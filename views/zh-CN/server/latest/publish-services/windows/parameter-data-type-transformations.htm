@@ -1,0 +1,565 @@
+
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>  <html class="ie lt-ie9 lt-ie8 lt-ie7 ie6" dir="ltr"> <![endif]-->
+<!--[if IE 7]>     <html class="ie lt-ie9 lt-ie8 ie7" dir="ltr"> <![endif]-->
+<!--[if IE 8]>     <html class="ie lt-ie9 ie8" dir="ltr"> <![endif]-->
+<!--[if IE 9]>     <html class="ie ie9" dir="ltr"> <![endif]-->
+<!--[if !IE]><!--> <html dir="ltr" lang="zh-CN"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>输入模式和参数数据类型&mdash;文档 | ArcGIS Enterprise 文档</title>
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+    <script>
+      var docConfig = {
+        locale: 'zh-CN'
+        ,localedir: 'zh-cn'
+        ,langSelector: ''
+        
+        ,relativeUrl: false
+        
+
+        ,searchformUrl: '/search/'
+        ,tertiaryNavIndex: ''
+
+        
+      };
+    </script>
+	 
+
+
+    
+    <!--[if lt IE 9]>
+      <script src="../../../../../zh-CN/cdn/js/libs/html5shiv.js" type="text/javascript"></script>
+      <script src="../../../../../zh-CN/cdn/js/libs/selectivizr-min.js" type="text/javascript"></script>
+      <script src="../../../../../zh-CN/cdn/js/libs/json2.js" type="text/javascript"></script>
+      <script src="../../../../../zh-CN/cdn/js/libs/html5shiv-printshiv.js" type="text/javascript" >
+
+    <![endif]-->
+
+     <!--[if lt IE 11]>
+    <script>
+      $$(document).ready(function(){
+        $$(".hideOnIE").hide();
+      });
+    </script>
+    <![endif]-->
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<link href="../../../../../zh-CN/assets/img/favicon.ico" rel="shortcut icon" >
+	<link href="../../../../../zh-CN/assets/css/screen.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/cdn/calcite/css/documentation.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/assets/css/print.css" media="print" type="text/css" rel="stylesheet" />
+
+	<!--
+	<link href="../../../../../zh-CN/assets/css/screen_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/assets/css/documentation/base_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/assets/css/print_l10n.css" media="print" type="text/css" rel="stylesheet" />
+	-->
+	
+	
+		<script src="../../../../../zh-CN/cdn/js/libs/jquery.1.9.1.min.js" type="text/javascript"></script>
+	
+	<script src="../../../../../zh-CN/cdn/js/libs/jquery.cookie.js" type="text/javascript"></script>
+	<link href="../../../../../zh-CN/cdn/css/colorbox.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/cdn/css/colorbox_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<script src="../../../../../zh-CN/cdn/js/libs/jquery.colorbox-min.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/assets/js/video-init.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/assets/js/sitecfg.js" type="text/javascript"></script>
+	
+		<script src="../../../../../zh-CN/assets/js/signIn.js" type="text/javascript"></script>
+	
+
+	<!--- Language Picker -->
+	<script src="../../../../../zh-CN/assets/js/locale/l10NStrings.js" type="text/javascript"></script>
+	
+		 
+	
+
+	<script src="../../../../../zh-CN/assets/js/calcite-web.js" type="text/javascript"></script>
+
+
+
+  <!--- search MD -->
+    <META name="description" content="地理处理任务参数的输入模式取决于参数的数据类型。"><META name="last-modified" content="2019-12-6"><META name="product" content="arcgis-server-windows,arcgis-enterprise-windows"><META name="sub_category" content="ArcGIS Server (Windows)"><META name="search-collection" content="help"><META name="content_type_label" content="帮助主题"><META name="sub_category_label" content="ArcGIS Server (Windows)"><META name="search-category" content="help-general"><META name="subject_label" content="服务"><META name="version" content="10.8"><META name="content_type" content="Help Topic"><META name="subject" content="SERVICES"><META name="content-language" content="zh-cn">
+    <!--- search MD -->
+
+  
+  <script src="../../../../../zh-CN/assets/js/switchers/server-1.js" type="text/javascript"></script>
+  
+      
+
+</head>
+
+<!--
+      pub: GUID-F157DF68-7F60-4427-A561-AD2F0FA30861=22
+      tpc: GUID-011AD301-E678-4CD2-8A0B-BFF873B82CE5=5
+      -->
+
+
+<!-- variable declaration, if any -->
+<!-- can change following macro to set variable once we are on Jinja 2.8 -->
+
+
+
+
+
+<body class="claro zh-CN server">
+  
+
+  <!-- Drawer location -->
+  <div class="drawer drawer-left js-drawer" data-drawer="top-nav">
+        <nav class="drawer-nav" role="navigation">
+          <aside class="side-nav">
+            <h2 class="side-nav-title">Arc<span>GIS</span> Enterprise</h2>
+            <form id="helpSearchForm" class="margin-left-half margin-right-half leader-half trailer-half drawer-search-form" method="GET">
+              <input type="search" name="q"  placeholder="搜索 ArcGIS Server 10.8 帮助">
+              <input type="hidden" name="collection" value="help" />
+              <input type="hidden" name="product" value="arcgis-server-windows" />
+              <input type="hidden" name="version" value="10.8" />
+              <input type="hidden" name="language" value="zh-CN" />
+            </form>    
+             <a id="nav-portal" data-langlabel="portal" href="../../../../../zh-CN/portal/" class="side-nav-link">Portal</a>
+             
+            <a id="all-servers" data-langlabel="all-servers" href="../../../../../zh-CN/server/" class="side-nav-link">所有服务器</a>
+            <a id="gis-server" data-langlabel="gis-server" href="../../../../../zh-CN/server/" class="side-nav-link">GIS Server</a>
+            <a id="image-server" data-langlabel="image-server" href="../../../../../zh-CN/image/" class="side-nav-link">Image Server</a>
+            <a id="geo-analytics-server" data-langlabel="geo-analytics-server" href="../../../../../zh-CN/geoanalytics/" class="side-nav-link">GeoAnalytics Server</a>
+            <a id="geoevent-server" data-langlabel="geoevent-server" href="../../../../../zh-CN/geoevent/" class="side-nav-link">GeoEvent Server</a>
+            <a id="notebook-server" data-langlabel="notebook-server" href="../../../../../zh-CN/notebook/" class="side-nav-link">Notebook Server</a>
+            <a id="nav-data-store" data-langlabel="data-store" href="../../../../../zh-CN/data-store/" class="side-nav-link">Data Stores</a>
+            <a id="nav-cloud" data-langlabel="cloud" href="../../../../../zh-CN/cloud/" class="side-nav-link">云</a>
+            <a id="nav-apps" data-langlabel="apps" href="../../../../../zh-CN/apps/" class="side-nav-link">应用程序</a>
+            <a id="nav-doc" data-langlabel="documentation" href="../../../../../zh-CN/documentation/" class="side-nav-link">文档</a>
+
+          </aside>
+        </nav>
+    </div>
+
+    <!-- user navigation collapses to drawer on mobile -->
+    
+    <div class="drawer drawer-right js-drawer hide-if-logged-out logged-in-navigation" data-drawer="user-nav">
+      <nav class="drawer-nav">
+        <aside class="side-nav">
+          <a class="side-nav-link agolProfile" href="#">我的个人资料</a>
+          <a class="side-nav-link icon-ui-sign-out js-log-out" href="#">登出</a>
+        </aside>
+      </nav>
+    </div>
+    
+<!-- End of drawer -->
+
+  
+  <div class="wrapper">
+      <!--googleoff: all-->
+
+      <header class="top-nav" data-skin="learn">
+        <a class="skip-to-content" href="#skip-to-content">Skip To Content</a>
+        <div class="grid-container">
+          <div class="column-24">
+
+
+            <!--<div class="top-nav-title-wrapper text-center ">-->
+              <a href='../../../../../zh-CN/' class="top-nav-title tablet-hide"><span>Arc</span>GIS  Enterprise</a>
+              <a href='../../../../../zh-CN/' class="icon-ui-menu top-nav-title js-drawer-toggle tablet-show" data-drawer="top-nav"><span>Arc</span>GIS Enterprise</a>
+            <!--</div> -->
+
+          
+            <nav role="navigation" class="top-nav-list left tablet-hide">
+              <a id="nav-portal" data-langlabel="portal" href="../../../../../zh-CN/portal/" class="top-nav-link">Portal</a>
+
+                <div class="dropdown js-dropdown ">
+                  <a class="top-nav-link js-dropdown-toggle" tabindex="0" aria-haspopup="true" aria-expanded="false" href="#">Servers</a>
+                  <nav class="dropdown-menu featured" role="menu">
+                    <ul class="dropdown-sublist-featured">
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/get-started/latest/windows/additional-server-deployment.htm" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path  d="M42.92 6.1H4.12v8.566l.833.832-.835.833-.018 7.332.845.847-.825.824V33.9h25v5.2h-2v1.075H8.02v.8h19.1v.925h4.8v-.925H40v-.8h-8.08V39.1h-2v-5.2h13v-8.566l-.834-.834.835-.834v-7.332l-.835-.834.835-.834zm-11.8 35h-3.2v-1.2h3.2zm11-8H4.92v-7.434l.767-.766h35.668l.765.766zm0-9.766l-.766.766H5.666l-.766-.767.017-6.669.766-.764h35.671l.766.766zm0-9l-.766.766H5.687l-.766-.766V6.9h37.2zM19 11.9h-2v-.8h2zm-4 0h-2v-.8h2zm-4 0H9v-.8h2zm6 8.2h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9zm8 9h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9z"/></svg></span>
+                          <span class="sublink-text">所有服务器</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/server/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M45.98 33.575a.616.616 0 0 0-.335-.51l-3.362-2.03 3.362-2.031a.556.556 0 0 0 0-1.02l-11.1-6.704a1.293 1.293 0 0 0-1.112 0L22.33 27.982a.556.556 0 0 0 0 1.02l3.36 2.03-3.358 2.03a.556.556 0 0 0-.002 1.021l3.322 2.006-3.324 2.008a.555.555 0 0 0 .002 1.017l11.102 6.703a1.25 1.25 0 0 0 1.11.002l11.104-6.706a.556.556 0 0 0 0-1.02l-3.32-2.006 3.318-2.004a.607.607 0 0 0 .335-.509zM33.837 21.97c.026-.01.286-.005.29-.005l10.814 6.53-10.8 6.523c-.028.01-.284.005-.294.006l-10.813-6.53zm11.105 16.636l-10.8 6.523a2.564 2.564 0 0 1-.295.006l-10.81-6.529 3.39-2.047 7.004 4.23a1.083 1.083 0 0 0 .557.131 1.101 1.101 0 0 0 .554-.13l7.01-4.233zM34.14 40.098a2.545 2.545 0 0 1-.294.006l-10.812-6.53 3.43-2.073 6.97 4.208a1.25 1.25 0 0 0 1.107-.001l6.966-4.206 3.431 2.073zM9 8H7V7h2zm8 8h-2v-1h2zm-4-8h-2V7h2zm4 0h-2V7h2zm-4 8h-2v-1h2zm7.316 11.1H3.9v-6.434l.766-.766h35.668l.766.766v2.12l.8.483v-2.935l-.826-.826.826-.845v-6.329l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9h16.88a2.632 2.632 0 0 1 .336-.8zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zm0 8v-5.668l.766-.766h35.668l.766.766v5.67l-.746.764H4.666zM15 24v-1h2v1zm-4 0v-1h2v1zm-2-8H7v-1h2zm-2 8v-1h2v1z"/></svg></span>
+                          <span class="sublink-text">GIS Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/image/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 8h-2V7h2zm-4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm8 8h-2v1h2zm-8 0H7v1h2zm4 9v-1h-2v1zm-4 0v-1H7v1zm8 0v-1h-2v1zm4 3.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V21h-.8v-.334l-.766-.766H4.666l-.766.766V27.1H21zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zm40.234 4v21.8H23.1V23.1zm-.8 16.366L39.466 44.1h2.868l1.766-1.766zm-20.2-9.932l5.634-5.634h-2.868L23.9 26.666zm6.2-5.068L24.466 30.1h2.868l2.766-2.766zM28.466 30.1H30.1v-1.634zm2.434 0h6.2v-6.2h-6.2zm-7 7h6.2v-6.2h-6.2zm7 0h6.2v-6.2h-6.2zm0 6.434l5.634-5.634h-2.868L30.9 40.666zm7-7l5.634-5.634h-2.868L37.9 33.666zm1.634-5.634H37.9v1.634zm-8.634 7v1.634l1.634-1.634zm.566 6.2h2.868l2.766-2.766v-2.868zm6.434-3.566l2.634-2.634H37.9zM35.466 44.1H37.1v-1.634zm2.434 0h.434l5.766-5.766V37.9h-2.434L37.9 41.666zm6.2-8.634L42.466 37.1H44.1zm0-4L38.466 37.1h2.868l2.766-2.766zm0-7.566h-6.2v6.2h6.2zm-20.2 0v1.634l1.634-1.634zm0 20.2h6.2v-6.2h-6.2zm20.2 0v-.634l-.634.634z"/></svg></span>
+                          <span class="sublink-text">Image Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/geoanalytics/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 16h-2v-1h2zm-8 8v-1H7v1zm8 0v-1h-2v1zM13 7h-2v1h2zm4 0h-2v1h2zM9 7H7v1h2zm21.45 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V27.9h-1.464l-.801-.8H41.1v-6.434l-.766-.766H4.666l-.766.766V27.1h27.15zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM13 24v-1h-2v1zm0-9h-2v1h2zm-4 0H7v1h2zm26.672 27.148A1.87 1.87 0 0 1 35.9 43a1.91 1.91 0 1 1-3.763-.222l-9.845-3.414A1.88 1.88 0 0 1 21 39.9a1.9 1.9 0 1 1 1.474-3.084l4.692-2.346A1.878 1.878 0 0 1 27.1 34a1.902 1.902 0 0 1 1.9-1.9 1.867 1.867 0 0 1 .781.191l3.788-5.05A1.88 1.88 0 0 1 33.1 26a1.9 1.9 0 1 1 3.491 1.026l4.889 4.888c-.069.056-.144.1-.21.162a3.986 3.986 0 0 0-.358.402l-4.883-4.883A1.889 1.889 0 0 1 35 27.9a1.867 1.867 0 0 1-.781-.191l-3.788 5.049a1.868 1.868 0 0 1 .437.965l9.204.614c-.018.11-.049.218-.058.33A3.93 3.93 0 0 0 40 35c0 .046.01.09.01.135l-9.185-.612A1.913 1.913 0 0 1 29 35.9a1.889 1.889 0 0 1-1.474-.716l-4.692 2.346a1.878 1.878 0 0 1 .066.47 1.9 1.9 0 0 1-.105.625c-.007.02-.022.036-.03.056l9.63 3.34a1.87 1.87 0 0 1 2.786-.505l5.415-4.437c.067.108.127.22.204.322a3.9 3.9 0 0 0 .292.306zM33.9 26a1.092 1.092 0 0 0 .43.872 1.12 1.12 0 0 0 1.42-.068A1.1 1.1 0 1 0 33.9 26zm-6 8a1.1 1.1 0 0 0 2.196.093 1.135 1.135 0 0 0-.426-.965A1.087 1.087 0 0 0 29 32.9a1.101 1.101 0 0 0-1.1 1.1zm-5.8 4a1.098 1.098 0 1 0-.06.362A1.101 1.101 0 0 0 22.1 38zm13 5a1.1 1.1 0 1 0-2.2 0 1.1 1.1 0 0 0 2.2 0zm10.8-8a1.9 1.9 0 1 1-3.8 0c0-.053.003-.105.007-.158A1.9 1.9 0 0 1 45.9 35zm-.8 0a1.1 1.1 0 0 0-2.196-.093 1.153 1.153 0 0 0 .216.752A1.1 1.1 0 0 0 45.1 35z"/></svg></span>
+                          <span class="sublink-text">GeoAnalytics Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/geoevent/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M13 8h-2V7h2zm4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm12.418 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826v2.117c-.259-.177-.53-.337-.8-.497v-1.288l-.766-.766H4.666l-.766.766V27.1h17.933c-.148.26-.283.53-.415.8zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM9 24v-1H7v1zm4-9h-2v1h2zm0 9v-1h-2v1zm-4-9H7v1h2zm8 9v-1h-2v1zm16.9 2h-.8v8.9H39v-.8h-5.1zm.1-3.901a11.9 11.9 0 1 0 11.9 11.9 11.914 11.914 0 0 0-11.9-11.9zm0 23a11.1 11.1 0 1 1 11.1-11.1 11.112 11.112 0 0 1-11.1 11.1z"/></svg></span>
+                          <span class="sublink-text">GeoEvent Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/notebook/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M22 27.1H3.9v-6.434l.766-.766h18.576a5.262 5.262 0 0 1 .83-.8H4.666l-.766-.766v-5.668l.766-.766h35.668l.766.766V18h.8v-5.666l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9H22zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zM9 8H7V7h2zm8 0h-2V7h2zm-4 0h-2V7h2zm2 16v-1h2v1zm-4 0v-1h2v1zm-4 0v-1h2v1zm0-8v-1h2v1zm8 0v-1h2v1zm-4 0v-1h2v1zm18.9 8.1h-1.8v1.8h1.8zm-.8 1h-.2v-.2h.2zm15.498-4.48a2.727 2.727 0 0 0-1.62-.5v-.02H27.25a3.154 3.154 0 0 0-3.15 3.15V38.1h-1.68a3.386 3.386 0 0 0-2.872 1.58 3.49 3.49 0 0 0-.157 3.419 3.241 3.241 0 0 0 2.954 1.801h15.161a3.404 3.404 0 0 0 3.394-3.4V26.9h5v-3.65a3.224 3.224 0 0 0-1.302-2.63zM22.345 44.1a2.44 2.44 0 0 1-2.23-1.341 2.706 2.706 0 0 1 .11-2.65A2.588 2.588 0 0 1 22.42 38.9h12.89a3.395 3.395 0 0 0 0 5.2zM40.1 23.192V41.5a2.6 2.6 0 1 1-2.6-2.6v-.8H24.9V23.25a2.352 2.352 0 0 1 2.35-2.35h13.795a3.183 3.183 0 0 0-.945 2.292zm5 2.908h-4.2v-2.908a2.274 2.274 0 0 1 1.44-2.18 1.944 1.944 0 0 1 1.791.259 2.423 2.423 0 0 1 .97 1.979zm-17.1 5h9v.8h-9zm0 3h7v.8h-7zm0-6h9v.8h-9zm4-3h5v.8h-5z"/></svg></span>
+                          <span class="sublink-text">Notebook Server</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+
+              <a id="nav-data-store" data-langlabel="data-store" href="../../../../../zh-CN/data-store/" class="top-nav-link">Data Stores</a>
+              <a id="nav-cloud" data-langlabel="cloud" href="../../../../../zh-CN/cloud/" class="top-nav-link">云</a>
+              <a id="nav-apps" data-langlabel="apps" href="../../../../../zh-CN/apps/" class="top-nav-link">应用程序</a>
+            </nav>
+
+
+            
+            
+            
+
+            <div class="margin-left-1 top-nav-list right hide-if-logged-in logged-out-navigation">
+               
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+              
+              <a data-langlabel="sign-in" id="login-link" class="icon-ui-user top-nav-link link-blue login-link" href="#">登录</a>
+              
+            </div>
+
+            
+            <nav class="margin-left-1 top-nav-list right hide-if-logged-out logged-in-navigation">
+              
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+             
+              <div class="dropdown js-dropdown right">
+
+                <div class="tablet-show top-nav-link">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a href="#" data-drawer="user-nav" class="user-nav-name js-drawer-toggle" data-first-name></a>
+                </div>
+
+                <div class="tablet-hide top-nav-link js-dropdown-toggle">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a class="user-nav-name top-nav-dropdown dropdown-btn" data-first-name>&nbsp;</a>
+                </div>
+
+                <nav class="dropdown-menu dropdown-right">
+                
+                  <a class="dropdown-link agolProfile" id="agolProfile" href="#">我的个人资料</a>
+                  <a class="dropdown-link js-log-out" id="agolLogout" href="#">登出</a>
+                </nav>
+              </div>
+            </nav>
+            
+
+            
+          </div>
+        </div>
+      </header>
+
+      <div class="js-search search-overlay">
+        <div class="search-content" role="dialog" aria-labelledby="search">
+          <form method="GET" id="helpSearchForm">
+            <label>
+              搜索 ArcGIS Server 10.8 帮助
+              <div class="search-bar">
+                <input type="search" name="q"  placeholder="搜索 ArcGIS Server 10.8 帮助" class="search-input js-search-input">
+                <input type="hidden" name="collection" value="help" />
+                <input type="hidden" name="product" value="arcgis-server-windows" />
+                <input type="hidden" name="version" value="10.8" />
+                <input type="hidden" name="language" value="zh-CN" />
+              </div>
+            </label>
+            <input type="hidden" name="relativePath" value="../../../../../" /><button type="submit" class="btn btn-large right">搜索</button>
+          </form>
+        </div>
+      </div>
+
+      <!--googleon: all-->
+
+      <div id="skip-to-content">
+        <!--googleoff: all-->
+        <header class="sub-nav sub-nav-learn">
+          <div class="grid-container">
+            
+            <div class="column-24">
+              <div style="display:table;" class="sdk-home-banner">
+                <div class="sdk-home-banner-content">
+                  <h1 class="sub-nav-title link-white">ArcGIS Server</h1>
+                </div>
+              </div>
+            </div>
+
+            <div class="column-24">
+              <nav class='sub-nav-list tablet-hide'><a class="sub-nav-link" href="../../../../../zh-CN/server/" target="_top" title="ArcGIS Server 的概述和文档">主页</a><a class="sub-nav-link" href="../../../../../zh-CN/server/latest/get-started/windows/" target="_top" title="了解有关 ArcGIS Server 和服务器角色的信息">简介</a><a class="sub-nav-link" href="../../../../../zh-CN/server/latest/deploy/windows/" target="_top" title="构建、配置和升级部署">部署</a><a class="sub-nav-link" href="../../../../../zh-CN/server/latest/manage-data/windows/" target="_top" title="管理企业的空间数据">管理数据</a><a class="sub-nav-link is-active" href="../../../../../zh-CN/server/latest/publish-services/windows/" target="_top" title="使用 GIS 服务">管理服务</a><a class="sub-nav-link" href="../../../../../zh-CN/server/latest/create-web-apps/windows/" target="_top" title="创建 Web 应用程序和可打印地图">共享</a><a class="sub-nav-link" href="../../../../../zh-CN/server/latest/administer/windows/" target="_top" title="管理和保护 ArcGIS Server">管理</a><a class="sub-nav-link" href="../../../../../zh-CN/server/latest/develop/windows/" target="_top" title="构建扩展模块并自动执行常见任务">开发</a></nav><select class='tablet-show select-full trailer-half js-select-nav'><option value="../../../../../zh-CN/server/">主页</option><option value="../../../../../zh-CN/server/latest/get-started/windows/">简介</option><option value="../../../../../zh-CN/server/latest/deploy/windows/">部署</option><option value="../../../../../zh-CN/server/latest/manage-data/windows/">管理数据</option><option selected="true" value="../../../../../zh-CN/server/latest/publish-services/windows/">管理服务</option><option value="../../../../../zh-CN/server/latest/create-web-apps/windows/">共享</option><option value="../../../../../zh-CN/server/latest/administer/windows/">管理</option><option value="../../../../../zh-CN/server/latest/develop/windows/">开发</option></select>
+            </div>
+
+          </div>
+        </header>
+        <!--googleon: all-->
+       
+        <!-- content goes here -->
+        <div class="grid-container ">
+          
+
+            
+              
+  <!--BREADCRUMB-BEG--><div id="bigmac" class="sticky-breadcrumbs trailer-2" data-spy="affix" data-offset-top="180"> </div><!--BREADCRUMB-END-->
+  <!--googleoff: all-->
+    <div class="column-5 tablet-column-12 trailer-2 ">
+      <aside class="js-accordion accordion reference-index" aria-live="polite" role="tablist">
+        <div></div>
+      </aside>
+
+      <div class="js-sticky scroll-show tablet-hide leader-1 back-to-top" data-top="0" style="top: 0px;">
+        <a href="#" class="btn btn-fill btn-clear">返回顶部</a>
+      </div>
+    </div>
+  <!--googleon: all-->
+  
+            
+            
+            
+	
+		<div class="column-13  pre-1 content-section">
+	
+		<header class="trailer-1"><h1>输入模式和参数数据类型</h1></header>
+
+		 
+	<!--googleoff: all-->
+	
+		
+				<aside id="main-toc-small" class="js-accordion accordion tablet-show trailer-1">
+			      <div class="accordion-section">
+			        <h4 class="accordion-title">在本主题中</h4>
+			        <div class="accordion-content list-plain">
+			          <ol class="list-plain pre-0 trailer-0"><li><a href="#ESRI_SECTION1_5C6000DB9B0341008B589D07782179CA">数据集</a></li><li><a href="#ESRI_SECTION1_F8E9E76E9B8541A69D5D0AAA6C552347">标量</a></li><li><a href="#ESRI_SECTION1_47432D76AB4E41A39BCBC471E2C644C7">值表</a></li></ol>
+			        </div>
+			      </div>
+			     </aside>
+		
+    
+   <!--googleon: all-->
+
+
+		<main>
+			
+	
+    	
+    
+
+
+			
+<p id="GUID-C62FE5F1-B31D-404A-84E9-FFA23C94AF5B">在<span class="uicontrol">服务编辑器</span>中发布结果时，需要为各任务参数指定<span class="uicontrol">输入模式</span>。选择的模式决定客户端给任务参数提供值的方式。本主题旨在帮助您了解为何有些输入模式选项不可用于某参数，并推荐了一些用于创建使用可用输入模式选项的任务的方法。</p><p id="GUID-3CFF9C2D-8664-4BE9-ABD1-B57FD082128C">回顾一下，共有三种输入模式选项，如下所述：   <ul purpose="ul" id="UL_D3E43CD3F247412FBDEF1239527E75D6"><li purpose="li" id="LI_9E9F89622E42435E8B10373E0F0C7A3B"><span class="uicontrol">用户定义值</span>：客户端将提供参数的值。</li><li purpose="li" id="LI_327E046F195B4AAEA85B545ED8277DC3"><span class="uicontrol">选择列表</span>：给出字符串列表（选择列表），客户端必须从选择列表中选择一个或多个字符串。根据输入的数据类型，选择列表中的字符串可以是图层名称或简单关键字选项。</li><li purpose="li" id="LI_BA4B4080C0B444439DCC3A8256B9CC18"><span class="uicontrol">常量值</span>：任务将使用您在创建结果时为参数提供的值。由于该值为常量，所以客户端无法对其进行更改，因此在发布服务时该值不会成为任务参数。</li></ul></p><p id="GUID-94277EE4-D474-46DE-ABEA-0D8D8464C7F0">特定参数具有的输入模式选项取决于工具的参数数据类型。有三种类型的数据类型： <ul purpose="ul" id="UL_DE78DCA741A34EF79D654359D24F7BB0"><li purpose="li" id="LI_2C2C487309464D35BF64A737BFC110B6">数据集：磁盘上存储的数据，如要素类、表、文件夹、地图文档、数据库等。</li><li purpose="li" id="LI_A01C35AC149540F19AD425F51CDD3B32">标量：数据集以外的任何数据类型，如数字和字符串。</li><li purpose="li" id="LI_C0E6784C71804A95812528CB2F487BBB">值表：多列值表形式的特殊数据类型。</li></ul>以下三节将依次讨论每种情况。</p><section class="section1 padded-anchor" id="ESRI_SECTION1_5C6000DB9B0341008B589D07782179CA" purpose="section1"><h2>数据集</h2><p id="GUID-D4B78234-747F-4351-88C8-449777A278B7">GIS 服务必须使用所有客户端中的最简单客户端：在计算机上运行的没有任何 GIS 功能的 Web 浏览器。这种简单的客户端仅知道如何向服务器传输（发送和接收）简单数据包，例如文本、数字、文件、地理要素及其属性（字段）。在地理处理任务上下文中，GIS 数据集可分为两种不同类别：可传输和不可传输。<ul purpose="ul" id="UL_203187168EA1430497D10ABA6BEAD9E7"><li purpose="li" id="LI_0844BA8516DB414F858939C8FB28FAD8"><b>可传输数据集</b>包括要素、栅格、表和文件。包含可传输数据集的参数支持<span class="uicontrol">用户定义值</span>输入模式。</li><li purpose="li" id="LI_FD973EC0CE884AF5BC919B9CDC44767F"><b>不可传输数据集</b>包括要素、栅格、表和文件以外的所有数据集。不可传输数据集分为两类。<ul purpose="ul" id="UL_D66AB2A0567B41AA8FD88229BD2D2846"><li purpose="li" id="LI_C4DF7E75664A43E59FF3BD46D838543E"><b>复杂数据集</b>包括几何网络、网络数据集、拓扑、TIN 等。这些数据类型称为复杂数据集，因为它们用于对简单要素之间的复杂关系进行建模。</li><li purpose="li" id="LI_A1601D786FD8429DB29D548857203217"><b>容器数据集</b>包括文件夹、文件和个人地理数据库以及地图文档 (<span class="usertext">.mxd</span>) 等项目。这些数据类型混合了其他数据集 - 因此，将它们称作“容器”。</li></ul>  复杂数据集和容器数据集不可传输，而且不支持<span class="uicontrol">用户定义值</span>输入模式。</li></ul></p><section class="section2 padded-anchor" id="ESRI_SECTION2_1743C2EE0A574A9CA5B98AA18FA2E67A" purpose="section2"><h3>确定工具参数的数据类型</h3><p id="GUID-F3721CC0-1FFC-4819-9CB0-18063468676E">要确定任务参数是否支持<span class="uicontrol">用户定义值</span>输入模式，可在<span class="uicontrol">服务编辑器</span>中对其进行检查，查看输入模式是否作为选项显示。您也可在进入<span class="uicontrol">服务编辑器</span>之前，通过以下任意一种方法确定工具参数的<a class="xref xref" esrisubtype="extrel" hrefpfx="https://desktop.arcgis.com/zh-cn/arcmap/latest/tools" href="https://desktop.arcgis.com/zh-cn/arcmap/latest/tools/supplement/data-types-for-geoprocessing-tool-parameters.htm">数据类型</a>，从而判断是否支持<span class="uicontrol">用户定义值</span>：<ul purpose="ul" id="UL_0DA2A1EB44814114AA8A2BAFC9C07DD6"><li purpose="li" id="GUID-DDC9958F-571F-4194-AA3F-5C8AC8EBAF23">在工具的参考页面中，语法区域包含一个用于描述每个参数的表。该表的最后一列包含参数的数据类型。</li><li purpose="li" id="GUID-B9E877A0-450B-4262-BF4B-B25C22CAA275">在 ModelBuilder 中，右键单击变量，然后依次单击<span class="uicontrol">属性</span>和<span class="uicontrol">数据类型</span>选项卡。将在对话框的顶部列出数据类型。</li><li purpose="li" id="LI_5C0BB78B103D4DC48BCE78756CCD0200">对于脚本工具，在<span class="uicontrol">目录</span>窗口中，右键单击脚本工具，然后选择<span class="uicontrol">属性</span>。在属性对话框中，单击<span class="uicontrol">参数</span>选项卡。各参数的数据类型将列出在参数表中。</li></ul>以下数据类型可传输，并支持<span class="uicontrol">用户定义值</span>输入模式：要素类、要素图层、要素集、栅格图层、栅格数据集、表、表视图、记录集和文件。</p></section><section class="section2 padded-anchor" id="ESRI_SECTION2_146537157C384B05A0841DA01D93D817" purpose="section2"><h3>选择列表和不可传输数据集</h3><p id="GUID-F0EC6B46-38FC-44C0-A98E-039919B93C5E">如果输入参数值是引用不可传输数据集的图层，则可选择<span class="uicontrol">选择列表</span>作为输入模式选项。例如，<span class="modelbuilder">交通模式网络</span>参数可用于根据用户的交通模式（汽车、自行车或步行）找出最佳路径的任务。</p><p id="GUID-69CE0727-B6C1-4DFF-96B8-FA4B9D2F6E7B">此参数的数据类型是“网络数据集图层”。网络数据集是复杂数据集，无法通过 Web 进行传输，所以<span class="uicontrol">用户定义值</span>不适用于该参数。但是，可以使用<span class="uicontrol">选择列表</span>指定要使用的图层名称的选择列表。客户端将从选择列表中选择一个图层名称，而任务将使用客户端选择的图层并访问图层引用的、存储在服务器上的网络数据集。</p><p id="GUID-11FE8BFB-4753-400A-A92A-9F76D8398832">多数复杂数据集具有相应的图层制图表达。上面的示例显示了网络数据集图层。其他复杂数据集包括 TIN 图层、地统计图层、宗地结构图层和 LAS 数据集图层。具有不可传输数据集时，可以使用其图层制图表达作为输入值。上面的示例任务的创建方法是：执行模型并提供<span class="modelbuilder">街道网络</span>图层作为输入。如果通过提供磁盘上的网络数据集的路径而不是图层名称执行模型，则输入模式将设置为<span class="uicontrol">常量值</span>。必须使用图层作为输入来执行工具，这样才会显示<span class="uicontrol">选择列表</span>选项。</p><p id="GUID-F3356A23-E958-460E-A6A6-2F62047B187B">总之：<ul purpose="ul" id="UL_958C0772C919464DA26F6417D1372A0E"><li purpose="li" id="LI_0F96FAA533544EE28B5BF28FEBA2FC53">客户端可通过 Internet 发送和接收（传输）简单要素、栅格、表和文件。</li><li purpose="li" id="LI_95B86CED27784614A9751637AACE580E">复杂数据集（如网络数据集、TIN 和宗地结构）不可传输。容器数据集（如文件夹、地理数据库和地图文档）也不可传输。也就是说，客户端无法创建这些复杂数据集或容器，或通过 Internet 传输它们。即使是 <span class="ph">ArcMap</span> 等全功能客户端也是如此。</li><li purpose="li" id="LI_4C078EC1964041BB8EA928C721A40CCF">多数复杂数据集具有图层制图表达；即，可以向 <span class="ph">ArcMap</span> 添加数据集，这将在内容列表中创建图层。<ul purpose="ul" id="UL_59A042D23B2C43C98C5D14C0844DE783"><li purpose="li" id="LI_D4ED90EF0CBD43CA8B6977506C9E529C">您可以创建图层名称的选择列表，客户端将从中选择一个或多个图层名称作为任务的输入。然后任务将使用图层引用的数据集。  </li><li purpose="li" id="LI_FF32A898DF0D42FE97330922D1C85E6B">要创建图层名称的选择列表，必须使用图层作为输入来执行工具。在<span class="uicontrol">服务编辑器</span>中，选择列表将使用内容列表中的适用图层填充。</li><li purpose="li" id="LI_5E8A20FEA676486D8A74267529EC6200">如果使用磁盘上的数据集的路径执行工具，则<span class="uicontrol">选择列表</span>选项将不可用，即使您具有内容列表中类型正确的图层。</li></ul></li></ul><div class="panel trailer-1 note" id="GUID-7021000F-6510-4981-B84E-BB12B977AC20"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-65750DD4-F450-42E0-8F0F-7621A41EE819">发布图层名称的选择列表时，图层引用的数据将成为<a class="xref xref" href="../../../../../zh-CN/server/latest/publish-services/windows/a-quick-tour-of-authoring-geoprocessing-services.htm#ESRI_SECTION1_BFAFD56F03A74BD2AF255F5F24D94F69">项目数据</a>，并且将复制到 GIS 服务器，除非在服务器的数据存储中找到该数据。</p></div></p></section><section class="section2 padded-anchor" id="ESRI_SECTION2_7F7E4668060F494383C1E45CC2A2BBF4" purpose="section2"><h3>常量值和复杂数据集</h3><p id="GUID-8A19297B-E9DD-49C4-A578-292E1B688C1D">如果任务的输入是复杂数据集的路径（例如 <span class="usertext">D:\mydata\chicago.gdb\transportation\streetnetwork</span> 下的网络数据集），则<span class="uicontrol">输入模式</span>将固定为<span class="uicontrol">常量值</span>。如果在输入模式设置为<span class="uicontrol">常量值</span>时进行发布，则数据集将复制到服务器（除非在服务器的数据存储中找到它）并且任务将使用复制的数据集。</p><p id="GUID-51C73957-4ADB-4DB4-AD4D-275B92815C5B">如果可以通过向 <span class="ph">ArcMap</span> 添加数据集来创建图层，则可使用图层作为输入来重新运行工具。这将创建可以共享的新结果，并且<span class="wintitle">服务编辑器</span>将支持<span class="uicontrol">选择列表</span>作为输入模式。</p><div class="panel trailer-1 note" id="GUID-ECD494E3-52C8-4BB1-B5C8-97A7263E1266"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-69B6FD1E-711A-4D63-B017-C7E97922560D">无法为几何网络创建图层。包含几何网络的参数始终将输入模式设置为<span class="uicontrol">常量值</span>。</p></div></section><section class="section2 padded-anchor" id="ESRI_SECTION2_7C145FD1083C41FD9EC0CD51B6186487" purpose="section2"><h3>常量值和容器数据集</h3><p id="GUID-7AF24C9F-95B3-4C18-AE76-F735F737FB34">容器包括文件夹、文件和个人地理数据库以及地图文档 (<span class="usertext">.mxd</span>) 等项目。这些数据类型混合了其他数据集 - 因此，将它们称作“容器”。容器是不可传输的，一般规则是：容器及其所有内容将复制到服务器（除非容器在服务器的数据存储中），已发布的任务将使用复制的容器。下面介绍了几种常见容器。</p><section class="section3 padded-anchor" id="ESRI_SECTION3_382E89D750CB41E2B6128F740D07F76D" purpose="section3"><h4>文件夹</h4><p id="GUID-6CE289C4-86CC-4416-BAC9-DF1E24190591">如果任务的输入是文件夹，则<span class="uicontrol">输入模式</span>将固定为<span class="uicontrol">常量值</span>。如果在输入模式设置为<span class="uicontrol">常量值</span>时进行发布，则文件夹及其内容（请参阅下面的注释）将复制到服务器（除非在服务器的数据存储中找到它）并且任务将使用复制的文件夹。<div class="panel trailer-1 note" id="GUID-F42189C5-4D81-4004-9988-5B2FB8328132"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-AE8F286B-581F-423B-B4B4-D2B4F0538ACD">作为发布过程的一部分将文件夹复制到服务器时，仅复制文件和地理数据集；不会复制文件夹内的子文件夹。有些地理数据集（例如，文件地理数据库、栅格和 TIN）从技术上讲是文件夹，但如果它们在要复制的文件夹中，则会将其复制到服务器。</p></div></p></section><section class="section3 padded-anchor" id="ESRI_SECTION3_E4D84631AB1B4B018F682568DEC00823" purpose="section3"><h4>地图文档 (<span class="usertext">.mxd</span>)</h4><p id="GUID-C433EA7E-A8F6-45C4-99FD-6FBDBA0F0D4D">如果任务的输入是地图文档，则<span class="uicontrol">输入模式</span>将固定为<span class="uicontrol">常量值</span>。如果在输入模式设置为<span class="uicontrol">常量值</span>时进行发布，则地图文档、其所有图层以及图层引用的所有数据集都将复制到服务器，除非在服务器的数据存储中找到地图文档。如果在服务器的数据存储中找不到任何引用的数据集，则也会将它们复制到服务器。实际上，将地图文档<a class="xref xref" esrisubtype="extrel" hrefpfx="https://desktop.arcgis.com/zh-cn/arcmap/latest/tools" href="https://desktop.arcgis.com/zh-cn/arcmap/latest/tools/data-management-toolbox/an-overview-of-the-package-toolset.htm">打包</a>，将其发送到服务器，然后在服务器上解包。</p></section><section class="section3 padded-anchor" id="ESRI_SECTION3_F85AACCF9E0F46589A6DDACE49911326" purpose="section3"><h4>地理数据库</h4><p id="GUID-B7098B33-AA9F-4D16-B27A-3D2037D3453F">如果任务的输入是地理数据库，则<span class="uicontrol">输入模式</span>将固定为<span class="uicontrol">常量值</span>。如果在输入模式设置为<span class="uicontrol">常量值</span>时进行发布，则地理数据库及其内容将复制到服务器（除非在服务器的数据存储中找到它）并且任务将使用复制的地理数据库。</p><p id="GUID-53F1C1A1-E469-4CCC-9BB2-168E75E6CA58">服务器平台（64 位操作系统）不支持个人地理数据库 (<span class="usertext">.mdb</span>)，复制到服务器后，会将其转换为文件地理数据库。向服务器进行复制时，企业地理数据库也将转换为文件地理数据库。</p></section></section><section class="section2 padded-anchor" id="ESRI_SECTION2_BCA0B94C42514C2C917C543E09548FB5" purpose="section2"><h3>不可传输输出</h3><p id="GUID-BA69C146-75E2-4E38-867C-E478660CB0BB">如果工具的输出是复杂数据集或容器数据集，则无法将其传输回客户端。在<span class="wintitle">服务编辑器</span>中，输出参数将显示<span class="uicontrol">字符串</span>这一<span class="uicontrol">数据类型</span>。在下图中，任务返回的值将是所创建的 TIN 数据集的名称，而非数据集本身。</p><p id="GUID-C457A847-1A14-4D3C-BC97-71993205D776"><img purpose="img" placement="inline" alt="不可传输输出将转换为字符串" title="不可传输输出将转换为字符串" src="GUID-E0E967E8-4C4B-45DE-BCE7-3B2F4C888D2F-web.png"></p><p id="GUID-A2A1C997-0B25-4BD2-ACB8-63E9101C034C">有多种处理不可传输输出的方法。<ul purpose="ul" id="UL_5A2E7A8828F6468FB45DCF23C2E83A2E"><li purpose="li" id="LI_8C30F6158E9F407BAD974CEFEB8029A1">使用<a class="xref xref" href="../../../../../zh-CN/server/latest/publish-services/windows/geoprocessing-service-settings-parameters.htm#GUID-C762751E-9409-431A-BE15-F3B6CBA14B7B">结果地图服务</a>将结果以地图形式发送到客户端。除数据的地图外，任何数据集都不会传输到客户端。</li><li purpose="li" id="LI_3D4FF8ED40D844C5B565ABFF08C13B40">将数据集转换为可传输数据集。例如，可以使用 <span purpose="gptoolref"><a class="xref xref" esrisubtype="extrel" hrefpfx="https://desktop.arcgis.com/zh-cn/arcmap/latest/tools" href="https://desktop.arcgis.com/zh-cn/arcmap/latest/tools/3d-analyst-toolbox/tin-to-raster.htm">TIN 转栅格</a></span>工具将 TIN（不可传输）转换为栅格数据集（可传输）。</li><li purpose="li" id="LI_2B4248F8A07D4399B211A21A4CFFD747">使用<a class="xref xref" esrisubtype="extrel" hrefpfx="https://desktop.arcgis.com/zh-cn/arcmap/latest/tools" href="https://desktop.arcgis.com/zh-cn/arcmap/latest/tools/data-management-toolbox/an-overview-of-the-layers-and-table-views-toolset.htm">图层和表视图工具集</a>中的某工具创建数据集的图层包 (<span class="usertext">.lpk</span>)，然后使用<a class="xref xref" esrisubtype="extrel" hrefpfx="https://desktop.arcgis.com/zh-cn/arcmap/latest/tools" href="https://desktop.arcgis.com/zh-cn/arcmap/latest/tools/data-management-toolbox/package-layer.htm">打包图层</a>工具创建图层包。图层包是文件，文件可通过 Internet 传输。客户端将必须对图层包进行解包。</li><li purpose="li" id="LI_C437883CE2C24F0A81D23D4D6B38633F">使用 ZIP 工具创建结果数据集文件或文件夹，并将 <span class="usertext">.zip</span> 文件传输到客户端。客户端负责对文件进行解压。<a class="xref xref" href="../../../../../zh-CN/server/latest/publish-services/windows/gp-service-example-clip-and-ship.htm">裁剪与发送服务示例</a>将图层从研究区域裁剪到文件地理数据库（以及其他格式），然后创建将传输到客户端上的 <span class="usertext">.zip</span> 文件。如果要使用此方法，请参阅以下链接：<ul purpose="ul" id="UL_161EC81CD8784162B939C2AE935F68B2"><li purpose="li" id="GUID-2BA37C52-7E19-4FA9-A7B8-97F7358306DB"><a class="xref xref" href="../../../../../zh-CN/server/latest/publish-services/windows/h-zip-python-script.htm">Zip.py</a> 将引入一个输入文件夹和一个输出文件名称，最后创建 <span class="usertext">.zip</span> 压缩文件。</li><li purpose="li" id="GUID-5EF391B2-FF94-4B20-A21E-4205A789FDF3"><a class="xref xref" href="../../../../../zh-CN/server/latest/publish-services/windows/h-unzip-python-script.htm">Unzip.py</a> 将引入输入 <span class="usertext">.zip</span> 文件和输出文件夹，然后将内容写入此文件夹。</li></ul></li></ul></p></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_F8E9E76E9B8541A69D5D0AAA6C552347" purpose="section1"><h2>标量</h2><p id="GUID-57540CCD-3021-44BF-BFD7-692F400C0609">标量数据类型包括数据集以外的任何数据类型。标量数据类型有时称为简单数据类型。地理处理中存在许多标量数据类型，如字段（表中的字段）、SQL 表达式、计算器表达式、字段映射、模糊函数以及许多其他类型。其中有些很少使用。字段和 SQL 表达式等其他类型较为常见。</p><p id="GUID-1E6693D1-83B1-4C53-8504-79677A5B4B1D">以下标量数据类型受所有客户端的完全支持并且无需转换即可通过 Internet 进行发送和接收：布尔型、日期型、双精度型、线性单位、长整型和字符串型。其他所有标量数据类型都将转换为字符串，这些数据类型称为不受支持或不可传输数据类型。</p><p id="GUID-2667FC88-17C3-4B67-B66B-AEC93E93C164">将不受支持的标量数据类型转换为字符串基本不是问题，因为每种数据类型都具有良好定义的字符串表示 - 只需知道这是什么，即可为您的客户端对其进行记录。在某些情况下，可能需要修改工具以便其使用客户端提供的其他信息构建字符串表示。下面将对这两种技术进行讨论。特殊数据类型“值表”将在<a class="xref xref" href="../../../../../zh-CN/server/latest/publish-services/windows/parameter-data-type-transformations.htm#ESRI_SECTION1_47432D76AB4E41A39BCBC471E2C644C7">下节</a>中单独讨论。</p><section class="section2 padded-anchor" id="ESRI_SECTION2_A58F5CC9AD06438DA14639AFE93271EE" purpose="section2"><h3>查找参数的字符串表示</h3><p id="GUID-0035EE78-496E-4CB7-BE03-ED077AFE3895">多数字符串表示显而易见。例如，“字段”数据类型的字符串表示是字段的名称。有时，必须深入挖掘才能找出字符串表示。</p><p id="GUID-076C5B86-3C8B-435D-9C45-48D3FAA2A5A5">以下示例显示了用于将点插值成面的 <span purpose="gptoolref"><a class="xref xref" esrisubtype="extrel" hrefpfx="https://desktop.arcgis.com/zh-cn/arcmap/latest/tools" href="https://desktop.arcgis.com/zh-cn/arcmap/latest/tools/spatial-analyst-toolbox/idw.htm">IDW</a></span>（反距离权重法）工具的<span class="uicontrol">搜索半径</span>参数。此参数由三部分构成：<span class="uicontrol">搜索半径设置</span>的方法（可变或固定）和两个值如下所示。</p><p id="GUID-21F20DAD-06B8-4771-AD6F-131B0588BC9E"><img purpose="img" placement="inline" alt="更复杂的标量数据类型示例" title="更复杂的标量数据类型示例" src="GUID-7B3BC543-1455-4308-8E0F-698CE5B1A9BC-web.png"></p><ol class="list-numbered" purpose="ol" id="OL_B1326D9A1A8240278A4E916D070E98A3"><li purpose="li" id="LI_E8096AF25EBC4F64B5252DFD632D7E72">要查找此参数的字符串表示，首先查看工具参考页面的参数语法部分。此表的第一列包含参数名称，在特殊情况下还包含字符串表示。表的最后一列包含参数的数据类型。下图显示了上述<span class="uicontrol">搜索半径</span>参数第一列的内容。<p id="GUID-8A65F499-FEA7-4A56-B720-9CA9D1D5A791"><img purpose="img" placement="inline" alt="search_radius 参数的字符串表示" title="search_radius 参数的字符串表示" src="GUID-9423C896-F26B-4449-8487-64F08AB9FF3C-web.png"></p><p id="GUID-F8019300-1E95-4A24-B672-100FC765F885">也可在工具参考页面的底部查看 Python 代码示例，因为这些示例通常使用参数的字符串表示。</p></li><li purpose="li" id="LI_ED762DA6DFA14456BE2B1D84D7D3BCC3">要查看任何参数的字符串表示，请运行工具，在<span class="uicontrol">结果</span>窗口中右键单击结果，然后选择<span class="uicontrol">复制为 Python 代码片段</span>。将代码片段粘贴到文本编辑器中，并对其进行检查。以下为运行<span purpose="gptoolref">反距离权重法</span>工具所使用的代码片段（为简洁起见，移除了初始参数）：<span class="arcpyref">arcpy.gp.Idw_sa(...,"2",</span>"VARIABLE 12 250"<span class="arcpyref">,"#")。</span> 沿该行浏览，您将看到搜索半径（与上图匹配）的字符串表示为 "VARIABLE 12 250"。可以更改参数值并复制 Python 代码片段再次运行该工具，以检查任何参数的字符串表示。</li></ol><p id="GUID-4372B825-A6B5-4DBD-A507-55DB868E3D59">  确定字符串表示后，需要告诉客户端这是什么。此操作在任务文档中完成。</p><p id="GUID-C11717C6-3120-43AE-A70A-6A5CFF668A80"><a class="xref xref" href="../../../../../zh-CN/server/latest/publish-services/windows/documenting-a-geoprocessing-service.htm">了解有关存档服务和任务的详细信息</a></p></section><section class="section2 padded-anchor" id="ESRI_SECTION2_37879CF6C65B4126BEF4C21BA0BA2512" purpose="section2"><h3>在工具中构建字符串表示</h3><p id="GUID-0E71533B-0956-4757-A736-214ACF11D78A">  对于复杂的字符串表示，或客户端的负担过重而无法构建字符串，可以修改工具以为客户端构建字符串。SQL 表达式数据类型就是一个很好的示例。在下图所示的模型中，<span class="modelbuilder">表达式</span>参数的数据类型为 SQL 表达式，为使此模型作为任务运行，客户端必须提供有效的 SQL 表达式字符串。</p><p id="GUID-BE73F8C2-9481-452D-8490-295B470740C1"><img purpose="img" placement="inline" alt="使用“SQL 表达式”数据类型的示例模型" title="使用“SQL 表达式”数据类型的示例模型" src="GUID-239B3351-70A6-479F-B8B7-22AC2E587F82-web.png"></p><p id="GUID-2F09EC59-7119-4F79-ABE5-1A7FD1024779">  如果任务的目的是基于所有者名称选择宗地，则可创建客户端输入所有者名称且构建对应的有效 SQL 语句的模型。该操作可通过<a class="xref xref" esrisubtype="extrel" hrefpfx="https://desktop.arcgis.com/zh-cn/arcmap/latest/analyze" href="https://desktop.arcgis.com/zh-cn/arcmap/latest/analyze/modelbuilder/a-quick-tour-of-using-inline-variable-substitution.htm">变量替换</a>轻松实现，如下所示。<span class="modelbuilder">所有者名称</span>变量是字符串数据类型；客户端输入宗地的所有者名称，并在模型中创建有效 SQL 表达式。有关使用变量替换的其他示例，请参阅<a class="xref xref" esrisubtype="extrel" hrefpfx="https://desktop.arcgis.com/zh-cn/arcmap/latest/analyze" href="https://desktop.arcgis.com/zh-cn/arcmap/latest/analyze/modelbuilder/examples-of-inline-model-variable-substitution.htm">行内模型变量替换的示例</a>主题。</p><p id="GUID-A72AE9A0-7E23-4450-9E0F-FD1876B0B5A2"><img purpose="img" placement="inline" alt="通过变量替换为客户端创建有效 SQL 表达式" title="通过变量替换为客户端创建有效 SQL 表达式" src="GUID-B957D7CB-D0BD-4C26-859D-31A2D961C6C8-web.png"></p></section><section class="section2 padded-anchor" id="ESRI_SECTION2_CED38FFD9BFA42378D40A4A4F5738F28" purpose="section2"><h3>创建自己的选择列表</h3><p id="GUID-763EB46A-A095-469F-8CC3-5BACB8BB9615">许多地理处理工具都会针对其字符串参数定义选择列表，也称为值列表过滤器。前面所示的<span class="modelbuilder"><a class="xref xref" esrisubtype="extrel" hrefpfx="https://desktop.arcgis.com/zh-cn/arcmap/latest/tools" href="https://desktop.arcgis.com/zh-cn/arcmap/latest/tools/data-management-toolbox/select-layer-by-attribute.htm">按属性选择图层</a></span>工具的<span class="uicontrol">选择类型</span>参数（NEW_SELECTION、ADD_TO_SELECTION、REMOVE_FROM_SELECTION 等）具有字符串选择列表。可以使用值列表过滤器为字符串变量创建自己的选择列表。</p><p id="GUID-8FC139ED-A9F4-4753-B05A-E7983531DC8B"><a class="xref xref" esrisubtype="extrel" hrefpfx="https://desktop.arcgis.com/zh-cn/arcmap/latest/analyze" href="https://desktop.arcgis.com/zh-cn/arcmap/latest/analyze/modelbuilder/value-list-filter.htm">了解有关值列表过滤器的详细信息</a></p></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_47432D76AB4E41A39BCBC471E2C644C7" purpose="section1"><h2>值表</h2><p id="GUID-A78B48B7-4B57-4E9E-8ADA-53C426FC5114"> “值表”是<span purpose="gptoolref"><a class="xref xref" esrisubtype="extrel" hrefpfx="https://desktop.arcgis.com/zh-cn/arcmap/latest/tools" href="https://desktop.arcgis.com/zh-cn/arcmap/latest/tools/analysis-toolbox/intersect.htm">相交</a></span>和<span purpose="gptoolref"><a class="xref xref" esrisubtype="extrel" hrefpfx="https://desktop.arcgis.com/zh-cn/arcmap/latest/tools" href="https://desktop.arcgis.com/zh-cn/arcmap/latest/tools/data-management-toolbox/merge.htm">合并</a></span>以及许多其他工具中使用的多列表。下图显示了<span purpose="gptoolref">相交</span>工具，其<span class="uicontrol">输入要素</span>参数是包含两列的“值表”：<span class="uicontrol">要素</span>和<span class="uicontrol">等级</span>。</p><p id="GUID-9C3127D2-6E18-416E-A355-AB0575D6BB07">值表不可传输，其<span class="uicontrol">输入模式</span>在<span class="uicontrol">服务编辑器</span>中将固定为<span class="uicontrol">常量值</span>。</p><p id="GUID-4BB05999-6E56-4587-9FCB-ADE5BCAFCD7F"><img purpose="img" placement="inline" alt="“值表”参数始终设置为常量字符串" title="“值表”参数始终设置为常量字符串" src="GUID-48E5235F-C929-4237-9307-18E0D6194A40-web.png"></p><p id="GUID-BF5AED89-A238-4B4D-B542-33682787241C">如果您需要客户端输入值而不是使用常量值，则需要修改模型或脚本，使其使用“值表”之外的其他数据类型。</p><p id="GUID-631D915D-C11B-4214-B7DB-A9872DC655A4">“值表”可以具有任意数量的行，修改工具的方式取决于您希望客户端输入固定还是可变的行数。如果“值表”中的任何列包含数据集，则行数必须固定，因为各行需要其自己的参数以包含数据集。</p><p id="GUID-354F74B4-3215-44A6-A008-45D0E836B894">下图显示了可在模型构建器中用来使两个要素类相交的方法，具有等级但没有显示“值表”。在“值表”中输入<span class="modelbuilder">街道</span>和<span class="modelbuilder">公园</span>变量时，ModelBuilder 将自动创建这些变量。<span class="modelbuilder">街道等级</span>和<span class="modelbuilder">公园等级</span>变量的创建方法如下：<ol class="list-numbered" purpose="ol" id="OL_45C7FC72FC374A5185AE87445FDB7B81"><li purpose="li" id="LI_8BCE45A56DDD4BB7B6929FBCE66543B9">创建两个长整型<a class="xref xref" esrisubtype="extrel" hrefpfx="https://desktop.arcgis.com/zh-cn/arcmap/latest/analyze" href="https://desktop.arcgis.com/zh-cn/arcmap/latest/analyze/modelbuilder/creating-stand-alone-variables.htm#ESRI_STEPS_D9B4FCB454B04044A39B9E02FF20AF6D">独立变量</a>。对其进行重命名并为其构建模型参数。</li><li purpose="li" id="LI_CC52F5305DC043EBA4E4BFC8FB2BADE9">打开<span class="modelbuilder">相交</span>工具并单击<span class="uicontrol">等级</span>列中的单元格，如下所示。可以从您创建的两个长整型变量中选择一个。</li></ol></p><p id="GUID-4BF0FE2C-3752-4F5A-8CA4-9D608A79E6B4"><img purpose="img" placement="inline" alt="在 ModelBuilder 中解构值表" title="在 ModelBuilder 中解构值表" src="GUID-5C13F736-77D3-4A70-BD7F-17161B212D92-web.png"></p><p id="GUID-A6849D4C-3F61-4543-A2DC-37A442C8F284">始终可以创建接受单个输入、在脚本中构建“值表”参数、然后调用工具的脚本工具。以下代码执行两个要素类的相交但没有使用“值表”参数。</p><p id="GUID-882C71C9-1DF7-4497-BC38-8698F5DA3833"><section class="codeblock padded-anchor" purpose="codeblock"><div class="codeblockdesc" purpose="codeblockdesc"></div><div class="codeblockbody"><pre><code class="python"># Script tool to intersect two feature classes.
+#  
+import arcpy
+inFeatures1 = arcpy.GetParameterAsText(0)  # data type = Feature layer
+inRank1 = arcpy.GetParameterAsText(1)      # data type = Long integer
+inFeatures2 = arcpy.GetParameterAsText(2)  # data type = Feature layer
+inRank2 = arcpy.GetParameterAsText(3)      # data type = Long integer
+outFeatures = arcpy.GetParameterAsText(4)  # data type = Feature class
+# Default values
+#
+joinAttributes = &quot;ALL&quot;
+xyTolerance = &quot;#&quot;
+outputType = &quot;INPUT&quot;
+# Construct the value table parameter, a list of lists
+#
+valueTable = [ [inFeatures1, inRank1], [inFeatures2, inRank2] ]
+arcpy.Intersect_analysis(valueTable, outFeatures, joinAttributes, 
+                         xyTolerance, outputType)</code></pre></div></section></p><p id="GUID-C6CAB285-4E61-4346-9F52-3AF4B809E561">以下示例使用<span purpose="gptoolref"><a class="xref xref" esrisubtype="extrel" hrefpfx="https://desktop.arcgis.com/zh-cn/arcmap/latest/tools" href="https://desktop.arcgis.com/zh-cn/arcmap/latest/tools/data-management-toolbox/dissolve.htm">融合</a></span>工具演示如何使用参数的字符串表示以及“值表”中的可变行数。<span purpose="gptoolref">融合</span>工具接受线或面的要素类或图层，并基于<span class="uicontrol">融合字段</span>参数中一个或多个字段中的值聚合要素。在聚合过程中，可以通过<span class="uicontrol">统计字段</span>参数（值表）计算聚合要素的统计数据。</p><p id="GUID-B2FCBBD1-6E9C-4A4D-A771-5F44A2311D80"><img purpose="img" placement="inline" alt="“融合”工具及其两个参数" title="“融合”工具及其两个参数" src="GUID-BFEC3A36-35F4-4671-BBAB-1892C466BB8B-web.png"></p><p id="GUID-BD72A525-6CD3-4FEA-B003-7B65A58FF2FA">只要客户端指定其输入要素中的融合字段和统计字段，就会执行任务。为此，需要创建接受<span class="uicontrol">融合字段</span>和<span class="uicontrol">统计字段</span>参数的字符串表示的脚本工具，而不是提供位于输入要素方案中的字段选择列表。实际上，您不必将智能化集成到工具对话框和<span class="uicontrol">服务编辑器</span>中，只需使用参数的字符串表示来执行工具。</p><p id="GUID-2FF69F23-392B-415A-8C50-F286BB603369"><section class="codeblock padded-anchor" purpose="codeblock"><div class="codeblockdesc" purpose="codeblockdesc"></div><div class="codeblockbody"><pre><code class="python"># Script tool code to do a Dissolve using strings for the Dissolve Fields(s) and
+#  Statistics Fields(s) parameters
+#
+import arcpy
+inFeatures = arcpy.GetParameterAsText(0)      # data type = Feature layer outFeatures = arcpy.GetParameterAsText(1)     # data type = Feature class dissolveFields = arcpy.GetParameterAsText(2)  # data type = String statFields = arcpy.GetParameterAsText(3)      # data type = String multi_part = False     # Always produce single-part features unsplit_lines = True   # Only dissolve lines if the share common vertex
+arcpy.Dissolve_management(inFeatures, outFeatures, dissolveFields, statFields,                           multi_part, unsplit_lines)</code></pre></div></section></p><p id="GUID-136A2352-5ECC-474C-8FD7-E438F1EA39D5">执行该脚本工具时，用户需提供<span class="uicontrol">融合字段</span>和<span class="uicontrol">统计字段</span>参数的字符串表示。由上例可见，<span class="uicontrol">融合字段</span> = DISTRICT，<span class="uicontrol">统计字段</span> = POP98 SUM;NAME FIRST。（有关<a class="xref xref" href="../../../../../zh-CN/server/latest/publish-services/windows/parameter-data-type-transformations.htm#ESRI_SECTION2_A58F5CC9AD06438DA14639AFE93271EE">如何查找数据类型的字符串表示</a>的详细信息，请参阅上文。） 可在<span class="uicontrol">服务编辑器</span>中将这两个参数设置为<span class="uicontrol">用户定义值</span>，因为它们是字符串。</p></section><section class="section2 leader-1" purpose="relatedtopics"><h4 class="trailer-0">相关主题</h4><ul class="pre-0 trailer-2"><li><a class="xref relatedtopic" href="../../../../../zh-CN/server/latest/publish-services/windows/a-quick-tour-of-geoprocessing-task-settings.htm">地理处理任务设置概述</a></li><li><a class="xref relatedtopic" href="../../../../../zh-CN/server/latest/publish-services/windows/h-zip-python-script.htm">压缩 Python 脚本</a></li><li><a class="xref relatedtopic" href="../../../../../zh-CN/server/latest/publish-services/windows/h-unzip-python-script.htm">解压缩 Python 脚本</a></li><li><a class="xref relatedtopic" esrisubtype="extrel" hrefpfx="https://desktop.arcgis.com/zh-cn/arcmap/latest/tools" href="https://desktop.arcgis.com/zh-cn/arcmap/latest/tools/supplement/data-types-for-geoprocessing-tool-parameters.htm">地理处理工具参数的数据类型</a></li></ul></section>
+			
+				<hr>
+				<!--googleoff: all-->
+				
+	
+        
+		    <p class="feedback right">
+		        <a id="afb" class="icon-ui-contact" href="/feedback/" data-langlabel="feedback-on-this-topic" >有关此主题的反馈?</a>
+		    </p>
+        
+	
+
+				<!--googleon: all-->
+			
+		</main>
+	</div>
+	
+	<!--googleoff: all-->
+	
+		
+			<div id="main-toc-large" class="column-5">
+			    <div class="panel font-size--2 tablet-hide trailer-1">
+			      <h5 class="trailer-half">在本主题中</h5>
+			      <ol class="list-plain pre-0 trailer-0"><li><a href="#ESRI_SECTION1_5C6000DB9B0341008B589D07782179CA">数据集</a></li><li><a href="#ESRI_SECTION1_F8E9E76E9B8541A69D5D0AAA6C552347">标量</a></li><li><a href="#ESRI_SECTION1_47432D76AB4E41A39BCBC471E2C644C7">值表</a></li></ol>
+			    </div>
+			    
+			    
+	  		</div>
+		
+    
+   <!--googleon: all-->
+
+
+
+
+          
+        </div>
+        <!-- ENDPAGECONTENT -->
+
+      </div>
+
+    </div>  <!-- End of wrapper -->
+
+  <footer class="footer leader-3 link-dark-gray" role="contentinfo">
+    <div class="grid-container">
+      <div class="row">
+        <nav class="column-6">
+          <h6 data-langlabel="arcgis-for-server">Arc<span>GIS Enterprise</span></h6>
+          <ul class="list-plain">
+            <li><a data-langlabel="home" href="../../../../../zh-CN/">主页</a></li>
+            <li><a data-langlabel="portal" href="../../../../../zh-CN/portal/">Portal</a></li>
+            <li><a data-langlabel="server" href="../../../../../zh-CN/server/">Server</a></li>
+            <li><a data-langlabel="data-store" href="../../../../../zh-CN/data-store/">Data Stores</a></li>
+            <li><a data-langlabel="cloud" href="../../../../../zh-CN/cloud/">云</a></li>
+            <li><a data-langlabel="apps" href="../../../../../zh-CN/apps/">应用程序</a></li>
+            <li><a data-langlabel="documentation" href="../../../../../zh-CN/documentation/">文档</a></li>
+          </ul>
+        </nav>
+
+        
+  <nav class="column-6">
+    <h6 data-langlabel="arcgis-platform">ArcGIS 平台</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="arcgis" href="//www.arcgis.com/">ArcGIS Online</a></li>
+      <li><a data-langlabel="arcgis-for-professionals" href="//pro.arcgis.com/">ArcGIS Pro</a></li>
+      <li><a data-langlabel="arcgis-for-server" href="//enterprise.arcgis.com/">ArcGIS Enterprise</a></li>
+      <li><a data-langlabel="arcgis-for-developers" href="https://developers.arcgis.com/">ArcGIS for Developers</a></li>
+      <li><a data-langlabel="arcgis-solutions" href="//solutions.arcgis.com/">ArcGIS Solutions</a></li>
+      <li><a data-langlabel="arcgis-marketplace" href="//marketplace.arcgis.com/">ArcGIS Marketplace</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <h6 data-langlabel="about-esri">关于 Esri</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="about-us" href="//www.esri.com/about-esri/">关于我们</a></li>
+      <li><a data-langlabel="careers" href="//www.esri.com/careers/">招贤纳士</a></li>
+      <li><a data-langlabel="insiders-blog" href="https://www.esri.com/about/newsroom/blog/">Esri 博客</a></li>
+      <li><a data-langlabel="user-conference" href="//www.esri.com/events/user-conference/index.html">用户大会</a></li>
+      <li><a data-langlabel="developer-summit" href="//www.esri.com/events/devsummit/index.html">开发者峰会</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <a class="esri-logo" href="//www.esri.com/" aria-label="Esri Home"></a>
+    <section class="footer-social-nav leader-1">
+            <a class="icon-social-twitter" aria-label="Esri on Twitter" href="https://twitter.com/Esri/"></a>
+            <a class="icon-social-facebook" aria-label="Esri on Facebook" href="https://www.facebook.com/esrigis/"></a>
+            <a class="icon-social-github" aria-label="Esri on GitHub" href="//esri.github.io/"></a>
+            <a class="icon-social-contact" aria-label="Contact Esri" href="//www.esri.com/about-esri/contact/"></a>
+    </section>
+	  
+  </nav>
+  
+  <div class="column-24 leader-1">
+    <p class="font-size--3"><a href="http://www.esri.com/legal/copyright-trademarks">Copyright &copy; 2019 Esri.</a> All rights reserved. | <a href="http://www.esri.com/legal/privacy/">隐私政策</a> | <a href="http://www.esri.com/legal/software-license">法律声明</a></p>
+  </div>
+  
+
+
+      </div>
+    </div>
+  </footer>
+  <!--googleoff: all-->
+
+  
+  
+	<script src="../../../../../zh-CN/assets/js/init.js" type="text/javascript"></script>
+	<!--<script src="../../../../../zh-CN/assets/js/drop-down.js" type="text/javascript"></script>-->
+	<script src="../../../../../zh-CN/assets/js/search/searchform.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/cdn/js/link-modifier.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/cdn/js/sitewide.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/cdn/js/libs/highlight.pack.js" type="text/javascript"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+
+
+  
+    
+
+  <script src="../../../../../zh-CN/cdn/js/affix.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    $(function () {
+          var appendFlg = true;
+
+          $("#bigmac")
+          .on("affixed.bs.affix", function (evt) {
+            if (appendFlg) {
+              $("<a class='crumb' href='#'>输入模式和参数数据类型</a>").insertAfter ($("#bigmac nav a").last());
+              appendFlg = false;
+            }
+          })
+          .on ("affix-top.bs.affix", function(evt) {
+            if (!appendFlg) {
+              $("#bigmac nav a").last().remove();
+            }
+            appendFlg = true;
+          })
+    })
+  </script>
+  
+        <script type="text/javascript">
+          window.doctoc = {
+            pubID: "1634",
+            tpcID: "283",
+            
+              prefix: "管理服务",
+              prefixUrl: "/zh-cn/server/latest/publish-services/windows/",
+          
+            hideToc: false
+          }
+        </script>
+
+        <script type="text/javascript" src="../../../../../zh-CN/server/latest/publish-services/windows/1634.js" ></script>
+        <script type="text/javascript" src="../../../../../zh-CN/cdn/calcite/js/protoc.js" ></script>
+        
+        
+
+  <noscript>
+        <p>
+            <a href="flisting.htm">flist</a>
+        </p>
+    </noscript>
+    <script type="text/javascript"></script>
+  
+  
+    
+    
+
+  </body>
+</html>

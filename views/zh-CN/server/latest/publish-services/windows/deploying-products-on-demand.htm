@@ -1,0 +1,553 @@
+
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>  <html class="ie lt-ie9 lt-ie8 lt-ie7 ie6" dir="ltr"> <![endif]-->
+<!--[if IE 7]>     <html class="ie lt-ie9 lt-ie8 ie7" dir="ltr"> <![endif]-->
+<!--[if IE 8]>     <html class="ie lt-ie9 ie8" dir="ltr"> <![endif]-->
+<!--[if IE 9]>     <html class="ie ie9" dir="ltr"> <![endif]-->
+<!--[if !IE]><!--> <html dir="ltr" lang="zh-CN"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>Deploying Products on Demand (PoD)&mdash;文档 | ArcGIS Enterprise 文档</title>
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+    <script>
+      var docConfig = {
+        locale: 'zh-CN'
+        ,localedir: 'zh-cn'
+        ,langSelector: ''
+        
+        ,relativeUrl: false
+        
+
+        ,searchformUrl: '/search/'
+        ,tertiaryNavIndex: ''
+
+        
+      };
+    </script>
+	 
+
+
+    
+    <!--[if lt IE 9]>
+      <script src="../../../../../zh-CN/cdn/js/libs/html5shiv.js" type="text/javascript"></script>
+      <script src="../../../../../zh-CN/cdn/js/libs/selectivizr-min.js" type="text/javascript"></script>
+      <script src="../../../../../zh-CN/cdn/js/libs/json2.js" type="text/javascript"></script>
+      <script src="../../../../../zh-CN/cdn/js/libs/html5shiv-printshiv.js" type="text/javascript" >
+
+    <![endif]-->
+
+     <!--[if lt IE 11]>
+    <script>
+      $$(document).ready(function(){
+        $$(".hideOnIE").hide();
+      });
+    </script>
+    <![endif]-->
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<link href="../../../../../zh-CN/assets/img/favicon.ico" rel="shortcut icon" >
+	<link href="../../../../../zh-CN/assets/css/screen.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/cdn/calcite/css/documentation.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/assets/css/print.css" media="print" type="text/css" rel="stylesheet" />
+
+	<!--
+	<link href="../../../../../zh-CN/assets/css/screen_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/assets/css/documentation/base_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/assets/css/print_l10n.css" media="print" type="text/css" rel="stylesheet" />
+	-->
+	
+	
+		<script src="../../../../../zh-CN/cdn/js/libs/jquery.1.9.1.min.js" type="text/javascript"></script>
+	
+	<script src="../../../../../zh-CN/cdn/js/libs/jquery.cookie.js" type="text/javascript"></script>
+	<link href="../../../../../zh-CN/cdn/css/colorbox.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/cdn/css/colorbox_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<script src="../../../../../zh-CN/cdn/js/libs/jquery.colorbox-min.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/assets/js/video-init.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/assets/js/sitecfg.js" type="text/javascript"></script>
+	
+		<script src="../../../../../zh-CN/assets/js/signIn.js" type="text/javascript"></script>
+	
+
+	<!--- Language Picker -->
+	<script src="../../../../../zh-CN/assets/js/locale/l10NStrings.js" type="text/javascript"></script>
+	
+		 
+	
+
+	<script src="../../../../../zh-CN/assets/js/calcite-web.js" type="text/javascript"></script>
+
+
+
+  <!--- search MD -->
+    <META name="description" content="ArcGIS for Maritime: Server allows you to deploy a web-based app to generate information map products on the fly  and create any product at any scale."><META name="last-modified" content="2019-12-6"><META name="product" content="arcgis-server-windows,arcgis-enterprise-windows"><META name="sub_category" content="ArcGIS Server (Windows)"><META name="search-collection" content="help"><META name="content_type_label" content="帮助主题"><META name="sub_category_label" content="ArcGIS Server (Windows)"><META name="search-category" content="help-general"><META name="subject_label" content="服务"><META name="version" content="10.8"><META name="content_type" content="Help Topic"><META name="subject" content="SERVICES"><META name="content-language" content="zh-cn">
+    <!--- search MD -->
+
+  
+  <script src="../../../../../zh-CN/assets/js/switchers/server-1.js" type="text/javascript"></script>
+  
+      
+
+</head>
+
+<!--
+      pub: GUID-F157DF68-7F60-4427-A561-AD2F0FA30861=22
+      tpc: GUID-6EC15286-F6E1-41B3-B953-E251CF19E0C6=8
+      -->
+
+
+<!-- variable declaration, if any -->
+<!-- can change following macro to set variable once we are on Jinja 2.8 -->
+
+
+
+
+
+<body class="claro zh-CN server">
+  
+
+  <!-- Drawer location -->
+  <div class="drawer drawer-left js-drawer" data-drawer="top-nav">
+        <nav class="drawer-nav" role="navigation">
+          <aside class="side-nav">
+            <h2 class="side-nav-title">Arc<span>GIS</span> Enterprise</h2>
+            <form id="helpSearchForm" class="margin-left-half margin-right-half leader-half trailer-half drawer-search-form" method="GET">
+              <input type="search" name="q"  placeholder="搜索 ArcGIS Server 10.8 帮助">
+              <input type="hidden" name="collection" value="help" />
+              <input type="hidden" name="product" value="arcgis-server-windows" />
+              <input type="hidden" name="version" value="10.8" />
+              <input type="hidden" name="language" value="zh-CN" />
+            </form>    
+             <a id="nav-portal" data-langlabel="portal" href="../../../../../zh-CN/portal/" class="side-nav-link">Portal</a>
+             
+            <a id="all-servers" data-langlabel="all-servers" href="../../../../../zh-CN/server/" class="side-nav-link">所有服务器</a>
+            <a id="gis-server" data-langlabel="gis-server" href="../../../../../zh-CN/server/" class="side-nav-link">GIS Server</a>
+            <a id="image-server" data-langlabel="image-server" href="../../../../../zh-CN/image/" class="side-nav-link">Image Server</a>
+            <a id="geo-analytics-server" data-langlabel="geo-analytics-server" href="../../../../../zh-CN/geoanalytics/" class="side-nav-link">GeoAnalytics Server</a>
+            <a id="geoevent-server" data-langlabel="geoevent-server" href="../../../../../zh-CN/geoevent/" class="side-nav-link">GeoEvent Server</a>
+            <a id="notebook-server" data-langlabel="notebook-server" href="../../../../../zh-CN/notebook/" class="side-nav-link">Notebook Server</a>
+            <a id="nav-data-store" data-langlabel="data-store" href="../../../../../zh-CN/data-store/" class="side-nav-link">Data Stores</a>
+            <a id="nav-cloud" data-langlabel="cloud" href="../../../../../zh-CN/cloud/" class="side-nav-link">云</a>
+            <a id="nav-apps" data-langlabel="apps" href="../../../../../zh-CN/apps/" class="side-nav-link">应用程序</a>
+            <a id="nav-doc" data-langlabel="documentation" href="../../../../../zh-CN/documentation/" class="side-nav-link">文档</a>
+
+          </aside>
+        </nav>
+    </div>
+
+    <!-- user navigation collapses to drawer on mobile -->
+    
+    <div class="drawer drawer-right js-drawer hide-if-logged-out logged-in-navigation" data-drawer="user-nav">
+      <nav class="drawer-nav">
+        <aside class="side-nav">
+          <a class="side-nav-link agolProfile" href="#">我的个人资料</a>
+          <a class="side-nav-link icon-ui-sign-out js-log-out" href="#">登出</a>
+        </aside>
+      </nav>
+    </div>
+    
+<!-- End of drawer -->
+
+  
+  <div class="wrapper">
+      <!--googleoff: all-->
+
+      <header class="top-nav" data-skin="learn">
+        <a class="skip-to-content" href="#skip-to-content">Skip To Content</a>
+        <div class="grid-container">
+          <div class="column-24">
+
+
+            <!--<div class="top-nav-title-wrapper text-center ">-->
+              <a href='../../../../../zh-CN/' class="top-nav-title tablet-hide"><span>Arc</span>GIS  Enterprise</a>
+              <a href='../../../../../zh-CN/' class="icon-ui-menu top-nav-title js-drawer-toggle tablet-show" data-drawer="top-nav"><span>Arc</span>GIS Enterprise</a>
+            <!--</div> -->
+
+          
+            <nav role="navigation" class="top-nav-list left tablet-hide">
+              <a id="nav-portal" data-langlabel="portal" href="../../../../../zh-CN/portal/" class="top-nav-link">Portal</a>
+
+                <div class="dropdown js-dropdown ">
+                  <a class="top-nav-link js-dropdown-toggle" tabindex="0" aria-haspopup="true" aria-expanded="false" href="#">Servers</a>
+                  <nav class="dropdown-menu featured" role="menu">
+                    <ul class="dropdown-sublist-featured">
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/get-started/latest/windows/additional-server-deployment.htm" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path  d="M42.92 6.1H4.12v8.566l.833.832-.835.833-.018 7.332.845.847-.825.824V33.9h25v5.2h-2v1.075H8.02v.8h19.1v.925h4.8v-.925H40v-.8h-8.08V39.1h-2v-5.2h13v-8.566l-.834-.834.835-.834v-7.332l-.835-.834.835-.834zm-11.8 35h-3.2v-1.2h3.2zm11-8H4.92v-7.434l.767-.766h35.668l.765.766zm0-9.766l-.766.766H5.666l-.766-.767.017-6.669.766-.764h35.671l.766.766zm0-9l-.766.766H5.687l-.766-.766V6.9h37.2zM19 11.9h-2v-.8h2zm-4 0h-2v-.8h2zm-4 0H9v-.8h2zm6 8.2h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9zm8 9h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9z"/></svg></span>
+                          <span class="sublink-text">所有服务器</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/server/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M45.98 33.575a.616.616 0 0 0-.335-.51l-3.362-2.03 3.362-2.031a.556.556 0 0 0 0-1.02l-11.1-6.704a1.293 1.293 0 0 0-1.112 0L22.33 27.982a.556.556 0 0 0 0 1.02l3.36 2.03-3.358 2.03a.556.556 0 0 0-.002 1.021l3.322 2.006-3.324 2.008a.555.555 0 0 0 .002 1.017l11.102 6.703a1.25 1.25 0 0 0 1.11.002l11.104-6.706a.556.556 0 0 0 0-1.02l-3.32-2.006 3.318-2.004a.607.607 0 0 0 .335-.509zM33.837 21.97c.026-.01.286-.005.29-.005l10.814 6.53-10.8 6.523c-.028.01-.284.005-.294.006l-10.813-6.53zm11.105 16.636l-10.8 6.523a2.564 2.564 0 0 1-.295.006l-10.81-6.529 3.39-2.047 7.004 4.23a1.083 1.083 0 0 0 .557.131 1.101 1.101 0 0 0 .554-.13l7.01-4.233zM34.14 40.098a2.545 2.545 0 0 1-.294.006l-10.812-6.53 3.43-2.073 6.97 4.208a1.25 1.25 0 0 0 1.107-.001l6.966-4.206 3.431 2.073zM9 8H7V7h2zm8 8h-2v-1h2zm-4-8h-2V7h2zm4 0h-2V7h2zm-4 8h-2v-1h2zm7.316 11.1H3.9v-6.434l.766-.766h35.668l.766.766v2.12l.8.483v-2.935l-.826-.826.826-.845v-6.329l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9h16.88a2.632 2.632 0 0 1 .336-.8zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zm0 8v-5.668l.766-.766h35.668l.766.766v5.67l-.746.764H4.666zM15 24v-1h2v1zm-4 0v-1h2v1zm-2-8H7v-1h2zm-2 8v-1h2v1z"/></svg></span>
+                          <span class="sublink-text">GIS Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/image/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 8h-2V7h2zm-4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm8 8h-2v1h2zm-8 0H7v1h2zm4 9v-1h-2v1zm-4 0v-1H7v1zm8 0v-1h-2v1zm4 3.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V21h-.8v-.334l-.766-.766H4.666l-.766.766V27.1H21zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zm40.234 4v21.8H23.1V23.1zm-.8 16.366L39.466 44.1h2.868l1.766-1.766zm-20.2-9.932l5.634-5.634h-2.868L23.9 26.666zm6.2-5.068L24.466 30.1h2.868l2.766-2.766zM28.466 30.1H30.1v-1.634zm2.434 0h6.2v-6.2h-6.2zm-7 7h6.2v-6.2h-6.2zm7 0h6.2v-6.2h-6.2zm0 6.434l5.634-5.634h-2.868L30.9 40.666zm7-7l5.634-5.634h-2.868L37.9 33.666zm1.634-5.634H37.9v1.634zm-8.634 7v1.634l1.634-1.634zm.566 6.2h2.868l2.766-2.766v-2.868zm6.434-3.566l2.634-2.634H37.9zM35.466 44.1H37.1v-1.634zm2.434 0h.434l5.766-5.766V37.9h-2.434L37.9 41.666zm6.2-8.634L42.466 37.1H44.1zm0-4L38.466 37.1h2.868l2.766-2.766zm0-7.566h-6.2v6.2h6.2zm-20.2 0v1.634l1.634-1.634zm0 20.2h6.2v-6.2h-6.2zm20.2 0v-.634l-.634.634z"/></svg></span>
+                          <span class="sublink-text">Image Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/geoanalytics/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 16h-2v-1h2zm-8 8v-1H7v1zm8 0v-1h-2v1zM13 7h-2v1h2zm4 0h-2v1h2zM9 7H7v1h2zm21.45 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V27.9h-1.464l-.801-.8H41.1v-6.434l-.766-.766H4.666l-.766.766V27.1h27.15zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM13 24v-1h-2v1zm0-9h-2v1h2zm-4 0H7v1h2zm26.672 27.148A1.87 1.87 0 0 1 35.9 43a1.91 1.91 0 1 1-3.763-.222l-9.845-3.414A1.88 1.88 0 0 1 21 39.9a1.9 1.9 0 1 1 1.474-3.084l4.692-2.346A1.878 1.878 0 0 1 27.1 34a1.902 1.902 0 0 1 1.9-1.9 1.867 1.867 0 0 1 .781.191l3.788-5.05A1.88 1.88 0 0 1 33.1 26a1.9 1.9 0 1 1 3.491 1.026l4.889 4.888c-.069.056-.144.1-.21.162a3.986 3.986 0 0 0-.358.402l-4.883-4.883A1.889 1.889 0 0 1 35 27.9a1.867 1.867 0 0 1-.781-.191l-3.788 5.049a1.868 1.868 0 0 1 .437.965l9.204.614c-.018.11-.049.218-.058.33A3.93 3.93 0 0 0 40 35c0 .046.01.09.01.135l-9.185-.612A1.913 1.913 0 0 1 29 35.9a1.889 1.889 0 0 1-1.474-.716l-4.692 2.346a1.878 1.878 0 0 1 .066.47 1.9 1.9 0 0 1-.105.625c-.007.02-.022.036-.03.056l9.63 3.34a1.87 1.87 0 0 1 2.786-.505l5.415-4.437c.067.108.127.22.204.322a3.9 3.9 0 0 0 .292.306zM33.9 26a1.092 1.092 0 0 0 .43.872 1.12 1.12 0 0 0 1.42-.068A1.1 1.1 0 1 0 33.9 26zm-6 8a1.1 1.1 0 0 0 2.196.093 1.135 1.135 0 0 0-.426-.965A1.087 1.087 0 0 0 29 32.9a1.101 1.101 0 0 0-1.1 1.1zm-5.8 4a1.098 1.098 0 1 0-.06.362A1.101 1.101 0 0 0 22.1 38zm13 5a1.1 1.1 0 1 0-2.2 0 1.1 1.1 0 0 0 2.2 0zm10.8-8a1.9 1.9 0 1 1-3.8 0c0-.053.003-.105.007-.158A1.9 1.9 0 0 1 45.9 35zm-.8 0a1.1 1.1 0 0 0-2.196-.093 1.153 1.153 0 0 0 .216.752A1.1 1.1 0 0 0 45.1 35z"/></svg></span>
+                          <span class="sublink-text">GeoAnalytics Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/geoevent/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M13 8h-2V7h2zm4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm12.418 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826v2.117c-.259-.177-.53-.337-.8-.497v-1.288l-.766-.766H4.666l-.766.766V27.1h17.933c-.148.26-.283.53-.415.8zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM9 24v-1H7v1zm4-9h-2v1h2zm0 9v-1h-2v1zm-4-9H7v1h2zm8 9v-1h-2v1zm16.9 2h-.8v8.9H39v-.8h-5.1zm.1-3.901a11.9 11.9 0 1 0 11.9 11.9 11.914 11.914 0 0 0-11.9-11.9zm0 23a11.1 11.1 0 1 1 11.1-11.1 11.112 11.112 0 0 1-11.1 11.1z"/></svg></span>
+                          <span class="sublink-text">GeoEvent Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/notebook/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M22 27.1H3.9v-6.434l.766-.766h18.576a5.262 5.262 0 0 1 .83-.8H4.666l-.766-.766v-5.668l.766-.766h35.668l.766.766V18h.8v-5.666l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9H22zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zM9 8H7V7h2zm8 0h-2V7h2zm-4 0h-2V7h2zm2 16v-1h2v1zm-4 0v-1h2v1zm-4 0v-1h2v1zm0-8v-1h2v1zm8 0v-1h2v1zm-4 0v-1h2v1zm18.9 8.1h-1.8v1.8h1.8zm-.8 1h-.2v-.2h.2zm15.498-4.48a2.727 2.727 0 0 0-1.62-.5v-.02H27.25a3.154 3.154 0 0 0-3.15 3.15V38.1h-1.68a3.386 3.386 0 0 0-2.872 1.58 3.49 3.49 0 0 0-.157 3.419 3.241 3.241 0 0 0 2.954 1.801h15.161a3.404 3.404 0 0 0 3.394-3.4V26.9h5v-3.65a3.224 3.224 0 0 0-1.302-2.63zM22.345 44.1a2.44 2.44 0 0 1-2.23-1.341 2.706 2.706 0 0 1 .11-2.65A2.588 2.588 0 0 1 22.42 38.9h12.89a3.395 3.395 0 0 0 0 5.2zM40.1 23.192V41.5a2.6 2.6 0 1 1-2.6-2.6v-.8H24.9V23.25a2.352 2.352 0 0 1 2.35-2.35h13.795a3.183 3.183 0 0 0-.945 2.292zm5 2.908h-4.2v-2.908a2.274 2.274 0 0 1 1.44-2.18 1.944 1.944 0 0 1 1.791.259 2.423 2.423 0 0 1 .97 1.979zm-17.1 5h9v.8h-9zm0 3h7v.8h-7zm0-6h9v.8h-9zm4-3h5v.8h-5z"/></svg></span>
+                          <span class="sublink-text">Notebook Server</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+
+              <a id="nav-data-store" data-langlabel="data-store" href="../../../../../zh-CN/data-store/" class="top-nav-link">Data Stores</a>
+              <a id="nav-cloud" data-langlabel="cloud" href="../../../../../zh-CN/cloud/" class="top-nav-link">云</a>
+              <a id="nav-apps" data-langlabel="apps" href="../../../../../zh-CN/apps/" class="top-nav-link">应用程序</a>
+            </nav>
+
+
+            
+            
+            
+
+            <div class="margin-left-1 top-nav-list right hide-if-logged-in logged-out-navigation">
+               
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+              
+              <a data-langlabel="sign-in" id="login-link" class="icon-ui-user top-nav-link link-blue login-link" href="#">登录</a>
+              
+            </div>
+
+            
+            <nav class="margin-left-1 top-nav-list right hide-if-logged-out logged-in-navigation">
+              
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+             
+              <div class="dropdown js-dropdown right">
+
+                <div class="tablet-show top-nav-link">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a href="#" data-drawer="user-nav" class="user-nav-name js-drawer-toggle" data-first-name></a>
+                </div>
+
+                <div class="tablet-hide top-nav-link js-dropdown-toggle">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a class="user-nav-name top-nav-dropdown dropdown-btn" data-first-name>&nbsp;</a>
+                </div>
+
+                <nav class="dropdown-menu dropdown-right">
+                
+                  <a class="dropdown-link agolProfile" id="agolProfile" href="#">我的个人资料</a>
+                  <a class="dropdown-link js-log-out" id="agolLogout" href="#">登出</a>
+                </nav>
+              </div>
+            </nav>
+            
+
+            
+          </div>
+        </div>
+      </header>
+
+      <div class="js-search search-overlay">
+        <div class="search-content" role="dialog" aria-labelledby="search">
+          <form method="GET" id="helpSearchForm">
+            <label>
+              搜索 ArcGIS Server 10.8 帮助
+              <div class="search-bar">
+                <input type="search" name="q"  placeholder="搜索 ArcGIS Server 10.8 帮助" class="search-input js-search-input">
+                <input type="hidden" name="collection" value="help" />
+                <input type="hidden" name="product" value="arcgis-server-windows" />
+                <input type="hidden" name="version" value="10.8" />
+                <input type="hidden" name="language" value="zh-CN" />
+              </div>
+            </label>
+            <input type="hidden" name="relativePath" value="../../../../../" /><button type="submit" class="btn btn-large right">搜索</button>
+          </form>
+        </div>
+      </div>
+
+      <!--googleon: all-->
+
+      <div id="skip-to-content">
+        <!--googleoff: all-->
+        <header class="sub-nav sub-nav-learn">
+          <div class="grid-container">
+            
+            <div class="column-24">
+              <div style="display:table;" class="sdk-home-banner">
+                <div class="sdk-home-banner-content">
+                  <h1 class="sub-nav-title link-white">ArcGIS Server</h1>
+                </div>
+              </div>
+            </div>
+
+            <div class="column-24">
+              <nav class='sub-nav-list tablet-hide'><a class="sub-nav-link" href="../../../../../zh-CN/server/" target="_top" title="ArcGIS Server 的概述和文档">主页</a><a class="sub-nav-link" href="../../../../../zh-CN/server/latest/get-started/windows/" target="_top" title="了解有关 ArcGIS Server 和服务器角色的信息">简介</a><a class="sub-nav-link" href="../../../../../zh-CN/server/latest/deploy/windows/" target="_top" title="构建、配置和升级部署">部署</a><a class="sub-nav-link" href="../../../../../zh-CN/server/latest/manage-data/windows/" target="_top" title="管理企业的空间数据">管理数据</a><a class="sub-nav-link is-active" href="../../../../../zh-CN/server/latest/publish-services/windows/" target="_top" title="使用 GIS 服务">管理服务</a><a class="sub-nav-link" href="../../../../../zh-CN/server/latest/create-web-apps/windows/" target="_top" title="创建 Web 应用程序和可打印地图">共享</a><a class="sub-nav-link" href="../../../../../zh-CN/server/latest/administer/windows/" target="_top" title="管理和保护 ArcGIS Server">管理</a><a class="sub-nav-link" href="../../../../../zh-CN/server/latest/develop/windows/" target="_top" title="构建扩展模块并自动执行常见任务">开发</a></nav><select class='tablet-show select-full trailer-half js-select-nav'><option value="../../../../../zh-CN/server/">主页</option><option value="../../../../../zh-CN/server/latest/get-started/windows/">简介</option><option value="../../../../../zh-CN/server/latest/deploy/windows/">部署</option><option value="../../../../../zh-CN/server/latest/manage-data/windows/">管理数据</option><option selected="true" value="../../../../../zh-CN/server/latest/publish-services/windows/">管理服务</option><option value="../../../../../zh-CN/server/latest/create-web-apps/windows/">共享</option><option value="../../../../../zh-CN/server/latest/administer/windows/">管理</option><option value="../../../../../zh-CN/server/latest/develop/windows/">开发</option></select>
+            </div>
+
+          </div>
+        </header>
+        <!--googleon: all-->
+       
+        <!-- content goes here -->
+        <div class="grid-container ">
+          
+
+            
+              
+  <!--BREADCRUMB-BEG--><div id="bigmac" class="sticky-breadcrumbs trailer-2" data-spy="affix" data-offset-top="180"> </div><!--BREADCRUMB-END-->
+  <!--googleoff: all-->
+    <div class="column-5 tablet-column-12 trailer-2 ">
+      <aside class="js-accordion accordion reference-index" aria-live="polite" role="tablist">
+        <div></div>
+      </aside>
+
+      <div class="js-sticky scroll-show tablet-hide leader-1 back-to-top" data-top="0" style="top: 0px;">
+        <a href="#" class="btn btn-fill btn-clear">返回顶部</a>
+      </div>
+    </div>
+  <!--googleon: all-->
+  
+            
+            
+            
+	
+		<div class="column-13  pre-1 content-section">
+	
+		<header class="trailer-1"><h1>Deploying Products on Demand (PoD)</h1></header>
+
+		 
+	<!--googleoff: all-->
+	
+		
+				<aside id="main-toc-small" class="js-accordion accordion tablet-show trailer-1">
+			      <div class="accordion-section">
+			        <h4 class="accordion-title">在本主题中</h4>
+			        <div class="accordion-content list-plain">
+			          <ol class="list-plain pre-0 trailer-0"><li><a href="#ESRI_SECTION1_EED62CDC9CB34B179E60B405910A6DB4">Copy productsondemand folder</a></li><li><a href="#ESRI_SECTION1_EFC741769FAA41AFAF9F181C513D0F9B">Configure sharing and permissions</a></li><li><a href="#ESRI_SECTION1_F24D7497A64B4FC8AED61E5F44B25EE0">Publish the service definition files</a></li><li><a href="#ESRI_SECTION1_DE761DD88737473FAECB1B469F4A0DB5">Update the Utilities.py file</a></li><li><a href="#ESRI_SECTION1_DAACD87FFCC44C63A6E6FD980F7C332E">Update geo-enabled notes</a></li><li><a href="#ESRI_SECTION1_DE24A559E34A432DAD9A1B40A9A3F41B">Customize layout templates</a></li><li><a href="#ESRI_SECTION1_CD3F3EC59490463291CE88088BEB32A8">Configuring the web app</a></li><li><a href="#ESRI_SECTION1_99B98A7D1D964BC68E191EB738FC1942">Troubleshoot Maritime Server configuration issues</a></li></ol>
+			        </div>
+			      </div>
+			     </aside>
+		
+    
+   <!--googleon: all-->
+
+
+		<main>
+			
+	
+    	<p class="license icon-ui-key text-light ">获得 Production Mapping 许可后可用。</p>
+    
+
+
+			
+<p id="GUID-89D851D0-83B1-4B77-AC64-034228D07C3E"><span class="ph">ArcGIS for Maritime: Server</span> allows you to deploy a web-based app to generate information map products on the  fly and  create any product at any scale. </p>
+
+<section class="section1 padded-anchor" id="ESRI_SECTION1_EED62CDC9CB34B179E60B405910A6DB4" purpose="section1"><h2>Copy productsondemand folder</h2><p id="GUID-935012EF-5B58-4441-BCF3-2D718BDD11EE">Copy the productsondemand folder from the PoD installation to the deployment location. The files in the PoD installation location can be treated as a backup, and the files in the deployment location will be modified as needed. The recommended location to copy the productsondemand folder to is <span class="usertext">&lt;ArcGIS Server installation drive&gt;\arcgisserver\directories\maritimeserver</span> so that the PoD folder and maritime server folders will be under the same folder.</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><section class="context padded-anchor" id="ESRI_CONTEXT_0F73CD1A12BE4EAEBF9832CFAE39ECD1" purpose="context"><p id="GUID-6C350A7B-B3C7-460D-BB95-7C30FE22600D">Perform the following steps to deploy Products on Demand (PoD) within your <span class="ph">ArcGIS Server</span> site.<div class="panel trailer-1 note" id="GUID-37CBD19C-5A87-43BD-B64A-841699CE7498"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-F511E339-4746-4D62-A7FF-35A86510181C"> To complete the steps, you need to have a map service with
+<span class="ph">Maritime Chart Service</span> <a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/documentation/install/mapping-charting-solution" href="../../../../../zh-CN/documentation/install/mapping-charting-solution/latest/configuring-arcgis-for-maritime-server.htm#ESRI_SECTION1_DF6748D1C243463AAB975DF82382FD56">enabled</a>.</p>
+
+</div></p></section><div class="steps" id="ESRI_STEPS_1FEC2D7247F4401E8463C94CEACAA169"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_C7D03848E9FD4ADC8CBA2499467C5B08"><span purpose="cmd">If necessary, create a folder named maritimeserver in the <span class="ph">ArcGIS Server</span> site at <span class="usertext">&lt;ArcGIS Server installation drive&gt;\arcgisserver\directories</span>.</span><div class="info" purpose="info"><div class="panel trailer-1 note" id="GUID-C52E8973-B6DA-4FA6-9F25-C487EC03E43C"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-4C13D222-296A-4E80-A726-F4F0542002D2"> If this location does not exist, verify that
+your <span class="ph">ArcGIS Server</span> site has been <a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/server/latest/install" href="../../../../../zh-CN/server/latest/install/windows/creating-a-new-site.htm">created</a> and <span class="ph">Maritime Chart Service</span> has been <a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/documentation/install/mapping-charting-solution" href="../../../../../zh-CN/documentation/install/mapping-charting-solution/latest/configuring-arcgis-for-maritime-server.htm#ESRI_SECTION1_DF6748D1C243463AAB975DF82382FD56">enabled</a>.</p>
+
+</div></div></li><li purpose="step" id="ESRI_STEP_4ED51A8975CF4E3D9EC0DC02766594B1"><span purpose="cmd">Copy the <span class="usertext">productsondemand</span> folder from <span class="usertext">&lt;ArcGIS Server Installation Directory&gt;\MaritimeServer\Server&lt;version&gt;</span> to the <span class="usertext">&lt;ArcGIS Server installation drive&gt;\arcgisserver\directories\maritimeserver</span> folder created in step 1.</span></li><li purpose="step" id="ESRI_STEP_445E87F274524320A89FAF9275379193"><span purpose="cmd"><a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/server/latest/administer" href="../../../../../zh-CN/server/latest/administer/windows/the-arcgis-server-account.htm">Configure</a> the <span class="ph">ArcGIS Server</span> account.</span></li></ol></div></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_EFC741769FAA41AFAF9F181C513D0F9B" purpose="section1"><h2>Configure sharing and permissions</h2><p id="GUID-A184B773-C915-4094-9ED1-A97FEBF79496">Perform these steps to configure sharing for the <span class="usertext">&lt;ArcGIS Server installation drive&gt;\arcgisserver</span> folder and to add Full Control permissions for the <span class="ph">ArcGIS Server</span> account:</p><div class="panel trailer-1 note" id="GUID-BE1D7325-B75D-4717-BDD0-6316EF470E97"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-EDE7D317-BAA9-40A3-AD1D-5C914DE1C32C">PoD product export processing will write or modify necessary files in this folder.</p></div><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_BEFCE66F2F6B46D49E975F5E4EC781B9"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_33BEBAD6354749B583ACC5A53F1578C6"><span purpose="cmd">Right-click the <span class="uicontrol">arcgisserver</span> folder and click <span class="uicontrol">Properties</span>.</span></li><li purpose="step" id="ESRI_STEP_3459F10CF63F44409A87780BE21115D7"><span purpose="cmd">Click the <span class="uicontrol">Sharing</span> tab.</span></li><li purpose="step" id="ESRI_STEP_F12DBDA86763452BA72D74097403DC44"><span purpose="cmd">Click <span class="uicontrol">Advanced Sharing</span>.</span></li><li purpose="step" id="ESRI_STEP_2B29702B8E0B477AA9B44C5A9AEBBEEE"><span purpose="cmd">Check the <span class="uicontrol">Share this folder</span> check box.</span></li><li purpose="step" id="ESRI_STEP_7EE9D08CAB8E44A5BA0522144709340B"><span purpose="cmd">Click <span class="uicontrol">Permissions</span>.</span></li><li purpose="step" id="ESRI_STEP_D11585EA61FE4025AD0997DAC6BEB3A4"><span purpose="cmd">Click <span class="uicontrol">Add</span> on the <span class="uicontrol">Share Permissions</span> tab.</span></li><li purpose="step" id="ESRI_STEP_BAE26EB3FE5941F5A9DF2B3B3DE2BF5F"><span purpose="cmd">Add the <span class="ph">ArcGIS Server</span> account.</span><div class="info" purpose="info"><div class="panel trailer-1 note" id="GUID-A1647591-8375-4714-9600-89696B156B66"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-7A1A77A3-FEB5-4949-813E-4EA71D4999E5">You can <a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/server/latest/administer" href="../../../../../zh-CN/server/latest/administer/windows/the-arcgis-server-account.htm#ESRI_SECTION1_487A8FA0B75745489005E225899C89F4">specify the locale of your <span class="ph">ArcGIS Server</span> account</a>. By default, this user is usually ArcGIS.</p></div></div></li><li purpose="step" id="ESRI_STEP_3C31630120AC454E99BC2C4E920C5D79"><span purpose="cmd">Once the <span class="ph">ArcGIS Server</span> account has been added, click <span class="uicontrol">OK</span> to close the <span class="uicontrol">Select Users or Groups</span> dialog box.</span></li><li purpose="step" id="ESRI_STEP_2981D2C245C945218FB09A9A9846F80B"><span purpose="cmd">Choose the newly added <span class="ph">ArcGIS Server</span> account in the Group or user names section on the <span class="uicontrol">Share Permissions</span> tab and click the <span class="uicontrol">Allow</span> check box next to <span class="uicontrol">Full Control</span>.</span></li><li purpose="step" id="ESRI_STEP_3E8F689BCF164966A03B89AC5C4340AC"><span purpose="cmd" id="GUID-C5751D68-F8B0-4CF1-B710-D262BDF357E3"> 单击<span class="uicontrol">确定</span>。 </span></li><li purpose="step" id="ESRI_STEP_DDB8223FD200477897CE57F52756FFE5"><span purpose="cmd">Click <span class="uicontrol">OK</span> again to close the <span class="uicontrol">Advanced Sharing</span> dialog box.</span></li><li purpose="step" id="ESRI_STEP_8B013F7046E5413898088D8D641A5C32"><span purpose="cmd" id="GUID-96E87F43-BEF0-4B27-8883-BB9ECD95393F">单击<span class="uicontrol">关闭</span>。</span></li><li purpose="step" id="ESRI_STEP_117A5DB1800946D3A63D07E48BDC6842"><span purpose="cmd">Click <span class="uicontrol">OK</span> again to close the <span class="uicontrol">Properties</span> dialog box.</span></li></ol></div></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_F24D7497A64B4FC8AED61E5F44B25EE0" purpose="section1"><h2>Publish the service definition files</h2><p id="GUID-9BCCE685-F6EC-4589-B63B-5E350380039C">Publish the two service definition files to <span class="ph">ArcGIS Server</span> for PoD to calculate the AOI extent when you create an extent on the map to export a PDF chart.</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_4777834BF60B49D2A3A4ACA3AA292A5F"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_FE9D32B0D5174088A91654543823D155"><span purpose="cmd">Sign in as a server manager by launching <span class="usertext">https://gisserver.domain.com/arcgis/manager</span>.</span><div class="info" purpose="info"><div class="panel trailer-1 note" id="GUID-1F061D81-2A05-42EB-A585-427210D52452"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-C7E32EAF-0146-4C6F-809D-B275F908D0A1"><a class="xref xref_bad" href="GUID-03EAF6D3-B3F1-41A1-90D9-00E2BF584DA8">Publish the service definition files</a> using <span class="ph">ArcGIS Server Manager</span>.  To streamline deployment, it is recommended that you create a folder within <span class="ph">ArcGIS Server Manager</span> named <span class="usertext">POD</span> to organize your PoD-related services.</p></div></div></li><li purpose="step" id="ESRI_STEP_DB07A64035B64F8D814D67654126AC14"><span purpose="cmd">Click <span class="uicontrol">Services  <span class="greaterthan">&gt;</span> Manage Services</span>, choose the <span class="usertext">POD</span> folder, and click <span class="uicontrol">Publish Service</span>.</span></li><li purpose="step" id="ESRI_STEP_4D269571B1E944609797203EB99CD6D1"><span purpose="cmd">Click <span class="uicontrol">Choose File</span> to browse to the service definition you want to publish, or type the path to the file. </span><div class="info" purpose="info"><p id="GUID-13D541C4-03E2-4152-BB43-C83BBB6D315C">The default location is <span class="usertext">&lt;ArcGIS Server installation drive&gt;\arcgisserver\directories\maritimeserver\productsondemand\ServiceDefinitionFiles</span>.</p></div></li><li purpose="step" id="ESRI_STEP_2A8E37A56A954192BE1D0CC1D85BDB6B"><span purpose="cmd">Select <span class="uicontrol">Calculators.sd</span> and click <span class="uicontrol">Open</span>.</span><div class="info" purpose="info"><div class="panel trailer-1" id="GUID-1170F7D9-A2BF-4798-8CDE-E37C0312CEC8"><h5 class="icon-ui-notice-triangle trailer-0">警告：</h5><p id="GUID-CD7F6266-E2BE-4A12-8675-8178D4091F6E">Do not change the name of the service.  Doing so will not allow the web app to work.</p></div></div><div class="stepresult" purpose="stepresult"><p id="GUID-A74E6941-EC0A-4959-A518-4CF71D446DC0">The service definition is published to the server folder specified in the service definition configuration by default. If you want to change the folder where the service definition will be published, choose a folder from the drop-down list or click <span class="uicontrol">New</span>.</p><div class="panel trailer-1 note" id="GUID-9A401EBE-02E9-4FF0-A082-1814A03DC393"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-BF1D9F64-202D-4BFA-9176-8343679F9A7E">All PoD service definitions must be in the same folder to properly deploy Products on Demand.  It is recommended that you create a folder to organize your PoD-related services. POD is the recommended folder name.</p></div></div></li><li purpose="step" id="ESRI_STEP_AA4B73E15914492D982FD1AE04930028"><span purpose="cmd">Click <span class="uicontrol">Next</span>.</span><div class="info" purpose="info"><p id="GUID-F8377D47-E060-489A-B6DF-A52626D981FE">You will need to specify properties for your new service. No additional capabilities are required to be selected.</p></div></li><li purpose="step" id="ESRI_STEP_8A05B03D6069466C80EA0BE98CAD3C34"><span purpose="cmd">Click <span class="uicontrol">Back</span> or click <span class="uicontrol">Next</span> as necessary.</span></li><li purpose="step" id="ESRI_STEP_E415522D4AD4416F8183F64A43169151"><span purpose="cmd">Click <span class="uicontrol">Publish</span>.</span></li><li purpose="step" id="ESRI_STEP_9393BF594FA24AE9B815653DAD2E950E"><span purpose="cmd">Repeat steps 3 through 6 for <span class="usertext">ExportWebmap.sd</span>.</span></li></ol></div></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_DE761DD88737473FAECB1B469F4A0DB5" purpose="section1"><h2>Update the Utilities.py file</h2><p id="GUID-60D8E18D-D44B-4947-B0F1-319E71CC0BA2">This process must be done after you have published your PoD service definition files.  This will make your Calculators and ExportWebmap geoprocessing services use the updated <span class="usertext">Utilities.py</span> file:</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_FE22EB8C5801491CAF429FB0793BCBF0"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_87EA32476E284C2294498667C8EF1E10"><span purpose="cmd">In Windows Explorer, browse to the <span class="usertext">Utilities.py</span> file and edit it.</span><div class="info" purpose="info"><p id="GUID-580F5975-DB6F-4096-8D19-33F111057818">The default location is <span class="usertext">&lt;ArcGIS Server installation drive&gt;\arcgisserver\directories\maritimeserver\productsondemand\Tools</span>.</p></div></li><li purpose="step" id="ESRI_STEP_D8AD8167962646979F951D0AE12BCECF"><span purpose="cmd">Update the following variables:</span><ul purpose="choices" id="ESRI_CHOICES_7F6FF5A8D00C421A82A49E502B492B4E"><li purpose="choice" id="ESRI_CHOICE_9C64D6413B374D3599C83BB365B651B0"><span class="usertext">shared_products_path</span> and <span class="usertext">output_directory</span>—Update the variables with your machine name, domain, and  folder path if you did not use the recommended default settings. </li><li purpose="choice" id="ESRI_CHOICE_A264B982072741DD947340092A3963F5"><span class="usertext">output_url</span>—Use of localhost is only for local testing. Otherwise, update the variable with your machine name and domain and update the  folder path if you did not use the recommended default settings.</li></ul></li><li purpose="step" id="ESRI_STEP_088621DE96F6434888FE60DEEAFF0AB1"><span purpose="cmd">Save the changes to <span class="usertext">Utilities.py</span>, then click <span class="uicontrol">File <span class="greaterthan">&gt;</span> Exit</span>.</span></li><li purpose="step" id="ESRI_STEP_1DF0E1D020C646789F2067D7B7D48258"><span purpose="cmd"> Copy your updated <span class="usertext">Utilities.py</span> file to your newly published Calculators and ExportWebmap PoD services' arcgisinput  location.</span></li><li purpose="step" id="ESRI_STEP_F427A0B7BF6F49738D53D8E4918ADD82"><span purpose="cmd">Browse to your arcgisinput location for POD.</span><div class="info" purpose="info"><p id="GUID-5FC4C281-AF99-4A17-8E80-3ED0EF7CD5C2">The default location is <span class="usertext">&lt;ArcGIS Server installation drive&gt;\arcgisserver\directories\arcgissystem\arcgisinput\POD</span>.</p></div><ul purpose="choices" id="ESRI_CHOICES_18DFE432BBF8452DA95EF1C2B1F80470"><li purpose="choice" id="ESRI_CHOICE_A71271BEF26E4CE3B6A0961BE5E8D413">Copy your updated <span class="usertext">Utilities.py</span> file located in step 1 to <span class="usertext">&lt;Installation Location&gt;\arcgisserver\directories\arcgissystem\arcgisinput\POD\Calculators.GPServer\extracted\p20\tools</span>.</li><li purpose="choice" id="ESRI_CHOICE_272A719C83434AB8AD15330E45D21EB6">Copy your updated <span class="usertext">Utilities.py</span> file located in step 1 to <span class="usertext">&lt;Installation Location&gt;\arcgisserver\directories\arcgissystem\arcgisinput\POD\ExportWebmap.GPServer\extracted\p20\tools</span>.</li></ul></li><li purpose="step" id="ESRI_STEP_DCFA95E9B8B34A24B31E9E458BBC6C63"><span purpose="cmd">In <span class="ph">ArcGIS Server Manager</span>, click <span class="uicontrol">Services <span class="greaterthan">&gt;</span> Manage Services</span>.</span></li><li purpose="step" id="ESRI_STEP_F3525FFF9ACC48D6A3716E11C3D49551"><span purpose="cmd">Click <span class="uicontrol">Folders <span class="greaterthan">&gt;</span> POD</span>.</span></li><li purpose="step" id="ESRI_STEP_376D173E6DCD455EB022D5FD23E3F404"><span purpose="cmd">Restart your Calculators and ExportWebmap geoprocessing services.</span></li></ol></div></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_DAACD87FFCC44C63A6E6FD980F7C332E" purpose="section1"><h2>Update geo-enabled notes</h2><p id="GUID-6733E0A6-DDCC-402E-BEA0-FE9692B33372">Geo-enabled notes allow you to generate textual notes for Product on Demand (PoD) outputs based on the geographic location of the product. </p><p id="GUID-E6DBB4C7-A655-4D8C-9A43-75659BC207C6">The notes are stored in a multipart polygon feature class, where each record has a text field that contains the note. When a new product area of interest is inserted, the area of interest is intersected with the geo-enabled notes polygon layer, and a separate A4 sheet is appended to the GeoPDF export. If there is more than one page of notes, a second page is generated, and so on.</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><section class="context padded-anchor" id="ESRI_CONTEXT_765E426344444408AF5E4FA455F3484B" purpose="context"><p id="GUID-60C8C146-8ADF-4336-9F06-01B2C452D582">Perform the following steps to customize geo-enabled notes:</p></section><div class="steps" id="ESRI_STEPS_BF444480457D42E7A8E237366300F349"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_98D0C5DC28054E2ABD64FAD20B39FE26"><span purpose="cmd">Unzip the <span class="usertext">Notes.gdb.zip</span> file located in the  <span class="usertext">&lt;ArcGIS Server installation drive&gt;\arcgisserver\directories\maritimeserver\productsondemand\LayoutTemplates</span> folder.</span><div class="info" purpose="info"><div class="panel trailer-1" id="GUID-4A110790-36A3-410A-B66A-246C3A90EE0E"><h5 class="icon-ui-description trailer-0">提示：</h5><p id="GUID-466E57B7-8392-4258-90F9-4095DB9489EB">A sample notes geodatabase exists in the <span class="usertext">Notes.gdb.zip</span> file.</p></div></div></li><li purpose="step" id="ESRI_STEP_C7F776F68804480791DFC3D4BF7E921B"><span purpose="cmd">Add multipart polygon features to the <span class="uicontrol">FeatureClassForNotes</span> feature class  in  <span class="uicontrol">Notes.gdb</span>.</span><div class="info" purpose="info">  <div class="panel trailer-1" id="GUID-F6828FE0-B8DF-48D9-8B57-FC41837A76CA"><h5 class="icon-ui-description trailer-0">提示：</h5><ul purpose="ul" id="UL_D4D006AF091E4F95AD5FCDE4944782F8"><li purpose="li" id="LI_8021D8F713964DD4814B9936299B60C5">Sample notes can be found in the <span class="uicontrol">FeatureClassForNotes_Sample</span> feature class in <span class="uicontrol">Notes.gdb</span>.</li><li purpose="li" id="LI_727B5F95F84C4852A38FF9DC97B46055"> Multipart polygons allow you to have several geographic locations that share the same note text without any redundancy.</li></ul></div></div></li><li purpose="step" id="ESRI_STEP_23E3E5729B4F4F3AA6598E575EB23AC1"><span purpose="cmd">Optionally edit the following fields in the <span class="uicontrol">FeatureClassForNotes</span> feature class:</span></li></ol></div></section><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><colgroup width="*"></colgroup><colgroup width="*"></colgroup><colgroup width="*"></colgroup><thead><tr><th colspan="1">Notes</th><th colspan="1">Title</th><th colspan="1">Color</th><th colspan="1">minScale</th><th colspan="1">maxScale</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-1727DF80-4871-4E5E-B308-EF31729E0748">This is a mandatory field.</p><p id="GUID-44A97762-6C17-44E9-8D8B-3C9AC870CEFF">Note text or body of the paragraph. </p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-09B7777A-04E9-4F0D-9650-6CE6AFB4AF98">This is an optional field.</p><p id="GUID-C55D04A7-865A-4640-B77D-4A5ACF4A3F7E">Name of the note that will print above the note paragraph.</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-F35A3A73-0314-41E1-80C3-B21258D53B53">This is an optional field. </p><p id="GUID-DB646BEF-4E89-408F-822E-22D909519282">Red, Green, Blue (RGB) value of the note paragraph and title. Separate values with a single comma (,). The note will appear with black text if the field is empty, null, or has invalid values.</p><p id="GUID-29CA4BAD-0075-42A2-9846-F9B75103AE22">Note:</p><p id="GUID-F2191386-118E-452B-8145-9976DF7158CA">This field does not comply with CYMK.</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-D5054B0F-F116-4A24-8C0A-5C51A2B9D864">This is an optional field.</p><p id="GUID-871B2F03-D6D2-4866-B4AC-CF7442053749">Allows you to specify the largest scale chart on which the note will appear. For example, if a note should appear on charts between 1:40000 and 1:90000, you will type 40000 in the field.</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-3D6B2B0F-8E5C-436E-95FD-0163F62BA37C">This is an optional field. </p><p id="GUID-02AB0EA5-9AB2-4A1F-A5FE-372923726EF5">Allows you to specify the smallest scale chart on which the note will appear. For example, if a note should appear on charts between 1:40000 and 1:90000, you will type 90000 in the field.</p></td></tr></tbody><caption></caption></table></div></section><section class="section1 padded-anchor" id="ESRI_SECTION1_DE24A559E34A432DAD9A1B40A9A3F41B" purpose="section1"><h2>Customize layout templates</h2><section class="section2 padded-anchor" id="ESRI_SECTION2_966FD00C14674C31BC83072D5B8F0F78" purpose="section2"><h3>Map elements</h3><p id="GUID-10285B0D-6237-411B-8355-0934FB05ADCC">PoD provides several layout templates for various page sizes and orientations. Each layout contains map elements, such as scale bars, north arrows, and legends; logos; text; or other graphics that are created for specific purposes in the chart. Layout elements can also be map frames.</p><div class="panel trailer-1" id="GUID-4FE0FEF0-C95D-4635-BB4F-5C46D0FDEE5E"><h5 class="icon-ui-description trailer-0">提示：</h5><p id="GUID-52719266-B3A1-4272-B218-299D440435FF">Rename your A0 and ANSI E templates. For example add a <span class="usertext">_withnotes</span> suffix to the template name. Remove the _withoutnotes suffix from your backup A0 and ANSI E templates. The system will now recognize the A0 and ANSI E templates that no longer have common notes.</p><p id="GUID-CAA87F91-0E3D-447E-B81A-1E2D97042CA4">By default, your <a class="xref xref" esrisubtype="extrel" hrefpfx="https://pro.arcgis.com/zh-cn/pro-app/help" href="https://pro.arcgis.com/zh-cn/pro-app/help/layouts/layouts-in-arcgis-pro.htm">layout</a> template font is set to Arial.</p></div></section><section class="section2 padded-anchor" id="ESRI_SECTION2_D667A75D6C2A43CBA1B82624E4A4BD7A" purpose="section2"><h3>Manage elements</h3><p id="GUID-B4B3223A-B41A-4E4C-8A51-B533BB336F5E">During product creation, the map elements are updated dynamically to reflect changes in the chart, such as scale, geographic extent, and generation date. PoD uses the names of elements to manage and identify which elements are to be modified by the automation script. Map element names should not be changed. If names are modified, the element cannot be managed using the automation script. If necessary, you can access the name by clicking  <span class="uicontrol">Element Name</span> on the <span class="uicontrol">Size and Position</span> tab on the <span class="uicontrol">Properties</span> dialog box.</p></section><section class="section2 padded-anchor" id="ESRI_SECTION2_2BE76EAD9FE842EE895E9DF9C1E798D8" purpose="section2"><h3>Map frame</h3><p id="GUID-E8101B12-ACDC-4397-9E85-A3D7BE745869">The area of interest (AOI) generated in the Products on Demand web app is obtained from the layout template's <a class="xref xref" esrisubtype="extrel" hrefpfx="https://pro.arcgis.com/zh-cn/pro-app/help" href="https://pro.arcgis.com/zh-cn/pro-app/help/layouts/add-and-modify-map-frames.htm">map frames</a>. A calculator finds the bottom left corner of the data frame, then the left and bottom edge. Changing the map frame size will impact AOI size.</p></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_CD3F3EC59490463291CE88088BEB32A8" purpose="section1"><h2>Configuring the web app</h2><p id="GUID-B3C52F88-718B-475D-99FB-99F0408AFC96"> Once you have published your service definition files, updated your layout templates, published a map service with <span class="ph">Maritime Chart Service</span> enabled, and updated your <span class="usertext">Utilities.py</span> file, you are ready to configure and deploy your PoD web app.</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_32ABA49F3CCB4DD586F69F48E15EC096"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_7C6F280C2AB14617AB189ACCF60F9233"><span purpose="cmd">Browse to <span class="usertext">&lt;ArcGIS Server Installation Directory&gt;\MaritimeServer\Server&lt;version&gt;\WebApplications</span> and copy the <span class="usertext">POD</span> folder to <span class="usertext">C:\inetpub\wwwroot</span> if using <span class="ph">Internet Information Server (IIS)</span> to deploy your web app. </span><div class="info" purpose="info"><div class="panel trailer-1 note" id="GUID-AAEAA83A-796F-43AC-BE4A-F94345F0FE93"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-8FF1FB08-3AF8-4FDD-B174-4259C4B8EB65">You can rename the pod folder. This will be the name of the app you access over the web.</p></div></div></li><li purpose="step" id="ESRI_STEP_588464BA465448BFBA26BDFC0DFFBF64"><span purpose="cmd">Register your <a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/portal/latest/administer" href="../../../../../zh-CN/portal/latest/administer/windows/add-items.htm#ESRI_SECTION1_0D1B620254F745AE84F394289F8AF44B">web app</a> and get the App ID.</span><div class="info" purpose="info"><p id="GUID-24DD3FED-D4A1-48AE-99A9-1F8CBB5D2939"><a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/documentation/install/mapping-charting-solution" href="../../../../../zh-CN/documentation/install/mapping-charting-solution/latest/configuring-arcgis-for-maritime-server.htm#ESRI_SECTION3_EDAD30A20B5E4F24B97E318B01C9CE27">You can also register your web app through portal</a>.</p></div></li><li purpose="step" id="ESRI_STEP_D54230362D354078BB7B63EAFC607A1F"><span purpose="cmd">Update your <span class="usertext">podconfig.js</span> file located under <span class="usertext">pod\js</span>.</span><div class="substeps" id="ESRI_SUBSTEPS_1891F2A0DCF84494BB64A307F3CE9CF6" purpose="substeps"><ol class="list-numbered" purpose="ol"><li purpose="substep" id="ESRI_SUBSTEP_94DDBEB27210418D9D1438C68A33A169"><span purpose="cmd">Update the <span class="uicontrol">serviceURL</span> with the location of the service you created in step 2 of <a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/documentation/install/mapping-charting-solution" href="../../../../../zh-CN/documentation/install/mapping-charting-solution/latest/configuring-arcgis-for-maritime-server.htm#ESRI_SECTION2_BCDE2F9FEB8B45F397FAB5754F4E9B80">Publish the service definition files</a>.  </span><div class="info" purpose="info"><p id="GUID-C85E2CD9-C47A-4279-9158-41BAF400DD8A">If the recommended defaults were used, the path is <span class="usertext">https://gisserver.domain.com/arcgis/rest/services/POD</span>.  </p></div></li><li purpose="substep" id="ESRI_SUBSTEP_BDB2C282F27C46C5B566CD66DB3E8906"><span purpose="cmd">Update MCSURL to the map service with <span class="ph">Maritime Chart Service</span> enabled.</span><div class="info" purpose="info"><p id="GUID-FE34A933-9E68-4464-AB69-09E130B58573">If you enabled <span class="ph">Maritime Chart Service</span> for SampleWorldCities, then the path is <span class="usertext">https://gisserver.domain.com/arcgis/rest/services/SampleWorldCities/MapServer/exts/MaritimeChartService/MapServer</span>. </p><div class="panel trailer-1 note" id="GUID-4998D3DE-3ACB-4FBB-A619-DEB8521E1709"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-6BE1D833-B2AD-4DA6-AE84-ECF35F05225D"> Your app will use the <span class="ph">Esri</span> Ocean basemap. You can choose another basemap by modifying the basemap variable.</p></div></div></li><li purpose="substep" id="ESRI_SUBSTEP_2C8E4F1E0ADA49D7A2F1383595043B3D"><span purpose="cmd">Update appID with the App ID you created in step 2. This allows you to sign into <span class="ph">ArcGIS Online</span> or your portal account.</span></li></ol></div></li><li purpose="step" id="ESRI_STEP_246780DAC55C4E529299A203A451013C"><span purpose="cmd">Save the changes to your <span class="usertext">podconfig.js</span> file.</span></li></ol></div><section class="result padded-anchor" id="ESRI_RESULT_C4609372AFA44031AE223243E625AAD5" purpose="result"><p id="GUID-8E301CC8-EA5E-4501-9AC8-FA503C1F9CF3">You are now  ready to use Products on Demand by launching the app.</p></section></section><section class="section2 padded-anchor" id="ESRI_SECTION2_BEC93F6092FC486D8EBE429608215A24" purpose="section2"><h3> Register the web app through portal</h3><p id="GUID-3B83C642-626A-4DF4-958F-277BAFC3A866"> If you registered the web app through portal, complete these post-registration steps:</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_03F04BC440634A84ADD9016B67FD9519"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_C924B9A0C28D4DBEB88426DDAD1080E3"><span purpose="cmd">Browse to the <span class="usertext">POD</span> folder in your web root folder. For example, <span class="usertext">C:\inetpub\wwwroot\POD</span>  if you are deploying your web app using <span class="ph">Internet Information Server (IIS)</span>.</span></li><li purpose="step" id="ESRI_STEP_25F8C6AE4A2B418B90D78F89420DE4FD"><span purpose="cmd">In the <span class="usertext">widgets\AddData</span> folder, open <span class="usertext">Widget.js</span>.</span></li><li purpose="step" id="ESRI_STEP_C78FDF49BBAD4ECD8CF012735125B821"><span purpose="cmd">Update the <span class="usertext">portalUrl</span> variable to <span class="usertext">https://portalserver.domain.com/arcgis</span>.</span></li><li purpose="step" id="ESRI_STEP_5C2A132434534726B3D4EBA5CA3AD315"><span purpose="cmd" id="GUID-7F047968-216D-4EEF-8E1A-0165CA80D408">单击<span class="uicontrol">保存</span>。</span></li><li purpose="step" id="ESRI_STEP_F2E9644673754801BA74176E131FCD9A"><span purpose="cmd">In the <span class="usertext">widgets\LayerList</span> folder, open <span class="usertext">Widget.js</span>.</span></li><li purpose="step" id="ESRI_STEP_7366035E97284F9683FFB79FA2DCBAE6"><span purpose="cmd">In the <span class="usertext">appConfig</span> section, update the <span class="usertext">portalUrl</span> to <span class="usertext">https://portalserver.domain.com/arcgis</span>.</span></li><li purpose="step" id="ESRI_STEP_33A17BC3FFC94C4487B33BED9C9010AC"><span purpose="cmd" id="GUID-7F047968-216D-4EEF-8E1A-0165CA80D408">单击<span class="uicontrol">保存</span>。</span></li><li purpose="step" id="ESRI_STEP_D7C4C5F3248848A88B682C28DEB6976B"><span purpose="cmd">In the <span class="usertext">js</span> folder, open <span class="usertext">SignInButton.js</span>.</span></li><li purpose="step" id="ESRI_STEP_B6AC52742D184F8183FBC5BA9CA54E15"><span purpose="cmd">Uncomment <span class="usertext">// portalUrl: "https://portalserver.domain.com/arcgis",</span> and update the portalUrl.  </span></li><li purpose="step" id="ESRI_STEP_06B977057FC04A5AAB97BEFBF4906892"><span purpose="cmd" id="GUID-7F047968-216D-4EEF-8E1A-0165CA80D408">单击<span class="uicontrol">保存</span>。</span></li></ol></div></section></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_99B98A7D1D964BC68E191EB738FC1942" purpose="section1"><h2>Troubleshoot Maritime Server configuration issues</h2><section class="section2 padded-anchor" id="ESRI_SECTION2_776AC1285A204FB6B6A301BCD36F1C78" purpose="section2"><h3>What if I don't see <span class="ph">Maritime Chart Service</span> data in my Products on Demand app?</h3><p id="GUID-B72734F2-8B06-4F9C-A07F-AB3FCDF7C0D0"> Verify that the MCSURL set in <a class="xref xref" href="../../../../../zh-CN/server/latest/publish-services/windows/deploying-products-on-demand.htm#ESRI_SECTION1_CD3F3EC59490463291CE88088BEB32A8">step 3  of the Configure the web app section</a> is accessible to the user accessing the app.</p></section><section class="section2 padded-anchor" id="ESRI_SECTION2_01D370FFD2394161877047CB8E73E57A" purpose="section2"><h3>What if I observe an Unable to complete Operation error?</h3><p id="GUID-58ACC2F0-CDA4-4187-B981-CBE30B799F95">Add Configure ArcGIS Server Account to the installation directory if you observe the error <span class="uicontrol">Unable to complete Operation. Error Executing tool. CalculateExtent.</span></p></section><section class="section2 padded-anchor" id="ESRI_SECTION2_A9847459DF7A48069BC44173E880A9B5" purpose="section2"><h3>What if my <span class="ph">Maritime Chart Service</span> does not display or disappears after changing my display properties?</h3><p id="GUID-A9D733F5-D8BF-4BFB-BB95-4FDD4876EF6F"> Check if you have exceeded the server URL length of 2048 characters when using display parameters, and if so, increase the allowable URL length in the <span class="usertext">web.config.xml</span> file.</p></section></section><section class="section2 leader-1" purpose="relatedtopics"><h4 class="trailer-0">相关主题</h4><ul class="pre-0 trailer-2"><li><a class="xref relatedtopic" href="../../../../../zh-CN/server/latest/publish-services/windows/creating-a-maritime-chart-service-tile-package.htm">Creating a  Maritime Chart Service tile package</a></li></ul></section>
+			
+				<hr>
+				<!--googleoff: all-->
+				
+	
+        
+		    <p class="feedback right">
+		        <a id="afb" class="icon-ui-contact" href="/feedback/" data-langlabel="feedback-on-this-topic" >有关此主题的反馈?</a>
+		    </p>
+        
+	
+
+				<!--googleon: all-->
+			
+		</main>
+	</div>
+	
+	<!--googleoff: all-->
+	
+		
+			<div id="main-toc-large" class="column-5">
+			    <div class="panel font-size--2 tablet-hide trailer-1">
+			      <h5 class="trailer-half">在本主题中</h5>
+			      <ol class="list-plain pre-0 trailer-0"><li><a href="#ESRI_SECTION1_EED62CDC9CB34B179E60B405910A6DB4">Copy productsondemand folder</a></li><li><a href="#ESRI_SECTION1_EFC741769FAA41AFAF9F181C513D0F9B">Configure sharing and permissions</a></li><li><a href="#ESRI_SECTION1_F24D7497A64B4FC8AED61E5F44B25EE0">Publish the service definition files</a></li><li><a href="#ESRI_SECTION1_DE761DD88737473FAECB1B469F4A0DB5">Update the Utilities.py file</a></li><li><a href="#ESRI_SECTION1_DAACD87FFCC44C63A6E6FD980F7C332E">Update geo-enabled notes</a></li><li><a href="#ESRI_SECTION1_DE24A559E34A432DAD9A1B40A9A3F41B">Customize layout templates</a></li><li><a href="#ESRI_SECTION1_CD3F3EC59490463291CE88088BEB32A8">Configuring the web app</a></li><li><a href="#ESRI_SECTION1_99B98A7D1D964BC68E191EB738FC1942">Troubleshoot Maritime Server configuration issues</a></li></ol>
+			    </div>
+			    
+			    
+	  		</div>
+		
+    
+   <!--googleon: all-->
+
+
+
+
+          
+        </div>
+        <!-- ENDPAGECONTENT -->
+
+      </div>
+
+    </div>  <!-- End of wrapper -->
+
+  <footer class="footer leader-3 link-dark-gray" role="contentinfo">
+    <div class="grid-container">
+      <div class="row">
+        <nav class="column-6">
+          <h6 data-langlabel="arcgis-for-server">Arc<span>GIS Enterprise</span></h6>
+          <ul class="list-plain">
+            <li><a data-langlabel="home" href="../../../../../zh-CN/">主页</a></li>
+            <li><a data-langlabel="portal" href="../../../../../zh-CN/portal/">Portal</a></li>
+            <li><a data-langlabel="server" href="../../../../../zh-CN/server/">Server</a></li>
+            <li><a data-langlabel="data-store" href="../../../../../zh-CN/data-store/">Data Stores</a></li>
+            <li><a data-langlabel="cloud" href="../../../../../zh-CN/cloud/">云</a></li>
+            <li><a data-langlabel="apps" href="../../../../../zh-CN/apps/">应用程序</a></li>
+            <li><a data-langlabel="documentation" href="../../../../../zh-CN/documentation/">文档</a></li>
+          </ul>
+        </nav>
+
+        
+  <nav class="column-6">
+    <h6 data-langlabel="arcgis-platform">ArcGIS 平台</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="arcgis" href="//www.arcgis.com/">ArcGIS Online</a></li>
+      <li><a data-langlabel="arcgis-for-professionals" href="//pro.arcgis.com/">ArcGIS Pro</a></li>
+      <li><a data-langlabel="arcgis-for-server" href="//enterprise.arcgis.com/">ArcGIS Enterprise</a></li>
+      <li><a data-langlabel="arcgis-for-developers" href="https://developers.arcgis.com/">ArcGIS for Developers</a></li>
+      <li><a data-langlabel="arcgis-solutions" href="//solutions.arcgis.com/">ArcGIS Solutions</a></li>
+      <li><a data-langlabel="arcgis-marketplace" href="//marketplace.arcgis.com/">ArcGIS Marketplace</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <h6 data-langlabel="about-esri">关于 Esri</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="about-us" href="//www.esri.com/about-esri/">关于我们</a></li>
+      <li><a data-langlabel="careers" href="//www.esri.com/careers/">招贤纳士</a></li>
+      <li><a data-langlabel="insiders-blog" href="https://www.esri.com/about/newsroom/blog/">Esri 博客</a></li>
+      <li><a data-langlabel="user-conference" href="//www.esri.com/events/user-conference/index.html">用户大会</a></li>
+      <li><a data-langlabel="developer-summit" href="//www.esri.com/events/devsummit/index.html">开发者峰会</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <a class="esri-logo" href="//www.esri.com/" aria-label="Esri Home"></a>
+    <section class="footer-social-nav leader-1">
+            <a class="icon-social-twitter" aria-label="Esri on Twitter" href="https://twitter.com/Esri/"></a>
+            <a class="icon-social-facebook" aria-label="Esri on Facebook" href="https://www.facebook.com/esrigis/"></a>
+            <a class="icon-social-github" aria-label="Esri on GitHub" href="//esri.github.io/"></a>
+            <a class="icon-social-contact" aria-label="Contact Esri" href="//www.esri.com/about-esri/contact/"></a>
+    </section>
+	  
+  </nav>
+  
+  <div class="column-24 leader-1">
+    <p class="font-size--3"><a href="http://www.esri.com/legal/copyright-trademarks">Copyright &copy; 2019 Esri.</a> All rights reserved. | <a href="http://www.esri.com/legal/privacy/">隐私政策</a> | <a href="http://www.esri.com/legal/software-license">法律声明</a></p>
+  </div>
+  
+
+
+      </div>
+    </div>
+  </footer>
+  <!--googleoff: all-->
+
+  
+  
+	<script src="../../../../../zh-CN/assets/js/init.js" type="text/javascript"></script>
+	<!--<script src="../../../../../zh-CN/assets/js/drop-down.js" type="text/javascript"></script>-->
+	<script src="../../../../../zh-CN/assets/js/search/searchform.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/cdn/js/link-modifier.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/cdn/js/sitewide.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/cdn/js/libs/highlight.pack.js" type="text/javascript"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+
+
+  
+    
+
+  <script src="../../../../../zh-CN/cdn/js/affix.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    $(function () {
+          var appendFlg = true;
+
+          $("#bigmac")
+          .on("affixed.bs.affix", function (evt) {
+            if (appendFlg) {
+              $("<a class='crumb' href='#'>Deploying Products on Demand (PoD)</a>").insertAfter ($("#bigmac nav a").last());
+              appendFlg = false;
+            }
+          })
+          .on ("affix-top.bs.affix", function(evt) {
+            if (!appendFlg) {
+              $("#bigmac nav a").last().remove();
+            }
+            appendFlg = true;
+          })
+    })
+  </script>
+  
+        <script type="text/javascript">
+          window.doctoc = {
+            pubID: "1634",
+            tpcID: "601",
+            
+              prefix: "管理服务",
+              prefixUrl: "/zh-cn/server/latest/publish-services/windows/",
+          
+            hideToc: false
+          }
+        </script>
+
+        <script type="text/javascript" src="../../../../../zh-CN/server/latest/publish-services/windows/1634.js" ></script>
+        <script type="text/javascript" src="../../../../../zh-CN/cdn/calcite/js/protoc.js" ></script>
+        
+        
+
+  <noscript>
+        <p>
+            <a href="flisting.htm">flist</a>
+        </p>
+    </noscript>
+    <script type="text/javascript"></script>
+  
+  
+    
+    
+
+  </body>
+</html>

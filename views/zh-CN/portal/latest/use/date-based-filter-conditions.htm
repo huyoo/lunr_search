@@ -1,0 +1,550 @@
+
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>  <html class="ie lt-ie9 lt-ie8 lt-ie7 ie6" dir="ltr"> <![endif]-->
+<!--[if IE 7]>     <html class="ie lt-ie9 lt-ie8 ie7" dir="ltr"> <![endif]-->
+<!--[if IE 8]>     <html class="ie lt-ie9 ie8" dir="ltr"> <![endif]-->
+<!--[if IE 9]>     <html class="ie ie9" dir="ltr"> <![endif]-->
+<!--[if !IE]><!--> <html dir="ltr" lang="zh-CN"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>基于日期的过滤条件&mdash;Portal for ArcGIS | ArcGIS Enterprise 文档</title>
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+    <script>
+      var docConfig = {
+        locale: 'zh-CN'
+        ,localedir: 'zh-cn'
+        ,langSelector: ''
+        
+        ,relativeUrl: false
+        
+
+        ,searchformUrl: '/search/'
+        ,tertiaryNavIndex: ''
+
+        
+      };
+    </script>
+	 
+
+
+    
+    <!--[if lt IE 9]>
+      <script src="../../../../zh-CN/cdn/js/libs/html5shiv.js" type="text/javascript"></script>
+      <script src="../../../../zh-CN/cdn/js/libs/selectivizr-min.js" type="text/javascript"></script>
+      <script src="../../../../zh-CN/cdn/js/libs/json2.js" type="text/javascript"></script>
+      <script src="../../../../zh-CN/cdn/js/libs/html5shiv-printshiv.js" type="text/javascript" >
+
+    <![endif]-->
+
+     <!--[if lt IE 11]>
+    <script>
+      $$(document).ready(function(){
+        $$(".hideOnIE").hide();
+      });
+    </script>
+    <![endif]-->
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<link href="../../../../zh-CN/assets/img/favicon.ico" rel="shortcut icon" >
+	<link href="../../../../zh-CN/assets/css/screen.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/cdn/calcite/css/documentation.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/assets/css/print.css" media="print" type="text/css" rel="stylesheet" />
+
+	<!--
+	<link href="../../../../zh-CN/assets/css/screen_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/assets/css/documentation/base_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/assets/css/print_l10n.css" media="print" type="text/css" rel="stylesheet" />
+	-->
+	
+	
+		<script src="../../../../zh-CN/cdn/js/libs/jquery.1.9.1.min.js" type="text/javascript"></script>
+	
+	<script src="../../../../zh-CN/cdn/js/libs/jquery.cookie.js" type="text/javascript"></script>
+	<link href="../../../../zh-CN/cdn/css/colorbox.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/cdn/css/colorbox_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<script src="../../../../zh-CN/cdn/js/libs/jquery.colorbox-min.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/assets/js/video-init.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/assets/js/sitecfg.js" type="text/javascript"></script>
+	
+		<script src="../../../../zh-CN/assets/js/signIn.js" type="text/javascript"></script>
+	
+
+	<!--- Language Picker -->
+	<script src="../../../../zh-CN/assets/js/locale/l10NStrings.js" type="text/javascript"></script>
+	
+		 
+	
+
+	<script src="../../../../zh-CN/assets/js/calcite-web.js" type="text/javascript"></script>
+
+
+
+  <!--- search MD -->
+    <META name="description" content="了解如何创建基于日期的过滤器。"><META name="last-modified" content="2019-12-6"><META name="product" content="arcgis-portal-windows,arcgis-portal-linux,arcgis-enterprise-windows,arcgis-enterprise-linux"><META name="sub_category" content="Portal for ArcGIS"><META name="search-collection" content="help"><META name="content_type_label" content="帮助主题"><META name="sub_category_label" content="Portal for ArcGIS"><META name="search-category" content="help-general"><META name="subject_label" content="PORTAL,服务,SERVER"><META name="version" content="10.8"><META name="content_type" content="Help Topic"><META name="subject" content="PORTAL,SERVICES,SERVER"><META name="content-language" content="zh-cn">
+    <!--- search MD -->
+
+  
+  <script src="../../../../zh-CN/assets/js/switchers/portal-1.js" type="text/javascript"></script>
+  
+      
+
+</head>
+
+<!--
+      pub: GUID-7B47163B-CE1B-465F-BEEE-4DADDB8DFF09=37
+      tpc: GUID-1A9390E9-E335-4BBB-AFAB-13D0E4F29A66=3
+      -->
+
+
+<!-- variable declaration, if any -->
+<!-- can change following macro to set variable once we are on Jinja 2.8 -->
+
+
+
+
+
+<body class="claro zh-CN server">
+  
+
+  <!-- Drawer location -->
+  <div class="drawer drawer-left js-drawer" data-drawer="top-nav">
+        <nav class="drawer-nav" role="navigation">
+          <aside class="side-nav">
+            <h2 class="side-nav-title">Arc<span>GIS</span> Enterprise</h2>
+            <form id="helpSearchForm" class="margin-left-half margin-right-half leader-half trailer-half drawer-search-form" method="GET">
+              <input type="search" name="q"  placeholder="搜索 ArcGIS Enterprise 帮助">
+              <input type="hidden" name="collection" value="help" />
+              <input type="hidden" name="product" value="arcgis-portal-windows" />
+              <input type="hidden" name="version" value="10.8" />
+              <input type="hidden" name="language" value="zh-CN" />
+            </form>    
+             <a id="nav-portal" data-langlabel="portal" href="../../../../zh-CN/portal/" class="side-nav-link">Portal</a>
+             
+            <a id="all-servers" data-langlabel="all-servers" href="../../../../zh-CN/server/" class="side-nav-link">所有服务器</a>
+            <a id="gis-server" data-langlabel="gis-server" href="../../../../zh-CN/server/" class="side-nav-link">GIS Server</a>
+            <a id="image-server" data-langlabel="image-server" href="../../../../zh-CN/image/" class="side-nav-link">Image Server</a>
+            <a id="geo-analytics-server" data-langlabel="geo-analytics-server" href="../../../../zh-CN/geoanalytics/" class="side-nav-link">GeoAnalytics Server</a>
+            <a id="geoevent-server" data-langlabel="geoevent-server" href="../../../../zh-CN/geoevent/" class="side-nav-link">GeoEvent Server</a>
+            <a id="notebook-server" data-langlabel="notebook-server" href="../../../../zh-CN/notebook/" class="side-nav-link">Notebook Server</a>
+            <a id="nav-data-store" data-langlabel="data-store" href="../../../../zh-CN/data-store/" class="side-nav-link">Data Stores</a>
+            <a id="nav-cloud" data-langlabel="cloud" href="../../../../zh-CN/cloud/" class="side-nav-link">云</a>
+            <a id="nav-apps" data-langlabel="apps" href="../../../../zh-CN/apps/" class="side-nav-link">应用程序</a>
+            <a id="nav-doc" data-langlabel="documentation" href="../../../../zh-CN/documentation/" class="side-nav-link">文档</a>
+
+          </aside>
+        </nav>
+    </div>
+
+    <!-- user navigation collapses to drawer on mobile -->
+    
+    <div class="drawer drawer-right js-drawer hide-if-logged-out logged-in-navigation" data-drawer="user-nav">
+      <nav class="drawer-nav">
+        <aside class="side-nav">
+          <a class="side-nav-link agolProfile" href="#">我的个人资料</a>
+          <a class="side-nav-link icon-ui-sign-out js-log-out" href="#">登出</a>
+        </aside>
+      </nav>
+    </div>
+    
+<!-- End of drawer -->
+
+  
+  <div class="wrapper">
+      <!--googleoff: all-->
+
+      <header class="top-nav" data-skin="learn">
+        <a class="skip-to-content" href="#skip-to-content">Skip To Content</a>
+        <div class="grid-container">
+          <div class="column-24">
+
+
+            <!--<div class="top-nav-title-wrapper text-center ">-->
+              <a href='../../../../zh-CN/' class="top-nav-title tablet-hide"><span>Arc</span>GIS  Enterprise</a>
+              <a href='../../../../zh-CN/' class="icon-ui-menu top-nav-title js-drawer-toggle tablet-show" data-drawer="top-nav"><span>Arc</span>GIS Enterprise</a>
+            <!--</div> -->
+
+          
+            <nav role="navigation" class="top-nav-list left tablet-hide">
+              <a id="nav-portal" data-langlabel="portal" href="../../../../zh-CN/portal/" class="top-nav-link">Portal</a>
+
+                <div class="dropdown js-dropdown ">
+                  <a class="top-nav-link js-dropdown-toggle" tabindex="0" aria-haspopup="true" aria-expanded="false" href="#">Servers</a>
+                  <nav class="dropdown-menu featured" role="menu">
+                    <ul class="dropdown-sublist-featured">
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/get-started/latest/windows/additional-server-deployment.htm" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path  d="M42.92 6.1H4.12v8.566l.833.832-.835.833-.018 7.332.845.847-.825.824V33.9h25v5.2h-2v1.075H8.02v.8h19.1v.925h4.8v-.925H40v-.8h-8.08V39.1h-2v-5.2h13v-8.566l-.834-.834.835-.834v-7.332l-.835-.834.835-.834zm-11.8 35h-3.2v-1.2h3.2zm11-8H4.92v-7.434l.767-.766h35.668l.765.766zm0-9.766l-.766.766H5.666l-.766-.767.017-6.669.766-.764h35.671l.766.766zm0-9l-.766.766H5.687l-.766-.766V6.9h37.2zM19 11.9h-2v-.8h2zm-4 0h-2v-.8h2zm-4 0H9v-.8h2zm6 8.2h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9zm8 9h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9z"/></svg></span>
+                          <span class="sublink-text">所有服务器</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/server/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M45.98 33.575a.616.616 0 0 0-.335-.51l-3.362-2.03 3.362-2.031a.556.556 0 0 0 0-1.02l-11.1-6.704a1.293 1.293 0 0 0-1.112 0L22.33 27.982a.556.556 0 0 0 0 1.02l3.36 2.03-3.358 2.03a.556.556 0 0 0-.002 1.021l3.322 2.006-3.324 2.008a.555.555 0 0 0 .002 1.017l11.102 6.703a1.25 1.25 0 0 0 1.11.002l11.104-6.706a.556.556 0 0 0 0-1.02l-3.32-2.006 3.318-2.004a.607.607 0 0 0 .335-.509zM33.837 21.97c.026-.01.286-.005.29-.005l10.814 6.53-10.8 6.523c-.028.01-.284.005-.294.006l-10.813-6.53zm11.105 16.636l-10.8 6.523a2.564 2.564 0 0 1-.295.006l-10.81-6.529 3.39-2.047 7.004 4.23a1.083 1.083 0 0 0 .557.131 1.101 1.101 0 0 0 .554-.13l7.01-4.233zM34.14 40.098a2.545 2.545 0 0 1-.294.006l-10.812-6.53 3.43-2.073 6.97 4.208a1.25 1.25 0 0 0 1.107-.001l6.966-4.206 3.431 2.073zM9 8H7V7h2zm8 8h-2v-1h2zm-4-8h-2V7h2zm4 0h-2V7h2zm-4 8h-2v-1h2zm7.316 11.1H3.9v-6.434l.766-.766h35.668l.766.766v2.12l.8.483v-2.935l-.826-.826.826-.845v-6.329l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9h16.88a2.632 2.632 0 0 1 .336-.8zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zm0 8v-5.668l.766-.766h35.668l.766.766v5.67l-.746.764H4.666zM15 24v-1h2v1zm-4 0v-1h2v1zm-2-8H7v-1h2zm-2 8v-1h2v1z"/></svg></span>
+                          <span class="sublink-text">GIS Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/image/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 8h-2V7h2zm-4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm8 8h-2v1h2zm-8 0H7v1h2zm4 9v-1h-2v1zm-4 0v-1H7v1zm8 0v-1h-2v1zm4 3.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V21h-.8v-.334l-.766-.766H4.666l-.766.766V27.1H21zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zm40.234 4v21.8H23.1V23.1zm-.8 16.366L39.466 44.1h2.868l1.766-1.766zm-20.2-9.932l5.634-5.634h-2.868L23.9 26.666zm6.2-5.068L24.466 30.1h2.868l2.766-2.766zM28.466 30.1H30.1v-1.634zm2.434 0h6.2v-6.2h-6.2zm-7 7h6.2v-6.2h-6.2zm7 0h6.2v-6.2h-6.2zm0 6.434l5.634-5.634h-2.868L30.9 40.666zm7-7l5.634-5.634h-2.868L37.9 33.666zm1.634-5.634H37.9v1.634zm-8.634 7v1.634l1.634-1.634zm.566 6.2h2.868l2.766-2.766v-2.868zm6.434-3.566l2.634-2.634H37.9zM35.466 44.1H37.1v-1.634zm2.434 0h.434l5.766-5.766V37.9h-2.434L37.9 41.666zm6.2-8.634L42.466 37.1H44.1zm0-4L38.466 37.1h2.868l2.766-2.766zm0-7.566h-6.2v6.2h6.2zm-20.2 0v1.634l1.634-1.634zm0 20.2h6.2v-6.2h-6.2zm20.2 0v-.634l-.634.634z"/></svg></span>
+                          <span class="sublink-text">Image Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/geoanalytics/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 16h-2v-1h2zm-8 8v-1H7v1zm8 0v-1h-2v1zM13 7h-2v1h2zm4 0h-2v1h2zM9 7H7v1h2zm21.45 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V27.9h-1.464l-.801-.8H41.1v-6.434l-.766-.766H4.666l-.766.766V27.1h27.15zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM13 24v-1h-2v1zm0-9h-2v1h2zm-4 0H7v1h2zm26.672 27.148A1.87 1.87 0 0 1 35.9 43a1.91 1.91 0 1 1-3.763-.222l-9.845-3.414A1.88 1.88 0 0 1 21 39.9a1.9 1.9 0 1 1 1.474-3.084l4.692-2.346A1.878 1.878 0 0 1 27.1 34a1.902 1.902 0 0 1 1.9-1.9 1.867 1.867 0 0 1 .781.191l3.788-5.05A1.88 1.88 0 0 1 33.1 26a1.9 1.9 0 1 1 3.491 1.026l4.889 4.888c-.069.056-.144.1-.21.162a3.986 3.986 0 0 0-.358.402l-4.883-4.883A1.889 1.889 0 0 1 35 27.9a1.867 1.867 0 0 1-.781-.191l-3.788 5.049a1.868 1.868 0 0 1 .437.965l9.204.614c-.018.11-.049.218-.058.33A3.93 3.93 0 0 0 40 35c0 .046.01.09.01.135l-9.185-.612A1.913 1.913 0 0 1 29 35.9a1.889 1.889 0 0 1-1.474-.716l-4.692 2.346a1.878 1.878 0 0 1 .066.47 1.9 1.9 0 0 1-.105.625c-.007.02-.022.036-.03.056l9.63 3.34a1.87 1.87 0 0 1 2.786-.505l5.415-4.437c.067.108.127.22.204.322a3.9 3.9 0 0 0 .292.306zM33.9 26a1.092 1.092 0 0 0 .43.872 1.12 1.12 0 0 0 1.42-.068A1.1 1.1 0 1 0 33.9 26zm-6 8a1.1 1.1 0 0 0 2.196.093 1.135 1.135 0 0 0-.426-.965A1.087 1.087 0 0 0 29 32.9a1.101 1.101 0 0 0-1.1 1.1zm-5.8 4a1.098 1.098 0 1 0-.06.362A1.101 1.101 0 0 0 22.1 38zm13 5a1.1 1.1 0 1 0-2.2 0 1.1 1.1 0 0 0 2.2 0zm10.8-8a1.9 1.9 0 1 1-3.8 0c0-.053.003-.105.007-.158A1.9 1.9 0 0 1 45.9 35zm-.8 0a1.1 1.1 0 0 0-2.196-.093 1.153 1.153 0 0 0 .216.752A1.1 1.1 0 0 0 45.1 35z"/></svg></span>
+                          <span class="sublink-text">GeoAnalytics Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/geoevent/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M13 8h-2V7h2zm4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm12.418 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826v2.117c-.259-.177-.53-.337-.8-.497v-1.288l-.766-.766H4.666l-.766.766V27.1h17.933c-.148.26-.283.53-.415.8zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM9 24v-1H7v1zm4-9h-2v1h2zm0 9v-1h-2v1zm-4-9H7v1h2zm8 9v-1h-2v1zm16.9 2h-.8v8.9H39v-.8h-5.1zm.1-3.901a11.9 11.9 0 1 0 11.9 11.9 11.914 11.914 0 0 0-11.9-11.9zm0 23a11.1 11.1 0 1 1 11.1-11.1 11.112 11.112 0 0 1-11.1 11.1z"/></svg></span>
+                          <span class="sublink-text">GeoEvent Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/notebook/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M22 27.1H3.9v-6.434l.766-.766h18.576a5.262 5.262 0 0 1 .83-.8H4.666l-.766-.766v-5.668l.766-.766h35.668l.766.766V18h.8v-5.666l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9H22zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zM9 8H7V7h2zm8 0h-2V7h2zm-4 0h-2V7h2zm2 16v-1h2v1zm-4 0v-1h2v1zm-4 0v-1h2v1zm0-8v-1h2v1zm8 0v-1h2v1zm-4 0v-1h2v1zm18.9 8.1h-1.8v1.8h1.8zm-.8 1h-.2v-.2h.2zm15.498-4.48a2.727 2.727 0 0 0-1.62-.5v-.02H27.25a3.154 3.154 0 0 0-3.15 3.15V38.1h-1.68a3.386 3.386 0 0 0-2.872 1.58 3.49 3.49 0 0 0-.157 3.419 3.241 3.241 0 0 0 2.954 1.801h15.161a3.404 3.404 0 0 0 3.394-3.4V26.9h5v-3.65a3.224 3.224 0 0 0-1.302-2.63zM22.345 44.1a2.44 2.44 0 0 1-2.23-1.341 2.706 2.706 0 0 1 .11-2.65A2.588 2.588 0 0 1 22.42 38.9h12.89a3.395 3.395 0 0 0 0 5.2zM40.1 23.192V41.5a2.6 2.6 0 1 1-2.6-2.6v-.8H24.9V23.25a2.352 2.352 0 0 1 2.35-2.35h13.795a3.183 3.183 0 0 0-.945 2.292zm5 2.908h-4.2v-2.908a2.274 2.274 0 0 1 1.44-2.18 1.944 1.944 0 0 1 1.791.259 2.423 2.423 0 0 1 .97 1.979zm-17.1 5h9v.8h-9zm0 3h7v.8h-7zm0-6h9v.8h-9zm4-3h5v.8h-5z"/></svg></span>
+                          <span class="sublink-text">Notebook Server</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+
+              <a id="nav-data-store" data-langlabel="data-store" href="../../../../zh-CN/data-store/" class="top-nav-link">Data Stores</a>
+              <a id="nav-cloud" data-langlabel="cloud" href="../../../../zh-CN/cloud/" class="top-nav-link">云</a>
+              <a id="nav-apps" data-langlabel="apps" href="../../../../zh-CN/apps/" class="top-nav-link">应用程序</a>
+            </nav>
+
+
+            
+            
+            
+
+            <div class="margin-left-1 top-nav-list right hide-if-logged-in logged-out-navigation">
+               
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+              
+              <a data-langlabel="sign-in" id="login-link" class="icon-ui-user top-nav-link link-blue login-link" href="#">登录</a>
+              
+            </div>
+
+            
+            <nav class="margin-left-1 top-nav-list right hide-if-logged-out logged-in-navigation">
+              
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+             
+              <div class="dropdown js-dropdown right">
+
+                <div class="tablet-show top-nav-link">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a href="#" data-drawer="user-nav" class="user-nav-name js-drawer-toggle" data-first-name></a>
+                </div>
+
+                <div class="tablet-hide top-nav-link js-dropdown-toggle">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a class="user-nav-name top-nav-dropdown dropdown-btn" data-first-name>&nbsp;</a>
+                </div>
+
+                <nav class="dropdown-menu dropdown-right">
+                
+                  <a class="dropdown-link agolProfile" id="agolProfile" href="#">我的个人资料</a>
+                  <a class="dropdown-link js-log-out" id="agolLogout" href="#">登出</a>
+                </nav>
+              </div>
+            </nav>
+            
+
+            
+          </div>
+        </div>
+      </header>
+
+      <div class="js-search search-overlay">
+        <div class="search-content" role="dialog" aria-labelledby="search">
+          <form method="GET" id="helpSearchForm">
+            <label>
+              搜索 ArcGIS Enterprise 帮助
+              <div class="search-bar">
+                <input type="search" name="q"  placeholder="搜索 ArcGIS Enterprise 帮助" class="search-input js-search-input">
+                <input type="hidden" name="collection" value="help" />
+                <input type="hidden" name="product" value="arcgis-portal-windows" />
+                <input type="hidden" name="version" value="10.8" />
+                <input type="hidden" name="language" value="zh-CN" />
+              </div>
+            </label>
+            <input type="hidden" name="relativePath" value="../../../../" /><button type="submit" class="btn btn-large right">搜索</button>
+          </form>
+        </div>
+      </div>
+
+      <!--googleon: all-->
+
+      <div id="skip-to-content">
+        <!--googleoff: all-->
+        <header class="sub-nav sub-nav-learn">
+          <div class="grid-container">
+            
+            <div class="column-24">
+              <div style="display:table;" class="sdk-home-banner">
+                <div class="sdk-home-banner-content">
+                  <h1 class="sub-nav-title link-white">Portal for ArcGIS</h1>
+                </div>
+              </div>
+            </div>
+
+            <div class="column-24">
+              <nav class='sub-nav-list tablet-hide'><a class="sub-nav-link" href="../../../../zh-CN/portal/" target="_top" title="Portal for ArcGIS 主页">主页</a><a class="sub-nav-link is-active" href="../../../../zh-CN/portal/latest/use/" target="_top" title="使用 Portal for ArcGIS">使用</a><a class="sub-nav-link" href="../../../../zh-CN/portal/latest/administer/windows/" target="_top" title="安装、管理和保护 Portal for ArcGIS">管理</a></nav><select class='tablet-show select-full trailer-half js-select-nav'><option value="../../../../zh-CN/portal/">主页</option><option selected="true" value="../../../../zh-CN/portal/latest/use/">使用</option><option value="../../../../zh-CN/portal/latest/administer/windows/">管理</option></select>
+            </div>
+
+          </div>
+        </header>
+        <!--googleon: all-->
+       
+        <!-- content goes here -->
+        <div class="grid-container ">
+          
+
+            
+              
+  <!--BREADCRUMB-BEG--><div id="bigmac" class="sticky-breadcrumbs trailer-2" data-spy="affix" data-offset-top="180"> </div><!--BREADCRUMB-END-->
+  <!--googleoff: all-->
+    <div class="column-5 tablet-column-12 trailer-2 ">
+      <aside class="js-accordion accordion reference-index" aria-live="polite" role="tablist">
+        <div></div>
+      </aside>
+
+      <div class="js-sticky scroll-show tablet-hide leader-1 back-to-top" data-top="0" style="top: 0px;">
+        <a href="#" class="btn btn-fill btn-clear">返回顶部</a>
+      </div>
+    </div>
+  <!--googleon: all-->
+  
+            
+            
+            
+	
+		<div class="column-13  pre-1 content-section">
+	
+		<header class="trailer-1"><h1>基于日期的过滤条件</h1></header>
+
+		 
+	<!--googleoff: all-->
+	
+		
+				<aside id="main-toc-small" class="js-accordion accordion tablet-show trailer-1">
+			      <div class="accordion-section">
+			        <h4 class="accordion-title">在本主题中</h4>
+			        <div class="accordion-content list-plain">
+			          <ol class="list-plain pre-0 trailer-0"><li><a href="#GUID-8FD813DF-BC8E-458C-94DE-D5425724325C">固定日期条件</a></li><li><a href="#ESRI_SECTION1_5ED9498D753B486898E32AC70F0F243F">相对日期条件</a></li></ol>
+			        </div>
+			      </div>
+			     </aside>
+		
+    
+   <!--googleon: all-->
+
+
+		<main>
+			
+	
+    	
+    
+
+
+			
+<p id="GUID-D853FE72-4375-4CA6-8161-FF0D581754B0">日期由两个元素组成：日期和时间。当使用日期字段类型<a class="xref xref" href="../../../../zh-CN/portal/latest/use/filter-data.htm">配置过滤条件</a>时，通常可以创建两种类型的条件：<a class="xref xref" href="../../../../zh-CN/portal/latest/use/date-based-filter-conditions.htm#GUID-8FD813DF-BC8E-458C-94DE-D5425724325C">固定日期</a>和<a class="xref xref" href="../../../../zh-CN/portal/latest/use/date-based-filter-conditions.htm#ESRI_SECTION1_5ED9498D753B486898E32AC70F0F243F">相对日期</a>。</p><p id="GUID-7476DD7A-3300-4776-A893-609C95BDC2A0"></p><p id="GUID-F20084BC-79C7-4042-B0C7-154160FD6879"><div class="panel trailer-1 note" id="GUID-C1026C70-B1CC-4864-8040-0AD3F9415BCD"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-35EDE6B1-2227-402F-9B0C-730C31718DE7" ishcondition="agol_plat=portal">要按日期过滤要素，图层必须<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/server/latest/administer" href="../../../../zh-CN/server/latest/administer/windows/about-standardized-queries.htm">支持标准化 SQL 函数</a>。</p></div></p><p id="GUID-9D81EDD0-AD1C-4E64-A6C0-FFFB9AD3277D">针对日期进行过滤时，请以本地时区输入时间组件。在后台，您的仪表盘将检查目标图层的属性以获取时区信息。如果找到时区信息，将以该时区发送查询。这可能涉及将输入值转换为目标图层的时区。如果未找到时区信息，则仪表盘将在发送输入值之前将其转换为协调世界时间 (UTC)。</p><p id="GUID-83430AB1-96C3-46F6-B199-728363EBBDF6"><div class="panel trailer-1" id="GUID-359FAE1F-C7AD-441C-9EBD-E793448F6832"><h5 class="icon-ui-description trailer-0">提示：</h5><ul purpose="ul" id="UL_50620B90DD9C4982AAA2AFB5081EA1EC"><li purpose="li" id="LI_F292E612277B4DE989BA4E60DC6B9D93"><a class="xref xref" href="../../../../zh-CN/portal/latest/use/hosted-web-layers.htm">托管要素图层</a>中的<a class="xref xref" href="../../../../zh-CN/portal/latest/use/work-with-date-fields.htm#GUID-ABDDCCEB-8140-45A3-A1EC-C1EB7C242BF7">日期</a>始终以 UTC 格式存储。<a class="xref xref" href="../../../../zh-CN/portal/latest/use/publish-features.htm">发布</a>托管要素图层时，您可以指定源时区，并在托管过程中将日期值转换为 UTC。</li><li purpose="li" id="LI_62709D71226E4BE9B6118A659D3311D8">两者 <span class="ph"><a class="xref xref" esrisubtype="extrel" hrefpfx="https://pro.arcgis.com/zh-cn/pro-app/help/sharing" href="https://pro.arcgis.com/zh-cn/pro-app/help/sharing/overview/configure-service-parameters.htm">ArcGIS Pro</a></span> 和 <span class="ph"><a class="xref xref" esrisubtype="extrel" hrefpfx="https://desktop.arcgis.com/zh-cn/arcmap/latest/map" href="https://desktop.arcgis.com/zh-cn/arcmap/latest/map/publish-map-services/setting-map-service-properties.htm">ArcMap</a></span> （10.4 及更高版本）允许在发布服务时设置时区信息，该服务引用存储在<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/server/latest/manage-data" href="../../../../zh-CN/server/latest/manage-data/windows/overview-register-data-with-arcgis-server.htm">注册企业级数据库或地理数据库</a>中的数据。</li></ul></div></p><section class="section1 padded-anchor" id="GUID-8FD813DF-BC8E-458C-94DE-D5425724325C" purpose="section1"><h2>固定日期条件</h2><p id="GUID-4C756886-7E1A-437C-93F7-EE976CB31F18">固定日期过滤条件包括特定日期值。输入该值的方法包括：从<span class="uicontrol">值</span>选项卡上的日期选取器中选择一个日期，或在<span class="uicontrol">字段</span>选项卡上选择另一个日期字段。选择日期字段的工作方式与输入特定日期值相同，可基于字段的数据更改进行更新。<figure class="fig" href="#"><img src="GUID-87DDC12F-D61F-4B22-A396-59A842226D54-web.png" alt="固定日期过滤器的输入值选项" title="固定日期过滤器的输入值选项"></figure><div class="panel trailer-1 note" id="GUID-D756B831-BD8B-4038-8309-A9F2D370017C"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-0CB3370B-59FE-4B9A-AB12-5B76F45D58BA">仅在元素的图层具有多个日期字段时才会显示<span class="uicontrol">字段</span>选项卡。</p></div></p><p id="GUID-FCB0E666-5901-4A38-8C65-29A0E88FE061"> 固定日期过滤条件仅可使用以下<a class="xref xref" href="../../../../zh-CN/portal/latest/use/filter-data.htm#ESRI_SECTION1_CF20FA7BCB724B30B7C7AD7D9B873818">运算符</a>创建：
+<ul purpose="ul" id="UL_5CB45271AA544AE184BF9856B05E8026"><li purpose="li" id="LI_9F743FB3E3034DECBF42B4D1BF2BDDD0">等于</li><li purpose="li" id="LI_9EB3C32D4A3C4FE89B04152E4422BFD0">不等于</li><li purpose="li" id="LI_A428B49193E840B8AD4F7492EA655EBF">早于</li><li purpose="li" id="LI_8FA3EAFD564D458DBDAA183141A6710D">等于或早于</li><li purpose="li" id="LI_2867CA135A794E1A88ED02674797CEE9">晚于</li><li purpose="li" id="LI_8D324D2C69B542D68659B21331E0740C">等于或晚于</li></ul></p><p id="GUID-C5622A5F-7111-40FA-BDDE-A2EF9AD02A35"> <div class="panel trailer-1 note" id="GUID-DB07C421-252E-4B99-B199-E2F338BECE00"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-355D3899-C6A1-4268-AA2E-4F0607881296"> 通过创建具有固定日期的单个过滤器并使用逻辑运算符<a class="xref xref" href="../../../../zh-CN/portal/latest/use/filter-data.htm#ESRI_SECTION1_E9B250E6EC96432990BB9FD6502A619F">进行组合</a>，可以创建具有一系列固定日期的固定日期过滤条件。</p></div></p></section><section class="section1 padded-anchor" id="ESRI_SECTION1_5ED9498D753B486898E32AC70F0F243F" purpose="section1"><h2>相对日期条件</h2><p id="GUID-8136E277-FF19-4DAF-84AE-05D3747E3153">相对日期过滤条件包括一系列日期值。范围可以限定到或包括当前时刻（即现在），或者可以是预定义时间段（例如，上周）。您可以输入的范围或限定类型取决于您选取的运算符。<h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><thead><tr><th colspan="1">运算符</th><th colspan="1">限定类型</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-E8E60028-B269-43A8-BF22-58DA62D1010D">在过去</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-E5A24A95-1017-4420-A379-A44D80BD7D93">现在</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-59FEE993-C640-4CDA-A4D6-CA0CE31F303B">早于过去</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-00B17763-8730-45F4-90AD-1ED1297E54F9">现在</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-DE33443E-6A98-413E-8F79-34A812D7ABA5"> 在未来</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-4D4915C7-7B99-4D05-A95A-2C33148FAF95">现在</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-438BFBBC-F053-457B-A177-8D2647DA736F"> 晚于未来</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-00538782-547F-49A4-BD20-7F4B66169192">现在</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-44B55CFB-15BB-4BD7-9105-EB4CFC7D8743">等于</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-4936F551-EF43-4AB5-B16E-8EC5022B364B">预定义</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-756D762E-5ED8-4729-9121-CA81833B4FB5">不等于</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-179C6A81-4A73-4BB6-9B93-286A477A6325">预定义</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-277D80FF-3E4D-4A17-813E-B6504DDB9D26">早于</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-6F8CA863-E066-4DA5-BE30-7CEA272B7970">预定义</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-34847653-CDE7-40F2-A29D-E138C3BA9E97">等于或早于</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-5DAE5BC9-FE43-433C-8FE3-BCFAD88B55C5">预定义</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-8C8DBB2C-4763-44DB-8F17-593DA1A6072A">晚于</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-B268002C-A8C1-490C-8FCA-EC0E91BD4DC3">预定义</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-B9E849DA-0BF6-4DE1-A339-651F9D88F04A">等于或晚于</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-6F49A194-E852-4803-945B-1316DF139C4F">预定义</p></td></tr></tbody><caption></caption></table></div></p><section class="section2 padded-anchor" id="ESRI_SECTION2_3860E7FE7BF54331ADC940562E6C17CE" purpose="section2"><h3>限定到现在</h3><p id="GUID-3C73DE82-EFA1-4E32-AFB5-58C8638A751E">使用限定到现在的日期范围的好处在于，该范围允许元素以数据可能的变化速率进行刷新。例如，配置为显示最近 30 分钟内数据的<a class="xref xref" href="../../../../zh-CN/portal/latest/use/indicator.htm">指示器</a>可能每分钟显示不同的数据，如果其图层的刷新频率同样如此频繁。但是，显示昨天数据的指示器仅在今天日期变化后（即午夜之后）才会显示不同数据，与图层的刷新间隔无关。</p><p id="GUID-CAA73B8B-0668-4C41-91D7-AA933852870B">选择与限定类型“现在”关联的运算符时，系统会提示您指定单位乘数 (N) 以及时间单位（例如，天、小时、分钟或秒）。例如，如果日期范围为 7 天，单位乘数为 7，则时间单位为天。</p><p id="GUID-A43F3EC5-275C-43D0-8939-C095C21EA69D"><figure class="fig" href="#"><img src="GUID-1E918E66-9EE1-4E0C-A1B9-565DE54DD836-web.png" alt="日期范围限定到现在" title="日期范围限定到现在"></figure>下表对这些时间单位进行了说明。请注意，所有日期值均以您的当地时区为准。<h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><colgroup width="*"></colgroup><thead><tr><th colspan="1">运算符</th><th colspan="1">时间单位</th><th colspan="1">描述</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="4" colspan="1"><p id="GUID-1B0F6C79-0911-42A8-957D-5F47E1BE126D"> 在过去</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-8F8C85D6-8EB0-45A6-8EA0-65427FD401B7"> 秒</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-11E2E9CC-B946-4656-A866-DCB12A26320A">到当前这一秒为止的 N 秒之前。也就是说，范围包括截至当前时间的这一秒。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-B5F37CDE-E8D8-414A-8751-F60E8B42954B"> 分钟</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-A0B6DD69-AC7B-4711-A4AC-3FA084FC2CE1">到当前这一分钟为止的 N 分钟之前。也就是说，范围包括截至当前时间的这一分钟。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-D3F4B6C6-2867-4DE0-9138-F1EE07892C9C">小时</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-430F9AAA-A465-4A9C-8720-080CB4361CE1">到当前这一小时为止的 N 小时之前。也就是说，范围包括截至当前时间的这一小时。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-D73891D4-E2D6-452A-996A-B29A86F8C7E2">天数</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-513DC323-6532-4C51-AD5B-11708BD93C11">从紧接今年的后一年的 1 月 1 日凌晨 12:00:00 开始， 到当前这一天为止的 N 天之前。也就是说，范围包括截至当前时间的今天。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="4" colspan="1"><p id="GUID-D7A925CB-F921-463A-9D45-276FF17DF305"> 早于过去</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-CF14E247-3E23-4EC5-BC43-3709D4A46E2C"> 秒</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-71D4A326-7310-450F-B12D-0D7C8BF0329A">从紧接今年的后一年的 1 月 1 日凌晨 12:00:00 开始， 当前这一秒之前的 N 秒并继续向前。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-2D45220F-9C55-4EAE-96DD-34A847DDF1F0"> 分钟</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-DA76D60B-F4F9-4307-8B8C-CD78B04AC34A">从紧接今年的后一年的 1 月 1 日凌晨 12:00:00 开始， 当前这一分钟之前的 N 分钟并继续向前。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-78336695-3158-485F-A1A3-FDD43FE66CF7">小时</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-24C8FDB4-213A-419C-AD5F-E9470D45AC76">从紧接今年的后一年的 1 月 1 日凌晨 12:00:00 开始， 当前这一小时之前的 N 小时并继续向前。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-D4DE787D-B17C-440B-8E0D-D2F44E325A9D">天数</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-E0B4CC50-E257-4E8E-9A4D-1AE19E4BDEF6">从紧接今年的后一年的 1 月 1 日凌晨 12:00:00 开始， 当前这一天之前的 N 天并继续向前。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="4" colspan="1"><p id="GUID-F5267C4E-3AE2-4192-B44C-F286AF0DD66D">在未来</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-445EEBED-E82F-46FB-8FEE-C0719C8E4F0F"> 秒</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-39B554B5-CB56-41A7-A13B-36C8240E1323">从现在开始的之后 N 秒。也就是说，范围包括当前时间之后的那一秒。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-7B82521C-15A8-4F14-84BA-87152C370D9C"> 分钟</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-7D0C6D61-6120-456D-A804-0225AA554F74">从现在开始的之后 N 分钟。也就是说，范围包括当前时间之后的那一分钟。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-6BC4A365-1558-4CDD-9C8D-6EF568AC8531">小时</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-41483C35-DD31-4910-8B00-98EB506C6846">从现在开始的之后 N 小时。也就是说，范围包括当前时间之后的那一小时。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-5065E1CC-07F5-4E6B-9F39-5CF6903C9A8E">天数</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-30EF0FC2-2875-4E13-92A8-6ED9BB0F8B1D">从现在开始，一直持续到下午 11:59:59。从现在开始的 N 天。也就是说，范围包括当前时间之后的今天。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="4" colspan="1"><p id="GUID-89E5D0C7-29F2-486F-8B5E-F77F4F09FE5E"> 晚于未来</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-DB0A4CE8-CC05-418F-8013-87AABBFC72C5"> 秒</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-A0EB660F-335F-4063-88BA-037302A02A53">从紧接今年的后一年的 1 月 1 日凌晨 12:00:00 开始， 当前这一秒之后的 N 秒并继续向后。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-83A332EB-013F-4BB4-A751-3D9361D65315"> 分钟</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-E32120DC-33E0-4CF8-8D6A-BDC02BA21E86">从紧接今年的后一年的 1 月 1 日凌晨 12:00:00 开始， 当前这一分钟之后的 N 分钟并继续向后。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-573D0D5B-3A4E-4B8A-B80A-4A6DB6025553"> 小时</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-1AF876F3-32E6-4689-ADA2-A7E24058DF20">从紧接今年的后一年的 1 月 1 日凌晨 12:00:00 开始， 当前这一小时之后的 N 小时并继续向后。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-09959E02-A341-4D44-8923-BCC83732961E"> 天数</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-B645D1CB-6267-4C12-9F11-C314B411DC1A">从紧接今年的后一年的 1 月 1 日凌晨 12:00:00 开始， 当前这一天之后的 N 天并继续向后。</p></td></tr></tbody><caption></caption></table></div></p></section><section class="section2 padded-anchor" id="ESRI_SECTION2_99F3EA66BB5D4295AF36A9F3B45AD655" purpose="section2"><h3>限定到预定义时间段</h3><p id="GUID-5B4A6985-6CE2-4B5E-851B-B69F0515424B">当您不需要像图层的刷新频率一样频繁地更新数据时，即当您希望使用限定到现在的日期范围时，适合使用限定到预定义时间段的日期范围。</p><p id="GUID-3FA9027C-21BD-48F8-9A5E-2859958F0AD3">选择与预定义限定类型关联的运算符时，需要在<span class="uicontrol">时间段</span>选项卡上指定一个间隔。<figure class="fig" href="#"><img src="GUID-5BBC52BF-2E6E-478A-B201-B4B325367109-web.png" alt="限定到预定义时间段的日期范围" title="限定到预定义时间段的日期范围"></figure></p><p id="GUID-0424FDCA-181A-4B51-ADA0-C8EE1303088A">这些时间段基于以下单位。请注意，开始和结束时间始终基于您的当地时区。<ul purpose="ul" id="UL_BF79FCB770484D49BF59819E08170F81"><li purpose="li" id="LI_296E05ADA11F47298A7159799FB1F855"><span class="uicontrol">天</span> - 一天从凌晨 12:00:00 开始，经过 24 小时，到下午 11:59:59 结束。对于军事时间，一天从 00:00:00 开始，经过 24 小时，到 23:59:59 结束。</li><li purpose="li" id="LI_B9B5C6EAB941456D8026E15C50D31187"><span class="uicontrol">周</span> - 一周从星期日凌晨 12:00:00 开始，连续经过 7 天，到第七天（即星期六）的下午 11:59:59 结束。</li><li purpose="li" id="LI_E90C4553329C41468F2B01726B9A29CB"><span class="uicontrol">月</span> - 根据公历定义一个月。每个月从本月第一天的凌晨 12:00:00（当地时间）开始， 并一直持续到本月最后一天的下午 11:59:59 （当地时间）。</li><li purpose="li" id="LI_B076431985534C2B91F5372A3FB191D5"><span class="uicontrol">季度</span> - 每年按季度划分，一季为三个月，如下所述。<ul purpose="ul" id="UL_AC7739CB15DB4942A84C918460DC073C"><li purpose="li" id="LI_E8D8F93C93164F82B073AB728DC77D66"><span class="uicontrol">第一季度</span> - 一月至三月</li><li purpose="li" id="LI_0A710E4A9A414D67933665361AAB1BAF"><span class="uicontrol">第二季度</span> - 四月至六月</li><li purpose="li" id="LI_BE7864A9404B47858F155F3F4FC9048A"><span class="uicontrol">第三季度</span> - 七月到九月</li><li purpose="li" id="LI_42C6FCE617C44E71832AB2C64520CE20"><span class="uicontrol">第四季度</span> - 十月到十二月</li></ul></li><li purpose="li" id="LI_6ECC9FF71DF54133BA31EF9D39CD5744"><span class="uicontrol">年</span> - 一年有 12 个月，从 1 月 1 日的凌晨 12:00:00 开始，到 12 月 31 日的下午 11:59:59 结束。</li></ul><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><thead><tr><th colspan="1">预定义时间段</th><th colspan="1">描述</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-BCE7C837-C841-4CBA-AEF8-A9D5876E1CB9">现在</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-C4033BEE-A8F7-4533-B2A1-8DA6261DA07E"> 当前日期和时间。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-70D9A3F0-BB9A-4F37-92F5-E6423EDAEAA5">今天</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-F6DA9E49-17EC-4CC7-8366-B66BA4A0A59A"> 从当前这一天的凌晨 12:00:00 开始，经过 24 小时。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-223A86DB-6EB3-45E5-BD99-31914BACA14D"> 昨天</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-B4651117-8156-4D2A-AA4C-BD5C9C3397BA"> 从前一天凌晨 12:00:00 开始，经过 24 小时。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-DAA394F8-C39F-4C10-A498-C77B99FF684E"> 明天</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-71BD2B2B-44C0-4414-8F7E-E991CAC83C05"> 从后一天凌晨 12:00:00 开始，经过 24 小时。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-EF2B0B0C-C9A0-4531-BAD1-88A1C44E4600"> 本周</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-10D05BB3-F35D-499F-8D69-C6387BBE8ADC"> 从当前这一周的第一天凌晨 12:00:00 开始，经过 7 天。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-2F7880C7-36F5-4E68-A236-534C0F2297BD"> 上周</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-28EB0F32-F7F0-4C68-91D4-E7390BBB87CC"> 在本周开始之前才结束的 7 天时间。上周从本周之前一周的第一天凌晨 12:00:00 开始，经过 7 天。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-39518623-A510-46A2-86F3-15DAF641AEB1">下周</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-3D737C9B-4BA7-43D8-B3DB-C9905F6374E3"> 在本周结束之后才开始的 7 天时间。下周从本周之后一周的第一天凌晨 12:00:00 开始，经过 7 天。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-435C44A4-7F7E-41A8-97BC-D1072FFECDDC"> 本月</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-911D5885-9C3E-4214-BD7B-3863C1BE0345"> 从当前这一月的第一天凌晨 12:00:00 开始，一直持续到该月最后一天的下午 11:59:59 结束。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-2CEFC892-7A1F-4D0E-B03F-0D803ACB695C"> 上个月</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-38314108-5204-4106-81B4-0181B56D4CB2"> 从本月之前一月的第一天凌晨 12:00:00 开始，一直持续到当月最后一天的下午 11:59:59 结束。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-DFBEA5F8-87BB-4870-A3F9-7CC56DF7AAC7"> 下个月</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-2298C7FC-A1BC-47B3-9B4B-907989711E67"> 从本月之后一月的第一天凌晨 12:00:00 开始，一直持续到当月最后一天的下午 11:59:59 结束。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-AA7779A7-1CBA-4436-8264-AE4686111457"> 本季度</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-A5EDAAF5-39A3-4A72-9227-6324DA10333A"> 从当前这一季度的第一天凌晨 12:00:00 开始，经过三个月，到该季度最后一天的下午 11:59:59 结束。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-E3019301-937C-4162-B23B-EAA890032E71">上个季度</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-C1230509-202B-4B80-9867-1270470B8F18"> 从本季度之前一季度的第一天凌晨 12:00:00 开始，经过三个月，到该季度最后一天的下午 11:59:59 结束。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-FAD1C5A9-8ED1-4AA0-B3ED-ED4CA388F92F"> 下个季度</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-6275A8D6-4A7A-4DD4-9451-F309B12132CD"> 从本季度之后一季度的第一天凌晨 12:00:00 开始，经过三个月，到该季度最后一天的下午 11:59:59 结束。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-24F2A540-C229-4EA9-AE7A-26F5AE28FB17">今年</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-CCA80FF6-128B-4CC2-890D-4090A7374BB1"> 从当前这一年的 1 月 1 日凌晨 12:00:00 开始， 持续 12 个月（截至 12 月 31 日下午 11:59:59）。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-E6747D36-DD41-4161-A5A3-A51B047A5C38"> 去年</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-D9CC6D59-65A5-4EF2-9124-CB57B5216F01"> 从本年度的前一年的 1 月 1 日凌晨 12:00:00 开始， 持续 12 个月（截至 12 月 31 日下午 11:59:59）。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-54CD9831-A83E-4876-81BE-033EC61D34F1">明年</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-009B0CAE-0353-48B0-8B36-EBACCEED86E0"> 从紧接今年的后一年的 1 月 1 日凌晨 12:00:00 开始， 持续 12 个月（截至 12 月 31 日下午 11:59:59）。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-DCE1151C-3618-4239-850B-6449D96282C1">年初至今</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-42AA76B3-2767-4A26-986F-D1B311B46AED"> 从当前这一年的 1 月 1 日凌晨 12:00:00 开始， 直到现在。该时间段与“今年”不同，因为后者可以包括未来日期，而“年初至今”不可以。</p></td></tr></tbody><caption></caption></table></div></p></section></section>
+			
+				<hr>
+				<!--googleoff: all-->
+				
+	
+        
+		    <p class="feedback right">
+		        <a id="afb" class="icon-ui-contact" href="/feedback/" data-langlabel="feedback-on-this-topic" >有关此主题的反馈?</a>
+		    </p>
+        
+	
+
+				<!--googleon: all-->
+			
+		</main>
+	</div>
+	
+	<!--googleoff: all-->
+	
+		
+			<div id="main-toc-large" class="column-5">
+			    <div class="panel font-size--2 tablet-hide trailer-1">
+			      <h5 class="trailer-half">在本主题中</h5>
+			      <ol class="list-plain pre-0 trailer-0"><li><a href="#GUID-8FD813DF-BC8E-458C-94DE-D5425724325C">固定日期条件</a></li><li><a href="#ESRI_SECTION1_5ED9498D753B486898E32AC70F0F243F">相对日期条件</a></li></ol>
+			    </div>
+			    
+			    
+	  		</div>
+		
+    
+   <!--googleon: all-->
+
+
+
+
+          
+        </div>
+        <!-- ENDPAGECONTENT -->
+
+      </div>
+
+    </div>  <!-- End of wrapper -->
+
+  <footer class="footer leader-3 link-dark-gray" role="contentinfo">
+    <div class="grid-container">
+      <div class="row">
+        <nav class="column-6">
+          <h6 data-langlabel="arcgis-for-server">Arc<span>GIS Enterprise</span></h6>
+          <ul class="list-plain">
+            <li><a data-langlabel="home" href="../../../../zh-CN/">主页</a></li>
+            <li><a data-langlabel="portal" href="../../../../zh-CN/portal/">Portal</a></li>
+            <li><a data-langlabel="server" href="../../../../zh-CN/server/">Server</a></li>
+            <li><a data-langlabel="data-store" href="../../../../zh-CN/data-store/">Data Stores</a></li>
+            <li><a data-langlabel="cloud" href="../../../../zh-CN/cloud/">云</a></li>
+            <li><a data-langlabel="apps" href="../../../../zh-CN/apps/">应用程序</a></li>
+            <li><a data-langlabel="documentation" href="../../../../zh-CN/documentation/">文档</a></li>
+          </ul>
+        </nav>
+
+        
+  <nav class="column-6">
+    <h6 data-langlabel="arcgis-platform">ArcGIS 平台</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="arcgis" href="//www.arcgis.com/">ArcGIS Online</a></li>
+      <li><a data-langlabel="arcgis-for-professionals" href="//pro.arcgis.com/">ArcGIS Pro</a></li>
+      <li><a data-langlabel="arcgis-for-server" href="//enterprise.arcgis.com/">ArcGIS Enterprise</a></li>
+      <li><a data-langlabel="arcgis-for-developers" href="https://developers.arcgis.com/">ArcGIS for Developers</a></li>
+      <li><a data-langlabel="arcgis-solutions" href="//solutions.arcgis.com/">ArcGIS Solutions</a></li>
+      <li><a data-langlabel="arcgis-marketplace" href="//marketplace.arcgis.com/">ArcGIS Marketplace</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <h6 data-langlabel="about-esri">关于 Esri</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="about-us" href="//www.esri.com/about-esri/">关于我们</a></li>
+      <li><a data-langlabel="careers" href="//www.esri.com/careers/">招贤纳士</a></li>
+      <li><a data-langlabel="insiders-blog" href="https://www.esri.com/about/newsroom/blog/">Esri 博客</a></li>
+      <li><a data-langlabel="user-conference" href="//www.esri.com/events/user-conference/index.html">用户大会</a></li>
+      <li><a data-langlabel="developer-summit" href="//www.esri.com/events/devsummit/index.html">开发者峰会</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <a class="esri-logo" href="//www.esri.com/" aria-label="Esri Home"></a>
+    <section class="footer-social-nav leader-1">
+            <a class="icon-social-twitter" aria-label="Esri on Twitter" href="https://twitter.com/Esri/"></a>
+            <a class="icon-social-facebook" aria-label="Esri on Facebook" href="https://www.facebook.com/esrigis/"></a>
+            <a class="icon-social-github" aria-label="Esri on GitHub" href="//esri.github.io/"></a>
+            <a class="icon-social-contact" aria-label="Contact Esri" href="//www.esri.com/about-esri/contact/"></a>
+    </section>
+	  
+  </nav>
+  
+  <div class="column-24 leader-1">
+    <p class="font-size--3"><a href="http://www.esri.com/legal/copyright-trademarks">Copyright &copy; 2019 Esri.</a> All rights reserved. | <a href="http://www.esri.com/legal/privacy/">隐私政策</a> | <a href="http://www.esri.com/legal/software-license">法律声明</a></p>
+  </div>
+  
+
+
+      </div>
+    </div>
+  </footer>
+  <!--googleoff: all-->
+
+  
+  
+	<script src="../../../../zh-CN/assets/js/init.js" type="text/javascript"></script>
+	<!--<script src="../../../../zh-CN/assets/js/drop-down.js" type="text/javascript"></script>-->
+	<script src="../../../../zh-CN/assets/js/search/searchform.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/cdn/js/link-modifier.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/cdn/js/sitewide.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/cdn/js/libs/highlight.pack.js" type="text/javascript"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+
+
+  
+    
+
+  <script src="../../../../zh-CN/cdn/js/affix.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    $(function () {
+          var appendFlg = true;
+
+          $("#bigmac")
+          .on("affixed.bs.affix", function (evt) {
+            if (appendFlg) {
+              $("<a class='crumb' href='#'>基于日期的过滤条件</a>").insertAfter ($("#bigmac nav a").last());
+              appendFlg = false;
+            }
+          })
+          .on ("affix-top.bs.affix", function(evt) {
+            if (!appendFlg) {
+              $("#bigmac nav a").last().remove();
+            }
+            appendFlg = true;
+          })
+    })
+  </script>
+  
+        <script type="text/javascript">
+          window.doctoc = {
+            pubID: "583",
+            tpcID: "684",
+            
+              prefix: "使用",
+              prefixUrl: "/zh-cn/portal/latest/use/",
+          
+            hideToc: false
+          }
+        </script>
+
+        <script type="text/javascript" src="../../../../zh-CN/portal/latest/use/583.js" ></script>
+        <script type="text/javascript" src="../../../../zh-CN/cdn/calcite/js/protoc.js" ></script>
+        
+        
+
+  <noscript>
+        <p>
+            <a href="flisting.htm">flist</a>
+        </p>
+    </noscript>
+    <script type="text/javascript"></script>
+  
+  
+    
+    
+
+  </body>
+</html>

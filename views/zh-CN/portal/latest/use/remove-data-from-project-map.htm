@@ -1,0 +1,543 @@
+
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>  <html class="ie lt-ie9 lt-ie8 lt-ie7 ie6" dir="ltr"> <![endif]-->
+<!--[if IE 7]>     <html class="ie lt-ie9 lt-ie8 ie7" dir="ltr"> <![endif]-->
+<!--[if IE 8]>     <html class="ie lt-ie9 ie8" dir="ltr"> <![endif]-->
+<!--[if IE 9]>     <html class="ie ie9" dir="ltr"> <![endif]-->
+<!--[if !IE]><!--> <html dir="ltr" lang="zh-CN"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>使用图层&mdash;Portal for ArcGIS | ArcGIS Enterprise 文档</title>
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+    <script>
+      var docConfig = {
+        locale: 'zh-CN'
+        ,localedir: 'zh-cn'
+        ,langSelector: ''
+        
+        ,relativeUrl: false
+        
+
+        ,searchformUrl: '/search/'
+        ,tertiaryNavIndex: ''
+
+        
+      };
+    </script>
+	 
+
+
+    
+    <!--[if lt IE 9]>
+      <script src="../../../../zh-CN/cdn/js/libs/html5shiv.js" type="text/javascript"></script>
+      <script src="../../../../zh-CN/cdn/js/libs/selectivizr-min.js" type="text/javascript"></script>
+      <script src="../../../../zh-CN/cdn/js/libs/json2.js" type="text/javascript"></script>
+      <script src="../../../../zh-CN/cdn/js/libs/html5shiv-printshiv.js" type="text/javascript" >
+
+    <![endif]-->
+
+     <!--[if lt IE 11]>
+    <script>
+      $$(document).ready(function(){
+        $$(".hideOnIE").hide();
+      });
+    </script>
+    <![endif]-->
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<link href="../../../../zh-CN/assets/img/favicon.ico" rel="shortcut icon" >
+	<link href="../../../../zh-CN/assets/css/screen.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/cdn/calcite/css/documentation.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/assets/css/print.css" media="print" type="text/css" rel="stylesheet" />
+
+	<!--
+	<link href="../../../../zh-CN/assets/css/screen_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/assets/css/documentation/base_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/assets/css/print_l10n.css" media="print" type="text/css" rel="stylesheet" />
+	-->
+	
+	
+		<script src="../../../../zh-CN/cdn/js/libs/jquery.1.9.1.min.js" type="text/javascript"></script>
+	
+	<script src="../../../../zh-CN/cdn/js/libs/jquery.cookie.js" type="text/javascript"></script>
+	<link href="../../../../zh-CN/cdn/css/colorbox.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/cdn/css/colorbox_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<script src="../../../../zh-CN/cdn/js/libs/jquery.colorbox-min.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/assets/js/video-init.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/assets/js/sitecfg.js" type="text/javascript"></script>
+	
+		<script src="../../../../zh-CN/assets/js/signIn.js" type="text/javascript"></script>
+	
+
+	<!--- Language Picker -->
+	<script src="../../../../zh-CN/assets/js/locale/l10NStrings.js" type="text/javascript"></script>
+	
+		 
+	
+
+	<script src="../../../../zh-CN/assets/js/calcite-web.js" type="text/javascript"></script>
+
+
+
+  <!--- search MD -->
+    <META name="description" content="您可以在内容窗口中访问图层和图层信息。"><META name="last-modified" content="2019-12-6"><META name="product" content="arcgis-portal-windows,arcgis-portal-linux,arcgis-enterprise-windows,arcgis-enterprise-linux"><META name="sub_category" content="Portal for ArcGIS"><META name="search-collection" content="help"><META name="content_type_label" content="帮助主题"><META name="sub_category_label" content="Portal for ArcGIS"><META name="search-category" content="help-general"><META name="subject_label" content="PORTAL,服务,SERVER"><META name="version" content="10.8"><META name="content_type" content="Help Topic"><META name="subject" content="PORTAL,SERVICES,SERVER"><META name="content-language" content="zh-cn">
+    <!--- search MD -->
+
+  
+  <script src="../../../../zh-CN/assets/js/switchers/portal-1.js" type="text/javascript"></script>
+  
+      
+
+</head>
+
+<!--
+      pub: GUID-7B47163B-CE1B-465F-BEEE-4DADDB8DFF09=37
+      tpc: GUID-4F756DF0-9FD3-49C2-A28C-3EA0AAB1CD2A=9
+      -->
+
+
+<!-- variable declaration, if any -->
+<!-- can change following macro to set variable once we are on Jinja 2.8 -->
+
+
+
+
+
+<body class="claro zh-CN server">
+  
+
+  <!-- Drawer location -->
+  <div class="drawer drawer-left js-drawer" data-drawer="top-nav">
+        <nav class="drawer-nav" role="navigation">
+          <aside class="side-nav">
+            <h2 class="side-nav-title">Arc<span>GIS</span> Enterprise</h2>
+            <form id="helpSearchForm" class="margin-left-half margin-right-half leader-half trailer-half drawer-search-form" method="GET">
+              <input type="search" name="q"  placeholder="搜索 ArcGIS Enterprise 帮助">
+              <input type="hidden" name="collection" value="help" />
+              <input type="hidden" name="product" value="arcgis-portal-windows" />
+              <input type="hidden" name="version" value="10.8" />
+              <input type="hidden" name="language" value="zh-CN" />
+            </form>    
+             <a id="nav-portal" data-langlabel="portal" href="../../../../zh-CN/portal/" class="side-nav-link">Portal</a>
+             
+            <a id="all-servers" data-langlabel="all-servers" href="../../../../zh-CN/server/" class="side-nav-link">所有服务器</a>
+            <a id="gis-server" data-langlabel="gis-server" href="../../../../zh-CN/server/" class="side-nav-link">GIS Server</a>
+            <a id="image-server" data-langlabel="image-server" href="../../../../zh-CN/image/" class="side-nav-link">Image Server</a>
+            <a id="geo-analytics-server" data-langlabel="geo-analytics-server" href="../../../../zh-CN/geoanalytics/" class="side-nav-link">GeoAnalytics Server</a>
+            <a id="geoevent-server" data-langlabel="geoevent-server" href="../../../../zh-CN/geoevent/" class="side-nav-link">GeoEvent Server</a>
+            <a id="notebook-server" data-langlabel="notebook-server" href="../../../../zh-CN/notebook/" class="side-nav-link">Notebook Server</a>
+            <a id="nav-data-store" data-langlabel="data-store" href="../../../../zh-CN/data-store/" class="side-nav-link">Data Stores</a>
+            <a id="nav-cloud" data-langlabel="cloud" href="../../../../zh-CN/cloud/" class="side-nav-link">云</a>
+            <a id="nav-apps" data-langlabel="apps" href="../../../../zh-CN/apps/" class="side-nav-link">应用程序</a>
+            <a id="nav-doc" data-langlabel="documentation" href="../../../../zh-CN/documentation/" class="side-nav-link">文档</a>
+
+          </aside>
+        </nav>
+    </div>
+
+    <!-- user navigation collapses to drawer on mobile -->
+    
+    <div class="drawer drawer-right js-drawer hide-if-logged-out logged-in-navigation" data-drawer="user-nav">
+      <nav class="drawer-nav">
+        <aside class="side-nav">
+          <a class="side-nav-link agolProfile" href="#">我的个人资料</a>
+          <a class="side-nav-link icon-ui-sign-out js-log-out" href="#">登出</a>
+        </aside>
+      </nav>
+    </div>
+    
+<!-- End of drawer -->
+
+  
+  <div class="wrapper">
+      <!--googleoff: all-->
+
+      <header class="top-nav" data-skin="learn">
+        <a class="skip-to-content" href="#skip-to-content">Skip To Content</a>
+        <div class="grid-container">
+          <div class="column-24">
+
+
+            <!--<div class="top-nav-title-wrapper text-center ">-->
+              <a href='../../../../zh-CN/' class="top-nav-title tablet-hide"><span>Arc</span>GIS  Enterprise</a>
+              <a href='../../../../zh-CN/' class="icon-ui-menu top-nav-title js-drawer-toggle tablet-show" data-drawer="top-nav"><span>Arc</span>GIS Enterprise</a>
+            <!--</div> -->
+
+          
+            <nav role="navigation" class="top-nav-list left tablet-hide">
+              <a id="nav-portal" data-langlabel="portal" href="../../../../zh-CN/portal/" class="top-nav-link">Portal</a>
+
+                <div class="dropdown js-dropdown ">
+                  <a class="top-nav-link js-dropdown-toggle" tabindex="0" aria-haspopup="true" aria-expanded="false" href="#">Servers</a>
+                  <nav class="dropdown-menu featured" role="menu">
+                    <ul class="dropdown-sublist-featured">
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/get-started/latest/windows/additional-server-deployment.htm" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path  d="M42.92 6.1H4.12v8.566l.833.832-.835.833-.018 7.332.845.847-.825.824V33.9h25v5.2h-2v1.075H8.02v.8h19.1v.925h4.8v-.925H40v-.8h-8.08V39.1h-2v-5.2h13v-8.566l-.834-.834.835-.834v-7.332l-.835-.834.835-.834zm-11.8 35h-3.2v-1.2h3.2zm11-8H4.92v-7.434l.767-.766h35.668l.765.766zm0-9.766l-.766.766H5.666l-.766-.767.017-6.669.766-.764h35.671l.766.766zm0-9l-.766.766H5.687l-.766-.766V6.9h37.2zM19 11.9h-2v-.8h2zm-4 0h-2v-.8h2zm-4 0H9v-.8h2zm6 8.2h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9zm8 9h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9z"/></svg></span>
+                          <span class="sublink-text">所有服务器</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/server/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M45.98 33.575a.616.616 0 0 0-.335-.51l-3.362-2.03 3.362-2.031a.556.556 0 0 0 0-1.02l-11.1-6.704a1.293 1.293 0 0 0-1.112 0L22.33 27.982a.556.556 0 0 0 0 1.02l3.36 2.03-3.358 2.03a.556.556 0 0 0-.002 1.021l3.322 2.006-3.324 2.008a.555.555 0 0 0 .002 1.017l11.102 6.703a1.25 1.25 0 0 0 1.11.002l11.104-6.706a.556.556 0 0 0 0-1.02l-3.32-2.006 3.318-2.004a.607.607 0 0 0 .335-.509zM33.837 21.97c.026-.01.286-.005.29-.005l10.814 6.53-10.8 6.523c-.028.01-.284.005-.294.006l-10.813-6.53zm11.105 16.636l-10.8 6.523a2.564 2.564 0 0 1-.295.006l-10.81-6.529 3.39-2.047 7.004 4.23a1.083 1.083 0 0 0 .557.131 1.101 1.101 0 0 0 .554-.13l7.01-4.233zM34.14 40.098a2.545 2.545 0 0 1-.294.006l-10.812-6.53 3.43-2.073 6.97 4.208a1.25 1.25 0 0 0 1.107-.001l6.966-4.206 3.431 2.073zM9 8H7V7h2zm8 8h-2v-1h2zm-4-8h-2V7h2zm4 0h-2V7h2zm-4 8h-2v-1h2zm7.316 11.1H3.9v-6.434l.766-.766h35.668l.766.766v2.12l.8.483v-2.935l-.826-.826.826-.845v-6.329l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9h16.88a2.632 2.632 0 0 1 .336-.8zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zm0 8v-5.668l.766-.766h35.668l.766.766v5.67l-.746.764H4.666zM15 24v-1h2v1zm-4 0v-1h2v1zm-2-8H7v-1h2zm-2 8v-1h2v1z"/></svg></span>
+                          <span class="sublink-text">GIS Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/image/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 8h-2V7h2zm-4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm8 8h-2v1h2zm-8 0H7v1h2zm4 9v-1h-2v1zm-4 0v-1H7v1zm8 0v-1h-2v1zm4 3.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V21h-.8v-.334l-.766-.766H4.666l-.766.766V27.1H21zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zm40.234 4v21.8H23.1V23.1zm-.8 16.366L39.466 44.1h2.868l1.766-1.766zm-20.2-9.932l5.634-5.634h-2.868L23.9 26.666zm6.2-5.068L24.466 30.1h2.868l2.766-2.766zM28.466 30.1H30.1v-1.634zm2.434 0h6.2v-6.2h-6.2zm-7 7h6.2v-6.2h-6.2zm7 0h6.2v-6.2h-6.2zm0 6.434l5.634-5.634h-2.868L30.9 40.666zm7-7l5.634-5.634h-2.868L37.9 33.666zm1.634-5.634H37.9v1.634zm-8.634 7v1.634l1.634-1.634zm.566 6.2h2.868l2.766-2.766v-2.868zm6.434-3.566l2.634-2.634H37.9zM35.466 44.1H37.1v-1.634zm2.434 0h.434l5.766-5.766V37.9h-2.434L37.9 41.666zm6.2-8.634L42.466 37.1H44.1zm0-4L38.466 37.1h2.868l2.766-2.766zm0-7.566h-6.2v6.2h6.2zm-20.2 0v1.634l1.634-1.634zm0 20.2h6.2v-6.2h-6.2zm20.2 0v-.634l-.634.634z"/></svg></span>
+                          <span class="sublink-text">Image Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/geoanalytics/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 16h-2v-1h2zm-8 8v-1H7v1zm8 0v-1h-2v1zM13 7h-2v1h2zm4 0h-2v1h2zM9 7H7v1h2zm21.45 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V27.9h-1.464l-.801-.8H41.1v-6.434l-.766-.766H4.666l-.766.766V27.1h27.15zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM13 24v-1h-2v1zm0-9h-2v1h2zm-4 0H7v1h2zm26.672 27.148A1.87 1.87 0 0 1 35.9 43a1.91 1.91 0 1 1-3.763-.222l-9.845-3.414A1.88 1.88 0 0 1 21 39.9a1.9 1.9 0 1 1 1.474-3.084l4.692-2.346A1.878 1.878 0 0 1 27.1 34a1.902 1.902 0 0 1 1.9-1.9 1.867 1.867 0 0 1 .781.191l3.788-5.05A1.88 1.88 0 0 1 33.1 26a1.9 1.9 0 1 1 3.491 1.026l4.889 4.888c-.069.056-.144.1-.21.162a3.986 3.986 0 0 0-.358.402l-4.883-4.883A1.889 1.889 0 0 1 35 27.9a1.867 1.867 0 0 1-.781-.191l-3.788 5.049a1.868 1.868 0 0 1 .437.965l9.204.614c-.018.11-.049.218-.058.33A3.93 3.93 0 0 0 40 35c0 .046.01.09.01.135l-9.185-.612A1.913 1.913 0 0 1 29 35.9a1.889 1.889 0 0 1-1.474-.716l-4.692 2.346a1.878 1.878 0 0 1 .066.47 1.9 1.9 0 0 1-.105.625c-.007.02-.022.036-.03.056l9.63 3.34a1.87 1.87 0 0 1 2.786-.505l5.415-4.437c.067.108.127.22.204.322a3.9 3.9 0 0 0 .292.306zM33.9 26a1.092 1.092 0 0 0 .43.872 1.12 1.12 0 0 0 1.42-.068A1.1 1.1 0 1 0 33.9 26zm-6 8a1.1 1.1 0 0 0 2.196.093 1.135 1.135 0 0 0-.426-.965A1.087 1.087 0 0 0 29 32.9a1.101 1.101 0 0 0-1.1 1.1zm-5.8 4a1.098 1.098 0 1 0-.06.362A1.101 1.101 0 0 0 22.1 38zm13 5a1.1 1.1 0 1 0-2.2 0 1.1 1.1 0 0 0 2.2 0zm10.8-8a1.9 1.9 0 1 1-3.8 0c0-.053.003-.105.007-.158A1.9 1.9 0 0 1 45.9 35zm-.8 0a1.1 1.1 0 0 0-2.196-.093 1.153 1.153 0 0 0 .216.752A1.1 1.1 0 0 0 45.1 35z"/></svg></span>
+                          <span class="sublink-text">GeoAnalytics Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/geoevent/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M13 8h-2V7h2zm4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm12.418 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826v2.117c-.259-.177-.53-.337-.8-.497v-1.288l-.766-.766H4.666l-.766.766V27.1h17.933c-.148.26-.283.53-.415.8zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM9 24v-1H7v1zm4-9h-2v1h2zm0 9v-1h-2v1zm-4-9H7v1h2zm8 9v-1h-2v1zm16.9 2h-.8v8.9H39v-.8h-5.1zm.1-3.901a11.9 11.9 0 1 0 11.9 11.9 11.914 11.914 0 0 0-11.9-11.9zm0 23a11.1 11.1 0 1 1 11.1-11.1 11.112 11.112 0 0 1-11.1 11.1z"/></svg></span>
+                          <span class="sublink-text">GeoEvent Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/notebook/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M22 27.1H3.9v-6.434l.766-.766h18.576a5.262 5.262 0 0 1 .83-.8H4.666l-.766-.766v-5.668l.766-.766h35.668l.766.766V18h.8v-5.666l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9H22zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zM9 8H7V7h2zm8 0h-2V7h2zm-4 0h-2V7h2zm2 16v-1h2v1zm-4 0v-1h2v1zm-4 0v-1h2v1zm0-8v-1h2v1zm8 0v-1h2v1zm-4 0v-1h2v1zm18.9 8.1h-1.8v1.8h1.8zm-.8 1h-.2v-.2h.2zm15.498-4.48a2.727 2.727 0 0 0-1.62-.5v-.02H27.25a3.154 3.154 0 0 0-3.15 3.15V38.1h-1.68a3.386 3.386 0 0 0-2.872 1.58 3.49 3.49 0 0 0-.157 3.419 3.241 3.241 0 0 0 2.954 1.801h15.161a3.404 3.404 0 0 0 3.394-3.4V26.9h5v-3.65a3.224 3.224 0 0 0-1.302-2.63zM22.345 44.1a2.44 2.44 0 0 1-2.23-1.341 2.706 2.706 0 0 1 .11-2.65A2.588 2.588 0 0 1 22.42 38.9h12.89a3.395 3.395 0 0 0 0 5.2zM40.1 23.192V41.5a2.6 2.6 0 1 1-2.6-2.6v-.8H24.9V23.25a2.352 2.352 0 0 1 2.35-2.35h13.795a3.183 3.183 0 0 0-.945 2.292zm5 2.908h-4.2v-2.908a2.274 2.274 0 0 1 1.44-2.18 1.944 1.944 0 0 1 1.791.259 2.423 2.423 0 0 1 .97 1.979zm-17.1 5h9v.8h-9zm0 3h7v.8h-7zm0-6h9v.8h-9zm4-3h5v.8h-5z"/></svg></span>
+                          <span class="sublink-text">Notebook Server</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+
+              <a id="nav-data-store" data-langlabel="data-store" href="../../../../zh-CN/data-store/" class="top-nav-link">Data Stores</a>
+              <a id="nav-cloud" data-langlabel="cloud" href="../../../../zh-CN/cloud/" class="top-nav-link">云</a>
+              <a id="nav-apps" data-langlabel="apps" href="../../../../zh-CN/apps/" class="top-nav-link">应用程序</a>
+            </nav>
+
+
+            
+            
+            
+
+            <div class="margin-left-1 top-nav-list right hide-if-logged-in logged-out-navigation">
+               
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+              
+              <a data-langlabel="sign-in" id="login-link" class="icon-ui-user top-nav-link link-blue login-link" href="#">登录</a>
+              
+            </div>
+
+            
+            <nav class="margin-left-1 top-nav-list right hide-if-logged-out logged-in-navigation">
+              
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+             
+              <div class="dropdown js-dropdown right">
+
+                <div class="tablet-show top-nav-link">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a href="#" data-drawer="user-nav" class="user-nav-name js-drawer-toggle" data-first-name></a>
+                </div>
+
+                <div class="tablet-hide top-nav-link js-dropdown-toggle">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a class="user-nav-name top-nav-dropdown dropdown-btn" data-first-name>&nbsp;</a>
+                </div>
+
+                <nav class="dropdown-menu dropdown-right">
+                
+                  <a class="dropdown-link agolProfile" id="agolProfile" href="#">我的个人资料</a>
+                  <a class="dropdown-link js-log-out" id="agolLogout" href="#">登出</a>
+                </nav>
+              </div>
+            </nav>
+            
+
+            
+          </div>
+        </div>
+      </header>
+
+      <div class="js-search search-overlay">
+        <div class="search-content" role="dialog" aria-labelledby="search">
+          <form method="GET" id="helpSearchForm">
+            <label>
+              搜索 ArcGIS Enterprise 帮助
+              <div class="search-bar">
+                <input type="search" name="q"  placeholder="搜索 ArcGIS Enterprise 帮助" class="search-input js-search-input">
+                <input type="hidden" name="collection" value="help" />
+                <input type="hidden" name="product" value="arcgis-portal-windows" />
+                <input type="hidden" name="version" value="10.8" />
+                <input type="hidden" name="language" value="zh-CN" />
+              </div>
+            </label>
+            <input type="hidden" name="relativePath" value="../../../../" /><button type="submit" class="btn btn-large right">搜索</button>
+          </form>
+        </div>
+      </div>
+
+      <!--googleon: all-->
+
+      <div id="skip-to-content">
+        <!--googleoff: all-->
+        <header class="sub-nav sub-nav-learn">
+          <div class="grid-container">
+            
+            <div class="column-24">
+              <div style="display:table;" class="sdk-home-banner">
+                <div class="sdk-home-banner-content">
+                  <h1 class="sub-nav-title link-white">Portal for ArcGIS</h1>
+                </div>
+              </div>
+            </div>
+
+            <div class="column-24">
+              <nav class='sub-nav-list tablet-hide'><a class="sub-nav-link" href="../../../../zh-CN/portal/" target="_top" title="Portal for ArcGIS 主页">主页</a><a class="sub-nav-link is-active" href="../../../../zh-CN/portal/latest/use/" target="_top" title="使用 Portal for ArcGIS">使用</a><a class="sub-nav-link" href="../../../../zh-CN/portal/latest/administer/windows/" target="_top" title="安装、管理和保护 Portal for ArcGIS">管理</a></nav><select class='tablet-show select-full trailer-half js-select-nav'><option value="../../../../zh-CN/portal/">主页</option><option selected="true" value="../../../../zh-CN/portal/latest/use/">使用</option><option value="../../../../zh-CN/portal/latest/administer/windows/">管理</option></select>
+            </div>
+
+          </div>
+        </header>
+        <!--googleon: all-->
+       
+        <!-- content goes here -->
+        <div class="grid-container ">
+          
+
+            
+              
+  <!--BREADCRUMB-BEG--><div id="bigmac" class="sticky-breadcrumbs trailer-2" data-spy="affix" data-offset-top="180"> </div><!--BREADCRUMB-END-->
+  <!--googleoff: all-->
+    <div class="column-5 tablet-column-12 trailer-2 ">
+      <aside class="js-accordion accordion reference-index" aria-live="polite" role="tablist">
+        <div></div>
+      </aside>
+
+      <div class="js-sticky scroll-show tablet-hide leader-1 back-to-top" data-top="0" style="top: 0px;">
+        <a href="#" class="btn btn-fill btn-clear">返回顶部</a>
+      </div>
+    </div>
+  <!--googleon: all-->
+  
+            
+            
+            
+	
+		<div class="column-13  pre-1 content-section">
+	
+		<header class="trailer-1"><h1>使用图层</h1></header>
+
+		 
+	<!--googleoff: all-->
+	
+		
+				<aside id="main-toc-small" class="js-accordion accordion tablet-show trailer-1">
+			      <div class="accordion-section">
+			        <h4 class="accordion-title">在本主题中</h4>
+			        <div class="accordion-content list-plain">
+			          <ol class="list-plain pre-0 trailer-0"><li><a href="#ESRI_SECTION1_3F7CBC44859C492AAA077F37B273630C">图层窗格</a></li><li><a href="#ESRI_SECTION1_797AD2A19B864AB0A110D1F79011E28F">从工程中移除图层</a></li><li><a href="#ESRI_SECTION1_C1B97572E6314A4D9257BED6066893BA">更改地图中的图层顺序</a></li><li><a href="#ESRI_SECTION1_D36FAA1B48A04FC5B00DD4C70D7FAED3">添加到设计图层</a></li><li><a href="#ESRI_SECTION1_4A5F9B89EC0845658BA38A93F938104D">更改设计图层符号、输入标注和默认值</a></li><li><a href="#ESRI_SECTION1_E4C582ADDF134AE89E139D0EBCBDA514">定义研究区域</a></li></ol>
+			        </div>
+			      </div>
+			     </aside>
+		
+    
+   <!--googleon: all-->
+
+
+		<main>
+			
+	
+    	
+    
+
+
+			
+<p id="GUID-08BCB4AA-9F38-4BA6-90CC-7F6205A1F983">当您单击工具栏左侧的<span class="uicontrol">内容</span>时，即会出现<span class="uicontrol">内容</span>窗口。该窗口包含以下三个窗格：</p><ul purpose="ul" id="UL_D9B5BC78F6DB4FDCAF4A1FDFDEFAB5DE"><li purpose="li" id="LI_FE3E0408E66C47EEBA924C47233CB440"><span class="uicontrol">图层</span> - 列出地图中的所有图层。</li><li purpose="li" id="LI_1AE2409246C746D39F60720BDF108224"><span class="uicontrol">图例</span> - 显示每个图层的关联符号。</li><li purpose="li" id="LI_FE3156FA76B04313A17DF625174858C8"><span class="uicontrol">作业</span> - 显示由分析工具创建的作业状态。</li></ul><p id="GUID-281831D8-B517-482D-81BF-F5BFDBB43B01">本主题介绍了<span class="uicontrol">图层</span>窗格中可用的图层相关功能。</p><section class="section1 padded-anchor" id="ESRI_SECTION1_3F7CBC44859C492AAA077F37B273630C" purpose="section1"><h2>图层窗格</h2><p id="GUID-4524F21D-9716-40A8-8E33-14D0B70C1B38"><span class="uicontrol">图层</span>窗格包含五种类别：活动方案、研究区域、数据图层、3D 图层和底图。<figure class="fig" href="#"><img src="GUID-9DE21945-28AD-490B-9561-6D3EE5AC3BD9-web.png" alt="图层窗格" title="图层窗格"></figure></p><p id="GUID-2D42833D-EC88-4B3F-813E-CB437A842288"><span class="uicontrol">活动方案</span>类别包含设计图层。设计图层是可在其中草绘、绘制和分割要素的图层。每个 <span class="ph">GeoPlanner</span> 工程均含有一个或多个在模板中定义的设计图层。可使用<span class="uicontrol">添加到设计图层</span>工具向工程中的现有设计图层组添加新图层。</p><p id="GUID-CBB79039-1E5E-4820-B330-7F6712B4CDB8"><span class="uicontrol">图层</span>组包含用于可视化和分析的图层。部分图层还可以用于仪表板中。可使用<span class="uicontrol">浏览</span>工具条上的<span class="uicontrol">添加数据</span>工具添加图层。</p><p id="GUID-11922065-9754-4FDC-9585-45C31CEAE31E"><span class="uicontrol">底图</span>将显示活动底图的名称。单击<span class="uicontrol">更改底图</span>工具以切换至其他底图。</p><p id="GUID-1DD7C36E-675C-4E67-B358-5ED5DADABDDD">在<span class="uicontrol">内容</span>窗口的<span class="uicontrol">图层</span>窗格中，单击图层旁边的齿轮图标将显示快捷菜单。</p><p id="GUID-89D2BA19-0717-4E6B-BBD0-36115C97CCF2"> <figure class="fig" href="#"><img src="GUID-0A0775FD-FF12-44D0-8D9C-093698F1AC32-web.png" alt="快捷菜单" title="快捷菜单"></figure></p><p id="GUID-1362515E-986D-4FE8-B7EA-34E2C9B717C4">该菜单列出了 <span class="ph">GeoPlanner</span> 中的图层相关功能。这些功能包括：</p><ul purpose="ul" id="UL_BE3E49BADD7A49269EEF7F0C8DCEC81F"><li purpose="li" id="LI_8ABBA77CACAE4D598FC6E5238CAEE1DE"><span class="uicontrol">缩放</span> - 将地图范围设置为所选图层范围。</li><li purpose="li" id="LI_E6014F15A8E24474818C01849D447065"><span class="uicontrol">透明度</span> - 设置所选图层的透明度。</li><li purpose="li" id="LI_872AEA4AC3824F42838330AB8144F7C0"><span class="uicontrol">可见范围</span> - 指明在图层中绘制内容的缩放级别。<div class="panel trailer-1" id="GUID-25643E20-22D2-43DB-9BCB-E2DFB8CA44AA"><h5 class="icon-ui-description trailer-0">提示：</h5><p id="GUID-2A7C2855-804E-4069-8B45-E1FFA54CE833">图层超出范围时，其名称将在内容和图例中显示为比范围内图层更浅的灰色。</p></div></li><li purpose="li" id="LI_4D18492496774FA2BB97446A9F1E9021"><span class="uicontrol">上移</span> - 将内容列表和地图中的所选图层上移一个级别。</li><li purpose="li" id="LI_0C3F84C8D96141F1AFCD4BD7977F5E24"><span class="uicontrol">下移</span> - 将内容列表和地图中的所选图层下移一个级别。</li><li purpose="li" id="LI_6CA668FAC90D49BD9CE1E0F2D0960F13"><span class="uicontrol">表格</span> - 此交互表可用于查看图层中要素相关信息的表格视图。<p id="GUID-30817017-2709-4320-9A83-EEB3D47FC8A3">表在地图中打开后，您就可以查看图层的属性。单击<span class="uicontrol">选项</span>按钮<img purpose="img" placement="inline" alt="选项" title="选项" src="GUID-695F3661-961D-40B8-82FF-6D963BE3F790-web.png">以通过以下方式操作表格：<ul purpose="ul" id="UL_9825830BE2E84F45976714F623F24A31"><li purpose="li" id="LI_2C5B60CD6B4E4071A57ED527328C884E">默认排序顺序</li><li purpose="li" id="LI_21D9DE7A70A94501ADE4717BE84F46F1">清除选择</li><li purpose="li" id="LI_3062DA50543D4C4A967A17E645386C15">显示/隐藏列</li></ul></p><div class="panel trailer-1 note" id="GUID-A37A5DB8-C1B8-4FE0-93FC-35BA90E61DE2"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-993B3BB2-AF46-4116-A5C4-BF9781E6B485">表格仅适用于要素图层。</p></div></li><li purpose="li" id="LI_4B0FA4F506FA4121B54E65E345D38723"><span class="uicontrol">移除</span> - 从内容列表和地图中移除图层。</li><li purpose="li" id="LI_BADC43BDE2EF49EEB29EC94A85AAC846"><a class="xref xref" href="../../../../zh-CN/portal/latest/use/classify-your-analysis.htm"><span class="uicontrol">分类</span></a> - 通过根据属性将数据重新分类为 0 - 9 的等级来创建评估或适宜性图层。可以将此图层用作仪表盘中辅助图表的评估图层。</li><li purpose="li" id="LI_4B620B18B4B948D2A1A2A45845F3075F"><a target="_blank" class="xref xref" href="http://doc.arcgis.com/en/arcgis-online/analyze/use-analysis-tools.htm"><span class="uicontrol">重新运行分析</span></a> - 将打开用于创建图层的工具并重新填充所有参数。</li><li purpose="li" id="LI_08D736C2946F4B1FBE9678712B7A377D"><span class="uicontrol">添加到设计图层</span> - 将图层添加到<span class="uicontrol">活动方案</span>组，以便可以使用图层中定义的类型进行草绘和绘制。此选项仅在要素图层中显示。</li><li purpose="li" id="LI_27D3D55604554F0499C1E65299DDC73E"><span class="uicontrol">属性</span> - 打开所选图层的<span class="uicontrol">图层属性</span>窗口。</li><li purpose="li" id="LI_2EAF2F403406402997CCBC54307610B7"><span class="uicontrol">设计类型</span> - 可用于更改设计图层的符号系统、类型名称和默认值。此选项仅会在<span class="uicontrol">活动方案</span>区域的图层中显示。您可以向图层中添加新的设计类型或删除现有类型。</li><li purpose="li" id="LI_CBC145F552D846AC8ED0F953E93A644E"><span class="uicontrol">复制设计图层</span> - 创建设计图层的副本。此选项仅会在<span class="uicontrol">活动方案</span>区域的图层中显示。</li><li purpose="li" id="LI_8B6452F762EF4B37B6F003EE78F33D18"><span class="uicontrol">重命名设计图层</span> - 从快捷菜单重命名设计图层。</li><li purpose="li" id="LI_6E1AA80573A04168BD0FE82FD0C1F1F4"><span class="uicontrol">删除设计图层</span> - 从工程中删除设计图层。此选项仅会在<span class="uicontrol">活动方案</span>区域的图层中显示。</li><li purpose="li" id="LI_AA2882ADFA4C45B393921DE5BDEA6412"><span class="uicontrol">建模器</span> - 打开加权叠加模型图层的加权叠加模型。该选项仅会在加权叠加建模图层中显示。</li></ul><p id="GUID-8C7DB6B3-8ED5-44D6-8FA5-7C0723AAE0D7">以下各部分详细阐述了使用其中部分功能的方法。</p></section><section class="section1 padded-anchor" id="ESRI_SECTION1_797AD2A19B864AB0A110D1F79011E28F" purpose="section1"><h2>从工程中移除图层</h2><p id="GUID-4DD7B9BF-55F0-4E7C-88B8-33930C1C69EC"><span class="ph">GeoPlanner</span> 允许您从地图中移除某些类型的图层。无法从工程中移除底图图层；但可以移除其他图层类型。这些图层包括方案图层、分析结果图层、业务图层、加权叠加模型图层以及其他直接从您的组织添加的图层。请按照以下步骤从您的工程中移除图层。</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="GUID-A87F537A-BE9F-45FA-A52B-73C5B3383C36"><ol class="list-numbered" purpose="ol"><li purpose="step" id="GUID-C8AD6114-53C1-438D-9F0B-1FE3CAB5A874"><span purpose="cmd" id="GUID-7F5642DE-0D98-4362-9894-BBA04A331220">单击<span class="uicontrol">内容</span>按钮以打开<span class="uicontrol">内容</span>窗口。</span></li><li purpose="step" id="ESRI_STEP_37AA032B868141B282DB43F26EFABDE7"><span purpose="cmd" id="GUID-6A9BE9B6-467C-45B2-B213-4DD1435BD68B">在<span class="uicontrol">图层</span>窗格中，单击图层名称旁边的齿轮图标，然后单击<span class="uicontrol">移除</span>。<figure class="fig" href="#"><img src="GUID-8103483F-2300-4253-8F05-8ACFD3AE2DD1-web.png" alt="移除图层" title="移除图层"></figure></span></li></ol></div></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_C1B97572E6314A4D9257BED6066893BA" purpose="section1"><h2>更改地图中的图层顺序</h2><p id="GUID-3B552328-1AEB-4067-AD0F-67BE5657A7E1">您可以在地图中设置某些类型图层的顺序。方案图层始终显示于其他图层之上，并且不能向下移动。底图图层始终显示于其他图层之下，并且不能向上移动。其他图层可以上下移动，例如分析结果图层、业务图层以及其他直接从您的组织添加的图层。可以在<span class="uicontrol">图层</span>窗格的菜单中访问<span class="uicontrol">上移</span>和<span class="uicontrol">下移</span>功能。</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="GUID-24498DE9-3091-4DBF-B8B4-05A79E8B48B3"><ol class="list-numbered" purpose="ol"><li purpose="step" id="GUID-7F7EA709-B444-4438-AC3A-4AE43718F243"><span purpose="cmd" id="GUID-08594AD0-1CDC-474F-BED9-1DFDBE869DDA">单击<span class="uicontrol">内容</span>。</span></li><li purpose="step" id="ESRI_STEP_DF3F98C0E7EC4B609C387C8ABCCD6841"><span purpose="cmd" id="GUID-0E9496C8-F21A-4DC0-A088-81A9115B5A43">在<span class="uicontrol">图层</span>窗格中，单击图层名称右侧的齿轮图标，然后选择<span class="uicontrol">上移</span>或<span class="uicontrol">下移</span>。</span><div class="info" purpose="info"><p id="GUID-4E683D60-A650-44F5-9007-DFD4CA82ECDF"> 根据地图中的图层类型以及图层的顺序，<span class="uicontrol">上移</span>或<span class="uicontrol">下移</span>功能可能会被隐藏或不可用。对于方案图层和底图图层来说，这两个功能不可用。要素图层始终显示于影像和地图图层以及底图之上。例如，如果您有一个地图图层和三个要素图层，则可以对要素图层进行重新排序，但无法将地图图层移至其上方。</p></div></li><li purpose="step" id="ESRI_STEP_F5F087ADB9B24AFCA6C26FCFC4E47E41"><span purpose="cmd" id="GUID-5A2E60DB-1AAF-4A88-8E83-568FDCBC24AD">单击<span class="uicontrol">保存地图</span>以保存对工程地图的更改。</span></li></ol></div></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_D36FAA1B48A04FC5B00DD4C70D7FAED3" purpose="section1"><h2>添加到设计图层</h2><p id="GUID-2D6D7E63-E130-43D0-9F46-29E2B1466090">每个 <span class="ph">GeoPlanner</span> 工程均通过模板进行创建。模板是包含一个或多个要素图层的组、web 地图和托管要素服务。要素图层包含类型和各类型的默认值。</p><p id="GUID-24918F96-00A6-4D1D-9302-8D6A34E803E3">您可能会发现类型和默认值不适用于规划属性域和工程。<span class="ph">GeoPlanner</span> 可用于将您自己的图层追加为设计图层。此功能有助于使用特定于规划属性域的符号和类型进行规划和草绘。以下步骤介绍了如何将现有图层添加为新设计图层：</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_D772AB4EE6E04CEDB4D79AAF47D17C6E"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_297F7A585D3F4C0697EDF086F024ADBF"><span purpose="cmd" id="GUID-1AA8446D-BAB7-4065-A874-B0FCEFB5DD80">将图层添加到 <span class="ph">GeoPlanner</span>。</span><div class="info" purpose="info"><p id="GUID-7624226E-22FF-43EB-BF23-3FC44F1F80BC">在 <span class="ph">GeoPlanner</span> 中用作设计图层的图层应具有类型。如果图层不具有类型，则其应具有唯一值渲染器。</p></div></li><li purpose="step" id="ESRI_STEP_A4578493995D4D98BAC1D7B1650D18D6"><span purpose="cmd" id="GUID-F607926E-82CD-4220-9F36-5CCA92D82A9C">在<span class="uicontrol">内容</span>窗格中单击图层旁的设置图标。从菜单中选择<span class="uicontrol">添加到设计图层</span>。<figure class="fig" href="#"><img src="GUID-D91DE48C-5228-47C7-A551-12DE95DEF943-web.png" alt="添加到设计图层菜单选项" title="添加到设计图层菜单选项"></figure></span></li><li purpose="step" id="ESRI_STEP_E34629B801454EC5B423C9A1C5ED3157"><span purpose="cmd" id="GUID-25888228-EA40-4720-A8A8-F7B0245F0EDB">在<span class="uicontrol">添加到设计图层</span>对话框上，在<span class="uicontrol">新名称</span>字段中输入设计图层的新名称。</span></li><li purpose="step" id="ESRI_STEP_A17A7CD26ED44218959EA6B4634F7E74"><span purpose="cmd" id="GUID-0D47E634-C332-45D7-A468-D0A74A0C7CEE">或者，选中<span class="uicontrol">导入要素</span>以将方案和数据导入到新设计图层中。</span></li><li purpose="step" id="ESRI_STEP_057AE5DE908E444985544AAD25B02249"><span purpose="cmd" id="GUID-B2F48A8F-798D-4BBD-8F02-7B025E16496F">单击<span class="uicontrol">导入</span>。</span><div class="stepresult" purpose="stepresult"><p id="GUID-D3FB37AE-BF28-4ECB-BC8D-D57D118BEE59"><span class="uicontrol">添加到设计图层</span>对话框随即关闭，然后工程将重新初始化。重新初始化完成后，新设计图层将显示在<span class="uicontrol">活动方案</span>组中。</p></div></li></ol></div></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_4A5F9B89EC0845658BA38A93F938104D" purpose="section1"><h2>更改设计图层符号、输入标注和默认值</h2><p id="GUID-1A272D5F-D0D1-4EDB-80CC-BAAB14E6C686">图层具有类型。类型可表示土地使用或分区等不同的实体。您可更改设计图层中类型的符号、标注和默认值。</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_964894C846AD421B94F1F3CD57FBCED3"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_886C5565342A40B78F841825B01E7A15"><span purpose="cmd" id="GUID-350E715A-BBAA-4BB5-BE0A-58ED4C577783">在<span class="uicontrol">内容</span>窗格的<span class="uicontrol">活动方案</span>区域中，单击设计图层旁边的设置图标，然后从菜单中选择<span class="uicontrol">设计类型</span>。<figure class="fig" href="#"><img src="GUID-F36D1B23-CC24-408C-A6BE-BAB4D449BBF9-web.png" alt="设计类型" title="设计类型"></figure></span></li><li purpose="step" id="ESRI_STEP_68912B26367C4F05B00235A3F4A0EC35"><span purpose="cmd" id="GUID-4E99FD1A-BE37-417E-BF86-0C243625547D">在设计类型编辑器对话框中，在左侧列表中单击一个类型，然后执行以下任一操作：</span><div class="substeps" id="ESRI_SUBSTEPS_8AED1BC9F7CD446793F8E945D4D7511F" purpose="substeps"><ol class="list-numbered" purpose="ol"><li purpose="substep" id="ESRI_SUBSTEP_C039FABA6C2640BCBEDAF0B5472096AA"><span purpose="cmd" id="GUID-CBE3E55C-2E09-4DD2-9B74-0CE6735C4D6B">单击符号选项卡以对符号的颜色和轮廓进行更改。</span></li><li purpose="substep" id="ESRI_SUBSTEP_F21C674AAC2B4BCE892C7A56676AC6EC"><span purpose="cmd" id="GUID-C24EB925-B75B-4D79-B77B-BC198652DDA9">单击类型选项卡以更改类型的标注。</span></li><li purpose="substep" id="ESRI_SUBSTEP_177D4219F01B497699FCE4B3C9642F2D"><span purpose="cmd" id="GUID-06513E0F-0F2C-4166-B235-F163389C51BB">单击默认值选项卡以更改类型的默认值。</span></li></ol></div><div class="info" purpose="info"><p id="GUID-8C9C80EC-71AB-4800-AF2D-6C9CDE4B03F1"><div class="panel trailer-1 note" id="GUID-9C2C1C3D-35D3-47D4-A3CC-7FA80043C823"><h5 class="icon-ui-comment trailer-0">注：</h5>通过单击左上角的<span class="uicontrol">添加</span>或<span class="uicontrol">删除</span>按钮，您可以向图层中添加新的设计类型或删除现有类型。</div></p></div></li><li purpose="step" id="ESRI_STEP_35BB7D039DD44913826AEFBD99FD80B6"><span purpose="cmd" id="GUID-7EC6BA19-523D-435E-B27D-CD56936ACBB4">单击<span class="uicontrol">保存</span>以保存您的更改并重新初始化工程。</span></li></ol></div></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_E4C582ADDF134AE89E139D0EBCBDA514" purpose="section1"><h2>定义研究区域</h2><p id="GUID-9A03FCCC-687C-4188-9C1E-A2FC90DF5254">在 <span class="ph">GeoPlanner</span> 工程中，研究区域可以定义规划子区域。规划子区域可以表示邻域、栖息地或任何其他位置类型。启用研究区域后，<span class="ph">GeoPlanner</span> 会关注其指示符、导入操作以及有关该区域的可视检查。启用的研究区域将显示一个掩膜，该掩膜会遮挡研究区域外的所有内容。仪表盘将仅报告与激活的研究区域相交或位于其中的要素。<span class="uicontrol">导入方案</span>工具将仅导入与启用的研究区域相交或位于其中的要素。</p><p id="GUID-ED3F6D65-505B-4829-82D8-9DD54227B677">请按照以下步骤定义研究区域：</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_40465B97F336493680D170E68BD89129"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_07F0F43BC1A743B38CAA63D406A7BB68"><span purpose="cmd">通过单击<span class="uicontrol">内容</span>按钮 <img purpose="img" placement="inline" alt="内容" title="内容" src="GUID-F99C8536-B2CA-435D-8AA6-43738CED5D13-web.png"> 可打开<span class="uicontrol">内容</span>窗格。</span></li><li purpose="step" id="ESRI_STEP_243C069425454FD3AD696263CA39CFF7"><span purpose="cmd">单击<span class="uicontrol">图层</span>选项卡，将鼠标指针悬停在加号 (+) 图标上方，然后单击<span class="uicontrol">添加研究区域</span>。</span></li><li purpose="step" id="ESRI_STEP_B53BC0D337674570B3150536AE1A7DDE"><span purpose="cmd">在<span class="uicontrol">新建研究区域</span>对话框上，单击<span class="uicontrol">在地图上绘制区域</span>。</span></li><li purpose="step" id="ESRI_STEP_8477A8A91FDC4B5A8E8F8B2A4584630E"><span purpose="cmd">单击<span class="uicontrol">面</span>，然后在地图上绘制一个或多个面以定义研究区域。<figure class="fig" href="#"><img src="GUID-35283CBA-6FE1-4AA5-8B6B-41B71DE4D754-web.png" alt="新建研究区域对话框" title="新建研究区域对话框"></figure></span></li><li purpose="step" id="ESRI_STEP_F3DD2673BD9442F2B1F8E806D628D216"><span purpose="cmd">键入研究区域的名称，然后单击<span class="uicontrol">保存</span>。</span><div class="info" purpose="info"><div class="panel trailer-1 note" id="GUID-91A02E10-EC43-4D30-A361-986231BD2417"><h5 class="icon-ui-comment trailer-0">注：</h5>您还可以通过单击弹出窗口内的<span class="uicontrol">导入</span>链接，根据现有要素创建研究区域。</div></div></li></ol></div></section></section>
+			
+				<hr>
+				<!--googleoff: all-->
+				
+	
+        
+		    <p class="feedback right">
+		        <a id="afb" class="icon-ui-contact" href="/feedback/" data-langlabel="feedback-on-this-topic" >有关此主题的反馈?</a>
+		    </p>
+        
+	
+
+				<!--googleon: all-->
+			
+		</main>
+	</div>
+	
+	<!--googleoff: all-->
+	
+		
+			<div id="main-toc-large" class="column-5">
+			    <div class="panel font-size--2 tablet-hide trailer-1">
+			      <h5 class="trailer-half">在本主题中</h5>
+			      <ol class="list-plain pre-0 trailer-0"><li><a href="#ESRI_SECTION1_3F7CBC44859C492AAA077F37B273630C">图层窗格</a></li><li><a href="#ESRI_SECTION1_797AD2A19B864AB0A110D1F79011E28F">从工程中移除图层</a></li><li><a href="#ESRI_SECTION1_C1B97572E6314A4D9257BED6066893BA">更改地图中的图层顺序</a></li><li><a href="#ESRI_SECTION1_D36FAA1B48A04FC5B00DD4C70D7FAED3">添加到设计图层</a></li><li><a href="#ESRI_SECTION1_4A5F9B89EC0845658BA38A93F938104D">更改设计图层符号、输入标注和默认值</a></li><li><a href="#ESRI_SECTION1_E4C582ADDF134AE89E139D0EBCBDA514">定义研究区域</a></li></ol>
+			    </div>
+			    
+			    
+	  		</div>
+		
+    
+   <!--googleon: all-->
+
+
+
+
+          
+        </div>
+        <!-- ENDPAGECONTENT -->
+
+      </div>
+
+    </div>  <!-- End of wrapper -->
+
+  <footer class="footer leader-3 link-dark-gray" role="contentinfo">
+    <div class="grid-container">
+      <div class="row">
+        <nav class="column-6">
+          <h6 data-langlabel="arcgis-for-server">Arc<span>GIS Enterprise</span></h6>
+          <ul class="list-plain">
+            <li><a data-langlabel="home" href="../../../../zh-CN/">主页</a></li>
+            <li><a data-langlabel="portal" href="../../../../zh-CN/portal/">Portal</a></li>
+            <li><a data-langlabel="server" href="../../../../zh-CN/server/">Server</a></li>
+            <li><a data-langlabel="data-store" href="../../../../zh-CN/data-store/">Data Stores</a></li>
+            <li><a data-langlabel="cloud" href="../../../../zh-CN/cloud/">云</a></li>
+            <li><a data-langlabel="apps" href="../../../../zh-CN/apps/">应用程序</a></li>
+            <li><a data-langlabel="documentation" href="../../../../zh-CN/documentation/">文档</a></li>
+          </ul>
+        </nav>
+
+        
+  <nav class="column-6">
+    <h6 data-langlabel="arcgis-platform">ArcGIS 平台</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="arcgis" href="//www.arcgis.com/">ArcGIS Online</a></li>
+      <li><a data-langlabel="arcgis-for-professionals" href="//pro.arcgis.com/">ArcGIS Pro</a></li>
+      <li><a data-langlabel="arcgis-for-server" href="//enterprise.arcgis.com/">ArcGIS Enterprise</a></li>
+      <li><a data-langlabel="arcgis-for-developers" href="https://developers.arcgis.com/">ArcGIS for Developers</a></li>
+      <li><a data-langlabel="arcgis-solutions" href="//solutions.arcgis.com/">ArcGIS Solutions</a></li>
+      <li><a data-langlabel="arcgis-marketplace" href="//marketplace.arcgis.com/">ArcGIS Marketplace</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <h6 data-langlabel="about-esri">关于 Esri</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="about-us" href="//www.esri.com/about-esri/">关于我们</a></li>
+      <li><a data-langlabel="careers" href="//www.esri.com/careers/">招贤纳士</a></li>
+      <li><a data-langlabel="insiders-blog" href="https://www.esri.com/about/newsroom/blog/">Esri 博客</a></li>
+      <li><a data-langlabel="user-conference" href="//www.esri.com/events/user-conference/index.html">用户大会</a></li>
+      <li><a data-langlabel="developer-summit" href="//www.esri.com/events/devsummit/index.html">开发者峰会</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <a class="esri-logo" href="//www.esri.com/" aria-label="Esri Home"></a>
+    <section class="footer-social-nav leader-1">
+            <a class="icon-social-twitter" aria-label="Esri on Twitter" href="https://twitter.com/Esri/"></a>
+            <a class="icon-social-facebook" aria-label="Esri on Facebook" href="https://www.facebook.com/esrigis/"></a>
+            <a class="icon-social-github" aria-label="Esri on GitHub" href="//esri.github.io/"></a>
+            <a class="icon-social-contact" aria-label="Contact Esri" href="//www.esri.com/about-esri/contact/"></a>
+    </section>
+	  
+  </nav>
+  
+  <div class="column-24 leader-1">
+    <p class="font-size--3"><a href="http://www.esri.com/legal/copyright-trademarks">Copyright &copy; 2019 Esri.</a> All rights reserved. | <a href="http://www.esri.com/legal/privacy/">隐私政策</a> | <a href="http://www.esri.com/legal/software-license">法律声明</a></p>
+  </div>
+  
+
+
+      </div>
+    </div>
+  </footer>
+  <!--googleoff: all-->
+
+  
+  
+	<script src="../../../../zh-CN/assets/js/init.js" type="text/javascript"></script>
+	<!--<script src="../../../../zh-CN/assets/js/drop-down.js" type="text/javascript"></script>-->
+	<script src="../../../../zh-CN/assets/js/search/searchform.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/cdn/js/link-modifier.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/cdn/js/sitewide.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/cdn/js/libs/highlight.pack.js" type="text/javascript"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+
+
+  
+    
+
+  <script src="../../../../zh-CN/cdn/js/affix.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    $(function () {
+          var appendFlg = true;
+
+          $("#bigmac")
+          .on("affixed.bs.affix", function (evt) {
+            if (appendFlg) {
+              $("<a class='crumb' href='#'>使用图层</a>").insertAfter ($("#bigmac nav a").last());
+              appendFlg = false;
+            }
+          })
+          .on ("affix-top.bs.affix", function(evt) {
+            if (!appendFlg) {
+              $("#bigmac nav a").last().remove();
+            }
+            appendFlg = true;
+          })
+    })
+  </script>
+  
+        <script type="text/javascript">
+          window.doctoc = {
+            pubID: "583",
+            tpcID: "480",
+            
+              prefix: "使用",
+              prefixUrl: "/zh-cn/portal/latest/use/",
+          
+            hideToc: false
+          }
+        </script>
+
+        <script type="text/javascript" src="../../../../zh-CN/portal/latest/use/583.js" ></script>
+        <script type="text/javascript" src="../../../../zh-CN/cdn/calcite/js/protoc.js" ></script>
+        
+        
+
+  <noscript>
+        <p>
+            <a href="flisting.htm">flist</a>
+        </p>
+    </noscript>
+    <script type="text/javascript"></script>
+  
+  
+    
+    
+
+  </body>
+</html>

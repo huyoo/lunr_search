@@ -1,0 +1,507 @@
+
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>  <html class="ie lt-ie9 lt-ie8 lt-ie7 ie6" dir="ltr"> <![endif]-->
+<!--[if IE 7]>     <html class="ie lt-ie9 lt-ie8 ie7" dir="ltr"> <![endif]-->
+<!--[if IE 8]>     <html class="ie lt-ie9 ie8" dir="ltr"> <![endif]-->
+<!--[if IE 9]>     <html class="ie ie9" dir="ltr"> <![endif]-->
+<!--[if !IE]><!--> <html dir="ltr" lang="zh-CN"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>课程 2：管理质量反馈&mdash;Data Reviewer for Server | ArcGIS Enterprise 文档</title>
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+    <script>
+      var docConfig = {
+        locale: 'zh-CN'
+        ,localedir: 'zh-cn'
+        ,langSelector: ''
+        
+        ,relativeUrl: false
+        
+
+        ,searchformUrl: '/search/'
+        ,tertiaryNavIndex: '1'
+
+        
+      };
+    </script>
+	 
+
+
+    
+    <!--[if lt IE 9]>
+      <script src="../../../../zh-CN/cdn/js/libs/html5shiv.js" type="text/javascript"></script>
+      <script src="../../../../zh-CN/cdn/js/libs/selectivizr-min.js" type="text/javascript"></script>
+      <script src="../../../../zh-CN/cdn/js/libs/json2.js" type="text/javascript"></script>
+      <script src="../../../../zh-CN/cdn/js/libs/html5shiv-printshiv.js" type="text/javascript" >
+
+    <![endif]-->
+
+     <!--[if lt IE 11]>
+    <script>
+      $$(document).ready(function(){
+        $$(".hideOnIE").hide();
+      });
+    </script>
+    <![endif]-->
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<link href="../../../../zh-CN/assets/img/favicon.ico" rel="shortcut icon" >
+	<link href="../../../../zh-CN/assets/css/screen.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/cdn/calcite/css/documentation.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/assets/css/print.css" media="print" type="text/css" rel="stylesheet" />
+
+	<!--
+	<link href="../../../../zh-CN/assets/css/screen_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/assets/css/documentation/base_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/assets/css/print_l10n.css" media="print" type="text/css" rel="stylesheet" />
+	-->
+	
+	
+		<script src="../../../../zh-CN/cdn/js/libs/jquery.1.9.1.min.js" type="text/javascript"></script>
+	
+	<script src="../../../../zh-CN/cdn/js/libs/jquery.cookie.js" type="text/javascript"></script>
+	<link href="../../../../zh-CN/cdn/css/colorbox.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/cdn/css/colorbox_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<script src="../../../../zh-CN/cdn/js/libs/jquery.colorbox-min.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/assets/js/video-init.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/assets/js/sitecfg.js" type="text/javascript"></script>
+	
+		<script src="../../../../zh-CN/assets/js/signIn.js" type="text/javascript"></script>
+	
+
+	<!--- Language Picker -->
+	<script src="../../../../zh-CN/assets/js/locale/l10NStrings.js" type="text/javascript"></script>
+	
+		 
+	
+
+	<script src="../../../../zh-CN/assets/js/calcite-web.js" type="text/javascript"></script>
+
+
+
+  <!--- search MD -->
+    <META name="description" content="使用自动方法会忽视某些数据错误。本课将向您展示如何利用简单易用的可视化检查工具识别缺失或错放的要素、属性错误的要素，以及无法自动检测到的其他错误。"><META name="last-modified" content="2019-12-6"><META name="product" content="arcgis-server-windows,arcgis-server-linux,ext-server-reviewer,arcgis-enterprise-windows,arcgis-enterprise-linux"><META name="sub_category" content="Data Reviewer for Server"><META name="search-collection" content="help"><META name="content_type_label" content="帮助主题"><META name="sub_category_label" content="Data Reviewer for Server"><META name="search-category" content="help-general"><META name="subject_label" content="DATA QUALITY,BATCH JOB,SERVER,服务"><META name="version" content="10.8"><META name="content_type" content="Help Topic"><META name="subject" content="DATA QUALITY,BATCH JOB,SERVER,SERVICES"><META name="content-language" content="zh-cn">
+    <!--- search MD -->
+
+  
+      
+
+</head>
+
+<!--
+      pub: GUID-C533D24E-586D-49C2-AE9B-C30A312D3008=10
+      tpc: GUID-FAC76B93-5F67-4F39-9BD0-466204413E72=3
+      -->
+
+
+<!-- variable declaration, if any -->
+<!-- can change following macro to set variable once we are on Jinja 2.8 -->
+
+
+
+
+
+<body class="claro zh-CN server">
+  
+
+  <!-- Drawer location -->
+  <div class="drawer drawer-left js-drawer" data-drawer="top-nav">
+        <nav class="drawer-nav" role="navigation">
+          <aside class="side-nav">
+            <h2 class="side-nav-title">Arc<span>GIS</span> Enterprise</h2>
+            <form id="helpSearchForm" class="margin-left-half margin-right-half leader-half trailer-half drawer-search-form" method="GET">
+              <input type="search" name="q"  placeholder="搜索 Data Reviewer for Server">
+              <input type="hidden" name="collection" value="help" />
+              <input type="hidden" name="product" value="ext-server-reviewer" />
+              <input type="hidden" name="version" value="10.8" />
+              <input type="hidden" name="language" value="zh-CN" />
+            </form>    
+             <a id="nav-portal" data-langlabel="portal" href="../../../../zh-CN/portal/" class="side-nav-link">Portal</a>
+             
+            <a id="all-servers" data-langlabel="all-servers" href="../../../../zh-CN/server/" class="side-nav-link">所有服务器</a>
+            <a id="gis-server" data-langlabel="gis-server" href="../../../../zh-CN/server/" class="side-nav-link">GIS Server</a>
+            <a id="image-server" data-langlabel="image-server" href="../../../../zh-CN/image/" class="side-nav-link">Image Server</a>
+            <a id="geo-analytics-server" data-langlabel="geo-analytics-server" href="../../../../zh-CN/geoanalytics/" class="side-nav-link">GeoAnalytics Server</a>
+            <a id="geoevent-server" data-langlabel="geoevent-server" href="../../../../zh-CN/geoevent/" class="side-nav-link">GeoEvent Server</a>
+            <a id="notebook-server" data-langlabel="notebook-server" href="../../../../zh-CN/notebook/" class="side-nav-link">Notebook Server</a>
+            <a id="nav-data-store" data-langlabel="data-store" href="../../../../zh-CN/data-store/" class="side-nav-link">Data Stores</a>
+            <a id="nav-cloud" data-langlabel="cloud" href="../../../../zh-CN/cloud/" class="side-nav-link">云</a>
+            <a id="nav-apps" data-langlabel="apps" href="../../../../zh-CN/apps/" class="side-nav-link">应用程序</a>
+            <a id="nav-doc" data-langlabel="documentation" href="../../../../zh-CN/documentation/" class="side-nav-link">文档</a>
+
+          </aside>
+        </nav>
+    </div>
+
+    <!-- user navigation collapses to drawer on mobile -->
+    
+    <div class="drawer drawer-right js-drawer hide-if-logged-out logged-in-navigation" data-drawer="user-nav">
+      <nav class="drawer-nav">
+        <aside class="side-nav">
+          <a class="side-nav-link agolProfile" href="#">我的个人资料</a>
+          <a class="side-nav-link icon-ui-sign-out js-log-out" href="#">登出</a>
+        </aside>
+      </nav>
+    </div>
+    
+<!-- End of drawer -->
+
+  
+  <div class="wrapper">
+      <!--googleoff: all-->
+
+      <header class="top-nav" data-skin="learn">
+        <a class="skip-to-content" href="#skip-to-content">Skip To Content</a>
+        <div class="grid-container">
+          <div class="column-24">
+
+
+            <!--<div class="top-nav-title-wrapper text-center ">-->
+              <a href='../../../../zh-CN/' class="top-nav-title tablet-hide"><span>Arc</span>GIS  Enterprise</a>
+              <a href='../../../../zh-CN/' class="icon-ui-menu top-nav-title js-drawer-toggle tablet-show" data-drawer="top-nav"><span>Arc</span>GIS Enterprise</a>
+            <!--</div> -->
+
+          
+            <nav role="navigation" class="top-nav-list left tablet-hide">
+              <a id="nav-portal" data-langlabel="portal" href="../../../../zh-CN/portal/" class="top-nav-link">Portal</a>
+
+                <div class="dropdown js-dropdown ">
+                  <a class="top-nav-link js-dropdown-toggle" tabindex="0" aria-haspopup="true" aria-expanded="false" href="#">Servers</a>
+                  <nav class="dropdown-menu featured" role="menu">
+                    <ul class="dropdown-sublist-featured">
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/get-started/latest/windows/additional-server-deployment.htm" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path  d="M42.92 6.1H4.12v8.566l.833.832-.835.833-.018 7.332.845.847-.825.824V33.9h25v5.2h-2v1.075H8.02v.8h19.1v.925h4.8v-.925H40v-.8h-8.08V39.1h-2v-5.2h13v-8.566l-.834-.834.835-.834v-7.332l-.835-.834.835-.834zm-11.8 35h-3.2v-1.2h3.2zm11-8H4.92v-7.434l.767-.766h35.668l.765.766zm0-9.766l-.766.766H5.666l-.766-.767.017-6.669.766-.764h35.671l.766.766zm0-9l-.766.766H5.687l-.766-.766V6.9h37.2zM19 11.9h-2v-.8h2zm-4 0h-2v-.8h2zm-4 0H9v-.8h2zm6 8.2h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9zm8 9h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9z"/></svg></span>
+                          <span class="sublink-text">所有服务器</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/server/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M45.98 33.575a.616.616 0 0 0-.335-.51l-3.362-2.03 3.362-2.031a.556.556 0 0 0 0-1.02l-11.1-6.704a1.293 1.293 0 0 0-1.112 0L22.33 27.982a.556.556 0 0 0 0 1.02l3.36 2.03-3.358 2.03a.556.556 0 0 0-.002 1.021l3.322 2.006-3.324 2.008a.555.555 0 0 0 .002 1.017l11.102 6.703a1.25 1.25 0 0 0 1.11.002l11.104-6.706a.556.556 0 0 0 0-1.02l-3.32-2.006 3.318-2.004a.607.607 0 0 0 .335-.509zM33.837 21.97c.026-.01.286-.005.29-.005l10.814 6.53-10.8 6.523c-.028.01-.284.005-.294.006l-10.813-6.53zm11.105 16.636l-10.8 6.523a2.564 2.564 0 0 1-.295.006l-10.81-6.529 3.39-2.047 7.004 4.23a1.083 1.083 0 0 0 .557.131 1.101 1.101 0 0 0 .554-.13l7.01-4.233zM34.14 40.098a2.545 2.545 0 0 1-.294.006l-10.812-6.53 3.43-2.073 6.97 4.208a1.25 1.25 0 0 0 1.107-.001l6.966-4.206 3.431 2.073zM9 8H7V7h2zm8 8h-2v-1h2zm-4-8h-2V7h2zm4 0h-2V7h2zm-4 8h-2v-1h2zm7.316 11.1H3.9v-6.434l.766-.766h35.668l.766.766v2.12l.8.483v-2.935l-.826-.826.826-.845v-6.329l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9h16.88a2.632 2.632 0 0 1 .336-.8zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zm0 8v-5.668l.766-.766h35.668l.766.766v5.67l-.746.764H4.666zM15 24v-1h2v1zm-4 0v-1h2v1zm-2-8H7v-1h2zm-2 8v-1h2v1z"/></svg></span>
+                          <span class="sublink-text">GIS Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/image/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 8h-2V7h2zm-4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm8 8h-2v1h2zm-8 0H7v1h2zm4 9v-1h-2v1zm-4 0v-1H7v1zm8 0v-1h-2v1zm4 3.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V21h-.8v-.334l-.766-.766H4.666l-.766.766V27.1H21zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zm40.234 4v21.8H23.1V23.1zm-.8 16.366L39.466 44.1h2.868l1.766-1.766zm-20.2-9.932l5.634-5.634h-2.868L23.9 26.666zm6.2-5.068L24.466 30.1h2.868l2.766-2.766zM28.466 30.1H30.1v-1.634zm2.434 0h6.2v-6.2h-6.2zm-7 7h6.2v-6.2h-6.2zm7 0h6.2v-6.2h-6.2zm0 6.434l5.634-5.634h-2.868L30.9 40.666zm7-7l5.634-5.634h-2.868L37.9 33.666zm1.634-5.634H37.9v1.634zm-8.634 7v1.634l1.634-1.634zm.566 6.2h2.868l2.766-2.766v-2.868zm6.434-3.566l2.634-2.634H37.9zM35.466 44.1H37.1v-1.634zm2.434 0h.434l5.766-5.766V37.9h-2.434L37.9 41.666zm6.2-8.634L42.466 37.1H44.1zm0-4L38.466 37.1h2.868l2.766-2.766zm0-7.566h-6.2v6.2h6.2zm-20.2 0v1.634l1.634-1.634zm0 20.2h6.2v-6.2h-6.2zm20.2 0v-.634l-.634.634z"/></svg></span>
+                          <span class="sublink-text">Image Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/geoanalytics/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 16h-2v-1h2zm-8 8v-1H7v1zm8 0v-1h-2v1zM13 7h-2v1h2zm4 0h-2v1h2zM9 7H7v1h2zm21.45 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V27.9h-1.464l-.801-.8H41.1v-6.434l-.766-.766H4.666l-.766.766V27.1h27.15zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM13 24v-1h-2v1zm0-9h-2v1h2zm-4 0H7v1h2zm26.672 27.148A1.87 1.87 0 0 1 35.9 43a1.91 1.91 0 1 1-3.763-.222l-9.845-3.414A1.88 1.88 0 0 1 21 39.9a1.9 1.9 0 1 1 1.474-3.084l4.692-2.346A1.878 1.878 0 0 1 27.1 34a1.902 1.902 0 0 1 1.9-1.9 1.867 1.867 0 0 1 .781.191l3.788-5.05A1.88 1.88 0 0 1 33.1 26a1.9 1.9 0 1 1 3.491 1.026l4.889 4.888c-.069.056-.144.1-.21.162a3.986 3.986 0 0 0-.358.402l-4.883-4.883A1.889 1.889 0 0 1 35 27.9a1.867 1.867 0 0 1-.781-.191l-3.788 5.049a1.868 1.868 0 0 1 .437.965l9.204.614c-.018.11-.049.218-.058.33A3.93 3.93 0 0 0 40 35c0 .046.01.09.01.135l-9.185-.612A1.913 1.913 0 0 1 29 35.9a1.889 1.889 0 0 1-1.474-.716l-4.692 2.346a1.878 1.878 0 0 1 .066.47 1.9 1.9 0 0 1-.105.625c-.007.02-.022.036-.03.056l9.63 3.34a1.87 1.87 0 0 1 2.786-.505l5.415-4.437c.067.108.127.22.204.322a3.9 3.9 0 0 0 .292.306zM33.9 26a1.092 1.092 0 0 0 .43.872 1.12 1.12 0 0 0 1.42-.068A1.1 1.1 0 1 0 33.9 26zm-6 8a1.1 1.1 0 0 0 2.196.093 1.135 1.135 0 0 0-.426-.965A1.087 1.087 0 0 0 29 32.9a1.101 1.101 0 0 0-1.1 1.1zm-5.8 4a1.098 1.098 0 1 0-.06.362A1.101 1.101 0 0 0 22.1 38zm13 5a1.1 1.1 0 1 0-2.2 0 1.1 1.1 0 0 0 2.2 0zm10.8-8a1.9 1.9 0 1 1-3.8 0c0-.053.003-.105.007-.158A1.9 1.9 0 0 1 45.9 35zm-.8 0a1.1 1.1 0 0 0-2.196-.093 1.153 1.153 0 0 0 .216.752A1.1 1.1 0 0 0 45.1 35z"/></svg></span>
+                          <span class="sublink-text">GeoAnalytics Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/geoevent/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M13 8h-2V7h2zm4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm12.418 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826v2.117c-.259-.177-.53-.337-.8-.497v-1.288l-.766-.766H4.666l-.766.766V27.1h17.933c-.148.26-.283.53-.415.8zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM9 24v-1H7v1zm4-9h-2v1h2zm0 9v-1h-2v1zm-4-9H7v1h2zm8 9v-1h-2v1zm16.9 2h-.8v8.9H39v-.8h-5.1zm.1-3.901a11.9 11.9 0 1 0 11.9 11.9 11.914 11.914 0 0 0-11.9-11.9zm0 23a11.1 11.1 0 1 1 11.1-11.1 11.112 11.112 0 0 1-11.1 11.1z"/></svg></span>
+                          <span class="sublink-text">GeoEvent Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/notebook/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M22 27.1H3.9v-6.434l.766-.766h18.576a5.262 5.262 0 0 1 .83-.8H4.666l-.766-.766v-5.668l.766-.766h35.668l.766.766V18h.8v-5.666l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9H22zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zM9 8H7V7h2zm8 0h-2V7h2zm-4 0h-2V7h2zm2 16v-1h2v1zm-4 0v-1h2v1zm-4 0v-1h2v1zm0-8v-1h2v1zm8 0v-1h2v1zm-4 0v-1h2v1zm18.9 8.1h-1.8v1.8h1.8zm-.8 1h-.2v-.2h.2zm15.498-4.48a2.727 2.727 0 0 0-1.62-.5v-.02H27.25a3.154 3.154 0 0 0-3.15 3.15V38.1h-1.68a3.386 3.386 0 0 0-2.872 1.58 3.49 3.49 0 0 0-.157 3.419 3.241 3.241 0 0 0 2.954 1.801h15.161a3.404 3.404 0 0 0 3.394-3.4V26.9h5v-3.65a3.224 3.224 0 0 0-1.302-2.63zM22.345 44.1a2.44 2.44 0 0 1-2.23-1.341 2.706 2.706 0 0 1 .11-2.65A2.588 2.588 0 0 1 22.42 38.9h12.89a3.395 3.395 0 0 0 0 5.2zM40.1 23.192V41.5a2.6 2.6 0 1 1-2.6-2.6v-.8H24.9V23.25a2.352 2.352 0 0 1 2.35-2.35h13.795a3.183 3.183 0 0 0-.945 2.292zm5 2.908h-4.2v-2.908a2.274 2.274 0 0 1 1.44-2.18 1.944 1.944 0 0 1 1.791.259 2.423 2.423 0 0 1 .97 1.979zm-17.1 5h9v.8h-9zm0 3h7v.8h-7zm0-6h9v.8h-9zm4-3h5v.8h-5z"/></svg></span>
+                          <span class="sublink-text">Notebook Server</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+
+              <a id="nav-data-store" data-langlabel="data-store" href="../../../../zh-CN/data-store/" class="top-nav-link">Data Stores</a>
+              <a id="nav-cloud" data-langlabel="cloud" href="../../../../zh-CN/cloud/" class="top-nav-link">云</a>
+              <a id="nav-apps" data-langlabel="apps" href="../../../../zh-CN/apps/" class="top-nav-link">应用程序</a>
+            </nav>
+
+
+            
+            
+            
+
+            <div class="margin-left-1 top-nav-list right hide-if-logged-in logged-out-navigation">
+               
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+              
+              <a data-langlabel="sign-in" id="login-link" class="icon-ui-user top-nav-link link-blue login-link" href="#">登录</a>
+              
+            </div>
+
+            
+            <nav class="margin-left-1 top-nav-list right hide-if-logged-out logged-in-navigation">
+              
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+             
+              <div class="dropdown js-dropdown right">
+
+                <div class="tablet-show top-nav-link">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a href="#" data-drawer="user-nav" class="user-nav-name js-drawer-toggle" data-first-name></a>
+                </div>
+
+                <div class="tablet-hide top-nav-link js-dropdown-toggle">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a class="user-nav-name top-nav-dropdown dropdown-btn" data-first-name>&nbsp;</a>
+                </div>
+
+                <nav class="dropdown-menu dropdown-right">
+                
+                  <a class="dropdown-link agolProfile" id="agolProfile" href="#">我的个人资料</a>
+                  <a class="dropdown-link js-log-out" id="agolLogout" href="#">登出</a>
+                </nav>
+              </div>
+            </nav>
+            
+
+            
+          </div>
+        </div>
+      </header>
+
+      <div class="js-search search-overlay">
+        <div class="search-content" role="dialog" aria-labelledby="search">
+          <form method="GET" id="helpSearchForm">
+            <label>
+              搜索 Data Reviewer for Server
+              <div class="search-bar">
+                <input type="search" name="q"  placeholder="搜索 Data Reviewer for Server" class="search-input js-search-input">
+                <input type="hidden" name="collection" value="help" />
+                <input type="hidden" name="product" value="ext-server-reviewer" />
+                <input type="hidden" name="version" value="10.8" />
+                <input type="hidden" name="language" value="zh-CN" />
+              </div>
+            </label>
+            <input type="hidden" name="relativePath" value="../../../../" /><button type="submit" class="btn btn-large right">搜索</button>
+          </form>
+        </div>
+      </div>
+
+      <!--googleon: all-->
+
+      <div id="skip-to-content">
+        <!--googleoff: all-->
+        <header class="sub-nav sub-nav-learn">
+          <div class="grid-container">
+            
+            <div class="column-24">
+              <div style="display:table;" class="sdk-home-banner">
+                <div class="sdk-home-banner-content">
+                  <h1 class="sub-nav-title link-white">ArcGIS Data Reviewer for Server</h1>
+                </div>
+              </div>
+            </div>
+
+            <div class="column-24">
+              <nav class='sub-nav-list tablet-hide'><a class="sub-nav-link" href="../../../../zh-CN/data-reviewer/" target="_top" title="ArcGIS Data Reviewer for Server 概述">主页</a><a class="sub-nav-link is-active" href="#" target="_top" title="ArcGIS Data Reviewer for Server 入门">帮助</a></nav><select class='tablet-show select-full trailer-half js-select-nav'><option value="../../../../zh-CN/data-reviewer/">主页</option><option selected="true" value="#">帮助</option></select>
+            </div>
+
+          </div>
+        </header>
+        <!--googleon: all-->
+       
+        <!-- content goes here -->
+        <div class="grid-container leader-2">
+          
+
+            
+              
+ <!--googleoff: all-->
+  
+  <div class="column-5 tablet-column-12 trailer-2">
+    <aside class="js-accordion accordion" aria-live="polite" role="tablist">
+        <div class="accordion-section"><h4 class="accordion-title" role="tab">简介</h4><nav class="accordion-content"><a class="side-nav-link" href="../../../../zh-CN/data-reviewer/latest/help/what-is-arcgis-data-reviewer-for-server.htm">什么是 ArcGIS Data Reviewer for Server</a><a class="side-nav-link" href="../../../../zh-CN/data-reviewer/latest/help/what-s-new-in-arcgis-data-reviewer-for-server.htm">ArcGIS Data Reviewer for Server 的新特性</a><a class="side-nav-link" href="../../../../zh-CN/data-reviewer/latest/help/publishing-arcgis-data-reviewer-for-server-services.htm">发布 ArcGIS Data Reviewer for Server 服务</a><a class="side-nav-link" href="../../../../zh-CN/data-reviewer/latest/help/using-arcgis-data-reviewer-in-a-federated-arcgis-server-site.htm">在联合 ArcGIS Server 站点上使用 ArcGIS Data Reviewer</a></nav></div><div class="accordion-section"><h4 class="accordion-title" role="tab">计划程序数据库</h4><nav class="accordion-content"><a class="side-nav-link" href="../../../../zh-CN/data-reviewer/latest/help/what-is-the-scheduler-database-.htm">什么是计划程序数据库？</a><a class="side-nav-link" href="../../../../zh-CN/data-reviewer/latest/help/creating-scheduler-tables-in-your-enterprise-database.htm">在您的企业级数据库中创建批处理验证计划程序表</a><a class="side-nav-link" href="../../../../zh-CN/data-reviewer/latest/help/configuring-the-scheduler-database.htm">配置计划程序数据库</a><a class="side-nav-link" href="../../../../zh-CN/data-reviewer/latest/help/upgrade-your-existing-scheduler-database.htm">升级现有计划程序数据库</a><a class="side-nav-link" href="../../../../zh-CN/data-reviewer/latest/help/removing-jobs-from-the-scheduler-database.htm">从计划程序数据库中移除验证作业</a></nav></div><div class="accordion-section is-active" area-expanded="true"><h4 class="accordion-title" role="tab">课程</h4><nav class="accordion-content"><a class="side-nav-link" href="../../../../zh-CN/data-reviewer/latest/help/lesson-1-deploy-data-quality-services.htm">课程 1：部署数据质量服务</a><a class="side-nav-link is-active" href="../../../../zh-CN/data-reviewer/latest/help/lesson-2-manage-quality-feedback.htm">课程 2：管理质量反馈</a><a class="side-nav-link" href="../../../../zh-CN/data-reviewer/latest/help/lesson-3-report-data-quality.htm">课程 3： 报告数据质量</a></nav></div>
+    </aside>
+    <div class="js-sticky scroll-show tablet-hide leader-1 back-to-top" data-top="0" style="top: 0px;">
+      <a href="#" class="btn btn-fill btn-clear">返回顶部</a>
+    </div>
+  </div>
+  
+  <!--googleon: all-->
+
+            
+            
+            
+	
+		<div class="column-13  pre-1 content-section">
+	
+		<header class="trailer-1"><h1>课程 2：管理质量反馈</h1></header>
+
+		 
+	<!--googleoff: all-->
+	
+		
+				<aside id="main-toc-small" class="js-accordion accordion tablet-show trailer-1">
+			      <div class="accordion-section">
+			        <h4 class="accordion-title">在本主题中</h4>
+			        <div class="accordion-content list-plain">
+			          <ol class="list-plain pre-0 trailer-0"><li><a href="#GUID-353AECAE-506A-44E5-B775-9E29EF2071A1">概览
+</a></li><li><a href="#ESRI_SECTION1_A06CDD31703E4FCC83077F9E74D25A29">部署服务</a></li></ol>
+			        </div>
+			      </div>
+			     </aside>
+		
+    
+   <!--googleon: all-->
+
+
+		<main>
+			
+	
+    	
+    
+
+
+			
+<section class="section1 padded-anchor" id="GUID-353AECAE-506A-44E5-B775-9E29EF2071A1" purpose="section1"><h2>概览
+</h2><p id="GUID-D8FABEEE-CF96-4E90-9902-3C76DD91F73A"><span class="ph">Data Reviewer</span> 具有自动数据验证功能，可通过快速、高效、可重复的方法识别许多不同类型的数据错误。但是，有些错误无法通过自动的方法进行检测。其中包含以下类型的要素：<ul purpose="ul" id="UL_F95A3764F2354360B0399CD4DAD799FE"><li purpose="li" id="LI_1F7715FA284246B0A96E34F21F58E911">缺失</li><li purpose="li" id="LI_099040EAF3B64503A56EB99E50B7EDE0">错放</li><li purpose="li" id="LI_C82AE75891B1461588FC398DCD8F3F9B">编码错误</li><li purpose="li" id="LI_CEF91BD6AA794C6AB741C4719531D85D">冗余</li></ul>  
+</p><p id="GUID-AE02B62F-D4AD-4131-92A0-E66E6798AF4A">上述类型的问题通常需要用半自动验证方法（可视化检查）进行识别。可视化检查允许您将一组数据与权威来源进行比较，以单独检测被自动方法忽略的问题。权威来源是指被您的组织定义为符合数据质量要求的一切影像、文档或数据集。</p><img purpose="img" placement="inline" alt="权威来源" title="权威来源" src="GUID-CDF107C9-8316-45F9-9630-AD2A7984297B-web.png"><p id="GUID-D6DFDC13-C868-48EB-B1D6-1970A2771EB6">在本课程中，您将部署和配置地图服务，以支持对可视化检查反馈的收集和管理。客户将借助 <span class="ph">Web AppBuilder for ArcGIS</span> 的“报告要素”微件来使用此服务。</p></section><section class="section1 padded-anchor" id="ESRI_SECTION1_A06CDD31703E4FCC83077F9E74D25A29" purpose="section1"><h2>部署服务</h2><section class="section2 padded-anchor" id="ESRI_SECTION2_800B3FBD49CE418CA0F75F4CCB57C90A" purpose="section2"><h3>部署 Data Reviewer 结果服务</h3><p id="GUID-5E076A8C-93E4-41E5-86FE-9EE76961EC9A"><span class="ph">ArcGIS Data Reviewer for Server</span> 包括其地图服务的服务定义 (*.sd) 文件，其地图服务可用于管理和报告数据质量结果。您将使用 ArcGIS Server Manager 应用程序中提供的发布工具来创建此服务。</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_2DA29DACE20149C9BDCBA94323F8D3B5"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_85EC531BF990461A8AC34FCF76D5CD23"><span purpose="cmd" id="GUID-32B1C3FA-D589-4EE1-8D39-CEC14381E549">在 Web 浏览器中打开管理器 URL 以登录到 ArcGIS Server Manager。您的管理器 URL 为 <span class="usertext">https://&lt;server name&gt;:6443/arcgis/manager</span>。</span></li><li purpose="step" id="ESRI_STEP_E2A5A0BC2ECE41CF8ECC6F11CAB259CD"><span purpose="cmd" id="GUID-F0853879-2F46-404A-922E-599FA327C380"> 单击顶端通栏上的<span class="uicontrol">服务</span>。</span></li><li purpose="step" id="ESRI_STEP_6FB9EC302E5B40B0BE4AED1C7A89B8D1"><span purpose="cmd" id="GUID-A6185AAF-9BDD-485B-8093-C649737AF889">单击<span class="uicontrol">发布服务</span>。</span></li><li purpose="step" id="ESRI_STEP_B9E66DA3A25D41828AAC52911B362BDC"><span purpose="cmd" id="GUID-F8FF47B2-7774-4318-8B07-34DCD2F6728B">在<span class="uicontrol">发布服务</span>对话框上单击<span class="uicontrol">下一步</span>。</span></li><li purpose="step" id="ESRI_STEP_B0E92118C3CD45BEA97FBFC7680A37C0"><span purpose="cmd" id="GUID-13EC3EF9-FEEA-4318-AD3E-CEA9084BA781">浏览至 <span class="usertext">reviewer.sd</span> 文件，然后单击<span class="uicontrol">打开</span>。</span><div class="info" purpose="info"><p id="GUID-C13E3EB5-FC94-4EEE-A930-3155EF0FA5B4">此文件位于 <span class="usertext">&lt;ArcGIS Server installation folder&gt;\ArcGISDataReviewerServer\Server&lt;version&gt;\Service Definitions</span>。</p></div></li><li purpose="step" id="ESRI_STEP_6A5FAAE06EFB43E9B20FB2C1F885A456"><span purpose="cmd" id="GUID-2A838162-BC33-4A6D-8D21-ABC7B8E8D4A5">在<span class="uicontrol">发布服务</span>对话框上单击<span class="uicontrol">下一步</span>。</span><ul purpose="choices" id="ESRI_CHOICES_64002DF52CB648C8ADD0B89DF7D8CFD9"><li purpose="choice" id="ESRI_CHOICE_854C6B694BC74984971E55301F060FF0">或者单击<span class="uicontrol">文件夹</span>下拉箭头，然后选择文件夹名称。</li><li purpose="choice" id="ESRI_CHOICE_E735FC68B730431AA9449BD8DFB09ADF">或者单击<span class="uicontrol">集群</span>下拉箭头，然后选择集群名称。</li></ul></li><li purpose="step" id="ESRI_STEP_59438E938FED452D9156729B5CF1C066"><span purpose="cmd" id="GUID-CFD36013-BC79-4C1F-AF4A-2402D3A55CAF">保持用于立即启动服务的复选框处于取消选中状态。</span><ul purpose="choices" id="ESRI_CHOICES_2AC0382FA80E450AB5374E2A55E675FC"><li purpose="choice" id="ESRI_CHOICE_4A95272E4F1647E7BEFF5A1C7F8C5A3D">或者，单击复选框以在门户上共享服务。</li></ul></li><li purpose="step" id="ESRI_STEP_FF9F3214DB154869953A33F6B51F1FEA"><span purpose="cmd" id="GUID-FDDB2D39-C02C-4372-BBF5-C86F6436058B">单击<span class="uicontrol">下一步</span>。</span></li><li purpose="step" id="ESRI_STEP_9197F2833823474E9CCB10721001E8B7"><span purpose="cmd" id="GUID-432AFE57-3347-4A3C-83BC-9EE4DD958EED">保持所有服务功能处于取消选中状态。</span></li><li purpose="step" id="ESRI_STEP_37E3E93FA46D45E89B7192D90A74BE76"><span purpose="cmd" id="GUID-F01E75F7-36AA-4C35-8FDA-F411807AE601">单击<span class="uicontrol">发布</span>。</span></li></ol></div></section></section><section class="section2 padded-anchor" id="ESRI_SECTION2_2D11DBE171CE451AAB27EFF36994C15C" purpose="section2"><h3>配置 <span class="ph">Data Reviewer</span> 结果服务</h3><p id="GUID-A729D0B4-9068-4D49-BF3E-D8B2ECFB2BD8">运行 <span class="ph">Data Reviewer</span> 结果服务之前，必须对其进行配置以存储验证的结果。使用 DRS 配置实用程序配置 <span class="ph">Data Reviewer</span> 结果服务。</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_25AB603327F74E048B529222A740F170"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_3BC4FD6C467244EA8CFD8FBBB8B41F52"><span purpose="cmd" id="GUID-3905BC17-94DC-48D4-80EB-7D87AADEDC4F">单击<span class="uicontrol">开始</span> &gt; <span class="uicontrol">所有程序</span> &gt; <span class="uicontrol">ArcGIS</span> &gt; <span class="uicontrol">ArcGIS Data Reviewer for Server</span> &gt; <span class="uicontrol">DRS 配置实用程序</span>。</span></li><li purpose="step" id="ESRI_STEP_52BF94E065B547559BFA310C1761A0F4"><span purpose="cmd" id="GUID-F192B256-A484-415E-8B11-9217CD082F04">验证 URL 文本框中所列的 URL 是否指向 ArcGIS Server Administrator Directory。服务目录的格式为 <span class="usertext">http://localhost:6080/arcgis/admin</span>。</span><div class="info" purpose="info"><div class="panel trailer-1 note" id="GUID-BB0EF5FD-7068-4C96-BC4B-67102A2EA676"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-571E1CE2-1023-4227-B286-0C774D9C474F">如果集群中已安装 <span class="ph">ArcGIS Data Reviewer for Server</span>，则只需针对集群中的一台计算机运行 DRS 配置实用程序。配置更改将自动应用到集群中的每台计算机。</p></div></div></li><li purpose="step" id="ESRI_STEP_6335DD696A684097B325B68D5BD86781"><span purpose="cmd" id="GUID-59FCECD8-0C42-4400-B1E0-FCB07BBD26E1">在<span class="uicontrol">用户名</span>和<span class="uicontrol">密码</span>文本框中，输入您的 ArcGIS Server 主站点管理员用户名和密码。这是您用于登录 ArcGIS Server Manager 的帐户。</span></li><li purpose="step" id="ESRI_STEP_A6A3DC10BE904F22B5879DCAFCC82639"><span purpose="cmd" id="GUID-ED205926-0CFD-4217-B5F3-ECCDD0E6A5BB">单击<span class="uicontrol">连接</span>。</span></li><li purpose="step" id="ESRI_STEP_2227AAA806F3463E81A8088565F85EEB"><span purpose="cmd" id="GUID-0BAC5646-330A-400C-BE60-57FE5CCA1321">或者，如果之前尚未安装，可将 <span class="ph">Data Reviewer</span> 服务器对象扩展 (.soe) 添加到服务器。</span><div class="substeps" id="ESRI_SUBSTEPS_64C23C6580F746A0A112D5965D59E557" purpose="substeps"><ol class="list-numbered" purpose="ol"><li purpose="substep" id="ESRI_SUBSTEP_352E9E62AD3946DBA97CAFE65E2B53A6"><span purpose="cmd" id="GUID-BF46753D-1A1F-494E-B199-9B9082EF9566">在 DRS 扩展区域中，单击<span class="uicontrol">浏览</span>。</span></li><li purpose="substep" id="ESRI_SUBSTEP_0B71A5A930274640B24C684795EE2A1E"><span purpose="cmd" id="GUID-352BB2D6-7ECA-4933-997E-0DAA3FF73290">浏览至包含 <span class="usertext">ESRI.ReviewerServer.soe</span> 文件的位置，然后单击<span class="uicontrol">打开</span>。</span><div class="info" purpose="info"><p id="GUID-7126592F-71BB-4B71-82BC-FE4830C7FF73">此文件将位于 <span class="usertext">&lt;ArcGIS Server installation folder&gt;\ArcGISDataReviewerServer\Server&lt;version&gt;\Bin</span>。</p></div></li><li purpose="substep" id="ESRI_SUBSTEP_65F96A3DE4CD4204A54F78F62DFAB7A1"><span purpose="cmd" id="GUID-F2894CB5-7491-4AB5-95ED-2ADDE47AFDC5">单击<span class="uicontrol">添加</span>。</span></li></ol></div></li><li purpose="step" id="ESRI_STEP_D228BCF09AF84C3998A90C79CF854CCD"><span purpose="cmd" id="GUID-F620C4DD-3B4A-44C1-9D21-6F796A64E4CE">单击<span class="uicontrol">选择地图服务</span>下拉箭头，然后从列表中选择 <span class="uicontrol">reviewer.MapServer</span>。</span></li><li purpose="step" id="ESRI_STEP_D04B8B396BB94A09A4E78A8B7441ECD6"><span purpose="cmd" id="GUID-90F07D53-C808-4C55-A22B-8FB7E45D90EB">单击<span class="uicontrol">选择新的 Reviewer 工作空间</span>文本框旁边的<span class="uicontrol">浏览</span>。</span><div class="info" purpose="info"><p id="GUID-CAD8011E-B09D-4748-A355-A50796610BED"><a class="xref xref" esrisubtype="extrel" hrefpfx="https://desktop.arcgis.com/zh-cn/arcmap/latest/extensions/data-reviewer-guide" href="https://desktop.arcgis.com/zh-cn/arcmap/latest/extensions/data-reviewer-guide/admin-dr-oracle/creating-the-reviewer-workspace-in-an-enterprise-geodatabase.htm">了解有关创建 Reviewer 工作空间的详细信息</a>。</p></div></li><li purpose="step" id="ESRI_STEP_AAB28E03CDFA449882502E5D06D9414D"><span purpose="cmd" id="GUID-A65E9EAE-042F-46B5-BFDA-E17E9B28FD4F">导航至 Reviewer 工作空间的位置，然后单击<span class="uicontrol">确定</span>。</span><div class="info" purpose="info"><p id="GUID-9DE063D4-548A-4746-8115-EF79960781A1">ArcGIS Server 帐户必须至少对于包含 .sde 连接文件的文件夹具有读权限。部署自动验证功能时，请勿选择文件地理数据库。</p></div><div class="info" purpose="info"><p id="GUID-313BCE57-B720-428F-A4A3-C83D501C28D8">如果已在多机部署中安装了 Data Reviewer for Server，则 Reviewer 工作空间路径必须为 UNC 路径，并可供部署中的所有计算机访问。</p></div></li><li purpose="step" id="ESRI_STEP_1C96B589C63449B9B20D846BF370632A"><span purpose="cmd" id="GUID-D4F10500-984A-4D82-8B99-1080982C7135">单击<span class="uicontrol">应用</span>。</span><div class="info" purpose="info"><p id="GUID-CA6B70CF-B003-44DF-AF06-EF24503D1E0B">如果 Reviewer 地图服务无法启动，则可以从 ArcGIS Server Manager 重新启动该服务。</p><img purpose="img" placement="inline" alt="DRS 配置实用程序对话框" title="DRS 配置实用程序对话框" src="GUID-04E57D35-F546-458F-8C74-A141D4C1CBDB-web.png"></div></li><li purpose="step" id="ESRI_STEP_CB768C84659A4FD48E311D8906905D8D"><span purpose="cmd" id="GUID-82C9F6B1-1046-43FA-99CB-659F2B5CE3A4">单击<span class="uicontrol">关闭</span>以关闭 DRS 配置实用程序。</span></li></ol></div></section></section><section class="section2 padded-anchor" id="ESRI_SECTION2_833223AAAC4845AEAEEF6CF96AB68965" purpose="section2"><h3>测试 Data Reviewer 服务</h3><p id="GUID-E1B8755F-20AB-4516-AE6F-C7F608B1822B">进行之前，请浏览至 Data Reviewer Server 服务目录以测试您的配置。</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_E40E778845F1449ABDEA6ECA5EAD9B8C"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_5076ECAC6E5B4DA3A88970C47FDD4E81"><span purpose="cmd" id="GUID-03F97423-E7E2-4E8A-8736-E83E391EDB3A">利用支持的 Web 浏览器执行以下操作：</span><div class="substeps" id="ESRI_SUBSTEPS_B4074AAB04A944C5832815E6C28B1CFF" purpose="substeps"><ol class="list-numbered" purpose="ol"><li purpose="substep" id="ESRI_SUBSTEP_3DF2C2795D7E4B14A602AC925409511D"><span purpose="cmd" id="GUID-0C657264-05F3-43F6-8AC2-905357437135">对于单机部署，请浏览至服务目录 URL (<span class="usertext">http://&lt;server name&gt;:6080/arcgis/rest/services/reviewer/MapServer/exts/DataReviewerServer</span>)。</span></li><li purpose="substep" id="ESRI_SUBSTEP_01A6F343E3C1417FA0C632023EFE0925"><span purpose="cmd" id="GUID-F30AB2D1-82F1-4336-82AA-AC780A994267">对于多机部署，请通过 ArcGIS Web Adaptor 浏览至服务目录 URL (<span class="usertext">https://&lt;web adaptor url&gt;/arcgis/rest/services/reviewer/MapServer/exts/DataReviewerServer</span>)。</span></li></ol></div></li><li purpose="step" id="ESRI_STEP_09F86312928F4F8388929432624D755B"><span purpose="cmd" id="GUID-0C008039-E720-47D6-83B7-A7E754BD5F76">验证 Data Reviewer 服务目录页面是否显示 Reviewer 工作空间的位置和空间参考以及四个子资源：批处理验证、仪表盘、Reviewer 结果和实用工具。</span></li><li purpose="step" id="ESRI_STEP_4B6726B8FA68444789AF400C64AABEFE"><span purpose="cmd" id="GUID-9CF73925-855F-49AB-B2A6-32A63AF927F9">服务组件现在即可配置 Web 客户端以启用基于 Web 的数据质量工作流。</span></li></ol></div></section></section><section class="section2 padded-anchor" id="ESRI_SECTION2_05B061B189024DC28C22DF78828D7B81" purpose="section2"><h3>部署 web 应用程序</h3><p id="GUID-4718BDFE-FC15-46BE-9A79-F5E701BCA049">要使用结果服务，需要客户端应用程序。在本部分中，您将部署 <span class="ph">Data Reviewer</span> 报告要素微件，以收集来自您的地图和应用程序用户的数据质量反馈。</p><p id="GUID-DC46C0DC-B120-410E-8ED4-CC51D0F4995B">“报告要素”微件是 <span class="ph">Web AppBuilder for ArcGIS</span> 中提供的多种即用型微件之一。该微件可帮助您从将您的地图服务用于自己的应用程序的客户手中自动收集可目视检测到的错误。</p><p id="GUID-F7F18686-A206-4460-A58C-21F52D334A4D">“报告要素”微件允许数据使用者将缺失要素或现有要素识别为 GIS 数据中的错误。系统会将从使用者手中收到的反馈作为启用了生命周期管理和追踪的 <span class="ph">Data Reviewer</span> 结果进行集中管理。</p><img purpose="img" placement="inline" alt="“报告要素”微件 - 修整要素" title="“报告要素”微件 - 修整要素" src="GUID-9FB76547-C461-4E38-9243-E71BAF043521-web.png"><section class="section3 padded-anchor" id="ESRI_SECTION3_9817E9A0672F4E53BDC1B8C73D0C2EBA" purpose="section3"><h4>配置和部署微件 </h4><p id="GUID-6ECB99A9-5660-49DA-9BF7-0E0A01F87ADC">可以使用 <a target="_blank" class="xref xref" href="https://www.esri.com/en-us/arcgis/products/arcgis-online"><span class="ph">ArcGIS Online</span></a> 中提供的功能来部署“Reviewer 仪表盘”微件，本地部署可使用 <a target="_blank" class="xref xref" href="https://www.esri.com/en-us/arcgis/products/arcgis-enterprise/overview"><span class="ph">ArcGIS Enterprise</span> 门户</a>，在自定义 Web 应用程序构建中部署可使用 <a target="_blank" class="xref xref" href="https://developers.arcgis.com/web-appbuilder/"><span class="ph">Web AppBuilder for ArcGIS</span>（开发人员版）</a>。无论选择哪种方法部署 Web 应用程序，微件的配置都是相同的。</p><p id="GUID-3745C536-AF84-4AF2-B9DA-10314DCFA010"><a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/portal/latest" href="../../../../zh-CN/portal/latest/use/make-first-app.htm">了解有关 <span class="ph">Web AppBuilder for ArcGIS</span> 入门的详细信息</a>。</p><p id="GUID-1B612968-8812-4D8E-99F2-1CC6B3314EDC"><a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/portal/latest" href="../../../../zh-CN/portal/latest/use/widget-reviewer-dashboard.htm#GUID-5EA3DD5A-0BAD-4E68-A7F0-E371CAC1FAC1">了解有关配置 Reviewer 仪表盘微件的详细信息</a>。</p></section><section class="section3 padded-anchor" id="ESRI_SECTION3_DCDD1296B9C24F09A725D2673E5991DE" purpose="section3"><h4>使用“报告要素”微件</h4><p id="GUID-97D3E522-5E38-43E5-8507-CB9F8C4811A8">“报告要素”微件使您能够收集并管理用户给出的数据质量反馈。用户可以报告地图中出错或需要附加检查的现有要素。用户还可以通过在地图上草绘要素来标识缺失的要素。</p><p id="GUID-AD5AD9F6-16A5-4025-AD7A-3159267F67C2"><a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/portal/latest" href="../../../../zh-CN/portal/latest/use/widget-report-feature.htm#ESRI_SECTION1_30E01E7D8A624C2E92215C5F1860B787">了解有关使用“报告要素”微件的详细信息</a>。</p></section></section></section>
+			
+				<hr>
+				<!--googleoff: all-->
+				
+	
+        
+		    <p class="feedback right">
+		        <a id="afb" class="icon-ui-contact" href="/feedback/" data-langlabel="feedback-on-this-topic" >有关此主题的反馈?</a>
+		    </p>
+        
+	
+
+				<!--googleon: all-->
+			
+		</main>
+	</div>
+	
+	<!--googleoff: all-->
+	
+		
+			<div id="main-toc-large" class="column-5">
+			    <div class="panel font-size--2 tablet-hide trailer-1">
+			      <h5 class="trailer-half">在本主题中</h5>
+			      <ol class="list-plain pre-0 trailer-0"><li><a href="#GUID-353AECAE-506A-44E5-B775-9E29EF2071A1">概览
+</a></li><li><a href="#ESRI_SECTION1_A06CDD31703E4FCC83077F9E74D25A29">部署服务</a></li></ol>
+			    </div>
+			    
+			    
+	  		</div>
+		
+    
+   <!--googleon: all-->
+
+
+
+
+          
+        </div>
+        <!-- ENDPAGECONTENT -->
+
+      </div>
+
+    </div>  <!-- End of wrapper -->
+
+  <footer class="footer leader-3 link-dark-gray" role="contentinfo">
+    <div class="grid-container">
+      <div class="row">
+        <nav class="column-6">
+          <h6 data-langlabel="arcgis-for-server">Arc<span>GIS Enterprise</span></h6>
+          <ul class="list-plain">
+            <li><a data-langlabel="home" href="../../../../zh-CN/">主页</a></li>
+            <li><a data-langlabel="portal" href="../../../../zh-CN/portal/">Portal</a></li>
+            <li><a data-langlabel="server" href="../../../../zh-CN/server/">Server</a></li>
+            <li><a data-langlabel="data-store" href="../../../../zh-CN/data-store/">Data Stores</a></li>
+            <li><a data-langlabel="cloud" href="../../../../zh-CN/cloud/">云</a></li>
+            <li><a data-langlabel="apps" href="../../../../zh-CN/apps/">应用程序</a></li>
+            <li><a data-langlabel="documentation" href="../../../../zh-CN/documentation/">文档</a></li>
+          </ul>
+        </nav>
+
+        
+  <nav class="column-6">
+    <h6 data-langlabel="arcgis-platform">ArcGIS 平台</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="arcgis" href="//www.arcgis.com/">ArcGIS Online</a></li>
+      <li><a data-langlabel="arcgis-for-professionals" href="//pro.arcgis.com/">ArcGIS Pro</a></li>
+      <li><a data-langlabel="arcgis-for-server" href="//enterprise.arcgis.com/">ArcGIS Enterprise</a></li>
+      <li><a data-langlabel="arcgis-for-developers" href="https://developers.arcgis.com/">ArcGIS for Developers</a></li>
+      <li><a data-langlabel="arcgis-solutions" href="//solutions.arcgis.com/">ArcGIS Solutions</a></li>
+      <li><a data-langlabel="arcgis-marketplace" href="//marketplace.arcgis.com/">ArcGIS Marketplace</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <h6 data-langlabel="about-esri">关于 Esri</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="about-us" href="//www.esri.com/about-esri/">关于我们</a></li>
+      <li><a data-langlabel="careers" href="//www.esri.com/careers/">招贤纳士</a></li>
+      <li><a data-langlabel="insiders-blog" href="https://www.esri.com/about/newsroom/blog/">Esri 博客</a></li>
+      <li><a data-langlabel="user-conference" href="//www.esri.com/events/user-conference/index.html">用户大会</a></li>
+      <li><a data-langlabel="developer-summit" href="//www.esri.com/events/devsummit/index.html">开发者峰会</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <a class="esri-logo" href="//www.esri.com/" aria-label="Esri Home"></a>
+    <section class="footer-social-nav leader-1">
+            <a class="icon-social-twitter" aria-label="Esri on Twitter" href="https://twitter.com/Esri/"></a>
+            <a class="icon-social-facebook" aria-label="Esri on Facebook" href="https://www.facebook.com/esrigis/"></a>
+            <a class="icon-social-github" aria-label="Esri on GitHub" href="//esri.github.io/"></a>
+            <a class="icon-social-contact" aria-label="Contact Esri" href="//www.esri.com/about-esri/contact/"></a>
+    </section>
+	  
+  </nav>
+  
+  <div class="column-24 leader-1">
+    <p class="font-size--3"><a href="http://www.esri.com/legal/copyright-trademarks">Copyright &copy; 2019 Esri.</a> All rights reserved. | <a href="http://www.esri.com/legal/privacy/">隐私政策</a> | <a href="http://www.esri.com/legal/software-license">法律声明</a></p>
+  </div>
+  
+
+
+      </div>
+    </div>
+  </footer>
+  <!--googleoff: all-->
+
+  
+  
+	<script src="../../../../zh-CN/assets/js/init.js" type="text/javascript"></script>
+	<!--<script src="../../../../zh-CN/assets/js/drop-down.js" type="text/javascript"></script>-->
+	<script src="../../../../zh-CN/assets/js/search/searchform.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/cdn/js/link-modifier.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/cdn/js/sitewide.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/cdn/js/libs/highlight.pack.js" type="text/javascript"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+
+
+  
+    
+	<script src="../../../../zh-CN/cdn/js/jqcollapsible.js" type="text/javascript"></script>
+	<noscript>
+        <p>
+            <a href="flisting.htm">flist</a>
+        </p>
+    </noscript>
+		<script type="text/javascript"></script>
+
+  
+    
+    
+
+  </body>
+</html>

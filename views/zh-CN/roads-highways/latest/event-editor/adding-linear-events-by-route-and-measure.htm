@@ -1,0 +1,546 @@
+
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>  <html class="ie lt-ie9 lt-ie8 lt-ie7 ie6" dir="ltr"> <![endif]-->
+<!--[if IE 7]>     <html class="ie lt-ie9 lt-ie8 ie7" dir="ltr"> <![endif]-->
+<!--[if IE 8]>     <html class="ie lt-ie9 ie8" dir="ltr"> <![endif]-->
+<!--[if IE 9]>     <html class="ie ie9" dir="ltr"> <![endif]-->
+<!--[if !IE]><!--> <html dir="ltr" lang="zh-CN"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>Adding linear events by route and measure&mdash;Event Editor for Roads and Highways | ArcGIS Enterprise 文档</title>
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+    <script>
+      var docConfig = {
+        locale: 'zh-CN'
+        ,localedir: 'zh-cn'
+        ,langSelector: ''
+        
+        ,relativeUrl: false
+        
+
+        ,searchformUrl: '/search/'
+        ,tertiaryNavIndex: ''
+
+        
+      };
+    </script>
+	 
+
+
+    
+    <!--[if lt IE 9]>
+      <script src="../../../../zh-CN/cdn/js/libs/html5shiv.js" type="text/javascript"></script>
+      <script src="../../../../zh-CN/cdn/js/libs/selectivizr-min.js" type="text/javascript"></script>
+      <script src="../../../../zh-CN/cdn/js/libs/json2.js" type="text/javascript"></script>
+      <script src="../../../../zh-CN/cdn/js/libs/html5shiv-printshiv.js" type="text/javascript" >
+
+    <![endif]-->
+
+     <!--[if lt IE 11]>
+    <script>
+      $$(document).ready(function(){
+        $$(".hideOnIE").hide();
+      });
+    </script>
+    <![endif]-->
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<link href="../../../../zh-CN/assets/img/favicon.ico" rel="shortcut icon" >
+	<link href="../../../../zh-CN/assets/css/screen.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/cdn/calcite/css/documentation.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/assets/css/print.css" media="print" type="text/css" rel="stylesheet" />
+
+	<!--
+	<link href="../../../../zh-CN/assets/css/screen_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/assets/css/documentation/base_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/assets/css/print_l10n.css" media="print" type="text/css" rel="stylesheet" />
+	-->
+	
+	
+		<script src="../../../../zh-CN/cdn/js/libs/jquery.1.9.1.min.js" type="text/javascript"></script>
+	
+	<script src="../../../../zh-CN/cdn/js/libs/jquery.cookie.js" type="text/javascript"></script>
+	<link href="../../../../zh-CN/cdn/css/colorbox.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/cdn/css/colorbox_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<script src="../../../../zh-CN/cdn/js/libs/jquery.colorbox-min.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/assets/js/video-init.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/assets/js/sitecfg.js" type="text/javascript"></script>
+	
+		<script src="../../../../zh-CN/assets/js/signIn.js" type="text/javascript"></script>
+	
+
+	<!--- Language Picker -->
+	<script src="../../../../zh-CN/assets/js/locale/l10NStrings.js" type="text/javascript"></script>
+	
+		 
+	
+
+	<script src="../../../../zh-CN/assets/js/calcite-web.js" type="text/javascript"></script>
+
+
+
+  <!--- search MD -->
+    <META name="description" content="You can characterize the route by adding new linear events along the route."><META name="last-modified" content="2019-12-6"><META name="product" content="arcgis-server-windows,ext-server-roads,arcgis-enterprise-windows"><META name="sub_category" content="Roads and Highways for Server"><META name="search-collection" content="help"><META name="content_type_label" content="帮助主题"><META name="sub_category_label" content="Roads and Highways for Server"><META name="search-category" content="help-general"><META name="subject_label" content="服务,交通"><META name="version" content="10.8"><META name="content_type" content="Help Topic"><META name="subject" content="SERVICES,TRANSPORTATION"><META name="content-language" content="zh-cn">
+    <!--- search MD -->
+
+  
+      
+
+</head>
+
+<!--
+      pub: GUID-3FD649CD-1851-4B39-AF9D-0ED7D77BA7CF=9
+      tpc: GUID-C577B546-2317-4040-8841-A9F9847F50BA=11
+      -->
+
+
+<!-- variable declaration, if any -->
+<!-- can change following macro to set variable once we are on Jinja 2.8 -->
+
+
+
+
+
+<body class="claro zh-CN server">
+  
+
+  <!-- Drawer location -->
+  <div class="drawer drawer-left js-drawer" data-drawer="top-nav">
+        <nav class="drawer-nav" role="navigation">
+          <aside class="side-nav">
+            <h2 class="side-nav-title">Arc<span>GIS</span> Enterprise</h2>
+            <form id="helpSearchForm" class="margin-left-half margin-right-half leader-half trailer-half drawer-search-form" method="GET">
+              <input type="search" name="q"  placeholder="Search Roads and Highways for Server">
+              <input type="hidden" name="collection" value="help" />
+              <input type="hidden" name="product" value="ext-server-roads" />
+              <input type="hidden" name="version" value="10.8" />
+              <input type="hidden" name="language" value="zh-CN" />
+            </form>    
+             <a id="nav-portal" data-langlabel="portal" href="../../../../zh-CN/portal/" class="side-nav-link">Portal</a>
+             
+            <a id="all-servers" data-langlabel="all-servers" href="../../../../zh-CN/server/" class="side-nav-link">所有服务器</a>
+            <a id="gis-server" data-langlabel="gis-server" href="../../../../zh-CN/server/" class="side-nav-link">GIS Server</a>
+            <a id="image-server" data-langlabel="image-server" href="../../../../zh-CN/image/" class="side-nav-link">Image Server</a>
+            <a id="geo-analytics-server" data-langlabel="geo-analytics-server" href="../../../../zh-CN/geoanalytics/" class="side-nav-link">GeoAnalytics Server</a>
+            <a id="geoevent-server" data-langlabel="geoevent-server" href="../../../../zh-CN/geoevent/" class="side-nav-link">GeoEvent Server</a>
+            <a id="notebook-server" data-langlabel="notebook-server" href="../../../../zh-CN/notebook/" class="side-nav-link">Notebook Server</a>
+            <a id="nav-data-store" data-langlabel="data-store" href="../../../../zh-CN/data-store/" class="side-nav-link">Data Stores</a>
+            <a id="nav-cloud" data-langlabel="cloud" href="../../../../zh-CN/cloud/" class="side-nav-link">云</a>
+            <a id="nav-apps" data-langlabel="apps" href="../../../../zh-CN/apps/" class="side-nav-link">应用程序</a>
+            <a id="nav-doc" data-langlabel="documentation" href="../../../../zh-CN/documentation/" class="side-nav-link">文档</a>
+
+          </aside>
+        </nav>
+    </div>
+
+    <!-- user navigation collapses to drawer on mobile -->
+    
+    <div class="drawer drawer-right js-drawer hide-if-logged-out logged-in-navigation" data-drawer="user-nav">
+      <nav class="drawer-nav">
+        <aside class="side-nav">
+          <a class="side-nav-link agolProfile" href="#">我的个人资料</a>
+          <a class="side-nav-link icon-ui-sign-out js-log-out" href="#">登出</a>
+        </aside>
+      </nav>
+    </div>
+    
+<!-- End of drawer -->
+
+  
+  <div class="wrapper">
+      <!--googleoff: all-->
+
+      <header class="top-nav" data-skin="learn">
+        <a class="skip-to-content" href="#skip-to-content">Skip To Content</a>
+        <div class="grid-container">
+          <div class="column-24">
+
+
+            <!--<div class="top-nav-title-wrapper text-center ">-->
+              <a href='../../../../zh-CN/' class="top-nav-title tablet-hide"><span>Arc</span>GIS  Enterprise</a>
+              <a href='../../../../zh-CN/' class="icon-ui-menu top-nav-title js-drawer-toggle tablet-show" data-drawer="top-nav"><span>Arc</span>GIS Enterprise</a>
+            <!--</div> -->
+
+          
+            <nav role="navigation" class="top-nav-list left tablet-hide">
+              <a id="nav-portal" data-langlabel="portal" href="../../../../zh-CN/portal/" class="top-nav-link">Portal</a>
+
+                <div class="dropdown js-dropdown ">
+                  <a class="top-nav-link js-dropdown-toggle" tabindex="0" aria-haspopup="true" aria-expanded="false" href="#">Servers</a>
+                  <nav class="dropdown-menu featured" role="menu">
+                    <ul class="dropdown-sublist-featured">
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/get-started/latest/windows/additional-server-deployment.htm" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path  d="M42.92 6.1H4.12v8.566l.833.832-.835.833-.018 7.332.845.847-.825.824V33.9h25v5.2h-2v1.075H8.02v.8h19.1v.925h4.8v-.925H40v-.8h-8.08V39.1h-2v-5.2h13v-8.566l-.834-.834.835-.834v-7.332l-.835-.834.835-.834zm-11.8 35h-3.2v-1.2h3.2zm11-8H4.92v-7.434l.767-.766h35.668l.765.766zm0-9.766l-.766.766H5.666l-.766-.767.017-6.669.766-.764h35.671l.766.766zm0-9l-.766.766H5.687l-.766-.766V6.9h37.2zM19 11.9h-2v-.8h2zm-4 0h-2v-.8h2zm-4 0H9v-.8h2zm6 8.2h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9zm8 9h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9z"/></svg></span>
+                          <span class="sublink-text">所有服务器</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/server/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M45.98 33.575a.616.616 0 0 0-.335-.51l-3.362-2.03 3.362-2.031a.556.556 0 0 0 0-1.02l-11.1-6.704a1.293 1.293 0 0 0-1.112 0L22.33 27.982a.556.556 0 0 0 0 1.02l3.36 2.03-3.358 2.03a.556.556 0 0 0-.002 1.021l3.322 2.006-3.324 2.008a.555.555 0 0 0 .002 1.017l11.102 6.703a1.25 1.25 0 0 0 1.11.002l11.104-6.706a.556.556 0 0 0 0-1.02l-3.32-2.006 3.318-2.004a.607.607 0 0 0 .335-.509zM33.837 21.97c.026-.01.286-.005.29-.005l10.814 6.53-10.8 6.523c-.028.01-.284.005-.294.006l-10.813-6.53zm11.105 16.636l-10.8 6.523a2.564 2.564 0 0 1-.295.006l-10.81-6.529 3.39-2.047 7.004 4.23a1.083 1.083 0 0 0 .557.131 1.101 1.101 0 0 0 .554-.13l7.01-4.233zM34.14 40.098a2.545 2.545 0 0 1-.294.006l-10.812-6.53 3.43-2.073 6.97 4.208a1.25 1.25 0 0 0 1.107-.001l6.966-4.206 3.431 2.073zM9 8H7V7h2zm8 8h-2v-1h2zm-4-8h-2V7h2zm4 0h-2V7h2zm-4 8h-2v-1h2zm7.316 11.1H3.9v-6.434l.766-.766h35.668l.766.766v2.12l.8.483v-2.935l-.826-.826.826-.845v-6.329l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9h16.88a2.632 2.632 0 0 1 .336-.8zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zm0 8v-5.668l.766-.766h35.668l.766.766v5.67l-.746.764H4.666zM15 24v-1h2v1zm-4 0v-1h2v1zm-2-8H7v-1h2zm-2 8v-1h2v1z"/></svg></span>
+                          <span class="sublink-text">GIS Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/image/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 8h-2V7h2zm-4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm8 8h-2v1h2zm-8 0H7v1h2zm4 9v-1h-2v1zm-4 0v-1H7v1zm8 0v-1h-2v1zm4 3.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V21h-.8v-.334l-.766-.766H4.666l-.766.766V27.1H21zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zm40.234 4v21.8H23.1V23.1zm-.8 16.366L39.466 44.1h2.868l1.766-1.766zm-20.2-9.932l5.634-5.634h-2.868L23.9 26.666zm6.2-5.068L24.466 30.1h2.868l2.766-2.766zM28.466 30.1H30.1v-1.634zm2.434 0h6.2v-6.2h-6.2zm-7 7h6.2v-6.2h-6.2zm7 0h6.2v-6.2h-6.2zm0 6.434l5.634-5.634h-2.868L30.9 40.666zm7-7l5.634-5.634h-2.868L37.9 33.666zm1.634-5.634H37.9v1.634zm-8.634 7v1.634l1.634-1.634zm.566 6.2h2.868l2.766-2.766v-2.868zm6.434-3.566l2.634-2.634H37.9zM35.466 44.1H37.1v-1.634zm2.434 0h.434l5.766-5.766V37.9h-2.434L37.9 41.666zm6.2-8.634L42.466 37.1H44.1zm0-4L38.466 37.1h2.868l2.766-2.766zm0-7.566h-6.2v6.2h6.2zm-20.2 0v1.634l1.634-1.634zm0 20.2h6.2v-6.2h-6.2zm20.2 0v-.634l-.634.634z"/></svg></span>
+                          <span class="sublink-text">Image Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/geoanalytics/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 16h-2v-1h2zm-8 8v-1H7v1zm8 0v-1h-2v1zM13 7h-2v1h2zm4 0h-2v1h2zM9 7H7v1h2zm21.45 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V27.9h-1.464l-.801-.8H41.1v-6.434l-.766-.766H4.666l-.766.766V27.1h27.15zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM13 24v-1h-2v1zm0-9h-2v1h2zm-4 0H7v1h2zm26.672 27.148A1.87 1.87 0 0 1 35.9 43a1.91 1.91 0 1 1-3.763-.222l-9.845-3.414A1.88 1.88 0 0 1 21 39.9a1.9 1.9 0 1 1 1.474-3.084l4.692-2.346A1.878 1.878 0 0 1 27.1 34a1.902 1.902 0 0 1 1.9-1.9 1.867 1.867 0 0 1 .781.191l3.788-5.05A1.88 1.88 0 0 1 33.1 26a1.9 1.9 0 1 1 3.491 1.026l4.889 4.888c-.069.056-.144.1-.21.162a3.986 3.986 0 0 0-.358.402l-4.883-4.883A1.889 1.889 0 0 1 35 27.9a1.867 1.867 0 0 1-.781-.191l-3.788 5.049a1.868 1.868 0 0 1 .437.965l9.204.614c-.018.11-.049.218-.058.33A3.93 3.93 0 0 0 40 35c0 .046.01.09.01.135l-9.185-.612A1.913 1.913 0 0 1 29 35.9a1.889 1.889 0 0 1-1.474-.716l-4.692 2.346a1.878 1.878 0 0 1 .066.47 1.9 1.9 0 0 1-.105.625c-.007.02-.022.036-.03.056l9.63 3.34a1.87 1.87 0 0 1 2.786-.505l5.415-4.437c.067.108.127.22.204.322a3.9 3.9 0 0 0 .292.306zM33.9 26a1.092 1.092 0 0 0 .43.872 1.12 1.12 0 0 0 1.42-.068A1.1 1.1 0 1 0 33.9 26zm-6 8a1.1 1.1 0 0 0 2.196.093 1.135 1.135 0 0 0-.426-.965A1.087 1.087 0 0 0 29 32.9a1.101 1.101 0 0 0-1.1 1.1zm-5.8 4a1.098 1.098 0 1 0-.06.362A1.101 1.101 0 0 0 22.1 38zm13 5a1.1 1.1 0 1 0-2.2 0 1.1 1.1 0 0 0 2.2 0zm10.8-8a1.9 1.9 0 1 1-3.8 0c0-.053.003-.105.007-.158A1.9 1.9 0 0 1 45.9 35zm-.8 0a1.1 1.1 0 0 0-2.196-.093 1.153 1.153 0 0 0 .216.752A1.1 1.1 0 0 0 45.1 35z"/></svg></span>
+                          <span class="sublink-text">GeoAnalytics Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/geoevent/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M13 8h-2V7h2zm4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm12.418 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826v2.117c-.259-.177-.53-.337-.8-.497v-1.288l-.766-.766H4.666l-.766.766V27.1h17.933c-.148.26-.283.53-.415.8zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM9 24v-1H7v1zm4-9h-2v1h2zm0 9v-1h-2v1zm-4-9H7v1h2zm8 9v-1h-2v1zm16.9 2h-.8v8.9H39v-.8h-5.1zm.1-3.901a11.9 11.9 0 1 0 11.9 11.9 11.914 11.914 0 0 0-11.9-11.9zm0 23a11.1 11.1 0 1 1 11.1-11.1 11.112 11.112 0 0 1-11.1 11.1z"/></svg></span>
+                          <span class="sublink-text">GeoEvent Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/notebook/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M22 27.1H3.9v-6.434l.766-.766h18.576a5.262 5.262 0 0 1 .83-.8H4.666l-.766-.766v-5.668l.766-.766h35.668l.766.766V18h.8v-5.666l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9H22zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zM9 8H7V7h2zm8 0h-2V7h2zm-4 0h-2V7h2zm2 16v-1h2v1zm-4 0v-1h2v1zm-4 0v-1h2v1zm0-8v-1h2v1zm8 0v-1h2v1zm-4 0v-1h2v1zm18.9 8.1h-1.8v1.8h1.8zm-.8 1h-.2v-.2h.2zm15.498-4.48a2.727 2.727 0 0 0-1.62-.5v-.02H27.25a3.154 3.154 0 0 0-3.15 3.15V38.1h-1.68a3.386 3.386 0 0 0-2.872 1.58 3.49 3.49 0 0 0-.157 3.419 3.241 3.241 0 0 0 2.954 1.801h15.161a3.404 3.404 0 0 0 3.394-3.4V26.9h5v-3.65a3.224 3.224 0 0 0-1.302-2.63zM22.345 44.1a2.44 2.44 0 0 1-2.23-1.341 2.706 2.706 0 0 1 .11-2.65A2.588 2.588 0 0 1 22.42 38.9h12.89a3.395 3.395 0 0 0 0 5.2zM40.1 23.192V41.5a2.6 2.6 0 1 1-2.6-2.6v-.8H24.9V23.25a2.352 2.352 0 0 1 2.35-2.35h13.795a3.183 3.183 0 0 0-.945 2.292zm5 2.908h-4.2v-2.908a2.274 2.274 0 0 1 1.44-2.18 1.944 1.944 0 0 1 1.791.259 2.423 2.423 0 0 1 .97 1.979zm-17.1 5h9v.8h-9zm0 3h7v.8h-7zm0-6h9v.8h-9zm4-3h5v.8h-5z"/></svg></span>
+                          <span class="sublink-text">Notebook Server</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+
+              <a id="nav-data-store" data-langlabel="data-store" href="../../../../zh-CN/data-store/" class="top-nav-link">Data Stores</a>
+              <a id="nav-cloud" data-langlabel="cloud" href="../../../../zh-CN/cloud/" class="top-nav-link">云</a>
+              <a id="nav-apps" data-langlabel="apps" href="../../../../zh-CN/apps/" class="top-nav-link">应用程序</a>
+            </nav>
+
+
+            
+            
+            
+
+            <div class="margin-left-1 top-nav-list right hide-if-logged-in logged-out-navigation">
+               
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+              
+              <a data-langlabel="sign-in" id="login-link" class="icon-ui-user top-nav-link link-blue login-link" href="#">登录</a>
+              
+            </div>
+
+            
+            <nav class="margin-left-1 top-nav-list right hide-if-logged-out logged-in-navigation">
+              
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+             
+              <div class="dropdown js-dropdown right">
+
+                <div class="tablet-show top-nav-link">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a href="#" data-drawer="user-nav" class="user-nav-name js-drawer-toggle" data-first-name></a>
+                </div>
+
+                <div class="tablet-hide top-nav-link js-dropdown-toggle">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a class="user-nav-name top-nav-dropdown dropdown-btn" data-first-name>&nbsp;</a>
+                </div>
+
+                <nav class="dropdown-menu dropdown-right">
+                
+                  <a class="dropdown-link agolProfile" id="agolProfile" href="#">我的个人资料</a>
+                  <a class="dropdown-link js-log-out" id="agolLogout" href="#">登出</a>
+                </nav>
+              </div>
+            </nav>
+            
+
+            
+          </div>
+        </div>
+      </header>
+
+      <div class="js-search search-overlay">
+        <div class="search-content" role="dialog" aria-labelledby="search">
+          <form method="GET" id="helpSearchForm">
+            <label>
+              Search Roads and Highways for Server
+              <div class="search-bar">
+                <input type="search" name="q"  placeholder="Search Roads and Highways for Server" class="search-input js-search-input">
+                <input type="hidden" name="collection" value="help" />
+                <input type="hidden" name="product" value="ext-server-roads" />
+                <input type="hidden" name="version" value="10.8" />
+                <input type="hidden" name="language" value="zh-CN" />
+              </div>
+            </label>
+            <input type="hidden" name="relativePath" value="../../../../" /><button type="submit" class="btn btn-large right">搜索</button>
+          </form>
+        </div>
+      </div>
+
+      <!--googleon: all-->
+
+      <div id="skip-to-content">
+        <!--googleoff: all-->
+        <header class="sub-nav sub-nav-learn">
+          <div class="grid-container">
+            
+            <div class="column-24">
+              <div style="display:table;" class="sdk-home-banner">
+                <div class="sdk-home-banner-content">
+                  <h1 class="sub-nav-title link-white">Esri Roads and Highways for Server</h1>
+                </div>
+              </div>
+            </div>
+
+            <div class="column-24">
+              <nav class='sub-nav-list tablet-hide'><a class="sub-nav-link" href="../../../../zh-CN/roads-highways/" target="_top" title="Esri Roads and Highways for Server Overview">Home</a><a class="sub-nav-link" href="../../../../zh-CN/roads-highways/latest/get-started/what-is-roads-and-highways.htm" target="_top" title="Get started with Esri Roads and Highways for Server">Get Started</a><a class="sub-nav-link is-active" href="../../../../zh-CN/roads-highways/latest/event-editor/what-is-event-editor.htm" target="_top" title="Event Editor for Roads and Highways">Event Editor</a><a class="sub-nav-link" href="../../../../zh-CN/roads-highways/latest/roadway-reporter/roadway-reporter.htm" target="_top" title="Roadway Reporter for Roads and Highways">Roadway Reporter</a></nav><select class='tablet-show select-full trailer-half js-select-nav'><option value="../../../../zh-CN/roads-highways/">Home</option><option value="../../../../zh-CN/roads-highways/latest/get-started/what-is-roads-and-highways.htm">Get Started</option><option selected="true" value="../../../../zh-CN/roads-highways/latest/event-editor/what-is-event-editor.htm">Event Editor</option><option value="../../../../zh-CN/roads-highways/latest/roadway-reporter/roadway-reporter.htm">Roadway Reporter</option></select>
+            </div>
+
+          </div>
+        </header>
+        <!--googleon: all-->
+       
+        <!-- content goes here -->
+        <div class="grid-container ">
+          
+
+            
+              
+  <!--BREADCRUMB-BEG--><div id="bigmac" class="sticky-breadcrumbs trailer-2" data-spy="affix" data-offset-top="180"> </div><!--BREADCRUMB-END-->
+  <!--googleoff: all-->
+    <div class="column-5 tablet-column-12 trailer-2 ">
+      <aside class="js-accordion accordion reference-index" aria-live="polite" role="tablist">
+        <div></div>
+      </aside>
+
+      <div class="js-sticky scroll-show tablet-hide leader-1 back-to-top" data-top="0" style="top: 0px;">
+        <a href="#" class="btn btn-fill btn-clear">返回顶部</a>
+      </div>
+    </div>
+  <!--googleon: all-->
+  
+            
+            
+            
+	
+		<div class="column-13  pre-1 content-section">
+	
+		<header class="trailer-1"><h1>Adding linear events by route and measure</h1></header>
+
+		 
+	<!--googleoff: all-->
+	
+		
+				<aside id="main-toc-small" class="js-accordion accordion tablet-show trailer-1">
+			      <div class="accordion-section">
+			        <h4 class="accordion-title">在本主题中</h4>
+			        <div class="accordion-content list-plain">
+			          <ol class="list-plain pre-0 trailer-0"><li><a href="#ESRI_SECTION1_83306E5DFDC449D7A21434C5F816D515">Adding linear events to routes</a></li><li><a href="#ESRI_SECTION1_3DD3D0B35E5F4A908BCC8EA59488F5F4">Providing measures in a different LRM than the events are stored in</a></li></ol>
+			        </div>
+			      </div>
+			     </aside>
+		
+    
+   <!--googleon: all-->
+
+
+		<main>
+			
+	
+    	
+    
+
+
+			
+<p id="GUID-96ECDE45-1550-48BC-9A5C-2CA4955B23E5">Characteristics of a route such as speed limit and functional class can be represented as a linear event with starting and ending measure information along the route.
+
+
+The <span class="uicontrol">Line Events</span> tool provides an interface to add linear events into the geodatabase. You can also use reference offset data to add events to a route. The reference offset data is translated to routes and measures for storage.<div class="panel trailer-1 note" id="GUID-F6CFFCC7-3E6A-4335-B6C0-0BAA9B71F6CD"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-C612FF17-1B28-4718-A3E8-691B6DA972E8">In cases where events are being modified on a route and you want to see the previous events on the route at that location, don't use the Add Linear Event widget. Instead, edit events in the Event Selection table or the Attribute Set table. If this method is used, you can see what was previously on the routes at the specified measures.</p></div></p><section class="section1 padded-anchor" id="ESRI_SECTION1_83306E5DFDC449D7A21434C5F816D515" purpose="section1"><h2>Adding linear events to routes</h2><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_189C0364C1C24A0D972F82E4B3DADCA1"><ol class="list-numbered" purpose="ol"><li purpose="step" id="GUID-44E92076-4E14-40C7-BBDF-9204E3106E0A"><span purpose="cmd" id="GUID-05DF775B-DA0F-4203-B83E-B1F7090C6BF9">Open <span class="ph">Event Editor</span> and, if prompted, sign in to <span class="ph">Portal for ArcGIS</span> or <span class="ph">ArcGIS Online</span>.</span></li><li purpose="step" id="GUID-282A6B4D-C299-4BB5-9314-E69477BD543A"><span purpose="cmd" id="GUID-E38603B4-1E36-424F-9468-4586EDB3B52D">Click  the <span class="uicontrol">Edit</span> tab.</span></li><li purpose="step" id="GUID-7E0DE0B8-DA3E-4059-A41A-876EE8A46970"><span purpose="cmd" id="GUID-C38CDE9D-F5B4-47F1-A203-D1A7671F1791">In the <span class="uicontrol">Edit Events</span> group, click  the <span class="uicontrol">Line Events</span> button <img purpose="img" placement="inline" alt="Line Events" title="Line Events" src="GUID-609A278F-41DF-4A18-9F63-1A7FE72D7C26-web.png">.</span><div class="stepresult" purpose="stepresult"><p id="GUID-F611D2C3-ACB7-4A0A-BD3E-00EB005BE2FA">The <span class="uicontrol">Add Linear Events</span> widget appears.</p><div class="panel trailer-1 note" id="GUID-CB94FDFF-93F7-4E78-A81E-A1A87E23415E"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-1C8290CD-96F4-43D6-8114-946090B93C54" ishcondition="extension_product=RHS">The selections for the network To and From method and measure can be configured in advance when configuring, creating, or editing the default settings for attribute sets. </p><p ishcondition="extension_product=RHS" id="GUID-D38430F8-3675-4516-8EE9-6276EF6BD43A">Learn more about <a class="xref xref_bad" href="GUID-7617C0A3-9742-4AEC-8B8A-434C9D1C110E">configuring</a> and <a class="xref xref" href="../../../../zh-CN/roads-highways/latest/event-editor/producing-attribute-sets.htm">creating and editing</a> default settings for attribute sets</p></div></div></li><li purpose="step" id="ESRI_STEP_0203E9000AC94D3D8B9309C3AD9EC85A"><span purpose="cmd" id="GUID-BC6E4048-0B6F-46B7-9E5D-BE1367B0F087">Click the <span class="uicontrol">Network</span> drop-down  arrow and choose the network that will serve as a source LRM for defining the input measures for the new  events.</span><div class="info" purpose="info"><p id="GUID-582AF475-75B4-445C-BD6C-9F25B66FDD34"> The network is an LRS Network published as a layer in the <span class="ph">Event Editor</span>. </p><p id="GUID-3B544644-CE6B-4714-B5DC-B5691F2E452A"><span class="ph">Event Editor</span> also accepts measures in  a network or LRM other than the one with which the linear event layer is associated.</p><p id="GUID-598BBCDC-CB69-4183-9C4A-3DA0DF8228F8">The new event will be associated to the route (route ID)  from the LRS Network with which the event location intersects.</p><figure class="fig" href="#"><img src="GUID-494355EB-0D1A-4AEF-9360-758EE36EE652-web.png" alt="Add Linear Events widget" title="Add Linear Events widget"></figure></div></li><li purpose="step" id="ESRI_STEP_BA12C3485A6940EDB4CE499DD43E5ECA"><span purpose="cmd" id="GUID-8427C53A-5EE5-4440-A812-99D8D2083A93">Type a route ID in the <span class="uicontrol">Route ID</span> text box on which the new event measure will be based.</span><div class="info" purpose="info"><div class="panel trailer-1" id="GUID-E1465EFE-2F7A-445D-846F-3DFDEEB9766D"><h5 class="icon-ui-description trailer-0">提示：</h5><p id="GUID-63586D27-9608-4BCC-BF54-628EE4EF0211">You can also click the <span class="uicontrol">Select a Route on the Map</span> button <img purpose="img" placement="inline" alt="Select a Route on the Map" title="Select a Route on the Map" src="GUID-F40A3D56-CB4C-439B-959F-FF3D1A45F640-web.png"> to select the route on the map.</p></div><figure class="fig" href="#"><img src="GUID-21028D97-C738-4A1F-8D48-754C320CCFDB-web.png" alt="Selecting routes" title="Selecting routes"></figure><p id="GUID-FD584072-B81C-4993-8212-FC506E44F479">You also have the following options.</p></div><ul purpose="choices" id="ESRI_CHOICES_125096C7189A4EC0AF04168AF0344577"><li purpose="choice" id="ESRI_CHOICE_0C63E27409A94791B30FB057AF4DE260">Click <span class="uicontrol">Choose Route</span> to add events to a single route.<figure class="fig" href="#"><img src="GUID-E1071E2B-EAB6-436F-8037-51A7EF412EB7-web.png" alt="The selected route highlighted on the map" title="The selected route highlighted on the map"><figcaption class="fig-caption">The single route is highlighted on the map.</figcaption></figure></li><li purpose="choice" id="ESRI_CHOICE_B70076571D09464AAC5C61DDB8F757B1">Click the <span class="uicontrol">Choose Redline</span>option or the <span class="uicontrol">Select a Redline on the Map</span> button <img purpose="img" placement="inline" alt="Select a Redline on the Map" title="Select a Redline on the Map" src="GUID-8BCEF5E2-6822-4B81-AEE5-2E6833618009-web.png"> to add events to a redline. For more information, see <a class="xref xref" href="../../../../zh-CN/roads-highways/latest/event-editor/adding-linear-events-to-a-route-redline.htm">Adding linear events to a route redline</a>.</li><li purpose="choice" id="ESRI_CHOICE_DC99150FCF344273AFFF752580CFFCDD">Click <span class="uicontrol">Selected Routes</span> to add events to multiple routes. You can select multiple routes using the interactive selection methods available in the <a class="xref xref" href="../../../../zh-CN/roads-highways/latest/event-editor/select-events-by-route.htm">Selection</a>   group of the <span class="uicontrol">Edit</span> tab.<figure class="fig" href="#"><img src="GUID-B0A952EE-7404-414A-88C1-87D454C52C72-web.png" alt="The selected routes highlighted on the map" title="The selected routes highlighted on the map"><figcaption class="fig-caption">The selected routes are highlighted on the map.</figcaption></figure></li><li purpose="choice" id="ESRI_CHOICE_0E00E0075CBB41E09EE874739B4F45D8">Click <span class="uicontrol">Highlighted Routes</span> to add events to highlighted routes that are a subset of the route selection.</li></ul><div class="info" purpose="info"><div class="panel trailer-1" id="GUID-7B5CC059-3B7F-4AB1-9823-55D5D5E66F16"><h5 class="icon-ui-description trailer-0">提示：</h5><p id="GUID-4E6FF26A-51FC-4219-AC61-C9D108BB2D09">If you use either <span class="uicontrol">Selected Routes</span> or  <span class="uicontrol">Highlighted Routes</span> for the route selection, the events are added from the start to the end measures of the routes. Steps 5 through 8 are disabled in that case.</p><p id="GUID-23B97D5E-5B4B-4E25-8839-8A12C3A3138A">If the selected route is not in the  active view of the map, you can click the <span class="uicontrol">Zoom to the route on the map</span> button <img purpose="img" placement="inline" alt="Zoom To" title="Zoom To" src="GUID-66079CC6-EA07-4DBE-BE6A-250990120E76-web.png"> to refresh the map display to zoom in to the entire extent of the selected route.</p></div><div class="panel trailer-1 note" id="GUID-A0DFA365-B668-4D32-9627-719F6E966275"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-F9458FEC-7FC0-45F1-A21C-AFDC85413247">If a message appears that is related to acquiring locks, the need to reconcile, or not being able to acquire locks, <span class="ph">Roads and Highways</span> conflict prevention is enabled. </p><p id="GUID-7F5B174D-1B5B-4941-98EA-0C0BE694BF89"><a class="xref xref" href="../../../../zh-CN/roads-highways/latest/event-editor/conflict-prevention-in-event-editor.htm">Learn more about conflict prevention in the <span class="ph">Event Editor</span></a></p></div></div></li><li purpose="step" id="ESRI_STEP_5CCE0FE350134862BFB5D60DAC45E59B"><span purpose="cmd" id="GUID-E2E9AB5E-1C79-4D5B-85FE-D488F221D36D">In the <span class="uicontrol">From</span> section, click the <span class="uicontrol">Method</span> drop-down arrow and choose the from measure value for the events.</span><ul purpose="choices" id="ESRI_CHOICES_A0A1E0A2B93C4763A759F20AD263E906"><li purpose="choice" id="ESRI_CHOICE_863C7BEF2BD044E3A2319A9DF0E12632">Select the network (MilePoint in this case) to enter the from measure value for a single route.</li><li purpose="choice" id="ESRI_CHOICE_4DADE070CB3E4CFDABC482AEE65DABA2">Select a reference offset method to enter the from measure value using a reference offset.</li></ul></li><li purpose="step" id="ESRI_STEP_7951BBE6A4614073A57FF883C6CF397A"><span purpose="cmd" id="GUID-BAAC7CD6-E0FB-4DB0-AD68-31BFBDBFAA6D">Provide the intended start location for the new linear event along the route using any of the following options.</span><ul purpose="choices" id="ESRI_CHOICES_CF0D0174A644458883F480DE751BE0DF"><li purpose="choice" id="ESRI_CHOICE_B79F1F121AD1437EA2CA1D9872D0DF27">Type the value in the <span class="uicontrol">Measure</span> text box.</li><li purpose="choice" id="ESRI_CHOICE_E2AB2148392B4A1E9AFDC8E7E559FED8">Click the <span class="uicontrol">Select From Measure on the Map</span> button <img purpose="img" placement="inline" alt="Select From Measure on the Map" title="Select From Measure on the Map" src="GUID-9E89D5FD-9695-40E2-BE2B-5EE0DBA23504-web.png"> to choose the  from measure  value along the route on the map.</li><li purpose="choice" id="ESRI_CHOICE_22D4DEF52EE14D30A3C0B4A227B47FC2">Click  the <span class="uicontrol">Measure</span> drop-down arrow to select  either <span class="uicontrol">Use the Route Start</span> or <span class="uicontrol">Use the Route End</span> as the from measure value for the event.<figure class="fig" href="#"><img src="GUID-F568DF91-BC53-495D-9DCE-47524865CFD4-web.png" alt="Get the from measure value of the event from the route start value" title="Get the from measure value of the event from the route start value"></figure></li></ul><div class="info" purpose="info"><p id="GUID-55595116-A997-46CF-9B2A-CBC9A80A967E">If you type the from measure value, you can choose the unit for that value using the drop-down arrow. The  from measure value will be converted into the LRS units before saving the newly added events. For example, the LRS is in miles and you have entered 1,000 feet as the from measure value. The newly added events will have a from measure value of 0.189394 miles because 1,000 feet equals 0.189394 miles.</p></div><div class="stepresult" purpose="stepresult"><p id="GUID-0EFAE7E7-A7C3-4B51-9EE3-574B2EC78F91">A green plus  appears at the selected location on the map.</p><figure class="fig" href="#"><img src="GUID-E1071E2B-EAB6-436F-8037-51A7EF412EB7-web.png" alt="The from measure and to measure values highlighted on the selected route" title="The from measure and to measure values highlighted on the selected route"><figcaption class="fig-caption">The from measure and to measure values highlighted on the selected route</figcaption></figure></div></li><li purpose="step" id="ESRI_STEP_FC938BBE0E3F4583A4DAA1A184F14BDA"><span purpose="cmd" id="GUID-EB0ED70F-9588-4D9C-AC8E-4A8EB8B3E6F8">In the <span class="uicontrol">To</span> section, the drop-down arrow  and choose the method for selecting the 
+to measure value for the events.</span><ul purpose="choices" id="ESRI_CHOICES_8BDE5D9BF158417A9A7DFFD2787E93F6"><li purpose="choice" id="ESRI_CHOICE_EC6370D794FC48EB975D56C9ADCA999A">Choose the network (MilePoint in this case) to enter the to measure value for a single route.</li><li purpose="choice" id="ESRI_CHOICE_8BE4FD8EDEB34929954555497C93EF34">Choose a point layer to enter the to measure value using a reference offset.</li><li purpose="choice" id="ESRI_CHOICE_AFE802B7958741819D6A309F64850A9A">Choose <span class="uicontrol">Length</span> to indicate the overall length of the event.</li></ul></li><div class="stepinfo" purpose="stepinfo"><div class="panel trailer-1 note" id="GUID-F85E039A-F9EE-48B7-8856-72D291DDD999"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-FCBDB73D-B112-413C-ACEC-00EB31A09BFC">You can use any combination of methods to enter the from measure and to measure values. For example, you can use  the <span class="uicontrol">Select From Measure on the Map</span> tool <img purpose="img" placement="inline" alt="Select From Measure on the Map" title="Select From Measure on the Map" src="GUID-9E89D5FD-9695-40E2-BE2B-5EE0DBA23504-web.png"> to choose the  from measure value, and then use the reference offset from a point to define the  to measure value along the route on the map.</p><p id="GUID-5F457E50-BA6A-4F8A-80AA-BB4D28531AC0">You can also add events in the reverse direction of calibration of the route; for example, you can provide a from measure value greater than the to measure value for the events on the <span class="uicontrol">Add Linear Events</span> widget. The resulting events in this case are created with the lesser value as the from measure, and the greater value as the to measure.</p></div></div><li purpose="step" id="ESRI_STEP_E7CADE0CC4F24FD3A52DA9A10EDCC435"><span purpose="cmd" id="GUID-14B6E098-FBCB-43DA-916E-1A82BBD182D2">Provide the intended start location for the new linear event along the route using any of these methods:</span><ul purpose="choices" id="ESRI_CHOICES_05D848BA50814180A603C3193EB0F7D3"><li purpose="choice" id="ESRI_CHOICE_EB72305055724CA788B4231EC3F26A42">Type the value in the <span class="uicontrol">Measure</span> text box.</li><li purpose="choice" id="ESRI_CHOICE_1E529FF00D4D4D0EABD9E82472F5E2BC">Click the <span class="uicontrol">Select To Measure on the Map</span> button <img purpose="img" placement="inline" alt="Select To Measure on the Map" title="Select To Measure on the Map" src="GUID-9E89D5FD-9695-40E2-BE2B-5EE0DBA23504-web.png"> to choose the end location along the route on the map.</li><li purpose="choice" id="ESRI_CHOICE_B954EBFE49364FF2BD9DCBE802E3AD4E">Click the <span class="uicontrol">Measure</span> drop-down arrow and choose  either <span class="uicontrol">Use the Route Start</span> or <span class="uicontrol">Use the Route End</span> as the to measure value for the event.<figure class="fig" href="#"><img src="GUID-4E08C40C-3F3B-4903-99B4-23B9134BD252-web.png" alt="Get the To Measure value of the event from the Route End value" title="Get the To Measure value of the event from the Route End value"></figure></li></ul><div class="stepresult" purpose="stepresult"><p id="GUID-19FB5909-3A40-4386-BE66-F7D31699F174">A red cross appears at the selected location on the map.</p></div></li><li purpose="step" id="ESRI_STEP_0B1FC52155AB4084AEC065703755F0D3"><span purpose="cmd">Choose the date that will define the start date of the events by doing one of the following:</span><ul purpose="choices" id="ESRI_CHOICES_3023DD5D2DC4407A92BB411258C60114"><li purpose="choice" id="ESRI_CHOICE_B8154CDB9F9049308E4AB41940B83924">Type the start date in the <span class="uicontrol">Start Date</span> text box.</li><li purpose="choice" id="ESRI_CHOICE_FCCFC03F22744264A621EDB674ED6243">Click the <span class="uicontrol">Start Date</span> drop-down arrow and choose the start date.</li><li purpose="choice" id="ESRI_CHOICE_92CF48EB75D1459BB99B952ED9B734FC">Check the <span class="uicontrol">Use route start date</span> check box.</li></ul><div class="info" purpose="info"><p id="GUID-BF45837B-166C-4899-900B-1825572FFDEF">The start date defaults to today's date, but  you can choose a different date using the date picker. The end date is optional, and if it is not provided, the event remains valid now and into the future.</p><div class="panel trailer-1 note" id="GUID-E937BB0F-590D-48AD-9253-1D06FF575757"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-25A3F2CE-DD72-48AD-870A-CD128E62C35D">If you configured your instance of <span class="ph">Event Editor</span> to not allow dates prior to the start date of the route, and you enter a date prior to the start date of the selected route in <span class="uicontrol">Start Date</span>, a warning message appears alerting you to choose a date on or after the start date of the selected route.</p></div></div></li><li purpose="step" id="ESRI_STEP_D56A4A9727C54D80848E1E259154ECA8"><span purpose="cmd">Choose the  date that will define the end date of the events by doing one of the following:</span><ul purpose="choices" id="ESRI_CHOICES_873C9E33C0704D0594A5585F0A114247"><li purpose="choice" id="ESRI_CHOICE_CAAAD03531CD45DDA214603296C110E6">Type the end date in the <span class="uicontrol">End Date</span> text box.</li><li purpose="choice" id="ESRI_CHOICE_4BE1E837423945E1B3DF375E5661BBBC">Click the <span class="uicontrol">End Date</span> drop-down arrow and choose the end date.</li><li purpose="choice" id="ESRI_CHOICE_4DC3E84CE2EC4E808220D73AAF4A64AE">Check the <span class="uicontrol">Use route end date</span> check box.</li></ul></li><li purpose="step" id="GUID-5BD81CDE-FCCA-4E44-B12E-A2D0AD762F31"><span purpose="cmd" id="GUID-AB09607F-C07B-4C36-9BC5-2C077D41CDAC">Choose from the following data validation options to prevent  erroneous input while characterizing a route with linear events:</span><ul purpose="choices" id="ESRI_CHOICES_C6E14839262E493EA9EC26EA89EBA2B4"><li purpose="choice" id="ESRI_CHOICE_E24DF6DD87414BB589D0C7844B47A514"><span class="uicontrol">Retire overlaps</span>—The system will adjust the measure and start and end dates of existing events in such a way that the new event does not cause 
+an overlap with respect to time and measure values.<figure class="fig" href="#"><img src="GUID-B7E5799C-3561-4F66-87ED-C29682C12866-web.png" alt="Retire overlaps behavior" title="Retire overlaps behavior"></figure></li><li purpose="choice" id="ESRI_CHOICE_7334AAEB50A64962A01E387772E15F4D"><span class="uicontrol">Merge coincident events</span>—When all attribute values for a new event are exactly the same as an existing event, and if the new event is adjacent to or overlapping the existing event in terms of measure values, the new event is merged into the existing event and the measure range is expanded accordingly.<figure class="fig" href="#"><img src="GUID-AFD2EFFD-0BEE-409B-8DC7-2C1B8BEE6DCF-web.png" alt="Merge coincident events behavior" title="Merge coincident events behavior"></figure></li><li purpose="choice" id="ESRI_CHOICE_0A20205E1AA34737B5566E521F1853B7"><span class="uicontrol">Prevent measures not on route</span>—This data validation option ensures that the input measure values for from measure and to measure values fall in the minimum and maximum range of measure values on the selected route. </li><li purpose="choice" id="ESRI_CHOICE_CA8ACB3C89614F439288BAFBA7274B78" ishcondition="extension_product=RHS"><span class="uicontrol">Save events to dominant routes</span>—Adds events to the dominant route in a section with concurrent routes.  If enabled, any concurrent sections on the route selected will allow you to choose which route the events will be added to on each concurrent section.  This option is available when the network selected has dominance rules configured.</li></ul></li><li purpose="step" id="GUID-207B1389-FC61-42BF-A9F9-1E7107CB3873"><span purpose="cmd" id="GUID-C4BD24D1-97D1-4A7E-973D-2E479EAF0150">Click <span class="uicontrol">Next</span>.</span><div class="stepresult" purpose="stepresult"><p id="GUID-2C052C42-3CBB-4862-BDAF-0F58F410C8B8">The tab showing the attribute set for the events appears. The event fields  are shown under the G1 attribute group.</p><figure class="fig" href="#"><img src="GUID-064CFBCE-F821-4DBD-987E-7EFF09C9627C-web.png" alt="Attribute set" title="Attribute set"><figcaption class="fig-caption">The G1 tab shows the G1 attribute set group.</figcaption></figure><div class="panel trailer-1 note" id="GUID-35DCA421-B8BA-4762-BC79-D17BADEA0AB0"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-BEF0662C-71D1-4172-8AA8-B7CAEFB2F4E2">You can use the check boxes to add data for specific events in the attribute set. No records are added for the unchecked events. As shown in the example below, no records are added to the County_A and City_A events.</p></div><figure class="fig" href="#"><img src="GUID-ACDBD98C-D3E3-493B-9BC5-28F499E263C4-web.png" alt="Choosing events in the attribute set" title="Choosing events in the attribute set"></figure></div></li><li purpose="step" id="ESRI_STEP_AA2A8283CB124A1BBA13342232B21A5F"><span purpose="cmd" id="GUID-C73FC2E3-6345-45D9-AD39-B6A57E022EF0">Choose attribute information for the new event using the following options:</span><ul purpose="choices" id="ESRI_CHOICES_3B7D1C5D5CE84DD58C93A1DE9CF811DC"><li purpose="choice" id="ESRI_CHOICE_AC18599F7147412990B4E9E0C6F26F3D">Type the attribute information for the new event in the tables defined by attribute sets.</li><li purpose="choice" id="ESRI_CHOICE_EC72401503AC4C75996750AC8645195F">Click the <span class="uicontrol">Copy Attribute Values</span> button <img purpose="img" placement="inline" alt="Copy Attribute Values" title="Copy Attribute Values" src="GUID-0F3C7CBC-D791-4EB6-B2E9-FFC663A3C777-web.png"> and click a route on the map to copy event attributes from another route.</li></ul><div class="info" purpose="info"><p id="GUID-91B79395-989B-46C5-9409-BF6D0B52FB6B"><span class="ph">Event Editor</span> uses a default attribute  set on the <span class="uicontrol">Edit</span>  tab. You can modify the attribute set to   <a class="xref xref" href="../../../../zh-CN/roads-highways/latest/event-editor/configuring-attribute-sets.htm">create custom attribute sets</a>  or use the administrator-configured attribute set.</p><div class="panel trailer-1 note" id="GUID-00D0C598-D4BA-4382-855F-80137F92B830"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-2C650DAB-B8B2-4C5A-91D3-7DDEE0866B88">Coded values, range domains, and subtypes are supported when configured for any field in the Attribute-Value table.</p></div></div></li><li purpose="step" id="GUID-AD4A80FD-BE14-4D00-9B2F-1BB4E2C2D5B5"><span purpose="cmd" id="GUID-84C1DD0B-3F07-44BB-9637-12CB1EE4EFFA">Use the following options to access more information on the attribute set:</span><ul purpose="choices" id="ESRI_CHOICES_94C98D6F341C468888F9957458AD8C02"><li purpose="choice" id="ESRI_CHOICE_08144D5A0839490094267DF324C2D404">Check the <span class="uicontrol">Show network name</span> check box to show the LRS Network associated with the  selected event layer.</li><li purpose="choice" id="ESRI_CHOICE_C36BAC3FD95243A28F3F9DFA79127574">The list of attributes in the tables defined by attribute sets can be from more than one event layer. If you want to identify the source event layer for each attribute, check the <span class="uicontrol">Show layer names</span> check box.</li><li purpose="choice" id="ESRI_CHOICE_162BEF60ACE9492391A3F0894F50C1DB">Checking the <span class="uicontrol">Go to the next measure upon save</span> check box results in prepopulating the From measure value  using the To measure value of the present section to continue the event creation process. For example, this will occur if events are created on the route using a From measure value of 0 miles and a To measure value of 0.289 miles.<figure class="fig" href="#"><img src="GUID-185E5B93-5712-4BFE-A542-47F8120D66A5-web.png" alt="Adding events to a section of the route" title="Adding events to a section of the route"></figure>If you click <span class="uicontrol">Save</span> with this option checked on the <span class="uicontrol">Attribute Set</span> tab, the <span class="uicontrol">Add Linear Events</span> widget is prepopulated with the value of 0.289 miles as the from measure value for the new events.<figure class="fig" href="#"><img src="GUID-AD05CC63-A655-4C1E-915C-ACF04D83CA94-web.png" alt="Prepopulated from measure value" title="Prepopulated from measure value"><figcaption class="fig-caption">The From measure value is prepopulated for the next section of the route and the green plus symbol drops to that location on the map.</figcaption></figure><figure class="fig" href="#"><img src="GUID-48904BCD-D9BA-4FCF-999F-F988F5847879-web.png" alt="Green plus symbol in the To measure location" title="Green plus symbol in the To measure location"><figcaption class="fig-caption">The green plus symbol appears in the To measure location of the previous section.</figcaption></figure></li></ul></li><li purpose="step" id="GUID-21901102-B684-452B-A8D7-F8A07F49AF5C"><span purpose="cmd" id="GUID-ACA48C12-C76A-4851-B7EA-6E55A8335723">Click <span class="uicontrol">Save</span>.</span><div class="stepresult" purpose="stepresult"><p id="GUID-7588E2DA-CC61-46AC-A159-6639DF55D30F">A confirmation message appears at the lower right once the newly added linear events are saved. The new linear events are created and appear on the map.</p><figure class="fig" href="#"><img src="GUID-2D1058CB-C892-4AA6-84AE-4A33C7A3AEF2-web.png" alt="Events added to a single route" title="Events added to a single route"></figure><figure class="fig" href="#"><img src="GUID-D1ABF3D7-A5EE-43C2-A843-24DB77448418-web.png" alt="Events added to multiple routes" title="Events added to multiple routes"></figure></div></li></ol></div><section class="result padded-anchor" id="ESRI_RESULT_ABF7CE86F441487BB2851F7E73A39795" purpose="result"><p id="GUID-774B3828-6AC4-4677-827B-40905984EC42">After an event has been successfully created, you have the following two options to continue characterizing the route:<ul purpose="ul" id="UL_0B8C4CE46BC64544921DCA58CAAF892C"><li purpose="li" id="LI_A2FD7C076FDF4556937E9AD2449C2EEC">Click <span class="uicontrol">New Edit</span> to clear all the input entries  in the widget and restore the default values from the geodatabase to the attribute table.</li><li purpose="li" id="LI_A37F615AF9644E068B694A0291AF0F4A">Click <span class="uicontrol">Next Edit</span> to retain all the existing entries in the widget and the attribute table  for the convenience of quick editing of similar characteristics.</li></ul></p></section></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_3DD3D0B35E5F4A908BCC8EA59488F5F4" purpose="section1"><h2>Providing measures in a different LRM than the events are stored in</h2><p id="GUID-D91A392C-9E1D-4A69-9D40-854C7DA08F63">You can specify the LRS Network that will be used as a source LRM for input start and end locations for the new linear event.  If the selected LRS Network is not the same as the one that the  linear event layer is registered with, <span class="ph">Event Editor</span> performs an internal translation of measures to always store the  measure value in the LRM of the LRS Network with which the event is registered.<ul purpose="ul" id="UL_2704DBCF57B34F1AA5C71DF20B1E9720"><li purpose="li" id="LI_E4F2EA1D321F4C2B9E9736C40898B81F">In cases where the input location for the new event does not partially overlap the route in the target LRS Network, the measure values of the linear event created are adjusted to match the shape of the route.<figure class="fig" href="#"><img src="GUID-BA49E0BE-0302-4CE4-9C75-9978AA19373D-web.png" alt="Add linear event—Partial route match" title="Add linear event—Partial route match"></figure></li><li purpose="li" id="LI_957906A07157416C9A0EC677927FDE6B"> In cases where the input location for the new event may intersect more than one route in the registered LRS Network, the linear event is split into multiple events so the shape of the events matches the shape of the route feature intersecting it, and the measure values are adjusted.<figure class="fig" href="#"><img src="GUID-54F6C492-5E95-4FCF-96BD-03550F2AB7BF-web.png" alt="Add linear event—Multiple routes match" title="Add linear event—Multiple routes match"></figure></li><li purpose="li" id="LI_17CA9F476E4641708C6A65E78E650CF5">In cases where the input location for the new event may intersect more than one route (concurrent) in the registered LRS Network, a linear event is created for all the routes in the concurrent section of the input.<figure class="fig" href="#"><img src="GUID-C51BB914-699B-4EC8-8837-C112C8213C09-web.png" alt="Add linear event—Concurrent routes match" title="Add linear event—Concurrent routes match"></figure></li></ul></p></section><section class="section2 leader-1" purpose="relatedtopics"><h4 class="trailer-0">相关主题</h4><ul class="pre-0 trailer-2"><li><a class="xref relatedtopic" href="../../../../zh-CN/roads-highways/latest/event-editor/adding-linear-events-by-reference-offset-and-locations.htm">Adding linear events to a route from a referent offset location</a></li><li><a class="xref relatedtopic" href="../../../../zh-CN/roads-highways/latest/event-editor/adding-linear-events-by-station-measures.htm">Adding linear events by station measures</a></li><li><a class="xref relatedtopic" href="../../../../zh-CN/roads-highways/latest/event-editor/adding-linear-events-to-a-route-redline.htm">Adding linear events to a route redline</a></li><li><a class="xref relatedtopic" href="../../../../zh-CN/roads-highways/latest/event-editor/adding-linear-events-to-dominant-routes.htm">Adding linear events to dominant routes</a></li><li><a class="xref relatedtopic" href="../../../../zh-CN/roads-highways/latest/event-editor/adding-linear-events-by-coordinate-location.htm">Adding linear events by coordinate location</a></li></ul></section>
+			
+				<hr>
+				<!--googleoff: all-->
+				
+	
+        
+		    <p class="feedback right">
+		        <a id="afb" class="icon-ui-contact" href="/feedback/" data-langlabel="feedback-on-this-topic" >有关此主题的反馈?</a>
+		    </p>
+        
+	
+
+				<!--googleon: all-->
+			
+		</main>
+	</div>
+	
+	<!--googleoff: all-->
+	
+		
+			<div id="main-toc-large" class="column-5">
+			    <div class="panel font-size--2 tablet-hide trailer-1">
+			      <h5 class="trailer-half">在本主题中</h5>
+			      <ol class="list-plain pre-0 trailer-0"><li><a href="#ESRI_SECTION1_83306E5DFDC449D7A21434C5F816D515">Adding linear events to routes</a></li><li><a href="#ESRI_SECTION1_3DD3D0B35E5F4A908BCC8EA59488F5F4">Providing measures in a different LRM than the events are stored in</a></li></ol>
+			    </div>
+			    
+			    
+	  		</div>
+		
+    
+   <!--googleon: all-->
+
+
+
+
+          
+        </div>
+        <!-- ENDPAGECONTENT -->
+
+      </div>
+
+    </div>  <!-- End of wrapper -->
+
+  <footer class="footer leader-3 link-dark-gray" role="contentinfo">
+    <div class="grid-container">
+      <div class="row">
+        <nav class="column-6">
+          <h6 data-langlabel="arcgis-for-server">Arc<span>GIS Enterprise</span></h6>
+          <ul class="list-plain">
+            <li><a data-langlabel="home" href="../../../../zh-CN/">主页</a></li>
+            <li><a data-langlabel="portal" href="../../../../zh-CN/portal/">Portal</a></li>
+            <li><a data-langlabel="server" href="../../../../zh-CN/server/">Server</a></li>
+            <li><a data-langlabel="data-store" href="../../../../zh-CN/data-store/">Data Stores</a></li>
+            <li><a data-langlabel="cloud" href="../../../../zh-CN/cloud/">云</a></li>
+            <li><a data-langlabel="apps" href="../../../../zh-CN/apps/">应用程序</a></li>
+            <li><a data-langlabel="documentation" href="../../../../zh-CN/documentation/">文档</a></li>
+          </ul>
+        </nav>
+
+        
+  <nav class="column-6">
+    <h6 data-langlabel="arcgis-platform">ArcGIS 平台</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="arcgis" href="//www.arcgis.com/">ArcGIS Online</a></li>
+      <li><a data-langlabel="arcgis-for-professionals" href="//pro.arcgis.com/">ArcGIS Pro</a></li>
+      <li><a data-langlabel="arcgis-for-server" href="//enterprise.arcgis.com/">ArcGIS Enterprise</a></li>
+      <li><a data-langlabel="arcgis-for-developers" href="https://developers.arcgis.com/">ArcGIS for Developers</a></li>
+      <li><a data-langlabel="arcgis-solutions" href="//solutions.arcgis.com/">ArcGIS Solutions</a></li>
+      <li><a data-langlabel="arcgis-marketplace" href="//marketplace.arcgis.com/">ArcGIS Marketplace</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <h6 data-langlabel="about-esri">关于 Esri</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="about-us" href="//www.esri.com/about-esri/">关于我们</a></li>
+      <li><a data-langlabel="careers" href="//www.esri.com/careers/">招贤纳士</a></li>
+      <li><a data-langlabel="insiders-blog" href="https://www.esri.com/about/newsroom/blog/">Esri 博客</a></li>
+      <li><a data-langlabel="user-conference" href="//www.esri.com/events/user-conference/index.html">用户大会</a></li>
+      <li><a data-langlabel="developer-summit" href="//www.esri.com/events/devsummit/index.html">开发者峰会</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <a class="esri-logo" href="//www.esri.com/" aria-label="Esri Home"></a>
+    <section class="footer-social-nav leader-1">
+            <a class="icon-social-twitter" aria-label="Esri on Twitter" href="https://twitter.com/Esri/"></a>
+            <a class="icon-social-facebook" aria-label="Esri on Facebook" href="https://www.facebook.com/esrigis/"></a>
+            <a class="icon-social-github" aria-label="Esri on GitHub" href="//esri.github.io/"></a>
+            <a class="icon-social-contact" aria-label="Contact Esri" href="//www.esri.com/about-esri/contact/"></a>
+    </section>
+	  
+  </nav>
+  
+  <div class="column-24 leader-1">
+    <p class="font-size--3"><a href="http://www.esri.com/legal/copyright-trademarks">Copyright &copy; 2019 Esri.</a> All rights reserved. | <a href="http://www.esri.com/legal/privacy/">隐私政策</a> | <a href="http://www.esri.com/legal/software-license">法律声明</a></p>
+  </div>
+  
+
+
+      </div>
+    </div>
+  </footer>
+  <!--googleoff: all-->
+
+  
+  
+	<script src="../../../../zh-CN/assets/js/init.js" type="text/javascript"></script>
+	<!--<script src="../../../../zh-CN/assets/js/drop-down.js" type="text/javascript"></script>-->
+	<script src="../../../../zh-CN/assets/js/search/searchform.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/cdn/js/link-modifier.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/cdn/js/sitewide.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/cdn/js/libs/highlight.pack.js" type="text/javascript"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+
+
+  
+    
+
+  <script src="../../../../zh-CN/cdn/js/affix.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    $(function () {
+          var appendFlg = true;
+
+          $("#bigmac")
+          .on("affixed.bs.affix", function (evt) {
+            if (appendFlg) {
+              $("<a class='crumb' href='#'>Adding linear events by route and measure</a>").insertAfter ($("#bigmac nav a").last());
+              appendFlg = false;
+            }
+          })
+          .on ("affix-top.bs.affix", function(evt) {
+            if (!appendFlg) {
+              $("#bigmac nav a").last().remove();
+            }
+            appendFlg = true;
+          })
+    })
+  </script>
+  
+        <script type="text/javascript">
+          window.doctoc = {
+            pubID: "1937",
+            tpcID: "60",
+            
+              prefix: "Event Editor",
+              prefixUrl: "/zh-cn/roads-highways/latest/event-editor/what-is-event-editor.htm",
+          
+            hideToc: false
+          }
+        </script>
+
+        <script type="text/javascript" src="../../../../zh-CN/roads-highways/latest/event-editor/1937.js" ></script>
+        <script type="text/javascript" src="../../../../zh-CN/cdn/calcite/js/protoc.js" ></script>
+        
+        
+
+  <noscript>
+        <p>
+            <a href="flisting.htm">flist</a>
+        </p>
+    </noscript>
+    <script type="text/javascript"></script>
+  
+  
+    
+    
+
+  </body>
+</html>

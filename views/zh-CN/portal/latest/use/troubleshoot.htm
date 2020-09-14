@@ -1,0 +1,567 @@
+
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>  <html class="ie lt-ie9 lt-ie8 lt-ie7 ie6" dir="ltr"> <![endif]-->
+<!--[if IE 7]>     <html class="ie lt-ie9 lt-ie8 ie7" dir="ltr"> <![endif]-->
+<!--[if IE 8]>     <html class="ie lt-ie9 ie8" dir="ltr"> <![endif]-->
+<!--[if IE 9]>     <html class="ie ie9" dir="ltr"> <![endif]-->
+<!--[if !IE]><!--> <html dir="ltr" lang="zh-CN"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>疑难解答&mdash;Portal for ArcGIS | ArcGIS Enterprise 文档</title>
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+    <script>
+      var docConfig = {
+        locale: 'zh-CN'
+        ,localedir: 'zh-cn'
+        ,langSelector: ''
+        
+        ,relativeUrl: false
+        
+
+        ,searchformUrl: '/search/'
+        ,tertiaryNavIndex: ''
+
+        
+      };
+    </script>
+	 
+
+
+    
+    <!--[if lt IE 9]>
+      <script src="../../../../zh-CN/cdn/js/libs/html5shiv.js" type="text/javascript"></script>
+      <script src="../../../../zh-CN/cdn/js/libs/selectivizr-min.js" type="text/javascript"></script>
+      <script src="../../../../zh-CN/cdn/js/libs/json2.js" type="text/javascript"></script>
+      <script src="../../../../zh-CN/cdn/js/libs/html5shiv-printshiv.js" type="text/javascript" >
+
+    <![endif]-->
+
+     <!--[if lt IE 11]>
+    <script>
+      $$(document).ready(function(){
+        $$(".hideOnIE").hide();
+      });
+    </script>
+    <![endif]-->
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<link href="../../../../zh-CN/assets/img/favicon.ico" rel="shortcut icon" >
+	<link href="../../../../zh-CN/assets/css/screen.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/cdn/calcite/css/documentation.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/assets/css/print.css" media="print" type="text/css" rel="stylesheet" />
+
+	<!--
+	<link href="../../../../zh-CN/assets/css/screen_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/assets/css/documentation/base_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/assets/css/print_l10n.css" media="print" type="text/css" rel="stylesheet" />
+	-->
+	
+	
+		<script src="../../../../zh-CN/cdn/js/libs/jquery.1.9.1.min.js" type="text/javascript"></script>
+	
+	<script src="../../../../zh-CN/cdn/js/libs/jquery.cookie.js" type="text/javascript"></script>
+	<link href="../../../../zh-CN/cdn/css/colorbox.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/cdn/css/colorbox_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<script src="../../../../zh-CN/cdn/js/libs/jquery.colorbox-min.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/assets/js/video-init.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/assets/js/sitecfg.js" type="text/javascript"></script>
+	
+		<script src="../../../../zh-CN/assets/js/signIn.js" type="text/javascript"></script>
+	
+
+	<!--- Language Picker -->
+	<script src="../../../../zh-CN/assets/js/locale/l10NStrings.js" type="text/javascript"></script>
+	
+		 
+	
+
+	<script src="../../../../zh-CN/assets/js/calcite-web.js" type="text/javascript"></script>
+
+
+
+  <!--- search MD -->
+    <META name="description" content="下面列出了使用网站时可能遇到的问题以及一些推荐的解决方案。"><META name="last-modified" content="2019-12-6"><META name="product" content="arcgis-portal-windows,arcgis-portal-linux,arcgis-enterprise-windows,arcgis-enterprise-linux"><META name="sub_category" content="Portal for ArcGIS"><META name="search-collection" content="help"><META name="content_type_label" content="帮助主题"><META name="sub_category_label" content="Portal for ArcGIS"><META name="search-category" content="help-general"><META name="subject_label" content="PORTAL,服务,SERVER"><META name="version" content="10.8"><META name="content_type" content="Help Topic"><META name="subject" content="PORTAL,SERVICES,SERVER"><META name="content-language" content="zh-cn">
+    <!--- search MD -->
+
+  
+  <script src="../../../../zh-CN/assets/js/switchers/portal-1.js" type="text/javascript"></script>
+  
+      
+
+</head>
+
+<!--
+      pub: GUID-7B47163B-CE1B-465F-BEEE-4DADDB8DFF09=37
+      tpc: GUID-165EA180-A4F3-4301-BFBC-D7FEC900B2AB=63
+      -->
+
+
+<!-- variable declaration, if any -->
+<!-- can change following macro to set variable once we are on Jinja 2.8 -->
+
+
+
+
+
+<body class="claro zh-CN server">
+  
+
+  <!-- Drawer location -->
+  <div class="drawer drawer-left js-drawer" data-drawer="top-nav">
+        <nav class="drawer-nav" role="navigation">
+          <aside class="side-nav">
+            <h2 class="side-nav-title">Arc<span>GIS</span> Enterprise</h2>
+            <form id="helpSearchForm" class="margin-left-half margin-right-half leader-half trailer-half drawer-search-form" method="GET">
+              <input type="search" name="q"  placeholder="搜索 ArcGIS Enterprise 帮助">
+              <input type="hidden" name="collection" value="help" />
+              <input type="hidden" name="product" value="arcgis-portal-windows" />
+              <input type="hidden" name="version" value="10.8" />
+              <input type="hidden" name="language" value="zh-CN" />
+            </form>    
+             <a id="nav-portal" data-langlabel="portal" href="../../../../zh-CN/portal/" class="side-nav-link">Portal</a>
+             
+            <a id="all-servers" data-langlabel="all-servers" href="../../../../zh-CN/server/" class="side-nav-link">所有服务器</a>
+            <a id="gis-server" data-langlabel="gis-server" href="../../../../zh-CN/server/" class="side-nav-link">GIS Server</a>
+            <a id="image-server" data-langlabel="image-server" href="../../../../zh-CN/image/" class="side-nav-link">Image Server</a>
+            <a id="geo-analytics-server" data-langlabel="geo-analytics-server" href="../../../../zh-CN/geoanalytics/" class="side-nav-link">GeoAnalytics Server</a>
+            <a id="geoevent-server" data-langlabel="geoevent-server" href="../../../../zh-CN/geoevent/" class="side-nav-link">GeoEvent Server</a>
+            <a id="notebook-server" data-langlabel="notebook-server" href="../../../../zh-CN/notebook/" class="side-nav-link">Notebook Server</a>
+            <a id="nav-data-store" data-langlabel="data-store" href="../../../../zh-CN/data-store/" class="side-nav-link">Data Stores</a>
+            <a id="nav-cloud" data-langlabel="cloud" href="../../../../zh-CN/cloud/" class="side-nav-link">云</a>
+            <a id="nav-apps" data-langlabel="apps" href="../../../../zh-CN/apps/" class="side-nav-link">应用程序</a>
+            <a id="nav-doc" data-langlabel="documentation" href="../../../../zh-CN/documentation/" class="side-nav-link">文档</a>
+
+          </aside>
+        </nav>
+    </div>
+
+    <!-- user navigation collapses to drawer on mobile -->
+    
+    <div class="drawer drawer-right js-drawer hide-if-logged-out logged-in-navigation" data-drawer="user-nav">
+      <nav class="drawer-nav">
+        <aside class="side-nav">
+          <a class="side-nav-link agolProfile" href="#">我的个人资料</a>
+          <a class="side-nav-link icon-ui-sign-out js-log-out" href="#">登出</a>
+        </aside>
+      </nav>
+    </div>
+    
+<!-- End of drawer -->
+
+  
+  <div class="wrapper">
+      <!--googleoff: all-->
+
+      <header class="top-nav" data-skin="learn">
+        <a class="skip-to-content" href="#skip-to-content">Skip To Content</a>
+        <div class="grid-container">
+          <div class="column-24">
+
+
+            <!--<div class="top-nav-title-wrapper text-center ">-->
+              <a href='../../../../zh-CN/' class="top-nav-title tablet-hide"><span>Arc</span>GIS  Enterprise</a>
+              <a href='../../../../zh-CN/' class="icon-ui-menu top-nav-title js-drawer-toggle tablet-show" data-drawer="top-nav"><span>Arc</span>GIS Enterprise</a>
+            <!--</div> -->
+
+          
+            <nav role="navigation" class="top-nav-list left tablet-hide">
+              <a id="nav-portal" data-langlabel="portal" href="../../../../zh-CN/portal/" class="top-nav-link">Portal</a>
+
+                <div class="dropdown js-dropdown ">
+                  <a class="top-nav-link js-dropdown-toggle" tabindex="0" aria-haspopup="true" aria-expanded="false" href="#">Servers</a>
+                  <nav class="dropdown-menu featured" role="menu">
+                    <ul class="dropdown-sublist-featured">
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/get-started/latest/windows/additional-server-deployment.htm" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path  d="M42.92 6.1H4.12v8.566l.833.832-.835.833-.018 7.332.845.847-.825.824V33.9h25v5.2h-2v1.075H8.02v.8h19.1v.925h4.8v-.925H40v-.8h-8.08V39.1h-2v-5.2h13v-8.566l-.834-.834.835-.834v-7.332l-.835-.834.835-.834zm-11.8 35h-3.2v-1.2h3.2zm11-8H4.92v-7.434l.767-.766h35.668l.765.766zm0-9.766l-.766.766H5.666l-.766-.767.017-6.669.766-.764h35.671l.766.766zm0-9l-.766.766H5.687l-.766-.766V6.9h37.2zM19 11.9h-2v-.8h2zm-4 0h-2v-.8h2zm-4 0H9v-.8h2zm6 8.2h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9zm8 9h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9z"/></svg></span>
+                          <span class="sublink-text">所有服务器</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/server/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M45.98 33.575a.616.616 0 0 0-.335-.51l-3.362-2.03 3.362-2.031a.556.556 0 0 0 0-1.02l-11.1-6.704a1.293 1.293 0 0 0-1.112 0L22.33 27.982a.556.556 0 0 0 0 1.02l3.36 2.03-3.358 2.03a.556.556 0 0 0-.002 1.021l3.322 2.006-3.324 2.008a.555.555 0 0 0 .002 1.017l11.102 6.703a1.25 1.25 0 0 0 1.11.002l11.104-6.706a.556.556 0 0 0 0-1.02l-3.32-2.006 3.318-2.004a.607.607 0 0 0 .335-.509zM33.837 21.97c.026-.01.286-.005.29-.005l10.814 6.53-10.8 6.523c-.028.01-.284.005-.294.006l-10.813-6.53zm11.105 16.636l-10.8 6.523a2.564 2.564 0 0 1-.295.006l-10.81-6.529 3.39-2.047 7.004 4.23a1.083 1.083 0 0 0 .557.131 1.101 1.101 0 0 0 .554-.13l7.01-4.233zM34.14 40.098a2.545 2.545 0 0 1-.294.006l-10.812-6.53 3.43-2.073 6.97 4.208a1.25 1.25 0 0 0 1.107-.001l6.966-4.206 3.431 2.073zM9 8H7V7h2zm8 8h-2v-1h2zm-4-8h-2V7h2zm4 0h-2V7h2zm-4 8h-2v-1h2zm7.316 11.1H3.9v-6.434l.766-.766h35.668l.766.766v2.12l.8.483v-2.935l-.826-.826.826-.845v-6.329l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9h16.88a2.632 2.632 0 0 1 .336-.8zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zm0 8v-5.668l.766-.766h35.668l.766.766v5.67l-.746.764H4.666zM15 24v-1h2v1zm-4 0v-1h2v1zm-2-8H7v-1h2zm-2 8v-1h2v1z"/></svg></span>
+                          <span class="sublink-text">GIS Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/image/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 8h-2V7h2zm-4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm8 8h-2v1h2zm-8 0H7v1h2zm4 9v-1h-2v1zm-4 0v-1H7v1zm8 0v-1h-2v1zm4 3.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V21h-.8v-.334l-.766-.766H4.666l-.766.766V27.1H21zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zm40.234 4v21.8H23.1V23.1zm-.8 16.366L39.466 44.1h2.868l1.766-1.766zm-20.2-9.932l5.634-5.634h-2.868L23.9 26.666zm6.2-5.068L24.466 30.1h2.868l2.766-2.766zM28.466 30.1H30.1v-1.634zm2.434 0h6.2v-6.2h-6.2zm-7 7h6.2v-6.2h-6.2zm7 0h6.2v-6.2h-6.2zm0 6.434l5.634-5.634h-2.868L30.9 40.666zm7-7l5.634-5.634h-2.868L37.9 33.666zm1.634-5.634H37.9v1.634zm-8.634 7v1.634l1.634-1.634zm.566 6.2h2.868l2.766-2.766v-2.868zm6.434-3.566l2.634-2.634H37.9zM35.466 44.1H37.1v-1.634zm2.434 0h.434l5.766-5.766V37.9h-2.434L37.9 41.666zm6.2-8.634L42.466 37.1H44.1zm0-4L38.466 37.1h2.868l2.766-2.766zm0-7.566h-6.2v6.2h6.2zm-20.2 0v1.634l1.634-1.634zm0 20.2h6.2v-6.2h-6.2zm20.2 0v-.634l-.634.634z"/></svg></span>
+                          <span class="sublink-text">Image Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/geoanalytics/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 16h-2v-1h2zm-8 8v-1H7v1zm8 0v-1h-2v1zM13 7h-2v1h2zm4 0h-2v1h2zM9 7H7v1h2zm21.45 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V27.9h-1.464l-.801-.8H41.1v-6.434l-.766-.766H4.666l-.766.766V27.1h27.15zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM13 24v-1h-2v1zm0-9h-2v1h2zm-4 0H7v1h2zm26.672 27.148A1.87 1.87 0 0 1 35.9 43a1.91 1.91 0 1 1-3.763-.222l-9.845-3.414A1.88 1.88 0 0 1 21 39.9a1.9 1.9 0 1 1 1.474-3.084l4.692-2.346A1.878 1.878 0 0 1 27.1 34a1.902 1.902 0 0 1 1.9-1.9 1.867 1.867 0 0 1 .781.191l3.788-5.05A1.88 1.88 0 0 1 33.1 26a1.9 1.9 0 1 1 3.491 1.026l4.889 4.888c-.069.056-.144.1-.21.162a3.986 3.986 0 0 0-.358.402l-4.883-4.883A1.889 1.889 0 0 1 35 27.9a1.867 1.867 0 0 1-.781-.191l-3.788 5.049a1.868 1.868 0 0 1 .437.965l9.204.614c-.018.11-.049.218-.058.33A3.93 3.93 0 0 0 40 35c0 .046.01.09.01.135l-9.185-.612A1.913 1.913 0 0 1 29 35.9a1.889 1.889 0 0 1-1.474-.716l-4.692 2.346a1.878 1.878 0 0 1 .066.47 1.9 1.9 0 0 1-.105.625c-.007.02-.022.036-.03.056l9.63 3.34a1.87 1.87 0 0 1 2.786-.505l5.415-4.437c.067.108.127.22.204.322a3.9 3.9 0 0 0 .292.306zM33.9 26a1.092 1.092 0 0 0 .43.872 1.12 1.12 0 0 0 1.42-.068A1.1 1.1 0 1 0 33.9 26zm-6 8a1.1 1.1 0 0 0 2.196.093 1.135 1.135 0 0 0-.426-.965A1.087 1.087 0 0 0 29 32.9a1.101 1.101 0 0 0-1.1 1.1zm-5.8 4a1.098 1.098 0 1 0-.06.362A1.101 1.101 0 0 0 22.1 38zm13 5a1.1 1.1 0 1 0-2.2 0 1.1 1.1 0 0 0 2.2 0zm10.8-8a1.9 1.9 0 1 1-3.8 0c0-.053.003-.105.007-.158A1.9 1.9 0 0 1 45.9 35zm-.8 0a1.1 1.1 0 0 0-2.196-.093 1.153 1.153 0 0 0 .216.752A1.1 1.1 0 0 0 45.1 35z"/></svg></span>
+                          <span class="sublink-text">GeoAnalytics Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/geoevent/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M13 8h-2V7h2zm4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm12.418 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826v2.117c-.259-.177-.53-.337-.8-.497v-1.288l-.766-.766H4.666l-.766.766V27.1h17.933c-.148.26-.283.53-.415.8zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM9 24v-1H7v1zm4-9h-2v1h2zm0 9v-1h-2v1zm-4-9H7v1h2zm8 9v-1h-2v1zm16.9 2h-.8v8.9H39v-.8h-5.1zm.1-3.901a11.9 11.9 0 1 0 11.9 11.9 11.914 11.914 0 0 0-11.9-11.9zm0 23a11.1 11.1 0 1 1 11.1-11.1 11.112 11.112 0 0 1-11.1 11.1z"/></svg></span>
+                          <span class="sublink-text">GeoEvent Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/notebook/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M22 27.1H3.9v-6.434l.766-.766h18.576a5.262 5.262 0 0 1 .83-.8H4.666l-.766-.766v-5.668l.766-.766h35.668l.766.766V18h.8v-5.666l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9H22zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zM9 8H7V7h2zm8 0h-2V7h2zm-4 0h-2V7h2zm2 16v-1h2v1zm-4 0v-1h2v1zm-4 0v-1h2v1zm0-8v-1h2v1zm8 0v-1h2v1zm-4 0v-1h2v1zm18.9 8.1h-1.8v1.8h1.8zm-.8 1h-.2v-.2h.2zm15.498-4.48a2.727 2.727 0 0 0-1.62-.5v-.02H27.25a3.154 3.154 0 0 0-3.15 3.15V38.1h-1.68a3.386 3.386 0 0 0-2.872 1.58 3.49 3.49 0 0 0-.157 3.419 3.241 3.241 0 0 0 2.954 1.801h15.161a3.404 3.404 0 0 0 3.394-3.4V26.9h5v-3.65a3.224 3.224 0 0 0-1.302-2.63zM22.345 44.1a2.44 2.44 0 0 1-2.23-1.341 2.706 2.706 0 0 1 .11-2.65A2.588 2.588 0 0 1 22.42 38.9h12.89a3.395 3.395 0 0 0 0 5.2zM40.1 23.192V41.5a2.6 2.6 0 1 1-2.6-2.6v-.8H24.9V23.25a2.352 2.352 0 0 1 2.35-2.35h13.795a3.183 3.183 0 0 0-.945 2.292zm5 2.908h-4.2v-2.908a2.274 2.274 0 0 1 1.44-2.18 1.944 1.944 0 0 1 1.791.259 2.423 2.423 0 0 1 .97 1.979zm-17.1 5h9v.8h-9zm0 3h7v.8h-7zm0-6h9v.8h-9zm4-3h5v.8h-5z"/></svg></span>
+                          <span class="sublink-text">Notebook Server</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+
+              <a id="nav-data-store" data-langlabel="data-store" href="../../../../zh-CN/data-store/" class="top-nav-link">Data Stores</a>
+              <a id="nav-cloud" data-langlabel="cloud" href="../../../../zh-CN/cloud/" class="top-nav-link">云</a>
+              <a id="nav-apps" data-langlabel="apps" href="../../../../zh-CN/apps/" class="top-nav-link">应用程序</a>
+            </nav>
+
+
+            
+            
+            
+
+            <div class="margin-left-1 top-nav-list right hide-if-logged-in logged-out-navigation">
+               
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+              
+              <a data-langlabel="sign-in" id="login-link" class="icon-ui-user top-nav-link link-blue login-link" href="#">登录</a>
+              
+            </div>
+
+            
+            <nav class="margin-left-1 top-nav-list right hide-if-logged-out logged-in-navigation">
+              
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+             
+              <div class="dropdown js-dropdown right">
+
+                <div class="tablet-show top-nav-link">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a href="#" data-drawer="user-nav" class="user-nav-name js-drawer-toggle" data-first-name></a>
+                </div>
+
+                <div class="tablet-hide top-nav-link js-dropdown-toggle">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a class="user-nav-name top-nav-dropdown dropdown-btn" data-first-name>&nbsp;</a>
+                </div>
+
+                <nav class="dropdown-menu dropdown-right">
+                
+                  <a class="dropdown-link agolProfile" id="agolProfile" href="#">我的个人资料</a>
+                  <a class="dropdown-link js-log-out" id="agolLogout" href="#">登出</a>
+                </nav>
+              </div>
+            </nav>
+            
+
+            
+          </div>
+        </div>
+      </header>
+
+      <div class="js-search search-overlay">
+        <div class="search-content" role="dialog" aria-labelledby="search">
+          <form method="GET" id="helpSearchForm">
+            <label>
+              搜索 ArcGIS Enterprise 帮助
+              <div class="search-bar">
+                <input type="search" name="q"  placeholder="搜索 ArcGIS Enterprise 帮助" class="search-input js-search-input">
+                <input type="hidden" name="collection" value="help" />
+                <input type="hidden" name="product" value="arcgis-portal-windows" />
+                <input type="hidden" name="version" value="10.8" />
+                <input type="hidden" name="language" value="zh-CN" />
+              </div>
+            </label>
+            <input type="hidden" name="relativePath" value="../../../../" /><button type="submit" class="btn btn-large right">搜索</button>
+          </form>
+        </div>
+      </div>
+
+      <!--googleon: all-->
+
+      <div id="skip-to-content">
+        <!--googleoff: all-->
+        <header class="sub-nav sub-nav-learn">
+          <div class="grid-container">
+            
+            <div class="column-24">
+              <div style="display:table;" class="sdk-home-banner">
+                <div class="sdk-home-banner-content">
+                  <h1 class="sub-nav-title link-white">Portal for ArcGIS</h1>
+                </div>
+              </div>
+            </div>
+
+            <div class="column-24">
+              <nav class='sub-nav-list tablet-hide'><a class="sub-nav-link" href="../../../../zh-CN/portal/" target="_top" title="Portal for ArcGIS 主页">主页</a><a class="sub-nav-link is-active" href="../../../../zh-CN/portal/latest/use/" target="_top" title="使用 Portal for ArcGIS">使用</a><a class="sub-nav-link" href="../../../../zh-CN/portal/latest/administer/windows/" target="_top" title="安装、管理和保护 Portal for ArcGIS">管理</a></nav><select class='tablet-show select-full trailer-half js-select-nav'><option value="../../../../zh-CN/portal/">主页</option><option selected="true" value="../../../../zh-CN/portal/latest/use/">使用</option><option value="../../../../zh-CN/portal/latest/administer/windows/">管理</option></select>
+            </div>
+
+          </div>
+        </header>
+        <!--googleon: all-->
+       
+        <!-- content goes here -->
+        <div class="grid-container ">
+          
+
+            
+              
+  <!--BREADCRUMB-BEG--><div id="bigmac" class="sticky-breadcrumbs trailer-2" data-spy="affix" data-offset-top="180"> </div><!--BREADCRUMB-END-->
+  <!--googleoff: all-->
+    <div class="column-5 tablet-column-12 trailer-2 ">
+      <aside class="js-accordion accordion reference-index" aria-live="polite" role="tablist">
+        <div></div>
+      </aside>
+
+      <div class="js-sticky scroll-show tablet-hide leader-1 back-to-top" data-top="0" style="top: 0px;">
+        <a href="#" class="btn btn-fill btn-clear">返回顶部</a>
+      </div>
+    </div>
+  <!--googleon: all-->
+  
+            
+            
+            
+	
+		<div class="column-13  pre-1 content-section">
+	
+		<header class="trailer-1"><h1>疑难解答</h1></header>
+
+		 
+	<!--googleoff: all-->
+	
+		
+				<aside id="main-toc-small" class="js-accordion accordion tablet-show trailer-1">
+			      <div class="accordion-section">
+			        <h4 class="accordion-title">在本主题中</h4>
+			        <div class="accordion-content list-plain">
+			          <ol class="list-plain pre-0 trailer-0"><li><a href="#ESRI_QUESTIONANSWERS_605D8C9E847A4039AF7E2240A55E4F56">网站</a></li><li><a href="#ESRI_QUESTIONANSWERS_5608774E1CAA4804BC1883828AC0771B">地图</a></li><li><a href="#ESRI_QUESTIONANSWERS_80F4F059417B4E5B8AA2874A80182130">应用程序</a></li><li><a href="#ESRI_QUESTIONANSWERS_0B1A3366B333402F8208BB565510FDDE">托管 Web 图层</a></li><li><a href="#ESRI_QUESTIONANSWERS_DFAB501BA1A941E692F6260374B32511"><ph translate="yes" varid="geoanalyticsserver_tools">GeoAnalytics 工具</ph></a></li><li><a href="#ESRI_QUESTIONANSWERS_74FDD3106C204E53999E3ED8C5F9BEF8">内容</a></li><li><a href="#ESRI_QUESTIONANSWERS_18C343EDBFDF449491F9E76E00494EE8"><ph translate="no" varid="ArcGISforDesktop">ArcGIS Desktop</ph></a></li></ol>
+			        </div>
+			      </div>
+			     </aside>
+		
+    
+   <!--googleon: all-->
+
+
+		<main>
+			
+	
+    	
+    
+
+
+			
+    
+    
+    <p id="GUID-25E1CD2C-1B19-4937-A955-7CCD26167975" ishcondition="agol_plat=portal">下面列出了使用门户网站时可能遇到的问题以及一些推荐的解决方案。
+</p><p id="GUID-5C01E7A7-57FD-4863-8B86-3507783ED05F" ishcondition="agol_plat=portal"><div class="panel trailer-1 note" id="GUID-4D438F05-0B70-44C7-BAD7-0D2230726059"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-E8FEB0B4-AB6C-4036-A9FE-7AADE07573C0">对于与场景图层和 <span class="ph">Scene Viewer</span> 相关的解决方案，请参阅<a class="xref xref" href="../../../../zh-CN/portal/latest/use/troubleshoot-scenes.htm">场景和 3D 数据疑难解答</a>。</p></div></p>    <section class="section1 padded-anchor" purpose="section1"><h2>网站</h2><ul purpose="ul" orig="qanav"><li purpose="li" orig="qanav"><a class="xref xref" href="#anchor1">使用此网站时遇到了最大值限制。</a></li><li purpose="li" orig="qanav"><a class="xref xref" href="#anchor2"> 尝试向门户添加新成员时出现软件授权错误。</a></li><li purpose="li" orig="qanav"><a class="xref xref" href="#anchor3">尝试登录我的门户时出现软件授权错误。</a></li></ul></section><section class="section1 padded-anchor" purpose="section1"><h2>地图</h2><ul purpose="ul" orig="qanav"><li purpose="li" orig="qanav"><a class="xref xref" href="#anchor4">搜索图层添加地图时，仅列出 web 图层。</a></li><li purpose="li" orig="qanav"><a class="xref xref" href="#anchor5">在搜索要添加到地图中的图层时，搜索结果中并未列出我的组织的所有图层。</a></li><li purpose="li" orig="qanav"><a class="xref xref" href="#anchor6">弹出窗口中的日期和时间与基础数据中的日期和时间不匹配。</a></li><li purpose="li" orig="qanav"><a class="xref xref" href="#anchor7"> 日期在整个地图中的格式有所不同。</a></li><li purpose="li" orig="qanav"><a class="xref xref" href="#anchor8">时间不会显示在日期字段中。</a></li><li purpose="li" orig="qanav"><a class="xref xref" href="#anchor9">无法在可编辑的要素图层中编辑要素的几何。</a></li><li purpose="li" orig="qanav"><a class="xref xref" href="#anchor10">打印地图时，某些图层丢失。</a></li><li purpose="li" orig="qanav"><a class="xref xref" href="#anchor11"> 我的地图图层未绘制完全。</a></li><li purpose="li" orig="qanav"><a class="xref xref" href="#anchor12">新建 web 地图的缩略图未生成或者无法正确显示。</a></li><li purpose="li" orig="qanav"><a class="xref xref" href="#anchor13">地图缺少图例。</a></li><li purpose="li" orig="qanav"><a class="xref xref" href="#anchor14">该地图图例与在要素图层中创建的图例不同。</a></li><li purpose="li" orig="qanav"><a class="xref xref" href="#anchor15">我无法对地图内容中的图层重新排序。</a></li><li purpose="li" orig="qanav"><a class="xref xref" href="#anchor16">我丢失了正在处理的地图。</a></li><li purpose="li" orig="qanav"><a class="xref xref" href="#anchor17">Web 地图包含不再可用的图层，加载地图时会出现错误。如何移除此图层，以便使用另一图层来替换此图层？</a></li><li purpose="li" orig="qanav"><a class="xref xref" href="#anchor18"> 时间滑块不会显示在具有时间感知型图层的地图中。</a></li><li purpose="li" orig="qanav"><a class="xref xref" href="#anchor19">没有可将我的图层用作底图的选项。</a></li><li purpose="li" orig="qanav"><a class="xref xref" href="#anchor20">使用自己的底图时，在地图中会丢失一些底图的缩放级别。</a></li><li purpose="li" orig="qanav"><a class="xref xref" href="#anchor21">由于底图不可用，所以不会显示任何地图内容。</a></li><li purpose="li" orig="qanav"><a class="xref xref" href="#anchor22">将 OGC WMS 或 WMTS 图层添加到地图中时，会收到一条错误消息，该消息提示此图层的坐标系未与底图的坐标系匹配。</a></li><li purpose="li" orig="qanav"><a class="xref xref" href="#anchor23">添加的航空影像在地图上不显示。</a></li><li purpose="li" orig="qanav"><a class="xref xref" href="#anchor24">我的地图图层在 <span class="ph">Map Viewer</span> 中没有以缓存切片时采用的比例来显示。</a></li><li purpose="li" orig="qanav"><a class="xref xref" href="#anchor25">我在 <span class="ph">Microsoft Internet Explorer</span> 中访问 <span class="ph">ArcGIS Server</span> 服务和受 Web 层身份验证保护的 OGC 图层时遇到问题。</a></li><li purpose="li" orig="qanav"><a class="xref xref" href="#anchor26">某些图层在地图中显示不正确。看起来像是 HTTP 和 HTTPS URL 的混合。这种混合的内容是否对地图显示造成负面影响？</a></li><li purpose="li" orig="qanav"><a class="xref xref" href="#anchor27">尝试向地图添加图层或打开现有地图时，出现消息提示 <span class="ph">Map Viewer</span> 无法与一个或多个图层建立安全连接。</a></li><li purpose="li" orig="qanav"><a class="xref xref" href="#anchor28">地图中丢失了一些要素。</a></li><li purpose="li" orig="qanav"><a class="xref xref" href="#anchor29">我无法编辑已经添加到地图中的要素。</a></li><li purpose="li" orig="qanav"><a class="xref xref" href="#anchor30">已知服务中包含要素数据，但我看不到配置弹出窗口的选项。</a></li><li purpose="li" orig="qanav"><a class="xref xref" href="#anchor31">我无法移除地图中图层的弹出窗口。</a></li><li purpose="li" orig="qanav"><a class="xref xref" href="#anchor32">我在 <span class="ph">Map Viewer</span> 中更新的图层上没有看到保存项目属性的选项。</a></li><li purpose="li" orig="qanav"><a class="xref xref" href="#anchor33">Web 上的 CSV 文件中的数值字段未能正确地导入到地图中。</a></li><li purpose="li" orig="qanav"><a class="xref xref" href="#anchor34">我的组织具有可在公开共享的地图中使用的 <span class="ph">Bing Maps</span> 密钥。我可在地图中看到 <span class="ph">Bing Maps</span> 底图，但是公众看到的是 <span class="ph">ArcGIS Online</span> 底图。</a></li><li purpose="li" orig="qanav"><a class="xref xref" href="#anchor35">我在样式设置方面遇到问题。</a></li><li purpose="li" orig="qanav"><a class="xref xref" href="#anchor36">仅搜索推荐的六个要素。</a></li></ul></section><section class="section1 padded-anchor" purpose="section1"><h2>应用程序</h2><ul purpose="ul" orig="qanav"><li purpose="li" orig="qanav"><a class="xref xref" href="#anchor37">正在配置的故事地图不具有共享订阅者内容的设置。</a></li></ul></section><section class="section1 padded-anchor" purpose="section1"><h2>托管 Web 图层</h2><ul purpose="ul" orig="qanav"><li purpose="li" orig="qanav"><a class="xref xref" href="#anchor38">我无法通过托管要素图层发布托管切片图层。</a></li><li purpose="li" orig="qanav"><a class="xref xref" href="#anchor39">无法将 <span class="usertext">.txt</span> 文件发布为托管要素图层。</a></li><li purpose="li" orig="qanav"><a class="xref xref" href="#anchor40">我在上传 <span class="usertext">.tpk</span> 文件并试图将其发布为托管切片图层时，收到了错误消息<span class="uicontrol">无法识别的服务类型：影像服务</span>。</a></li><li purpose="li" orig="qanav"><a class="xref xref" href="#anchor41">我看不到通过使用 <span class="ph">ArcGIS Desktop</span> 发布到组织门户的选项。</a></li><li purpose="li" orig="qanav"><a class="xref xref" href="#anchor42">发布托管切片图层需要花费较长时间。</a></li><li purpose="li" orig="qanav"><a class="xref xref" href="#anchor43">            
+            <span class="ph">发布上传到门户的服务定义 (<span class="usertext">.sd</span>) 文件失败并显示消息<span class="uicontrol">无法发布项目。无法将该项目发布到 Online 服务</span>。</span>          </a></li><li purpose="li" orig="qanav"><a class="xref xref" href="#anchor44">            尝试在 <span class="ph">ArcGIS Desktop</span> 中打开托管图层的服务属性时，收到错误消息<span class="usertext"></span><span class="uicontrol">无法查看或编辑服务属性。请尝试直接通过服务器访问服务属性。</span>。</a></li><li purpose="li" orig="qanav"><a class="xref xref" href="#anchor45">我的托管要素图层不使用我在 <span class="ph">ArcGIS Pro</span> 或 <span class="ph">ArcMap</span> 中定义的符号系统。</a></li></ul></section><section class="section1 padded-anchor" purpose="section1"><h2><span class="ph">GeoAnalytics 工具</span></h2><ul purpose="ul" orig="qanav"><li purpose="li" orig="qanav"><a class="xref xref" href="#anchor46">当我运行 <span class="ph">GeoAnalytics 工具</span> 创建用于在时空大数据存储中存储数据的托管要素图层时，我收到<span class="uicontrol">已配置节点均不可用</span>消息。</a></li></ul></section><section class="section1 padded-anchor" purpose="section1"><h2>内容</h2><ul purpose="ul" orig="qanav"><li purpose="li" orig="qanav"><a class="xref xref" href="#anchor47"> 当我向 <span class="ph">Map Viewer</span> 添加要素图层或查询图层时，收到<span class="uicontrol">堆空间不足异常</span>的错误消息。</a></li></ul></section><section class="section1 padded-anchor" purpose="section1"><h2><span class="ph">ArcGIS Desktop</span></h2><ul purpose="ul" orig="qanav"><li purpose="li" orig="qanav"><a class="xref xref" href="#anchor48">无法在 <span class="ph">ArcGIS Desktop</span> 中打开项目。</a></li><li purpose="li" orig="qanav"><a class="xref xref" href="#anchor49">更新图层包或地图包项目详细信息时，即使选择了<span class="uicontrol">保持项目属性</span>，图像也会更新。</a></li><li purpose="li" orig="qanav"><a class="xref xref" href="#anchor50">打开图层包时系统提示我登录。</a></li><li purpose="li" orig="qanav"><a class="xref xref" href="#anchor51">在 <span class="ph">ArcMap</span> 中打开 globe 图层将返回错误消息。</a></li><li purpose="li" orig="qanav"><a class="xref xref" href="#anchor52">通过在图层项目详细信息页面中单击<span class="uicontrol">在 ArcGIS Desktop 中打开</span>选项来将图层添加到 <span class="ph">ArcGIS Desktop</span> 或 ArcGIS Explorer 中时，此图层不可用。例如，在 <span class="ph">ArcMap</span> 中，我看到添加了新图层，但无法对其进行绘制。而在图层项目详细信息页面中单击<span class="uicontrol">在 Map Viewer 中打开</span>选项时，则可以在 <span class="ph">Map Viewer</span> 中打开和绘制图层，由此可知托管地图服务的服务器已启动和运行。</a></li><li purpose="li" orig="qanav"><a class="xref xref" href="#anchor53">尝试从 <span class="ph">ArcGIS Desktop</span> 登录我的门户时出现软件授权错误。</a></li><li purpose="li" orig="qanav"><a class="xref xref" href="#anchor54">当我在 <span class="ph">ArcGIS Desktop</span> 客户端打开图层文件（<span class="usertext">.lyr</span> 或 <span class="usertext">.lyrx</span>）或地图文档（<span class="usertext">.mxd</span> 或 <span class="usertext">.mapx</span>）时，一些图层会丢失。</a></li></ul></section><section class="qas padded-anchor" id="ESRI_QUESTIONANSWERS_605D8C9E847A4039AF7E2240A55E4F56" purpose="qas"><span qas_title="网站"></span><section class="qa padded-anchor" id="anchor1" purpose="qa"><div class="question" id="ESRI_QUESTIONANSWER_71B9FC50E40848FEB871DA0AA78587E0" purpose="question"><a id="GUID-E8126AFC-7320-4E81-9123-EEEFA09FA334"></a>                    
+          <p id="GUID-41E4327C-910F-41E5-A82A-6D5858C11F15">使用此网站时遇到了最大值限制。</p>        </div><div class="answer" id="ESRI_QUESTIONANSWER_71B9FC50E40848FEB871DA0AA78587E0" purpose="answer"><a id="GUID-7E4BA845-2A7C-4806-9323-E5DA8ED17F90"></a>          <p id="GUID-2560C15D-E99A-4A58-A258-29A950AE9DE8">网站具有下列最大值限制：</p>          <ul purpose="ul" id="UL_6322A979590C4B279AE759624CB3B7D5">            
+            <li purpose="li" id="LI_E08B371B6A4A4A2AB5F75856675B1454" ishcondition="agol_plat=portal">  每个用户的群组数量：512</li><li purpose="li" id="LI_D28BEA2DE2174298A59EEAEB37CADF44">上传文件大小：200 GB</li>            <li purpose="li" id="LI_A444A35FCB7042388AF1092D7B66C569"> 缩略图大小：1 MB</li>            <li purpose="li" id="LI_9D5F00266FA144A2A956DCEEC2E28B96">登录时间：两周</li>          <li purpose="li" id="LI_BEDD9033AD2D438F976EDF1CC89EA72E"><a class="xref xref" href="../../../../zh-CN/portal/latest/use/add-items.htm#ESRI_SECTION1_1A21D51E1AFC41EA9974209BD94E50C0">通过 Web 添加项目</a>的 URL 字符：1024</li></ul>        </div></section><section class="qa padded-anchor" id="anchor2" purpose="qa"><div class="question" id="ESRI_QUESTIONANSWER_8229BBD1D19440F2A0A9274EB9849452" purpose="question"><a id="GUID-52EE5496-6ADE-4F1C-AAFD-E2CD095FEAC4"></a>          <p id="GUID-FE59C506-96FC-4F7B-A56A-E133F856ECF4"> 尝试向门户添加新成员时出现软件授权错误。</p>        </div><div class="answer" id="ESRI_QUESTIONANSWER_8229BBD1D19440F2A0A9274EB9849452" purpose="answer"><a id="GUID-769606AD-E2E5-46BD-A80C-A7C809C0B447"></a>          <p id="GUID-62302A20-2B0D-4A2A-ADDE-ED21E6A9C660">对 <span class="ph">Portal for ArcGIS</span> 进行许可，以允许特定的成员数量。如果门户的成员数量已达许可的最大数量，则无法添加新的帐户，并且将显示消息<span class="uicontrol">由于软件授权错误无法创建新帐户。请联系 Portal for ArcGIS 管理员获取帮助。</span> 门户管理员必须要获得新的许可或移除现有成员才能添加新成员。</p>        </div></section><section class="qa padded-anchor" id="anchor3" purpose="qa"><div class="question" id="ESRI_QUESTIONANSWER_CB112313F9C1482EBB3E84990FA34F7B" purpose="question"><a id="GUID-89CBB7A7-5762-40E6-BD29-599D9B0E4DFD"></a>          <p id="GUID-8F41C20A-9F8E-4262-95FE-91FEC30B3A41">尝试登录我的门户时出现软件授权错误。</p>        </div><div class="answer" id="ESRI_QUESTIONANSWER_CB112313F9C1482EBB3E84990FA34F7B" purpose="answer"><a id="GUID-12AEFDD4-0CDD-4DBD-B6B6-94B31D0DB627"></a>          <p id="GUID-1A8BB97B-9D5C-433F-917E-EA0B181C9A31">对 <span class="ph">Portal for ArcGIS</span> 进行许可，以允许特定的成员数量。如果门户成员超出该数量，下次尝试登录门户时会显示以下消息：<span class="uicontrol">由于软件授权错误无法登录。请联系 Portal for ArcGIS 管理员获取帮助。</span> 门户管理员必须要获得新的许可或从门户中移除成员。</p>        </div></section></section>    
+    
+    
+    <section class="qas padded-anchor" id="ESRI_QUESTIONANSWERS_5608774E1CAA4804BC1883828AC0771B" purpose="qas"><span qas_title="地图"></span><section class="qa padded-anchor" id="anchor4" purpose="qa"><div class="question" id="ESRI_QUESTIONANSWER_E2099C60B2F947A6A2BB795FA893737F" purpose="question"><a id="GUID-36419EAD-DA57-4854-9EBF-1A84C9370506"></a>          <p id="GUID-737DB140-4AA1-4E1A-B8C6-B1A416C44A03">搜索图层添加地图时，仅列出 web 图层。</p>        </div><div class="answer" id="ESRI_QUESTIONANSWER_E2099C60B2F947A6A2BB795FA893737F" purpose="answer"><a id="GUID-0FD6CE4A-CF42-40D4-B906-C86117E029E4"></a>          <p id="GUID-B8244900-0617-468F-993B-986B8F3CD262">您可以搜索并添加要素图层、切片图层、影像图层、KML 图层以及 OGC WMS、WMTS 和 WFS 图层。不支持其他图层类型（例如图层包）。</p>        </div></section><section class="qa padded-anchor" id="anchor5" purpose="qa"><div class="question" id="ESRI_QUESTIONANSWER_9C1173F62E014A69A161E0181A91E08C" purpose="question"><a id="GUID-F9D1A571-58DA-41A5-A609-887394FA02CA"></a>          <p id="GUID-396F0E99-5D5E-4170-BDA9-051F9C532D5E">在搜索要添加到地图中的图层时，搜索结果中并未列出我的组织的所有图层。</p>        </div><div class="answer" id="ESRI_QUESTIONANSWER_9C1173F62E014A69A161E0181A91E08C" purpose="answer"><a id="GUID-34B5D384-7594-4821-80F4-9166481D278D"></a>          <p id="GUID-6DDF9EDF-DB89-48DF-8410-C6730AB63648">如果选中了<span class="uicontrol">在地图区域内</span>框，则搜索结果中将仅列出与当前地图范围相交的图层。</p>        </div></section><section class="qa padded-anchor" id="anchor6" purpose="qa"><div class="question" id="ESRI_QUESTIONANSWER_DE92994C4A6B42EAB6B9B016A43519C9" purpose="question"><a id="GUID-F5D5674D-BC11-4431-ADCF-F950C50A39F2"></a>          <p id="GUID-6EA4274A-D2CA-4EF2-906C-5886D93DEB8E">弹出窗口中的日期和时间与基础数据中的日期和时间不匹配。</p>        </div><div class="answer" id="ESRI_QUESTIONANSWER_DE92994C4A6B42EAB6B9B016A43519C9" purpose="answer"><a id="GUID-0E5E1FFB-3102-484F-A205-65B91B0FC5D7"></a>          <p id="GUID-F51D11E5-1291-49BF-9440-0AD8009EF51B">服务器以协调世界时间 (UTC) 存储日期。而 Web 浏览器会将日期转换为本地时间。例如，如果您在加利福尼亚州查看弹出窗口中的时间字段，且此时为标准夏令时，您将看到早于数据时间 8 小时的时间 (UTC-8)。此偏移量可能也会影响日期。如果在弹出窗口中查看 7/7/2017 12:00 AM 时的数据，您会看到 7/6/2017 5:00 PM。</p>        </div></section><section class="qa padded-anchor" id="anchor7" purpose="qa"><div class="question" id="ESRI_QUESTIONANSWER_AD22FABE6D3A4E0687E6A7F6563C6161" purpose="question"><a id="GUID-72E5472F-28A0-452E-98EB-20522D1E6DF0"></a>          <p id="GUID-0F106DD8-A9E2-44F3-A40C-0C94203D8392"> 日期在整个地图中的格式有所不同。</p>        </div><div class="answer" id="ESRI_QUESTIONANSWER_AD22FABE6D3A4E0687E6A7F6563C6161" purpose="answer"><a id="GUID-E5077350-3471-4943-8609-70100471DC5C"></a>          <p id="GUID-261FEF82-DB89-48B3-BE15-946DD65BCEE5"> 在 <span class="ph">Map Viewer</span> 中查看日期时，您可能会看到地图中不同的部分具有不同的格式。地图制作工具可用于配置弹出窗口、表格和标签中显示的格式。对于地图的其他部分，例如时间滑块、与您的帐户相关联的语言将决定日期格式。</p>        </div></section><section class="qa padded-anchor" id="anchor8" purpose="qa"><div class="question" id="ESRI_QUESTIONANSWER_EDDD3CD82A324D3DBBB08E8127F24251" purpose="question"><a id="GUID-32786849-A425-4AFA-8192-1D0B72676EC8"></a>          <p id="GUID-DB409E40-048A-4896-A3EC-DCD3D4517D9B">时间不会显示在日期字段中。</p>        </div><div class="answer" id="ESRI_QUESTIONANSWER_EDDD3CD82A324D3DBBB08E8127F24251" purpose="answer"><a id="GUID-25A5B99A-FBE9-4BA5-8BA4-37F7EA59A80D"></a>          <p id="GUID-E4D89A9A-5AD9-4CAC-B15E-CEBF41B7AA38">仅短日期格式会显示时间（例如，12/31/1999 和 31/12/1999）。而其他日期格式不会将时间作为日期字段的一部分显示。如果要在日期字段中显示时间，则需要<a class="xref xref" href="../../../../zh-CN/portal/latest/use/configure-pop-ups.htm#ESRI_SECTION1_0505720B006E43C5B14837A353FFF9EC">在弹出窗口中配置日期字段</a>以使用其中一种短日期格式（并选中复选框才能显示时间）。</p>        </div></section><section class="qa padded-anchor" id="anchor9" purpose="qa"><div class="question" id="ESRI_QUESTIONANSWER_5D650903595F43B5AA7F72B171737A37" purpose="question"><a id="GUID-D64BF3F3-0538-4121-8383-BA15EF1F01D5"></a>          <p id="GUID-7A03551D-892F-4475-9BB7-228AA3DDD55E">无法在可编辑的要素图层中编辑要素的几何。</p>        </div><div class="answer" id="ESRI_QUESTIONANSWER_5D650903595F43B5AA7F72B171737A37" purpose="answer"><a id="GUID-8F8FEE94-1790-4D2D-A490-B244CD6F4B51"></a>          <p id="GUID-C727FB96-20F3-4571-932E-4AD9BE8A7018">如果可编辑的要素图层包含 m 值，则无法编辑现有要素的几何。如果要编辑图层中现有要素的几何，则图层所有者必须将包含 m 值的数据移至独立图层（该图层可以位于同一服务中）。</p>        </div></section><section class="qa padded-anchor" id="anchor10" purpose="qa"><div class="question" id="ESRI_QUESTIONANSWER_4BC6D7B9427E4C16A3C7F5C734AAE824" purpose="question"><a id="GUID-B36059A0-671F-45E9-A37D-C7728D6195FD"></a>          <p id="GUID-0502A184-F79C-4127-AD85-8C8E84BD5150">打印地图时，某些图层丢失。</p>        </div><div class="answer" id="ESRI_QUESTIONANSWER_4BC6D7B9427E4C16A3C7F5C734AAE824" purpose="answer"><a id="GUID-3EC12814-C615-4941-9EB2-84FBFCCFA3F0"></a>          <p id="GUID-0513F201-52A5-4F2B-81A8-F6A5C4AF13E1" ishcondition="agol_plat=portal">根据管理员配置打印服务的方式，某些类型的图层可能不会显示在打印的地图上。有关详细信息，请与您的管理员联系。此外，如果使用浏览器的打印按钮打印地图，也可能会缺失许多其他图层和徽标。使用 <span class="ph">Map Viewer</span> 中的<span class="uicontrol">打印</span>按钮可打印最完整且格式良好的地图。</p>          
+        </div></section><section class="qa padded-anchor" id="anchor11" purpose="qa"><div class="question" id="ESRI_QUESTIONANSWER_F8B4DA191ACE492AB1A24F894A3132B5" purpose="question"><a id="GUID-194729D1-2CC2-427D-8D85-1DC9B54FC82F"></a><p id="GUID-ED2D1E26-8BA3-4C0D-A1CB-CC3E9D436245"> 我的地图图层未绘制完全。</p></div><div class="answer" id="ESRI_QUESTIONANSWER_F8B4DA191ACE492AB1A24F894A3132B5" purpose="answer"><a id="GUID-EC7E3C9D-B11D-430B-8DA5-38142224BA77"></a><p id="GUID-C19EBC7D-A81E-4AC4-B887-3F074F67CBE7">对于 <span class="ph">Map Viewer</span> 而言，图层中包括的要素数量可能过多，以至于无法同时显示所有要素。发生这种情况时，<span class="ph">Map Viewer</span> 会显示一则警告，指示图层未绘制完全。要查看省略的要素，请放大并四处移动地图。</p><p id="GUID-4203626F-D00A-4174-9D5B-A3320A302978"><a class="xref xref" href="../../../../zh-CN/portal/latest/use/best-practices-layers.htm">了解在地图中使用图层的最佳做法</a></p></div></section><section class="qa padded-anchor" id="anchor12" purpose="qa"><div class="question" id="ESRI_QUESTIONANSWER_EDA2FA2C14D84E249355A5F0BF7A1ABB" purpose="question"><a id="GUID-13EB687F-0208-4359-8FF7-3C38A4A26EA9"></a>          <p id="GUID-DC91D354-ECCC-417A-B98F-E61E48AF2B17">新建 web 地图的缩略图未生成或者无法正确显示。</p>        </div><div class="answer" id="ESRI_QUESTIONANSWER_EDA2FA2C14D84E249355A5F0BF7A1ABB" purpose="answer"><a id="GUID-8B690211-00A6-4864-985B-DCC21B93E5C7"></a>          <p id="GUID-D8EBF976-0CA1-4346-A921-D42D6F4DAB94">如果您的 web 地图包含使用 HTTPS 的 <span class="ph">ArcGIS Server</span> 服务，则可能会遇到此类问题。打印服务用于生成缩略图。如果带有打印服务（用于生成缩略图）的计算机不信任托管 HTTPS 服务的 <span class="ph">ArcGIS Server</span> 站点，则缩略图不会生成或者无法正确显示。要解决此问题，请联系门户管理员，并让管理员在计算机与站点之间建立信任。</p>        </div></section><section class="qa padded-anchor" id="anchor13" purpose="qa"><div class="question" id="ESRI_QUESTIONANSWER_695E74CABB614EE19847E71DBF2B20DA" purpose="question"><a id="GUID-5D0B0978-3B77-4763-91C6-0E907605D733"></a>          <p id="GUID-8BE9212C-5245-4822-8262-BC95BDB0B05C">地图缺少图例。</p>        </div><div class="answer" id="ESRI_QUESTIONANSWER_695E74CABB614EE19847E71DBF2B20DA" purpose="answer"><a id="GUID-3BEDD32B-AE42-4F7D-AC7B-2AB772722EAA"></a>          <p id="GUID-64A62E20-BFB4-4DE0-9198-4BA86C0B77E2">将不会显示底图或 OGC WMS 和 OGC WMTS 图层的图例。也不会显示外部无法访问的图层的图例，以及地图作者所隐藏的图层的图例。</p>        </div></section><section class="qa padded-anchor" id="anchor14" purpose="qa"><div class="question" id="ESRI_QUESTIONANSWER_97F1F03EA91543A6A38471AD3F717438" purpose="question"><a id="GUID-23A60F8F-5B68-4662-A75E-A83B7DB6D010"></a>          <p id="GUID-7E630014-5A70-46D0-8856-DA55CCBA4910">该地图图例与在要素图层中创建的图例不同。</p>        </div><div class="answer" id="ESRI_QUESTIONANSWER_97F1F03EA91543A6A38471AD3F717438" purpose="answer"><a id="GUID-5177A27F-C4F2-4341-89B2-E767ED110833"></a>          <p id="GUID-DF22B757-06DF-41F2-97C6-AD17D3E48B0F">要素图层的图例可能与 web 地图中保存的图例不匹配。当您使用与原始图层不同的符号系统在 web 地图中保存图层时，通常会发生这种情况。保存地图时，符号系统将保存到 web 地图。因此，如果您将不同的符号系统保存到图层并希望在 web 地图中显示图层的图例，则必须从 web 地图中移除该图层并将其添加回来。</p>        </div></section><section class="qa padded-anchor" id="anchor15" purpose="qa"><div class="question" id="ESRI_QUESTIONANSWER_33C00AAFDC2841B0A41A381F7CAD9DB1" purpose="question"><a id="GUID-D9528A49-9FB3-4F77-A1DD-AAF95369B4A9"></a>          <p id="GUID-099A2C87-E03C-43B1-BCEF-271107C02D7E">我无法对地图内容中的图层重新排序。</p>        </div><div class="answer" id="ESRI_QUESTIONANSWER_33C00AAFDC2841B0A41A381F7CAD9DB1" purpose="answer"><a id="GUID-3BBC3BB4-04B9-4423-ADB1-50CDBAC59B3C"></a>          <p id="GUID-9C483F9E-A64E-4A73-A89D-62A60A4E2DA7">图层始终显示在底图之上，要素图层始终显示在切片集图层（地图图像、影像和切片图层）和 KML 图层之上。根据地图中图层类型的不同，您可能无法将所有图层上移或下移。例如，如果您有一个地图图像图层和三个要素图层，则可以对要素图层进行重新排序，但无法将地图图层移至其上方。</p>        </div></section><section class="qa padded-anchor" id="anchor16" purpose="qa"><div class="question" id="ESRI_QUESTIONANSWER_8EE462EE86814F689F57C6C905A2EA36" purpose="question"><a id="GUID-0F39DBCA-4DB8-4E39-AF22-783F9DF09B89"></a>          <p id="GUID-3DE4A910-A26A-434F-B8C6-C606B5942EA0">我丢失了正在处理的地图。</p>        </div><div class="answer" id="ESRI_QUESTIONANSWER_8EE462EE86814F689F57C6C905A2EA36" purpose="answer"><a id="GUID-BD6E4D2E-A683-4B91-BBCA-9C2FD29B5F8C"></a>          <p id="GUID-054F4F8D-6A44-4973-8518-5A05F2D4B051">            当您在 HTTP 中添加安全图层时或在地图过大以致浏览器缓存不足的情况下导航离开 <span class="ph">Map Viewer</span> 时，可能会导致丢失地图。为防止在添加大量数据时丢失地图，请在开始工作之前登录并定期保存地图（如果具有创建项目的权限）。如果计划添加安全图层，请将 <span class="ph">Map Viewer</span> URL 更改为 HTTPS 并首先添加安全图层。</p>        </div></section><section class="qa padded-anchor" id="anchor17" purpose="qa"><div class="question" id="ESRI_QUESTIONANSWER_E28DD114681D437E944E77D89993DDB3" purpose="question"><a id="GUID-5D6FA013-534C-4FD4-BBA7-9289F68A60BE"></a><p id="GUID-3CF4DE20-26C5-4078-9823-0A48AB69BE46">Web 地图包含不再可用的图层，加载地图时会出现错误。如何移除此图层，以便使用另一图层来替换此图层？</p></div><div class="answer" id="ESRI_QUESTIONANSWER_E28DD114681D437E944E77D89993DDB3" purpose="answer"><a id="GUID-7538CF5E-6C4D-48F2-8167-CEA8DCFABFBE"></a><p id="GUID-97DC3673-0835-4769-BE7D-CF41066DCFFC">保存 Web 地图。问题图层无法保存，您可以根据需要向地图添加其他可用图层。</p></div></section><section class="qa padded-anchor" id="anchor18" purpose="qa"><div class="question" id="ESRI_QUESTIONANSWER_4C1256F4FE0249E7BBFA23EED827377E" purpose="question"><a id="GUID-CC1DD0FA-B0CA-4B03-9011-C100950DCF95"></a>          <p id="GUID-F0624CC5-9183-4429-86D5-EFECDBA48DD9"> 时间滑块不会显示在具有时间感知型图层的地图中。</p>        </div><div class="answer" id="ESRI_QUESTIONANSWER_4C1256F4FE0249E7BBFA23EED827377E" purpose="answer"><a id="GUID-AB6C1268-3178-43FB-85C7-C8FA02332FFC"></a>          <p id="GUID-C0827ADC-CE48-458A-B687-D8E53009D970">  在 KML 文档、嵌入式地图和来自文件的图层中不支持时间感知型图层。上述情况下不会显示时间滑块。如果地图作者在图层上禁用了时间动画，也不会显示时间滑块。</p>        </div></section><section class="qa padded-anchor" id="anchor19" purpose="qa"><div class="question" id="ESRI_QUESTIONANSWER_2B3063B3D30244CD920B64BB15C2F0A0" purpose="question"><a id="GUID-60B180CE-0AC7-4928-8864-145C5D35886C"></a>          <p id="GUID-F5AD47BA-24D1-4A5F-99EA-204313424F09">没有可将我的图层用作底图的选项。</p>        </div><div class="answer" id="ESRI_QUESTIONANSWER_2B3063B3D30244CD920B64BB15C2F0A0" purpose="answer"><a id="GUID-E895CAF5-5303-4C83-AA61-82E011B1EEDA"></a>          <p id="GUID-C1134C33-D5B8-41BA-A8E5-2321603EC96B"><span class="ph">ArcGIS Server</span> 服务（地图图像图层）、OGC WMS、OGC WMTS 和切片图层可用作底图。文件中的图层、KML 文档和在 <span class="ph">Map Viewer</span> 中创建的地图注释不能用作底图。</p>        </div></section><section class="qa padded-anchor" id="anchor20" purpose="qa"><div class="question" id="ESRI_QUESTIONANSWER_B493A978943440069CCADA50C0AA6F46" purpose="question"><a id="GUID-81FC299E-1D7A-44C6-89DE-5D227230F7B3"></a>          <p id="GUID-78C72127-347C-41AB-A707-F039864EF730">使用自己的底图时，在地图中会丢失一些底图的缩放级别。</p>        </div><div class="answer" id="ESRI_QUESTIONANSWER_B493A978943440069CCADA50C0AA6F46" purpose="answer"><a id="GUID-B1CE3427-2F25-4778-B1D7-3537D1DD8A20"></a>          <p id="GUID-B7FFC496-FB63-45DE-87ED-CE773F604CAF">出现上述情况的原因是地图显示的是当前底图（例如，世界地形底图）的缩放级别。要查看所添加底图的其他缩放级别，请保存地图，关闭 <span class="ph">Map Viewer</span> 页面（例如，转至“图库”），然后重新打开该地图。随即显示其他的缩放级别。您需要创建项目的权限才能保存地图。</p>        </div></section><section class="qa padded-anchor" id="anchor21" purpose="qa"><div class="question" id="ESRI_QUESTIONANSWER_70225717D5C943238531125DD79F5D8B" purpose="question"><a id="GUID-21D0045D-2B5F-4DF5-B18A-96EEAF0331DC"></a>          <p id="GUID-6135DC35-6769-487F-9E04-7CC9C48FAB59">由于底图不可用，所以不会显示任何地图内容。</p>        </div><div class="answer" id="ESRI_QUESTIONANSWER_70225717D5C943238531125DD79F5D8B" purpose="answer"><a id="GUID-5D2C04A4-4D3C-4D32-85EC-5BCA067A778B"></a>          <p id="GUID-D87D1073-F05C-4382-8D6C-D84E67793F3D"><span class="ph">Map Viewer</span> 无法在没有工作底图的情况下在地图中显示图层，因为底图用于建立地图的坐标系。将底图随地图一起保存后，<span class="ph">Map Viewer</span> 将只使用该底图；如果您的底图不可用，它不会恢复成默认底图。只要已损坏底图和新底图的空间参考相同，就可以使用其他的底图来修复您的地图。对于作为切片图层的底图，已损坏底图和新底图的切片方案也必须相同。通过从图库中选择不同的底图或<a class="xref xref" href="../../../../zh-CN/portal/latest/use/use-url-parameters.htm">使用 URL 参数</a><span class="usertext">basemapUrl</span> 修复您的地图。</p>        </div></section><section class="qa padded-anchor" id="anchor22" purpose="qa"><div class="question" id="ESRI_QUESTIONANSWER_BBD0462FAB3C4FB99B4CBA06E0190F0B" purpose="question"><a id="GUID-1601EB44-BD68-459E-A978-90E3D0288A31"></a>          <p id="GUID-3B652E68-03A6-4FEA-B101-EE6A83A23BC0">将 OGC WMS 或 WMTS 图层添加到地图中时，会收到一条错误消息，该消息提示此图层的坐标系未与底图的坐标系匹配。</p>        </div><div class="answer" id="ESRI_QUESTIONANSWER_BBD0462FAB3C4FB99B4CBA06E0190F0B" purpose="answer"><a id="GUID-7C44B9D0-6FBB-47C0-8E70-5D996544E621"></a>          <p id="GUID-218904F0-FB89-4D79-B832-CA3CD8D62B3B">如果已向地图中添加了图层，然后再添加非 Web 墨卡托坐标系（<span class="ph">Map Viewer</span> 默认图库中的底图投影）的 OGC 图层，则通常会显示此错误消息。要解决此问题，请创建新地图，然后先添加 OGC 图层。如果您的图层在 GCS WGS84 投影坐标系中，则 <span class="ph">Map Viewer</span> 将使用 GCS WGS84 世界影像底图。如果您的 OGC WMS 或 WMTS 图层处于一个非 Web 墨卡托或 GCS WGS84 的坐标系中，则您的图层将用作底图。如果您的 WMTS 图层支持多个坐标系，您可以选择一个要使用的坐标系。</p>        </div></section><section class="qa padded-anchor" id="anchor23" purpose="qa"><div class="question" id="ESRI_QUESTIONANSWER_F3727A2277AD405ABEAD1DDF2AD4D7C6" purpose="question"><a id="GUID-61439C7B-D969-48B3-930A-EB38CCEE5BAA"></a>          <p id="GUID-060D2AD5-B0B1-4EB5-A981-584FF259B344">添加的航空影像在地图上不显示。</p>        </div><div class="answer" id="ESRI_QUESTIONANSWER_F3727A2277AD405ABEAD1DDF2AD4D7C6" purpose="answer"><a id="GUID-C4EBE0CD-0354-4729-A54B-EA39D35B6075"></a>          <p id="GUID-A9B2B4CF-4AFB-462A-8A43-5FA5FB5E7789"> 如果正在使用 Web 墨卡托投影底图（图库中的底图投影）而图层不在 Web 墨卡托投影内，采用航空影像的切片图层可能无法在地图上显示。要显示该图层，可将其用作底图或在与切片图层处于同一投影中的底图上方进行显示。</p>        </div></section><section class="qa padded-anchor" id="anchor24" purpose="qa"><div class="question" id="ESRI_QUESTIONANSWER_7EF092F52C8844EC98BF7953ED30BB6D" purpose="question"><a id="GUID-9183CF8E-BB25-4F00-AC55-313C5D8BE28A"></a>          <p id="GUID-AAC03D4E-AF0B-46C2-A9C4-FC97C01E71D1">我的地图图层在 <span class="ph">Map Viewer</span> 中没有以缓存切片时采用的比例来显示。</p>        </div><div class="answer" id="ESRI_QUESTIONANSWER_7EF092F52C8844EC98BF7953ED30BB6D" purpose="answer"><a id="GUID-17EA3A2D-2C5A-4944-825E-98D48C6A4204"></a>          
+          <p id="GUID-3FDECF4A-C9B0-4E89-8801-3592CC7F8A3A" ishcondition="agol_plat=portal"><span class="ph">Map Viewer</span> 支持通过 ArcGIS 10.2 创建的图层中的最小和最大比例设置。可在 <span class="ph">ArcGIS Desktop</span> 中调整这些比例。</p>        </div></section><section class="qa padded-anchor" id="anchor25" purpose="qa"><div class="question" id="ESRI_QUESTIONANSWER_A86C3693EB7E4F08BCD15B35E69455EC" purpose="question"><a id="GUID-6F78F58A-E4EE-4BCB-AFCD-303B3B78ADD3"></a><p id="GUID-690C1CCF-C5C1-4D0F-8DE8-A08E008A9ED4">我在 <span class="ph">Microsoft Internet Explorer</span> 中访问 <span class="ph">ArcGIS Server</span> 服务和受 Web 层身份验证保护的 OGC 图层时遇到问题。</p></div><div class="answer" id="ESRI_QUESTIONANSWER_A86C3693EB7E4F08BCD15B35E69455EC" purpose="answer"><a id="GUID-CD84AC5A-4481-4E52-A7AA-4D8493142352"></a><p id="GUID-78D45A6B-7773-4303-9809-BAC83188727C">您可能需要将组织的<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/portal/latest/administer" href="../../../../zh-CN/portal/latest/administer/windows/configure-security.htm#ESRI_SECTION1_70CC159B3540440AB325BE5D89DBE94A">受信任服务器</a>的属性域添加到浏览器的受信任站点列表。有关为组织配置的受信任服务器，请联系您的组织管理员。</p></div></section><section class="qa padded-anchor" id="anchor26" purpose="qa"><div class="question" id="ESRI_QUESTIONANSWER_47ABF7F0F0814DE29860A76C33D82887" purpose="question"><a id="GUID-BE1F0078-9845-4BBB-906C-493B5CCE0122"></a>          <p id="GUID-85A64163-5EE2-45B5-A69A-032574CEA8EC">某些图层在地图中显示不正确。看起来像是 HTTP 和 HTTPS URL 的混合。这种混合的内容是否对地图显示造成负面影响？</p>        </div><div class="answer" id="ESRI_QUESTIONANSWER_47ABF7F0F0814DE29860A76C33D82887" purpose="answer"><a id="GUID-4B93BC92-AF7B-45DA-A32D-BBCF8BF8FFB7"></a>          <p id="GUID-3705D9C7-0693-45F1-B776-F606A6BFF516">视情况而定。该特定行为取决于您的浏览器和浏览器版本。</p>          <p id="GUID-B5E0B2E8-323A-49E7-BBCB-5557A28F2E3E">当您尝试在基于 HTTP 的 <span class="ph">Map Viewer</span> 中打开基于 HTTPS 的图层时，浏览器可能会通知您必须重新将页面（此情况下是 <span class="ph">Map Viewer</span>）加载到 HTTPS 中并重新添加图层。此方法适用于您添加到地图中的图层以及现有地图中的图层。某些浏览器可能会成功加载这些图层而不发送通知。</p>          
+          <p id="GUID-873F8375-D4B5-410B-BAD2-C586C5964633" ishcondition="agol_plat=portal">当您尝试在基于 HTTPS 的 <span class="ph">Map Viewer</span> 中打开基于 HTTP 的图层时，图层可能无法正确加载或在不同的浏览器或浏览器版本中表现各异。此方法适用于您添加到地图中的图层以及现有地图中的图层。某些浏览器可能会成功加载这些图层。</p><p id="GUID-A155286D-D361-4DB6-B243-72DAA80DB094">您可通过多个浏览器提供商了解有关混合内容的详细信息。</p>          <ul purpose="ul" id="UL_926CAF0A8D5048F890C1FD9465B481B2">            <li purpose="li" id="LI_B5867F52921A4348AB4ADD6714559A12"><span class="ph">Chrome</span> - <a target="_blank" class="xref xref" href="https://support.google.com/chrome/answer/1342714?hl=en">支持文章</a>和<a target="_blank" class="xref xref" href="http://googleonlinesecurity.blogspot.com/2011/06/trying-to-end-mixed-scripting.html">博客文章</a></li>            <li purpose="li" id="LI_9C64D6001853464381BB7EF2015BF0DB"><span class="ph">Firefox</span> - <a target="_blank" class="xref xref" href="https://support.mozilla.org/en-US/kb/how-does-content-isnt-secure-affect-my-safety">支持文章</a>和<a target="_blank" class="xref xref" href="https://developer.mozilla.org/en-US/docs/Web/Security/Mixed_content#Mixed_active_content"><span class="ph">Mozilla</span> 开发人员网络文章</a></li>            <li purpose="li" id="LI_4051A33C1842490AB5925FCDB9A6200A"><span class="ph">Internet Explorer</span> - <a target="_blank" class="xref xref" href="http://blogs.msdn.com/b/ie/archive/2011/06/23/internet-explorer-9-security-part-4-protecting-consumers-from-malicious-mixed-content.aspx">博客文章</a></li>          </ul>        </div></section><section class="qa padded-anchor" id="anchor27" purpose="qa"><div class="question" id="ESRI_QUESTIONANSWER_E3F887480C6544478C6CF8BFD73802D2" purpose="question"><a id="GUID-9F1BD666-6AE7-43EE-BC7A-BE32AE776DD5"></a><p id="GUID-6508B691-8088-4374-BAAB-6FAFF6F5558B">尝试向地图添加图层或打开现有地图时，出现消息提示 <span class="ph">Map Viewer</span> 无法与一个或多个图层建立安全连接。</p></div><div class="answer" id="ESRI_QUESTIONANSWER_E3F887480C6544478C6CF8BFD73802D2" purpose="answer"><a id="GUID-C13B658A-B0DC-4290-A9F7-8D9DDA87A958"></a><p id="GUID-F90565E6-90A7-4636-8B03-371CF746FE3E">可能仅为组织设置 HTTPS，但是您提供的 URL 为 HTTP。某些浏览器会通知您或阻止<a class="xref xref" href="../../../../zh-CN/portal/latest/use/troubleshoot.htm#ESRI_QUESTIONANSWER_47ABF7F0F0814DE29860A76C33D82887">混合内容</a>。可以尝试将图层 URL 切换至 HTTPS。关于在托管图层的服务器上配置“传输层安全性”(TLS)，您还可以联系管理员。TLS 是比“安全套接字层”(SSL) 加密协议更新且更安全的加密协议，能够提供跨网络安全通信。</p></div></section><section class="qa padded-anchor" id="anchor28" purpose="qa"><div class="question" id="ESRI_QUESTIONANSWER_73B5B2E004D74B769A63F3C94B63CEE1" purpose="question"><a id="GUID-CC30309E-DAF5-48B1-AC6D-7504676B1637"></a>          <p id="GUID-FACA3B8D-7465-447F-8594-3A2BCD32731C">地图中丢失了一些要素。</p>        </div><div class="answer" id="ESRI_QUESTIONANSWER_73B5B2E004D74B769A63F3C94B63CEE1" purpose="answer"><a id="GUID-FF4409BF-5714-442F-B79C-13E379F91E38"></a>          <p id="GUID-861D9823-5C0C-4942-A6E4-2C52D8A9E766"> 大数据集应发布为托管要素图层。将 shapefile、GeoJSON、CSV、TXT 或 GPX 文件直接添加至 <span class="ph">Map Viewer</span> 时，这些要素将存储于 web 地图中，这将增大每次打开 web 地图时必须下载的数据量。将数据发布为托管要素图层允许根据需要请求数据集中的要素，而非将其存储于 web 地图中。</p><p id="GUID-AC88CBE1-4B6A-4986-A46E-188741B213AB"> 使用门户登录后，如果添加包含地址的文本文件（<span class="usertext">.txt</span> 或 <span class="usertext">.csv</span>），则会将 4,000 个要素直接添加至地图。如果使用匿名用户或未登录的情况下添加具有地址的文本文件，可直接向地图中添加 250 个要素。对于包含的要素超过此值的数据集，必须将其发布为托管要素图层。</p><p id="GUID-751C2C84-9194-408C-BA25-0E04578B922E"> 如果添加包含点数据的 shapefile 或 GeoJSON 文件，则可将 4,000 个要素直接添加至地图。如果添加包含面或线数据的 shapefile 或 GeoJSON 文件，则可将 2,000 个要素直接添加至地图。对于包含的要素超过此值的数据集，必须将其发布为托管要素图层。对于大于 10 MB 的 shapefile 和 GeoJSON 文件，必须将其发布为托管要素图层，不考虑其要素数量。</p><p id="GUID-85F2E19E-E065-45E4-A1EE-26CA9D8ACF4B"> 如果添加了 KML 文档，则会显示来自地标、网络链接、不具有刷新属性的地面叠加层、文件夹和扩展数据的要素。暂不支持其他要素。</p>        </div></section><section class="qa padded-anchor" id="anchor29" purpose="qa"><div class="question" id="ESRI_QUESTIONANSWER_0A9727B5958F44B98F6CC253D77961BF" purpose="question"><a id="GUID-DC41295A-3E4B-46DF-8F79-9D6AC67C71E9"></a>          <p id="GUID-F2D3BB82-6EFF-4030-A913-F7F140A3412A">我无法编辑已经添加到地图中的要素。</p>        </div><div class="answer" id="ESRI_QUESTIONANSWER_0A9727B5958F44B98F6CC253D77961BF" purpose="answer"><a id="GUID-88FC9C92-FECD-4526-A36D-27559A714E5C"></a>          <p id="GUID-DE2F2F34-2F9F-4FB2-87DB-8F989974BD55">发布要素图层时，发布者将决定可通过要素图层执行哪些编辑操作（如果需要执行编辑操作）。请确保要素图层可编辑。而且，无法在 <span class="ph">Map Viewer</span> 中编辑 KML、OGC WMS 和 OGC WMTS 图层。</p>        </div></section><section class="qa padded-anchor" id="anchor30" purpose="qa"><div class="question" id="ESRI_QUESTIONANSWER_0ED074E906F44157952FCA73A849EC7B" purpose="question"><a id="GUID-E614B254-4839-4B76-9E8E-5F2C25BFF2B6"></a>          <p id="GUID-0A67227C-E306-4AA1-BE19-4C9D8FBBBE5E">已知服务中包含要素数据，但我看不到配置弹出窗口的选项。</p>        </div><div class="answer" id="ESRI_QUESTIONANSWER_0ED074E906F44157952FCA73A849EC7B" purpose="answer"><a id="GUID-45B1F405-8180-4B49-983C-0FA054247A8C"></a>          <p id="GUID-AECF477D-93A7-4D35-BB2F-D085B515A0FE"><span class="ph">Map Viewer</span> 不支持在 OGC WMS 和 OGC WMTS 图层上编辑或显示弹出窗口。不支持在 KML 图层上配置弹出窗口；KML 图层中的所有要素数据会自动显示（您无法禁用或配置这些数据）。</p>        </div></section><section class="qa padded-anchor" id="anchor31" purpose="qa"><div class="question" id="ESRI_QUESTIONANSWER_216D7E37637E4009A6274FC2689FFD95" purpose="question"><a id="GUID-0CCFDE61-41DF-425A-8FF6-A22D5BC5B04A"></a>          <p id="GUID-DCF1863E-36E2-4FB2-B946-135139864F20">我无法移除地图中图层的弹出窗口。</p>        </div><div class="answer" id="ESRI_QUESTIONANSWER_216D7E37637E4009A6274FC2689FFD95" purpose="answer"><a id="GUID-60283FB0-C9E2-4DCA-BA81-53D6C5297B04"></a>          
+          <p id="GUID-2D100818-830E-4537-A4FD-FCD23E59CC24" ishcondition="agol_plat=portal">您可以移除之前启用的地图图层的弹出窗口和来自带分隔符的文本文件或 GPX 文件的要素的弹出窗口。无法移除在 <span class="ph">Map Viewer</span> 中创建的地图注释图层或 KML 图层的弹出窗口。</p>        </div></section><section class="qa padded-anchor" id="anchor32" purpose="qa"><div class="question" id="ESRI_QUESTIONANSWER_285BF5EB307B4891830FD00837FD6174" purpose="question"><a id="GUID-2336D5B8-992E-4860-A1C6-0F29D8F2958E"></a>          <p id="GUID-0FC82423-7394-49C7-BB2E-EA17EC23E6BB">我在 <span class="ph">Map Viewer</span> 中更新的图层上没有看到保存项目属性的选项。</p>        </div><div class="answer" id="ESRI_QUESTIONANSWER_285BF5EB307B4891830FD00837FD6174" purpose="answer"><a id="GUID-EBC7A372-940C-41AE-B92F-C4E99E58078D"></a>          <p id="GUID-5380F8ED-8460-4AEF-BA5B-4ED6244B255D"> 您只能在您添加的图层上<a class="xref xref" href="../../../../zh-CN/portal/latest/use/copy-save-layers.htm">保存项目属性</a>。</p>        </div></section><section class="qa padded-anchor" id="anchor33" purpose="qa"><div class="question" id="ESRI_QUESTIONANSWER_896324D318AC46C8BCB933314C2969A1" purpose="question"><a id="GUID-E056C67D-23A7-472D-8079-6BE4406C25E1"></a>          <p id="GUID-E5A0EB42-3809-4312-855C-F0CF1E5BA3C2">Web 上的 CSV 文件中的数值字段未能正确地导入到地图中。</p>        </div><div class="answer" id="ESRI_QUESTIONANSWER_896324D318AC46C8BCB933314C2969A1" purpose="answer"><a id="GUID-E1BD5028-AAEA-4982-8840-CAE234BCBB8F"></a>          <p id="GUID-2B46ECCD-1A69-430F-8918-071FC7541998">如果要添加来自 web 的使用句号作为小数点的 CSV 文件，但是设置的系统语言却使用逗号作为小数点，则可能无法正确地显示数字字段。您文件中的小数点字符应与您系统语言所支持的格式相匹配。例如，如果您的系统设置为英语，则您的文件应使用句号作为小数点。如果您的系统设置为法语，则您的文件应使用逗号作为小数点。</p>        </div></section><section class="qa padded-anchor" id="anchor34" purpose="qa"><div class="question" id="ESRI_QUESTIONANSWER_DFB416059F0F40E580C423796555A9BF" purpose="question"><a id="GUID-6142D80A-F0B3-4AF3-97F5-539159309AAB"></a>          <p id="GUID-97F5388A-A74F-48B6-A2A9-E59F1AB42065">我的组织具有可在公开共享的地图中使用的 <span class="ph">Bing Maps</span> 密钥。我可在地图中看到 <span class="ph">Bing Maps</span> 底图，但是公众看到的是 <span class="ph">ArcGIS Online</span> 底图。</p>        </div><div class="answer" id="ESRI_QUESTIONANSWER_DFB416059F0F40E580C423796555A9BF" purpose="answer"><a id="GUID-1944DDA8-21D5-4B5E-95B8-5FF1A92983B4"></a>          <p id="GUID-B6EA8E27-2CE9-46A8-8198-B6B04A2D8670">确认您的组织是否已配置 <span class="ph">Bing Maps</span> 密钥以供公众使用。如果经过配置后公众仍无法在地图中看到 <span class="ph">Bing Maps</span> 底图，则请重新保存地图。</p>        </div></section><section class="qa padded-anchor" id="anchor35" purpose="qa"><div class="question" id="ESRI_QUESTIONANSWER_C1A72C7948A748CC977C36F5FC964F6E" purpose="question"><a id="GUID-31923E91-59A3-4538-B61B-764B0C9482EF"></a>          <p id="GUID-C5CB2CAC-6C3A-4B4B-A57F-301A1A76B04E">我在样式设置方面遇到问题。</p>        </div><div class="answer" id="ESRI_QUESTIONANSWER_C1A72C7948A748CC977C36F5FC964F6E" purpose="answer"><a id="GUID-5D32FB99-31C9-4C73-9162-564F5709D513"></a>          
+        <p id="GUID-5F22E8B2-A45B-4EA6-9F0B-1AEE8BA459A8" ishcondition="agol_plat=portal">            <a class="xref xref" href="../../../../zh-CN/portal/latest/use/styling-reference.htm#ESRI_SECTION1_B5BE7F1863FF449C9445E85C9C617A33">请参阅样式设置注意事项列表</a>。</p></div></section><section class="qa padded-anchor" id="anchor36" purpose="qa"><div class="question" id="ESRI_QUESTIONANSWER_31D9274B90564AA39042BBABC4FD129B" purpose="question"><a id="GUID-C84B231D-EB30-45EA-945C-2A42FCB4DB20"></a><p id="GUID-F3603DFE-6311-4FCD-BB90-C651885E32EA">仅搜索推荐的六个要素。</p></div><div class="answer" id="ESRI_QUESTIONANSWER_31D9274B90564AA39042BBABC4FD129B" purpose="answer"><a id="GUID-15F23AF6-D7D4-4064-AC05-B967D0AD29C9"></a><p id="GUID-F44DAECE-66C8-409F-B86F-362447FA4C6A"> 搜索图层中的要素时，搜索结果仅返回六个推荐的要素。这就可能导致列表中不包含您要查找的要素。</p></div></section></section>    <section class="qas padded-anchor" id="ESRI_QUESTIONANSWERS_80F4F059417B4E5B8AA2874A80182130" purpose="qas"><span qas_title="应用程序"></span><section class="qa padded-anchor" id="anchor37" purpose="qa"><div class="question" id="ESRI_QUESTIONANSWER_00B5D1618933407F80113FD5D8C2BC04" purpose="question"><a id="GUID-3E0CBEF2-E609-4CA6-8C52-9AD3B0C16AB9"></a>          <p id="GUID-BACB9DC9-90C0-4544-8076-47002394706B">正在配置的故事地图不具有共享订阅者内容的设置。</p>        </div><div class="answer" id="ESRI_QUESTIONANSWER_00B5D1618933407F80113FD5D8C2BC04" purpose="answer"><a id="GUID-EF392B9B-D816-4844-8028-EE633C398D99"></a>          
+        <p id="GUID-19AF2A1F-A371-4DA1-9514-C6C706CF9E24" ishcondition="agol_plat=portal">您可以使用<a target="_blank" class="xref xref" href="https://links.esri.com/agol-help/my-stories">我的故事</a>在故事地图中共享订阅者内容。</p></div></section></section>    
+    <section class="qas padded-anchor" id="ESRI_QUESTIONANSWERS_0B1A3366B333402F8208BB565510FDDE" purpose="qas"><span qas_title="托管 Web 图层"></span><section class="qa padded-anchor" id="anchor38" purpose="qa"><div class="question" id="ESRI_QUESTIONANSWER_0B092CCB9D1E4DED82F868D545D90EC4" purpose="question"><a id="GUID-DAE0A140-9025-4D60-91F9-572AA9FE3351"></a>          <p id="GUID-F5286839-916E-4B14-97B9-F1A9670D7BB3">我无法通过托管要素图层发布托管切片图层。</p>        </div><div class="answer" id="ESRI_QUESTIONANSWER_0B092CCB9D1E4DED82F868D545D90EC4" purpose="answer"><a id="GUID-A9FEAB2F-4A7F-4F39-98A1-C427AB1D7C53"></a>          <p id="GUID-DE5F33B1-05BA-4E8E-B568-2ED115793EEE">如果托管要素图层配置为<a class="xref xref" href="../../../../zh-CN/portal/latest/use/styling-reference.htm#ESRI_SECTION1_CA58C232ECE841F28FF5B1DB38D03EB9">某些样式</a>并保存到托管要素图层项目，则无法为从托管要素图层发布的托管切片图层生成地图切片。</p>                  <p id="GUID-9DB11464-050D-4E64-82BD-73123726010B" ishcondition="agol_plat=portal">此外，只有当门户具有采用托管服务器配置的关系数据存储 (<span class="ph">ArcGIS Data Store</span>) 时，才支持该工作流。</p></div></section><section class="qa padded-anchor" id="anchor39" purpose="qa"><div class="question" id="ESRI_QUESTIONANSWER_2C96DC7E5D8D4FCEBAEBB59D43ECD66E" purpose="question"><a id="GUID-56DE5749-016C-41B9-BAF5-79A627741BDF"></a>          <p id="GUID-47FA6A27-71E1-4564-BC3C-B1FDFC8D0A38">无法将 <span class="usertext">.txt</span> 文件发布为托管要素图层。</p>        </div><div class="answer" id="ESRI_QUESTIONANSWER_2C96DC7E5D8D4FCEBAEBB59D43ECD66E" purpose="answer"><a id="GUID-29BF81DB-032B-4540-B182-2E7D7412CEBE"></a>          <p id="GUID-110CD35C-D06F-4ACC-80CB-1D32380D0122">CSV 文件必须已格式化，并另存为 <span class="usertext">.csv</span>。不支持其他格式的文本文件。</p>        </div></section><section class="qa padded-anchor" id="anchor40" purpose="qa"><div class="question" id="ESRI_QUESTIONANSWER_58B512B40B2C4F7BA97BEA467753CB26" purpose="question"><a id="GUID-E835EE32-02DE-4AE2-930B-D1A19904ECAB"></a>          <p id="GUID-F45C30AA-945A-4811-A3A2-7C668C816156">我在上传 <span class="usertext">.tpk</span> 文件并试图将其发布为托管切片图层时，收到了错误消息<span class="uicontrol">无法识别的服务类型：影像服务</span>。</p>        </div><div class="answer" id="ESRI_QUESTIONANSWER_58B512B40B2C4F7BA97BEA467753CB26" purpose="answer"><a id="GUID-ED65E013-AF11-4169-A6E4-1116A33E6948"></a>          <p id="GUID-C567B1BC-9B70-49E4-A9AB-C9FEC09D753D">当在 <span class="ph">ArcGIS Online</span> 发布使用 LERC 压缩的切片方案所创建的切片包时，将生成托管高程图层。无法将其加载并发布到 <span class="ph">ArcGIS Enterprise</span> 门户。</p>        </div></section><section class="qa padded-anchor" id="anchor41" purpose="qa"><div class="question" id="ESRI_QUESTIONANSWER_F02EE540352F44ABBE242652B50B6D44" purpose="question"><a id="GUID-AF7D18F6-B09A-40CA-A4C0-AC1B90D43E2D"></a>          <p id="GUID-60BEB0A0-CA30-4AEB-A4B3-8512DA035CE3">我看不到通过使用 <span class="ph">ArcGIS Desktop</span> 发布到组织门户的选项。</p>        </div><div class="answer" id="ESRI_QUESTIONANSWER_F02EE540352F44ABBE242652B50B6D44" purpose="answer"><a id="GUID-03E508A6-009A-41F8-BB08-DE0D6DDC0551"></a>          <p id="GUID-8A0CAE7F-347C-4531-9337-E5D2E99EF683">为使用 <span class="ph">ArcMap</span> 或 <span class="ph">ArcGIS Pro</span> 发布到组织门户，必须满足以下条件：</p>          <ul purpose="ul" id="UL_71EE0080050643D6B53280FFAAB8E961">            <li purpose="li" id="LI_A6F92AD4A507422C90E0D7296D17A0E9"><span class="ph">ArcGIS Desktop</span> 必须连接到正确的门户。默认情况下，<span class="ph">ArcGIS Desktop</span> 连接到 <span class="ph">ArcGIS Online</span>。使用 ArcGIS Administrator 从 <span class="ph">ArcMap</span> 连接到您的组织的门户。有关完整说明，请参阅<a class="xref xref" href="../../../../zh-CN/portal/latest/use/use-with-desktop.htm#ESRI_SECTION1_534771F9137A49F4BFF5168C58B3C411">将 <span class="ph">ArcMap</span> 与门户结合使用</a>。在 <span class="ph">ArcGIS Pro</span> 中，将您的组织的门户添加到工程并将其设置为活动门户。</li>            <li purpose="li" id="LI_661ACE83D5B040C8BE9380EF6EE5ABAB">您必须登录到您的组织的门户才能进行发布。在 <span class="ph">ArcGIS Pro</span> 中，活动门户以及您的登录状态显示在工程的顶部。在 <span class="ph">ArcMap</span> 中，单击<span class="uicontrol">文件</span>菜单；如果您看到<span class="uicontrol">登录</span>选项可用，则表示您并未登录。</li>            <li purpose="li" id="LI_8F10025D058748C397E2F9866B24F71F">您必须是具有组织门户发布权限的角色的成员。通过<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/portal/latest/administer" href="../../../../zh-CN/portal/latest/administer/windows/getting-started-with-portal-for-arcgis.htm">登录</a>到门户网站并选择姓名，可检查自己的成员角色。此操作将打开您的成员个人资料并显示您在组织中的角色。</li>            <li purpose="li" id="LI_859A929AEE0D45FB808B0E0EC1FAC78A">您的组织的门户必须已配置托管服务器。托管服务器允许门户成员将托管的切片、要素和场景图层发布至门户。如果不存在托管服务器，则不能发布到门户。请联系您的组织的门户管理员以确定是否已配置托管服务器。要了解有关托管 Web 图层的详细信息，请参阅<a class="xref xref" href="../../../../zh-CN/portal/latest/use/hosted-web-layers.htm">关于托管 Web 图层</a>。</li>          </ul>        </div></section><section class="qa padded-anchor" id="anchor42" purpose="qa"><div class="question" id="ESRI_QUESTIONANSWER_DF06394BE11F4B04887F43EB59C4EFCA" purpose="question"><a id="GUID-921E3114-3C47-4EAB-8144-94625E3C613D"></a>          <p id="GUID-EAEFDD74-D649-431B-9817-671DCC7C4B37">发布托管切片图层需要花费较长时间。</p>        </div><div class="answer" id="ESRI_QUESTIONANSWER_DF06394BE11F4B04887F43EB59C4EFCA" purpose="answer"><a id="GUID-B028CE10-E511-407D-83B3-A3CC7D316F2D"></a>          <p id="GUID-74066241-45D7-40DA-95F7-17CD7A88F40B"> 通常，渲染特定地图切片所需的时间取决于要缓存的地图的空间范围、地图中的图层数量以及处理地图时系统上的负载。系统已设计为可随着负载增加自动进行缩放（通过添加计算机）。然而，当系统遇到过载时，可能会出现延迟。</p>          
+        </div></section><section class="qa padded-anchor" id="anchor43" purpose="qa"><div class="question" id="ESRI_QUESTIONANSWER_80CFABE1CDF74AF780F3116DBF78437F" purpose="question"><a id="GUID-EB56DAA8-41D5-4427-8BB6-3336EA43BDB1"></a>          <p id="GUID-31AC031A-4C16-486A-9267-E60FE0DFA116">            
+            <span class="ph">发布上传到门户的服务定义 (<span class="usertext">.sd</span>) 文件失败并显示消息<span class="uicontrol">无法发布项目。无法将该项目发布到 Online 服务</span>。</span>          </p>        </div><div class="answer" id="ESRI_QUESTIONANSWER_80CFABE1CDF74AF780F3116DBF78437F" purpose="answer"><a id="GUID-CC47D537-A548-46A6-92EF-D574E77569C9"></a>          <p id="GUID-C91D1A87-D206-465D-A5E8-17330D29C41D"><span class="ph">ArcGIS Server</span> Web 服务的服务定义文件与托管切片图层的服务定义文件不同。保存服务定义文件时所建立的连接可确定创建的服务定义文件类型。</p>          <p id="GUID-AC3FCDAD-E470-49DD-A32B-99A2630834AF">如果在 <span class="ph">ArcGIS Desktop</span> 中保存服务定义文件，当您<span class="uicontrol">选择一个连接</span>来保存可发布托管切片图层的服务定义文件时，必须选择<span class="uicontrol">我的托管服务</span>。您无法连接到 <span class="ph">ArcGIS Server</span> 或选择<span class="uicontrol">无可用连接</span>。</p>        </div></section><section class="qa padded-anchor" id="anchor44" purpose="qa"><div class="question" id="ESRI_QUESTIONANSWER_A9DFBACFBA57490994851D114412F145" purpose="question"><a id="GUID-F0DEAD0E-9D28-4BD4-8B3F-733CBCE9F714"></a>          <p id="GUID-7429A007-CA2F-41C9-988F-922B70935C1A">            尝试在 <span class="ph">ArcGIS Desktop</span> 中打开托管图层的服务属性时，收到错误消息<span class="usertext"></span><span class="uicontrol">无法查看或编辑服务属性。请尝试直接通过服务器访问服务属性。</span>。</p>        </div><div class="answer" id="ESRI_QUESTIONANSWER_A9DFBACFBA57490994851D114412F145" purpose="answer"><a id="GUID-0B502C5F-EBB0-4DA4-96AB-32A9210620F9"></a>          
+          <p id="GUID-6B81402C-31C9-42A8-924C-736DAE770E03" ishcondition="agol_plat=portal">如果图层是在门户网站中创建的，您将无法通过目录树中的<span class="uicontrol">我的托管服务</span>节点查看服务属性。可通过连接到 <span class="ph">ArcGIS Desktop</span> 中的托管服务器查看服务属性，或直接在门户网站中查看图层属性。</p>        </div></section><section class="qa padded-anchor" id="anchor45" purpose="qa"><div class="question" id="ESRI_QUESTIONANSWER_55EF480F2CA342A0BEDAB2D6721ACB6E" purpose="question"><a id="GUID-A7C587F9-16A8-441F-9B41-6A991F471198"></a>          <p id="GUID-AA233BEA-2EBF-4BCB-932C-DEB28B02BFD6">我的托管要素图层不使用我在 <span class="ph">ArcGIS Pro</span> 或 <span class="ph">ArcMap</span> 中定义的符号系统。</p>        </div><div class="answer" id="ESRI_QUESTIONANSWER_55EF480F2CA342A0BEDAB2D6721ACB6E" purpose="answer"><a id="GUID-94F123C2-C5FD-408D-A3A9-D498FA84B7A0"></a>          <p id="GUID-E1A6F2D8-F89F-449F-A488-6C8B2FAAC4FD"> Web 浏览器无法显示您在 <span class="ph">ArcGIS Pro</span> 或 <span class="ph">ArcMap</span> 中制作地图时使用的某些较为复杂的制图符号。大多数符号类型均可用，但某些符号会在发布时降级。有关受支持符号的详细信息，请参阅 <span class="ph">ArcGIS Server</span> 帮助中的<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/server/latest/publish-services" href="../../../../zh-CN/server/latest/publish-services/windows/author-feature-services.htm">创作地图以发布要素服务</a>。在发布之前，对地图符号系统进行任何所需更改。</p>        </div></section></section>    <section class="qas padded-anchor" id="ESRI_QUESTIONANSWERS_DFAB501BA1A941E692F6260374B32511" purpose="qas"><span qas_title="GeoAnalytics 工具"></span><section class="qa padded-anchor" id="anchor46" purpose="qa"><div class="question" id="ESRI_QUESTIONANSWER_18BE7F3C9F4F49CCBD3EC318BDB693C6" purpose="question"><a id="GUID-D37A6B97-5F62-4AAA-A4D0-2CFAAF6D1E10"></a><p id="GUID-B0BF32A8-A924-4DA0-A35C-55B3AB19AB2D">当我运行 <span class="ph">GeoAnalytics 工具</span> 创建用于在时空大数据存储中存储数据的托管要素图层时，我收到<span class="uicontrol">已配置节点均不可用</span>消息。</p></div><div class="answer" id="ESRI_QUESTIONANSWER_18BE7F3C9F4F49CCBD3EC318BDB693C6" purpose="answer"><a id="GUID-E61C4166-36BD-4472-A91D-3377CC140519"></a><p id="GUID-C9BBECA5-0753-4DF6-9A93-C7D2E3F8A438"> 时空大数据存储中至少一台计算机包含多个网络接口控制器 (NIC) 卡。每个卡使用不同的 IP 地址进行通信，并且未将数据存储配置为使用正确的 IP 地址。请联系 <span class="ph">ArcGIS Data Store</span> 管理员以解决此问题。</p><p id="GUID-61ADAEB3-09D0-4D21-A2C5-FD9E087005FE"></p></div></section></section>    <section class="qas padded-anchor" id="ESRI_QUESTIONANSWERS_74FDD3106C204E53999E3ED8C5F9BEF8" purpose="qas"><span qas_title="内容"></span><section class="qa padded-anchor" id="anchor47" purpose="qa"><div class="question" id="ESRI_QUESTIONANSWER_F8799D786C3B4806AC22C7B7223F484F" purpose="question"><a id="GUID-46CE354C-0452-4E98-91C4-307BBCC669F0"></a>          <p id="GUID-75D701D3-1A50-4310-8018-E690665A40B0"> 当我向 <span class="ph">Map Viewer</span> 添加要素图层或查询图层时，收到<span class="uicontrol">堆空间不足异常</span>的错误消息。</p>        </div><div class="answer" id="ESRI_QUESTIONANSWER_F8799D786C3B4806AC22C7B7223F484F" purpose="answer"><a id="GUID-3AE0C63C-9499-4FFA-8D39-8AF5123DA8FF"></a>          <p id="GUID-F45EA2A6-0788-43DD-BF47-B70BF4CD02FC">如果要素图层中包括含较大和较复杂要素的多面体图层，则要素服务运行所在的 <span class="ph">ArcGIS Server</span> 站点可能会发生堆内存不足。请联系要素服务运行所在的 <span class="ph">ArcGIS GIS Server</span> 站点的管理员，因为管理员需要为站点中的每台机器增加 SOC 最大堆大小设置。SOC 最大堆大小设置在 <a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/portal/latest/administer" href="../../../../zh-CN/portal/latest/administer/windows/components-of-arcgis-urls.htm#ESRI_SECTION2_E260C7E968D043B7960F2E534403573E"><span class="ph">ArcGIS Server</span> 管理员目录</a>中进行更改。</p><p id="GUID-DC61D0DF-3434-43C7-B36C-1546B86FC66E">要确定要素图层中是否包含多面体图层，请在<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/portal/latest/administer" href="../../../../zh-CN/portal/latest/administer/windows/components-of-arcgis-urls.htm#ESRI_SECTION2_ED8E2F7C852C46129E3950A9A9C5FF19"><span class="ph">ArcGIS Server</span> 服务目录</a>中选中各个图层的<span class="uicontrol">几何类型</span>。如果要素图层是您门户中的一个项目，您可以打开各图层的 <span class="ph">ArcGIS Server</span> 服务目录信息，方法如下：打开要素图层的详细信息页面，然后在<span class="uicontrol">概述</span>选项卡的<span class="uicontrol">图层</span>部分单击图层名称。</p>        </div></section></section>    
+    <section class="qas padded-anchor" id="ESRI_QUESTIONANSWERS_18C343EDBFDF449491F9E76E00494EE8" purpose="qas"><span qas_title="ArcGIS Desktop"></span><section class="qa padded-anchor" id="anchor48" purpose="qa"><div class="question" id="ESRI_QUESTIONANSWER_6C44AE30E0FB4B7A80C969125885CC01" purpose="question"><a id="GUID-BD0CE60B-0F07-468A-ACC6-C6B655B72469"></a>          <p id="GUID-2299616F-310A-40AE-A457-42329EC6C9DC">无法在 <span class="ph">ArcGIS Desktop</span> 中打开项目。</p>        </div><div class="answer" id="ESRI_QUESTIONANSWER_6C44AE30E0FB4B7A80C969125885CC01" purpose="answer"><a id="GUID-D56186CB-E15D-4D2E-BFFF-99A5B7C3AF32"></a>          <p id="GUID-93A4682D-6C38-4EBA-9D22-05C421B087C9">您必须安装 <span class="ph">ArcGIS Desktop</span> 9.3.1 或更高版本才能打开大多数项目。一些项目需要较新版本的 <span class="ph">ArcGIS Desktop</span> - ArcGIS Desktop 10 或更高版本才能打开 <span class="ph">ArcGIS Desktop</span> 加载项文件、地图包和 Web 地图。需要 <span class="ph">ArcGIS  10.1 for Desktop</span> 或更高版本才能打开地理处理包、要素、KML、定位器包、切片包、切片和 WMS 图层。</p>        <p id="GUID-7F11BAE7-B509-4834-9C0C-67BF223DA7E3">需要使用 <span class="ph">ArcGIS Pro</span> 1.1 或更高版本才能打开 <span class="ph">ArcGIS Pro</span> 加载项文件。</p><p id="GUID-965C6F5B-6A77-439B-911F-5343F0CABB5D">请注意，加载项可向后兼容，但不可向前兼容。例如，<span class="ph">ArcGIS Pro</span> 1.1 加载项可通过 <span class="ph">ArcGIS Pro</span> 1.1 或更高版本打开，而 <span class="ph">ArcGIS Pro</span> 1.2 加载项只能通过 <span class="ph">ArcGIS Pro</span> 1.2 或更高版本打开。</p></div></section><section class="qa padded-anchor" id="anchor49" purpose="qa"><div class="question" id="ESRI_QUESTIONANSWER_E2199CE194AD40EB8F93DD21114CF28B" purpose="question"><a id="GUID-3390D935-2BCA-43D8-A379-AFF66EDC809D"></a>          <p id="GUID-872346C4-E1B3-4C36-84FE-DFF245E39333">更新图层包或地图包项目详细信息时，即使选择了<span class="uicontrol">保持项目属性</span>，图像也会更新。</p>        </div><div class="answer" id="ESRI_QUESTIONANSWER_E2199CE194AD40EB8F93DD21114CF28B" purpose="answer"><a id="GUID-6652DA3D-7602-4D71-9D37-1A79E56A3743"></a>          <p id="GUID-0343690F-1C6A-41CC-A259-639706AD2BAC">更新图层包或地图包时，项目属性缩略图被重置为包中的缩略图。
+ 即使选择将项目属性保留在服务器上，也会出现这种情况。更新项目后，您需要上传想要显示在项目页面上的图像。</p>        </div></section><section class="qa padded-anchor" id="anchor50" purpose="qa"><div class="question" id="ESRI_QUESTIONANSWER_7F1CDDFC5FF84117BE15038813A75BF5" purpose="question"><a id="GUID-6F2F551E-8D13-4CA4-945C-0C4F4DB5AB40"></a>          <p id="GUID-FD45CC11-4FA0-4CB4-A011-B79DACCBF542">打开图层包时系统提示我登录。</p>        </div><div class="answer" id="ESRI_QUESTIONANSWER_7F1CDDFC5FF84117BE15038813A75BF5" purpose="answer"><a id="GUID-73B527EB-D372-4B81-8736-F0B72E78BB76"></a>          
+          <p id="GUID-5265DA40-E8A5-4924-9AE9-2B6E4D83F7A3" ishcondition="agol_plat=portal">打开与群组共享但未公开的包时，系统会提示您（通过弹出对话框）输入门户网站的用户名和密码。此对话框包含保存登录信息的选项，用于在不重新输入用户名和密码的情况下打开共享包。</p>        </div></section><section class="qa padded-anchor" id="anchor51" purpose="qa"><div class="question" id="ESRI_QUESTIONANSWER_FF0F3650F5D24EF391B7DB439CFD4066" purpose="question"><a id="GUID-E1BC0705-08B6-4379-84F0-17DA27BF100B"></a>          <p id="GUID-ED41CDE6-2758-4279-938D-689032967BCD">在 <span class="ph">ArcMap</span> 中打开 globe 图层将返回错误消息。</p>        </div><div class="answer" id="ESRI_QUESTIONANSWER_FF0F3650F5D24EF391B7DB439CFD4066" purpose="answer"><a id="GUID-5A0BEAE8-7A8C-4D27-836A-3F079A3E971F"></a>          
+          <p id="GUID-A752DB63-06E7-46B9-9EFD-C464B8205F5F" ishcondition="agol_plat=portal">默认情况下，门户网站在 <span class="ph">ArcMap</span> 中打开 globe 图层时，您会收到一条错误消息。要成功打开这些项目，您必须在计算机上打开 <span class="ph">ArcGlobe</span> 并关闭 <span class="ph">ArcMap</span>。</p>        </div></section><section class="qa padded-anchor" id="anchor52" purpose="qa"><div class="question" id="ESRI_QUESTIONANSWER_1825FCEDC151481CB1C7AEB4D36D0260" purpose="question"><a id="GUID-0172CEF5-B1D6-4ABB-9BD6-F839B695C3DE"></a>          
+          <p id="GUID-0A975E0A-2E15-4C85-BAB4-24B780EA71E9">通过在图层项目详细信息页面中单击<span class="uicontrol">在 ArcGIS Desktop 中打开</span>选项来将图层添加到 <span class="ph">ArcGIS Desktop</span> 或 ArcGIS Explorer 中时，此图层不可用。例如，在 <span class="ph">ArcMap</span> 中，我看到添加了新图层，但无法对其进行绘制。而在图层项目详细信息页面中单击<span class="uicontrol">在 Map Viewer 中打开</span>选项时，则可以在 <span class="ph">Map Viewer</span> 中打开和绘制图层，由此可知托管地图服务的服务器已启动和运行。</p>        </div><div class="answer" id="ESRI_QUESTIONANSWER_1825FCEDC151481CB1C7AEB4D36D0260" purpose="answer"><a id="GUID-EE52E462-5617-4547-8A83-B5539A80B91A"></a>          <p id="GUID-E48E3033-0067-4703-B8C5-02FA5F43E3DB"> 这是有关托管地图服务图层的 <span class="ph">GIS Server</span> 的 REST 配置问题。单击<span class="uicontrol">在 ArcGIS Desktop 中打开</span>会导致自动生成的 LYR 文件使用 <span class="ph">GIS Server</span> 站点的内部 URL 而非外部 URL。同一问题还会导致地图服务的“REST 服务目录”页面上的<span class="uicontrol">在 ArcMap 中查看</span>和<span class="uicontrol">在 ArcGIS Explorer 中查看</span>链接失败。此问题只能由托管地图服务的 <span class="ph">GIS Server</span> 管理员解决。</p>          <p id="GUID-0E3EF496-1BA3-447A-B1CB-191EB012AE1B"> 如果想要使用存在此问题的 <span class="ph">GIS Server</span> 站点中的服务，您仍然可以在 <span class="ph">ArcGIS Desktop</span> 或 <span class="ph">ArcGIS Explorer Desktop</span> 中通过直接连接到 <span class="ph">GIS Server</span> 站点来向地图或 globe 中添加地图服务，步骤如下所示：</p>          <ol class="list-numbered" purpose="ol" id="OL_4B6DDBF4FCE546EF8FBF2CB796C2286B">            <li purpose="li" id="LI_E120205A57054194916BAB5AF1FB6B52">打开要使用的地图服务的<span class="uicontrol">详细信息</span>页面，然后单击<span class="uicontrol">地图内容</span>链接。</li>            <li purpose="li" id="LI_21275EA2B7A74758A0B7064EE7969EFB">复制<span class="uicontrol">地图内容</span>页面 URL 的第一部分，复制到（并包括）单词“services”，然后删除该字符串的 <span class="usertext">/rest</span> 部分，因此其格式如下：<span class="usertext">https://gisserver:6080/arcgis/services</span>。</li>            <li purpose="li" id="LI_80986BC47FAA418BBE75AF9C4F996D01">打开<span class="uicontrol">目录</span>窗口中的<span class="uicontrol">添加 ArcGIS Server</span> 对话框，然后将字符串粘贴到<span class="uicontrol">服务器 URL</span> 字段中。在 <span class="ph">ArcGIS Explorer Desktop</span> 中，打开<span class="uicontrol">添加内容</span>对话框，然后将该字符串粘贴到 <span class="uicontrol">GIS 服务</span>字段中。此时您已连接到 <span class="ph">GIS Server</span> 站点。</li>            <li purpose="li" id="LI_EC92B2631826495498F51B9C23454933"> 浏览至您要使用的地图服务。</li>            <li purpose="li" id="LI_6B5BA736EFA0484190AFEA0F124FD742">您还可以联系 <span class="ph">GIS Server</span> 站点的所有者，使其了解此配置问题亟需解决。</li>          </ol>        </div></section><section class="qa padded-anchor" id="anchor53" purpose="qa"><div class="question" id="ESRI_QUESTIONANSWER_C4ABCDD2AE6543F78CD9260E1159BE03" purpose="question"><a id="GUID-4697CF06-2423-4967-B3E7-17BA4F3596A4"></a>          <p id="GUID-A3690EC2-F46F-47D9-83FA-88B282A1253D">尝试从 <span class="ph">ArcGIS Desktop</span> 登录我的门户时出现软件授权错误。</p>        </div><div class="answer" id="ESRI_QUESTIONANSWER_C4ABCDD2AE6543F78CD9260E1159BE03" purpose="answer"><a id="GUID-88FFA035-AE4A-4086-B1AA-D51CFAB6B33E"></a>          <p id="GUID-996FDBA8-573C-4BD3-810A-B0CE41F508F7">对 <span class="ph">Portal for ArcGIS</span> 进行许可，以允许特定的成员数量。如果门户成员超出该数量，下次尝试从 <span class="ph">ArcGIS Desktop</span> 登录门户时会显示以下消息：<span class="uicontrol">登录 Portal for ArcGIS 时出错。由于软件授权错误无法登录用户。请联系 Portal for ArcGIS 管理员获取帮助。</span> 门户管理员必须要获得新的许可或从门户中移除成员。</p>        </div></section><section class="qa padded-anchor" id="anchor54" purpose="qa"><div class="question" id="ESRI_QUESTIONANSWER_B4EBC5BFC94F4E89A24DE2B04D01A0CF" purpose="question"><a id="GUID-9F0C64C1-171B-4092-8065-03815E6DCE03"></a>          <p id="GUID-6E6D4C48-EF80-44A2-A8DB-F42EB65D9FAA">当我在 <span class="ph">ArcGIS Desktop</span> 客户端打开图层文件（<span class="usertext">.lyr</span> 或 <span class="usertext">.lyrx</span>）或地图文档（<span class="usertext">.mxd</span> 或 <span class="usertext">.mapx</span>）时，一些图层会丢失。</p>        </div><div class="answer" id="ESRI_QUESTIONANSWER_B4EBC5BFC94F4E89A24DE2B04D01A0CF" purpose="answer"><a id="GUID-801E3F9F-D189-4B08-9688-9C04CB852370"></a>          <p id="GUID-AC9968B0-3314-499B-B75C-720D51E618A3">您可能不具有基础数据源的访问权限。请联系图层文件或地图文档的所有者，使其与组织或其共享图层文件或地图文档的群组共享上述数据。</p>        </div></section></section>  
+			
+				<hr>
+				<!--googleoff: all-->
+				
+	
+        
+		    <p class="feedback right">
+		        <a id="afb" class="icon-ui-contact" href="/feedback/" data-langlabel="feedback-on-this-topic" >有关此主题的反馈?</a>
+		    </p>
+        
+	
+
+				<!--googleon: all-->
+			
+		</main>
+	</div>
+	
+	<!--googleoff: all-->
+	
+		
+			<div id="main-toc-large" class="column-5">
+			    <div class="panel font-size--2 tablet-hide trailer-1">
+			      <h5 class="trailer-half">在本主题中</h5>
+			      <ol class="list-plain pre-0 trailer-0"><li><a href="#ESRI_QUESTIONANSWERS_605D8C9E847A4039AF7E2240A55E4F56">网站</a></li><li><a href="#ESRI_QUESTIONANSWERS_5608774E1CAA4804BC1883828AC0771B">地图</a></li><li><a href="#ESRI_QUESTIONANSWERS_80F4F059417B4E5B8AA2874A80182130">应用程序</a></li><li><a href="#ESRI_QUESTIONANSWERS_0B1A3366B333402F8208BB565510FDDE">托管 Web 图层</a></li><li><a href="#ESRI_QUESTIONANSWERS_DFAB501BA1A941E692F6260374B32511"><ph translate="yes" varid="geoanalyticsserver_tools">GeoAnalytics 工具</ph></a></li><li><a href="#ESRI_QUESTIONANSWERS_74FDD3106C204E53999E3ED8C5F9BEF8">内容</a></li><li><a href="#ESRI_QUESTIONANSWERS_18C343EDBFDF449491F9E76E00494EE8"><ph translate="no" varid="ArcGISforDesktop">ArcGIS Desktop</ph></a></li></ol>
+			    </div>
+			    
+			    
+	  		</div>
+		
+    
+   <!--googleon: all-->
+
+
+
+
+          
+        </div>
+        <!-- ENDPAGECONTENT -->
+
+      </div>
+
+    </div>  <!-- End of wrapper -->
+
+  <footer class="footer leader-3 link-dark-gray" role="contentinfo">
+    <div class="grid-container">
+      <div class="row">
+        <nav class="column-6">
+          <h6 data-langlabel="arcgis-for-server">Arc<span>GIS Enterprise</span></h6>
+          <ul class="list-plain">
+            <li><a data-langlabel="home" href="../../../../zh-CN/">主页</a></li>
+            <li><a data-langlabel="portal" href="../../../../zh-CN/portal/">Portal</a></li>
+            <li><a data-langlabel="server" href="../../../../zh-CN/server/">Server</a></li>
+            <li><a data-langlabel="data-store" href="../../../../zh-CN/data-store/">Data Stores</a></li>
+            <li><a data-langlabel="cloud" href="../../../../zh-CN/cloud/">云</a></li>
+            <li><a data-langlabel="apps" href="../../../../zh-CN/apps/">应用程序</a></li>
+            <li><a data-langlabel="documentation" href="../../../../zh-CN/documentation/">文档</a></li>
+          </ul>
+        </nav>
+
+        
+  <nav class="column-6">
+    <h6 data-langlabel="arcgis-platform">ArcGIS 平台</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="arcgis" href="//www.arcgis.com/">ArcGIS Online</a></li>
+      <li><a data-langlabel="arcgis-for-professionals" href="//pro.arcgis.com/">ArcGIS Pro</a></li>
+      <li><a data-langlabel="arcgis-for-server" href="//enterprise.arcgis.com/">ArcGIS Enterprise</a></li>
+      <li><a data-langlabel="arcgis-for-developers" href="https://developers.arcgis.com/">ArcGIS for Developers</a></li>
+      <li><a data-langlabel="arcgis-solutions" href="//solutions.arcgis.com/">ArcGIS Solutions</a></li>
+      <li><a data-langlabel="arcgis-marketplace" href="//marketplace.arcgis.com/">ArcGIS Marketplace</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <h6 data-langlabel="about-esri">关于 Esri</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="about-us" href="//www.esri.com/about-esri/">关于我们</a></li>
+      <li><a data-langlabel="careers" href="//www.esri.com/careers/">招贤纳士</a></li>
+      <li><a data-langlabel="insiders-blog" href="https://www.esri.com/about/newsroom/blog/">Esri 博客</a></li>
+      <li><a data-langlabel="user-conference" href="//www.esri.com/events/user-conference/index.html">用户大会</a></li>
+      <li><a data-langlabel="developer-summit" href="//www.esri.com/events/devsummit/index.html">开发者峰会</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <a class="esri-logo" href="//www.esri.com/" aria-label="Esri Home"></a>
+    <section class="footer-social-nav leader-1">
+            <a class="icon-social-twitter" aria-label="Esri on Twitter" href="https://twitter.com/Esri/"></a>
+            <a class="icon-social-facebook" aria-label="Esri on Facebook" href="https://www.facebook.com/esrigis/"></a>
+            <a class="icon-social-github" aria-label="Esri on GitHub" href="//esri.github.io/"></a>
+            <a class="icon-social-contact" aria-label="Contact Esri" href="//www.esri.com/about-esri/contact/"></a>
+    </section>
+	  
+  </nav>
+  
+  <div class="column-24 leader-1">
+    <p class="font-size--3"><a href="http://www.esri.com/legal/copyright-trademarks">Copyright &copy; 2019 Esri.</a> All rights reserved. | <a href="http://www.esri.com/legal/privacy/">隐私政策</a> | <a href="http://www.esri.com/legal/software-license">法律声明</a></p>
+  </div>
+  
+
+
+      </div>
+    </div>
+  </footer>
+  <!--googleoff: all-->
+
+  
+  
+	<script src="../../../../zh-CN/assets/js/init.js" type="text/javascript"></script>
+	<!--<script src="../../../../zh-CN/assets/js/drop-down.js" type="text/javascript"></script>-->
+	<script src="../../../../zh-CN/assets/js/search/searchform.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/cdn/js/link-modifier.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/cdn/js/sitewide.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/cdn/js/libs/highlight.pack.js" type="text/javascript"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+
+
+  
+    
+
+  <script src="../../../../zh-CN/cdn/js/affix.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    $(function () {
+          var appendFlg = true;
+
+          $("#bigmac")
+          .on("affixed.bs.affix", function (evt) {
+            if (appendFlg) {
+              $("<a class='crumb' href='#'>疑难解答</a>").insertAfter ($("#bigmac nav a").last());
+              appendFlg = false;
+            }
+          })
+          .on ("affix-top.bs.affix", function(evt) {
+            if (!appendFlg) {
+              $("#bigmac nav a").last().remove();
+            }
+            appendFlg = true;
+          })
+    })
+  </script>
+  
+        <script type="text/javascript">
+          window.doctoc = {
+            pubID: "583",
+            tpcID: "42",
+            
+              prefix: "使用",
+              prefixUrl: "/zh-cn/portal/latest/use/",
+          
+            hideToc: false
+          }
+        </script>
+
+        <script type="text/javascript" src="../../../../zh-CN/portal/latest/use/583.js" ></script>
+        <script type="text/javascript" src="../../../../zh-CN/cdn/calcite/js/protoc.js" ></script>
+        
+        
+
+  <noscript>
+        <p>
+            <a href="flisting.htm">flist</a>
+        </p>
+    </noscript>
+    <script type="text/javascript"></script>
+  
+  
+    
+    
+
+  </body>
+</html>

@@ -1,0 +1,545 @@
+
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>  <html class="ie lt-ie9 lt-ie8 lt-ie7 ie6" dir="ltr"> <![endif]-->
+<!--[if IE 7]>     <html class="ie lt-ie9 lt-ie8 ie7" dir="ltr"> <![endif]-->
+<!--[if IE 8]>     <html class="ie lt-ie9 ie8" dir="ltr"> <![endif]-->
+<!--[if IE 9]>     <html class="ie ie9" dir="ltr"> <![endif]-->
+<!--[if !IE]><!--> <html dir="ltr" lang="zh-CN"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>要素服务&mdash;文档 | ArcGIS Enterprise 文档</title>
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+    <script>
+      var docConfig = {
+        locale: 'zh-CN'
+        ,localedir: 'zh-cn'
+        ,langSelector: ''
+        
+        ,relativeUrl: false
+        
+
+        ,searchformUrl: '/search/'
+        ,tertiaryNavIndex: ''
+
+        
+      };
+    </script>
+	 
+
+
+    
+    <!--[if lt IE 9]>
+      <script src="../../../../../zh-CN/cdn/js/libs/html5shiv.js" type="text/javascript"></script>
+      <script src="../../../../../zh-CN/cdn/js/libs/selectivizr-min.js" type="text/javascript"></script>
+      <script src="../../../../../zh-CN/cdn/js/libs/json2.js" type="text/javascript"></script>
+      <script src="../../../../../zh-CN/cdn/js/libs/html5shiv-printshiv.js" type="text/javascript" >
+
+    <![endif]-->
+
+     <!--[if lt IE 11]>
+    <script>
+      $$(document).ready(function(){
+        $$(".hideOnIE").hide();
+      });
+    </script>
+    <![endif]-->
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<link href="../../../../../zh-CN/assets/img/favicon.ico" rel="shortcut icon" >
+	<link href="../../../../../zh-CN/assets/css/screen.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/cdn/calcite/css/documentation.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/assets/css/print.css" media="print" type="text/css" rel="stylesheet" />
+
+	<!--
+	<link href="../../../../../zh-CN/assets/css/screen_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/assets/css/documentation/base_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/assets/css/print_l10n.css" media="print" type="text/css" rel="stylesheet" />
+	-->
+	
+	
+		<script src="../../../../../zh-CN/cdn/js/libs/jquery.1.9.1.min.js" type="text/javascript"></script>
+	
+	<script src="../../../../../zh-CN/cdn/js/libs/jquery.cookie.js" type="text/javascript"></script>
+	<link href="../../../../../zh-CN/cdn/css/colorbox.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/cdn/css/colorbox_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<script src="../../../../../zh-CN/cdn/js/libs/jquery.colorbox-min.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/assets/js/video-init.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/assets/js/sitecfg.js" type="text/javascript"></script>
+	
+		<script src="../../../../../zh-CN/assets/js/signIn.js" type="text/javascript"></script>
+	
+
+	<!--- Language Picker -->
+	<script src="../../../../../zh-CN/assets/js/locale/l10NStrings.js" type="text/javascript"></script>
+	
+		 
+	
+
+	<script src="../../../../../zh-CN/assets/js/calcite-web.js" type="text/javascript"></script>
+
+
+
+  <!--- search MD -->
+    <META name="description" content="要素服务可用来通过 Internet 提供要素，并提供显示要素时所要使用的符号系统。之后，客户端可执行查询操作以获取要素，并执行相应的编辑操作。"><META name="last-modified" content="2019-12-6"><META name="product" content="arcgis-server-windows,arcgis-enterprise-windows"><META name="sub_category" content="ArcGIS Server (Windows)"><META name="search-collection" content="help"><META name="content_type_label" content="帮助主题"><META name="sub_category_label" content="ArcGIS Server (Windows)"><META name="search-category" content="help-general"><META name="subject_label" content="服务"><META name="version" content="10.8"><META name="content_type" content="Help Topic"><META name="subject" content="SERVICES"><META name="content-language" content="zh-cn">
+    <!--- search MD -->
+
+  
+  <script src="../../../../../zh-CN/assets/js/switchers/server-1.js" type="text/javascript"></script>
+  
+      
+
+</head>
+
+<!--
+      pub: GUID-F157DF68-7F60-4427-A561-AD2F0FA30861=22
+      tpc: GUID-94AF12F9-010E-494D-A366-B92140C02B21=14
+      -->
+
+
+<!-- variable declaration, if any -->
+<!-- can change following macro to set variable once we are on Jinja 2.8 -->
+
+
+
+
+
+<body class="claro zh-CN server">
+  
+
+  <!-- Drawer location -->
+  <div class="drawer drawer-left js-drawer" data-drawer="top-nav">
+        <nav class="drawer-nav" role="navigation">
+          <aside class="side-nav">
+            <h2 class="side-nav-title">Arc<span>GIS</span> Enterprise</h2>
+            <form id="helpSearchForm" class="margin-left-half margin-right-half leader-half trailer-half drawer-search-form" method="GET">
+              <input type="search" name="q"  placeholder="搜索 ArcGIS Server 10.8 帮助">
+              <input type="hidden" name="collection" value="help" />
+              <input type="hidden" name="product" value="arcgis-server-windows" />
+              <input type="hidden" name="version" value="10.8" />
+              <input type="hidden" name="language" value="zh-CN" />
+            </form>    
+             <a id="nav-portal" data-langlabel="portal" href="../../../../../zh-CN/portal/" class="side-nav-link">Portal</a>
+             
+            <a id="all-servers" data-langlabel="all-servers" href="../../../../../zh-CN/server/" class="side-nav-link">所有服务器</a>
+            <a id="gis-server" data-langlabel="gis-server" href="../../../../../zh-CN/server/" class="side-nav-link">GIS Server</a>
+            <a id="image-server" data-langlabel="image-server" href="../../../../../zh-CN/image/" class="side-nav-link">Image Server</a>
+            <a id="geo-analytics-server" data-langlabel="geo-analytics-server" href="../../../../../zh-CN/geoanalytics/" class="side-nav-link">GeoAnalytics Server</a>
+            <a id="geoevent-server" data-langlabel="geoevent-server" href="../../../../../zh-CN/geoevent/" class="side-nav-link">GeoEvent Server</a>
+            <a id="notebook-server" data-langlabel="notebook-server" href="../../../../../zh-CN/notebook/" class="side-nav-link">Notebook Server</a>
+            <a id="nav-data-store" data-langlabel="data-store" href="../../../../../zh-CN/data-store/" class="side-nav-link">Data Stores</a>
+            <a id="nav-cloud" data-langlabel="cloud" href="../../../../../zh-CN/cloud/" class="side-nav-link">云</a>
+            <a id="nav-apps" data-langlabel="apps" href="../../../../../zh-CN/apps/" class="side-nav-link">应用程序</a>
+            <a id="nav-doc" data-langlabel="documentation" href="../../../../../zh-CN/documentation/" class="side-nav-link">文档</a>
+
+          </aside>
+        </nav>
+    </div>
+
+    <!-- user navigation collapses to drawer on mobile -->
+    
+    <div class="drawer drawer-right js-drawer hide-if-logged-out logged-in-navigation" data-drawer="user-nav">
+      <nav class="drawer-nav">
+        <aside class="side-nav">
+          <a class="side-nav-link agolProfile" href="#">我的个人资料</a>
+          <a class="side-nav-link icon-ui-sign-out js-log-out" href="#">登出</a>
+        </aside>
+      </nav>
+    </div>
+    
+<!-- End of drawer -->
+
+  
+  <div class="wrapper">
+      <!--googleoff: all-->
+
+      <header class="top-nav" data-skin="learn">
+        <a class="skip-to-content" href="#skip-to-content">Skip To Content</a>
+        <div class="grid-container">
+          <div class="column-24">
+
+
+            <!--<div class="top-nav-title-wrapper text-center ">-->
+              <a href='../../../../../zh-CN/' class="top-nav-title tablet-hide"><span>Arc</span>GIS  Enterprise</a>
+              <a href='../../../../../zh-CN/' class="icon-ui-menu top-nav-title js-drawer-toggle tablet-show" data-drawer="top-nav"><span>Arc</span>GIS Enterprise</a>
+            <!--</div> -->
+
+          
+            <nav role="navigation" class="top-nav-list left tablet-hide">
+              <a id="nav-portal" data-langlabel="portal" href="../../../../../zh-CN/portal/" class="top-nav-link">Portal</a>
+
+                <div class="dropdown js-dropdown ">
+                  <a class="top-nav-link js-dropdown-toggle" tabindex="0" aria-haspopup="true" aria-expanded="false" href="#">Servers</a>
+                  <nav class="dropdown-menu featured" role="menu">
+                    <ul class="dropdown-sublist-featured">
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/get-started/latest/windows/additional-server-deployment.htm" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path  d="M42.92 6.1H4.12v8.566l.833.832-.835.833-.018 7.332.845.847-.825.824V33.9h25v5.2h-2v1.075H8.02v.8h19.1v.925h4.8v-.925H40v-.8h-8.08V39.1h-2v-5.2h13v-8.566l-.834-.834.835-.834v-7.332l-.835-.834.835-.834zm-11.8 35h-3.2v-1.2h3.2zm11-8H4.92v-7.434l.767-.766h35.668l.765.766zm0-9.766l-.766.766H5.666l-.766-.767.017-6.669.766-.764h35.671l.766.766zm0-9l-.766.766H5.687l-.766-.766V6.9h37.2zM19 11.9h-2v-.8h2zm-4 0h-2v-.8h2zm-4 0H9v-.8h2zm6 8.2h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9zm8 9h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9z"/></svg></span>
+                          <span class="sublink-text">所有服务器</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/server/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M45.98 33.575a.616.616 0 0 0-.335-.51l-3.362-2.03 3.362-2.031a.556.556 0 0 0 0-1.02l-11.1-6.704a1.293 1.293 0 0 0-1.112 0L22.33 27.982a.556.556 0 0 0 0 1.02l3.36 2.03-3.358 2.03a.556.556 0 0 0-.002 1.021l3.322 2.006-3.324 2.008a.555.555 0 0 0 .002 1.017l11.102 6.703a1.25 1.25 0 0 0 1.11.002l11.104-6.706a.556.556 0 0 0 0-1.02l-3.32-2.006 3.318-2.004a.607.607 0 0 0 .335-.509zM33.837 21.97c.026-.01.286-.005.29-.005l10.814 6.53-10.8 6.523c-.028.01-.284.005-.294.006l-10.813-6.53zm11.105 16.636l-10.8 6.523a2.564 2.564 0 0 1-.295.006l-10.81-6.529 3.39-2.047 7.004 4.23a1.083 1.083 0 0 0 .557.131 1.101 1.101 0 0 0 .554-.13l7.01-4.233zM34.14 40.098a2.545 2.545 0 0 1-.294.006l-10.812-6.53 3.43-2.073 6.97 4.208a1.25 1.25 0 0 0 1.107-.001l6.966-4.206 3.431 2.073zM9 8H7V7h2zm8 8h-2v-1h2zm-4-8h-2V7h2zm4 0h-2V7h2zm-4 8h-2v-1h2zm7.316 11.1H3.9v-6.434l.766-.766h35.668l.766.766v2.12l.8.483v-2.935l-.826-.826.826-.845v-6.329l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9h16.88a2.632 2.632 0 0 1 .336-.8zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zm0 8v-5.668l.766-.766h35.668l.766.766v5.67l-.746.764H4.666zM15 24v-1h2v1zm-4 0v-1h2v1zm-2-8H7v-1h2zm-2 8v-1h2v1z"/></svg></span>
+                          <span class="sublink-text">GIS Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/image/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 8h-2V7h2zm-4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm8 8h-2v1h2zm-8 0H7v1h2zm4 9v-1h-2v1zm-4 0v-1H7v1zm8 0v-1h-2v1zm4 3.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V21h-.8v-.334l-.766-.766H4.666l-.766.766V27.1H21zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zm40.234 4v21.8H23.1V23.1zm-.8 16.366L39.466 44.1h2.868l1.766-1.766zm-20.2-9.932l5.634-5.634h-2.868L23.9 26.666zm6.2-5.068L24.466 30.1h2.868l2.766-2.766zM28.466 30.1H30.1v-1.634zm2.434 0h6.2v-6.2h-6.2zm-7 7h6.2v-6.2h-6.2zm7 0h6.2v-6.2h-6.2zm0 6.434l5.634-5.634h-2.868L30.9 40.666zm7-7l5.634-5.634h-2.868L37.9 33.666zm1.634-5.634H37.9v1.634zm-8.634 7v1.634l1.634-1.634zm.566 6.2h2.868l2.766-2.766v-2.868zm6.434-3.566l2.634-2.634H37.9zM35.466 44.1H37.1v-1.634zm2.434 0h.434l5.766-5.766V37.9h-2.434L37.9 41.666zm6.2-8.634L42.466 37.1H44.1zm0-4L38.466 37.1h2.868l2.766-2.766zm0-7.566h-6.2v6.2h6.2zm-20.2 0v1.634l1.634-1.634zm0 20.2h6.2v-6.2h-6.2zm20.2 0v-.634l-.634.634z"/></svg></span>
+                          <span class="sublink-text">Image Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/geoanalytics/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 16h-2v-1h2zm-8 8v-1H7v1zm8 0v-1h-2v1zM13 7h-2v1h2zm4 0h-2v1h2zM9 7H7v1h2zm21.45 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V27.9h-1.464l-.801-.8H41.1v-6.434l-.766-.766H4.666l-.766.766V27.1h27.15zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM13 24v-1h-2v1zm0-9h-2v1h2zm-4 0H7v1h2zm26.672 27.148A1.87 1.87 0 0 1 35.9 43a1.91 1.91 0 1 1-3.763-.222l-9.845-3.414A1.88 1.88 0 0 1 21 39.9a1.9 1.9 0 1 1 1.474-3.084l4.692-2.346A1.878 1.878 0 0 1 27.1 34a1.902 1.902 0 0 1 1.9-1.9 1.867 1.867 0 0 1 .781.191l3.788-5.05A1.88 1.88 0 0 1 33.1 26a1.9 1.9 0 1 1 3.491 1.026l4.889 4.888c-.069.056-.144.1-.21.162a3.986 3.986 0 0 0-.358.402l-4.883-4.883A1.889 1.889 0 0 1 35 27.9a1.867 1.867 0 0 1-.781-.191l-3.788 5.049a1.868 1.868 0 0 1 .437.965l9.204.614c-.018.11-.049.218-.058.33A3.93 3.93 0 0 0 40 35c0 .046.01.09.01.135l-9.185-.612A1.913 1.913 0 0 1 29 35.9a1.889 1.889 0 0 1-1.474-.716l-4.692 2.346a1.878 1.878 0 0 1 .066.47 1.9 1.9 0 0 1-.105.625c-.007.02-.022.036-.03.056l9.63 3.34a1.87 1.87 0 0 1 2.786-.505l5.415-4.437c.067.108.127.22.204.322a3.9 3.9 0 0 0 .292.306zM33.9 26a1.092 1.092 0 0 0 .43.872 1.12 1.12 0 0 0 1.42-.068A1.1 1.1 0 1 0 33.9 26zm-6 8a1.1 1.1 0 0 0 2.196.093 1.135 1.135 0 0 0-.426-.965A1.087 1.087 0 0 0 29 32.9a1.101 1.101 0 0 0-1.1 1.1zm-5.8 4a1.098 1.098 0 1 0-.06.362A1.101 1.101 0 0 0 22.1 38zm13 5a1.1 1.1 0 1 0-2.2 0 1.1 1.1 0 0 0 2.2 0zm10.8-8a1.9 1.9 0 1 1-3.8 0c0-.053.003-.105.007-.158A1.9 1.9 0 0 1 45.9 35zm-.8 0a1.1 1.1 0 0 0-2.196-.093 1.153 1.153 0 0 0 .216.752A1.1 1.1 0 0 0 45.1 35z"/></svg></span>
+                          <span class="sublink-text">GeoAnalytics Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/geoevent/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M13 8h-2V7h2zm4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm12.418 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826v2.117c-.259-.177-.53-.337-.8-.497v-1.288l-.766-.766H4.666l-.766.766V27.1h17.933c-.148.26-.283.53-.415.8zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM9 24v-1H7v1zm4-9h-2v1h2zm0 9v-1h-2v1zm-4-9H7v1h2zm8 9v-1h-2v1zm16.9 2h-.8v8.9H39v-.8h-5.1zm.1-3.901a11.9 11.9 0 1 0 11.9 11.9 11.914 11.914 0 0 0-11.9-11.9zm0 23a11.1 11.1 0 1 1 11.1-11.1 11.112 11.112 0 0 1-11.1 11.1z"/></svg></span>
+                          <span class="sublink-text">GeoEvent Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/notebook/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M22 27.1H3.9v-6.434l.766-.766h18.576a5.262 5.262 0 0 1 .83-.8H4.666l-.766-.766v-5.668l.766-.766h35.668l.766.766V18h.8v-5.666l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9H22zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zM9 8H7V7h2zm8 0h-2V7h2zm-4 0h-2V7h2zm2 16v-1h2v1zm-4 0v-1h2v1zm-4 0v-1h2v1zm0-8v-1h2v1zm8 0v-1h2v1zm-4 0v-1h2v1zm18.9 8.1h-1.8v1.8h1.8zm-.8 1h-.2v-.2h.2zm15.498-4.48a2.727 2.727 0 0 0-1.62-.5v-.02H27.25a3.154 3.154 0 0 0-3.15 3.15V38.1h-1.68a3.386 3.386 0 0 0-2.872 1.58 3.49 3.49 0 0 0-.157 3.419 3.241 3.241 0 0 0 2.954 1.801h15.161a3.404 3.404 0 0 0 3.394-3.4V26.9h5v-3.65a3.224 3.224 0 0 0-1.302-2.63zM22.345 44.1a2.44 2.44 0 0 1-2.23-1.341 2.706 2.706 0 0 1 .11-2.65A2.588 2.588 0 0 1 22.42 38.9h12.89a3.395 3.395 0 0 0 0 5.2zM40.1 23.192V41.5a2.6 2.6 0 1 1-2.6-2.6v-.8H24.9V23.25a2.352 2.352 0 0 1 2.35-2.35h13.795a3.183 3.183 0 0 0-.945 2.292zm5 2.908h-4.2v-2.908a2.274 2.274 0 0 1 1.44-2.18 1.944 1.944 0 0 1 1.791.259 2.423 2.423 0 0 1 .97 1.979zm-17.1 5h9v.8h-9zm0 3h7v.8h-7zm0-6h9v.8h-9zm4-3h5v.8h-5z"/></svg></span>
+                          <span class="sublink-text">Notebook Server</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+
+              <a id="nav-data-store" data-langlabel="data-store" href="../../../../../zh-CN/data-store/" class="top-nav-link">Data Stores</a>
+              <a id="nav-cloud" data-langlabel="cloud" href="../../../../../zh-CN/cloud/" class="top-nav-link">云</a>
+              <a id="nav-apps" data-langlabel="apps" href="../../../../../zh-CN/apps/" class="top-nav-link">应用程序</a>
+            </nav>
+
+
+            
+            
+            
+
+            <div class="margin-left-1 top-nav-list right hide-if-logged-in logged-out-navigation">
+               
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+              
+              <a data-langlabel="sign-in" id="login-link" class="icon-ui-user top-nav-link link-blue login-link" href="#">登录</a>
+              
+            </div>
+
+            
+            <nav class="margin-left-1 top-nav-list right hide-if-logged-out logged-in-navigation">
+              
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+             
+              <div class="dropdown js-dropdown right">
+
+                <div class="tablet-show top-nav-link">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a href="#" data-drawer="user-nav" class="user-nav-name js-drawer-toggle" data-first-name></a>
+                </div>
+
+                <div class="tablet-hide top-nav-link js-dropdown-toggle">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a class="user-nav-name top-nav-dropdown dropdown-btn" data-first-name>&nbsp;</a>
+                </div>
+
+                <nav class="dropdown-menu dropdown-right">
+                
+                  <a class="dropdown-link agolProfile" id="agolProfile" href="#">我的个人资料</a>
+                  <a class="dropdown-link js-log-out" id="agolLogout" href="#">登出</a>
+                </nav>
+              </div>
+            </nav>
+            
+
+            
+          </div>
+        </div>
+      </header>
+
+      <div class="js-search search-overlay">
+        <div class="search-content" role="dialog" aria-labelledby="search">
+          <form method="GET" id="helpSearchForm">
+            <label>
+              搜索 ArcGIS Server 10.8 帮助
+              <div class="search-bar">
+                <input type="search" name="q"  placeholder="搜索 ArcGIS Server 10.8 帮助" class="search-input js-search-input">
+                <input type="hidden" name="collection" value="help" />
+                <input type="hidden" name="product" value="arcgis-server-windows" />
+                <input type="hidden" name="version" value="10.8" />
+                <input type="hidden" name="language" value="zh-CN" />
+              </div>
+            </label>
+            <input type="hidden" name="relativePath" value="../../../../../" /><button type="submit" class="btn btn-large right">搜索</button>
+          </form>
+        </div>
+      </div>
+
+      <!--googleon: all-->
+
+      <div id="skip-to-content">
+        <!--googleoff: all-->
+        <header class="sub-nav sub-nav-learn">
+          <div class="grid-container">
+            
+            <div class="column-24">
+              <div style="display:table;" class="sdk-home-banner">
+                <div class="sdk-home-banner-content">
+                  <h1 class="sub-nav-title link-white">ArcGIS Server</h1>
+                </div>
+              </div>
+            </div>
+
+            <div class="column-24">
+              <nav class='sub-nav-list tablet-hide'><a class="sub-nav-link" href="../../../../../zh-CN/server/" target="_top" title="ArcGIS Server 的概述和文档">主页</a><a class="sub-nav-link" href="../../../../../zh-CN/server/latest/get-started/windows/" target="_top" title="了解有关 ArcGIS Server 和服务器角色的信息">简介</a><a class="sub-nav-link" href="../../../../../zh-CN/server/latest/deploy/windows/" target="_top" title="构建、配置和升级部署">部署</a><a class="sub-nav-link" href="../../../../../zh-CN/server/latest/manage-data/windows/" target="_top" title="管理企业的空间数据">管理数据</a><a class="sub-nav-link is-active" href="../../../../../zh-CN/server/latest/publish-services/windows/" target="_top" title="使用 GIS 服务">管理服务</a><a class="sub-nav-link" href="../../../../../zh-CN/server/latest/create-web-apps/windows/" target="_top" title="创建 Web 应用程序和可打印地图">共享</a><a class="sub-nav-link" href="../../../../../zh-CN/server/latest/administer/windows/" target="_top" title="管理和保护 ArcGIS Server">管理</a><a class="sub-nav-link" href="../../../../../zh-CN/server/latest/develop/windows/" target="_top" title="构建扩展模块并自动执行常见任务">开发</a></nav><select class='tablet-show select-full trailer-half js-select-nav'><option value="../../../../../zh-CN/server/">主页</option><option value="../../../../../zh-CN/server/latest/get-started/windows/">简介</option><option value="../../../../../zh-CN/server/latest/deploy/windows/">部署</option><option value="../../../../../zh-CN/server/latest/manage-data/windows/">管理数据</option><option selected="true" value="../../../../../zh-CN/server/latest/publish-services/windows/">管理服务</option><option value="../../../../../zh-CN/server/latest/create-web-apps/windows/">共享</option><option value="../../../../../zh-CN/server/latest/administer/windows/">管理</option><option value="../../../../../zh-CN/server/latest/develop/windows/">开发</option></select>
+            </div>
+
+          </div>
+        </header>
+        <!--googleon: all-->
+       
+        <!-- content goes here -->
+        <div class="grid-container ">
+          
+
+            
+              
+  <!--BREADCRUMB-BEG--><div id="bigmac" class="sticky-breadcrumbs trailer-2" data-spy="affix" data-offset-top="180"> </div><!--BREADCRUMB-END-->
+  <!--googleoff: all-->
+    <div class="column-5 tablet-column-12 trailer-2 ">
+      <aside class="js-accordion accordion reference-index" aria-live="polite" role="tablist">
+        <div></div>
+      </aside>
+
+      <div class="js-sticky scroll-show tablet-hide leader-1 back-to-top" data-top="0" style="top: 0px;">
+        <a href="#" class="btn btn-fill btn-clear">返回顶部</a>
+      </div>
+    </div>
+  <!--googleon: all-->
+  
+            
+            
+            
+	
+		<div class="column-13  pre-1 content-section">
+	
+		<header class="trailer-1"><h1>要素服务</h1></header>
+
+		 
+	<!--googleoff: all-->
+	
+		
+				<aside id="main-toc-small" class="js-accordion accordion tablet-show trailer-1">
+			      <div class="accordion-section">
+			        <h4 class="accordion-title">在本主题中</h4>
+			        <div class="accordion-content list-plain">
+			          <ol class="list-plain pre-0 trailer-0"><li><a href="#ESRI_SECTION1_C118DEF4F7C6461F99F3ADC5725E2794">如何创建要素服务？</a></li><li><a href="#ESRI_SECTION1_6DA35A8EAC6F4AE8A9077E4737BD840B">创建为工具或应用程序运行结果的要素服务</a></li></ol>
+			        </div>
+			      </div>
+			     </aside>
+		
+    
+   <!--googleon: all-->
+
+
+		<main>
+			
+	
+    	
+    
+
+
+			
+<p id="GUID-45165A21-3FC5-4DB4-B993-AACA4353D832"> 要素服务允许您在 Internet 或 Intranet 中使用要素数据和非空间表。这样，您的数据便可用于 Web 客户端、桌面应用程序和字段应用程序。</p><p id="GUID-A70E47E2-CB20-4C7B-9DC0-91F9AD9148E6">作为要素服务的发布者，您需确定使用要素服务的人员可获取的功能，定义显示要素时使用的样式并定义编辑数据的模板。其他人员访问您的要素服务时，可以查看您的数据和通过关系类与之关联的数据。他们可以在其所创建的地图和应用程序中使用您的要素服务，如果您允许，他们还可以编辑要素服务中的数据。</p><p id="GUID-5861A4F2-24C4-47F0-BE01-68604E55AE19">要素服务运行于 <span class="ph">ArcGIS GIS Server</span> 站点上。</p><p id="GUID-A16724AD-5882-4A09-AC96-3F781798D176"><div class="panel trailer-1" id="GUID-D080C66D-EF01-4D25-8819-45668344F706"><h5 class="icon-ui-key trailer-0">许可：</h5><p id="GUID-ECB25383-F8BB-4E24-B146-A756AD5B7F40">有关基于 <span class="ph">ArcGIS Enterprise</span> 许可或服务器角色的要素服务可用功能的信息，请参阅<a target="_blank" class="xref xref" href="http://links.esri.com/enterprise_matrix106">功能矩阵</a>。</p></div></p><section class="section1 padded-anchor" id="ESRI_SECTION1_C118DEF4F7C6461F99F3ADC5725E2794" purpose="section1"><h2>如何创建要素服务？</h2><p id="GUID-9E319CF6-126A-484D-B5F7-BEE2C2EB71EB">要发布要素服务，需要准备数据并进行发布。实现此操作的详细步骤取决于要素服务所需的功能。</p><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><colgroup width="1.50*"></colgroup><thead><tr><th colspan="1">所需功能</th><th colspan="1">创建步骤汇总</th><th colspan="1">您将获得</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-1962493D-2247-4E89-BE00-E8C38914BD6B"><ul purpose="ul" id="UL_C61401B1F61A4A9787926B83A2B721CF"><li purpose="li" id="LI_8AFBB42612594238AF28A8A8EB574CB7">我需要将我的数据保留在我的源<a class="xref xref" esrisubtype="extrel" hrefpfx="https://desktop.arcgis.com/zh-cn/arcmap/latest/manage-data" href="https://desktop.arcgis.com/zh-cn/arcmap/latest/manage-data/administer-gdb-intro/geodatabase-administration.htm">企业级地理数据库</a>或<a class="xref xref" esrisubtype="extrel" hrefpfx="https://pro.arcgis.com/zh-cn/pro-app/help/data" href="https://pro.arcgis.com/zh-cn/pro-app/help/data/databases/databases-and-arcgis.htm">数据库</a>中，因为其他应用程序访问的是我的记录系统。</li><li purpose="li" id="LI_DDFF0A0115854F93A536C14F65BF8937">我想快速共享通过数据库连接文件访问的所有要素类和表，以允许我的 <span class="ph">ArcGIS Enterprise</span> 门户的其他成员查看数据。</li><li purpose="li" id="LI_FAE325EBC17A479A9F65FE125F2E6501">图层中不会立即需要自定义符号系统和范围。</li></ul></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-878BEC26-04EB-4E7E-A5BE-9D2D501DF189">如果要使用在 <a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/portal/latest" href="../../../../../zh-CN/portal/latest/use/data-store-items.htm#GUID-1F01F971-BA33-4604-B576-CB7CB3A99752"><span class="ph">ArcGIS Enterprise</span> 门户中的用户管理数据存储</a>中列出的其中一个数据库，请执行以下操作在门户中创建数据库数据存储项目，然后批量发布 <span class="ph">ArcGIS Server</span> 地图和要素服务（启用要素访问的地图服务）：<ol class="list-numbered" purpose="ol" id="OL_DCB90CE3ACF5449DB8AD2CBE2974191E"><li purpose="li" id="LI_412F9912BFF64F6EA97BDBB93375A1BB">向单个数据库用户授予要发布的要素类和表的访问权限。有关详细信息，请参阅<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/portal/latest" href="../../../../../zh-CN/portal/latest/use/data-store-access.htm">控制从数据存储项目发布的数据的访问权限</a>。</li><li purpose="li" id="LI_73930FC6531D4CEABB44333F4D77CB33">以有权访问要发布数据的用户身份<a class="xref xref" esrisubtype="extrel" hrefpfx="https://desktop.arcgis.com/zh-cn/arcmap/latest/tools" href="https://desktop.arcgis.com/zh-cn/arcmap/latest/tools/data-management-toolbox/create-database-connection.htm">创建数据库连接</a>。</li><li purpose="li" id="LI_DE2B648781724CD8A575D76FE1D96133"><a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/portal/latest/administer" href="../../../../../zh-CN/portal/latest/administer/windows/add-items.htm#ESRI_SECTION1_D93CFCC7E77146389C4ECC8AD7E1856C">将数据库数据存储项目添加</a>到门户。添加数据存储时，请指定数据库将要注册到的联合 <span class="ph">ArcGIS GIS Server</span> 站点。</li><li purpose="li" id="LI_31B89A9E5B0B47A7BBCA242932C77744">以数据存储项目的所有者身份，<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/portal/latest" href="../../../../../zh-CN/portal/latest/use/bulk-publish-arcgis-server-feature-layers.htm">将所有可访问的图层发布</a>至其中一个联合 <span class="ph">ArcGIS GIS Server</span> 站点。</li></ol></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-C6CDE053-C364-4F83-B2CE-A4F71129B5F8"><ul purpose="ul" id="UL_EDA328A66182444598E26D930BC4E0EC"><li purpose="li" id="LI_D16E249529D749BBBEEBA10F112A20F1">在 <span class="ph">ArcGIS GIS Server</span> 站点上运行的<a class="xref xref" esrisubtype="extrel" hrefpfx="https://desktop.arcgis.com/zh-cn/arcmap/latest/map" href="https://desktop.arcgis.com/zh-cn/arcmap/latest/map/publish-map-services/setting-map-service-properties.htm#ESRI_SECTION1_36B90DE5C96D430FBC9F4E7B338ACC9D">启用要素访问的地图服务</a>。</li><li purpose="li" id="LI_04525230FA484A828A34C02C5D833352"><span class="ph">ArcGIS Enterprise</span> 门户中的<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/portal/latest" href="../../../../../zh-CN/portal/latest/use/layers.htm#LI_801D1F84903A4602B53D3402BC1DF638">地图图像图层</a>和<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/portal/latest" href="../../../../../zh-CN/portal/latest/use/feature-layers.htm#ESRI_SECTION1_0BEFA4197C154A219A5B113039AB73F2">要素图层</a>。要素图层未启用编辑。您可以将图层<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/portal/latest" href="../../../../../zh-CN/portal/latest/use/share-items.htm">共享</a>到门户中的群组、您的组织或公众。</li></ul></p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-DC3F601C-3779-405E-8310-9AC652733B08"><ul purpose="ul" id="UL_25F3C7A61AE9481994891823E14CB49B"><li purpose="li" id="LI_B5151A8CD037402E9AD224DEA2B708B3">我需要将我的数据保留在我的源<a class="xref xref" esrisubtype="extrel" hrefpfx="https://desktop.arcgis.com/zh-cn/arcmap/latest/manage-data" href="https://desktop.arcgis.com/zh-cn/arcmap/latest/manage-data/administer-gdb-intro/geodatabase-administration.htm">企业级地理数据库</a>或<a class="xref xref" esrisubtype="extrel" hrefpfx="https://pro.arcgis.com/zh-cn/pro-app/help/data" href="https://pro.arcgis.com/zh-cn/pro-app/help/data/databases/databases-and-arcgis.htm">数据库</a>中，因为其他应用程序访问的是我的记录系统。</li><li purpose="li" id="LI_0BF23EBF68AF460FBBC2EBE5EFFF2C51">编辑人员将在数据源中直接更新数据，而我希望这些更改可反映在要素服务中。</li></ul> </p><div class="panel trailer-1" id="GUID-6DFF5B8F-EFB9-4735-BC92-E69C9DEE3A0F"><h5 class="icon-ui-description trailer-0">提示：</h5><p id="GUID-B8CE60AF-B0A7-4832-8C5D-9371A55FD9FA">如果想要访问企业级地理数据库或数据库中作为只读要素的数据，您可以选择仅发布一个<a class="xref xref" href="../../../../../zh-CN/server/latest/publish-services/windows/what-is-a-map-service.htm">地图服务</a>。</p></div></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-DED48BC7-F3FF-4791-AA89-8ED58043458A"><ol class="list-numbered" purpose="ol" id="OL_6BF11692EF0640D6A5025C1F837D7E0A"><li purpose="li" id="LI_D95AE67EA3E046CFBF5763B85F6657A3"><a class="xref xref" href="../../../../../zh-CN/server/latest/publish-services/windows/author-feature-services.htm#GUID-6C906CA5-54C8-4E9F-BDB8-8BC4A23FC485">准备源数据</a>。</li><li purpose="li" id="LI_C9F7B2BBFE8847E9A79BA2B0BB754582">在包含您希望要素服务中具有的要素类和表的 <span class="ph">ArcMap</span> 或 <span class="ph">ArcGIS Pro</span> 中<a class="xref xref" href="../../../../../zh-CN/server/latest/publish-services/windows/author-feature-services.htm#ESRI_SECTION1_60CB4D7932D6400B8F5CA08BBE0ABD57">制作地图</a>。</li><li purpose="li" id="LI_084A11CACD7A4B8A80A6AD67D75B593C">发布到联合服务器或独立 <span class="ph">ArcGIS GIS Server</span> 站点（仅 <span class="ph">ArcGIS Server</span> Manager 和 <span class="ph">ArcMap</span> 支持发布到独立站点）。</li></ol></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-6DFF5689-8C32-4C56-BE4F-173A3166E93A"><ul purpose="ul" id="UL_C983DE5F32414484B8087977530664BC"><li purpose="li" id="LI_6DE6F9E897174FD9AE381801B41E9819">在 <span class="ph">ArcGIS GIS Server</span> 站点上运行的<a class="xref xref" esrisubtype="extrel" hrefpfx="https://desktop.arcgis.com/zh-cn/arcmap/latest/map" href="https://desktop.arcgis.com/zh-cn/arcmap/latest/map/publish-map-services/setting-map-service-properties.htm#ESRI_SECTION1_36B90DE5C96D430FBC9F4E7B338ACC9D">启用要素访问的地图服务</a>。</li><li purpose="li" id="LI_90763B02CA51471EB435D1F3075C28B9">如果发布到联合服务器，则您还会在 <span class="ph">ArcGIS Enterprise</span> 门户中获得<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/portal/latest" href="../../../../../zh-CN/portal/latest/use/layers.htm#LI_801D1F84903A4602B53D3402BC1DF638">地图影像图层</a>、<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/portal/latest" href="../../../../../zh-CN/portal/latest/use/feature-layers.htm#ESRI_SECTION1_0BEFA4197C154A219A5B113039AB73F2">要素图层</a>和<a class="xref xref" href="../../../../../zh-CN/server/latest/publish-services/windows/about-service-definition-files.htm">服务定义文件</a>，而且您与门户中的群组、组织或公众<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/portal/latest" href="../../../../../zh-CN/portal/latest/use/share-items.htm">共享</a>这些内容。</li></ul></p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-A5A8C24D-1874-4C5F-90FA-414A10CD0008">除了先前的要求之外，我还希望其他人员通过要素服务来编辑数据，并且在他们通过其他客户端进行访问时，我也可以看到数据源的更改。</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-3BFC6955-C286-463D-B35E-09A3214C563E">完成前三步，然后在发布时启用对要素服务的编辑功能。</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-4C6E765A-4387-4F06-AFF0-51056E1C9157"><ul purpose="ul" id="UL_AFE56893E1F046CF87CBEFF9E189CCFF"><li purpose="li" id="LI_FCFF71CD1E0A42E18D3BBBAB5D749400">在 <span class="ph">ArcGIS GIS Server</span> 站点上运行的<a class="xref xref" esrisubtype="extrel" hrefpfx="https://desktop.arcgis.com/zh-cn/arcmap/latest/map" href="https://desktop.arcgis.com/zh-cn/arcmap/latest/map/publish-map-services/setting-map-service-properties.htm#ESRI_SECTION1_36B90DE5C96D430FBC9F4E7B338ACC9D">启用要素访问的地图服务</a>。</li><li purpose="li" id="LI_51E84E3D800D40BFA64E031E183D02BE">如果发布到联合服务器，则您还会在 <span class="ph">ArcGIS Enterprise</span> 门户中获得<a class="xref xref" href="../../../../../zh-CN/server/latest/publish-services/windows/about-service-definition-files.htm">服务定义文件</a>、<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/portal/latest" href="../../../../../zh-CN/portal/latest/use/layers.htm#LI_801D1F84903A4602B53D3402BC1DF638">地图影像图层</a>和可编辑的<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/portal/latest" href="../../../../../zh-CN/portal/latest/use/feature-layers.htm#ESRI_SECTION1_0BEFA4197C154A219A5B113039AB73F2">要素图层</a>，而且您可以与门户中的群组、组织或公众<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/portal/latest" href="../../../../../zh-CN/portal/latest/use/share-items.htm">共享</a>这些内容。</li></ul></p><p id="GUID-ED74EA67-6D36-4B97-9B3C-0EA94EB41493"><div class="panel trailer-1" id="GUID-95C26896-A4BD-4A80-8AEC-BCF86324E85E"><h5 class="icon-ui-description trailer-0">提示：</h5><p id="GUID-BC4B37BC-E97F-40E6-80FE-050F08279BFD">有关创建引用企业级地理数据库或数据库数据源中数据的要素服务的演练详细信息，请参阅<a class="xref xref" esrisubtype="extrel" hrefpfx="https://desktop.arcgis.com/zh-cn/arcmap/latest/map" href="https://desktop.arcgis.com/zh-cn/arcmap/latest/map/publish-map-services/tutorial-perform-web-editing-using-data-from-a-geodatabase.htm">教程：使用企业级地理数据库中的数据执行 Web 编辑</a>或<a class="xref xref" esrisubtype="extrel" hrefpfx="https://desktop.arcgis.com/zh-cn/arcmap/latest/map" href="https://desktop.arcgis.com/zh-cn/arcmap/latest/map/publish-map-services/tutorial-performing-web-editing-using-data-from-a-database.htm">教程：使用数据库中的数据执行 Web 编辑</a>。</p></div></p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-BFAD22D2-A70A-4BAC-9018-140BB35E7342">其他人员需要在断开网络连接时编辑要素服务，但是我希望他们所做的离线编辑可与我的记录系统同步。</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-2367A46F-4270-47F3-8408-810A2908D04D"><ol class="list-numbered" purpose="ol" id="OL_2040F9110645409788E54B1BC93FE70F"><li purpose="li" id="LI_B4F50E1EFF70426A89D28190DA51C32C"><a class="xref xref" href="../../../../../zh-CN/server/latest/publish-services/windows/author-feature-services.htm#GUID-6C906CA5-54C8-4E9F-BDB8-8BC4A23FC485">准备源数据</a>以在要素服务中使用。</li><li purpose="li" id="LI_5719B9B3447C4BD3A0107240545D9B6A">对于离线使用的数据，需要<a class="xref xref" href="../../../../../zh-CN/server/latest/publish-services/windows/prepare-data-for-offline-use.htm">执行额外准备步骤</a>。</li><li purpose="li" id="LI_ED29AB35DCA04FBCBCFDE9CAFC990F10">在包含您希望要素服务中具有的要素类和表的 <span class="ph">ArcMap</span> 或 <span class="ph">ArcGIS Pro</span> 中<a class="xref xref" href="../../../../../zh-CN/server/latest/publish-services/windows/author-feature-services.htm#ESRI_SECTION1_60CB4D7932D6400B8F5CA08BBE0ABD57">制作地图</a>。</li><li purpose="li" id="LI_B9CF4CEA126144269254C2D82BF64FAB">发布到联合服务器或独立 <span class="ph">ArcGIS GIS Server</span> 站点（仅 <span class="ph">ArcGIS Server</span> Manager 和 <span class="ph">ArcMap</span> 支持发布到独立站点）。</li><li purpose="li" id="LI_B84068F5016B4ACFAAAD7D0697288B6A">启用编辑并在发布时执行同步。</li></ol></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-5BC7F72A-3189-46DC-87C6-0A25F27FA851"><ul purpose="ul" id="UL_ABE1327E8B5045259E7555E564171B87"><li purpose="li" id="LI_196EEE029CB945F082BB331AE4CB423C">在 <span class="ph">ArcGIS GIS Server</span> 站点上运行的<a class="xref xref" esrisubtype="extrel" hrefpfx="https://desktop.arcgis.com/zh-cn/arcmap/latest/map" href="https://desktop.arcgis.com/zh-cn/arcmap/latest/map/publish-map-services/setting-map-service-properties.htm#ESRI_SECTION1_36B90DE5C96D430FBC9F4E7B338ACC9D">启用要素访问的地图服务</a>。</li><li purpose="li" id="LI_C59403F3980543BF95CCC564634403F0">如果发布到联合服务器，则您还会在 <span class="ph">ArcGIS Enterprise</span> 门户中获得<a class="xref xref" href="../../../../../zh-CN/server/latest/publish-services/windows/about-service-definition-files.htm">服务定义文件</a>、<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/portal/latest" href="../../../../../zh-CN/portal/latest/use/layers.htm#LI_801D1F84903A4602B53D3402BC1DF638">地图影像图层</a>和启用同步功能的可编辑<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/portal/latest" href="../../../../../zh-CN/portal/latest/use/feature-layers.htm#ESRI_SECTION1_0BEFA4197C154A219A5B113039AB73F2">要素图层</a>，而且您可以与门户中的群组、组织或公众<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/portal/latest" href="../../../../../zh-CN/portal/latest/use/share-items.htm">共享</a>这些内容。</li></ul></p><p id="GUID-F897D858-AF75-4861-910F-9A6726A62409">要完成此工作流，请创建一个包含要素图层的 Web 地图并配置样式和其他设置。配置 Web 地图，以使其具有与要素图层相同的共享设置。</p><p id="GUID-39F920AC-D4A6-4E8D-91AE-B131703B6D2E">如果其他人员要使用 <span class="ph">Collector for ArcGIS</span> 中的离线 Web 地图，则您还需要在 Web 地图中配置底图，以使其可离线使用。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-9BA790A0-B9F7-4478-BC4D-4B848C67CC61">我具有文件数据源（如 CSV、<span class="ph">Microsoft Excel</span> 电子表格和 shapefile），并且希望利用这些数据源创建要素服务。</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-84DB5815-B79E-42DB-8759-A5E23EA1F7D4"><ol class="list-numbered" purpose="ol" id="OL_45AC0FE329994CE792BB45A877199A34"><li purpose="li" id="LI_3ABA97AB65D3484BA4318AA56773A73D">准备发布文件。例如，定义电子表格中列的数据类型或压缩 <span class="usertext">.zip</span> 中的 shapefile 或文件地理数据库。</li><li purpose="li" id="LI_87AAB114C1E1486098D21C1B8727969D">将文件上传到 <span class="ph">ArcGIS Enterprise</span> 或 <span class="ph">ArcGIS Online</span> 门户并<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/portal/latest" href="../../../../../zh-CN/portal/latest/use/publish-features.htm">发布</a>托管要素图层。</li><li purpose="li" id="LI_2CB76A0BEB50466FB60AEE42FE01C66B">在托管要素图层上配置<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/portal/latest" href="../../../../../zh-CN/portal/latest/use/styling-reference.htm">样式</a>和<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/portal/latest" href="../../../../../zh-CN/portal/latest/use/manage-hosted-feature-layers.htm">设置</a>。</li><li purpose="li" id="LI_6AF757921AEF4D58A1518D7ACE76021C">将托管要素图层<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/portal/latest" href="../../../../../zh-CN/portal/latest/use/share-items.htm">共享</a>到特定群组、组织或公众。</li></ol></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-A3E67503-155B-491F-8B44-2A376D6D5CAC"><ul purpose="ul" id="UL_64761229C42A4FF6A48C59A68F811C1E"><li purpose="li" id="LI_C1B9659136794F639530A60B44038277">文件（<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/portal/latest" href="../../../../../zh-CN/portal/latest/use/csv-gpx.htm">CSV</a>、Excel、<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/portal/latest" href="../../../../../zh-CN/portal/latest/use/shapefiles.htm">shapefile</a>、geoJSON 或文件地理数据库）。</li><li purpose="li" id="LI_2F0076C6FE1D4920B7E50E89DF119854"> 门户中的<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/portal/latest" href="../../../../../zh-CN/portal/latest/use/feature-layers.htm">托管要素图层</a>。</li><li purpose="li" id="LI_33860850E7CD4602ABD4587584142731">如果已发布到 <span class="ph">ArcGIS Enterprise</span> 门户，托管要素图层则存储在门户的关系数据存储中。如果已发布到 <span class="ph">ArcGIS Online</span>，则托管要素图层数据存储在 <span class="ph">ArcGIS Online</span> 中。</li><li purpose="li" id="LI_B202AB893EC049049439EA1BBCF57477">如果已发布到 <span class="ph">ArcGIS Enterprise</span> 门户，则门户的托管服务器上存在运行的要素服务。</li></ul></p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-C3416A37-BDA9-4C6A-9CA9-F10BEE7F7015">我的地理数据库或数据库中存在数据，但我还想创建一份数据副本与公众共享并供社区输入使用。</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-57F22717-E909-43FB-BA16-1D5DDBCAA17A"><ol class="list-numbered" purpose="ol" id="OL_12BCEEF0C0B8442D9D6D70C84D8A60CD"><li purpose="li" id="LI_BB6490E5EAD643B8B832E65AC4C553B3">准备源数据。</li><li purpose="li" id="LI_F4C3D7DE89904FC7AAA684D22DE4BA44">在包含您希望复制并可通过要素服务访问的要素类和表的 <span class="ph">ArcMap</span> 或 <span class="ph">ArcGIS Pro</span> 中制作地图。</li><li purpose="li" id="LI_81BCADCE28A84C1FBBB6428151A8990D">发布到 <span class="ph">ArcGIS Online</span>。（您也可以发布到 <span class="ph">ArcGIS Enterprise</span> 门户；然而，大多数 <span class="ph">Enterprise</span> 门户位于防止公共输入的防火墙内。）</li><li purpose="li" id="LI_EDAADAB07FBF4BD4B571778525037E5B"><a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/portal/latest" href="../../../../../zh-CN/portal/latest/use/manage-hosted-feature-layers.htm#ESRI_SECTION1_030A9819DFF7498E9DFCDE6030E5FFBA">启用编辑</a>并与所有人（公众）<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/portal/latest" href="../../../../../zh-CN/portal/latest/use/share-items.htm">共享</a>图层以允许进行社区输入。</li></ol></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-E87CE12E-BE53-4E8E-8025-484C7DEAE1DA"><ul purpose="ul" id="UL_77C44A8AFB11453BAD44DC0EDFFFE52A"><li purpose="li" id="LI_7DAA014577D84842B2E15A90E3B9DC92"><span class="ph">ArcGIS Online</span> 上与公众共享的可编辑<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/portal/latest" href="../../../../../zh-CN/portal/latest/use/feature-layers.htm">托管要素图层</a>。</li><li purpose="li" id="LI_FA0715B1E43042AE9FAC7A5654710EE7">托管要素图层的数据存储在 <span class="ph">ArcGIS Online</span> 中。</li><li purpose="li" id="LI_6BDB8B826AB542F2855C351376C8F6F1">与公众共享的服务定义文件。您可能要更改此文件的共享设置，以使其仅对您及组织中的管理员可用。</li></ul></p><p id="GUID-2C67B4A7-1661-4FD5-BAA4-5F4744929D56">要完成此工作流，请<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/portal/latest" href="../../../../../zh-CN/portal/latest/use/get-started-with-maps.htm">创建 Web 地图</a>，其中应包含托管要素图层，然后配置<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/portal/latest" href="../../../../../zh-CN/portal/latest/use/styling-reference.htm">样式</a>和其他<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/portal/latest" href="../../../../../zh-CN/portal/latest/use/manage-hosted-feature-layers.htm">设置</a>。将 Web 地图与所有人（公众）共享。<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/portal/latest" href="../../../../../zh-CN/portal/latest/use/create-map-apps.htm">向 Web 应用程序中添加 Web 地图</a>并使用公众提供输入所需的工具配置该应用程序。将 Web 应用程序与所有人（公众）共享。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-028BAC34-F405-47F5-97D6-A92848732D9A">我的地理数据库或数据库中具有数据，但我还想创建一份数据副本与组织或组织中部分成员共享。</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-EDA619CE-A4C0-460B-9038-AB4D37E56088"><ol class="list-numbered" purpose="ol" id="OL_800B30C5F26C4E95875485770913A960"><li purpose="li" id="LI_6691A3E6568F47FFBF4D5649064E71DF">在包含您希望复制并可通过要素服务访问的要素类和表的 <span class="ph">ArcMap</span> 或 <span class="ph">ArcGIS Pro</span> 中制作地图。</li><li purpose="li" id="LI_3912F47C57294E4F81831FA59224A60D"><a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/portal/latest" href="../../../../../zh-CN/portal/latest/use/publish-features.htm">发布</a>到您的 <span class="ph">Enterprise</span> 门户或 <span class="ph">ArcGIS Online</span>。</li><li purpose="li" id="LI_A7F914458C454D70A03C5BDDC50D85E3">在托管要素图层上配置<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/portal/latest" href="../../../../../zh-CN/portal/latest/use/styling-reference.htm">样式</a>和其他<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/portal/latest" href="../../../../../zh-CN/portal/latest/use/manage-hosted-feature-layers.htm">设置</a>。</li><li purpose="li" id="LI_212DD1EC4CB145F19B2C5C8B09020F2C">与您的组织或特定群组<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/portal/latest" href="../../../../../zh-CN/portal/latest/use/share-items.htm">共享</a>图层。</li></ol></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><ul purpose="ul" id="UL_DBB63B111B3043A7BE4DED710D854FE4"><li purpose="li" id="LI_5B9C7A29B3A7428F839E316B67993455"><span class="ph">Enterprise</span> 门户或 <span class="ph">ArcGIS Online</span> 上与目标用户共享的<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/portal/latest" href="../../../../../zh-CN/portal/latest/use/feature-layers.htm">托管要素图层</a>。</li><li purpose="li" id="LI_A7CCCEC44F46432280351A1F169A26C3">托管要素图层的数据存储在 <span class="ph">Enterprise</span> 门户托管服务器的关系数据存储中或 <span class="ph">ArcGIS Online</span> 中。</li><li purpose="li" id="LI_96621E4FA11D489F9AC2EE9C84F097C3">共享对象与托管要素图层共享对象相同的<a class="xref xref" href="../../../../../zh-CN/server/latest/publish-services/windows/about-service-definition-files.htm">服务定义文件</a>。您可能要更改此文件的共享设置，以使其仅对您及组织中的管理员可用。</li><li purpose="li" id="LI_5FFDCBA7062E46518E74DD540DB3E886">如果已发布到 <span class="ph">Enterprise</span> 门户，则门户的托管服务器上存在运行的要素服务。</li></ul></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-B190F071-E59C-42B0-A06D-EFBCEB551BFE">我使用 <span class="ph">ArcGIS GeoEvent Server</span> 实现实时数据的流式传输，但希望可以本地归档其中部分数据。</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-2011D8FB-6971-4892-B0C8-2E84D0989B9E"><ol class="list-numbered" purpose="ol" id="OL_2696EAF7A1D144C4ABA85986C1926430"><li purpose="li" id="LI_942A8730CAF74E4998DAD6E64F023630">配置流式数据的<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/geoevent/latest" href="../../../../../zh-CN/geoevent/latest/process-event-data/input-connectors.htm">输入连接器</a>。</li><li purpose="li" id="LI_340B83F46F864A8D9F5BEA4691829580">配置用于归档数据的<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/geoevent/latest" href="../../../../../zh-CN/geoevent/latest/administer/managing-big-data-stores.htm#ESRI_SECTION1_B20508010BE44B8B9171836600529BE8">时空大数据存储输出连接器</a>。</li></ol></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-47589049-76F3-4DCF-8E28-E2106D0B7F6F"><ul purpose="ul" id="UL_A47699CDC96F44449E371477475488A5"><li purpose="li" id="LI_ED91D46D5D5341788329EC6E33F605C3"><span class="ph">ArcGIS GeoEvent Server</span> 中的连接器。</li><li purpose="li" id="LI_011563A41A4C4C4A8EDA3E83160B0EFC"> <span class="ph">Enterprise</span> 门户中的<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/portal/latest" href="../../../../../zh-CN/portal/latest/use/feature-layers.htm#ESRI_SECTION1_0BEFA4197C154A219A5B113039AB73F2">要素图层</a>。</li><li purpose="li" id="LI_DD825B6277B441CB9F71524D430C4E49">在门户的托管服务器上运行的要素服务。</li><li purpose="li" id="LI_B5532B97478D4849A9434033D1C3B0D4">要素图层数据存储在门户的时空大数据存储中。</li></ul></p></td></tr></tbody><caption></caption></table></div></section><section class="section1 padded-anchor" id="ESRI_SECTION1_6DA35A8EAC6F4AE8A9077E4737BD840B" purpose="section1"><h2>创建为工具或应用程序运行结果的要素服务</h2><p id="GUID-2AB8B11C-B84C-494D-9071-03926A94753A">您也可以将托管要素图层创建为运行部分工具或应用程序的结果。<ul purpose="ul" id="UL_C8F4A48481C2416298E23AC6153A8784"><li purpose="li" id="LI_7FA801956FF04222AD3256310BF4D183"><span class="ph">Enterprise</span> 或 <span class="ph">ArcGIS Online</span> 门户中的部分<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/portal/latest" href="../../../../../zh-CN/portal/latest/use/perform-analysis.htm">标准要素分析工具</a>会将托管要素图层创建为输出。</li><li purpose="li" id="LI_249A505344C94E24A15D634A400E4343">您在 <span class="ph">Enterprise</span> 门户或 <span class="ph">ArcGIS Pro</span> 中运行的部分 <span class="ph">GeoAnalytics 工具</span> 会将托管要素图层或托管时空要素图层创建为输出。</li><li purpose="li" id="LI_08958B36C48D43CD8C5E8076E780A7FB">在 <span class="ph">ArcGIS Insights</span> 中运行的分析可能使门户中产生新的托管要素图层。</li><li purpose="li" id="LI_C01B0753E503445A9897DCC0A077988E">当您<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/portal/latest" href="../../../../../zh-CN/portal/latest/use/create-open-edit-or-delete-a-geodesign-project.htm#GUID-44A8B98A-928B-4BCD-90A2-B08A60CE3DB3">创建 <span class="ph">GeoPlanner for ArcGIS</span> 工程</a>时，创建的可编辑托管要素图层可用于存储工程要素数据。</li><li purpose="li" id="LI_BA0BEDCB8F4B4DC6A606BBF62E04FD0F">当您<a class="xref xref" esrisubtype="extrel" hrefpfx="https://doc.arcgis.com/zh-cn/survey123/browser" href="https://doc.arcgis.com/zh-cn/survey123/browser/create-surveys/createsurveys.htm">在 <span class="ph">Survey123 for ArcGIS</span> 中创建调查</a>时，创建的可编辑托管要素图层可用于记录调查输入。</li><li purpose="li" id="LI_7ECE227D17A14E38835D874D3A993214">当您<a class="xref xref" esrisubtype="extrel" hrefpfx="https://learn.arcgis.com/zh-cn/projects/manage-and-complete-hydrant-inspections" href="https://learn.arcgis.com/zh-cn/projects/manage-and-complete-hydrant-inspections/lessons/create-your-first-project.htm#ESRI_SECTION1_F13556C530524048ADEFCA60FDD0A2EF">创建 <span class="ph">Workforce for ArcGIS</span> 工程</a>时，创建的可编辑托管要素图层可用于数据采集。</li><li purpose="li" id="LI_CFBF295C819C43BAB1FCD04AEB56CC2A"><a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/portal/latest/administer" href="../../../../../zh-CN/portal/latest/administer/windows/configure-location-tracking.htm"><span class="ph">Tracker for ArcGIS</span></a> 将创建托管时空要素图层以跟踪位置。门户管理员可以基于此要素图层创建托管要素图层视图。</li></ul></p></section>
+			
+				<hr>
+				<!--googleoff: all-->
+				
+	
+        
+		    <p class="feedback right">
+		        <a id="afb" class="icon-ui-contact" href="/feedback/" data-langlabel="feedback-on-this-topic" >有关此主题的反馈?</a>
+		    </p>
+        
+	
+
+				<!--googleon: all-->
+			
+		</main>
+	</div>
+	
+	<!--googleoff: all-->
+	
+		
+			<div id="main-toc-large" class="column-5">
+			    <div class="panel font-size--2 tablet-hide trailer-1">
+			      <h5 class="trailer-half">在本主题中</h5>
+			      <ol class="list-plain pre-0 trailer-0"><li><a href="#ESRI_SECTION1_C118DEF4F7C6461F99F3ADC5725E2794">如何创建要素服务？</a></li><li><a href="#ESRI_SECTION1_6DA35A8EAC6F4AE8A9077E4737BD840B">创建为工具或应用程序运行结果的要素服务</a></li></ol>
+			    </div>
+			    
+			    
+	  		</div>
+		
+    
+   <!--googleon: all-->
+
+
+
+
+          
+        </div>
+        <!-- ENDPAGECONTENT -->
+
+      </div>
+
+    </div>  <!-- End of wrapper -->
+
+  <footer class="footer leader-3 link-dark-gray" role="contentinfo">
+    <div class="grid-container">
+      <div class="row">
+        <nav class="column-6">
+          <h6 data-langlabel="arcgis-for-server">Arc<span>GIS Enterprise</span></h6>
+          <ul class="list-plain">
+            <li><a data-langlabel="home" href="../../../../../zh-CN/">主页</a></li>
+            <li><a data-langlabel="portal" href="../../../../../zh-CN/portal/">Portal</a></li>
+            <li><a data-langlabel="server" href="../../../../../zh-CN/server/">Server</a></li>
+            <li><a data-langlabel="data-store" href="../../../../../zh-CN/data-store/">Data Stores</a></li>
+            <li><a data-langlabel="cloud" href="../../../../../zh-CN/cloud/">云</a></li>
+            <li><a data-langlabel="apps" href="../../../../../zh-CN/apps/">应用程序</a></li>
+            <li><a data-langlabel="documentation" href="../../../../../zh-CN/documentation/">文档</a></li>
+          </ul>
+        </nav>
+
+        
+  <nav class="column-6">
+    <h6 data-langlabel="arcgis-platform">ArcGIS 平台</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="arcgis" href="//www.arcgis.com/">ArcGIS Online</a></li>
+      <li><a data-langlabel="arcgis-for-professionals" href="//pro.arcgis.com/">ArcGIS Pro</a></li>
+      <li><a data-langlabel="arcgis-for-server" href="//enterprise.arcgis.com/">ArcGIS Enterprise</a></li>
+      <li><a data-langlabel="arcgis-for-developers" href="https://developers.arcgis.com/">ArcGIS for Developers</a></li>
+      <li><a data-langlabel="arcgis-solutions" href="//solutions.arcgis.com/">ArcGIS Solutions</a></li>
+      <li><a data-langlabel="arcgis-marketplace" href="//marketplace.arcgis.com/">ArcGIS Marketplace</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <h6 data-langlabel="about-esri">关于 Esri</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="about-us" href="//www.esri.com/about-esri/">关于我们</a></li>
+      <li><a data-langlabel="careers" href="//www.esri.com/careers/">招贤纳士</a></li>
+      <li><a data-langlabel="insiders-blog" href="https://www.esri.com/about/newsroom/blog/">Esri 博客</a></li>
+      <li><a data-langlabel="user-conference" href="//www.esri.com/events/user-conference/index.html">用户大会</a></li>
+      <li><a data-langlabel="developer-summit" href="//www.esri.com/events/devsummit/index.html">开发者峰会</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <a class="esri-logo" href="//www.esri.com/" aria-label="Esri Home"></a>
+    <section class="footer-social-nav leader-1">
+            <a class="icon-social-twitter" aria-label="Esri on Twitter" href="https://twitter.com/Esri/"></a>
+            <a class="icon-social-facebook" aria-label="Esri on Facebook" href="https://www.facebook.com/esrigis/"></a>
+            <a class="icon-social-github" aria-label="Esri on GitHub" href="//esri.github.io/"></a>
+            <a class="icon-social-contact" aria-label="Contact Esri" href="//www.esri.com/about-esri/contact/"></a>
+    </section>
+	  
+  </nav>
+  
+  <div class="column-24 leader-1">
+    <p class="font-size--3"><a href="http://www.esri.com/legal/copyright-trademarks">Copyright &copy; 2019 Esri.</a> All rights reserved. | <a href="http://www.esri.com/legal/privacy/">隐私政策</a> | <a href="http://www.esri.com/legal/software-license">法律声明</a></p>
+  </div>
+  
+
+
+      </div>
+    </div>
+  </footer>
+  <!--googleoff: all-->
+
+  
+  
+	<script src="../../../../../zh-CN/assets/js/init.js" type="text/javascript"></script>
+	<!--<script src="../../../../../zh-CN/assets/js/drop-down.js" type="text/javascript"></script>-->
+	<script src="../../../../../zh-CN/assets/js/search/searchform.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/cdn/js/link-modifier.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/cdn/js/sitewide.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/cdn/js/libs/highlight.pack.js" type="text/javascript"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+
+
+  
+    
+
+  <script src="../../../../../zh-CN/cdn/js/affix.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    $(function () {
+          var appendFlg = true;
+
+          $("#bigmac")
+          .on("affixed.bs.affix", function (evt) {
+            if (appendFlg) {
+              $("<a class='crumb' href='#'>要素服务</a>").insertAfter ($("#bigmac nav a").last());
+              appendFlg = false;
+            }
+          })
+          .on ("affix-top.bs.affix", function(evt) {
+            if (!appendFlg) {
+              $("#bigmac nav a").last().remove();
+            }
+            appendFlg = true;
+          })
+    })
+  </script>
+  
+        <script type="text/javascript">
+          window.doctoc = {
+            pubID: "1634",
+            tpcID: "134",
+            
+              prefix: "管理服务",
+              prefixUrl: "/zh-cn/server/latest/publish-services/windows/",
+          
+            hideToc: false
+          }
+        </script>
+
+        <script type="text/javascript" src="../../../../../zh-CN/server/latest/publish-services/windows/1634.js" ></script>
+        <script type="text/javascript" src="../../../../../zh-CN/cdn/calcite/js/protoc.js" ></script>
+        
+        
+
+  <noscript>
+        <p>
+            <a href="flisting.htm">flist</a>
+        </p>
+    </noscript>
+    <script type="text/javascript"></script>
+  
+  
+    
+    
+
+  </body>
+</html>

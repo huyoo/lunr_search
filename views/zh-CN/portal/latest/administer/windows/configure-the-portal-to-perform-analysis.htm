@@ -1,0 +1,569 @@
+
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>  <html class="ie lt-ie9 lt-ie8 lt-ie7 ie6" dir="ltr"> <![endif]-->
+<!--[if IE 7]>     <html class="ie lt-ie9 lt-ie8 ie7" dir="ltr"> <![endif]-->
+<!--[if IE 8]>     <html class="ie lt-ie9 ie8" dir="ltr"> <![endif]-->
+<!--[if IE 9]>     <html class="ie ie9" dir="ltr"> <![endif]-->
+<!--[if !IE]><!--> <html dir="ltr" lang="zh-CN"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>配置门户以执行分析&mdash;Portal for ArcGIS 
+  (10.8) | ArcGIS Enterprise 文档</title>
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+    <script>
+      var docConfig = {
+        locale: 'zh-CN'
+        ,localedir: 'zh-cn'
+        ,langSelector: ''
+        
+        ,relativeUrl: false
+        
+
+        ,searchformUrl: '/search/'
+        ,tertiaryNavIndex: ''
+
+        
+      };
+    </script>
+	 
+
+
+    
+    <!--[if lt IE 9]>
+      <script src="../../../../../zh-CN/cdn/js/libs/html5shiv.js" type="text/javascript"></script>
+      <script src="../../../../../zh-CN/cdn/js/libs/selectivizr-min.js" type="text/javascript"></script>
+      <script src="../../../../../zh-CN/cdn/js/libs/json2.js" type="text/javascript"></script>
+      <script src="../../../../../zh-CN/cdn/js/libs/html5shiv-printshiv.js" type="text/javascript" >
+
+    <![endif]-->
+
+     <!--[if lt IE 11]>
+    <script>
+      $$(document).ready(function(){
+        $$(".hideOnIE").hide();
+      });
+    </script>
+    <![endif]-->
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<link href="../../../../../zh-CN/assets/img/favicon.ico" rel="shortcut icon" >
+	<link href="../../../../../zh-CN/assets/css/screen.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/cdn/calcite/css/documentation.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/assets/css/print.css" media="print" type="text/css" rel="stylesheet" />
+
+	<!--
+	<link href="../../../../../zh-CN/assets/css/screen_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/assets/css/documentation/base_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/assets/css/print_l10n.css" media="print" type="text/css" rel="stylesheet" />
+	-->
+	
+	
+		<script src="../../../../../zh-CN/cdn/js/libs/jquery.1.9.1.min.js" type="text/javascript"></script>
+	
+	<script src="../../../../../zh-CN/cdn/js/libs/jquery.cookie.js" type="text/javascript"></script>
+	<link href="../../../../../zh-CN/cdn/css/colorbox.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/cdn/css/colorbox_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<script src="../../../../../zh-CN/cdn/js/libs/jquery.colorbox-min.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/assets/js/video-init.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/assets/js/sitecfg.js" type="text/javascript"></script>
+	
+		<script src="../../../../../zh-CN/assets/js/signIn.js" type="text/javascript"></script>
+	
+
+	<!--- Language Picker -->
+	<script src="../../../../../zh-CN/assets/js/locale/l10NStrings.js" type="text/javascript"></script>
+	
+		 
+	
+
+	<script src="../../../../../zh-CN/assets/js/calcite-web.js" type="text/javascript"></script>
+
+
+
+  <!--- search MD -->
+    <META name="description" content="通过启用分析，您可以授权您组织的成员使用多种视觉分析来解决问题并制定重要决策。"><META name="last-modified" content="2019-12-6"><META name="product" content="arcgis-portal-windows,arcgis-enterprise-windows"><META name="sub_category" content="Portal for ArcGIS (Windows)"><META name="search-collection" content="help"><META name="content_type_label" content="帮助主题"><META name="sub_category_label" content="Portal for ArcGIS (Windows)"><META name="search-category" content="help-general"><META name="subject_label" content="PORTAL,服务,SERVER"><META name="version" content="10.8"><META name="content_type" content="Help Topic"><META name="subject" content="PORTAL,SERVICES,SERVER"><META name="content-language" content="zh-cn">
+    <!--- search MD -->
+
+  
+  <script src="../../../../../zh-CN/assets/js/switchers/portal-1.js" type="text/javascript"></script>
+  
+      
+
+</head>
+
+<!--
+      pub: GUID-86E3206A-3CAD-43C1-9F16-FFB7CA3AEC71=33
+      tpc: GUID-FD66A432-501D-4C21-ABBD-C3C53C987D5E=5
+      -->
+
+
+<!-- variable declaration, if any -->
+<!-- can change following macro to set variable once we are on Jinja 2.8 -->
+
+
+
+
+
+<body class="claro zh-CN server">
+  
+
+  <!-- Drawer location -->
+  <div class="drawer drawer-left js-drawer" data-drawer="top-nav">
+        <nav class="drawer-nav" role="navigation">
+          <aside class="side-nav">
+            <h2 class="side-nav-title">Arc<span>GIS</span> Enterprise</h2>
+            <form id="helpSearchForm" class="margin-left-half margin-right-half leader-half trailer-half drawer-search-form" method="GET">
+              <input type="search" name="q"  placeholder="搜索 ArcGIS Enterprise 帮助">
+              <input type="hidden" name="collection" value="help" />
+              <input type="hidden" name="product" value="arcgis-portal-windows" />
+              <input type="hidden" name="version" value="10.8" />
+              <input type="hidden" name="language" value="zh-CN" />
+            </form>    
+             <a id="nav-portal" data-langlabel="portal" href="../../../../../zh-CN/portal/" class="side-nav-link">Portal</a>
+             
+            <a id="all-servers" data-langlabel="all-servers" href="../../../../../zh-CN/server/" class="side-nav-link">所有服务器</a>
+            <a id="gis-server" data-langlabel="gis-server" href="../../../../../zh-CN/server/" class="side-nav-link">GIS Server</a>
+            <a id="image-server" data-langlabel="image-server" href="../../../../../zh-CN/image/" class="side-nav-link">Image Server</a>
+            <a id="geo-analytics-server" data-langlabel="geo-analytics-server" href="../../../../../zh-CN/geoanalytics/" class="side-nav-link">GeoAnalytics Server</a>
+            <a id="geoevent-server" data-langlabel="geoevent-server" href="../../../../../zh-CN/geoevent/" class="side-nav-link">GeoEvent Server</a>
+            <a id="notebook-server" data-langlabel="notebook-server" href="../../../../../zh-CN/notebook/" class="side-nav-link">Notebook Server</a>
+            <a id="nav-data-store" data-langlabel="data-store" href="../../../../../zh-CN/data-store/" class="side-nav-link">Data Stores</a>
+            <a id="nav-cloud" data-langlabel="cloud" href="../../../../../zh-CN/cloud/" class="side-nav-link">云</a>
+            <a id="nav-apps" data-langlabel="apps" href="../../../../../zh-CN/apps/" class="side-nav-link">应用程序</a>
+            <a id="nav-doc" data-langlabel="documentation" href="../../../../../zh-CN/documentation/" class="side-nav-link">文档</a>
+
+          </aside>
+        </nav>
+    </div>
+
+    <!-- user navigation collapses to drawer on mobile -->
+    
+    <div class="drawer drawer-right js-drawer hide-if-logged-out logged-in-navigation" data-drawer="user-nav">
+      <nav class="drawer-nav">
+        <aside class="side-nav">
+          <a class="side-nav-link agolProfile" href="#">我的个人资料</a>
+          <a class="side-nav-link icon-ui-sign-out js-log-out" href="#">登出</a>
+        </aside>
+      </nav>
+    </div>
+    
+<!-- End of drawer -->
+
+  
+  <div class="wrapper">
+      <!--googleoff: all-->
+
+      <header class="top-nav" data-skin="learn">
+        <a class="skip-to-content" href="#skip-to-content">Skip To Content</a>
+        <div class="grid-container">
+          <div class="column-24">
+
+
+            <!--<div class="top-nav-title-wrapper text-center ">-->
+              <a href='../../../../../zh-CN/' class="top-nav-title tablet-hide"><span>Arc</span>GIS  Enterprise</a>
+              <a href='../../../../../zh-CN/' class="icon-ui-menu top-nav-title js-drawer-toggle tablet-show" data-drawer="top-nav"><span>Arc</span>GIS Enterprise</a>
+            <!--</div> -->
+
+          
+            <nav role="navigation" class="top-nav-list left tablet-hide">
+              <a id="nav-portal" data-langlabel="portal" href="../../../../../zh-CN/portal/" class="top-nav-link">Portal</a>
+
+                <div class="dropdown js-dropdown ">
+                  <a class="top-nav-link js-dropdown-toggle" tabindex="0" aria-haspopup="true" aria-expanded="false" href="#">Servers</a>
+                  <nav class="dropdown-menu featured" role="menu">
+                    <ul class="dropdown-sublist-featured">
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/get-started/latest/windows/additional-server-deployment.htm" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path  d="M42.92 6.1H4.12v8.566l.833.832-.835.833-.018 7.332.845.847-.825.824V33.9h25v5.2h-2v1.075H8.02v.8h19.1v.925h4.8v-.925H40v-.8h-8.08V39.1h-2v-5.2h13v-8.566l-.834-.834.835-.834v-7.332l-.835-.834.835-.834zm-11.8 35h-3.2v-1.2h3.2zm11-8H4.92v-7.434l.767-.766h35.668l.765.766zm0-9.766l-.766.766H5.666l-.766-.767.017-6.669.766-.764h35.671l.766.766zm0-9l-.766.766H5.687l-.766-.766V6.9h37.2zM19 11.9h-2v-.8h2zm-4 0h-2v-.8h2zm-4 0H9v-.8h2zm6 8.2h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9zm8 9h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9z"/></svg></span>
+                          <span class="sublink-text">所有服务器</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/server/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M45.98 33.575a.616.616 0 0 0-.335-.51l-3.362-2.03 3.362-2.031a.556.556 0 0 0 0-1.02l-11.1-6.704a1.293 1.293 0 0 0-1.112 0L22.33 27.982a.556.556 0 0 0 0 1.02l3.36 2.03-3.358 2.03a.556.556 0 0 0-.002 1.021l3.322 2.006-3.324 2.008a.555.555 0 0 0 .002 1.017l11.102 6.703a1.25 1.25 0 0 0 1.11.002l11.104-6.706a.556.556 0 0 0 0-1.02l-3.32-2.006 3.318-2.004a.607.607 0 0 0 .335-.509zM33.837 21.97c.026-.01.286-.005.29-.005l10.814 6.53-10.8 6.523c-.028.01-.284.005-.294.006l-10.813-6.53zm11.105 16.636l-10.8 6.523a2.564 2.564 0 0 1-.295.006l-10.81-6.529 3.39-2.047 7.004 4.23a1.083 1.083 0 0 0 .557.131 1.101 1.101 0 0 0 .554-.13l7.01-4.233zM34.14 40.098a2.545 2.545 0 0 1-.294.006l-10.812-6.53 3.43-2.073 6.97 4.208a1.25 1.25 0 0 0 1.107-.001l6.966-4.206 3.431 2.073zM9 8H7V7h2zm8 8h-2v-1h2zm-4-8h-2V7h2zm4 0h-2V7h2zm-4 8h-2v-1h2zm7.316 11.1H3.9v-6.434l.766-.766h35.668l.766.766v2.12l.8.483v-2.935l-.826-.826.826-.845v-6.329l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9h16.88a2.632 2.632 0 0 1 .336-.8zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zm0 8v-5.668l.766-.766h35.668l.766.766v5.67l-.746.764H4.666zM15 24v-1h2v1zm-4 0v-1h2v1zm-2-8H7v-1h2zm-2 8v-1h2v1z"/></svg></span>
+                          <span class="sublink-text">GIS Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/image/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 8h-2V7h2zm-4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm8 8h-2v1h2zm-8 0H7v1h2zm4 9v-1h-2v1zm-4 0v-1H7v1zm8 0v-1h-2v1zm4 3.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V21h-.8v-.334l-.766-.766H4.666l-.766.766V27.1H21zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zm40.234 4v21.8H23.1V23.1zm-.8 16.366L39.466 44.1h2.868l1.766-1.766zm-20.2-9.932l5.634-5.634h-2.868L23.9 26.666zm6.2-5.068L24.466 30.1h2.868l2.766-2.766zM28.466 30.1H30.1v-1.634zm2.434 0h6.2v-6.2h-6.2zm-7 7h6.2v-6.2h-6.2zm7 0h6.2v-6.2h-6.2zm0 6.434l5.634-5.634h-2.868L30.9 40.666zm7-7l5.634-5.634h-2.868L37.9 33.666zm1.634-5.634H37.9v1.634zm-8.634 7v1.634l1.634-1.634zm.566 6.2h2.868l2.766-2.766v-2.868zm6.434-3.566l2.634-2.634H37.9zM35.466 44.1H37.1v-1.634zm2.434 0h.434l5.766-5.766V37.9h-2.434L37.9 41.666zm6.2-8.634L42.466 37.1H44.1zm0-4L38.466 37.1h2.868l2.766-2.766zm0-7.566h-6.2v6.2h6.2zm-20.2 0v1.634l1.634-1.634zm0 20.2h6.2v-6.2h-6.2zm20.2 0v-.634l-.634.634z"/></svg></span>
+                          <span class="sublink-text">Image Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/geoanalytics/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 16h-2v-1h2zm-8 8v-1H7v1zm8 0v-1h-2v1zM13 7h-2v1h2zm4 0h-2v1h2zM9 7H7v1h2zm21.45 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V27.9h-1.464l-.801-.8H41.1v-6.434l-.766-.766H4.666l-.766.766V27.1h27.15zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM13 24v-1h-2v1zm0-9h-2v1h2zm-4 0H7v1h2zm26.672 27.148A1.87 1.87 0 0 1 35.9 43a1.91 1.91 0 1 1-3.763-.222l-9.845-3.414A1.88 1.88 0 0 1 21 39.9a1.9 1.9 0 1 1 1.474-3.084l4.692-2.346A1.878 1.878 0 0 1 27.1 34a1.902 1.902 0 0 1 1.9-1.9 1.867 1.867 0 0 1 .781.191l3.788-5.05A1.88 1.88 0 0 1 33.1 26a1.9 1.9 0 1 1 3.491 1.026l4.889 4.888c-.069.056-.144.1-.21.162a3.986 3.986 0 0 0-.358.402l-4.883-4.883A1.889 1.889 0 0 1 35 27.9a1.867 1.867 0 0 1-.781-.191l-3.788 5.049a1.868 1.868 0 0 1 .437.965l9.204.614c-.018.11-.049.218-.058.33A3.93 3.93 0 0 0 40 35c0 .046.01.09.01.135l-9.185-.612A1.913 1.913 0 0 1 29 35.9a1.889 1.889 0 0 1-1.474-.716l-4.692 2.346a1.878 1.878 0 0 1 .066.47 1.9 1.9 0 0 1-.105.625c-.007.02-.022.036-.03.056l9.63 3.34a1.87 1.87 0 0 1 2.786-.505l5.415-4.437c.067.108.127.22.204.322a3.9 3.9 0 0 0 .292.306zM33.9 26a1.092 1.092 0 0 0 .43.872 1.12 1.12 0 0 0 1.42-.068A1.1 1.1 0 1 0 33.9 26zm-6 8a1.1 1.1 0 0 0 2.196.093 1.135 1.135 0 0 0-.426-.965A1.087 1.087 0 0 0 29 32.9a1.101 1.101 0 0 0-1.1 1.1zm-5.8 4a1.098 1.098 0 1 0-.06.362A1.101 1.101 0 0 0 22.1 38zm13 5a1.1 1.1 0 1 0-2.2 0 1.1 1.1 0 0 0 2.2 0zm10.8-8a1.9 1.9 0 1 1-3.8 0c0-.053.003-.105.007-.158A1.9 1.9 0 0 1 45.9 35zm-.8 0a1.1 1.1 0 0 0-2.196-.093 1.153 1.153 0 0 0 .216.752A1.1 1.1 0 0 0 45.1 35z"/></svg></span>
+                          <span class="sublink-text">GeoAnalytics Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/geoevent/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M13 8h-2V7h2zm4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm12.418 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826v2.117c-.259-.177-.53-.337-.8-.497v-1.288l-.766-.766H4.666l-.766.766V27.1h17.933c-.148.26-.283.53-.415.8zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM9 24v-1H7v1zm4-9h-2v1h2zm0 9v-1h-2v1zm-4-9H7v1h2zm8 9v-1h-2v1zm16.9 2h-.8v8.9H39v-.8h-5.1zm.1-3.901a11.9 11.9 0 1 0 11.9 11.9 11.914 11.914 0 0 0-11.9-11.9zm0 23a11.1 11.1 0 1 1 11.1-11.1 11.112 11.112 0 0 1-11.1 11.1z"/></svg></span>
+                          <span class="sublink-text">GeoEvent Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/notebook/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M22 27.1H3.9v-6.434l.766-.766h18.576a5.262 5.262 0 0 1 .83-.8H4.666l-.766-.766v-5.668l.766-.766h35.668l.766.766V18h.8v-5.666l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9H22zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zM9 8H7V7h2zm8 0h-2V7h2zm-4 0h-2V7h2zm2 16v-1h2v1zm-4 0v-1h2v1zm-4 0v-1h2v1zm0-8v-1h2v1zm8 0v-1h2v1zm-4 0v-1h2v1zm18.9 8.1h-1.8v1.8h1.8zm-.8 1h-.2v-.2h.2zm15.498-4.48a2.727 2.727 0 0 0-1.62-.5v-.02H27.25a3.154 3.154 0 0 0-3.15 3.15V38.1h-1.68a3.386 3.386 0 0 0-2.872 1.58 3.49 3.49 0 0 0-.157 3.419 3.241 3.241 0 0 0 2.954 1.801h15.161a3.404 3.404 0 0 0 3.394-3.4V26.9h5v-3.65a3.224 3.224 0 0 0-1.302-2.63zM22.345 44.1a2.44 2.44 0 0 1-2.23-1.341 2.706 2.706 0 0 1 .11-2.65A2.588 2.588 0 0 1 22.42 38.9h12.89a3.395 3.395 0 0 0 0 5.2zM40.1 23.192V41.5a2.6 2.6 0 1 1-2.6-2.6v-.8H24.9V23.25a2.352 2.352 0 0 1 2.35-2.35h13.795a3.183 3.183 0 0 0-.945 2.292zm5 2.908h-4.2v-2.908a2.274 2.274 0 0 1 1.44-2.18 1.944 1.944 0 0 1 1.791.259 2.423 2.423 0 0 1 .97 1.979zm-17.1 5h9v.8h-9zm0 3h7v.8h-7zm0-6h9v.8h-9zm4-3h5v.8h-5z"/></svg></span>
+                          <span class="sublink-text">Notebook Server</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+
+              <a id="nav-data-store" data-langlabel="data-store" href="../../../../../zh-CN/data-store/" class="top-nav-link">Data Stores</a>
+              <a id="nav-cloud" data-langlabel="cloud" href="../../../../../zh-CN/cloud/" class="top-nav-link">云</a>
+              <a id="nav-apps" data-langlabel="apps" href="../../../../../zh-CN/apps/" class="top-nav-link">应用程序</a>
+            </nav>
+
+
+            
+            
+            
+
+            <div class="margin-left-1 top-nav-list right hide-if-logged-in logged-out-navigation">
+               
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+              
+              <a data-langlabel="sign-in" id="login-link" class="icon-ui-user top-nav-link link-blue login-link" href="#">登录</a>
+              
+            </div>
+
+            
+            <nav class="margin-left-1 top-nav-list right hide-if-logged-out logged-in-navigation">
+              
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+             
+              <div class="dropdown js-dropdown right">
+
+                <div class="tablet-show top-nav-link">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a href="#" data-drawer="user-nav" class="user-nav-name js-drawer-toggle" data-first-name></a>
+                </div>
+
+                <div class="tablet-hide top-nav-link js-dropdown-toggle">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a class="user-nav-name top-nav-dropdown dropdown-btn" data-first-name>&nbsp;</a>
+                </div>
+
+                <nav class="dropdown-menu dropdown-right">
+                
+                  <a class="dropdown-link agolProfile" id="agolProfile" href="#">我的个人资料</a>
+                  <a class="dropdown-link js-log-out" id="agolLogout" href="#">登出</a>
+                </nav>
+              </div>
+            </nav>
+            
+
+            
+          </div>
+        </div>
+      </header>
+
+      <div class="js-search search-overlay">
+        <div class="search-content" role="dialog" aria-labelledby="search">
+          <form method="GET" id="helpSearchForm">
+            <label>
+              搜索 ArcGIS Enterprise 帮助
+              <div class="search-bar">
+                <input type="search" name="q"  placeholder="搜索 ArcGIS Enterprise 帮助" class="search-input js-search-input">
+                <input type="hidden" name="collection" value="help" />
+                <input type="hidden" name="product" value="arcgis-portal-windows" />
+                <input type="hidden" name="version" value="10.8" />
+                <input type="hidden" name="language" value="zh-CN" />
+              </div>
+            </label>
+            <input type="hidden" name="relativePath" value="../../../../../" /><button type="submit" class="btn btn-large right">搜索</button>
+          </form>
+        </div>
+      </div>
+
+      <!--googleon: all-->
+
+      <div id="skip-to-content">
+        <!--googleoff: all-->
+        <header class="sub-nav sub-nav-learn">
+          <div class="grid-container">
+            
+            <div class="column-24">
+              <div style="display:table;" class="sdk-home-banner">
+                <div class="sdk-home-banner-content">
+                  <h1 class="sub-nav-title link-white">Portal for ArcGIS</h1>
+                </div>
+              </div>
+            </div>
+
+            <div class="column-24">
+              <nav class='sub-nav-list tablet-hide'><a class="sub-nav-link" href="../../../../../zh-CN/portal/" target="_top" title="Portal for ArcGIS 主页">主页</a><a class="sub-nav-link" href="../../../../../zh-CN/portal/latest/use/" target="_top" title="使用 Portal for ArcGIS">使用</a><a class="sub-nav-link is-active" href="../../../../../zh-CN/portal/latest/administer/windows/" target="_top" title="安装、管理和保护 Portal for ArcGIS">管理</a></nav><select class='tablet-show select-full trailer-half js-select-nav'><option value="../../../../../zh-CN/portal/">主页</option><option value="../../../../../zh-CN/portal/latest/use/">使用</option><option selected="true" value="../../../../../zh-CN/portal/latest/administer/windows/">管理</option></select>
+            </div>
+
+          </div>
+        </header>
+        <!--googleon: all-->
+       
+        <!-- content goes here -->
+        <div class="grid-container ">
+          
+
+            
+              
+  <!--BREADCRUMB-BEG--><div id="bigmac" class="sticky-breadcrumbs trailer-2" data-spy="affix" data-offset-top="180"> </div><!--BREADCRUMB-END-->
+  <!--googleoff: all-->
+    <div class="column-5 tablet-column-12 trailer-2 ">
+      <aside class="js-accordion accordion reference-index" aria-live="polite" role="tablist">
+        <div></div>
+      </aside>
+
+      <div class="js-sticky scroll-show tablet-hide leader-1 back-to-top" data-top="0" style="top: 0px;">
+        <a href="#" class="btn btn-fill btn-clear">返回顶部</a>
+      </div>
+    </div>
+  <!--googleon: all-->
+  
+            
+            
+            
+	
+		<div class="column-13  pre-1 content-section">
+	
+		<header class="trailer-1"><h1>配置门户以执行分析</h1></header>
+
+		 
+	<!--googleoff: all-->
+	
+		
+				<aside id="main-toc-small" class="js-accordion accordion tablet-show trailer-1">
+			      <div class="accordion-section">
+			        <h4 class="accordion-title">在本主题中</h4>
+			        <div class="accordion-content list-plain">
+			          <ol class="list-plain pre-0 trailer-0"><li><a href="#GUID-36946C81-96A6-4DEC-BB90-660A077F7A0E">配置门户以执行分析</a></li><li><a href="#ESRI_SECTION1_B36B505146B94EEEA296B37A2A1B3030">关于分析工具</a></li></ol>
+			        </div>
+			      </div>
+			     </aside>
+		
+    
+   <!--googleon: all-->
+
+
+		<main>
+			
+	
+    	
+    
+
+
+			
+<p id="GUID-B4B99D6F-6199-41B2-99CB-45B07D560941"> 假设您组织的任务是为新仓库评估潜在地点。执行此评估的依据有：交通条件是否便利、是否存在特殊限制（例如邻近的历史街区）、周边是否有餐馆和员工可能需要的其他设施、是否设有供员工使用的公共交通工具，以及邻近的土地使用是否可能限制或促进此位置的发展。您的组织如何以合理的量化方式评估这些地点？ 当然，您的组织需要数据，但它还需要工具来分析数据、测量地理关系并帮助解决问题。此过程称为空间分析。</p><p id="GUID-33A464C6-6C9D-4278-9497-525CF8CEF95A">仅通过查看地图，许多模式和关系往往并不清晰。某些情况下，会因为数据太多而无法条理清晰地呈现。您所看到的模式取决于您在地图中显示数据的方式。空间分析工具支持您量化数据模式和关系并将结果以地图、表格和图表的形式显示出来。自 10.4 版本起，这些工具位于 <span class="ph">Portal for ArcGIS</span> 中。它们允许您为门户成员提供一种快速的访问方式，来执行许多常见的空间分析工作流。</p><p id="GUID-883F4442-3E97-4BBC-88F0-0665F976DA5F">您将用来执行空间分析的工具实际上是作为一系列任务托管在 <span class="ph">ArcGIS Server</span> 中的。为向门户成员展现这些工具，请完成<a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/configure-the-portal-to-perform-analysis.htm#GUID-36946C81-96A6-4DEC-BB90-660A077F7A0E">配置门户以执行分析</a>部分中的步骤。</p> <p id="GUID-629672C5-E51C-4C05-9D94-4DEBEDDD73E6">您组织的成员与 <span class="ph">ArcGIS Server</span> 不会有直接互动；他们只会使用 <span class="ph">Portal for ArcGIS</span> 网站来执行分析。例如，成员将使用分析工具执行常见分析功能，如查找热点、定位街道和地址、查找地点、路径分析或访问地理数据库。通过启用分析，您可以授权您组织的成员使用多种视觉分析来解决问题并制定重要决策。</p><p id="GUID-C5D32900-97F6-4801-9846-AB50B840E91B">要了解每种工具的详细信息，请参阅<a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/configure-the-portal-to-perform-analysis.htm#ESRI_SECTION1_B36B505146B94EEEA296B37A2A1B3030">关于分析工具</a>部分。要了解有关访问和运行工具的详细信息，请参阅 <span class="ph">Portal for ArcGIS</span> 帮助中的<span class="uicontrol">执行分析</span>部分。</p><section class="section1 padded-anchor" id="GUID-36946C81-96A6-4DEC-BB90-660A077F7A0E" purpose="section1"><h2>配置门户以执行分析</h2><p id="GUID-542325FD-F0A5-4C27-A327-86A973A1871D">空间分析工具作为一系列任务托管在 <span class="ph">ArcGIS Server</span> 中。为使您组织的成员使用这些任务在 <span class="ph">Portal for ArcGIS</span> 中执行分析，您需要设置<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/get-started/latest" href="../../../../../zh-CN/get-started/latest/windows/base-arcgis-enterprise-deployment.htm">基础 <span class="ph">ArcGIS Enterprise</span> 部署</a>，并向成员授予执行分析的权限。门户的托管服务器处理分析请求，将结果存储在 ArcGIS Data Store 中，然后将结果返回给 <span class="ph">Portal for ArcGIS</span> 网站中的成员。您不能将利用企业级地理数据库配置的托管服务器用于此用途。</p><p id="GUID-16EB534B-311E-4295-ABAA-45881A78CDA5">下列说明可能需要您更改在组织中部署 ArcGIS 的方式；继续下一步骤前请仔细查看下列说明。要配置门户以执行分析，请遵循以下步骤：</p><div class="panel trailer-1 note" id="GUID-CA9BC668-1114-4D23-9EE4-497154E01040"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-286BF729-76A1-403C-ABBF-CC241391ACA6">您可配置已从较早版本升级的门户的分析。您的门户必须具有一个用 <span class="ph">ArcGIS Data Store</span> 配置的<a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/configure-hosting-server-for-portal.htm">托管服务器</a>。遵循<a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/upgrade-portal-for-arcgis.htm">升级 Portal for ArcGIS</a> 中的步骤，然后转至<span class="uicontrol">组织 <span class="greaterthan">&gt;</span> 设置 <span class="greaterthan">&gt;</span> 服务器</span>。单击<span class="uicontrol">启用</span>并保存设置。接下来您就可以继续进行步骤 5。</p></div><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="GUID-DDEF2077-F62F-466F-9991-3E8C78BBF9E8"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_CAC6B0922D394F82896FDECBE41C7A92"><span purpose="cmd" id="GUID-8E139808-0B5F-4010-9C3E-FFF65F05F84C">如果您尚未配置<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/get-started/latest" href="../../../../../zh-CN/get-started/latest/windows/base-arcgis-enterprise-deployment.htm">基础 <span class="ph">ArcGIS Enterprise</span> 部署</a>，请进行设置。有关详细信息，请参阅<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/portal/latest/install" href="../../../../../zh-CN/portal/latest/install/windows/tutorial-creating-your-first-web-gis-configuration.htm">教程：设置基础 <span class="ph">ArcGIS Enterprise</span> 部署</a>。</span></li><li purpose="step" id="ESRI_STEP_2E81F6C621464FCDB8DB127D56A2950B"><span purpose="cmd" id="GUID-0EA82C02-0B35-4371-83B2-B8004557578B"><a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/roles.htm">授予成员执行分析的权限</a>。执行分析需要发布者及空间分析权限。</span></li><li purpose="step" id="ESRI_STEP_2F7CCA73380E4F1FB2FB243AF6D85263"><span purpose="cmd" id="GUID-865A2DB5-78D5-46BE-977F-ABFF8FE8C8E2">或者，使用门户<a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/configure-services.htm#ESRI_SECTION1_4ED0D998F414468A933C351D9129E584">配置附加实用程序服务</a>。有关哪些工具需要哪些附加实用程序服务的详细信息，请参阅下列的分析工具描述。请注意，需要网络实用程序服务的工具需要将所有网络实用程序服务注册到门户。有关实用程序服务的详细信息，请参阅<a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/about-utility-services.htm">关于实用程序服务</a>。</span></li></ol></div></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_B36B505146B94EEEA296B37A2A1B3030" purpose="section1"><h2>关于分析工具</h2><p id="GUID-E5422083-EDB4-48B1-A189-E1422E6BF232">分析工具按类别排列。这些类别为逻辑分组，不会对您组织成员访问或使用工具的方式造成任何影响。</p><div class="panel trailer-1 note" id="GUID-E0A4F0E8-5E8F-4203-A872-C774722B7981"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-57457255-AA4C-4E2E-8069-BB0C3A53901C">如果未配置某一工具的必需实用程序服务，则工具在门户用户界面中不可见。如果门户成员没有使用该工具的正确权限，则工具也会不可见。</p></div><p id="GUID-A886D5A0-754E-49A2-98BF-CE940FD77B9B">类别如下：</p><ul purpose="ul" id="UL_F8F102634470498EBF748426D39E66C0"><li purpose="li" id="LI_2DA7AD0F91D7425392DE0D1C2D05678C"><a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/configure-the-portal-to-perform-analysis.htm#ESRI_SECTION2_8A9403F65FDF4582AEAA6C64DF928739">汇总数据</a></li><li purpose="li" id="LI_FE11420E2AA14D38B15C94B6D01B4DE6"><a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/configure-the-portal-to-perform-analysis.htm#ESRI_SECTION2_D1570050FF7744AC8A95A2201D96AC98">查找位置</a></li><li purpose="li" id="LI_DA1CB7903CF14FA18343B618520EE186"><a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/configure-the-portal-to-perform-analysis.htm#ESRI_SECTION2_DF698C47A43D4616A39BAEDF6687D918">数据丰富</a></li><li purpose="li" id="LI_C4002CA6308F4853A960ACD71F688333"><a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/configure-the-portal-to-perform-analysis.htm#ESRI_SECTION2_7C018FA30B524A1EAF471E4FC579115B">分析模式</a></li><li purpose="li" id="LI_384FA6193A43435F8DF037D20F99D687"><a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/configure-the-portal-to-perform-analysis.htm#ESRI_SECTION2_D00940BFD630477296A8E81EA3AB56EA">邻近分析</a></li><li purpose="li" id="LI_BB8920FA2B0E4D7690F38F39D5413854"><a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/configure-the-portal-to-perform-analysis.htm#ESRI_SECTION2_699068BC01EB42C79AD5BA017A330E01">管理数据</a></li></ul><section class="section2 padded-anchor" id="ESRI_SECTION2_8A9403F65FDF4582AEAA6C64DF928739" purpose="section2"><h3>汇总数据</h3><p id="GUID-242F8B08-2E2B-4B72-92E1-7E5F6501A49B">这些工具用于计算区域内或其他要素附近的要素及其属性的总数、长度、面积以及基本描述性统计数据。</p><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><thead><tr><th colspan="1">工具</th><th colspan="1">描述</th></tr></thead><tbody class="align-middle">            <tr class="align-middle">              <td outputclass="" purpose="entry" rowspan="1" colspan="1">                <p id="GUID-AE2CF11A-B678-4125-90E7-85EF7D79A969">                  <a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/portal/latest" href="../../../../../zh-CN/portal/latest/use/aggregate-points.htm"><span purpose="gptoolref">聚合点</span></a>                </p>              </td>              <td outputclass="" purpose="entry" rowspan="1" colspan="1">                <p id="GUID-52DB2BA9-50CB-48FD-9CFC-CA273AA93E9F">                  <img purpose="img" placement="inline" alt="聚合点" title="聚合点" src="GUID-60C59C66-3038-4D0E-8F6A-EC6C53FEAA02-web.png">                </p>                <p id="GUID-FCEA28A4-5081-4C7B-95C8-962A3F2A85E0">该工具适用于点要素图层以及面要素图层。首先计算出每个区域内的点。确定点与区域的空间关系后，会计算出区域内所有点的统计数据并将统计数据指定给该区域。最基本的统计数据是区域内点的计数，但是也可以获取其他统计数据。</p>                <p id="GUID-53253AA9-8ED7-4E76-BCD3-621248E7C709">例如，假设以咖啡店位置作为点要素，以县作为面要素，并且希望按县汇总咖啡销售额。假定咖啡店具有 <span class="usertext">TOTAL_SALES</span> 属性，则您可以获得每个县内所有
+<span class="usertext">TOTAL_SALES</span> 的总和，或者每个县内 <span class="usertext">TOTAL_SALES</span>的最小值或最大值，或每个县内所有销售额的标准差。</p>              </td>            </tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-D937615B-24BC-4609-82B0-3F202E06B825"><a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/portal/latest" href="../../../../../zh-CN/portal/latest/use/join-features.htm"><span purpose="gptoolref">连接要素</span></a></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-8751DE70-1BC0-4B84-9A4A-E7EE8ABD727A"><img purpose="img" placement="inline" alt="连接要素" title="连接要素" src="GUID-2230E8B8-8956-475C-9C65-68A92359BB48-web.png"></p><p id="GUID-81D41D56-2251-40BD-90DB-ABE94F57C812">此工具可根据空间和属性关系将属性从一个图层或表格传输到另一个图层或表格。然后，计算连接要素的统计数据。</p><p id="GUID-97246D3B-13ED-4700-9B82-36555C32E5FE">例如<ul purpose="ul" id="UL_9B80641BD16E40DC8E0426B0ABA37523"><li purpose="li" id="LI_E12E446B235F4A768006E4155D8BF6E6">使用空间关系将犯罪数据与警务区连接。</li><li purpose="li" id="LI_95747F273659438BB56FBF12B39EF13C">使用代码值将土地利用描述与土地利用面连接。</li></ul></p></td></tr>            <tr class="align-middle">              <td outputclass="" purpose="entry" rowspan="1" colspan="1">                <p id="GUID-F55C5E02-FEA7-4ABC-94E9-79F8EA289C7B"><a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/portal/latest" href="../../../../../zh-CN/portal/latest/use/summarize-nearby.htm">                  <span purpose="gptoolref">邻近汇总</span></a>                </p>              </td>              <td outputclass="" purpose="entry" rowspan="1" colspan="1">                <p id="GUID-886260ED-D1CC-420E-A95F-A0E52AA57BD4">                  <img purpose="img" placement="inline" alt="邻近汇总" title="邻近汇总" src="GUID-A5033D27-81B6-42E7-BA38-50D25C1CCCCA-web.png">                </p>                <p id="GUID-F199BBC0-2A2C-407E-AC5D-3FA0B2F5C816">此工具用于在分析图层中查找位于选定要素指定距离内的要素。距离可按直线距离或选择的出行模式进行测量。然后，计算邻近要素的统计数据。</p><p id="GUID-FE4CA65A-8A96-43C8-9458-2A6C9DE3EB56">例如<ul purpose="ul" id="UL_3469D9D077464C20BB5AA06DF201D1C6"><li purpose="li" id="LI_2AF1436322BF4BA590A01DBB9DD247C9">计算在建议的新商店位置五分钟车程内的总人口数。</li><li purpose="li" id="LI_AFCB4E4E1CDE445A99B84A675660AAF9">计算在建议的新商店位置的一英里行驶距离内的高速公路匝道数，以便评估商店的可达性。</li></ul></p>                
+                
+                <div class="panel trailer-1 note" id="GUID-CE95812D-E922-4C2F-9F9C-5F27E7AEBAF4"><h5 class="icon-ui-comment trailer-0">注：</h5>                  <p id="GUID-8C8019CA-74CB-4C09-93AA-5BD594F84F92">出行模式距离计算需要您将门户配置为使用网络实用程序服务，并对需要运行此工具的成员授予<span class="uicontrol">网络分析</span>权限。</p>                </div>              </td>            </tr>            <tr class="align-middle">              <td outputclass="" purpose="entry" rowspan="1" colspan="1">                <p id="GUID-D55D8187-9481-4460-BBC5-578C20E54808"><a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/portal/latest" href="../../../../../zh-CN/portal/latest/use/summarize-within.htm">                  <span purpose="gptoolref">范围内汇总</span></a>                </p>              </td>              <td outputclass="" purpose="entry" rowspan="1" colspan="1">                <p id="GUID-B13C3CAC-5F66-406C-88C1-25E70F45BBE2">                  <img purpose="img" placement="inline" alt="范围内汇总" title="范围内汇总" src="GUID-9B12DB3F-AA7B-41EB-87C6-D2DEC3D52DA9-web.png">                </p>                <p id="GUID-A90A303F-23FF-42EA-91FD-58336CCDEEA0">此工具用于查找分析图层中位于区域边界内的要素（和部分要素）。</p><p id="GUID-04CB3400-6537-4EA9-81F8-A1E4FA30EBEE">  例如<ul purpose="ul" id="UL_05704CCD0CE04C4F87A6DE98CB2FD1C9"><li purpose="li" id="LI_7CDD8EF750724F60B45D06EDC58211D6">给定一个流域边界图层和一个按土地利用类型划分的土地利用边界图层，计算每个流域的土地使用类型的总面积。</li><li purpose="li" id="LI_E85D1223FD08475995529339B8B60103">给定某县的宗地图层和城市边界图层，汇总各城市边界内闲置宗地的平均值。</li></ul></p>              </td>            </tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-F7B56D21-EC0C-460D-953F-DE9FD3C8643A"><a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/portal/latest" href="../../../../../zh-CN/portal/latest/use/summarize-center-and-dispersion.htm">汇总中心和离差</a></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-311D0D93-22D1-4C8D-896B-C533757D2F6E"><img purpose="img" placement="inline" alt="汇总中心和离差" title="汇总中心和离差" src="GUID-D2D53CA4-8A35-4163-9765-77BF232E569D-web.png"></p><p id="GUID-A827F137-03F0-4C45-8AF9-761372A59DDA">该工具用于查找点要素的中心要素、平均中心、中位数中心或椭圆（方向分布）。</p><p id="GUID-A7363F27-1E4E-40F5-8E40-FF064B5AB929">例如<ul purpose="ul" id="UL_C701C8E996484D149D19B08797CF37C6"><li purpose="li" id="LI_A4CCB8D24DCE49D8A121E1F7F0B272A2">在诸如树木、建筑物或公园的一组点中查找中心要素。</li><li purpose="li" id="LI_9C68DA0251BE4FE0AE89A0097B0E0525">在诸如犯罪事件和野生动物踪迹的一组点中查找平均中心。</li><li purpose="li" id="LI_4E33E13B83384D02A2F69D7C44B093E1">在诸如车祸位置的一组点中查找中位数中心。</li><li purpose="li" id="LI_1FB4376DE8434298BCEC0C516F84C1FE">在诸如疾病发生或入侵性植物物种位置的一组点中查找离差（椭圆）。</li></ul></p></td></tr>          </tbody><caption></caption></table></div></section><section class="section2 padded-anchor" id="ESRI_SECTION2_D1570050FF7744AC8A95A2201D96AC98" purpose="section2"><h3>查找位置</h3><p id="GUID-FC73B6F0-D62A-4576-ABEA-B894BB7C13A2">这些工具用于查找传递任意指定数量条件的要素。它们通常用于地点选择，目标是查找满足多个条件的地点。</p><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><thead><tr><th colspan="1">Tool</th><th colspan="1">Description</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-0B711302-4AE2-48F9-930F-8C2162204925"><b>Find Existing Locations</b></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-115E358A-1330-4B97-8929-E9E89E491B75"><img purpose="img" placement="inline" alt="Find Existing Locations" title="Find Existing Locations" src="GUID-FEF355B4-CF3B-48F6-9EC1-A00A1D53C81F-web.png"></p><p id="GUID-CA1A9CE0-20E3-4D22-BB86-5C1A581D75CA">This tool selects existing features in your study area that meet a series of criteria you specify. These criteria can be based on attribute queries (for example, parcels that are vacant) and spatial queries (for example,  parcels within 1 mile of a river). </p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-11301610-5D55-424B-8485-E25EF655150E"><b>Derive New Locations</b></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-CE181BEE-44CC-4843-972A-3CDB73FDE862"><img purpose="img" placement="inline" alt="Derive New Locations" title="Derive New Locations" src="GUID-4A756008-8431-4AA5-BD42-7135296560DD-web.png"></p><p id="GUID-60DF65BC-BD13-460C-9CEA-9DD90C7A2672">This tool derives new features in your study area that meet a series of criteria you specify. These criteria can be based on attribute queries (for example, parcels that are vacant) and spatial queries (for example,   parcels that are within flood zones).
+</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-E7810048-A2A8-40CA-9895-4FB058C3CCE8"><b>Find Similar Locations</b></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-38705997-DEF8-4992-BD05-E7DE6E3D22FD"><img purpose="img" placement="inline" alt="Find Similar Locations" title="Find Similar Locations" src="GUID-6262A84E-9087-4E48-930E-E9B89FECC836-web.png"></p><p id="GUID-7C562AF7-E41A-4006-9FF0-CBBA2FDE1AF6">  Based on criteria you specify, the Find Similar Locations tool measures the similarity of locations in your candidate search layer to one or more reference locations.</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-B258F967-C57A-49D7-ABF7-15468266CBA0"><b>Create Viewshed</b></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-FDF90271-3074-4D12-B943-C75511979DD4"><img purpose="img" placement="inline" alt="Create Viewshed" title="Create Viewshed" src="GUID-491E9A75-30CC-4526-9F71-E47FD25536DE-web.png"></p><p id="GUID-7A4799E3-B39D-45FF-B55E-4EF14762215B"> This tool creates areas were an observer can see objects on the ground. The input analysis points can represent either observers (such as people on the ground or lookouts in a fire tower) or observed objects (such as wind turbines, water towers, vehicles, or other people). The result areas are those areas where the observers can see the observed objects and vice versa: the observed objects can see the observers.  The output is typically used in site suitability and selection analysis.</p><div class="panel trailer-1 note" id="GUID-D0698CEE-D9EE-41E0-B3D3-1FB3EB2A4479"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-0D3F21A9-5F9C-4FB0-B421-2EE6F6867AD1">This tool requires you to configure elevation and hydrological  service items for the portal, and grant the <span class="uicontrol">Elevation Analysis</span> privilege to any members who need to run the tool.</p></div><div class="panel trailer-1 note" id="GUID-9722376C-DBD0-40E2-B2D5-32C3F0FFE75E"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-F69CC3CF-99B2-442D-AE8C-D5B757476AED">Your portal administrator must configure elevation and hydrological  service items for the portal, and grant you the <span class="uicontrol">Elevation Analysis</span> privilege to allow you to run this tool.</p></div></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-C5DEB551-01A6-4CA0-8613-A420E66A50BF"><b>Create Watersheds</b></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-94E210BC-0F17-4C1B-AD96-78140F587868"><img purpose="img" placement="inline" alt="Create Watersheds" title="Create Watersheds" src="GUID-4DE64CF6-2A02-46F6-8AE4-4D9227AAB71C-web.png"></p><p id="GUID-E1F58038-849A-4695-9EE2-B8CDE46DDADC">This tool identifies catchment areas based on locations that you specify.</p><div class="panel trailer-1 note" id="GUID-FD5B6DAF-123D-41B3-B210-A9D25820CEF1"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-98CAAEC3-0183-42D8-96B4-920AF64EA293">This tool requires you to configure elevation and hydrological  service items for the portal, and grant the <span class="uicontrol">Elevation Analysis</span> privilege to any members who need to run the tool.</p></div><div class="panel trailer-1 note" id="GUID-F2025682-BE47-4577-9C49-158C4F64CA58"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-5EFA4E3A-E4B8-41BB-B7CB-5E69D3DBB0C3">Your portal administrator must configure elevation and hydrological  service items for the portal, and grant you the <span class="uicontrol">Elevation Analysis</span> privilege to allow you to run this tool.</p></div></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-449FC70B-CA43-4CD5-9FFA-17C26D1F5DE9"><b>Trace Downstream</b></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-B00EDC6C-DC30-42F6-975B-B635B3C07FAF"><img purpose="img" placement="inline" alt="Trace Downstream" title="Trace Downstream" src="GUID-1700E318-5F2D-4D4D-BF21-B12663F5D3C4-web.png"></p><p id="GUID-E58BC69B-64C6-4E88-8B8E-0B69FE6D8A60">This tool determines the trace, or flow path, in a downstream direction from the points in your analysis layer.</p><div class="panel trailer-1 note" id="GUID-F2205BD2-0A5C-4772-842E-0007B287205C"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-4941F9A0-DBDB-487F-9DA3-9F68F8E5919B">This tool requires you to configure elevation and hydrological  service items for the portal, and grant the <span class="uicontrol">Elevation Analysis</span> privilege to any members who need to run the tool.</p></div><div class="panel trailer-1 note" id="GUID-36DE8451-66A6-494E-8B89-D95B801E59FF"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-13B512A3-D5FB-4BEF-8186-76070A939672">Your portal administrator must configure elevation and hydrological  service items for the portal, and grant you the <span class="uicontrol">Elevation Analysis</span> privilege to allow you to run this tool.</p></div></td></tr></tbody><caption></caption></table></div></section><section class="section2 padded-anchor" id="ESRI_SECTION2_DF698C47A43D4616A39BAEDF6687D918" purpose="section2"><h3>数据丰富</h3><p id="GUID-45FD4A77-3C5B-4634-ADD4-C38498FB745D">这些工具可帮助您了解区域特征。结果将返回已选区域的详细人口资料以及统计数据。也可以报告扩展区域（如州和县）的比较信息。</p><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><thead><tr><th colspan="1">工具</th><th colspan="1">描述</th></tr></thead><tbody class="align-middle">            <tr class="align-middle">              <td outputclass="" purpose="entry" rowspan="1" colspan="1">                <p id="GUID-519C85FD-6FD0-43F0-8AC1-C3E090A514C2"><a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/portal/latest" href="../../../../../zh-CN/portal/latest/use/enrich-layer.htm"><span purpose="gptoolref">                  丰富图层</span></a>                </p>              </td>              <td outputclass="" purpose="entry" rowspan="1" colspan="1">                <p id="GUID-DED38075-C834-433F-AEC9-225633AA76E1">                  <img purpose="img" placement="inline" alt="丰富图层" title="丰富图层" src="GUID-5B2D9742-AFD2-4054-8D05-ED6A80EDAF4D-web.png">                </p>                <p id="GUID-B116AFA3-599F-4B40-A06E-C2DA7F76BA26">此工具通过获取数据位置周边的人口、场所以及商业信息来丰富您的点或区域数据。<span purpose="gptoolref">丰富图层</span>可以用来回答地图本身无法提供答案的新的位置相关问题，例如：该地居住的是哪类人群？ 该地区的人有什么喜好？ 他们的习惯和生活方式是什么？ 该地区有何种商业形式？</p>                <p id="GUID-EB9B98E1-7B1C-4B9D-B11E-9EC4568480F1">结果为一个新图层，其中包含给定数据集的所有人口统计信息和地理信息。此新信息将作为字段添加到表中。</p>                
+                <div class="panel trailer-1 note" id="GUID-9F48F193-8179-423B-9D8A-67D3FF5F4A2E"><h5 class="icon-ui-comment trailer-0">注：</h5>                  <p id="GUID-9F8A9D37-7F13-44AF-BD8F-53D74DE1CE26">此工具需要 GeoEnrichment 实用程序服务，且运行此工具的任何成员都需要具有 <span class="uicontrol">GeoEnrichment</span> 权限。此外，出行模式距离计算需要您将门户配置为使用网络实用程序服务，并对需要运行此工具的成员授予<span class="uicontrol">网络分析</span>权限。</p>                </div>                
+              </td>            </tr>          </tbody><caption></caption></table></div></section><section class="section2 padded-anchor" id="ESRI_SECTION2_7C018FA30B524A1EAF471E4FC579115B" purpose="section2"><h3>分析模式</h3><p id="GUID-D32B2E94-9C07-427E-AA23-7FF83217AC2B">这些工具通过确定具有统计显著性的聚类的区域来帮助您确定、量化并显示数据的空间模式。</p><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><thead><tr><th colspan="1">工具</th><th colspan="1">描述</th></tr></thead><tbody class="align-middle">            <tr class="align-middle">              <td outputclass="" purpose="entry" rowspan="1" colspan="1">                <p id="GUID-6E565D03-AF8F-4527-BCD8-504DEC4E3CC8"><a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/portal/latest" href="../../../../../zh-CN/portal/latest/use/calculate-density.htm"><span purpose="gptoolref">                  计算密度                </span></a></p>              </td>              <td outputclass="" purpose="entry" rowspan="1" colspan="1">                <img purpose="img" placement="inline" alt="计算密度" title="计算密度" src="GUID-20E554EC-1F41-4951-99FE-B3FE71DB2E17-web.png">                <p id="GUID-8C355F8F-C0D7-4BC1-B412-D4D2F9CE9CD0"><span purpose="gptoolref">计算密度</span>工具用于通过将已知量的某种现象（表示为点或线的属性）散布到整个地图上以从点要素或线要素创建密度地图。结果是按密度从小到大分类的面图层。</p><p id="GUID-251CF275-F7A6-4FF6-BA2E-643527D743E6">   例如<ul purpose="ul" id="UL_EE18606FD68B483F9CF4AF76DB7B16A0"><li purpose="li" id="LI_F777539BCE0B4B96A72484FC1584A4B9">计算某县的医院密度。结果图层将显示容易到达医院和不容易到达医院的区域，此信息可用于确定新建医院的位置。</li><li purpose="li" id="LI_575F3D118E454846B09553BA4DB68C62">根据发生森林火灾的历史位置确定森林火灾的高风险区域。</li><li purpose="li" id="LI_9B27DC0DCB134A9E94BDA0E93A32207C">查找距离主干道较远的社区以计划修建新道路的位置。</li></ul></p>              </td>            </tr>            <tr class="align-middle">              <td outputclass="" purpose="entry" rowspan="1" colspan="1">                <p id="GUID-513A53DA-0CF2-4075-8658-4BE37A9600B5">                  <a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/portal/latest" href="../../../../../zh-CN/portal/latest/use/find-hot-spots.htm"><span purpose="gptoolref">查找热点</span></a>                </p>              </td>              <td outputclass="" purpose="entry" rowspan="1" colspan="1">                <img purpose="img" placement="inline" alt="查找热点" title="查找热点" src="GUID-D4A59131-AC88-4C7A-85BA-67861D5C1CF8-web.png">                <p id="GUID-18CB9743-91D2-45C5-A213-D3950CE581BB"><span purpose="gptoolref">查找热点</span>工具可以确定数据在空间模式方面是否存在任何统计显著性的聚类。</p><p id="GUID-775A127C-AD3D-4056-8321-5B875FFB623D">例如<ul purpose="ul" id="UL_427ADF4C0A2B4793B46534CA9DAF1C05"><li purpose="li" id="LI_A980E1BDE1074A038ED182D4B0C60C59">各个点要素（犯罪事件、树木、交通事故）是否可进行聚类？ 您又是如何确定的？</li><li purpose="li" id="LI_55A13AE318644B1E804E9581511163E5">您是否确实发现了具有统计显著性的热点（消费、婴儿死亡率、长期保持高测试分数）？或者说如果更改地图的符号化方式，地图会呈现出另一种结果吗？</li></ul><span purpose="gptoolref">查找热点</span>工具可针对这些问题给出令人信服的答案。</p>              </td>            </tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-126BC096-7901-4B69-956D-2E8923F74785"><a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/portal/latest" href="../../../../../zh-CN/portal/latest/use/find-outliers.htm"><span purpose="gptoolref">查找异常值</span></a></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-1973E181-2160-4353-AD1C-DB375EF62308"><img purpose="img" placement="inline" alt="查找异常值" title="查找异常值" src="GUID-2FD18406-6333-45B9-8220-E930C1E154B2-web.png"></p><p id="GUID-A6CFC105-4D64-4A5E-AAAD-3EADFF7F3E00"><span purpose="gptoolref">查找异常值</span>工具可以确定数据在空间模式方面是否存在任何具有统计显著性的异常值。</p><p id="GUID-9623E77E-0A9F-4B42-A4AA-1B8ABFEC7389">例如<ul purpose="ul" id="UL_1679E1DC571C4F6DBCC92D69DB64906D"><li purpose="li" id="LI_048A3A382A114898AEF5548C0F6FB759">在数据（犯罪事件、树、交通事故）模式方面是否存在异常区域？ 您又是如何确定的？</li><li purpose="li" id="LI_5816D34C7D274D76AE3238FDDFEF6BC0">您是否确实发现了具有统计显著性的异常值（消费、婴儿死亡率、长期保持高测试分数）？或者说如果更改地图的符号化方式，地图会呈现出另一种结果吗？</li></ul><span purpose="gptoolref">查找异常值</span>工具可针对这些问题给出令人信服的答案。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-7ECCA5DC-DF21-46FD-BD09-4468F8284D09"><a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/portal/latest" href="../../../../../zh-CN/portal/latest/use/find-point-clusters.htm">查找点聚类</a></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-8DB57CA3-6DDE-4D3F-9ABB-8F230B3D57CD"><img purpose="img" placement="inline" alt="查找点聚类" title="查找点聚类" src="GUID-025ADB1C-E4BF-4C8D-A35F-1D0E222627F9-web.png"></p><p id="GUID-7BF6BECD-C98C-48BD-AC64-5F21688C8B2C">“查找点聚类”工具可基于点要素的空间分布查找周围噪点内的点要素聚类。</p><p id="GUID-D34DC0F4-2FB2-4E04-99D0-2FC8AED800B1">例如<ul purpose="ul" id="UL_7F959912C23C428B8DF868ECBA2E2CF5"><li purpose="li" id="LI_F75109F9D25A4D81BB0345E013E429DC">查找受害虫侵害的房屋聚类。</li><li purpose="li" id="LI_EB4DACB8EAFE467BBCF76C010C400CA1">查找盗窃等犯罪事件的聚类。</li></ul></p></td></tr>            <tr class="align-middle">              <td outputclass="" purpose="entry" rowspan="1" colspan="1">                <p id="GUID-A61C51CB-1A9E-4BAC-834B-71A69F64CC99"><a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/portal/latest" href="../../../../../zh-CN/portal/latest/use/interpolate-points.htm"><span purpose="gptoolref">                  插值点</span></a>                </p>              </td>              <td outputclass="" purpose="entry" rowspan="1" colspan="1">                <img purpose="img" placement="inline" alt="插值点" title="插值点" src="GUID-28FC50AA-7B10-487C-949B-241EF2F8028E-web.png">                <p id="GUID-B76440E5-33CB-40E1-A9B9-4B56E33A758B"><span purpose="gptoolref">插值点</span>工具用于根据一组点的测量结果来预测新位置上的值。该工具对具有数值的点数据进行处理，并返回按预测值分类的区域。</p><p id="GUID-842BB64B-3624-462E-BC6E-B04F3614B9F1"> 例如<ul purpose="ul" id="UL_B5BB351F19864EF18B1EEAAF26B9BE5C"><li purpose="li" id="LI_D027D0F7F529448FAC833123D948195D">一处空气质量管理区安装有用于测量污染水平的传感器。<span purpose="gptoolref">插值点</span>可用于预测未安装传感器位置的污染水平，如学校或医院等高危人群聚集的地区。</li><li purpose="li" id="LI_5563D6834BF0438AABC88973BDB6D418">根据采集到的诸多单株植物样本来预测农作物区域的重金属浓度。</li><li purpose="li" id="LI_90406D054E4044CD97437F8B684A5D7F">预测土壤养分水平（氮、磷、钾等）和其他指标（如导电性），以便研究这些指标与作物产量的关系并规定田间各处的精确化肥用量。</li><li purpose="li" id="LI_D189656B6D0B48AC912A71EAEF3D4925"> 气象应用包括温度、降雨和相关变量（例如酸雨）的预测。</li></ul></p>              </td>            </tr>          </tbody><caption></caption></table></div></section><section class="section2 padded-anchor" id="ESRI_SECTION2_D00940BFD630477296A8E81EA3AB56EA" purpose="section2"><h3>邻近分析</h3><p id="GUID-3377D35F-840A-4EB2-ACBE-A90D9ECA9C2F">这些工具可帮助您回答在空间分析中提出的一个最普遍问题：什么在什么附近？</p><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><thead><tr><th colspan="1">工具</th><th colspan="1">描述</th></tr></thead><tbody class="align-middle">            <tr class="align-middle">              <td outputclass="" purpose="entry" rowspan="1" colspan="1">                <p id="GUID-1232680C-CF55-464F-B636-55F1B009EC55"><a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/portal/latest" href="../../../../../zh-CN/portal/latest/use/create-buffers.htm">                  <span purpose="gptoolref">创建缓冲区</span></a>                </p>              </td>              <td outputclass="" purpose="entry" rowspan="1" colspan="1">                <img purpose="img" placement="inline" alt="创建缓冲区" title="创建缓冲区" src="GUID-7F4A8E4D-42E3-41C1-9238-16619CE65079-web.png">                <p id="GUID-074A7C68-8B6D-4317-A6FC-4C2825C069B5">缓冲区是一个以点、线或面要素为起点，并覆盖给定距离的区域。</p>                <p id="GUID-66EC6A4E-5296-4878-B362-D0E64BE856F7">缓冲区通常用于创建一些区域，以便使用如<span purpose="gptoolref">叠加图层</span>等工具进行深入分析。例如，假设问题是在学校 1 英里范围内存在哪些建筑物？，通过在学校周围创建一个 1 英里的缓冲区并将缓冲区与包含建筑物覆盖区的图层相叠加即可找到答案。最终结果是一个包含学校 1 英里范围内建筑物的图层。</p>              </td>            </tr>            <tr class="align-middle">              <td outputclass="" purpose="entry" rowspan="1" colspan="1">                <p id="GUID-8C0FD274-FBEF-4F80-A2F8-0BAF172FE71C"><a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/portal/latest" href="../../../../../zh-CN/portal/latest/use/create-drive-time-areas.htm"><span purpose="gptoolref">创建行驶时间区域</span></a>                </p>              </td>              <td outputclass="" purpose="entry" rowspan="1" colspan="1">                <img purpose="img" placement="inline" alt="创建行驶时间区域" title="创建行驶时间区域" src="GUID-6F629A09-768D-4C04-88A4-AB941811ADE9-web.png">                <p id="GUID-8E876FF4-0B3A-4E3C-AF0B-6F28AA075A3D"><span purpose="gptoolref">创建行驶时间区域</span>用于创建可在指定的行驶时间或行驶距离内到达的区域。它以一个或多个点为起点（最多 1000 个），沿道路创建图层，所创建的图层可帮助您回答如下问题：<ul purpose="ul" id="UL_80FD768E1AD04DB4917DD2F6563D8727"><li purpose="li" id="LI_F8EE2A3FE66343E19DF96C0A3A1D663F">在 30 分钟内，我可以从此处行驶到哪里？</li><li purpose="li" id="LI_744CE503D9674732AE36B11598B570C0">在下午 5:30 的高峰时段，我可以在 30 分钟内行驶到哪里？</li><li purpose="li" id="LI_4B679B031D2E40E99F5993A720301D4E">消防部门可以在 5 分钟内到达城镇中的哪些区域？ </li><li purpose="li" id="LI_BEEEE09B7F11406EA436763E96556F6D">在此处建立新消防站后，火灾响应范围会有多大的改善？</li><li purpose="li" id="LI_F4189222F64E4CCEA8FC1690AEA8C105">我的业务覆盖哪些市场区域？</li></ul></p>                <p id="GUID-006A27CC-0534-45DA-90E1-4EC3A6369A61">通过可视化输出区域即可解答这些问题。另外，您还可使用输出区域执行进一步的空间分析。例如，运行<span purpose="gptoolref">聚合点</span>工具时，将行驶时间区域和人口统计数据结合使用，可帮助您确认根据您的业务类型可提供最佳客源的潜在店面位置。</p>                
+                
+                <div class="panel trailer-1 note" id="GUID-36FCFECB-6DC2-4DAF-864F-0C7E3AB1DAE9"><h5 class="icon-ui-comment trailer-0">注：</h5>                  <p id="GUID-192A242B-9553-4FFE-AF99-F2A6ED62A0B5">您必须在门户上配置网络实用程序服务，并对成员授予<span class="uicontrol">网络分析</span>权限，以使得他们能够运行此工具。</p>                </div>              </td>            </tr>            <tr class="align-middle">              <td outputclass="" purpose="entry" rowspan="1" colspan="1">                <p id="GUID-0971B100-E5EB-4598-86E2-965C1EE6211D"><a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/portal/latest" href="../../../../../zh-CN/portal/latest/use/find-nearest.htm"><span purpose="gptoolref">                  查找最近点</span></a>                </p>              </td>              <td outputclass="" purpose="entry" rowspan="1" colspan="1">                <img purpose="img" placement="inline" alt="查找最近点" title="查找最近点" src="GUID-150C2484-7459-405A-8835-B4E72CD49738-web.png">                <p id="GUID-B9EAC970-18C2-473C-9412-543C8CD55160"> 此工具用于查找最近的要素，还可以报告并排序邻近要素的距离。要查找附近的要素，该工具可以按直线距离或选择的行驶模式进行测量。利用工具中的选项可以限制要查找的最近要素的数量或查找这些要素的搜索范围。</p><p id="GUID-8CA6B87F-7B51-4B40-B16C-64B1DDA06403">通过该工具获得的结果可帮助您回答以下类型的问题：<ul purpose="ul" id="UL_33EE231B56A84881A25B6A9867C4B7B0"><li purpose="li" id="LI_1DF82C090D584B349FDA1EBB9E86E01D">哪个公园离这里最近？</li><li purpose="li" id="LI_8BC6578FC02E466391C965724908F899">以最短的行驶时间可以到达哪家医院？ 在星期二下午 5:30 的高峰时段，这条路线要耗时多久？</li><li purpose="li" id="LI_5C9414FDD74E45C5833D4C70D1893F0C">这些主要城市间的路程有多远？</li><li purpose="li" id="LI_EE064DEA9AF64E1D8DC9F1DB4104F6C5">在这些患者中，都有谁居住在距这些化工厂 2 英里的范围内？</li></ul></p>                <p id="GUID-16B6A727-B099-4613-B99F-3795B6F19DA2"> <span purpose="gptoolref">查找最近点</span>可返回包含最近要素的图层，还可以返回连接起始位置及其最近位置的线图层。这些可选的线图层包含有关起始位置、最近位置及两者间距离的信息。</p>                
+                
+                <div class="panel trailer-1 note" id="GUID-538F5D65-67E1-49E3-9044-12A69CE21A3A"><h5 class="icon-ui-comment trailer-0">注：</h5>                  <p id="GUID-10FA6357-0DD4-4A80-908D-56B4E8FA8DDE">为使成员能够使用大部分可用的出行模式查找邻近要素，您的输入必须为点要素且您必须为门户配置网络实用程序服务，并授予成员<span class="uicontrol">网络分析</span>权限。但是，如果没有此权限，您可以通过<span class="uicontrol">直线距离</span>进行测量。</p>                </div>              </td>            </tr>            <tr class="align-middle">              <td outputclass="" purpose="entry" rowspan="1" colspan="1">                <p id="GUID-E186CF17-A5F6-4763-9755-6F0343C510AF"><a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/portal/latest" href="../../../../../zh-CN/portal/latest/use/plan-routes.htm"><span purpose="gptoolref">                  计划路径</span></a>                </p>              </td>              <td outputclass="" purpose="entry" rowspan="1" colspan="1">                <img purpose="img" placement="inline" alt="计划路径" title="计划路径" src="GUID-A6D9521F-EECE-4DA2-808E-61483B99AE01-web.png">                <p id="GUID-17873109-090C-4C4B-B29B-1E0CAED6664D"><span purpose="gptoolref">计划路径</span>确定了在流动的工作人员之间高效地划分任务的方法。</p>                <p id="GUID-EAA6F6C8-13CF-47CC-9C7B-71C3919FF73B">您需为该工具提供一组停靠点以及可以访问这些停靠点的车辆数。该工具可为车辆分配停靠点并返回路径，这些路径同时显示了每辆车如何能在最短时间内到达为其分配的停靠点。</p>                <p id="GUID-C06CA5B1-E86A-41F4-AF2E-C4FA8AE12A81">利用<span purpose="gptoolref">计划路径</span>，流动的工作人员能在更短的时间内到达更多的工作地点，从而提高生产效率并完善客户服务。<ul purpose="ul" id="UL_997041AF7245463898A5957B5D78534E"><li purpose="li" id="LI_25808DB131524EA08C938FBFD2F71374"> 检查住宅、饭店或建筑工地。</li><li purpose="li" id="LI_F2EE5C77A00A44639E392254C11707D3"> 提供修复、安装或技术服务。</li><li purpose="li" id="LI_D5C3DD1476A24ED0AB589EFB21298BEA"> 派送物品和小包裹。</li><li purpose="li" id="LI_ABF0A42AC08C46EAB78274D07426C9F6"> 进行销售拜访。</li><li purpose="li" id="LI_BDAAC87CFFF64C62B248CBAF5D76E687"> 将人员从家中送达至活动现场。</li></ul></p>                <p id="GUID-E6E3861E-342A-47EE-BDE5-BFDAD1C907E6"><span purpose="gptoolref">计划路径</span>的输出包括一个停靠点图层（按停靠点所分配至的路径进行编码）、一个路径图层（用于显示访问所分配停靠点的最短路径）和一个未分配停靠点的图层（具体取决于是否存在无法到达的停靠点）。</p>                
+                
+                <div class="panel trailer-1 note" id="GUID-215F3A75-440C-42EF-B43C-DA53E2E3CCCC"><h5 class="icon-ui-comment trailer-0">注：</h5>                  <p id="GUID-45D4C069-F76A-43AF-B05F-D1F719B092F2">您必须在门户上配置网络实用程序服务，并对成员授予<span class="uicontrol">网络分析</span>权限，以使得他们能够运行此工具。</p>                </div>              </td>            </tr>            <tr class="align-middle">              <td outputclass="" purpose="entry" rowspan="1" colspan="1">                <p id="GUID-BC2E9733-B3CC-413C-9AC2-C25CE667B71A">                  <a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/portal/latest" href="../../../../../zh-CN/portal/latest/use/connect-origins-to-destinations.htm"><span purpose="gptoolref">连接起点与终点</span></a>                </p>              </td>              <td outputclass="" purpose="entry" rowspan="1" colspan="1">                <p id="GUID-6090822F-D429-41A0-ABF1-1AC37C10DC3B">                  <img purpose="img" placement="inline" alt="连接起点与终点" title="连接起点与终点" src="GUID-86AA24B9-2DDE-460C-BA65-7CCDF7F4855D-web.png">                </p>                <p id="GUID-6A7524F1-4B88-4915-B372-259AA17C18B9">该工具可测量点对间的行驶时间或行驶距离。此工具可以报告直线距离、道路距离或行驶时间。您提供起点和终点后，此工具便会在成对的起始点和目的地之间返回含有各路线和测量值的图层。如果有多个起始点通向一个目的地，则输出中包括用于汇总通向该目的地的多个行程的表。</p>              
+                <div class="panel trailer-1 note" id="GUID-E944D07C-7ACD-4E26-8278-06D5E3C9BB34"><h5 class="icon-ui-comment trailer-0">注：</h5>                  <p id="GUID-63A27076-FC22-4B44-BB2F-B821EEF259F6">您必须在门户上配置网络实用程序服务，并对成员授予<span class="uicontrol">网络分析</span>权限，以使得他们能够运行此工具。</p>                </div></td>            </tr>          </tbody><caption></caption></table></div></section><section class="section2 padded-anchor" id="ESRI_SECTION2_699068BC01EB42C79AD5BA017A330E01" purpose="section2"><h3>管理数据</h3><p id="GUID-1409D80D-B2AF-453C-B3A0-F928EDF90DF4">这些工具用于地理数据的日常管理以及在分析之前合并数据。</p><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><thead><tr><th colspan="1">工具</th><th colspan="1">描述</th></tr></thead><tbody class="align-middle">            <tr class="align-middle">              <td outputclass="" purpose="entry" rowspan="1" colspan="1">                <p id="GUID-54566898-FA55-4595-9715-B83136BE2330"><a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/portal/latest" href="../../../../../zh-CN/portal/latest/use/extract-data.htm"><span purpose="gptoolref">提取数据</span></a>                </p>              </td>              <td outputclass="" purpose="entry" rowspan="1" colspan="1">                <img purpose="img" placement="inline" alt="提取数据" title="提取数据" src="GUID-CE24332B-74C0-412F-BB94-31415A02195A-web.png">                <p id="GUID-EB0E9054-F254-4088-8D97-A39AB79D46FA">使用此工具可以选择并下载特定感兴趣区的数据。所选图层将被添加到 ZIP 文件或图层包中。</p>              </td>            </tr>            <tr class="align-middle">              <td outputclass="" purpose="entry" rowspan="1" colspan="1">                <p id="GUID-E8EDD25C-50BA-4391-A1C1-AA0F920FDC7C"><a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/portal/latest" href="../../../../../zh-CN/portal/latest/use/dissolve-boundaries.htm">                  <span purpose="gptoolref">融合边界</span></a>                </p>              </td>              <td outputclass="" purpose="entry" rowspan="1" colspan="1">                <img purpose="img" placement="inline" alt="融合边界" title="融合边界" src="GUID-7B5F69B0-3625-404F-8B52-2B562766C0BB-web.png">                <p id="GUID-452D6160-D54E-4E35-A31F-7BE045F0FA75">将重叠区域或共享边界的区域进行合并以形成单个区域。</p>                <p id="GUID-440095E3-136C-4DFA-A3BB-A4BA409C8A74">您可以通过指定字段来控制合并哪些边界。例如，如果有一个县图层，并且每个县具有 <span class="usertext">State_Name</span> 属性，则可以使用 <span class="usertext">State_Name</span> 属性来融合边界。如果相邻的县具有相同的 <span class="usertext">State_Name</span> 值，则将它们合并到一起。最终结果是一个州边界图层。</p>              </td>            </tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-8D27A25D-5D84-47F8-ACEE-DE6BEAD95A99"><a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/portal/latest" href="../../../../../zh-CN/portal/latest/use/generate-tessellations.htm"><span purpose="gptoolref">生成细分面</span></a></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><img purpose="img" placement="inline" alt="生成细分面" title="生成细分面" src="GUID-7D6FF8CB-15F3-4051-9C57-46E6C3708788-web.png"><p id="GUID-158686EE-FD95-4E43-B328-A75F959461BC">此工具将针对研究区域创建具有指定形状和大小的图格。</p><p id="GUID-9C17D276-CC41-45D4-A7AC-137927C78649">图格可以为方形、六边形、横向六边形、三角形或菱形。</p></td></tr>            <tr class="align-middle">              <td outputclass="" purpose="entry" rowspan="1" colspan="1">                <p id="GUID-FA4C123D-2B21-4C36-95BD-0C74955453B7"><a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/portal/latest" href="../../../../../zh-CN/portal/latest/use/merge-layers.htm"><span purpose="gptoolref">合并图层</span></a>                </p>              </td>              <td outputclass="" purpose="entry" rowspan="1" colspan="1">                <img purpose="img" placement="inline" alt="合并图层" title="合并图层" src="GUID-BDDD6517-4EE7-4EEC-AE15-15DD9B709131-web.png">                <p id="GUID-E94CD864-61B8-4D24-9AB1-0B1EB7F3EAA1">此工具用于将 2 个图层中的要素复制到一个新图层中。所有要合并的图层必须都包含相同的要素类型（点、线或面）。您可以控制输入图层中各字段的连接和复制方式。</p><p id="GUID-621DC8D6-F684-4135-BF0B-24F4E624E958">  例如<ul purpose="ul" id="UL_E036F8FE1C424A419534010B2472BC35"><li purpose="li" id="LI_131F3AC26D234A2A860702B41C4FDC5A">有 3 个图层分别对应英格兰、威尔士和苏格兰，我希望使用一个图层来代表大不列颠。</li><li purpose="li" id="LI_FF2EC443D6D245F196060E8E0FCD7DCD">我有 12 个图层，每个图层包含相邻镇区的宗地信息。我希望将它们合并成单个图层，只保留这 12 个输入图层中名称和类型相同的字段。</li></ul></p>              </td>            </tr>            <tr class="align-middle">              <td outputclass="" purpose="entry" rowspan="1" colspan="1">                <p id="GUID-B0A096E2-AF2C-4316-8199-CCBCD400D14B">                  <a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/portal/latest" href="../../../../../zh-CN/portal/latest/use/overlay-layers.htm"><span purpose="gptoolref">叠加图层</span></a>                </p>              </td>              <td outputclass="" purpose="entry" rowspan="1" colspan="1">                <img purpose="img" placement="inline" alt="图层叠加" title="图层叠加" src="GUID-CE1E0E84-F3B5-446B-9FDE-4DA057F106CC-web.png">                <p id="GUID-AB30067D-35FD-4C5D-ACA2-BCFFA45D7924"><span purpose="gptoolref">叠加图层</span>将 2 个或更多图层合并为 1 个图层。您可以认为叠加就是通过地图堆叠栈进行查看并创建包含在堆叠中找到的所有信息的单个地图。事实上，在 GIS 出现之前，制图人员就将地图复制到透明的醋酸板上，将这些醋酸板叠加在看版台上，然后根据叠加数据手绘新地图。叠加操作不仅仅是合并线要素，还会将参与叠加的要素的所有属性传递到最终产品。叠加用于回答一个最基本的地理问题：什么在什么上？</p><p id="GUID-01AE26C2-245F-46D8-B1D3-7EA7DB7BD974"> 例如<ul purpose="ul" id="UL_A32CCF9F4AEE4D8DA33B65F25DA681A2"><li purpose="li" id="LI_EDACEA4144754EC0B7509C91CDE3E7C7"> 哪些宗地位于百年一遇的洪泛区中？ （“在...中”只是“在...上”的另一种表达方式。）</li><li purpose="li" id="LI_9D5EB6A4934B4B249E84F0292017E450"> 什么道路在什么国家中？</li><li purpose="li" id="LI_7841BAF13522423AAF19A91AC0C48C1E"> 什么土地利用在什么土壤类型上？</li><li purpose="li" id="LI_43AF4E971A9B4C80861FC0B082EE4AB4"> 什么井在废弃的军事基地中？</li></ul></p>              </td>            </tr>          </tbody><caption></caption></table></div></section></section>
+			
+				<hr>
+				<!--googleoff: all-->
+				
+	
+        
+		    <p class="feedback right">
+		        <a id="afb" class="icon-ui-contact" href="/feedback/" data-langlabel="feedback-on-this-topic" >有关此主题的反馈?</a>
+		    </p>
+        
+	
+
+				<!--googleon: all-->
+			
+		</main>
+	</div>
+	
+	<!--googleoff: all-->
+	
+		
+			<div id="main-toc-large" class="column-5">
+			    <div class="panel font-size--2 tablet-hide trailer-1">
+			      <h5 class="trailer-half">在本主题中</h5>
+			      <ol class="list-plain pre-0 trailer-0"><li><a href="#GUID-36946C81-96A6-4DEC-BB90-660A077F7A0E">配置门户以执行分析</a></li><li><a href="#ESRI_SECTION1_B36B505146B94EEEA296B37A2A1B3030">关于分析工具</a></li></ol>
+			    </div>
+			    
+			    
+	  		</div>
+		
+    
+   <!--googleon: all-->
+
+
+
+
+          
+        </div>
+        <!-- ENDPAGECONTENT -->
+
+      </div>
+
+    </div>  <!-- End of wrapper -->
+
+  <footer class="footer leader-3 link-dark-gray" role="contentinfo">
+    <div class="grid-container">
+      <div class="row">
+        <nav class="column-6">
+          <h6 data-langlabel="arcgis-for-server">Arc<span>GIS Enterprise</span></h6>
+          <ul class="list-plain">
+            <li><a data-langlabel="home" href="../../../../../zh-CN/">主页</a></li>
+            <li><a data-langlabel="portal" href="../../../../../zh-CN/portal/">Portal</a></li>
+            <li><a data-langlabel="server" href="../../../../../zh-CN/server/">Server</a></li>
+            <li><a data-langlabel="data-store" href="../../../../../zh-CN/data-store/">Data Stores</a></li>
+            <li><a data-langlabel="cloud" href="../../../../../zh-CN/cloud/">云</a></li>
+            <li><a data-langlabel="apps" href="../../../../../zh-CN/apps/">应用程序</a></li>
+            <li><a data-langlabel="documentation" href="../../../../../zh-CN/documentation/">文档</a></li>
+          </ul>
+        </nav>
+
+        
+  <nav class="column-6">
+    <h6 data-langlabel="arcgis-platform">ArcGIS 平台</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="arcgis" href="//www.arcgis.com/">ArcGIS Online</a></li>
+      <li><a data-langlabel="arcgis-for-professionals" href="//pro.arcgis.com/">ArcGIS Pro</a></li>
+      <li><a data-langlabel="arcgis-for-server" href="//enterprise.arcgis.com/">ArcGIS Enterprise</a></li>
+      <li><a data-langlabel="arcgis-for-developers" href="https://developers.arcgis.com/">ArcGIS for Developers</a></li>
+      <li><a data-langlabel="arcgis-solutions" href="//solutions.arcgis.com/">ArcGIS Solutions</a></li>
+      <li><a data-langlabel="arcgis-marketplace" href="//marketplace.arcgis.com/">ArcGIS Marketplace</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <h6 data-langlabel="about-esri">关于 Esri</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="about-us" href="//www.esri.com/about-esri/">关于我们</a></li>
+      <li><a data-langlabel="careers" href="//www.esri.com/careers/">招贤纳士</a></li>
+      <li><a data-langlabel="insiders-blog" href="https://www.esri.com/about/newsroom/blog/">Esri 博客</a></li>
+      <li><a data-langlabel="user-conference" href="//www.esri.com/events/user-conference/index.html">用户大会</a></li>
+      <li><a data-langlabel="developer-summit" href="//www.esri.com/events/devsummit/index.html">开发者峰会</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <a class="esri-logo" href="//www.esri.com/" aria-label="Esri Home"></a>
+    <section class="footer-social-nav leader-1">
+            <a class="icon-social-twitter" aria-label="Esri on Twitter" href="https://twitter.com/Esri/"></a>
+            <a class="icon-social-facebook" aria-label="Esri on Facebook" href="https://www.facebook.com/esrigis/"></a>
+            <a class="icon-social-github" aria-label="Esri on GitHub" href="//esri.github.io/"></a>
+            <a class="icon-social-contact" aria-label="Contact Esri" href="//www.esri.com/about-esri/contact/"></a>
+    </section>
+	  
+  </nav>
+  
+  <div class="column-24 leader-1">
+    <p class="font-size--3"><a href="http://www.esri.com/legal/copyright-trademarks">Copyright &copy; 2019 Esri.</a> All rights reserved. | <a href="http://www.esri.com/legal/privacy/">隐私政策</a> | <a href="http://www.esri.com/legal/software-license">法律声明</a></p>
+  </div>
+  
+
+
+      </div>
+    </div>
+  </footer>
+  <!--googleoff: all-->
+
+  
+  
+	<script src="../../../../../zh-CN/assets/js/init.js" type="text/javascript"></script>
+	<!--<script src="../../../../../zh-CN/assets/js/drop-down.js" type="text/javascript"></script>-->
+	<script src="../../../../../zh-CN/assets/js/search/searchform.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/cdn/js/link-modifier.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/cdn/js/sitewide.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/cdn/js/libs/highlight.pack.js" type="text/javascript"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+
+
+  
+    
+
+  <script src="../../../../../zh-CN/cdn/js/affix.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    $(function () {
+          var appendFlg = true;
+
+          $("#bigmac")
+          .on("affixed.bs.affix", function (evt) {
+            if (appendFlg) {
+              $("<a class='crumb' href='#'>配置门户以执行分析</a>").insertAfter ($("#bigmac nav a").last());
+              appendFlg = false;
+            }
+          })
+          .on ("affix-top.bs.affix", function(evt) {
+            if (!appendFlg) {
+              $("#bigmac nav a").last().remove();
+            }
+            appendFlg = true;
+          })
+    })
+  </script>
+  
+        <script type="text/javascript">
+          window.doctoc = {
+            pubID: "555",
+            tpcID: "258",
+            
+              prefix: "管理",
+              prefixUrl: "/zh-cn/portal/latest/administer/windows/",
+          
+            hideToc: false
+          }
+        </script>
+
+        <script type="text/javascript" src="../../../../../zh-CN/portal/latest/administer/windows/555.js" ></script>
+        <script type="text/javascript" src="../../../../../zh-CN/cdn/calcite/js/protoc.js" ></script>
+        
+        
+
+  <noscript>
+        <p>
+            <a href="flisting.htm">flist</a>
+        </p>
+    </noscript>
+    <script type="text/javascript"></script>
+  
+  
+    
+    
+
+  </body>
+</html>

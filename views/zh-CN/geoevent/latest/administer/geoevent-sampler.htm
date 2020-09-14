@@ -1,0 +1,544 @@
+
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>  <html class="ie lt-ie9 lt-ie8 lt-ie7 ie6" dir="ltr"> <![endif]-->
+<!--[if IE 7]>     <html class="ie lt-ie9 lt-ie8 ie7" dir="ltr"> <![endif]-->
+<!--[if IE 8]>     <html class="ie lt-ie9 ie8" dir="ltr"> <![endif]-->
+<!--[if IE 9]>     <html class="ie ie9" dir="ltr"> <![endif]-->
+<!--[if !IE]><!--> <html dir="ltr" lang="zh-CN"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>GeoEvent Sampler&mdash;管理 (10.8) | ArcGIS Enterprise 文档</title>
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+    <script>
+      var docConfig = {
+        locale: 'zh-CN'
+        ,localedir: 'zh-cn'
+        ,langSelector: ''
+        
+        ,relativeUrl: false
+        
+
+        ,searchformUrl: '/search/'
+        ,tertiaryNavIndex: ''
+
+        
+      };
+    </script>
+	 
+
+
+    
+    <!--[if lt IE 9]>
+      <script src="../../../../zh-CN/cdn/js/libs/html5shiv.js" type="text/javascript"></script>
+      <script src="../../../../zh-CN/cdn/js/libs/selectivizr-min.js" type="text/javascript"></script>
+      <script src="../../../../zh-CN/cdn/js/libs/json2.js" type="text/javascript"></script>
+      <script src="../../../../zh-CN/cdn/js/libs/html5shiv-printshiv.js" type="text/javascript" >
+
+    <![endif]-->
+
+     <!--[if lt IE 11]>
+    <script>
+      $$(document).ready(function(){
+        $$(".hideOnIE").hide();
+      });
+    </script>
+    <![endif]-->
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<link href="../../../../zh-CN/assets/img/favicon.ico" rel="shortcut icon" >
+	<link href="../../../../zh-CN/assets/css/screen.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/cdn/calcite/css/documentation.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/assets/css/print.css" media="print" type="text/css" rel="stylesheet" />
+
+	<!--
+	<link href="../../../../zh-CN/assets/css/screen_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/assets/css/documentation/base_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/assets/css/print_l10n.css" media="print" type="text/css" rel="stylesheet" />
+	-->
+	
+	
+		<script src="../../../../zh-CN/cdn/js/libs/jquery.1.9.1.min.js" type="text/javascript"></script>
+	
+	<script src="../../../../zh-CN/cdn/js/libs/jquery.cookie.js" type="text/javascript"></script>
+	<link href="../../../../zh-CN/cdn/css/colorbox.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/cdn/css/colorbox_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<script src="../../../../zh-CN/cdn/js/libs/jquery.colorbox-min.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/assets/js/video-init.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/assets/js/sitecfg.js" type="text/javascript"></script>
+	
+		<script src="../../../../zh-CN/assets/js/signIn.js" type="text/javascript"></script>
+	
+
+	<!--- Language Picker -->
+	<script src="../../../../zh-CN/assets/js/locale/l10NStrings.js" type="text/javascript"></script>
+	
+		 
+	
+
+	<script src="../../../../zh-CN/assets/js/calcite-web.js" type="text/javascript"></script>
+
+
+
+  <!--- search MD -->
+    <META name="description" content="GeoEvent Sampler 是 GeoEvent Manager 服务设计器中的一个实用程序，用于在发布的 GeoEvent 服务的元素流经时对固定数量的 GeoEvent 进行采样。"><META name="last-modified" content="2019-12-6"><META name="product" content="arcgis-server-windows,arcgis-server-linux,ext-server-geoevent,arcgis-enterprise-windows,arcgis-enterprise-linux"><META name="sub_category" content="GeoEvent"><META name="search-collection" content="help"><META name="content_type_label" content="帮助主题"><META name="sub_category_label" content="GeoEvent"><META name="search-category" content="help-general"><META name="subject_label" content="REAL-TIME FEEDS,服务,SERVER"><META name="version" content="10.8"><META name="content_type" content="Help Topic"><META name="subject" content="REAL-TIME FEEDS,SERVICES,SERVER"><META name="content-language" content="zh-cn">
+    <!--- search MD -->
+
+  
+      
+
+</head>
+
+<!--
+      pub: GUID-631A2EAC-D430-4669-BA75-17AFACC28D9B=16
+      tpc: GUID-722FFA93-D984-4BFD-987D-44BEBE7EF3D4=1
+      -->
+
+
+<!-- variable declaration, if any -->
+<!-- can change following macro to set variable once we are on Jinja 2.8 -->
+
+
+
+
+
+<body class="claro zh-CN server">
+  
+
+  <!-- Drawer location -->
+  <div class="drawer drawer-left js-drawer" data-drawer="top-nav">
+        <nav class="drawer-nav" role="navigation">
+          <aside class="side-nav">
+            <h2 class="side-nav-title">Arc<span>GIS</span> Enterprise</h2>
+            <form id="helpSearchForm" class="margin-left-half margin-right-half leader-half trailer-half drawer-search-form" method="GET">
+              <input type="search" name="q"  placeholder="搜索 GeoEvent Server 10.7 帮助">
+              <input type="hidden" name="collection" value="help" />
+              <input type="hidden" name="product" value="ext-server-geoevent" />
+              <input type="hidden" name="version" value="10.8" />
+              <input type="hidden" name="language" value="zh-CN" />
+            </form>    
+             <a id="nav-portal" data-langlabel="portal" href="../../../../zh-CN/portal/" class="side-nav-link">Portal</a>
+             
+            <a id="all-servers" data-langlabel="all-servers" href="../../../../zh-CN/server/" class="side-nav-link">所有服务器</a>
+            <a id="gis-server" data-langlabel="gis-server" href="../../../../zh-CN/server/" class="side-nav-link">GIS Server</a>
+            <a id="image-server" data-langlabel="image-server" href="../../../../zh-CN/image/" class="side-nav-link">Image Server</a>
+            <a id="geo-analytics-server" data-langlabel="geo-analytics-server" href="../../../../zh-CN/geoanalytics/" class="side-nav-link">GeoAnalytics Server</a>
+            <a id="geoevent-server" data-langlabel="geoevent-server" href="../../../../zh-CN/geoevent/" class="side-nav-link">GeoEvent Server</a>
+            <a id="notebook-server" data-langlabel="notebook-server" href="../../../../zh-CN/notebook/" class="side-nav-link">Notebook Server</a>
+            <a id="nav-data-store" data-langlabel="data-store" href="../../../../zh-CN/data-store/" class="side-nav-link">Data Stores</a>
+            <a id="nav-cloud" data-langlabel="cloud" href="../../../../zh-CN/cloud/" class="side-nav-link">云</a>
+            <a id="nav-apps" data-langlabel="apps" href="../../../../zh-CN/apps/" class="side-nav-link">应用程序</a>
+            <a id="nav-doc" data-langlabel="documentation" href="../../../../zh-CN/documentation/" class="side-nav-link">文档</a>
+
+          </aside>
+        </nav>
+    </div>
+
+    <!-- user navigation collapses to drawer on mobile -->
+    
+    <div class="drawer drawer-right js-drawer hide-if-logged-out logged-in-navigation" data-drawer="user-nav">
+      <nav class="drawer-nav">
+        <aside class="side-nav">
+          <a class="side-nav-link agolProfile" href="#">我的个人资料</a>
+          <a class="side-nav-link icon-ui-sign-out js-log-out" href="#">登出</a>
+        </aside>
+      </nav>
+    </div>
+    
+<!-- End of drawer -->
+
+  
+  <div class="wrapper">
+      <!--googleoff: all-->
+
+      <header class="top-nav" data-skin="learn">
+        <a class="skip-to-content" href="#skip-to-content">Skip To Content</a>
+        <div class="grid-container">
+          <div class="column-24">
+
+
+            <!--<div class="top-nav-title-wrapper text-center ">-->
+              <a href='../../../../zh-CN/' class="top-nav-title tablet-hide"><span>Arc</span>GIS  Enterprise</a>
+              <a href='../../../../zh-CN/' class="icon-ui-menu top-nav-title js-drawer-toggle tablet-show" data-drawer="top-nav"><span>Arc</span>GIS Enterprise</a>
+            <!--</div> -->
+
+          
+            <nav role="navigation" class="top-nav-list left tablet-hide">
+              <a id="nav-portal" data-langlabel="portal" href="../../../../zh-CN/portal/" class="top-nav-link">Portal</a>
+
+                <div class="dropdown js-dropdown ">
+                  <a class="top-nav-link js-dropdown-toggle" tabindex="0" aria-haspopup="true" aria-expanded="false" href="#">Servers</a>
+                  <nav class="dropdown-menu featured" role="menu">
+                    <ul class="dropdown-sublist-featured">
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/get-started/latest/windows/additional-server-deployment.htm" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path  d="M42.92 6.1H4.12v8.566l.833.832-.835.833-.018 7.332.845.847-.825.824V33.9h25v5.2h-2v1.075H8.02v.8h19.1v.925h4.8v-.925H40v-.8h-8.08V39.1h-2v-5.2h13v-8.566l-.834-.834.835-.834v-7.332l-.835-.834.835-.834zm-11.8 35h-3.2v-1.2h3.2zm11-8H4.92v-7.434l.767-.766h35.668l.765.766zm0-9.766l-.766.766H5.666l-.766-.767.017-6.669.766-.764h35.671l.766.766zm0-9l-.766.766H5.687l-.766-.766V6.9h37.2zM19 11.9h-2v-.8h2zm-4 0h-2v-.8h2zm-4 0H9v-.8h2zm6 8.2h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9zm8 9h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9z"/></svg></span>
+                          <span class="sublink-text">所有服务器</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/server/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M45.98 33.575a.616.616 0 0 0-.335-.51l-3.362-2.03 3.362-2.031a.556.556 0 0 0 0-1.02l-11.1-6.704a1.293 1.293 0 0 0-1.112 0L22.33 27.982a.556.556 0 0 0 0 1.02l3.36 2.03-3.358 2.03a.556.556 0 0 0-.002 1.021l3.322 2.006-3.324 2.008a.555.555 0 0 0 .002 1.017l11.102 6.703a1.25 1.25 0 0 0 1.11.002l11.104-6.706a.556.556 0 0 0 0-1.02l-3.32-2.006 3.318-2.004a.607.607 0 0 0 .335-.509zM33.837 21.97c.026-.01.286-.005.29-.005l10.814 6.53-10.8 6.523c-.028.01-.284.005-.294.006l-10.813-6.53zm11.105 16.636l-10.8 6.523a2.564 2.564 0 0 1-.295.006l-10.81-6.529 3.39-2.047 7.004 4.23a1.083 1.083 0 0 0 .557.131 1.101 1.101 0 0 0 .554-.13l7.01-4.233zM34.14 40.098a2.545 2.545 0 0 1-.294.006l-10.812-6.53 3.43-2.073 6.97 4.208a1.25 1.25 0 0 0 1.107-.001l6.966-4.206 3.431 2.073zM9 8H7V7h2zm8 8h-2v-1h2zm-4-8h-2V7h2zm4 0h-2V7h2zm-4 8h-2v-1h2zm7.316 11.1H3.9v-6.434l.766-.766h35.668l.766.766v2.12l.8.483v-2.935l-.826-.826.826-.845v-6.329l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9h16.88a2.632 2.632 0 0 1 .336-.8zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zm0 8v-5.668l.766-.766h35.668l.766.766v5.67l-.746.764H4.666zM15 24v-1h2v1zm-4 0v-1h2v1zm-2-8H7v-1h2zm-2 8v-1h2v1z"/></svg></span>
+                          <span class="sublink-text">GIS Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/image/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 8h-2V7h2zm-4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm8 8h-2v1h2zm-8 0H7v1h2zm4 9v-1h-2v1zm-4 0v-1H7v1zm8 0v-1h-2v1zm4 3.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V21h-.8v-.334l-.766-.766H4.666l-.766.766V27.1H21zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zm40.234 4v21.8H23.1V23.1zm-.8 16.366L39.466 44.1h2.868l1.766-1.766zm-20.2-9.932l5.634-5.634h-2.868L23.9 26.666zm6.2-5.068L24.466 30.1h2.868l2.766-2.766zM28.466 30.1H30.1v-1.634zm2.434 0h6.2v-6.2h-6.2zm-7 7h6.2v-6.2h-6.2zm7 0h6.2v-6.2h-6.2zm0 6.434l5.634-5.634h-2.868L30.9 40.666zm7-7l5.634-5.634h-2.868L37.9 33.666zm1.634-5.634H37.9v1.634zm-8.634 7v1.634l1.634-1.634zm.566 6.2h2.868l2.766-2.766v-2.868zm6.434-3.566l2.634-2.634H37.9zM35.466 44.1H37.1v-1.634zm2.434 0h.434l5.766-5.766V37.9h-2.434L37.9 41.666zm6.2-8.634L42.466 37.1H44.1zm0-4L38.466 37.1h2.868l2.766-2.766zm0-7.566h-6.2v6.2h6.2zm-20.2 0v1.634l1.634-1.634zm0 20.2h6.2v-6.2h-6.2zm20.2 0v-.634l-.634.634z"/></svg></span>
+                          <span class="sublink-text">Image Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/geoanalytics/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 16h-2v-1h2zm-8 8v-1H7v1zm8 0v-1h-2v1zM13 7h-2v1h2zm4 0h-2v1h2zM9 7H7v1h2zm21.45 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V27.9h-1.464l-.801-.8H41.1v-6.434l-.766-.766H4.666l-.766.766V27.1h27.15zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM13 24v-1h-2v1zm0-9h-2v1h2zm-4 0H7v1h2zm26.672 27.148A1.87 1.87 0 0 1 35.9 43a1.91 1.91 0 1 1-3.763-.222l-9.845-3.414A1.88 1.88 0 0 1 21 39.9a1.9 1.9 0 1 1 1.474-3.084l4.692-2.346A1.878 1.878 0 0 1 27.1 34a1.902 1.902 0 0 1 1.9-1.9 1.867 1.867 0 0 1 .781.191l3.788-5.05A1.88 1.88 0 0 1 33.1 26a1.9 1.9 0 1 1 3.491 1.026l4.889 4.888c-.069.056-.144.1-.21.162a3.986 3.986 0 0 0-.358.402l-4.883-4.883A1.889 1.889 0 0 1 35 27.9a1.867 1.867 0 0 1-.781-.191l-3.788 5.049a1.868 1.868 0 0 1 .437.965l9.204.614c-.018.11-.049.218-.058.33A3.93 3.93 0 0 0 40 35c0 .046.01.09.01.135l-9.185-.612A1.913 1.913 0 0 1 29 35.9a1.889 1.889 0 0 1-1.474-.716l-4.692 2.346a1.878 1.878 0 0 1 .066.47 1.9 1.9 0 0 1-.105.625c-.007.02-.022.036-.03.056l9.63 3.34a1.87 1.87 0 0 1 2.786-.505l5.415-4.437c.067.108.127.22.204.322a3.9 3.9 0 0 0 .292.306zM33.9 26a1.092 1.092 0 0 0 .43.872 1.12 1.12 0 0 0 1.42-.068A1.1 1.1 0 1 0 33.9 26zm-6 8a1.1 1.1 0 0 0 2.196.093 1.135 1.135 0 0 0-.426-.965A1.087 1.087 0 0 0 29 32.9a1.101 1.101 0 0 0-1.1 1.1zm-5.8 4a1.098 1.098 0 1 0-.06.362A1.101 1.101 0 0 0 22.1 38zm13 5a1.1 1.1 0 1 0-2.2 0 1.1 1.1 0 0 0 2.2 0zm10.8-8a1.9 1.9 0 1 1-3.8 0c0-.053.003-.105.007-.158A1.9 1.9 0 0 1 45.9 35zm-.8 0a1.1 1.1 0 0 0-2.196-.093 1.153 1.153 0 0 0 .216.752A1.1 1.1 0 0 0 45.1 35z"/></svg></span>
+                          <span class="sublink-text">GeoAnalytics Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/geoevent/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M13 8h-2V7h2zm4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm12.418 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826v2.117c-.259-.177-.53-.337-.8-.497v-1.288l-.766-.766H4.666l-.766.766V27.1h17.933c-.148.26-.283.53-.415.8zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM9 24v-1H7v1zm4-9h-2v1h2zm0 9v-1h-2v1zm-4-9H7v1h2zm8 9v-1h-2v1zm16.9 2h-.8v8.9H39v-.8h-5.1zm.1-3.901a11.9 11.9 0 1 0 11.9 11.9 11.914 11.914 0 0 0-11.9-11.9zm0 23a11.1 11.1 0 1 1 11.1-11.1 11.112 11.112 0 0 1-11.1 11.1z"/></svg></span>
+                          <span class="sublink-text">GeoEvent Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/notebook/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M22 27.1H3.9v-6.434l.766-.766h18.576a5.262 5.262 0 0 1 .83-.8H4.666l-.766-.766v-5.668l.766-.766h35.668l.766.766V18h.8v-5.666l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9H22zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zM9 8H7V7h2zm8 0h-2V7h2zm-4 0h-2V7h2zm2 16v-1h2v1zm-4 0v-1h2v1zm-4 0v-1h2v1zm0-8v-1h2v1zm8 0v-1h2v1zm-4 0v-1h2v1zm18.9 8.1h-1.8v1.8h1.8zm-.8 1h-.2v-.2h.2zm15.498-4.48a2.727 2.727 0 0 0-1.62-.5v-.02H27.25a3.154 3.154 0 0 0-3.15 3.15V38.1h-1.68a3.386 3.386 0 0 0-2.872 1.58 3.49 3.49 0 0 0-.157 3.419 3.241 3.241 0 0 0 2.954 1.801h15.161a3.404 3.404 0 0 0 3.394-3.4V26.9h5v-3.65a3.224 3.224 0 0 0-1.302-2.63zM22.345 44.1a2.44 2.44 0 0 1-2.23-1.341 2.706 2.706 0 0 1 .11-2.65A2.588 2.588 0 0 1 22.42 38.9h12.89a3.395 3.395 0 0 0 0 5.2zM40.1 23.192V41.5a2.6 2.6 0 1 1-2.6-2.6v-.8H24.9V23.25a2.352 2.352 0 0 1 2.35-2.35h13.795a3.183 3.183 0 0 0-.945 2.292zm5 2.908h-4.2v-2.908a2.274 2.274 0 0 1 1.44-2.18 1.944 1.944 0 0 1 1.791.259 2.423 2.423 0 0 1 .97 1.979zm-17.1 5h9v.8h-9zm0 3h7v.8h-7zm0-6h9v.8h-9zm4-3h5v.8h-5z"/></svg></span>
+                          <span class="sublink-text">Notebook Server</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+
+              <a id="nav-data-store" data-langlabel="data-store" href="../../../../zh-CN/data-store/" class="top-nav-link">Data Stores</a>
+              <a id="nav-cloud" data-langlabel="cloud" href="../../../../zh-CN/cloud/" class="top-nav-link">云</a>
+              <a id="nav-apps" data-langlabel="apps" href="../../../../zh-CN/apps/" class="top-nav-link">应用程序</a>
+            </nav>
+
+
+            
+            
+            
+
+            <div class="margin-left-1 top-nav-list right hide-if-logged-in logged-out-navigation">
+               
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+              
+              <a data-langlabel="sign-in" id="login-link" class="icon-ui-user top-nav-link link-blue login-link" href="#">登录</a>
+              
+            </div>
+
+            
+            <nav class="margin-left-1 top-nav-list right hide-if-logged-out logged-in-navigation">
+              
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+             
+              <div class="dropdown js-dropdown right">
+
+                <div class="tablet-show top-nav-link">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a href="#" data-drawer="user-nav" class="user-nav-name js-drawer-toggle" data-first-name></a>
+                </div>
+
+                <div class="tablet-hide top-nav-link js-dropdown-toggle">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a class="user-nav-name top-nav-dropdown dropdown-btn" data-first-name>&nbsp;</a>
+                </div>
+
+                <nav class="dropdown-menu dropdown-right">
+                
+                  <a class="dropdown-link agolProfile" id="agolProfile" href="#">我的个人资料</a>
+                  <a class="dropdown-link js-log-out" id="agolLogout" href="#">登出</a>
+                </nav>
+              </div>
+            </nav>
+            
+
+            
+          </div>
+        </div>
+      </header>
+
+      <div class="js-search search-overlay">
+        <div class="search-content" role="dialog" aria-labelledby="search">
+          <form method="GET" id="helpSearchForm">
+            <label>
+              搜索 GeoEvent Server 10.7 帮助
+              <div class="search-bar">
+                <input type="search" name="q"  placeholder="搜索 GeoEvent Server 10.7 帮助" class="search-input js-search-input">
+                <input type="hidden" name="collection" value="help" />
+                <input type="hidden" name="product" value="ext-server-geoevent" />
+                <input type="hidden" name="version" value="10.8" />
+                <input type="hidden" name="language" value="zh-CN" />
+              </div>
+            </label>
+            <input type="hidden" name="relativePath" value="../../../../" /><button type="submit" class="btn btn-large right">搜索</button>
+          </form>
+        </div>
+      </div>
+
+      <!--googleon: all-->
+
+      <div id="skip-to-content">
+        <!--googleoff: all-->
+        <header class="sub-nav sub-nav-learn">
+          <div class="grid-container">
+            
+            <div class="column-24">
+              <div style="display:table;" class="sdk-home-banner">
+                <div class="sdk-home-banner-content">
+                  <h1 class="sub-nav-title link-white">GeoEvent Server</h1>
+                </div>
+              </div>
+            </div>
+
+            <div class="column-24">
+              <nav class='sub-nav-list tablet-hide'><a class="sub-nav-link" href="../../../../zh-CN/geoevent/" target="_top" title="GeoEvent Server 概述和文档">主页</a><a class="sub-nav-link" href="../../../../zh-CN/geoevent/latest/get-started/" target="_top" title="GeoEvent Server 入门">入门</a><a class="sub-nav-link" href="../../../../zh-CN/geoevent/latest/process-event-data/" target="_top" title="过滤和处理事件数据流，以关注最感兴趣的要素">处理事件数据</a><a class="sub-nav-link is-active" href="../../../../zh-CN/geoevent/latest/administer/" target="_top" title="管理 GeoEvent Server">管理</a></nav><select class='tablet-show select-full trailer-half js-select-nav'><option value="../../../../zh-CN/geoevent/">主页</option><option value="../../../../zh-CN/geoevent/latest/get-started/">入门</option><option value="../../../../zh-CN/geoevent/latest/process-event-data/">处理事件数据</option><option selected="true" value="../../../../zh-CN/geoevent/latest/administer/">管理</option></select>
+            </div>
+
+          </div>
+        </header>
+        <!--googleon: all-->
+       
+        <!-- content goes here -->
+        <div class="grid-container ">
+          
+
+            
+              
+  <!--BREADCRUMB-BEG--><div id="bigmac" class="sticky-breadcrumbs trailer-2" data-spy="affix" data-offset-top="180"> </div><!--BREADCRUMB-END-->
+  <!--googleoff: all-->
+    <div class="column-5 tablet-column-12 trailer-2 ">
+      <aside class="js-accordion accordion reference-index" aria-live="polite" role="tablist">
+        <div></div>
+      </aside>
+
+      <div class="js-sticky scroll-show tablet-hide leader-1 back-to-top" data-top="0" style="top: 0px;">
+        <a href="#" class="btn btn-fill btn-clear">返回顶部</a>
+      </div>
+    </div>
+  <!--googleon: all-->
+  
+            
+            
+            
+	
+		<div class="column-13  pre-1 content-section">
+	
+		<header class="trailer-1"><h1>GeoEvent Sampler</h1></header>
+
+		 
+	<!--googleoff: all-->
+	
+		
+				<aside id="main-toc-small" class="js-accordion accordion tablet-show trailer-1">
+			      <div class="accordion-section">
+			        <h4 class="accordion-title">在本主题中</h4>
+			        <div class="accordion-content list-plain">
+			          <ol class="list-plain pre-0 trailer-0"><li><a href="#ESRI_SECTION1_769D1B267A014FD3965EEECA0A471753">什么是 GeoEvent Sampler？</a></li><li><a href="#ESRI_SECTION1_521275062F3743EE9A80834981134D1F">启用 GeoEvent Sampler</a></li><li><a href="#ESRI_SECTION1_C92BBAE99F7D49FBBB9B96520C311F7E">开始采样 GeoEvent</a></li><li><a href="#ESRI_SECTION1_524018E7EAB74DAAA077D2C3C5D6F572">可视化已采样的 GeoEvent</a></li><li><a href="#ESRI_SECTION1_6C146E4FFC944D28A37E9D8BB3D93CE6">比较两条路径的 GeoEvent</a></li><li><a href="#ESRI_SECTION1_FA2BD5A765814070AE2CF9EAE43D7319">GeoEvent 采样注意事项和限制</a></li></ol>
+			        </div>
+			      </div>
+			     </aside>
+		
+    
+   <!--googleon: all-->
+
+
+		<main>
+			
+	
+    	
+    
+
+
+			
+<section class="section1 padded-anchor" id="ESRI_SECTION1_769D1B267A014FD3965EEECA0A471753" purpose="section1"><h2>什么是 GeoEvent Sampler？</h2><p id="GUID-2762F174-ADF9-431C-9A24-12F63494365C">可以通过多种类型的协议（HTTP、WebSocket、TCP 等）以各种数据格式（文本、JSON、GeoJSON 等）接收实时数据。在指示将 GeoEvent 写入要素图层以在 Web 地图中查看之前，能够直接在 GeoEvent Manager 中验证和探索事件数据（<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/geoevent/latest" href="../../../../zh-CN/geoevent/latest/get-started/essential-geoevent-server-vocabulary.htm#ESRI_SECTION1_76DCB1BA3F844989BE90B2025717CA72">GeoEvent</a>），这特别有用。GeoEvent Sampler 是 GeoEvent Manager 服务设计器中的一个实用程序，用于在发布的 GeoEvent 服务的元素（输入、输出、过滤器和处理器）流经时对固定数量的 GeoEvent 进行采样。经采样的 GeoEvent 可以在采样器窗口中以经过修饰的 JSON 或分隔文本形式进行查看。经采样的 GeoEvent 可以更早、更深刻地洞察实时事件数据，并有助于对 GeoEvent 服务中的不同路径进行设计、验证和故障排除。</p><p id="GUID-9D656A99-6E2F-42DB-B66A-ABE714FD3D10">与随 GeoEvent Server 安装的独立 Windows 应用程序 <a class="xref xref" href="../../../../zh-CN/geoevent/latest/administer/geoevent-logger.htm">GeoEvent Logger</a> 和 <a class="xref xref" href="../../../../zh-CN/geoevent/latest/administer/geoevent-simulator.htm">GeoEvent Simulator</a> 不同，GeoEvent Sampler 是 GeoEvent Manager 中服务设计器中的实用程序。通过切换服务设计器底部的实用程序，可以从任何新的或现有 GeoEvent 服务访问 GeoEvent Sampler。以下是对 GeoEvent Sampler 提供的主要功能的说明。</p><img purpose="img" placement="inline" alt="服务设计器中的 GeoEvent Sampler 实用程序" title="服务设计器中的 GeoEvent Sampler 实用程序" src="GUID-B2FEE37B-119B-45BE-920D-50810343E84E-web.png"><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><thead><tr><th colspan="1" width="25%">属性或功能</th><th colspan="1">描述</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1">							<p id="GUID-184A2F6D-0486-4C58-993C-462B265163FB">1 - 启用/禁用</p>						</td><td outputclass="" purpose="entry" rowspan="1" colspan="1">							<p id="GUID-D7AE2015-9B17-4067-A6BF-23ED851C8A82"><span class="uicontrol">启用</span>和<span class="uicontrol">禁用</span>用于针对已发布的 GeoEvent 服务的两个元素之间的选定路径启动和停止 GeoEvent Sampler。GeoEvent Sampler 默认情况下处于禁用状态，必须将其启用才能在选定路径上对 GeoEvent 进行采样。</p>							<ul purpose="ul" id="UL_5EE2DC73CD894892A31F787DE11862D9">								<li purpose="li" id="LI_16DAE12A613741DA943D6538CE2DE694"><span class="uicontrol">启用</span> - 将启用 GeoEvent Sampler。选择已发布的 GeoEvent 服务中两个元素之间的路径后，通过 GeoEvent 服务流式传输的 GeoEvent 将显示在采样器窗口中。</li>								<li purpose="li" id="LI_7664746DF16A4582B47C33A35A68AF3F"><span class="uicontrol">禁用</span> - 将禁用 GeoEvent Sampler。通过发布的 GeoEvent 服务流式传输的 GeoEvent 不会显示在采样器窗口中。任何现有事件记录都将保留在窗口中，直到手动将其清除，或者刷新 <span class="uicontrol">GeoEvent 服务</span>。如果禁用采样，则单击 GeoEvent 服务中的路径将不会显示任何事件数据。</li>							</ul>							<p id="GUID-9B95DA97-1BC5-47AE-AF95-35D62023EBEF">有关启用 GeoEvent Sampler 的详细信息，请参阅下方的<a class="xref xref" href="../../../../zh-CN/geoevent/latest/administer/geoevent-sampler.htm#ESRI_SECTION1_521275062F3743EE9A80834981134D1F">启用 GeoEvent Sampler</a>。</p>						</td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1">							<p id="GUID-F4CCDAAC-40D6-4BD9-9994-178AAFF7AA8A">2 - 选择路径</p>						</td><td outputclass="" purpose="entry" rowspan="1" colspan="1">							<p id="GUID-3CA02CAF-1ABA-4EAD-B3E3-4E142F670B47">GeoEvent 服务中所选路径的名称。仅在采样器窗口中显示所选路径的事件数据。可以在已发布的 GeoEvent 服务中选择输入、输出、过滤器或处理器元素之间的任何路径。</p>							<p id="GUID-F2152AB7-C378-4A72-83F7-0E36AF21D591">所选路径的名称显示为已连接元素名称的串连形式。路径名称的几个示例包括：</p>							<ul purpose="ul" id="UL_3C1C51F91CDF4FD085F84AB3D3903ED4">								<li purpose="li" id="LI_34889B3D39BB4EE39620A0478652D1FD">输入连接器到输出连接器</li>								<li purpose="li" id="LI_C19693BBB6AE4ECFA589CF5C59A66AFA">字段映射器到方位角计算器</li>								<li purpose="li" id="LI_0AF76A8749224C60BF93F5BBBF7C4B83">过滤器“速度&gt; 80” 到 Change_Status_Speeding_Field_Calculator</li>								<li purpose="li" id="LI_F118AC45B40C414FB91E1F5C19CE9200">Hurricane_Warning 到 Email_FieldCrewA</li>							</ul>							<div class="panel trailer-1 note" id="GUID-B45DE60B-AD5E-4B09-8DA7-CEB4D045213E"><h5 class="icon-ui-comment trailer-0">注：</h5>								<p id="GUID-7FDBBAA0-9CC4-4F5A-87E3-62D9A64D731B">启用 GeoEvent Sampler 并选择了 GeoEvent 服务中两个元素之间的路径后，将显示所选路径的名称。</p>							</div>						</td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1">							<p id="GUID-5ED9D0FC-1124-4C7E-B452-08D64FFA2180">3 - GeoEvent Sampler 实用程序</p>						</td><td outputclass="" purpose="entry" rowspan="1" colspan="1">							<p id="GUID-3090294B-606A-450C-84BE-51AF96E9B130">单击切换按钮以在服务设计器中显示或隐藏 GeoEvent Sampler。</p>							<p id="GUID-95126C6F-7EA2-49EC-90FB-12D490C332C0">有关启用 GeoEvent Sampler 的详细信息，请参阅下方的<a class="xref xref" href="../../../../zh-CN/geoevent/latest/administer/geoevent-sampler.htm#ESRI_SECTION1_521275062F3743EE9A80834981134D1F">启用 GeoEvent Sampler</a>。</p>						</td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1">							<p id="GUID-48B50D45-420B-433E-A78E-96C91BFFF5C4">4 - 刷新</p>						</td><td outputclass="" purpose="entry" rowspan="1" colspan="1">							<p id="GUID-1FFE1C79-C4F5-4181-B182-43F20F3F54B2">使用<span class="uicontrol">刷新</span>可清除当前已采样的 GeoEvent，并对所选路径中的另一组进行采样。</p>							<p id="GUID-AEBB07EE-18DC-46BE-A392-DF613624335A">刷新后，将对另一组 GeoEvent 进行采样，直到达到<span class="uicontrol">采样大小设置</span>。例如，如果将<span class="uicontrol">采样大小</span>设置为 <span class="uicontrol">10</span> 然后刷新，则当前 GeoEvent 将被清除，而在采样器窗口中显示另外 10 个样本。</p>							<p id="GUID-559C7826-5237-436E-BF01-2A3B4B2F44CC">如果要比较两条路径，<span class="uicontrol">刷新</span>功能可清除每条路径的 GeoEvent，然后再次对每条路径进行采样。有关比较两条路径的详细信息，请参阅下方的<a class="xref xref" href="../../../../zh-CN/geoevent/latest/administer/geoevent-sampler.htm#ESRI_SECTION1_6C146E4FFC944D28A37E9D8BB3D93CE6">比较两条路径的 GeoEvent</a>。</p>						</td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1">							<p id="GUID-36E224B6-428A-476C-8BB7-3AAC2111B06A">5 - 清除</p>						</td><td outputclass="" purpose="entry" rowspan="1" colspan="1">							<p id="GUID-02CB647C-0317-40CD-96BC-1DD1D16BAA17">使用<span class="uicontrol">清除</span>可从采样器窗口中删除已采样的 GeoEvent。</p>							<p id="GUID-A1FC50DB-A231-453F-9555-77E6DAA5A7DC">清除之后，将继续从选定路径中采样 GeoEvent，直到达到<span class="uicontrol">采样大小设置</span>。例如，如果将<span class="uicontrol">采样大小</span>设置为 <span class="uicontrol">10</span> 并且在对 3 个 GeoEvent 进行采样后清除，采样器将清除 3 个 GeoEvent，并继续对其余 7 个 GeoEvent 进行采样。</p>							<p id="GUID-34CF010E-7787-45F2-868B-22AB6E593DFC">如果对两条路径进行比较，<span class="uicontrol">清除</span>对于每条路径均可用。有关比较两条路径的详细信息，请参阅下方的<a class="xref xref" href="../../../../zh-CN/geoevent/latest/administer/geoevent-sampler.htm#ESRI_SECTION1_6C146E4FFC944D28A37E9D8BB3D93CE6">比较两条路径的 GeoEvent</a>。</p>							<div class="panel trailer-1 note" id="GUID-2C6A0C37-3DBF-41B8-AF25-FF372695B379"><h5 class="icon-ui-comment trailer-0">注：</h5>								<p id="GUID-30EC858C-5B01-499B-83F5-B7F57E6578D4">只有至少对一个 GeoEvent 进行采样之后，才能清除采样器窗口。</p>							</div>						</td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1">							<p id="GUID-EFF074B1-CFE5-42E0-97AA-2D9B7D59B646">6 - 在事件查看器中查看</p>						</td><td outputclass="" purpose="entry" rowspan="1" colspan="1">							<p id="GUID-D32BD46B-AE9A-4F5F-8D0C-7DB471C31DDF">使用<span class="uicontrol">在事件查看器中查看</span>在网络地图查看器中可视化采样的 GeoEvent 的几何。</p>							<p id="GUID-AF233231-53DB-4DA2-8A7D-05113078004B"><span class="uicontrol">事件查看器</span>仅显示采样器窗口中当前显示的已采样 GeoEvent 的几何。<span class="uicontrol">事件查看器</span>打开后，将不会显示任何新采样的 GeoEvent。在所需数量的 GeoEvent 采样完成并显示在采样器窗口中后打开<span class="uicontrol">事件查看器</span>。</p>							<div class="panel trailer-1 note" id="GUID-2EE2CDA3-1777-479F-AF0E-3A477E0BC022"><h5 class="icon-ui-comment trailer-0">注：</h5>								<p id="GUID-92695CC8-A6EA-4607-9BC6-E27CB69DF49B">仅当 GeoEvent 的几何具有在其 GeoEvent 定义中标记为 <span class="uicontrol">GEOMETRY</span> 的字段时，才可以在<span class="uicontrol">事件查看器</span>中查看已采样的 GeoEvent。此外，已采样的 GeoEvent 必须采用 JSON 数据类型格式，不支持以文本形式查看。</p>							</div>						</td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1">							<p id="GUID-D948FBC4-D14C-4B82-8676-B21999D377AE">7 - 复制到剪贴板</p>						</td><td outputclass="" purpose="entry" rowspan="1" colspan="1">							<p id="GUID-9865C5A9-1D92-4AD0-8833-DE0ECF38F9B1">使用<span class="uicontrol">复制到剪贴板</span>可将当前显示在采样器窗口中的 GeoEvent 复制到系统剪贴板。然后，可以将复制的 GeoEvent 粘贴到单独的文本文件或文本编辑器中，以进行存储或进一步查看。</p>							<p id="GUID-F9ABC518-9B63-427D-BE9C-7417FF28AA29">如果对两条路径进行比较，<span class="uicontrol">复制到剪贴板</span>对于每条路径均可用。有关比较两条路径的详细信息，请参阅下方的<a class="xref xref" href="../../../../zh-CN/geoevent/latest/administer/geoevent-sampler.htm#ESRI_SECTION1_6C146E4FFC944D28A37E9D8BB3D93CE6">比较两条路径的 GeoEvent</a>。</p>							<div class="panel trailer-1 note" id="GUID-DF8180BD-4E41-4E8C-BCFD-458F0E8D6307"><h5 class="icon-ui-comment trailer-0">注：</h5>								<p id="GUID-648C1742-3C33-4DFB-8C57-3BE16C07A677">GeoEvent 将以<span class="uicontrol">数据类型</span>设置中定义的数据类型格式（<span class="uicontrol">文本</span>或 <span class="uicontrol">JSON 格式</span>）进行复制。数据类型格式可以在<span class="uicontrol">设置</span>中进行更改。</p>							</div>						</td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1">							<p id="GUID-22E47984-9794-4DE6-A65F-5B1DC4220B06">8 - 设置</p>						</td><td outputclass="" purpose="entry" rowspan="1" colspan="1">							<p id="GUID-E92A5AB9-E3BD-4644-8A52-17743D00200C">访问用于采样 GeoEvent 的设置，包括<span class="uicontrol">数据类型</span>和<span class="uicontrol">采样大小</span>。</p>							<ul purpose="ul" id="UL_1BAFC2D53A764AA193D3C595769341F0">								<li purpose="li" id="LI_5A5AC3603D524CB7A2F9884A0E3CE143"><span class="uicontrol">数据类型</span> - 指定已采样的 GeoEvent 的格式，修饰的 <span class="uicontrol">JSON 格式</span> 或分隔的<span class="uicontrol">文本</span>。默认值为 <span class="uicontrol">JSON</span>。</li>								<li purpose="li" id="LI_5C1E8B1ADABE42AF9E9E9E302DCA8F82"><span class="uicontrol">采样大小</span> - 指定要从选定路径中采样的 GeoEvent 的数量。采样大小可以设置为 <span class="uicontrol">1</span>、<span class="uicontrol">10</span> 或 <span class="uicontrol">100</span> 个 GeoEvent。默认值为 <span class="uicontrol">10</span>。</li>							</ul>						</td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1">							<p id="GUID-880E87B2-267C-4A09-84E6-92C107EDE8D7">9 - 采样器窗口</p>						</td><td outputclass="" purpose="entry" rowspan="1" colspan="1">							<p id="GUID-082C8428-4C81-4DDD-96AB-463D891950CB">从选定路径采样的 GeoEvent 将显示在采样器窗口中。</p>							<p id="GUID-4D531FEC-63C7-47CE-8F31-FCF4CE0369F1">已采样的 GeoEvent 将显示为 JSON 或文本，具体取决于<span class="uicontrol">数据类型设置</span>中指定的数据类型格式。</p>						</td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1">							<p id="GUID-1837A290-571B-4F9E-AFC5-380120612A8B">10 - 事件计数器</p>						</td><td outputclass="" purpose="entry" rowspan="1" colspan="1">							<p id="GUID-2B32697E-4DED-4336-865C-1BCFD2FDD9A0">事件计数器显示在选定路径上采样的 GeoEvent 的数量。采样的 GeoEvent 数量将永远不会超过<span class="uicontrol">采样大小</span>设置。例如，<span class="shortcut">3/10</span> 表示已采样了 3 个 GeoEvent（最多 10 个）。</p>							<div class="panel trailer-1 note" id="GUID-2497B3AB-F661-45AA-B83A-C3EEEC37CFFC"><h5 class="icon-ui-comment trailer-0">注：</h5>								<p id="GUID-F1D0F961-4A35-4EEE-A843-1A271931AC06">如果选择了新路径或已对采样进行刷新，则事件计数器将重置为 0。</p>							</div>						</td></tr></tbody><caption></caption></table></div></section><section class="section1 padded-anchor" id="ESRI_SECTION1_521275062F3743EE9A80834981134D1F" purpose="section1"><h2>启用 GeoEvent Sampler</h2><p id="GUID-F8DAC7E3-E8ED-4D5E-9E02-31D486DF65F3">GeoEvent 可以从已发布的 GeoEvent 服务中的输入、输出、过滤器或处理器元素之间的路径（或连接）实时采样和显示。要开始使用 GeoEvent Sampler，请打开 GeoEvent Manager，然后创建新 GeoEvent 服务或打开现有 GeoEvent 服务。有关创建新 GeoEvent 服务的详细信息，请参阅
+<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/geoevent/latest" href="../../../../zh-CN/geoevent/latest/process-event-data/creating-a-geoevent-service.htm">创建 GeoEvent 服务</a>。</p><p id="GUID-83A5EF3E-4B8F-4D25-A435-B31AF58A4D4E">要在服务设计器中访问和启用 GeoEvent Sampler，请参考以下步骤。</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_626B3AF709AE45A6B276ADEF7CDDDE9A"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_9C3524FF59EE49038718580941048859"><span purpose="cmd">打开已发布的 GeoEvent 服务，并确保其正在接收 GeoEvent。</span></li><li purpose="step" id="ESRI_STEP_3105B5855DE944D984B1DB0B241F3188"><span purpose="cmd">请单击服务设计器底部的 <img purpose="img" placement="inline" alt="GeoEvent Sampler 切换" title="GeoEvent Sampler 切换" src="GUID-C8F49FBA-ADCB-4ABF-9A03-DA6FC7076105-web.png">，以打开 GeoEvent Sampler。</span></li><li purpose="step" id="ESRI_STEP_6DAE50D6B7024B1DA838A1DDCB053B19"><span purpose="cmd">请单击 <img purpose="img" placement="inline" alt="GeoEvent Sampler 设置" title="GeoEvent Sampler 设置" src="GUID-8A1DA39D-9001-4B59-9960-9282D767840F-web.png"> 以打开 GeoEvent Sampler 的<span class="uicontrol">设置</span>，并指定所需的<span class="uicontrol">数据类型</span>和<span class="uicontrol">采样大小</span>。默认数据类型为 <span class="uicontrol">JSON 格式</span>，默认采样大小为 <span class="uicontrol">10</span> 个 GeoEvent。</span></li><li purpose="step" id="ESRI_STEP_1C02452C71EB40A99B0E46B845B8D07E"><span purpose="cmd">请单击 <img purpose="img" placement="inline" alt="启用 GeoEvent Sampler" title="启用 GeoEvent Sampler" src="GUID-E31B9CAB-955D-4B28-8126-EC1E7552B408-web.png"> 以启动 GeoEvent Sampler。</span></li></ol></div></section><div class="panel trailer-1 note" id="GUID-A8C720EB-2FBD-4BA0-B606-2607D3DE0B0D"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-6D3C2814-4453-4BE9-83C5-C0C8CBD7DB53">要启动 GeoEvent Sampler，您还可以通过右键单击已发布的 GeoEvent 服务中两个元素之间的路径并选择<span class="uicontrol">样本路径</span>。GeoEvent Sampler 将打开，并且将在所选路径上开始 GeoEvent 采样。</p></div></section><section class="section1 padded-anchor" id="ESRI_SECTION1_C92BBAE99F7D49FBBB9B96520C311F7E" purpose="section1"><h2>开始采样 GeoEvent</h2><p id="GUID-8F7FD191-438B-4E5C-A40F-23F8488FFFFB">要开始对 GeoEvent 进行采样，请在 GeoEvent Sampler 打开并启用的情况下，选择输入、输出、过滤器或处理器元素之间的路径。</p><p id="GUID-5F96913B-128F-43B7-88C8-319AC3835DFD">要对 GeoEvent 服务中的路径采样 GeoEvent，请创建新的已发布 GeoEvent 服务或打开现有已发布 GeoEvent 服务，确保其正在主动接收 GeoEvent，然后按照以下步骤操作。</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_DD6168D0DA6E4CB1B6DE7324EEC5E6CF"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_DA5018A9E92B4DA386CC2FD253BFE571"><span purpose="cmd">确保 GeoEvent 采样已在服务设计器中打开并启用。</span></li><li purpose="step" id="ESRI_STEP_578CED89347C492A884FBA0C330BFE24"><span purpose="cmd">左键单击已发布的 GeoEvent 服务中的一条路径，以开始对该路径上的 GeoEvent 进行采样。<img purpose="img" placement="inline" alt="GeoEvent 服务中的示例选定路径" title="GeoEvent 服务中的示例选定路径" src="GUID-EC7983B4-930B-4D70-B516-C32C44A2C420-web.png"></span></li><div class="stepinfo" purpose="stepinfo"><div class="panel trailer-1 note" id="GUID-534FB8AB-DDA6-4627-AC3D-B0EACD280B3D"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-B392A924-ED42-4A37-B754-FC6A57D11CD9">也可以通过右键单击路径并从菜单中选择<span class="uicontrol">样本路径</span>来启动 GeoEvent Sampler。如果之前尚未打开并启用 GeoEvent Sampler，则 GeoEvent Sampler 将打开、启用并立即从所选路径开始采样 GeoEvent。</p></div>当实时数据流过 GeoEvent 服务时，采样器窗口将在处理过程中显示来自所选路径的 GeoEvent 的样本。已采样的 GeoEvent将显示为<span class="uicontrol">文本</span>或 <span class="uicontrol">JSON 格式</span>，具体取决于<span class="uicontrol">数据类型</span>中的设置。显示的已采样 GeoEvent 总数取决于<span class="uicontrol">采样大小</span>设置。可以在事件采样计数器中看到已采样 GeoEvent 的数量。</div><li purpose="step" id="ESRI_STEP_B93C163658A0458B9DE5819C1EF924BA"><span purpose="cmd"> （可选）可以通过单击 <img purpose="img" placement="inline" alt="复制到剪贴板" title="复制到剪贴板" src="GUID-4D445177-1F5B-411E-A3B8-512A3574A073-web.png"> <span class="uicontrol">复制到剪贴板</span>从采样器窗口中复制当前 GeoEvent 示例。</span></li><li purpose="step" id="ESRI_STEP_2C728E00F314425FADCA8263609EC30D"><span purpose="cmd"> （可选）可以通过单击 <img purpose="img" placement="inline" alt="清除" title="清除" src="GUID-6BC29AFE-D77E-4658-A47D-FF9BB60F6D94-web.png"> <span class="uicontrol">清除</span>将当前 GeoEvent 示例从采样器窗口中清除。</span></li><li purpose="step" id="ESRI_STEP_A73007F8FB4D46809FECC353411C02E2"><span purpose="cmd">（可选）可以通过单击 <img purpose="img" placement="inline" alt="刷新" title="刷新" src="GUID-5BBA7C63-6E9B-4B62-9ADE-6D88F9164FA5-web.png"> <span class="uicontrol">刷新</span>再次采样所选路径。</span></li></ol></div></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_524018E7EAB74DAAA077D2C3C5D6F572" purpose="section1"><h2>可视化已采样的 GeoEvent</h2><p id="GUID-D7FB47FD-153A-4796-B0B9-EA604A0D2742">GeoEvent Sampler 的主要目的是在已发布的 GeoEvent 服务中对其进行处理时，以文本或 JSON 格式实时提供 GeoEvent 样本。GeoEvent Sampler 还包括一个事件查看器，它是一个网络地图查看器，可用于可视化和验证已处理的 GeoEvent 的几何。</p><p id="GUID-8F10201E-E995-4D24-962D-F80EEA380751">要在事件查看器中可视化已采样的 GeoEvent，请创建新的已发布 GeoEvent 服务或打开现有已发布 GeoEvent 服务，确保其正在主动接收 GeoEvent，然后执行以下步骤。</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_5495F7F5A42B4B3288515633DFF8472E"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_A0C87685F1DF4A0B9AABAD56CB8B1F27"><span purpose="cmd">确保已在服务设计器中打开并启用 GeoEvent Sampler。</span></li><li purpose="step" id="ESRI_STEP_5494ADCD4DB342288AA65DF56600E671"><span purpose="cmd">请单击 <img purpose="img" placement="inline" alt="GeoEvent Sampler 设置" title="GeoEvent Sampler 设置" src="GUID-8A1DA39D-9001-4B59-9960-9282D767840F-web.png"> 并确认已将<span class="uicontrol">数据类型</span>设置为 <span class="uicontrol">JSON 格式</span>。</span></li><li purpose="step" id="ESRI_STEP_BE8B4919C53E45F6B51198D3B10A7F77"><span purpose="cmd">左键单击已发布的 GeoEvent 服务中的一条路径，以开始对所选路径上的 GeoEvent 进行采样。</span></li><div class="stepinfo" purpose="stepinfo"><div class="panel trailer-1 note" id="GUID-CD7AD5CE-BED3-453C-B980-6B7F2A01FF40"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-9E38A7CA-3FD4-49ED-9576-8EAB3B4FC9AD">（可选）右键单击路径，然后从菜单中选择<span class="uicontrol">样本路径</span>以开始采样 GeoEvent。</p></div></div><li purpose="step" id="ESRI_STEP_0BF5249F3B9D4D3B89496C2D8F13A035"><span purpose="cmd">在采样器窗口中将 GeoEvent 样本显示为 JSON 后，单击 <img purpose="img" placement="inline" alt="在事件查看器中查看" title="在事件查看器中查看" src="GUID-603D201D-C01D-4780-9DE6-66012B39C2E7-web.png"> 以在<span class="uicontrol">事件查看器</span>中查看 GeoEvent。</span></li><div class="stepinfo" purpose="stepinfo"><div class="panel trailer-1 note" id="GUID-C59CBA85-558B-48C4-B543-D4D7503AE3D7"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-161154F8-4482-4564-B506-E3F616972587"><span class="uicontrol">事件查看器</span>仅支持采样 <span class="uicontrol">JSON</span> 格式的 GeoEvent，其中包含在相应 GeoEvent 定义中标记为 <span class="uicontrol">GEOMETRY</span> 的几何字段。如果采样的 GeoEvent 格式为<span class="uicontrol">文本</span>并且没有标记为 <span class="uicontrol">GEOMETRY</span> 的几何字段，则<span class="uicontrol">在事件查看器中查看</span>将被禁用。</p></div> </div><li purpose="step" id="ESRI_STEP_8BF88D873EE14528BD12A45FCC5C490B"><span purpose="cmd">浏览<span class="uicontrol">事件查看器</span>中的已采样 GeoEvent。<img purpose="img" placement="inline" alt="在事件查看器中查看的 GeoEvent" title="在事件查看器中查看的 GeoEvent" src="GUID-C48C5E3A-BA98-4102-9828-87172B845DE8-web.png"></span></li><div class="stepinfo" purpose="stepinfo"><span class="uicontrol">事件查看器</span>仅显示当前一组已采样的 GeoEvent。要显示另一组已采样的 GeoEvent，请关闭<span class="uicontrol">事件查看器</span>，单击<b>刷新</b>，然后再次单击<span class="uicontrol">在事件查看器中查看</span>查看另一组已采样的 GeoEvent。</div><li purpose="step" id="ESRI_STEP_F0255977F54D41BB928B5F34D581F810"><span purpose="cmd">在<span class="uicontrol">事件查看器</span>中，左键单击 GeoEvent，将显示一个包含属性信息的弹出窗口。<img purpose="img" placement="inline" alt="在事件查看器弹出窗口中查看的 GeoEvent 属性数据" title="在事件查看器弹出窗口中查看的 GeoEvent 属性数据" src="GUID-4AB08755-5FA2-4326-8046-655E8166D948-web.png"></span></li></ol></div></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_6C146E4FFC944D28A37E9D8BB3D93CE6" purpose="section1"><h2>比较两条路径的 GeoEvent</h2><p id="GUID-58A34621-17B9-4FF5-B9E0-3A051068956E">可以同时在两条不同路径上执行 GeoEvent 采样。对两条路径进行采样对于比较和验证相关实时数据的变化会很有用。例如，由<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/geoevent/latest" href="../../../../zh-CN/geoevent/latest/process-event-data/buffer-creator-processor.htm">缓冲区创建者处理器</a>发出的 GeoEvent 应该与其原始源几何（点）具有不同的几何（面）。通过从往返于处理器的路径中采样 GeoEvent，您可以确认 GeoEvent 不仅被缓冲区创建者处理器接收，而且那些相同的 GeoEvent 会被处理器缓冲。</p><p id="GUID-7F988475-93BF-4C6C-87EF-6512DADF2E97">要比较两条路径中的已采样 GeoEvent，请创建新的已发布 GeoEvent 服务或打开现有已发布 GeoEvent 服务，确保其正在主动接收 GeoEvent，然后执行以下步骤。</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_855E8BBBEDA645DD8CD3C09BEB31900A"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_D9D9BF191D484E0F9FAF7D1162A6138D"><span purpose="cmd">确保已在服务设计器中打开并启用 GeoEvent Sampler。</span></li><li purpose="step" id="ESRI_STEP_F647404CAFA04DA69B8378E9A81D80A4"><span purpose="cmd">左键单击 GeoEvent 服务中的一条路径，以开始在第一条选定路径上采样 GeoEvent。<img purpose="img" placement="inline" alt="在示例 GeoEvent 服务中选择的第一条路径" title="在示例 GeoEvent 服务中选择的第一条路径" src="GUID-3D3B40C3-39E0-49B0-8156-8597F918A268-web.png"></span></li><div class="stepinfo" purpose="stepinfo"><div class="panel trailer-1 note" id="GUID-00F9B47F-4CFF-4B14-8649-95AAAF4F104D"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-AF237531-973C-4685-A89A-9E1C513C413D">（可选）右键单击路径，然后从菜单中选择<span class="uicontrol">样本路径</span>以开始采样第一条路径。</p></div></div><li purpose="step" id="ESRI_STEP_A8AF92A55E6F44D2B2FBA03AC4D2F081"><span purpose="cmd">选择第一条路径后，右键单击第二条路径，然后选择<span class="uicontrol">比较路径</span>。<img purpose="img" placement="inline" alt="在示例 GeoEvent 服务中选择的第二条路径" title="在示例 GeoEvent 服务中选择的第二条路径" src="GUID-AB68E795-B0CE-41BA-B3C4-FEA8BEB272D2-web.png"></span></li><div class="stepinfo" purpose="stepinfo"><div class="panel trailer-1 note" id="GUID-F1FF9CA7-BE57-4790-B5AB-CD055D565C4A"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-D2255609-5ABF-4EF2-818E-3D438DAC6BF0"><span class="uicontrol">比较路径</span>仅在选择了第一条路径后可用，否则该选项将处于禁用状态。共享同一源元素（无论是输入、输出、过滤器还是处理器）的路径都无法进行比较。</p></div> </div><div class="stepinfo" purpose="stepinfo"><p id="GUID-12AC053F-FEAE-45D4-BA56-9D18B415E983">请注意，第二条选定路径使用不同的颜色（橙色），表示将对这两条选定路径执行 GeoEvent 采样。</p><img purpose="img" placement="inline" alt="GeoEvent 服务中两条选定路径的示例" title="GeoEvent 服务中两条选定路径的示例" src="GUID-01E2550C-91A0-4A9A-A8CB-7B1BFAF4A5D0-web.png"><p id="GUID-15CD773C-15B7-4CDA-965B-873B910FAB20">选择两条路径后，将在 GeoEvent Sampler 中显示两个采样器窗口，您可以通过上述窗口比较这两条路径。左侧采样器窗口（蓝色）将返回第一条选定路径的已采样 GeoEvent，而右侧的窗口（橙色）将返回第二条选定路径的已采样 GeoEvent。</p><img purpose="img" placement="inline" alt="比较两条选定路径的采样器窗口" title="比较两条选定路径的采样器窗口" src="GUID-E6A76604-99C8-4218-800E-04E0BE938E1F-web.png"><p id="GUID-8E52AF29-670A-4987-9962-2DC4DDB67D3D">GeoEvent 采样最多只能在两条路径上执行。比较两条路径时，更改设置、刷新和打开事件查看器对于两个采样器窗口均适用。清除数据和将数据复制到剪贴板可以单独使用，并可应用于使用该工具的采样器窗口。</p></div><li purpose="step" id="ESRI_STEP_AC72B01E8B3043C1AC9871CEC72D7700"><span purpose="cmd">单击以查看<span class="uicontrol">事件查看器</span>中每条路径的 GeoEvent。<img purpose="img" placement="inline" alt="在事件查看器中查看两条进行比较的路径" title="在事件查看器中查看两条进行比较的路径" src="GUID-A934A603-93E3-4D7B-8627-C9D277045CE4-web.png"></span></li><div class="stepinfo" purpose="stepinfo">注意<span class="uicontrol">事件查看器</span>将针对每条选定路径打开一个查看器。这对于在执行事件处理时验证几何更改很有用。例如，可以在第一个查看器中可视化 GeoEvent 原始点的几何，而可以在第二个查看器中可视化从<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/geoevent/latest" href="../../../../zh-CN/geoevent/latest/process-event-data/buffer-creator-processor.htm">缓冲区创建者处理器</a>发出的相同 GeoEvent 。允许您确认原始点几何已成功缓冲，且现在是面。</div></ol></div></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_FA2BD5A765814070AE2CF9EAE43D7319" purpose="section1"><h2>GeoEvent 采样注意事项和限制</h2><ul purpose="ul" id="UL_C7B7D098CDCB4BCB976289213D4628FE"><li purpose="li" id="LI_D134C42EF8E04F159FDDB7E50651B0CA">仅在 GeoEvent 服务发布、启动以及主动接收实时事件数据时才对 GeoEvent 进行采样。如果 GeoEvent 服务未发布、未停止或未接收到事件数据，则采样器窗口中将不会显示任何内容。</li><li purpose="li" id="LI_3BD969F854D248E19CEC359249A510DB">GeoEvent Sampler 可用于仅在连接输入、输出、处理器和过滤器的路径上执行采样。不支持对输入、输出、处理器和过滤器元素进行采样。</li><li purpose="li" id="LI_20B1D58D794A4077926242B5CE3F4B06">采样 GeoEvent 时，请考虑您的实时数据和服务设计。</li><li purpose="li" id="LI_DFBC5FEB5E6D4BDE9C7858744A3A605A">超过 10 分钟不活动，GeoEvent Sampler 会自动断开连接并被禁用。</li><li purpose="li" id="LI_3086FEF844484865A090411A2BEEE05D">GeoEvent Sampler 最多仅支持对 GeoEvent 元素之间的两条路径进行比较。</li><li purpose="li" id="LI_291D1D1D8B57454094327337141A7A7F">无法保证已采样的 GeoEvent 的顺序。GeoEvent 导入 GeoEvent Server 时的顺序可能与其在采样器窗口中的显示顺序不同。</li><li purpose="li" id="LI_241660F7545D45DF8509224FDCB0DD6C">已采样的 GeoEvent 不会保留或缓存。刷新采样器窗口或浏览器会话将删除当前已采样的所有 GeoEvent。</li><li purpose="li" id="LI_FBAECA08A9814D219FD1B768670FB3F9">更改 GeoEvent Sampler 设置需要刷新。如果在对 GeoEvent 进行活动采样期间更改了设置，则新设置将在刷新 GeoEvent Sampler 后生效。</li><li purpose="li" id="LI_46B92DE054554867878C1EDFA6ADFA5C">比较两条路径时，合理的方式是在第一个采样器窗口达到其采样大小后，第二个采样器窗口才显示 GeoEvent。考虑到路径中的数据可能因不满足过滤条件或处理条件而无法接收的情况。</li><li purpose="li" id="LI_534D2941197C46C0B451FE53E0C7011D">等待接收第一个 GeoEvent 时，采样器窗口将显示进度条。</li><li purpose="li" id="LI_C5E908E3E8274A448368BEFE7E82CD59">离线环境不支持在<span class="uicontrol">事件查看器</span>中查看 GeoEvent。</li></ul></section><section class="wfsummary padded-anchor" id="GUID-E46DB37E-DCB4-4290-A9F5-9C912A8CC240" purpose="wfsummary"></section>
+			
+				<hr>
+				<!--googleoff: all-->
+				
+	
+        
+		    <p class="feedback right">
+		        <a id="afb" class="icon-ui-contact" href="/feedback/" data-langlabel="feedback-on-this-topic" >有关此主题的反馈?</a>
+		    </p>
+        
+	
+
+				<!--googleon: all-->
+			
+		</main>
+	</div>
+	
+	<!--googleoff: all-->
+	
+		
+			<div id="main-toc-large" class="column-5">
+			    <div class="panel font-size--2 tablet-hide trailer-1">
+			      <h5 class="trailer-half">在本主题中</h5>
+			      <ol class="list-plain pre-0 trailer-0"><li><a href="#ESRI_SECTION1_769D1B267A014FD3965EEECA0A471753">什么是 GeoEvent Sampler？</a></li><li><a href="#ESRI_SECTION1_521275062F3743EE9A80834981134D1F">启用 GeoEvent Sampler</a></li><li><a href="#ESRI_SECTION1_C92BBAE99F7D49FBBB9B96520C311F7E">开始采样 GeoEvent</a></li><li><a href="#ESRI_SECTION1_524018E7EAB74DAAA077D2C3C5D6F572">可视化已采样的 GeoEvent</a></li><li><a href="#ESRI_SECTION1_6C146E4FFC944D28A37E9D8BB3D93CE6">比较两条路径的 GeoEvent</a></li><li><a href="#ESRI_SECTION1_FA2BD5A765814070AE2CF9EAE43D7319">GeoEvent 采样注意事项和限制</a></li></ol>
+			    </div>
+			    
+			    
+	  		</div>
+		
+    
+   <!--googleon: all-->
+
+
+
+
+          
+        </div>
+        <!-- ENDPAGECONTENT -->
+
+      </div>
+
+    </div>  <!-- End of wrapper -->
+
+  <footer class="footer leader-3 link-dark-gray" role="contentinfo">
+    <div class="grid-container">
+      <div class="row">
+        <nav class="column-6">
+          <h6 data-langlabel="arcgis-for-server">Arc<span>GIS Enterprise</span></h6>
+          <ul class="list-plain">
+            <li><a data-langlabel="home" href="../../../../zh-CN/">主页</a></li>
+            <li><a data-langlabel="portal" href="../../../../zh-CN/portal/">Portal</a></li>
+            <li><a data-langlabel="server" href="../../../../zh-CN/server/">Server</a></li>
+            <li><a data-langlabel="data-store" href="../../../../zh-CN/data-store/">Data Stores</a></li>
+            <li><a data-langlabel="cloud" href="../../../../zh-CN/cloud/">云</a></li>
+            <li><a data-langlabel="apps" href="../../../../zh-CN/apps/">应用程序</a></li>
+            <li><a data-langlabel="documentation" href="../../../../zh-CN/documentation/">文档</a></li>
+          </ul>
+        </nav>
+
+        
+  <nav class="column-6">
+    <h6 data-langlabel="arcgis-platform">ArcGIS 平台</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="arcgis" href="//www.arcgis.com/">ArcGIS Online</a></li>
+      <li><a data-langlabel="arcgis-for-professionals" href="//pro.arcgis.com/">ArcGIS Pro</a></li>
+      <li><a data-langlabel="arcgis-for-server" href="//enterprise.arcgis.com/">ArcGIS Enterprise</a></li>
+      <li><a data-langlabel="arcgis-for-developers" href="https://developers.arcgis.com/">ArcGIS for Developers</a></li>
+      <li><a data-langlabel="arcgis-solutions" href="//solutions.arcgis.com/">ArcGIS Solutions</a></li>
+      <li><a data-langlabel="arcgis-marketplace" href="//marketplace.arcgis.com/">ArcGIS Marketplace</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <h6 data-langlabel="about-esri">关于 Esri</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="about-us" href="//www.esri.com/about-esri/">关于我们</a></li>
+      <li><a data-langlabel="careers" href="//www.esri.com/careers/">招贤纳士</a></li>
+      <li><a data-langlabel="insiders-blog" href="https://www.esri.com/about/newsroom/blog/">Esri 博客</a></li>
+      <li><a data-langlabel="user-conference" href="//www.esri.com/events/user-conference/index.html">用户大会</a></li>
+      <li><a data-langlabel="developer-summit" href="//www.esri.com/events/devsummit/index.html">开发者峰会</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <a class="esri-logo" href="//www.esri.com/" aria-label="Esri Home"></a>
+    <section class="footer-social-nav leader-1">
+            <a class="icon-social-twitter" aria-label="Esri on Twitter" href="https://twitter.com/Esri/"></a>
+            <a class="icon-social-facebook" aria-label="Esri on Facebook" href="https://www.facebook.com/esrigis/"></a>
+            <a class="icon-social-github" aria-label="Esri on GitHub" href="//esri.github.io/"></a>
+            <a class="icon-social-contact" aria-label="Contact Esri" href="//www.esri.com/about-esri/contact/"></a>
+    </section>
+	  
+  </nav>
+  
+  <div class="column-24 leader-1">
+    <p class="font-size--3"><a href="http://www.esri.com/legal/copyright-trademarks">Copyright &copy; 2019 Esri.</a> All rights reserved. | <a href="http://www.esri.com/legal/privacy/">隐私政策</a> | <a href="http://www.esri.com/legal/software-license">法律声明</a></p>
+  </div>
+  
+
+
+      </div>
+    </div>
+  </footer>
+  <!--googleoff: all-->
+
+  
+  
+	<script src="../../../../zh-CN/assets/js/init.js" type="text/javascript"></script>
+	<!--<script src="../../../../zh-CN/assets/js/drop-down.js" type="text/javascript"></script>-->
+	<script src="../../../../zh-CN/assets/js/search/searchform.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/cdn/js/link-modifier.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/cdn/js/sitewide.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/cdn/js/libs/highlight.pack.js" type="text/javascript"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+
+
+  
+    
+
+  <script src="../../../../zh-CN/cdn/js/affix.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    $(function () {
+          var appendFlg = true;
+
+          $("#bigmac")
+          .on("affixed.bs.affix", function (evt) {
+            if (appendFlg) {
+              $("<a class='crumb' href='#'>GeoEvent Sampler</a>").insertAfter ($("#bigmac nav a").last());
+              appendFlg = false;
+            }
+          })
+          .on ("affix-top.bs.affix", function(evt) {
+            if (!appendFlg) {
+              $("#bigmac nav a").last().remove();
+            }
+            appendFlg = true;
+          })
+    })
+  </script>
+  
+        <script type="text/javascript">
+          window.doctoc = {
+            pubID: "1334",
+            tpcID: "49",
+            
+              prefix: "管理",
+              prefixUrl: "/zh-cn/geoevent/latest/administer/",
+          
+            hideToc: false
+          }
+        </script>
+
+        <script type="text/javascript" src="../../../../zh-CN/geoevent/latest/administer/1334.js" ></script>
+        <script type="text/javascript" src="../../../../zh-CN/cdn/calcite/js/protoc.js" ></script>
+        
+        
+
+  <noscript>
+        <p>
+            <a href="flisting.htm">flist</a>
+        </p>
+    </noscript>
+    <script type="text/javascript"></script>
+  
+  
+    
+    
+
+  </body>
+</html>

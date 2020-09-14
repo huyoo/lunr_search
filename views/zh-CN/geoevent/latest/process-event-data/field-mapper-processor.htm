@@ -1,0 +1,543 @@
+
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>  <html class="ie lt-ie9 lt-ie8 lt-ie7 ie6" dir="ltr"> <![endif]-->
+<!--[if IE 7]>     <html class="ie lt-ie9 lt-ie8 ie7" dir="ltr"> <![endif]-->
+<!--[if IE 8]>     <html class="ie lt-ie9 ie8" dir="ltr"> <![endif]-->
+<!--[if IE 9]>     <html class="ie ie9" dir="ltr"> <![endif]-->
+<!--[if !IE]><!--> <html dir="ltr" lang="zh-CN"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>字段映射器处理器&mdash;处理事件数据(10.8) | ArcGIS Enterprise 文档</title>
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+    <script>
+      var docConfig = {
+        locale: 'zh-CN'
+        ,localedir: 'zh-cn'
+        ,langSelector: ''
+        
+        ,relativeUrl: false
+        
+
+        ,searchformUrl: '/search/'
+        ,tertiaryNavIndex: ''
+
+        
+      };
+    </script>
+	 
+
+
+    
+    <!--[if lt IE 9]>
+      <script src="../../../../zh-CN/cdn/js/libs/html5shiv.js" type="text/javascript"></script>
+      <script src="../../../../zh-CN/cdn/js/libs/selectivizr-min.js" type="text/javascript"></script>
+      <script src="../../../../zh-CN/cdn/js/libs/json2.js" type="text/javascript"></script>
+      <script src="../../../../zh-CN/cdn/js/libs/html5shiv-printshiv.js" type="text/javascript" >
+
+    <![endif]-->
+
+     <!--[if lt IE 11]>
+    <script>
+      $$(document).ready(function(){
+        $$(".hideOnIE").hide();
+      });
+    </script>
+    <![endif]-->
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<link href="../../../../zh-CN/assets/img/favicon.ico" rel="shortcut icon" >
+	<link href="../../../../zh-CN/assets/css/screen.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/cdn/calcite/css/documentation.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/assets/css/print.css" media="print" type="text/css" rel="stylesheet" />
+
+	<!--
+	<link href="../../../../zh-CN/assets/css/screen_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/assets/css/documentation/base_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/assets/css/print_l10n.css" media="print" type="text/css" rel="stylesheet" />
+	-->
+	
+	
+		<script src="../../../../zh-CN/cdn/js/libs/jquery.1.9.1.min.js" type="text/javascript"></script>
+	
+	<script src="../../../../zh-CN/cdn/js/libs/jquery.cookie.js" type="text/javascript"></script>
+	<link href="../../../../zh-CN/cdn/css/colorbox.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/cdn/css/colorbox_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<script src="../../../../zh-CN/cdn/js/libs/jquery.colorbox-min.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/assets/js/video-init.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/assets/js/sitecfg.js" type="text/javascript"></script>
+	
+		<script src="../../../../zh-CN/assets/js/signIn.js" type="text/javascript"></script>
+	
+
+	<!--- Language Picker -->
+	<script src="../../../../zh-CN/assets/js/locale/l10NStrings.js" type="text/javascript"></script>
+	
+		 
+	
+
+	<script src="../../../../zh-CN/assets/js/calcite-web.js" type="text/javascript"></script>
+
+
+
+  <!--- search MD -->
+    <META name="description" content="字段映射器处理器可用于将一个事件记录方案或结构中的数据转换（或映射）到另一个事件记录方案或结构中。"><META name="last-modified" content="2019-12-6"><META name="product" content="arcgis-server-windows,arcgis-server-linux,ext-server-geoevent,arcgis-enterprise-windows,arcgis-enterprise-linux"><META name="sub_category" content="GeoEvent"><META name="search-collection" content="help"><META name="content_type_label" content="帮助主题"><META name="sub_category_label" content="GeoEvent"><META name="search-category" content="help-general"><META name="subject_label" content="REAL-TIME FEEDS,服务,SERVER"><META name="version" content="10.8"><META name="content_type" content="Help Topic"><META name="subject" content="REAL-TIME FEEDS,SERVICES,SERVER"><META name="content-language" content="zh-cn">
+    <!--- search MD -->
+
+  
+      
+
+</head>
+
+<!--
+      pub: GUID-5D524593-D8D3-4B10-896F-B21A7B6A7B11=16
+      tpc: GUID-E04A5EB7-BB4C-41B0-B3D6-A4CF13F0760D=2
+      -->
+
+
+<!-- variable declaration, if any -->
+<!-- can change following macro to set variable once we are on Jinja 2.8 -->
+
+
+
+
+
+<body class="claro zh-CN server">
+  
+
+  <!-- Drawer location -->
+  <div class="drawer drawer-left js-drawer" data-drawer="top-nav">
+        <nav class="drawer-nav" role="navigation">
+          <aside class="side-nav">
+            <h2 class="side-nav-title">Arc<span>GIS</span> Enterprise</h2>
+            <form id="helpSearchForm" class="margin-left-half margin-right-half leader-half trailer-half drawer-search-form" method="GET">
+              <input type="search" name="q"  placeholder="搜索 GeoEvent Server 10.7 帮助">
+              <input type="hidden" name="collection" value="help" />
+              <input type="hidden" name="product" value="ext-server-geoevent" />
+              <input type="hidden" name="version" value="10.8" />
+              <input type="hidden" name="language" value="zh-CN" />
+            </form>    
+             <a id="nav-portal" data-langlabel="portal" href="../../../../zh-CN/portal/" class="side-nav-link">Portal</a>
+             
+            <a id="all-servers" data-langlabel="all-servers" href="../../../../zh-CN/server/" class="side-nav-link">所有服务器</a>
+            <a id="gis-server" data-langlabel="gis-server" href="../../../../zh-CN/server/" class="side-nav-link">GIS Server</a>
+            <a id="image-server" data-langlabel="image-server" href="../../../../zh-CN/image/" class="side-nav-link">Image Server</a>
+            <a id="geo-analytics-server" data-langlabel="geo-analytics-server" href="../../../../zh-CN/geoanalytics/" class="side-nav-link">GeoAnalytics Server</a>
+            <a id="geoevent-server" data-langlabel="geoevent-server" href="../../../../zh-CN/geoevent/" class="side-nav-link">GeoEvent Server</a>
+            <a id="notebook-server" data-langlabel="notebook-server" href="../../../../zh-CN/notebook/" class="side-nav-link">Notebook Server</a>
+            <a id="nav-data-store" data-langlabel="data-store" href="../../../../zh-CN/data-store/" class="side-nav-link">Data Stores</a>
+            <a id="nav-cloud" data-langlabel="cloud" href="../../../../zh-CN/cloud/" class="side-nav-link">云</a>
+            <a id="nav-apps" data-langlabel="apps" href="../../../../zh-CN/apps/" class="side-nav-link">应用程序</a>
+            <a id="nav-doc" data-langlabel="documentation" href="../../../../zh-CN/documentation/" class="side-nav-link">文档</a>
+
+          </aside>
+        </nav>
+    </div>
+
+    <!-- user navigation collapses to drawer on mobile -->
+    
+    <div class="drawer drawer-right js-drawer hide-if-logged-out logged-in-navigation" data-drawer="user-nav">
+      <nav class="drawer-nav">
+        <aside class="side-nav">
+          <a class="side-nav-link agolProfile" href="#">我的个人资料</a>
+          <a class="side-nav-link icon-ui-sign-out js-log-out" href="#">登出</a>
+        </aside>
+      </nav>
+    </div>
+    
+<!-- End of drawer -->
+
+  
+  <div class="wrapper">
+      <!--googleoff: all-->
+
+      <header class="top-nav" data-skin="learn">
+        <a class="skip-to-content" href="#skip-to-content">Skip To Content</a>
+        <div class="grid-container">
+          <div class="column-24">
+
+
+            <!--<div class="top-nav-title-wrapper text-center ">-->
+              <a href='../../../../zh-CN/' class="top-nav-title tablet-hide"><span>Arc</span>GIS  Enterprise</a>
+              <a href='../../../../zh-CN/' class="icon-ui-menu top-nav-title js-drawer-toggle tablet-show" data-drawer="top-nav"><span>Arc</span>GIS Enterprise</a>
+            <!--</div> -->
+
+          
+            <nav role="navigation" class="top-nav-list left tablet-hide">
+              <a id="nav-portal" data-langlabel="portal" href="../../../../zh-CN/portal/" class="top-nav-link">Portal</a>
+
+                <div class="dropdown js-dropdown ">
+                  <a class="top-nav-link js-dropdown-toggle" tabindex="0" aria-haspopup="true" aria-expanded="false" href="#">Servers</a>
+                  <nav class="dropdown-menu featured" role="menu">
+                    <ul class="dropdown-sublist-featured">
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/get-started/latest/windows/additional-server-deployment.htm" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path  d="M42.92 6.1H4.12v8.566l.833.832-.835.833-.018 7.332.845.847-.825.824V33.9h25v5.2h-2v1.075H8.02v.8h19.1v.925h4.8v-.925H40v-.8h-8.08V39.1h-2v-5.2h13v-8.566l-.834-.834.835-.834v-7.332l-.835-.834.835-.834zm-11.8 35h-3.2v-1.2h3.2zm11-8H4.92v-7.434l.767-.766h35.668l.765.766zm0-9.766l-.766.766H5.666l-.766-.767.017-6.669.766-.764h35.671l.766.766zm0-9l-.766.766H5.687l-.766-.766V6.9h37.2zM19 11.9h-2v-.8h2zm-4 0h-2v-.8h2zm-4 0H9v-.8h2zm6 8.2h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9zm8 9h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9z"/></svg></span>
+                          <span class="sublink-text">所有服务器</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/server/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M45.98 33.575a.616.616 0 0 0-.335-.51l-3.362-2.03 3.362-2.031a.556.556 0 0 0 0-1.02l-11.1-6.704a1.293 1.293 0 0 0-1.112 0L22.33 27.982a.556.556 0 0 0 0 1.02l3.36 2.03-3.358 2.03a.556.556 0 0 0-.002 1.021l3.322 2.006-3.324 2.008a.555.555 0 0 0 .002 1.017l11.102 6.703a1.25 1.25 0 0 0 1.11.002l11.104-6.706a.556.556 0 0 0 0-1.02l-3.32-2.006 3.318-2.004a.607.607 0 0 0 .335-.509zM33.837 21.97c.026-.01.286-.005.29-.005l10.814 6.53-10.8 6.523c-.028.01-.284.005-.294.006l-10.813-6.53zm11.105 16.636l-10.8 6.523a2.564 2.564 0 0 1-.295.006l-10.81-6.529 3.39-2.047 7.004 4.23a1.083 1.083 0 0 0 .557.131 1.101 1.101 0 0 0 .554-.13l7.01-4.233zM34.14 40.098a2.545 2.545 0 0 1-.294.006l-10.812-6.53 3.43-2.073 6.97 4.208a1.25 1.25 0 0 0 1.107-.001l6.966-4.206 3.431 2.073zM9 8H7V7h2zm8 8h-2v-1h2zm-4-8h-2V7h2zm4 0h-2V7h2zm-4 8h-2v-1h2zm7.316 11.1H3.9v-6.434l.766-.766h35.668l.766.766v2.12l.8.483v-2.935l-.826-.826.826-.845v-6.329l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9h16.88a2.632 2.632 0 0 1 .336-.8zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zm0 8v-5.668l.766-.766h35.668l.766.766v5.67l-.746.764H4.666zM15 24v-1h2v1zm-4 0v-1h2v1zm-2-8H7v-1h2zm-2 8v-1h2v1z"/></svg></span>
+                          <span class="sublink-text">GIS Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/image/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 8h-2V7h2zm-4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm8 8h-2v1h2zm-8 0H7v1h2zm4 9v-1h-2v1zm-4 0v-1H7v1zm8 0v-1h-2v1zm4 3.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V21h-.8v-.334l-.766-.766H4.666l-.766.766V27.1H21zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zm40.234 4v21.8H23.1V23.1zm-.8 16.366L39.466 44.1h2.868l1.766-1.766zm-20.2-9.932l5.634-5.634h-2.868L23.9 26.666zm6.2-5.068L24.466 30.1h2.868l2.766-2.766zM28.466 30.1H30.1v-1.634zm2.434 0h6.2v-6.2h-6.2zm-7 7h6.2v-6.2h-6.2zm7 0h6.2v-6.2h-6.2zm0 6.434l5.634-5.634h-2.868L30.9 40.666zm7-7l5.634-5.634h-2.868L37.9 33.666zm1.634-5.634H37.9v1.634zm-8.634 7v1.634l1.634-1.634zm.566 6.2h2.868l2.766-2.766v-2.868zm6.434-3.566l2.634-2.634H37.9zM35.466 44.1H37.1v-1.634zm2.434 0h.434l5.766-5.766V37.9h-2.434L37.9 41.666zm6.2-8.634L42.466 37.1H44.1zm0-4L38.466 37.1h2.868l2.766-2.766zm0-7.566h-6.2v6.2h6.2zm-20.2 0v1.634l1.634-1.634zm0 20.2h6.2v-6.2h-6.2zm20.2 0v-.634l-.634.634z"/></svg></span>
+                          <span class="sublink-text">Image Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/geoanalytics/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 16h-2v-1h2zm-8 8v-1H7v1zm8 0v-1h-2v1zM13 7h-2v1h2zm4 0h-2v1h2zM9 7H7v1h2zm21.45 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V27.9h-1.464l-.801-.8H41.1v-6.434l-.766-.766H4.666l-.766.766V27.1h27.15zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM13 24v-1h-2v1zm0-9h-2v1h2zm-4 0H7v1h2zm26.672 27.148A1.87 1.87 0 0 1 35.9 43a1.91 1.91 0 1 1-3.763-.222l-9.845-3.414A1.88 1.88 0 0 1 21 39.9a1.9 1.9 0 1 1 1.474-3.084l4.692-2.346A1.878 1.878 0 0 1 27.1 34a1.902 1.902 0 0 1 1.9-1.9 1.867 1.867 0 0 1 .781.191l3.788-5.05A1.88 1.88 0 0 1 33.1 26a1.9 1.9 0 1 1 3.491 1.026l4.889 4.888c-.069.056-.144.1-.21.162a3.986 3.986 0 0 0-.358.402l-4.883-4.883A1.889 1.889 0 0 1 35 27.9a1.867 1.867 0 0 1-.781-.191l-3.788 5.049a1.868 1.868 0 0 1 .437.965l9.204.614c-.018.11-.049.218-.058.33A3.93 3.93 0 0 0 40 35c0 .046.01.09.01.135l-9.185-.612A1.913 1.913 0 0 1 29 35.9a1.889 1.889 0 0 1-1.474-.716l-4.692 2.346a1.878 1.878 0 0 1 .066.47 1.9 1.9 0 0 1-.105.625c-.007.02-.022.036-.03.056l9.63 3.34a1.87 1.87 0 0 1 2.786-.505l5.415-4.437c.067.108.127.22.204.322a3.9 3.9 0 0 0 .292.306zM33.9 26a1.092 1.092 0 0 0 .43.872 1.12 1.12 0 0 0 1.42-.068A1.1 1.1 0 1 0 33.9 26zm-6 8a1.1 1.1 0 0 0 2.196.093 1.135 1.135 0 0 0-.426-.965A1.087 1.087 0 0 0 29 32.9a1.101 1.101 0 0 0-1.1 1.1zm-5.8 4a1.098 1.098 0 1 0-.06.362A1.101 1.101 0 0 0 22.1 38zm13 5a1.1 1.1 0 1 0-2.2 0 1.1 1.1 0 0 0 2.2 0zm10.8-8a1.9 1.9 0 1 1-3.8 0c0-.053.003-.105.007-.158A1.9 1.9 0 0 1 45.9 35zm-.8 0a1.1 1.1 0 0 0-2.196-.093 1.153 1.153 0 0 0 .216.752A1.1 1.1 0 0 0 45.1 35z"/></svg></span>
+                          <span class="sublink-text">GeoAnalytics Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/geoevent/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M13 8h-2V7h2zm4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm12.418 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826v2.117c-.259-.177-.53-.337-.8-.497v-1.288l-.766-.766H4.666l-.766.766V27.1h17.933c-.148.26-.283.53-.415.8zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM9 24v-1H7v1zm4-9h-2v1h2zm0 9v-1h-2v1zm-4-9H7v1h2zm8 9v-1h-2v1zm16.9 2h-.8v8.9H39v-.8h-5.1zm.1-3.901a11.9 11.9 0 1 0 11.9 11.9 11.914 11.914 0 0 0-11.9-11.9zm0 23a11.1 11.1 0 1 1 11.1-11.1 11.112 11.112 0 0 1-11.1 11.1z"/></svg></span>
+                          <span class="sublink-text">GeoEvent Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/notebook/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M22 27.1H3.9v-6.434l.766-.766h18.576a5.262 5.262 0 0 1 .83-.8H4.666l-.766-.766v-5.668l.766-.766h35.668l.766.766V18h.8v-5.666l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9H22zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zM9 8H7V7h2zm8 0h-2V7h2zm-4 0h-2V7h2zm2 16v-1h2v1zm-4 0v-1h2v1zm-4 0v-1h2v1zm0-8v-1h2v1zm8 0v-1h2v1zm-4 0v-1h2v1zm18.9 8.1h-1.8v1.8h1.8zm-.8 1h-.2v-.2h.2zm15.498-4.48a2.727 2.727 0 0 0-1.62-.5v-.02H27.25a3.154 3.154 0 0 0-3.15 3.15V38.1h-1.68a3.386 3.386 0 0 0-2.872 1.58 3.49 3.49 0 0 0-.157 3.419 3.241 3.241 0 0 0 2.954 1.801h15.161a3.404 3.404 0 0 0 3.394-3.4V26.9h5v-3.65a3.224 3.224 0 0 0-1.302-2.63zM22.345 44.1a2.44 2.44 0 0 1-2.23-1.341 2.706 2.706 0 0 1 .11-2.65A2.588 2.588 0 0 1 22.42 38.9h12.89a3.395 3.395 0 0 0 0 5.2zM40.1 23.192V41.5a2.6 2.6 0 1 1-2.6-2.6v-.8H24.9V23.25a2.352 2.352 0 0 1 2.35-2.35h13.795a3.183 3.183 0 0 0-.945 2.292zm5 2.908h-4.2v-2.908a2.274 2.274 0 0 1 1.44-2.18 1.944 1.944 0 0 1 1.791.259 2.423 2.423 0 0 1 .97 1.979zm-17.1 5h9v.8h-9zm0 3h7v.8h-7zm0-6h9v.8h-9zm4-3h5v.8h-5z"/></svg></span>
+                          <span class="sublink-text">Notebook Server</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+
+              <a id="nav-data-store" data-langlabel="data-store" href="../../../../zh-CN/data-store/" class="top-nav-link">Data Stores</a>
+              <a id="nav-cloud" data-langlabel="cloud" href="../../../../zh-CN/cloud/" class="top-nav-link">云</a>
+              <a id="nav-apps" data-langlabel="apps" href="../../../../zh-CN/apps/" class="top-nav-link">应用程序</a>
+            </nav>
+
+
+            
+            
+            
+
+            <div class="margin-left-1 top-nav-list right hide-if-logged-in logged-out-navigation">
+               
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+              
+              <a data-langlabel="sign-in" id="login-link" class="icon-ui-user top-nav-link link-blue login-link" href="#">登录</a>
+              
+            </div>
+
+            
+            <nav class="margin-left-1 top-nav-list right hide-if-logged-out logged-in-navigation">
+              
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+             
+              <div class="dropdown js-dropdown right">
+
+                <div class="tablet-show top-nav-link">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a href="#" data-drawer="user-nav" class="user-nav-name js-drawer-toggle" data-first-name></a>
+                </div>
+
+                <div class="tablet-hide top-nav-link js-dropdown-toggle">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a class="user-nav-name top-nav-dropdown dropdown-btn" data-first-name>&nbsp;</a>
+                </div>
+
+                <nav class="dropdown-menu dropdown-right">
+                
+                  <a class="dropdown-link agolProfile" id="agolProfile" href="#">我的个人资料</a>
+                  <a class="dropdown-link js-log-out" id="agolLogout" href="#">登出</a>
+                </nav>
+              </div>
+            </nav>
+            
+
+            
+          </div>
+        </div>
+      </header>
+
+      <div class="js-search search-overlay">
+        <div class="search-content" role="dialog" aria-labelledby="search">
+          <form method="GET" id="helpSearchForm">
+            <label>
+              搜索 GeoEvent Server 10.7 帮助
+              <div class="search-bar">
+                <input type="search" name="q"  placeholder="搜索 GeoEvent Server 10.7 帮助" class="search-input js-search-input">
+                <input type="hidden" name="collection" value="help" />
+                <input type="hidden" name="product" value="ext-server-geoevent" />
+                <input type="hidden" name="version" value="10.8" />
+                <input type="hidden" name="language" value="zh-CN" />
+              </div>
+            </label>
+            <input type="hidden" name="relativePath" value="../../../../" /><button type="submit" class="btn btn-large right">搜索</button>
+          </form>
+        </div>
+      </div>
+
+      <!--googleon: all-->
+
+      <div id="skip-to-content">
+        <!--googleoff: all-->
+        <header class="sub-nav sub-nav-learn">
+          <div class="grid-container">
+            
+            <div class="column-24">
+              <div style="display:table;" class="sdk-home-banner">
+                <div class="sdk-home-banner-content">
+                  <h1 class="sub-nav-title link-white">GeoEvent Server</h1>
+                </div>
+              </div>
+            </div>
+
+            <div class="column-24">
+              <nav class='sub-nav-list tablet-hide'><a class="sub-nav-link" href="../../../../zh-CN/geoevent/" target="_top" title="GeoEvent Server 概述和文档">主页</a><a class="sub-nav-link" href="../../../../zh-CN/geoevent/latest/get-started/" target="_top" title="GeoEvent Server 入门">入门</a><a class="sub-nav-link is-active" href="../../../../zh-CN/geoevent/latest/process-event-data/" target="_top" title="过滤和处理事件数据流，以关注最感兴趣的要素">处理事件数据</a><a class="sub-nav-link" href="../../../../zh-CN/geoevent/latest/administer/" target="_top" title="管理 GeoEvent Server">管理</a></nav><select class='tablet-show select-full trailer-half js-select-nav'><option value="../../../../zh-CN/geoevent/">主页</option><option value="../../../../zh-CN/geoevent/latest/get-started/">入门</option><option selected="true" value="../../../../zh-CN/geoevent/latest/process-event-data/">处理事件数据</option><option value="../../../../zh-CN/geoevent/latest/administer/">管理</option></select>
+            </div>
+
+          </div>
+        </header>
+        <!--googleon: all-->
+       
+        <!-- content goes here -->
+        <div class="grid-container ">
+          
+
+            
+              
+  <!--BREADCRUMB-BEG--><div id="bigmac" class="sticky-breadcrumbs trailer-2" data-spy="affix" data-offset-top="180"> </div><!--BREADCRUMB-END-->
+  <!--googleoff: all-->
+    <div class="column-5 tablet-column-12 trailer-2 ">
+      <aside class="js-accordion accordion reference-index" aria-live="polite" role="tablist">
+        <div></div>
+      </aside>
+
+      <div class="js-sticky scroll-show tablet-hide leader-1 back-to-top" data-top="0" style="top: 0px;">
+        <a href="#" class="btn btn-fill btn-clear">返回顶部</a>
+      </div>
+    </div>
+  <!--googleon: all-->
+  
+            
+            
+            
+	
+		<div class="column-13  pre-1 content-section">
+	
+		<header class="trailer-1"><h1>字段映射器处理器</h1></header>
+
+		 
+	<!--googleoff: all-->
+	
+		
+				<aside id="main-toc-small" class="js-accordion accordion tablet-show trailer-1">
+			      <div class="accordion-section">
+			        <h4 class="accordion-title">在本主题中</h4>
+			        <div class="accordion-content list-plain">
+			          <ol class="list-plain pre-0 trailer-0"><li><a href="#ESRI_SECTION1_65A2E25A398F4BFA80FF7898917618E9">汇总</a></li><li><a href="#ESRI_SECTION1_637B7F971F4040CCB350F68E31E180F6">示例</a></li><li><a href="#ESRI_SECTION1_1564BB7FA73A4A5A8657475477CEA695">用法说明</a></li><li><a href="#ESRI_SECTION1_DFDEA1B3C1434363A3FB06F4893D13D2">参数</a></li><li><a href="#ESRI_SECTION1_AA49DF70A272422A81BDED8C8E0B314D">注意事项和限制</a></li></ol>
+			        </div>
+			      </div>
+			     </aside>
+		
+    
+   <!--googleon: all-->
+
+
+		<main>
+			
+	
+    	
+    
+
+
+			
+<section class="section1 padded-anchor" id="ESRI_SECTION1_65A2E25A398F4BFA80FF7898917618E9" purpose="section1"><h2>汇总</h2><p id="GUID-01BB1E73-302C-40BA-A698-0B0E7D59448C">字段映射器处理器可用于将一个事件记录方案或结构中的数据转换（或映射）到另一个事件记录方案或结构中。字段映射器处理器有五个主要用途：</p><ul purpose="ul" id="UL_941B350597424F9EBFB05CD199ACA21B">			<li purpose="li" id="LI_53D43A0E0A2B47A685CCC8EF76F64234">在将事件记录路由到添加或更新要素输出之前，将层次结构或多基数结构展平。</li>			<li purpose="li" id="LI_EB51BDBCB5214C9983DEB6F7B6B68757">处理属性字段名称和/或大小写的必要更改。例如，将 <span class="uicontrol">TrackID</span> 映射至 <span class="uicontrol">track_id</span>。</li>			<li purpose="li" id="LI_0117DAF5E732421B99F3BB5398EB2A27">将感兴趣的字段选择性地映射到新字段，以简化事件记录。</li>			<li purpose="li" id="LI_CEF42549A9A346A2B90FCA0891DEF72D">向事件记录方案添加新属性字段，以允许其他处理器（例如<a class="xref xref" href="../../../../zh-CN/geoevent/latest/process-event-data/field-calculator-processor.htm">字段计算器</a>或<a class="xref xref" href="../../../../zh-CN/geoevent/latest/process-event-data/field-enricher-feature-service-processor.htm">字段丰富器（要素服务）</a>/<a class="xref xref" href="../../../../zh-CN/geoevent/latest/process-event-data/field-enricher-file-processor.htm">字段丰富器（文件）</a>）写入到现有字段而不是新字段。</li>			<li purpose="li" id="LI_019A600C06664CBF9E1FC8783FBB1479">执行显式数据类型转换，例如将字符串转换为长整数，反之亦然。</li>		</ul><p id="GUID-4CA80E56-A5A5-4ABF-AC7B-9984A6B9BF89">添加到 <span class="ph">GeoEvent Server</span> 的所有事件数据应该具有关联的 GeoEvent 定义，其中 GeoEvent 定义用于定义属性字段名称、数据类型和整体数据结构。字段映射器处理器可用于将一个 GeoEvent 定义映射到另一个 GeoEvent 定义。</p></section>	<section class="section1 padded-anchor" id="ESRI_SECTION1_637B7F971F4040CCB350F68E31E180F6" purpose="section1"><h2>示例</h2><ul purpose="ul" id="UL_48A3BE80208B435EB52E7A2293F0B7BB">			<li purpose="li" id="LI_3E3061FC713A401DA4EE37098031F553">字段映射器处理器可用于处理属性字段名称和/或大小写的必要更改。例如，可重新映射已添加到属性字段名称的数据（如 <span class="usertext">ReportedDateTime</span>），以将数据值传输到名为 <span class="usertext">reported_dt</span> 的属性字段。当接收到的方案中的属性字段名称不符合后端 RDMS 要求，即字段名称全部大写或全部小写时，通常需要使用此处理器。</li>			<li purpose="li" id="LI_B22B47C60F6F4C8281A66263F96DE9DD">处理器可用于将感兴趣的字段选择性地映射到新字段，因此目标事件结构比源事件结构的属性字段少。例如，如果将输入配置为根据接收到的坐标值构造几何，则可以使用字段映射器处理器在将数据路由到输出之前从事件记录结构中删除坐标值。字段映射器处理器还可以通过删除客户的姓名和街道地址，而保留城市、州或其他常规信息的名称来对事件数据进行匿名处理。</li>			<li purpose="li" id="LI_7A6BE9FE437F448BA1D26A88B0B0E5D9">处理器可用于将其他字段添加到事件结构。这在使用<a class="xref xref" href="../../../../zh-CN/geoevent/latest/process-event-data/field-calculator-processor.htm">字段计算器处理器</a>或<a class="xref xref" href="../../../../zh-CN/geoevent/latest/process-event-data/field-enricher-feature-service-processor.htm">字段丰富器（要素服务）处理器</a>并希望允许这些处理器写入现有字段，而不是创建新字段时非常有用。在其他处理器之前使用该处理器可允许您将字段添加到事件结构中，从而允许下游处理器将数据写入新字段。</li>			<li purpose="li" id="LI_BF427F399427450C847445A57A5DAF1D">处理器可用于执行显式数据类型转换，例如将字符串转换为长整型（如 <span class="usertext">“3201”</span> 转换为 <span class="usertext">3201</span>），以及将长整型转换为字符串（如 <span class="usertext">3201</span> 转换为 <span class="usertext">“3201”</span>）。由于 <span class="ph">GeoEvent Server</span> 将日期值处理为以新纪元毫秒为单位的长整数，因此，可以将日期显式转换为长整数，但是不能使用字段映射器处理器将日期转换为字符串或将字符串转换为日期。但是，可以使用<a class="xref xref" href="../../../../zh-CN/geoevent/latest/process-event-data/field-calculator-processor.htm">字段映射器处理器</a>中的 <span class="usertext">toString( )</span> 函数将日期转换为字符串。</li>			<li purpose="li" id="LI_C59A4DBAB7FD4DE4BAED0B84942F7819">处理器可用于展平多基数或层次结构的事件结构。通常，展平操作需要在将事件记录路由到添加或更新要素输出之前完成。地理数据库中的要素记录不支持层次结构组或多基数数据值列表。如下所示，三个数据值（<span class="usertext">pressure</span>、<span class="usertext">temperature</span> 和 <span class="usertext">humidity</span>）分组在名为 <span class="usertext">data</span> 的父元素下。可以使用处理器来展平事件记录的层次结构，方法是映射 <span class="usertext">data</span> 下分组的属性，以使其与属性 <span class="usertext">id</span>、<span class="usertext">status</span> 和 <span class="usertext">calibrated</span> 一同显示。<img purpose="img" placement="inline" alt="使用字段映射器处理器展平的事件记录层次结构的示例" title="使用字段映射器处理器展平的事件记录层次结构的示例" src="GUID-A17009D7-5812-4269-ADE8-1B7FAA7C9E14-web.png"></li>			<li purpose="li" id="LI_8DD44CA983C54B64A2FE1439075F7B1C">当映射在组内、层次结构中组织的值时，请使用点 (<span class="usertext">.</span>) 符号来访问嵌套字段。例如，要映射分组 <span class="usertext">data</span> 字段下嵌套的 <span class="usertext">pressure</span> 字段，可将 <span class="usertext">data.pressure</span> 映射到名为 <span class="usertext">pressure</span> 的字段。<img purpose="img" placement="inline" alt="使用点 (.) 符号访问“字段映射器处理器”属性中的嵌套字段的示例" title="使用点 (.) 符号访问“字段映射器处理器”属性中的嵌套字段的示例" src="GUID-65989A0C-E469-408C-AD46-FEB403FBC371-web.png"></li>			<li purpose="li" id="LI_FF9E6B7BF30343CFBF8CC6C06D9C82E8">当映射在数组、列表或多基数结构内组织的值时，请使用诸如 C# 以及 Java 等编程语言中的通用索引符号。例如，给定一个名为 <span class="usertext">observations</span> 的值列表，要将列表中的第三个值映射到名为 <span class="usertext">third</span> 新属性，则需要将 <span class="usertext">observations[2]</span> 映射到名为 <span class="usertext">third</span> 的字段。在编程中，数组几乎总是从零开始，这意味着数组中第一个元素的索引为零。</li>			<li purpose="li" id="LI_11DB67B03BCC413EAB37837F13EA9EA8">有关详细信息，请参阅有关 GeoNet 的博客 <a target="_blank" class="xref xref" href="https://community.esri.com/community/gis/enterprise-gis/geoevent/blog/2018/07/25/json-data-structures-working-with-hierarchy-and-multicardinality">JSON 数据结构 - 使用层次结构和多基数</a>中的<span class="uicontrol">访问数据值</span>部分，以了解层次结构和多基数数据的示例。</li>		</ul></section>	<section class="section1 padded-anchor" id="ESRI_SECTION1_1564BB7FA73A4A5A8657475477CEA695" purpose="section1"><h2>用法说明</h2><ul purpose="ul" id="UL_28AABCE60E3E49FFA7E5249394D7BCFD">			<li purpose="li" id="LI_752099F0C7F647C485617C3B420E49DA">配置字段映射器处理器时，请选择一个源 GeoEvent 定义和目标 GeoEvent 定义。目标 GeoEvent 定义中的字段显示在右侧，可通过源 GeoEvent 定义中的下拉列表选择适当的映射字段。显示每个字段的数据类型以帮助识别适合每个字段的映射。</li>			<li purpose="li" id="LI_259CCD71C487494490347CC53A9BB347">某个实时处理阶段中事件记录的 GeoEvent 定义可能与已发布要素服务的方案不一致。事件记录将需要由字段映射器处理器进行处理，以在 GeoEvent 服务能够更新要素服务中的要素前转换所有事件记录的方案，使其与目标要素的方案相匹配。例如，许多实时数据源（尤其是提供通用 JSON 的数据源）经常提供的数据结构为以组或列表形式组织的具有多个值的数据。此类数据结构与数据结构是平面的要素服务方案不一致，需要离散数据类型（日期、字符串、长整型等）。处理器可用于映射来自层次结构和/或多基数数据结构的数据，以创建更简单的平面数据结构，例如从要素服务导入的 GeoEvent 定义。</li>			<li purpose="li" id="LI_9704917F61814696B01ED07D795B8D5E">如要在已发布的要素服务中更新要素，并且不想修改现有要素的一个或多个字段，那么在处理器中不映射这些字段，将导致在要素记录的未映射属性中写入空值。为了不在处理器留下未映射字段，只需清除不应更新的字段。有关详细信息，请参阅有关 GeoNet 的博客<a target="_blank" class="xref xref" href="https://community.esri.com/community/gis/enterprise-gis/geoevent/blog/2018/10/03/using-a-partial-structure-or-schema-to-update-feature-records">使用部分 GeoEvent 定义更新要素记录</a>。</li>		</ul></section>	<section class="section1 padded-anchor" id="ESRI_SECTION1_DFDEA1B3C1434363A3FB06F4893D13D2" purpose="section1"><h2>参数</h2><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><thead><tr><th colspan="1" width="25%">参数</th><th colspan="1">描述</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1">							<p id="GUID-BBF9C386-98D2-48C9-A4FB-D0FBC7405435">名称</p>						</td><td outputclass="" purpose="entry" rowspan="1" colspan="1">							<p id="GUID-DB723445-3A06-419E-A892-826F901366A9">用于在 GeoEvent Manager 中引用的处理器的描述性名称。</p>						</td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1">							<p id="GUID-36BDA747-4F6E-44CC-B479-2EEB685B2C2B">处理器</p>						</td><td outputclass="" purpose="entry" rowspan="1" colspan="1">							<p id="GUID-7FC6D157-6C57-405D-AACC-5E27720139C7">所选处理器的名称。</p>						</td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1">							<p id="GUID-321C8E3D-D00D-449A-9B0E-74003ED103AE">源 GeoEvent 定义</p>						</td><td outputclass="" purpose="entry" rowspan="1" colspan="1">							<p id="GUID-26D0BA20-549D-4461-AE7F-B2B07361B8A9">将从中获取属性值 GeoEvent 定义的名称。</p>							<div class="panel trailer-1 note" id="GUID-1C292CBB-81A4-40CE-9AA5-1DBCB3B3743F"><h5 class="icon-ui-comment trailer-0">注：</h5>								<p id="GUID-1C96179D-0715-4B50-BD17-D3E9B17B6360">当映射在组内或层次结构中组织的值时，请使用点 (<span class="usertext">.</span>) 符号来访问嵌套字段。当映射在列表或多基数结构中组织的值时，请使用 C＃ 和 Java 等编程语言中通用的数组索引符号。</p>							</div>						</td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1">							<p id="GUID-C3B8FF5B-78E7-4F77-BD64-8198CB1D3477">目标 GeoEvent 定义</p>						</td><td outputclass="" purpose="entry" rowspan="1" colspan="1">							<p id="GUID-114743FD-8D47-47A5-BB32-193C43D26F55">对于从源数据结构接收值的属性字段，其 GeoEvent 定义的名称。</p>						</td></tr></tbody><caption></caption></table></div></section>	<section class="section1 padded-anchor" id="ESRI_SECTION1_AA49DF70A272422A81BDED8C8E0B314D" purpose="section1"><h2>注意事项和限制</h2><ul purpose="ul" id="UL_D05C2B296BEB486BB3EE419B953C086C">			<li purpose="li" id="LI_7604C7F81B6643999E50A9EC96983D5B">如果字段映射器处理器无法完成数据类型转换，则映射字段中将写入空值。例如，将数据类型为字符串的属性字段映射到数据类型为双精度的属性字段时。处理器无法将文字字符串值 twelve 转换为数值，因此它会在目标字段中写入空值。</li>			<li purpose="li" id="LI_EDB135747B9942E69039A9F25C9FF0F8">处理器对于其接收到的事件数据特别挑剔。例如，假设处理器已配置为将与<span class="uicontrol">汽车</span> GeoEvent 定义相关的事件记录映射到由<span class="uicontrol">车辆</span> GeoEvent 定义描述的结构。如果处理器接收到包含船只属性数据的事件记录，则它将假定下游的另一个处理器正在期待其数据结构与<span class="uicontrol">船只</span> GeoEvent 定义相匹配的事件记录，并会允许事件记录通过未经修改的处理器。</li>			<li purpose="li" id="LI_2BA34DF867D54C56AD1034ED2485B669">如果源 GeoEvent 定义和目标 GeoEvent 定义之间的字段映射不正确，处理器将不会删除或放弃事件记录。事件记录将继续使用源 GeoEvent 定义方案进行处理，而目标 GeoEvent 定义将被忽略。例如，如果目的是将源方案中名为 <span class="usertext">TrackID</span> 的字段映射到目标方案中名为 <span class="usertext">track_id</span> 的字段，但因输入错误将源字段指定为 <span class="usertext">TrackIDs</span>，则处理器将不会映射任何字段。相反，处理器将通过使用源 GeoEvent 定义的原始事件记录。如果错误地指定了用于引用层次结构值的点或索引符号，也会如此。</li>		</ul></section>
+			
+				<hr>
+				<!--googleoff: all-->
+				
+	
+        
+		    <p class="feedback right">
+		        <a id="afb" class="icon-ui-contact" href="/feedback/" data-langlabel="feedback-on-this-topic" >有关此主题的反馈?</a>
+		    </p>
+        
+	
+
+				<!--googleon: all-->
+			
+		</main>
+	</div>
+	
+	<!--googleoff: all-->
+	
+		
+			<div id="main-toc-large" class="column-5">
+			    <div class="panel font-size--2 tablet-hide trailer-1">
+			      <h5 class="trailer-half">在本主题中</h5>
+			      <ol class="list-plain pre-0 trailer-0"><li><a href="#ESRI_SECTION1_65A2E25A398F4BFA80FF7898917618E9">汇总</a></li><li><a href="#ESRI_SECTION1_637B7F971F4040CCB350F68E31E180F6">示例</a></li><li><a href="#ESRI_SECTION1_1564BB7FA73A4A5A8657475477CEA695">用法说明</a></li><li><a href="#ESRI_SECTION1_DFDEA1B3C1434363A3FB06F4893D13D2">参数</a></li><li><a href="#ESRI_SECTION1_AA49DF70A272422A81BDED8C8E0B314D">注意事项和限制</a></li></ol>
+			    </div>
+			    
+			    
+	  		</div>
+		
+    
+   <!--googleon: all-->
+
+
+
+
+          
+        </div>
+        <!-- ENDPAGECONTENT -->
+
+      </div>
+
+    </div>  <!-- End of wrapper -->
+
+  <footer class="footer leader-3 link-dark-gray" role="contentinfo">
+    <div class="grid-container">
+      <div class="row">
+        <nav class="column-6">
+          <h6 data-langlabel="arcgis-for-server">Arc<span>GIS Enterprise</span></h6>
+          <ul class="list-plain">
+            <li><a data-langlabel="home" href="../../../../zh-CN/">主页</a></li>
+            <li><a data-langlabel="portal" href="../../../../zh-CN/portal/">Portal</a></li>
+            <li><a data-langlabel="server" href="../../../../zh-CN/server/">Server</a></li>
+            <li><a data-langlabel="data-store" href="../../../../zh-CN/data-store/">Data Stores</a></li>
+            <li><a data-langlabel="cloud" href="../../../../zh-CN/cloud/">云</a></li>
+            <li><a data-langlabel="apps" href="../../../../zh-CN/apps/">应用程序</a></li>
+            <li><a data-langlabel="documentation" href="../../../../zh-CN/documentation/">文档</a></li>
+          </ul>
+        </nav>
+
+        
+  <nav class="column-6">
+    <h6 data-langlabel="arcgis-platform">ArcGIS 平台</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="arcgis" href="//www.arcgis.com/">ArcGIS Online</a></li>
+      <li><a data-langlabel="arcgis-for-professionals" href="//pro.arcgis.com/">ArcGIS Pro</a></li>
+      <li><a data-langlabel="arcgis-for-server" href="//enterprise.arcgis.com/">ArcGIS Enterprise</a></li>
+      <li><a data-langlabel="arcgis-for-developers" href="https://developers.arcgis.com/">ArcGIS for Developers</a></li>
+      <li><a data-langlabel="arcgis-solutions" href="//solutions.arcgis.com/">ArcGIS Solutions</a></li>
+      <li><a data-langlabel="arcgis-marketplace" href="//marketplace.arcgis.com/">ArcGIS Marketplace</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <h6 data-langlabel="about-esri">关于 Esri</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="about-us" href="//www.esri.com/about-esri/">关于我们</a></li>
+      <li><a data-langlabel="careers" href="//www.esri.com/careers/">招贤纳士</a></li>
+      <li><a data-langlabel="insiders-blog" href="https://www.esri.com/about/newsroom/blog/">Esri 博客</a></li>
+      <li><a data-langlabel="user-conference" href="//www.esri.com/events/user-conference/index.html">用户大会</a></li>
+      <li><a data-langlabel="developer-summit" href="//www.esri.com/events/devsummit/index.html">开发者峰会</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <a class="esri-logo" href="//www.esri.com/" aria-label="Esri Home"></a>
+    <section class="footer-social-nav leader-1">
+            <a class="icon-social-twitter" aria-label="Esri on Twitter" href="https://twitter.com/Esri/"></a>
+            <a class="icon-social-facebook" aria-label="Esri on Facebook" href="https://www.facebook.com/esrigis/"></a>
+            <a class="icon-social-github" aria-label="Esri on GitHub" href="//esri.github.io/"></a>
+            <a class="icon-social-contact" aria-label="Contact Esri" href="//www.esri.com/about-esri/contact/"></a>
+    </section>
+	  
+  </nav>
+  
+  <div class="column-24 leader-1">
+    <p class="font-size--3"><a href="http://www.esri.com/legal/copyright-trademarks">Copyright &copy; 2019 Esri.</a> All rights reserved. | <a href="http://www.esri.com/legal/privacy/">隐私政策</a> | <a href="http://www.esri.com/legal/software-license">法律声明</a></p>
+  </div>
+  
+
+
+      </div>
+    </div>
+  </footer>
+  <!--googleoff: all-->
+
+  
+  
+	<script src="../../../../zh-CN/assets/js/init.js" type="text/javascript"></script>
+	<!--<script src="../../../../zh-CN/assets/js/drop-down.js" type="text/javascript"></script>-->
+	<script src="../../../../zh-CN/assets/js/search/searchform.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/cdn/js/link-modifier.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/cdn/js/sitewide.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/cdn/js/libs/highlight.pack.js" type="text/javascript"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+
+
+  
+    
+
+  <script src="../../../../zh-CN/cdn/js/affix.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    $(function () {
+          var appendFlg = true;
+
+          $("#bigmac")
+          .on("affixed.bs.affix", function (evt) {
+            if (appendFlg) {
+              $("<a class='crumb' href='#'>字段映射器处理器</a>").insertAfter ($("#bigmac nav a").last());
+              appendFlg = false;
+            }
+          })
+          .on ("affix-top.bs.affix", function(evt) {
+            if (!appendFlg) {
+              $("#bigmac nav a").last().remove();
+            }
+            appendFlg = true;
+          })
+    })
+  </script>
+  
+        <script type="text/javascript">
+          window.doctoc = {
+            pubID: "1336",
+            tpcID: "57",
+            
+              prefix: "处理事件数据",
+              prefixUrl: "/zh-cn/geoevent/latest/process-event-data/",
+          
+            hideToc: false
+          }
+        </script>
+
+        <script type="text/javascript" src="../../../../zh-CN/geoevent/latest/process-event-data/1336.js" ></script>
+        <script type="text/javascript" src="../../../../zh-CN/cdn/calcite/js/protoc.js" ></script>
+        
+        
+
+  <noscript>
+        <p>
+            <a href="flisting.htm">flist</a>
+        </p>
+    </noscript>
+    <script type="text/javascript"></script>
+  
+  
+    
+    
+
+  </body>
+</html>

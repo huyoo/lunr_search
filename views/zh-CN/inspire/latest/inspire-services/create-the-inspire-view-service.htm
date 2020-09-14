@@ -1,0 +1,657 @@
+
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>  <html class="ie lt-ie9 lt-ie8 lt-ie7 ie6" dir="ltr"> <![endif]-->
+<!--[if IE 7]>     <html class="ie lt-ie9 lt-ie8 ie7" dir="ltr"> <![endif]-->
+<!--[if IE 8]>     <html class="ie lt-ie9 ie8" dir="ltr"> <![endif]-->
+<!--[if IE 9]>     <html class="ie ie9" dir="ltr"> <![endif]-->
+<!--[if !IE]><!--> <html dir="ltr" lang="zh-CN"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>Creating the INSPIRE View service&mdash;ArcGIS for INSPIRE | ArcGIS Enterprise 文档</title>
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+    <script>
+      var docConfig = {
+        locale: 'zh-CN'
+        ,localedir: 'zh-cn'
+        ,langSelector: ''
+        
+        ,relativeUrl: false
+        
+
+        ,searchformUrl: '/search/'
+        ,tertiaryNavIndex: ''
+
+        
+      };
+    </script>
+	 
+
+
+    
+    <!--[if lt IE 9]>
+      <script src="../../../../zh-CN/cdn/js/libs/html5shiv.js" type="text/javascript"></script>
+      <script src="../../../../zh-CN/cdn/js/libs/selectivizr-min.js" type="text/javascript"></script>
+      <script src="../../../../zh-CN/cdn/js/libs/json2.js" type="text/javascript"></script>
+      <script src="../../../../zh-CN/cdn/js/libs/html5shiv-printshiv.js" type="text/javascript" >
+
+    <![endif]-->
+
+     <!--[if lt IE 11]>
+    <script>
+      $$(document).ready(function(){
+        $$(".hideOnIE").hide();
+      });
+    </script>
+    <![endif]-->
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<link href="../../../../zh-CN/assets/img/favicon.ico" rel="shortcut icon" >
+	<link href="../../../../zh-CN/assets/css/screen.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/cdn/calcite/css/documentation.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/assets/css/print.css" media="print" type="text/css" rel="stylesheet" />
+
+	<!--
+	<link href="../../../../zh-CN/assets/css/screen_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/assets/css/documentation/base_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/assets/css/print_l10n.css" media="print" type="text/css" rel="stylesheet" />
+	-->
+	
+	
+		<script src="../../../../zh-CN/cdn/js/libs/jquery.1.9.1.min.js" type="text/javascript"></script>
+	
+	<script src="../../../../zh-CN/cdn/js/libs/jquery.cookie.js" type="text/javascript"></script>
+	<link href="../../../../zh-CN/cdn/css/colorbox.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/cdn/css/colorbox_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<script src="../../../../zh-CN/cdn/js/libs/jquery.colorbox-min.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/assets/js/video-init.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/assets/js/sitecfg.js" type="text/javascript"></script>
+	
+		<script src="../../../../zh-CN/assets/js/signIn.js" type="text/javascript"></script>
+	
+
+	<!--- Language Picker -->
+	<script src="../../../../zh-CN/assets/js/locale/l10NStrings.js" type="text/javascript"></script>
+	
+		 
+	
+
+	<script src="../../../../zh-CN/assets/js/calcite-web.js" type="text/javascript"></script>
+
+
+
+  <!--- search MD -->
+    <META name="description" content="After you've followed steps to prepare a  map document with INSPIRE data, the map document can be published as an INSPIRE View service through ArcGIS Server."><META name="last-modified" content="2019-12-6"><META name="product" content="inspire,arcgis-server-windows"><META name="sub_category" content="ArcGIS for INSPIRE"><META name="search-collection" content="help"><META name="content_type_label" content="帮助主题"><META name="sub_category_label" content="ArcGIS for Inspire"><META name="search-category" content="help-general"><META name="subject_label" content="服务,DATA,SERVER,INSPIRE"><META name="version" content="10.8"><META name="content_type" content="Help Topic"><META name="subject" content="SERVICES,DATA,SERVER,INSPIRE"><META name="content-language" content="zh-cn">
+    <!--- search MD -->
+
+  
+      
+
+</head>
+
+<!--
+      pub: GUID-9A3EA886-A00A-41A8-A8F0-D6AAE3840B61=10
+      tpc: GUID-A2AB2866-8D1E-4B9A-A6E9-F47043F64E04=4
+      -->
+
+
+<!-- variable declaration, if any -->
+<!-- can change following macro to set variable once we are on Jinja 2.8 -->
+
+
+
+
+
+<body class="claro zh-CN server">
+  
+
+  <!-- Drawer location -->
+  <div class="drawer drawer-left js-drawer" data-drawer="top-nav">
+        <nav class="drawer-nav" role="navigation">
+          <aside class="side-nav">
+            <h2 class="side-nav-title">Arc<span>GIS</span> Enterprise</h2>
+            <form id="helpSearchForm" class="margin-left-half margin-right-half leader-half trailer-half drawer-search-form" method="GET">
+              <input type="search" name="q"  placeholder="Search ArcGIS for INSPIRE 10.6">
+              <input type="hidden" name="collection" value="help" />
+              <input type="hidden" name="product" value="inspire" />
+              <input type="hidden" name="version" value="10.8" />
+              <input type="hidden" name="language" value="zh-CN" />
+            </form>    
+             <a id="nav-portal" data-langlabel="portal" href="../../../../zh-CN/portal/" class="side-nav-link">Portal</a>
+             
+            <a id="all-servers" data-langlabel="all-servers" href="../../../../zh-CN/server/" class="side-nav-link">所有服务器</a>
+            <a id="gis-server" data-langlabel="gis-server" href="../../../../zh-CN/server/" class="side-nav-link">GIS Server</a>
+            <a id="image-server" data-langlabel="image-server" href="../../../../zh-CN/image/" class="side-nav-link">Image Server</a>
+            <a id="geo-analytics-server" data-langlabel="geo-analytics-server" href="../../../../zh-CN/geoanalytics/" class="side-nav-link">GeoAnalytics Server</a>
+            <a id="geoevent-server" data-langlabel="geoevent-server" href="../../../../zh-CN/geoevent/" class="side-nav-link">GeoEvent Server</a>
+            <a id="notebook-server" data-langlabel="notebook-server" href="../../../../zh-CN/notebook/" class="side-nav-link">Notebook Server</a>
+            <a id="nav-data-store" data-langlabel="data-store" href="../../../../zh-CN/data-store/" class="side-nav-link">Data Stores</a>
+            <a id="nav-cloud" data-langlabel="cloud" href="../../../../zh-CN/cloud/" class="side-nav-link">云</a>
+            <a id="nav-apps" data-langlabel="apps" href="../../../../zh-CN/apps/" class="side-nav-link">应用程序</a>
+            <a id="nav-doc" data-langlabel="documentation" href="../../../../zh-CN/documentation/" class="side-nav-link">文档</a>
+
+          </aside>
+        </nav>
+    </div>
+
+    <!-- user navigation collapses to drawer on mobile -->
+    
+    <div class="drawer drawer-right js-drawer hide-if-logged-out logged-in-navigation" data-drawer="user-nav">
+      <nav class="drawer-nav">
+        <aside class="side-nav">
+          <a class="side-nav-link agolProfile" href="#">我的个人资料</a>
+          <a class="side-nav-link icon-ui-sign-out js-log-out" href="#">登出</a>
+        </aside>
+      </nav>
+    </div>
+    
+<!-- End of drawer -->
+
+  
+  <div class="wrapper">
+      <!--googleoff: all-->
+
+      <header class="top-nav" data-skin="learn">
+        <a class="skip-to-content" href="#skip-to-content">Skip To Content</a>
+        <div class="grid-container">
+          <div class="column-24">
+
+
+            <!--<div class="top-nav-title-wrapper text-center ">-->
+              <a href='../../../../zh-CN/' class="top-nav-title tablet-hide"><span>Arc</span>GIS  Enterprise</a>
+              <a href='../../../../zh-CN/' class="icon-ui-menu top-nav-title js-drawer-toggle tablet-show" data-drawer="top-nav"><span>Arc</span>GIS Enterprise</a>
+            <!--</div> -->
+
+          
+            <nav role="navigation" class="top-nav-list left tablet-hide">
+              <a id="nav-portal" data-langlabel="portal" href="../../../../zh-CN/portal/" class="top-nav-link">Portal</a>
+
+                <div class="dropdown js-dropdown ">
+                  <a class="top-nav-link js-dropdown-toggle" tabindex="0" aria-haspopup="true" aria-expanded="false" href="#">Servers</a>
+                  <nav class="dropdown-menu featured" role="menu">
+                    <ul class="dropdown-sublist-featured">
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/get-started/latest/windows/additional-server-deployment.htm" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path  d="M42.92 6.1H4.12v8.566l.833.832-.835.833-.018 7.332.845.847-.825.824V33.9h25v5.2h-2v1.075H8.02v.8h19.1v.925h4.8v-.925H40v-.8h-8.08V39.1h-2v-5.2h13v-8.566l-.834-.834.835-.834v-7.332l-.835-.834.835-.834zm-11.8 35h-3.2v-1.2h3.2zm11-8H4.92v-7.434l.767-.766h35.668l.765.766zm0-9.766l-.766.766H5.666l-.766-.767.017-6.669.766-.764h35.671l.766.766zm0-9l-.766.766H5.687l-.766-.766V6.9h37.2zM19 11.9h-2v-.8h2zm-4 0h-2v-.8h2zm-4 0H9v-.8h2zm6 8.2h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9zm8 9h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9z"/></svg></span>
+                          <span class="sublink-text">所有服务器</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/server/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M45.98 33.575a.616.616 0 0 0-.335-.51l-3.362-2.03 3.362-2.031a.556.556 0 0 0 0-1.02l-11.1-6.704a1.293 1.293 0 0 0-1.112 0L22.33 27.982a.556.556 0 0 0 0 1.02l3.36 2.03-3.358 2.03a.556.556 0 0 0-.002 1.021l3.322 2.006-3.324 2.008a.555.555 0 0 0 .002 1.017l11.102 6.703a1.25 1.25 0 0 0 1.11.002l11.104-6.706a.556.556 0 0 0 0-1.02l-3.32-2.006 3.318-2.004a.607.607 0 0 0 .335-.509zM33.837 21.97c.026-.01.286-.005.29-.005l10.814 6.53-10.8 6.523c-.028.01-.284.005-.294.006l-10.813-6.53zm11.105 16.636l-10.8 6.523a2.564 2.564 0 0 1-.295.006l-10.81-6.529 3.39-2.047 7.004 4.23a1.083 1.083 0 0 0 .557.131 1.101 1.101 0 0 0 .554-.13l7.01-4.233zM34.14 40.098a2.545 2.545 0 0 1-.294.006l-10.812-6.53 3.43-2.073 6.97 4.208a1.25 1.25 0 0 0 1.107-.001l6.966-4.206 3.431 2.073zM9 8H7V7h2zm8 8h-2v-1h2zm-4-8h-2V7h2zm4 0h-2V7h2zm-4 8h-2v-1h2zm7.316 11.1H3.9v-6.434l.766-.766h35.668l.766.766v2.12l.8.483v-2.935l-.826-.826.826-.845v-6.329l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9h16.88a2.632 2.632 0 0 1 .336-.8zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zm0 8v-5.668l.766-.766h35.668l.766.766v5.67l-.746.764H4.666zM15 24v-1h2v1zm-4 0v-1h2v1zm-2-8H7v-1h2zm-2 8v-1h2v1z"/></svg></span>
+                          <span class="sublink-text">GIS Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/image/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 8h-2V7h2zm-4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm8 8h-2v1h2zm-8 0H7v1h2zm4 9v-1h-2v1zm-4 0v-1H7v1zm8 0v-1h-2v1zm4 3.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V21h-.8v-.334l-.766-.766H4.666l-.766.766V27.1H21zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zm40.234 4v21.8H23.1V23.1zm-.8 16.366L39.466 44.1h2.868l1.766-1.766zm-20.2-9.932l5.634-5.634h-2.868L23.9 26.666zm6.2-5.068L24.466 30.1h2.868l2.766-2.766zM28.466 30.1H30.1v-1.634zm2.434 0h6.2v-6.2h-6.2zm-7 7h6.2v-6.2h-6.2zm7 0h6.2v-6.2h-6.2zm0 6.434l5.634-5.634h-2.868L30.9 40.666zm7-7l5.634-5.634h-2.868L37.9 33.666zm1.634-5.634H37.9v1.634zm-8.634 7v1.634l1.634-1.634zm.566 6.2h2.868l2.766-2.766v-2.868zm6.434-3.566l2.634-2.634H37.9zM35.466 44.1H37.1v-1.634zm2.434 0h.434l5.766-5.766V37.9h-2.434L37.9 41.666zm6.2-8.634L42.466 37.1H44.1zm0-4L38.466 37.1h2.868l2.766-2.766zm0-7.566h-6.2v6.2h6.2zm-20.2 0v1.634l1.634-1.634zm0 20.2h6.2v-6.2h-6.2zm20.2 0v-.634l-.634.634z"/></svg></span>
+                          <span class="sublink-text">Image Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/geoanalytics/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 16h-2v-1h2zm-8 8v-1H7v1zm8 0v-1h-2v1zM13 7h-2v1h2zm4 0h-2v1h2zM9 7H7v1h2zm21.45 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V27.9h-1.464l-.801-.8H41.1v-6.434l-.766-.766H4.666l-.766.766V27.1h27.15zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM13 24v-1h-2v1zm0-9h-2v1h2zm-4 0H7v1h2zm26.672 27.148A1.87 1.87 0 0 1 35.9 43a1.91 1.91 0 1 1-3.763-.222l-9.845-3.414A1.88 1.88 0 0 1 21 39.9a1.9 1.9 0 1 1 1.474-3.084l4.692-2.346A1.878 1.878 0 0 1 27.1 34a1.902 1.902 0 0 1 1.9-1.9 1.867 1.867 0 0 1 .781.191l3.788-5.05A1.88 1.88 0 0 1 33.1 26a1.9 1.9 0 1 1 3.491 1.026l4.889 4.888c-.069.056-.144.1-.21.162a3.986 3.986 0 0 0-.358.402l-4.883-4.883A1.889 1.889 0 0 1 35 27.9a1.867 1.867 0 0 1-.781-.191l-3.788 5.049a1.868 1.868 0 0 1 .437.965l9.204.614c-.018.11-.049.218-.058.33A3.93 3.93 0 0 0 40 35c0 .046.01.09.01.135l-9.185-.612A1.913 1.913 0 0 1 29 35.9a1.889 1.889 0 0 1-1.474-.716l-4.692 2.346a1.878 1.878 0 0 1 .066.47 1.9 1.9 0 0 1-.105.625c-.007.02-.022.036-.03.056l9.63 3.34a1.87 1.87 0 0 1 2.786-.505l5.415-4.437c.067.108.127.22.204.322a3.9 3.9 0 0 0 .292.306zM33.9 26a1.092 1.092 0 0 0 .43.872 1.12 1.12 0 0 0 1.42-.068A1.1 1.1 0 1 0 33.9 26zm-6 8a1.1 1.1 0 0 0 2.196.093 1.135 1.135 0 0 0-.426-.965A1.087 1.087 0 0 0 29 32.9a1.101 1.101 0 0 0-1.1 1.1zm-5.8 4a1.098 1.098 0 1 0-.06.362A1.101 1.101 0 0 0 22.1 38zm13 5a1.1 1.1 0 1 0-2.2 0 1.1 1.1 0 0 0 2.2 0zm10.8-8a1.9 1.9 0 1 1-3.8 0c0-.053.003-.105.007-.158A1.9 1.9 0 0 1 45.9 35zm-.8 0a1.1 1.1 0 0 0-2.196-.093 1.153 1.153 0 0 0 .216.752A1.1 1.1 0 0 0 45.1 35z"/></svg></span>
+                          <span class="sublink-text">GeoAnalytics Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/geoevent/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M13 8h-2V7h2zm4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm12.418 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826v2.117c-.259-.177-.53-.337-.8-.497v-1.288l-.766-.766H4.666l-.766.766V27.1h17.933c-.148.26-.283.53-.415.8zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM9 24v-1H7v1zm4-9h-2v1h2zm0 9v-1h-2v1zm-4-9H7v1h2zm8 9v-1h-2v1zm16.9 2h-.8v8.9H39v-.8h-5.1zm.1-3.901a11.9 11.9 0 1 0 11.9 11.9 11.914 11.914 0 0 0-11.9-11.9zm0 23a11.1 11.1 0 1 1 11.1-11.1 11.112 11.112 0 0 1-11.1 11.1z"/></svg></span>
+                          <span class="sublink-text">GeoEvent Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/notebook/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M22 27.1H3.9v-6.434l.766-.766h18.576a5.262 5.262 0 0 1 .83-.8H4.666l-.766-.766v-5.668l.766-.766h35.668l.766.766V18h.8v-5.666l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9H22zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zM9 8H7V7h2zm8 0h-2V7h2zm-4 0h-2V7h2zm2 16v-1h2v1zm-4 0v-1h2v1zm-4 0v-1h2v1zm0-8v-1h2v1zm8 0v-1h2v1zm-4 0v-1h2v1zm18.9 8.1h-1.8v1.8h1.8zm-.8 1h-.2v-.2h.2zm15.498-4.48a2.727 2.727 0 0 0-1.62-.5v-.02H27.25a3.154 3.154 0 0 0-3.15 3.15V38.1h-1.68a3.386 3.386 0 0 0-2.872 1.58 3.49 3.49 0 0 0-.157 3.419 3.241 3.241 0 0 0 2.954 1.801h15.161a3.404 3.404 0 0 0 3.394-3.4V26.9h5v-3.65a3.224 3.224 0 0 0-1.302-2.63zM22.345 44.1a2.44 2.44 0 0 1-2.23-1.341 2.706 2.706 0 0 1 .11-2.65A2.588 2.588 0 0 1 22.42 38.9h12.89a3.395 3.395 0 0 0 0 5.2zM40.1 23.192V41.5a2.6 2.6 0 1 1-2.6-2.6v-.8H24.9V23.25a2.352 2.352 0 0 1 2.35-2.35h13.795a3.183 3.183 0 0 0-.945 2.292zm5 2.908h-4.2v-2.908a2.274 2.274 0 0 1 1.44-2.18 1.944 1.944 0 0 1 1.791.259 2.423 2.423 0 0 1 .97 1.979zm-17.1 5h9v.8h-9zm0 3h7v.8h-7zm0-6h9v.8h-9zm4-3h5v.8h-5z"/></svg></span>
+                          <span class="sublink-text">Notebook Server</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+
+              <a id="nav-data-store" data-langlabel="data-store" href="../../../../zh-CN/data-store/" class="top-nav-link">Data Stores</a>
+              <a id="nav-cloud" data-langlabel="cloud" href="../../../../zh-CN/cloud/" class="top-nav-link">云</a>
+              <a id="nav-apps" data-langlabel="apps" href="../../../../zh-CN/apps/" class="top-nav-link">应用程序</a>
+            </nav>
+
+
+            
+            
+            
+
+            <div class="margin-left-1 top-nav-list right hide-if-logged-in logged-out-navigation">
+               
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+              
+              <a data-langlabel="sign-in" id="login-link" class="icon-ui-user top-nav-link link-blue login-link" href="#">登录</a>
+              
+            </div>
+
+            
+            <nav class="margin-left-1 top-nav-list right hide-if-logged-out logged-in-navigation">
+              
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+             
+              <div class="dropdown js-dropdown right">
+
+                <div class="tablet-show top-nav-link">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a href="#" data-drawer="user-nav" class="user-nav-name js-drawer-toggle" data-first-name></a>
+                </div>
+
+                <div class="tablet-hide top-nav-link js-dropdown-toggle">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a class="user-nav-name top-nav-dropdown dropdown-btn" data-first-name>&nbsp;</a>
+                </div>
+
+                <nav class="dropdown-menu dropdown-right">
+                
+                  <a class="dropdown-link agolProfile" id="agolProfile" href="#">我的个人资料</a>
+                  <a class="dropdown-link js-log-out" id="agolLogout" href="#">登出</a>
+                </nav>
+              </div>
+            </nav>
+            
+
+            
+          </div>
+        </div>
+      </header>
+
+      <div class="js-search search-overlay">
+        <div class="search-content" role="dialog" aria-labelledby="search">
+          <form method="GET" id="helpSearchForm">
+            <label>
+              Search ArcGIS for INSPIRE 10.6
+              <div class="search-bar">
+                <input type="search" name="q"  placeholder="Search ArcGIS for INSPIRE 10.6" class="search-input js-search-input">
+                <input type="hidden" name="collection" value="help" />
+                <input type="hidden" name="product" value="inspire" />
+                <input type="hidden" name="version" value="10.8" />
+                <input type="hidden" name="language" value="zh-CN" />
+              </div>
+            </label>
+            <input type="hidden" name="relativePath" value="../../../../" /><button type="submit" class="btn btn-large right">搜索</button>
+          </form>
+        </div>
+      </div>
+
+      <!--googleon: all-->
+
+      <div id="skip-to-content">
+        <!--googleoff: all-->
+        <header class="sub-nav sub-nav-learn">
+          <div class="grid-container">
+            
+            <div class="column-24">
+              <div style="display:table;" class="sdk-home-banner">
+                <div class="sdk-home-banner-content">
+                  <h1 class="sub-nav-title link-white">ArcGIS for INSPIRE</h1>
+                </div>
+              </div>
+            </div>
+
+            <div class="column-24">
+              <nav class='sub-nav-list tablet-hide'><a class="sub-nav-link" href="../../../../zh-CN/inspire/" target="_top" title="ArcGIS for INSPIRE Overview">Home</a><a class="sub-nav-link" href="../../../../zh-CN/inspire/latest/get-started/" target="_top" title="Get Started with ArcGIS for INSPIRE">Get Started</a><a class="sub-nav-link is-active" href="../../../../zh-CN/inspire/latest/inspire-services/" target="_top" title="INSPIRE Services">INSPIRE Services</a></nav><select class='tablet-show select-full trailer-half js-select-nav'><option value="../../../../zh-CN/inspire/">Home</option><option value="../../../../zh-CN/inspire/latest/get-started/">Get Started</option><option selected="true" value="../../../../zh-CN/inspire/latest/inspire-services/">INSPIRE Services</option></select>
+            </div>
+
+          </div>
+        </header>
+        <!--googleon: all-->
+       
+        <!-- content goes here -->
+        <div class="grid-container ">
+          
+
+            
+              
+  <!--BREADCRUMB-BEG--><div id="bigmac" class="sticky-breadcrumbs trailer-2" data-spy="affix" data-offset-top="180"> </div><!--BREADCRUMB-END-->
+  <!--googleoff: all-->
+    <div class="column-5 tablet-column-12 trailer-2 ">
+      <aside class="js-accordion accordion reference-index" aria-live="polite" role="tablist">
+        <div></div>
+      </aside>
+
+      <div class="js-sticky scroll-show tablet-hide leader-1 back-to-top" data-top="0" style="top: 0px;">
+        <a href="#" class="btn btn-fill btn-clear">返回顶部</a>
+      </div>
+    </div>
+  <!--googleon: all-->
+  
+            
+            
+            
+	
+		<div class="column-13  pre-1 content-section">
+	
+		<header class="trailer-1"><h1>Creating the INSPIRE View service</h1></header>
+
+		 
+	<!--googleoff: all-->
+	
+		
+				<aside id="main-toc-small" class="js-accordion accordion tablet-show trailer-1">
+			      <div class="accordion-section">
+			        <h4 class="accordion-title">在本主题中</h4>
+			        <div class="accordion-content list-plain">
+			          <ol class="list-plain pre-0 trailer-0"><li><a href="#GUID-FFAE3950-B778-4BE4-BA23-EADE60127E37">Creating the <ph translate="no" varid="inspire_short">INSPIRE</ph> View service</a></li><li><a href="#ESRI_SECTION1_880475ECF3B14C7DAF1E5C8370914EBB">Configuring <ph translate="no" varid="inspire_short">INSPIRE</ph> View service properties</a></li><li><a href="#ESRI_SECTION1_405E80C6ED6245C48C9F3A926A7D52EA"> Saving and reusing <ph translate="no" varid="inspire_short">INSPIRE</ph> View service properties</a></li><li><a href="#ESRI_SECTION1_516F8B2A7DC54BEA8E5E440844E0DC29">Enabling or disabling capabilities document caching</a></li><li><a href="#ESRI_SECTION1_3AF31210323845C0917C909634A9F063">Creating and using the custom <ph translate="no" varid="inspire_short">INSPIRE</ph> View service capabilities document </a></li></ol>
+			        </div>
+			      </div>
+			     </aside>
+		
+    
+   <!--googleon: all-->
+
+
+		<main>
+			
+	
+    	
+    
+
+
+			
+<p id="GUID-A0A37541-B713-4107-A191-0E9DB7253E7C"> After you've followed steps to <a class="xref xref" href="../../../../zh-CN/inspire/latest/inspire-services/create-inspire-view-service-map-document.htm">prepare a  map document with <span class="ph">INSPIRE</span> data</a>, the map document can be published as an <span class="ph">INSPIRE</span> View service through <span class="ph">ArcGIS Server</span>.
+This topic discusses details about the steps to publish. </p>      <div class="panel trailer-1 note" id="GUID-7B072310-AF21-4EA2-8D91-DC08B5A3E2A2"><h5 class="icon-ui-comment trailer-0">注：</h5>        <p id="GUID-7D08D88D-4EF8-4966-8027-8CA8214F8CA3">The service creation workflow is a two-step process:<ol class="list-numbered" purpose="ol" id="OL_54C80193DB774962B16EAED405E4F05A"><li purpose="li" id="LI_32C2B840CBFF49B3AAE0778BBF35D5D0">Create the <span class="ph">INSPIRE</span> View service.</li><li purpose="li" id="LI_B7B412252B9A4FC5B907F8E138A9101C">Configure <span class="ph">INSPIRE</span> View service properties.</li></ol></p>      </div><section class="section1 padded-anchor" id="GUID-FFAE3950-B778-4BE4-BA23-EADE60127E37" purpose="section1"><h2>Creating the <span class="ph">INSPIRE</span> View service</h2><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><section class="context padded-anchor" id="GUID-DCF8B5CA-9CE8-47CE-9AC7-FAA68F1DC7F9" purpose="context"><p id="GUID-C4F5B25D-8E78-4E9D-BC27-5F032CDE5630"> (Optional) A user can enable the <span class="ph">INSPIRE</span> View service to act as a Web Map Tile Service (WMTS). To do this, check the <span class="uicontrol">WMS uses TileCache (WMTS available)</span> check box. As the WMTS functionality relies on prerendered and cached map tiles, a user has to enable tile caching for the map service first before turning on the  WMTS option.</p>
+<div class="panel trailer-1 note" id="GUID-BBD8A115-476F-4031-997C-61FE5A998D40"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-38AC2C9A-269B-4AE9-8D04-D489B1543C94">If you published the Map service in a federated ArcGIS Server, you must share the service with everyone before proceeding with the following configuration steps.</p></div><div class="panel trailer-1" id="GUID-A45C23C5-3369-42EE-B4EA-2133501F4992"><h5 class="icon-ui-notice-triangle trailer-0">警告：</h5><p id="GUID-107AF146-78E0-4C8D-8FB6-E9066972BEF1">You must use <span class="ph">ArcMap</span> or <span class="ph">ArcCatalog</span> to manage <span class="ph">INSPIRE</span> services. <span class="ph">ArcGIS Server Manager</span> cannot be used to manage <span class="ph">INSPIRE</span> services. Actions such as saving an <span class="ph">INSPIRE</span> service using <span class="ph">ArcGIS Server Manager</span> will lead to a loss of some <span class="ph">INSPIRE</span> specific properties.</p></div></section><div class="steps" id="GUID-592AC72D-F258-4DD1-8BF7-7F8E0F7DDFFF"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_08B2A75D362041208B5F968C6EB4DFFC"><span purpose="cmd" id="GUID-0306B168-D5B6-45CA-845C-C07924921191">
+
+
+
+
+
+
+
+
+
+
+In ArcMap, click <span class="uicontrol">File <span class="greaterthan">&gt;</span> Share As <span class="greaterthan">&gt;</span> Service</span>.
+</span><div class="stepresult" purpose="stepresult"><p id="GUID-AA9ABEDB-4FBD-4332-A687-2025FE39DFA1">The <span class="uicontrol">Share as a Service</span> dialog box appears.</p></div></li><li purpose="step" id="ESRI_STEP_ED710DFB87684C14AF11F691A91DF953"><span purpose="cmd" id="GUID-C8EE71A6-AA54-425B-92F4-F8843A9B61C9">Click <span class="uicontrol">Publish a
+service</span>.
+</span></li><li purpose="step" id="ESRI_STEP_F91420150E074FE6A11F87B7FBEBC00C"><span purpose="cmd" id="GUID-5EBA4E5C-1E05-4981-85D5-95F808DDCDD2">Choose an existing connection to <span class="ph">ArcGIS Server</span>.</span><div class="info" purpose="info"><div class="panel trailer-1 note" id="GUID-BAD05070-1D14-4B48-A9D7-8145B1C357E5"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-2764DC3C-D5A0-4244-86A4-A0C1AC92C230"> If you don't have a connection yet, you can create one by choosing the <span class="ph">ArcGIS Server</span> connection option on the <span class="uicontrol">Catalog</span> table of contents.</p></div></div></li><li purpose="step" id="ESRI_STEP_5F54EB16F0374CB996C563A86236B533"><span purpose="cmd" id="GUID-6BFA2951-72D2-4979-B158-BD243F78C510">Provide a service name, and choose the folder where
+the service should be published.</span></li><li purpose="step" id="ESRI_STEP_695FD879031545CDBE180267EFD95FFF"><span purpose="cmd" id="GUID-4358B455-3E45-4685-BDE2-389EE9E1DD6E">In the <span class="uicontrol">Service Editor</span> dialog box, <span class="uicontrol">ArcGIS for INSPIRE capabilities</span> section, click <span class="uicontrol">Capabilities</span> and choose the service types <span class="uicontrol">WMS</span> and <span class="uicontrol">INSPIRE View</span>.
+</span></li><li purpose="step" id="ESRI_STEP_6574C71E419644508E40FAA4C3A05C45"><span purpose="cmd" id="GUID-B6D93784-6DAE-4D57-8368-33D7D4104FB7">Click <span class="uicontrol">Publish</span>.</span></li></ol></div></section></section>
+<section class="section1 padded-anchor" id="ESRI_SECTION1_880475ECF3B14C7DAF1E5C8370914EBB" purpose="section1"><h2>Configuring <span class="ph">INSPIRE</span> View service properties</h2><p id="GUID-180EC568-A619-4281-8F16-D1561DFF00C4"> The <span class="ph">INSPIRE</span> View service properties window supports multiple  languages and allows the user to specify a default language for the service. In <span class="ph">ArcMap</span>, it is found in the Service Editor interface on the wizard.</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_39BD3CFDC8BE4B1BBC161329AB6DFC83"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_695F1A2D3BB94B7E9661C37955AF4753"><span purpose="cmd" id="GUID-9C40E124-DF1E-4028-ACAB-62022F93F46A">Check that the <span class="uicontrol">WMS uses layer names from map document</span> check box is set appropriate to the setting of the WMS extension. </span><div class="info" purpose="info"><p id="GUID-29C12EC7-1ED3-46B8-8B14-89926FE5C38E">The <span class="ph">INSPIRE</span> View service and WMS capabilities share some information. For this reason, the layer names must be consistent between the two. It is recommended to leave the default values (that is, check box not checked) but if you enable it, make sure you also choose the equivalent option for the WMS capabilities.</p></div></li><li purpose="step" id="ESRI_STEP_D829871ABEAA4983B07172B4A2533888"><span purpose="cmd" id="GUID-26C64151-ABEC-42ED-9D28-9E59365664C8"> Optionally check the <span class="uicontrol">WMS uses TileCache (WMTS available)</span> check box so that users can enable the <span class="ph">INSPIRE</span> View service to act as a Web Map Tile service (WMTS).  </span><div class="info" purpose="info"><div class="panel trailer-1 note" id="GUID-6AA1709F-3FEB-4E36-9FA7-C967BE982B38"><h5 class="icon-ui-comment trailer-0">注：</h5><ul purpose="ul" id="UL_AF1867603FDD41EEB0DB236B850106BC"><li purpose="li" id="LI_6637F14F1DEC456398F78E276FCEB3E1">As the WMTS functionality relies on cached map tiles, enable tile caching for the map service before turning on the WMTS option.</li><li purpose="li" id="LI_C7C078844BDB4EA3B02C00055B9BA6B0"> Each <span class="ph">INSPIRE</span> layer needs its own map tile cache. If you have more <span class="ph">INSPIRE</span> layers, create a map cache for each layer to have them available via WMTS.</li></ul></div></div></li><div class="stepinfo" purpose="stepinfo"><span class="ph">INSPIRE</span> supports the <span class="ph">INSPIRE</span>specifications of providing multilingual services. The supported
+languages of a service instance can be configured via the service
+properties interface. </div><li purpose="step" id="ESRI_STEP_7D130F6CC4F54EBF9B461716CD9C25B6"><span purpose="cmd" id="GUID-7A7C38C4-AF5D-403C-B2C5-BABC4CB08321">To display the language
+check boxes, click the <span class="uicontrol">Supported languages</span> field
+and a list of languages displays.</span></li><li purpose="step" id="ESRI_STEP_4DDAB8A5662A4E51852C9C4C47CA9E4C"><span purpose="cmd" id="GUID-EC039E1F-87C4-4DA6-B6FB-1FA6DD69BBAA">Activate a language for the service by
+clicking the  language you want. </span><div class="info" purpose="info"><p id="GUID-0E96ACFC-889D-4660-9CEF-982EEE0A40A1">The default language for a
+service needs to be assigned by the user.
+</p></div></li><li purpose="step" id="ESRI_STEP_DDC1ACCDEF0F441189EE42387545DF13"><span purpose="cmd" id="GUID-D133FEBD-A74A-4E11-852F-3AC35C5DDC5F">Click <span class="uicontrol">Advanced Properties</span>. </span><div class="info" purpose="info"><p id="GUID-2797CCEA-9E5D-4C9A-B0BF-CC49ECC59764">These properties are given for the selected supported language or languages. For detailed information on how to add advanced properties, see <a class="xref xref" href="../../../../zh-CN/inspire/latest/inspire-services/create-the-inspire-view-service.htm#GUID-6613F951-0172-406C-99DC-2EF041877354">Advanced properties</a>.</p></div></li><li purpose="step" id="ESRI_STEP_C54D07964D47427B9864A8F82B30A6E5"><span purpose="cmd" id="GUID-1B804CF3-56DE-4963-9149-B45E3890CFF4">After you set the service's advanced properties, do the following:  </span><div class="substeps" id="ESRI_SUBSTEPS_E527394B867144A1BC9B9F263EA1DE84" purpose="substeps"><ol class="list-numbered" purpose="ol"><li purpose="substep" id="ESRI_SUBSTEP_D008CF752A024FA787C648638FC8B33B"><span purpose="cmd" id="GUID-A0E286A1-86FF-4538-87C2-9888D6FB336D">Click <span class="uicontrol">Close</span> to close the <span class="uicontrol">Edit Properties</span> dialog box.</span></li><li purpose="substep" id="ESRI_SUBSTEP_ABD47CE44F6E423AA097BDA92CA7A972"><span purpose="cmd" id="GUID-F9F88A05-1128-451E-93EC-90AC4A3EC621">Click   <span class="uicontrol">Save</span> to save the properties. </span></li></ol></div></li><li purpose="step" id="ESRI_STEP_9B4E34704E74488783E04DCD1F8DC81F"><span purpose="cmd" id="GUID-5933B125-ACE6-49FA-8FC6-45A7236EDBC6">After setting all the properties, complete the wizard.</span></li></ol></div></section><section class="section2 padded-anchor" id="ESRI_SECTION2_E6FD73E1616643178D6B43706A9B9DDB" purpose="section2"><h3>Advanced properties</h3><p id="GUID-71AD1731-5D6B-40DA-AA58-43164C319751">With version 3.1 of the technical guidance to
+<span class="ph">INSPIRE</span> View service, the service provider can choose how to provide
+metadata about the service using the <span class="ph">INSPIRE</span> related capabilities
+extension element. Thus, there are two choices provided at the top of the <span class="ph">INSPIRE</span> View service properties dialog box. These are the following: <ul purpose="ul" id="UL_96E7AB87DC5F44918C71FDAFD025155B"><li purpose="li" id="LI_60CB8C89BF7042CEAF9398809C6760A0">Enter a URL referencing the <span class="ph">INSPIRE</span> metadata record describing this <span class="ph">INSPIRE</span> View service—The service provider enters a URL
+that references a metadata record in an <span class="ph">INSPIRE</span> Discovery
+service describing this <span class="ph">INSPIRE</span> View service instance.  </li><li purpose="li" id="LI_27F349180D474182890A4FDE984D3E9D">Enter all <span class="ph">INSPIRE</span> metadata element values, these will be exposed directly in the service capabilities document—The
+service provider can edit all the metadata elements using the <span class="ph">INSPIRE</span> View service properties
+configuration page.</li></ul> If you choose the second option, you see a dialog box similar to the following image. </p><figure class="fig" href="#"><img src="GUID-0FBB1A42-F9BC-4036-B0F3-B96D161682BC-web.png" alt="Editing the INSPIRE View service properties" title="Editing the INSPIRE View service properties"></figure><p id="GUID-E07D8604-312B-4F26-AF38-2D49548403DC">There are several sections in this properties dialog box for the service—the properties of the service, GEMET keywords, the contact metadata of the service, the properties of the layer node in the table of contents, and the properties for each of the subsequent <span class="ph">INSPIRE</span> layers.  The screen capture below displays the configuration page for an <span class="ph">INSPIRE</span> View service containing the <span class="ph">INSPIRE</span> layers HY.AquiferNode, HY.AquiferNode.SpringOrSeep, and HY.AquiferNode.VanishingPoint.  The fields highlighted in yellow indicate required fields.</p><p id="GUID-B5760FFB-CA18-4857-9BF7-89D5DBD739DD">Parameters for each of these sections of the interface are described in the following sections. </p><section class="section3 padded-anchor" id="ESRI_SECTION3_53D3DD38026240E19D1965D0ADF3E3B1" purpose="section3"><h4>Properties of the service</h4><p id="GUID-3F4E83B8-F5FA-4EA7-86D9-AF462CED4E73">Properties of the service pertain to the service as a whole. The following table describes each field and pertinent information related to that field.</p><h4 class="table title">Properties of the service</h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><thead><tr><th colspan="1">Property item</th><th colspan="1">Description and notes</th></tr></thead><tbody class="align-middle">                <tr class="align-middle">                  <td outputclass="" purpose="entry" rowspan="1" colspan="1">                    <p id="GUID-6D9D4535-7B82-40E7-BC25-16ADC8D1EC91">Title</p>                  </td>                  <td outputclass="" purpose="entry" rowspan="1" colspan="1">                    <p id="GUID-F7BA51CA-4BA5-4334-9053-FB109322A9DA"> A title that describes the resource.</p>                  </td>                </tr>                <tr class="align-middle">                  <td outputclass="" purpose="entry" rowspan="1" colspan="1">                    <p id="GUID-351435D8-675A-45AA-B667-064C273B64EF"> Abstract
+</p>                  </td>                  <td outputclass="" purpose="entry" rowspan="1" colspan="1">                    <p id="GUID-F7E64381-4AEC-42D5-8E46-A7E11D77FED2"> Short summary for the content of a
+resource.</p>                  </td>                </tr>                <tr class="align-middle">                  <td outputclass="" purpose="entry" rowspan="1" colspan="1">                    <p id="GUID-CA477BC5-7908-45DA-9200-D13741AC4960"> Common keywords
+</p>                  </td>                  <td outputclass="" purpose="entry" rowspan="1" colspan="1">                    <p id="GUID-789B7826-4709-4789-B28D-8AB821D63760"> Terms that capture the essence of the topic
+(for example, words, expressions or formalized terms. In this case, the
+terms are in respect to <span class="ph">INSPIRE</span> terms). It is recommended to use infoMapAccessService and
+<span class="ph">INSPIRE</span> as keywords for
+the <span class="ph">INSPIRE</span> View service.  </p>                    <p id="GUID-BD030E6C-16D5-4664-B2CD-4C13143E65F9">This field can also be used to enter keywords that do not belong to a specific keyword vocabulary.</p>                  </td>                </tr>                <tr class="align-middle">                  <td outputclass="" purpose="entry" rowspan="1" colspan="1">                    <p id="GUID-5B606282-373A-4C31-B7A5-BB1C2AED462F"> Access constraints
+</p>                  </td>                  <td outputclass="" purpose="entry" rowspan="1" colspan="1">                    <p id="GUID-CBE24592-F6D1-4A2A-8175-73DC247AC999"> Describes if an access restriction exists that
+would protect the privacy or the intellectual property. Also provides a special restriction for accessing resources or
+metadata.</p>                    <p id="GUID-D299C27D-92FF-4E38-91DB-280711A5B22D"> Default value: None</p>                  </td>                </tr>                <tr class="align-middle">                  <td outputclass="" purpose="entry" rowspan="1" colspan="1">                    <p id="GUID-A5132BFD-BB6F-4696-96B5-C162176C6C94">Fees
+</p>                  </td>                  <td outputclass="" purpose="entry" rowspan="1" colspan="1">                    <p id="GUID-C31F835C-C2E0-4BFF-A233-D1B0C7BE0A9C"> Describes costs for access and
+use.</p>                    <p id="GUID-3DC29DFB-13C6-4405-951B-FBAEAAEDFAC6"> Default value: No conditions
+apply.</p>                  </td>                </tr>                <tr class="align-middle">                  <td outputclass="" purpose="entry" rowspan="1" colspan="1">                    <p id="GUID-51A484F9-6BBA-440F-B8E6-0DEC692D73D3"> Online resource</p>                  </td>                  <td outputclass="" purpose="entry" rowspan="1" colspan="1">                    <p id="GUID-46B2B035-5C1E-492D-BF41-065212A7F1B5"> The URL under which the service is made available to the public. This value is prepopulated based on the <span class="ph">ArcGIS Server</span> connection details used during the service creation process. Changing this is important if you run the service behind a reverse proxy.
+</p>                  </td>                </tr>                <tr class="align-middle">                  <td outputclass="" purpose="entry" rowspan="1" colspan="1">                    <p id="GUID-86B05838-6C22-46BB-B240-F24D3EDECC78"> External GetFeatureInfo
+URL
+</p>                  </td>                  <td outputclass="" purpose="entry" rowspan="1" colspan="1">                    <p id="GUID-1293D2D1-9A0E-4184-9AAF-289E35A50DC2"> Setting the external GetFeatureInfo URL
+replaces the URL used in the capabilities document with the one
+defined here. Additionally, this affects this View service instance
+as the internal feature server back end  will not be started.</p>                  </td>                </tr>                <tr class="align-middle">                  <td outputclass="" purpose="entry" rowspan="1" colspan="1">                    <p id="GUID-DB189EC2-CA5C-41C6-BA4D-35BAEEE74DA9"> Authority name
+</p>                  </td>                  <td outputclass="" purpose="entry" rowspan="1" colspan="1">                    <p id="GUID-A29C3D9A-13ED-48AC-B51E-4347B3E6F3BB"> Name of the responsible authority for the View
+service.</p>                  </td>                </tr>                <tr class="align-middle">                  <td outputclass="" purpose="entry" rowspan="1" colspan="1">                    <p id="GUID-C97527E6-0A54-420D-A687-16E063083D14"> Authority URL
+</p>                  </td>                  <td outputclass="" purpose="entry" rowspan="1" colspan="1">                    <p id="GUID-6A5C1D19-1A84-4E63-B024-FFF795EE75F6"> URL of the responsible authority for the View
+service. URLs that contain characters classified potentially unsafe in IETF RFC1738 should be encoded as entity reference while entering the URL in the user interface (for example, <span class="usertext">{</span> and <span class="usertext">}</span> should be encoded respectively as <span class="usertext">%7B</span> and <span class="usertext">%7D</span>).</p>                  </td>                </tr>                <tr class="align-middle">                  <td outputclass="" purpose="entry" rowspan="1" colspan="1">                    <p id="GUID-E614B8CB-B2CB-4DF6-A7C7-00F4E9BD5F26">Metadata URL</p>                  </td>                  <td outputclass="" purpose="entry" rowspan="1" colspan="1">                    <p id="GUID-2C4633E9-6D54-4771-8F9A-9AB701961D9D">Access to metadata provided by an <span class="ph">INSPIRE</span> Discovery service describing this service instance, for example: <span class="usertext">http://[host]/ /geoportal/csw?service=CSW&amp;request=GetRecordById&amp;version=2.0.2&amp;ID={identifier_of_the_metadata}</span>. URLs that contain characters classified potentially unsafe in IETF RFC1738 should be encoded as entity reference while entering the URL in the user interface (for example, <span class="usertext">{</span> and <span class="usertext">}</span> should be encoded respectively as <span class="usertext">%7B</span> and <span class="usertext">%7D</span>).</p>                    <p id="GUID-11561E7D-01F0-4E3F-8FF3-B112854C39CA">See the option to select a URL at the top of the form.
+</p>                  </td>                </tr>                <tr class="align-middle">                  <td outputclass="" purpose="entry" rowspan="1" colspan="1">                    <p id="GUID-1716B036-A061-4358-874F-4F345A5CD308">Metadata published at (YYYY-MM-DD)</p>                  </td>                  <td outputclass="" purpose="entry" rowspan="1" colspan="1">                    <p id="GUID-BAE50501-7721-47AC-9F56-D16B0CF5762A"> Publication date of the metadata that describes the View service.</p>                  </td>                </tr>                <tr class="align-middle">                  <td outputclass="" purpose="entry" rowspan="1" colspan="1">                    <p id="GUID-55A79DFB-2255-406E-ACD7-43D92D3DC98D"> Metadata contact organization</p>                  </td>                  <td outputclass="" purpose="entry" rowspan="1" colspan="1">                    <p id="GUID-6CED5677-4663-46CA-9725-17794ABAC2FF"> <span class="ph">INSPIRE</span> is more demanding than  ISO 19115 by mandating both the name of the organization,
+and a contact email address. The role of the responsible party
+serving as a metadata point of contact is out of scope for the
+metadata regulation; however, according to the  <span class="ph">INSPIRE</span> View service TG 3.0, this property is mandated by ISO 19115.</p>                  </td>                </tr>                <tr class="align-middle">                  <td outputclass="" purpose="entry" rowspan="1" colspan="1">                    <p id="GUID-C71B3FB0-0465-43D5-8AD2-988B5AF84E97"> Metadata contact email</p>                  </td>                  <td outputclass="" purpose="entry" rowspan="1" colspan="1">                    <p id="GUID-BF1ABB61-AEC7-4687-8831-8597D2ACA791">See above.</p>                  </td>                </tr>                <tr class="align-middle">                  <td outputclass="" purpose="entry" rowspan="1" colspan="1">                    <p id="GUID-F1D91B14-9680-43DB-A24C-9CB60836BCFC">Service created at (YYYY-MM-DD)</p>                  </td>                  <td outputclass="" purpose="entry" rowspan="1" colspan="1">                    <p id="GUID-4B685383-964B-43AC-A79D-F381645BA521">To be compliant with the <span class="ph">INSPIRE</span> metadata
+regulation and with ISO 19115, one of following dates will be used: date of
+publication, date of last revision, or the date of creation. Date
+of last revision is preferred. Per  <span class="ph">INSPIRE</span>View service TG 3.0, the date will be expressed in
+conformity with the <span class="ph">INSPIRE</span><span class="ph">INSPIRE</span> metadata regulation.</p>                  </td>                </tr>                <tr class="align-middle">                  <td outputclass="" purpose="entry" rowspan="1" colspan="1">                    <p id="GUID-0AEAE9A7-644C-41D0-8278-2917471045B5">Service last revised at (YYYY-MM-DD)</p>                  </td>                  <td outputclass="" purpose="entry" rowspan="1" colspan="1">                    <p id="GUID-4437CD85-4D63-4779-AFDF-9975E074168E">See above.</p>                  </td>                </tr>                <tr class="align-middle">                  <td outputclass="" purpose="entry" rowspan="1" colspan="1">                    <p id="GUID-2C709AE5-C83D-4684-98D6-276FF9692B65"> Service published at (YYYY-MM-DD)</p>                  </td>                  <td outputclass="" purpose="entry" rowspan="1" colspan="1">                    <p id="GUID-D17D302D-B084-497A-8D47-96C785D1F71A">See above.</p>                  </td>                </tr>                <tr class="align-middle">                  <td outputclass="" purpose="entry" rowspan="1" colspan="1">                    <p id="GUID-40B287CA-94C4-4CFD-803C-344F2BC6B5DF"> Beginning of temporal extent covered by the service</p>                  </td>                  <td outputclass="" purpose="entry" rowspan="1" colspan="1">                    <p id="GUID-A771BBFC-5AC2-485C-B03F-5D2233AE3391"> <span class="ph">INSPIRE</span>  also allows the use of a temporal extent as a temporal reference.</p>                  </td>                </tr>                <tr class="align-middle">                  <td outputclass="" purpose="entry" rowspan="1" colspan="1">                    <p id="GUID-8020AE80-FC15-45E6-A35D-8D17A82EC86D"> End of temporal extent covered by the service</p>                  </td>                  <td outputclass="" purpose="entry" rowspan="1" colspan="1">                    <p id="GUID-6DAA22CA-1C10-4DBD-9FE9-80CEEDAE9A13">See above.</p>                  </td>                </tr>                <tr class="align-middle">                  <td outputclass="" purpose="entry" rowspan="1" colspan="1">                    <p id="GUID-2A854C45-15E3-4FE7-899A-D2557C1BECC6">Degree of conformity</p>                  </td>                  <td outputclass="" purpose="entry" rowspan="1" colspan="1">                    <p id="GUID-67A3AA03-F0DD-4AD4-9827-24E5DFB7D485"> Choose conformant or not conformant when
+the conformity to the cited specification is evaluated. In
+this case, if the evaluation has passed, the degree is conformant;
+otherwise, it is not conformant. Choose not evaluated when the conformity to
+the cited specification has not been evaluated. Note that in the <span class="ph">INSPIRE</span> metadata technical guidance (<span class="ph">INSPIRE</span> View service TG 3.0), the absence of ISO 19115 metadata related to the conformity to an
+<span class="ph">INSPIRE</span> specification implies that the conformity has not been
+evaluated.</p>                  </td>                </tr>              </tbody><caption></caption></table></div></section><section class="section3 padded-anchor" id="ESRI_SECTION3_DC02324C37D54D9D99E6866EEB8E351F" purpose="section3"><h4>GEMET keywords</h4><p id="GUID-14CC127B-B10D-48FE-8652-7F055950048A"> Additional keywords can be defined using the <span class="ph">INSPIRE</span> GEMET vocabulary. The keywords chosen here will be added to the WMS KeywordList element and to the ExtendedCapabilities element, which is specific to the <span class="ph">INSPIRE</span> View service. The language encoding of the GEMET keywords in the capabilities document corresponds the requested language.</p></section><section class="section3 padded-anchor" id="ESRI_SECTION3_23BEDB6E48D542F391B56CBAAB1381E1" purpose="section3"><h4>Contact metadata of the service</h4><p id="GUID-EEF588C6-27E7-4D36-804D-2696F469078A"> With the <span class="ph">INSPIRE</span> View service, the responsible authority can be provided under the Contact metadata of the service section.  The properties interface provides default placeholder values that you should update accordingly. </p></section><section class="section3 padded-anchor" id="ESRI_SECTION3_DBE4BF1D78AA4B4088DACBB132BAB6DC" purpose="section3"><h4>Properties of the top most layer node</h4><p id="GUID-CED596C9-DC12-432E-8AB0-BDB523EA54D6"> This is a root layer, and as previously noted, the default name is
+Layer.  The root layer properties consist of the
+attributes Title, Abstract, and Keywords, and follow the conventions described in the following table.<h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><thead><tr><th colspan="1">Property item</th><th colspan="1">Description and notes</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-742407E5-EE1C-4448-BC70-305149554CE8">Title</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-232D40E2-B7D3-4154-8300-4D5C529B1A23"> A title that describes the resource.</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-7A5C3E03-9FA4-4647-AAC3-18BA44AB3D61"> Abstract
+</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-3BFE9DAE-4C6A-4E76-AB88-B32848379D5A"> Short summary for the content of a
+resource.</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-9D3073D4-6EA5-497C-AB8A-168D968A70ED"> Keywords
+</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-0CFAFD3D-0927-42E9-A196-44722F399346"> Terms that capture the essence of the topic
+(for example, words, expressions, or formalized terms, in this case the
+terms refer to <span class="ph">INSPIRE</span> terms). </p></td></tr></tbody><caption></caption></table></div></p></section><section class="section3 padded-anchor" id="ESRI_SECTION3_A2DA3C1CAD7E4F84B231AD6C9A76D2F1" purpose="section3"><h4>Properties of the <span class="ph">INSPIRE</span> layer</h4><p id="GUID-5BC892CF-EBC9-4178-8E81-D990C9C76D84"> There may be many <span class="ph">INSPIRE</span> layer sections in the properties interface, as there should be a section for each <span class="ph">INSPIRE</span> layer in the View service.  Each of these <span class="ph">INSPIRE</span> layer sections will have the properties described in the table below.  Nonetheless, the configuration page also gains access to non–<span class="ph">INSPIRE</span> layers. If a layer has been recognized, the <span class="ph">INSPIRE</span> layer name from the relevant <span class="ph">INSPIRE</span> data specification will print in brackets in the headline of the section.<h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><thead><tr><th colspan="1">Property item</th><th colspan="1">Description and notes</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-80B87804-DFB9-4EEF-8443-6095AA840660">Title</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-2571F719-5DFB-475C-BD46-A0636AC92260"> A title that describes the resource. If this is an <span class="ph">INSPIRE</span> layer, the title defined in the relevant <span class="ph">INSPIRE</span> data specification is used.</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-731687DE-9A13-4CB6-B3B9-49B13B52B8AB"> Abstract
+</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-BD19FDF6-FC35-421E-AE71-F73FB3F64441"> Short summary for the content of a
+resource.</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-887ADB18-7D7D-4FF0-BB12-F026A98C49E4"> Keywords
+</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-F7C1E255-907C-49C4-84D7-828354B5FD6E"> Terms that capture the essence of the topic
+(for example, words, expressions, or formalized terms. In this case the
+terms refer to <span class="ph">INSPIRE</span> terms). It is recommended to use infoMapAccessService and
+<span class="ph">INSPIRE</span> as keywords for
+the <span class="ph">INSPIRE</span> View service.</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-CE78D4D6-7994-4D5F-9DB8-A8434B8D5BC8"> Metadata URL
+</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-8113FADB-63C9-446A-87C8-3AE7787A8BF9"> Access to a metadata record provided by an <span class="ph">INSPIRE</span>Discovery service. URLs that contain characters classified potentially unsafe in IETF RFC1738 should be encoded as entity reference while entering the URL in the user interface (for example, <span class="usertext">{</span> and <span class="usertext">}</span> should be encoded respectively as <span class="usertext">%7B</span> and <span class="usertext">%7D</span>).</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-D55A8513-349F-4CC2-B154-9DC0C4A610F6"> Data URL</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-79F1990A-8578-4B19-9921-5884ED5AC167">  Access to the source data of this layer via the <span class="ph">INSPIRE</span> Feature Download service. URLs that contain characters classified potentially unsafe in IETF RFC1738 should be encoded as entity reference while entering the URL in the user interface (for example, <span class="usertext">{</span> and <span class="usertext">}</span> should be encoded respectively as <span class="usertext">%7B</span> and <span class="usertext">%7D</span>).</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-01A68163-25B7-406C-BEA8-F312CD262ABD">Authority Layer ID</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-9848519D-0CC8-413C-8670-9ABDC2E180CF">  Unique ID of the layer as specified by the responsible authority.  See authority definition in Properties of the service.</p></td></tr></tbody><caption></caption></table></div></p></section></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_405E80C6ED6245C48C9F3A926A7D52EA" purpose="section1"><h2> Saving and reusing <span class="ph">INSPIRE</span> View service properties</h2><p id="GUID-2BDF7AA6-415D-4569-AA89-7B806C85A390"> It is possible to save the
+<span class="ph">INSPIRE</span> View service properties in a file and reuse this in other <span class="ph">INSPIRE</span>View services.</p><section class="section2 padded-anchor" id="ESRI_SECTION2_B83BBB2B6E714B799AB851CDD9AD1462" purpose="section2"><h3>Saving the <span class="ph">INSPIRE</span> View service
+properties</h3><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_D971FE7BF3404FD58AB53A2B1D7B729C"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_291B4C6A84424C9C9F77D69D8E36CF07"><span purpose="cmd" id="GUID-FFEC07B5-B3F1-4D70-95D5-0BD6A28EC868">Open the <span class="ph">INSPIRE</span>View service advanced properties.</span></li><li purpose="step" id="ESRI_STEP_F9B3108DEB0A4EFEBE5A903F29E5851F"><span purpose="cmd" id="GUID-C43E9D44-BC00-460B-88F1-1E0B4ABC45C6">Enter values
+for the fields on the advanced properties section. </span><div class="info" purpose="info"><p id="GUID-36058494-68DB-45FC-B2E6-6F5669F024D1">Only enter
+values for required fields and those fields whose value will be
+reused.</p></div></li><li purpose="step" id="GUID-C027B0B7-5C32-4442-B477-90BA559B8071"><span purpose="cmd" id="GUID-96E87F43-BEF0-4B27-8883-BB9ECD95393F">单击<span class="uicontrol">关闭</span>。</span></li><li purpose="step" id="GUID-7235291A-398E-433E-B528-5A7016EA375A"><span purpose="cmd" id="GUID-3891E245-8D7E-4E66-8B83-E6E851148CE1">单击<span class="uicontrol">应用</span>。</span></li><li purpose="step" id="ESRI_STEP_A57E6BBA9EBC4D338247EDE48C9C2581"><span purpose="cmd" id="GUID-F289767D-D006-4E11-BA48-B3B47C27C8E6">To save the properties to
+a file, click
+<span class="uicontrol">Save</span> on the <span class="uicontrol">Service Editor</span> dialog box in the <span class="uicontrol">INSPIRE View Service capabilities</span> section.</span></li><li purpose="step" id="ESRI_STEP_AD0364DE786149459EFC541744C342D1"><span purpose="cmd" id="GUID-B50E13C5-B63D-4F28-9B7D-C126FE22C57B">Open the
+saved file in a text editor, review its values, and remove those
+fields that will not be reused (such as the online resource and
+layer specific fields).</span></li><li purpose="step" id="ESRI_STEP_9762C5C398DF488CAD6E499BBEB74B0A"><span purpose="cmd" id="GUID-26BC3A06-E228-4FB2-8EC4-3093C7086E4C">Save the
+file.</span></li></ol></div></section></section><section class="section2 padded-anchor" id="ESRI_SECTION2_C23057E0CC1347D69C6CDAD29341C528" purpose="section2"><h3> Reusing the property file</h3><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_E82AC8533FD54FDEAEFCE035010148E7"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_9176425188924EF3A344741E190B0984"><span purpose="cmd" id="GUID-A87A4959-4018-4E55-B0A9-CA44BBA2292C">Create a new
+<span class="ph">INSPIRE</span> service.</span></li><li purpose="step" id="ESRI_STEP_057BC8304E284FBCB70E80F593506C8A"><span purpose="cmd" id="GUID-BCCB972E-B614-48DB-8617-607329667C52">Go to the
+<span class="ph">INSPIRE</span> service properties.</span></li><li purpose="step" id="ESRI_STEP_771651EA87DA4750BACB49C1BBCF897F"><span purpose="cmd" id="GUID-4C5FA2C0-9C9D-451A-88A5-3D21E694A95A">Click the
+<span class="uicontrol">Open</span> button, select the previously saved file, and load the
+properties to be reused.</span></li><li purpose="step" id="ESRI_STEP_1DA9515E6B024443930345594EC55F85"><span purpose="cmd" id="GUID-6D099B15-B0B3-4F2F-8B42-F68BD8D059B0">Go to
+the <span class="ph">INSPIRE</span> service advanced properties dialog box to review the loaded values and make necessary adjustments. </span><div class="info" purpose="info"><p id="GUID-5F56D94F-B004-4093-94A5-344BE50A0C5C"> Loading the file
+is just a starting point, and you need to review those values
+and make necessary service specific adjustments to make the service
+work correctly.</p></div></li></ol></div></section></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_516F8B2A7DC54BEA8E5E440844E0DC29" purpose="section1"><h2>Enabling or disabling capabilities document caching</h2><p id="GUID-BD35A455-6C6E-49F2-8D87-6F731A52161B">When the caching option is set to true (configurable), <span class="ph">ArcGIS for INSPIRE</span> will pregenerate the getCapabilities response when the service starts; this will improve the getCapabilities operation
+response time, especially for services with a large number of
+layers. Caching is set to <span class="usertext">true</span> by default. Follow the steps to enable/disable caching:
+
+</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_D990F04AE6DE4229AEAFF5C8E538C179"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_7F8A002FB7CE4ABB8732189398AC325E"><span purpose="cmd" id="GUID-829E4AE3-B83C-4648-8BD9-B71865FD722C">Go
+to the REST admin page.</span><div class="stepexample" purpose="stepexample"><p id="GUID-1010AE39-0528-4B1F-9237-79CD8168D952">For example, http://servername:6080/arcgis/admin.</p></div></li><li purpose="step" id="ESRI_STEP_F6E060F494244909AB7DBCD900FBE283"><span purpose="cmd" id="GUID-62BAD0ED-9B4B-4F65-94FD-56BA8E83DC2F">Click <span class="uicontrol">Services</span>.</span></li><li purpose="step" id="ESRI_STEP_980D9F6C0CF147CB953D0135B6801228"><span purpose="cmd" id="GUID-86DFE8C8-B299-428B-B39D-618D6EC09CB9">Choose the service, and click <span class="uicontrol">Edit</span>.</span></li><li purpose="step" id="ESRI_STEP_D6A3087258584EC3B0DC3CAFD650061F"><span purpose="cmd" id="GUID-EECD9770-BB08-49B8-803A-943F93202A92">Find the parameter
+<span class="uicontrol">cacheGetCapabilities</span> and set its value to true or false.</span></li><li purpose="step" id="ESRI_STEP_12270FC577424561B5AB908515915495"><span purpose="cmd" id="GUID-27CCF0EC-995E-48FC-9244-157C84EAA3EC">Click <span class="uicontrol">Save</span>.</span></li></ol></div></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_3AF31210323845C0917C909634A9F063" purpose="section1"><h2>Creating and using the custom <span class="ph">INSPIRE</span> View service capabilities document </h2><p id="GUID-7C403066-E92F-41A9-A0DA-C894E4722BB7">If the cacheGetCapabilities property is set to false, then the getCapabilities operation response is generated dynamically and can't be overridden by a custom capabilities file. This means that all properties authored in ArcCatalog property pages are reflected in the response. </p><p id="GUID-C99270CC-F078-44F5-A1AB-69D47A51A5F4">If the administrator decides to create and use a custom getCapabilities operation response, then the GetCapabilities&lt;version&gt;_&lt;3 letter language code&gt;_custom.xml file needs to be saved at the service cached capabilities folder (for example c:\arcgisserver\directories\arcgisforinspire\GEMR_MapServer\GEMR_MapServer_inspireview). </p><p id="GUID-E813EB29-56B8-45A9-9B1B-9F2605F9BC4D">If a custom capabilities file is found in the folder, the file is used to respond to getCapabilities operation requests for that specific version and language level. For example GetCapabilities130_FRE_custom.xml would be used when responding to a getCapabilities operation requests with Language=FRE, version=1.3.0, and service=WMS request parameters. If there is no custom cached file in the directory for that particular language and version configuration, the regular cached getCapabilities files are used to respond. The administrator therefore may choose to use custom cache file for certain version and/or language and use the default for others. Custom cached capabilities files are not deleted when the service is restarted. Only default cached capabilities files are deleted and recreated.</p><p id="GUID-E4E9900D-2EFC-4AA7-BBBA-F58BAEF54193">For WMTS-based getCapabilities, the custom file name pattern is WMTSGetCapabilities100_&lt;3 letter language code&gt;_custom.xml.</p></section>
+			
+				<hr>
+				<!--googleoff: all-->
+				
+	
+        
+		    <p class="feedback right">
+		        <a id="afb" class="icon-ui-contact" href="/feedback/" data-langlabel="feedback-on-this-topic" >有关此主题的反馈?</a>
+		    </p>
+        
+	
+
+				<!--googleon: all-->
+			
+		</main>
+	</div>
+	
+	<!--googleoff: all-->
+	
+		
+			<div id="main-toc-large" class="column-5">
+			    <div class="panel font-size--2 tablet-hide trailer-1">
+			      <h5 class="trailer-half">在本主题中</h5>
+			      <ol class="list-plain pre-0 trailer-0"><li><a href="#GUID-FFAE3950-B778-4BE4-BA23-EADE60127E37">Creating the <ph translate="no" varid="inspire_short">INSPIRE</ph> View service</a></li><li><a href="#ESRI_SECTION1_880475ECF3B14C7DAF1E5C8370914EBB">Configuring <ph translate="no" varid="inspire_short">INSPIRE</ph> View service properties</a></li><li><a href="#ESRI_SECTION1_405E80C6ED6245C48C9F3A926A7D52EA"> Saving and reusing <ph translate="no" varid="inspire_short">INSPIRE</ph> View service properties</a></li><li><a href="#ESRI_SECTION1_516F8B2A7DC54BEA8E5E440844E0DC29">Enabling or disabling capabilities document caching</a></li><li><a href="#ESRI_SECTION1_3AF31210323845C0917C909634A9F063">Creating and using the custom <ph translate="no" varid="inspire_short">INSPIRE</ph> View service capabilities document </a></li></ol>
+			    </div>
+			    
+			    
+	  		</div>
+		
+    
+   <!--googleon: all-->
+
+
+
+
+          
+        </div>
+        <!-- ENDPAGECONTENT -->
+
+      </div>
+
+    </div>  <!-- End of wrapper -->
+
+  <footer class="footer leader-3 link-dark-gray" role="contentinfo">
+    <div class="grid-container">
+      <div class="row">
+        <nav class="column-6">
+          <h6 data-langlabel="arcgis-for-server">Arc<span>GIS Enterprise</span></h6>
+          <ul class="list-plain">
+            <li><a data-langlabel="home" href="../../../../zh-CN/">主页</a></li>
+            <li><a data-langlabel="portal" href="../../../../zh-CN/portal/">Portal</a></li>
+            <li><a data-langlabel="server" href="../../../../zh-CN/server/">Server</a></li>
+            <li><a data-langlabel="data-store" href="../../../../zh-CN/data-store/">Data Stores</a></li>
+            <li><a data-langlabel="cloud" href="../../../../zh-CN/cloud/">云</a></li>
+            <li><a data-langlabel="apps" href="../../../../zh-CN/apps/">应用程序</a></li>
+            <li><a data-langlabel="documentation" href="../../../../zh-CN/documentation/">文档</a></li>
+          </ul>
+        </nav>
+
+        
+  <nav class="column-6">
+    <h6 data-langlabel="arcgis-platform">ArcGIS 平台</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="arcgis" href="//www.arcgis.com/">ArcGIS Online</a></li>
+      <li><a data-langlabel="arcgis-for-professionals" href="//pro.arcgis.com/">ArcGIS Pro</a></li>
+      <li><a data-langlabel="arcgis-for-server" href="//enterprise.arcgis.com/">ArcGIS Enterprise</a></li>
+      <li><a data-langlabel="arcgis-for-developers" href="https://developers.arcgis.com/">ArcGIS for Developers</a></li>
+      <li><a data-langlabel="arcgis-solutions" href="//solutions.arcgis.com/">ArcGIS Solutions</a></li>
+      <li><a data-langlabel="arcgis-marketplace" href="//marketplace.arcgis.com/">ArcGIS Marketplace</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <h6 data-langlabel="about-esri">关于 Esri</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="about-us" href="//www.esri.com/about-esri/">关于我们</a></li>
+      <li><a data-langlabel="careers" href="//www.esri.com/careers/">招贤纳士</a></li>
+      <li><a data-langlabel="insiders-blog" href="https://www.esri.com/about/newsroom/blog/">Esri 博客</a></li>
+      <li><a data-langlabel="user-conference" href="//www.esri.com/events/user-conference/index.html">用户大会</a></li>
+      <li><a data-langlabel="developer-summit" href="//www.esri.com/events/devsummit/index.html">开发者峰会</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <a class="esri-logo" href="//www.esri.com/" aria-label="Esri Home"></a>
+    <section class="footer-social-nav leader-1">
+            <a class="icon-social-twitter" aria-label="Esri on Twitter" href="https://twitter.com/Esri/"></a>
+            <a class="icon-social-facebook" aria-label="Esri on Facebook" href="https://www.facebook.com/esrigis/"></a>
+            <a class="icon-social-github" aria-label="Esri on GitHub" href="//esri.github.io/"></a>
+            <a class="icon-social-contact" aria-label="Contact Esri" href="//www.esri.com/about-esri/contact/"></a>
+    </section>
+	  
+  </nav>
+  
+  <div class="column-24 leader-1">
+    <p class="font-size--3"><a href="http://www.esri.com/legal/copyright-trademarks">Copyright &copy; 2019 Esri.</a> All rights reserved. | <a href="http://www.esri.com/legal/privacy/">隐私政策</a> | <a href="http://www.esri.com/legal/software-license">法律声明</a></p>
+  </div>
+  
+
+
+      </div>
+    </div>
+  </footer>
+  <!--googleoff: all-->
+
+  
+  
+	<script src="../../../../zh-CN/assets/js/init.js" type="text/javascript"></script>
+	<!--<script src="../../../../zh-CN/assets/js/drop-down.js" type="text/javascript"></script>-->
+	<script src="../../../../zh-CN/assets/js/search/searchform.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/cdn/js/link-modifier.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/cdn/js/sitewide.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/cdn/js/libs/highlight.pack.js" type="text/javascript"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+
+
+  
+    
+
+  <script src="../../../../zh-CN/cdn/js/affix.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    $(function () {
+          var appendFlg = true;
+
+          $("#bigmac")
+          .on("affixed.bs.affix", function (evt) {
+            if (appendFlg) {
+              $("<a class='crumb' href='#'>Creating the INSPIRE View service</a>").insertAfter ($("#bigmac nav a").last());
+              appendFlg = false;
+            }
+          })
+          .on ("affix-top.bs.affix", function(evt) {
+            if (!appendFlg) {
+              $("#bigmac nav a").last().remove();
+            }
+            appendFlg = true;
+          })
+    })
+  </script>
+  
+        <script type="text/javascript">
+          window.doctoc = {
+            pubID: "1629",
+            tpcID: "29",
+            
+              prefix: "INSPIRE Services",
+              prefixUrl: "/zh-cn/inspire/latest/inspire-services/",
+          
+            hideToc: false
+          }
+        </script>
+
+        <script type="text/javascript" src="../../../../zh-CN/inspire/latest/inspire-services/1629.js" ></script>
+        <script type="text/javascript" src="../../../../zh-CN/cdn/calcite/js/protoc.js" ></script>
+        
+        
+
+  <noscript>
+        <p>
+            <a href="flisting.htm">flist</a>
+        </p>
+    </noscript>
+    <script type="text/javascript"></script>
+  
+  
+    
+    
+
+  </body>
+</html>

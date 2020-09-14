@@ -1,0 +1,552 @@
+
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>  <html class="ie lt-ie9 lt-ie8 lt-ie7 ie6" dir="ltr"> <![endif]-->
+<!--[if IE 7]>     <html class="ie lt-ie9 lt-ie8 ie7" dir="ltr"> <![endif]-->
+<!--[if IE 8]>     <html class="ie lt-ie9 ie8" dir="ltr"> <![endif]-->
+<!--[if IE 9]>     <html class="ie ie9" dir="ltr"> <![endif]-->
+<!--[if !IE]><!--> <html dir="ltr" lang="zh-CN"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>将图层添加到地图&mdash;Portal for ArcGIS | ArcGIS Enterprise 文档</title>
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+    <script>
+      var docConfig = {
+        locale: 'zh-CN'
+        ,localedir: 'zh-cn'
+        ,langSelector: ''
+        
+        ,relativeUrl: false
+        
+
+        ,searchformUrl: '/search/'
+        ,tertiaryNavIndex: ''
+
+        
+      };
+    </script>
+	 
+
+
+    
+    <!--[if lt IE 9]>
+      <script src="../../../../zh-CN/cdn/js/libs/html5shiv.js" type="text/javascript"></script>
+      <script src="../../../../zh-CN/cdn/js/libs/selectivizr-min.js" type="text/javascript"></script>
+      <script src="../../../../zh-CN/cdn/js/libs/json2.js" type="text/javascript"></script>
+      <script src="../../../../zh-CN/cdn/js/libs/html5shiv-printshiv.js" type="text/javascript" >
+
+    <![endif]-->
+
+     <!--[if lt IE 11]>
+    <script>
+      $$(document).ready(function(){
+        $$(".hideOnIE").hide();
+      });
+    </script>
+    <![endif]-->
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<link href="../../../../zh-CN/assets/img/favicon.ico" rel="shortcut icon" >
+	<link href="../../../../zh-CN/assets/css/screen.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/cdn/calcite/css/documentation.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/assets/css/print.css" media="print" type="text/css" rel="stylesheet" />
+
+	<!--
+	<link href="../../../../zh-CN/assets/css/screen_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/assets/css/documentation/base_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/assets/css/print_l10n.css" media="print" type="text/css" rel="stylesheet" />
+	-->
+	
+	
+		<script src="../../../../zh-CN/cdn/js/libs/jquery.1.9.1.min.js" type="text/javascript"></script>
+	
+	<script src="../../../../zh-CN/cdn/js/libs/jquery.cookie.js" type="text/javascript"></script>
+	<link href="../../../../zh-CN/cdn/css/colorbox.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/cdn/css/colorbox_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<script src="../../../../zh-CN/cdn/js/libs/jquery.colorbox-min.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/assets/js/video-init.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/assets/js/sitecfg.js" type="text/javascript"></script>
+	
+		<script src="../../../../zh-CN/assets/js/signIn.js" type="text/javascript"></script>
+	
+
+	<!--- Language Picker -->
+	<script src="../../../../zh-CN/assets/js/locale/l10NStrings.js" type="text/javascript"></script>
+	
+		 
+	
+
+	<script src="../../../../zh-CN/assets/js/calcite-web.js" type="text/javascript"></script>
+
+
+
+  <!--- search MD -->
+    <META name="description" content="可通过选择一个底图，然后添加门户、Web 上的图层、地图注释或者计算机上的文件来创建地图。"><META name="last-modified" content="2019-12-6"><META name="product" content="arcgis-portal-windows,arcgis-portal-linux,arcgis-enterprise-windows,arcgis-enterprise-linux"><META name="sub_category" content="Portal for ArcGIS"><META name="search-collection" content="help"><META name="content_type_label" content="帮助主题"><META name="sub_category_label" content="Portal for ArcGIS"><META name="search-category" content="help-general"><META name="subject_label" content="PORTAL,服务,SERVER"><META name="version" content="10.8"><META name="content_type" content="Help Topic"><META name="subject" content="PORTAL,SERVICES,SERVER"><META name="content-language" content="zh-cn">
+    <!--- search MD -->
+
+  
+  <script src="../../../../zh-CN/assets/js/switchers/portal-1.js" type="text/javascript"></script>
+  
+      
+
+</head>
+
+<!--
+      pub: GUID-7B47163B-CE1B-465F-BEEE-4DADDB8DFF09=37
+      tpc: GUID-481D2DC6-AE69-4DFD-9514-AB0E97043EBD=46
+      -->
+
+
+<!-- variable declaration, if any -->
+<!-- can change following macro to set variable once we are on Jinja 2.8 -->
+
+
+
+
+
+<body class="claro zh-CN server">
+  
+
+  <!-- Drawer location -->
+  <div class="drawer drawer-left js-drawer" data-drawer="top-nav">
+        <nav class="drawer-nav" role="navigation">
+          <aside class="side-nav">
+            <h2 class="side-nav-title">Arc<span>GIS</span> Enterprise</h2>
+            <form id="helpSearchForm" class="margin-left-half margin-right-half leader-half trailer-half drawer-search-form" method="GET">
+              <input type="search" name="q"  placeholder="搜索 ArcGIS Enterprise 帮助">
+              <input type="hidden" name="collection" value="help" />
+              <input type="hidden" name="product" value="arcgis-portal-windows" />
+              <input type="hidden" name="version" value="10.8" />
+              <input type="hidden" name="language" value="zh-CN" />
+            </form>    
+             <a id="nav-portal" data-langlabel="portal" href="../../../../zh-CN/portal/" class="side-nav-link">Portal</a>
+             
+            <a id="all-servers" data-langlabel="all-servers" href="../../../../zh-CN/server/" class="side-nav-link">所有服务器</a>
+            <a id="gis-server" data-langlabel="gis-server" href="../../../../zh-CN/server/" class="side-nav-link">GIS Server</a>
+            <a id="image-server" data-langlabel="image-server" href="../../../../zh-CN/image/" class="side-nav-link">Image Server</a>
+            <a id="geo-analytics-server" data-langlabel="geo-analytics-server" href="../../../../zh-CN/geoanalytics/" class="side-nav-link">GeoAnalytics Server</a>
+            <a id="geoevent-server" data-langlabel="geoevent-server" href="../../../../zh-CN/geoevent/" class="side-nav-link">GeoEvent Server</a>
+            <a id="notebook-server" data-langlabel="notebook-server" href="../../../../zh-CN/notebook/" class="side-nav-link">Notebook Server</a>
+            <a id="nav-data-store" data-langlabel="data-store" href="../../../../zh-CN/data-store/" class="side-nav-link">Data Stores</a>
+            <a id="nav-cloud" data-langlabel="cloud" href="../../../../zh-CN/cloud/" class="side-nav-link">云</a>
+            <a id="nav-apps" data-langlabel="apps" href="../../../../zh-CN/apps/" class="side-nav-link">应用程序</a>
+            <a id="nav-doc" data-langlabel="documentation" href="../../../../zh-CN/documentation/" class="side-nav-link">文档</a>
+
+          </aside>
+        </nav>
+    </div>
+
+    <!-- user navigation collapses to drawer on mobile -->
+    
+    <div class="drawer drawer-right js-drawer hide-if-logged-out logged-in-navigation" data-drawer="user-nav">
+      <nav class="drawer-nav">
+        <aside class="side-nav">
+          <a class="side-nav-link agolProfile" href="#">我的个人资料</a>
+          <a class="side-nav-link icon-ui-sign-out js-log-out" href="#">登出</a>
+        </aside>
+      </nav>
+    </div>
+    
+<!-- End of drawer -->
+
+  
+  <div class="wrapper">
+      <!--googleoff: all-->
+
+      <header class="top-nav" data-skin="learn">
+        <a class="skip-to-content" href="#skip-to-content">Skip To Content</a>
+        <div class="grid-container">
+          <div class="column-24">
+
+
+            <!--<div class="top-nav-title-wrapper text-center ">-->
+              <a href='../../../../zh-CN/' class="top-nav-title tablet-hide"><span>Arc</span>GIS  Enterprise</a>
+              <a href='../../../../zh-CN/' class="icon-ui-menu top-nav-title js-drawer-toggle tablet-show" data-drawer="top-nav"><span>Arc</span>GIS Enterprise</a>
+            <!--</div> -->
+
+          
+            <nav role="navigation" class="top-nav-list left tablet-hide">
+              <a id="nav-portal" data-langlabel="portal" href="../../../../zh-CN/portal/" class="top-nav-link">Portal</a>
+
+                <div class="dropdown js-dropdown ">
+                  <a class="top-nav-link js-dropdown-toggle" tabindex="0" aria-haspopup="true" aria-expanded="false" href="#">Servers</a>
+                  <nav class="dropdown-menu featured" role="menu">
+                    <ul class="dropdown-sublist-featured">
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/get-started/latest/windows/additional-server-deployment.htm" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path  d="M42.92 6.1H4.12v8.566l.833.832-.835.833-.018 7.332.845.847-.825.824V33.9h25v5.2h-2v1.075H8.02v.8h19.1v.925h4.8v-.925H40v-.8h-8.08V39.1h-2v-5.2h13v-8.566l-.834-.834.835-.834v-7.332l-.835-.834.835-.834zm-11.8 35h-3.2v-1.2h3.2zm11-8H4.92v-7.434l.767-.766h35.668l.765.766zm0-9.766l-.766.766H5.666l-.766-.767.017-6.669.766-.764h35.671l.766.766zm0-9l-.766.766H5.687l-.766-.766V6.9h37.2zM19 11.9h-2v-.8h2zm-4 0h-2v-.8h2zm-4 0H9v-.8h2zm6 8.2h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9zm8 9h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9z"/></svg></span>
+                          <span class="sublink-text">所有服务器</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/server/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M45.98 33.575a.616.616 0 0 0-.335-.51l-3.362-2.03 3.362-2.031a.556.556 0 0 0 0-1.02l-11.1-6.704a1.293 1.293 0 0 0-1.112 0L22.33 27.982a.556.556 0 0 0 0 1.02l3.36 2.03-3.358 2.03a.556.556 0 0 0-.002 1.021l3.322 2.006-3.324 2.008a.555.555 0 0 0 .002 1.017l11.102 6.703a1.25 1.25 0 0 0 1.11.002l11.104-6.706a.556.556 0 0 0 0-1.02l-3.32-2.006 3.318-2.004a.607.607 0 0 0 .335-.509zM33.837 21.97c.026-.01.286-.005.29-.005l10.814 6.53-10.8 6.523c-.028.01-.284.005-.294.006l-10.813-6.53zm11.105 16.636l-10.8 6.523a2.564 2.564 0 0 1-.295.006l-10.81-6.529 3.39-2.047 7.004 4.23a1.083 1.083 0 0 0 .557.131 1.101 1.101 0 0 0 .554-.13l7.01-4.233zM34.14 40.098a2.545 2.545 0 0 1-.294.006l-10.812-6.53 3.43-2.073 6.97 4.208a1.25 1.25 0 0 0 1.107-.001l6.966-4.206 3.431 2.073zM9 8H7V7h2zm8 8h-2v-1h2zm-4-8h-2V7h2zm4 0h-2V7h2zm-4 8h-2v-1h2zm7.316 11.1H3.9v-6.434l.766-.766h35.668l.766.766v2.12l.8.483v-2.935l-.826-.826.826-.845v-6.329l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9h16.88a2.632 2.632 0 0 1 .336-.8zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zm0 8v-5.668l.766-.766h35.668l.766.766v5.67l-.746.764H4.666zM15 24v-1h2v1zm-4 0v-1h2v1zm-2-8H7v-1h2zm-2 8v-1h2v1z"/></svg></span>
+                          <span class="sublink-text">GIS Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/image/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 8h-2V7h2zm-4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm8 8h-2v1h2zm-8 0H7v1h2zm4 9v-1h-2v1zm-4 0v-1H7v1zm8 0v-1h-2v1zm4 3.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V21h-.8v-.334l-.766-.766H4.666l-.766.766V27.1H21zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zm40.234 4v21.8H23.1V23.1zm-.8 16.366L39.466 44.1h2.868l1.766-1.766zm-20.2-9.932l5.634-5.634h-2.868L23.9 26.666zm6.2-5.068L24.466 30.1h2.868l2.766-2.766zM28.466 30.1H30.1v-1.634zm2.434 0h6.2v-6.2h-6.2zm-7 7h6.2v-6.2h-6.2zm7 0h6.2v-6.2h-6.2zm0 6.434l5.634-5.634h-2.868L30.9 40.666zm7-7l5.634-5.634h-2.868L37.9 33.666zm1.634-5.634H37.9v1.634zm-8.634 7v1.634l1.634-1.634zm.566 6.2h2.868l2.766-2.766v-2.868zm6.434-3.566l2.634-2.634H37.9zM35.466 44.1H37.1v-1.634zm2.434 0h.434l5.766-5.766V37.9h-2.434L37.9 41.666zm6.2-8.634L42.466 37.1H44.1zm0-4L38.466 37.1h2.868l2.766-2.766zm0-7.566h-6.2v6.2h6.2zm-20.2 0v1.634l1.634-1.634zm0 20.2h6.2v-6.2h-6.2zm20.2 0v-.634l-.634.634z"/></svg></span>
+                          <span class="sublink-text">Image Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/geoanalytics/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 16h-2v-1h2zm-8 8v-1H7v1zm8 0v-1h-2v1zM13 7h-2v1h2zm4 0h-2v1h2zM9 7H7v1h2zm21.45 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V27.9h-1.464l-.801-.8H41.1v-6.434l-.766-.766H4.666l-.766.766V27.1h27.15zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM13 24v-1h-2v1zm0-9h-2v1h2zm-4 0H7v1h2zm26.672 27.148A1.87 1.87 0 0 1 35.9 43a1.91 1.91 0 1 1-3.763-.222l-9.845-3.414A1.88 1.88 0 0 1 21 39.9a1.9 1.9 0 1 1 1.474-3.084l4.692-2.346A1.878 1.878 0 0 1 27.1 34a1.902 1.902 0 0 1 1.9-1.9 1.867 1.867 0 0 1 .781.191l3.788-5.05A1.88 1.88 0 0 1 33.1 26a1.9 1.9 0 1 1 3.491 1.026l4.889 4.888c-.069.056-.144.1-.21.162a3.986 3.986 0 0 0-.358.402l-4.883-4.883A1.889 1.889 0 0 1 35 27.9a1.867 1.867 0 0 1-.781-.191l-3.788 5.049a1.868 1.868 0 0 1 .437.965l9.204.614c-.018.11-.049.218-.058.33A3.93 3.93 0 0 0 40 35c0 .046.01.09.01.135l-9.185-.612A1.913 1.913 0 0 1 29 35.9a1.889 1.889 0 0 1-1.474-.716l-4.692 2.346a1.878 1.878 0 0 1 .066.47 1.9 1.9 0 0 1-.105.625c-.007.02-.022.036-.03.056l9.63 3.34a1.87 1.87 0 0 1 2.786-.505l5.415-4.437c.067.108.127.22.204.322a3.9 3.9 0 0 0 .292.306zM33.9 26a1.092 1.092 0 0 0 .43.872 1.12 1.12 0 0 0 1.42-.068A1.1 1.1 0 1 0 33.9 26zm-6 8a1.1 1.1 0 0 0 2.196.093 1.135 1.135 0 0 0-.426-.965A1.087 1.087 0 0 0 29 32.9a1.101 1.101 0 0 0-1.1 1.1zm-5.8 4a1.098 1.098 0 1 0-.06.362A1.101 1.101 0 0 0 22.1 38zm13 5a1.1 1.1 0 1 0-2.2 0 1.1 1.1 0 0 0 2.2 0zm10.8-8a1.9 1.9 0 1 1-3.8 0c0-.053.003-.105.007-.158A1.9 1.9 0 0 1 45.9 35zm-.8 0a1.1 1.1 0 0 0-2.196-.093 1.153 1.153 0 0 0 .216.752A1.1 1.1 0 0 0 45.1 35z"/></svg></span>
+                          <span class="sublink-text">GeoAnalytics Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/geoevent/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M13 8h-2V7h2zm4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm12.418 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826v2.117c-.259-.177-.53-.337-.8-.497v-1.288l-.766-.766H4.666l-.766.766V27.1h17.933c-.148.26-.283.53-.415.8zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM9 24v-1H7v1zm4-9h-2v1h2zm0 9v-1h-2v1zm-4-9H7v1h2zm8 9v-1h-2v1zm16.9 2h-.8v8.9H39v-.8h-5.1zm.1-3.901a11.9 11.9 0 1 0 11.9 11.9 11.914 11.914 0 0 0-11.9-11.9zm0 23a11.1 11.1 0 1 1 11.1-11.1 11.112 11.112 0 0 1-11.1 11.1z"/></svg></span>
+                          <span class="sublink-text">GeoEvent Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/notebook/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M22 27.1H3.9v-6.434l.766-.766h18.576a5.262 5.262 0 0 1 .83-.8H4.666l-.766-.766v-5.668l.766-.766h35.668l.766.766V18h.8v-5.666l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9H22zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zM9 8H7V7h2zm8 0h-2V7h2zm-4 0h-2V7h2zm2 16v-1h2v1zm-4 0v-1h2v1zm-4 0v-1h2v1zm0-8v-1h2v1zm8 0v-1h2v1zm-4 0v-1h2v1zm18.9 8.1h-1.8v1.8h1.8zm-.8 1h-.2v-.2h.2zm15.498-4.48a2.727 2.727 0 0 0-1.62-.5v-.02H27.25a3.154 3.154 0 0 0-3.15 3.15V38.1h-1.68a3.386 3.386 0 0 0-2.872 1.58 3.49 3.49 0 0 0-.157 3.419 3.241 3.241 0 0 0 2.954 1.801h15.161a3.404 3.404 0 0 0 3.394-3.4V26.9h5v-3.65a3.224 3.224 0 0 0-1.302-2.63zM22.345 44.1a2.44 2.44 0 0 1-2.23-1.341 2.706 2.706 0 0 1 .11-2.65A2.588 2.588 0 0 1 22.42 38.9h12.89a3.395 3.395 0 0 0 0 5.2zM40.1 23.192V41.5a2.6 2.6 0 1 1-2.6-2.6v-.8H24.9V23.25a2.352 2.352 0 0 1 2.35-2.35h13.795a3.183 3.183 0 0 0-.945 2.292zm5 2.908h-4.2v-2.908a2.274 2.274 0 0 1 1.44-2.18 1.944 1.944 0 0 1 1.791.259 2.423 2.423 0 0 1 .97 1.979zm-17.1 5h9v.8h-9zm0 3h7v.8h-7zm0-6h9v.8h-9zm4-3h5v.8h-5z"/></svg></span>
+                          <span class="sublink-text">Notebook Server</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+
+              <a id="nav-data-store" data-langlabel="data-store" href="../../../../zh-CN/data-store/" class="top-nav-link">Data Stores</a>
+              <a id="nav-cloud" data-langlabel="cloud" href="../../../../zh-CN/cloud/" class="top-nav-link">云</a>
+              <a id="nav-apps" data-langlabel="apps" href="../../../../zh-CN/apps/" class="top-nav-link">应用程序</a>
+            </nav>
+
+
+            
+            
+            
+
+            <div class="margin-left-1 top-nav-list right hide-if-logged-in logged-out-navigation">
+               
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+              
+              <a data-langlabel="sign-in" id="login-link" class="icon-ui-user top-nav-link link-blue login-link" href="#">登录</a>
+              
+            </div>
+
+            
+            <nav class="margin-left-1 top-nav-list right hide-if-logged-out logged-in-navigation">
+              
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+             
+              <div class="dropdown js-dropdown right">
+
+                <div class="tablet-show top-nav-link">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a href="#" data-drawer="user-nav" class="user-nav-name js-drawer-toggle" data-first-name></a>
+                </div>
+
+                <div class="tablet-hide top-nav-link js-dropdown-toggle">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a class="user-nav-name top-nav-dropdown dropdown-btn" data-first-name>&nbsp;</a>
+                </div>
+
+                <nav class="dropdown-menu dropdown-right">
+                
+                  <a class="dropdown-link agolProfile" id="agolProfile" href="#">我的个人资料</a>
+                  <a class="dropdown-link js-log-out" id="agolLogout" href="#">登出</a>
+                </nav>
+              </div>
+            </nav>
+            
+
+            
+          </div>
+        </div>
+      </header>
+
+      <div class="js-search search-overlay">
+        <div class="search-content" role="dialog" aria-labelledby="search">
+          <form method="GET" id="helpSearchForm">
+            <label>
+              搜索 ArcGIS Enterprise 帮助
+              <div class="search-bar">
+                <input type="search" name="q"  placeholder="搜索 ArcGIS Enterprise 帮助" class="search-input js-search-input">
+                <input type="hidden" name="collection" value="help" />
+                <input type="hidden" name="product" value="arcgis-portal-windows" />
+                <input type="hidden" name="version" value="10.8" />
+                <input type="hidden" name="language" value="zh-CN" />
+              </div>
+            </label>
+            <input type="hidden" name="relativePath" value="../../../../" /><button type="submit" class="btn btn-large right">搜索</button>
+          </form>
+        </div>
+      </div>
+
+      <!--googleon: all-->
+
+      <div id="skip-to-content">
+        <!--googleoff: all-->
+        <header class="sub-nav sub-nav-learn">
+          <div class="grid-container">
+            
+            <div class="column-24">
+              <div style="display:table;" class="sdk-home-banner">
+                <div class="sdk-home-banner-content">
+                  <h1 class="sub-nav-title link-white">Portal for ArcGIS</h1>
+                </div>
+              </div>
+            </div>
+
+            <div class="column-24">
+              <nav class='sub-nav-list tablet-hide'><a class="sub-nav-link" href="../../../../zh-CN/portal/" target="_top" title="Portal for ArcGIS 主页">主页</a><a class="sub-nav-link is-active" href="../../../../zh-CN/portal/latest/use/" target="_top" title="使用 Portal for ArcGIS">使用</a><a class="sub-nav-link" href="../../../../zh-CN/portal/latest/administer/windows/" target="_top" title="安装、管理和保护 Portal for ArcGIS">管理</a></nav><select class='tablet-show select-full trailer-half js-select-nav'><option value="../../../../zh-CN/portal/">主页</option><option selected="true" value="../../../../zh-CN/portal/latest/use/">使用</option><option value="../../../../zh-CN/portal/latest/administer/windows/">管理</option></select>
+            </div>
+
+          </div>
+        </header>
+        <!--googleon: all-->
+       
+        <!-- content goes here -->
+        <div class="grid-container ">
+          
+
+            
+              
+  <!--BREADCRUMB-BEG--><div id="bigmac" class="sticky-breadcrumbs trailer-2" data-spy="affix" data-offset-top="180"> </div><!--BREADCRUMB-END-->
+  <!--googleoff: all-->
+    <div class="column-5 tablet-column-12 trailer-2 ">
+      <aside class="js-accordion accordion reference-index" aria-live="polite" role="tablist">
+        <div></div>
+      </aside>
+
+      <div class="js-sticky scroll-show tablet-hide leader-1 back-to-top" data-top="0" style="top: 0px;">
+        <a href="#" class="btn btn-fill btn-clear">返回顶部</a>
+      </div>
+    </div>
+  <!--googleon: all-->
+  
+            
+            
+            
+	
+		<div class="column-13  pre-1 content-section">
+	
+		<header class="trailer-1"><h1>将图层添加到地图</h1></header>
+
+		 
+	<!--googleoff: all-->
+	
+		
+				<aside id="main-toc-small" class="js-accordion accordion tablet-show trailer-1">
+			      <div class="accordion-section">
+			        <h4 class="accordion-title">在本主题中</h4>
+			        <div class="accordion-content list-plain">
+			          <ol class="list-plain pre-0 trailer-0"><li><a href="#ESRI_SECTION1_4AD1E832EECE4DA18842CC1EEA600F98">可添加哪些图层？</a></li><li><a href="#ESRI_SECTION1_16F13402AF194F8E8DD8A227DB1E1E30">搜索图层</a></li><li><a href="#ESRI_SECTION1_D7E2513964E9429E990C8753FB328592">浏览 <ph translate="no" varid="LivingAtlas_short">Living Atlas</ph> 图层</a></li><li><a href="#ESRI_SECTION1_A82A515232CB4672838FEB9FCF8E76D8">从 web 添加图层</a></li><li><a href="#FILE">从文件添加图层</a></li><li><a href="#ESRI_SECTION1_0C90A3B63ABD49D5B9535055991F4684">添加地图注释</a></li><li><a href="#ESRI_SECTION1_FD5000F7DB47479B849CB12672F60D38">添加路径图层</a></li></ol>
+			        </div>
+			      </div>
+			     </aside>
+		
+    
+   <!--googleon: all-->
+
+
+		<main>
+			
+	
+    	
+    
+
+
+			
+    <p id="GUID-F8C22BC4-7EE1-4969-9EF1-13A56331D477"><a class="xref xref" href="../../../../zh-CN/portal/latest/use/layers.htm">图层</a>是地图的内容。其包含的信息范围十分广泛。这些主题涉及人类、地球、生活等，由影像、切片、要素等构成。要开始添加图层，请登录到站点，打开 <span class="ph">Map Viewer</span>，然后单击<span class="uicontrol">添加</span>按钮。<span class="ph">您可以<a class="xref xref" href="../../../../zh-CN/portal/latest/use/add-layers.htm#ESRI_SECTION1_16F13402AF194F8E8DD8A227DB1E1E30">搜索图层</a>、<a class="xref xref" href="../../../../zh-CN/portal/latest/use/add-layers.htm#ESRI_SECTION1_D7E2513964E9429E990C8753FB328592">浏览 <span class="ph">Living Atlas</span> 图层</a>、<a class="xref xref" href="../../../../zh-CN/portal/latest/use/add-layers.htm#ESRI_SECTION1_A82A515232CB4672838FEB9FCF8E76D8">从 Web 添加图层</a>、<a class="xref xref" href="../../../../zh-CN/portal/latest/use/add-layers.htm#FILE">从文件添加图层</a>以及<a class="xref xref" href="../../../../zh-CN/portal/latest/use/add-layers.htm#ESRI_SECTION1_0C90A3B63ABD49D5B9535055991F4684">添加地图标注</a>。</span> 您也可以获取方向并<a class="xref xref" href="../../../../zh-CN/portal/latest/use/add-layers.htm#ESRI_SECTION1_FD5000F7DB47479B849CB12672F60D38">将路径添加为图层</a>。</p>    <div class="panel trailer-1 note" id="GUID-B3418FDB-67EE-462B-9815-EDE83FE88256"><h5 class="icon-ui-comment trailer-0">注：</h5>      <p id="GUID-F30456B4-F8B2-4F9B-85D8-58427C57D03F"> 即使您没有创建内容的<a class="xref xref" href="../../../../zh-CN/portal/latest/use/roles.htm">权限</a>，您仍可以通过单击<span class="uicontrol">修改地图</span>添加图层来浏览数据。</p>    </div>    <section class="section1 padded-anchor" id="ESRI_SECTION1_4AD1E832EECE4DA18842CC1EEA600F98" purpose="section1"><h2>可添加哪些图层？</h2><p id="GUID-9633AD07-9F82-4B6F-BB7A-B321F837B612">下表显示了您可以添加至地图的图层以及可使用的添加方法。保存地图时，添加的任何项目都会随地图一起保存，并且地图会出现在内容页面的<span class="uicontrol">我的内容</span>选项卡上。</p><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><thead><tr><th colspan="1">图层类型</th><th colspan="1">添加方法</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-7DAFAF04-5366-4B77-8ECB-E8348C15DAC5"><span class="ph">ArcGIS Server</span> 服务</p><p id="GUID-C1D2A6C4-151B-4E4E-B807-0865CC409766">服务类型包括要素、地图、影像和切片服务。</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-4A821C45-2719-4A51-8624-7D7E025ADF1F"> <a class="xref xref" href="../../../../zh-CN/portal/latest/use/add-layers.htm#ESRI_SECTION1_A82A515232CB4672838FEB9FCF8E76D8">从 web 添加图层</a>。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-6D517BB8-DC98-4DFA-BD96-51FBAF251BFF">Bing 底图</p><p id="GUID-498FCD54-F6B2-4243-AB13-FF14315AB166">您的组织必须配置有 Bing 地图密钥才能使用此图层类型。</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-864AB579-88CE-4799-B9AC-1D25B23A2709"><a class="xref xref" href="../../../../zh-CN/portal/latest/use/add-layers.htm#ESRI_SECTION2_758AE7D53057403FB9CA27FCABE174CA">从 web 添加图层</a>。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-E90FF8AC-680D-4E1C-BF9F-3DA73535C1AA">逗号分隔值 (CSV) 文件 (<span class="usertext">.csv</span>)*</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-5504F401-2C00-4A42-95C9-EDA7135249C2"><a class="xref xref" href="../../../../zh-CN/portal/latest/use/add-layers.htm#FILE">从文件添加图层</a>或<a class="xref xref" href="../../../../zh-CN/portal/latest/use/add-layers.htm#ESRI_SECTION2_E377B2D234694DE3BA4ED88DDBF59067">将文件拖放到地图上</a>。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-18E02B93-9BA4-46C7-87ED-52D0BC2EEB3D">来自第三方数据供应商的 CSV 文件</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-E08048FD-15F9-498C-96BE-5581AA69AD8C"><a class="xref xref" href="../../../../zh-CN/portal/latest/use/add-layers.htm#ESRI_SECTION2_E2F7001A034942B7925686E01C839A7E">从 web 添加图层</a>。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-524CD439-B950-4002-B97E-DA8439DD6FAB">来自 <span class="ph">ArcGIS Living Atlas of the World</span> 的 Esri 图层</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-9BD64CCB-FAB4-44D6-9D12-356A9C653E76"><a class="xref xref" href="../../../../zh-CN/portal/latest/use/add-layers.htm#ESRI_SECTION1_D7E2513964E9429E990C8753FB328592">浏览 <span class="ph">Living Atlas</span> 图层</a>或<a class="xref xref" href="../../../../zh-CN/portal/latest/use/add-layers.htm#ESRI_SECTION1_16F13402AF194F8E8DD8A227DB1E1E30">从 <span class="ph">Living Atlas</span> 中搜索图层</a>。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-4A87499F-C390-474E-9C4E-BCC48DEE94EB">GeoJSON 文件（<span class="usertext">.json</span> 或 <span class="usertext">.geojson</span>）</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-112B127B-D4A3-4D8C-ACE2-0478FA5BFBE1"><a class="xref xref" href="../../../../zh-CN/portal/latest/use/add-layers.htm#FILE">从文件添加图层</a>。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-9E2C7C5A-2424-4CC2-926A-3CC762EB02D8">GPS 交换格式文件 (<span class="usertext">.gpx</span>)</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-A39433D1-BD9C-48B8-8649-5AE74FB1CB33"><a class="xref xref" href="../../../../zh-CN/portal/latest/use/add-layers.htm#FILE">从文件添加图层</a>或<a class="xref xref" href="../../../../zh-CN/portal/latest/use/add-layers.htm#ESRI_SECTION2_E377B2D234694DE3BA4ED88DDBF59067">将文件拖放到地图上</a>。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-B2521AB1-FF2C-45D6-863E-0536FB34254E">Keyhole 标记语言 (KML) 文档</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-51E23D4C-D3D4-4853-BEA0-93369F421136"><a class="xref xref" href="../../../../zh-CN/portal/latest/use/add-layers.htm#ESRI_SECTION1_A82A515232CB4672838FEB9FCF8E76D8">从 web 添加图层</a>。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-D2A318A2-8ECE-4CFE-A7F6-9CABF1AA6AA0">地图注释</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-97C7C83E-6643-4882-96AA-193A3E24E298"><a class="xref xref" href="../../../../zh-CN/portal/latest/use/add-layers.htm#ESRI_SECTION1_0C90A3B63ABD49D5B9535055991F4684">在 <span class="ph">Map Viewer</span></a> 中创建。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-0FBF7F09-C85B-45D5-A1B2-01AEB2E7BA0C">开放地理空间联盟 (OGC) Web 要素服务 (WFS) 图层</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-F3E19822-2A50-4A16-ACA0-3A5641952606"><a class="xref xref" href="../../../../zh-CN/portal/latest/use/add-layers.htm#ESRI_SECTION2_49E839B2BE9C455FB6E50887BF96CDAC">从 web 添加图层</a>或<a class="xref xref" href="../../../../zh-CN/portal/latest/use/add-layers.htm#ESRI_SECTION1_16F13402AF194F8E8DD8A227DB1E1E30">从 <span class="ph">ArcGIS Server</span> 站点搜索图层</a>。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-E66C3AD2-51E5-454E-A2DE-F9480CDB944E">OGC Web 地图服务 (WMS) 图层</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-4DF9740C-75C0-4CED-A6E8-52ACC9522EE4"><a class="xref xref" href="../../../../zh-CN/portal/latest/use/add-layers.htm#ESRI_SECTION2_C34EB22293D94DEAA28712CAF132A78B">从 web 添加图层</a>或<a class="xref xref" href="../../../../zh-CN/portal/latest/use/add-layers.htm#ESRI_SECTION1_16F13402AF194F8E8DD8A227DB1E1E30">从 <span class="ph">ArcGIS Server</span> 站点搜索图层</a>。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-60501E36-FC86-4063-AD16-30F292FCA1C4">OGC Web 地图切片服务 (WMTS) 图层</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-634E8237-F637-4AC6-ACF5-F6F484C452B2"><a class="xref xref" href="../../../../zh-CN/portal/latest/use/add-layers.htm#ESRI_SECTION2_97BAAF75132F4D6E9A43EBE0F10C0007">从 web 添加图层</a>或<a class="xref xref" href="../../../../zh-CN/portal/latest/use/add-layers.htm#ESRI_SECTION1_16F13402AF194F8E8DD8A227DB1E1E30">从 <span class="ph">ArcGIS Server</span> 站点搜索图层</a>。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-CCFB75D8-6681-4998-A778-E38BF0D3A186"><span class="ph">ArcGIS Online</span> 上的公共图层</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-8DE7A715-FE52-439E-A39F-6C678E10F7B3"><a class="xref xref" href="../../../../zh-CN/portal/latest/use/add-layers.htm#ESRI_SECTION1_16F13402AF194F8E8DD8A227DB1E1E30">从 <span class="ph">ArcGIS Online</span> 中搜索图层</a>。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-2E108C09-52AE-4165-942E-89E56E17C47E">路径</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-FDC9445D-EE53-458C-B44A-4BD2ABEA7995"><a class="xref xref" href="../../../../zh-CN/portal/latest/use/add-layers.htm#ESRI_SECTION1_FD5000F7DB47479B849CB12672F60D38">在 <span class="ph">Map Viewer</span> 中创建或</a>在门户上<a class="xref xref" href="../../../../zh-CN/portal/latest/use/add-layers.htm#ESRI_SECTION1_16F13402AF194F8E8DD8A227DB1E1E30">搜索您可用的图层</a>。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-19A07935-DCC1-41CE-8955-504E99F70428">Shapefile (<span class="usertext">.zip</span>)*</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-D2D404C5-0E35-412F-AF19-46F9E6349BCD"><a class="xref xref" href="../../../../zh-CN/portal/latest/use/add-layers.htm#FILE">从文件添加图层</a>。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-52CE6BF2-2B41-4FB5-963C-7A5135ECE0E2">文本文件 (<span class="usertext">.txt</span>)*</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-03F41ED8-0EAB-42EE-B660-2F5F48A28C02"><a class="xref xref" href="../../../../zh-CN/portal/latest/use/add-layers.htm#FILE">从文件添加图层</a>或<a class="xref xref" href="../../../../zh-CN/portal/latest/use/add-layers.htm#ESRI_SECTION2_E377B2D234694DE3BA4ED88DDBF59067">将文件拖放到地图上</a>。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-E88AC8B8-7ACD-4768-A994-810C43A81516">来自第三方数据供应商的切片图层</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-CA9C4D8C-4293-4649-AF34-A8EBE4270D09"><a class="xref xref" href="../../../../zh-CN/portal/latest/use/add-layers.htm#ESRI_SECTION2_2C913FF2022B4DD29BF9DA6CB6014EDB">从 web 添加图层</a>或<a class="xref xref" href="../../../../zh-CN/portal/latest/use/add-layers.htm#ESRI_SECTION1_16F13402AF194F8E8DD8A227DB1E1E30">从 <span class="ph">ArcGIS Server</span> 站点搜索图层</a>。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-080B3F44-C7D9-4AD0-98D2-2676B0399618">组织中托管的 Web 图层</p><p id="GUID-07820A50-8609-4D47-830D-F52074724CAA">图层类型包括要素图层、地图图像图层、影像图层和切片图层。</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-0B340500-6446-4AD3-A849-535BC8FB6F75">在门户中<a class="xref xref" href="../../../../zh-CN/portal/latest/use/add-layers.htm#ESRI_SECTION1_16F13402AF194F8E8DD8A227DB1E1E30">搜索您可用的图层</a>。</p></td></tr></tbody><caption></caption></table></div><p id="GUID-D7825941-8D9F-418D-9A2C-BF662BB47864" ishcondition="agol_plat=portal">*门户必须具备托管服务器才能将压缩 shapefile、CSV 文件或文本文件添加至 <span class="ph">Map Viewer</span>。此外，门户必须配置定位器服务，才能添加包含地址的 CSV 或文本文件。</p></section>    <section class="section1 padded-anchor" id="ESRI_SECTION1_16F13402AF194F8E8DD8A227DB1E1E30" purpose="section1"><h2>搜索图层</h2><p id="GUID-DB61BDEE-E269-45DA-9312-F4174F39341A" ishcondition="agol_plat=portal"> 默认情况下，您可以从<span class="uicontrol">我的内容</span>中搜索图层，但是您还可以选择从以下内容中搜索图层： <ul purpose="ul" id="UL_CE20F6E16F3441A082B70759AA0D65B1"><li purpose="li" id="LI_D0AA5ADAEE5A405C997A2BA65C22D381"><span class="uicontrol">我的收藏夹</span> - 包括您已<a class="xref xref" href="../../../../zh-CN/portal/latest/use/item-details.htm#ESRI_SECTION2_1E2E46D3A5EA416F80EF464C5439FD81">标记为收藏项目</a>的图层。</li><li purpose="li" id="LI_180E2BD5FDBE403A86702941320C3B39"><span class="uicontrol">我的群组</span> - 包括您所属群组的图层。</li><li purpose="li" id="LI_6A8AA3C986984FF4ADC64A949DE42F93"><span class="uicontrol">我的组织</span> - 包括组织中的图层。</li><li purpose="li" id="LI_1F2D235E949B49B7B200815A49228647"><p id="GUID-3B399C59-B596-4228-BA23-7E75267CC184"><span class="uicontrol">Living Atlas</span> - 此选项会返回 <a class="xref xref" href="../../../../zh-CN/portal/latest/use/faq.htm#ESRI_QUESTIONANSWER_15678E09261F4B69A4264E1E6D4B196E"><span class="ph">ArcGIS Living Atlas of the World</span></a> 中的所选图层，其中包括交通、人口统计和土地覆被图层。仅当您登录到配置为使用 <span class="ph">ArcGIS Living Atlas of the World</span> 内容的门户时，此选项才可用。</p></li><li purpose="li" id="LI_6B51C17BE922440DB127F46706EFA72B"><span class="uicontrol">ArcGIS Online</span> - <span class="ph">ArcGIS Online</span> 中的公共内容。</li></ul> </p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><section class="context padded-anchor" id="ESRI_CONTEXT_53E13B8E9EE242E19151FAF85A81066D" purpose="context"><p id="GUID-0E7D22C1-E6D0-4C8D-9E4D-1B74A53B6947">要搜索图层，请完成以下步骤：</p></section><div class="steps" id="GUID-E5A50AFC-3EE7-4DB3-BC2B-41C978E704D6"><ol class="list-numbered" purpose="ol">          <li purpose="step" id="ESRI_STEP_92208F8750E949239BBB9C0D1A9773C4">            <span purpose="cmd" id="GUID-847EFDF9-021E-47D2-B55B-81586E03732F">单击<span class="uicontrol">添加</span>并选择<span class="uicontrol">搜索图层</span>。</span>          </li>          <li purpose="step" id="ESRI_STEP_C06FF7C2D12F49A3BB9BC7C9439A369F">            <span purpose="cmd" id="GUID-358C8069-DF1C-4217-BF2D-27FD57197AC3">选择要在何处搜索图层：<span class="uicontrol">我的内容</span>、<span class="uicontrol">我的收藏夹</span>、<span class="uicontrol">我的群组</span>、<span class="uicontrol">我的组织</span>、<span class="uicontrol">Living Atlas</span> 或 <span class="uicontrol"> ArcGIS Online</span>。</span>            
+          </li><li purpose="step" id="ESRI_STEP_C3B56FCE61E5489A997F2927A14EAB85">            <span purpose="cmd">执行以下任意操作以便查找所需图层： </span>                      <ul purpose="choices" id="ESRI_CHOICES_F08A8E2F3165400D98E983450E597516"><li purpose="choice" id="ESRI_CHOICE_2B9E7AEB1E0D450E96A5382C8AD00727">在搜索框中输入搜索术语。您也可以使用<a class="xref xref" href="../../../../zh-CN/portal/latest/use/advanced-search.htm">高级搜索</a>帮助缩小搜索结果范围。</li><li purpose="choice" id="ESRI_CHOICE_E6D931509F984C1F831ADA3D1FDED8CC">使用不同的视图按钮以不同的方式显示图层结果（<span class="uicontrol">表</span>   <img purpose="img" placement="inline" alt="表" title="表" src="GUID-F1626D4F-EC72-4F32-8D91-9A03BFD09441-web.png"> 或<span class="uicontrol">列表</span> <img purpose="img" placement="inline" alt="列表" title="列表" src="GUID-5B3729FD-5F79-403E-AF0C-3A20408446A9-web.png">）。</li><li purpose="choice" id="ESRI_CHOICE_8F8C761FDDC64523AA1EFB463A579BFB">单击<span class="uicontrol">排序</span>按钮   <img purpose="img" placement="inline" alt="排序" title="排序" src="GUID-CF60E20E-1495-4CB6-8795-95E17BB6E201-web.png"> 对图层结果进行排序并根据需要更改排序方向。</li><li purpose="choice" id="ESRI_CHOICE_07F5C9F45A224C578D78940E6FB869F1">单击<span class="uicontrol">过滤器</span>按钮  <img purpose="img" placement="inline" alt="过滤器" title="过滤器" src="GUID-4B105A65-AFAB-4989-A390-2D2C946CA7E1-web.png"> 以缩小搜索结果范围。
+<span class="ph">例如，如果您正在搜索组织中的图层，且<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/portal/latest/administer" href="../../../../zh-CN/portal/latest/administer/windows/manage-items.htm">已设置内容类别</a>，则可以使用<span class="uicontrol">类别</span>过滤器来缩小结果范围。</span> 您也可以使用 <a class="xref xref" href="../../../../zh-CN/portal/latest/use/content-categories.htm#CATEGORY_ARCGIS">ArcGIS 标准类别集</a>或<span class="uicontrol">区域</span>过滤器对 <span class="ph">Living Atlas</span> 图层结果进行过滤。如果您希望您的搜索仅返回已<a class="xref xref" href="../../../../zh-CN/portal/latest/use/item-details.htm#ESRI_SECTION3_5B0AA740695F424792447B4D1B600B27">标记为权威</a>的图层，请使用<span class="uicontrol">状态</span>过滤器。您所见的过滤器选项取决于您搜索图层的位置、您是否已登录以及您的登录方法。<div class="panel trailer-1 note" id="GUID-B2B29C95-6873-4D2A-9931-5E2094DE3C35"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-D8224736-3669-4755-9FA8-5931BE3E1D48">要根据当前地图范围限制搜索结果，请选择<span class="uicontrol">仅显示地图区域中的内容</span>。例如，如果将地图缩放至美国内华达州，则搜索结果将进行排序，并根据地图范围显示。如果将地图范围更改为宾夕法尼亚州，通常会返回不同的结果（取决于关键字）。位于当前地图范围内（并且与关键字匹配）的所有图层都将返回。</p></div></li><li purpose="choice" id="ESRI_CHOICE_C1FFDA9E3A1748DA9B3471514146B1FF">要查看有关图层的重要详细信息，请单击其标题。在图层详细信息窗格中，单击<span class="uicontrol">查看完整详细信息</span>按钮 <img purpose="img" placement="inline" alt="查看完整详细信息" title="查看完整详细信息" src="GUID-4F2C7164-58D2-4B96-A0D2-4868E2B5991E-web.png"> 打开项目页面以查看关于图层的详细信息。</li></ul></li><li purpose="step" id="ESRI_STEP_A122A5F219C941B1BE151DBF1E70B574"><span purpose="cmd">要向地图中添加图层，请单击图层结果上的<span class="uicontrol">添加</span>按钮 <img purpose="img" placement="inline" alt="添加" title="添加" src="GUID-AD2F294B-0E1F-4890-A172-1166D70BA47E-web.png">。</span><div class="info" purpose="info"><div class="panel trailer-1 note" id="GUID-74098ACC-E2DC-48BB-93C4-292DAD433302"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-30F223CF-A745-4DCE-BC17-9D35DA21E7C7">当您通过搜索向 <span class="ph">Map Viewer</span> 添加托管 WFS 图层时，系统将提示您添加单个图层并定义自定义参数。</p></div></div></li><li purpose="step" id="ESRI_STEP_5A7F1A82BC9B41C99BDFAD5059E19E54"><span purpose="cmd">对要添加的每个图层重复之前的步骤。</span><div class="info" purpose="info"><div class="panel trailer-1" id="GUID-164565DC-0273-4CE7-8F27-B5E75A778D05"><h5 class="icon-ui-description trailer-0">提示：</h5><p id="GUID-3D857D36-AD26-453B-8BA1-035B1110A175">可通过单击图层详细信息窗格中的<span class="uicontrol">添加到收藏夹</span>将任何图层结果添加到您的收藏夹。您可以通过在 <span class="ph">Map Viewer</span> 中搜索图层时选择<span class="uicontrol">我的收藏夹</span>或从<a class="xref xref" href="../../../../zh-CN/portal/latest/use/search.htm">内容页面</a>的<span class="uicontrol">我的收藏夹</span>选项卡中查看完整的收藏夹列表。</p></div><p id="GUID-8B19BC95-3A9C-4E60-AE78-F60910CCDFAE">将图层添加至 <span class="ph">Map Viewer</span> 后，您可以配置各个图层。例如，您可以为添加至地图的每个图层<a class="xref xref" href="../../../../zh-CN/portal/latest/use/change-style.htm">更改样式</a>、<a class="xref xref" href="../../../../zh-CN/portal/latest/use/create-labels.htm">创建标注</a>以及<a class="xref xref" href="../../../../zh-CN/portal/latest/use/configure-pop-ups.htm">配置弹出窗口</a>。</p><p id="GUID-45D47D96-92AC-4BE8-A73E-9705A2B91C3E">如果您已添加托管 WFS 图层，则可以保存含有托管 WFS 图层中图层的地图，并且这些配置将保存在地图中。将配置保存到每个单独图层时，系统将提示您<a class="xref xref" href="../../../../zh-CN/portal/latest/use/copy-save-layers.htm#ESRI_SECTION1_9F4C867CA85B4E4DA5945EF1C8BBC3E0">创建新 WFS 图层</a>。这一新 WFS 图层是对托管 WFS 图层的引用。所有的配置均保存到新图层而不是托管图层。</p></div></li><li purpose="step" id="ESRI_STEP_4BDAC3CF6F3D440A9FDF6227409D4726" ishcondition="agol_plat=portal"><span purpose="cmd">要从地图中移除图层，请单击搜索结果列表中图层上的<span class="uicontrol">移除</span>按钮 <img purpose="img" placement="inline" alt="移除" title="移除" src="GUID-699A9623-C3C6-44F7-81A9-6F21A786552F-web.png">。</span></li>        <li purpose="step" id="ESRI_STEP_16922B784CAE47E6AC8D495EAEEB0A83" ishcondition="agol_plat=portal"><span purpose="cmd">要在完成时关闭搜索窗格，请单击<span class="uicontrol">返回</span>箭头。</span></li></ol></div></section></section>    <section class="section1 padded-anchor" id="ESRI_SECTION1_D7E2513964E9429E990C8753FB328592" purpose="section1"><h2>浏览 <span class="ph">Living Atlas</span> 图层</h2><p id="GUID-C263DADE-6D99-48FF-A088-B8C2BA58E1F4" ishcondition="agol_plat=portal">如果您的门户已配置为可以访问 <a class="xref xref" href="../../../../zh-CN/portal/latest/use/faq.htm#ESRI_QUESTIONANSWER_15678E09261F4B69A4264E1E6D4B196E"><span class="ph">ArcGIS Living Atlas of the World</span></a> 内容，则您可以浏览 <span class="uicontrol">Living Atlas 图层</span>并直接将其添加至地图。您门户组织的成员可以查看这些图层。如果您想在组织外共享的地图包含 <a class="xref xref" href="../../../../zh-CN/portal/latest/use/faq.htm#ESRI_QUESTIONANSWER_974E2E21497F42FA9344B871F03CB6AF"><span class="ph">ArcGIS Online</span> 订阅者内容</a>或 <a class="xref xref" href="../../../../zh-CN/portal/latest/use/faq.htm#ESRI_QUESTIONANSWER_5FA26E16589441BC92556F0F01C918E4"><span class="ph">ArcGIS Online</span> 高级内容</a>，您可以<a class="xref xref" href="../../../../zh-CN/portal/latest/use/create-map-apps.htm">创建基于地图的应用程序</a>并对其进行配置，以允许通过您的组织订阅访问内容。（如果使用高级内容，您的 <span class="ph">ArcGIS Online</span> 订阅将产生若干配额成本。）</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_25C611F965B44F1B933A377B6A53F60E"><ol class="list-numbered" purpose="ol">                    <li purpose="step" id="ESRI_STEP_AA744E0CB15A4690ABCFA902132A3D74">            <span purpose="cmd">单击<span class="uicontrol">添加</span>，然后选择<span class="uicontrol">浏览 Living Atlas 图层</span>。</span>          </li>          <li purpose="step" id="ESRI_STEP_8A67A771A2C646D2B622C227A11B9AF5">            <span purpose="cmd">执行以下任意操作以便查找所需图层： </span>                      <ul purpose="choices" id="ESRI_CHOICES_E0E5D5F3551C4803BBE76C54C4B9785A"><li purpose="choice" id="ESRI_CHOICE_DD28F31832DF443B8E9B3F66A30DF1FD">在搜索框中输入搜索术语。您也可以使用<a class="xref xref" href="../../../../zh-CN/portal/latest/use/advanced-search.htm">高级搜索</a>帮助缩小搜索结果范围。</li><li purpose="choice" id="ESRI_CHOICE_83A152840E674570BF39531A8382A6EF">使用不同的视图按钮以不同的方式显示图层结果（<span class="uicontrol">表</span>   <img purpose="img" placement="inline" alt="表" title="表" src="GUID-F1626D4F-EC72-4F32-8D91-9A03BFD09441-web.png"> 或<span class="uicontrol">列表</span> <img purpose="img" placement="inline" alt="列表" title="列表" src="GUID-5B3729FD-5F79-403E-AF0C-3A20408446A9-web.png">）。</li><li purpose="choice" id="ESRI_CHOICE_6AED570537284F7B8A513FCA0DBF7395">单击<span class="uicontrol">排序</span>按钮   <img purpose="img" placement="inline" alt="排序" title="排序" src="GUID-CF60E20E-1495-4CB6-8795-95E17BB6E201-web.png"> 对图层结果进行排序并根据需要更改排序方向。</li><li purpose="choice" id="ESRI_CHOICE_31F31304AD004C2699C7C9EB4E8B7BEB">单击<span class="uicontrol">过滤器</span>按钮  <img purpose="img" placement="inline" alt="过滤器" title="过滤器" src="GUID-4B105A65-AFAB-4989-A390-2D2C946CA7E1-web.png"> 以缩小搜索结果范围。例如，您可以使用<span class="uicontrol">类别</span>过滤器过滤图层结果，其中包括 <a class="xref xref" href="../../../../zh-CN/portal/latest/use/content-categories.htm#CATEGORY_ARCGIS">ArcGIS 标准类别集</a>中的类别，或者使用<span class="uicontrol">区域</span>或<span class="uicontrol">项目类型</span>过滤器。<div class="panel trailer-1 note" id="GUID-BD86D73E-CCE6-430B-B707-58759BB401F9"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-C9221E27-76DF-4C79-82BB-62261A2A191A">要根据当前地图范围限制搜索结果，请选择<span class="uicontrol">仅显示地图区域中的内容</span>。例如，如果将地图缩放至美国内华达州，则搜索结果将进行排序，并根据地图范围显示。如果将地图范围更改为宾夕法尼亚州，通常会返回不同的结果（取决于关键字）。位于当前地图范围内（并且与关键字匹配）的所有图层都将返回。</p></div></li><li purpose="choice" id="ESRI_CHOICE_4C02FDF33D9B4960B4B9D18D95F4A8ED">要查看有关图层的重要详细信息，请单击其标题。在图层详细信息窗格中，单击<span class="uicontrol">查看完整详细信息</span>按钮 <img purpose="img" placement="inline" alt="查看完整详细信息" title="查看完整详细信息" src="GUID-4F2C7164-58D2-4B96-A0D2-4868E2B5991E-web.png"> 打开项目页面以查看关于图层的详细信息。</li></ul></li><li purpose="step" id="ESRI_STEP_E06340723C8C4BB29630A3E9703A70D0"><span purpose="cmd">要向地图中添加图层，请单击图层结果上的<span class="uicontrol">添加</span>按钮 <img purpose="img" placement="inline" alt="添加" title="添加" src="GUID-AD2F294B-0E1F-4890-A172-1166D70BA47E-web.png">。</span></li><li purpose="step" id="ESRI_STEP_7B38FEFFAFDC4A9AA0E2F5787E4D57AA"><span purpose="cmd">对要添加的每个图层重复之前的步骤。</span><div class="info" purpose="info"><div class="panel trailer-1" id="GUID-BFC049BA-17F2-4FF2-BE68-8D331C36E55A"><h5 class="icon-ui-description trailer-0">提示：</h5><p id="GUID-4A3121E5-7BD3-4D40-B55C-72522E80B510">可通过单击图层详细信息窗格中的<span class="uicontrol">添加到收藏夹</span>将任何图层结果添加到您的收藏夹。您可以通过在 <span class="ph">Map Viewer</span> 中搜索图层时选择<span class="uicontrol">我的收藏夹</span>或从<a class="xref xref" href="../../../../zh-CN/portal/latest/use/search.htm">内容页面</a>的<span class="uicontrol">我的收藏夹</span>选项卡中查看完整的收藏夹列表。</p></div></div></li>                  <li purpose="step" id="ESRI_STEP_873A6DA62F654FAE975DAD3ADCFDA9DA" ishcondition="agol_plat=portal"><span purpose="cmd">要从地图中移除图层，请单击图层结果上的<span class="uicontrol">移除</span>按钮 <img purpose="img" placement="inline" alt="移除" title="移除" src="GUID-699A9623-C3C6-44F7-81A9-6F21A786552F-web.png">。</span></li><li purpose="step" id="ESRI_STEP_910E45F8E08647EA99F2BD77A06EB60D" ishcondition="agol_plat=portal"><span purpose="cmd">要在完成时关闭搜索窗格，请单击<span class="uicontrol">返回</span>箭头。</span></li></ol></div></section></section>    <section class="section1 padded-anchor" id="ESRI_SECTION1_A82A515232CB4672838FEB9FCF8E76D8" purpose="section1"><h2>从 web 添加图层</h2><p id="GUID-FD2F76C3-79AC-4F45-8945-8D5CCEE4E39E">您可通过 URL 添加以下类型的图层：<a class="xref xref" href="../../../../zh-CN/portal/latest/use/add-layers.htm#ESRI_SECTION2_314AA95D5A074ACD91AA6AA1DD9F9E5C">ArcGIS Server web 服务</a>、<a class="xref xref" href="../../../../zh-CN/portal/latest/use/add-layers.htm#ESRI_SECTION2_49E839B2BE9C455FB6E50887BF96CDAC">OGC WFS web 服务</a>、<a class="xref xref" href="../../../../zh-CN/portal/latest/use/add-layers.htm#ESRI_SECTION2_C34EB22293D94DEAA28712CAF132A78B">OGC WMS web 服务</a>、<a class="xref xref" href="../../../../zh-CN/portal/latest/use/add-layers.htm#ESRI_SECTION2_97BAAF75132F4D6E9A43EBE0F10C0007">OGC WMTS web 服务</a>、<a class="xref xref" href="../../../../zh-CN/portal/latest/use/add-layers.htm#ESRI_SECTION2_2C913FF2022B4DD29BF9DA6CB6014EDB">切片图层</a>、<a class="xref xref" href="../../../../zh-CN/portal/latest/use/add-layers.htm#ESRI_SECTION2_739FD1CC71AE4EC999F51B752186F67D">KML 文件</a>、<a class="xref xref" href="../../../../zh-CN/portal/latest/use/add-layers.htm#ESRI_SECTION2_D291DA63878141B291ECF3FC4CC692FE">GeoRSS 文件</a>和 <a class="xref xref" href="../../../../zh-CN/portal/latest/use/add-layers.htm#ESRI_SECTION2_E2F7001A034942B7925686E01C839A7E">CSV 文件</a>。如果您的组织配置了 <span class="ph">Bing Maps</span>，您也可以添加 <a class="xref xref" href="../../../../zh-CN/portal/latest/use/add-layers.htm#ESRI_SECTION2_758AE7D53057403FB9CA27FCABE174CA"><span class="ph">Bing Maps</span> 底图</a>。</p><p id="GUID-0DFBE29B-AD0A-4E48-8284-A8D24CD52647">选择<span class="uicontrol">从 Web 添加图层</span>选项，然后选择要添加的 web 图层的类型。</p><section class="section2 padded-anchor" id="ESRI_SECTION2_314AA95D5A074ACD91AA6AA1DD9F9E5C" purpose="section2"><h3><span class="ph">ArcGIS Server</span> web 服务</h3><p id="GUID-5C011C03-28D2-423B-A678-365089ACF608">          <a class="xref xref" href="../../../../zh-CN/portal/latest/use/arcgis-server-services.htm"><span class="ph">ArcGIS Server</span> web 服务</a>是位于 <span class="ph">ArcGIS Server</span> 站点上的地图、影像或要素资源。如果已知用于访问 <span class="ph">ArcGIS Server</span> 站点服务的用户名和密码，则可添加使用 <span class="ph">ArcGIS Server</span> 10 SP1 及更高版本创建的安全服务。将安全服务添加到地图时，系统会提示您输入用户名和密码。任何人查看您的地图时，系统都会提示其登录 <span class="ph">ArcGIS Server</span> 以访问受保护服务。如果 <span class="ph">ArcGIS Server</span> 登录信息无效，显示的地图将不包含该图层。</p><p id="GUID-AC7159BC-CB0E-4007-A9E4-18C543550A9B">使用此选项，您还可以指定
+<span class="ph">ArcGIS Server</span> 站点的 URL 并从该服务器上的图层列表中进行选择。</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="GUID-16FC6EC8-9482-43B5-8C34-D748BAB3CFF3"><ol class="list-numbered" purpose="ol">            <li purpose="step" id="GUID-161CD42E-C75D-44D0-82F3-942849931607">              <span purpose="cmd" id="GUID-68D193E0-A2CB-4526-BBB7-33CC2FFF3A7A">选择 <span class="uicontrol">ArcGIS Server Web 服务</span>，然后在 <span class="uicontrol">URL</span> 字段中输入图层的 web 地址。</span>              <div class="info" purpose="info">                <p id="GUID-CEF0D64A-3CE3-42DA-AEA5-38951FE06B14">如果您已配置了 <span class="ph">ArcGIS Web Adaptor</span>，则 ArcGIS Server web 服务 URL 的格式为 <span class="usertext">https://webadaptorhost.domain.com/webadaptorname/rest/services/folder/service/servicetype</span>。如果服务位于根文件夹中，则无需在 URL 中包含文件夹名称。在这种情况下，URL 的格式为 <span class="usertext">https://webadaptorhost.domain.com/webadaptorname/rest/services/service/servicetype</span>。</p>              </div>              <div class="stepexample" purpose="stepexample">                <p id="GUID-5CCDE557-6C4C-47AB-8427-4A9AFAE60613">例如，要连接到 <span class="ph">ArcGIS Server</span> 地图服务，需输入如下所示的 URL：<span class="usertext">https://webadaptorhost/webadaptorname/rest/services/service/MapServer</span>。<span class="ph">有关详细信息和示例，请参阅 <span class="ph">Portal for ArcGIS</span> 管理员指南中的 <a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/portal/latest/administer" href="../../../../zh-CN/portal/latest/administer/windows/components-of-arcgis-urls.htm">ArcGIS URL 组件</a>。</span></p>                <p id="GUID-DE31EEF7-ECFA-4AE0-BE22-9795641066DE">如果需要通过 HTTPS 访问服务，请使用 <span class="usertext">https</span> 添加图层。</p>              </div>            </li>            <li purpose="step" id="ESRI_STEP_0A325D7154964F008E5288A57EA9D239">              <span purpose="cmd" id="GUID-A4A51F4D-D921-4E46-B674-21F3371CAB0A">如果要将图层作为底图使用，请选中<span class="uicontrol">用作底图</span>。</span>            </li>            <li purpose="step" id="ESRI_STEP_12561A59633949F09CA4E705734A304C"><span purpose="cmd">如果您输入的 <span class="ph">ArcGIS Server</span> 站点 URL 包含多个图层，并且您要将特定图层添加至地图，请单击<span class="uicontrol">浏览更多图层</span>并选择所需图层。</span></li><li purpose="step" id="ESRI_STEP_2677F35FDDA94E3FB79278675CF0803C">              <span purpose="cmd" id="GUID-8B0A57E1-47B3-4D68-B7AD-5A5A8C66074C">单击<span class="uicontrol">添加图层</span>将图层添加到地图中。</span>            </li>          </ol></div></section></section><section class="section2 padded-anchor" id="ESRI_SECTION2_49E839B2BE9C455FB6E50887BF96CDAC" purpose="section2"><h3>OGC WFS web 服务</h3><p id="GUID-234B7B9B-EC1D-4665-926B-66EEBD43B2AE"> <a class="xref xref" href="../../../../zh-CN/portal/latest/use/ogc.htm">OGC WFS</a> 是遵循 OGC Web 要素服务规范的要素服务。 OGC WFS 图层将作为地图图像图层添加到 <span class="ph">Map Viewer</span>。添加 OGC WFS 图层后，您可以<a class="xref xref" href="../../../../zh-CN/portal/latest/use/show-tables.htm">查看其属性表</a>、<a class="xref xref" href="../../../../zh-CN/portal/latest/use/change-style.htm">进行简单的样式更改</a>、<a class="xref xref" href="../../../../zh-CN/portal/latest/use/configure-pop-ups.htm">配置弹出窗口</a>、<a class="xref xref" href="../../../../zh-CN/portal/latest/use/change-transparency.htm">更改透明度</a>及<a class="xref xref" href="../../../../zh-CN/portal/latest/use/perform-analysis.htm">执行分析</a>。</p><p id="GUID-EFE6C7D1-18C4-46BC-8881-3F351F28FD37"><div class="panel trailer-1 note" id="GUID-84096D96-8BED-4F16-9B68-2E76D2BD8B81"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-C3451D62-DE30-431E-80D1-C3CA4C2CE643">如果您从 <span class="ph">ArcGIS Server</span> 站点添加 WFS 服务，<span class="ph">Map Viewer</span> 将改为使用 <span class="ph">ArcGIS Server</span> 服务。</p></div></p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_C5B25752163746228ED13B2CB77E62F3"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_BB5B924EA93C4250BF601D3F51A1F4CD"><span purpose="cmd" id="GUID-22B0BFD3-18AC-4FF7-A8EC-459C99B6A432">选择 <span class="uicontrol">WFS OGC Web 服务</span>，然后在 URL 字段中输入图层的 web 地址。</span><div class="stepexample" purpose="stepexample"><p id="GUID-86107222-4611-48FB-B851-A6994638BC62">以下为 WFS 服务 URL 的示例：<span class="usertext">https://mrdata.usgs.gov/wfs/asbestos?SERVICE=WFS&amp;REQUEST=GetCapabilities</span>。</p></div></li>            <li purpose="step" id="ESRI_STEP_52C823A0200E4F59936A8152FE946B57"><span purpose="cmd" id="GUID-5AED8E51-3A72-4ACA-B752-E7C2DFC5EC5B">选择要添加的图层。无法选择多个图层。</span></li><li purpose="step" id="ESRI_STEP_6EEA72DD7AD3445782828F2BDAE4F20C"><span purpose="cmd" id="GUID-AF52AFA8-394A-4D3C-99E6-5AEEB7208037">如果所选图层包含复杂要素，请选择要显示的要素类型：<span class="uicontrol">点</span>、<span class="uicontrol">线</span>或<span class="uicontrol">面</span>。</span></li><li purpose="step" id="ESRI_STEP_DD2C4494889245F498EF991625596031"><span purpose="cmd" id="GUID-674E26DE-3634-4B81-BD31-C285DE4502A1">单击<span class="uicontrol">显示高级选项</span>并根据需要更改以下内容：</span><ul purpose="choices" id="ESRI_CHOICES_79DE0EC4E6894B5095A80425010EC9E4"><li purpose="choice" id="ESRI_CHOICE_A884662DD72B4C7A8F55B5D73D9941DB"><span class="uicontrol">最大要素计数</span> - 输入一个新值以更改从 WFS 请求的、和在 web 地图中绘制的最大要素计数。</li><li purpose="choice" id="ESRI_CHOICE_CB3AC2E0DFC54DDC8E55907213470D04"><span class="uicontrol">交换 X/Y 坐标</span> - 选中此框以交换 x，y 坐标。</li></ul></li><li purpose="step" id="ESRI_STEP_848CC1981A79421BB6B5606EEDFF8609"><span purpose="cmd" id="GUID-78706922-6714-47AD-9FDB-8C1815844BC1">单击<span class="uicontrol">添加图层</span>。</span></li><li purpose="step" id="ESRI_STEP_68AD422C25BE4A0CB8C089E0A8767EA6">              <span purpose="cmd" id="GUID-15415632-A293-4CED-BD51-98336610F9E6">如果要在 WFS 中添加更多的图层，请重复上述步骤。</span>            </li></ol></div><section class="postreq padded-anchor" id="ESRI_POSTREQ_DB041D90968748EDACF12876CA69999B" purpose="postreq"><div class="panel trailer-1" id="GUID-3117069D-0A20-4BEC-8FA3-64F4D6CDE6A4"><h5 class="icon-ui-description trailer-0">提示：</h5><p id="GUID-8C810369-DBE5-4E04-BDDA-0E2D17A81C9A">添加图层后还可以设置或更改高级选项，方法是在<span class="uicontrol">内容</span>窗格中单击图层的<span class="uicontrol">更多选项</span>按钮 <img purpose="img" placement="inline" alt="更多选项" title="更多选项" src="GUID-54E2A3B6-4830-42A9-8077-680C2C3B2D54-web.png">，然后单击 <span class="uicontrol">WFS OGC 选项</span>。</p></div></section></section></section><section class="section2 padded-anchor" id="ESRI_SECTION2_C34EB22293D94DEAA28712CAF132A78B" purpose="section2"><h3>OGC WMS web 服务</h3><p id="GUID-9C3C068B-B7AD-4FC6-B775-B1AB91CE25D0">          <a class="xref xref" href="../../../../zh-CN/portal/latest/use/ogc.htm">OGC WMS</a> 是遵循 OGC Web 地图服务规范的地图。 添加 OGC WMS 图层后，您可以启用弹出窗口、配置哪些图层可见、<a class="xref xref" href="../../../../zh-CN/portal/latest/use/change-transparency.htm">更改透明度</a>、<a class="xref xref" href="../../../../zh-CN/portal/latest/use/set-visibility.htm">设置可见性范围</a>和<a class="xref xref" href="../../../../zh-CN/portal/latest/use/set-refresh-interval.htm">更改刷新间隔</a>等。</p><div class="panel trailer-1 note" id="GUID-5E62DC64-8872-4BCE-B51D-4497FA153D01"><h5 class="icon-ui-comment trailer-0">注：</h5><ul purpose="ul" id="UL_B9E491B80A7E4AC2915F882820D5207B"><li purpose="li" id="LI_B359E8E041B54E7DB975ABE8A449EDAD"> 如果启用弹出窗口的选项对于 WMS 图层不可用，您可能需要再次将图层添加到 <span class="ph">Map Viewer</span> 或重新创建 WMS 项目。某些 WMS 图层不支持弹出窗口。</li><li purpose="li" id="LI_992A4F0207C54CACBA7859C3BFA02E05"> 仅当 WMS 服务支持标准 HTTP 缓存规则时，才能对 WMS 图层进行刷新。</li><li purpose="li" id="LI_808B476F72CD4D67875088F14A70F44A">如果您从 <span class="ph">ArcGIS Server</span> 站点添加 WMS 服务，<span class="ph">Map Viewer</span> 将改为使用 <span class="ph">ArcGIS Server</span> 服务。</li></ul></div><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_D001D8E11BFF4961A7222C5FCE080CE0"><ol class="list-numbered" purpose="ol">            <li purpose="step" id="ESRI_STEP_F3EEF07D7EFF43C588B7E29A7C4335C4">              <span purpose="cmd" id="GUID-2FBB195A-AC25-468F-B330-C756EF3D687C">选择 <span class="uicontrol">WMS OGC Web 服务</span>，然后在 <span class="uicontrol">URL</span> 字段中输入图层的 web 地址。</span>              <div class="stepexample" purpose="stepexample"><p id="GUID-F8418B2D-46E8-4573-8ABE-676E2902DD82">以下为 WMS 服务 URL 的示例：<span class="usertext">http://ows.terrestris.de/osm/service?SERVICE=WMS&amp;VERSION=1.1.1&amp;REQUEST=GetCapabilities</span>。</p><div class="panel trailer-1 note" id="GUID-4835D875-43B5-4951-85C6-D9BE29547EAA"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-9B638937-518D-487C-B43E-5B72C5EDADC2"><span class="ph">Esri</span> 并不拥有或维护此服务，因此无法保证此服务可随时访问。</p></div></div>            </li>            <li purpose="step" id="ESRI_STEP_06279C6CA9344FA4B353B6DC54D8FA18">              <span purpose="cmd" id="GUID-921F119B-5D93-4EB9-BED3-0E603B18C2F7">如果要将图层作为底图使用，请选中<span class="uicontrol">用作底图</span>。</span>            </li>            <li purpose="step" id="ESRI_STEP_C130969042594423B630D555FAE93B82"><span purpose="cmd" id="GUID-9CF1D411-B804-4B45-8804-5B409771D9CD">如果您要选择将 OGC WMS 服务中的特定图层（而不是整个服务）添加至地图，请单击<span class="uicontrol">获取图层</span>，然后选中要添加的图层旁的复选框。如果您要添加整个服务，则可跳过此步骤。</span><div class="info" purpose="info"><div class="panel trailer-1" id="GUID-2D8F45D6-E50F-409D-80B2-DDD8C6A3219F"><h5 class="icon-ui-description trailer-0">提示：</h5><p id="GUID-4A7F920C-2E8F-47F0-8C08-993CF455EE11">您可以在添加图层之前对任何图层进行重命名，方法是单击图层名称并键入一个新名称。</p></div></div></li><li purpose="step" id="ESRI_STEP_22110CA77ADA4BED8CA3526E549737EA">              <span purpose="cmd" id="GUID-B04EB4E6-3A9F-447C-B3E9-86822B4BCFDE">单击<span class="uicontrol">添加图层</span>。</span>            </li>          </ol></div></section></section><section class="section2 padded-anchor" id="ESRI_SECTION2_97BAAF75132F4D6E9A43EBE0F10C0007" purpose="section2"><h3>OGC WMTS web 服务</h3><p id="GUID-C3BF73B2-2783-4E3A-98E4-79C8F5B3B7CC">          <a class="xref xref" href="../../../../zh-CN/portal/latest/use/ogc.htm">OGC WMTS</a> 是遵循 OGC Web 地图切片服务规范的一组缓存图像切片。 添加 OGC WMTS 图层后，您可以<a class="xref xref" href="../../../../zh-CN/portal/latest/use/change-transparency.htm">更改透明度</a>、<a class="xref xref" href="../../../../zh-CN/portal/latest/use/set-visibility.htm">设置可见性范围</a>和<a class="xref xref" href="../../../../zh-CN/portal/latest/use/set-refresh-interval.htm">更改刷新间隔</a>等。</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_3C033BADE06F4B688F4755034CC13B57"><ol class="list-numbered" purpose="ol">            <li purpose="step" id="ESRI_STEP_15CDCD19E5CA4AF2ADD2C87679B49A94">              <span purpose="cmd" id="GUID-29C86051-8873-4410-AB91-D08AA4BDA4AB">选择 <span class="uicontrol">WMTS OGC Web 服务</span>，然后在 <span class="uicontrol">URL</span> 字段中输入图层的 web 地址。</span>              <div class="stepexample" purpose="stepexample"><p id="GUID-0E960521-195D-4A18-A856-ADBDDC4362E1">以下为 WMTS 服务 URL 的示例：<span class="usertext">http://tileserver.maptiler.com/wmts</span></p><div class="panel trailer-1 note" id="GUID-853CADD1-84FE-4395-ABCE-640BF2338AED"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-0E81515D-9ECE-442A-B693-5C79DC197562"><span class="ph">Esri</span> 并不拥有或维护此服务，因此无法保证此服务可随时访问。</p></div></div>            </li>            
+            <li purpose="step" id="ESRI_STEP_95DFD087751345229D92BECE8179DC9C" ishcondition="agol_plat=portal">              <span purpose="cmd" id="GUID-75DE6050-A4D2-43D8-818D-55F3675EA78C">选择要添加的图层。您只能添加一个图层。</span>            </li><li purpose="step" id="ESRI_STEP_E234A4DD20D14A85906B41EBD5199CE3" ishcondition="agol_plat=portal">              <span purpose="cmd" id="GUID-C4AA0536-D2AB-435B-82D5-FB594F93A43F">如果要将图层作为底图使用，请选中<span class="uicontrol">用作底图</span>。</span>            </li>            <li purpose="step" id="ESRI_STEP_B6F5CFE5693A489881EA51381D1151C5">              <span purpose="cmd" id="GUID-0A452133-6434-43E7-B03F-2C855E329895">单击<span class="uicontrol">添加图层</span>。</span>            </li>            <li purpose="step" id="ESRI_STEP_948BB512C52846619438DD35C81BB962">              <span purpose="cmd" id="GUID-5493B83B-30FE-45C4-B618-2FC37682E161">如果要在 WMTS 中添加更多的图层，请重复上述步骤。</span>            </li>          </ol></div></section></section><section class="section2 padded-anchor" id="ESRI_SECTION2_2C913FF2022B4DD29BF9DA6CB6014EDB" purpose="section2"><h3>切片图层</h3><p id="GUID-C5F630BA-CCCE-4384-9253-D005D8D21C26"><a class="xref xref" href="../../../../zh-CN/portal/latest/use/tile-layers.htm">切片图层</a>是服务器上一组可通过 Web 访问的切片。当您从 Web 添加切片图层时，这些切片可通过来自 Web 浏览器的直接 URL 请求访问。为了在 <span class="ph">Map Viewer</span> 中精确地显示切片图层，请确保使用 Web 墨卡托投影（辅助球体）坐标系。 </p><p id="GUID-494DB4B6-3079-47D6-BB3B-D62E2BAE3FD0">切片图层中相应切片的访问权限取决于切片图层的 URL。URL 包含的参数化值可用于 <span class="ph">Map Viewer</span>，以动态请求平移和缩放时与地图的范围和比例相对应的切片。<span class="ph">例如，OpenCycleMap 切片图层的 URL 包含用大括号 ({}) 括起来的参数化值：<span class="usertext">http://www.opencyclemap.org/:
+http://{subDomain}.tile.opencyclemap.org/cycle/{level}/{col}/{row}.png</span>。</span> </p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_3642AB7AB5F643329E419BFF688947F1"><ol class="list-numbered" purpose="ol">            <li purpose="step" id="ESRI_STEP_A1D1B96299AA4C828977C8EF8E5A81E8">              <span purpose="cmd" id="GUID-A015F1E3-E664-4FDD-BE71-E0A6FF49FF1D">选择<span class="uicontrol">切片图层</span>，然后在 <span class="uicontrol">URL</span> 字段中输入图层的 web 地址。</span>              <div class="info" purpose="info">                <p id="GUID-879B82C8-CFFC-4606-A5BE-1A6BFD5D1857">您可从数据提供商处获取该 URL。</p>                <p id="GUID-622F7D9F-21AB-4806-8864-03F5C442D8CC">如果需要通过 HTTPS 访问服务，请使用 <span class="usertext">https</span> 添加图层。</p>              <div class="panel trailer-1 note" id="GUID-D64E540E-C6D3-41BC-99EB-660F9E151984"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-C3A9FA06-C7BE-404F-B339-E9AF10E77F29">从 web 添加的切片图层必须使用 Web 墨卡托投影（辅助球体）坐标系以确保图层可在 <span class="ph">Map Viewer</span> 中正确显示。</p></div></div>            </li>            <li purpose="step" id="ESRI_STEP_F8611D247E924219B90383AB9E8A0E6F">              <span purpose="cmd" id="GUID-B3B01080-307A-4D80-87D6-5EA58A746D3D">如果切片图层包含一个或多个子域，请在<span class="uicontrol">子域</span>字段中指定该切片图层的子域标注。使用逗号分隔标注。</span>              <div class="info" purpose="info">                <p id="GUID-4C74FB25-9B7B-4B96-8374-02DE796DA54B">切片图层提供者使用子域在多个服务器间分发切片请求。并非所有切片图层都具有子域。如果切片图层不含子域，则<span class="uicontrol">从 Web 添加图层</span>窗口将不显示“子域”字段。如果对子域标注有任何疑问，请联系切片图层提供者。</p>              <div class="panel trailer-1 note" id="GUID-A772F851-7019-4328-9CEB-A762D85877C2"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-173B6F1F-BC59-45F1-85D2-07F1693D3401">如果切片跨多个服务器分布，则必须提供子域信息。</p></div></div>            </li>            <li purpose="step" id="ESRI_STEP_55FA4B805C264610B312B7DF4955256F">              <span purpose="cmd" id="GUID-6E921465-D07C-4C36-87BC-10495979E387">在<span class="uicontrol">标题</span>字段中输入切片图层的标题。</span>              <div class="info" purpose="info">                <p id="GUID-866C703A-92CA-40F2-952C-E60F9C8DCC5E">此地图的<span class="uicontrol">内容</span>窗格会将您输入的标题显示为该切片图层的名称。</p>              </div>            </li>            <li purpose="step" id="ESRI_STEP_8830E5B7CFC4472FBB9CAAC546135FC5">              <span purpose="cmd" id="GUID-C4AA3571-192C-417A-A14A-29683A253EF5">在<span class="uicontrol">制作者名单</span>字段中为切片图层提供者输入任意版权信息或所需属性信息。</span>              <div class="info" purpose="info">                <p id="GUID-C6F322F8-75C3-4704-89CA-4F4E15A4180C">此地图将在右下方显示制作者名单。</p>              </div>            </li>            <li purpose="step" id="ESRI_STEP_C7665C46E20D4BA294B2564F664CAC01">              <span purpose="cmd" id="GUID-1B88E551-9CD9-4EDA-9ACC-BE9E73169B5F">单击<span class="uicontrol">设置切片范围</span>设置切片的覆盖范围。</span>              <div class="info" purpose="info">                <p id="GUID-F6DF3844-2534-43AD-837F-BEDB6600EB18">切片范围代表所有切片的范围。这是一项可选设置。设置范围后，将仅针对指定范围请求切片。但是，由于切片未根据范围大小进行裁剪，因此可能超出范围。</p>              </div>            </li>            <li purpose="step" id="ESRI_STEP_8ADBC9155D06485BB77232E71FD74684">              <span purpose="cmd" id="GUID-B087EA3A-E349-44A0-9681-2422784E8DB7">如果要将图层作为底图使用，请选中<span class="uicontrol">用作底图</span>。</span>            </li>            <li purpose="step" id="ESRI_STEP_5B76B8AA35D84643BAA8AE259B1D57F5">              <span purpose="cmd" id="GUID-7DB0486E-B15E-4157-A18C-6316345FF28F">单击<span class="uicontrol">添加图层</span>将图层添加到地图中。</span>            </li>          </ol></div></section></section><section class="section2 padded-anchor" id="ESRI_SECTION2_739FD1CC71AE4EC999F51B752186F67D" purpose="section2"><h3>KML 文件</h3><p id="GUID-41E263AD-408C-42FB-90A0-CADECAEBE9D0"><a class="xref xref" href="../../../../zh-CN/portal/latest/use/kml.htm">KML 文件</a>包含一组地理要素。</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_460B2449A139477989FDE34B60D56031"><ol class="list-numbered" purpose="ol">            <li purpose="step" id="ESRI_STEP_85CF8F9EBE754959AAF3FA8049B1359E">              <span purpose="cmd" id="GUID-5141AE98-A947-4A15-A8E0-1DBBC5742B77">选择 <span class="uicontrol">KML 文件</span>，然后在 <span class="uicontrol">URL</span> 字段中输入图层的 web 地址。</span>              <div class="info" purpose="info">                <p id="GUID-E0946CE5-83D6-4BF6-B102-FCE5E888FE9B">您可从数据提供商处获取该 URL。</p>              </div>            </li>            <li purpose="step" id="ESRI_STEP_3351F64F9B7F49FE85A760C09B8C7E73">              <span purpose="cmd" id="GUID-F3527EBA-FD76-47A9-9A58-1DA63FABDF69">单击<span class="uicontrol">添加图层</span>将图层添加到地图中。</span>            </li>          </ol></div></section></section><section class="section2 padded-anchor" id="ESRI_SECTION2_D291DA63878141B291ECF3FC4CC692FE" purpose="section2"><h3>GeoRSS 文件</h3><p id="GUID-FB8003D1-FA01-47C7-B56B-3D73D3A48E9C"><a class="xref xref" href="../../../../zh-CN/portal/latest/use/georss.htm">GeoRSS 文件</a>是一种 web 订阅源，包括地理要素和位置。。</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_1CBB265D91AA428FA567C68B82CAFF64"><ol class="list-numbered" purpose="ol">            <li purpose="step" id="ESRI_STEP_A1860D0195944527A80493908ED1751B">              <span purpose="cmd" id="GUID-C690D9C9-4019-4D4E-8855-D62A26B6B5F6">选择<span class="uicontrol"> GeoRSS 文件</span>，然后在 <span class="uicontrol">URL</span> 字段中输入图层的 web 地址。</span>              <div class="info" purpose="info">                <p id="GUID-0ED15DEB-7B32-435B-A345-6ABCFDB31A29">您可从数据提供商处获取该 URL。</p>              </div>            </li>            <li purpose="step" id="ESRI_STEP_F8B8F7F621784927AFB5DD38E22D6A1F">              <span purpose="cmd" id="GUID-575D02DC-DA81-4621-B562-BF68C8BA0BB0">单击<span class="uicontrol">添加图层</span>将图层添加到地图中。</span>            </li>          </ol></div></section></section><section class="section2 padded-anchor" id="ESRI_SECTION2_E2F7001A034942B7925686E01C839A7E" purpose="section2"><h3>CSV 文件</h3><p id="GUID-F84C370A-0E51-4816-B7D2-3EDF73D033DF">以 URL 形式引用的 <a class="xref xref" href="../../../../zh-CN/portal/latest/use/csv-gpx.htm">CSV 文件</a>是基于 Web 的逗号分隔值文本文件，通常包括位置信息。您也可以将不包含位置信息的 CSV 文件添加为表格。这有助于使用<a class="xref xref" href="../../../../zh-CN/portal/latest/use/join-features.htm">连接要素</a>分析工具将 web 上的非空间数据（例如销售信息）连接到空间数据（例如 ZIP Codes 图层）。</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_C45F6082D21C43E29F056937F789A0AA"><ol class="list-numbered" purpose="ol">            <li purpose="step" id="ESRI_STEP_F1C19E4413904E9C84F70C6AF259EE5C">              <span purpose="cmd" id="GUID-F5F224C8-DCE6-4AE1-ABFC-60EEE35A43D1">选择<span class="uicontrol"> CSV 文件</span>，然后在 <span class="uicontrol">URL</span> 字段中输入图层的 web 地址。</span>              <div class="info" purpose="info">                <p id="GUID-337E0919-8AC6-4AC8-AC98-CBAF919DB479">您可从数据提供商处获取该 URL。</p>              </div>            </li>            <li purpose="step" id="ESRI_STEP_B51D16BFE39F440F8F5E1F9FBD429854"><span purpose="cmd" id="GUID-7B3B781A-FEE7-49C4-B9E5-E5E2366B0188">如果 CSV 文件不包含空间信息，可使用 <span class="ph">Map Viewer</span> 将其添加为表格。</span></li><li purpose="step" id="ESRI_STEP_16664C6DF096495EB0473B76DEFA56DD">              <span purpose="cmd" id="GUID-737DB5CD-82FF-4F86-823F-8C89126CBD3F">单击<span class="uicontrol">添加图层</span>。</span>            </li>          </ol></div></section></section><section class="section2 padded-anchor" id="ESRI_SECTION2_758AE7D53057403FB9CA27FCABE174CA" purpose="section2"><h3><span class="ph">Bing</span> 底图</h3><p id="GUID-FC50B42C-FC5E-4907-B6E2-A2274E2C874F">          
+          <span class="ph">只有管理员使用 <span class="ph">Bing Maps</span> 密钥<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/portal/latest/administer" href="../../../../zh-CN/portal/latest/administer/windows/configure-map.htm">对地图进行配置</a>后，才会显示 <span class="uicontrol">Bing 底图</span>选项。</span>        </p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_3AAF5E6033434E55BAD68DD7D45CCB13"><ol class="list-numbered" purpose="ol">            <li purpose="step" id="ESRI_STEP_E5FC6F61FE744084BF06DF7A0A84D2CF">              <span purpose="cmd" id="GUID-96F06E6E-94D9-4234-9323-B174725D26CB">选择 <span class="uicontrol">Bing 底图</span>，然后选择要使用的 <span class="ph">Bing Maps</span> 类型：<span class="uicontrol">道路</span>、<span class="uicontrol">航空</span>或<span class="uicontrol">混合</span>。</span>            </li>            <li purpose="step" id="ESRI_STEP_A4C80CEDAA4F4C9C9886A7D60CBE1C6C">              <span purpose="cmd" id="GUID-01C43C31-901F-49DC-ADFF-B51007C3EE58">单击<span class="uicontrol">添加图层</span>将图层添加到地图中。</span>            </li>          </ol></div></section></section></section>    <section class="section1 padded-anchor" id="FILE" purpose="section1"><h2>从文件添加图层</h2><p id="GUID-E0AF87EF-EBDD-4AC2-991B-B54F58A06AFA">您可以通过导入存储在<a class="xref xref" href="../../../../zh-CN/portal/latest/use/csv-gpx.htm">带分隔符的文本文件</a>（<span class="usertext">.csv</span> 或 <span class="usertext">.txt</span>）、GPS 交换格式文件 (<span class="usertext">.gpx</span>)、GeoJSON 文件（<span class="usertext">.geojson</span> 或 <span class="usertext">.json</span>）或 shapefile（压缩成 <span class="usertext">.zip</span> 文件）中的数据向地图添加图层。来自文件的图层存储在地图中。</p><div class="panel trailer-1 note" id="GUID-C5A9E6E0-A5F6-448D-96D6-337916C0470D"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-56040D9E-8963-4793-A5AF-3A8B3335C160">向地图添加文件时，必须使用世界大地测量系统 (WGS 84) 作为其参考坐标系。</p></div><div class="panel trailer-1" id="GUID-4E4FB708-4BD3-4DA6-83C9-10161EDBC0A6"><h5 class="icon-ui-description trailer-0">提示：</h5><p id="GUID-EFE55738-B7A2-44D2-82DD-47D8BA807971">如果 CSV 文件、shapefile 或 GeoJSON 文件中包含大量数据，或者您希望创建可在多个地图中重复使用的图层，则可以<a class="xref xref" href="../../../../zh-CN/portal/latest/use/publish-features.htm">发布托管要素图层</a>而不是向地图中添加文件。</p></div><p id="GUID-410A3615-BAB8-4469-B34A-C978B443CE91">您也可以将不包含位置信息的 CSV 文件以表格形式添加到 <span class="ph">Map Viewer</span>。这有助于使用<a class="xref xref" href="../../../../zh-CN/portal/latest/use/join-features.htm">连接要素</a>分析工具将非空间数据（与近期龙卷风相关的财产损失理赔）连接到空间数据（例如 ZIP Codes 图层）。</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="GUID-E1D6E794-CD56-41BD-BA55-348B6D72CE8F"><ol class="list-numbered" purpose="ol">          <li purpose="step" id="GUID-C1F7AE48-FE6F-40A2-A0FE-54EFE7040AF4">            <span purpose="cmd" id="GUID-8E1CC07A-1997-4860-8883-C98546E0D27B">选择<span class="uicontrol">从文件添加图层</span>。</span>          </li>          <li purpose="step" id="GUID-90FCD885-00FB-4F3D-B23B-1DA02D184B70">            <span purpose="cmd" id="GUID-FCAEA5E2-2836-4C03-BBEC-54FE78044C83">单击<span class="uicontrol">选择文件</span>并在计算机上定位文件。</span>          </li>          <li purpose="step" id="ESRI_STEP_74C50E910C0547F1BA34E96C029C0827"><span purpose="cmd">如果添加的是 <a class="xref xref" href="../../../../zh-CN/portal/latest/use/shapefiles.htm">shapefile</a>，请选择针对 Web 显示概化要素，或者保持原始要素。</span></li><li purpose="step" id="ESRI_STEP_B5FD6ED6BDFE418FB69EC1AA2338C45A"><span purpose="cmd" id="GUID-14670894-57AB-44A1-B6A8-42508C0CEFC4">单击<span class="uicontrol">导入图层</span>。</span><div class="stepresult" purpose="stepresult"><p id="GUID-054479C1-2220-4B15-85F3-A9E3CCACCA08">如果要添加 GeoJSON、GPX 文件或 shapefile，图层则会显示在地图上。如果要添加带分隔符的文本文件（CSV 或 TXT），请继续进行下一步。</p></div></li><li purpose="step" id="ESRI_STEP_C10EADD74A6D48A68B9964C7FE30A33D"><span purpose="cmd">如果要添加 CSV 文件或 TXT 文件，请执行以下操作：</span><div class="substeps" id="ESRI_SUBSTEPS_9A59A16751EF4A08BD84DCBB9C5474CB" purpose="substeps"><ol class="list-numbered" purpose="ol"><li purpose="substep" id="ESRI_SUBSTEP_DE21B0D8CF7E49B8A70D5909ED95FE26"><span purpose="cmd">根据需要执行以下操作之一：</span><div class="info" purpose="info"><ul purpose="ul" id="UL_DEEA1FB93F6345C5B427C476E3FE0322"><li purpose="li" id="LI_8640E1DE574040268F7191FF7B724674"><p id="GUID-68A1974E-3979-474B-AC02-4679594C9B88">如果添加的是包含位置信息的带分隔符的文本文件（<span class="usertext">.csv</span> 或 <span class="usertext">.txt</span>），则请选择通过 <span class="ph">Map Viewer</span> 按需要使用<span class="uicontrol">坐标</span>或<span class="uicontrol">地址或地点</span>来查找要素。</p><p id="GUID-3F14C2EC-4625-4E12-B24D-B9AEB458B395">要按地址或地点定位要素，请单击要使用的定位器，或使用默认定位器。</p><p id="GUID-645D243F-12F0-4CD0-84A3-A36842C3B5BB">检查位置字段，然后单击单元格以更改所使用的位置字段或字段。如果要添加 <a class="xref xref" href="../../../../zh-CN/portal/latest/use/csv-gpx.htm#GUID-4EDCE12E-285E-41D0-A3B8-1BAB4B111922">CSV 文件，其中包含支持的坐标字段</a>（例如 MGRS 或 USNG），请选择与您的坐标字段对应的位置字段（如果尚未选择）。</p></li><li purpose="li" id="LI_0F51D77833E345598A1270B81383C88B">如果添加的 CSV 文件不包含空间位置信息，可使用 <span class="ph">Map Viewer</span> 将其添加为表格。</li></ul></div></li><li purpose="substep" id="ESRI_SUBSTEP_928D6AC74919422D89F7AB1854EE2F17"><span purpose="cmd">单击<span class="uicontrol">添加图层</span>。</span></li></ol></div><div class="stepresult" purpose="stepresult"><p id="GUID-CF35BB0D-E41D-422F-8715-84D5A515AD5A">图层随即添加到地图中。</p></div></li>                  </ol></div><section class="postreq padded-anchor" id="ESRI_POSTREQ_7DA11DE2236B4FAB86CE87C8093F58CB" purpose="postreq"><p id="GUID-C76C467B-F906-493D-8DB4-43F0405BA50D">如果您在向地图中添加文件时遇到问题，请确保您的门户管理员在门户中配置了托管服务器。如果您在地图中添加或查看文件时仍遇到问题，请参阅<a class="xref xref" href="../../../../zh-CN/portal/latest/use/troubleshoot.htm#ESRI_QUESTIONANSWERS_5608774E1CAA4804BC1883828AC0771B">疑难解答</a>。</p></section></section><section class="section2 padded-anchor" id="ESRI_SECTION2_E377B2D234694DE3BA4ED88DDBF59067" purpose="section2"><h3>拖放文件</h3><p id="GUID-A7969C3B-C647-44B6-A28B-E2354513CF29">除了使用 <span class="ph">Map Viewer</span> 的<span class="uicontrol">添加</span>按钮导入 <span class="usertext">.csv</span>、<span class="usertext">.txt</span> 或 <span class="usertext">.gpx</span> 文件之外，还可以将文件从计算机拖放到地图上。<span class="ph">Map Viewer</span> 将处理这些文件，就像您使用<span class="uicontrol">添加</span>一样。<span class="ph">Google Chrome</span> 和 <span class="ph">Mozilla Firefox</span> 浏览器支持拖放 <span class="usertext">.txt</span>、<span class="usertext">.csv</span> 和 <span class="usertext">.gpx</span> 文件；但 <span class="ph">Internet Explorer</span> 和 <span class="ph">Apple</span> <span class="ph">Safari</span> 不支持该功能。</p><p id="GUID-BD95CB3E-AF89-4826-B7F5-621D19F4039B" ishcondition="agol_plat=portal">如果您在向地图中拖放或删除 <span class="usertext">.csv</span>、<span class="usertext">.txt</span> 或 <span class="usertext">.gpx</span> 文件时遇到问题，请确保您的门户管理员在门户中配置了托管服务器。</p><p id="GUID-44940653-396C-4BAA-AF7F-6BB858DBFBE3">无法将 shapefile 或 GeoJSON 文件从计算机拖放到地图上；您必须使用<span class="uicontrol">添加</span>按钮。</p></section></section>    <section class="section1 padded-anchor" id="ESRI_SECTION1_0C90A3B63ABD49D5B9535055991F4684" purpose="section1"><h2>添加地图注释</h2><p id="GUID-1D7B3285-807C-4D23-B817-1AAF09ECBD3F">可通过添加<a class="xref xref" href="../../../../zh-CN/portal/latest/use/feature-layers.htm#ESRI_SECTION2_D535374C2B014362976F39BCD4B8DB95">地图注释图层</a>直接将自己的数据添加至地图。向地图添加少量要素时这些图层会非常有用，例如，由城市公园和娱乐部门管理的游泳池。添加地图注释图层时，默认将其存储在地图中。</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="GUID-66154E06-0770-4023-A97D-B56ACA72308D"><ol class="list-numbered" purpose="ol">          <li purpose="step" id="GUID-2578DAA7-466E-4910-A008-82392A12545B">            <span purpose="cmd" id="GUID-0452E24F-E3F8-4A6B-AB78-5EE9625A7BE3"> 选择<span class="uicontrol">添加地图注释</span>，然后输入图层的名称。</span>          </li>          <li purpose="step" id="ESRI_STEP_6338199E477849B593401101684BE7AC">            <span purpose="cmd" id="GUID-A64494A3-1371-431B-A752-99E2AD535CF1">选择一个图层模板。</span>          <div class="info" purpose="info">每个模板包含一组相关的形状和符号。例如，“公园规划”模板包含表示野餐区和自行车路线的符号，而“石油天然气基础设施”模板具有表示炼油厂和处理设施的符号。<div class="panel trailer-1 note" id="GUID-B5AD7381-FF7A-48BA-A5CE-A42BDEC4FCE2"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-3E959A99-5855-41D4-A9E4-027B67419108">灾害、常规基础设施以及损失的模板包括<a target="_blank" class="xref xref" href="http://links.esri.com/agolhelp/ocha">联合国人道事务协调办公室 (Office for the Coordination of Humanitarian Affairs)</a> 提供的人道主义图标。源：OCHA。</p></div></div></li>          <li purpose="step" id="ESRI_STEP_7F512827A12144A3A8022A099F147D2E">            <span purpose="cmd" id="GUID-C201A8AB-13C1-41BC-BE28-D3E2BE330F2D">单击<span class="uicontrol">创建</span>。</span>          <div class="stepresult" purpose="stepresult"><p id="GUID-91815651-083F-47CB-AADB-5F5BD9FF774F">在地图的左侧将出现一个模板。</p></div></li>          <li purpose="step" id="ESRI_STEP_C83992464C6A414193D765223309908C">            <span purpose="cmd" id="GUID-204CD4B3-D85B-49C6-AA12-A4014FFDF663">单击一个形状或符号，然后单击要向其添加要素的地图。按 <span class="shortcut">Ctrl</span> 键启用捕捉功能。</span>          <div class="info" purpose="info"><p id="GUID-730484A8-F113-4333-BA70-84A042E6DD8C">捕捉功能可帮助您将正在添加的要素定位在地图上现有要素的旁边。要素的添加方式取决于它的几何类型；例如，添加点和圆时，在地图上单击即可，而在添加线和面时，需在地图上单击并绘制形状，然后双击完成。</p></div></li>          <li purpose="step" id="ESRI_STEP_59BB7758A4334D95999A434CB31ED51A">            <span purpose="cmd" id="GUID-43F53963-E9E9-4F72-9C6A-BED47EC28A28">添加下列关于弹出窗口中的要素信息： </span>            <div class="substeps" id="ESRI_SUBSTEPS_C74637992CA9402DB358032FFB646227" purpose="substeps"><ol class="list-numbered" purpose="ol">              <li purpose="substep" id="ESRI_SUBSTEP_EE14D0A40D10467F8BC952AB1D7FB4D7">                <span purpose="cmd" id="GUID-E22C46B4-34F7-4617-8D88-13E64656B5F6">                  <span class="uicontrol">标题</span> - 此标题显示为要素弹出窗口的标题。</span>              </li>              <li purpose="substep" id="ESRI_SUBSTEP_6D79189E1D9943059A660BFEC3BAB758">                <span purpose="cmd" id="GUID-9E95A62E-4473-4DE5-AEAA-89D53C2C69C3">                  <span class="uicontrol">描述</span> - 描述字段包括用于创建富文本（如超链接、颜色和样式等）的格式选项。</span>              </li>              <li purpose="substep" id="ESRI_SUBSTEP_CE4FA1A2F0654595906335F308793477">                <span purpose="cmd" id="GUID-B0745A24-70A2-4599-AB57-14BB3C5346F7"><span class="uicontrol">图像 URL</span> -<span class="ph">图像必须存储在可从您的组织网络访问的网站上，并且应采用 Web 格式，例如 PNG、GIF 或 JPEG。</span> 要获得最佳效果，图像大小应为 200 像素（宽）x 150 像素（高）。其他图像大小将自动调整为该尺寸，因此您的图像可能被拉伸或收缩。</span>              </li>              <li purpose="substep" id="ESRI_SUBSTEP_8CE85E26EB2341DA9A742924B226464D">                <span purpose="cmd" id="GUID-4D4202D6-EE6F-4D5D-857F-DA881C51FF40"><span class="uicontrol">相关链接</span> - 在弹出窗口中单击图像时，此链接可打开一个网站。</span>              </li>            </ol></div>          </li>          <li purpose="step" id="ESRI_STEP_4310DE2676EF4F4F8F4C7DE7519D9974">            <span purpose="cmd" id="GUID-D9EEDAC6-0575-411D-89E4-A02158670792">或者，可通过单击弹出窗口底部的<span class="uicontrol">更改符号</span>来创建您自己的符号。</span>            <div class="substeps" id="ESRI_SUBSTEPS_27146312B8C444E9BF379605AF261680" purpose="substeps"><ol class="list-numbered" purpose="ol">              <li purpose="substep" id="ESRI_SUBSTEP_0E0B78C3ACAD4A368693284BA23AE5C4">                <span purpose="cmd" id="GUID-A12DD602-8627-47C6-9A9B-E7B1A4304546">选择<span class="uicontrol">来源</span>，然后单击一个符号以使用预定义符号。</span>              </li>              <li purpose="substep" id="ESRI_SUBSTEP_80AA5ACA59AD42469EA540E5FD522EE4">                <span purpose="cmd" id="GUID-3CADD60C-0D6D-47F3-9F9A-66E3F4F17235">选择 <span class="uicontrol">URL</span>，然后输入符号文件的 URL。<span class="ph">符号必须存储在您的组织所在网络可以访问的网站上。</span> 图像文件应为 PNG、GIF 或 JPEG 等 web 格式。要获得最佳效果，图像大小应为 200 像素（宽）x 150 像素（高）。其他图像大小将自动调整为该尺寸，因此您的图像可能被拉伸或收缩。</span>              </li>              <li purpose="substep" id="ESRI_SUBSTEP_597B284D640F4C8A94821BABB9F46D0E">                <span purpose="cmd" id="GUID-6FCA97DB-60D5-4AD7-8E70-5BA0A87E1A15">可使用<span class="uicontrol">符号大小</span>滑块调整符号的大小。</span>              </li>              <li purpose="substep" id="ESRI_SUBSTEP_7717971CD6C94E47A8D95A6E647D19DF"><span purpose="cmd" id="GUID-42CF80D3-DF6B-4112-AE65-DC83AEEBBC34">执行以下任意操作以对地图注释进行更改：</span><div class="info" purpose="info"><ul purpose="ul" id="UL_9A75B47D4C024A738CDF3618E62BC2E3"><li purpose="li" id="LI_A06CA3F3C7134987B4ADAE75F7C67E9E">通过拖动显示在形状上的折点来更改现有符号的大小。</li><li purpose="li" id="LI_58C1656B594F465AA883B97F7DF9F88F">从图层中移除要素的方法为：单击要素内部以重新打开弹出窗口，然后单击<span class="uicontrol">删除</span>。</li> <li purpose="li" id="LI_C19BBE3AA4C14208A7CBD65367A18774">通过在地图上单击符号内部来编辑现有要素。此操作将重新打开弹出窗口。</li></ul></div></li><li purpose="substep" id="ESRI_SUBSTEP_DE8A322575FC469584F520239424288F">                <span purpose="cmd" id="GUID-EEE88CC9-401E-489D-A940-0F0FBB5BBCAA">单击<span class="uicontrol">完成</span>，然后单击<span class="uicontrol">关闭</span>。</span>              </li>            </ol></div>          <div class="stepresult" purpose="stepresult"><p id="GUID-6F218DED-D533-43F6-A86D-C9FCEE77DDE5">将自动保存添加到弹出窗口的信息。</p></div></li>        <li purpose="step" id="ESRI_STEP_34C1E95D570D44B1879BBF8B7D22D413"><span purpose="cmd" id="GUID-D8152F33-05B1-4BE6-A53E-8E521823ED0A">添加地图注释后，执行以下任意操作以对地图上图层的显示方式进行更改：</span><ul purpose="choices" id="ESRI_CHOICES_6938C16B8FCC45F8A2DEA1662CB4B447"><li purpose="choice" id="ESRI_CHOICE_B22A91C1440D4E44A59D584DAF6A29C0"><a class="xref xref" href="../../../../zh-CN/portal/latest/use/set-visibility.htm">设置可见性范围</a>，以确定地图注释图层何时显示在地图中。</li><li purpose="choice" id="ESRI_CHOICE_6213D929B6E042FC89F042821244D580">隐藏所有与图层关联的要素的方法为：单击<span class="uicontrol">详细信息</span>，然后单击<span class="uicontrol">内容</span>，并取消选中图层名称左侧的框。</li><li purpose="choice" id="ESRI_CHOICE_4AD573DDF24543859222734E8CEAFD67">可通过单击<span class="uicontrol">详细信息</span>，然后单击<span class="uicontrol">内容</span>来移除图层。单击图层，单击<span class="uicontrol">更多选项</span>，然后单击<span class="uicontrol">移除</span>。</li></ul></li><li purpose="step" id="ESRI_STEP_BC96A0113E2F4B82A6722EBE71577298"><span purpose="cmd" id="GUID-3BA67958-5C76-4874-AEA7-163B541B632F"> 要将地图注释图层保存为地图的一部分，请单击<span class="uicontrol">保存</span>按钮 <img purpose="img" placement="inline" alt="保存" title="保存" src="GUID-BAAA9812-65F8-415D-96EA-FBF6E8F4F8ED-web.png">，输入标题、标签和摘要，然后指定要保存地图的文件夹。单击<span class="uicontrol">保存地图</span>。</span><div class="info" purpose="info"><div class="panel trailer-1" id="GUID-66FB9696-FE0A-471C-8958-0C0F3E0BDA41"><h5 class="icon-ui-description trailer-0">提示：</h5><p id="GUID-F68CCCBC-47AB-480D-9C9C-93F796C78949">您也可以将地图注释图层作为<a class="xref xref" href="../../../../zh-CN/portal/latest/use/copy-save-layers.htm#ESRI_SECTION1_9F4C867CA85B4E4DA5945EF1C8BBC3E0">要素集合</a>项目<a class="xref xref" href="../../../../zh-CN/portal/latest/use/feature-layers.htm#GUID-304463C0-25BD-4FEA-8DD6-AD82F2C96B56">保存</a>在您的内容中。通过执行此操作，可以编辑其项目详细信息，并与其他人<a class="xref xref" href="../../../../zh-CN/portal/latest/use/share-items.htm">共享</a>。要保存地图或地图注释图层，您必须具有创建内容的权限。</p></div></div></li></ol></div></section></section>    <section class="section1 padded-anchor" id="ESRI_SECTION1_FD5000F7DB47479B849CB12672F60D38" purpose="section1"><h2>添加路径图层</h2><p id="GUID-A02C5A03-F237-4F3F-B00C-1CEEC41EF51A">如果您已登录组织的帐户，可以使用 <span class="ph">Map Viewer</span> <a class="xref xref" href="../../../../zh-CN/portal/latest/use/get-directions.htm">获取方向</a>并在地图中创建路径图层。如果您具有创建内容的权限，则可以在内容页面的<span class="uicontrol">我的内容</span>选项卡上将路径图层保存为项目，将图层和地图一同保存，或者同时执行这两种操作。如您将路径图层保存为项目，则可以编辑其<a class="xref xref" href="../../../../zh-CN/portal/latest/use/item-details.htm">项目详细信息</a>并与他人<a class="xref xref" href="../../../../zh-CN/portal/latest/use/share-items.htm">共享</a>。可在<span class="uicontrol">我的内容</span>或图层项目页面中，或通过使用 <span class="ph">Map Viewer</span> <span class="uicontrol">添加</span>菜单中的<a class="xref xref" href="../../../../zh-CN/portal/latest/use/add-layers.htm#ESRI_SECTION1_16F13402AF194F8E8DD8A227DB1E1E30"><span class="uicontrol">搜索图层</span></a>选项将任意现有路径图层项目添加到新地图或现有地图。如果将路径图层另存为项目，则同样可以添加这些创建为分析工具（如<a class="xref xref" href="../../../../zh-CN/portal/latest/use/find-nearest.htm">查找最近点</a>、<a class="xref xref" href="../../../../zh-CN/portal/latest/use/plan-routes.htm">计划路径</a>和<a class="xref xref" href="../../../../zh-CN/portal/latest/use/connect-origins-to-destinations.htm">连接起点与终点</a>）输出的路径图层。</p><p id="GUID-2723B174-16DA-4CD4-BFA1-91F21C39EE40" ishcondition="agol_plat=portal">在 <span class="ph">Map Viewer</span> 中，您可以配置图层、编辑路径以及对路径执行分析。具有一个或多个路径图层的地图与其他地图类似，可对其进行配置、通过 web 应用程序、故事模板、博客等进行共享，也可在 <a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/get-started/latest" href="../../../../zh-CN/get-started/latest/windows/portal-clients.htm"><span class="ph">ArcGIS Enterprise</span> 客户端</a>（如 <span class="ph">iOS</span> 设备、<span class="ph">Android</span> 手机和 <span class="ph">ArcGIS Pro</span>）上使用。</p><section class="section2 padded-anchor" id="ESRI_SECTION2_66A670869A354A8598FAA074EDD42258" purpose="section2"><h3>创建新路径图层</h3><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><section class="context padded-anchor" id="ESRI_CONTEXT_CAD1C3E14102406F9031605C9587963E" purpose="context"><p id="GUID-1CD42648-9B76-4C23-A481-138C7A162111">要创建新路径图层，请执行以下操作：</p></section><div class="steps" id="GUID-80DB2404-F804-4FA9-8445-B20CBC896EA1"><ol class="list-numbered" purpose="ol">          <li purpose="step" id="ESRI_STEP_8790D93E83F040F0929C54CCEA9B1D77" ishcondition="agol_plat=portal">            <span purpose="cmd" id="GUID-B65EE216-9528-43CB-904F-6869C6805C48">登录门户。</span>          </li>          <li purpose="step" id="ESRI_STEP_96DA56776F864A2A9EF0EF36521CCF88"><span purpose="cmd" id="GUID-C2DC5919-2B81-470C-AA0A-9BDF0FC57CB4">打开 <span class="ph">Map Viewer</span>。</span></li><li purpose="step" id="ESRI_STEP_6F3FBD380587477EB1B00F1B38B40CD4"><span purpose="cmd" id="GUID-86E0598B-445B-4932-B55B-1C3397EEF9F8">单击<span class="uicontrol">方向</span> <img purpose="img" placement="inline" alt="获取方向" title="获取方向" src="GUID-01E78EB5-578C-409C-A51D-C749B6B24427-web.png">，随即在地图左侧显示<span class="uicontrol">方向</span>窗格。通过添加起点和一个或多个目的地来<a class="xref xref" href="../../../../zh-CN/portal/latest/use/get-directions.htm">获取方向</a>。</span></li>                    
+          <li purpose="step" id="ESRI_STEP_64CBFAC8732E41839A9D0FD33FD369A3">            <span purpose="cmd" id="GUID-71CA91CD-0F74-46C3-BE65-EB7EDEF45BCB">单击<span class="uicontrol">保存</span>按钮 <img purpose="img" placement="inline" alt="保存" title="保存" src="GUID-BAAA9812-65F8-415D-96EA-FBF6E8F4F8ED-web.png">，为图层输入名称并选择要保存该路径的文件夹。单击<span class="uicontrol">保存</span>。</span>          <div class="info" purpose="info">该路径在地图的<span class="uicontrol">内容</span>窗格中另存为路径图层并在内容页面的<span class="uicontrol">我的内容</span>选项卡上另存为路径图层项目。<div class="panel trailer-1 note" id="GUID-2F88097F-E96C-4071-BC19-B0E63F172653"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-B0E23972-F738-483B-8F24-786376843EDD">要保存路径图层，您必须具有创建内容的权限。</p></div></div></li><li purpose="step" id="ESRI_STEP_8B82E1B8C6754C08ADA506BF03D0A9BA"><span purpose="cmd" id="GUID-5E003835-F8B8-4F90-AF2B-43F2C892E463">执行以下任一操作：</span><ul purpose="choices" id="ESRI_CHOICES_18A17755A6B1441AB5F534560AF8C99B"><li purpose="choice" id="ESRI_CHOICE_318D0FD2E66B4292B1F3CF59113BE970">单击<span class="uicontrol">共享路径</span>以查看并编辑路径图层的<a class="xref xref" href="../../../../zh-CN/portal/latest/use/item-details.htm">项目详细信息</a>或将其与他人<a class="xref xref" href="../../../../zh-CN/portal/latest/use/share-items.htm">共享</a>。</li><li purpose="choice" id="ESRI_CHOICE_39DDA34616234CA5B33360EAA5C30F79">根据需要<a class="xref xref" href="../../../../zh-CN/portal/latest/use/get-directions.htm#ESRI_SECTION1_5C09083528D7494DB61D438EAB454975">对路径进行更改</a>，包括添加目的地，更改出行模式等。</li><li purpose="choice" id="ESRI_CHOICE_CC96AF87C2594E5BA75C9EBF164164C9"> 根据需要<a class="xref xref" href="../../../../zh-CN/portal/latest/use/add-layers.htm#ESRI_SECTION2_08519853E2D74B55911F9C27D48245D3">配置路径图层</a>，包括更改透明度，重命名等。要执行此操作，请关闭<span class="uicontrol">方向</span>窗格，转到<span class="uicontrol">内容</span>窗格并单击<span class="uicontrol">更多选项</span>按钮 <img purpose="img" placement="inline" alt="更多选项" title="更多选项" src="GUID-54E2A3B6-4830-42A9-8077-680C2C3B2D54-web.png"> 以查看配置图层的选项。</li></ul></li><li purpose="step" id="ESRI_STEP_A3DFA910BA2C4C91A43C9D23F79EF1BF"><span purpose="cmd" id="GUID-3AE29C89-9664-423B-B1C7-97B7C76487F6">通过执行以下任一操作来保存对路径所做的任何更改： </span><ul purpose="choices" id="ESRI_CHOICES_D52F9711A32D4DFBAF2B0CDCC100C2BC"><li purpose="choice" id="ESRI_CHOICE_99DC8894AE764B64A8D19D62A8707689">在<span class="uicontrol">内容</span>窗格中，单击<span class="uicontrol">更多选项</span>按钮 <img purpose="img" placement="inline" alt="更多选项" title="更多选项" src="GUID-54E2A3B6-4830-42A9-8077-680C2C3B2D54-web.png">，然后单击<span class="uicontrol">保存图层</span>。<div class="panel trailer-1" id="GUID-8D5831C7-690F-4542-97BA-E0D1B6BD41C6"><h5 class="icon-ui-description trailer-0">提示：</h5><p id="GUID-7D7D2E64-3CC1-458D-A297-35BBD05873E9">保存路径后，您可以在<span class="uicontrol">内容</span>窗格中<a class="xref xref" href="../../../../zh-CN/portal/latest/use/get-directions.htm#ESRI_SECTION1_5C09083528D7494DB61D438EAB454975">对路径进行进一步更改</a>，包括添加目的地，更改出行模式等，方法是单击<span class="uicontrol">内容</span>窗格中的<span class="uicontrol">更多选项</span>按钮 <img purpose="img" placement="inline" alt="更多选项" title="更多选项" src="GUID-54E2A3B6-4830-42A9-8077-680C2C3B2D54-web.png">，然后单击<span class="uicontrol">编辑路径</span>。随即打开<span class="uicontrol">方向</span>窗格，您可以在其中编辑路径。</p></div></li><li purpose="choice" id="ESRI_CHOICE_F346F3BC07DC42F6B1853D8F1B9EE090">在<span class="uicontrol">方向</span>窗格中，单击<span class="uicontrol">保存</span>按钮 <img purpose="img" placement="inline" alt="保存" title="保存" src="GUID-BAAA9812-65F8-415D-96EA-FBF6E8F4F8ED-web.png">，然后单击<span class="uicontrol">保存</span>。<div class="panel trailer-1" id="GUID-3CF9E203-C71F-44D5-85D6-55B86C748B74"><h5 class="icon-ui-description trailer-0">提示：</h5><p id="GUID-CE084F3B-CE40-41F4-A70F-8D3677310438">如要将更新的图层保存为不同的路径图层项目，请根据需要更改<span class="uicontrol">结果图层名称</span>和文件夹，然后单击<span class="uicontrol">另存为新</span>。</p></div></li></ul></li>                  </ol></div></section></section><section class="section2 padded-anchor" id="ESRI_SECTION2_5E55BE82F43641C692A247CE3FD363C6" purpose="section2"><h3>添加现有路径图层</h3><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><section class="context padded-anchor" id="ESRI_CONTEXT_01536B32AEAC4FFD8E73F35CA20D6BCC" purpose="context"><p id="GUID-4657EBC0-54CF-490E-BA31-7AF809B17529">如果您想要在 <span class="ph">Map Viewer</span> 中配置或编辑现有路径图层，请执行以下操作：</p></section><div class="steps" id="ESRI_STEPS_8E92ADBF8135442596DD166A231DAF28"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_31C17FB92CDE433B91CB2A1B5D60E949" ishcondition="agol_plat=portal">            <span purpose="cmd" id="GUID-17155C17-6BD5-4E8B-9B6B-C13FB430EA62">登录门户。</span>          </li>          <li purpose="step" id="ESRI_STEP_0F17CC1B53354DDB97AE0087B9BB6E3C"><span purpose="cmd" id="GUID-3B04630D-DBAF-4F41-8F33-DCFD58A337C0">执行以下操作之一将现有路径图层添加到地图： </span><ul purpose="choices" id="ESRI_CHOICES_C869851BAAEF481E9203818642297747"><li purpose="choice" id="ESRI_CHOICE_81C43E8EBBFC4CEF8740FAEF10E24924">打开 <span class="ph">Map Viewer</span> 并使用<a class="xref xref" href="../../../../zh-CN/portal/latest/use/add-layers.htm#ESRI_SECTION1_16F13402AF194F8E8DD8A227DB1E1E30"><span class="uicontrol">搜索图层</span></a>选项将路径图层添加到地图。</li><li purpose="choice" id="ESRI_CHOICE_1D39D000E8EB41DA8E16A2ABD7AB386A">在内容页面的<span class="uicontrol">我的内容</span>选项卡中，单击列表视图或格网视图中路径图层的缩略图。</li></ul><div class="stepresult" purpose="stepresult"><p id="GUID-34D74CF4-C5E1-4557-835C-60C4371BC26F" ishcondition="agol_plat=portal">该路径即会显示在地图上，同时显示<span class="uicontrol">方向</span>窗格。</p></div></li><li purpose="step" id="ESRI_STEP_A6EC30C516664B878989298E457CE70F"><span purpose="cmd" id="GUID-3B03E8BE-7499-4642-A31B-72382A7F8B72">执行以下任一操作：</span><ul purpose="choices" id="ESRI_CHOICES_04A1BB7443AD472BA596399AAE0C5AE2"><li purpose="choice" id="ESRI_CHOICE_F83AB037487C4117BD11E4FC7F1B7F63">根据需要<a class="xref xref" href="../../../../zh-CN/portal/latest/use/get-directions.htm#ESRI_SECTION1_5C09083528D7494DB61D438EAB454975">对路径进行更改</a>，包括添加目的地，更改出行模式等。</li><li purpose="choice" id="ESRI_CHOICE_347338B445714729AE0A7583C476AD12">根据需要<a class="xref xref" href="../../../../zh-CN/portal/latest/use/add-layers.htm#ESRI_SECTION2_08519853E2D74B55911F9C27D48245D3">配置路径图层</a>，包括更改透明度，重命名等。要执行此操作，请关闭<span class="uicontrol">方向</span>窗格，转到<span class="uicontrol">内容</span>窗格并单击<span class="uicontrol">更多选项</span>按钮 <img purpose="img" placement="inline" alt="更多选项" title="更多选项" src="GUID-54E2A3B6-4830-42A9-8077-680C2C3B2D54-web.png"> 以查看配置图层的选项。</li></ul></li><li purpose="step" id="ESRI_STEP_9031DB1BBB344C33B805B21E6DA0F249"><span purpose="cmd" id="GUID-EB1363B3-188F-4708-A639-E9EC72FFA0BA"> 要保存更改，请执行以下操作之一： </span><div class="info" purpose="info"><div class="panel trailer-1 note" id="GUID-4EC53C97-DAB4-4FC6-87BF-0CD1653094FA"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-40345018-D5FE-4191-8866-47002FC7488C">要保存路径图层，您必须具有创建内容的权限。</p></div></div><ul purpose="choices" id="ESRI_CHOICES_E9A1D76938E946E8A801EAB05A990C6D"><li purpose="choice" id="ESRI_CHOICE_71393EFF185545F9A6C4F8F03997A151">在<span class="uicontrol">内容</span>窗格中，单击<span class="uicontrol">更多选项</span>按钮 <img purpose="img" placement="inline" alt="更多选项" title="更多选项" src="GUID-54E2A3B6-4830-42A9-8077-680C2C3B2D54-web.png">，然后单击<span class="uicontrol">保存图层</span>。</li><li purpose="choice" id="ESRI_CHOICE_6F2358C39D9E47BA94E686725D65DE7D">在<span class="uicontrol">方向</span>窗格中，单击<span class="uicontrol">保存</span>按钮 <img purpose="img" placement="inline" alt="保存" title="保存" src="GUID-BAAA9812-65F8-415D-96EA-FBF6E8F4F8ED-web.png">，然后单击<span class="uicontrol">保存</span>。</li><li purpose="choice" id="ESRI_CHOICE_CFF21225818A4ABCAC84C9EA388E7408">如要将更新的图层保存为不同的路径图层项目，请根据需要更改<span class="uicontrol">结果图层名称</span>和文件夹，然后单击<span class="uicontrol">另存为新</span>。<div class="panel trailer-1" id="GUID-AFDD8F3C-C6A1-4633-807B-480541900F02"><h5 class="icon-ui-description trailer-0">提示：</h5><p id="GUID-95D09F27-9253-49DA-888E-34B033DB9A3C" ishcondition="agol_plat=portal">保存路径后，您可以在<span class="uicontrol">内容</span>窗格中<a class="xref xref" href="../../../../zh-CN/portal/latest/use/get-directions.htm#ESRI_SECTION1_5C09083528D7494DB61D438EAB454975">对路径进行进一步更改</a>（包括添加目的地，更改出行模式等），方法是单击<span class="uicontrol">内容</span>窗格中的<span class="uicontrol">更多选项</span>按钮 <img purpose="img" placement="inline" alt="更多选项" title="更多选项" src="GUID-54E2A3B6-4830-42A9-8077-680C2C3B2D54-web.png">，然后单击<span class="uicontrol">编辑路径</span>。随即打开<span class="uicontrol">方向</span>窗格。</p></div></li></ul></li></ol></div></section></section><section class="section2 padded-anchor" id="ESRI_SECTION2_08519853E2D74B55911F9C27D48245D3" purpose="section2"><h3>配置路径图层</h3><p id="GUID-2D84820D-A911-40EF-97B7-46C36FF2989C">如果打算同其他人共享路径（并具备共享权限），您可能需要为特定群体配置路径图层。例如，如果您就职于应急管理机构并计划与警方共享疏散路线地图，那么您可能需要将<span class="uicontrol">内容</span>窗格中的路径图层和弹出窗口中的路径名重命名为可供警方使用的名称。</p><p id="GUID-41C95BC2-1EE1-47FB-B47C-C205915AEC0C">在路径图层上，可以<a class="xref xref" href="../../../../zh-CN/portal/latest/use/change-transparency.htm">更改透明度</a>、<a class="xref xref" href="../../../../zh-CN/portal/latest/use/organize-layers.htm">重命名图层</a>、将其隐藏在图例中、编辑路径并保存对图层的更改。如果地图中还有其他要素图层，还可以在<span class="uicontrol">内容</span>窗格中<a class="xref xref" href="../../../../zh-CN/portal/latest/use/organize-layers.htm">上移或下移图层</a>。您可以通过<span class="uicontrol">内容</span>窗格中的<span class="uicontrol">更多选项</span>按钮 <img purpose="img" placement="inline" alt="更多选项" title="更多选项" src="GUID-54E2A3B6-4830-42A9-8077-680C2C3B2D54-web.png"> 访问这些选项。</p><p id="GUID-3FB6AFC7-08BB-4577-ACBC-181E44942874">路径图层包含下列子图层。在每个子图层上，您可以<a class="xref xref" href="../../../../zh-CN/portal/latest/use/set-visibility.htm">设置可见性</a>、<a class="xref xref" href="../../../../zh-CN/portal/latest/use/configure-pop-ups.htm">配置弹出窗口</a>、<a class="xref xref" href="../../../../zh-CN/portal/latest/use/change-style.htm">更改样式</a>、<a class="xref xref" href="../../../../zh-CN/portal/latest/use/show-tables.htm">查看属性表</a>、<a class="xref xref" href="../../../../zh-CN/portal/latest/use/create-labels.htm">创建标注</a>和将图层隐藏在图例中。但您无法更改子图层的名称。</p><ul purpose="ul" id="UL_587E090606A341709435F7602BC7E142">                    <li purpose="li" id="LI_9931209F31DA466EBF4F793DF26AE8A2"><span class="uicontrol">DirectionPoints</span> - 一组表示方向策略（如到达或离开停靠点、左转或右转以及路径沿途的其他事件）的点要素。该图层包含路径的逐步导航。默认情况下，该图层不会显示在地图上。可通过（在<span class="uicontrol">内容</span>窗格中）选中图层名称旁边的复选框将其显示出来。</li><li purpose="li" id="LI_0783E7E7F96F416BA2A530097DC8EB4A"><span class="uicontrol">DirectionLines</span> - 一组用于路径各段的线要素。此图层可用于在地图上显示逐步导航。默认情况下，不显示该图层。可通过（在<span class="uicontrol">内容</span>窗格中）选中图层名称旁边的复选框将其显示出来。</li>                  <li purpose="li" id="LI_4887B1C0C71E4832822B4A5895A1B074"><span class="uicontrol">RouteInfo</span> - 路径的线要素图层。该图层包含总驾驶时间和距离。</li><li purpose="li" id="LI_084C776027F24CBE818A812D5E13F1AD"><span class="uicontrol">Stops</span> - 包含起始点和目的地，或仅含目的地的点要素图层。</li><li purpose="li" id="LI_8072781F972A4A338DE9684B31C603E6"><span class="uicontrol">Barriers</span> - 包含添加的所有限制型或增加成本型点障碍的点要素图层。仅当将点障碍添加或保存到路径后才会创建该子图层。</li><li purpose="li" id="LI_47EC7CDEF1DA47919AD16B439865D5B4"><span class="uicontrol">PolygonBarriers</span> - 包含添加的所有限制型或调整成本型面障碍的面要素图层。仅当将面障碍添加或保存到路径后才会创建该子图层。</li><li purpose="li" id="LI_DA58962F44ED4C7292397428545DC183"><span class="uicontrol">PolylineBarriers</span> - 包含添加的所有限制型线障碍的线要素图层。仅当将线障碍添加或保存到路径后才会创建该子图层。</li></ul><div class="panel trailer-1 note" id="GUID-D4BFCE1E-A1BD-41C5-8611-647B17A60B61"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-54FD1337-910C-4D8C-827F-52356011663A">要了解有关可向路径添加的障碍类型的详细信息，请参阅<a target="_blank" class="xref xref" href="http://links.esri.com/agol-help/desktop-network-analysis-barriers">障碍</a>。目前，仅可在 <span class="ph">Map Viewer</span> 中创建限制型线障碍。但是，在 <span class="ph">ArcGIS Pro</span> 中，所有障碍类型都可以与路径一同创建和保存，并可在 <span class="ph">Map Viewer</span> 中查看。</p></div></section></section>  
+			
+				<hr>
+				<!--googleoff: all-->
+				
+	
+        
+		    <p class="feedback right">
+		        <a id="afb" class="icon-ui-contact" href="/feedback/" data-langlabel="feedback-on-this-topic" >有关此主题的反馈?</a>
+		    </p>
+        
+	
+
+				<!--googleon: all-->
+			
+		</main>
+	</div>
+	
+	<!--googleoff: all-->
+	
+		
+			<div id="main-toc-large" class="column-5">
+			    <div class="panel font-size--2 tablet-hide trailer-1">
+			      <h5 class="trailer-half">在本主题中</h5>
+			      <ol class="list-plain pre-0 trailer-0"><li><a href="#ESRI_SECTION1_4AD1E832EECE4DA18842CC1EEA600F98">可添加哪些图层？</a></li><li><a href="#ESRI_SECTION1_16F13402AF194F8E8DD8A227DB1E1E30">搜索图层</a></li><li><a href="#ESRI_SECTION1_D7E2513964E9429E990C8753FB328592">浏览 <ph translate="no" varid="LivingAtlas_short">Living Atlas</ph> 图层</a></li><li><a href="#ESRI_SECTION1_A82A515232CB4672838FEB9FCF8E76D8">从 web 添加图层</a></li><li><a href="#FILE">从文件添加图层</a></li><li><a href="#ESRI_SECTION1_0C90A3B63ABD49D5B9535055991F4684">添加地图注释</a></li><li><a href="#ESRI_SECTION1_FD5000F7DB47479B849CB12672F60D38">添加路径图层</a></li></ol>
+			    </div>
+			    
+			    
+	  		</div>
+		
+    
+   <!--googleon: all-->
+
+
+
+
+          
+        </div>
+        <!-- ENDPAGECONTENT -->
+
+      </div>
+
+    </div>  <!-- End of wrapper -->
+
+  <footer class="footer leader-3 link-dark-gray" role="contentinfo">
+    <div class="grid-container">
+      <div class="row">
+        <nav class="column-6">
+          <h6 data-langlabel="arcgis-for-server">Arc<span>GIS Enterprise</span></h6>
+          <ul class="list-plain">
+            <li><a data-langlabel="home" href="../../../../zh-CN/">主页</a></li>
+            <li><a data-langlabel="portal" href="../../../../zh-CN/portal/">Portal</a></li>
+            <li><a data-langlabel="server" href="../../../../zh-CN/server/">Server</a></li>
+            <li><a data-langlabel="data-store" href="../../../../zh-CN/data-store/">Data Stores</a></li>
+            <li><a data-langlabel="cloud" href="../../../../zh-CN/cloud/">云</a></li>
+            <li><a data-langlabel="apps" href="../../../../zh-CN/apps/">应用程序</a></li>
+            <li><a data-langlabel="documentation" href="../../../../zh-CN/documentation/">文档</a></li>
+          </ul>
+        </nav>
+
+        
+  <nav class="column-6">
+    <h6 data-langlabel="arcgis-platform">ArcGIS 平台</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="arcgis" href="//www.arcgis.com/">ArcGIS Online</a></li>
+      <li><a data-langlabel="arcgis-for-professionals" href="//pro.arcgis.com/">ArcGIS Pro</a></li>
+      <li><a data-langlabel="arcgis-for-server" href="//enterprise.arcgis.com/">ArcGIS Enterprise</a></li>
+      <li><a data-langlabel="arcgis-for-developers" href="https://developers.arcgis.com/">ArcGIS for Developers</a></li>
+      <li><a data-langlabel="arcgis-solutions" href="//solutions.arcgis.com/">ArcGIS Solutions</a></li>
+      <li><a data-langlabel="arcgis-marketplace" href="//marketplace.arcgis.com/">ArcGIS Marketplace</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <h6 data-langlabel="about-esri">关于 Esri</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="about-us" href="//www.esri.com/about-esri/">关于我们</a></li>
+      <li><a data-langlabel="careers" href="//www.esri.com/careers/">招贤纳士</a></li>
+      <li><a data-langlabel="insiders-blog" href="https://www.esri.com/about/newsroom/blog/">Esri 博客</a></li>
+      <li><a data-langlabel="user-conference" href="//www.esri.com/events/user-conference/index.html">用户大会</a></li>
+      <li><a data-langlabel="developer-summit" href="//www.esri.com/events/devsummit/index.html">开发者峰会</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <a class="esri-logo" href="//www.esri.com/" aria-label="Esri Home"></a>
+    <section class="footer-social-nav leader-1">
+            <a class="icon-social-twitter" aria-label="Esri on Twitter" href="https://twitter.com/Esri/"></a>
+            <a class="icon-social-facebook" aria-label="Esri on Facebook" href="https://www.facebook.com/esrigis/"></a>
+            <a class="icon-social-github" aria-label="Esri on GitHub" href="//esri.github.io/"></a>
+            <a class="icon-social-contact" aria-label="Contact Esri" href="//www.esri.com/about-esri/contact/"></a>
+    </section>
+	  
+  </nav>
+  
+  <div class="column-24 leader-1">
+    <p class="font-size--3"><a href="http://www.esri.com/legal/copyright-trademarks">Copyright &copy; 2019 Esri.</a> All rights reserved. | <a href="http://www.esri.com/legal/privacy/">隐私政策</a> | <a href="http://www.esri.com/legal/software-license">法律声明</a></p>
+  </div>
+  
+
+
+      </div>
+    </div>
+  </footer>
+  <!--googleoff: all-->
+
+  
+  
+	<script src="../../../../zh-CN/assets/js/init.js" type="text/javascript"></script>
+	<!--<script src="../../../../zh-CN/assets/js/drop-down.js" type="text/javascript"></script>-->
+	<script src="../../../../zh-CN/assets/js/search/searchform.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/cdn/js/link-modifier.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/cdn/js/sitewide.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/cdn/js/libs/highlight.pack.js" type="text/javascript"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+
+
+  
+    
+
+  <script src="../../../../zh-CN/cdn/js/affix.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    $(function () {
+          var appendFlg = true;
+
+          $("#bigmac")
+          .on("affixed.bs.affix", function (evt) {
+            if (appendFlg) {
+              $("<a class='crumb' href='#'>将图层添加到地图</a>").insertAfter ($("#bigmac nav a").last());
+              appendFlg = false;
+            }
+          })
+          .on ("affix-top.bs.affix", function(evt) {
+            if (!appendFlg) {
+              $("#bigmac nav a").last().remove();
+            }
+            appendFlg = true;
+          })
+    })
+  </script>
+  
+        <script type="text/javascript">
+          window.doctoc = {
+            pubID: "583",
+            tpcID: "70",
+            
+              prefix: "使用",
+              prefixUrl: "/zh-cn/portal/latest/use/",
+          
+            hideToc: false
+          }
+        </script>
+
+        <script type="text/javascript" src="../../../../zh-CN/portal/latest/use/583.js" ></script>
+        <script type="text/javascript" src="../../../../zh-CN/cdn/calcite/js/protoc.js" ></script>
+        
+        
+
+  <noscript>
+        <p>
+            <a href="flisting.htm">flist</a>
+        </p>
+    </noscript>
+    <script type="text/javascript"></script>
+  
+  
+    
+    
+
+  </body>
+</html>

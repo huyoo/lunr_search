@@ -1,0 +1,545 @@
+
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>  <html class="ie lt-ie9 lt-ie8 lt-ie7 ie6" dir="ltr"> <![endif]-->
+<!--[if IE 7]>     <html class="ie lt-ie9 lt-ie8 ie7" dir="ltr"> <![endif]-->
+<!--[if IE 8]>     <html class="ie lt-ie9 ie8" dir="ltr"> <![endif]-->
+<!--[if IE 9]>     <html class="ie ie9" dir="ltr"> <![endif]-->
+<!--[if !IE]><!--> <html dir="ltr" lang="zh-CN"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>管理托管切片图层&mdash;Portal for ArcGIS | ArcGIS Enterprise 文档</title>
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+    <script>
+      var docConfig = {
+        locale: 'zh-CN'
+        ,localedir: 'zh-cn'
+        ,langSelector: ''
+        
+        ,relativeUrl: false
+        
+
+        ,searchformUrl: '/search/'
+        ,tertiaryNavIndex: ''
+
+        
+      };
+    </script>
+	 
+
+
+    
+    <!--[if lt IE 9]>
+      <script src="../../../../zh-CN/cdn/js/libs/html5shiv.js" type="text/javascript"></script>
+      <script src="../../../../zh-CN/cdn/js/libs/selectivizr-min.js" type="text/javascript"></script>
+      <script src="../../../../zh-CN/cdn/js/libs/json2.js" type="text/javascript"></script>
+      <script src="../../../../zh-CN/cdn/js/libs/html5shiv-printshiv.js" type="text/javascript" >
+
+    <![endif]-->
+
+     <!--[if lt IE 11]>
+    <script>
+      $$(document).ready(function(){
+        $$(".hideOnIE").hide();
+      });
+    </script>
+    <![endif]-->
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<link href="../../../../zh-CN/assets/img/favicon.ico" rel="shortcut icon" >
+	<link href="../../../../zh-CN/assets/css/screen.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/cdn/calcite/css/documentation.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/assets/css/print.css" media="print" type="text/css" rel="stylesheet" />
+
+	<!--
+	<link href="../../../../zh-CN/assets/css/screen_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/assets/css/documentation/base_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/assets/css/print_l10n.css" media="print" type="text/css" rel="stylesheet" />
+	-->
+	
+	
+		<script src="../../../../zh-CN/cdn/js/libs/jquery.1.9.1.min.js" type="text/javascript"></script>
+	
+	<script src="../../../../zh-CN/cdn/js/libs/jquery.cookie.js" type="text/javascript"></script>
+	<link href="../../../../zh-CN/cdn/css/colorbox.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/cdn/css/colorbox_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<script src="../../../../zh-CN/cdn/js/libs/jquery.colorbox-min.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/assets/js/video-init.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/assets/js/sitecfg.js" type="text/javascript"></script>
+	
+		<script src="../../../../zh-CN/assets/js/signIn.js" type="text/javascript"></script>
+	
+
+	<!--- Language Picker -->
+	<script src="../../../../zh-CN/assets/js/locale/l10NStrings.js" type="text/javascript"></script>
+	
+		 
+	
+
+	<script src="../../../../zh-CN/assets/js/calcite-web.js" type="text/javascript"></script>
+
+
+
+  <!--- search MD -->
+    <META name="description" content="托管切片图层的所有者和管理员可以设置图层中切片的数量和比例、设置添加到地图时绘制托管切片图层所使用的最小和最大比例，并且允许离线使用切片以及替换矢量切片图层的内容。"><META name="last-modified" content="2019-12-6"><META name="product" content="arcgis-portal-windows,arcgis-portal-linux,arcgis-enterprise-windows,arcgis-enterprise-linux"><META name="sub_category" content="Portal for ArcGIS"><META name="search-collection" content="help"><META name="content_type_label" content="帮助主题"><META name="sub_category_label" content="Portal for ArcGIS"><META name="search-category" content="help-general"><META name="subject_label" content="PORTAL,服务,SERVER"><META name="version" content="10.8"><META name="content_type" content="Help Topic"><META name="subject" content="PORTAL,SERVICES,SERVER"><META name="content-language" content="zh-cn">
+    <!--- search MD -->
+
+  
+  <script src="../../../../zh-CN/assets/js/switchers/portal-1.js" type="text/javascript"></script>
+  
+      
+
+</head>
+
+<!--
+      pub: GUID-7B47163B-CE1B-465F-BEEE-4DADDB8DFF09=37
+      tpc: GUID-2F99409E-8DAF-422B-BB03-9E2043093593=15
+      -->
+
+
+<!-- variable declaration, if any -->
+<!-- can change following macro to set variable once we are on Jinja 2.8 -->
+
+
+
+
+
+<body class="claro zh-CN server">
+  
+
+  <!-- Drawer location -->
+  <div class="drawer drawer-left js-drawer" data-drawer="top-nav">
+        <nav class="drawer-nav" role="navigation">
+          <aside class="side-nav">
+            <h2 class="side-nav-title">Arc<span>GIS</span> Enterprise</h2>
+            <form id="helpSearchForm" class="margin-left-half margin-right-half leader-half trailer-half drawer-search-form" method="GET">
+              <input type="search" name="q"  placeholder="搜索 ArcGIS Enterprise 帮助">
+              <input type="hidden" name="collection" value="help" />
+              <input type="hidden" name="product" value="arcgis-portal-windows" />
+              <input type="hidden" name="version" value="10.8" />
+              <input type="hidden" name="language" value="zh-CN" />
+            </form>    
+             <a id="nav-portal" data-langlabel="portal" href="../../../../zh-CN/portal/" class="side-nav-link">Portal</a>
+             
+            <a id="all-servers" data-langlabel="all-servers" href="../../../../zh-CN/server/" class="side-nav-link">所有服务器</a>
+            <a id="gis-server" data-langlabel="gis-server" href="../../../../zh-CN/server/" class="side-nav-link">GIS Server</a>
+            <a id="image-server" data-langlabel="image-server" href="../../../../zh-CN/image/" class="side-nav-link">Image Server</a>
+            <a id="geo-analytics-server" data-langlabel="geo-analytics-server" href="../../../../zh-CN/geoanalytics/" class="side-nav-link">GeoAnalytics Server</a>
+            <a id="geoevent-server" data-langlabel="geoevent-server" href="../../../../zh-CN/geoevent/" class="side-nav-link">GeoEvent Server</a>
+            <a id="notebook-server" data-langlabel="notebook-server" href="../../../../zh-CN/notebook/" class="side-nav-link">Notebook Server</a>
+            <a id="nav-data-store" data-langlabel="data-store" href="../../../../zh-CN/data-store/" class="side-nav-link">Data Stores</a>
+            <a id="nav-cloud" data-langlabel="cloud" href="../../../../zh-CN/cloud/" class="side-nav-link">云</a>
+            <a id="nav-apps" data-langlabel="apps" href="../../../../zh-CN/apps/" class="side-nav-link">应用程序</a>
+            <a id="nav-doc" data-langlabel="documentation" href="../../../../zh-CN/documentation/" class="side-nav-link">文档</a>
+
+          </aside>
+        </nav>
+    </div>
+
+    <!-- user navigation collapses to drawer on mobile -->
+    
+    <div class="drawer drawer-right js-drawer hide-if-logged-out logged-in-navigation" data-drawer="user-nav">
+      <nav class="drawer-nav">
+        <aside class="side-nav">
+          <a class="side-nav-link agolProfile" href="#">我的个人资料</a>
+          <a class="side-nav-link icon-ui-sign-out js-log-out" href="#">登出</a>
+        </aside>
+      </nav>
+    </div>
+    
+<!-- End of drawer -->
+
+  
+  <div class="wrapper">
+      <!--googleoff: all-->
+
+      <header class="top-nav" data-skin="learn">
+        <a class="skip-to-content" href="#skip-to-content">Skip To Content</a>
+        <div class="grid-container">
+          <div class="column-24">
+
+
+            <!--<div class="top-nav-title-wrapper text-center ">-->
+              <a href='../../../../zh-CN/' class="top-nav-title tablet-hide"><span>Arc</span>GIS  Enterprise</a>
+              <a href='../../../../zh-CN/' class="icon-ui-menu top-nav-title js-drawer-toggle tablet-show" data-drawer="top-nav"><span>Arc</span>GIS Enterprise</a>
+            <!--</div> -->
+
+          
+            <nav role="navigation" class="top-nav-list left tablet-hide">
+              <a id="nav-portal" data-langlabel="portal" href="../../../../zh-CN/portal/" class="top-nav-link">Portal</a>
+
+                <div class="dropdown js-dropdown ">
+                  <a class="top-nav-link js-dropdown-toggle" tabindex="0" aria-haspopup="true" aria-expanded="false" href="#">Servers</a>
+                  <nav class="dropdown-menu featured" role="menu">
+                    <ul class="dropdown-sublist-featured">
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/get-started/latest/windows/additional-server-deployment.htm" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path  d="M42.92 6.1H4.12v8.566l.833.832-.835.833-.018 7.332.845.847-.825.824V33.9h25v5.2h-2v1.075H8.02v.8h19.1v.925h4.8v-.925H40v-.8h-8.08V39.1h-2v-5.2h13v-8.566l-.834-.834.835-.834v-7.332l-.835-.834.835-.834zm-11.8 35h-3.2v-1.2h3.2zm11-8H4.92v-7.434l.767-.766h35.668l.765.766zm0-9.766l-.766.766H5.666l-.766-.767.017-6.669.766-.764h35.671l.766.766zm0-9l-.766.766H5.687l-.766-.766V6.9h37.2zM19 11.9h-2v-.8h2zm-4 0h-2v-.8h2zm-4 0H9v-.8h2zm6 8.2h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9zm8 9h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9z"/></svg></span>
+                          <span class="sublink-text">所有服务器</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/server/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M45.98 33.575a.616.616 0 0 0-.335-.51l-3.362-2.03 3.362-2.031a.556.556 0 0 0 0-1.02l-11.1-6.704a1.293 1.293 0 0 0-1.112 0L22.33 27.982a.556.556 0 0 0 0 1.02l3.36 2.03-3.358 2.03a.556.556 0 0 0-.002 1.021l3.322 2.006-3.324 2.008a.555.555 0 0 0 .002 1.017l11.102 6.703a1.25 1.25 0 0 0 1.11.002l11.104-6.706a.556.556 0 0 0 0-1.02l-3.32-2.006 3.318-2.004a.607.607 0 0 0 .335-.509zM33.837 21.97c.026-.01.286-.005.29-.005l10.814 6.53-10.8 6.523c-.028.01-.284.005-.294.006l-10.813-6.53zm11.105 16.636l-10.8 6.523a2.564 2.564 0 0 1-.295.006l-10.81-6.529 3.39-2.047 7.004 4.23a1.083 1.083 0 0 0 .557.131 1.101 1.101 0 0 0 .554-.13l7.01-4.233zM34.14 40.098a2.545 2.545 0 0 1-.294.006l-10.812-6.53 3.43-2.073 6.97 4.208a1.25 1.25 0 0 0 1.107-.001l6.966-4.206 3.431 2.073zM9 8H7V7h2zm8 8h-2v-1h2zm-4-8h-2V7h2zm4 0h-2V7h2zm-4 8h-2v-1h2zm7.316 11.1H3.9v-6.434l.766-.766h35.668l.766.766v2.12l.8.483v-2.935l-.826-.826.826-.845v-6.329l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9h16.88a2.632 2.632 0 0 1 .336-.8zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zm0 8v-5.668l.766-.766h35.668l.766.766v5.67l-.746.764H4.666zM15 24v-1h2v1zm-4 0v-1h2v1zm-2-8H7v-1h2zm-2 8v-1h2v1z"/></svg></span>
+                          <span class="sublink-text">GIS Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/image/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 8h-2V7h2zm-4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm8 8h-2v1h2zm-8 0H7v1h2zm4 9v-1h-2v1zm-4 0v-1H7v1zm8 0v-1h-2v1zm4 3.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V21h-.8v-.334l-.766-.766H4.666l-.766.766V27.1H21zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zm40.234 4v21.8H23.1V23.1zm-.8 16.366L39.466 44.1h2.868l1.766-1.766zm-20.2-9.932l5.634-5.634h-2.868L23.9 26.666zm6.2-5.068L24.466 30.1h2.868l2.766-2.766zM28.466 30.1H30.1v-1.634zm2.434 0h6.2v-6.2h-6.2zm-7 7h6.2v-6.2h-6.2zm7 0h6.2v-6.2h-6.2zm0 6.434l5.634-5.634h-2.868L30.9 40.666zm7-7l5.634-5.634h-2.868L37.9 33.666zm1.634-5.634H37.9v1.634zm-8.634 7v1.634l1.634-1.634zm.566 6.2h2.868l2.766-2.766v-2.868zm6.434-3.566l2.634-2.634H37.9zM35.466 44.1H37.1v-1.634zm2.434 0h.434l5.766-5.766V37.9h-2.434L37.9 41.666zm6.2-8.634L42.466 37.1H44.1zm0-4L38.466 37.1h2.868l2.766-2.766zm0-7.566h-6.2v6.2h6.2zm-20.2 0v1.634l1.634-1.634zm0 20.2h6.2v-6.2h-6.2zm20.2 0v-.634l-.634.634z"/></svg></span>
+                          <span class="sublink-text">Image Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/geoanalytics/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 16h-2v-1h2zm-8 8v-1H7v1zm8 0v-1h-2v1zM13 7h-2v1h2zm4 0h-2v1h2zM9 7H7v1h2zm21.45 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V27.9h-1.464l-.801-.8H41.1v-6.434l-.766-.766H4.666l-.766.766V27.1h27.15zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM13 24v-1h-2v1zm0-9h-2v1h2zm-4 0H7v1h2zm26.672 27.148A1.87 1.87 0 0 1 35.9 43a1.91 1.91 0 1 1-3.763-.222l-9.845-3.414A1.88 1.88 0 0 1 21 39.9a1.9 1.9 0 1 1 1.474-3.084l4.692-2.346A1.878 1.878 0 0 1 27.1 34a1.902 1.902 0 0 1 1.9-1.9 1.867 1.867 0 0 1 .781.191l3.788-5.05A1.88 1.88 0 0 1 33.1 26a1.9 1.9 0 1 1 3.491 1.026l4.889 4.888c-.069.056-.144.1-.21.162a3.986 3.986 0 0 0-.358.402l-4.883-4.883A1.889 1.889 0 0 1 35 27.9a1.867 1.867 0 0 1-.781-.191l-3.788 5.049a1.868 1.868 0 0 1 .437.965l9.204.614c-.018.11-.049.218-.058.33A3.93 3.93 0 0 0 40 35c0 .046.01.09.01.135l-9.185-.612A1.913 1.913 0 0 1 29 35.9a1.889 1.889 0 0 1-1.474-.716l-4.692 2.346a1.878 1.878 0 0 1 .066.47 1.9 1.9 0 0 1-.105.625c-.007.02-.022.036-.03.056l9.63 3.34a1.87 1.87 0 0 1 2.786-.505l5.415-4.437c.067.108.127.22.204.322a3.9 3.9 0 0 0 .292.306zM33.9 26a1.092 1.092 0 0 0 .43.872 1.12 1.12 0 0 0 1.42-.068A1.1 1.1 0 1 0 33.9 26zm-6 8a1.1 1.1 0 0 0 2.196.093 1.135 1.135 0 0 0-.426-.965A1.087 1.087 0 0 0 29 32.9a1.101 1.101 0 0 0-1.1 1.1zm-5.8 4a1.098 1.098 0 1 0-.06.362A1.101 1.101 0 0 0 22.1 38zm13 5a1.1 1.1 0 1 0-2.2 0 1.1 1.1 0 0 0 2.2 0zm10.8-8a1.9 1.9 0 1 1-3.8 0c0-.053.003-.105.007-.158A1.9 1.9 0 0 1 45.9 35zm-.8 0a1.1 1.1 0 0 0-2.196-.093 1.153 1.153 0 0 0 .216.752A1.1 1.1 0 0 0 45.1 35z"/></svg></span>
+                          <span class="sublink-text">GeoAnalytics Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/geoevent/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M13 8h-2V7h2zm4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm12.418 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826v2.117c-.259-.177-.53-.337-.8-.497v-1.288l-.766-.766H4.666l-.766.766V27.1h17.933c-.148.26-.283.53-.415.8zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM9 24v-1H7v1zm4-9h-2v1h2zm0 9v-1h-2v1zm-4-9H7v1h2zm8 9v-1h-2v1zm16.9 2h-.8v8.9H39v-.8h-5.1zm.1-3.901a11.9 11.9 0 1 0 11.9 11.9 11.914 11.914 0 0 0-11.9-11.9zm0 23a11.1 11.1 0 1 1 11.1-11.1 11.112 11.112 0 0 1-11.1 11.1z"/></svg></span>
+                          <span class="sublink-text">GeoEvent Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/notebook/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M22 27.1H3.9v-6.434l.766-.766h18.576a5.262 5.262 0 0 1 .83-.8H4.666l-.766-.766v-5.668l.766-.766h35.668l.766.766V18h.8v-5.666l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9H22zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zM9 8H7V7h2zm8 0h-2V7h2zm-4 0h-2V7h2zm2 16v-1h2v1zm-4 0v-1h2v1zm-4 0v-1h2v1zm0-8v-1h2v1zm8 0v-1h2v1zm-4 0v-1h2v1zm18.9 8.1h-1.8v1.8h1.8zm-.8 1h-.2v-.2h.2zm15.498-4.48a2.727 2.727 0 0 0-1.62-.5v-.02H27.25a3.154 3.154 0 0 0-3.15 3.15V38.1h-1.68a3.386 3.386 0 0 0-2.872 1.58 3.49 3.49 0 0 0-.157 3.419 3.241 3.241 0 0 0 2.954 1.801h15.161a3.404 3.404 0 0 0 3.394-3.4V26.9h5v-3.65a3.224 3.224 0 0 0-1.302-2.63zM22.345 44.1a2.44 2.44 0 0 1-2.23-1.341 2.706 2.706 0 0 1 .11-2.65A2.588 2.588 0 0 1 22.42 38.9h12.89a3.395 3.395 0 0 0 0 5.2zM40.1 23.192V41.5a2.6 2.6 0 1 1-2.6-2.6v-.8H24.9V23.25a2.352 2.352 0 0 1 2.35-2.35h13.795a3.183 3.183 0 0 0-.945 2.292zm5 2.908h-4.2v-2.908a2.274 2.274 0 0 1 1.44-2.18 1.944 1.944 0 0 1 1.791.259 2.423 2.423 0 0 1 .97 1.979zm-17.1 5h9v.8h-9zm0 3h7v.8h-7zm0-6h9v.8h-9zm4-3h5v.8h-5z"/></svg></span>
+                          <span class="sublink-text">Notebook Server</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+
+              <a id="nav-data-store" data-langlabel="data-store" href="../../../../zh-CN/data-store/" class="top-nav-link">Data Stores</a>
+              <a id="nav-cloud" data-langlabel="cloud" href="../../../../zh-CN/cloud/" class="top-nav-link">云</a>
+              <a id="nav-apps" data-langlabel="apps" href="../../../../zh-CN/apps/" class="top-nav-link">应用程序</a>
+            </nav>
+
+
+            
+            
+            
+
+            <div class="margin-left-1 top-nav-list right hide-if-logged-in logged-out-navigation">
+               
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+              
+              <a data-langlabel="sign-in" id="login-link" class="icon-ui-user top-nav-link link-blue login-link" href="#">登录</a>
+              
+            </div>
+
+            
+            <nav class="margin-left-1 top-nav-list right hide-if-logged-out logged-in-navigation">
+              
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+             
+              <div class="dropdown js-dropdown right">
+
+                <div class="tablet-show top-nav-link">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a href="#" data-drawer="user-nav" class="user-nav-name js-drawer-toggle" data-first-name></a>
+                </div>
+
+                <div class="tablet-hide top-nav-link js-dropdown-toggle">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a class="user-nav-name top-nav-dropdown dropdown-btn" data-first-name>&nbsp;</a>
+                </div>
+
+                <nav class="dropdown-menu dropdown-right">
+                
+                  <a class="dropdown-link agolProfile" id="agolProfile" href="#">我的个人资料</a>
+                  <a class="dropdown-link js-log-out" id="agolLogout" href="#">登出</a>
+                </nav>
+              </div>
+            </nav>
+            
+
+            
+          </div>
+        </div>
+      </header>
+
+      <div class="js-search search-overlay">
+        <div class="search-content" role="dialog" aria-labelledby="search">
+          <form method="GET" id="helpSearchForm">
+            <label>
+              搜索 ArcGIS Enterprise 帮助
+              <div class="search-bar">
+                <input type="search" name="q"  placeholder="搜索 ArcGIS Enterprise 帮助" class="search-input js-search-input">
+                <input type="hidden" name="collection" value="help" />
+                <input type="hidden" name="product" value="arcgis-portal-windows" />
+                <input type="hidden" name="version" value="10.8" />
+                <input type="hidden" name="language" value="zh-CN" />
+              </div>
+            </label>
+            <input type="hidden" name="relativePath" value="../../../../" /><button type="submit" class="btn btn-large right">搜索</button>
+          </form>
+        </div>
+      </div>
+
+      <!--googleon: all-->
+
+      <div id="skip-to-content">
+        <!--googleoff: all-->
+        <header class="sub-nav sub-nav-learn">
+          <div class="grid-container">
+            
+            <div class="column-24">
+              <div style="display:table;" class="sdk-home-banner">
+                <div class="sdk-home-banner-content">
+                  <h1 class="sub-nav-title link-white">Portal for ArcGIS</h1>
+                </div>
+              </div>
+            </div>
+
+            <div class="column-24">
+              <nav class='sub-nav-list tablet-hide'><a class="sub-nav-link" href="../../../../zh-CN/portal/" target="_top" title="Portal for ArcGIS 主页">主页</a><a class="sub-nav-link is-active" href="../../../../zh-CN/portal/latest/use/" target="_top" title="使用 Portal for ArcGIS">使用</a><a class="sub-nav-link" href="../../../../zh-CN/portal/latest/administer/windows/" target="_top" title="安装、管理和保护 Portal for ArcGIS">管理</a></nav><select class='tablet-show select-full trailer-half js-select-nav'><option value="../../../../zh-CN/portal/">主页</option><option selected="true" value="../../../../zh-CN/portal/latest/use/">使用</option><option value="../../../../zh-CN/portal/latest/administer/windows/">管理</option></select>
+            </div>
+
+          </div>
+        </header>
+        <!--googleon: all-->
+       
+        <!-- content goes here -->
+        <div class="grid-container ">
+          
+
+            
+              
+  <!--BREADCRUMB-BEG--><div id="bigmac" class="sticky-breadcrumbs trailer-2" data-spy="affix" data-offset-top="180"> </div><!--BREADCRUMB-END-->
+  <!--googleoff: all-->
+    <div class="column-5 tablet-column-12 trailer-2 ">
+      <aside class="js-accordion accordion reference-index" aria-live="polite" role="tablist">
+        <div></div>
+      </aside>
+
+      <div class="js-sticky scroll-show tablet-hide leader-1 back-to-top" data-top="0" style="top: 0px;">
+        <a href="#" class="btn btn-fill btn-clear">返回顶部</a>
+      </div>
+    </div>
+  <!--googleon: all-->
+  
+            
+            
+            
+	
+		<div class="column-13  pre-1 content-section">
+	
+		<header class="trailer-1"><h1>管理托管切片图层</h1></header>
+
+		 
+	<!--googleoff: all-->
+	
+		
+				<aside id="main-toc-small" class="js-accordion accordion tablet-show trailer-1">
+			      <div class="accordion-section">
+			        <h4 class="accordion-title">在本主题中</h4>
+			        <div class="accordion-content list-plain">
+			          <ol class="list-plain pre-0 trailer-0"><li><a href="#ESRI_SECTION1_EC1624E2D04A45F2AB48F871D6C2E6C1">管理托管栅格切片图层设置</a></li><li><a href="#ESRI_SECTION1_0561B66EE826482297DDE002A94048B0">管理托管矢量切片图层设置</a></li><li><a href="#ESRI_SECTION1_CF8695C829AD41379E66E8D59AF6AF8E">替换托管矢量切片图层</a></li></ol>
+			        </div>
+			      </div>
+			     </aside>
+		
+    
+   <!--googleon: all-->
+
+
+		<main>
+			
+	
+    	
+    
+
+
+			
+<p id="GUID-5AA8F502-D09B-4721-8640-0EECF817C93F">托管切片图层的所有者和管理员可以管理现有托管切片图层的设置和内容。管理选项取决于您的图层是包含栅格切片或矢量切片。下表显示了每种图层类型具有的管理选项。</p><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="2.00*"></colgroup><colgroup width="*"></colgroup><colgroup width="*"></colgroup><thead><tr><th colspan="1"></th><th colspan="1"><img purpose="img" placement="inline" alt="栅格切片" title="栅格切片" src="GUID-D7FC841D-4390-4BFF-9BED-AEC4AD91F574-web.png">托管栅格图层</th><th colspan="1"><img purpose="img" placement="inline" alt="矢量切片" title="矢量切片" src="GUID-3490F5B0-AEFC-46E7-935C-B3486950FF8A-web.png">托管矢量切片图层</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-25A0BC8D-D9D4-46FC-A6CF-4416EFDA2A3C">设置托管切片图层在添加到地图时所使用的最小和最大绘制比例。</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-0343D640-0048-4F19-82D1-8A7922E2E088">是</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-7CA06580-B31E-43AE-BF81-D5D5B7640F81">否</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-B93B0ED0-F636-4968-9797-624A3C3656B2">配置托管切片图层以在离线地图和应用程序中使用。</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-DD5ACF9D-2F07-414B-9DF3-E119BF6DDA99">是</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-A28C8C87-F8CF-43A0-BFDF-7347F20DA44E">是</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-58D00C92-0BA5-4BB3-BAD0-65621DA8EEC2">使用其他图层替换图层的内容。</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-73B0C145-C976-4590-93BD-5BB8E217B2DB">否*</p><p id="GUID-DEFE3CE6-47E1-47E3-8074-EABFB3EC585E">*从 <span class="ph">ArcGIS Pro</span> 2.5 版本开始，可以使用 <a target="_blank" class="xref xref" href="https://developers.arcgis.com/python/api-reference/arcgis.gis.toc.html?highlight=replace_service#arcgis.gis.ContentManager.replace_service">Python API</a> 或<span purpose="gptoolref"><a class="xref xref" esrisubtype="extrel" hrefpfx="https://pro.arcgis.com/zh-cn/pro-app/tool-reference" href="https://pro.arcgis.com/zh-cn/pro-app/tool-reference/server/replace-web-layer.htm">替换 Web 图层</a></span>地理处理工具</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-A476F835-6C65-487E-AAF6-717799357EAB">是</p></td></tr></tbody><caption></caption></table></div><section class="section1 padded-anchor" id="ESRI_SECTION1_EC1624E2D04A45F2AB48F871D6C2E6C1" purpose="section1"><h2>管理托管栅格切片图层设置</h2><p id="GUID-FA46C7F0-8D62-4FF6-A801-B25B1937046A">要管理最小和最大比例或托管切片图层的离线模式，必须能够访问源数据或您用于发布的源图层。当您从托管要素图层或托管要素图层视图发布托管切片图层时，切片图层将继承源图层的可见范围。无法为落在继承的可见范围之外的区域构建切片。</p><p id="GUID-AD31547A-4A51-4D37-BA3A-6F6553964ABC" ishcondition="agol_plat=portal">按照这些步骤为托管切片图层 <img purpose="img" placement="inline" alt="栅格切片" title="栅格切片" src="GUID-D7FC841D-4390-4BFF-9BED-AEC4AD91F574-web.png"> 构建切片、更改可见范围以及管理离线模式：</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_9F5954D6CCBB45FCA8195F4F5EDA80E9"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_D382AC815F8A4E8F91340F5C03E3944B"><span purpose="cmd" id="GUID-5E7E8358-A1C9-4394-AEDF-2F1467D7E135">以 Web 图层所有者、管理员或具备更新所有成员项目<a class="xref xref" href="../../../../zh-CN/portal/latest/use/roles.htm">权限</a>的帐户身份登录。</span></li><li purpose="step" id="ESRI_STEP_10D8CBBBEA6D44999FDC370F2824CEB3"><span purpose="cmd" id="GUID-26795261-7F80-495C-BF1E-D5CC2478E6CF">打开托管切片图层的项目页面。</span></li><li purpose="step" id="ESRI_STEP_86367B305B554CABA3FEAAA8DA5E48CC"><span purpose="cmd" id="GUID-BE1B2115-A0B9-4154-BD17-943B72730E7D">单击<span class="uicontrol">设置</span>选项卡。</span></li><li purpose="step" id="ESRI_STEP_96822C5E69754D079D0361BDF81416F8"><span purpose="cmd" id="GUID-1106232D-A5E7-4D24-98B4-2224ABBD0B50">滚动至<span class="uicontrol">切片图层（托管）设置</span>部分。</span></li><li purpose="step" id="ESRI_STEP_55D7675907D04E6385E984A9878E8807"><span purpose="cmd" id="GUID-DC1CA287-CAA3-493D-8DE3-88B850A88AE0">单击<span class="uicontrol">显示详细信息</span>查看现有切片的当前状态。</span></li><li purpose="step" id="ESRI_STEP_C08C9F490FBE447EB0F49EED633CDC5A"><span purpose="cmd" id="GUID-6F992D23-431B-4F65-B1AB-C59297840CE9">进行以下任意更改：</span><ul purpose="choices" id="ESRI_CHOICES_70496233D4D84A369EEC0EACDFD310F7"><li purpose="choice" id="ESRI_CHOICE_A2AF569A653B43FB8667F7010B7AC4B9">使用滑块或下拉列表设置<span class="uicontrol">可见范围</span>选项，以选择添加到地图时绘制托管切片图层所使用的最小和最大比例。</li><li purpose="choice" id="ESRI_CHOICE_2D520CC1396F48C580D6A6B3C8CBA964">单击<span class="uicontrol">构建切片</span>来为图层构建切片。当显示该对话框时，选中您所希望的切片生成级别（比例）旁边的方框。必须至少选择一个级别。完成选择级别后，请单击<span class="uicontrol">创建切片</span>。</li><li purpose="choice" id="ESRI_CHOICE_D22E63828B324569A547F38FCCD02AB5">选中<span class="uicontrol">允许下载此图层并用于离线地图</span>以允许其他用户在将要离线使用的地图中包含托管切片图层。</li></ul></li><li purpose="step" id="ESRI_STEP_305B2535ABF14EEC92F734861DF313A5"><span purpose="cmd" id="GUID-A8BA3691-7003-4F3E-9C6A-5085631F76D0">完成后，单击<span class="uicontrol">保存</span>。</span></li></ol></div></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_0561B66EE826482297DDE002A94048B0" purpose="section1"><h2>管理托管矢量切片图层设置</h2><p id="GUID-C20E1C01-788F-4BCD-80DD-43B2279F4CCD">目前，您可以启用托管矢量切片图层以便在离线地图中使用。请按照以下步骤管理托管矢量切片图层 <img purpose="img" placement="inline" alt="矢量切片" title="矢量切片" src="GUID-3490F5B0-AEFC-46E7-935C-B3486950FF8A-web.png"> 的离线模式：</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_CA6A9EA970124C839F1550D0E31AD864"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_DBA2242B984A47B295FFCBE00C9E7DC1"><span purpose="cmd">以 Web 图层所有者、管理员或具备更新所有成员项目<a class="xref xref" href="../../../../zh-CN/portal/latest/use/roles.htm">权限</a>的帐户身份登录。</span></li><li purpose="step" id="ESRI_STEP_B5E7E93C8E4C4EA68F422692BF041103"><span purpose="cmd">打开托管矢量切片图层的项目页面。</span></li><li purpose="step" id="ESRI_STEP_A37145D2402C4D6EACAA212FEC67C656"><span purpose="cmd">单击<span class="uicontrol">设置</span>选项卡。</span></li><li purpose="step" id="ESRI_STEP_A564208F1BDA4464BFD8BFAE48972A31"><span purpose="cmd">滚动至<span class="uicontrol">切片图层（托管）设置</span>部分。</span></li><li purpose="step" id="ESRI_STEP_09375C348DF04409903A0A2870034AC2"><span purpose="cmd">选中<span class="uicontrol">允许下载此图层并用于离线地图</span>以允许其他用户在离线应用程序中包含托管切片图层。</span></li><li purpose="step" id="ESRI_STEP_9C9860475A504C1E94334479C8EA91A0"><span purpose="cmd">完成后，单击<span class="uicontrol">保存</span>。</span></li></ol></div><section class="postreq padded-anchor" id="ESRI_POSTREQ_196B4D87F31549BFBF5D3ABB8A719183" purpose="postreq"><p id="GUID-85B295A1-E481-41CC-B35D-69A86F54448D">您现在可以将此图层添加至<a class="xref xref" href="../../../../zh-CN/portal/latest/use/take-maps-offline.htm">启用离线使用的地图</a>中。</p></section></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_CF8695C829AD41379E66E8D59AF6AF8E" purpose="section1"><h2>替换托管矢量切片图层</h2><p id="GUID-146A029C-A346-4692-ADBE-537C9F2D3DF1"><span class="ph"><a class="xref xref" href="../../../../zh-CN/portal/latest/use/tile-layers.htm#ESRI_SECTION1_5DCE98364D4446A9B0AEB741849E5423">矢量切片图层</a>将地图数据作为矢量文件进行交付，并包括一个或多个基于随图层交付的样式在客户端上渲染的图层。</span> 可以<a class="xref xref" href="../../../../zh-CN/portal/latest/use/update-vector-tile-style.htm">使用矢量切片样式编辑器创建其他样式</a>。要更新托管矢量切片图层的矢量文件内容，请将其内容替换为另一个图层中的内容。</p><p id="GUID-AAC4B893-B860-41F2-BEFD-FFDD1694AA0E"><span class="ph"><span class="uicontrol">替换图层</span>选项允许您将组织中的托管矢量切片图层替换为相同成员所拥有的另一个托管矢量切片图层中的内容。</span> 替换托管矢量切片图层时，该图层的内容将替换为另一个图层的内容。由于图层的项目 ID 和 URL 不变，因此使用该图层的地图和应用程序无需进行更新即可引用新图层。</p><p id="GUID-DBD3F76D-AF02-41AD-9729-7545EDEFD66D" ishcondition="agol_plat=portal">要替换托管矢量切片图层，您必须拥有当前托管矢量切片图层和替换图层。门户管理员也可以替换托管矢量切片图层，但替换图层和当前图层必须由相同的门户成员所有。</p><p id="GUID-CE8607E4-4651-422C-8483-45626B859006">替换图层具有以下优点：<ul purpose="ul" id="UL_7DECD4DB364A4E2E97FE1F4E50BD3652"><li purpose="li" id="LI_EEA3C2E52096468CA61695A1A641EEDB">可以创建一个替换图层并在该图层上执行质量控制测试，而不会影响当前托管矢量切片图层的用户。</li><li purpose="li" id="LI_A9B1C32F19114E03AB7D9C13A2EFEEB9">如果当前托管矢量切片图层具有多种样式，则可以使用替换图层来预览样式，以验证样式在替换图层后是否将继续正常运行。</li><li purpose="li" id="LI_3F881D352EF741EC8B9C8274CB673AA9">替换当前图层的内容不会生成新切片。因此，无需等待提取和重新构建切片。在替换操作期间，使用当前图层的地图和应用程序将继续正常运行。</li><li purpose="li" id="LI_47E8C09872F0433AB7FC9CFFF8C090D4">可以存档旧内容，并在必要时恢复其内容。</li></ul></p><p id="GUID-170B80CB-E5D5-4449-99FA-5EA5B98CFE94"><div class="panel trailer-1 note" id="GUID-74F9DF83-B4BB-4799-8DA7-67495558B70B"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-910CC6C4-D4A1-46C2-A787-6D39406BB107">在 <span class="ph">ArcGIS Pro</span> 中发布或打包替换矢量切片图层时，请确保为替换矢量切片图层使用与当前矢量切片图层相同的坐标系和切片方案。这些设置必须匹配。</p><p id="GUID-22AD5525-FDAC-42B4-BC5C-58B82F8169AC">请参阅<a class="xref xref" href="../../../../zh-CN/portal/latest/use/manage-hosted-tile-layers.htm#ESRI_SECTION2_9A5C36E6BEEF41798059A3C65FA67B12">将对当前图层产生不利影响的替换图层更改</a>以了解有关在 <span class="ph">ArcGIS Pro</span> 中生成替换图层时应注意的其他配置更改的详细信息。</p></div></p><p id="GUID-1E754C8C-ED5A-4A0C-8F15-EA603DEF5128">替换图层时，可以将当前图层的内容移动到新图层中，也可以交换当前图层和替换图层的内容，从而将现有替换图层用作存档。<ul purpose="ul" id="UL_F9483F1CD6A34DF9B53584A1933E396D"><li purpose="li" id="LI_DC535B110A3943E6BE7729A7321A30DF">如果要在每次替换图层时存档当前托管矢量切片图层的内容，请创建当前图层的存档。如有必要，可以使用任何包含存档内容的图层来恢复为内容的旧版本。要恢复为存档的内容，请使用<span class="uicontrol">替换图层</span>选项，然后选择包含要放回到当前图层中的存档内容的特定图层。<p id="GUID-01E4C116-E587-4199-873B-F16D1CCB5C61">如果要使用存档内容创建多个图层，以反映托管矢量切片图层内容随时间的变化，请使用此选项。例如，如果您执行季度更新，则可以创建诸如 <span class="usertext">2019Q4</span> 和 <span class="usertext">2020Q1</span> 等存档，从而为每次更新创建一个存档。</p></li><li purpose="li" id="LI_EEF9FA37F0954BE68A39999B5B39D007">如果使用替换图层作为存档，则不会为存档内容创建单独的图层。替换图层中的内容将移至当前图层中。来自当前图层的内容将移动到替换图层。如果您不需要单独的图层用于存档内容，请使用此选项。</li></ul></p><p id="GUID-71BBEAF5-B489-4688-A821-915AE4B42B85">除了确定如何存档之外，还需要选择要在当前生产图层中更新以下项目信息还是从替换图层中导入更改：缩略图、摘要、描述和标签。默认情况下，将不会更新信息。要从替换图层导入信息，启用<span class="uicontrol">替换项目信息</span>选项。</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_F55FC919D4844BFF976B3EA81375A793"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_1A442AD8B41040F18334AB6A7A9645C2" ishcondition="agol_plat=portal"><span purpose="cmd">以 Web 图层所有者、门户管理员或具备更新所有成员项目<a class="xref xref" href="../../../../zh-CN/portal/latest/use/roles.htm">权限</a>的帐户身份登录。</span></li><li purpose="step" id="ESRI_STEP_6729705A4CED4BBE812C3332778E7BF0"><span purpose="cmd">打开托管矢量切片图层的项目页面。</span></li><li purpose="step" id="ESRI_STEP_18F160B23A224BFC90F033B57967BE5C"><span purpose="cmd">单击<span class="uicontrol">替换图层</span>。</span></li><li purpose="step" id="ESRI_STEP_1EBF6AE1FD5941429109E68A87049184"><span purpose="cmd">单击<span class="uicontrol">选择图层</span>。</span><div class="info" purpose="info"><p id="GUID-B6F63459-0910-4FA7-89E0-DAC4665963CA">在显示的面板中，您可以搜索、浏览、过滤和排序可用图层，以查找替换切片图层。您也可以通过单击<span class="uicontrol">查看详细信息</span>来查看各个图层的项目详细信息。</p></div></li><li purpose="step" id="ESRI_STEP_60C8E0A31B2143B3A45CB762E018F6CB"><span purpose="cmd">找到要使用的矢量切片图层后，单击<span class="uicontrol">选择</span>。</span><div class="info" purpose="info"><p id="GUID-E2B4438B-B343-4B33-93BA-C13E1E0B0256">如果您看到有关样式不兼容的警告消息，则意味着替换图层上的样式与当前图层上的样式不同。这种差异可能会破坏引用当前图层的任何其他样式。同样，如果替换图层的切片方案与当前图层的切片方案不同，同样会显示此消息。如果您不想使用此替换图层，单击<span class="uicontrol">更改图层</span>并选择不具有匹配样式的图层。可以继续将当前图层替换为具有不同样式的图层。</p></div></li><li purpose="step" id="ESRI_STEP_A1C5B6E135F34D2A8DBBC60D3595E60C"><span purpose="cmd">单击<span class="uicontrol">下一步</span>选择如何存档当前矢量切片。选择以下选项之一:</span><ul purpose="choices" id="ESRI_CHOICES_E88F8DF4ADD0497585758DB106EC9170"><li purpose="choice" id="ESRI_CHOICE_264592E421E14B8B860C783BD2B69D1F"><span class="uicontrol">存档当前图层</span> - 如果要在更新之前保留当前托管矢量切片图层内容的快照，请使用此选项。默认情况下，新图层的名称包含当前图层名称和追加的 <span class="usertext">_archive_&lt;current date_and_time&gt;</span>。要指定其他名称，请单击编辑按钮并输入新名称。</li><li purpose="choice" id="ESRI_CHOICE_16E041FC43C448B1ACC6B2CD1D2E2CB6"><span class="uicontrol">使用替换图层</span> - 如果您不需要新图层来存储存档内容，并且希望保留替换图层以供将来更新使用，请使用此选项。</li></ul></li><li purpose="step" id="ESRI_STEP_26AE51AC7DD34DC0ACDFFD86AE9B9AB3"><span purpose="cmd">如果要从替换图层导入更新的缩略图、摘要、描述和标签，向下滚动并启用<span class="uicontrol">替换项目信息</span>。</span></li><li purpose="step" id="ESRI_STEP_D489F3AE2A724DAB8DCABF04EA9A93F3"><span purpose="cmd">单击<span class="uicontrol">下一步</span>以预览与替换图层关联的样式。</span><div class="info" purpose="info"><p id="GUID-2EBEA0E2-22F4-4A0A-9DE9-92FA10F32026"><div class="panel trailer-1 note" id="GUID-DB195EDF-7889-4452-A71A-0FD8C9BE86F2"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-D2E0C448-A4F3-4CFF-B20D-C1A3F136AD0B">仅当在矢量切片样式编辑器中为当前图层<a class="xref xref" href="../../../../zh-CN/portal/latest/use/update-vector-tile-style.htm">创建了其他样式</a>后，用于预览样式的选项才可用。</p></div></p></div></li><li purpose="step" id="ESRI_STEP_E0E857149D2E4E1593BAE8B824C27093"><span purpose="cmd">使用替换图层中的内容对当前图层进行更新后，可以使用<span class="uicontrol">其他样式</span>下拉菜单来预览每种样式在当前图层中的外观。如果要继续操作，请单击<span class="uicontrol">下一步</span>。如果不需要，请单击<span class="uicontrol">取消</span>。</span></li><li purpose="step" id="ESRI_STEP_AAB140A6D41B4A3D85CEE0936A48C0C8"><span purpose="cmd">摘要页面显示您当前的托管矢量切片图层、将替换当前图层内容的图层以及您选择的存档选项。</span><ul purpose="choices" id="ESRI_CHOICES_2D9C69CE88274F59B54EAE90DD556ECC"><li purpose="choice" id="ESRI_CHOICE_516D4E1EBAA84513AB338F9327DB4992">如果替换图层不完全兼容，您可以单击<span class="uicontrol">选择替换图层</span>并选择一个新图层。</li><li purpose="choice" id="ESRI_CHOICE_E1E9383313514DD0BDADB0C2501DE4C9"> 如果要更改存档选项，单击<span class="uicontrol">选择存档选项</span>并更改您的设置。</li></ul></li><li purpose="step" id="ESRI_STEP_D7F208B0FAEA4135951923F8C367D4CD"><span purpose="cmd">当图层和存档选项满足您的要求后，单击<span class="uicontrol">替换</span>以执行替换操作。</span></li></ol></div></section><section class="section2 padded-anchor" id="ESRI_SECTION2_CE3BA12E4FCC419F9DD030B0B29E231E" purpose="section2"><h3>用于替换托管矢量切片图层的常见工作流</h3><p id="GUID-94D0BE1C-DF3F-4DA0-9955-5B9E419ED8FE">借助<span class="uicontrol">替换图层</span>选项，可以通过多种不同的方法来替换托管矢量切片图层的内容。由于术语“当前图层”和“替换图层”是相对的，因此它可能有助于您阅读一些用于替换托管矢量切片图层内容的示例工作流。</p><p id="GUID-2C805C00-AF6E-4660-B9DA-CD7EB40E8875"> 接下来的三个部分将介绍使用两个或多个托管矢量切片图层来维护托管矢量切片数据的工作流。这些工作流将使用示例图层来帮助您理解内容在每个工作流中的移动方式。在所有这些示例中，您拥有供人们在其地图和应用程序中使用的当前托管矢量切片图层，以及至少一个替换托管矢量切片图层。执行类似工作流时，您可能具有不同数量的替换图层或包含存档内容的图层。您或者访问当前托管矢量切片图层的其他人也可能具有针对图层定义的<a class="xref xref" href="../../../../zh-CN/portal/latest/use/update-vector-tile-style.htm">其他样式</a>。</p><section class="section3 padded-anchor" id="ESRI_SECTION3_7ED2C457C5A4405A9895956FAB64F612" purpose="section3"><h4>将当前内容存档到新图层中</h4><p id="GUID-406846D6-44D1-4516-B2D5-87E31AFAED1F">在此示例场景中，您拥有一个托管矢量切片图层，其中将存储服务区边界。这是人们在其地图中使用的生产图层。要更新该图层的内容，您需要发布另一个托管矢量切片图层，其中包含更新的服务区数据。该图层即为替换图层。</p><p id="GUID-64F385D6-299A-420E-8452-792704C7632F">您还希望每次进行更新时，保留生产托管矢量切片图层中的内容存档。由此，如果您发现替换内容存在问题，则可以将托管矢量切片图层的内容恢复为对其进行更新前的状态。为此，您需要选择将当前托管矢量切片图层的现有内容存档到新的托管矢量切片图层中。</p><p id="GUID-BF296870-6A72-4B7A-A6B2-CB2008BEDB8F">在以下示例中，您将更新当前托管矢量切片图层 <span class="usertext">ServiceAreas</span>，以反映对服务区和属性的更改。</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_CE5DF2A0AF134242B80F605031F15D50"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_FDD1AE1853A940498B88030BD968B077"><span purpose="cmd">发布包含更新数据的托管矢量切片图层。您将使用该图层来替换当前托管矢量切片图层中的内容。</span><div class="stepexample" purpose="stepexample"><p id="GUID-F5E6CFD3-E731-4B86-AC64-D867783F2132">例如，2019 年 9 月，您将多位新客户添加到了其中两个服务区，由此更改了这两个区域的边界。您需要更新源数据以反映区域中的更改，然后发布名为 <span class="usertext">ServiceAreasUpdateSept</span> 的托管矢量切片图层。由于边界区域已更改，因此您还需要为此图层配置新的缩略图。但是，可以将描述、摘要和标签设置为与当前图层相同，因为无需对其进行更改。</p></div></li><li purpose="step" id="ESRI_STEP_D4CDB2AD1B37462D8CADE9A4FFE0CB59"><span purpose="cmd">打开 <span class="usertext">ServiceAreas</span> 图层（当前图层）的项目页面，然后将其内容替换为 <span class="usertext">ServiceAreasUpdateSept</span>（替换图层）的内容。选择<span class="uicontrol">存档当前图层</span>选项以创建第三个托管矢量切片图层，用于存储生产托管矢量切片图层的旧内容。为该图层指定一个对您的组织有意义的名称。</span><div class="stepexample" purpose="stepexample"><p id="GUID-ECA482BB-9B16-4D92-BACD-76ABD7C1EAFD">例如，生产托管矢量切片图层的内容将反映截至 2019 年 8 月的选区数据。因此，您需要将新图层命名为 <span class="usertext">ServiceAreasAug2019_arch</span>，因为该图层为 2019 年 8 月存在的服务区边界的存档。</p></div></li><li purpose="step" id="ESRI_STEP_A062CB72C7654F8BBE18224DDC89F844"><span purpose="cmd">由于您已更新缩略图以反映对边界的更改，因此，请启用<span class="uicontrol">替换项目信息</span>以使用替换图层中的缩略图来更新当前托管矢量切片图层上的缩略图。</span></li><li purpose="step" id="ESRI_STEP_73350BCC17074C19B6982BD799DFA849"><span purpose="cmd">存档当前图层的内容时，将删除替换图层。因此，在此特定示例中首次替换当前托管矢量切片图层的内容后，您将拥有以下两个托管矢量切片图层： </span><div class="stepresult" purpose="stepresult"><p id="GUID-2B7F5803-6539-453A-8478-EA8AECBE53F4"><ul purpose="ul" id="UL_87A2A90713DA40BA9BD382D1C6E72A29"><li purpose="li" id="LI_28C160E3E3C144DFAFAF96375734BFEE"><span class="usertext">ServiceAreas</span> - 这是您的生产托管矢量切片图层，现在包含截至 2019 年 9 月 30 日的服务区更新。</li><li purpose="li" id="LI_05392FC9CAEF490B89BE964820A200F7"><span class="usertext">ServiceAreasAug2019_arch</span> - 该托管矢量切片图层包含截至 2019 年 8 月的服务区状态。</li></ul></p><p id="GUID-9A31EB4A-512C-4856-9768-B7D9E2168DA3">替换托管矢量切片图层 (<span class="usertext">ServiceAreasUpdateSept</span>) 已删除。</p></div></li><li purpose="step" id="ESRI_STEP_41F182CBAB69415297DC30AC6A9EB203"><span purpose="cmd">10 月，由于您的其中一位服务代表休长假，因此您雇用了一名临时工作人员，该人员将于 10 月 7 日开始工作。您需要更新该区域的服务代表属性信息，然后发布一个名为 <span class="usertext">ServiceAreasUpdateOct</span> 的替换图层。</span></li><li purpose="step" id="ESRI_STEP_F9A24C6507744EB89A00E61452BC83DB"><span purpose="cmd">您将使用 <span class="usertext">ServiceAreasUpdateOct</span> 图层的内容来替换 <span class="usertext">ServiceAreas</span> 图层的内容，然后创建一个名为 <span class="usertext">ServiceAreasOct62019_arch</span> 的图层来存储存档内容。</span><div class="stepresult" purpose="stepresult"><p id="GUID-1A7504CB-F928-4358-AD82-00F929E858D0">在此特定示例的上述过程结束时，您将具有以下三个托管矢量切片图层：</p><p id="GUID-C050DB74-F11A-41AC-8C3D-7EF16016A747"><ul purpose="ul" id="UL_CE2AF3CF066249D1B996A36FF664165E"><li purpose="li" id="LI_0F4EC900D09E40E289ABBF7F4D04AB08"><span class="usertext">ServiceAreas</span> - 这是您的生产托管矢量切片图层，现在包含截至 2019 年 10 月 7 日的服务区更新。</li><li purpose="li" id="LI_206872A0B7244A469B73A6F4B4CEEBF1"><span class="usertext">ServiceAreasOct62019_arch</span> - 该托管矢量切片图层包含截至 2019 年 10 月 6 日的服务区状态。</li><li purpose="li" id="LI_8616AB2315DA4EDFB4F43259306061E4"><span class="usertext">ServiceAreasAug2019_arch</span> - 该托管矢量切片图层包含截至 2019 年 8 月的服务区状态。</li></ul></p></div></li><li purpose="step" id="ESRI_STEP_E1DCAAB018CB4100A449F34D60FDCA0F"><span purpose="cmd">对于 10 月的其余时间，服务区没有任何更改。服务代表将于 11 月 4 日重返工作岗位。由于服务代表信息是 10 月 6 日至 11 月 4 日之间对该图层所做的唯一更改，因此可以使用 <span class="usertext">ServiceAreasOct62019_arch</span> 图层将生产图层恢复为其在服务代表休假之前的状态。如果将 <span class="usertext">ServiceAreas</span> 图层的内容替换为 <span class="usertext">ServiceAreasOct62019_arch</span>，则可以将 10 月 7 日至 11 月 3 日的图层状态存档在新图层 <span class="usertext">ServiceAreasOct7toNov32019_arch</span> 中。</span><div class="stepresult" purpose="stepresult"><p id="GUID-6A4F9ADE-7A3E-486A-A9AB-E2C817B794BC">现在，您具有以下三个托管矢量切片图层：</p><p id="GUID-4E43AC09-4A62-4E9B-AE08-CD6598034E3B"><ul purpose="ul" id="UL_E0B874E850B54ECE8B9A9E8E6C974E16"><li purpose="li" id="LI_FD7C8A1A0C7D4DBFA99ADD13696B8341"><span class="usertext">ServiceAreas</span> - 这是您的生产托管矢量切片图层，其中包含截至 2019 年 11 月 4 日的服务区更新。</li><li purpose="li" id="LI_147FA9807A774EE6AECA2913E0168AF6"><span class="usertext">ServiceAreasAug2019_arch</span> - 该托管矢量切片图层包含截至 2019 年 8 月的服务区状态。</li><li purpose="li" id="LI_BBD7D7DF79224EE58EC1A0C384DEBE48"><span class="usertext">ServiceAreasOct7toNov32019_arch</span> - 该托管矢量切片图层包含您雇用了临时工作人员时的服务区状态。</li></ul></p></div></li></ol></div></section><p id="GUID-F876BE1F-0DDE-4C0A-96A2-E0E771992427">您将继续创建将用于替换内容的图层，更新当前托管矢量切片图层，然后创建图层以根据服务区的需要对图层内容进行存档。可以根据需要保留存储存档内容的图层，然后使用其恢复为任何之前的更新。</p><p id="GUID-E33DE727-10FF-4B2D-9C6C-D6FC378C65FA">使用该工作流时，请牢记以下内容：<ul purpose="ul" id="UL_23954A797F314DE6A0A2DC5400A062F2"><li purpose="li" id="LI_7F4D9BDF569F47FFBAB9B853A3BACD84">要帮助组织存储存档内容的图层，请<a class="xref xref" href="../../../../zh-CN/portal/latest/use/item-details.htm#ESRI_SECTION2_1E6FEFF08C8C43B2B7497AA3E9FA5ADD">专门针对这些图层创建文件夹并将图层移至其中</a>。</li><li purpose="li" id="LI_F46E6BC1CF4B4A5BAAAA4CC3468980CF">由于您将创建用于存档较旧内容的图层，以备将来可能需要将生产托管矢量切片图层恢复为较旧状态，并且只有您或管理员能够使用这些图层来恢复数据，因此您可能无需共享这些图层。</li><li purpose="li" id="LI_34E0103AE8364C31809731B84A3CF847">随即删除替换图层。如果您针对替换图层创建了多个样式，则其将不再起作用。可以手动将其删除。</li></ul></p><p id="GUID-D587381F-DD76-4433-96B0-FA2EF287772D">如果您的工作流要求您保留替换图层以备将来使用（例如，如果您拥有要在替换图层上保留的样式，或者需要在地图和应用程序中使用替换图层以进行测试），请使用以下两个工作流之一：</p></section><section class="section3 padded-anchor" id="ESRI_SECTION3_425C622853C04F9A82F3426B8EC1CA83" purpose="section3"><h4>保留替换图层</h4><p id="GUID-CBED2C61-43A2-4BFB-AA43-A537EB678A50">可以保留替换图层以用于测试或其他用途。如果您需要保留替换图层，并且无需在每次更新前保留包含当前托管矢量切片图层状态快照的多个图层，则可以在当前图层和替换图层之间交换内容。一个为何保留替换图层的示例为：在将更改推送到当前图层之前，如果要使用其来测试更新。本部分概述了此质量控制工作流。</p><p id="GUID-F78F8E4D-81DE-455D-88E3-B8B86AE95394">要继续服务区示例，可能您决定不需要将内容存档在新图层中，而是希望拥有一个可用于质量控制测试的图层。可以使用替换图层进行此测试。可以打开包含替换图层的地图和应用程序，以确保样式仍然起作用、在正确的范围内显示正确数据，并且该图层在离线地图中仍可以正常运行（如果需要）。</p><p id="GUID-E8EBA132-6CDB-48D8-87EA-33DF0A7113FD">在此特定示例中，您将使用以下三个托管矢量切片图层，将保留其中两个图层并删除另一个图层： </p><p id="GUID-999BF5AA-D848-4239-AA4C-09FFD8608D17"><ul purpose="ul" id="UL_2DEB930167574CA1B3DFE885A401A7D1"><li purpose="li" id="LI_DD6407324EE54DF3AED3372D26EAB7F3"><span class="usertext">ServiceAreas</span> - 这是组织成员在其地图中使用的生产托管矢量切片图层。</li><li purpose="li" id="LI_9DE05478DB444725B73F32B2C1071324"><span class="usertext">ServiceAreasQC</span> - 您可以使用此图层来查看内容和样式，然后将更新推送到 <span class="usertext">ServiceAreas</span> 图层中。这是替换图层，但您不希望将其删除，因为您已经创建了引用该图层的 web 地图和应用程序作为测试图层更新的一部分。</li><li purpose="li" id="LI_26A0A7761D0F42A88A36D3E75FCEBFFC"><span class="usertext">ServiceAreaUpdates</span> - 每次更新源服务区数据时，都会发布一个包含数据更新的托管矢量切片图层。可以使用此图层来更新质量控制图层中的内容。将 <span class="usertext">ServiceAreasQC</span> 中的内容替换为 <span class="usertext">ServiceAreaUpdates</span> 中的内容后，需要删除 <span class="usertext">ServiceAreaUpdates</span>。</li></ul></p><p id="GUID-A434E20B-F392-473D-B441-5CB52DAF0D8F">此工作流的概要如下所示：</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_71842E44AC15473F9F28233A908BE502"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_14275E5589AB4D9A90FC7361CFB6B308"><span purpose="cmd">更新服务区源数据并发布 <span class="usertext">ServiceAreaUpdates</span> 托管矢量切片图层。</span><div class="stepexample" purpose="stepexample"><p id="GUID-AD7F76AA-761D-46F5-90E6-E9A92C972D0A">例如，由于新客户导致两个服务区的边界发生变化后，您需要更新源数据并发布 <span class="usertext">ServiceAreaUpdates</span> 托管矢量切片图层。</p></div></li><li purpose="step" id="ESRI_STEP_409D56917EB74FA0B4C6457695CE135E"><span purpose="cmd">打开 <span class="usertext">ServiceAreasQC</span> 的项目页面并将其内容替换为 <span class="usertext">ServiceAreasQC</span> 中的内容。在此步骤中，<span class="usertext">ServiceAreasQC</span> 将视为当前图层，而 <span class="usertext">ServiceAreaUpdates</span> 为替换图层。选择<span class="uicontrol">使用替换图层作为存档</span>选项。由此可将 <span class="usertext">ServiceAreaUpdates</span> 中的内容移至 <span class="usertext">ServiceAreasQC</span> 中，并将 <span class="usertext">ServiceAreasQC</span> 中的内容移至 <span class="usertext">ServiceAreaUpdates</span> 中。</span></li><li purpose="step" id="ESRI_STEP_00085B353351432C9C82858312F1C5B6"><span purpose="cmd">在针对此目的创建的地图和应用程序中，测试更新后的 <span class="usertext">ServiceAreasQC</span> 图层。确定更新不会引起任何问题后，请使用 <span class="usertext">ServiceAreasQC</span> 的内容更新 <span class="usertext">ServiceAreas</span> 图层的内容。再次选择<span class="uicontrol">使用替换图层作为存档</span>，以便不会删除 <span class="usertext">ServiceAreasQC</span> 图层。</span><div class="info" purpose="info"><p id="GUID-0C3CB7CB-0421-44E0-AC22-3611643C762D">在此步骤中，<span class="usertext">ServiceAreas</span> 将视为当前图层，而 <span class="usertext">ServiceAreasQC</span> 为替换图层。</p></div></li><li purpose="step" id="ESRI_STEP_F871D692864A4E4EA79B8E800FE77931"><span purpose="cmd">完成测试更新和更新生产图层中的内容过程后，可以从<span class="uicontrol">我的内容</span>中删除 <span class="usertext">ServiceAreaUpdates</span> 图层。</span></li></ol></div></section><p id="GUID-949007E8-8638-4273-B013-1F4497A3EBC0">每当服务区源数据发生更改时，请重复上述步骤。</p><p id="GUID-AF0EA8C0-C798-418A-BD64-8196C96AF56F">使用该工作流时，请牢记以下内容：<ul purpose="ul" id="UL_06F37BB7D1CA42459F9E70E9C65DF2D0"><li purpose="li" id="LI_FC0035F9061E4D3EB411523D11B60370">您无需创建单独的托管矢量切片图层来存储存档数据。但是，用于测试的替换图层（此示例中的 <span class="usertext">ServiceAreasQC</span>）包含处于更新前状态的当前图层的内容。这意味着您可以根据需要，使用此测试图层将旧内容恢复到当前图层。</li><li purpose="li" id="LI_9C99560C53894FE1ADA2081FE677B72B">如果您需要其他人在替换当前图层内容之前测试更新，则需要与包含这些成员的群组共享替换图层。</li></ul></p></section><section class="section3 padded-anchor" id="ESRI_SECTION3_E0723FEBDC1A434EA784EFDF92119C1A" purpose="section3"><h4>保留替换图层并将内容存档到新图层</h4><p id="GUID-E0732676-2ED1-4D65-BA87-EC330A713E13">如果您希望获得质量控制图层和归档内容图层，则应如何操作？ 可以结合使用上述两个工作流来更新当前图层的内容、保留替换图层并创建图层来存档更改。</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_F2B73BA8E86C4172B0A1C49B3DF50155"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_74B3D98FE48749FDA9740907DDAE55B4"><span purpose="cmd">完成<a class="xref xref" href="../../../../zh-CN/portal/latest/use/manage-hosted-tile-layers.htm#ESRI_SECTION3_425C622853C04F9A82F3426B8EC1CA83">上一部分</a>中的步骤 1 到 3。首次完成此示例的上述步骤后，您将具有以下三个托管矢量切片图层：</span><div class="stepresult" purpose="stepresult"><p id="GUID-DBE88DDC-F36E-4BC9-BD83-87F2118A71E5"><ul purpose="ul" id="UL_4CD798C237B047E2BA5E729F083F60FF"><li purpose="li" id="LI_AB47041719F94B8E99BC52D5FE2D061F"><span class="usertext">ServiceAreas</span> - 该图层包含最新更新。</li><li purpose="li" id="LI_8B1C7793923B4AD48831879981925B5C"><span class="usertext">ServiceAreasQC</span> - 该图层包含来自更新前的 <span class="usertext">ServiceAreas</span> 图层的内容。因此，它暂时为较旧的 <span class="usertext">ServiceAreas</span> 内容的存档。</li><li purpose="li" id="LI_83DA60B96AC14A56BBC5DA4E11C138D6"><span class="usertext">ServiceAreaUpdates</span> - 该图层包含在替换 <span class="usertext">ServiceAreasQC</span> 内容之前的 ServiceAreasQC 的内容。</li></ul></p></div></li><li purpose="step" id="ESRI_STEP_D4274EEB68304385B2BBD294CF6384E7"><span purpose="cmd">接下来，使用 <span class="usertext">ServiceAreaUpdates</span> 图层再次替换 <span class="usertext">ServiceAreasQC</span> 的内容。在本例中，<span class="usertext">ServiceAreasQC</span> 为当前图层，<span class="usertext">ServiceAreaUpdates</span> 为替换图层。但是，这次请选择<span class="uicontrol">存档当前图层</span>选项来创建托管矢量切片图层以存档 <span class="usertext">ServiceAreasQC</span> 的内容。该过程将生成以下结果：</span><div class="stepresult" purpose="stepresult"><p id="GUID-DACA3D6F-FADE-48B6-B74B-A3FBE41C2D90"><ul purpose="ul" id="UL_6E3418219A654F1695496C5002F6F340"><li purpose="li" id="LI_8470164FBD374DDF8AA600E9F3BF03DB">用作较旧 <span class="usertext">ServiceAreas</span> 内容存档的托管矢量切片图层 - 由于 <span class="usertext">ServiceAreasQC</span> 包含了存档的 <span class="usertext">ServiceAreas</span> 内容，因此您现在已将该内容移至单独的托管矢量切片图层中。确保正确命名该图层以反映其内容。</li><li purpose="li" id="LI_CB87FD92DE494EDF8EB13DA27FFDD764"><span class="usertext">ServiceAreasQC</span> 图层将恢复为使用 <span class="usertext">ServiceAreaUpdates</span> 图层的更新内容对其进行替换之前的状态。</li><li purpose="li" id="LI_F019A45E86A444529CFC7DB187D97846">随即删除 <span class="usertext">ServiceAreaUpdates</span> 图层。</li></ul></p></div></li></ol></div></section><p id="GUID-A3898019-3736-4261-AB4F-A7BF058A1416">例如，如果您将此工作流与自 2019 年 9 月起的服务区边界更新配合使用，则 <span class="usertext">ServiceAreas</span> 将包含 2019 年 9 月的更新。存储最后一批存档服务区内容的图层将包含自 2019 年 8 月起的服务区，因此您可能已将此图层命名为 <span class="usertext"> ServiceAreasAug2019_arch </span> 并将其移至存档文件夹中。<span class="usertext">ServiceAreasQC</span> 还包含 2019 年 8 月的内容。</p><p id="GUID-79BB4F13-C5E8-4EFF-97B5-1A8FEF8E132E">当您再次完成此工作流以将 10 月 7 日的编辑内容从源服务区数据传播到 <span class="usertext">ServiceAreas</span> 图层后，您将拥有包含 10 月 7 日内容的 <span class="usertext">ServiceAreas</span> 图层、反映服务区之前状态的归档数据图层 (<span class="usertext">ServiceAreasOct62019_arch</span>)，以及包含自 2019 年 8 月起开始存档的内容的图层 (<span class="usertext">ServiceAreasAug2019_arch</span>)。<span class="usertext">ServiceAreasQC</span> 仍包含 8 月的内容。</p><p id="GUID-C6D01716-7843-45FD-BD14-934BB7B1F568">当服务区代表于 11 月 4 日重返工作岗位后，可以使用 <span class="usertext">ServiceAreasOct62019_arch</span> 图层将生产图层恢复为服务代表休假之前的状态。在<a class="xref xref" href="../../../../zh-CN/portal/latest/use/manage-hosted-tile-layers.htm#ESRI_STEPS_F2B73BA8E86C4172B0A1C49B3DF50155">本部分列出的步骤中</a>，可以使用 <span class="usertext">ServiceAreasOct62019_arch</span> 图层替换 <span class="usertext">ServiceAreaUpdates</span> 图层。</p><p id="GUID-EC189087-4F43-425D-8FB4-38A5936EA120">使用该工作流时，请牢记以下内容：<ul purpose="ul" id="UL_E5AB8B5854E949C29002B64401E0DF64"><li purpose="li" id="LI_AF6BC4EF539B4EA09A044EBC4E8014B5">如同使用第一个工作流一样，您可以<a class="xref xref" href="../../../../zh-CN/portal/latest/use/item-details.htm#ESRI_SECTION2_1E6FEFF08C8C43B2B7497AA3E9FA5ADD">创建文件夹并将存储存档内容的图层移至其中</a>以帮助组织这些图层。</li><li purpose="li" id="LI_2DCDE5E0B47A427B946CFCE320171562">由于将在单独图层中存档内容以备将来可能需要将生产托管矢量切片图层恢复为较旧状态，并且只有您或管理员能够使用这些图层来恢复数据，因此您可能无需共享这些图层。</li><li purpose="li" id="LI_314B2F0C4707441082229FA5BAE87D25"><span class="usertext">ServiceAreasQC</span> 替换图层将保留在<span class="uicontrol">我的内容</span>中，以便更加轻松地复制质量控制测试。因此，该图层的内容仅在此测试工作流背景中相关。您可能共享此图层的唯一原因为：在使用内容来更新生产图层之前，需要其他人员来测试更新。</li></ul></p></section></section><section class="section2 padded-anchor" id="ESRI_SECTION2_9A5C36E6BEEF41798059A3C65FA67B12" purpose="section2"><h3>将对当前图层产生不利影响的替换图层更改</h3><p id="GUID-11CD2479-0B00-4988-9CE9-4B9D43AF0E1A">替换图层中的以下更改可能导致替换的托管矢量切片图层出现异常行为，尤其是当您针对图层<a class="xref xref" href="../../../../zh-CN/portal/latest/use/update-vector-tile-style.htm">创作其他样式</a>时更是如此：<ul purpose="ul" id="UL_A5347259041643B596303DA2171DA9E6"><li purpose="li" id="LI_F1C4BAA75EF146EC8C0D3E4652347252">在发布替换托管矢量切片图层或包之前从 <span class="ph">ArcGIS Pro</span> 中的地图中移除图层。</li><li purpose="li" id="LI_E1FDFF18FF554DDBAD03C471EE0F5E01">在发布替换托管矢量切片图层或包之前向 <span class="ph">ArcGIS Pro</span> 中的地图中添加图层。</li><li purpose="li" id="LI_62636114EB2B4EAEAF641912A2F2F2CD">在发布替换托管矢量切片图层或包之前对 <span class="ph">ArcGIS Pro</span> 中的地图的一个或多个图层进行重命名。</li><li purpose="li" id="LI_3C50B85EE1F14C9EA651E5C518FB0C03">在发布替换托管矢量切片图层或包之前更改 <span class="ph">ArcGIS Pro</span> 中的地图中图层的符号系统。</li><li purpose="li" id="LI_11C90B869CF8412899394DB54E6C79BD">如果已启用当前托管矢量切片图层以供离线使用，请确保同样启用替换图层以供离线使用。如果替换图层未启用离线模式，则替换其内容后，将不再启用当前图层以供离线使用。</li></ul></p><p id="GUID-F9FCF6C2-0588-4E9A-A036-231FDA29CE78">如果您在替换图层中进行了以上列出的任何更改，则在完成使用替换图层完成当前图层的过程之前，必须预览样式以确认您对更改感到满意。 </p><p id="GUID-3B540639-C663-475D-A990-268DD89A1E21">行为可能会有所不同，具体取决于确切更改。例如，当您添加图层时，其他样式将继续显示在替换之前定义的图层，但是，除非样式所有者重新创建样式，否则其可能不会显示添加的图层。</p></section></section>
+			
+				<hr>
+				<!--googleoff: all-->
+				
+	
+        
+		    <p class="feedback right">
+		        <a id="afb" class="icon-ui-contact" href="/feedback/" data-langlabel="feedback-on-this-topic" >有关此主题的反馈?</a>
+		    </p>
+        
+	
+
+				<!--googleon: all-->
+			
+		</main>
+	</div>
+	
+	<!--googleoff: all-->
+	
+		
+			<div id="main-toc-large" class="column-5">
+			    <div class="panel font-size--2 tablet-hide trailer-1">
+			      <h5 class="trailer-half">在本主题中</h5>
+			      <ol class="list-plain pre-0 trailer-0"><li><a href="#ESRI_SECTION1_EC1624E2D04A45F2AB48F871D6C2E6C1">管理托管栅格切片图层设置</a></li><li><a href="#ESRI_SECTION1_0561B66EE826482297DDE002A94048B0">管理托管矢量切片图层设置</a></li><li><a href="#ESRI_SECTION1_CF8695C829AD41379E66E8D59AF6AF8E">替换托管矢量切片图层</a></li></ol>
+			    </div>
+			    
+			    
+	  		</div>
+		
+    
+   <!--googleon: all-->
+
+
+
+
+          
+        </div>
+        <!-- ENDPAGECONTENT -->
+
+      </div>
+
+    </div>  <!-- End of wrapper -->
+
+  <footer class="footer leader-3 link-dark-gray" role="contentinfo">
+    <div class="grid-container">
+      <div class="row">
+        <nav class="column-6">
+          <h6 data-langlabel="arcgis-for-server">Arc<span>GIS Enterprise</span></h6>
+          <ul class="list-plain">
+            <li><a data-langlabel="home" href="../../../../zh-CN/">主页</a></li>
+            <li><a data-langlabel="portal" href="../../../../zh-CN/portal/">Portal</a></li>
+            <li><a data-langlabel="server" href="../../../../zh-CN/server/">Server</a></li>
+            <li><a data-langlabel="data-store" href="../../../../zh-CN/data-store/">Data Stores</a></li>
+            <li><a data-langlabel="cloud" href="../../../../zh-CN/cloud/">云</a></li>
+            <li><a data-langlabel="apps" href="../../../../zh-CN/apps/">应用程序</a></li>
+            <li><a data-langlabel="documentation" href="../../../../zh-CN/documentation/">文档</a></li>
+          </ul>
+        </nav>
+
+        
+  <nav class="column-6">
+    <h6 data-langlabel="arcgis-platform">ArcGIS 平台</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="arcgis" href="//www.arcgis.com/">ArcGIS Online</a></li>
+      <li><a data-langlabel="arcgis-for-professionals" href="//pro.arcgis.com/">ArcGIS Pro</a></li>
+      <li><a data-langlabel="arcgis-for-server" href="//enterprise.arcgis.com/">ArcGIS Enterprise</a></li>
+      <li><a data-langlabel="arcgis-for-developers" href="https://developers.arcgis.com/">ArcGIS for Developers</a></li>
+      <li><a data-langlabel="arcgis-solutions" href="//solutions.arcgis.com/">ArcGIS Solutions</a></li>
+      <li><a data-langlabel="arcgis-marketplace" href="//marketplace.arcgis.com/">ArcGIS Marketplace</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <h6 data-langlabel="about-esri">关于 Esri</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="about-us" href="//www.esri.com/about-esri/">关于我们</a></li>
+      <li><a data-langlabel="careers" href="//www.esri.com/careers/">招贤纳士</a></li>
+      <li><a data-langlabel="insiders-blog" href="https://www.esri.com/about/newsroom/blog/">Esri 博客</a></li>
+      <li><a data-langlabel="user-conference" href="//www.esri.com/events/user-conference/index.html">用户大会</a></li>
+      <li><a data-langlabel="developer-summit" href="//www.esri.com/events/devsummit/index.html">开发者峰会</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <a class="esri-logo" href="//www.esri.com/" aria-label="Esri Home"></a>
+    <section class="footer-social-nav leader-1">
+            <a class="icon-social-twitter" aria-label="Esri on Twitter" href="https://twitter.com/Esri/"></a>
+            <a class="icon-social-facebook" aria-label="Esri on Facebook" href="https://www.facebook.com/esrigis/"></a>
+            <a class="icon-social-github" aria-label="Esri on GitHub" href="//esri.github.io/"></a>
+            <a class="icon-social-contact" aria-label="Contact Esri" href="//www.esri.com/about-esri/contact/"></a>
+    </section>
+	  
+  </nav>
+  
+  <div class="column-24 leader-1">
+    <p class="font-size--3"><a href="http://www.esri.com/legal/copyright-trademarks">Copyright &copy; 2019 Esri.</a> All rights reserved. | <a href="http://www.esri.com/legal/privacy/">隐私政策</a> | <a href="http://www.esri.com/legal/software-license">法律声明</a></p>
+  </div>
+  
+
+
+      </div>
+    </div>
+  </footer>
+  <!--googleoff: all-->
+
+  
+  
+	<script src="../../../../zh-CN/assets/js/init.js" type="text/javascript"></script>
+	<!--<script src="../../../../zh-CN/assets/js/drop-down.js" type="text/javascript"></script>-->
+	<script src="../../../../zh-CN/assets/js/search/searchform.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/cdn/js/link-modifier.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/cdn/js/sitewide.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/cdn/js/libs/highlight.pack.js" type="text/javascript"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+
+
+  
+    
+
+  <script src="../../../../zh-CN/cdn/js/affix.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    $(function () {
+          var appendFlg = true;
+
+          $("#bigmac")
+          .on("affixed.bs.affix", function (evt) {
+            if (appendFlg) {
+              $("<a class='crumb' href='#'>管理托管切片图层</a>").insertAfter ($("#bigmac nav a").last());
+              appendFlg = false;
+            }
+          })
+          .on ("affix-top.bs.affix", function(evt) {
+            if (!appendFlg) {
+              $("#bigmac nav a").last().remove();
+            }
+            appendFlg = true;
+          })
+    })
+  </script>
+  
+        <script type="text/javascript">
+          window.doctoc = {
+            pubID: "583",
+            tpcID: "566",
+            
+              prefix: "使用",
+              prefixUrl: "/zh-cn/portal/latest/use/",
+          
+            hideToc: false
+          }
+        </script>
+
+        <script type="text/javascript" src="../../../../zh-CN/portal/latest/use/583.js" ></script>
+        <script type="text/javascript" src="../../../../zh-CN/cdn/calcite/js/protoc.js" ></script>
+        
+        
+
+  <noscript>
+        <p>
+            <a href="flisting.htm">flist</a>
+        </p>
+    </noscript>
+    <script type="text/javascript"></script>
+  
+  
+    
+    
+
+  </body>
+</html>

@@ -1,0 +1,570 @@
+
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>  <html class="ie lt-ie9 lt-ie8 lt-ie7 ie6" dir="ltr"> <![endif]-->
+<!--[if IE 7]>     <html class="ie lt-ie9 lt-ie8 ie7" dir="ltr"> <![endif]-->
+<!--[if IE 8]>     <html class="ie lt-ie9 ie8" dir="ltr"> <![endif]-->
+<!--[if IE 9]>     <html class="ie ie9" dir="ltr"> <![endif]-->
+<!--[if !IE]><!--> <html dir="ltr" lang="zh-CN"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>创建和管理 webhook&mdash;Portal for ArcGIS 
+  (10.8) | ArcGIS Enterprise 文档</title>
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+    <script>
+      var docConfig = {
+        locale: 'zh-CN'
+        ,localedir: 'zh-cn'
+        ,langSelector: ''
+        
+        ,relativeUrl: false
+        
+
+        ,searchformUrl: '/search/'
+        ,tertiaryNavIndex: ''
+
+        
+      };
+    </script>
+	 
+
+
+    
+    <!--[if lt IE 9]>
+      <script src="../../../../../zh-CN/cdn/js/libs/html5shiv.js" type="text/javascript"></script>
+      <script src="../../../../../zh-CN/cdn/js/libs/selectivizr-min.js" type="text/javascript"></script>
+      <script src="../../../../../zh-CN/cdn/js/libs/json2.js" type="text/javascript"></script>
+      <script src="../../../../../zh-CN/cdn/js/libs/html5shiv-printshiv.js" type="text/javascript" >
+
+    <![endif]-->
+
+     <!--[if lt IE 11]>
+    <script>
+      $$(document).ready(function(){
+        $$(".hideOnIE").hide();
+      });
+    </script>
+    <![endif]-->
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<link href="../../../../../zh-CN/assets/img/favicon.ico" rel="shortcut icon" >
+	<link href="../../../../../zh-CN/assets/css/screen.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/cdn/calcite/css/documentation.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/assets/css/print.css" media="print" type="text/css" rel="stylesheet" />
+
+	<!--
+	<link href="../../../../../zh-CN/assets/css/screen_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/assets/css/documentation/base_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/assets/css/print_l10n.css" media="print" type="text/css" rel="stylesheet" />
+	-->
+	
+	
+		<script src="../../../../../zh-CN/cdn/js/libs/jquery.1.9.1.min.js" type="text/javascript"></script>
+	
+	<script src="../../../../../zh-CN/cdn/js/libs/jquery.cookie.js" type="text/javascript"></script>
+	<link href="../../../../../zh-CN/cdn/css/colorbox.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/cdn/css/colorbox_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<script src="../../../../../zh-CN/cdn/js/libs/jquery.colorbox-min.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/assets/js/video-init.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/assets/js/sitecfg.js" type="text/javascript"></script>
+	
+		<script src="../../../../../zh-CN/assets/js/signIn.js" type="text/javascript"></script>
+	
+
+	<!--- Language Picker -->
+	<script src="../../../../../zh-CN/assets/js/locale/l10NStrings.js" type="text/javascript"></script>
+	
+		 
+	
+
+	<script src="../../../../../zh-CN/assets/js/calcite-web.js" type="text/javascript"></script>
+
+
+
+  <!--- search MD -->
+    <META name="description" content="组织可利用 Webhook 监控对门户项目、群组和用户的更改。"><META name="last-modified" content="2019-12-6"><META name="product" content="arcgis-portal-windows,arcgis-enterprise-windows"><META name="sub_category" content="Portal for ArcGIS (Windows)"><META name="search-collection" content="help"><META name="content_type_label" content="帮助主题"><META name="sub_category_label" content="Portal for ArcGIS (Windows)"><META name="search-category" content="help-general"><META name="subject_label" content="PORTAL,服务,SERVER"><META name="version" content="10.8"><META name="content_type" content="Help Topic"><META name="subject" content="PORTAL,SERVICES,SERVER"><META name="content-language" content="zh-cn">
+    <!--- search MD -->
+
+  
+  <script src="../../../../../zh-CN/assets/js/switchers/portal-1.js" type="text/javascript"></script>
+  
+      
+
+</head>
+
+<!--
+      pub: GUID-86E3206A-3CAD-43C1-9F16-FFB7CA3AEC71=33
+      tpc: GUID-4D4483BF-B3AD-4F8B-9EA4-51FEA88CFA0A=3
+      -->
+
+
+<!-- variable declaration, if any -->
+<!-- can change following macro to set variable once we are on Jinja 2.8 -->
+
+
+
+
+
+<body class="claro zh-CN server">
+  
+
+  <!-- Drawer location -->
+  <div class="drawer drawer-left js-drawer" data-drawer="top-nav">
+        <nav class="drawer-nav" role="navigation">
+          <aside class="side-nav">
+            <h2 class="side-nav-title">Arc<span>GIS</span> Enterprise</h2>
+            <form id="helpSearchForm" class="margin-left-half margin-right-half leader-half trailer-half drawer-search-form" method="GET">
+              <input type="search" name="q"  placeholder="搜索 ArcGIS Enterprise 帮助">
+              <input type="hidden" name="collection" value="help" />
+              <input type="hidden" name="product" value="arcgis-portal-windows" />
+              <input type="hidden" name="version" value="10.8" />
+              <input type="hidden" name="language" value="zh-CN" />
+            </form>    
+             <a id="nav-portal" data-langlabel="portal" href="../../../../../zh-CN/portal/" class="side-nav-link">Portal</a>
+             
+            <a id="all-servers" data-langlabel="all-servers" href="../../../../../zh-CN/server/" class="side-nav-link">所有服务器</a>
+            <a id="gis-server" data-langlabel="gis-server" href="../../../../../zh-CN/server/" class="side-nav-link">GIS Server</a>
+            <a id="image-server" data-langlabel="image-server" href="../../../../../zh-CN/image/" class="side-nav-link">Image Server</a>
+            <a id="geo-analytics-server" data-langlabel="geo-analytics-server" href="../../../../../zh-CN/geoanalytics/" class="side-nav-link">GeoAnalytics Server</a>
+            <a id="geoevent-server" data-langlabel="geoevent-server" href="../../../../../zh-CN/geoevent/" class="side-nav-link">GeoEvent Server</a>
+            <a id="notebook-server" data-langlabel="notebook-server" href="../../../../../zh-CN/notebook/" class="side-nav-link">Notebook Server</a>
+            <a id="nav-data-store" data-langlabel="data-store" href="../../../../../zh-CN/data-store/" class="side-nav-link">Data Stores</a>
+            <a id="nav-cloud" data-langlabel="cloud" href="../../../../../zh-CN/cloud/" class="side-nav-link">云</a>
+            <a id="nav-apps" data-langlabel="apps" href="../../../../../zh-CN/apps/" class="side-nav-link">应用程序</a>
+            <a id="nav-doc" data-langlabel="documentation" href="../../../../../zh-CN/documentation/" class="side-nav-link">文档</a>
+
+          </aside>
+        </nav>
+    </div>
+
+    <!-- user navigation collapses to drawer on mobile -->
+    
+    <div class="drawer drawer-right js-drawer hide-if-logged-out logged-in-navigation" data-drawer="user-nav">
+      <nav class="drawer-nav">
+        <aside class="side-nav">
+          <a class="side-nav-link agolProfile" href="#">我的个人资料</a>
+          <a class="side-nav-link icon-ui-sign-out js-log-out" href="#">登出</a>
+        </aside>
+      </nav>
+    </div>
+    
+<!-- End of drawer -->
+
+  
+  <div class="wrapper">
+      <!--googleoff: all-->
+
+      <header class="top-nav" data-skin="learn">
+        <a class="skip-to-content" href="#skip-to-content">Skip To Content</a>
+        <div class="grid-container">
+          <div class="column-24">
+
+
+            <!--<div class="top-nav-title-wrapper text-center ">-->
+              <a href='../../../../../zh-CN/' class="top-nav-title tablet-hide"><span>Arc</span>GIS  Enterprise</a>
+              <a href='../../../../../zh-CN/' class="icon-ui-menu top-nav-title js-drawer-toggle tablet-show" data-drawer="top-nav"><span>Arc</span>GIS Enterprise</a>
+            <!--</div> -->
+
+          
+            <nav role="navigation" class="top-nav-list left tablet-hide">
+              <a id="nav-portal" data-langlabel="portal" href="../../../../../zh-CN/portal/" class="top-nav-link">Portal</a>
+
+                <div class="dropdown js-dropdown ">
+                  <a class="top-nav-link js-dropdown-toggle" tabindex="0" aria-haspopup="true" aria-expanded="false" href="#">Servers</a>
+                  <nav class="dropdown-menu featured" role="menu">
+                    <ul class="dropdown-sublist-featured">
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/get-started/latest/windows/additional-server-deployment.htm" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path  d="M42.92 6.1H4.12v8.566l.833.832-.835.833-.018 7.332.845.847-.825.824V33.9h25v5.2h-2v1.075H8.02v.8h19.1v.925h4.8v-.925H40v-.8h-8.08V39.1h-2v-5.2h13v-8.566l-.834-.834.835-.834v-7.332l-.835-.834.835-.834zm-11.8 35h-3.2v-1.2h3.2zm11-8H4.92v-7.434l.767-.766h35.668l.765.766zm0-9.766l-.766.766H5.666l-.766-.767.017-6.669.766-.764h35.671l.766.766zm0-9l-.766.766H5.687l-.766-.766V6.9h37.2zM19 11.9h-2v-.8h2zm-4 0h-2v-.8h2zm-4 0H9v-.8h2zm6 8.2h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9zm8 9h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9z"/></svg></span>
+                          <span class="sublink-text">所有服务器</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/server/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M45.98 33.575a.616.616 0 0 0-.335-.51l-3.362-2.03 3.362-2.031a.556.556 0 0 0 0-1.02l-11.1-6.704a1.293 1.293 0 0 0-1.112 0L22.33 27.982a.556.556 0 0 0 0 1.02l3.36 2.03-3.358 2.03a.556.556 0 0 0-.002 1.021l3.322 2.006-3.324 2.008a.555.555 0 0 0 .002 1.017l11.102 6.703a1.25 1.25 0 0 0 1.11.002l11.104-6.706a.556.556 0 0 0 0-1.02l-3.32-2.006 3.318-2.004a.607.607 0 0 0 .335-.509zM33.837 21.97c.026-.01.286-.005.29-.005l10.814 6.53-10.8 6.523c-.028.01-.284.005-.294.006l-10.813-6.53zm11.105 16.636l-10.8 6.523a2.564 2.564 0 0 1-.295.006l-10.81-6.529 3.39-2.047 7.004 4.23a1.083 1.083 0 0 0 .557.131 1.101 1.101 0 0 0 .554-.13l7.01-4.233zM34.14 40.098a2.545 2.545 0 0 1-.294.006l-10.812-6.53 3.43-2.073 6.97 4.208a1.25 1.25 0 0 0 1.107-.001l6.966-4.206 3.431 2.073zM9 8H7V7h2zm8 8h-2v-1h2zm-4-8h-2V7h2zm4 0h-2V7h2zm-4 8h-2v-1h2zm7.316 11.1H3.9v-6.434l.766-.766h35.668l.766.766v2.12l.8.483v-2.935l-.826-.826.826-.845v-6.329l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9h16.88a2.632 2.632 0 0 1 .336-.8zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zm0 8v-5.668l.766-.766h35.668l.766.766v5.67l-.746.764H4.666zM15 24v-1h2v1zm-4 0v-1h2v1zm-2-8H7v-1h2zm-2 8v-1h2v1z"/></svg></span>
+                          <span class="sublink-text">GIS Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/image/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 8h-2V7h2zm-4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm8 8h-2v1h2zm-8 0H7v1h2zm4 9v-1h-2v1zm-4 0v-1H7v1zm8 0v-1h-2v1zm4 3.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V21h-.8v-.334l-.766-.766H4.666l-.766.766V27.1H21zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zm40.234 4v21.8H23.1V23.1zm-.8 16.366L39.466 44.1h2.868l1.766-1.766zm-20.2-9.932l5.634-5.634h-2.868L23.9 26.666zm6.2-5.068L24.466 30.1h2.868l2.766-2.766zM28.466 30.1H30.1v-1.634zm2.434 0h6.2v-6.2h-6.2zm-7 7h6.2v-6.2h-6.2zm7 0h6.2v-6.2h-6.2zm0 6.434l5.634-5.634h-2.868L30.9 40.666zm7-7l5.634-5.634h-2.868L37.9 33.666zm1.634-5.634H37.9v1.634zm-8.634 7v1.634l1.634-1.634zm.566 6.2h2.868l2.766-2.766v-2.868zm6.434-3.566l2.634-2.634H37.9zM35.466 44.1H37.1v-1.634zm2.434 0h.434l5.766-5.766V37.9h-2.434L37.9 41.666zm6.2-8.634L42.466 37.1H44.1zm0-4L38.466 37.1h2.868l2.766-2.766zm0-7.566h-6.2v6.2h6.2zm-20.2 0v1.634l1.634-1.634zm0 20.2h6.2v-6.2h-6.2zm20.2 0v-.634l-.634.634z"/></svg></span>
+                          <span class="sublink-text">Image Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/geoanalytics/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 16h-2v-1h2zm-8 8v-1H7v1zm8 0v-1h-2v1zM13 7h-2v1h2zm4 0h-2v1h2zM9 7H7v1h2zm21.45 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V27.9h-1.464l-.801-.8H41.1v-6.434l-.766-.766H4.666l-.766.766V27.1h27.15zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM13 24v-1h-2v1zm0-9h-2v1h2zm-4 0H7v1h2zm26.672 27.148A1.87 1.87 0 0 1 35.9 43a1.91 1.91 0 1 1-3.763-.222l-9.845-3.414A1.88 1.88 0 0 1 21 39.9a1.9 1.9 0 1 1 1.474-3.084l4.692-2.346A1.878 1.878 0 0 1 27.1 34a1.902 1.902 0 0 1 1.9-1.9 1.867 1.867 0 0 1 .781.191l3.788-5.05A1.88 1.88 0 0 1 33.1 26a1.9 1.9 0 1 1 3.491 1.026l4.889 4.888c-.069.056-.144.1-.21.162a3.986 3.986 0 0 0-.358.402l-4.883-4.883A1.889 1.889 0 0 1 35 27.9a1.867 1.867 0 0 1-.781-.191l-3.788 5.049a1.868 1.868 0 0 1 .437.965l9.204.614c-.018.11-.049.218-.058.33A3.93 3.93 0 0 0 40 35c0 .046.01.09.01.135l-9.185-.612A1.913 1.913 0 0 1 29 35.9a1.889 1.889 0 0 1-1.474-.716l-4.692 2.346a1.878 1.878 0 0 1 .066.47 1.9 1.9 0 0 1-.105.625c-.007.02-.022.036-.03.056l9.63 3.34a1.87 1.87 0 0 1 2.786-.505l5.415-4.437c.067.108.127.22.204.322a3.9 3.9 0 0 0 .292.306zM33.9 26a1.092 1.092 0 0 0 .43.872 1.12 1.12 0 0 0 1.42-.068A1.1 1.1 0 1 0 33.9 26zm-6 8a1.1 1.1 0 0 0 2.196.093 1.135 1.135 0 0 0-.426-.965A1.087 1.087 0 0 0 29 32.9a1.101 1.101 0 0 0-1.1 1.1zm-5.8 4a1.098 1.098 0 1 0-.06.362A1.101 1.101 0 0 0 22.1 38zm13 5a1.1 1.1 0 1 0-2.2 0 1.1 1.1 0 0 0 2.2 0zm10.8-8a1.9 1.9 0 1 1-3.8 0c0-.053.003-.105.007-.158A1.9 1.9 0 0 1 45.9 35zm-.8 0a1.1 1.1 0 0 0-2.196-.093 1.153 1.153 0 0 0 .216.752A1.1 1.1 0 0 0 45.1 35z"/></svg></span>
+                          <span class="sublink-text">GeoAnalytics Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/geoevent/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M13 8h-2V7h2zm4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm12.418 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826v2.117c-.259-.177-.53-.337-.8-.497v-1.288l-.766-.766H4.666l-.766.766V27.1h17.933c-.148.26-.283.53-.415.8zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM9 24v-1H7v1zm4-9h-2v1h2zm0 9v-1h-2v1zm-4-9H7v1h2zm8 9v-1h-2v1zm16.9 2h-.8v8.9H39v-.8h-5.1zm.1-3.901a11.9 11.9 0 1 0 11.9 11.9 11.914 11.914 0 0 0-11.9-11.9zm0 23a11.1 11.1 0 1 1 11.1-11.1 11.112 11.112 0 0 1-11.1 11.1z"/></svg></span>
+                          <span class="sublink-text">GeoEvent Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/notebook/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M22 27.1H3.9v-6.434l.766-.766h18.576a5.262 5.262 0 0 1 .83-.8H4.666l-.766-.766v-5.668l.766-.766h35.668l.766.766V18h.8v-5.666l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9H22zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zM9 8H7V7h2zm8 0h-2V7h2zm-4 0h-2V7h2zm2 16v-1h2v1zm-4 0v-1h2v1zm-4 0v-1h2v1zm0-8v-1h2v1zm8 0v-1h2v1zm-4 0v-1h2v1zm18.9 8.1h-1.8v1.8h1.8zm-.8 1h-.2v-.2h.2zm15.498-4.48a2.727 2.727 0 0 0-1.62-.5v-.02H27.25a3.154 3.154 0 0 0-3.15 3.15V38.1h-1.68a3.386 3.386 0 0 0-2.872 1.58 3.49 3.49 0 0 0-.157 3.419 3.241 3.241 0 0 0 2.954 1.801h15.161a3.404 3.404 0 0 0 3.394-3.4V26.9h5v-3.65a3.224 3.224 0 0 0-1.302-2.63zM22.345 44.1a2.44 2.44 0 0 1-2.23-1.341 2.706 2.706 0 0 1 .11-2.65A2.588 2.588 0 0 1 22.42 38.9h12.89a3.395 3.395 0 0 0 0 5.2zM40.1 23.192V41.5a2.6 2.6 0 1 1-2.6-2.6v-.8H24.9V23.25a2.352 2.352 0 0 1 2.35-2.35h13.795a3.183 3.183 0 0 0-.945 2.292zm5 2.908h-4.2v-2.908a2.274 2.274 0 0 1 1.44-2.18 1.944 1.944 0 0 1 1.791.259 2.423 2.423 0 0 1 .97 1.979zm-17.1 5h9v.8h-9zm0 3h7v.8h-7zm0-6h9v.8h-9zm4-3h5v.8h-5z"/></svg></span>
+                          <span class="sublink-text">Notebook Server</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+
+              <a id="nav-data-store" data-langlabel="data-store" href="../../../../../zh-CN/data-store/" class="top-nav-link">Data Stores</a>
+              <a id="nav-cloud" data-langlabel="cloud" href="../../../../../zh-CN/cloud/" class="top-nav-link">云</a>
+              <a id="nav-apps" data-langlabel="apps" href="../../../../../zh-CN/apps/" class="top-nav-link">应用程序</a>
+            </nav>
+
+
+            
+            
+            
+
+            <div class="margin-left-1 top-nav-list right hide-if-logged-in logged-out-navigation">
+               
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+              
+              <a data-langlabel="sign-in" id="login-link" class="icon-ui-user top-nav-link link-blue login-link" href="#">登录</a>
+              
+            </div>
+
+            
+            <nav class="margin-left-1 top-nav-list right hide-if-logged-out logged-in-navigation">
+              
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+             
+              <div class="dropdown js-dropdown right">
+
+                <div class="tablet-show top-nav-link">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a href="#" data-drawer="user-nav" class="user-nav-name js-drawer-toggle" data-first-name></a>
+                </div>
+
+                <div class="tablet-hide top-nav-link js-dropdown-toggle">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a class="user-nav-name top-nav-dropdown dropdown-btn" data-first-name>&nbsp;</a>
+                </div>
+
+                <nav class="dropdown-menu dropdown-right">
+                
+                  <a class="dropdown-link agolProfile" id="agolProfile" href="#">我的个人资料</a>
+                  <a class="dropdown-link js-log-out" id="agolLogout" href="#">登出</a>
+                </nav>
+              </div>
+            </nav>
+            
+
+            
+          </div>
+        </div>
+      </header>
+
+      <div class="js-search search-overlay">
+        <div class="search-content" role="dialog" aria-labelledby="search">
+          <form method="GET" id="helpSearchForm">
+            <label>
+              搜索 ArcGIS Enterprise 帮助
+              <div class="search-bar">
+                <input type="search" name="q"  placeholder="搜索 ArcGIS Enterprise 帮助" class="search-input js-search-input">
+                <input type="hidden" name="collection" value="help" />
+                <input type="hidden" name="product" value="arcgis-portal-windows" />
+                <input type="hidden" name="version" value="10.8" />
+                <input type="hidden" name="language" value="zh-CN" />
+              </div>
+            </label>
+            <input type="hidden" name="relativePath" value="../../../../../" /><button type="submit" class="btn btn-large right">搜索</button>
+          </form>
+        </div>
+      </div>
+
+      <!--googleon: all-->
+
+      <div id="skip-to-content">
+        <!--googleoff: all-->
+        <header class="sub-nav sub-nav-learn">
+          <div class="grid-container">
+            
+            <div class="column-24">
+              <div style="display:table;" class="sdk-home-banner">
+                <div class="sdk-home-banner-content">
+                  <h1 class="sub-nav-title link-white">Portal for ArcGIS</h1>
+                </div>
+              </div>
+            </div>
+
+            <div class="column-24">
+              <nav class='sub-nav-list tablet-hide'><a class="sub-nav-link" href="../../../../../zh-CN/portal/" target="_top" title="Portal for ArcGIS 主页">主页</a><a class="sub-nav-link" href="../../../../../zh-CN/portal/latest/use/" target="_top" title="使用 Portal for ArcGIS">使用</a><a class="sub-nav-link is-active" href="../../../../../zh-CN/portal/latest/administer/windows/" target="_top" title="安装、管理和保护 Portal for ArcGIS">管理</a></nav><select class='tablet-show select-full trailer-half js-select-nav'><option value="../../../../../zh-CN/portal/">主页</option><option value="../../../../../zh-CN/portal/latest/use/">使用</option><option selected="true" value="../../../../../zh-CN/portal/latest/administer/windows/">管理</option></select>
+            </div>
+
+          </div>
+        </header>
+        <!--googleon: all-->
+       
+        <!-- content goes here -->
+        <div class="grid-container ">
+          
+
+            
+              
+  <!--BREADCRUMB-BEG--><div id="bigmac" class="sticky-breadcrumbs trailer-2" data-spy="affix" data-offset-top="180"> </div><!--BREADCRUMB-END-->
+  <!--googleoff: all-->
+    <div class="column-5 tablet-column-12 trailer-2 ">
+      <aside class="js-accordion accordion reference-index" aria-live="polite" role="tablist">
+        <div></div>
+      </aside>
+
+      <div class="js-sticky scroll-show tablet-hide leader-1 back-to-top" data-top="0" style="top: 0px;">
+        <a href="#" class="btn btn-fill btn-clear">返回顶部</a>
+      </div>
+    </div>
+  <!--googleon: all-->
+  
+            
+            
+            
+	
+		<div class="column-13  pre-1 content-section">
+	
+		<header class="trailer-1"><h1>创建和管理 webhook</h1></header>
+
+		 
+	<!--googleoff: all-->
+	
+		
+				<aside id="main-toc-small" class="js-accordion accordion tablet-show trailer-1">
+			      <div class="accordion-section">
+			        <h4 class="accordion-title">在本主题中</h4>
+			        <div class="accordion-content list-plain">
+			          <ol class="list-plain pre-0 trailer-0"><li><a href="#ESRI_SECTION1_C30D73392D964D51A8B606128A8A6E8F">重要术语</a></li><li><a href="#ESRI_SECTION1_EC18080E8E98428CA139933DB99B5EE5">用例示例</a></li><li><a href="#ESRI_SECTION1_AFA5131A650D4FCDBA8F4AE6DC153519">支持的触发事件</a></li><li><a href="#ESRI_SECTION1_4FC3BA2F655A4A138FE04CE56D035BDD">负载</a></li><li><a href="#ESRI_SECTION1_AAAA2A52C1A6456FBC0E746D6C41CCB9">负载 URL</a></li><li><a href="#ESRI_SECTION1_2704B0F0C1B34A09ABFA042C50381F19">创建 webhook</a></li><li><a href="#ESRI_SECTION1_C894A4A632A0483CB9F0E8CBEF9809AD">管理 webhook</a></li><li><a href="#ESRI_SECTION1_0C5422DC2DEF41AC829E376D82711F9F">配置高级参数</a></li><li><a href="#ESRI_SECTION1_FC9727B5892F4044BC389966B1C5F591">Webhook 常见问题</a></li></ol>
+			        </div>
+			      </div>
+			     </aside>
+		
+    
+   <!--googleon: all-->
+
+
+		<main>
+			
+	
+    	
+    
+
+
+			
+<p id="GUID-03240E40-C2E8-48D6-87F9-A729EC63D3BA">Webhook 是一种允许应用程序为其他应用程序提供事件驱动型信息的机制。作为 <span class="ph">ArcGIS Enterprise</span> 门户管理员，您可以创建、管理和配置 webhook。您可以将 webhook 配置为在发生与门户项目、群组和用户关联的事件时自动通知您。触发 webhook 后，将向用户定义的唯一负载 URL 发出 HTTP 请求，以提供有关该事件的信息。</p><section class="section1 padded-anchor" id="ESRI_SECTION1_C30D73392D964D51A8B606128A8A6E8F" purpose="section1"><h2>重要术语</h2><p id="GUID-6799F224-923A-451A-9016-D6B8C5151947">以下是 webhook 的关键术语：<ul purpose="ul" id="UL_D3B4848635D84F7BA96818D1E7BFCDA8"><li purpose="li" id="LI_D1DFE2D138AE4EDD83D86B98A38FFFE3">触发事件 - 您设置用来触发 webhook 的操作。例如，您可以将 webhook 配置为在更新组织中特定群组或共享项目时触发。Webhook 可具有多个触发事件。</li><li purpose="li" id="LI_68F1B347467B42EA868D9BF19E33DC5B">负载 - 发生指定事件后 webhook 提供的触发事件数据。此信息的格式为 JSON。有关详细信息，请参阅以下<a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/create-and-manage-webhooks.htm#ESRI_SECTION1_4FC3BA2F655A4A138FE04CE56D035BDD">负载</a>部分。</li><li purpose="li" id="LI_68559212579343D0B18CC245F45D934B">负载 URL - 负载将被发送到的位置。可以使用诸如 <span class="ph">Microsoft Flow</span>、<span class="ph">Zapier</span> 或 IFTTT 等服务来创建负载 URL。您还可以使用所选平台创建自己的自定义 web 服务端点。</li></ul></p></section><section class="section1 padded-anchor" id="ESRI_SECTION1_EC18080E8E98428CA139933DB99B5EE5" purpose="section1"><h2>用例示例</h2><p id="GUID-C7B8C3B5-191B-4091-8B08-462BAE59F384">Webhook 允许跨系统集成工作流，并且可通过多种方式来利用组织中的 webhook。</p><section class="section2 padded-anchor" id="ESRI_SECTION2_19FF716DD1954D33870F0B0EF4B0441D" purpose="section2"><h3>监控 <span class="ph">ArcGIS Enterprise</span> 中的活动</h3><p id="GUID-37B9647B-2AF9-43C7-818D-A20FFCA08F65">Webhook 可用于监控 <span class="ph">ArcGIS Enterprise</span> 中的活动。例如，您可以订阅与特定项目关联的所有事件。更新项目属性时会触发 webhook，而 HTTPS 请求会提供包含事件描述数据的负载。您决定提供此负载所至的位置，并可在收到信息后相应地采取行动。</p></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_AFA5131A650D4FCDBA8F4AE6DC153519" purpose="section1"><h2>支持的触发事件</h2><p id="GUID-EA0DB081-9127-4D53-891D-258CD3F48E53">创建 webhook 时，您将订阅触发事件。由于这些事件是门户操作，因此必须在 webhook 配置中提供操作的 URI。以下各小节描述了可用的触发事件和关联的 URI。</p><section class="section2 padded-anchor" id="ESRI_SECTION2_1A6545E6ADE24E9A926CF100F3C5E4F2" purpose="section2"><h3>项目</h3><p id="GUID-03B3AA19-1244-433B-B487-8D75EDAF51ED">可以更新的项目属性因项目类型而异，并且存在触发 /update 操作的唯一操作。例如，如果项目是 web 地图，则更新标签、配置弹出窗口或更改底图都是会触发 webhook 的更新事件。</p><p id="GUID-F010C74D-C8B3-4650-8022-EBF42868AD71">下表列出了支持的门户项目的触发事件，其中包括 web 地图、web 应用程序、图层、软件包、PDF 文档等：</p><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><thead><tr><th colspan="1">触发事件</th><th colspan="1">URI 示例</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-A6A7D377-9333-4657-94F9-87B05AF11714">适用于所有项目的所有触发事件</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext">/items</span></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-5013549C-F653-4A13-B157-58AF7C2928C2">一个项目已添加到门户</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext">/items/add</span></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-4919ABA7-8AC4-4130-9B19-65D79BF6FBA2">任意项目已删除</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext">/items/delete</span></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-99FCEA22-F5F7-45B9-9360-A996321D7D08">任意项目已更新</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext">/items/update</span></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-3C81F292-04C8-4C1D-98A0-0D480DC98B23">任意项目已移动或所有权已更改</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext">/items/move</span></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-1052A730-598D-4911-AEA2-25EB4F21D08C">任意项目已发布</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext">/items/publish</span></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-ACFA0C72-A489-4413-B4A3-0BBC2DBE2E1C">任意项目已共享</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext">/items/share</span></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-2B08C295-1DD9-421E-89C4-3C76CF36E8F2">任意项目未共享</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext">/items/unshare</span></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-1784514C-AD66-4A41-9DA3-5113272C5489">任意项目的所有权已重新分配</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext">/items/reassign</span></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-C757A4C5-4174-4BD4-AE07-77D4DCD08363">适用于特定项目的所有触发事件</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext">/items/&lt;itemID&gt;</span></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-A82205A9-24C9-4B51-BA90-9657D503C375">指定项目已删除</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext">/items/&lt;itemID&gt;/delete</span></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-65A666B0-DA25-449E-B28D-B1BC1597B40C">指定项目的属性已更新</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext">/items/&lt;itemID&gt;/update</span></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-8489393D-C4E4-47CC-9E2B-770DA5C56086">特定项目的所有权已更改或该项目已移动</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext">/items/&lt;itemID&gt;/move</span></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-D9BF8D19-DD94-41E4-89BE-73D3BA09C148">指定项目已发布</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext">/items/&lt;itemID&gt;/publish</span></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-1A2667E1-D4BA-4E0D-BC0B-4C5959D5492A">指定项目已共享</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext">/items/&lt;itemID&gt;/share</span></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-0B43AE04-0D4B-4FC3-880E-54C73C0C5591">指定项目未共享</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext">/items/&lt;itemID&gt;/unshare</span></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-BBCD7712-D3DA-4A66-A5E1-62489A113AB9">指定项目的所有权已重新分配</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext">/items/&lt;itemID&gt;/reassign</span></td></tr></tbody><caption></caption></table></div></section><section class="section2 padded-anchor" id="ESRI_SECTION2_B186602437FB444F85838E08961A5663" purpose="section2"><h3>群组</h3><p id="GUID-1DBAC358-8536-4A9B-85BA-2DC29DE31899">对群组设置所做的任何常规更改都会构成更新。例如，更改群组的访问权限即会触发更新事件。</p><p id="GUID-D933B1EC-318E-4E00-B570-8A9ADA169001">下表列出了与群组关联的触发事件：</p><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><thead><tr><th colspan="1">触发事件</th><th colspan="1">URI 示例</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-78100979-92B3-4380-8984-5ACFAB9019CD">适用于所有群组的所有触发事件</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext">/groups</span></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-477886E4-6833-446C-BD62-143A0CEBF677">一个组已添加</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext">/groups/add</span></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-37FBE177-9F59-4624-9289-2B560A148A18">任意组已更新</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext">/groups/update</span></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-691729D5-4251-43AF-8C67-01A9E0C9B281">任意组已删除</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext">/groups/delete</span></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-2EA8557C-96AF-43A3-9B13-221C69393282">任何组启用了<span class="uicontrol">删除保护</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext">/groups/protect</span></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-FC335AB1-3317-4822-BEF4-40EC690A0776">任何组禁用了<span class="uicontrol">删除保护</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext">/groups/unprotect</span></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-72C057CB-C9D1-483F-82F6-8C3C36018F8A">用户被邀请加入任意组</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext">/groups/invite</span></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-0015FC5A-FC8D-4233-B6C8-9F83B19983F6">用户被添加至任意组</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext">/groups/addUsers</span></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-A74562F0-9645-43EB-9EB9-2E11A07EFA24">用户已从任何组中移除</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext">/groups/removeUsers</span></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-B989B0A2-EEEE-431A-B107-4FA53BF96D2B">任何组中，用户的角色已更新</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext">/groups/updateUsers</span></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-49F94800-7CCC-4A60-8A85-32BDAEC1FEA4">任意组的所有权已重新分配</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext">/groups/reassign</span></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-6CB1E0BE-9E2A-4C38-929E-C6B97E921796">适用于特定群组的所有触发事件</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext">/groups/&lt;groupID&gt;</span></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-5DCBB76A-1E06-4BB8-99A7-B101BA2B91C8">指定组已更新</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext">/groups/&lt;groupID&gt;/update</span></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-BF923801-1827-4F9D-A389-D1C660A613EA">指定组已删除</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext">/groups/&lt;groupID&gt;/delete</span></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-9C4473CE-C7A7-4569-AC8F-3F40B9DA23AB">指定组启用了<span class="uicontrol">删除保护</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext">/groups/&lt;groupID&gt;/protect</span></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-9BE1913D-0B2B-4B2E-80B7-4A300DB8952B">指定组禁用了<span class="uicontrol">删除保护</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext">/groups/&lt;groupID&gt;/unprotect</span></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-53A880BB-9FCC-49BF-AB2E-A606180B81F8">用户被邀请加入指定组</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext">/groups/&lt;groupID&gt;/invite</span></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-515557D1-4E5F-43BF-9FA4-A9A44369235B">用户被添加至指定组</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext">/groups/&lt;groupID&gt;/addUsers</span></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-E6305D8F-B4F0-4DC5-8ED2-AF5326C048A8">用户已从指定组中移除</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext">/groups/&lt;groupID&gt;/removeUsers</span></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-CCFE141C-2C9A-4134-B508-2B3BA345D2EA">指定组中，用户的角色已更新</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext">/groups/&lt;groupID&gt;/updateUsers</span></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-9282DCF8-3E31-44D1-B0E6-F773B600ED17">指定组的所有权已重新分配</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext">/groups/&lt;groupID&gt;/reassign</span></td></tr></tbody><caption></caption></table></div></section><section class="section2 padded-anchor" id="ESRI_SECTION2_7DC4856EF4224734A8245515D942D845" purpose="section2"><h3>用户</h3><p id="GUID-99696164-A920-407D-817D-BE8FDA10D334">无论何时对用户的配置文件进行更改，都会触发更新事件。但是，对用户角色、用户类型或许可所做的更改不会被视为对用户配置文件的更新。</p><p id="GUID-D27D3AB8-854A-4C6D-B98E-1D039D32102E">下表列出了与用户关联的触发事件：</p><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><thead><tr><th colspan="1">触发事件</th><th colspan="1">URI 示例</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-4038F929-222F-4023-ABF0-D4A6E5632901">适用于门户中所有用户的所有触发事件</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext">/users</span></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-9012655A-E5A8-42F5-A9CB-E40A72E9362B">用户被添加至组织</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext">/users/add</span></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-E2C0D28F-C89A-4903-8C56-2D6AA0A1C573">任意用户已登录门户</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext">/users/signIn</span></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-4068AFE1-D51B-4966-A560-AC0D80BE618F">任意用户已登出门户</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext">/users/singOut</span></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-74E98E8B-E371-477A-ABB5-A39BA67659D9">任意用户已删除</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext">/users/delete</span></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-AACB9CD9-2757-4537-AEE8-FF6264E550E9">任意用户的配置文件已更新</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext">/users/update</span></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-5C363742-E0B6-4675-9D5B-C73A44282E52">任意用户的帐户已被禁用</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext">/users/disable</span></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-4FD11093-9492-4E7E-8B94-1529DACC587B">任意用户的帐户已被启用</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext">/users/enable</span></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-7E256D4E-02C7-495E-98F5-74BA26A30D39">任意用户已被分配了新的角色</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext">/users/updateUserRole</span></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-CDC45ADD-AACA-4682-9B53-B4608F2A0974">任意用户已被分配了新的用户类型</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext">/users/updateUserLicenseType</span></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-97E627EC-B723-4E05-83E1-F50AC2DFD5F8">与特定用户关联的所有触发事件</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext">/users/&lt;username&gt;</span></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-350ED594-083E-47B6-92D0-678298FBCAEB">指定用户已登录门户</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext">/users/&lt;username&gt;/signIn</span></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-02C73479-44A8-4F32-ADF7-E596CC65CDBE">指定用户已登出门户</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext">/users/&lt;username&gt;/signOut</span></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-468B84CA-0E1C-4429-AB4C-72FE66CE392F">指定用户已删除</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext">/users/&lt;username&gt;/delete</span></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-FBBB85AC-5D22-47C5-BA40-3ECCF42DF9D0">指定用户的配置文件已更新</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext">/users/&lt;username&gt;/update</span></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-51613BDB-5226-40EE-8EE6-1C343448685F">指定用户的帐户已被禁用</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext">/users/&lt;username&gt;/disable</span></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-F5833229-52F2-4833-B08D-59AFC02873CD">指定用户的帐户已被启用</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext">/users/&lt;username&gt;/enable</span></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-4BB80C57-28C5-4A25-9F96-B8AF3CDAB625">指定用户已被分配了新的角色</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext">/users/&lt;username&gt;/updateUserRole</span></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-826F851F-97AA-48A3-9E19-6416F13DFC8F">指定用户已被分配了新的用户类型</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext">/users/&lt;username&gt;/updateUserLicenseType</span></td></tr></tbody><caption></caption></table></div></section><section class="section2 padded-anchor" id="ESRI_SECTION2_3810D548F07E42969AAC0FA82E6C9155" purpose="section2"><h3>角色</h3><p id="GUID-405F0A40-2E07-4A57-ACA9-7419C3476D04">无论何时对组织的角色进行更改，都会触发更新事件。</p><p id="GUID-EF263AAC-C60C-4398-8511-EFD241CED0B1">下表列出了与用户角色关联的触发事件：</p><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><thead><tr><th colspan="1">触发事件</th><th colspan="1">URI 示例</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-B611AE28-048D-4CB8-A46A-008C744A5F0A">适用于门户中所有角色的所有触发事件</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext">/roles</span></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-F099CD6E-7B6F-4579-A438-5EEC988F19A4">随即将创建新角色</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext">/roles/add</span></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-01DA4965-F6AE-4970-BC12-B01992AC1CA5">现有角色已更新</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext">/roles/updated</span></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-40AD5EB7-4A6F-4056-AE2C-861A27711D0B">现有角色已删除</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext">/roles/delete</span></td></tr></tbody><caption></caption></table></div></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_4FC3BA2F655A4A138FE04CE56D035BDD" purpose="section1"><h2>负载</h2><p id="GUID-46A1285A-7D99-46C6-A0F3-3C877BED8F3E">触发 webhook 后，负载将以 JSON 格式传送到特定的负载 URL。每个事件都遵循类似的 JSON 模式，其中包含与事件相关的信息。</p><p id="GUID-1F5FA6A8-7652-4926-9212-C1C329B107AF"><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><colgroup width="*"></colgroup><thead><tr><th colspan="1">键</th><th colspan="1">类型</th><th colspan="1">描述</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext">webhookName</span></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-E1565572-9802-4D72-9D0A-6DF4032B33E3">string</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-3B292D06-F09A-4707-8799-28AD3F06FD22">传送负载的 webhook 的名称。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext">webhookId</span></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-D6DFAA60-977F-4511-BB3B-DEA45AAEEFC6">string</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-72D8F054-CE9E-4150-9418-3D751DC794D5">传送负载的 webhook 的 ID。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext">portalURL</span></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-E8242140-372B-49EA-AE66-595A471DF8D9">string</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-069FE0DD-E8B1-4B17-91E3-45C977CD672C">Webhook 注册的门户的 URL。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext">when</span></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-91D3B830-1FDE-4319-AE6C-AFD39FF6BFE2">timestamp</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-F3C341B0-4467-4CF0-9B8A-07138A25515E">传送负载的时间。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext">username</span></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-AA0BFA54-F69D-4CC8-B566-6367A8E85AAC">string</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-CDDAD0D8-86C9-4E7E-9F08-CC2D7E596DCC">触发事件的用户。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext">userId</span></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-154F3CC3-C399-429D-A056-E9E99621BFA1">string</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-5C697874-E879-4990-A84C-C4214058CB71">触发事件的用户的 ID。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext">when</span></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-9EBA140B-793B-49CE-AFFF-CBE31DEE7025">timestamp</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-06414CDA-D670-4FF5-9E3F-FC344E3A92C5">事件发生的时间。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext">operation</span></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-7AABA0DA-D297-4701-AB7A-9917C7C5D8B2">string</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-0C401EB6-DF6E-4CC5-AFCA-DB54BE1C890F">用户执行的操作。可以是：</p><ul purpose="ul" id="UL_20604146F74D4683802EDB045674A98F"><li purpose="li" id="LI_AE6EFC69CBED4AFF8118B586BED48AF9"><span class="usertext">add</span></li><li purpose="li" id="LI_D180F1A56C354912BF6CF18059578B7E"><span class="usertext">addUsers</span></li><li purpose="li" id="LI_3F6AC211698448389268F4DB26EAEFFB"><span class="usertext">delete</span></li><li purpose="li" id="LI_9F75DD5856A04171BB3990C9421DA10B"><span class="usertext">disable</span></li><li purpose="li" id="LI_BBE2B18A724E44D58B50119CCBEA0B40"><span class="usertext">enable</span></li><li purpose="li" id="LI_BE71581E978F4A1EAA43579E088689D2"><span class="usertext">invite</span></li><li purpose="li" id="LI_80C307ED48714F4E8FE0AB671F0CDD16"><span class="usertext">move</span></li><li purpose="li" id="LI_B6CB14DDF67D4B5FA4E8B9A03B8B2DF9"><span class="usertext">protect</span></li><li purpose="li" id="LI_66C81E54357049F6A41FBDC1BAF89715"><span class="usertext">publish</span></li><li purpose="li" id="LI_FE133A65691E4FB3AA8084072FA26584"><span class="usertext">removeUsers</span></li><li purpose="li" id="LI_3ADA3987992641F8BE9150411AA75BD8"><span class="usertext">share</span></li><li purpose="li" id="LI_E49A6A8F2A4442B0B75E0AD1BC5C134E"><span class="usertext">unprotect</span></li><li purpose="li" id="LI_F1A472297160418C857862FCEC77EC87"><span class="usertext">unshare</span></li><li purpose="li" id="LI_99C3F20AFDF94EFCA8CFD29F350CA44D"><span class="usertext">update</span></li><li purpose="li" id="LI_97C0DCBF4E9F47809EDBF9C8A9FCF649"><span class="usertext">updateUsers</span></li></ul></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext">source</span></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-AAD859E5-6402-429A-9FAA-FA32398B9338">string</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-D90CFAC8-E285-44F4-B71E-8C98A9991EEB">执行操作所针对的项目类型。可以是 <span class="usertext">item</span>、<span class="usertext">group</span> 或 <span class="usertext">user</span>。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext">id</span></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-FF79A8DF-B899-42D0-B1A9-7510BA63C2AA">string</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-B0F469D6-CFCD-4BD6-A84A-FDCADDB93E33">执行操作所针对的源项目的 ID。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext">properties</span></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-45471274-BFFF-434B-961E-6E54A054F80D">object</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-C60A7DB0-FE72-44E4-8DC7-9F4884762846">与事件关联的其他属性。可以是：</p><ul purpose="ul" id="UL_5F68A878FD654DB193FE73C6BE291FEE"><li purpose="li" id="LI_6FFB2457FC3E40C7AB0589BBC32A229E"><span class="usertext">sharedToGroups</span> - 项目共享的方式（groupID、组织或所有人）</li><li purpose="li" id="LI_F2C570C66BED46EB8CAEE72094168374"><span class="usertext">unsharedFromGroups</span> - 项目取消共享的方式（groupID、组织或所有人）</li><li purpose="li" id="LI_153826D371F242999F47989DF3C211B3"><span class="usertext">removeUserNames</span> - 从群组中删除的用户的用户名</li><li purpose="li" id="LI_FF791D93BA9B49C09564AC4246A02568"><span class="usertext">updateUserNames</span> - 群组角色已更新的用户的用户名。</li><li purpose="li" id="LI_279462CE906F4872BF88AB35F8BA9AC9"><span class="usertext">invitedUserNames</span> - 受邀加入群组的用户的用户名。</li><li purpose="li" id="LI_3217696AC6B64D3992D10EE218256C8F"><span class="usertext">addedUserNames</span> - 已添加到群组的用户的用户名</li><li purpose="li" id="LI_E32A46EC26064E80903A52A1D762B95A"><span class="usertext">userRoleUpdatedTo</span> - 已为用户分配新的角色</li><li purpose="li" id="LI_549F3AC55F294DDEBE400DF572411634"><span class="usertext">reassignedTo</span> - 已为项目或组重新分配新的用户。</li><li purpose="li" id="LI_A148C5F671B74D1B87ED421C7455D497"><span class="usertext">userLicenseTypeUpdatedTo</span> - 已为用户分配新的用户类型。</li></ul></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext">name</span></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-575D999A-DAEB-416C-929B-26D0176B0216">string</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-A0FC1F01-8671-4623-B9AC-4B4CDCD469BB">已创建、更新或删除的角色名称。</p></td></tr></tbody><caption></caption></table></div></p></section><section class="section1 padded-anchor" id="ESRI_SECTION1_AAAA2A52C1A6456FBC0E746D6C41CCB9" purpose="section1"><h2>负载 URL</h2><p id="GUID-AE6A787B-EF0B-4A84-8376-3B450F472FD3">创建 webhook 时，负载 URL 必须由用户提供；这定义了负载所传送至的位置。由于负载是通过 HTTPS POST 请求传送的，因此 webhook 接收器应配置为通过 HTTPS 进行通信且可通过门户访问。您可以使用多个 web 服务（例如 <span class="ph">Microsoft Flow</span>、<span class="ph">Zapier</span> 和 IFFT）来配置使用负载的自定义工作流。例如，您可以创建工作流，以便在 <span class="ph">Microsoft Flow</span> 接收负载时解析并格式化负载，然后将其发送到电子邮件别名。或者，您还可以构建和自定义 web 服务来接收负载。对于限制 Internet 访问的组织，建议构建自定义 web 服务来接收负载。有关即用型 Java servlet，请参阅我们的 Enterprise SDK 示例。</p><section class="section2 padded-anchor" id="ESRI_SECTION2_2CB9D7CB1EA54341BA45A5238B9787DD" purpose="section2"><h3>负载示例</h3><p id="GUID-79B94045-AD8D-4668-AE94-90825956974B">以下是用来说明特定群组已更新的示例负载：</p><p id="GUID-8F7EA037-6495-45B4-8577-72E02FCCC095"><section class="codeblock padded-anchor" purpose="codeblock"><div class="codeblockbody"><pre><code class="other no-highlight">{
+   &quot;info&quot;: {
+      &quot;webhookName&quot;: &quot;Group monitoring&quot;,
+      &quot;webhookId&quot;: &quot;72fed926aeb74c9ca8a22aacddc6725a&quot;,
+      &quot;portalURL&quot;: &quot;https://machineURL/portal/&quot;,
+      &quot;when&quot;: 1543192196521
+   },
+   &quot;events&quot;: [{
+      &quot;username&quot;: &quot;administrator&quot;,
+      &quot;userId&quot;: &quot;173dd04b69134bdf99c5000aad0b6298&quot;,
+      &quot;when&quot;: 1543192196521,
+      &quot;operation&quot;: &quot;update&quot;,
+      &quot;source&quot;: &quot;group&quot;,
+      &quot;id&quot;: &quot;173dd04b69134bdf99c5000aad0b6298&quot;,
+      &quot;properties&quot;: {}
+   }]
+}</code></pre></div></section></p></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_2704B0F0C1B34A09ABFA042C50381F19" purpose="section1"><h2>创建 webhook</h2><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><section class="context padded-anchor" id="ESRI_CONTEXT_6560A838683D48199B93CDB41E19DC7B" purpose="context"><p id="GUID-A3731E16-AC19-4B55-B280-BAA7F99C208A">只能通过 <a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/about-the-arcgis-portal-directory.htm">ArcGIS Portal Directory</a> 对 Webhook 进行管理。使用以下步骤创建 webhook：</p></section><div class="steps" id="ESRI_STEPS_01C4AA33D144416787139ABE7D956648"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_A59729597E424FEFB64E4CA7AEC651FF"><span purpose="cmd">浏览至 ArcGIS Portal Directory。</span><div class="stepexample" purpose="stepexample"><span class="usertext">https://webadaptorhost.domain.com/webadaptorname/sharing/rest</span></div></li><li purpose="step" id="ESRI_STEP_5D5BB5A5748340EE833448F5E74C71BB"><span purpose="cmd">以管理员身份登录。</span><div class="info" purpose="info"><p id="GUID-1FDD5635-8FCD-49AD-A826-A941E66458A0">Webhook 只能由管理员创建和管理。</p></div><div class="stepresult" purpose="stepresult"><p id="GUID-3A4B7D29-06C0-4BA9-BD57-206300CEA195">管理员用户页面随即显示。</p></div></li><li purpose="step" id="ESRI_STEP_398C42F922DB47B1AD1C8B626391EA3D"><span purpose="cmd">单击<span class="uicontrol">组织 ID</span> 超链接，或根据以下表单提出请求，以转到门户自助资源页面。</span><div class="stepexample" purpose="stepexample"><span class="usertext">https://webadaptorhost.domain.com/webadaptorname/sharing/rest/portals/&lt;org Id&gt;</span></div></li><li purpose="step" id="ESRI_STEP_C902B3A19F5449B589D8DA79D7F93C77"><span purpose="cmd">滚动至页面底部，直至<span class="uicontrol">子资源</span>下的 <span class="usertext">Webhooks</span>。</span><div class="stepexample" purpose="stepexample"><span class="usertext">https://webadaptorhost.domain/com/webadaptorname/sharing/rest/portals/&lt;org Id&gt;/webhooks</span></div></li><li purpose="step" id="ESRI_STEP_58935C78CB574B4F999926A02E3208F9"><span purpose="cmd">在<span class="uicontrol">支持的操作</span>下，选择 <span class="usertext">Create Webhook</span>。</span></li><li purpose="step" id="ESRI_STEP_2B7CCC2B542F4B5D805910DC76E6D851"><span purpose="cmd">指定 webhook 的参数。</span><div class="info" purpose="info"><p id="GUID-1F3DA86C-EB91-4FB4-81DF-131586B55439">有关这些参数的详细信息，请参阅 webhook <a class="xref xref" esrisubtype="extrel" hrefpfx="https://developers.arcgis.com/rest" href="https://developers.arcgis.com/rest/users-groups-and-items/create-webhooks.htm">REST API 文档</a>。</p></div><div class="stepresult" purpose="stepresult"><p id="GUID-061E0ED4-0D72-4AFF-BFFF-3E9974F14CB1">您的 webhook 现已在 webhook 下列出。<span class="usertext">https://webadaptorhost.domain.com/webadaptorname/sharing/rest/portals/&lt;org Id&gt;/webhooks</span></p></div></li></ol></div></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_C894A4A632A0483CB9F0E8CBEF9809AD" purpose="section1"><h2>管理 webhook</h2><p id="GUID-8A67B3E2-A9FF-4653-A96C-6DAA5076EEC5">您可以根据以下表单提出请求，从而通过 ArcGIS Portal Directory 来管理您的 webhook：</p><p id="GUID-610A2AFE-DE2B-4AF3-9066-C65320653460"><span class="usertext">https://webadaptorhost.domain.com/webadaptorname/sharing/rest/&lt;org Id&gt;/webhoooks/&lt;webhookID&gt;</span>。</p><p id="GUID-768A8E06-A6B1-4003-8E53-3E75DE9523F7">Webhook 管理所支持的操作如下： </p><ul purpose="ul" id="UL_F8CC1E96647C4CAB9C3EFAB0816D77E2"><li purpose="li" id="LI_3D109C0D69CB49D9AC711ECACE026603"><span class="usertext">Update Webhook</span> - 更新您的 webhook 参数。您可以更新指定 webhook 的名称、负载 URL、配置或触发事件。</li><li purpose="li" id="LI_DF87D73588B84160A8D7E2A8CC10C0EE"><span class="usertext">Delete Webhook</span> - 从门户中删除 webhook。</li><li purpose="li" id="LI_472C0687A0B64E0682CBA54A43255454"><span class="usertext">Deactivate Webhook</span> 和 <span class="usertext">Activate Webhook</span> - 禁用 webhook，即在触发 webhook 时停止传送负载。当 webhook 处于禁用状态时，可通过“激活 Webhook”操作恢复负载的传送。</li></ul><p id="GUID-B0BC52BA-7EAC-4888-9856-1696B2E32E87"><span class="usertext">Notification Status</span> 页面用于显示与特定 webhook 关联的触发事件的相关信息。您可以使用此表来监控您的 webhook 以及所传送负载的详细信息，例如触发 webhook 的时间，以及从负载 URL 和所传送负载接收到的响应。指示负载传送成功的记录会于一天后删除。指示传送尝试失败的记录会存储七天。</p><p id="GUID-E80E0C5E-2DD1-4823-A86D-495985BF4BD4">有关这些操作的示例，请参阅 <a class="xref xref" esrisubtype="extrel" hrefpfx="https://developers.arcgis.com/rest" href="https://developers.arcgis.com/rest/users-groups-and-items/webhooks.htm#GUID-B5C91E12-8767-42FA-88AB-B3336EF7B5FF">Webhooks API</a>。</p></section><section class="section1 padded-anchor" id="ESRI_SECTION1_0C5422DC2DEF41AC829E376D82711F9F" purpose="section1"><h2>配置高级参数</h2><p id="GUID-537A086E-84EE-4F3A-8E06-7FEB2F3E5B63">可通过提供的多个高级参数进一步自定义您的 webhook。这些参数将应用于门户中所有已配置的 webhook，并可通过 <span class="usertext">https://webadaptorhost.domain.com/webadaptorname/sharing/rest/portals/&lt;org ID&gt;/webhooks/settings.</span> 进行访问 </p><p id="GUID-75469150-A29C-4FAC-9DE0-500BDB226F9B"><span class="usertext">Update</span> 操作可用于更新以下参数：</p><ul purpose="ul" id="UL_6E3411D2A9C84C98A0C4613B03191492"><li purpose="li" id="LI_AF3C1A4EEC5545C2A8A96393CCA9BEC5">传送尝试次数 - 指定将尝试传送负载的次数。默认进行三次尝试，最多可增加至五次。</li><li purpose="li" id="LI_73045ED45E214BA096FD4D60A31AE435">通知超时 - 指定连接用来接收响应的等待时长。如果在此时间间隔内未收到响应，连接则会超时并被视为失败的通知尝试。</li><li purpose="li" id="LI_1143882CF0D54D86ACAE480DBCF6693B">传送尝试之间的历时 - 指定每次负载传送尝试之间的间隔时间。默认值为 30 秒，可增加至最大值 100 秒或减少至最小值 1 秒。</li></ul><p id="GUID-D8E86EC1-3316-4967-B59F-C3DB8759FEE7">有关如何配置高级参数的详细信息，请参阅 <a class="xref xref" esrisubtype="extrel" hrefpfx="https://developers.arcgis.com/rest" href="https://developers.arcgis.com/rest/users-groups-and-items/webhooks.htm#GUID-B5C91E12-8767-42FA-88AB-B3336EF7B5FF">webhook API 文档</a>。</p></section><section class="section1 padded-anchor" id="ESRI_SECTION1_FC9727B5892F4044BC389966B1C5F591" purpose="section1"><h2>Webhook 常见问题</h2><section class="section2 padded-anchor" id="ESRI_SECTION2_F97FC466C72D4F82ADF67F3C4835A6FA" purpose="section2"><h3>我的 ArcGIS Enterprise 部署位于组织防火墙后的断开连接的环境中。这种情况下，我还可以配置 Webhook 吗？</h3><p id="GUID-9FDAA9A0-FD2F-4556-9DD8-588EBB7AC60B">会。要配置 Webhook，您需要使用 ArcGIS Enterprise 门户可访问的有效负载 URL。要做到这一点，您可以<a target="_blank" class="xref xref" href="https://github.com/Esri/webhooks-samples">构建自定义应用程序</a>并将其部署在内部服务器上。</p></section><section class="section2 padded-anchor" id="ESRI_SECTION2_7DD64970E2384121B90D00DED96DFF58" purpose="section2"><h3>项目、用户或组的更新由什么构成？</h3><p id="GUID-20FA8707-390B-4972-AFA0-60FB93759B9E">如果您已订阅门户项目、用户和组的更新，那么只要其属性已更新，您的 Webhook 就会触发。例如，如果您已订阅门户中特定项目的更新，那么如果项目的标题、标签或缩略图发生更新，您的 Webhook 就会触发。通过以网络流量为例，即可轻松确定某个操作是否为门户更新的组成部分。无论何时，只要某个操作可导致<span class="uicontrol">更新</span>操作被调用，则该操作也能够触发正在监听更新的 Webhook。</p></section><section class="section2 padded-anchor" id="ESRI_SECTION2_128DF3F5B0764565B99E2FDC8DA430E6" purpose="section2"><h3>我正在 ArcGIS Enterprise 门户中使用集成式 Windows 身份验证。我还可以订阅用户登录和登出门户吗（<span class="usertext">user/&lt;username&gt;/signIn</span>）？</h3><p id="GUID-626091CC-7DD2-4627-8BAF-048837F28D2A">仅当用户通过 OAuth 登录或登出时才会触发这些事件。因此，不支持集成的 Windows 身份验证 (IWA) 和 SAML。但是，门户的内置安全性和 PKI 可支持登录和登出事件。</p></section><section class="section2 padded-anchor" id="ESRI_SECTION2_F0658CFD2B834DF7983F43A12E3FFD62" purpose="section2"><h3>如果我的负载 URL 出现故障或不可用，将会发生什么？ 有没有办法恢复未传送的负载？</h3><p id="GUID-F7AD235D-5E29-43EB-B985-C9BB17F9AF70">如果门户尝试将负载传送到无法访问或无响应的负载 URL 或 Webhook 接收器，则已设置的<a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/create-and-manage-webhooks.htm#ESRI_SECTION1_0C5422DC2DEF41AC829E376D82711F9F">高级参数</a>将确定门户尝试另一次传送的方式和时间。如果这些额外尝试仍无法传送负载，则将视为在创建 Webhook 时设置 <span class="usertext">deactivationPolicy</span> 失败。满足此政策后，Webhook 将停用。</p><p id="GUID-63A52A03-BFE0-4833-8EF7-1ECF2F592B01">您可以转至 Webhook <a class="xref xref" esrisubtype="extrel" hrefpfx="https://developers.arcgis.com/rest" href="https://developers.arcgis.com/rest/users-groups-and-items/notification-status.htm">通知状态</a>以查看所有尝试过的负载传送，并确定它们是否传送成功。</p></section></section>
+			
+				<hr>
+				<!--googleoff: all-->
+				
+	
+        
+		    <p class="feedback right">
+		        <a id="afb" class="icon-ui-contact" href="/feedback/" data-langlabel="feedback-on-this-topic" >有关此主题的反馈?</a>
+		    </p>
+        
+	
+
+				<!--googleon: all-->
+			
+		</main>
+	</div>
+	
+	<!--googleoff: all-->
+	
+		
+			<div id="main-toc-large" class="column-5">
+			    <div class="panel font-size--2 tablet-hide trailer-1">
+			      <h5 class="trailer-half">在本主题中</h5>
+			      <ol class="list-plain pre-0 trailer-0"><li><a href="#ESRI_SECTION1_C30D73392D964D51A8B606128A8A6E8F">重要术语</a></li><li><a href="#ESRI_SECTION1_EC18080E8E98428CA139933DB99B5EE5">用例示例</a></li><li><a href="#ESRI_SECTION1_AFA5131A650D4FCDBA8F4AE6DC153519">支持的触发事件</a></li><li><a href="#ESRI_SECTION1_4FC3BA2F655A4A138FE04CE56D035BDD">负载</a></li><li><a href="#ESRI_SECTION1_AAAA2A52C1A6456FBC0E746D6C41CCB9">负载 URL</a></li><li><a href="#ESRI_SECTION1_2704B0F0C1B34A09ABFA042C50381F19">创建 webhook</a></li><li><a href="#ESRI_SECTION1_C894A4A632A0483CB9F0E8CBEF9809AD">管理 webhook</a></li><li><a href="#ESRI_SECTION1_0C5422DC2DEF41AC829E376D82711F9F">配置高级参数</a></li><li><a href="#ESRI_SECTION1_FC9727B5892F4044BC389966B1C5F591">Webhook 常见问题</a></li></ol>
+			    </div>
+			    
+			    
+	  		</div>
+		
+    
+   <!--googleon: all-->
+
+
+
+
+          
+        </div>
+        <!-- ENDPAGECONTENT -->
+
+      </div>
+
+    </div>  <!-- End of wrapper -->
+
+  <footer class="footer leader-3 link-dark-gray" role="contentinfo">
+    <div class="grid-container">
+      <div class="row">
+        <nav class="column-6">
+          <h6 data-langlabel="arcgis-for-server">Arc<span>GIS Enterprise</span></h6>
+          <ul class="list-plain">
+            <li><a data-langlabel="home" href="../../../../../zh-CN/">主页</a></li>
+            <li><a data-langlabel="portal" href="../../../../../zh-CN/portal/">Portal</a></li>
+            <li><a data-langlabel="server" href="../../../../../zh-CN/server/">Server</a></li>
+            <li><a data-langlabel="data-store" href="../../../../../zh-CN/data-store/">Data Stores</a></li>
+            <li><a data-langlabel="cloud" href="../../../../../zh-CN/cloud/">云</a></li>
+            <li><a data-langlabel="apps" href="../../../../../zh-CN/apps/">应用程序</a></li>
+            <li><a data-langlabel="documentation" href="../../../../../zh-CN/documentation/">文档</a></li>
+          </ul>
+        </nav>
+
+        
+  <nav class="column-6">
+    <h6 data-langlabel="arcgis-platform">ArcGIS 平台</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="arcgis" href="//www.arcgis.com/">ArcGIS Online</a></li>
+      <li><a data-langlabel="arcgis-for-professionals" href="//pro.arcgis.com/">ArcGIS Pro</a></li>
+      <li><a data-langlabel="arcgis-for-server" href="//enterprise.arcgis.com/">ArcGIS Enterprise</a></li>
+      <li><a data-langlabel="arcgis-for-developers" href="https://developers.arcgis.com/">ArcGIS for Developers</a></li>
+      <li><a data-langlabel="arcgis-solutions" href="//solutions.arcgis.com/">ArcGIS Solutions</a></li>
+      <li><a data-langlabel="arcgis-marketplace" href="//marketplace.arcgis.com/">ArcGIS Marketplace</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <h6 data-langlabel="about-esri">关于 Esri</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="about-us" href="//www.esri.com/about-esri/">关于我们</a></li>
+      <li><a data-langlabel="careers" href="//www.esri.com/careers/">招贤纳士</a></li>
+      <li><a data-langlabel="insiders-blog" href="https://www.esri.com/about/newsroom/blog/">Esri 博客</a></li>
+      <li><a data-langlabel="user-conference" href="//www.esri.com/events/user-conference/index.html">用户大会</a></li>
+      <li><a data-langlabel="developer-summit" href="//www.esri.com/events/devsummit/index.html">开发者峰会</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <a class="esri-logo" href="//www.esri.com/" aria-label="Esri Home"></a>
+    <section class="footer-social-nav leader-1">
+            <a class="icon-social-twitter" aria-label="Esri on Twitter" href="https://twitter.com/Esri/"></a>
+            <a class="icon-social-facebook" aria-label="Esri on Facebook" href="https://www.facebook.com/esrigis/"></a>
+            <a class="icon-social-github" aria-label="Esri on GitHub" href="//esri.github.io/"></a>
+            <a class="icon-social-contact" aria-label="Contact Esri" href="//www.esri.com/about-esri/contact/"></a>
+    </section>
+	  
+  </nav>
+  
+  <div class="column-24 leader-1">
+    <p class="font-size--3"><a href="http://www.esri.com/legal/copyright-trademarks">Copyright &copy; 2019 Esri.</a> All rights reserved. | <a href="http://www.esri.com/legal/privacy/">隐私政策</a> | <a href="http://www.esri.com/legal/software-license">法律声明</a></p>
+  </div>
+  
+
+
+      </div>
+    </div>
+  </footer>
+  <!--googleoff: all-->
+
+  
+  
+	<script src="../../../../../zh-CN/assets/js/init.js" type="text/javascript"></script>
+	<!--<script src="../../../../../zh-CN/assets/js/drop-down.js" type="text/javascript"></script>-->
+	<script src="../../../../../zh-CN/assets/js/search/searchform.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/cdn/js/link-modifier.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/cdn/js/sitewide.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/cdn/js/libs/highlight.pack.js" type="text/javascript"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+
+
+  
+    
+
+  <script src="../../../../../zh-CN/cdn/js/affix.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    $(function () {
+          var appendFlg = true;
+
+          $("#bigmac")
+          .on("affixed.bs.affix", function (evt) {
+            if (appendFlg) {
+              $("<a class='crumb' href='#'>创建和管理 webhook</a>").insertAfter ($("#bigmac nav a").last());
+              appendFlg = false;
+            }
+          })
+          .on ("affix-top.bs.affix", function(evt) {
+            if (!appendFlg) {
+              $("#bigmac nav a").last().remove();
+            }
+            appendFlg = true;
+          })
+    })
+  </script>
+  
+        <script type="text/javascript">
+          window.doctoc = {
+            pubID: "555",
+            tpcID: "394",
+            
+              prefix: "管理",
+              prefixUrl: "/zh-cn/portal/latest/administer/windows/",
+          
+            hideToc: false
+          }
+        </script>
+
+        <script type="text/javascript" src="../../../../../zh-CN/portal/latest/administer/windows/555.js" ></script>
+        <script type="text/javascript" src="../../../../../zh-CN/cdn/calcite/js/protoc.js" ></script>
+        
+        
+
+  <noscript>
+        <p>
+            <a href="flisting.htm">flist</a>
+        </p>
+    </noscript>
+    <script type="text/javascript"></script>
+  
+  
+    
+    
+
+  </body>
+</html>

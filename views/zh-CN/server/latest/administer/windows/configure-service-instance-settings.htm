@@ -1,0 +1,544 @@
+
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>  <html class="ie lt-ie9 lt-ie8 lt-ie7 ie6" dir="ltr"> <![endif]-->
+<!--[if IE 7]>     <html class="ie lt-ie9 lt-ie8 ie7" dir="ltr"> <![endif]-->
+<!--[if IE 8]>     <html class="ie lt-ie9 ie8" dir="ltr"> <![endif]-->
+<!--[if IE 9]>     <html class="ie ie9" dir="ltr"> <![endif]-->
+<!--[if !IE]><!--> <html dir="ltr" lang="zh-CN"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>配置服务实例设置&mdash;ArcGIS Server 管理 (Windows) | ArcGIS Enterprise 文档</title>
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+    <script>
+      var docConfig = {
+        locale: 'zh-CN'
+        ,localedir: 'zh-cn'
+        ,langSelector: ''
+        
+        ,relativeUrl: false
+        
+
+        ,searchformUrl: '/search/'
+        ,tertiaryNavIndex: ''
+
+        
+      };
+    </script>
+	 
+
+
+    
+    <!--[if lt IE 9]>
+      <script src="../../../../../zh-CN/cdn/js/libs/html5shiv.js" type="text/javascript"></script>
+      <script src="../../../../../zh-CN/cdn/js/libs/selectivizr-min.js" type="text/javascript"></script>
+      <script src="../../../../../zh-CN/cdn/js/libs/json2.js" type="text/javascript"></script>
+      <script src="../../../../../zh-CN/cdn/js/libs/html5shiv-printshiv.js" type="text/javascript" >
+
+    <![endif]-->
+
+     <!--[if lt IE 11]>
+    <script>
+      $$(document).ready(function(){
+        $$(".hideOnIE").hide();
+      });
+    </script>
+    <![endif]-->
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<link href="../../../../../zh-CN/assets/img/favicon.ico" rel="shortcut icon" >
+	<link href="../../../../../zh-CN/assets/css/screen.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/cdn/calcite/css/documentation.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/assets/css/print.css" media="print" type="text/css" rel="stylesheet" />
+
+	<!--
+	<link href="../../../../../zh-CN/assets/css/screen_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/assets/css/documentation/base_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/assets/css/print_l10n.css" media="print" type="text/css" rel="stylesheet" />
+	-->
+	
+	
+		<script src="../../../../../zh-CN/cdn/js/libs/jquery.1.9.1.min.js" type="text/javascript"></script>
+	
+	<script src="../../../../../zh-CN/cdn/js/libs/jquery.cookie.js" type="text/javascript"></script>
+	<link href="../../../../../zh-CN/cdn/css/colorbox.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/cdn/css/colorbox_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<script src="../../../../../zh-CN/cdn/js/libs/jquery.colorbox-min.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/assets/js/video-init.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/assets/js/sitecfg.js" type="text/javascript"></script>
+	
+		<script src="../../../../../zh-CN/assets/js/signIn.js" type="text/javascript"></script>
+	
+
+	<!--- Language Picker -->
+	<script src="../../../../../zh-CN/assets/js/locale/l10NStrings.js" type="text/javascript"></script>
+	
+		 
+	
+
+	<script src="../../../../../zh-CN/assets/js/calcite-web.js" type="text/javascript"></script>
+
+
+
+  <!--- search MD -->
+    <META name="description" content="使用共享实例可以通过池化多个活动服务器进程以供 ArcGIS Server 站点中的多个地图服务使用的方式来节省内存使用量。"><META name="last-modified" content="2019-12-6"><META name="product" content="arcgis-server-windows,arcgis-enterprise-windows"><META name="sub_category" content="ArcGIS Server (Windows)"><META name="search-collection" content="help"><META name="content_type_label" content="帮助主题"><META name="sub_category_label" content="ArcGIS Server (Windows)"><META name="search-category" content="help-general"><META name="subject_label" content="服务"><META name="version" content="10.8"><META name="content_type" content="Help Topic"><META name="subject" content="SERVICES"><META name="content-language" content="zh-cn">
+    <!--- search MD -->
+
+  
+  <script src="../../../../../zh-CN/assets/js/switchers/server-1.js" type="text/javascript"></script>
+  
+      
+
+</head>
+
+<!--
+      pub: GUID-7EF2A884-9DD0-4341-BA8B-FEB95EBECC37=19
+      tpc: GUID-5C987B96-9F2A-4FF0-ADEB-C4AA48C93261=5
+      -->
+
+
+<!-- variable declaration, if any -->
+<!-- can change following macro to set variable once we are on Jinja 2.8 -->
+
+
+
+
+
+<body class="claro zh-CN server">
+  
+
+  <!-- Drawer location -->
+  <div class="drawer drawer-left js-drawer" data-drawer="top-nav">
+        <nav class="drawer-nav" role="navigation">
+          <aside class="side-nav">
+            <h2 class="side-nav-title">Arc<span>GIS</span> Enterprise</h2>
+            <form id="helpSearchForm" class="margin-left-half margin-right-half leader-half trailer-half drawer-search-form" method="GET">
+              <input type="search" name="q"  placeholder="搜索 ArcGIS Server 10.8 帮助">
+              <input type="hidden" name="collection" value="help" />
+              <input type="hidden" name="product" value="arcgis-server-windows" />
+              <input type="hidden" name="version" value="10.8" />
+              <input type="hidden" name="language" value="zh-CN" />
+            </form>    
+             <a id="nav-portal" data-langlabel="portal" href="../../../../../zh-CN/portal/" class="side-nav-link">Portal</a>
+             
+            <a id="all-servers" data-langlabel="all-servers" href="../../../../../zh-CN/server/" class="side-nav-link">所有服务器</a>
+            <a id="gis-server" data-langlabel="gis-server" href="../../../../../zh-CN/server/" class="side-nav-link">GIS Server</a>
+            <a id="image-server" data-langlabel="image-server" href="../../../../../zh-CN/image/" class="side-nav-link">Image Server</a>
+            <a id="geo-analytics-server" data-langlabel="geo-analytics-server" href="../../../../../zh-CN/geoanalytics/" class="side-nav-link">GeoAnalytics Server</a>
+            <a id="geoevent-server" data-langlabel="geoevent-server" href="../../../../../zh-CN/geoevent/" class="side-nav-link">GeoEvent Server</a>
+            <a id="notebook-server" data-langlabel="notebook-server" href="../../../../../zh-CN/notebook/" class="side-nav-link">Notebook Server</a>
+            <a id="nav-data-store" data-langlabel="data-store" href="../../../../../zh-CN/data-store/" class="side-nav-link">Data Stores</a>
+            <a id="nav-cloud" data-langlabel="cloud" href="../../../../../zh-CN/cloud/" class="side-nav-link">云</a>
+            <a id="nav-apps" data-langlabel="apps" href="../../../../../zh-CN/apps/" class="side-nav-link">应用程序</a>
+            <a id="nav-doc" data-langlabel="documentation" href="../../../../../zh-CN/documentation/" class="side-nav-link">文档</a>
+
+          </aside>
+        </nav>
+    </div>
+
+    <!-- user navigation collapses to drawer on mobile -->
+    
+    <div class="drawer drawer-right js-drawer hide-if-logged-out logged-in-navigation" data-drawer="user-nav">
+      <nav class="drawer-nav">
+        <aside class="side-nav">
+          <a class="side-nav-link agolProfile" href="#">我的个人资料</a>
+          <a class="side-nav-link icon-ui-sign-out js-log-out" href="#">登出</a>
+        </aside>
+      </nav>
+    </div>
+    
+<!-- End of drawer -->
+
+  
+  <div class="wrapper">
+      <!--googleoff: all-->
+
+      <header class="top-nav" data-skin="learn">
+        <a class="skip-to-content" href="#skip-to-content">Skip To Content</a>
+        <div class="grid-container">
+          <div class="column-24">
+
+
+            <!--<div class="top-nav-title-wrapper text-center ">-->
+              <a href='../../../../../zh-CN/' class="top-nav-title tablet-hide"><span>Arc</span>GIS  Enterprise</a>
+              <a href='../../../../../zh-CN/' class="icon-ui-menu top-nav-title js-drawer-toggle tablet-show" data-drawer="top-nav"><span>Arc</span>GIS Enterprise</a>
+            <!--</div> -->
+
+          
+            <nav role="navigation" class="top-nav-list left tablet-hide">
+              <a id="nav-portal" data-langlabel="portal" href="../../../../../zh-CN/portal/" class="top-nav-link">Portal</a>
+
+                <div class="dropdown js-dropdown ">
+                  <a class="top-nav-link js-dropdown-toggle" tabindex="0" aria-haspopup="true" aria-expanded="false" href="#">Servers</a>
+                  <nav class="dropdown-menu featured" role="menu">
+                    <ul class="dropdown-sublist-featured">
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/get-started/latest/windows/additional-server-deployment.htm" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path  d="M42.92 6.1H4.12v8.566l.833.832-.835.833-.018 7.332.845.847-.825.824V33.9h25v5.2h-2v1.075H8.02v.8h19.1v.925h4.8v-.925H40v-.8h-8.08V39.1h-2v-5.2h13v-8.566l-.834-.834.835-.834v-7.332l-.835-.834.835-.834zm-11.8 35h-3.2v-1.2h3.2zm11-8H4.92v-7.434l.767-.766h35.668l.765.766zm0-9.766l-.766.766H5.666l-.766-.767.017-6.669.766-.764h35.671l.766.766zm0-9l-.766.766H5.687l-.766-.766V6.9h37.2zM19 11.9h-2v-.8h2zm-4 0h-2v-.8h2zm-4 0H9v-.8h2zm6 8.2h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9zm8 9h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9z"/></svg></span>
+                          <span class="sublink-text">所有服务器</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/server/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M45.98 33.575a.616.616 0 0 0-.335-.51l-3.362-2.03 3.362-2.031a.556.556 0 0 0 0-1.02l-11.1-6.704a1.293 1.293 0 0 0-1.112 0L22.33 27.982a.556.556 0 0 0 0 1.02l3.36 2.03-3.358 2.03a.556.556 0 0 0-.002 1.021l3.322 2.006-3.324 2.008a.555.555 0 0 0 .002 1.017l11.102 6.703a1.25 1.25 0 0 0 1.11.002l11.104-6.706a.556.556 0 0 0 0-1.02l-3.32-2.006 3.318-2.004a.607.607 0 0 0 .335-.509zM33.837 21.97c.026-.01.286-.005.29-.005l10.814 6.53-10.8 6.523c-.028.01-.284.005-.294.006l-10.813-6.53zm11.105 16.636l-10.8 6.523a2.564 2.564 0 0 1-.295.006l-10.81-6.529 3.39-2.047 7.004 4.23a1.083 1.083 0 0 0 .557.131 1.101 1.101 0 0 0 .554-.13l7.01-4.233zM34.14 40.098a2.545 2.545 0 0 1-.294.006l-10.812-6.53 3.43-2.073 6.97 4.208a1.25 1.25 0 0 0 1.107-.001l6.966-4.206 3.431 2.073zM9 8H7V7h2zm8 8h-2v-1h2zm-4-8h-2V7h2zm4 0h-2V7h2zm-4 8h-2v-1h2zm7.316 11.1H3.9v-6.434l.766-.766h35.668l.766.766v2.12l.8.483v-2.935l-.826-.826.826-.845v-6.329l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9h16.88a2.632 2.632 0 0 1 .336-.8zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zm0 8v-5.668l.766-.766h35.668l.766.766v5.67l-.746.764H4.666zM15 24v-1h2v1zm-4 0v-1h2v1zm-2-8H7v-1h2zm-2 8v-1h2v1z"/></svg></span>
+                          <span class="sublink-text">GIS Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/image/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 8h-2V7h2zm-4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm8 8h-2v1h2zm-8 0H7v1h2zm4 9v-1h-2v1zm-4 0v-1H7v1zm8 0v-1h-2v1zm4 3.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V21h-.8v-.334l-.766-.766H4.666l-.766.766V27.1H21zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zm40.234 4v21.8H23.1V23.1zm-.8 16.366L39.466 44.1h2.868l1.766-1.766zm-20.2-9.932l5.634-5.634h-2.868L23.9 26.666zm6.2-5.068L24.466 30.1h2.868l2.766-2.766zM28.466 30.1H30.1v-1.634zm2.434 0h6.2v-6.2h-6.2zm-7 7h6.2v-6.2h-6.2zm7 0h6.2v-6.2h-6.2zm0 6.434l5.634-5.634h-2.868L30.9 40.666zm7-7l5.634-5.634h-2.868L37.9 33.666zm1.634-5.634H37.9v1.634zm-8.634 7v1.634l1.634-1.634zm.566 6.2h2.868l2.766-2.766v-2.868zm6.434-3.566l2.634-2.634H37.9zM35.466 44.1H37.1v-1.634zm2.434 0h.434l5.766-5.766V37.9h-2.434L37.9 41.666zm6.2-8.634L42.466 37.1H44.1zm0-4L38.466 37.1h2.868l2.766-2.766zm0-7.566h-6.2v6.2h6.2zm-20.2 0v1.634l1.634-1.634zm0 20.2h6.2v-6.2h-6.2zm20.2 0v-.634l-.634.634z"/></svg></span>
+                          <span class="sublink-text">Image Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/geoanalytics/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 16h-2v-1h2zm-8 8v-1H7v1zm8 0v-1h-2v1zM13 7h-2v1h2zm4 0h-2v1h2zM9 7H7v1h2zm21.45 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V27.9h-1.464l-.801-.8H41.1v-6.434l-.766-.766H4.666l-.766.766V27.1h27.15zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM13 24v-1h-2v1zm0-9h-2v1h2zm-4 0H7v1h2zm26.672 27.148A1.87 1.87 0 0 1 35.9 43a1.91 1.91 0 1 1-3.763-.222l-9.845-3.414A1.88 1.88 0 0 1 21 39.9a1.9 1.9 0 1 1 1.474-3.084l4.692-2.346A1.878 1.878 0 0 1 27.1 34a1.902 1.902 0 0 1 1.9-1.9 1.867 1.867 0 0 1 .781.191l3.788-5.05A1.88 1.88 0 0 1 33.1 26a1.9 1.9 0 1 1 3.491 1.026l4.889 4.888c-.069.056-.144.1-.21.162a3.986 3.986 0 0 0-.358.402l-4.883-4.883A1.889 1.889 0 0 1 35 27.9a1.867 1.867 0 0 1-.781-.191l-3.788 5.049a1.868 1.868 0 0 1 .437.965l9.204.614c-.018.11-.049.218-.058.33A3.93 3.93 0 0 0 40 35c0 .046.01.09.01.135l-9.185-.612A1.913 1.913 0 0 1 29 35.9a1.889 1.889 0 0 1-1.474-.716l-4.692 2.346a1.878 1.878 0 0 1 .066.47 1.9 1.9 0 0 1-.105.625c-.007.02-.022.036-.03.056l9.63 3.34a1.87 1.87 0 0 1 2.786-.505l5.415-4.437c.067.108.127.22.204.322a3.9 3.9 0 0 0 .292.306zM33.9 26a1.092 1.092 0 0 0 .43.872 1.12 1.12 0 0 0 1.42-.068A1.1 1.1 0 1 0 33.9 26zm-6 8a1.1 1.1 0 0 0 2.196.093 1.135 1.135 0 0 0-.426-.965A1.087 1.087 0 0 0 29 32.9a1.101 1.101 0 0 0-1.1 1.1zm-5.8 4a1.098 1.098 0 1 0-.06.362A1.101 1.101 0 0 0 22.1 38zm13 5a1.1 1.1 0 1 0-2.2 0 1.1 1.1 0 0 0 2.2 0zm10.8-8a1.9 1.9 0 1 1-3.8 0c0-.053.003-.105.007-.158A1.9 1.9 0 0 1 45.9 35zm-.8 0a1.1 1.1 0 0 0-2.196-.093 1.153 1.153 0 0 0 .216.752A1.1 1.1 0 0 0 45.1 35z"/></svg></span>
+                          <span class="sublink-text">GeoAnalytics Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/geoevent/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M13 8h-2V7h2zm4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm12.418 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826v2.117c-.259-.177-.53-.337-.8-.497v-1.288l-.766-.766H4.666l-.766.766V27.1h17.933c-.148.26-.283.53-.415.8zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM9 24v-1H7v1zm4-9h-2v1h2zm0 9v-1h-2v1zm-4-9H7v1h2zm8 9v-1h-2v1zm16.9 2h-.8v8.9H39v-.8h-5.1zm.1-3.901a11.9 11.9 0 1 0 11.9 11.9 11.914 11.914 0 0 0-11.9-11.9zm0 23a11.1 11.1 0 1 1 11.1-11.1 11.112 11.112 0 0 1-11.1 11.1z"/></svg></span>
+                          <span class="sublink-text">GeoEvent Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/notebook/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M22 27.1H3.9v-6.434l.766-.766h18.576a5.262 5.262 0 0 1 .83-.8H4.666l-.766-.766v-5.668l.766-.766h35.668l.766.766V18h.8v-5.666l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9H22zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zM9 8H7V7h2zm8 0h-2V7h2zm-4 0h-2V7h2zm2 16v-1h2v1zm-4 0v-1h2v1zm-4 0v-1h2v1zm0-8v-1h2v1zm8 0v-1h2v1zm-4 0v-1h2v1zm18.9 8.1h-1.8v1.8h1.8zm-.8 1h-.2v-.2h.2zm15.498-4.48a2.727 2.727 0 0 0-1.62-.5v-.02H27.25a3.154 3.154 0 0 0-3.15 3.15V38.1h-1.68a3.386 3.386 0 0 0-2.872 1.58 3.49 3.49 0 0 0-.157 3.419 3.241 3.241 0 0 0 2.954 1.801h15.161a3.404 3.404 0 0 0 3.394-3.4V26.9h5v-3.65a3.224 3.224 0 0 0-1.302-2.63zM22.345 44.1a2.44 2.44 0 0 1-2.23-1.341 2.706 2.706 0 0 1 .11-2.65A2.588 2.588 0 0 1 22.42 38.9h12.89a3.395 3.395 0 0 0 0 5.2zM40.1 23.192V41.5a2.6 2.6 0 1 1-2.6-2.6v-.8H24.9V23.25a2.352 2.352 0 0 1 2.35-2.35h13.795a3.183 3.183 0 0 0-.945 2.292zm5 2.908h-4.2v-2.908a2.274 2.274 0 0 1 1.44-2.18 1.944 1.944 0 0 1 1.791.259 2.423 2.423 0 0 1 .97 1.979zm-17.1 5h9v.8h-9zm0 3h7v.8h-7zm0-6h9v.8h-9zm4-3h5v.8h-5z"/></svg></span>
+                          <span class="sublink-text">Notebook Server</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+
+              <a id="nav-data-store" data-langlabel="data-store" href="../../../../../zh-CN/data-store/" class="top-nav-link">Data Stores</a>
+              <a id="nav-cloud" data-langlabel="cloud" href="../../../../../zh-CN/cloud/" class="top-nav-link">云</a>
+              <a id="nav-apps" data-langlabel="apps" href="../../../../../zh-CN/apps/" class="top-nav-link">应用程序</a>
+            </nav>
+
+
+            
+            
+            
+
+            <div class="margin-left-1 top-nav-list right hide-if-logged-in logged-out-navigation">
+               
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+              
+              <a data-langlabel="sign-in" id="login-link" class="icon-ui-user top-nav-link link-blue login-link" href="#">登录</a>
+              
+            </div>
+
+            
+            <nav class="margin-left-1 top-nav-list right hide-if-logged-out logged-in-navigation">
+              
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+             
+              <div class="dropdown js-dropdown right">
+
+                <div class="tablet-show top-nav-link">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a href="#" data-drawer="user-nav" class="user-nav-name js-drawer-toggle" data-first-name></a>
+                </div>
+
+                <div class="tablet-hide top-nav-link js-dropdown-toggle">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a class="user-nav-name top-nav-dropdown dropdown-btn" data-first-name>&nbsp;</a>
+                </div>
+
+                <nav class="dropdown-menu dropdown-right">
+                
+                  <a class="dropdown-link agolProfile" id="agolProfile" href="#">我的个人资料</a>
+                  <a class="dropdown-link js-log-out" id="agolLogout" href="#">登出</a>
+                </nav>
+              </div>
+            </nav>
+            
+
+            
+          </div>
+        </div>
+      </header>
+
+      <div class="js-search search-overlay">
+        <div class="search-content" role="dialog" aria-labelledby="search">
+          <form method="GET" id="helpSearchForm">
+            <label>
+              搜索 ArcGIS Server 10.8 帮助
+              <div class="search-bar">
+                <input type="search" name="q"  placeholder="搜索 ArcGIS Server 10.8 帮助" class="search-input js-search-input">
+                <input type="hidden" name="collection" value="help" />
+                <input type="hidden" name="product" value="arcgis-server-windows" />
+                <input type="hidden" name="version" value="10.8" />
+                <input type="hidden" name="language" value="zh-CN" />
+              </div>
+            </label>
+            <input type="hidden" name="relativePath" value="../../../../../" /><button type="submit" class="btn btn-large right">搜索</button>
+          </form>
+        </div>
+      </div>
+
+      <!--googleon: all-->
+
+      <div id="skip-to-content">
+        <!--googleoff: all-->
+        <header class="sub-nav sub-nav-learn">
+          <div class="grid-container">
+            
+            <div class="column-24">
+              <div style="display:table;" class="sdk-home-banner">
+                <div class="sdk-home-banner-content">
+                  <h1 class="sub-nav-title link-white">ArcGIS Server</h1>
+                </div>
+              </div>
+            </div>
+
+            <div class="column-24">
+              <nav class='sub-nav-list tablet-hide'><a class="sub-nav-link" href="../../../../../zh-CN/server/" target="_top" title="ArcGIS Server 的概述和文档">主页</a><a class="sub-nav-link" href="../../../../../zh-CN/server/latest/get-started/windows/" target="_top" title="了解有关 ArcGIS Server 和服务器角色的信息">简介</a><a class="sub-nav-link" href="../../../../../zh-CN/server/latest/deploy/windows/" target="_top" title="构建、配置和升级部署">部署</a><a class="sub-nav-link" href="../../../../../zh-CN/server/latest/manage-data/windows/" target="_top" title="管理企业的空间数据">管理数据</a><a class="sub-nav-link" href="../../../../../zh-CN/server/latest/publish-services/windows/" target="_top" title="使用 GIS 服务">管理服务</a><a class="sub-nav-link" href="../../../../../zh-CN/server/latest/create-web-apps/windows/" target="_top" title="创建 Web 应用程序和可打印地图">共享</a><a class="sub-nav-link is-active" href="../../../../../zh-CN/server/latest/administer/windows/" target="_top" title="管理和保护 ArcGIS Server">管理</a><a class="sub-nav-link" href="../../../../../zh-CN/server/latest/develop/windows/" target="_top" title="构建扩展模块并自动执行常见任务">开发</a></nav><select class='tablet-show select-full trailer-half js-select-nav'><option value="../../../../../zh-CN/server/">主页</option><option value="../../../../../zh-CN/server/latest/get-started/windows/">简介</option><option value="../../../../../zh-CN/server/latest/deploy/windows/">部署</option><option value="../../../../../zh-CN/server/latest/manage-data/windows/">管理数据</option><option value="../../../../../zh-CN/server/latest/publish-services/windows/">管理服务</option><option value="../../../../../zh-CN/server/latest/create-web-apps/windows/">共享</option><option selected="true" value="../../../../../zh-CN/server/latest/administer/windows/">管理</option><option value="../../../../../zh-CN/server/latest/develop/windows/">开发</option></select>
+            </div>
+
+          </div>
+        </header>
+        <!--googleon: all-->
+       
+        <!-- content goes here -->
+        <div class="grid-container ">
+          
+
+            
+              
+  <!--BREADCRUMB-BEG--><div id="bigmac" class="sticky-breadcrumbs trailer-2" data-spy="affix" data-offset-top="180"> </div><!--BREADCRUMB-END-->
+  <!--googleoff: all-->
+    <div class="column-5 tablet-column-12 trailer-2 ">
+      <aside class="js-accordion accordion reference-index" aria-live="polite" role="tablist">
+        <div></div>
+      </aside>
+
+      <div class="js-sticky scroll-show tablet-hide leader-1 back-to-top" data-top="0" style="top: 0px;">
+        <a href="#" class="btn btn-fill btn-clear">返回顶部</a>
+      </div>
+    </div>
+  <!--googleon: all-->
+  
+            
+            
+            
+	
+		<div class="column-13  pre-1 content-section">
+	
+		<header class="trailer-1"><h1>配置服务实例设置</h1></header>
+
+		 
+	<!--googleoff: all-->
+	
+		
+				<aside id="main-toc-small" class="js-accordion accordion tablet-show trailer-1">
+			      <div class="accordion-section">
+			        <h4 class="accordion-title">在本主题中</h4>
+			        <div class="accordion-content list-plain">
+			          <ol class="list-plain pre-0 trailer-0"><li><a href="#ESRI_SECTION1_C30D73392D964D51A8B606128A8A6E8F">服务实例简介</a></li><li><a href="#ESRI_SECTION1_C7763B9B6A9A4B349B2D0B334919D70D">最小和最大服务实例数</a></li><li><a href="#ESRI_SECTION1_C6A867B5D3C543668798F75139028A99">共享和专用实例</a></li><li><a href="#ESRI_SECTION1_100EBEA6FF554B0BAFE3662F08772BC3">配置共享实例池</a></li><li><a href="#ESRI_SECTION1_91F25EC91E5A43C9BF87900248987B32">配置默认服务实例设置</a></li><li><a href="#ESRI_SECTION1_C10993BA9EC94D6DA0BB87E4EDD0ED31">配置服务的实例类型</a></li></ol>
+			        </div>
+			      </div>
+			     </aside>
+		
+    
+   <!--googleon: all-->
+
+
+		<main>
+			
+	
+    	
+    
+
+
+			
+<p id="GUID-BB92A609-BB98-44AF-891B-7422BF4C8068"><span class="ph">ArcGIS Server</span> 提供对从 <span class="ph">ArcGIS Pro</span> 发布到 <span class="ph">ArcGIS Server</span> 站点的每个兼容地图服务使用共享实例或专用实例的功能。使用共享实例可以通过池化多个活动服务器进程以供多个服务使用的方式来节省内存使用量。这样做可以减少没有积极处理请求的服务的内存使用量。</p><div class="panel trailer-1" id="GUID-5106E3D7-4021-4583-A3DD-ED11857393AA"><h5 class="icon-ui-time-clock trailer-0">旧版本：</h5><p id="GUID-F8BE9175-8ADA-4AEA-B09D-3C134D25D8D7">在 10.7 之前，所有服务使用的模型现在称为专用实例。</p></div><p id="GUID-9D786B14-1EC4-444A-8539-25573B93A343">对于接收偶发请求的服务，尤其是服务器站点托管许多服务时，建议使用共享实例。此外，专用实例可让服务在通过一个或多个服务器进程处理请求时始终可用，同时也是经常性或计算密集型请求的理想之选。</p><p id="GUID-361AA3E8-8D91-4F21-B739-03CE197A75E2">本主题将对服务实例和进程进行说明，介绍共享和专用实例的最佳做法，并提供设置服务实例设置的步骤。</p><section class="section1 padded-anchor" id="ESRI_SECTION1_C30D73392D964D51A8B606128A8A6E8F" purpose="section1"><h2>服务实例简介</h2><p id="GUID-DF1C73C3-9FDF-425D-A923-3131759E5CF0">对 <span class="ph">ArcGIS Server</span> 站点中的某个服务发出请求（例如平移地图或导航至某个地址）时，该请求将由在服务器计算机上运行的已发布服务的实例进行处理。服务实例由名为 ArcSOC 进程的 Esri 专有服务器进程提供支持。每个 ArcSOC 进程运行时都需要占用一定量的计算机内存。</p><p id="GUID-F2BA58AA-9690-4531-B1AF-467A5A137AFC">如果 <span class="ph">ArcGIS Server</span> 站点上有许多服务，且每个服务使用一个或多个持续运行的服务实例，则计算机可用内存最终将达到限值。运行服务实例也会给您的组织带来能量消耗，如果您在云基础架构上部署 <span class="ph">ArcGIS Server</span>，则每个正在运行的服务实例都会给您带来直接的货币成本。</p><p id="GUID-CA0B508E-A77E-4642-BD05-8624793270DA">因此，<span class="ph">ArcGIS Server</span> 管理员有必要监控其站点运行的实例数，并在性能受到内存使用量抑制时限制所运行的实例数。</p><p id="GUID-6407A70F-FD00-4638-A736-5F4504128A05">用户希望在与服务交互时能够快速获得结果
+（包括借助服务构建的产品，例如 Web 地图和应用程序）。处理服务收到的流量时需要足够的 ArcSOC 进程。但是，如果配置的服务器资源超过了服务所需，则会浪费计算机内存、能源和资金。对于管理员来说，在不影响性能的前提下，将运行的服务实例数量减少到所需要数量是一个理想的目标。</p><p id="GUID-9C62E525-713D-4625-9809-88AB9BDD8F0E"> 有关用于优化 <span class="ph">ArcGIS Server</span> 性能的活动管理策略的详细信息，请参阅<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/server/latest/deploy" href="../../../../../zh-CN/server/latest/deploy/windows/anticipating-and-accommodating-users.htm">预估和容纳用户</a>。</p></section><section class="section1 padded-anchor" id="ESRI_SECTION1_C7763B9B6A9A4B349B2D0B334919D70D" purpose="section1"><h2>最小和最大服务实例数</h2><p id="GUID-515F9F77-774E-428F-BAC5-3FBEAA1A6375">对于发布到 <span class="ph">ArcGIS Server</span> 站点、使用专用实例的每个服务，可使用 <span class="ph">ArcGIS Server</span> Manager 为服务指定正在运行的最小专用实例数和可以运行的最大实例数。例如，如果将此参数设置为三个实例，则在给定时间内始终会至少有三个实例在 ArcSOC 进程上运行，即使服务未使用时亦如此。</p><p id="GUID-03CA72FF-1FC4-4EA0-A71C-D536D8B8931C">如果将最小实例数设置为零，则不使用服务时，将不会运行任何实例。这样，可以通过关闭未使用的服务来节省内存使用量，但也有一个缺点：用户下次向服务发送请求时，会发生响应延迟。在 <span class="ph">ArcGIS Server</span> 启动实例来处理服务请求时，这种冷启动对发出请求的用户尤为明显。</p></section><section class="section1 padded-anchor" id="ESRI_SECTION1_C6A867B5D3C543668798F75139028A99" purpose="section1"><h2>共享和专用实例</h2><p id="GUID-EFCC7CFD-D9C6-4C29-AF39-4E7C354D2806">将服务配置为使用共享实例池后，该共享实例池将在站点中的每台计算机上运行。使用共享实例池的服务在不处理请求时不再产生资源使用成本，并且没有冷启动的缺点。</p><div class="panel trailer-1" id="GUID-178B517A-F2EA-4B63-8E28-167380FABD49"><h5 class="icon-ui-description trailer-0">提示：</h5><p id="GUID-55425545-28A7-415C-8F5B-FE7FCE025E01">要确定地图服务是从哪个应用程序发布的，请参阅下面<a class="xref xref" href="../../../../../zh-CN/server/latest/administer/windows/configure-service-instance-settings.htm#ESRI_STEP_1CCABCE47CAC4B8D830011708EBD5112">为服务配置实例类型中的第 3 步</a>。</p></div><p id="GUID-53A8153F-3570-4E81-A59A-BCEF529B3C7D"></p><p id="GUID-B107580A-1F4A-45A3-ABD7-B0B34ECE8B69">以下限制条件用于限制可以使用共享实例池的服务：</p><ul purpose="ul" id="UL_CAA32499240847CBA48FCA0E9AB11D88"><li purpose="li" id="LI_E4243FA2C4524CB397383F593A3D47DC">仅从 <span class="ph">ArcGIS Pro</span> 中发布的地图服务可以配置为使用共享实例池。不支持其他服务类型，例如地理处理服务。</li><li purpose="li" id="LI_C74607DEDB0448FD8DCDE56FF4B46E13">仅可以启用地图服务的某些功能，例如，要素访问、WFS、WMS 和 KML。请先关闭所有其他应用程序，然后再继续下一步。</li><li purpose="li" id="LI_BADB5A89B9144B26A157692BAB9DC030">具有自定义服务器对象扩展模块 (SOE) 或服务器对象拦截器 (SOI) 的服务无法使用共享实例。</li><li purpose="li" id="LI_22DF3D9712F14F30862D6012BC792C3C">从 <span class="ph">ArcMap</span> 发布的服务无法使用共享实例。</li><li purpose="li" id="LI_1E83C56F736949CAB57831B9902F06CF">从 <span class="ph">ArcGIS Pro</span> 发布的缓存地图服务若满足以上要求，则可以使用共享实例。</li></ul><p id="GUID-940ADBBC-FDCC-4383-BD90-70F996F05139">共享实例与专用实例不同，后者在断电之前仅运行一种特定服务。但是专用实例仍然是管理员的有效选择，尤其是对于高流量服务。专用实例旨在通过为服务提供专用服务器资源确保服务性能最佳，同时防止高流量服务使用池中的所有进程。</p><div class="panel trailer-1 note" id="GUID-6647A318-5614-440C-9C2E-8F807271863D"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-F1D38A03-7515-4183-893B-0B9E3A8CCE51">将 <span class="ph">ArcGIS Server</span> 从 10.6.1 或更早版本升级到 <span class="ph">10.8</span> 时，服务的最小实例数设置不会发生变化，但是会为共享实例留出一个默认 ArcSOC 进程池。如果要为部分或全部服务配置共享实例，可以在升级后进行配置。</p></div><section class="section2 padded-anchor" id="ESRI_SECTION2_B1EEE33F517F44ADB68943F7CE416F57" purpose="section2"><h3>使用每个实例类型的时机</h3><p id="GUID-72BE8C5E-F034-40F8-B50C-075E20C4B11E">没有哪个实例类型可完美适用于所有地图服务。作为服务器站点管理员，您可以决定发布到站点的每个服务应使用哪个实例池。</p><p id="GUID-0CD96AAC-05EC-45EB-A5ED-B664B22F9055">您可以为某些服务配置共享实例，也可以为其他服务提供其专用的 ArcSOC 进程。如果您知道某些服务将接受连续请求，而其他服务接收偶发请求，则可以选择这种分开配置的方法。如果所有服务都只是偶尔接收请求，则考虑为所有服务配置共享实例可以节省内存使用量。</p><div class="panel trailer-1" id="GUID-B44303FF-8A2F-48DF-8B5E-883430CC3C82"><h5 class="icon-ui-description trailer-0">提示：</h5><p id="GUID-91B3029B-68CB-4DB1-8787-0CEC7D978940">使用模式会经常发生变化，因此在监控站点时，请根据流量和服务器性能，适当调整实例类型设置。</p></div><p id="GUID-4B1530B0-E983-4434-960F-01FFB57DF137">共享实例池适用于兼容的地图服务，例如：<ul purpose="ul" id="UL_C9C58ADF3D6B4183BF50F593CBBBD33A"><li purpose="li" id="LI_682CB729104C45449B8AB84432B11885">不经常使用的服务。因部署而异，但对于大多数部署来说，意味着平均每分钟的服务请求数少于一个。</li><li purpose="li" id="LI_D1D9141418114524BC5CBCAB4C59D2CC">最小专用实例数已设置为零的服务。</li><li purpose="li" id="LI_1A24848E036D4630A0AED59ADB73B1A3">大多数缓存地图服务。</li></ul></p><p id="GUID-C2567745-2181-43EA-8154-7AB0A8B05859">相比之下，专用实例池仍然是以下服务的最佳选择：<ul purpose="ul" id="UL_A091B1964C7A436DA1761E840ADD7294"><li purpose="li" id="LI_AB86A916DD5F4264986A81447EDC7328">在服务级别协议下签约的服务。</li><li purpose="li" id="LI_C89B5FCFBAA74E70B3F133002E596C81">频繁使用的服务（近乎连续请求或计算密集型请求）。</li><li purpose="li" id="LI_E285C16D890C4D4280133C2B4C9FA293">最小专用实例数已设置为较高值的服务。</li><li purpose="li" id="LI_71646544F2614203BC6B0DFC4264F212">与共享实例池不兼容的所有服务（请参照以上定义）。</li></ul></p></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_100EBEA6FF554B0BAFE3662F08772BC3" purpose="section1"><h2>配置共享实例池</h2><p id="GUID-B7F6220E-2614-4958-8A30-AA0C62D0E814">管理员可以使用 <span class="ph">Server Manager</span> 配置其站点中的共享实例池设置。可用设置包括每台计算机的共享实例数和每个共享实例的缓存大小。</p><p id="GUID-A17334B0-C455-425D-84BF-24721F9AD981">新安装的 <span class="ph">ArcGIS Server</span> <span class="ph">10.8</span> 第一次托管使用共享实例池的兼容地图服务时，站点将开始运行共享实例。默认情况下，根据每台计算机上的物理 CPU 内核数将池中的共享实例数设置为适当数值。</p><p id="GUID-7FDC8EED-991F-4A38-A92D-2ED26517B43B">如果大多数或全部站点服务都使用共享实例池，请考虑将共享池中的服务实例数量设置为 <span class="ph">ArcGIS Server</span> 站点中单个计算机的物理 CPU 内核数的两倍（例如，如果您使用的是四核计算机，请考虑将池大小设置为八个实例）。</p><p id="GUID-63EC70D6-A4C8-4A47-90EE-2AB90343EAB5"><div class="panel trailer-1 note" id="GUID-4AFB4792-1FDE-4ECA-8B69-021FFCCE92EF"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-63DDA030-E682-42E5-83E6-2D189E38622D">如果您使用的是超线程、vCPU 或逻辑内核（例如，如果您的站点位于虚拟环境或云环境中），请考虑将每个逻辑核心设置为物理核心的一半。</p></div></p><p id="GUID-2203ABB7-3D8D-4EE0-923B-8161422CCADA">在许多服务使用专用实例的服务器站点中，如果希望将更多系统资源分配给这些服务，则可以考虑减小共享实例池的大小。池中的共享实例数不应小于计算机上的物理 CPU 内核数，除非没有服务正在使用该池。如果站点中的所有服务当前均未使用共享实例，则可以将每台计算机的实例数设置为零。</p><p id="GUID-7C97B2D3-F2AB-4945-8336-828F94650E71"> 共享池中的每个实例都会缓存有关已收到请求的服务的信息，因为缓存此信息可提高相同服务的后续请求性能。每个已缓存服务只占用少量内存。</p><p id="GUID-D944B44E-F8B5-414F-802B-C353172419B5"> 缓存大小设置控制共享实例池中每个实例缓存的服务数量。除非您拥有大量的内存和大量全部定期接收请求的服务，否则建议保留每个实例的缓存服务数默认值 50。</p><p id="GUID-47BA1663-0FAF-4498-927B-C0E4171A18D2">如果您拥有超过 50 个定期接收请求的服务，目前遇到了性能问题，并且您拥有希望用于此目的的可用内存，则可以考虑提高缓存大小值。</p><p id="GUID-5E2A3AE3-7729-4881-87AC-F2FC756D31C8">这些建议旨在帮助您入门。监视 <span class="ph">ArcGIS Server</span> 站点，以确保充分利用可用资源，且站点不会出现流量超载问题。池中的最佳实例数和实例的最佳缓存大小取决于共享池服务的流量、正在服务的数据数量和类型以及可用计算资源数量。</p><p id="GUID-A38CB7D2-68AF-4E16-9D71-CA3FAC7D8C47">按照以下步骤指定共享实例池中的实例数及其缓存大小。</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_1D87D54A667B41079ADB870D91847EFE"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_FE0DF6E811EF416AA1E7DC47CEEC2D36"><span purpose="cmd">以管理员身份登录到 <span class="ph">ArcGIS Server Manager</span>。URL 地址格式为 <span class="usertext">https://webadaptor.domain.com/arcgis/manager</span>。</span></li><li purpose="step" id="ESRI_STEP_B95E06A8DE1D4FE392EAD3D1999C3081"><span purpose="cmd">浏览至<span class="uicontrol">站点 <span class="greaterthan">&gt;</span> 设置</span>。可从<span class="uicontrol">池化</span>页面访问这些设置。</span></li><li purpose="step" id="ESRI_STEP_856D2E7486EC4C2597E96C482A6FF21F"><span purpose="cmd">单击<span class="uicontrol">共享实例设置</span>的编辑按钮。</span></li><li purpose="step" id="ESRI_STEP_6E7C5059686E4FD399F86E3B3B9A73DE"><span purpose="cmd">在对话框上，根据需要更改<span class="uicontrol">每台计算机的共享实例数</span>或<span class="uicontrol">每个共享实例的缓存大小</span>的值。</span></li><li purpose="step" id="ESRI_STEP_95B7D7A7AF884EB09203594B397507F1"><span purpose="cmd">单击<span class="uicontrol">应用</span>确认选择。</span></li></ol></div></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_91F25EC91E5A43C9BF87900248987B32" purpose="section1"><h2>配置默认服务实例设置</h2><p id="GUID-9784EE76-86C2-407F-8937-D8AA938F359E">管理员可以为从 <span class="ph">ArcGIS Pro</span> 发布的兼容地图服务指定默认实例类型设置。将此类服务发布到服务器时，该服务将使用默认实例类型。之后，您可以使用下一节中的步骤更改单个服务的实例类型。</p><p id="GUID-0FBB676A-6D2A-4BB0-B10E-590FF16E3455"><span class="ph">ArcGIS Server</span> <span class="ph">10.8</span> 站点的默认实例类型的初始设置取决于此站点是新安装站点还是升级站点：<ul purpose="ul" id="UL_9A06B1DD95D94674B20AB622163F40FB"><li purpose="li" id="LI_D22B16EC75764671BAF01E8057E1EFBD">在 <span class="ph">10.8</span> 中创建的新 <span class="ph">ArcGIS Server</span> 站点将所有兼容的地图服务分配给共享实例池作为默认实例设置。</li><li purpose="li" id="LI_6A4547479CB44CDA82D55BDD18A37536"> 从 10.7 或 10.7.1 升级的 <span class="ph">ArcGIS Server</span> 站点保留其当前默认实例设置。这些版本的初始设置为专用实例，可选择使用共享实例。</li><li purpose="li" id="LI_C0132EFB743E4F9ABD2926C86C17A3F5"> 在从 10.6.1 或更早版本升级的 <span class="ph">ArcGIS Server</span> 站点中，默认实例类型的初始设置为专用实例。第一次将兼容的地图服务配置为使用共享实例时，将创建共享实例池。</li></ul></p><p id="GUID-36612A55-8DF3-4A5E-AC43-F72E3CB299C5"></p><p id="GUID-3273F546-0639-4EDF-B59B-449F8D4FC403">如果选择将共享实例用作服务的默认实例类型，则该设置仅适用于兼容的地图服务。无法使用共享实例池的服务继续使用自己的专用实例池。</p><p id="GUID-412E86C1-0CA3-4C92-BEA3-5D39D95EEA42">更改默认实例类型设置仅影响未来发布的服务。不会更改现有服务的实例类型设置。</p><div class="panel trailer-1 note" id="GUID-A1DD67C3-84A3-4D15-8856-82D9E25E914F"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-B50C85B8-37B1-4DE6-84EA-C1F839448B47">共享实例池将占用一小部分内存，具体视接受请求的服务数量而定。对于处理大量服务请求的共享实例池，您可以看到随着服务接受请求的数量增多，共享实例池所占内存也在不断增加。在单个回收期内 50 个或更多服务收到请求后，这一内存消耗的增加将减缓。</p></div><p id="GUID-57E28FD2-3B17-4441-A887-8569F403F754">按照以下步骤指定兼容地图服务的默认实例类型。</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_29B7FD152D82434F8F54F1435370C676"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_7F488EE1B1274CF89B1CA356AB1D5134"><span purpose="cmd">以管理员身份登录到 <span class="ph">ArcGIS Server Manager</span>。URL 地址格式为 <span class="usertext">https://webadaptor.domain.com/arcgis/manager</span>。</span></li><li purpose="step" id="ESRI_STEP_0850BA7510064EBE88D63FFA7B8353A2"><span purpose="cmd">浏览至<span class="uicontrol">站点 <span class="greaterthan">&gt;</span> 设置</span>。您将从<span class="uicontrol">池化</span>页面访问这些设置。</span></li><li purpose="step" id="ESRI_STEP_8E1A8FFDA34A45DC857982F1FCE3D460"><span purpose="cmd">要更改兼容地图服务的默认实例类型，请单击<span class="uicontrol">默认实例类型</span>编辑按钮。选择要作为默认设置的实例类型：</span><ul purpose="choices" id="ESRI_CHOICES_BC1DD8DC24614EF3999D42579B30A652"><li purpose="choice" id="ESRI_CHOICE_336DDD45580C418396607499339F82A6">如果您预计大多数服务将接收频繁流量，或者服务器站点中运行的服务数量不足以导致计算机内存负载显著增加，请选择<span class="uicontrol">专用实例</span>。</li><li purpose="choice" id="ESRI_CHOICE_6B0E7EB243D947DA9DDB110AB21D47B2">如果您发布的许多服务仅接收不频繁的请求，或者您担心将要发布的其他服务会使内存资源变得紧张，请选择<span class="uicontrol">共享实例</span>。</li></ul></li><li purpose="step" id="ESRI_STEP_085134048EC242E5BEDE5E261BE2D69C"><span purpose="cmd">单击<span class="uicontrol">应用</span>确认选择。</span></li></ol></div></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_C10993BA9EC94D6DA0BB87E4EDD0ED31" purpose="section1"><h2>配置服务的实例类型</h2></section><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><section class="context padded-anchor" id="ESRI_CONTEXT_6560A838683D48199B93CDB41E19DC7B" purpose="context"><p id="GUID-A3731E16-AC19-4B55-B280-BAA7F99C208A">管理员还可以在发布服务后指定单个服务的实例类型，以覆盖默认设置。请按照以下步骤更改单个服务的实例类型。要使用共享实例池，必须从 <span class="ph">ArcGIS Pro</span> 发布地图服务，并满足上述其他要求。</p></section><div class="steps" id="ESRI_STEPS_01C4AA33D144416787139ABE7D956648"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_A59729597E424FEFB64E4CA7AEC651FF"><span purpose="cmd">将 web 图层（作为地图图像图层）或 web 地图从 <span class="ph">ArcGIS Pro</span> 共享到 <span class="ph">ArcGIS Enterprise</span> 门户。将在联合 <span class="ph">ArcGIS Server</span> 上创建地图服务。</span><div class="info" purpose="info"><div class="panel trailer-1 note" id="GUID-EDE5AF61-CDA0-4FA1-9070-AFDD7BA7BB1D"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-6D550F90-3526-41CE-8548-E1AC28F565CB">在使用共享实例池的地图服务上只能启用某些地图服务功能（要素访问、WFS、WMS 和 KML）。</p></div></div></li><li purpose="step" id="ESRI_STEP_2103052721674AFCBDA89A2F7F114C37"><span purpose="cmd">以管理员身份登录到 <span class="ph">ArcGIS Server Manager</span>。URL 地址格式为 <span class="usertext">https://webadaptor.domain.com/arcgis/manager</span>。</span></li><li purpose="step" id="ESRI_STEP_1CCABCE47CAC4B8D830011708EBD5112"><span purpose="cmd">找到地图服务。</span><div class="stepresult" purpose="stepresult"><p id="GUID-44E6F1BF-7CA5-4BA8-A8B8-3E5C223A9358"><span class="uicontrol">创作应用程序</span>属性表示此地图服务之前是从 <span class="ph">ArcGIS Pro</span> 发布的。单击服务的编辑链接。</p></div></li><li purpose="step" id="ESRI_STEP_F85BE18B27074E91ACFDB333B6C74095"><span purpose="cmd">在页面左侧，单击<span class="uicontrol">池化</span>选项卡。</span><div class="info" purpose="info"><p id="GUID-459C0A58-23BA-490F-9009-876891D5E351">可在此选项卡中指定服务的专用实例范围（如果适用），设置<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/server/latest/publish-services" href="../../../../../zh-CN/server/latest/publish-services/windows/tuning-and-configuring-services.htm#GUID-2927D13A-A234-4E90-9CD2-C0515A440735">服务超时属性</a>，以及指定服务是使用专用实例还是共享实例。</p></div></li><li purpose="step" id="ESRI_STEP_BD82201320174C728AE58DEA4FDDAB84"><span purpose="cmd">指定服务应使用<span class="uicontrol">共享实例池</span>还是自己的<span class="uicontrol">专用实例池</span>。</span><ul purpose="choices" id="ESRI_CHOICES_4A2FEF1EF26E43978DA5E537AEFC3CFB"><li purpose="choice" id="ESRI_CHOICE_894E395BF279442B8D1DD97503042B45">将服务配置为使用共享实例池时，某些地图服务功能（在<span class="uicontrol">功能</span>选项卡上）将不可用。如果您无法选择<span class="uicontrol">共享实例池</span>选项，请确保地图服务上没有启用任何不支持的功能。请参阅步骤 1 中的注释。</li><li purpose="choice" id="ESRI_CHOICE_F5C551E0048A4401BA428B4B0E834978">将服务配置为使用共享实例池时，<span class="uicontrol">指定实例数</span>部分（适用于专用实例池）不可用。</li></ul></li><li purpose="step" id="ESRI_STEP_131A260DF21941B0B3B21D6A55E4BC35"><span purpose="cmd">准备就绪后，单击<span class="uicontrol">保存并重新启动</span>。地图服务上的实例池选项发生更改后，服务必须重新启动。</span></li></ol></div><section class="result padded-anchor" id="ESRI_RESULT_D0E295EE13D2457DA6A6491535669FA1" purpose="result"><p id="GUID-D2FC59A7-E2B0-485C-9906-A90DE3010590">您可以随时更改地图服务使用的实例池；当服务流量模式发生变化时，您可能需要执行此操作。</p></section></section><section class="wfsummary padded-anchor" id="ESRI_WORKFLOWSUMMARY_9E2EBB687C9E4101B631BA4BEA924BAD" purpose="wfsummary"></section>
+			
+				<hr>
+				<!--googleoff: all-->
+				
+	
+        
+		    <p class="feedback right">
+		        <a id="afb" class="icon-ui-contact" href="/feedback/" data-langlabel="feedback-on-this-topic" >有关此主题的反馈?</a>
+		    </p>
+        
+	
+
+				<!--googleon: all-->
+			
+		</main>
+	</div>
+	
+	<!--googleoff: all-->
+	
+		
+			<div id="main-toc-large" class="column-5">
+			    <div class="panel font-size--2 tablet-hide trailer-1">
+			      <h5 class="trailer-half">在本主题中</h5>
+			      <ol class="list-plain pre-0 trailer-0"><li><a href="#ESRI_SECTION1_C30D73392D964D51A8B606128A8A6E8F">服务实例简介</a></li><li><a href="#ESRI_SECTION1_C7763B9B6A9A4B349B2D0B334919D70D">最小和最大服务实例数</a></li><li><a href="#ESRI_SECTION1_C6A867B5D3C543668798F75139028A99">共享和专用实例</a></li><li><a href="#ESRI_SECTION1_100EBEA6FF554B0BAFE3662F08772BC3">配置共享实例池</a></li><li><a href="#ESRI_SECTION1_91F25EC91E5A43C9BF87900248987B32">配置默认服务实例设置</a></li><li><a href="#ESRI_SECTION1_C10993BA9EC94D6DA0BB87E4EDD0ED31">配置服务的实例类型</a></li></ol>
+			    </div>
+			    
+			    
+	  		</div>
+		
+    
+   <!--googleon: all-->
+
+
+
+
+          
+        </div>
+        <!-- ENDPAGECONTENT -->
+
+      </div>
+
+    </div>  <!-- End of wrapper -->
+
+  <footer class="footer leader-3 link-dark-gray" role="contentinfo">
+    <div class="grid-container">
+      <div class="row">
+        <nav class="column-6">
+          <h6 data-langlabel="arcgis-for-server">Arc<span>GIS Enterprise</span></h6>
+          <ul class="list-plain">
+            <li><a data-langlabel="home" href="../../../../../zh-CN/">主页</a></li>
+            <li><a data-langlabel="portal" href="../../../../../zh-CN/portal/">Portal</a></li>
+            <li><a data-langlabel="server" href="../../../../../zh-CN/server/">Server</a></li>
+            <li><a data-langlabel="data-store" href="../../../../../zh-CN/data-store/">Data Stores</a></li>
+            <li><a data-langlabel="cloud" href="../../../../../zh-CN/cloud/">云</a></li>
+            <li><a data-langlabel="apps" href="../../../../../zh-CN/apps/">应用程序</a></li>
+            <li><a data-langlabel="documentation" href="../../../../../zh-CN/documentation/">文档</a></li>
+          </ul>
+        </nav>
+
+        
+  <nav class="column-6">
+    <h6 data-langlabel="arcgis-platform">ArcGIS 平台</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="arcgis" href="//www.arcgis.com/">ArcGIS Online</a></li>
+      <li><a data-langlabel="arcgis-for-professionals" href="//pro.arcgis.com/">ArcGIS Pro</a></li>
+      <li><a data-langlabel="arcgis-for-server" href="//enterprise.arcgis.com/">ArcGIS Enterprise</a></li>
+      <li><a data-langlabel="arcgis-for-developers" href="https://developers.arcgis.com/">ArcGIS for Developers</a></li>
+      <li><a data-langlabel="arcgis-solutions" href="//solutions.arcgis.com/">ArcGIS Solutions</a></li>
+      <li><a data-langlabel="arcgis-marketplace" href="//marketplace.arcgis.com/">ArcGIS Marketplace</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <h6 data-langlabel="about-esri">关于 Esri</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="about-us" href="//www.esri.com/about-esri/">关于我们</a></li>
+      <li><a data-langlabel="careers" href="//www.esri.com/careers/">招贤纳士</a></li>
+      <li><a data-langlabel="insiders-blog" href="https://www.esri.com/about/newsroom/blog/">Esri 博客</a></li>
+      <li><a data-langlabel="user-conference" href="//www.esri.com/events/user-conference/index.html">用户大会</a></li>
+      <li><a data-langlabel="developer-summit" href="//www.esri.com/events/devsummit/index.html">开发者峰会</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <a class="esri-logo" href="//www.esri.com/" aria-label="Esri Home"></a>
+    <section class="footer-social-nav leader-1">
+            <a class="icon-social-twitter" aria-label="Esri on Twitter" href="https://twitter.com/Esri/"></a>
+            <a class="icon-social-facebook" aria-label="Esri on Facebook" href="https://www.facebook.com/esrigis/"></a>
+            <a class="icon-social-github" aria-label="Esri on GitHub" href="//esri.github.io/"></a>
+            <a class="icon-social-contact" aria-label="Contact Esri" href="//www.esri.com/about-esri/contact/"></a>
+    </section>
+	  
+  </nav>
+  
+  <div class="column-24 leader-1">
+    <p class="font-size--3"><a href="http://www.esri.com/legal/copyright-trademarks">Copyright &copy; 2019 Esri.</a> All rights reserved. | <a href="http://www.esri.com/legal/privacy/">隐私政策</a> | <a href="http://www.esri.com/legal/software-license">法律声明</a></p>
+  </div>
+  
+
+
+      </div>
+    </div>
+  </footer>
+  <!--googleoff: all-->
+
+  
+  
+	<script src="../../../../../zh-CN/assets/js/init.js" type="text/javascript"></script>
+	<!--<script src="../../../../../zh-CN/assets/js/drop-down.js" type="text/javascript"></script>-->
+	<script src="../../../../../zh-CN/assets/js/search/searchform.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/cdn/js/link-modifier.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/cdn/js/sitewide.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/cdn/js/libs/highlight.pack.js" type="text/javascript"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+
+
+  
+    
+
+  <script src="../../../../../zh-CN/cdn/js/affix.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    $(function () {
+          var appendFlg = true;
+
+          $("#bigmac")
+          .on("affixed.bs.affix", function (evt) {
+            if (appendFlg) {
+              $("<a class='crumb' href='#'>配置服务实例设置</a>").insertAfter ($("#bigmac nav a").last());
+              appendFlg = false;
+            }
+          })
+          .on ("affix-top.bs.affix", function(evt) {
+            if (!appendFlg) {
+              $("#bigmac nav a").last().remove();
+            }
+            appendFlg = true;
+          })
+    })
+  </script>
+  
+        <script type="text/javascript">
+          window.doctoc = {
+            pubID: "1640",
+            tpcID: "237",
+            
+              prefix: "管理",
+              prefixUrl: "/zh-cn/server/latest/administer/windows/",
+          
+            hideToc: false
+          }
+        </script>
+
+        <script type="text/javascript" src="../../../../../zh-CN/server/latest/administer/windows/1640.js" ></script>
+        <script type="text/javascript" src="../../../../../zh-CN/cdn/calcite/js/protoc.js" ></script>
+        
+        
+
+  <noscript>
+        <p>
+            <a href="flisting.htm">flist</a>
+        </p>
+    </noscript>
+    <script type="text/javascript"></script>
+  
+  
+    
+    
+
+  </body>
+</html>

@@ -1,0 +1,544 @@
+
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>  <html class="ie lt-ie9 lt-ie8 lt-ie7 ie6" dir="ltr"> <![endif]-->
+<!--[if IE 7]>     <html class="ie lt-ie9 lt-ie8 ie7" dir="ltr"> <![endif]-->
+<!--[if IE 8]>     <html class="ie lt-ie9 ie8" dir="ltr"> <![endif]-->
+<!--[if IE 9]>     <html class="ie ie9" dir="ltr"> <![endif]-->
+<!--[if !IE]><!--> <html dir="ltr" lang="zh-CN"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>可用地图和图像缓存属性&mdash;文档 | ArcGIS Enterprise 文档</title>
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+    <script>
+      var docConfig = {
+        locale: 'zh-CN'
+        ,localedir: 'zh-cn'
+        ,langSelector: ''
+        
+        ,relativeUrl: false
+        
+
+        ,searchformUrl: '/search/'
+        ,tertiaryNavIndex: ''
+
+        
+      };
+    </script>
+	 
+
+
+    
+    <!--[if lt IE 9]>
+      <script src="../../../../../zh-CN/cdn/js/libs/html5shiv.js" type="text/javascript"></script>
+      <script src="../../../../../zh-CN/cdn/js/libs/selectivizr-min.js" type="text/javascript"></script>
+      <script src="../../../../../zh-CN/cdn/js/libs/json2.js" type="text/javascript"></script>
+      <script src="../../../../../zh-CN/cdn/js/libs/html5shiv-printshiv.js" type="text/javascript" >
+
+    <![endif]-->
+
+     <!--[if lt IE 11]>
+    <script>
+      $$(document).ready(function(){
+        $$(".hideOnIE").hide();
+      });
+    </script>
+    <![endif]-->
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<link href="../../../../../zh-CN/assets/img/favicon.ico" rel="shortcut icon" >
+	<link href="../../../../../zh-CN/assets/css/screen.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/cdn/calcite/css/documentation.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/assets/css/print.css" media="print" type="text/css" rel="stylesheet" />
+
+	<!--
+	<link href="../../../../../zh-CN/assets/css/screen_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/assets/css/documentation/base_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/assets/css/print_l10n.css" media="print" type="text/css" rel="stylesheet" />
+	-->
+	
+	
+		<script src="../../../../../zh-CN/cdn/js/libs/jquery.1.9.1.min.js" type="text/javascript"></script>
+	
+	<script src="../../../../../zh-CN/cdn/js/libs/jquery.cookie.js" type="text/javascript"></script>
+	<link href="../../../../../zh-CN/cdn/css/colorbox.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/cdn/css/colorbox_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<script src="../../../../../zh-CN/cdn/js/libs/jquery.colorbox-min.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/assets/js/video-init.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/assets/js/sitecfg.js" type="text/javascript"></script>
+	
+		<script src="../../../../../zh-CN/assets/js/signIn.js" type="text/javascript"></script>
+	
+
+	<!--- Language Picker -->
+	<script src="../../../../../zh-CN/assets/js/locale/l10NStrings.js" type="text/javascript"></script>
+	
+		 
+	
+
+	<script src="../../../../../zh-CN/assets/js/calcite-web.js" type="text/javascript"></script>
+
+
+
+  <!--- search MD -->
+    <META name="description" content="地图缓存包含很多属性，这些属性的设置将对缓存效率产生影响"><META name="last-modified" content="2019-12-6"><META name="product" content="arcgis-server-windows,arcgis-enterprise-windows"><META name="sub_category" content="ArcGIS Server (Windows)"><META name="search-collection" content="help"><META name="content_type_label" content="帮助主题"><META name="sub_category_label" content="ArcGIS Server (Windows)"><META name="search-category" content="help-general"><META name="subject_label" content="服务"><META name="version" content="10.8"><META name="content_type" content="Help Topic"><META name="subject" content="SERVICES"><META name="content-language" content="zh-cn">
+    <!--- search MD -->
+
+  
+  <script src="../../../../../zh-CN/assets/js/switchers/server-1.js" type="text/javascript"></script>
+  
+      
+
+</head>
+
+<!--
+      pub: GUID-F157DF68-7F60-4427-A561-AD2F0FA30861=22
+      tpc: GUID-5F41A4FD-3F91-46A7-88AC-BD9E4EECBA32=17
+      -->
+
+
+<!-- variable declaration, if any -->
+<!-- can change following macro to set variable once we are on Jinja 2.8 -->
+
+
+
+
+
+<body class="claro zh-CN server">
+  
+
+  <!-- Drawer location -->
+  <div class="drawer drawer-left js-drawer" data-drawer="top-nav">
+        <nav class="drawer-nav" role="navigation">
+          <aside class="side-nav">
+            <h2 class="side-nav-title">Arc<span>GIS</span> Enterprise</h2>
+            <form id="helpSearchForm" class="margin-left-half margin-right-half leader-half trailer-half drawer-search-form" method="GET">
+              <input type="search" name="q"  placeholder="搜索 ArcGIS Server 10.8 帮助">
+              <input type="hidden" name="collection" value="help" />
+              <input type="hidden" name="product" value="arcgis-server-windows" />
+              <input type="hidden" name="version" value="10.8" />
+              <input type="hidden" name="language" value="zh-CN" />
+            </form>    
+             <a id="nav-portal" data-langlabel="portal" href="../../../../../zh-CN/portal/" class="side-nav-link">Portal</a>
+             
+            <a id="all-servers" data-langlabel="all-servers" href="../../../../../zh-CN/server/" class="side-nav-link">所有服务器</a>
+            <a id="gis-server" data-langlabel="gis-server" href="../../../../../zh-CN/server/" class="side-nav-link">GIS Server</a>
+            <a id="image-server" data-langlabel="image-server" href="../../../../../zh-CN/image/" class="side-nav-link">Image Server</a>
+            <a id="geo-analytics-server" data-langlabel="geo-analytics-server" href="../../../../../zh-CN/geoanalytics/" class="side-nav-link">GeoAnalytics Server</a>
+            <a id="geoevent-server" data-langlabel="geoevent-server" href="../../../../../zh-CN/geoevent/" class="side-nav-link">GeoEvent Server</a>
+            <a id="notebook-server" data-langlabel="notebook-server" href="../../../../../zh-CN/notebook/" class="side-nav-link">Notebook Server</a>
+            <a id="nav-data-store" data-langlabel="data-store" href="../../../../../zh-CN/data-store/" class="side-nav-link">Data Stores</a>
+            <a id="nav-cloud" data-langlabel="cloud" href="../../../../../zh-CN/cloud/" class="side-nav-link">云</a>
+            <a id="nav-apps" data-langlabel="apps" href="../../../../../zh-CN/apps/" class="side-nav-link">应用程序</a>
+            <a id="nav-doc" data-langlabel="documentation" href="../../../../../zh-CN/documentation/" class="side-nav-link">文档</a>
+
+          </aside>
+        </nav>
+    </div>
+
+    <!-- user navigation collapses to drawer on mobile -->
+    
+    <div class="drawer drawer-right js-drawer hide-if-logged-out logged-in-navigation" data-drawer="user-nav">
+      <nav class="drawer-nav">
+        <aside class="side-nav">
+          <a class="side-nav-link agolProfile" href="#">我的个人资料</a>
+          <a class="side-nav-link icon-ui-sign-out js-log-out" href="#">登出</a>
+        </aside>
+      </nav>
+    </div>
+    
+<!-- End of drawer -->
+
+  
+  <div class="wrapper">
+      <!--googleoff: all-->
+
+      <header class="top-nav" data-skin="learn">
+        <a class="skip-to-content" href="#skip-to-content">Skip To Content</a>
+        <div class="grid-container">
+          <div class="column-24">
+
+
+            <!--<div class="top-nav-title-wrapper text-center ">-->
+              <a href='../../../../../zh-CN/' class="top-nav-title tablet-hide"><span>Arc</span>GIS  Enterprise</a>
+              <a href='../../../../../zh-CN/' class="icon-ui-menu top-nav-title js-drawer-toggle tablet-show" data-drawer="top-nav"><span>Arc</span>GIS Enterprise</a>
+            <!--</div> -->
+
+          
+            <nav role="navigation" class="top-nav-list left tablet-hide">
+              <a id="nav-portal" data-langlabel="portal" href="../../../../../zh-CN/portal/" class="top-nav-link">Portal</a>
+
+                <div class="dropdown js-dropdown ">
+                  <a class="top-nav-link js-dropdown-toggle" tabindex="0" aria-haspopup="true" aria-expanded="false" href="#">Servers</a>
+                  <nav class="dropdown-menu featured" role="menu">
+                    <ul class="dropdown-sublist-featured">
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/get-started/latest/windows/additional-server-deployment.htm" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path  d="M42.92 6.1H4.12v8.566l.833.832-.835.833-.018 7.332.845.847-.825.824V33.9h25v5.2h-2v1.075H8.02v.8h19.1v.925h4.8v-.925H40v-.8h-8.08V39.1h-2v-5.2h13v-8.566l-.834-.834.835-.834v-7.332l-.835-.834.835-.834zm-11.8 35h-3.2v-1.2h3.2zm11-8H4.92v-7.434l.767-.766h35.668l.765.766zm0-9.766l-.766.766H5.666l-.766-.767.017-6.669.766-.764h35.671l.766.766zm0-9l-.766.766H5.687l-.766-.766V6.9h37.2zM19 11.9h-2v-.8h2zm-4 0h-2v-.8h2zm-4 0H9v-.8h2zm6 8.2h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9zm8 9h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9z"/></svg></span>
+                          <span class="sublink-text">所有服务器</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/server/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M45.98 33.575a.616.616 0 0 0-.335-.51l-3.362-2.03 3.362-2.031a.556.556 0 0 0 0-1.02l-11.1-6.704a1.293 1.293 0 0 0-1.112 0L22.33 27.982a.556.556 0 0 0 0 1.02l3.36 2.03-3.358 2.03a.556.556 0 0 0-.002 1.021l3.322 2.006-3.324 2.008a.555.555 0 0 0 .002 1.017l11.102 6.703a1.25 1.25 0 0 0 1.11.002l11.104-6.706a.556.556 0 0 0 0-1.02l-3.32-2.006 3.318-2.004a.607.607 0 0 0 .335-.509zM33.837 21.97c.026-.01.286-.005.29-.005l10.814 6.53-10.8 6.523c-.028.01-.284.005-.294.006l-10.813-6.53zm11.105 16.636l-10.8 6.523a2.564 2.564 0 0 1-.295.006l-10.81-6.529 3.39-2.047 7.004 4.23a1.083 1.083 0 0 0 .557.131 1.101 1.101 0 0 0 .554-.13l7.01-4.233zM34.14 40.098a2.545 2.545 0 0 1-.294.006l-10.812-6.53 3.43-2.073 6.97 4.208a1.25 1.25 0 0 0 1.107-.001l6.966-4.206 3.431 2.073zM9 8H7V7h2zm8 8h-2v-1h2zm-4-8h-2V7h2zm4 0h-2V7h2zm-4 8h-2v-1h2zm7.316 11.1H3.9v-6.434l.766-.766h35.668l.766.766v2.12l.8.483v-2.935l-.826-.826.826-.845v-6.329l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9h16.88a2.632 2.632 0 0 1 .336-.8zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zm0 8v-5.668l.766-.766h35.668l.766.766v5.67l-.746.764H4.666zM15 24v-1h2v1zm-4 0v-1h2v1zm-2-8H7v-1h2zm-2 8v-1h2v1z"/></svg></span>
+                          <span class="sublink-text">GIS Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/image/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 8h-2V7h2zm-4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm8 8h-2v1h2zm-8 0H7v1h2zm4 9v-1h-2v1zm-4 0v-1H7v1zm8 0v-1h-2v1zm4 3.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V21h-.8v-.334l-.766-.766H4.666l-.766.766V27.1H21zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zm40.234 4v21.8H23.1V23.1zm-.8 16.366L39.466 44.1h2.868l1.766-1.766zm-20.2-9.932l5.634-5.634h-2.868L23.9 26.666zm6.2-5.068L24.466 30.1h2.868l2.766-2.766zM28.466 30.1H30.1v-1.634zm2.434 0h6.2v-6.2h-6.2zm-7 7h6.2v-6.2h-6.2zm7 0h6.2v-6.2h-6.2zm0 6.434l5.634-5.634h-2.868L30.9 40.666zm7-7l5.634-5.634h-2.868L37.9 33.666zm1.634-5.634H37.9v1.634zm-8.634 7v1.634l1.634-1.634zm.566 6.2h2.868l2.766-2.766v-2.868zm6.434-3.566l2.634-2.634H37.9zM35.466 44.1H37.1v-1.634zm2.434 0h.434l5.766-5.766V37.9h-2.434L37.9 41.666zm6.2-8.634L42.466 37.1H44.1zm0-4L38.466 37.1h2.868l2.766-2.766zm0-7.566h-6.2v6.2h6.2zm-20.2 0v1.634l1.634-1.634zm0 20.2h6.2v-6.2h-6.2zm20.2 0v-.634l-.634.634z"/></svg></span>
+                          <span class="sublink-text">Image Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/geoanalytics/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 16h-2v-1h2zm-8 8v-1H7v1zm8 0v-1h-2v1zM13 7h-2v1h2zm4 0h-2v1h2zM9 7H7v1h2zm21.45 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V27.9h-1.464l-.801-.8H41.1v-6.434l-.766-.766H4.666l-.766.766V27.1h27.15zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM13 24v-1h-2v1zm0-9h-2v1h2zm-4 0H7v1h2zm26.672 27.148A1.87 1.87 0 0 1 35.9 43a1.91 1.91 0 1 1-3.763-.222l-9.845-3.414A1.88 1.88 0 0 1 21 39.9a1.9 1.9 0 1 1 1.474-3.084l4.692-2.346A1.878 1.878 0 0 1 27.1 34a1.902 1.902 0 0 1 1.9-1.9 1.867 1.867 0 0 1 .781.191l3.788-5.05A1.88 1.88 0 0 1 33.1 26a1.9 1.9 0 1 1 3.491 1.026l4.889 4.888c-.069.056-.144.1-.21.162a3.986 3.986 0 0 0-.358.402l-4.883-4.883A1.889 1.889 0 0 1 35 27.9a1.867 1.867 0 0 1-.781-.191l-3.788 5.049a1.868 1.868 0 0 1 .437.965l9.204.614c-.018.11-.049.218-.058.33A3.93 3.93 0 0 0 40 35c0 .046.01.09.01.135l-9.185-.612A1.913 1.913 0 0 1 29 35.9a1.889 1.889 0 0 1-1.474-.716l-4.692 2.346a1.878 1.878 0 0 1 .066.47 1.9 1.9 0 0 1-.105.625c-.007.02-.022.036-.03.056l9.63 3.34a1.87 1.87 0 0 1 2.786-.505l5.415-4.437c.067.108.127.22.204.322a3.9 3.9 0 0 0 .292.306zM33.9 26a1.092 1.092 0 0 0 .43.872 1.12 1.12 0 0 0 1.42-.068A1.1 1.1 0 1 0 33.9 26zm-6 8a1.1 1.1 0 0 0 2.196.093 1.135 1.135 0 0 0-.426-.965A1.087 1.087 0 0 0 29 32.9a1.101 1.101 0 0 0-1.1 1.1zm-5.8 4a1.098 1.098 0 1 0-.06.362A1.101 1.101 0 0 0 22.1 38zm13 5a1.1 1.1 0 1 0-2.2 0 1.1 1.1 0 0 0 2.2 0zm10.8-8a1.9 1.9 0 1 1-3.8 0c0-.053.003-.105.007-.158A1.9 1.9 0 0 1 45.9 35zm-.8 0a1.1 1.1 0 0 0-2.196-.093 1.153 1.153 0 0 0 .216.752A1.1 1.1 0 0 0 45.1 35z"/></svg></span>
+                          <span class="sublink-text">GeoAnalytics Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/geoevent/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M13 8h-2V7h2zm4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm12.418 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826v2.117c-.259-.177-.53-.337-.8-.497v-1.288l-.766-.766H4.666l-.766.766V27.1h17.933c-.148.26-.283.53-.415.8zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM9 24v-1H7v1zm4-9h-2v1h2zm0 9v-1h-2v1zm-4-9H7v1h2zm8 9v-1h-2v1zm16.9 2h-.8v8.9H39v-.8h-5.1zm.1-3.901a11.9 11.9 0 1 0 11.9 11.9 11.914 11.914 0 0 0-11.9-11.9zm0 23a11.1 11.1 0 1 1 11.1-11.1 11.112 11.112 0 0 1-11.1 11.1z"/></svg></span>
+                          <span class="sublink-text">GeoEvent Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/notebook/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M22 27.1H3.9v-6.434l.766-.766h18.576a5.262 5.262 0 0 1 .83-.8H4.666l-.766-.766v-5.668l.766-.766h35.668l.766.766V18h.8v-5.666l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9H22zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zM9 8H7V7h2zm8 0h-2V7h2zm-4 0h-2V7h2zm2 16v-1h2v1zm-4 0v-1h2v1zm-4 0v-1h2v1zm0-8v-1h2v1zm8 0v-1h2v1zm-4 0v-1h2v1zm18.9 8.1h-1.8v1.8h1.8zm-.8 1h-.2v-.2h.2zm15.498-4.48a2.727 2.727 0 0 0-1.62-.5v-.02H27.25a3.154 3.154 0 0 0-3.15 3.15V38.1h-1.68a3.386 3.386 0 0 0-2.872 1.58 3.49 3.49 0 0 0-.157 3.419 3.241 3.241 0 0 0 2.954 1.801h15.161a3.404 3.404 0 0 0 3.394-3.4V26.9h5v-3.65a3.224 3.224 0 0 0-1.302-2.63zM22.345 44.1a2.44 2.44 0 0 1-2.23-1.341 2.706 2.706 0 0 1 .11-2.65A2.588 2.588 0 0 1 22.42 38.9h12.89a3.395 3.395 0 0 0 0 5.2zM40.1 23.192V41.5a2.6 2.6 0 1 1-2.6-2.6v-.8H24.9V23.25a2.352 2.352 0 0 1 2.35-2.35h13.795a3.183 3.183 0 0 0-.945 2.292zm5 2.908h-4.2v-2.908a2.274 2.274 0 0 1 1.44-2.18 1.944 1.944 0 0 1 1.791.259 2.423 2.423 0 0 1 .97 1.979zm-17.1 5h9v.8h-9zm0 3h7v.8h-7zm0-6h9v.8h-9zm4-3h5v.8h-5z"/></svg></span>
+                          <span class="sublink-text">Notebook Server</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+
+              <a id="nav-data-store" data-langlabel="data-store" href="../../../../../zh-CN/data-store/" class="top-nav-link">Data Stores</a>
+              <a id="nav-cloud" data-langlabel="cloud" href="../../../../../zh-CN/cloud/" class="top-nav-link">云</a>
+              <a id="nav-apps" data-langlabel="apps" href="../../../../../zh-CN/apps/" class="top-nav-link">应用程序</a>
+            </nav>
+
+
+            
+            
+            
+
+            <div class="margin-left-1 top-nav-list right hide-if-logged-in logged-out-navigation">
+               
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+              
+              <a data-langlabel="sign-in" id="login-link" class="icon-ui-user top-nav-link link-blue login-link" href="#">登录</a>
+              
+            </div>
+
+            
+            <nav class="margin-left-1 top-nav-list right hide-if-logged-out logged-in-navigation">
+              
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+             
+              <div class="dropdown js-dropdown right">
+
+                <div class="tablet-show top-nav-link">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a href="#" data-drawer="user-nav" class="user-nav-name js-drawer-toggle" data-first-name></a>
+                </div>
+
+                <div class="tablet-hide top-nav-link js-dropdown-toggle">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a class="user-nav-name top-nav-dropdown dropdown-btn" data-first-name>&nbsp;</a>
+                </div>
+
+                <nav class="dropdown-menu dropdown-right">
+                
+                  <a class="dropdown-link agolProfile" id="agolProfile" href="#">我的个人资料</a>
+                  <a class="dropdown-link js-log-out" id="agolLogout" href="#">登出</a>
+                </nav>
+              </div>
+            </nav>
+            
+
+            
+          </div>
+        </div>
+      </header>
+
+      <div class="js-search search-overlay">
+        <div class="search-content" role="dialog" aria-labelledby="search">
+          <form method="GET" id="helpSearchForm">
+            <label>
+              搜索 ArcGIS Server 10.8 帮助
+              <div class="search-bar">
+                <input type="search" name="q"  placeholder="搜索 ArcGIS Server 10.8 帮助" class="search-input js-search-input">
+                <input type="hidden" name="collection" value="help" />
+                <input type="hidden" name="product" value="arcgis-server-windows" />
+                <input type="hidden" name="version" value="10.8" />
+                <input type="hidden" name="language" value="zh-CN" />
+              </div>
+            </label>
+            <input type="hidden" name="relativePath" value="../../../../../" /><button type="submit" class="btn btn-large right">搜索</button>
+          </form>
+        </div>
+      </div>
+
+      <!--googleon: all-->
+
+      <div id="skip-to-content">
+        <!--googleoff: all-->
+        <header class="sub-nav sub-nav-learn">
+          <div class="grid-container">
+            
+            <div class="column-24">
+              <div style="display:table;" class="sdk-home-banner">
+                <div class="sdk-home-banner-content">
+                  <h1 class="sub-nav-title link-white">ArcGIS Server</h1>
+                </div>
+              </div>
+            </div>
+
+            <div class="column-24">
+              <nav class='sub-nav-list tablet-hide'><a class="sub-nav-link" href="../../../../../zh-CN/server/" target="_top" title="ArcGIS Server 的概述和文档">主页</a><a class="sub-nav-link" href="../../../../../zh-CN/server/latest/get-started/windows/" target="_top" title="了解有关 ArcGIS Server 和服务器角色的信息">简介</a><a class="sub-nav-link" href="../../../../../zh-CN/server/latest/deploy/windows/" target="_top" title="构建、配置和升级部署">部署</a><a class="sub-nav-link" href="../../../../../zh-CN/server/latest/manage-data/windows/" target="_top" title="管理企业的空间数据">管理数据</a><a class="sub-nav-link is-active" href="../../../../../zh-CN/server/latest/publish-services/windows/" target="_top" title="使用 GIS 服务">管理服务</a><a class="sub-nav-link" href="../../../../../zh-CN/server/latest/create-web-apps/windows/" target="_top" title="创建 Web 应用程序和可打印地图">共享</a><a class="sub-nav-link" href="../../../../../zh-CN/server/latest/administer/windows/" target="_top" title="管理和保护 ArcGIS Server">管理</a><a class="sub-nav-link" href="../../../../../zh-CN/server/latest/develop/windows/" target="_top" title="构建扩展模块并自动执行常见任务">开发</a></nav><select class='tablet-show select-full trailer-half js-select-nav'><option value="../../../../../zh-CN/server/">主页</option><option value="../../../../../zh-CN/server/latest/get-started/windows/">简介</option><option value="../../../../../zh-CN/server/latest/deploy/windows/">部署</option><option value="../../../../../zh-CN/server/latest/manage-data/windows/">管理数据</option><option selected="true" value="../../../../../zh-CN/server/latest/publish-services/windows/">管理服务</option><option value="../../../../../zh-CN/server/latest/create-web-apps/windows/">共享</option><option value="../../../../../zh-CN/server/latest/administer/windows/">管理</option><option value="../../../../../zh-CN/server/latest/develop/windows/">开发</option></select>
+            </div>
+
+          </div>
+        </header>
+        <!--googleon: all-->
+       
+        <!-- content goes here -->
+        <div class="grid-container ">
+          
+
+            
+              
+  <!--BREADCRUMB-BEG--><div id="bigmac" class="sticky-breadcrumbs trailer-2" data-spy="affix" data-offset-top="180"> </div><!--BREADCRUMB-END-->
+  <!--googleoff: all-->
+    <div class="column-5 tablet-column-12 trailer-2 ">
+      <aside class="js-accordion accordion reference-index" aria-live="polite" role="tablist">
+        <div></div>
+      </aside>
+
+      <div class="js-sticky scroll-show tablet-hide leader-1 back-to-top" data-top="0" style="top: 0px;">
+        <a href="#" class="btn btn-fill btn-clear">返回顶部</a>
+      </div>
+    </div>
+  <!--googleon: all-->
+  
+            
+            
+            
+	
+		<div class="column-13  pre-1 content-section">
+	
+		<header class="trailer-1"><h1>可用地图和图像缓存属性</h1></header>
+
+		 
+	<!--googleoff: all-->
+	
+		
+				<aside id="main-toc-small" class="js-accordion accordion tablet-show trailer-1">
+			      <div class="accordion-section">
+			        <h4 class="accordion-title">在本主题中</h4>
+			        <div class="accordion-content list-plain">
+			          <ol class="list-plain pre-0 trailer-0"><li><a href="#GUID-58B3BEC4-FC83-432B-AA69-9DEFEB202BED"> 访问缓存属性</a></li><li><a href="#ESRI_SECTION1_587D6232E38B4380B3FE1675F54B3DF2">缓存选项卡设置</a></li><li><a href="#ESRI_SECTION1_7CB7C4969828445F93FFED84F01E141D">高级设置</a></li><li><a href="#ESRI_SECTION1_B520E0B7BF514FBE98214A84DCF5A7E7">其他高级设置</a></li></ol>
+			        </div>
+			      </div>
+			     </aside>
+		
+    
+   <!--googleon: all-->
+
+
+		<main>
+			
+	
+    	
+    
+
+
+			
+<p id="GUID-09ED6AFF-75F9-405E-8465-222C8E9EF262">为地图或图像服务缓存所设置的属性可大大影响切片创建和使用的成功几率。</p><p id="GUID-B8CA45A4-662C-4004-A20E-645D5D725E82">本主题将介绍可用的地图和图像缓存属性以及如何对各属性做出最佳决策。有关创建切片的详细信息，请参阅<a class="xref xref" href="../../../../../zh-CN/server/latest/publish-services/windows/strategies-for-creating-map-cache-tiles.htm">创建地图缓存切片的策略</a>。</p><section class="section1 padded-anchor" id="GUID-58B3BEC4-FC83-432B-AA69-9DEFEB202BED" purpose="section1"><h2> 访问缓存属性</h2><p id="GUID-70CE1813-7CFA-4BA2-A180-E944F8DFBF91"><span class="wintitle">服务编辑器</span>对话框的<span class="uicontrol">缓存</span>选项卡用于设置缓存属性。以下主题说明了如何访问<span class="uicontrol">缓存</span>选项卡：</p><ul purpose="ul" id="UL_9D8683E0D3E040D6A3958D5AF3154B1F"><li purpose="li" id="LI_EF5D675D24FE4428A7745028C05D94B6"><a class="xref xref" href="../../../../../zh-CN/server/latest/publish-services/windows/accessing-map-and-image-cache-properties-in-manager.htm">在 Manager 中访问地图和影像缓存属性</a></li><li purpose="li" id="LI_1557F899962D4398BFBB63E433CBB259"><a class="xref xref" href="../../../../../zh-CN/server/latest/publish-services/windows/accessing-map-and-image-cache-properties-in-arcgis-for-desktop.htm">在 ArcGIS for Desktop 中访问地图和影像缓存属性</a></li></ul><p id="GUID-F8F2750E-29AF-4EF7-B114-3F73662EC785">打开<span class="uicontrol">缓存</span>选项卡后，首先需要选择<span class="uicontrol">使用缓存中的切片</span>绘制地图或影像服务的选项。如果选择<span class="uicontrol">根据数据动态绘制</span>，服务器每次都会绘制地图，且地图或影像服务不会使用创建的任何缓存切片。</p><p id="GUID-A3A74BE4-047B-4205-ADA8-5D90AF5D0679">本主题余下部分介绍<span class="uicontrol">缓存</span>选项卡及其<span class="uicontrol">高级设置</span>子选项卡上的可用设置。开始创建缓存后，有些选项（如切片宽度和高度）不可更改，除非删除现有缓存并重新开始。因此，提前规划缓存的切片方案和其他属性至关重要。</p><p id="GUID-FE550A30-57A3-4DFA-BAAB-82020071ACA3">完成缓存属性的设置后，右键单击目录树中的服务，然后单击<span class="uicontrol">管理缓存 <span class="greaterthan">&gt;</span> 管理切片</span>以开始创建切片。</p></section><section class="section1 padded-anchor" id="ESRI_SECTION1_587D6232E38B4380B3FE1675F54B3DF2" purpose="section1"><h2>缓存选项卡设置</h2><p id="GUID-458DDDA0-9505-45D5-AF95-43D62FE5B5A0">以下各小节说明了可在<span class="uicontrol">缓存</span>选项卡中指定的缓存设置。有关<span class="uicontrol">高级设置</span>子选项卡中属性的介绍位于下文一个单独部分中。</p><section class="section2 padded-anchor" id="ESRI_SECTION2_9736E026A32248D6A877207DE60718E0" purpose="section2"><h3>切片方案</h3><p id="GUID-F9C9FF21-E0C7-430C-A424-B8D5CAF8B8A3">切片方案包括缓存的比例级别、切片尺寸和切片原点。这些属性定义了缓存边界的存在位置，而且在某些客户端中叠加缓存时对于匹配操作十分重要。</p><p id="GUID-2519BBF6-E027-4815-9650-4222F93F802F">有多个选项可选择用于切片方案：</p><section class="section3 padded-anchor" id="ESRI_SECTION3_44B0CA1D7B61480C970D9CCFA154A7A4" purpose="section3"><h4><span class="ph">ArcGIS Online</span>/Bing 地图/Google 地图</h4><p id="GUID-7B3EFA7D-4401-449D-AC8C-DA91F604B25B">选择 <span class="uicontrol">ArcGIS Online/Bing 地图/Google 地图</span>使您可以将来自这些在线地图服务的切片叠加在缓存切片之上。ArcGIS 对源地图进行动态投影，投影至此切片方案需要的坐标系中，即 WGS 1984 Web Mercator (Auxiliary Sphere)。如果想要增强创建切片时的性能，那么可在发布服务之前将数据和数据框投影到此坐标系中。</p><p id="GUID-7C1E6ED9-23D4-4FCB-9D04-073918BB9201">如果要将 <span class="ph">ArcGIS Online</span>、Bing 地图或 Google 地图中的地图叠加到缓存，则需要 <span class="ph">ArcGIS Online</span>/Bing 地图/Google 地图切片方案。<span class="ph">ArcGIS Online</span> 叠加实际上可在所有最新的 Esri 客户端应用程序中实现。Bing 地图叠加可在<span class="ph">Map Viewer</span>以及很多 ArcGIS Web 查看器和 API 中实现。Google 地图叠加可通过 ArcGIS API for JavaScript Extension to the Google Maps API 来实现。</p><p id="GUID-573AADCC-29A4-4452-8EEF-22853C4A3D8F"><span class="ph">ArcGIS Online</span>/Bing 地图/Google 地图切片方案的优势在于它在 Web 地图领域内广为熟知，所以您的切片将与其他使用此切片方案的组织的切片相一致。即使您不打算叠加这些广为熟知的地图服务，仍然可以选择此切片方案以便于实现互操作。</p><p id="GUID-6BB16918-4E80-4EDB-BE8E-F838EFFD4EC6"><span class="ph">ArcGIS Online</span>/Bing 地图/Google 地图切片方案可能包含过度放大以至于无法在地图中使用的比例。在大比例下进行缓存相当耗时，且会占用大量磁盘存储空间。例如，切片方案中的最大比例约为 1:1,000。在此比例下缓存整个美国大陆可能将耗费数周时间并需要数百 GB 的存储空间。如果尚未准备好在此比例级别下进行缓存，可在<span class="uicontrol">细节层次</span>范围中将其删除（有关“细节层次”的信息，请参阅下一小节）。</p><div class="panel trailer-1" id="GUID-DB734E04-633A-4384-AAE7-E283C0A7FDED"><h5 class="icon-ui-notice-triangle trailer-0">警告：</h5><p id="GUID-224B73D1-76B8-4EA1-906C-12F0F18926FB">相对于删除切片方案中的比例，选择不在该比例下创建切片效果更佳。如果从 <span class="ph">ArcGIS Online</span>/Bing 地图/Google 地图切片方案中删除比例，可能无法叠加该服务的切片。</p></div></section><section class="section3 padded-anchor" id="ESRI_SECTION3_69DF62CB38ED4BC5B9E42E5C77749619" purpose="section3"><h4>切片方案文件</h4><p id="GUID-96FAF108-0967-49CC-A3AB-460C660A66B9">如果无法使用 <span class="ph">ArcGIS Online</span>/Bing 地图/Google 地图切片方案中的比例或坐标系，可以创建您自己的切片方案。使用服务器工具箱中的<a class="xref xref" esrisubtype="extrel" hrefpfx="https://desktop.arcgis.com/zh-cn/arcmap/latest/tools" href="https://desktop.arcgis.com/zh-cn/arcmap/latest/tools/server-toolbox/generate-map-server-cache-tiling-scheme.htm">生成地图服务器缓存切片方案</a>工具来生成 XML 切片方案文件。本主题稍后将介绍此工具对话框需要您提供的多项设置。无论何时创建缓存，您都可以浏览至此切片方案文件，从而导入所有您偏好的比例和设置。</p><div class="panel trailer-1" id="GUID-A35A8BC7-B8B9-4CFA-83FA-6987E8852B19"><h5 class="icon-ui-time-clock trailer-0">旧版本：</h5><p id="GUID-C2CADBDF-5DBC-416D-95F1-336CDAD74D1C">在 10.0 及较低版本中，<span class="ph">ArcGIS Online</span> 使用基于 WGS 1984 地理坐标系（使用 512 x 512 像素切片）的切片方案。如果运行的服务需要使用此切片方案，必须从现有服务或切片方案文件中加载。</p></div></section><section class="section3 padded-anchor" id="ESRI_SECTION3_4F5D570DE0E94438B68A4365A7245AF2" purpose="section3"><h4>现有的缓存地图/图像服务</h4><p id="GUID-492D7679-0503-4058-9E2E-4A1E9E2192FC">如果想要匹配现有的缓存服务切片方案，请选择此选项。系统将提示您浏览至该服务。</p><p id="GUID-F5EBA3DC-F22B-4F9E-875F-CECFA09DF0E0">匹配的切片方案可确保切片在 Web 应用程序和其他混合 Web 应用程序中正确叠加。</p><p id="GUID-141E1A2C-F2A7-43CA-BB68-3E494271C205">如果选择此选项，源地图文档和用于导入切片方案的地图应使用相同的坐标系。</p></section><section class="section3 padded-anchor" id="ESRI_SECTION3_7A92BA6B7D234F64A987BE5BBB45E229" purpose="section3"><h4>建议</h4><p id="GUID-0DE0C9A5-08E3-4423-987B-05CA0D01C029">选择此选项后，系统将提示您想要的比例级数，随后 ArcGIS 将给出一些建议比例。建议的比例以 1:1,000,000 为下限，按 2 的乘方递增或递减，并将最接近于源地图文档范围的级别作为起始比例。</p><p id="GUID-DCB0344E-571B-4E00-94A1-065F052D3ABA">例如，如果源地图文档的范围是 1:121,000,000 并定义三个比例级别，ArcGIS 将给出以下三个建议比例级别</p><ul purpose="ul" id="UL_30A6E8D77D6C4DBD8109942B4E0BB2AF"><li purpose="li" id="GUID-C2198B09-845C-4333-8C10-ED6AF97071A5">1:128,000,000</li><li purpose="li" id="GUID-1A6B17DC-3528-4512-974B-8A9503D03FAC">1:64,000,000</li><li purpose="li" id="GUID-E4C9789F-B9BE-4904-97F6-309B6BA80431">1:32,000,000</li></ul><p id="GUID-16D5B4EE-E55D-48A8-97C0-091937E05305">一般来说，应该将请求的建议比例数限制在 20 个或以下。如果地图的全图范围涵盖相对小的区域（例如城市），则可能无法获得请求数量的比例。可使用<span class="uicontrol">高级设置</span>选项卡手动添加更多的比例。</p><p id="GUID-78D418FD-7141-4D3E-9141-73A7F82FE1FD">熟悉缓存创建过程后，最好选择自定义比例级别，而不是要求软件为您建议比例。如果可能，应在开始设计地图之前就选择比例。这样，所设计的地图在各种比例下都会具有良好的显示效果。</p></section></section><section class="section2 padded-anchor" id="ESRI_SECTION2_FFD0E36462044301AA08A95384FDD715" purpose="section2"><h3>细节层次</h3><p id="GUID-37D981F5-ED90-4FF3-A086-D37AE61CB30D">切片方案通常含有多个比例。根据特定地图，您可能希望放弃在切片方案中极大的或极小的比例处创建缓存。ArcGIS 检查地图中的比例可变选项，并提供进行缓存的最低和最高比例范围的建议值。可以通过移动<span class="uicontrol">缓存</span>选项卡上的滑块调整该范围。</p><p id="GUID-18C3F376-F727-489A-B47C-DA4317131161">其余比例并不会从切片方案中移除，但您将无法创建它们的切片，除非您返回<span class="uicontrol">缓存</span>选项卡，并将它们包括在范围内。</p></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_7CB7C4969828445F93FFED84F01E141D" purpose="section1"><h2>高级设置</h2><p id="GUID-AF1CCEF1-3286-4266-9AE8-E2C8FA89AFDB">本部分介绍<span class="wintitle">服务编辑器</span>的<span class="uicontrol">缓存 &gt; 高级设置</span>子选项卡中的属性。</p><section class="section2 padded-anchor" id="GUID-DC65ECD1-4473-46B1-A0BD-547C15E30657" purpose="section2"><h3>比例</h3><p id="GUID-3882B6A8-8863-4C43-A3BC-57079E7A9D3B">创建切片方案时，采用哪些地图比例创建切片是最为重要的选择。</p><p id="GUID-0A49EC7F-E9CD-43DC-AB14-29E94F9DBD07">可在两个位置输入比例列表：</p><ul purpose="ul" id="UL_8EED798B72444A0988EBE1130D27B6DB"><li purpose="li" id="LI_B37C0F5A4E5A46D7B46C1D117A52B09C">可在第一次创建切片方案时，在“生成地图服务器缓存切片方案”工具中直接输入比例。</li><li purpose="li" id="LI_0BBF1ABA6BA1404E86104A51985D59FE">在创建新缓存时，加载了切片方案以后，可对<span class="wintitle">服务编辑器</span>的<span class="uicontrol">缓存 &gt; 高级设置</span>子选项卡中的比例列表进行修改。处理影像时，在此输入比例非常方便，因为可以在列表中输入像素大小。</li></ul><p id="GUID-7070010E-E91C-4175-88C1-63D5CDA8ADCF">输入比例时，可以输入比率或仅输入比例的分母（例如输入 <span class="usertext">36000</span>，列表中将会显示 1:36,000）。</p><p id="GUID-8D5D1EC8-01EE-429B-96F3-6B5489B0B09E">如果输入像素大小，则可以键入像素大小值（采用地图单位）用于生成的切片。有时缓存图像时该选项十分有用。例如，您可能要向像素分辨率为一米的缓存中添加比例。</p><p id="GUID-55DD513E-8665-4765-95D9-67E84A8C29C7">选择一组比例的简便方法是：确定用户查看地图时需要使用的最接近比例，然后重复地将比例的分母乘以 2，直至达到仅在一或两个切片内便可包含全部关注区域的比例。例如，如果正为某个城市设计切片方案，用户查看地图应使用的最接近比例为 1:2,400，则比例可能为 1:2,400、1:4,800、1:9,600、1:19,200 或 1:38,400，直到达到一个可在计算机屏幕上一次性看到整个城市的比例。</p></section><section class="section2 padded-anchor" id="ESRI_SECTION2_8AC43B0BD8CC4254902D107DFABABDB1" purpose="section2"><h3>最小缓存比例</h3><p id="GUID-0663AADC-CD10-46FF-A99A-E4409A421CDC">这是想要创建切片的最小比例。这不必是您的切片方案中的最小比例。</p><p id="GUID-FACF92EC-F87D-4CD3-9230-26D0F6F7FA81">例如，您的切片方案可能包括比例 1:2,000,000，但您想要其他人创建切片使用的最小比例为 1:500,000。您可以将 1:500,000 设置为您的最小缓存比例，那么其他人运行“管理地图服务器缓存切片”时能够使用的最小比例将为 1:500,000。</p><p id="GUID-C9E3B9C6-D4D2-4FA0-9B42-893C1DC3CAD6">该属性与您在<span class="uicontrol">缓存</span>选项卡中设置的<span class="uicontrol">细节层次</span>范围的下限相对应。</p></section><section class="section2 padded-anchor" id="ESRI_SECTION2_41A17CFC24D740B1B7D62B1145CA0B9A" purpose="section2"><h3>最大缓存比例</h3><p id="GUID-1E73E44D-E5B3-4B50-B78F-EA746306B261">这是想要创建切片的最大比例。这不必是您的切片方案中的最大比例。</p><p id="GUID-319C20B3-999A-42D4-8364-5479D18EC591">例如，您的切片方案可能包括比例 1:1,000，但您想要其他人创建切片使用的最大比例为 1:4,000。您可以将 1:4,000 设置为您的最大缓存比例，那么其他人运行“管理地图服务器缓存切片”时能够使用的最大比例将为 1:4,000。</p><p id="GUID-DA354D9C-284A-4F0E-ADB2-CD8315D5E52A">该属性与您在<span class="uicontrol">缓存</span>选项卡中设置的<span class="uicontrol">细节层次</span>范围的上限对应。</p></section><section class="section2 padded-anchor" id="ESRI_SECTION2_475CD0E893B8499E953A93938E212479" purpose="section2"><h3>缓存目录</h3><p id="GUID-9C62F961-1A08-4EC7-8079-D54B65EA8B2D">服务器缓存目录是磁盘上用于存储缓存切片的文件夹。一个服务器缓存目录可存储多个缓存；但可将多个服务器缓存目录添加到服务器。在创建 <span class="ph">ArcGIS Server</span> 站点时，会在您指定的位置为您创建服务器缓存目录。有关详细信息，请参阅<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/server/latest/administer" href="../../../../../zh-CN/server/latest/administer/windows/about-server-directories.htm">关于服务器目录</a>。</p><p id="GUID-C6997497-446B-44B0-AD2E-A7A794A4F932">如果计划将其他 GIS 服务器计算机添加到您的站点，则需要在服务器缓存目录上启用文件共享，以便参与的所有计算机都可以看到它。有关详细信息，请参阅<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/server/latest/administer" href="../../../../../zh-CN/server/latest/administer/windows/adding-a-server-directory-in-manager.htm">创建服务器目录</a>和<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/server/latest/deploy" href="../../../../../zh-CN/server/latest/deploy/windows/configuring-a-multiple-machine-deployment.htm">配置多机部署</a>。确保为 <span class="ph">ArcGIS Server</span> 帐户授予服务器缓存目录的写入权限，以使服务器可以成功地将切片放置在该目录中。完成创建缓存时，可选择删除写入权限。</p><p id="GUID-5A64C082-BD36-483A-B565-1195278D388B">可打开服务器缓存目录以检查缓存切片和切片方案文件 conf.xml。另一个文件 conf.cdi 包含服务的默认范围信息，在 ArcMap 中以栅格数据集形式查看缓存时需要使用它。地理数据库 status.gdb 包含 ArcGIS 在其缓存状态报告中显示的信息。</p><p id="GUID-66894D1C-227B-44C3-9382-00B06D15946E">切片以目录等级形式组织。顶级目录和地图服务具有相同的名称，除非服务创建于 GIS 服务器文件夹。如果地图服务在某个文件夹中，则顶级目录的名称为 &lt;文件夹名称&gt;_&lt;地图服务名称&gt;。</p><div class="panel trailer-1" id="GUID-127A2C8C-9399-4FAB-937D-09124B53CD87"><h5 class="icon-ui-notice-triangle trailer-0">警告：</h5><p id="GUID-3DD3D137-3994-4D45-96BD-4520409304CD">如果更改地图服务名称或地图数据框名称，需要手动重命名缓存文件夹以保持匹配。</p></div><p id="GUID-7C7AA117-0103-4192-9156-13AA340AD45C">在顶级目录下，会发现要进行缓存的地图中特定数据框的子目录。接下来，会发现单个子目录 _alllayers。在该子目录中，会发现对应于各个细节层次的子目录。这些细节级别子目录的结构取决于使用的是紧凑型存储格式还是松散型存储格式。</p><ul purpose="ul" id="UL_050CE91328D048D982707DD7E49F377B"><li purpose="li" id="LI_58ED9492CA34496697278714CF2E8DA8">如果使用紧凑型缓存格式，会在级别文件夹中直接看到包文件。这些包文件包含切片。</li><li purpose="li" id="LI_49A0635DD0224073A6E5E30AFD8F4956">如果使用松散型缓存格式，会看到每个切片行的子目录，最后会看到在行中表示特定列的实际图像文件。</li></ul></section><section class="section2 padded-anchor" id="ESRI_SECTION2_EA3F92618E1E4E3E8E972FB12B595FFA" purpose="section2"><h3>要缓存的感兴趣区</h3><p id="GUID-3DA77F3A-6D0C-4823-92AF-F12448AEC79B">如果在发布服务时选择 ArcGIS 自动构建缓存，该设置会确定地图的哪些区域将会创建切片。选项如下：</p><ul purpose="ul" id="UL_B1E739323C654E32A617945F0EF1B1D5"><li purpose="li" id="LI_4C88A489EB544B02877610E7ADACD8F0">地图的全图范围 - 该选项缓存地图中所有数据的整个边界框。这是默认选项。将应用在 ArcMap 中通过<span class="uicontrol">数据框属性</span>设置的自定义全图。</li><li purpose="li" id="LI_1422B02282C043C48CF81FAA484379AF">地图的当前范围 - 该选项缓存当前发布的地图文档的范围；也就是说，地图服务的初始范围。</li><li purpose="li" id="LI_E1C4DDDBC49947808E74D4686E315AA3">从要素类导入 - 该选项用于仅缓存与所选要素类中的要素边界相交的区域。例如，如果想将切片的创建仅限制在覆盖加利福尼亚州的区域内，可浏览至包含加利福尼亚州边界的简单要素类。<p id="GUID-1B276087-9A81-461B-BC15-262F7F2E4402">当缓存较大或感兴趣区不是矩形时，建议使用导入要素类选项。有关为此准备并选择要素类的提示，请参阅<a class="xref xref" href="../../../../../zh-CN/server/latest/publish-services/windows/map-caching-based-on-feature-boundaries.htm">基于要素边界的地图缓存</a>。</p></li></ul><p id="GUID-A919CF0E-0A54-42D2-8295-DBD0D8E4151A">您在此处设置的感兴趣区仅适用于在发布时自动生成的缓存。该区域始终会由您在手动运行“管理地图服务器缓存切片”工具时所设置的感兴趣区域覆盖。如果没有使用“管理地图服务器缓存切片”明确设置感兴趣区，则将缓存地图的全图。</p></section><section class="section2 padded-anchor" id="GUID-28ADBC71-D7AC-41FF-B599-1B43497BF2E5" purpose="section2"><h3>切片格式</h3><p id="GUID-43F16622-86B5-47B4-878B-D9269E09DF8B">此设置决定地图服务在创建切片时要使用的输出图像格式。选择图像格式十分重要，因为它将确定切片在磁盘上的大小、图像质量以及能否使切片背景透明。</p><p id="GUID-C2B06D84-BF95-4FB5-B0B3-111338470CB3">在初始化新缓存时，ArcGIS 检查地图中的图层，并为您选择默认图像格式。如果地图仅包含矢量图层，则默认图像格式为 PNG。如果至少检测到一个栅格图层，则默认图像格式为 MIXED。</p><p id="GUID-CF5D57DC-854F-4123-9C07-C3E237E38827">应检查此默认格式，并确定它是否可以达到您绘制地图的目的。以下为可用图像格式及其相应用途的摘要：</p><ul purpose="ul" id="UL_6892FC968C734E7CBEFD5ED3D67060B9"><li purpose="li" id="LI_F526B137F46A432F8398688B113C5463"><span class="uicontrol">PNG</span> - 对于每个切片，此格式确定将尽量降低切片存储空间而不降低显示效果的 PNG 位深度。这适用于很多矢量地图，尤其是颜色种类较少的地图、单色条带较多的地图或者叠加网络。如果不确定使用哪种 PNG 格式，请首先尝试此格式。</li><li purpose="li" id="GUID-ED5B1930-EE17-43CB-BD40-C268133B9130"><span class="uicontrol">PNG8</span> - PNG 8 用于需要具有透明背景的叠加服务，例如道路和边界。PNG 8 可在磁盘上创建非常小的切片且不损失任何信息。<p id="GUID-434B2652-938C-41CF-B147-10A6F0CF4D17">当地图使用了抗锯齿功能时，采用 PNG 或 PNG 32 而非 PNG 8 将会看到较高质量的线和标注。如果由于渐变填充或山体阴影而导致地图包含大量颜色，可能还需要采用 PNG 或 PNG 32。</p></li><li purpose="li" id="GUID-D1F7CDC4-86BF-4ADC-9DBB-9780928BB9FA"><span class="uicontrol">PNG24</span> - 可将 PNG 24 用于超过 256 种颜色（如果少于 256 种颜色，使用 PNG 8）的叠加服务，例如道路和边界。如果将在 Internet Explorer 6 或更早版本中查看切片，请勿使用 PNG 24。</li><li purpose="li" id="GUID-BD749AFD-6960-4E7E-BFE5-238200DCC7C0"><span class="uicontrol">PNG32</span> - PNG 32 用于超过 256 种颜色的叠加服务，例如道路和边界。PNG 32 特别适用于对线或文本启用了抗锯齿的叠加服务。PNG 32 在磁盘上创建的切片比 PNG 24 大，但所有浏览器都完全支持这种切片。</li><li purpose="li" id="GUID-910856F7-F091-4528-A8D2-425728B137D5"><span class="uicontrol">JPEG</span> - 此格式用于颜色变化较大且不需要透明背景的底图服务。例如，栅格图像和非常详细的矢量底图特别适合使用 JPEG。<p id="GUID-F91FCA36-0698-4FF0-9561-C4D940DCE833">JPEG 为有损图像格式。在不影响图像显示效果的情况下，它会尝试有选择地删除数据。这会在磁盘上产生很小的切片，但如果地图包含矢量线作业或标注，它可能会在线周围生成过多的噪声或模糊区域。如果发生这种情况，可尝试将压缩值从默认的 75 增加到更大的值。更高的值（如 90）可以生成可接受的线作业质量，同时还可保证 JPEG 格式的小切片优势。</p><p id="GUID-D292BCBD-A5AE-4E09-9A01-DA0C81733F90">您将确定可接受的图像质量。如果愿意接受图像中存在少量噪声，选择 JPEG 可节省大量的磁盘空间。更小的切片同样意味着浏览器可更快地下载切片。</p></li><li purpose="li" id="LI_75922FFB9CDA4F2ABEEF7C0C566A1723"><span class="uicontrol">MIXED（混合）</span> - 混合缓存在缓存中心使用 JPEG，同时在缓存边缘使用 PNG 32。如果要在其他图层上完全叠加栅格缓存，应使用混合模式。<p id="GUID-F6A72BA2-8003-4DA4-A5E3-6F215B340569">创建混合缓存时，在检测到透明度的任何位置（也就是数据框背景可见的位置）都会创建 PNG 32 切片。其余切片使用 JPEG 构建。这可降低平均文件大小，同时可在其他缓存上进行完全叠加。如果在这种情况下不使用混合模式缓存，将在图像叠加其他缓存的外围看到不透明的凸边。</p></li><li purpose="li" id="LI_EFB28F8D92B846CC92F6CB084D6E6B4E"><span class="uicontrol">LERC</span> - 有限错误栅格压缩
+(LERC) 是一种高效的有损压缩方法，建议用于较大像素深度的单波段或高程数据（如浮点型、32 位、16 位或 12 位数据）。对于浮点数据而言，LERC 比 LZ77 的压缩效果好 5 到 10 倍，压缩速度快 5 到 10 倍。对于整型数据，LERC 也优于 LZ77。使用整型数据并且指定的错误限制为 0.99 或更低时，LERC 被视为无损压缩。<div class="panel trailer-1 note" id="GUID-7E8B54B7-77C1-42D1-B586-24FE2D2713E9"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-0106F3BE-8FE0-47A8-8794-5A9FC12A1705">有限错误栅格压缩 (LERC) 仅适用于影像服务；不支持地图服务。</p></div><p id="GUID-3CF86109-72BE-4B4B-AE6B-B5CAEFD5B294">3D 视图中广泛使用高程数据或表面来表示地面，例如 terrain 模型。您可以使用不表示地面的表面，例如位于地表上方的臭氧图层或位于地表下方的地质基层。如果使用 LERC 压缩方法处理不在地平面上的表面，则强烈建议发布含所有细节层次的数据。这将确保在查看数据时不会缩小到最粗糙分辨率以下，否则，将停止对内容进行渲染。然而，对参与地表的高程内容来说，这并不重要，因为表面可用于填充可能存在的任何空隙。</p><ul purpose="ul" id="UL_88FED296A5334086B69C5451E7E4A47D"><li purpose="li" id="LI_0C8B9D32DC7E44E284AF5EF383156C12">如果选择 LERC，则使用<span class="uicontrol">压缩</span>输入对话框指定压缩值。压缩代表适用于每个像素的最大容差错误值（并非图像的平均值）。该值以镶嵌数据集的单位指定。例如，如果误差为 10 厘米而镶嵌数据集的单位为米，则输入 0.1。</li><li purpose="li" id="LI_C120895E66D248E28E3DD13E8A7ADEE0">如果源数据在特定的比例上不受支持，或者概视图不存在，则基于 LERC 的缓存服务不会为了进行绘制而执行重采样。此外，基于 LERC 的缓存服务还将包含一个列出服务是否包含高程数据的属性文件。在绘制全部范围的 3D 场景时，基于 LERC 的缓存所使用的缓存切片大小应比标准 256 x 256 大半个像素。</li><li purpose="li" id="LI_925E8AC9F03C4F89A2E1A27B0A8C96F4">LERC 格式使用非转换压缩算法，因此压缩值或最大错误允许值将在 0 到 1,000 的范围内变化。</li></ul></li></ul><div class="panel trailer-1" id="GUID-5BEE3DD3-6F97-44B3-BAF9-57000ABC34AB"><h5 class="icon-ui-description trailer-0">提示：</h5><p id="GUID-6F69467B-83C7-4B8C-95DE-E86E8768B51F">可能需要更改默认图像格式的最常见情形是在构建使用抗锯齿功能的、仅基于矢量的底图时。在这种情况下，压缩质量较高的 JPEG 或 MIXED 格式比默认的 PNG 更适合，因为生成的切片在磁盘上要小很多。</p></div><p id="GUID-5974A675-7382-4689-AB74-AAA985585F6B">确定大缓存的图像格式之前，先针对有代表性的地图区域构建一个较小的缓存并在测试应用程序中检查切片质量和性能。如果要使用多个缓存，构建每个缓存的测试缓存并将其添加到测试应用程序以确保它们按预期方式叠加。这将使您有机会在创建整个缓存之前做出调整。</p><p id="GUID-985129C5-BACD-425C-9E7E-CF5C6C6F3D1B">要创建一个小型测试缓存，请先使用 ArcMap 中的编辑工具创建一个包含待测试区域周围的小矩形的新要素类。然后使用<span class="uicontrol">管理地图服务器缓存切片</span>工具对话框底部的选项，基于要素类的边界创建切片。浏览至包含测试区域的要素类，然后创建切片。</p></section><section class="section2 padded-anchor" id="ESRI_SECTION2_4A113712ABFD4F26AD654F89E8528B29" purpose="section2"><h3>压缩</h3><p id="GUID-387D52D5-0B3E-45DB-A146-6909E7C892BC">使用 JPEG 或混合图像格式缓存时，压缩指的是执行 JPEG 压缩的程度。较高的值表示较高的 JPEG 质量，因此压缩较少。对于图像而言，55 至 75 之间的值通常足以不造成任何可见的质量降低。对于矢量和其他明确定义的要素或区域而言，推荐将质量更高的 90 作为起点。</p></section><section class="section2 padded-anchor" id="ESRI_SECTION2_A8CB6059AD49443AB3976F703B4F8C62" purpose="section2"><h3>按需创建切片</h3><p id="GUID-9FA132D5-D224-4CAF-92AE-6032EBFFBA35">如果选中此框，则当客户端首次请求之前未缓存区域的切片时，会将这些切片添加到缓存中。这是确保人们在查看您的缓存时始终能看到地图的好方法，即使您没有时间来初始创建各个比例级别的所有切片。</p><p id="GUID-35726A08-6C52-4C8E-AC8E-B11033252F26"><a class="xref xref" href="../../../../../zh-CN/server/latest/publish-services/windows/map-caching-on-demand.htm">了解有关何时使用按需缓存的详细信息</a></p></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_B520E0B7BF514FBE98214A84DCF5A7E7" purpose="section1"><h2>其他高级设置</h2><p id="GUID-C98CAAB1-F0AA-499C-9D7F-8DC735C52368">本部分介绍一些高级缓存设置，可通过<span class="wintitle">服务编辑器</span>的<span class="uicontrol">缓存 &gt; 高级设置</span>子选项卡中的<span class="uicontrol">高级</span>按钮查看。仅当使用“生成地图服务器缓存切片方案”工具生成新的切片方案时，才可设置这些属性（切片原点、每英寸点数、切片宽度和切片高度）。</p><section class="section2 padded-anchor" id="GUID-F93318FF-1E22-4A29-8EC6-CEEA6988A269" purpose="section2"><h3>切片原点（地图单位）</h3><p id="GUID-91FF45B4-10F5-44EC-8490-133DCF071865">切片方案原点是指切片方案格网的左上角。原点不一定代表创建切片的起始点；只有在达到地图全图范围或感兴趣区要素类时才是这样。进行缓存时使用公用切片方案原点可确保它们能够在 Web 应用程序中相互叠加。</p><figure class="fig" href="#"><img src="GUID-B5AAE1A2-304F-4185-B838-6C6CA0B6F8D0-web.png" alt="切片方案原点和切片方案格网图示" title="切片方案原点和切片方案格网图示"></figure><p id="GUID-1D3E4241-DD5F-4E03-A37B-95077B630DDD">大多数情况下，应保持软件的默认切片方案原点。默认原点为地图文档定义的坐标参考的左上点。如果地图文档中未定义坐标参考，则将所有图层范围的并集中最大的范围加倍，然后使用所得范围的左上角作为原点。</p><p id="GUID-74052C10-FD64-4AF2-94D3-C61279A0BB64">如果将切片方案原点更改到非默认位置，则应注意只能在切片方案原点右下方的地图区域中创建切片。如果只想缓存地图的某一区域，相对于更改切片方案原点，基于要素类边界创建切片是更好的选择。</p></section><section class="section2 padded-anchor" id="GUID-E4D6E14E-246A-4B3A-A8C4-C9427016AE12" purpose="section2"><h3>每英寸点数(DPI)</h3><p id="GUID-43441102-A8A4-4316-9627-4E63CBC82965">每英寸点数 (DPI) 是指服务器将生成的缓存切片的分辨率。默认值 96 通常完全可满足需要，除非在您所工作的网络中，大多数客户端计算机都具有不同 DPI。请注意，调整 DPI 会影响切片的比例。</p></section><section class="section2 padded-anchor" id="GUID-F1822552-BC76-474F-9335-79159C148F20" purpose="section2"><h3>切片高度和切片宽度</h3><p id="GUID-D7E53444-F2DD-42C2-8316-8B5AB0FD104B">切片的默认宽度和高度为 256 像素。建议使用 256 或 512。如果要构建的缓存将与另一缓存相叠加，应确保对两个缓存均使用相同的切片宽度和高度。</p><p id="GUID-DF06448C-E55B-4160-AD49-8EC991A08B38">选择较小的切片宽度和高度可提高向缓存请求切片的应用程序的性能，因为需要传输的数据较少。但对于松散缓存，切片越小，缓存越大且创建时间越长。</p></section><section class="section2 padded-anchor" id="ESRI_SECTION2_D17F69625A764647B7C49EB7FEB12248" purpose="section2"><h3>存储格式</h3><p id="GUID-0C8B5818-64B4-4FC9-9834-6287DBC1A3A7"> 可选择将切片分组以获取更高的存储效率和移动性，或者以单个文件形式存储每个切片。以下为存储选项：</p><ul purpose="ul" id="UL_63C5E34724B641B3B6BCD2C2C0A13827"><li purpose="li" id="LI_C66BC4FCC4F24C0C8BC1C7A85B161270"><span class="uicontrol">紧凑</span> - 在紧凑格式下，缓存中的每个文件都包含一包切片。每个包的宽度为 128 个切片，高为 128 个切片，最多包含 16,384 个切片。紧凑缓存的复制速度大大快于松散缓存，且所占用的磁盘空间更少。</li><li purpose="li" id="LI_DBC37049BE06404EA35CC28939544273"><span class="uicontrol">松散</span> - 在松散格式下，每个切片都存储为磁盘上的一个文件。这便于查看缓存中的切片；但这会使生成的缓存较大从而耗费更多的时间来创建，并且不易于复制。</li></ul><p id="GUID-143E02EF-1131-4AFD-8046-BFDB8F1AD052"> 有时，缓存中数量巨大的文件和文件夹可能会使复制工具效率低下，包括 Windows 复制/粘贴。因此，紧凑缓存可极大地减少缓存复制时间。如果采用自动缓存更新工作流程，即在过渡服务器上创建切片后将其复制到生产服务器，建议使用紧凑缓存。此外，如果可用磁盘空间有限，也应使用紧凑缓存。</p></section><section class="section2 padded-anchor" id="ESRI_SECTION2_DD52C67539D74F898B6F48EDBA567E36" purpose="section2"><h3>允许客户端本地缓存切片</h3><p id="GUID-4D9EF51F-DDD4-4972-9592-0AC722400589">如果选中此框，将允许 ArcMap 等 Esri 客户端应用程序保留从服务器检索的任何切片的本地缓存。这可帮助客户端在返回到该区域时更加快速地查看切片。客户端必须手动清除其缓存才能从服务器获取较新的切片；因此，如果您要频繁地更新缓存，应考虑取消选中此框。</p></section><section class="section2 padded-anchor" id="ESRI_SECTION2_874D24C21189417E90C7484A61BFBCB9" purpose="section2"><h3>允许客户端导出缓存切片</h3><p id="GUID-56C7F0CB-3B13-4009-92EF-623B2DD18D6B">ArcGIS 客户端 API 允许应用程序从服务器下载地图切片以供离线使用。您选中<span class="uicontrol">允许客户端导出缓存切片</span>复选框时，将授权进行这些下载。</p><p id="GUID-9C07D995-4173-4919-80D7-597706847CC0">大型切片下载会对服务器性能产生负面影响，并会超出客户端设备的负荷。使用<span class="uicontrol">将导出缓存限制为</span>设置可定义客户端一次请求的最大切片数量。</p><div class="panel trailer-1" id="GUID-9AC313D0-74C3-48FA-8118-89B136684D8C"><h5 class="icon-ui-description trailer-0">提示：</h5>如果您尝试确定允许下载的最大切片数量，那么查看缓存中的切片总数可提供有用的信息。从缓存完成状态的详细报告中可获取此信息。请参阅<a class="xref xref" href="../../../../../zh-CN/server/latest/publish-services/windows/viewing-cache-completion-status.htm">查看缓存完成状态</a>。</div><p id="GUID-B29C19B4-5532-4A4D-931E-00E5877A604E">导出的切片放置在服务器输出目录中。在允许客户端导出切片时，您可能想增加服务器输出目录中允许的文件最长保留期限。默认的保留期限 10 分钟可能不足以供客户端在切片遭到清理之前完成检索。有关如何进行此编辑的步骤，请参阅<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/server/latest/administer" href="../../../../../zh-CN/server/latest/administer/windows/editing-a-server-directory-in-manager.htm">在 Manager 中编辑服务器目录</a>。</p></section></section>
+			
+				<hr>
+				<!--googleoff: all-->
+				
+	
+        
+		    <p class="feedback right">
+		        <a id="afb" class="icon-ui-contact" href="/feedback/" data-langlabel="feedback-on-this-topic" >有关此主题的反馈?</a>
+		    </p>
+        
+	
+
+				<!--googleon: all-->
+			
+		</main>
+	</div>
+	
+	<!--googleoff: all-->
+	
+		
+			<div id="main-toc-large" class="column-5">
+			    <div class="panel font-size--2 tablet-hide trailer-1">
+			      <h5 class="trailer-half">在本主题中</h5>
+			      <ol class="list-plain pre-0 trailer-0"><li><a href="#GUID-58B3BEC4-FC83-432B-AA69-9DEFEB202BED"> 访问缓存属性</a></li><li><a href="#ESRI_SECTION1_587D6232E38B4380B3FE1675F54B3DF2">缓存选项卡设置</a></li><li><a href="#ESRI_SECTION1_7CB7C4969828445F93FFED84F01E141D">高级设置</a></li><li><a href="#ESRI_SECTION1_B520E0B7BF514FBE98214A84DCF5A7E7">其他高级设置</a></li></ol>
+			    </div>
+			    
+			    
+	  		</div>
+		
+    
+   <!--googleon: all-->
+
+
+
+
+          
+        </div>
+        <!-- ENDPAGECONTENT -->
+
+      </div>
+
+    </div>  <!-- End of wrapper -->
+
+  <footer class="footer leader-3 link-dark-gray" role="contentinfo">
+    <div class="grid-container">
+      <div class="row">
+        <nav class="column-6">
+          <h6 data-langlabel="arcgis-for-server">Arc<span>GIS Enterprise</span></h6>
+          <ul class="list-plain">
+            <li><a data-langlabel="home" href="../../../../../zh-CN/">主页</a></li>
+            <li><a data-langlabel="portal" href="../../../../../zh-CN/portal/">Portal</a></li>
+            <li><a data-langlabel="server" href="../../../../../zh-CN/server/">Server</a></li>
+            <li><a data-langlabel="data-store" href="../../../../../zh-CN/data-store/">Data Stores</a></li>
+            <li><a data-langlabel="cloud" href="../../../../../zh-CN/cloud/">云</a></li>
+            <li><a data-langlabel="apps" href="../../../../../zh-CN/apps/">应用程序</a></li>
+            <li><a data-langlabel="documentation" href="../../../../../zh-CN/documentation/">文档</a></li>
+          </ul>
+        </nav>
+
+        
+  <nav class="column-6">
+    <h6 data-langlabel="arcgis-platform">ArcGIS 平台</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="arcgis" href="//www.arcgis.com/">ArcGIS Online</a></li>
+      <li><a data-langlabel="arcgis-for-professionals" href="//pro.arcgis.com/">ArcGIS Pro</a></li>
+      <li><a data-langlabel="arcgis-for-server" href="//enterprise.arcgis.com/">ArcGIS Enterprise</a></li>
+      <li><a data-langlabel="arcgis-for-developers" href="https://developers.arcgis.com/">ArcGIS for Developers</a></li>
+      <li><a data-langlabel="arcgis-solutions" href="//solutions.arcgis.com/">ArcGIS Solutions</a></li>
+      <li><a data-langlabel="arcgis-marketplace" href="//marketplace.arcgis.com/">ArcGIS Marketplace</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <h6 data-langlabel="about-esri">关于 Esri</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="about-us" href="//www.esri.com/about-esri/">关于我们</a></li>
+      <li><a data-langlabel="careers" href="//www.esri.com/careers/">招贤纳士</a></li>
+      <li><a data-langlabel="insiders-blog" href="https://www.esri.com/about/newsroom/blog/">Esri 博客</a></li>
+      <li><a data-langlabel="user-conference" href="//www.esri.com/events/user-conference/index.html">用户大会</a></li>
+      <li><a data-langlabel="developer-summit" href="//www.esri.com/events/devsummit/index.html">开发者峰会</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <a class="esri-logo" href="//www.esri.com/" aria-label="Esri Home"></a>
+    <section class="footer-social-nav leader-1">
+            <a class="icon-social-twitter" aria-label="Esri on Twitter" href="https://twitter.com/Esri/"></a>
+            <a class="icon-social-facebook" aria-label="Esri on Facebook" href="https://www.facebook.com/esrigis/"></a>
+            <a class="icon-social-github" aria-label="Esri on GitHub" href="//esri.github.io/"></a>
+            <a class="icon-social-contact" aria-label="Contact Esri" href="//www.esri.com/about-esri/contact/"></a>
+    </section>
+	  
+  </nav>
+  
+  <div class="column-24 leader-1">
+    <p class="font-size--3"><a href="http://www.esri.com/legal/copyright-trademarks">Copyright &copy; 2019 Esri.</a> All rights reserved. | <a href="http://www.esri.com/legal/privacy/">隐私政策</a> | <a href="http://www.esri.com/legal/software-license">法律声明</a></p>
+  </div>
+  
+
+
+      </div>
+    </div>
+  </footer>
+  <!--googleoff: all-->
+
+  
+  
+	<script src="../../../../../zh-CN/assets/js/init.js" type="text/javascript"></script>
+	<!--<script src="../../../../../zh-CN/assets/js/drop-down.js" type="text/javascript"></script>-->
+	<script src="../../../../../zh-CN/assets/js/search/searchform.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/cdn/js/link-modifier.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/cdn/js/sitewide.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/cdn/js/libs/highlight.pack.js" type="text/javascript"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+
+
+  
+    
+
+  <script src="../../../../../zh-CN/cdn/js/affix.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    $(function () {
+          var appendFlg = true;
+
+          $("#bigmac")
+          .on("affixed.bs.affix", function (evt) {
+            if (appendFlg) {
+              $("<a class='crumb' href='#'>可用地图和图像缓存属性</a>").insertAfter ($("#bigmac nav a").last());
+              appendFlg = false;
+            }
+          })
+          .on ("affix-top.bs.affix", function(evt) {
+            if (!appendFlg) {
+              $("#bigmac nav a").last().remove();
+            }
+            appendFlg = true;
+          })
+    })
+  </script>
+  
+        <script type="text/javascript">
+          window.doctoc = {
+            pubID: "1634",
+            tpcID: "436",
+            
+              prefix: "管理服务",
+              prefixUrl: "/zh-cn/server/latest/publish-services/windows/",
+          
+            hideToc: false
+          }
+        </script>
+
+        <script type="text/javascript" src="../../../../../zh-CN/server/latest/publish-services/windows/1634.js" ></script>
+        <script type="text/javascript" src="../../../../../zh-CN/cdn/calcite/js/protoc.js" ></script>
+        
+        
+
+  <noscript>
+        <p>
+            <a href="flisting.htm">flist</a>
+        </p>
+    </noscript>
+    <script type="text/javascript"></script>
+  
+  
+    
+    
+
+  </body>
+</html>

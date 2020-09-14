@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+
+<!--[if lt IE 7]>      <html class="ie lt-ie9 lt-ie8 lt-ie7 ie6"> <![endif]-->
+<!--[if IE 7]>         <html class="ie lt-ie9 lt-ie8 ie7"> <![endif]-->
+<!--[if IE 8]>         <html class="ie lt-ie9 ie8"> <![endif]-->
+<!--[if IE 9]>         <html class="ie ie9"> <![endif]-->
+<!--[if gt IE 9]>      <html class="ie"> <![endif]-->
+<!--[if !IE]><!--> <html dir="ltr" lang="zh-cn"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    
+    <meta name="content-language" content="zh-cn">
+    <title>Essentials | ArcGIS Enterprise</title>
+
+
+	 <!-- Some interim redirect sol -->
+	 
+    <!--[if lt IE 9]>
+      <script src="../../zh-CN/cdn/js/libs/html5shiv.js" type="text/javascript"></script>
+      <script src="../../zh-CN/cdn/js/libs/selectivizr-min.js" type="text/javascript"></script>
+      <script src="../../zh-CN/cdn/js/libs/html5shiv-printshiv.js" type="text/javascript"></script>
+      <style>
+        #wrapper {
+          min-width: 960px;
+        }
+      </style>
+    <![endif]-->
+    <link rel="shortcut icon" href="../../zh-CN/assets/images/favicon.ico">
+    <link href="../../zh-CN/assets/images/apple-touch-icon.png" rel="apple-touch-icon" />
+
+    <link href="../../zh-CN/assets/css/screen.css?1576604156" media="screen" rel="stylesheet" type="text/css" />
+    
+
+    
+  		<link type="text/css" rel="stylesheet" href="../../zh-CN/assets/css/screen_l10n.css"/>
+  		<link type="text/css" rel="stylesheet" href="../../zh-CN/assets/css/print_l10n.css"/>
+  	
+    <script src="../../zh-CN/assets/js/libs/jquery-1.9.1.min.js?1576523882" type="text/javascript"></script>
+	<!-- Language Picker-->
+    <link type="text/css" rel="stylesheet" href="../../zh-CN/assets/css/langSelector.css"/>
+    <script src="../../zh-CN/assets/js/locale/l10NStrings.js?1576696476" type="text/javascript"></script>
+    
+       
+    
+    
+    <script src="../../zh-CN/cdn/js/libs/jquery.cookie.js" type="text/javascript"></script>
+    <script src="../../zh-CN/assets/js/sitecfg.js" type="text/javascript"></script>
+    <script src="../../zh-CN/assets/js/signIn.js" type="text/javascript"></script>
+    <script src="../../zh-CN/assets/js/search/searchform.js" type="text/javascript"></script>
+    <link type="text/css" rel="stylesheet" media="print" href="../../zh-CN/assets/css/print.css" />
+	 <!--- search MD -->
+	
+
+    <script src="../../zh-CN/assets/js/calcite-web.js?1576523883" type="text/javascript"></script>
+    <script>
+      // On document ready
+      window.onload = function () {
+        // Initialize all calcite.js patterns
+        calcite.init();
+      };
+    </script>
+
+  </head>
+  <body class="zh-cn">
+
+    
+    
+      
+    
+
+
+    <div class="drawer drawer-left js-drawer" data-drawer="top-nav" tabindex="0">
+      <!-- Mobile Nav Drawer -->
+<nav class="drawer-nav" role="navigation">
+  <aside class="side-nav">
+    <h2 class="side-nav-title">ArcGIS Enterprise</h2>
+    <form id="helpSearchForm" class="site-search-form" method="GET" action="">
+      <input class="drawer-search" type="search" name="q" data-langlabel="search-arcgis-server" placeholder="搜索 ArcGIS Enterprise 站点">
+      <input type="hidden" name="collection" value="help">
+      <input type="hidden" name="product" value="">
+      <input type="hidden" name="language" value="zh-CN">
+    </form>
+    <a class="side-nav-link" href="../../zh-CN/portal/">Portal</a>
+    <a class="side-nav-link" href="../../zh-CN/get-started/latest/windows/additional-server-deployment.htm">All Servers</a>
+    <a class="side-nav-link" href="../../zh-CN/server/">GIS Server</a>
+    <a class="side-nav-link" href="../../zh-CN/image/">Image Server</a>
+    <a class="side-nav-link" href="../../zh-CN/geoanalytics/">GeoAnalytics Server</a>
+    <a class="side-nav-link" href="../../zh-CN/geoevent/">GeoEvent Server</a>
+    <a class="side-nav-link" href="../../zh-CN/notebook/">Notebook Server</a>
+    <a class="side-nav-link" href="../../zh-CN/data-store/">Data Store</a>
+    <a class="side-nav-link" href="../../zh-CN/cloud/">云</a>
+    <a class="side-nav-link" href="../../zh-CN/apps/">应用程序</a>
+    <a class="side-nav-link" href="../../zh-CN/documentation/">文档</a>
+  </aside>
+</nav>
+
+    </div>
+    <div class="wrapper">
+      <div class="page">
+        <header class="top-nav">
+  <div class="grid-container">
+      <div class="column-24">
+        <div class="tablet-hide">
+          <a class="top-nav-title" href='../../zh-CN/'>ArcGIS Enterprise</a>
+          <nav class="top-nav-list" role="navigation" aria-labelledby="topnav">
+            <a class="top-nav-link" href="../../zh-CN/portal/">Portal</a>
+            <div class="dropdown js-dropdown ">
+              <a class="top-nav-link js-dropdown-toggle" tabindex="0" aria-haspopup="true" aria-expanded="false" href="#">Servers</a>
+              <nav class="dropdown-menu featured" role="menu">
+                <ul class="dropdown-sublist-featured">
+                  <li class="dropdown-subitem-featured">
+                    <a href="../../zh-CN/server/latest/get-started/windows/about-arcgis-server-licensing-roles.htm" class="sublink-featured">
+                      <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M42.92 6.1H4.12v8.566l.833.832-.835.833-.018 7.332.845.847-.825.824V33.9h25v5.2h-2v1.075H8.02v.8h19.1v.925h4.8v-.925H40v-.8h-8.08V39.1h-2v-5.2h13v-8.566l-.834-.834.835-.834v-7.332l-.835-.834.835-.834zm-11.8 35h-3.2v-1.2h3.2zm11-8H4.92v-7.434l.767-.766h35.668l.765.766zm0-9.766l-.766.766H5.666l-.766-.767.017-6.669.766-.764h35.671l.766.766zm0-9l-.766.766H5.687l-.766-.766V6.9h37.2zM19 11.9h-2v-.8h2zm-4 0h-2v-.8h2zm-4 0H9v-.8h2zm6 8.2h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9zm8 9h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9z"/></svg></span>
+                      <span class="sublink-text">所有服务器</span>
+                    </a>
+                  </li>
+                  <li class="dropdown-subitem-featured">
+                    <a href="../../zh-CN/server/" class="sublink-featured">
+                      <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M45.98 33.575a.616.616 0 0 0-.335-.51l-3.362-2.03 3.362-2.031a.556.556 0 0 0 0-1.02l-11.1-6.704a1.293 1.293 0 0 0-1.112 0L22.33 27.982a.556.556 0 0 0 0 1.02l3.36 2.03-3.358 2.03a.556.556 0 0 0-.002 1.021l3.322 2.006-3.324 2.008a.555.555 0 0 0 .002 1.017l11.102 6.703a1.25 1.25 0 0 0 1.11.002l11.104-6.706a.556.556 0 0 0 0-1.02l-3.32-2.006 3.318-2.004a.607.607 0 0 0 .335-.509zM33.837 21.97c.026-.01.286-.005.29-.005l10.814 6.53-10.8 6.523c-.028.01-.284.005-.294.006l-10.813-6.53zm11.105 16.636l-10.8 6.523a2.564 2.564 0 0 1-.295.006l-10.81-6.529 3.39-2.047 7.004 4.23a1.083 1.083 0 0 0 .557.131 1.101 1.101 0 0 0 .554-.13l7.01-4.233zM34.14 40.098a2.545 2.545 0 0 1-.294.006l-10.812-6.53 3.43-2.073 6.97 4.208a1.25 1.25 0 0 0 1.107-.001l6.966-4.206 3.431 2.073zM9 8H7V7h2zm8 8h-2v-1h2zm-4-8h-2V7h2zm4 0h-2V7h2zm-4 8h-2v-1h2zm7.316 11.1H3.9v-6.434l.766-.766h35.668l.766.766v2.12l.8.483v-2.935l-.826-.826.826-.845v-6.329l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9h16.88a2.632 2.632 0 0 1 .336-.8zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zm0 8v-5.668l.766-.766h35.668l.766.766v5.67l-.746.764H4.666zM15 24v-1h2v1zm-4 0v-1h2v1zm-2-8H7v-1h2zm-2 8v-1h2v1z"/></svg></span>
+                      <span class="sublink-text">GIS Server</span>
+                    </a>
+                  </li>
+                  <li class="dropdown-subitem-featured">
+                    <a href="../../zh-CN/image/" class="sublink-featured">
+                      <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 8h-2V7h2zm-4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm8 8h-2v1h2zm-8 0H7v1h2zm4 9v-1h-2v1zm-4 0v-1H7v1zm8 0v-1h-2v1zm4 3.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V21h-.8v-.334l-.766-.766H4.666l-.766.766V27.1H21zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zm40.234 4v21.8H23.1V23.1zm-.8 16.366L39.466 44.1h2.868l1.766-1.766zm-20.2-9.932l5.634-5.634h-2.868L23.9 26.666zm6.2-5.068L24.466 30.1h2.868l2.766-2.766zM28.466 30.1H30.1v-1.634zm2.434 0h6.2v-6.2h-6.2zm-7 7h6.2v-6.2h-6.2zm7 0h6.2v-6.2h-6.2zm0 6.434l5.634-5.634h-2.868L30.9 40.666zm7-7l5.634-5.634h-2.868L37.9 33.666zm1.634-5.634H37.9v1.634zm-8.634 7v1.634l1.634-1.634zm.566 6.2h2.868l2.766-2.766v-2.868zm6.434-3.566l2.634-2.634H37.9zM35.466 44.1H37.1v-1.634zm2.434 0h.434l5.766-5.766V37.9h-2.434L37.9 41.666zm6.2-8.634L42.466 37.1H44.1zm0-4L38.466 37.1h2.868l2.766-2.766zm0-7.566h-6.2v6.2h6.2zm-20.2 0v1.634l1.634-1.634zm0 20.2h6.2v-6.2h-6.2zm20.2 0v-.634l-.634.634z"/></svg></span>
+                      <span class="sublink-text">Image Server</span>
+                    </a>
+                  </li>
+                  <li class="dropdown-subitem-featured">
+                    <a href="../../zh-CN/geoanalytics/" class="sublink-featured">
+                      <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 16h-2v-1h2zm-8 8v-1H7v1zm8 0v-1h-2v1zM13 7h-2v1h2zm4 0h-2v1h2zM9 7H7v1h2zm21.45 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V27.9h-1.464l-.801-.8H41.1v-6.434l-.766-.766H4.666l-.766.766V27.1h27.15zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM13 24v-1h-2v1zm0-9h-2v1h2zm-4 0H7v1h2zm26.672 27.148A1.87 1.87 0 0 1 35.9 43a1.91 1.91 0 1 1-3.763-.222l-9.845-3.414A1.88 1.88 0 0 1 21 39.9a1.9 1.9 0 1 1 1.474-3.084l4.692-2.346A1.878 1.878 0 0 1 27.1 34a1.902 1.902 0 0 1 1.9-1.9 1.867 1.867 0 0 1 .781.191l3.788-5.05A1.88 1.88 0 0 1 33.1 26a1.9 1.9 0 1 1 3.491 1.026l4.889 4.888c-.069.056-.144.1-.21.162a3.986 3.986 0 0 0-.358.402l-4.883-4.883A1.889 1.889 0 0 1 35 27.9a1.867 1.867 0 0 1-.781-.191l-3.788 5.049a1.868 1.868 0 0 1 .437.965l9.204.614c-.018.11-.049.218-.058.33A3.93 3.93 0 0 0 40 35c0 .046.01.09.01.135l-9.185-.612A1.913 1.913 0 0 1 29 35.9a1.889 1.889 0 0 1-1.474-.716l-4.692 2.346a1.878 1.878 0 0 1 .066.47 1.9 1.9 0 0 1-.105.625c-.007.02-.022.036-.03.056l9.63 3.34a1.87 1.87 0 0 1 2.786-.505l5.415-4.437c.067.108.127.22.204.322a3.9 3.9 0 0 0 .292.306zM33.9 26a1.092 1.092 0 0 0 .43.872 1.12 1.12 0 0 0 1.42-.068A1.1 1.1 0 1 0 33.9 26zm-6 8a1.1 1.1 0 0 0 2.196.093 1.135 1.135 0 0 0-.426-.965A1.087 1.087 0 0 0 29 32.9a1.101 1.101 0 0 0-1.1 1.1zm-5.8 4a1.098 1.098 0 1 0-.06.362A1.101 1.101 0 0 0 22.1 38zm13 5a1.1 1.1 0 1 0-2.2 0 1.1 1.1 0 0 0 2.2 0zm10.8-8a1.9 1.9 0 1 1-3.8 0c0-.053.003-.105.007-.158A1.9 1.9 0 0 1 45.9 35zm-.8 0a1.1 1.1 0 0 0-2.196-.093 1.153 1.153 0 0 0 .216.752A1.1 1.1 0 0 0 45.1 35z"/></svg></span>
+                      <span class="sublink-text">GeoAnalytics Server</span>
+                    </a>
+                  </li>
+                  <li class="dropdown-subitem-featured">
+                    <a href="../../zh-CN/geoevent/" class="sublink-featured">
+                      <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M13 8h-2V7h2zm4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm12.418 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826v2.117c-.259-.177-.53-.337-.8-.497v-1.288l-.766-.766H4.666l-.766.766V27.1h17.933c-.148.26-.283.53-.415.8zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM9 24v-1H7v1zm4-9h-2v1h2zm0 9v-1h-2v1zm-4-9H7v1h2zm8 9v-1h-2v1zm16.9 2h-.8v8.9H39v-.8h-5.1zm.1-3.901a11.9 11.9 0 1 0 11.9 11.9 11.914 11.914 0 0 0-11.9-11.9zm0 23a11.1 11.1 0 1 1 11.1-11.1 11.112 11.112 0 0 1-11.1 11.1z"/></svg></span>
+                      <span class="sublink-text">GeoEvent Server</span>
+                    </a>
+                  </li>
+                  <li class="dropdown-subitem-featured">
+                    <a href="../../zh-CN/notebook/" class="sublink-featured">
+                      <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M22 27.1H3.9v-6.434l.766-.766h18.576a5.262 5.262 0 0 1 .83-.8H4.666l-.766-.766v-5.668l.766-.766h35.668l.766.766V18h.8v-5.666l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9H22zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zM9 8H7V7h2zm8 0h-2V7h2zm-4 0h-2V7h2zm2 16v-1h2v1zm-4 0v-1h2v1zm-4 0v-1h2v1zm0-8v-1h2v1zm8 0v-1h2v1zm-4 0v-1h2v1zm18.9 8.1h-1.8v1.8h1.8zm-.8 1h-.2v-.2h.2zm15.498-4.48a2.727 2.727 0 0 0-1.62-.5v-.02H27.25a3.154 3.154 0 0 0-3.15 3.15V38.1h-1.68a3.386 3.386 0 0 0-2.872 1.58 3.49 3.49 0 0 0-.157 3.419 3.241 3.241 0 0 0 2.954 1.801h15.161a3.404 3.404 0 0 0 3.394-3.4V26.9h5v-3.65a3.224 3.224 0 0 0-1.302-2.63zM22.345 44.1a2.44 2.44 0 0 1-2.23-1.341 2.706 2.706 0 0 1 .11-2.65A2.588 2.588 0 0 1 22.42 38.9h12.89a3.395 3.395 0 0 0 0 5.2zM40.1 23.192V41.5a2.6 2.6 0 1 1-2.6-2.6v-.8H24.9V23.25a2.352 2.352 0 0 1 2.35-2.35h13.795a3.183 3.183 0 0 0-.945 2.292zm5 2.908h-4.2v-2.908a2.274 2.274 0 0 1 1.44-2.18 1.944 1.944 0 0 1 1.791.259 2.423 2.423 0 0 1 .97 1.979zm-17.1 5h9v.8h-9zm0 3h7v.8h-7zm0-6h9v.8h-9zm4-3h5v.8h-5z"/></svg></span>
+                      <span class="sublink-text">Notebook Server</span>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+            <a class="top-nav-link" href="../../zh-CN/data-store/">Data Stores</a>
+            <a class="top-nav-link" href="../../zh-CN/cloud/">云</a>
+            <a class="top-nav-link" href="../../zh-CN/apps/">应用程序</a>
+          </nav>
+          
+
+        </div>
+        <a href='../../zh-CN/' class="icon-ui-menu top-nav-title js-drawer-toggle tablet-show" data-drawer="top-nav">ArcGIS Enterprise</a>
+        <div class="margin-left-1 top-nav-list right hide-if-logged-in logged-out-navigation">
+          <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="搜索">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+              <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+              <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+            </svg>
+          </button>
+          <a data-langlabel="sign-in" id="login-link" class="icon-ui-user top-nav-link link-blue login-link" href="#">登录</a>
+        </div>
+        <nav class="margin-left-1 top-nav-list right hide-if-logged-out logged-in-navigation">
+          <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="搜索">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+              <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+              <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+            </svg>
+          </button>
+          <div class="dropdown js-dropdown right">
+            <div class="tablet-show top-nav-link">
+              <img alt="用户头像" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+              <a href="#" data-drawer="user-nav" class="user-nav-name js-drawer-toggle" data-first-name></a>
+            </div>
+            <div class="tablet-hide top-nav-link js-dropdown-toggle">
+              <img alt="用户头像" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+              <a class="user-nav-name top-nav-dropdown dropdown-btn" data-first-name>&nbsp;</a>
+            </div>
+            <nav class="dropdown-menu dropdown-right">
+              <a class="dropdown-link agolProfile" id="agolProfile" href="#">我的个人资料</a> <a class="dropdown-link js-log-out" id="agolLogout" href="#">登出</a>
+            </nav>
+          </div>
+        </nav>
+
+      </div>
+    </div>
+  </header>
+  <div class="js-search search-overlay">
+    <div class="search-content" role="dialog" aria-labelledby="search">
+      <form method="GET" id="helpSearchForm">
+        <label>
+搜索 ArcGIS Enterprise 帮助
+          <div class="search-bar">
+            <input type="search" name="q" placeholder="搜索 ArcGIS Enterprise 帮助" class="search-input js-search-input">
+            <input type="hidden" name="collection" value="help" />
+            <input type="hidden" name="product" value="arcgis-enterprise-windows" />
+            <input type="hidden" name="version" value="10.6" />
+            <input type="hidden" name="language" value="zh-CN" />
+          </div>
+        </label>
+        <input type="hidden" name="relativePath" value="../../" /><button type="submit" class="btn btn-large right">搜索</button>
+      </form>
+    </div>
+  </div>
+
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>-
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-animate.js"></script>-
+<script src="../../zh-CN/documentation/install/docindex_controller.js" type="text/javascript"></script>-
+
+<div class="sub-nav" role="banner">
+  <div class="grid-container padding-leader-1">
+    <div class="column-24">
+      <h1 class="text-white">ArcGIS Enterprise</h1>
+    </div>
+    <div class="column-24">
+      <nav class="sub-nav-list" role="navigation" aria-labelledby="subnav">
+        <a class="sub-nav-link" href="../../zh-CN/" title="ArcGIS Enterprise 概述和文档">主页</a> <a class="sub-nav-link" href="../../zh-CN/get-started/latest/windows/what-is-arcgis-enterprise-.htm" title="ArcGIS Enterprise 简介">简介</a> <a class="sub-nav-link is-active" href="../../zh-CN/documentation/" title="ArcGIS Enterprise 的最佳做法">基本知识</a> <a class="sub-nav-link" title="ArcGIS Enterprise 及相关组件安装指南" href="../../zh-CN/documentation/install/">安装和开发</a>
+      </nav>
+    </div>
+  </div>
+</div>
+
+<div class="panel panel-no-border panel-no-padding panel-white">
+  <div class="grid-container">
+    <div class="column-24 text-center trailer-2 leader-2">
+      <p class="trailer-0 avenir-light font-size-3">让我们开始吧。这些主题可帮助您了解有关 ArcGIS Enterprise 的详细信息。
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="panel panel-no-border panel-no-padding padding-leader-2 padding-trailer-2 panel-dark">
+  <div class="grid-container">
+    <div class="column-16 pre-4 post-4">
+      <div class="center trailer-0">
+        <div container="" class="panel">
+          <div class="wf-nav" style="height:55px;">
+            <div class="wf-nav search-bar column-16 trailer-0 leader-0 padding-right-3 padding-left-1">
+              <form id="helpSearchForm" class="input-group" target="_top">
+                <input type="search" name="q" class="leader input-group-input" data-langlabel="search-arcgis-server" placeholder="搜索 ArcGIS Enterprise 站点">
+                <input type="hidden" name="collection" value="all">
+                <input type="hidden" name="product" value="">
+                <input type="hidden" name="language" value="zh-CN">
+                <span class="input-group-button">
+                  <input type="hidden" name="relativePath" value="../../" /><button class="icon-ui-search icon-ui-flush" type="submit"></button>
+                </span>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="panel panel-no-padding padding-leader-1 padding-trailer-1 panel-gradient">
+  <div class="grid-container">
+    <div class="column-24">
+      <h2 class="text-white">找出最佳做法</h2>
+      <div class="block-group block-group-5-up tablet-block-group-2-up phone-block-group-1-up">
+        <div class="card block trailer-1">
+          <figure class="card-image-wrap">
+            <img src="../../zh-CN/assets/images/bestpractices_architect.png" alt="系统架构的最佳做法" class="card-image">
+          </figure>
+          <div class="card-content">
+            <h4 class="trailer-half">系统架构</h4>
+            <p class="font-size--1 card-last">
+              设计一项策略以实现最佳的性能、可靠性和安全性。
+            </p>
+          </div>
+          <a href="../../zh-CN/server/latest/deploy/windows/best-practices-for-system-architecture.htm" class="btn btn-clear btn-fill">了解详细信息</a>
+        </div>
+        <div class="card block trailer-1">
+          <figure class="card-image-wrap">
+            <img src="../../zh-CN/assets/images/bestpractices_certificate.png" alt="适用于服务器证书的最佳做法" class="card-image">
+          </figure>
+          <div class="card-content">
+            <h4 class="trailer-half">证书</h4>
+            <p class=" font-size--1 card-last">
+              通过部署的证书来确保通信的一致性和安全性。
+            </p>
+          </div>
+          <a href="../../zh-CN/server/latest/administer/windows/best-practices-for-server-certificates.htm" class="btn btn-clear btn-fill">了解详细信息</a>
+        </div>
+        <div class="card block trailer-1">
+          <figure class="card-image-wrap">
+            <img src="../../zh-CN/assets/images/bestpractices_portal.png" alt="门户安全性的最佳做法" class="card-image">
+          </figure>
+          <div class="card-content">
+            <h4 class="trailer-half">门户安全性</h4>
+            <p class="font-size--1 card-last">
+              确保门户及其内容的安全性不受威胁。
+            </p>
+          </div>
+          <a href="../../zh-CN/portal/latest/administer/windows/security-best-practices.htm" class="btn btn-clear btn-fill">了解详细信息</a>
+        </div>
+        <div class="card block trailer-1">
+          <figure class="card-image-wrap">
+            <img src="../../zh-CN/assets/images/bestpractices_server.png" alt="服务器安全性的最佳做法" class="card-image">
+          </figure>
+          <div class="card-content">
+            <h4 class="trailer-half">服务器安全性</h4>
+            <p class="font-size--1 trailer-0">
+              即使您站点的服务已由公众使用，也要对其进行控制。
+            </p>
+          </div>
+          <a href="../../zh-CN/server/latest/administer/windows/best-practices-for-configuring-a-secure-environment.htm" class="btn btn-clear btn-fill">了解详细信息</a>
+        </div>
+        <div class="card block trailer-1">
+          <figure class="card-image-wrap">
+            <img src="../../zh-CN/assets/images/bestpractices_sharing.png" alt="共享内容的最佳做法" class="card-image">
+          </figure>
+          <div class="card-content">
+            <h4 class="trailer-half">共享内容</h4>
+            <p class="font-size--1 trailer-0">
+              与存在相关需求的用户可靠地共享门户内容。
+            </p>
+          </div>
+          <a href="../../zh-CN/portal/latest/use/best-practices-share.htm" class="btn btn-clear btn-fill">了解详细信息</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="panel panel-no-border panel-no-padding padding-leader-2 padding-trailer-2">
+  <div class="grid-container">
+   <div class="column-24">
+      <h2 class="text-rule font-size-3">找到您自己的解决方式</h2>
+    </div>
+    <div class="column-8 tablet-column-4 phone-column-6">
+      <ul class="list-plain">
+        <li><a href="../../zh-CN/">ArcGIS Enterprise 概览</a></li>
+        <li><a href="../../zh-CN/system-requirements/latest/windows/">系统要求</a></li>
+        <li><a href="../../zh-CN/documentation/install/">安装指南</a></li>
+
+      </ul>
+    </div>
+
+    <div class="column-8 tablet-column-4 phone-column-6">
+      <ul class="list-plain">
+        <li><a href="../../zh-CN/get-started/latest/windows/publishing-in-arcgis-enterprise.htm">在 ArcGIS Enterprise 中发布</a></li>
+        <li><a href="../../zh-CN/get-started/latest/windows/the-arcgis-enterprise-security-model.htm">ArcGIS Enterprise 安全模型</a></li>
+        <li><a href="../../zh-CN/cloud/">云部署</a></li>
+      </ul>
+    </div>
+
+    <div class="column-8 tablet-column-4 phone-column-6">
+      <ul class="list-plain">
+        <li><a href="//links.esri.com/enterprise_matrix">功能矩阵 (PDF) <span class="icon-ui-download"></span></a></li>
+        <li><a href="//www.esri.com/legal/open-source-acknowledgements">鸣谢</a></li>
+        <li><a href="//links.esri.com/enterpriseSDK">ArcGIS Enterprise SDK</a></li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+
+
+<div class="panel panel-no-border panel-no-padding padding-leader-1 padding-trailer-2 panel-white">
+  <div class="grid-container">
+    <div class="column-24">
+      <h2 class="text-rule font-size-3">ArcGIS Enterprise 门户基本知识</h2>
+    </div>
+    <div class="column-8 tablet-column-4 phone-column-6">
+      <ul class="list-plain">
+        <li><a href="../../zh-CN/portal/">概述</a></li>
+        <li><a href="../../zh-CN/portal/latest/use/what-s-new-in-portal-for-arcgis.htm">新特性？</a></li>
+        <li><a href="../../zh-CN/system-requirements/latest/windows/portal-for-arcgis-system-requirements.htm">系统要求</a></li>
+        <li><a href="../../zh-CN/portal/latest/install/windows/welcome-to-the-portal-for-arcgis-installation-guide.htm">安装指南</a></li>
+        <li><a href="../../zh-CN/portal/latest/administer/windows/upgrade-portal-for-arcgis.htm">升级您的门户</a></li>
+        <li><a href="../../zh-CN/portal/latest/administer/windows/about-using-your-server-with-portal-for-arcgis.htm">将 Portal 与 ArcGIS Server 搭配使用</a></li>
+      </ul>
+    </div>
+    <div class="column-8 tablet-column-4 phone-column-6">
+      <ul class="list-plain">
+        <li><a href="../../zh-CN/portal/latest/use/view-maps.htm">查看地图</a></li>
+        <li><a href="../../zh-CN/portal/latest/use/view-scenes.htm">查看场景</a></li>
+        <li><a href="../../zh-CN/portal/latest/use/create-maps-and-apps.htm">创建地图和应用程序</a></li>
+        <li><a href="../../zh-CN/portal/latest/use/get-started-with-sharing.htm">共享入门</a></li>
+        <li><a href="../../zh-CN/portal/latest/use/data-publishing-and-enterprise.htm">数据和发布</a></li>
+        <li><a href="../../zh-CN/portal/latest/use/understanding-analysis-in-portal-for-arcgis.htm">空间分析</a></li>
+      </ul>
+    </div>
+    <div class="column-8 tablet-column-4 phone-column-6">
+      <ul class="list-plain">
+        <li><a href="../../zh-CN/portal/latest/administer/windows/about-configuring-the-portal-website.htm">配置门户网站</a></li>
+        <li><a href="../../zh-CN/portal/latest/administer/windows/what-is-arcgis-data-store.htm">使用 ArcGIS Data Store</a></li>
+        <li><a href="../../zh-CN/portal/latest/administer/windows/roles.htm">用户类型、角色和权限</a></li>
+        <li><a href="../../zh-CN/portal/latest/administer/windows/license-premium-apps.htm">许可应用程序</a></li>
+        <li><a href="../../zh-CN/portal/latest/administer/windows/choose-data-loss-downtime-prevention-method.htm">防止停机和数据丢失</a></li>
+        <li><a href="../../zh-CN/portal/latest/administer/windows/about-distributed-collaboration.htm">分布式协作</a></li>
+        <li>先前版本：<a href="../../zh-CN/portal/10.5/use/">10.5.x</a> | <a href="../../zh-CN/portal/10.4/">10.4.X</a> | <a href="../../zh-CN/portal/10.3/">10.3.x</a> | <a href="//resources.arcgis.com/zh-cn/help/main/10.2/#/What_is_Portal_for_ArcGIS/019300000007000000/">10.2.x</a> <a class="icon-external-link" href="//resources.arcgis.com/zh-cn/help/main/10.2/#/What_is_Portal_for_ArcGIS/019300000007000000/"></a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="panel panel-no-border panel-no-padding padding-leader-1 padding-trailer-2">
+  <div class="grid-container">
+    <div class="column-24">
+      <h2 class="text-rule font-size-3">ArcGIS Server 基本知识</h2>
+    </div>
+    <div class="column-8 tablet-column-4 phone-column-6">
+      <ul class="list-plain">
+        <li><a href="../../zh-CN/server/">概述</a></li>
+        <li><a href="../../zh-CN/server/latest/get-started/windows/what-s-new-in-arcgis-for-server.htm">新特性？</a></li>
+        <li><a href="../../zh-CN/system-requirements/latest/windows/arcgis-server-system-requirements.htm">系统要求</a></li>
+        <li><a href="../../zh-CN/server/latest/install/windows/welcome-to-the-arcgis-for-server-install-guide.htm">安装指南</a></li>
+        <li><a href="../../zh-CN/server/latest/get-started/windows/upgrade-arcgis-server.htm">升级服务器</a></li>
+        <li><a href="../../zh-CN/server/latest/get-started/windows/server-extensions.htm">扩展模块</a></li>
+      </ul>
+    </div>
+    <div class="column-8 tablet-column-4 phone-column-6">
+      <ul class="list-plain">
+        <li><a href="../../zh-CN/server/latest/administer/windows/about-using-your-server-with-portal-for-arcgis.htm">将服务器与 ArcGIS Enterprise 集成</a></li>
+        <li><a href="../../zh-CN/web-adaptor/latest/install/iis/about-the-arcgis-web-adaptor-server-.htm">在服务器中配置 ArcGIS Web Adaptor</a></li>
+        <li><a href="../../zh-CN/server/latest/administer/windows/securing-your-arcgis-server-site.htm">保护您的服务器</a></li>
+        <li><a href="../../zh-CN/server/latest/administer/windows/deployment-scenarios.htm">计划服务器部署</a></li>
+        <li><a href="../../zh-CN/server/latest/deploy/windows/anticipating-and-accommodating-users.htm">预估和容纳用户</a></li>
+        <li><a href="../../zh-CN/server/latest/administer/windows/scripting-arcgis-server-administration.htm">共享实例</a></li>
+      </ul>
+    </div>
+    <div class="column-8 tablet-column-4 phone-column-6">
+      <ul class="list-plain">
+        <li><a href="../../zh-CN/server/latest/publish-services/windows/services-in-arcgis-enterprise.htm">ArcGIS Enterprise 中的服务</a></li>
+        <li><a href="../../zh-CN/server/latest/publish-services/windows/relationships-between-web-services-and-portal-items.htm">服务和门户项目</a></li>
+        <li><a href="../../zh-CN/server/latest/publish-services/windows/approaches-for-publishing-services-with-arcgis.htm">发布服务的方法</a></li>
+        <li><a href="../../zh-CN/server/latest/publish-services/windows/service-publishing-in-arcgis-pro.htm">ArcGIS Pro 中发布的服务</a></li>
+        <li><a href="../../zh-CN/server/latest/publish-services/windows/what-types-of-services-can-you-publish.htm">服务类型</a></li>       
+        <li><a href="../../zh-CN/server/latest/publish-services/windows/about-extending-services.htm">扩展服务</a></li>
+        <li>先前版本：<a href="../../zh-CN/server/10.5/get-started/windows/">10.5.x</a> | <a href="../../zh-CN/server/10.4/">10.4.X</a> | <a href="../../zh-CN/server/10.3/">10.3.x</a> | <a href="//resources.arcgis.com/zh-cn/help/main/10.2/#/Welcome_to_the_ArcGIS_10_2_for_Server_Windows_Help/0154000002np000000/">10.2.x</a> | <a href="//resources.arcgis.com/zh-cn/help/main/10.1/#/Welcome_to_the_ArcGIS_10_1_for_Server_Windows_Help/0154000002np000000/">10.1.x</a> | <a href="//resources.arcgis.com/zh-cn/help/previous-help/index.html">更早版本</a><a class="icon-external-link" href="//resources.arcgis.com/zh-cn/help/previous-help/index.html"></a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="panel panel-no-border panel-no-padding padding-leader-1 padding-trailer-2 panel-white">
+  <div class="grid-container">
+    <div class="column-24">
+      <h2 class="text-rule font-size-3">相关产品文档</h2>
+    </div>
+    <div class="column-8 tablet-column-4 phone-column-6">
+      <ul class="list-plain">
+        <li><a href="//desktop.arcgis.com/en/license-manager/latest/">ArcGIS License Manager 指南</a></li>
+        <li><a href="//enterprise.arcgis.com/zh-cn/monitor/">ArcGIS Monitor</a></li>
+        <li><a href="../../zh-CN/apps/">ArcGIS 应用程序</a></li>
+      </ul>
+    </div>
+    <div class="column-8 tablet-column-4 phone-column-6">
+      <ul class="list-plain">
+        <li><a href="../../zh-CN/inspire/">ArcGIS for INSPIRE</a></li>
+        <li><a href="//doc.arcgis.com/en/insights/">Insights for ArcGIS</a></li>
+        <li><a href="//links.esri.com/streetmapPremium">StreetMap Premium</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+      </div>
+    </div>
+
+    <footer class="footer leader-0">
+  <div class="grid-container">
+    <nav class="column-6">
+      <h6 data-langlabel="arcgis-for-server">ArcGIS Enterprise</h6>
+      <ul class="list-plain">
+        <li><a href="../../zh-CN/" data-langlabel="nav_home">主页</a></li>
+        <li><a href="../../zh-CN/portal/" data-langlabel="nav_portal">Portal</a></li>
+        <li><a href="../../zh-CN/server/" data-langlabel="nav_server">Server</a></li>
+        <li><a href="../../zh-CN/data-store/" data-langlabel="nav_data-store">Data Stores</a></li>
+        <li><a href="../../zh-CN/cloud/" data-langlabel="nav_cloud">云</a></li>
+        <li><a href="../../zh-CN/apps/" data-langlabel="nav_cloud">应用程序</a></li>
+        <li><a href="../../zh-CN/documentation/" data-langlabel="nav_documentation">文档</a></li>
+      </ul>
+    </nav>
+    <nav class="column-6">
+      <h6 data-langlabel="nav_arcgis_platform">ArcGIS 平台</h6>
+      <ul class="list-plain">
+        <li><a href="//www.arcgis.com">ArcGIS Online</a></li>
+        <li><a href="//pro.arcgis.com/" data-langlabel="arcgis-pro">ArcGIS Pro</a></li>
+        <li><a href="//enterprise.arcgis.com/" data-langlabel="arcgis-for-server">ArcGIS Enterprise</a></li>
+        <li><a href="https://developers.arcgis.com" data-langlabel="arcgis-for-developers">ArcGIS for Developers</a></li>
+        <li><a href="//solutions.arcgis.com" data-langlabel="arcgis-solutions">ArcGIS Solutions</a></li>
+        <li><a href="//marketplace.arcgis.com" data-langlabel="arcgis-marketplace">ArcGIS Marketplace</a></li>
+      </ul>
+    </nav>
+    <nav class="column-6">
+      <h6 data-langlabel="about-esri">关于 Esri</h6>
+      <ul class="list-plain">
+        <li><a data-langlabel="about-us" href="//www.esri.com/about-esri/">关于我们</a></li>
+        <li><a data-langlabel="careers" href="//www.esri.com/careers/">招贤纳士</a></li>
+        <li><a data-langlabel="esri-blog" href="//www.esri.com/about/newsroom/blog/">Esri 博客</a></li>
+        <li><a data-langlabel="user-conference" href="//www.esri.com/events/user-conference/index.html">用户大会</a></li>
+        <li><a data-langlabel="developer-summit" href="//www.esri.com/events/devsummit/index.html">开发者峰会</a></li>
+      </ul>
+    </nav>
+    <nav class="column-6">
+      <a class="esri-logo" href="//www.esri.com/"></a>
+      <section class="footer-social-nav leader-1">
+        <a class="icon-social-twitter" href="https://twitter.com/Esri/"></a>
+        <a class="icon-social-facebook" href="https://www.facebook.com/esrigis/"></a>
+        <a class="icon-social-github" href="//esri.github.com/"></a>
+        <a class="icon-social-contact" href="//www.esri.com/about-esri/contact/"></a>
+      </section>
+      <section class="feedback-footer center-text">
+         
+
+      </section>
+    </nav>
+    <div class="column-24 leader-1">
+      <p class="font-size--3">
+        <a href="//www.esri.com/legal/copyright-trademarks">版权所有 © 2019Esri。</a> 保留所有权利。| <a href="//www.esri.com/legal/privacy/" data-langlabel="footer_privacy">隐私策略</a> | <a href="//www.esri.com/legal/software-license/" data-langlabel="footer_legal">法律声明</a>
+      </p>
+    </div>
+  </div>
+</footer>
+<a href="#" class="back-2-top icon-ui-up-arrow" data-langlabel="top">返回顶部</a>
+
+
+    <script src="../../zh-CN/assets/js/back-to-top.js?1576523883" type="text/javascript"></script>
+
+  </body>
+  <script type="text/javascript"></script>
+</html>

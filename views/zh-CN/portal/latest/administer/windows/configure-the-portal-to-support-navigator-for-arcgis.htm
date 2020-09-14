@@ -1,0 +1,549 @@
+
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>  <html class="ie lt-ie9 lt-ie8 lt-ie7 ie6" dir="ltr"> <![endif]-->
+<!--[if IE 7]>     <html class="ie lt-ie9 lt-ie8 ie7" dir="ltr"> <![endif]-->
+<!--[if IE 8]>     <html class="ie lt-ie9 ie8" dir="ltr"> <![endif]-->
+<!--[if IE 9]>     <html class="ie ie9" dir="ltr"> <![endif]-->
+<!--[if !IE]><!--> <html dir="ltr" lang="zh-CN"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>配置门户以支持 Navigator for ArcGIS&mdash;Portal for ArcGIS 
+  (10.8) | ArcGIS Enterprise 文档</title>
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+    <script>
+      var docConfig = {
+        locale: 'zh-CN'
+        ,localedir: 'zh-cn'
+        ,langSelector: ''
+        
+        ,relativeUrl: false
+        
+
+        ,searchformUrl: '/search/'
+        ,tertiaryNavIndex: ''
+
+        
+      };
+    </script>
+	 
+
+
+    
+    <!--[if lt IE 9]>
+      <script src="../../../../../zh-CN/cdn/js/libs/html5shiv.js" type="text/javascript"></script>
+      <script src="../../../../../zh-CN/cdn/js/libs/selectivizr-min.js" type="text/javascript"></script>
+      <script src="../../../../../zh-CN/cdn/js/libs/json2.js" type="text/javascript"></script>
+      <script src="../../../../../zh-CN/cdn/js/libs/html5shiv-printshiv.js" type="text/javascript" >
+
+    <![endif]-->
+
+     <!--[if lt IE 11]>
+    <script>
+      $$(document).ready(function(){
+        $$(".hideOnIE").hide();
+      });
+    </script>
+    <![endif]-->
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<link href="../../../../../zh-CN/assets/img/favicon.ico" rel="shortcut icon" >
+	<link href="../../../../../zh-CN/assets/css/screen.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/cdn/calcite/css/documentation.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/assets/css/print.css" media="print" type="text/css" rel="stylesheet" />
+
+	<!--
+	<link href="../../../../../zh-CN/assets/css/screen_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/assets/css/documentation/base_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/assets/css/print_l10n.css" media="print" type="text/css" rel="stylesheet" />
+	-->
+	
+	
+		<script src="../../../../../zh-CN/cdn/js/libs/jquery.1.9.1.min.js" type="text/javascript"></script>
+	
+	<script src="../../../../../zh-CN/cdn/js/libs/jquery.cookie.js" type="text/javascript"></script>
+	<link href="../../../../../zh-CN/cdn/css/colorbox.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/cdn/css/colorbox_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<script src="../../../../../zh-CN/cdn/js/libs/jquery.colorbox-min.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/assets/js/video-init.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/assets/js/sitecfg.js" type="text/javascript"></script>
+	
+		<script src="../../../../../zh-CN/assets/js/signIn.js" type="text/javascript"></script>
+	
+
+	<!--- Language Picker -->
+	<script src="../../../../../zh-CN/assets/js/locale/l10NStrings.js" type="text/javascript"></script>
+	
+		 
+	
+
+	<script src="../../../../../zh-CN/assets/js/calcite-web.js" type="text/javascript"></script>
+
+
+
+  <!--- search MD -->
+    <META name="description" content="配置您的门户，使成员可以使用 Navigator for ArcGIS。"><META name="last-modified" content="2019-12-6"><META name="product" content="arcgis-portal-windows,arcgis-enterprise-windows"><META name="sub_category" content="Portal for ArcGIS (Windows)"><META name="search-collection" content="help"><META name="content_type_label" content="帮助主题"><META name="sub_category_label" content="Portal for ArcGIS (Windows)"><META name="search-category" content="help-general"><META name="subject_label" content="PORTAL,服务,SERVER"><META name="version" content="10.8"><META name="content_type" content="Help Topic"><META name="subject" content="PORTAL,SERVICES,SERVER"><META name="content-language" content="zh-cn">
+    <!--- search MD -->
+
+  
+  <script src="../../../../../zh-CN/assets/js/switchers/portal-1.js" type="text/javascript"></script>
+  
+      
+
+</head>
+
+<!--
+      pub: GUID-86E3206A-3CAD-43C1-9F16-FFB7CA3AEC71=33
+      tpc: GUID-58D94254-29A0-4E10-B801-FF989A82CC30=8
+      -->
+
+
+<!-- variable declaration, if any -->
+<!-- can change following macro to set variable once we are on Jinja 2.8 -->
+
+
+
+
+
+<body class="claro zh-CN server">
+  
+
+  <!-- Drawer location -->
+  <div class="drawer drawer-left js-drawer" data-drawer="top-nav">
+        <nav class="drawer-nav" role="navigation">
+          <aside class="side-nav">
+            <h2 class="side-nav-title">Arc<span>GIS</span> Enterprise</h2>
+            <form id="helpSearchForm" class="margin-left-half margin-right-half leader-half trailer-half drawer-search-form" method="GET">
+              <input type="search" name="q"  placeholder="搜索 ArcGIS Enterprise 帮助">
+              <input type="hidden" name="collection" value="help" />
+              <input type="hidden" name="product" value="arcgis-portal-windows" />
+              <input type="hidden" name="version" value="10.8" />
+              <input type="hidden" name="language" value="zh-CN" />
+            </form>    
+             <a id="nav-portal" data-langlabel="portal" href="../../../../../zh-CN/portal/" class="side-nav-link">Portal</a>
+             
+            <a id="all-servers" data-langlabel="all-servers" href="../../../../../zh-CN/server/" class="side-nav-link">所有服务器</a>
+            <a id="gis-server" data-langlabel="gis-server" href="../../../../../zh-CN/server/" class="side-nav-link">GIS Server</a>
+            <a id="image-server" data-langlabel="image-server" href="../../../../../zh-CN/image/" class="side-nav-link">Image Server</a>
+            <a id="geo-analytics-server" data-langlabel="geo-analytics-server" href="../../../../../zh-CN/geoanalytics/" class="side-nav-link">GeoAnalytics Server</a>
+            <a id="geoevent-server" data-langlabel="geoevent-server" href="../../../../../zh-CN/geoevent/" class="side-nav-link">GeoEvent Server</a>
+            <a id="notebook-server" data-langlabel="notebook-server" href="../../../../../zh-CN/notebook/" class="side-nav-link">Notebook Server</a>
+            <a id="nav-data-store" data-langlabel="data-store" href="../../../../../zh-CN/data-store/" class="side-nav-link">Data Stores</a>
+            <a id="nav-cloud" data-langlabel="cloud" href="../../../../../zh-CN/cloud/" class="side-nav-link">云</a>
+            <a id="nav-apps" data-langlabel="apps" href="../../../../../zh-CN/apps/" class="side-nav-link">应用程序</a>
+            <a id="nav-doc" data-langlabel="documentation" href="../../../../../zh-CN/documentation/" class="side-nav-link">文档</a>
+
+          </aside>
+        </nav>
+    </div>
+
+    <!-- user navigation collapses to drawer on mobile -->
+    
+    <div class="drawer drawer-right js-drawer hide-if-logged-out logged-in-navigation" data-drawer="user-nav">
+      <nav class="drawer-nav">
+        <aside class="side-nav">
+          <a class="side-nav-link agolProfile" href="#">我的个人资料</a>
+          <a class="side-nav-link icon-ui-sign-out js-log-out" href="#">登出</a>
+        </aside>
+      </nav>
+    </div>
+    
+<!-- End of drawer -->
+
+  
+  <div class="wrapper">
+      <!--googleoff: all-->
+
+      <header class="top-nav" data-skin="learn">
+        <a class="skip-to-content" href="#skip-to-content">Skip To Content</a>
+        <div class="grid-container">
+          <div class="column-24">
+
+
+            <!--<div class="top-nav-title-wrapper text-center ">-->
+              <a href='../../../../../zh-CN/' class="top-nav-title tablet-hide"><span>Arc</span>GIS  Enterprise</a>
+              <a href='../../../../../zh-CN/' class="icon-ui-menu top-nav-title js-drawer-toggle tablet-show" data-drawer="top-nav"><span>Arc</span>GIS Enterprise</a>
+            <!--</div> -->
+
+          
+            <nav role="navigation" class="top-nav-list left tablet-hide">
+              <a id="nav-portal" data-langlabel="portal" href="../../../../../zh-CN/portal/" class="top-nav-link">Portal</a>
+
+                <div class="dropdown js-dropdown ">
+                  <a class="top-nav-link js-dropdown-toggle" tabindex="0" aria-haspopup="true" aria-expanded="false" href="#">Servers</a>
+                  <nav class="dropdown-menu featured" role="menu">
+                    <ul class="dropdown-sublist-featured">
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/get-started/latest/windows/additional-server-deployment.htm" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path  d="M42.92 6.1H4.12v8.566l.833.832-.835.833-.018 7.332.845.847-.825.824V33.9h25v5.2h-2v1.075H8.02v.8h19.1v.925h4.8v-.925H40v-.8h-8.08V39.1h-2v-5.2h13v-8.566l-.834-.834.835-.834v-7.332l-.835-.834.835-.834zm-11.8 35h-3.2v-1.2h3.2zm11-8H4.92v-7.434l.767-.766h35.668l.765.766zm0-9.766l-.766.766H5.666l-.766-.767.017-6.669.766-.764h35.671l.766.766zm0-9l-.766.766H5.687l-.766-.766V6.9h37.2zM19 11.9h-2v-.8h2zm-4 0h-2v-.8h2zm-4 0H9v-.8h2zm6 8.2h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9zm8 9h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9z"/></svg></span>
+                          <span class="sublink-text">所有服务器</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/server/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M45.98 33.575a.616.616 0 0 0-.335-.51l-3.362-2.03 3.362-2.031a.556.556 0 0 0 0-1.02l-11.1-6.704a1.293 1.293 0 0 0-1.112 0L22.33 27.982a.556.556 0 0 0 0 1.02l3.36 2.03-3.358 2.03a.556.556 0 0 0-.002 1.021l3.322 2.006-3.324 2.008a.555.555 0 0 0 .002 1.017l11.102 6.703a1.25 1.25 0 0 0 1.11.002l11.104-6.706a.556.556 0 0 0 0-1.02l-3.32-2.006 3.318-2.004a.607.607 0 0 0 .335-.509zM33.837 21.97c.026-.01.286-.005.29-.005l10.814 6.53-10.8 6.523c-.028.01-.284.005-.294.006l-10.813-6.53zm11.105 16.636l-10.8 6.523a2.564 2.564 0 0 1-.295.006l-10.81-6.529 3.39-2.047 7.004 4.23a1.083 1.083 0 0 0 .557.131 1.101 1.101 0 0 0 .554-.13l7.01-4.233zM34.14 40.098a2.545 2.545 0 0 1-.294.006l-10.812-6.53 3.43-2.073 6.97 4.208a1.25 1.25 0 0 0 1.107-.001l6.966-4.206 3.431 2.073zM9 8H7V7h2zm8 8h-2v-1h2zm-4-8h-2V7h2zm4 0h-2V7h2zm-4 8h-2v-1h2zm7.316 11.1H3.9v-6.434l.766-.766h35.668l.766.766v2.12l.8.483v-2.935l-.826-.826.826-.845v-6.329l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9h16.88a2.632 2.632 0 0 1 .336-.8zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zm0 8v-5.668l.766-.766h35.668l.766.766v5.67l-.746.764H4.666zM15 24v-1h2v1zm-4 0v-1h2v1zm-2-8H7v-1h2zm-2 8v-1h2v1z"/></svg></span>
+                          <span class="sublink-text">GIS Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/image/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 8h-2V7h2zm-4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm8 8h-2v1h2zm-8 0H7v1h2zm4 9v-1h-2v1zm-4 0v-1H7v1zm8 0v-1h-2v1zm4 3.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V21h-.8v-.334l-.766-.766H4.666l-.766.766V27.1H21zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zm40.234 4v21.8H23.1V23.1zm-.8 16.366L39.466 44.1h2.868l1.766-1.766zm-20.2-9.932l5.634-5.634h-2.868L23.9 26.666zm6.2-5.068L24.466 30.1h2.868l2.766-2.766zM28.466 30.1H30.1v-1.634zm2.434 0h6.2v-6.2h-6.2zm-7 7h6.2v-6.2h-6.2zm7 0h6.2v-6.2h-6.2zm0 6.434l5.634-5.634h-2.868L30.9 40.666zm7-7l5.634-5.634h-2.868L37.9 33.666zm1.634-5.634H37.9v1.634zm-8.634 7v1.634l1.634-1.634zm.566 6.2h2.868l2.766-2.766v-2.868zm6.434-3.566l2.634-2.634H37.9zM35.466 44.1H37.1v-1.634zm2.434 0h.434l5.766-5.766V37.9h-2.434L37.9 41.666zm6.2-8.634L42.466 37.1H44.1zm0-4L38.466 37.1h2.868l2.766-2.766zm0-7.566h-6.2v6.2h6.2zm-20.2 0v1.634l1.634-1.634zm0 20.2h6.2v-6.2h-6.2zm20.2 0v-.634l-.634.634z"/></svg></span>
+                          <span class="sublink-text">Image Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/geoanalytics/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 16h-2v-1h2zm-8 8v-1H7v1zm8 0v-1h-2v1zM13 7h-2v1h2zm4 0h-2v1h2zM9 7H7v1h2zm21.45 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V27.9h-1.464l-.801-.8H41.1v-6.434l-.766-.766H4.666l-.766.766V27.1h27.15zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM13 24v-1h-2v1zm0-9h-2v1h2zm-4 0H7v1h2zm26.672 27.148A1.87 1.87 0 0 1 35.9 43a1.91 1.91 0 1 1-3.763-.222l-9.845-3.414A1.88 1.88 0 0 1 21 39.9a1.9 1.9 0 1 1 1.474-3.084l4.692-2.346A1.878 1.878 0 0 1 27.1 34a1.902 1.902 0 0 1 1.9-1.9 1.867 1.867 0 0 1 .781.191l3.788-5.05A1.88 1.88 0 0 1 33.1 26a1.9 1.9 0 1 1 3.491 1.026l4.889 4.888c-.069.056-.144.1-.21.162a3.986 3.986 0 0 0-.358.402l-4.883-4.883A1.889 1.889 0 0 1 35 27.9a1.867 1.867 0 0 1-.781-.191l-3.788 5.049a1.868 1.868 0 0 1 .437.965l9.204.614c-.018.11-.049.218-.058.33A3.93 3.93 0 0 0 40 35c0 .046.01.09.01.135l-9.185-.612A1.913 1.913 0 0 1 29 35.9a1.889 1.889 0 0 1-1.474-.716l-4.692 2.346a1.878 1.878 0 0 1 .066.47 1.9 1.9 0 0 1-.105.625c-.007.02-.022.036-.03.056l9.63 3.34a1.87 1.87 0 0 1 2.786-.505l5.415-4.437c.067.108.127.22.204.322a3.9 3.9 0 0 0 .292.306zM33.9 26a1.092 1.092 0 0 0 .43.872 1.12 1.12 0 0 0 1.42-.068A1.1 1.1 0 1 0 33.9 26zm-6 8a1.1 1.1 0 0 0 2.196.093 1.135 1.135 0 0 0-.426-.965A1.087 1.087 0 0 0 29 32.9a1.101 1.101 0 0 0-1.1 1.1zm-5.8 4a1.098 1.098 0 1 0-.06.362A1.101 1.101 0 0 0 22.1 38zm13 5a1.1 1.1 0 1 0-2.2 0 1.1 1.1 0 0 0 2.2 0zm10.8-8a1.9 1.9 0 1 1-3.8 0c0-.053.003-.105.007-.158A1.9 1.9 0 0 1 45.9 35zm-.8 0a1.1 1.1 0 0 0-2.196-.093 1.153 1.153 0 0 0 .216.752A1.1 1.1 0 0 0 45.1 35z"/></svg></span>
+                          <span class="sublink-text">GeoAnalytics Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/geoevent/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M13 8h-2V7h2zm4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm12.418 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826v2.117c-.259-.177-.53-.337-.8-.497v-1.288l-.766-.766H4.666l-.766.766V27.1h17.933c-.148.26-.283.53-.415.8zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM9 24v-1H7v1zm4-9h-2v1h2zm0 9v-1h-2v1zm-4-9H7v1h2zm8 9v-1h-2v1zm16.9 2h-.8v8.9H39v-.8h-5.1zm.1-3.901a11.9 11.9 0 1 0 11.9 11.9 11.914 11.914 0 0 0-11.9-11.9zm0 23a11.1 11.1 0 1 1 11.1-11.1 11.112 11.112 0 0 1-11.1 11.1z"/></svg></span>
+                          <span class="sublink-text">GeoEvent Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/notebook/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M22 27.1H3.9v-6.434l.766-.766h18.576a5.262 5.262 0 0 1 .83-.8H4.666l-.766-.766v-5.668l.766-.766h35.668l.766.766V18h.8v-5.666l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9H22zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zM9 8H7V7h2zm8 0h-2V7h2zm-4 0h-2V7h2zm2 16v-1h2v1zm-4 0v-1h2v1zm-4 0v-1h2v1zm0-8v-1h2v1zm8 0v-1h2v1zm-4 0v-1h2v1zm18.9 8.1h-1.8v1.8h1.8zm-.8 1h-.2v-.2h.2zm15.498-4.48a2.727 2.727 0 0 0-1.62-.5v-.02H27.25a3.154 3.154 0 0 0-3.15 3.15V38.1h-1.68a3.386 3.386 0 0 0-2.872 1.58 3.49 3.49 0 0 0-.157 3.419 3.241 3.241 0 0 0 2.954 1.801h15.161a3.404 3.404 0 0 0 3.394-3.4V26.9h5v-3.65a3.224 3.224 0 0 0-1.302-2.63zM22.345 44.1a2.44 2.44 0 0 1-2.23-1.341 2.706 2.706 0 0 1 .11-2.65A2.588 2.588 0 0 1 22.42 38.9h12.89a3.395 3.395 0 0 0 0 5.2zM40.1 23.192V41.5a2.6 2.6 0 1 1-2.6-2.6v-.8H24.9V23.25a2.352 2.352 0 0 1 2.35-2.35h13.795a3.183 3.183 0 0 0-.945 2.292zm5 2.908h-4.2v-2.908a2.274 2.274 0 0 1 1.44-2.18 1.944 1.944 0 0 1 1.791.259 2.423 2.423 0 0 1 .97 1.979zm-17.1 5h9v.8h-9zm0 3h7v.8h-7zm0-6h9v.8h-9zm4-3h5v.8h-5z"/></svg></span>
+                          <span class="sublink-text">Notebook Server</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+
+              <a id="nav-data-store" data-langlabel="data-store" href="../../../../../zh-CN/data-store/" class="top-nav-link">Data Stores</a>
+              <a id="nav-cloud" data-langlabel="cloud" href="../../../../../zh-CN/cloud/" class="top-nav-link">云</a>
+              <a id="nav-apps" data-langlabel="apps" href="../../../../../zh-CN/apps/" class="top-nav-link">应用程序</a>
+            </nav>
+
+
+            
+            
+            
+
+            <div class="margin-left-1 top-nav-list right hide-if-logged-in logged-out-navigation">
+               
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+              
+              <a data-langlabel="sign-in" id="login-link" class="icon-ui-user top-nav-link link-blue login-link" href="#">登录</a>
+              
+            </div>
+
+            
+            <nav class="margin-left-1 top-nav-list right hide-if-logged-out logged-in-navigation">
+              
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+             
+              <div class="dropdown js-dropdown right">
+
+                <div class="tablet-show top-nav-link">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a href="#" data-drawer="user-nav" class="user-nav-name js-drawer-toggle" data-first-name></a>
+                </div>
+
+                <div class="tablet-hide top-nav-link js-dropdown-toggle">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a class="user-nav-name top-nav-dropdown dropdown-btn" data-first-name>&nbsp;</a>
+                </div>
+
+                <nav class="dropdown-menu dropdown-right">
+                
+                  <a class="dropdown-link agolProfile" id="agolProfile" href="#">我的个人资料</a>
+                  <a class="dropdown-link js-log-out" id="agolLogout" href="#">登出</a>
+                </nav>
+              </div>
+            </nav>
+            
+
+            
+          </div>
+        </div>
+      </header>
+
+      <div class="js-search search-overlay">
+        <div class="search-content" role="dialog" aria-labelledby="search">
+          <form method="GET" id="helpSearchForm">
+            <label>
+              搜索 ArcGIS Enterprise 帮助
+              <div class="search-bar">
+                <input type="search" name="q"  placeholder="搜索 ArcGIS Enterprise 帮助" class="search-input js-search-input">
+                <input type="hidden" name="collection" value="help" />
+                <input type="hidden" name="product" value="arcgis-portal-windows" />
+                <input type="hidden" name="version" value="10.8" />
+                <input type="hidden" name="language" value="zh-CN" />
+              </div>
+            </label>
+            <input type="hidden" name="relativePath" value="../../../../../" /><button type="submit" class="btn btn-large right">搜索</button>
+          </form>
+        </div>
+      </div>
+
+      <!--googleon: all-->
+
+      <div id="skip-to-content">
+        <!--googleoff: all-->
+        <header class="sub-nav sub-nav-learn">
+          <div class="grid-container">
+            
+            <div class="column-24">
+              <div style="display:table;" class="sdk-home-banner">
+                <div class="sdk-home-banner-content">
+                  <h1 class="sub-nav-title link-white">Portal for ArcGIS</h1>
+                </div>
+              </div>
+            </div>
+
+            <div class="column-24">
+              <nav class='sub-nav-list tablet-hide'><a class="sub-nav-link" href="../../../../../zh-CN/portal/" target="_top" title="Portal for ArcGIS 主页">主页</a><a class="sub-nav-link" href="../../../../../zh-CN/portal/latest/use/" target="_top" title="使用 Portal for ArcGIS">使用</a><a class="sub-nav-link is-active" href="../../../../../zh-CN/portal/latest/administer/windows/" target="_top" title="安装、管理和保护 Portal for ArcGIS">管理</a></nav><select class='tablet-show select-full trailer-half js-select-nav'><option value="../../../../../zh-CN/portal/">主页</option><option value="../../../../../zh-CN/portal/latest/use/">使用</option><option selected="true" value="../../../../../zh-CN/portal/latest/administer/windows/">管理</option></select>
+            </div>
+
+          </div>
+        </header>
+        <!--googleon: all-->
+       
+        <!-- content goes here -->
+        <div class="grid-container ">
+          
+
+            
+              
+  <!--BREADCRUMB-BEG--><div id="bigmac" class="sticky-breadcrumbs trailer-2" data-spy="affix" data-offset-top="180"> </div><!--BREADCRUMB-END-->
+  <!--googleoff: all-->
+    <div class="column-5 tablet-column-12 trailer-2 ">
+      <aside class="js-accordion accordion reference-index" aria-live="polite" role="tablist">
+        <div></div>
+      </aside>
+
+      <div class="js-sticky scroll-show tablet-hide leader-1 back-to-top" data-top="0" style="top: 0px;">
+        <a href="#" class="btn btn-fill btn-clear">返回顶部</a>
+      </div>
+    </div>
+  <!--googleon: all-->
+  
+            
+            
+            
+	
+		<div class="column-13  pre-1 content-section">
+	
+		<header class="trailer-1"><h1>配置门户以支持 Navigator for ArcGIS</h1></header>
+
+		 
+	<!--googleoff: all-->
+	
+		
+				<aside id="main-toc-small" class="js-accordion accordion tablet-show trailer-1">
+			      <div class="accordion-section">
+			        <h4 class="accordion-title">在本主题中</h4>
+			        <div class="accordion-content list-plain">
+			          <ol class="list-plain pre-0 trailer-0"><li><a href="#ESRI_SECTION1_8BE8C95021744ED189B8AAEE067305BB">管理移动地图包</a></li></ol>
+			        </div>
+			      </div>
+			     </aside>
+		
+    
+   <!--googleon: all-->
+
+
+		<main>
+			
+	
+    	
+    
+
+
+			
+<p id="GUID-8866682D-D635-4BF3-A675-9C9DEC5B988C">购买 <span class="ph">Navigator for ArcGIS</span> 许可后，请遵循下列步骤配置您的门户，以支持 <span class="ph">Navigator</span> 应用程序。</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_FFF96CEF772C4011A70C5AC8C403680F"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_8C00B0A87529468DA3E9F6B734C541EC"><span purpose="cmd" id="GUID-9CAEAB23-7D69-4906-8F88-6E198BB878CE">向门户成员<a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/manage-licenses.htm">分配许可</a>。</span></li><li purpose="step" id="ESRI_STEP_BA320D458EAC4F22948E4F1594E83BD2"><span purpose="cmd" id="GUID-299C2A2A-7874-4156-A72F-39E1B3C530A3">从 <span class="ph"><a target="_blank" class="xref xref" href="https://my.esri.com/">My Esri</a></span> <a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/configure-the-portal-to-support-navigator-for-arcgis.htm#ESRI_SECTION2_3F4415E2ECB541B08274624CC70B58F7">下载移动地图包</a>或在 <span class="ph">ArcGIS Pro</span> 中创建自定义移动地图包。将其托管在 Web 服务器上。</span></li><li purpose="step" id="ESRI_STEP_BF18FC7204C544A392192231C3A79915"><span purpose="cmd" id="GUID-71B8E628-0E1A-4335-87F0-89B1D7A4119B">将移动地图包<a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/configure-the-portal-to-support-navigator-for-arcgis.htm#ESRI_SECTION2_809400190EA1499FB3B060B4ADF07B67">注册</a>到门户。</span></li></ol></div><section class="result padded-anchor" id="ESRI_RESULT_48514FC694FF4C7FB661FD7FFDC8D787" purpose="result"><p id="GUID-E09F56E8-2DF3-4441-AB81-D7324A25DFFF">然后成员可通过 <span class="ph">Navigator</span> 应用程序登录到门户，为其工作下载地图包，并进行离线导航。有关详细信息，请参阅 <a target="_blank" class="xref xref" href="http://doc.arcgis.com/en/navigator/"><span class="ph">Navigator for ArcGIS</span> 帮助</a>。</p></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_8BE8C95021744ED189B8AAEE067305BB" purpose="section1"><h2>管理移动地图包</h2><p id="GUID-47891D11-C3BE-44C2-AC33-C658CA7B5C1B">已登录到门户的 Navigator 用户将看到可供下载的移动地图包。您可以通过 <span class="ph">My Esri</span> 获得由 <span class="ph">Esri</span> 创建的地图包，或者在 <span class="ph">ArcGIS Pro</span> 中创建自己的地图包并将其上传至您的门户。为使 <span class="ph">Navigator</span> 应用程序用户可以使用移动地图包，您必须将地图包注册到门户。</p><p id="GUID-BE2D1488-C36E-4834-9247-761F9593BEC0"><span class="ph">ArcGIS Enterprise</span> 门户随附了 esri_nav 所拥有的 Navigator Maps 组。该组内预填充了 <span class="ph">Esri</span> 创建的项目。您可以浏览 Navigator Maps 组的内容，以查看每个项目的描述、缩略图和其他信息。</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><section class="context padded-anchor" id="ESRI_CONTEXT_D7C723DEF84D4D58AB53F158C1BE5BEE" purpose="context"><p id="GUID-90D245B5-695B-46B7-8C8E-C5B344CC2E7E"> 要访问 Navigator Maps 组中的项目，请按照以下步骤操作：</p></section><div class="steps" id="ESRI_STEPS_75F6A0FB40054C9ABECED93731C971E2"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_E824D5CE8C1B4044A54C20E21F9C9D13"><span purpose="cmd">登录门户。</span></li><li purpose="step" id="ESRI_STEP_E0875C66133C4998A090DD5171A303B0"><span purpose="cmd">打开<span class="uicontrol">群组 <span class="greaterthan">&gt;</span> 我的组织的群组</span>。</span></li><li purpose="step" id="ESRI_STEP_81EB7718A26149B6BE96A7BA65794835"><span purpose="cmd">单击 Navigator Maps 群组。</span><div class="stepresult" purpose="stepresult"><p id="GUID-9EC0DC1B-5BC0-4D0E-B260-A2A14EB3016C">将打开群组的项目页面。</p></div></li><li purpose="step" id="ESRI_STEP_7D183447FFD24AAABF02C1127CE37431"><span purpose="cmd">要查看群组中的所有项目，请单击<span class="uicontrol">查看所有群组内容</span>。</span></li><li purpose="step" id="ESRI_STEP_52166CB0CEB2415ABF8DD40720E0A886"><span purpose="cmd">您可以单击任何项目以打开其详细信息页面。</span></li></ol></div></section><p id="GUID-F7C8D608-B72E-4781-A8C2-995F4A999228">首次创建门户时，这些项目不会链接到任何地图包。要为项目填充内容或更新项目的内容，请从 <span class="ph">My Esri</span> 下载地图包，将其托管在您自己的 Web 服务器上，并使用门户注册托管的地图包。</p><p id="GUID-387AFACF-556A-4BD3-A210-A7ECF43AD6F6">可以使用 <span class="ph">Portal for ArcGIS</span> 随附安装的移动地图包工具 (<span class="usertext">managemmpks</span>) 注册该地图包。如有需要，您还可以使用此工具在您的门户中更新，取消注册和列出移动地图包。</p><div class="panel trailer-1 note" id="GUID-5CD6F76D-2B50-4E78-8768-C3F3FFD09BFD"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-4F9FF907-B76C-40AA-88EA-00C105ED9EA9">为使用 <span class="ph">Navigator for ArcGIS</span>，门户成员必须为其分配 Navigator 许可。</p></div><section class="section2 padded-anchor" id="ESRI_SECTION2_3F4415E2ECB541B08274624CC70B58F7" purpose="section2"><h3>下载 <span class="ph">Esri</span> 提供的移动地图包。</h3><p id="GUID-C99D3648-447F-40A0-9A87-4952FCD95928">为下载 <span class="ph">Esri</span> 提供的移动地图包，请遵循下列步骤。</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_B840F0A36C8E46979B4FB8437CD73DA0"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_F79A402C4C334B49B7C9E9FF758B4CC8"><span purpose="cmd" id="GUID-02A3A7BA-C9DA-4165-8979-0617E51D43D8">登录至 <span class="ph"><a target="_blank" class="xref xref" href="https://my.esri.com/">My Esri</a></span>，然后单击<span class="uicontrol">我的组织 <span class="greaterthan">&gt;</span> 下载 <span class="greaterthan">&gt;</span> 数据和内容</span>。</span></li><li purpose="step" id="ESRI_STEP_B92705F1DD0442C08ABF5DFB610767AB"><span purpose="cmd" id="GUID-C6D0B102-0E24-4105-85E0-0E667A440EFF">在搜索文本框中输入 <span class="usertext">Navigator</span> 并从<span class="uicontrol">排序依据</span>下拉列表中选择您需要的排序选项。</span></li><li purpose="step" id="ESRI_STEP_82B9E11CF768407C9838B69B86FDEC99"><span purpose="cmd" id="GUID-EE62E814-FB74-4D20-8FC0-C5E543D318DE">滚动查看移动地图包列表并搜索您需要的文件。</span></li><li purpose="step" id="ESRI_STEP_3B064A04B4F34527B611BA48042CE6C8"><span purpose="cmd" id="GUID-1F3C5BF0-6B06-4F6D-9ABA-B95A843975B3">单击您想要提供给 Navigator 应用程序用户的各个移动地图包的<span class="uicontrol">下载</span>。每次可下载一个文件。</span></li><li purpose="step" id="ESRI_STEP_DFC080CA71344C46B5AE07287B338148"><span purpose="cmd" id="GUID-AFCFF06E-3185-4F1D-A0F1-19606D1F8703">将下载的地图包放置在可通过 web 访问的位置。例如，如果使用 IIS 作为 web 服务器，可以将下载的文件放置在 <span class="usertext">c:\inetpub\wwwroot\</span> 文件夹中或者<a target="_blank" class="xref xref" href="https://msdn.microsoft.com/en-us/library/bb763173.aspx">配置为虚拟目录</a>的其他位置。</span><div class="stepresult" purpose="stepresult"><p id="GUID-2E3DE872-C2AF-446E-943F-FC52174999FA">您放置地图包文件的 web 服务器的 URL 是您在使用 <span class="usertext">managemmpks</span> 工具注册和管理包时将要提供的基本 URL。</p></div></li><li purpose="step" id="ESRI_STEP_86AEFC208532405ABF8251157E177B9C"><span purpose="cmd" id="GUID-59E46596-2DE5-42B0-BDB8-E99274266327">启用 <span class="usertext">.mmpk</span> 扩展模块作为 MIME 类型。例如，如果使用 IIS 作为 web 服务器，请执行以下步骤。</span><div class="substeps" id="ESRI_SUBSTEPS_501CEC0B15BC405FB8E7B3EE675DF7C8" purpose="substeps"><ol class="list-numbered" purpose="ol"><li purpose="substep" id="ESRI_SUBSTEP_F91D86B18B0648D698FC3A54DFB95E9D"><span purpose="cmd" id="GUID-1FE88EBA-F861-40B8-B15D-52078FB8AE50">打开 IIS 管理器。</span></li><li purpose="substep" id="ESRI_SUBSTEP_7E1CDD94128C4556A33EE7B776025B1A"><span purpose="cmd" id="GUID-665E0393-72CD-4F52-A79E-90548F93A8DF">在<span class="uicontrol">连接</span>窗格中，于树视图中选择您的服务器，然后双击 <span class="uicontrol">MIME 类型</span>。</span></li><li purpose="substep" id="ESRI_SUBSTEP_90A3B06514A9489885E3226B2CFFBD49"><span purpose="cmd" id="GUID-337008E9-9F78-445D-8FDC-73DAD58967C3">在<span class="uicontrol">操作</span>窗口中，单击<span class="uicontrol">添加</span>。</span></li><li purpose="substep" id="ESRI_SUBSTEP_47AF60DF7EFE41EB86291DCDBF258574"><span purpose="cmd" id="GUID-1802A341-F691-45B5-BA64-B9EA919078B3">对于<span class="uicontrol">文件扩展名</span>，请输入 <span class="usertext">mmpk</span>。</span></li><li purpose="substep" id="ESRI_SUBSTEP_CE2222ACF2C54874A74B9CB2A22AB067"><span purpose="cmd" id="GUID-FEECA64A-59B2-4D51-A177-908A62687365">对于 <span class="uicontrol">MIME 类型</span>，请输入 <span class="usertext">application/mmpk</span>。</span></li><li purpose="substep" id="ESRI_SUBSTEP_FF5376F4BCF3431FA5C92021DA084D7F"><span purpose="cmd" id="GUID-334F3247-7109-42C7-A91C-E1C5DEFE5A37">重新启动 web 服务器。</span></li></ol></div></li></ol></div></section></section><section class="section2 padded-anchor" id="ESRI_SECTION2_809400190EA1499FB3B060B4ADF07B67" purpose="section2"><h3>注册移动地图包</h3><p id="GUID-66A39FA6-ABAF-4D7D-9248-474B3697A0D1">获得移动地图包并将其托管于 web 服务器后，请将这些地图包注册到门户。所有移动地图包的更新也必须与门户通信。针对每个移动地图包，您的门户均会包含一个门户项目。注册您的移动地图包将更新这些门户项目，以引用 Web 服务器上的 <span class="usertext">.mmpk</span> 文件 URL。</p><p id="GUID-DCEFCC97-0262-4849-ADD8-6C0C22CD1940">您还可使用 <span class="usertext">managemmpks</span> 工具注册并管理移动地图包。<span class="ph">此工具与 <span class="ph">Portal for ArcGIS</span> 一起安装在 <span class="usertext">&lt;Portal for ArcGIS installation directory&gt;\tools\managemmpks</span> 目录中。</span> 当您运行 <span class="usertext">managemmpks</span> 工具时，系统将提示您输入门户管理员用户名和密码。</p><p id="GUID-6377DECC-7C3C-44B5-AE9B-90E2BEBEEFD1">您可通过 <span class="usertext">managemmpks</span> 工具每次使用门户注册一个或多个移动地图包。该工具将门户项目名称作为输入，而不是地图包的名称。因此，在注册之前，您需要知道现有门户项目的名称。要获取此列表，您可以<a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/configure-the-portal-to-support-navigator-for-arcgis.htm#ESRI_SECTION2_1C1EC8561CC2444BB4B85A31F7D1DE52">使用 <span class="usertext">managemmpks</span> 工具的 <span class="usertext">--preinstalled</span> 命令</a>，或<a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/configure-the-portal-to-support-navigator-for-arcgis.htm#ESRI_STEPS_75F6A0FB40054C9ABECED93731C971E2">浏览 Navigator Maps 组的内容</a>。</p><p id="GUID-8CABF892-3D9E-4100-B80F-DD0A1932AC8E">键入 <span class="usertext">managemmpks --help</span> 以获取工具语法方面的帮助。</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><section class="context padded-anchor" id="ESRI_CONTEXT_64C41AB465CC48E8B1EED4CAFA62EA34" purpose="context"><p id="GUID-2EB02764-E7B3-46BF-B85A-0DA5CEFDCEE5">知道了要注册的项目名称后，请按照以下步骤注册 Web 服务器上托管的地图包：</p></section><div class="steps" id="GUID-A469E0E9-A587-4B36-B257-044E770DF149"><ol class="list-numbered" purpose="ol"><li purpose="step" id="GUID-56152298-2669-43A8-A605-E8767367E038"><span purpose="cmd" id="GUID-BD84360C-35AA-45E2-B9E4-0EF7E7D2B3E5">登录到安装有 <span class="ph">Portal for ArcGIS</span> 的计算机。</span></li><li purpose="step" id="GUID-C56DC74C-11F6-45DF-8801-1DBFBE3E9770"><span purpose="cmd" id="GUID-4C8200F6-3CFE-419C-B677-D65446580015"><span class="ph">使用<span class="uicontrol">以管理员身份运行</span>选项打开命令提示符窗口。</span>。</span></li><li purpose="step" id="ESRI_STEP_232A6CDCC7CD478A93C15792BF9E48B0"><span purpose="cmd" id="GUID-F62A8357-54C0-465C-93C9-DDAF628EF617"><span class="ph">从命令行浏览至 <span class="ph">Portal for ArcGIS</span> 安装目录的 <span class="usertext">tools\managemmpks</span> 文件夹。</span></span></li><li purpose="step" id="ESRI_STEP_621F2647C381404883E7CD8DE064C462"><span purpose="cmd" id="GUID-1BAFD525-C9E5-4444-BD80-B2FF39D888CE">请使用 <span class="usertext">--register</span> 命令运行以下 <span class="usertext">managemmpks</span> 工具来注册以文本文件、逗号分隔值文件或使用逗号分隔的地图包项目名称列表列出的所有移动地图包：<span class="usertext">managemmpks --register --url &lt;base_URL&gt; {--file &lt;package_names_list.txt&gt; | --packages &lt;package_name1,package_name2&gt;}</span>。</span><div class="stepexample" purpose="stepexample"><p id="GUID-17D6410F-5C49-424C-B314-0CB1F609AE54">以下示例使用了移动地图包门户项目名称列表，以注册通过 URL <span class="usertext">http://mapcdn.esri.com/navigator/mmpk</span> 访问的移动地图包：</p><section class="codeblock padded-anchor" purpose="codeblock"><div class="codeblockbody"><pre><code class="text">managemmpks --register --url http://mapcdn.esri.com/navigator/mmpk --packages Alabama,Czech_Republic</code></pre></div></section><p id="GUID-AA70BC0E-59C8-419B-BE0C-235DFE7348AC">当您使用 <span class="usertext">--packages</span> 命令时，必须插入下划线 (_) 以替换包含多个单词的门户项目名称中的空格，如前例中 <span class="usertext">Czech Republic</span> 项目所示。</p></div><div class="stepexample" purpose="stepexample"><p id="GUID-D01512A3-6AD7-497B-851C-6A4772F6C795">在本示例中，包含门户项目名称列表的文本文件 (<span class="usertext">us_states_package_list.txt</span>) 提供给通过 <span class="usertext">http://mapcdn.esri.com/navigator/mmpk</span> 访问的移动地图包 (<span class="usertext">.mmpk</span>) 文件。</p><section class="codeblock padded-anchor" purpose="codeblock"><div class="codeblockbody"><pre><code class="text">managemmpks --register --url http://mapcdn.esri.com/navigator/mmpk 
+--file us_states_package_list.txt</code></pre></div></section></div><div class="info" purpose="info"><p id="GUID-D6FFA20D-DDB7-4C6A-B6CD-7FF4D7D4296B">当您使用文本文件或逗号分隔值 (CSV) 文件注册移动地图包时，不需要用下划线替换项目名称中的空格。例如，该文件可能包含以下条目： <pre purpose="pre" cid="1uKDOg">Alabama
+Czech Republic
+South America Southern Cone Region</pre></p></div></li></ol></div><section class="result padded-anchor" id="ESRI_RESULT_A5A2BF56F5A548638C49D23843A1F782" purpose="result"><p id="GUID-326AEE2E-DF4A-4B36-BD65-D0FFA98BE6E6"><span class="ph">Navigator</span> 应用程序用户可下载地图包以进行导航。</p></section></section></section><section class="section2 padded-anchor" id="ESRI_SECTION2_824B143B9E314086BCDA7A7CC94D3748" purpose="section2"><h3>更新移动地图包</h3><p id="GUID-44D786DF-C4BB-4AD5-B091-C52DDEFE2C2A"><span class="ph">Esri</span> 定期在 <span class="ph">My Esri</span> 上更新移动地图包。您也可以更新您在 <span class="ph">ArcGIS Pro</span> 中生成的移动地图包。您获得这些更新文件并将其放入您可通过基本 URL 进行访问的移动地图包目录中后，请使用 <span class="usertext">managemmpks</span> 工具执行 <span class="usertext">--refresh</span> 命令以更新包的内容。您可以提供一个包含移动地图包名称的文本文件或 CSV 文件，或使用逗号分隔的项目名称列表。语法为 <span class="usertext">managemmpks --refresh {--file &lt;package_names_list.txt&gt; | --packages &lt;name1,name2&gt;}</span>。</p><p id="GUID-723EAB7F-133E-44D4-82B0-16E861DD05F0">在本示例中，更新的农场和 <span class="usertext">pop_density</span> 移动地图包被放置在基本 URL 能够访问的位置。<section class="codeblock padded-anchor" purpose="codeblock"><div class="codeblockbody"><pre><code class="text">managemmpks --refresh --packages farmland,pop_density</code></pre></div></section></p><p id="GUID-F45C69D7-CCD2-47BC-BF33-A62BE77A92AF"> 新的 <span class="usertext">.mmpk</span> 文件可用后即可更新 Navigator Maps 组中的项目内容，但不要更改其关联的基本 URL。运行 <span class="usertext">--refresh</span> 命令后，<span class="ph">Navigator</span> 应用程序用户将看到文件已更新，并可以下载更新的文件。</p></section><section class="section2 padded-anchor" id="ESRI_SECTION2_F54D82EE663A4C5A96D9F48EA6D7B3DC" purpose="section2"><h3>取消注册移动地图包</h3><p id="GUID-E12CBCD2-6CA5-4C74-8EF9-0B0D068BDEA1">要取消注册移动地图包，请通过 <span class="usertext">managemmpks</span> 工具使用 <span class="usertext">--unregister</span> 命令。您可以使用 <span class="usertext">--file</span> 命令指定包的文本文件或 CSV 文件列表，或者使用 <span class="usertext">--packages</span> 命令包含使用逗号分隔的项目名称列表。</p><p id="GUID-FDC8B4C1-23A8-41FE-98BA-E9DB03067EE6">在本示例中，Albania 移动地图包已取消注册。<section class="codeblock padded-anchor" purpose="codeblock"><div class="codeblockbody"><pre><code class="text">managemmpks --unregister --packages Albania</code></pre></div></section></p><p id="GUID-88470C70-78F9-4D65-B238-B9058D9F8DC0">当您使用 <span class="usertext">--packages</span> 命令时，必须插入下划线 (_) 以替换包含多个单词的门户项目名称中的空格，例如 <span class="usertext">Czech Republic</span>。</p><p id="GUID-53375D53-C214-4DFF-ABBD-86578A14BD71">以下示例展示了如何取消注册在文本文件中列出的移动地图包，<span class="usertext">package_list.txt</span>：<section class="codeblock padded-anchor" purpose="codeblock"><div class="codeblockbody"><pre><code class="text">managemmpks --unregister --file package_list.txt</code></pre></div></section></p><p id="GUID-8791A703-4B99-4B36-B84D-AA16B327B992">当您使用文本文件或逗号分隔值 (CSV) 文件取消注册移动地图包时，不需要用下划线替换项目名称中的空格。例如，该文件可能包含以下条目： <pre purpose="pre" cid="1fzjTP">Alabama
+Czech Republic
+South America Southern Cone Region</pre></p></section><section class="section2 padded-anchor" id="ESRI_SECTION2_7D37955149594E8BB14F28699F3D840C" purpose="section2"><h3>列出所有移动地图包</h3><p id="GUID-B2989A1C-861F-46CA-9F63-F97AA183B6A9">通过 <span class="usertext">managemmpks</span> 工具使用 <span class="usertext">--list</span> 命令生成两个列表：已注册移动地图包列表和已取消注册的移动地图包列表。使用 <span class="usertext">--dir</span> 命令指定希望在其中创建上述列表的文本文件的输出目录。通过 <span class="usertext">managemmpks</span> 工具自动生成文件名称。您随后即可将这些文本文件用作注册和取消注册 <span class="usertext">.mmpk</span> 文件的输入。</p><p id="GUID-ABFF3522-12FF-41AD-870C-64FE12E26911" ishcondition="srv_os=windows">在本示例中，移动地图包列表输出到目录 <span class="usertext">C:\temp</span> 中。<section class="codeblock padded-anchor" purpose="codeblock"><div class="codeblockbody"><pre><code class="text">managemmpks --list --dir C:\temp</code></pre></div></section></p><p id="GUID-500390D5-3F08-4A0B-932E-4A9E1578F211">已在指定的目录中创建两个文件。<ul purpose="ul" id="UL_0D6D1CAEA78E4D17978872C639F6338F"><li purpose="li" id="LI_29236DBB2AB94A549E05D1CD8F887082"><span class="usertext">registered-&lt;YYYMMDD-hhmmss&gt;.txt</span> - 这个文件包含注册项目的名称。</li><li purpose="li" id="LI_709F3DB98BB64E4E87C85FFF51D51D43"><span class="usertext">unregistered-&lt;YYYMMDD-hhmmss&gt;.txt</span> - 这个文件包含取消注册项目的名称。</li></ul></p></section><section class="section2 padded-anchor" id="ESRI_SECTION2_1C1EC8561CC2444BB4B85A31F7D1DE52" purpose="section2"><h3>列出安装的移动地图包</h3><p id="GUID-A9F5E1FB-C60F-4319-95B5-00A22BD91E8A">使用 <span class="usertext">managemmpks</span> 工具随附的 <span class="usertext">--preinstalled</span> 命令列出门户随附的移动地图包。您可以输出包含该列表的文本文件。您随后即可将该文本文件用作注册和取消注册 <span class="usertext">.mmpk</span> 文件的输入。</p><p id="GUID-1B43B581-2E5E-4255-B3A4-4B0B2B0392AD">要返回您的命令提示符或命令终端中的地图包列表，请将 <span class="usertext">--preinstalled</span> 命令指定为示例中所示内容。<section class="codeblock padded-anchor" purpose="codeblock"><div class="codeblockbody"><pre><code class="text">managemmpks --preinstalled</code></pre></div></section></p><p id="GUID-53B2D3A4-BF05-4E36-A964-CF4D20909D88">如果您想要将列表输出到文件，请按照如下示例中所示内容指定文件名称：<section class="codeblock padded-anchor" purpose="codeblock"><div class="codeblockbody"><pre><code class="text">managemmpks --preinstalled &gt; myoutputfile.txt</code></pre></div></section></p></section></section>
+			
+				<hr>
+				<!--googleoff: all-->
+				
+	
+        
+		    <p class="feedback right">
+		        <a id="afb" class="icon-ui-contact" href="/feedback/" data-langlabel="feedback-on-this-topic" >有关此主题的反馈?</a>
+		    </p>
+        
+	
+
+				<!--googleon: all-->
+			
+		</main>
+	</div>
+	
+	<!--googleoff: all-->
+	
+		
+			<div id="main-toc-large" class="column-5">
+			    <div class="panel font-size--2 tablet-hide trailer-1">
+			      <h5 class="trailer-half">在本主题中</h5>
+			      <ol class="list-plain pre-0 trailer-0"><li><a href="#ESRI_SECTION1_8BE8C95021744ED189B8AAEE067305BB">管理移动地图包</a></li></ol>
+			    </div>
+			    
+			    
+	  		</div>
+		
+    
+   <!--googleon: all-->
+
+
+
+
+          
+        </div>
+        <!-- ENDPAGECONTENT -->
+
+      </div>
+
+    </div>  <!-- End of wrapper -->
+
+  <footer class="footer leader-3 link-dark-gray" role="contentinfo">
+    <div class="grid-container">
+      <div class="row">
+        <nav class="column-6">
+          <h6 data-langlabel="arcgis-for-server">Arc<span>GIS Enterprise</span></h6>
+          <ul class="list-plain">
+            <li><a data-langlabel="home" href="../../../../../zh-CN/">主页</a></li>
+            <li><a data-langlabel="portal" href="../../../../../zh-CN/portal/">Portal</a></li>
+            <li><a data-langlabel="server" href="../../../../../zh-CN/server/">Server</a></li>
+            <li><a data-langlabel="data-store" href="../../../../../zh-CN/data-store/">Data Stores</a></li>
+            <li><a data-langlabel="cloud" href="../../../../../zh-CN/cloud/">云</a></li>
+            <li><a data-langlabel="apps" href="../../../../../zh-CN/apps/">应用程序</a></li>
+            <li><a data-langlabel="documentation" href="../../../../../zh-CN/documentation/">文档</a></li>
+          </ul>
+        </nav>
+
+        
+  <nav class="column-6">
+    <h6 data-langlabel="arcgis-platform">ArcGIS 平台</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="arcgis" href="//www.arcgis.com/">ArcGIS Online</a></li>
+      <li><a data-langlabel="arcgis-for-professionals" href="//pro.arcgis.com/">ArcGIS Pro</a></li>
+      <li><a data-langlabel="arcgis-for-server" href="//enterprise.arcgis.com/">ArcGIS Enterprise</a></li>
+      <li><a data-langlabel="arcgis-for-developers" href="https://developers.arcgis.com/">ArcGIS for Developers</a></li>
+      <li><a data-langlabel="arcgis-solutions" href="//solutions.arcgis.com/">ArcGIS Solutions</a></li>
+      <li><a data-langlabel="arcgis-marketplace" href="//marketplace.arcgis.com/">ArcGIS Marketplace</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <h6 data-langlabel="about-esri">关于 Esri</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="about-us" href="//www.esri.com/about-esri/">关于我们</a></li>
+      <li><a data-langlabel="careers" href="//www.esri.com/careers/">招贤纳士</a></li>
+      <li><a data-langlabel="insiders-blog" href="https://www.esri.com/about/newsroom/blog/">Esri 博客</a></li>
+      <li><a data-langlabel="user-conference" href="//www.esri.com/events/user-conference/index.html">用户大会</a></li>
+      <li><a data-langlabel="developer-summit" href="//www.esri.com/events/devsummit/index.html">开发者峰会</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <a class="esri-logo" href="//www.esri.com/" aria-label="Esri Home"></a>
+    <section class="footer-social-nav leader-1">
+            <a class="icon-social-twitter" aria-label="Esri on Twitter" href="https://twitter.com/Esri/"></a>
+            <a class="icon-social-facebook" aria-label="Esri on Facebook" href="https://www.facebook.com/esrigis/"></a>
+            <a class="icon-social-github" aria-label="Esri on GitHub" href="//esri.github.io/"></a>
+            <a class="icon-social-contact" aria-label="Contact Esri" href="//www.esri.com/about-esri/contact/"></a>
+    </section>
+	  
+  </nav>
+  
+  <div class="column-24 leader-1">
+    <p class="font-size--3"><a href="http://www.esri.com/legal/copyright-trademarks">Copyright &copy; 2019 Esri.</a> All rights reserved. | <a href="http://www.esri.com/legal/privacy/">隐私政策</a> | <a href="http://www.esri.com/legal/software-license">法律声明</a></p>
+  </div>
+  
+
+
+      </div>
+    </div>
+  </footer>
+  <!--googleoff: all-->
+
+  
+  
+	<script src="../../../../../zh-CN/assets/js/init.js" type="text/javascript"></script>
+	<!--<script src="../../../../../zh-CN/assets/js/drop-down.js" type="text/javascript"></script>-->
+	<script src="../../../../../zh-CN/assets/js/search/searchform.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/cdn/js/link-modifier.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/cdn/js/sitewide.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/cdn/js/libs/highlight.pack.js" type="text/javascript"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+
+
+  
+    
+
+  <script src="../../../../../zh-CN/cdn/js/affix.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    $(function () {
+          var appendFlg = true;
+
+          $("#bigmac")
+          .on("affixed.bs.affix", function (evt) {
+            if (appendFlg) {
+              $("<a class='crumb' href='#'>配置门户以支持 Navigator for ArcGIS</a>").insertAfter ($("#bigmac nav a").last());
+              appendFlg = false;
+            }
+          })
+          .on ("affix-top.bs.affix", function(evt) {
+            if (!appendFlg) {
+              $("#bigmac nav a").last().remove();
+            }
+            appendFlg = true;
+          })
+    })
+  </script>
+  
+        <script type="text/javascript">
+          window.doctoc = {
+            pubID: "555",
+            tpcID: "284",
+            
+              prefix: "管理",
+              prefixUrl: "/zh-cn/portal/latest/administer/windows/",
+          
+            hideToc: false
+          }
+        </script>
+
+        <script type="text/javascript" src="../../../../../zh-CN/portal/latest/administer/windows/555.js" ></script>
+        <script type="text/javascript" src="../../../../../zh-CN/cdn/calcite/js/protoc.js" ></script>
+        
+        
+
+  <noscript>
+        <p>
+            <a href="flisting.htm">flist</a>
+        </p>
+    </noscript>
+    <script type="text/javascript"></script>
+  
+  
+    
+    
+
+  </body>
+</html>

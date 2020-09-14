@@ -1,0 +1,546 @@
+
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>  <html class="ie lt-ie9 lt-ie8 lt-ie7 ie6" dir="ltr"> <![endif]-->
+<!--[if IE 7]>     <html class="ie lt-ie9 lt-ie8 ie7" dir="ltr"> <![endif]-->
+<!--[if IE 8]>     <html class="ie lt-ie9 ie8" dir="ltr"> <![endif]-->
+<!--[if IE 9]>     <html class="ie ie9" dir="ltr"> <![endif]-->
+<!--[if !IE]><!--> <html dir="ltr" lang="zh-CN"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>地理处理服务示例:河流网络&mdash;文档 | ArcGIS Enterprise 文档</title>
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+    <script>
+      var docConfig = {
+        locale: 'zh-CN'
+        ,localedir: 'zh-cn'
+        ,langSelector: ''
+        
+        ,relativeUrl: false
+        
+
+        ,searchformUrl: '/search/'
+        ,tertiaryNavIndex: ''
+
+        
+      };
+    </script>
+	 
+
+
+    
+    <!--[if lt IE 9]>
+      <script src="../../../../../zh-CN/cdn/js/libs/html5shiv.js" type="text/javascript"></script>
+      <script src="../../../../../zh-CN/cdn/js/libs/selectivizr-min.js" type="text/javascript"></script>
+      <script src="../../../../../zh-CN/cdn/js/libs/json2.js" type="text/javascript"></script>
+      <script src="../../../../../zh-CN/cdn/js/libs/html5shiv-printshiv.js" type="text/javascript" >
+
+    <![endif]-->
+
+     <!--[if lt IE 11]>
+    <script>
+      $$(document).ready(function(){
+        $$(".hideOnIE").hide();
+      });
+    </script>
+    <![endif]-->
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<link href="../../../../../zh-CN/assets/img/favicon.ico" rel="shortcut icon" >
+	<link href="../../../../../zh-CN/assets/css/screen.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/cdn/calcite/css/documentation.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/assets/css/print.css" media="print" type="text/css" rel="stylesheet" />
+
+	<!--
+	<link href="../../../../../zh-CN/assets/css/screen_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/assets/css/documentation/base_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/assets/css/print_l10n.css" media="print" type="text/css" rel="stylesheet" />
+	-->
+	
+	
+		<script src="../../../../../zh-CN/cdn/js/libs/jquery.1.9.1.min.js" type="text/javascript"></script>
+	
+	<script src="../../../../../zh-CN/cdn/js/libs/jquery.cookie.js" type="text/javascript"></script>
+	<link href="../../../../../zh-CN/cdn/css/colorbox.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/cdn/css/colorbox_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<script src="../../../../../zh-CN/cdn/js/libs/jquery.colorbox-min.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/assets/js/video-init.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/assets/js/sitecfg.js" type="text/javascript"></script>
+	
+		<script src="../../../../../zh-CN/assets/js/signIn.js" type="text/javascript"></script>
+	
+
+	<!--- Language Picker -->
+	<script src="../../../../../zh-CN/assets/js/locale/l10NStrings.js" type="text/javascript"></script>
+	
+		 
+	
+
+	<script src="../../../../../zh-CN/assets/js/calcite-web.js" type="text/javascript"></script>
+
+
+
+  <!--- search MD -->
+    <META name="description" content="创建可根据流向和流量数据生成河流网络的地理处理服务的示例。"><META name="last-modified" content="2019-12-6"><META name="product" content="arcgis-server-windows,arcgis-enterprise-windows"><META name="sub_category" content="ArcGIS Server (Windows)"><META name="search-collection" content="help"><META name="content_type_label" content="帮助主题"><META name="sub_category_label" content="ArcGIS Server (Windows)"><META name="search-category" content="help-general"><META name="subject_label" content="服务"><META name="version" content="10.8"><META name="content_type" content="Help Topic"><META name="subject" content="SERVICES"><META name="content-language" content="zh-cn">
+    <!--- search MD -->
+
+  
+  <script src="../../../../../zh-CN/assets/js/switchers/server-1.js" type="text/javascript"></script>
+  
+      
+
+</head>
+
+<!--
+      pub: GUID-F157DF68-7F60-4427-A561-AD2F0FA30861=22
+      tpc: GUID-A49CE15D-341A-44FD-920F-2560E7828D2C=5
+      -->
+
+
+<!-- variable declaration, if any -->
+<!-- can change following macro to set variable once we are on Jinja 2.8 -->
+
+
+
+
+
+<body class="claro zh-CN server">
+  
+
+  <!-- Drawer location -->
+  <div class="drawer drawer-left js-drawer" data-drawer="top-nav">
+        <nav class="drawer-nav" role="navigation">
+          <aside class="side-nav">
+            <h2 class="side-nav-title">Arc<span>GIS</span> Enterprise</h2>
+            <form id="helpSearchForm" class="margin-left-half margin-right-half leader-half trailer-half drawer-search-form" method="GET">
+              <input type="search" name="q"  placeholder="搜索 ArcGIS Server 10.8 帮助">
+              <input type="hidden" name="collection" value="help" />
+              <input type="hidden" name="product" value="arcgis-server-windows" />
+              <input type="hidden" name="version" value="10.8" />
+              <input type="hidden" name="language" value="zh-CN" />
+            </form>    
+             <a id="nav-portal" data-langlabel="portal" href="../../../../../zh-CN/portal/" class="side-nav-link">Portal</a>
+             
+            <a id="all-servers" data-langlabel="all-servers" href="../../../../../zh-CN/server/" class="side-nav-link">所有服务器</a>
+            <a id="gis-server" data-langlabel="gis-server" href="../../../../../zh-CN/server/" class="side-nav-link">GIS Server</a>
+            <a id="image-server" data-langlabel="image-server" href="../../../../../zh-CN/image/" class="side-nav-link">Image Server</a>
+            <a id="geo-analytics-server" data-langlabel="geo-analytics-server" href="../../../../../zh-CN/geoanalytics/" class="side-nav-link">GeoAnalytics Server</a>
+            <a id="geoevent-server" data-langlabel="geoevent-server" href="../../../../../zh-CN/geoevent/" class="side-nav-link">GeoEvent Server</a>
+            <a id="notebook-server" data-langlabel="notebook-server" href="../../../../../zh-CN/notebook/" class="side-nav-link">Notebook Server</a>
+            <a id="nav-data-store" data-langlabel="data-store" href="../../../../../zh-CN/data-store/" class="side-nav-link">Data Stores</a>
+            <a id="nav-cloud" data-langlabel="cloud" href="../../../../../zh-CN/cloud/" class="side-nav-link">云</a>
+            <a id="nav-apps" data-langlabel="apps" href="../../../../../zh-CN/apps/" class="side-nav-link">应用程序</a>
+            <a id="nav-doc" data-langlabel="documentation" href="../../../../../zh-CN/documentation/" class="side-nav-link">文档</a>
+
+          </aside>
+        </nav>
+    </div>
+
+    <!-- user navigation collapses to drawer on mobile -->
+    
+    <div class="drawer drawer-right js-drawer hide-if-logged-out logged-in-navigation" data-drawer="user-nav">
+      <nav class="drawer-nav">
+        <aside class="side-nav">
+          <a class="side-nav-link agolProfile" href="#">我的个人资料</a>
+          <a class="side-nav-link icon-ui-sign-out js-log-out" href="#">登出</a>
+        </aside>
+      </nav>
+    </div>
+    
+<!-- End of drawer -->
+
+  
+  <div class="wrapper">
+      <!--googleoff: all-->
+
+      <header class="top-nav" data-skin="learn">
+        <a class="skip-to-content" href="#skip-to-content">Skip To Content</a>
+        <div class="grid-container">
+          <div class="column-24">
+
+
+            <!--<div class="top-nav-title-wrapper text-center ">-->
+              <a href='../../../../../zh-CN/' class="top-nav-title tablet-hide"><span>Arc</span>GIS  Enterprise</a>
+              <a href='../../../../../zh-CN/' class="icon-ui-menu top-nav-title js-drawer-toggle tablet-show" data-drawer="top-nav"><span>Arc</span>GIS Enterprise</a>
+            <!--</div> -->
+
+          
+            <nav role="navigation" class="top-nav-list left tablet-hide">
+              <a id="nav-portal" data-langlabel="portal" href="../../../../../zh-CN/portal/" class="top-nav-link">Portal</a>
+
+                <div class="dropdown js-dropdown ">
+                  <a class="top-nav-link js-dropdown-toggle" tabindex="0" aria-haspopup="true" aria-expanded="false" href="#">Servers</a>
+                  <nav class="dropdown-menu featured" role="menu">
+                    <ul class="dropdown-sublist-featured">
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/get-started/latest/windows/additional-server-deployment.htm" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path  d="M42.92 6.1H4.12v8.566l.833.832-.835.833-.018 7.332.845.847-.825.824V33.9h25v5.2h-2v1.075H8.02v.8h19.1v.925h4.8v-.925H40v-.8h-8.08V39.1h-2v-5.2h13v-8.566l-.834-.834.835-.834v-7.332l-.835-.834.835-.834zm-11.8 35h-3.2v-1.2h3.2zm11-8H4.92v-7.434l.767-.766h35.668l.765.766zm0-9.766l-.766.766H5.666l-.766-.767.017-6.669.766-.764h35.671l.766.766zm0-9l-.766.766H5.687l-.766-.766V6.9h37.2zM19 11.9h-2v-.8h2zm-4 0h-2v-.8h2zm-4 0H9v-.8h2zm6 8.2h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9zm8 9h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9z"/></svg></span>
+                          <span class="sublink-text">所有服务器</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/server/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M45.98 33.575a.616.616 0 0 0-.335-.51l-3.362-2.03 3.362-2.031a.556.556 0 0 0 0-1.02l-11.1-6.704a1.293 1.293 0 0 0-1.112 0L22.33 27.982a.556.556 0 0 0 0 1.02l3.36 2.03-3.358 2.03a.556.556 0 0 0-.002 1.021l3.322 2.006-3.324 2.008a.555.555 0 0 0 .002 1.017l11.102 6.703a1.25 1.25 0 0 0 1.11.002l11.104-6.706a.556.556 0 0 0 0-1.02l-3.32-2.006 3.318-2.004a.607.607 0 0 0 .335-.509zM33.837 21.97c.026-.01.286-.005.29-.005l10.814 6.53-10.8 6.523c-.028.01-.284.005-.294.006l-10.813-6.53zm11.105 16.636l-10.8 6.523a2.564 2.564 0 0 1-.295.006l-10.81-6.529 3.39-2.047 7.004 4.23a1.083 1.083 0 0 0 .557.131 1.101 1.101 0 0 0 .554-.13l7.01-4.233zM34.14 40.098a2.545 2.545 0 0 1-.294.006l-10.812-6.53 3.43-2.073 6.97 4.208a1.25 1.25 0 0 0 1.107-.001l6.966-4.206 3.431 2.073zM9 8H7V7h2zm8 8h-2v-1h2zm-4-8h-2V7h2zm4 0h-2V7h2zm-4 8h-2v-1h2zm7.316 11.1H3.9v-6.434l.766-.766h35.668l.766.766v2.12l.8.483v-2.935l-.826-.826.826-.845v-6.329l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9h16.88a2.632 2.632 0 0 1 .336-.8zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zm0 8v-5.668l.766-.766h35.668l.766.766v5.67l-.746.764H4.666zM15 24v-1h2v1zm-4 0v-1h2v1zm-2-8H7v-1h2zm-2 8v-1h2v1z"/></svg></span>
+                          <span class="sublink-text">GIS Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/image/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 8h-2V7h2zm-4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm8 8h-2v1h2zm-8 0H7v1h2zm4 9v-1h-2v1zm-4 0v-1H7v1zm8 0v-1h-2v1zm4 3.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V21h-.8v-.334l-.766-.766H4.666l-.766.766V27.1H21zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zm40.234 4v21.8H23.1V23.1zm-.8 16.366L39.466 44.1h2.868l1.766-1.766zm-20.2-9.932l5.634-5.634h-2.868L23.9 26.666zm6.2-5.068L24.466 30.1h2.868l2.766-2.766zM28.466 30.1H30.1v-1.634zm2.434 0h6.2v-6.2h-6.2zm-7 7h6.2v-6.2h-6.2zm7 0h6.2v-6.2h-6.2zm0 6.434l5.634-5.634h-2.868L30.9 40.666zm7-7l5.634-5.634h-2.868L37.9 33.666zm1.634-5.634H37.9v1.634zm-8.634 7v1.634l1.634-1.634zm.566 6.2h2.868l2.766-2.766v-2.868zm6.434-3.566l2.634-2.634H37.9zM35.466 44.1H37.1v-1.634zm2.434 0h.434l5.766-5.766V37.9h-2.434L37.9 41.666zm6.2-8.634L42.466 37.1H44.1zm0-4L38.466 37.1h2.868l2.766-2.766zm0-7.566h-6.2v6.2h6.2zm-20.2 0v1.634l1.634-1.634zm0 20.2h6.2v-6.2h-6.2zm20.2 0v-.634l-.634.634z"/></svg></span>
+                          <span class="sublink-text">Image Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/geoanalytics/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 16h-2v-1h2zm-8 8v-1H7v1zm8 0v-1h-2v1zM13 7h-2v1h2zm4 0h-2v1h2zM9 7H7v1h2zm21.45 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V27.9h-1.464l-.801-.8H41.1v-6.434l-.766-.766H4.666l-.766.766V27.1h27.15zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM13 24v-1h-2v1zm0-9h-2v1h2zm-4 0H7v1h2zm26.672 27.148A1.87 1.87 0 0 1 35.9 43a1.91 1.91 0 1 1-3.763-.222l-9.845-3.414A1.88 1.88 0 0 1 21 39.9a1.9 1.9 0 1 1 1.474-3.084l4.692-2.346A1.878 1.878 0 0 1 27.1 34a1.902 1.902 0 0 1 1.9-1.9 1.867 1.867 0 0 1 .781.191l3.788-5.05A1.88 1.88 0 0 1 33.1 26a1.9 1.9 0 1 1 3.491 1.026l4.889 4.888c-.069.056-.144.1-.21.162a3.986 3.986 0 0 0-.358.402l-4.883-4.883A1.889 1.889 0 0 1 35 27.9a1.867 1.867 0 0 1-.781-.191l-3.788 5.049a1.868 1.868 0 0 1 .437.965l9.204.614c-.018.11-.049.218-.058.33A3.93 3.93 0 0 0 40 35c0 .046.01.09.01.135l-9.185-.612A1.913 1.913 0 0 1 29 35.9a1.889 1.889 0 0 1-1.474-.716l-4.692 2.346a1.878 1.878 0 0 1 .066.47 1.9 1.9 0 0 1-.105.625c-.007.02-.022.036-.03.056l9.63 3.34a1.87 1.87 0 0 1 2.786-.505l5.415-4.437c.067.108.127.22.204.322a3.9 3.9 0 0 0 .292.306zM33.9 26a1.092 1.092 0 0 0 .43.872 1.12 1.12 0 0 0 1.42-.068A1.1 1.1 0 1 0 33.9 26zm-6 8a1.1 1.1 0 0 0 2.196.093 1.135 1.135 0 0 0-.426-.965A1.087 1.087 0 0 0 29 32.9a1.101 1.101 0 0 0-1.1 1.1zm-5.8 4a1.098 1.098 0 1 0-.06.362A1.101 1.101 0 0 0 22.1 38zm13 5a1.1 1.1 0 1 0-2.2 0 1.1 1.1 0 0 0 2.2 0zm10.8-8a1.9 1.9 0 1 1-3.8 0c0-.053.003-.105.007-.158A1.9 1.9 0 0 1 45.9 35zm-.8 0a1.1 1.1 0 0 0-2.196-.093 1.153 1.153 0 0 0 .216.752A1.1 1.1 0 0 0 45.1 35z"/></svg></span>
+                          <span class="sublink-text">GeoAnalytics Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/geoevent/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M13 8h-2V7h2zm4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm12.418 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826v2.117c-.259-.177-.53-.337-.8-.497v-1.288l-.766-.766H4.666l-.766.766V27.1h17.933c-.148.26-.283.53-.415.8zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM9 24v-1H7v1zm4-9h-2v1h2zm0 9v-1h-2v1zm-4-9H7v1h2zm8 9v-1h-2v1zm16.9 2h-.8v8.9H39v-.8h-5.1zm.1-3.901a11.9 11.9 0 1 0 11.9 11.9 11.914 11.914 0 0 0-11.9-11.9zm0 23a11.1 11.1 0 1 1 11.1-11.1 11.112 11.112 0 0 1-11.1 11.1z"/></svg></span>
+                          <span class="sublink-text">GeoEvent Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/notebook/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M22 27.1H3.9v-6.434l.766-.766h18.576a5.262 5.262 0 0 1 .83-.8H4.666l-.766-.766v-5.668l.766-.766h35.668l.766.766V18h.8v-5.666l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9H22zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zM9 8H7V7h2zm8 0h-2V7h2zm-4 0h-2V7h2zm2 16v-1h2v1zm-4 0v-1h2v1zm-4 0v-1h2v1zm0-8v-1h2v1zm8 0v-1h2v1zm-4 0v-1h2v1zm18.9 8.1h-1.8v1.8h1.8zm-.8 1h-.2v-.2h.2zm15.498-4.48a2.727 2.727 0 0 0-1.62-.5v-.02H27.25a3.154 3.154 0 0 0-3.15 3.15V38.1h-1.68a3.386 3.386 0 0 0-2.872 1.58 3.49 3.49 0 0 0-.157 3.419 3.241 3.241 0 0 0 2.954 1.801h15.161a3.404 3.404 0 0 0 3.394-3.4V26.9h5v-3.65a3.224 3.224 0 0 0-1.302-2.63zM22.345 44.1a2.44 2.44 0 0 1-2.23-1.341 2.706 2.706 0 0 1 .11-2.65A2.588 2.588 0 0 1 22.42 38.9h12.89a3.395 3.395 0 0 0 0 5.2zM40.1 23.192V41.5a2.6 2.6 0 1 1-2.6-2.6v-.8H24.9V23.25a2.352 2.352 0 0 1 2.35-2.35h13.795a3.183 3.183 0 0 0-.945 2.292zm5 2.908h-4.2v-2.908a2.274 2.274 0 0 1 1.44-2.18 1.944 1.944 0 0 1 1.791.259 2.423 2.423 0 0 1 .97 1.979zm-17.1 5h9v.8h-9zm0 3h7v.8h-7zm0-6h9v.8h-9zm4-3h5v.8h-5z"/></svg></span>
+                          <span class="sublink-text">Notebook Server</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+
+              <a id="nav-data-store" data-langlabel="data-store" href="../../../../../zh-CN/data-store/" class="top-nav-link">Data Stores</a>
+              <a id="nav-cloud" data-langlabel="cloud" href="../../../../../zh-CN/cloud/" class="top-nav-link">云</a>
+              <a id="nav-apps" data-langlabel="apps" href="../../../../../zh-CN/apps/" class="top-nav-link">应用程序</a>
+            </nav>
+
+
+            
+            
+            
+
+            <div class="margin-left-1 top-nav-list right hide-if-logged-in logged-out-navigation">
+               
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+              
+              <a data-langlabel="sign-in" id="login-link" class="icon-ui-user top-nav-link link-blue login-link" href="#">登录</a>
+              
+            </div>
+
+            
+            <nav class="margin-left-1 top-nav-list right hide-if-logged-out logged-in-navigation">
+              
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+             
+              <div class="dropdown js-dropdown right">
+
+                <div class="tablet-show top-nav-link">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a href="#" data-drawer="user-nav" class="user-nav-name js-drawer-toggle" data-first-name></a>
+                </div>
+
+                <div class="tablet-hide top-nav-link js-dropdown-toggle">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a class="user-nav-name top-nav-dropdown dropdown-btn" data-first-name>&nbsp;</a>
+                </div>
+
+                <nav class="dropdown-menu dropdown-right">
+                
+                  <a class="dropdown-link agolProfile" id="agolProfile" href="#">我的个人资料</a>
+                  <a class="dropdown-link js-log-out" id="agolLogout" href="#">登出</a>
+                </nav>
+              </div>
+            </nav>
+            
+
+            
+          </div>
+        </div>
+      </header>
+
+      <div class="js-search search-overlay">
+        <div class="search-content" role="dialog" aria-labelledby="search">
+          <form method="GET" id="helpSearchForm">
+            <label>
+              搜索 ArcGIS Server 10.8 帮助
+              <div class="search-bar">
+                <input type="search" name="q"  placeholder="搜索 ArcGIS Server 10.8 帮助" class="search-input js-search-input">
+                <input type="hidden" name="collection" value="help" />
+                <input type="hidden" name="product" value="arcgis-server-windows" />
+                <input type="hidden" name="version" value="10.8" />
+                <input type="hidden" name="language" value="zh-CN" />
+              </div>
+            </label>
+            <input type="hidden" name="relativePath" value="../../../../../" /><button type="submit" class="btn btn-large right">搜索</button>
+          </form>
+        </div>
+      </div>
+
+      <!--googleon: all-->
+
+      <div id="skip-to-content">
+        <!--googleoff: all-->
+        <header class="sub-nav sub-nav-learn">
+          <div class="grid-container">
+            
+            <div class="column-24">
+              <div style="display:table;" class="sdk-home-banner">
+                <div class="sdk-home-banner-content">
+                  <h1 class="sub-nav-title link-white">ArcGIS Server</h1>
+                </div>
+              </div>
+            </div>
+
+            <div class="column-24">
+              <nav class='sub-nav-list tablet-hide'><a class="sub-nav-link" href="../../../../../zh-CN/server/" target="_top" title="ArcGIS Server 的概述和文档">主页</a><a class="sub-nav-link" href="../../../../../zh-CN/server/latest/get-started/windows/" target="_top" title="了解有关 ArcGIS Server 和服务器角色的信息">简介</a><a class="sub-nav-link" href="../../../../../zh-CN/server/latest/deploy/windows/" target="_top" title="构建、配置和升级部署">部署</a><a class="sub-nav-link" href="../../../../../zh-CN/server/latest/manage-data/windows/" target="_top" title="管理企业的空间数据">管理数据</a><a class="sub-nav-link is-active" href="../../../../../zh-CN/server/latest/publish-services/windows/" target="_top" title="使用 GIS 服务">管理服务</a><a class="sub-nav-link" href="../../../../../zh-CN/server/latest/create-web-apps/windows/" target="_top" title="创建 Web 应用程序和可打印地图">共享</a><a class="sub-nav-link" href="../../../../../zh-CN/server/latest/administer/windows/" target="_top" title="管理和保护 ArcGIS Server">管理</a><a class="sub-nav-link" href="../../../../../zh-CN/server/latest/develop/windows/" target="_top" title="构建扩展模块并自动执行常见任务">开发</a></nav><select class='tablet-show select-full trailer-half js-select-nav'><option value="../../../../../zh-CN/server/">主页</option><option value="../../../../../zh-CN/server/latest/get-started/windows/">简介</option><option value="../../../../../zh-CN/server/latest/deploy/windows/">部署</option><option value="../../../../../zh-CN/server/latest/manage-data/windows/">管理数据</option><option selected="true" value="../../../../../zh-CN/server/latest/publish-services/windows/">管理服务</option><option value="../../../../../zh-CN/server/latest/create-web-apps/windows/">共享</option><option value="../../../../../zh-CN/server/latest/administer/windows/">管理</option><option value="../../../../../zh-CN/server/latest/develop/windows/">开发</option></select>
+            </div>
+
+          </div>
+        </header>
+        <!--googleon: all-->
+       
+        <!-- content goes here -->
+        <div class="grid-container ">
+          
+
+            
+              
+  <!--BREADCRUMB-BEG--><div id="bigmac" class="sticky-breadcrumbs trailer-2" data-spy="affix" data-offset-top="180"> </div><!--BREADCRUMB-END-->
+  <!--googleoff: all-->
+    <div class="column-5 tablet-column-12 trailer-2 ">
+      <aside class="js-accordion accordion reference-index" aria-live="polite" role="tablist">
+        <div></div>
+      </aside>
+
+      <div class="js-sticky scroll-show tablet-hide leader-1 back-to-top" data-top="0" style="top: 0px;">
+        <a href="#" class="btn btn-fill btn-clear">返回顶部</a>
+      </div>
+    </div>
+  <!--googleon: all-->
+  
+            
+            
+            
+	
+		<div class="column-13  pre-1 content-section">
+	
+		<header class="trailer-1"><h1>地理处理服务示例:河流网络</h1></header>
+
+		 
+	<!--googleoff: all-->
+	
+		
+				<aside id="main-toc-small" class="js-accordion accordion tablet-show trailer-1">
+			      <div class="accordion-section">
+			        <h4 class="accordion-title">在本主题中</h4>
+			        <div class="accordion-content list-plain">
+			          <ol class="list-plain pre-0 trailer-0"><li><a href="#GUID-835B399F-E9C1-4679-91BB-8555A28B026F">对应的文件夹</a></li><li><a href="#GUID-5BBB56B2-9785-4C06-979A-06C2DF3871B1">关于 Create Stream Network 任务</a></li><li><a href="#ESRI_SECTION1_564A7E4C79D04C72B7C0565F67CC1169">准备工作</a></li><li><a href="#GUID-34BDDCA4-A4B1-4985-9432-1ED93DAD8211">引用地图</a></li><li><a href="#GUID-9C0EAC25-465C-4C4D-BBCB-FB156E3601DD">模型和工具数据</a></li><li><a href="#GUID-6583F67F-4A7F-4961-9168-9FF5E99AA8D2">设置输出符号系统</a></li><li><a href="#GUID-BE8806AA-D3CC-4C21-8E56-C00E38ED2537">发布</a></li><li><a href="#GUID-9CEFECBA-A0EC-45C1-B482-3F4F3025D62A">使用服务</a></li><li><a href="#ESRI_SECTION1_0C2DF40CB5444437BA6D41BF9FE59151">配置您自己的河流网络任务</a></li></ol>
+			        </div>
+			      </div>
+			     </aside>
+		
+    
+   <!--googleon: all-->
+
+
+		<main>
+			
+	
+    	
+    
+
+
+			<div class="wfheader"><span class="wfmetahead">复杂程度： </span><span class="wfmetacontent">初级</span><span class="wfmetahead">数据要求： </span><span class="wfmetacontent">ArcGIS Tutorial Data for Desktop</span><span purpose="wfdatapath">
+</span>
+</div><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-43A93251-13F6-4CCF-9224-B756C4BA34AE">文件夹</p></td> <td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-1502A34E-658A-4918-974C-D6178A12500C"><span class="usertext">StreamNet</span></p></td></tr> <tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-157C3ECB-78D3-4CAC-BC3F-A61AB6C34F05">权限用途</p></td> <td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-E5CCF605-BD84-4F57-B0EC-4605A189F6BC">根据流向和流量数据创建河流网络</p></td></tr> <tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-07FA06D5-4882-4066-801E-D441334894B5">服务</p></td> <td outputclass="" purpose="entry" rowspan="1" colspan="1"><ul purpose="ul" id="UL_50BD28D33A7C478CAC7DB87B54AE0300"><li purpose="li" id="LI_7760C06B630F44AF8B0D7A7A85088A20"><span class="usertext">StoweHillshade</span>（地图服务）</li><li purpose="li" id="LI_669C7FAFDFF24A51A5BAD6C699459701"><span class="usertext">StoweStreamNet</span>（地理处理服务和结果地图服务）</li></ul></td></tr> <tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-9060487B-74D5-4D64-9289-6CA9CEEBCE5F">地理处理任务</p></td> <td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-D7DA7AD3-D8BA-4E81-BEBD-FC0421EDBB7C"><span class="usertext">Create Stream Network</span></p></td></tr> <tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-15C12B9D-9C67-44E7-885C-EF1530F50824">输入</p></td> <td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-9C86961A-AEF6-452C-A9B1-72AE2232F23B">最小上游面积（以公顷为单位）</p></td></tr> <tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-EC969152-7604-403B-87ED-1F359A818CED">输出</p></td> <td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-F049723F-0918-40DE-B1C5-3C391AF9DD3F">河流网络</p></td></tr> <tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-A2542696-241A-43F6-A0CE-EFE3458F63D2">数据</p></td> <td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-131A3F32-1158-4FF1-B249-B3F1C0A23DE1">使用 Spatial Analyst 教程中的数字高程数据（栅格）和其他数据</p></td></tr> <tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-F667B20B-9BAE-4A01-9560-3363CD85CC6B">扩展模块</p></td> <td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-64E0F091-7222-446C-B346-D3479DEE77DE">Spatial Analyst</p></td></tr> <tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-D6A5EAAD-11AB-483B-9267-2BF43D8B72C2">注释</p></td> <td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-BDA9252C-5732-4AAB-9EBE-9FF4EE31B303">使用结果地图服务绘制网络</p></td></tr></tbody><caption>关于本示例</caption></table></div><section class="section1 padded-anchor" id="GUID-835B399F-E9C1-4679-91BB-8555A28B026F" purpose="section1"><h2>对应的文件夹</h2><p id="GUID-71980952-658B-4343-965A-7EAEEA6B7C69">本示例的数据可<a target="_blank" class="xref xref" href="http://links.esri.com/gpexamples10_2_1">从 ArcGIS.com 下载</a>。下载后，提取 zip 文件至 <span class="usertext">C:\arcgis\ArcTutor</span>。<span class="usertext">GP Service Examples\StreamNet</span> 文件夹包含了完成的模型和数据。 </p></section><section class="section1 padded-anchor" id="GUID-5BBB56B2-9785-4C06-979A-06C2DF3871B1" purpose="section1"><h2>关于 Create Stream Network 任务</h2><p id="GUID-25A61ABF-269E-4DFF-9C5A-F07C8F942FDC">Create Stream Network 任务的主要目的是为制图显示生成河流网络。两种结果如下图所示，使用研究区域（佛蒙特州的斯托镇）的山体阴影图作为引用地图。此项服务的意义在于允许用户生成多个不同的网络，然后选择一个满足其制图需求的网络。</p><figure class="fig" href="#"><img src="GUID-1689D711-9D92-4FD4-8463-1E5BD9A42062-web.png" alt="Create Stream Network 输出示例" title="Create Stream Network 输出示例"></figure><p id="GUID-0CD23303-2794-4CA6-9E33-5057B66D11D6">该任务创建的是由最小面积定义的河流网络，面积越小，生成的河段越多。每条河段都将根据上游河段数分配一个河网分级值，该值用于确定每条河段的显示线宽。</p><p id="GUID-9F9D8292-3407-4DC1-B413-40ED6EFAF7CA">生成的河段数取决于使用的最小面积。如果输入为 1 公顷，则大约可生成 32,000 条河段。而如果为 45 公顷，大约只生成 600 条河段。</p><p id="GUID-D1B84F2A-1A7E-49DA-B295-8AACE7B56D16">创建地理处理服务时需要做出的决定之一就是确定允许从服务器返回客户端的最大记录和要素数量。默认值为 1,000，您也可将该值增大到数十亿。但在 Web 上传输大量要素既昂贵又缓慢。如果您的任何一项服务可能需要输出大量要素，都应考虑使用结果地图服务创建包含结果的地图，从而使 <span class="ph">ArcGIS Server</span> 在 Web 上传输地图而非要素。由于 Create Stream Network 任务生成的河段数量取决于最小流域面积，因此在替换数据时（研究区域的大小和拓扑），在本例中使用的是结果地图服务绘制结果，而不是将要素在 Web 上传输到客户端。</p></section><section class="section1 padded-anchor" id="ESRI_SECTION1_564A7E4C79D04C72B7C0565F67CC1169" purpose="section1"><h2>准备工作</h2><p id="GUID-02BAE2EA-4262-4EE0-9E66-AA38CC3A9114">在发布地图和地理处理服务之前，您将需要创建 GIS 服务器连接。</p><section class="section2 padded-anchor" id="ESRI_SECTION2_5C72B3511C0A4CA89707F3B19C6F759A" purpose="section2"><h3>设置 GIS 服务器连接</h3><p id="GUID-5E675926-FBA5-49F7-8CFC-5BDCDBA64F6B">您将需要设置一个发布程序连接，可以供您使用和发布至 <span class="ph">ArcGIS Server</span>。</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_9412D12DDDF647FA918FDDE8D7FC2F22"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_492034F4979B4E079D2BFF1940921B25"><span purpose="cmd" id="GUID-B64B94AE-534B-469D-9619-8F5DA32ED4E6">在<span class="wintitle">目录</span> 窗口中，导航至 GIS 服务器节点，然后双击<span class="uicontrol">添加 ArcGIS Server</span>。</span></li><li purpose="step" id="ESRI_STEP_983202A86D684619A2F3F4ECCDF93957"><span purpose="cmd" id="GUID-89A5CACC-BFCE-4554-A638-1BE103F1CC01">选择<b>发布 GIS 服务</b>，然后单击<span class="uicontrol">下一步</span>。</span></li><li purpose="step" id="ESRI_STEP_90D3DE533FE14CACBF5D9BC9DC3066E5"><span purpose="cmd" id="GUID-6FAB72BD-4295-4EB4-AD84-D72D7FE0451E">为您的 GIS 服务器输入<span class="uicontrol">服务器 URL</span>例如，<span class="usertext">http://myserver:6080/arcgis/</span>。输入用户名和密码，然后单击<span class="uicontrol">完成</span>。您现在在<span class="wintitle">目录</span> 窗口的 GIS 服务器节点下拥有一个指向 GIS 服务器的（发布程序）连接。</span></li></ol></div></section></section></section><section class="section1 padded-anchor" id="GUID-34BDDCA4-A4B1-4985-9432-1ED93DAD8211" purpose="section1"><h2>引用地图</h2><p id="GUID-DCC37A16-EADE-4BC3-8FF3-0E4F6C9226D4">如下图所示，本例中的引用地图 <span class="usertext">StoweHillshade.mxd</span> 只包含一个图层 Hillshade。Hillshade 图层以 55% 的透明度绘制。</p><figure class="fig" href="#"><img src="GUID-C26B61A0-3527-4091-B586-EEBAAA3DE3AF-web.png" alt="斯托镇山体阴影底图" title="斯托镇山体阴影底图"><figcaption class="fig-caption">斯托镇山体阴影引用地图</figcaption></figure><p id="GUID-6F094C43-935A-4C78-8F42-FA62C29D86BE"><span class="usertext">StoweHillshade.mxd</span> 需要作为地图服务发布，此地图服务将在使用地理处理服务时提供参考。</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_C994E6D7221E441F86638631691966F1"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_CFCB188714EB423DA839D3401515CDF3"><span purpose="cmd" id="GUID-41440543-BE7E-48CE-9A60-9921EA7DFFE9">启动新 ArcMap 会话。</span></li><li purpose="step" id="ESRI_STEP_CFF6C29E07AB41139BDD819090BF03BC"><span purpose="cmd" id="GUID-481B9556-2A0C-49D3-A271-561DE7D8CD46">打开“StoweHillshade”地图文档。</span></li><li purpose="step" id="ESRI_STEP_F58422BF06564C6C9870976575FED19C"><span purpose="cmd" id="GUID-773FAF69-916C-43A4-9433-3E0DE05C2503">从<span class="uicontrol">文件</span>菜单，单击<span class="uicontrol">共享为 <span class="greaterthan">&gt;</span> 服务</span>。</span></li><li purpose="step" id="ESRI_STEP_D9EFF1B81D1D48D193C87FF257A91570"><span purpose="cmd" id="GUID-DB5AFAC0-1701-4957-9D6E-C23531CFBAEC">选择<span class="uicontrol">发布服务</span>，然后单击<span class="uicontrol">下一步</span>。</span></li><li purpose="step" id="ESRI_STEP_09DFDC3FAA6044659FB7294686561853"><span purpose="cmd" id="GUID-B9771A68-C85F-45A0-BF92-157254F3D910">选择在设置 GIS 服务器连接时创建的发布程序连接。接受默认名称，然后单击<span class="uicontrol">下一步</span>。</span></li><li purpose="step" id="ESRI_STEP_BC1BA63611DF42FC8482911F7C047A1C"><span purpose="cmd" id="GUID-DF1FC4AE-06F6-4B7D-95F6-F18C0FDEC81F">单击<span class="uicontrol">创建新文件夹</span>并输入 <span class="usertext">Stream</span>。这将创建一个文件夹，以保存您发布的服务。</span></li><li purpose="step" id="ESRI_STEP_278779251CBD4D92AA56696B95561899"><span purpose="cmd" id="GUID-12597BF8-810F-4074-80EC-C91F25515B1C">单击<span class="uicontrol">继续</span>以启动<span class="wintitle">服务编辑器</span>。</span></li><li purpose="step" id="ESRI_STEP_588A4059440E4645B84FD67AD64AC888"><span purpose="cmd" id="GUID-82DF6900-0899-43DA-A1B7-6AAAA0349FE7">单击<span class="uicontrol">分析</span> <img purpose="img" placement="inline" alt="分析" title="分析" src="GUID-98E22D54-9700-4516-9382-BC63CF8DD4E7-web.png"> 按钮。修复所有错误。</span><div class="info" purpose="info"><p id="GUID-C06E0F54-CD6E-4057-A631-FB69605EACAA">您应会收到一个警告 - 数据会复制至服务器上 - 以及一个信息 - 图层将按照所有比例范围绘制。您可以完全忽略这些消息或采取您觉得合适的做法。</p></div></li><li purpose="step" id="ESRI_STEP_1084A5FC324D4E4F8EADBF182501D5F9"><span purpose="cmd" id="GUID-18EF2B8F-1445-4364-8F05-47BF8203CCD2">单击<span class="uicontrol">发布</span> <img purpose="img" placement="inline" alt="发布" title="发布" src="GUID-6A9846D8-6F36-436A-85D4-B9D055A4760C-web.png"> 按钮以完成地图服务的发布。</span></li></ol></div></section></section><section class="section1 padded-anchor" id="GUID-9C0EAC25-465C-4C4D-BBCB-FB156E3601DD" purpose="section1"><h2>模型和工具数据</h2><p id="GUID-59EC1AEC-097A-49F5-A613-FC75CC64ABEA">该地理处理服务的工具箱和源地图文档分别为 <span class="usertext">StoweStreamNet.tbx</span> 和 <span class="usertext">StoweStreamNet.mxd</span>。<span class="usertext">StoweStreamNet.mxd</span> 包含两个源数据图层：Flow Direction（<span class="usertext">flowdir</span> 栅格）和 Flow Accumulation（<span class="usertext">accumulation</span> 栅格）。</p><p id="GUID-81B4C785-FE76-4BDF-ADE1-FA06240DF85A">通过双击从<span class="wintitle">目录</span> 窗口打开 <span class="usertext">StoweStreamNet</span> 地图文档。</p><section class="section2 padded-anchor" id="GUID-0776BD32-03FC-44BC-B241-D0E649A538F3" purpose="section2"><h3>模型概览</h3><p id="GUID-A963D52D-D549-4D9D-AE10-4F685CA8AE2A">为了更好地理解模型，展开 <span class="usertext">StoweStreamNet.tbx</span> 工具箱，右键单击“创建河流网络”模型并选择<span class="uicontrol">编辑</span>。Create Stream Network 模型如下图所示。有一个输入变量：<span class="modelbuilder">最小上游面积（以公顷为单位）</span>。此变量为双精度型，表示创建河段所需的最小流域面积。面积越小，创建的河段越多。</p><p id="GUID-A546F21E-263A-4AAD-A47A-B36CF7EB50E2">该模型可计算出输入面积中的栅格像元数，然后使用<span purpose="gptoolref"><a class="xref xref" esrisubtype="extrel" hrefpfx="https://desktop.arcgis.com/zh-cn/arcmap/latest/tools" href="https://desktop.arcgis.com/zh-cn/arcmap/latest/tools/spatial-analyst-toolbox/con-.htm">条件函数</a></span>工具对 <span class="modelbuilder">Flow Accumulation</span> 栅格中的每个输入像元执行 if-else 条件评估。由于 <span class="modelbuilder">Flow Accumulation</span> 栅格中的像元值即为流入该像元的上游像元数，因此上游面积大于中断值的所有像元都会被选中。选中的像元将形成河段，并在输出栅格中分配 1。</p><p id="GUID-E11F1E2D-B00E-4D06-9BB7-0197AD36F776"><span purpose="gptoolref"><a class="xref xref" esrisubtype="extrel" hrefpfx="https://desktop.arcgis.com/zh-cn/arcmap/latest/tools" href="https://desktop.arcgis.com/zh-cn/arcmap/latest/tools/spatial-analyst-toolbox/stream-order.htm">河网分级</a></span>工具可将数字分级值分配给表示线性网络分支的栅格，例如<span purpose="gptoolref">条件函数</span>工具的输出。通常，分级高表示水流量大，因此河流分级也可视为河流宽度的代名词。该模型的输出已经过符号化处理，以便使用较宽的线绘制分级值较高的河段。</p><p id="GUID-FE94BE1D-A6EF-4204-B5A3-C37A1CD3573E"><span purpose="gptoolref"><a class="xref xref" esrisubtype="extrel" hrefpfx="https://desktop.arcgis.com/zh-cn/arcmap/latest/tools" href="https://desktop.arcgis.com/zh-cn/arcmap/latest/tools/spatial-analyst-toolbox/stream-to-feature.htm">栅格河网矢量化</a></span>工具可将 <span class="modelbuilder">Stream Order Raster</span> 转换为输出线要素类。此要素类将由结果地图服务使用自身定义的符号系统绘制。</p><img purpose="img" placement="inline" alt="StreamNet 模型" title="StreamNet 模型" src="GUID-97642015-E3A5-4D0C-93A1-B6056C5C9028-web.png"></section><section class="section2 padded-anchor" id="GUID-D7F63BA3-93AB-4839-A12F-35551CED7824" purpose="section2"><h3>项目数据</h3><p id="GUID-22AE39AA-C6B7-4D8F-927F-0E918CD8622C"><span class="modelbuilder">Flow Accumulation</span> 和 <span class="modelbuilder">Flow Direction</span> 变量是源地图文档 <span class="usertext">StoweStreamNet.mxd</span> 中的图层。在术语中，这两个变量称为项目数据，因为它们均属于非参数输入数据。</p></section><section class="section2 padded-anchor" id="GUID-A60FA524-77F9-4176-AC94-39D40990F553" purpose="section2"><h3>计算最小面积中的像元数</h3><p id="GUID-136779C5-652D-48F5-BE2F-1CC3DCCA789C">所有的栅格数据集都在佛蒙特州平面坐标（使用线性单位米）内。像元大小为 30 米 x 30 米。要确定栅格的空间参考和像元大小，可执行以下操作之一：</p><ul purpose="ul" id="UL_B02057D26BD449EB881951DAD6F31794"><li purpose="li" id="GUID-3CDCFD85-A656-46EA-82A3-35BAD7F0420A">在<span class="wintitle">目录</span> 窗口中，右键单击栅格，然后单击<span class="uicontrol">属性</span>。</li><li purpose="li" id="GUID-8F8C5917-6F59-423F-962E-8105330B155D">在 ArcMap 内容列表中，右键单击栅格图层，单击<span class="uicontrol">属性</span>，然后单击<span class="uicontrol">源</span>选项卡。</li></ul><p id="GUID-3479B205-08AB-440F-AFE9-FBA4A47C4975"><span purpose="gptoolref"><a class="xref xref" esrisubtype="extrel" hrefpfx="https://desktop.arcgis.com/zh-cn/arcmap/latest/tools" href="https://desktop.arcgis.com/zh-cn/arcmap/latest/tools/modelbuilder-toolbox/calculate-value.htm">计算值</a></span>工具用输入公顷数除以单位为公顷的像元大小（30 米 x 30 米 = 900 平方米 = 0.09 公顷）可得出最小上游面积中的像元数。如下图所示，<span class="modelbuilder">计算值</span>工具的参数需要使用变量替换。在变量名旁放置百分号 (<span class="usertext">%</span>)，即可将该变量的内容替换为该值。 </p><p id="GUID-FA1E0228-C2A6-4B7D-BB2D-65B9507398D2"><img purpose="img" placement="inline" alt="“计算值”参数" title="“计算值”参数" src="GUID-F3468937-8BCD-4260-91EA-283FB4DBE875-web.png"></p></section><section class="section2 padded-anchor" id="GUID-2B76F77C-B12B-4F0A-94AB-BA02EB5EC2C5" purpose="section2"><h3>条件函数使用流程</h3><p id="GUID-8B171562-AB72-479C-B326-82BB445407F2"><span purpose="gptoolref"><a class="xref xref" esrisubtype="extrel" hrefpfx="https://desktop.arcgis.com/zh-cn/arcmap/latest/tools" href="https://desktop.arcgis.com/zh-cn/arcmap/latest/tools/spatial-analyst-toolbox/con-.htm">条件函数</a></span>工具可对 Flow Accumulation 栅格中的每个输入像元执行 if-else 条件评估。</p><img purpose="img" placement="inline" alt="“条件函数”工具参数" title="“条件函数”工具参数" src="GUID-85F84CDE-0C5F-4074-93F8-803837DDD07C-web.png"><p id="GUID-967EA045-5159-43E5-9FDC-21992C587412">请注意，表达式需要使用变量替换。在表达式中，值大于最小像元数的所有像元均会被选中。（Flow Accumulation 栅格中像元的值即为流入各个像元的像元数。）</p><p id="GUID-82FEF99C-3DE9-47FA-B7D3-8626B0587382"><span class="uicontrol">输入条件为真时所取的栅格数据或常数值</span>参数是要向每个所选像元分配的值，它设置为 1。 </p></section><section class="section2 padded-anchor" id="GUID-05C8CBF0-DC8E-43CB-9457-D318277F7AB3" purpose="section2"><h3>河网分级使用流程</h3><p id="GUID-AECBDDEF-E771-4641-88B7-906697230232"><span purpose="gptoolref"><a class="xref xref" esrisubtype="extrel" hrefpfx="https://desktop.arcgis.com/zh-cn/arcmap/latest/tools" href="https://desktop.arcgis.com/zh-cn/arcmap/latest/tools/spatial-analyst-toolbox/stream-order.htm">河网分级</a></span>工具可为表示河流网络各分支的像元计算数值。模型中<span class="modelbuilder">河网分级</span>的各个参数值如下所示。</p><img purpose="img" placement="inline" alt="“河网分级”参数" title="“河网分级”参数" src="GUID-1861FBB3-4B1E-4AC4-AB40-DF62A016D4B8-web.png"><p id="GUID-319AB61F-A996-4901-8862-8076E4914436">输出栅格对表示河流的每个像元都应用 Shreve 河网分级值。</p></section><section class="section2 padded-anchor" id="GUID-0B481611-D7F3-48B7-ABFC-4191B585E6DB" purpose="section2"><h3>栅格河网矢量化使用流程</h3><p id="GUID-9FE6E29F-A8F1-44B6-B387-84E11B1AC78A"><span class="modelbuilder"><a class="xref xref" esrisubtype="extrel" hrefpfx="https://desktop.arcgis.com/zh-cn/arcmap/latest/tools" href="https://desktop.arcgis.com/zh-cn/arcmap/latest/tools/spatial-analyst-toolbox/stream-to-feature.htm">栅格河网矢量化</a></span>工具可为 <span class="modelbuilder">Stream Order Raster</span> 中包含的河段创建 shapefile。</p><img purpose="img" placement="inline" alt="栅格河网矢量化参数" title="栅格河网矢量化参数" src="GUID-8692A46C-B96E-458C-8163-2E2A1901D236-web.png"></section></section><section class="section1 padded-anchor" id="GUID-6583F67F-4A7F-4961-9168-9FF5E99AA8D2" purpose="section1"><h2>设置输出符号系统</h2><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_08D7337509764B30AEB3F00C00A354BC"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_455D6CA02C954223B6D1D5CD422F2882"><span purpose="cmd" id="GUID-173D486F-640C-4A17-95B4-E92D9216CB60">展开 <span class="usertext">StoweStreamNet.tbx</span> 并双击创建河流网络模型。</span></li><li purpose="step" id="ESRI_STEP_7A9EF41E6ED34150B83B4011410DE1A4"><span purpose="cmd" id="GUID-AF034D01-FCF2-4E81-96AE-C7348B6038AF">接受默认的 <span class="usertext">45</span> 公顷并单击<span class="uicontrol">确定</span>以执行模型。</span></li><li purpose="step" id="ESRI_STEP_36F3F82896354C11992D4F63ED119FB1"><span purpose="cmd" id="GUID-55F8DD59-888D-4021-9AF8-D0FDD3339D7F"><span class="usertext">StreamNet</span> 图层将添加至 ArcMap。</span></li><li purpose="step" id="ESRI_STEP_682189C500CB49F39262E0D8389523CD"><span purpose="cmd" id="GUID-263ED863-8995-40D8-A84A-928CD2BFE504">右键单击 <span class="usertext">StreamNet</span> 图层，单击<span class="uicontrol">属性</span>以打开<span class="wintitle">图层属性</span> 窗口。</span></li><li purpose="step" id="ESRI_STEP_35411D6FDC754555A1861E798EB748EB"><span purpose="cmd" id="GUID-38A04871-CF56-496D-8CBC-7ACB88D7EBA5">通过下列步骤中，您可将此符号改为分级线符号。单击<span class="uicontrol">符号系统</span>选项卡以设置合适的符号系统。</span><div class="substeps" id="ESRI_SUBSTEPS_4BA2AF86FE8A4406AAA210DC6A9F17C8" purpose="substeps"><ol class="list-numbered" purpose="ol"><li purpose="substep" id="ESRI_SUBSTEP_F8FEC76F531B4FF7B33D478CD653600B"><span purpose="cmd" id="GUID-E905F6FA-25BE-4519-AD17-9F22BFB7FC3E">单击<span class="uicontrol">数量</span>类别下的<span class="uicontrol">分级符号</span>。</span></li><li purpose="substep" id="ESRI_SUBSTEP_642F17203BC14411BD77F0C0552A5260"><span purpose="cmd" id="GUID-5C1307D6-BA63-4DF9-84B7-F2D83980463F">“值”字段选择 GRID_CODE。</span></li><li purpose="substep" id="ESRI_SUBSTEP_7C1A5DB403C2464AABA6E08049CDD52E"><span purpose="cmd" id="GUID-8DF4E706-8796-4540-AC61-DDD083597E6C">单击<span class="uicontrol">分类</span>。</span><div class="stepexample" purpose="stepexample"><p id="GUID-1E58D6B5-AA64-4AD9-94A9-4776A0E0A7D4"><img purpose="img" placement="inline" alt="河流网络符号系统属性" title="河流网络符号系统属性" src="GUID-556E98EB-E347-4B15-BEC2-B691C6CBB967-web.png"></p></div></li><li purpose="substep" id="ESRI_SUBSTEP_A3279936F7AD4EA5943B8D7DD29B7602"><span purpose="cmd" id="GUID-1C27D46A-B59A-45B7-8451-C27A773345F5">在<span class="uicontrol"></span><span class="wintitle">分类</span> 对话框上选择<span class="uicontrol">手动</span>作为分类方法。</span></li><li purpose="substep" id="ESRI_SUBSTEP_17823D4F4B8045E28030A5CF22E613F4"><span purpose="cmd" id="GUID-B40D20B0-743F-4194-A70C-30C7AE15A107">可将手动分类的中断值设为 <span class="usertext">100、250、500、750</span> 和 <span class="usertext">10000</span>。在<span class="uicontrol">中断值</span>面板中单击列表中的最后一个值。这样您便可编辑该值。输入其中一个中断值，例如 <span class="usertext">10000</span>。列表将会刷新，值也会排序。</span><div class="stepexample" purpose="stepexample"><p id="GUID-97C29CA0-41B9-4348-A560-2AFCE67F5506"><img purpose="img" placement="inline" alt="河流网络分类" title="河流网络分类" src="GUID-BCCB401A-ACF7-4E7F-BA85-E7FB24E7C3C9-web.png"></p></div></li><li purpose="substep" id="ESRI_SUBSTEP_88ED8C4DEF434E9A8A8125BD433ECB21"><span purpose="cmd" id="GUID-3785E81B-F8FD-4617-8533-81EBC884032B">继续编辑和设置中断值，直到列表显示为下图所示内容为止。</span><div class="stepexample" purpose="stepexample"><p id="GUID-D18C81FA-7503-458B-AFBF-C4FA126F359D"><img purpose="img" placement="inline" alt="中断值设定后" title="中断值设定后" src="GUID-1F497730-8FD1-499C-A6B7-8EA657775479-web.png"></p></div></li><li purpose="substep" id="ESRI_SUBSTEP_FAE1D3A143B74F71B412CC46D9D5C42A"><span purpose="cmd" id="GUID-C863AC56-1A04-4BFE-9807-9BE16099AD83">单击<span class="uicontrol">确定</span>。<span class="uicontrol">符号系统</span>选项卡此时显示如下。您可能需要单击<span class="uicontrol">模板</span>并选择一种合适的蓝色将颜色重设为蓝色。</span><div class="stepexample" purpose="stepexample"><p id="GUID-5F5790EB-497E-4DFE-9BFA-1F90471FB175"><figure class="fig" href="#"><img src="GUID-3A09E884-B104-4862-83D9-778B4CE2E2E8-web.png" alt="重新设置分类后" title="重新设置分类后"></figure></p></div></li><li purpose="substep" id="ESRI_SUBSTEP_386BD282952B48519FD30EECF5586930"><span purpose="cmd" id="GUID-9090D88B-ABC4-4CBD-822A-47AB166D6188">单击<span class="uicontrol">确定</span>。</span></li></ol></div></li><li purpose="step" id="ESRI_STEP_0D74AAAE2B1E49BB9C2728AB901C45A3"><span purpose="cmd" id="GUID-83B69D9E-7EAC-4C6A-A264-CDD193BD50EC">StreamNet 图层的图例将 GRID_CODE 显示为分类字段，这个名称对于使用服务的用户来说没什么意义。要进行更改，可在图例中单击 GRID_CODE，再按 <span class="shortcut">F2</span> 键，然后将文本更改为描述性更强的内容，例如 <span class="usertext">Shreve Order</span> 或 <span class="usertext">Stream Order</span>。</span></li><div class="stepinfo" purpose="stepinfo"><img purpose="img" placement="inline" alt="更改图例" title="更改图例" src="GUID-95B83A78-7153-4C0E-BC79-542B74103BD1-web.png"></div></ol></div></section></section><section class="section1 padded-anchor" id="GUID-BE8806AA-D3CC-4C21-8E56-C00E38ED2537" purpose="section1"><h2>发布</h2><p id="GUID-1E8C4AF4-53F2-40F1-91D4-3AECE3349C52">要发布地理处理服务，请执行以下步骤：</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_15ADD5058CD545A29C276282CC43B8F2"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_55270B3E0157481881A42761A04C32BD"><span purpose="cmd" id="GUID-D9E62847-28B5-45DC-9894-E92E57179BA0">在<span class="wintitle">结果</span> 窗口中，右键单击 <span class="usertext">Create Stream Network</span> 结果并选择<span class="uicontrol">共享为 <span class="greaterthan">&gt;</span> 地理处理服务</span>。</span></li><li purpose="step" id="ESRI_STEP_2B9EE3A7E42B440689C91B1E094896B0"><span purpose="cmd" id="GUID-89C5EE7F-69CE-4457-B4C9-2243F4A9DA7B">选择<span class="uicontrol">发布服务</span>，然后单击<span class="uicontrol">下一步</span>。</span></li><li purpose="step" id="ESRI_STEP_F67C69C80FAB4ACB998F4508C12A46C3"><span purpose="cmd" id="GUID-4E900C16-5EBA-4A75-BD30-4AE92BCF2ACE">选择在设置 GIS 服务器连接时创建的发布程序连接。将<span class="uicontrol">服务名称</span>更改为 <span class="usertext">StoweStreamNet</span> 并单击<span class="uicontrol">下一步</span>。</span></li><li purpose="step" id="ESRI_STEP_9A16C7DDC15F49449D9EF0E786C21B1F"><span purpose="cmd" id="GUID-008EFCC3-2487-4319-B839-8A8937763ADA">从<span class="uicontrol">使用现有文件夹</span>下拉列表中选择您发布地图时创建的 <span class="usertext">Stream</span> 文件夹，并单击<span class="uicontrol">继续</span>以打开<span class="wintitle">服务编辑器</span>。</span></li><li purpose="step" id="ESRI_STEP_FEF12403AC414834A1884D5B2C5A5B40"><span purpose="cmd" id="GUID-0E69521C-8AE8-4CE5-9F8A-6C18EF5ABD98">单击<span class="uicontrol">分析</span> <img purpose="img" placement="inline" alt="分析" title="分析" src="GUID-98E22D54-9700-4516-9382-BC63CF8DD4E7-web.png"> 按钮。应该没有错误。如果有，则纠正后才能继续进行。</span></li><li purpose="step" id="ESRI_STEP_EC9726313848444AA66ACE32053A2176"><span purpose="cmd" id="GUID-079CC2EB-A783-4F52-BCA2-95C1F087879A">打开<span class="uicontrol">参数</span>页面以设置服务的属性。</span><div class="substeps" id="ESRI_SUBSTEPS_4EAAEFCDAE80418AB319BA68FED2B0AA" purpose="substeps"><ol class="list-numbered" purpose="ol"><li purpose="substep" id="ESRI_SUBSTEP_B100970F834743D68C02F037F0618F96"><span purpose="cmd" id="GUID-63693DB6-C2F7-4723-AA56-7AE8E11E22BF">选中<span class="uicontrol">通过地图服务查看结果</span>复选框。此设置可使地理处理服务在返回要素外再返回一个输出的结果图像。</span></li><li purpose="substep" id="ESRI_SUBSTEP_793C4295345A44A492D0C37E7D5F15CD"><span purpose="cmd" id="GUID-D8EEC2FA-523B-41CE-A844-4792E359ECF0">或者，也可将消息级别设置为<span class="uicontrol">信息</span>以在运行服务时查看工具执行消息。</span></li></ol></div></li><li purpose="step" id="ESRI_STEP_89E5B2E3FBD446A4A5F5395113698B92"><span purpose="cmd" id="GUID-32E85B4D-7754-4E5F-9B12-752A99F908EB">单击<span class="uicontrol">发布</span> <img purpose="img" placement="inline" alt="发布" title="发布" src="GUID-6A9846D8-6F36-436A-85D4-B9D055A4760C-web.png"> 按钮以完成地理处理服务的发布。</span></li></ol></div></section></section><section class="section1 padded-anchor" id="GUID-9CEFECBA-A0EC-45C1-B482-3F4F3025D62A" purpose="section1"><h2>使用服务</h2><p id="GUID-6F74F086-D82D-468A-B63E-1F2E273B0E2A">要使用服务，请启动 ArcMap，然后从之前创建的用户连接添加 StoweHillshade 地图服务。从同一个 GIS 服务器连接中的 StoweStreamNet 地理处理服务打开 Creat Stream Network 任务。对参数<span class="uicontrol">最小上游面积（以公顷为单位）</span>赋值并执行任务。请不要添加 Create Stream Network 地图服务因为这是一个结果地图服务。</p><img purpose="img" placement="inline" alt="执行服务前的 ArcMap" title="执行服务前的 ArcMap" src="GUID-B0D28D35-7350-4E0C-AFAF-96C461846560-web.png"><img purpose="img" placement="inline" alt="执行了 Create Stream Network 任务之后的 ArcMap" title="执行了 Create Stream Network 任务之后的 ArcMap" src="GUID-E561D547-D688-442A-BD44-3C35C4F44036-web.png"></section><section class="section1 padded-anchor" id="ESRI_SECTION1_0C2DF40CB5444437BA6D41BF9FE59151" purpose="section1"><h2>配置您自己的河流网络任务</h2><p id="GUID-02F01D0B-57FE-499B-80F7-BD100A1760A9">为设置您自己的河流网络任务，您可以对此教程中收录的模型使用您自己的数据。为使用您自己的数据设置模型，您将需要使用<a class="xref xref" esrisubtype="extrel" hrefpfx="https://desktop.arcgis.com/zh-cn/arcmap/latest/tools" href="https://desktop.arcgis.com/zh-cn/arcmap/latest/tools/spatial-analyst-toolbox/flow-direction.htm"><span purpose="gptoolref">流向</span></a>和<a class="xref xref" esrisubtype="extrel" hrefpfx="https://desktop.arcgis.com/zh-cn/arcmap/latest/tools" href="https://desktop.arcgis.com/zh-cn/arcmap/latest/tools/spatial-analyst-toolbox/flow-accumulation.htm"><span purpose="gptoolref">流量</span></a>工具以预先计算栅格输入。您不需要创建山体阴影，尽管<a class="xref xref" esrisubtype="extrel" hrefpfx="https://desktop.arcgis.com/zh-cn/arcmap/latest/tools" href="https://desktop.arcgis.com/zh-cn/arcmap/latest/tools/spatial-analyst-toolbox/hillshade.htm"><span purpose="gptoolref">山体阴影</span></a>工具的输出提供了一个可供绘制河流网络的有效引用地图。</p><p id="GUID-93DFA5F7-1580-4411-904C-F9839105C2DE">一旦您创建了输入栅格后，模型内即更新这些输入。除此之外，您可能还希望给<span class="modelbuilder">最小上游面积（以公顷为单位）</span>参数添加一个合适的范围，您的用户将使用该参数提供数值。通过设定一个适合您的栅格的范围，您可以确保给出了有效输入。</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_683C441E204743C9AAE07B3A219A925C"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_2F68536D907E4ADDB6516F8E421DE8B0"><span purpose="cmd" id="GUID-16EA6456-CD93-4083-95A7-123E45BEE5CF">右键单击模型，然后选择<span class="uicontrol">属性</span>。</span></li><li purpose="step" id="ESRI_STEP_161038DA85634F738C31C737F14DBB77"><span purpose="cmd" id="GUID-FC5A2189-B721-4F80-8894-2198060EDC17">选择<span class="uicontrol">参数</span>选项卡并单击 <span class="usertext">Minimum upstream area in hectares parameter</span> 的过滤器标题下的<span class="uicontrol">无</span>值。</span></li><li purpose="step" id="ESRI_STEP_95E29E2B47C74A8DBF244855DDF51F92"><span purpose="cmd" id="GUID-56903FC3-00DC-4B7E-8A5A-4F042C42E492">从下拉列表中选择<span class="uicontrol">范围</span>。</span></li><li purpose="step" id="ESRI_STEP_DA73F10D5E114338B3530AE37781402E"><span purpose="cmd" id="GUID-10B4A070-FE52-4EBC-9929-FDC8ED873B6C">输入最小值和最大值，单击<span class="uicontrol">确定</span>接受更改。</span></li></ol></div></section><div class="panel trailer-1 note" id="GUID-299D7543-577E-4372-94FE-9BECF0A6E795"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-4620D11E-8F84-4F5F-B50D-CDD9B396F8AD">您所允许的最小值可影响返回的要素个数。如果您要创建的服务可能会产生大量的河流（要素），您可能需要在发布时增加<span class="uicontrol">返回给服务器的最大记录数</span>。或者，您将值设为 0 可返回 0 个要素，因为您使用结果地图服务来发布服务以绘制结果。</p></div><p id="GUID-FC41736A-2EB4-4F99-BA1E-A02008969298">发布前所做的最后一项修改是关于在分类符号系统中设置适当的中断值。中断主要取决于您研究区域的大小，而您将需要尝试不同的中断值。具有更多潜在河流的较大研究区域可能需要您创建具有更大值的中断。按照以上关于<a class="xref xref" href="../../../../../zh-CN/server/latest/publish-services/windows/gp-service-example-stream-network.htm#GUID-6583F67F-4A7F-4961-9168-9FF5E99AA8D2">设置输出符号系统</a>的说明操作。</p></section><section class="section2 leader-1" purpose="relatedtopics"><h4 class="trailer-0">相关主题</h4><ul class="pre-0 trailer-2"><li><a class="xref relatedtopic" href="../../../../../zh-CN/server/latest/publish-services/windows/a-quick-tour-of-the-geoprocessing-service-examples.htm">地理处理服务示例快速浏览</a></li><li><a class="xref relatedtopic" href="../../../../../zh-CN/server/latest/publish-services/windows/a-quick-tour-of-publishing-a-geoprocessing-service.htm">发布地理处理服务快速浏览</a></li></ul></section>
+			
+				<hr>
+				<!--googleoff: all-->
+				
+	
+        
+		    <p class="feedback right">
+		        <a id="afb" class="icon-ui-contact" href="/feedback/" data-langlabel="feedback-on-this-topic" >有关此主题的反馈?</a>
+		    </p>
+        
+	
+
+				<!--googleon: all-->
+			
+		</main>
+	</div>
+	
+	<!--googleoff: all-->
+	
+		
+			<div id="main-toc-large" class="column-5">
+			    <div class="panel font-size--2 tablet-hide trailer-1">
+			      <h5 class="trailer-half">在本主题中</h5>
+			      <ol class="list-plain pre-0 trailer-0"><li><a href="#GUID-835B399F-E9C1-4679-91BB-8555A28B026F">对应的文件夹</a></li><li><a href="#GUID-5BBB56B2-9785-4C06-979A-06C2DF3871B1">关于 Create Stream Network 任务</a></li><li><a href="#ESRI_SECTION1_564A7E4C79D04C72B7C0565F67CC1169">准备工作</a></li><li><a href="#GUID-34BDDCA4-A4B1-4985-9432-1ED93DAD8211">引用地图</a></li><li><a href="#GUID-9C0EAC25-465C-4C4D-BBCB-FB156E3601DD">模型和工具数据</a></li><li><a href="#GUID-6583F67F-4A7F-4961-9168-9FF5E99AA8D2">设置输出符号系统</a></li><li><a href="#GUID-BE8806AA-D3CC-4C21-8E56-C00E38ED2537">发布</a></li><li><a href="#GUID-9CEFECBA-A0EC-45C1-B482-3F4F3025D62A">使用服务</a></li><li><a href="#ESRI_SECTION1_0C2DF40CB5444437BA6D41BF9FE59151">配置您自己的河流网络任务</a></li></ol>
+			    </div>
+			    
+			    
+	  		</div>
+		
+    
+   <!--googleon: all-->
+
+
+
+
+          
+        </div>
+        <!-- ENDPAGECONTENT -->
+
+      </div>
+
+    </div>  <!-- End of wrapper -->
+
+  <footer class="footer leader-3 link-dark-gray" role="contentinfo">
+    <div class="grid-container">
+      <div class="row">
+        <nav class="column-6">
+          <h6 data-langlabel="arcgis-for-server">Arc<span>GIS Enterprise</span></h6>
+          <ul class="list-plain">
+            <li><a data-langlabel="home" href="../../../../../zh-CN/">主页</a></li>
+            <li><a data-langlabel="portal" href="../../../../../zh-CN/portal/">Portal</a></li>
+            <li><a data-langlabel="server" href="../../../../../zh-CN/server/">Server</a></li>
+            <li><a data-langlabel="data-store" href="../../../../../zh-CN/data-store/">Data Stores</a></li>
+            <li><a data-langlabel="cloud" href="../../../../../zh-CN/cloud/">云</a></li>
+            <li><a data-langlabel="apps" href="../../../../../zh-CN/apps/">应用程序</a></li>
+            <li><a data-langlabel="documentation" href="../../../../../zh-CN/documentation/">文档</a></li>
+          </ul>
+        </nav>
+
+        
+  <nav class="column-6">
+    <h6 data-langlabel="arcgis-platform">ArcGIS 平台</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="arcgis" href="//www.arcgis.com/">ArcGIS Online</a></li>
+      <li><a data-langlabel="arcgis-for-professionals" href="//pro.arcgis.com/">ArcGIS Pro</a></li>
+      <li><a data-langlabel="arcgis-for-server" href="//enterprise.arcgis.com/">ArcGIS Enterprise</a></li>
+      <li><a data-langlabel="arcgis-for-developers" href="https://developers.arcgis.com/">ArcGIS for Developers</a></li>
+      <li><a data-langlabel="arcgis-solutions" href="//solutions.arcgis.com/">ArcGIS Solutions</a></li>
+      <li><a data-langlabel="arcgis-marketplace" href="//marketplace.arcgis.com/">ArcGIS Marketplace</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <h6 data-langlabel="about-esri">关于 Esri</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="about-us" href="//www.esri.com/about-esri/">关于我们</a></li>
+      <li><a data-langlabel="careers" href="//www.esri.com/careers/">招贤纳士</a></li>
+      <li><a data-langlabel="insiders-blog" href="https://www.esri.com/about/newsroom/blog/">Esri 博客</a></li>
+      <li><a data-langlabel="user-conference" href="//www.esri.com/events/user-conference/index.html">用户大会</a></li>
+      <li><a data-langlabel="developer-summit" href="//www.esri.com/events/devsummit/index.html">开发者峰会</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <a class="esri-logo" href="//www.esri.com/" aria-label="Esri Home"></a>
+    <section class="footer-social-nav leader-1">
+            <a class="icon-social-twitter" aria-label="Esri on Twitter" href="https://twitter.com/Esri/"></a>
+            <a class="icon-social-facebook" aria-label="Esri on Facebook" href="https://www.facebook.com/esrigis/"></a>
+            <a class="icon-social-github" aria-label="Esri on GitHub" href="//esri.github.io/"></a>
+            <a class="icon-social-contact" aria-label="Contact Esri" href="//www.esri.com/about-esri/contact/"></a>
+    </section>
+	  
+  </nav>
+  
+  <div class="column-24 leader-1">
+    <p class="font-size--3"><a href="http://www.esri.com/legal/copyright-trademarks">Copyright &copy; 2019 Esri.</a> All rights reserved. | <a href="http://www.esri.com/legal/privacy/">隐私政策</a> | <a href="http://www.esri.com/legal/software-license">法律声明</a></p>
+  </div>
+  
+
+
+      </div>
+    </div>
+  </footer>
+  <!--googleoff: all-->
+
+  
+  
+	<script src="../../../../../zh-CN/assets/js/init.js" type="text/javascript"></script>
+	<!--<script src="../../../../../zh-CN/assets/js/drop-down.js" type="text/javascript"></script>-->
+	<script src="../../../../../zh-CN/assets/js/search/searchform.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/cdn/js/link-modifier.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/cdn/js/sitewide.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/cdn/js/libs/highlight.pack.js" type="text/javascript"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+
+
+  
+    
+
+  <script src="../../../../../zh-CN/cdn/js/affix.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    $(function () {
+          var appendFlg = true;
+
+          $("#bigmac")
+          .on("affixed.bs.affix", function (evt) {
+            if (appendFlg) {
+              $("<a class='crumb' href='#'>地理处理服务示例:河流网络</a>").insertAfter ($("#bigmac nav a").last());
+              appendFlg = false;
+            }
+          })
+          .on ("affix-top.bs.affix", function(evt) {
+            if (!appendFlg) {
+              $("#bigmac nav a").last().remove();
+            }
+            appendFlg = true;
+          })
+    })
+  </script>
+  
+        <script type="text/javascript">
+          window.doctoc = {
+            pubID: "1634",
+            tpcID: "198",
+            
+              prefix: "管理服务",
+              prefixUrl: "/zh-cn/server/latest/publish-services/windows/",
+          
+            hideToc: false
+          }
+        </script>
+
+        <script type="text/javascript" src="../../../../../zh-CN/server/latest/publish-services/windows/1634.js" ></script>
+        <script type="text/javascript" src="../../../../../zh-CN/cdn/calcite/js/protoc.js" ></script>
+        
+        
+
+  <noscript>
+        <p>
+            <a href="flisting.htm">flist</a>
+        </p>
+    </noscript>
+    <script type="text/javascript"></script>
+  
+  
+    
+    
+
+  </body>
+</html>

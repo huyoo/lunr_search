@@ -1,0 +1,642 @@
+
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>  <html class="ie lt-ie9 lt-ie8 lt-ie7 ie6" dir="ltr"> <![endif]-->
+<!--[if IE 7]>     <html class="ie lt-ie9 lt-ie8 ie7" dir="ltr"> <![endif]-->
+<!--[if IE 8]>     <html class="ie lt-ie9 ie8" dir="ltr"> <![endif]-->
+<!--[if IE 9]>     <html class="ie ie9" dir="ltr"> <![endif]-->
+<!--[if !IE]><!--> <html dir="ltr" lang="zh-CN"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>教程：使用 ArcPy 打印 Web 地图并导出矢量输出 PDF 文档&mdash;文档 
+  (10.7) | ArcGIS Enterprise 文档</title>
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+    <script>
+      var docConfig = {
+        locale: 'zh-CN'
+        ,localedir: 'zh-cn'
+        ,langSelector: ''
+        
+        ,relativeUrl: false
+        
+
+        ,searchformUrl: '/search/'
+        ,tertiaryNavIndex: ''
+
+        
+      };
+    </script>
+	 
+
+
+    
+    <!--[if lt IE 9]>
+      <script src="../../../../../zh-CN/cdn/js/libs/html5shiv.js" type="text/javascript"></script>
+      <script src="../../../../../zh-CN/cdn/js/libs/selectivizr-min.js" type="text/javascript"></script>
+      <script src="../../../../../zh-CN/cdn/js/libs/json2.js" type="text/javascript"></script>
+      <script src="../../../../../zh-CN/cdn/js/libs/html5shiv-printshiv.js" type="text/javascript" >
+
+    <![endif]-->
+
+     <!--[if lt IE 11]>
+    <script>
+      $$(document).ready(function(){
+        $$(".hideOnIE").hide();
+      });
+    </script>
+    <![endif]-->
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<link href="../../../../../zh-CN/assets/img/favicon.ico" rel="shortcut icon" >
+	<link href="../../../../../zh-CN/assets/css/screen.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/cdn/calcite/css/documentation.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/assets/css/print.css" media="print" type="text/css" rel="stylesheet" />
+
+	<!--
+	<link href="../../../../../zh-CN/assets/css/screen_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/assets/css/documentation/base_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/assets/css/print_l10n.css" media="print" type="text/css" rel="stylesheet" />
+	-->
+	
+	
+		<script src="../../../../../zh-CN/cdn/js/libs/jquery.1.9.1.min.js" type="text/javascript"></script>
+	
+	<script src="../../../../../zh-CN/cdn/js/libs/jquery.cookie.js" type="text/javascript"></script>
+	<link href="../../../../../zh-CN/cdn/css/colorbox.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/cdn/css/colorbox_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<script src="../../../../../zh-CN/cdn/js/libs/jquery.colorbox-min.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/assets/js/video-init.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/assets/js/sitecfg.js" type="text/javascript"></script>
+	
+		<script src="../../../../../zh-CN/assets/js/signIn.js" type="text/javascript"></script>
+	
+
+	<!--- Language Picker -->
+	<script src="../../../../../zh-CN/assets/js/locale/l10NStrings.js" type="text/javascript"></script>
+	
+		 
+	
+
+	<script src="../../../../../zh-CN/assets/js/calcite-web.js" type="text/javascript"></script>
+
+
+
+  <!--- search MD -->
+    <META name="description" content="本教程将演示使用 arcpy.mapping 进行 Web 地图打印和导出，该过程将输出包含服务图层矢量输出的方便打印的文档。"><META name="last-modified" content="2019-12-6"><META name="product" content="arcgis-server-windows,arcgis-enterprise-windows"><META name="sub_category" content="ArcGIS Server (Windows)"><META name="search-collection" content="help"><META name="content_type_label" content="帮助主题"><META name="sub_category_label" content="ArcGIS Server (Windows)"><META name="search-category" content="help-general"><META name="subject_label" content="服务"><META name="version" content="10.8"><META name="content_type" content="Help Topic"><META name="subject" content="SERVICES"><META name="content-language" content="zh-cn">
+    <!--- search MD -->
+
+  
+  <script src="../../../../../zh-CN/assets/js/switchers/server-1.js" type="text/javascript"></script>
+  
+      
+
+</head>
+
+<!--
+      pub: GUID-8CEA0D8A-F25F-4291-9901-6B9833BA91EE=15
+      tpc: GUID-68885A15-F5EE-4FCE-B28A-CFA5D8D6AFA3=18
+      -->
+
+
+<!-- variable declaration, if any -->
+<!-- can change following macro to set variable once we are on Jinja 2.8 -->
+
+
+
+
+
+<body class="claro zh-CN server">
+  
+
+  <!-- Drawer location -->
+  <div class="drawer drawer-left js-drawer" data-drawer="top-nav">
+        <nav class="drawer-nav" role="navigation">
+          <aside class="side-nav">
+            <h2 class="side-nav-title">Arc<span>GIS</span> Enterprise</h2>
+            <form id="helpSearchForm" class="margin-left-half margin-right-half leader-half trailer-half drawer-search-form" method="GET">
+              <input type="search" name="q"  placeholder="搜索 ArcGIS Server 10.8 帮助">
+              <input type="hidden" name="collection" value="help" />
+              <input type="hidden" name="product" value="arcgis-server-windows" />
+              <input type="hidden" name="version" value="10.8" />
+              <input type="hidden" name="language" value="zh-CN" />
+            </form>    
+             <a id="nav-portal" data-langlabel="portal" href="../../../../../zh-CN/portal/" class="side-nav-link">Portal</a>
+             
+            <a id="all-servers" data-langlabel="all-servers" href="../../../../../zh-CN/server/" class="side-nav-link">所有服务器</a>
+            <a id="gis-server" data-langlabel="gis-server" href="../../../../../zh-CN/server/" class="side-nav-link">GIS Server</a>
+            <a id="image-server" data-langlabel="image-server" href="../../../../../zh-CN/image/" class="side-nav-link">Image Server</a>
+            <a id="geo-analytics-server" data-langlabel="geo-analytics-server" href="../../../../../zh-CN/geoanalytics/" class="side-nav-link">GeoAnalytics Server</a>
+            <a id="geoevent-server" data-langlabel="geoevent-server" href="../../../../../zh-CN/geoevent/" class="side-nav-link">GeoEvent Server</a>
+            <a id="notebook-server" data-langlabel="notebook-server" href="../../../../../zh-CN/notebook/" class="side-nav-link">Notebook Server</a>
+            <a id="nav-data-store" data-langlabel="data-store" href="../../../../../zh-CN/data-store/" class="side-nav-link">Data Stores</a>
+            <a id="nav-cloud" data-langlabel="cloud" href="../../../../../zh-CN/cloud/" class="side-nav-link">云</a>
+            <a id="nav-apps" data-langlabel="apps" href="../../../../../zh-CN/apps/" class="side-nav-link">应用程序</a>
+            <a id="nav-doc" data-langlabel="documentation" href="../../../../../zh-CN/documentation/" class="side-nav-link">文档</a>
+
+          </aside>
+        </nav>
+    </div>
+
+    <!-- user navigation collapses to drawer on mobile -->
+    
+    <div class="drawer drawer-right js-drawer hide-if-logged-out logged-in-navigation" data-drawer="user-nav">
+      <nav class="drawer-nav">
+        <aside class="side-nav">
+          <a class="side-nav-link agolProfile" href="#">我的个人资料</a>
+          <a class="side-nav-link icon-ui-sign-out js-log-out" href="#">登出</a>
+        </aside>
+      </nav>
+    </div>
+    
+<!-- End of drawer -->
+
+  
+  <div class="wrapper">
+      <!--googleoff: all-->
+
+      <header class="top-nav" data-skin="learn">
+        <a class="skip-to-content" href="#skip-to-content">Skip To Content</a>
+        <div class="grid-container">
+          <div class="column-24">
+
+
+            <!--<div class="top-nav-title-wrapper text-center ">-->
+              <a href='../../../../../zh-CN/' class="top-nav-title tablet-hide"><span>Arc</span>GIS  Enterprise</a>
+              <a href='../../../../../zh-CN/' class="icon-ui-menu top-nav-title js-drawer-toggle tablet-show" data-drawer="top-nav"><span>Arc</span>GIS Enterprise</a>
+            <!--</div> -->
+
+          
+            <nav role="navigation" class="top-nav-list left tablet-hide">
+              <a id="nav-portal" data-langlabel="portal" href="../../../../../zh-CN/portal/" class="top-nav-link">Portal</a>
+
+                <div class="dropdown js-dropdown ">
+                  <a class="top-nav-link js-dropdown-toggle" tabindex="0" aria-haspopup="true" aria-expanded="false" href="#">Servers</a>
+                  <nav class="dropdown-menu featured" role="menu">
+                    <ul class="dropdown-sublist-featured">
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/get-started/latest/windows/additional-server-deployment.htm" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path  d="M42.92 6.1H4.12v8.566l.833.832-.835.833-.018 7.332.845.847-.825.824V33.9h25v5.2h-2v1.075H8.02v.8h19.1v.925h4.8v-.925H40v-.8h-8.08V39.1h-2v-5.2h13v-8.566l-.834-.834.835-.834v-7.332l-.835-.834.835-.834zm-11.8 35h-3.2v-1.2h3.2zm11-8H4.92v-7.434l.767-.766h35.668l.765.766zm0-9.766l-.766.766H5.666l-.766-.767.017-6.669.766-.764h35.671l.766.766zm0-9l-.766.766H5.687l-.766-.766V6.9h37.2zM19 11.9h-2v-.8h2zm-4 0h-2v-.8h2zm-4 0H9v-.8h2zm6 8.2h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9zm8 9h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9z"/></svg></span>
+                          <span class="sublink-text">所有服务器</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/server/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M45.98 33.575a.616.616 0 0 0-.335-.51l-3.362-2.03 3.362-2.031a.556.556 0 0 0 0-1.02l-11.1-6.704a1.293 1.293 0 0 0-1.112 0L22.33 27.982a.556.556 0 0 0 0 1.02l3.36 2.03-3.358 2.03a.556.556 0 0 0-.002 1.021l3.322 2.006-3.324 2.008a.555.555 0 0 0 .002 1.017l11.102 6.703a1.25 1.25 0 0 0 1.11.002l11.104-6.706a.556.556 0 0 0 0-1.02l-3.32-2.006 3.318-2.004a.607.607 0 0 0 .335-.509zM33.837 21.97c.026-.01.286-.005.29-.005l10.814 6.53-10.8 6.523c-.028.01-.284.005-.294.006l-10.813-6.53zm11.105 16.636l-10.8 6.523a2.564 2.564 0 0 1-.295.006l-10.81-6.529 3.39-2.047 7.004 4.23a1.083 1.083 0 0 0 .557.131 1.101 1.101 0 0 0 .554-.13l7.01-4.233zM34.14 40.098a2.545 2.545 0 0 1-.294.006l-10.812-6.53 3.43-2.073 6.97 4.208a1.25 1.25 0 0 0 1.107-.001l6.966-4.206 3.431 2.073zM9 8H7V7h2zm8 8h-2v-1h2zm-4-8h-2V7h2zm4 0h-2V7h2zm-4 8h-2v-1h2zm7.316 11.1H3.9v-6.434l.766-.766h35.668l.766.766v2.12l.8.483v-2.935l-.826-.826.826-.845v-6.329l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9h16.88a2.632 2.632 0 0 1 .336-.8zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zm0 8v-5.668l.766-.766h35.668l.766.766v5.67l-.746.764H4.666zM15 24v-1h2v1zm-4 0v-1h2v1zm-2-8H7v-1h2zm-2 8v-1h2v1z"/></svg></span>
+                          <span class="sublink-text">GIS Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/image/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 8h-2V7h2zm-4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm8 8h-2v1h2zm-8 0H7v1h2zm4 9v-1h-2v1zm-4 0v-1H7v1zm8 0v-1h-2v1zm4 3.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V21h-.8v-.334l-.766-.766H4.666l-.766.766V27.1H21zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zm40.234 4v21.8H23.1V23.1zm-.8 16.366L39.466 44.1h2.868l1.766-1.766zm-20.2-9.932l5.634-5.634h-2.868L23.9 26.666zm6.2-5.068L24.466 30.1h2.868l2.766-2.766zM28.466 30.1H30.1v-1.634zm2.434 0h6.2v-6.2h-6.2zm-7 7h6.2v-6.2h-6.2zm7 0h6.2v-6.2h-6.2zm0 6.434l5.634-5.634h-2.868L30.9 40.666zm7-7l5.634-5.634h-2.868L37.9 33.666zm1.634-5.634H37.9v1.634zm-8.634 7v1.634l1.634-1.634zm.566 6.2h2.868l2.766-2.766v-2.868zm6.434-3.566l2.634-2.634H37.9zM35.466 44.1H37.1v-1.634zm2.434 0h.434l5.766-5.766V37.9h-2.434L37.9 41.666zm6.2-8.634L42.466 37.1H44.1zm0-4L38.466 37.1h2.868l2.766-2.766zm0-7.566h-6.2v6.2h6.2zm-20.2 0v1.634l1.634-1.634zm0 20.2h6.2v-6.2h-6.2zm20.2 0v-.634l-.634.634z"/></svg></span>
+                          <span class="sublink-text">Image Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/geoanalytics/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 16h-2v-1h2zm-8 8v-1H7v1zm8 0v-1h-2v1zM13 7h-2v1h2zm4 0h-2v1h2zM9 7H7v1h2zm21.45 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V27.9h-1.464l-.801-.8H41.1v-6.434l-.766-.766H4.666l-.766.766V27.1h27.15zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM13 24v-1h-2v1zm0-9h-2v1h2zm-4 0H7v1h2zm26.672 27.148A1.87 1.87 0 0 1 35.9 43a1.91 1.91 0 1 1-3.763-.222l-9.845-3.414A1.88 1.88 0 0 1 21 39.9a1.9 1.9 0 1 1 1.474-3.084l4.692-2.346A1.878 1.878 0 0 1 27.1 34a1.902 1.902 0 0 1 1.9-1.9 1.867 1.867 0 0 1 .781.191l3.788-5.05A1.88 1.88 0 0 1 33.1 26a1.9 1.9 0 1 1 3.491 1.026l4.889 4.888c-.069.056-.144.1-.21.162a3.986 3.986 0 0 0-.358.402l-4.883-4.883A1.889 1.889 0 0 1 35 27.9a1.867 1.867 0 0 1-.781-.191l-3.788 5.049a1.868 1.868 0 0 1 .437.965l9.204.614c-.018.11-.049.218-.058.33A3.93 3.93 0 0 0 40 35c0 .046.01.09.01.135l-9.185-.612A1.913 1.913 0 0 1 29 35.9a1.889 1.889 0 0 1-1.474-.716l-4.692 2.346a1.878 1.878 0 0 1 .066.47 1.9 1.9 0 0 1-.105.625c-.007.02-.022.036-.03.056l9.63 3.34a1.87 1.87 0 0 1 2.786-.505l5.415-4.437c.067.108.127.22.204.322a3.9 3.9 0 0 0 .292.306zM33.9 26a1.092 1.092 0 0 0 .43.872 1.12 1.12 0 0 0 1.42-.068A1.1 1.1 0 1 0 33.9 26zm-6 8a1.1 1.1 0 0 0 2.196.093 1.135 1.135 0 0 0-.426-.965A1.087 1.087 0 0 0 29 32.9a1.101 1.101 0 0 0-1.1 1.1zm-5.8 4a1.098 1.098 0 1 0-.06.362A1.101 1.101 0 0 0 22.1 38zm13 5a1.1 1.1 0 1 0-2.2 0 1.1 1.1 0 0 0 2.2 0zm10.8-8a1.9 1.9 0 1 1-3.8 0c0-.053.003-.105.007-.158A1.9 1.9 0 0 1 45.9 35zm-.8 0a1.1 1.1 0 0 0-2.196-.093 1.153 1.153 0 0 0 .216.752A1.1 1.1 0 0 0 45.1 35z"/></svg></span>
+                          <span class="sublink-text">GeoAnalytics Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/geoevent/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M13 8h-2V7h2zm4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm12.418 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826v2.117c-.259-.177-.53-.337-.8-.497v-1.288l-.766-.766H4.666l-.766.766V27.1h17.933c-.148.26-.283.53-.415.8zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM9 24v-1H7v1zm4-9h-2v1h2zm0 9v-1h-2v1zm-4-9H7v1h2zm8 9v-1h-2v1zm16.9 2h-.8v8.9H39v-.8h-5.1zm.1-3.901a11.9 11.9 0 1 0 11.9 11.9 11.914 11.914 0 0 0-11.9-11.9zm0 23a11.1 11.1 0 1 1 11.1-11.1 11.112 11.112 0 0 1-11.1 11.1z"/></svg></span>
+                          <span class="sublink-text">GeoEvent Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/notebook/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M22 27.1H3.9v-6.434l.766-.766h18.576a5.262 5.262 0 0 1 .83-.8H4.666l-.766-.766v-5.668l.766-.766h35.668l.766.766V18h.8v-5.666l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9H22zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zM9 8H7V7h2zm8 0h-2V7h2zm-4 0h-2V7h2zm2 16v-1h2v1zm-4 0v-1h2v1zm-4 0v-1h2v1zm0-8v-1h2v1zm8 0v-1h2v1zm-4 0v-1h2v1zm18.9 8.1h-1.8v1.8h1.8zm-.8 1h-.2v-.2h.2zm15.498-4.48a2.727 2.727 0 0 0-1.62-.5v-.02H27.25a3.154 3.154 0 0 0-3.15 3.15V38.1h-1.68a3.386 3.386 0 0 0-2.872 1.58 3.49 3.49 0 0 0-.157 3.419 3.241 3.241 0 0 0 2.954 1.801h15.161a3.404 3.404 0 0 0 3.394-3.4V26.9h5v-3.65a3.224 3.224 0 0 0-1.302-2.63zM22.345 44.1a2.44 2.44 0 0 1-2.23-1.341 2.706 2.706 0 0 1 .11-2.65A2.588 2.588 0 0 1 22.42 38.9h12.89a3.395 3.395 0 0 0 0 5.2zM40.1 23.192V41.5a2.6 2.6 0 1 1-2.6-2.6v-.8H24.9V23.25a2.352 2.352 0 0 1 2.35-2.35h13.795a3.183 3.183 0 0 0-.945 2.292zm5 2.908h-4.2v-2.908a2.274 2.274 0 0 1 1.44-2.18 1.944 1.944 0 0 1 1.791.259 2.423 2.423 0 0 1 .97 1.979zm-17.1 5h9v.8h-9zm0 3h7v.8h-7zm0-6h9v.8h-9zm4-3h5v.8h-5z"/></svg></span>
+                          <span class="sublink-text">Notebook Server</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+
+              <a id="nav-data-store" data-langlabel="data-store" href="../../../../../zh-CN/data-store/" class="top-nav-link">Data Stores</a>
+              <a id="nav-cloud" data-langlabel="cloud" href="../../../../../zh-CN/cloud/" class="top-nav-link">云</a>
+              <a id="nav-apps" data-langlabel="apps" href="../../../../../zh-CN/apps/" class="top-nav-link">应用程序</a>
+            </nav>
+
+
+            
+            
+            
+
+            <div class="margin-left-1 top-nav-list right hide-if-logged-in logged-out-navigation">
+               
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+              
+              <a data-langlabel="sign-in" id="login-link" class="icon-ui-user top-nav-link link-blue login-link" href="#">登录</a>
+              
+            </div>
+
+            
+            <nav class="margin-left-1 top-nav-list right hide-if-logged-out logged-in-navigation">
+              
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+             
+              <div class="dropdown js-dropdown right">
+
+                <div class="tablet-show top-nav-link">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a href="#" data-drawer="user-nav" class="user-nav-name js-drawer-toggle" data-first-name></a>
+                </div>
+
+                <div class="tablet-hide top-nav-link js-dropdown-toggle">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a class="user-nav-name top-nav-dropdown dropdown-btn" data-first-name>&nbsp;</a>
+                </div>
+
+                <nav class="dropdown-menu dropdown-right">
+                
+                  <a class="dropdown-link agolProfile" id="agolProfile" href="#">我的个人资料</a>
+                  <a class="dropdown-link js-log-out" id="agolLogout" href="#">登出</a>
+                </nav>
+              </div>
+            </nav>
+            
+
+            
+          </div>
+        </div>
+      </header>
+
+      <div class="js-search search-overlay">
+        <div class="search-content" role="dialog" aria-labelledby="search">
+          <form method="GET" id="helpSearchForm">
+            <label>
+              搜索 ArcGIS Server 10.8 帮助
+              <div class="search-bar">
+                <input type="search" name="q"  placeholder="搜索 ArcGIS Server 10.8 帮助" class="search-input js-search-input">
+                <input type="hidden" name="collection" value="help" />
+                <input type="hidden" name="product" value="arcgis-server-windows" />
+                <input type="hidden" name="version" value="10.8" />
+                <input type="hidden" name="language" value="zh-CN" />
+              </div>
+            </label>
+            <input type="hidden" name="relativePath" value="../../../../../" /><button type="submit" class="btn btn-large right">搜索</button>
+          </form>
+        </div>
+      </div>
+
+      <!--googleon: all-->
+
+      <div id="skip-to-content">
+        <!--googleoff: all-->
+        <header class="sub-nav sub-nav-learn">
+          <div class="grid-container">
+            
+            <div class="column-24">
+              <div style="display:table;" class="sdk-home-banner">
+                <div class="sdk-home-banner-content">
+                  <h1 class="sub-nav-title link-white">ArcGIS Server</h1>
+                </div>
+              </div>
+            </div>
+
+            <div class="column-24">
+              <nav class='sub-nav-list tablet-hide'><a class="sub-nav-link" href="../../../../../zh-CN/server/" target="_top" title="ArcGIS Server 的概述和文档">主页</a><a class="sub-nav-link" href="../../../../../zh-CN/server/latest/get-started/windows/" target="_top" title="了解有关 ArcGIS Server 和服务器角色的信息">简介</a><a class="sub-nav-link" href="../../../../../zh-CN/server/latest/deploy/windows/" target="_top" title="构建、配置和升级部署">部署</a><a class="sub-nav-link" href="../../../../../zh-CN/server/latest/manage-data/windows/" target="_top" title="管理企业的空间数据">管理数据</a><a class="sub-nav-link" href="../../../../../zh-CN/server/latest/publish-services/windows/" target="_top" title="使用 GIS 服务">管理服务</a><a class="sub-nav-link is-active" href="../../../../../zh-CN/server/latest/create-web-apps/windows/" target="_top" title="创建 Web 应用程序和可打印地图">共享</a><a class="sub-nav-link" href="../../../../../zh-CN/server/latest/administer/windows/" target="_top" title="管理和保护 ArcGIS Server">管理</a><a class="sub-nav-link" href="../../../../../zh-CN/server/latest/develop/windows/" target="_top" title="构建扩展模块并自动执行常见任务">开发</a></nav><select class='tablet-show select-full trailer-half js-select-nav'><option value="../../../../../zh-CN/server/">主页</option><option value="../../../../../zh-CN/server/latest/get-started/windows/">简介</option><option value="../../../../../zh-CN/server/latest/deploy/windows/">部署</option><option value="../../../../../zh-CN/server/latest/manage-data/windows/">管理数据</option><option value="../../../../../zh-CN/server/latest/publish-services/windows/">管理服务</option><option selected="true" value="../../../../../zh-CN/server/latest/create-web-apps/windows/">共享</option><option value="../../../../../zh-CN/server/latest/administer/windows/">管理</option><option value="../../../../../zh-CN/server/latest/develop/windows/">开发</option></select>
+            </div>
+
+          </div>
+        </header>
+        <!--googleon: all-->
+       
+        <!-- content goes here -->
+        <div class="grid-container ">
+          
+
+            
+              
+  <!--BREADCRUMB-BEG--><div id="bigmac" class="sticky-breadcrumbs trailer-2" data-spy="affix" data-offset-top="180"> </div><!--BREADCRUMB-END-->
+  <!--googleoff: all-->
+    <div class="column-5 tablet-column-12 trailer-2 ">
+      <aside class="js-accordion accordion reference-index" aria-live="polite" role="tablist">
+        <div></div>
+      </aside>
+
+      <div class="js-sticky scroll-show tablet-hide leader-1 back-to-top" data-top="0" style="top: 0px;">
+        <a href="#" class="btn btn-fill btn-clear">返回顶部</a>
+      </div>
+    </div>
+  <!--googleon: all-->
+  
+            
+            
+            
+	
+		<div class="column-13  pre-1 content-section">
+	
+		<header class="trailer-1"><h1>教程：使用 ArcPy 打印 Web 地图并导出矢量输出 PDF 文档</h1></header>
+
+		 
+	<!--googleoff: all-->
+	
+		
+				<aside id="main-toc-small" class="js-accordion accordion tablet-show trailer-1">
+			      <div class="accordion-section">
+			        <h4 class="accordion-title">在本主题中</h4>
+			        <div class="accordion-content list-plain">
+			          <ol class="list-plain pre-0 trailer-0"><li><a href="#ESRI_SECTION1_2741330F1D9D463F9B37FF0761C9346E">获取矢量数据</a></li><li><a href="#ESRI_SECTION1_6951E2D316D74A0BA57CCEDDA5F187AB">创建 Python 脚本</a></li><li><a href="#ESRI_SECTION1_368046B9955E4565A778A445B9A2A2CE">创建 Python 脚本工具 </a></li><li><a href="#ESRI_SECTION1_F9773C70E38649099B1C9AF99F279461">执行工具 </a></li><li><a href="#ESRI_SECTION1_6D6567B3B82542009C208F5E61023358">发布结果</a></li><li><a href="#ESRI_SECTION1_810C4DF5DA6C4982ABF8F62230A61589"><ph translate="no" varid="ArcGISAPIforJavaScript">ArcGIS API for JavaScript</ph> 示例代码</a></li><li><a href="#ESRI_SECTION1_C57A26287B9F4E4396E4F5CA8AA5A211">运行 Web 应用程序</a></li></ol>
+			        </div>
+			      </div>
+			     </aside>
+		
+    
+   <!--googleon: all-->
+
+
+		<main>
+			
+	
+    	
+    
+
+
+			<div class="wfheader"><span class="wfmetahead">复杂程度： </span><span class="wfmetacontent">中级</span><span class="wfmetahead">数据要求： </span><span class="wfmetacontent">ArcGIS.com</span><span purpose="wfdatapath">
+</span>
+</div><p id="GUID-DB15B9C0-6FBC-436E-B246-44086AD72E6B"> 在本教程中，您将构建 <a class="xref xref" href="../../../../../zh-CN/server/latest/create-web-apps/windows/about-creating-web-gis-applications.htm">web GIS 应用程序</a>，使最终用户能够导航至感兴趣区域并单击<span class="uicontrol">打印</span>按钮。输出为方便打印的 PDF 文档，其中包含了服务图层矢量输出。</p><p id="GUID-7859B430-5A70-4208-A6CF-D47A31C4E26A">使用 <a class="xref xref" href="../../../../../zh-CN/server/latest/create-web-apps/windows/printing-in-web-applications.htm"><span class="ph">ArcGIS API for JavaScript</span></a> 中开箱即用的 <a target="_blank" class="xref xref" href="http://links.esri.com/help/javascript/arcgis">PrintingTools</a> 服务及其客户端打印微件从 Web 应用程序中进行导出，可输出高质量的服务图层图像。但是，您可能需要矢量输出。例如，矢量 PDF 输出在 PDF 查看应用程序中支持以下功能：切换图层可见性、查看要素属性以及查看地图坐标。在将要构建的 Web 应用程序中，您会输出世界地形图底图服务的矢量化表示。世界地形图底图服务的小区域的矢量子集是公开提供的。</p><div class="panel trailer-1 note" id="GUID-DFB8D4CB-7BC9-4A43-8BB8-3D99B73F595E"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-32FC3EA3-294E-4D9A-88EE-D31582223FD7">要生成含有本地矢量数据而非服务图层图像的输出文档，您必须具有访问相应矢量数据的权限。</p></div><p id="GUID-6E4A0F30-AAE2-4826-8B7D-E958A200F571">下图显示了将要构建的 Web 应用程序。</p><figure class="fig" href="#"><img src="GUID-FC895CB0-7FD1-4F16-B88D-2120931E3D8F-web.png" alt="Web 应用程序" title="Web 应用程序"></figure><p id="GUID-2167981A-2F9A-4595-BECE-771FEF6118F2">Web 应用程序中<span class="uicontrol">打印</span>按钮后的代码使用了 <span class="ph">ArcGIS API for JavaScript</span> 打印任务。您将创建 Python 脚本，该脚本将作为打印任务所用的地理处理服务发布。Python 脚本使用 <a class="xref xref" esrisubtype="extrel" hrefpfx="https://desktop.arcgis.com/zh-cn/arcmap/latest/analyze" href="https://desktop.arcgis.com/zh-cn/arcmap/latest/analyze/arcpy-mapping/convertwebmaptomapdocument.htm">arcpy.mapping 模块</a>中的 <a class="xref xref" esrisubtype="extrel" hrefpfx="https://desktop.arcgis.com/zh-cn/arcmap/latest/analyze" href="https://desktop.arcgis.com/zh-cn/arcmap/latest/analyze/arcpy-mapping/introduction-to-arcpy-mapping.htm"><span class="usertext">ConvertWebMapToMapDocument</span></a> 函数，该函数会将完整状态的 web 地图插入过渡的模板地图文档。
+模板包含了地图服务中所有可能图层的矢量化表示。<span class="usertext">arcpy.mapping</span> 模块还可用于移除服务图层并导出至 PDF 文档，同时将已过渡的本地矢量数据保留在模板地图文档中。</p><p id="GUID-0C51D94A-844F-4BEC-A372-F5E7BFF9F0DB">输出为方便打印的 PDF 文档，其中包含了本地矢量数据而非服务图层的图像。</p><p id="GUID-5996E07E-8E28-49DA-AF95-59ECD6D205ED">要完成本教程，应熟悉 <span class="usertext">arcpy.mapping</span> 模块、<span class="ph">ArcGIS API for JavaScript</span>、<span class="ph">ArcMap</span> 和 <span class="ph">ArcGIS Server</span>。您还应逐渐熟悉在 web 应用程序中打印。以下主题会非常有帮助：<ul class="seealso"><li><a class="xref xref" href="../../../../../zh-CN/server/latest/create-web-apps/windows/printing-in-web-applications.htm">在 web 应用程序高级打印中</a></li><li><a class="xref xref" href="../../../../../zh-CN/server/latest/create-web-apps/windows/advanced-printing-for-web-maps.htm">打印 web 地图</a></li></ul></p><section class="section1 padded-anchor" id="ESRI_SECTION1_2741330F1D9D463F9B37FF0761C9346E" purpose="section1"><h2>获取矢量数据</h2><p id="GUID-9D6F7AC0-FE35-4E7D-9512-5A51F0AA1EDD">下载包含已过渡地图文档模板中使用的矢量数据的压缩文件。在此之前，需要确保存在一个 <span class="ph">ArcGIS Server</span> 可以在其中定位将用于 web 应用程序的模板地图文档和数据的文件夹结构。假定存在注册到 <span class="ph">ArcGIS Server</span> 的文件夹。有关将数据注册到 <span class="ph">ArcGIS Server</span> 的详细信息，请参阅以下内容： </p><ul class="seealso"><li><a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/server/latest/administer" href="../../../../../zh-CN/server/latest/administer/windows/making-your-data-accessible-to-arcgis-server.htm">使数据可供 <span class="ph">ArcGIS Server</span> 访问</a></li><li><a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/server/latest/manage-data" href="../../../../../zh-CN/server/latest/manage-data/windows/overview-register-data-with-arcgis-server.htm">关于将数据注册到 <span class="ph">ArcGIS Server</span></a></li><li><a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/server/latest/manage-data" href="../../../../../zh-CN/server/latest/manage-data/windows/registering-your-data-with-arcgis-server-using-arcgis-for-desktop.htm">使用 <span class="ph">ArcGIS Server</span> 将数据注册到 <span class="ph">ArcMap</span></a></li></ul><div class="panel trailer-1" id="GUID-C22E0625-E09A-4317-BF56-1F37C082F50B"><h5 class="icon-ui-description trailer-0">提示：</h5><p id="GUID-5453C845-09F4-4AB8-AC7D-C208A47FCAB4">在 <span class="usertext">ConvertWebMapToMapDocument</span> 函数中使用模板地图文档时，最佳做法是使用注册到 <span class="ph">ArcGIS Server</span> 的数据。如果选择使用未注册的数据，那么模板地图文档和数据将打包复制到服务器。在打包过程中，数据可能移动并带着相对路径重新指向
+<span class="usertext">ConvertWebMapToMapDocument</span> 无法解析的文件夹结构。有关详细信息，请参阅 <a class="xref xref" esrisubtype="extrel" hrefpfx="https://desktop.arcgis.com/zh-cn/arcmap/latest/analyze" href="https://desktop.arcgis.com/zh-cn/arcmap/latest/analyze/arcpy-mapping/convertwebmaptomapdocument.htm">ConvertWebMapToMapDocument</a>。</p> 
+</div></section><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="GUID-EBD80D88-904E-4DB7-B5F5-D9662AC1C290"><ol class="list-numbered" purpose="ol"><li purpose="step" id="GUID-F0DF0BB2-E438-455A-8055-94FBAA36BC44"><span purpose="cmd" id="GUID-42DCFED0-B9E1-47BB-817F-B54F448ADC33">打开新的空 <span class="ph">ArcMap</span> 会话。</span></li><li purpose="step" id="ESRI_STEP_EE7428C67C49419195C605B56B4ACE4A"><span purpose="cmd" id="GUID-E22A499C-682F-4382-962C-ED732F05A5C2">在<span class="uicontrol">目录</span>窗口中，浏览至已注册文件夹。</span></li><li purpose="step" id="ESRI_STEP_6ED0999A76A446B08EAEDA68EEDD2538"><span purpose="cmd">在已注册文件夹中创建一个名为 BasicTutorial 的新文件夹。</span></li><li purpose="step" id="ESRI_STEP_72F2BD63B6884E288774B967BBEFEE29"><span purpose="cmd" id="GUID-38B73DE8-A78F-4E2B-8FF5-E4BDA5ACC329">在 Web 浏览器中，转到<a target="_blank" class="xref xref" href="http://links.esri.com/arcpy_mapping_basic_tutorial_vector_data">世界地形图模板下载</a>。</span></li><li purpose="step" id="ESRI_STEP_9CC2735143E64B8096427138FF37CC6A"><span purpose="cmd" id="GUID-6067FF55-4A84-4F5D-9DA3-4A3817A39CE3">通过单击<span class="uicontrol">打开 &gt; 下载</span>按钮，将世界地形图模板压缩文件下载至您的计算机。</span></li><li purpose="step" id="ESRI_STEP_4ECF1ADC141A462AB7776D4DBCF16643"><span purpose="cmd" id="GUID-D7CA32DC-1606-4110-8231-98E63888E4E2">出现提示时，请选择<span class="uicontrol">另存为</span>并将压缩文件保存到已注册文件夹中的 BasicTutorial 文件夹。</span></li><li purpose="step" id="ESRI_STEP_A54082D4D41B472C81D32F51FACB392A"><span purpose="cmd" id="GUID-3EE54996-B100-40DC-97B7-963A03B8B3C1">在 <span class="ph">ArcMap</span> 中打开<span purpose="gptoolref"><a class="xref xref" esrisubtype="extrel" hrefpfx="https://desktop.arcgis.com/zh-cn/arcmap/latest/tools" href="https://desktop.arcgis.com/zh-cn/arcmap/latest/tools/data-management-toolbox/extract-package.htm">提取包</a></span>地理处理工具。</span><div class="info" purpose="info"><p id="GUID-B80EBE7D-A79B-47ED-9445-31B1C0A74E5E">该工具会将压缩地图模板解包到已注册的文件夹中。<span class="usertext">in_package</span> 参数是您刚刚下载的压缩文件。<span class="usertext">output_folder</span> 参数是已注册文件夹中的 BasicTutorial 文件夹。</p></div></li><li purpose="step" id="ESRI_STEP_FC215D10DA4046EC80EB4E7A62FB4187"><span purpose="cmd" id="GUID-E665612A-84C0-4D54-967F-FDB260B61D1D">单击<span class="uicontrol">确定</span>执行该工具。</span><div class="stepresult" purpose="stepresult"><p id="GUID-B93D1B22-1E17-43DF-9B92-F0728BC0CE13">已注册文件夹应类似于以下屏幕截图：</p><p id="GUID-819E1C70-F898-4FA5-97B3-84889DDFAE9E"><figure class="fig" href="#"><img src="GUID-C20B0E1A-4989-4C25-AF87-8824C89F04D3-web.png" alt="已注册文件夹" title="已注册文件夹"></figure></p><div class="panel trailer-1 note" id="GUID-71A5E37A-8287-43BB-8D2F-44E5E4A6C6BD"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-EF15F807-5444-4C3E-80C3-F95986F46B03">在上方的屏幕截图中，已注册文件夹名为 MyDataStore。您可以根据意愿命名已注册文件夹。</p></div></div></li></ol></div><section class="result padded-anchor" id="ESRI_RESULT_5D155B945CCE47389200BA067F317738" purpose="result"><p id="GUID-747BE44E-8E87-4757-B016-49CCADC2F580"><span class="usertext">WorldTopo_103Templatev2_288k_to_1k.mxd</span> 地图文档现已准备就绪，可以在 Web 应用程序中使用。</p></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_6951E2D316D74A0BA57CCEDDA5F187AB" purpose="section1"><h2>创建 Python 脚本</h2><p id="GUID-709DA87D-E430-4702-B6EF-E29A14D930B7">创建将用作自定义地理处理打印服务的 Python 脚本。</p><p id="GUID-62673E4F-75BF-41BD-A49B-13BFEE5B3D94">自定义地理处理打印服务中的 Python 脚本执行 <a class="xref xref" esrisubtype="extrel" hrefpfx="https://desktop.arcgis.com/zh-cn/arcmap/latest/analyze" href="https://desktop.arcgis.com/zh-cn/arcmap/latest/analyze/arcpy-mapping/convertwebmaptomapdocument.htm"><span class="usertext">ConvertWebMapToMapDocument</span></a> 函数，可将 web 地图（JSON 格式）转换为地图文档。该脚本随后会移除输出地图文档中的服务图层，保留与 Web 地图 JSON 中服务图层相对应的矢量图层。Web 地图 JSON 还包含了 Web 应用程序中的地图范围。最后，该脚本将地图文档导出至 PDF 文档。</p></section><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_BA868FC1D4AF4D7C8332B165CFE54063"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_81FBE3464B124D9B9F8DF7A867039472"><span purpose="cmd" id="GUID-9A4E865F-8654-4721-8BD7-0B278410C23F">打开任意的 <a class="xref xref" esrisubtype="extrel" hrefpfx="https://desktop.arcgis.com/zh-cn/arcmap/latest/analyze" href="https://desktop.arcgis.com/zh-cn/arcmap/latest/analyze/executing-tools/writing-python-scripts.htm">Python IDE</a>，如 IDLE（<span class="ph">ArcGIS Desktop</span> 附带）。</span></li><li purpose="step" id="ESRI_STEP_76E51AF4C8BB44EBA3151D5986BAADA3"><span purpose="cmd" id="GUID-EBBFF4E2-D963-401C-AD23-1AD0D02816F2">将以下代码复制并粘贴到新的 Python 脚本中：</span></li><div class="stepinfo" purpose="stepinfo"><section class="codeblock padded-anchor" purpose="codeblock"><div class="codeblockbody"><pre><code class="python">import arcpy
+import os
+import uuid
+# Input Web Map json
+Web_Map_as_JSON = arcpy.GetParameterAsText(0)
+# The template location in the server data store
+templateMxd = r&quot;\\MyComputer\MyDataStore\BasicTutorial\v103\WorldTopo_103Templatev2_288k_to_1k.mxd&quot;
+   
+# Convert the Web Map to a map document
+result = arcpy.mapping.ConvertWebMapToMapDocument(Web_Map_as_JSON, templateMxd)
+mxd = result.mapDocument
+# Reference the data frame that contains the web map
+# Note: ConvertWebMapToMapDocument renames the active data frame in the template_mxd &quot;Webmap&quot;
+df = arcpy.mapping.ListDataFrames(mxd, 'Webmap')[0]
+# Remove the service layer
+# This will just leave the vector layers from the template
+for lyr in arcpy.mapping.ListLayers(mxd, data_frame=df):
+    if lyr.isServiceLayer:
+        arcpy.mapping.RemoveLayer(df, lyr)
+        
+# Use the uuid module to generate a GUID as part of the output name
+# This will ensure a unique output name
+output = 'WebMap_{}.pdf'.format(str(uuid.uuid1()))
+Output_File = os.path.join(arcpy.env.scratchFolder, output)
+# Export the Web Map
+arcpy.mapping.ExportToPDF(mxd, Output_File) 
+# Set the output parameter to be the output file of the server job
+arcpy.SetParameterAsText(1, Output_File)
+# Clean up - delete the map document reference
+filePath = mxd.filePath
+del mxd, result
+os.remove(filePath)</code></pre></div></section></div><li purpose="step" id="ESRI_STEP_A6360660A4674A869726A4A556B3F9AB"><span purpose="cmd" id="GUID-DD72CF6B-D730-42EA-9BB3-7A679EA3E6DD">将 <span class="usertext">templateMxd</span> 变量更改为包含模板地图文档的已注册文件夹中的文件夹 UNC 路径。</span></li><div class="stepinfo" purpose="stepinfo"><div class="panel trailer-1 note" id="GUID-D596CAD8-4725-493B-8C1B-B0BB35CB0B80"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-838822F6-6224-42C6-9D5E-990C50BAF267">如果 <span class="ph">ArcGIS Server</span>、<span class="ph">ArcMap</span> 和已注册文件夹都在同一台计算机上，则无需已注册文件夹的 UNC 路径。但可以使用绝对路径。</p></div></div><li purpose="step" id="ESRI_STEP_2CDD18F385B34F8FAFC40917803DF726"><span purpose="cmd" id="GUID-34BC3B12-FF52-45C9-9999-CA71A834DD29">保存 Python 脚本。命名脚本 <span class="usertext">BasicTutorial.py</span>。将其保存至已注册文件夹中名为 WebApp 的文件夹内。</span></li></ol></div></section><section class="section1 padded-anchor" id="ESRI_SECTION1_368046B9955E4565A778A445B9A2A2CE" purpose="section1"><h2>创建 Python 脚本工具 </h2><p id="GUID-20B4FA25-81CF-4919-8E00-684B6735124D">创建运行 <span class="usertext">BasicTutorial.py</span> 脚本的自定义地理处理工具。</p></section><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_B115048AC8084DF38ACECDFF6F338CAB"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_185A9B1A7E3F466E80CE9A1B577CADF3"><span purpose="cmd" id="GUID-39F866D8-1368-4802-97AA-8A26B3A35A4E">在 <span class="ph">ArcMap</span> 的<span class="uicontrol">目录</span>窗口中，浏览至已注册文件夹目录中的 WebApp 文件夹。</span></li><li purpose="step" id="ESRI_STEP_5EE6D19DD0D349B48150C62861F3CC4C"><span purpose="cmd" id="GUID-83FBFEDD-4323-45F6-9463-09ECE9763D7C">右键单击 WebApp 文件夹并单击<span class="uicontrol">新建 <span class="greaterthan">&gt;</span> 工具箱</span>。</span></li><li purpose="step" id="ESRI_STEP_CDB93B2A47CC4A808BA66E16F8363206"><span purpose="cmd">将该工具箱命名为 <span class="usertext">BasicTutorial</span>。</span></li><li purpose="step" id="ESRI_STEP_F7892C523C0146718980F0C4D6F2C962"><span purpose="cmd" id="GUID-AB90572E-223F-4253-8FBA-FF4E020DCB07">右键单击 BasicTutorial 工具箱并单击<span class="uicontrol">项目描述</span>。</span></li><li purpose="step" id="ESRI_STEP_D2C6F72D7E7F4ED9AFE34428E9F2982E"><span purpose="cmd" id="GUID-EFFA4F45-5BBF-4741-B4E7-0E30EA65B6E6">在<a class="xref xref" esrisubtype="extrel" hrefpfx="https://desktop.arcgis.com/zh-cn/arcmap/latest/analyze" href="https://desktop.arcgis.com/zh-cn/arcmap/latest/analyze/creating-tools/a-quick-tour-of-documenting-tools-and-toolboxes.htm"><span class="uicontrol">项目描述</span></a>对话框中，使用所选文本填充<span class="uicontrol">标签</span>和<span class="uicontrol">摘要</span>选项。或者填写其他选项描述。</span></li><li purpose="step" id="ESRI_STEP_B36577A4ECB34652B8657D47B48C2B52"><span purpose="cmd" id="GUID-38A13F02-A8EA-4D83-BF32-387F907487FA">单击<span class="uicontrol">保存</span>并关闭<span class="uicontrol">项目描述</span>对话框。</span></li><li purpose="step" id="ESRI_STEP_43906BED5CF146E89FFA6514A6DFED81"><span purpose="cmd" id="GUID-7F7CE11D-6C89-48CE-A332-69864152920E">在<span class="uicontrol">目录</span>窗口中，右键单击 BasicTutorial 工具箱并单击<span class="uicontrol">添加 <span class="greaterthan">&gt;</span> 脚本</span>。</span></li><li purpose="step" id="ESRI_STEP_579DE39275E542CDA13899CC2924A951"><span purpose="cmd" id="GUID-2266A939-3951-47AF-80EB-1ADB83A81181">在<span class="uicontrol">添加脚本</span>对话框中，为<span class="uicontrol">名称</span>和<span class="uicontrol">标注</span>选项输入 <span class="usertext">BasicTutorial</span>。</span></li><li purpose="step" id="ESRI_STEP_79DC848E446042BEA9AACB814118829F"><span purpose="cmd" id="GUID-6CC7D95E-DF4D-4BBE-A702-434D4685D337">单击<span class="uicontrol">下一步</span>。</span></li><li purpose="step" id="ESRI_STEP_DFE1C908CC534801A7A58271E5732991"><span purpose="cmd" id="GUID-02743FB6-3259-4F84-94E4-2A2E10732EA4">对于<span class="uicontrol">脚本文件</span>，浏览至已注册文件夹中的 WebApp 文件夹并选择 <span class="usertext">BasicTutorial.py</span>。</span></li><li purpose="step" id="ESRI_STEP_F5BB767DCC7B4AD2A938207E3F938987"><span purpose="cmd" id="GUID-6A6D3A63-5F2C-4482-B44F-AC41FA2604CD">单击<span class="uicontrol">下一步</span>。</span></li><li purpose="step" id="ESRI_STEP_768281E5786D4A30900ADEFEC58C336C"><span purpose="cmd" id="GUID-382D49A1-4FE5-4362-B256-5380D8D90ABB">将两个<a class="xref xref" esrisubtype="extrel" hrefpfx="https://desktop.arcgis.com/zh-cn/arcmap/latest/analyze" href="https://desktop.arcgis.com/zh-cn/arcmap/latest/analyze/creating-tools/setting-script-tool-parameters.htm">参数</a>添加至脚本工具。</span><div class="substeps" id="ESRI_SUBSTEPS_5ED6CABCA5FA4B09B3126EA2AD573893" purpose="substeps"><ol class="list-numbered" purpose="ol"><li purpose="substep" id="ESRI_SUBSTEP_228BDFD0531749A8B816BC6B4C142AAC"><span purpose="cmd" id="GUID-5F39A014-E061-4BE2-A296-9149BAC20EAE">添加 <span class="usertext">Web_Map_as_JSON</span> 参数。</span><div class="stepresult" purpose="stepresult"><p id="GUID-550B6D4D-DF8E-4C9B-93CC-A0E78DF5786A">该参数采用要在地图在 Web 应用程序中显示时导出的地图状态的 JSON 表示。属性应与以下屏幕截图相匹配：</p><p id="GUID-10184FAE-7C0C-4498-8BCF-E51055CE0AA4"><figure class="fig" href="#"><img src="GUID-7F51782B-CB7A-4813-8B93-1BEA6ADF5940-web.png" alt="Web_Map_as_JSON 参数属性" title="Web_Map_as_JSON 参数属性"></figure></p></div></li><li purpose="substep" id="ESRI_SUBSTEP_68BBAE949C2C47BE9D9FA301D34929F2"><span purpose="cmd" id="GUID-9B73C3B2-3D16-4938-84D2-CC7AFE9046E9">添加 <span class="usertext">Output_File</span> 参数。</span><div class="stepresult" purpose="stepresult"><p id="GUID-CB144D07-8B2F-46CC-97DE-E9976CDF46C4">这是将创建的输出文件。属性应与以下屏幕截图相匹配：</p><p id="GUID-C97A4582-E492-4E09-B28E-7790EF3CF76B"><figure class="fig" href="#"><img src="GUID-5F8D71D0-3622-4B78-A3D2-075591E32C2B-web.png" alt="Output_File 参数属性" title="Output_File 参数属性"></figure></p><p id="GUID-7CE62533-65F4-4254-9288-2B6BCF8A95E8"><div class="panel trailer-1" id="GUID-5446B79B-C1F2-40F5-BBBC-F2D0706D3C32"><h5 class="icon-ui-notice-triangle trailer-0">警告：</h5><p id="GUID-3EC407AF-DC14-4011-B3D7-2D394C8CD4D1"><span class="usertext">Web_Map_as_JSON</span> 和 <span class="usertext">Output_File</span> 参数名称必须完全按照以下所示拼写，以便与 ArcGIS Web API 中打印任务的工具签名相匹配。</p></div></p></div></li><li purpose="substep" id="ESRI_SUBSTEP_A9BA663093D24DFB80E25E7970B3F9FE"><span purpose="cmd" id="GUID-8CF5D5B0-D85C-4DD8-951C-AE8EAD6DE904">单击<span class="uicontrol">添加脚本</span>对话框上的<span class="uicontrol">完成</span>。</span></li></ol></div></li><li purpose="step" id="ESRI_STEP_6E8D21BE706740359973B929B2C247FD"><span purpose="cmd" id="GUID-72F11354-5FD2-4EEE-86B6-9E0B241630D3">右键单击 <span class="usertext">BasicTutorial</span> 脚本工具并单击<span class="uicontrol">项目描述</span>。</span></li><li purpose="step" id="ESRI_STEP_7E1A4C6A36B14E289FDBE9628AEF597F"><span purpose="cmd" id="GUID-BC849822-0B1D-4EED-A96F-074B2ED82E45">在<a class="xref xref" esrisubtype="extrel" hrefpfx="https://desktop.arcgis.com/zh-cn/arcmap/latest/analyze" href="https://desktop.arcgis.com/zh-cn/arcmap/latest/analyze/creating-tools/a-quick-tour-of-documenting-tools-and-toolboxes.htm"><span class="uicontrol">项目描述</span></a>对话框中，使用所选文本填充<span class="uicontrol">标签</span>和<span class="uicontrol">摘要</span>选项。同样，使用所选文本填充<span class="uicontrol">项目描述</span>对话框<span class="uicontrol">语法</span>部分内所有四个参数的<span class="uicontrol">对话框说明</span>选项。或者填写其他选项描述。</span></li></ol></div></section><section class="section1 padded-anchor" id="ESRI_SECTION1_F9773C70E38649099B1C9AF99F279461" purpose="section1"><h2>执行工具 </h2><p id="GUID-467C5DE6-3E26-4F03-B5CC-5F23862502B9">必须成功执行工具才能在<span class="uicontrol">结果</span>窗口中创建可发布到 <span class="ph">ArcGIS Server</span> 的结果。</p></section><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_83AD5D53CC8F459794D4123B2EF89DE6"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_7287C4DFCA5F4FD29A7E48FEAB6AA2D6"><span purpose="cmd" id="GUID-79375744-6B16-4A56-965C-77D73F97B32F">在<span class="uicontrol">目录</span>窗口中，右键单击 <span class="usertext">BasicTutorial</span> 脚本工具，然后单击<span class="uicontrol">打开</span>。</span></li><li purpose="step" id="ESRI_STEP_3B981F278D85481F8638DAFF411BC06C"><span purpose="cmd" id="GUID-2D5350B3-03F5-466A-B3E5-028C783E35CF">将 <span class="usertext">Web_Map_as_JSON</span> 输入参数留空。</span><div class="stepresult" purpose="stepresult"><div class="panel trailer-1" id="GUID-285936F5-517A-446C-965D-6C7A16A84019"><h5 class="icon-ui-description trailer-0">提示：</h5><p id="GUID-587A48F1-7B75-4705-979A-CD78ED031634">出于发布目的，可将 <span class="usertext">Web_Map_as_JSON</span> 输入参数留空，因为 <span class="ph">ArcGIS API for JavaScript</span> 会在 web 应用程序中提供 web 地图 JSON。如果 Python 脚本的写入方式使其在空白输入时仍能正常执行，则可将 <span class="usertext">Web_Map_as_JSON</span> 输入参数留空。例如，脚本不会按名称搜索 web 地图图层。</p></div></div></li><li purpose="step" id="ESRI_STEP_A54A2AB2F38546369A8282069081B8D4"><span purpose="cmd" id="GUID-18853AD3-D735-4B69-BB26-4C19E5E53F6A">单击<span class="uicontrol">确定</span>并等待工具完成执行。</span></li></ol></div><section class="result padded-anchor" id="ESRI_RESULT_58C32796DB0F4B37A8C19947B133B154" purpose="result"><p id="GUID-8046577C-7012-4291-B7B6-4DE7B0746F1A">结果现已准备就绪，可作为地理处理服务发布。</p></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_6D6567B3B82542009C208F5E61023358" purpose="section1"><h2>发布结果</h2><p id="GUID-F40CBD38-C518-4890-9C76-4C78CD8A949D"> 如果您不熟悉有关发布地理处理服务的信息，请参阅以下内容：<ul class="seealso"><li><a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/server/latest/publish-services" href="../../../../../zh-CN/server/latest/publish-services/windows/what-is-a-geoprocessing-service-.htm">什么是地理处理服务？</a></li><li><a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/server/latest/publish-services" href="../../../../../zh-CN/server/latest/publish-services/windows/a-quick-tour-of-authoring-geoprocessing-services.htm">创作和共享地理处理服务快速浏览</a></li><li><a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/server/latest/publish-services" href="../../../../../zh-CN/server/latest/publish-services/windows/a-quick-tour-of-publishing-a-geoprocessing-service.htm">发布地理处理服务快速浏览</a></li><li><a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/server/latest/publish-services" href="../../../../../zh-CN/server/latest/publish-services/windows/essential-vocabulary-for-geoprocessing-services.htm">地理处理服务的基本词汇</a></li></ul></p></section><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><section class="context padded-anchor" id="ESRI_CONTEXT_9DAD3158D1E44F4F9434C75B8E7C9F95" purpose="context"><p id="GUID-63A0C5EC-FCE6-4DB3-89E7-628DA08383E0">要发布结果，请完成以下步骤：</p></section><div class="steps" id="ESRI_STEPS_0C0C01594C99422C8D5B159F4E3EA347"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_933B5ABDBE034FA2A3FFFC6E3007DB2F"><span purpose="cmd" id="GUID-384BDDD5-FC1B-446D-B2D3-243E66E041BE">打开<a class="xref xref" esrisubtype="extrel" hrefpfx="https://desktop.arcgis.com/zh-cn/arcmap/latest/analyze" href="https://desktop.arcgis.com/zh-cn/arcmap/latest/analyze/executing-tools/using-the-results-window.htm"><span class="uicontrol">结果</span>窗口</a>。</span></li><li purpose="step" id="ESRI_STEP_B80B4B5864B24E1EA1D6602DF7E7FA17"><span purpose="cmd" id="GUID-A9949120-8603-4A47-A44C-7C8CD5DEC1E2">展开<span class="uicontrol">当前会话</span>。</span></li><li purpose="step" id="ESRI_STEP_CEBC68FECF4A43D291D76CA2F1A2583D"><span purpose="cmd" id="GUID-4B689451-B191-41E4-9860-C5D79B0976B2">右键单击 <span class="uicontrol">BasicTutorial</span> 结果并单击<span class="uicontrol">共享为 <span class="greaterthan">&gt;</span> 地理处理服务</span>。</span></li><li purpose="step" id="ESRI_STEP_206CC443E39E44509BEF8CA321D09A77"><span purpose="cmd" id="GUID-9AE80FAA-CB6B-4CEE-871F-B1002064A17B">选择<span class="uicontrol">发布服务</span>。</span></li><li purpose="step" id="ESRI_STEP_1571436AD0654439B5EE17DC0CE56394"><span purpose="cmd" id="GUID-869B31AD-3711-437C-A8F6-242D47A98B60">单击<span class="uicontrol">下一步</span>。</span></li><li purpose="step" id="ESRI_STEP_5274ED7E6AE24551B11CDB070F8AFE9D"><span purpose="cmd" id="GUID-A96D298C-179B-4482-A54F-9B1CDB4D7E2F">选择指向 <span class="ph">ArcGIS Server</span> 计算机的发布或管理员连接。</span></li><li purpose="step" id="ESRI_STEP_595AD67727B44D279F57B16AFC297E85"><span purpose="cmd" id="GUID-F2CE88A3-C8C5-4B6F-9720-AC82CB5CB579">单击<span class="uicontrol">下一步</span>。</span></li><li purpose="step" id="ESRI_STEP_D03B44057026427A97527F92CAB13139"><span purpose="cmd" id="GUID-74AF5186-902D-45B6-9064-E8FB24F355B3">单击<span class="uicontrol">下一步</span>。</span></li><li purpose="step" id="ESRI_STEP_309FA7C735BB42928A5DBA248A5D7AFE"><span purpose="cmd" id="GUID-ACDFCA5A-5F19-4804-93BC-006EB002BE06">单击<span class="uicontrol">继续</span>。</span></li><li purpose="step" id="ESRI_STEP_93E3239BCE0A47559D9E76C798B024F4"><span purpose="cmd" id="GUID-959B9E5F-EFB1-4837-8000-BDDC540A4D9D">在<span class="uicontrol">服务编辑器</span>对话框中，单击<span class="uicontrol">发布</span>。</span></li></ol></div><section class="result padded-anchor" id="ESRI_RESULT_37ADA172BE364DB8905D9F4767BEBB23" purpose="result"><p id="GUID-0B4D8DFD-BB73-4CC0-9598-1440AFC490CB">地理处理服务现已准备就绪，可以在 <span class="ph">ArcGIS API for JavaScript</span> 中使用。</p></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_810C4DF5DA6C4982ABF8F62230A61589" purpose="section1"><h2><span class="ph">ArcGIS API for JavaScript</span> 示例代码</h2><p id="GUID-C06FEBA9-F9A7-4216-BB97-9BFF38080B07">使用以下示例代码构建 Web 应用程序。</p><p id="GUID-D9B03EA5-1967-4DF5-A884-4F24DF56DFCE">在以下 <span class="ph">ArcGIS API for JavaScript</span> 代码示例中，将 URL 更改为已创建的地理处理服务，以匹配服务器名称。在以下行中进行引用：<section class="codeblock padded-anchor" purpose="codeblock"><div class="codeblockbody"><pre><code class="javascript">var printUrl = &quot;https://MyServer:6443/arcgis/rest/services/BasicTutorial/GPServer/BasicTutorial&quot;;</code></pre></div></section></p><p id="GUID-FEC2ED0F-1338-4B2E-8216-70F20068C848">BasicTutorial.html 代码</p><section class="codeblock padded-anchor" purpose="codeblock"><div class="codeblockbody"><pre><code class="javascript">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01//EN&quot; &quot;http://www.w3.org/TR/html4/strict.dtd&quot;&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Webmap Printing&lt;/title&gt;
+    &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot;/&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=7,IE=9&quot; /&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;initial-scale=1, maximum-scale=1,user-scalable=no&quot;/&gt;
+    &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;http://serverapi.arcgisonline.com/jsapi/arcgis/3.0/js/dojo/dijit/themes/claro/claro.css&quot;&gt;
+    &lt;script src=&quot;http://serverapi.arcgisonline.com/jsapi/arcgis/?v=3.0&quot;&gt;&lt;/script&gt;
+    &lt;script type=&quot;text/javascript&quot; language=&quot;Javascript&quot;&gt;
+      dojo.require(&quot;esri.map&quot;);
+      dojo.require(&quot;esri.tasks.PrintTask&quot;);
+      var printTask, params;
+
+      function init() {
+        // set the extent of the web app to same extent as the template map document
+        var startExtent = new esri.geometry.Extent({
+          &quot;xmin&quot; : -13043333,
+          &quot;ymin&quot; : 3836078,
+          &quot;xmax&quot; : -13030585,
+          &quot;ymax&quot; : 3853683,
+          &quot;spatialReference&quot; : {
+            &quot;wkid&quot; : 102100
+          }
+        });
+
+        var map = new esri.Map(&quot;map&quot;, {
+          extent : startExtent
+        });
+
+        // add tiled map service to webmap
+        var tiledUrl = &quot;http://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer&quot;;
+        var tiledLayer = new esri.layers.ArcGISTiledMapServiceLayer(tiledUrl);
+        map.addLayer(tiledLayer);
+        var printUrl = &quot;http://MyServer:6080/arcgis/rest/services/BasicTutorial/GPServer/BasicTutorial&quot;;
+        printTask = new esri.tasks.PrintTask(printUrl, {
+          async : true
+        });
+        params = new esri.tasks.PrintParameters();
+        params.map = map;
+      }
+
+      function print() {
+        var ptemplate = new esri.tasks.PrintTemplate();
+        // use the extent of the webmap in the output PDF
+        ptemplate.preserveScale = false;
+        params.template = ptemplate;
+        printTask.execute(params, printComplete);
+      }
+
+      function printComplete(result) {
+        window.open(result.url);
+      }
+
+
+      dojo.addOnLoad(init);
+
+    &lt;/script&gt;
+  &lt;/head&gt;
+  &lt;body class=&quot;claro&quot;&gt;
+    &lt;input type=&quot;button&quot; id=&quot;print&quot; value=&quot;Print&quot; onclick=&quot;print();&quot;/&gt;
+    &lt;div id=&quot;map&quot; style=&quot;width:1000px; height:600px; border:1px solid #000;&quot;&gt;&lt;/div&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre></div></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_C57A26287B9F4E4396E4F5CA8AA5A211" purpose="section1"><h2>运行 Web 应用程序</h2><p id="GUID-8D113E5E-D1D0-4493-9E18-1831868784F9">运行已创建的 web 应用程序。如有必要，请参阅 <span class="ph">ArcGIS API for JavaScript</span> 文档获取运行 Web 应用程序的说明。以下是 web 应用程序的屏幕截图：</p><figure class="fig" href="#"><img src="GUID-FC895CB0-7FD1-4F16-B88D-2120931E3D8F-web.png" alt="示例 Web 应用程序" title="示例 Web 应用程序"></figure><p id="GUID-A6B2BADD-FD9D-415E-BA28-4DD38D88F2EE">放大至感兴趣区域并单击<span class="uicontrol">打印</span>。随即显示输出 PDF 文档。输入为方便打印的 PDF 文档，其中包含了在布局模板中过渡的本地矢量数据，而非服务图层的图像。以下是一个示例输出：</p><figure class="fig" href="#"><img src="GUID-3E16A62E-3D33-45D8-A10F-B8E69707E355-web.png" alt="示例 PDF 输出" title="示例 PDF 输出"></figure></section><section class="wfsummary padded-anchor" id="ESRI_WORKFLOWSUMMARY_311EAD4F614C4CD6B83B5A7AD8B005DF" purpose="wfsummary"><p id="GUID-7B78B84E-C2AB-4FF7-970C-2E5C8A461F95">使用 <span class="usertext">arcpy.mapping</span> 进行基本 Web 地图打印和导出的教程到此结束。有关高级方案的详细信息，请参阅<a class="xref xref" href="../../../../../zh-CN/server/latest/create-web-apps/windows/gp-service-example-advanced-high-quality-webmap-printing.htm">使用 arcpy.mapping 进行的高级 Web 地图打印和导出教程</a>。</p></section>
+			
+				<hr>
+				<!--googleoff: all-->
+				
+	
+        
+		    <p class="feedback right">
+		        <a id="afb" class="icon-ui-contact" href="/feedback/" data-langlabel="feedback-on-this-topic" >有关此主题的反馈?</a>
+		    </p>
+        
+	
+
+				<!--googleon: all-->
+			
+		</main>
+	</div>
+	
+	<!--googleoff: all-->
+	
+		
+			<div id="main-toc-large" class="column-5">
+			    <div class="panel font-size--2 tablet-hide trailer-1">
+			      <h5 class="trailer-half">在本主题中</h5>
+			      <ol class="list-plain pre-0 trailer-0"><li><a href="#ESRI_SECTION1_2741330F1D9D463F9B37FF0761C9346E">获取矢量数据</a></li><li><a href="#ESRI_SECTION1_6951E2D316D74A0BA57CCEDDA5F187AB">创建 Python 脚本</a></li><li><a href="#ESRI_SECTION1_368046B9955E4565A778A445B9A2A2CE">创建 Python 脚本工具 </a></li><li><a href="#ESRI_SECTION1_F9773C70E38649099B1C9AF99F279461">执行工具 </a></li><li><a href="#ESRI_SECTION1_6D6567B3B82542009C208F5E61023358">发布结果</a></li><li><a href="#ESRI_SECTION1_810C4DF5DA6C4982ABF8F62230A61589"><ph translate="no" varid="ArcGISAPIforJavaScript">ArcGIS API for JavaScript</ph> 示例代码</a></li><li><a href="#ESRI_SECTION1_C57A26287B9F4E4396E4F5CA8AA5A211">运行 Web 应用程序</a></li></ol>
+			    </div>
+			    
+			    
+	  		</div>
+		
+    
+   <!--googleon: all-->
+
+
+
+
+          
+        </div>
+        <!-- ENDPAGECONTENT -->
+
+      </div>
+
+    </div>  <!-- End of wrapper -->
+
+  <footer class="footer leader-3 link-dark-gray" role="contentinfo">
+    <div class="grid-container">
+      <div class="row">
+        <nav class="column-6">
+          <h6 data-langlabel="arcgis-for-server">Arc<span>GIS Enterprise</span></h6>
+          <ul class="list-plain">
+            <li><a data-langlabel="home" href="../../../../../zh-CN/">主页</a></li>
+            <li><a data-langlabel="portal" href="../../../../../zh-CN/portal/">Portal</a></li>
+            <li><a data-langlabel="server" href="../../../../../zh-CN/server/">Server</a></li>
+            <li><a data-langlabel="data-store" href="../../../../../zh-CN/data-store/">Data Stores</a></li>
+            <li><a data-langlabel="cloud" href="../../../../../zh-CN/cloud/">云</a></li>
+            <li><a data-langlabel="apps" href="../../../../../zh-CN/apps/">应用程序</a></li>
+            <li><a data-langlabel="documentation" href="../../../../../zh-CN/documentation/">文档</a></li>
+          </ul>
+        </nav>
+
+        
+  <nav class="column-6">
+    <h6 data-langlabel="arcgis-platform">ArcGIS 平台</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="arcgis" href="//www.arcgis.com/">ArcGIS Online</a></li>
+      <li><a data-langlabel="arcgis-for-professionals" href="//pro.arcgis.com/">ArcGIS Pro</a></li>
+      <li><a data-langlabel="arcgis-for-server" href="//enterprise.arcgis.com/">ArcGIS Enterprise</a></li>
+      <li><a data-langlabel="arcgis-for-developers" href="https://developers.arcgis.com/">ArcGIS for Developers</a></li>
+      <li><a data-langlabel="arcgis-solutions" href="//solutions.arcgis.com/">ArcGIS Solutions</a></li>
+      <li><a data-langlabel="arcgis-marketplace" href="//marketplace.arcgis.com/">ArcGIS Marketplace</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <h6 data-langlabel="about-esri">关于 Esri</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="about-us" href="//www.esri.com/about-esri/">关于我们</a></li>
+      <li><a data-langlabel="careers" href="//www.esri.com/careers/">招贤纳士</a></li>
+      <li><a data-langlabel="insiders-blog" href="https://www.esri.com/about/newsroom/blog/">Esri 博客</a></li>
+      <li><a data-langlabel="user-conference" href="//www.esri.com/events/user-conference/index.html">用户大会</a></li>
+      <li><a data-langlabel="developer-summit" href="//www.esri.com/events/devsummit/index.html">开发者峰会</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <a class="esri-logo" href="//www.esri.com/" aria-label="Esri Home"></a>
+    <section class="footer-social-nav leader-1">
+            <a class="icon-social-twitter" aria-label="Esri on Twitter" href="https://twitter.com/Esri/"></a>
+            <a class="icon-social-facebook" aria-label="Esri on Facebook" href="https://www.facebook.com/esrigis/"></a>
+            <a class="icon-social-github" aria-label="Esri on GitHub" href="//esri.github.io/"></a>
+            <a class="icon-social-contact" aria-label="Contact Esri" href="//www.esri.com/about-esri/contact/"></a>
+    </section>
+	  
+  </nav>
+  
+  <div class="column-24 leader-1">
+    <p class="font-size--3"><a href="http://www.esri.com/legal/copyright-trademarks">Copyright &copy; 2019 Esri.</a> All rights reserved. | <a href="http://www.esri.com/legal/privacy/">隐私政策</a> | <a href="http://www.esri.com/legal/software-license">法律声明</a></p>
+  </div>
+  
+
+
+      </div>
+    </div>
+  </footer>
+  <!--googleoff: all-->
+
+  
+  
+	<script src="../../../../../zh-CN/assets/js/init.js" type="text/javascript"></script>
+	<!--<script src="../../../../../zh-CN/assets/js/drop-down.js" type="text/javascript"></script>-->
+	<script src="../../../../../zh-CN/assets/js/search/searchform.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/cdn/js/link-modifier.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/cdn/js/sitewide.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/cdn/js/libs/highlight.pack.js" type="text/javascript"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+
+
+  
+    
+
+  <script src="../../../../../zh-CN/cdn/js/affix.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    $(function () {
+          var appendFlg = true;
+
+          $("#bigmac")
+          .on("affixed.bs.affix", function (evt) {
+            if (appendFlg) {
+              $("<a class='crumb' href='#'>教程：使用 ArcPy 打印 Web 地图并导出矢量输出 PDF 文档</a>").insertAfter ($("#bigmac nav a").last());
+              appendFlg = false;
+            }
+          })
+          .on ("affix-top.bs.affix", function(evt) {
+            if (!appendFlg) {
+              $("#bigmac nav a").last().remove();
+            }
+            appendFlg = true;
+          })
+    })
+  </script>
+  
+        <script type="text/javascript">
+          window.doctoc = {
+            pubID: "1636",
+            tpcID: "25",
+            
+              prefix: "共享",
+              prefixUrl: "/zh-cn/server/latest/create-web-apps/windows/",
+          
+            hideToc: false
+          }
+        </script>
+
+        <script type="text/javascript" src="../../../../../zh-CN/server/latest/create-web-apps/windows/1636.js" ></script>
+        <script type="text/javascript" src="../../../../../zh-CN/cdn/calcite/js/protoc.js" ></script>
+        
+        
+
+  <noscript>
+        <p>
+            <a href="flisting.htm">flist</a>
+        </p>
+    </noscript>
+    <script type="text/javascript"></script>
+  
+  
+    
+    
+
+  </body>
+</html>

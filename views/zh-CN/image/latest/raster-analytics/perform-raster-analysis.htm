@@ -1,0 +1,561 @@
+
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>  <html class="ie lt-ie9 lt-ie8 lt-ie7 ie6" dir="ltr"> <![endif]-->
+<!--[if IE 7]>     <html class="ie lt-ie9 lt-ie8 ie7" dir="ltr"> <![endif]-->
+<!--[if IE 8]>     <html class="ie lt-ie9 ie8" dir="ltr"> <![endif]-->
+<!--[if IE 9]>     <html class="ie ie9" dir="ltr"> <![endif]-->
+<!--[if !IE]><!--> <html dir="ltr" lang="zh-CN"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>执行栅格分析&mdash;栅格分析 | ArcGIS Enterprise 文档</title>
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+    <script>
+      var docConfig = {
+        locale: 'zh-CN'
+        ,localedir: 'zh-cn'
+        ,langSelector: ''
+        
+        ,relativeUrl: false
+        
+
+        ,searchformUrl: '/search/'
+        ,tertiaryNavIndex: ''
+
+        
+      };
+    </script>
+	 
+
+
+    
+    <!--[if lt IE 9]>
+      <script src="../../../../zh-CN/cdn/js/libs/html5shiv.js" type="text/javascript"></script>
+      <script src="../../../../zh-CN/cdn/js/libs/selectivizr-min.js" type="text/javascript"></script>
+      <script src="../../../../zh-CN/cdn/js/libs/json2.js" type="text/javascript"></script>
+      <script src="../../../../zh-CN/cdn/js/libs/html5shiv-printshiv.js" type="text/javascript" >
+
+    <![endif]-->
+
+     <!--[if lt IE 11]>
+    <script>
+      $$(document).ready(function(){
+        $$(".hideOnIE").hide();
+      });
+    </script>
+    <![endif]-->
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<link href="../../../../zh-CN/assets/img/favicon.ico" rel="shortcut icon" >
+	<link href="../../../../zh-CN/assets/css/screen.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/cdn/calcite/css/documentation.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/assets/css/print.css" media="print" type="text/css" rel="stylesheet" />
+
+	<!--
+	<link href="../../../../zh-CN/assets/css/screen_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/assets/css/documentation/base_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/assets/css/print_l10n.css" media="print" type="text/css" rel="stylesheet" />
+	-->
+	
+	
+		<script src="../../../../zh-CN/cdn/js/libs/jquery.1.9.1.min.js" type="text/javascript"></script>
+	
+	<script src="../../../../zh-CN/cdn/js/libs/jquery.cookie.js" type="text/javascript"></script>
+	<link href="../../../../zh-CN/cdn/css/colorbox.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/cdn/css/colorbox_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<script src="../../../../zh-CN/cdn/js/libs/jquery.colorbox-min.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/assets/js/video-init.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/assets/js/sitecfg.js" type="text/javascript"></script>
+	
+		<script src="../../../../zh-CN/assets/js/signIn.js" type="text/javascript"></script>
+	
+
+	<!--- Language Picker -->
+	<script src="../../../../zh-CN/assets/js/locale/l10NStrings.js" type="text/javascript"></script>
+	
+		 
+	
+
+	<script src="../../../../zh-CN/assets/js/calcite-web.js" type="text/javascript"></script>
+
+
+
+  <!--- search MD -->
+    <META name="description" content="在地图中，您可以在图层上执行多种栅格分析。"><META name="last-modified" content="2019-12-6"><META name="product" content="arcgis-server-windows,arcgis-server-linux,arcgis-enterprise-linux,arcgis-enterprise-windows,arcgis-image"><META name="sub_category" content="ArcGIS Mission"><META name="search-collection" content="help"><META name="content_type_label" content="帮助主题"><META name="sub_category_label" content="ArcGIS Mission"><META name="search-category" content="help-general"><META name="subject_label" content="服务"><META name="version" content="10.8"><META name="content_type" content="Help Topic"><META name="subject" content="SERVICES"><META name="content-language" content="zh-cn">
+    <!--- search MD -->
+
+  
+  <script src="../../../../zh-CN/assets/js/switchers/server-1.js" type="text/javascript"></script>
+  
+      
+
+</head>
+
+<!--
+      pub: GUID-C03373CF-DD4B-477A-B0C8-2F88346E4BD5=1
+      tpc: GUID-2AF0A035-CFB9-4425-A71B-2F5504FCC7FD=11
+      -->
+
+
+<!-- variable declaration, if any -->
+<!-- can change following macro to set variable once we are on Jinja 2.8 -->
+
+
+
+
+
+<body class="claro zh-CN server">
+  
+
+  <!-- Drawer location -->
+  <div class="drawer drawer-left js-drawer" data-drawer="top-nav">
+        <nav class="drawer-nav" role="navigation">
+          <aside class="side-nav">
+            <h2 class="side-nav-title">Arc<span>GIS</span> Enterprise</h2>
+            <form id="helpSearchForm" class="margin-left-half margin-right-half leader-half trailer-half drawer-search-form" method="GET">
+              <input type="search" name="q"  placeholder="搜索 ArcGIS Enterprise 帮助">
+              <input type="hidden" name="collection" value="help" />
+              <input type="hidden" name="product" value="arcgis-image" />
+              <input type="hidden" name="version" value="10.8" />
+              <input type="hidden" name="language" value="zh-CN" />
+            </form>    
+             <a id="nav-portal" data-langlabel="portal" href="../../../../zh-CN/portal/" class="side-nav-link">Portal</a>
+             
+            <a id="all-servers" data-langlabel="all-servers" href="../../../../zh-CN/server/" class="side-nav-link">所有服务器</a>
+            <a id="gis-server" data-langlabel="gis-server" href="../../../../zh-CN/server/" class="side-nav-link">GIS Server</a>
+            <a id="image-server" data-langlabel="image-server" href="../../../../zh-CN/image/" class="side-nav-link">Image Server</a>
+            <a id="geo-analytics-server" data-langlabel="geo-analytics-server" href="../../../../zh-CN/geoanalytics/" class="side-nav-link">GeoAnalytics Server</a>
+            <a id="geoevent-server" data-langlabel="geoevent-server" href="../../../../zh-CN/geoevent/" class="side-nav-link">GeoEvent Server</a>
+            <a id="notebook-server" data-langlabel="notebook-server" href="../../../../zh-CN/notebook/" class="side-nav-link">Notebook Server</a>
+            <a id="nav-data-store" data-langlabel="data-store" href="../../../../zh-CN/data-store/" class="side-nav-link">Data Stores</a>
+            <a id="nav-cloud" data-langlabel="cloud" href="../../../../zh-CN/cloud/" class="side-nav-link">云</a>
+            <a id="nav-apps" data-langlabel="apps" href="../../../../zh-CN/apps/" class="side-nav-link">应用程序</a>
+            <a id="nav-doc" data-langlabel="documentation" href="../../../../zh-CN/documentation/" class="side-nav-link">文档</a>
+
+          </aside>
+        </nav>
+    </div>
+
+    <!-- user navigation collapses to drawer on mobile -->
+    
+    <div class="drawer drawer-right js-drawer hide-if-logged-out logged-in-navigation" data-drawer="user-nav">
+      <nav class="drawer-nav">
+        <aside class="side-nav">
+          <a class="side-nav-link agolProfile" href="#">我的个人资料</a>
+          <a class="side-nav-link icon-ui-sign-out js-log-out" href="#">登出</a>
+        </aside>
+      </nav>
+    </div>
+    
+<!-- End of drawer -->
+
+  
+  <div class="wrapper">
+      <!--googleoff: all-->
+
+      <header class="top-nav" data-skin="learn">
+        <a class="skip-to-content" href="#skip-to-content">Skip To Content</a>
+        <div class="grid-container">
+          <div class="column-24">
+
+
+            <!--<div class="top-nav-title-wrapper text-center ">-->
+              <a href='../../../../zh-CN/' class="top-nav-title tablet-hide"><span>Arc</span>GIS  Enterprise</a>
+              <a href='../../../../zh-CN/' class="icon-ui-menu top-nav-title js-drawer-toggle tablet-show" data-drawer="top-nav"><span>Arc</span>GIS Enterprise</a>
+            <!--</div> -->
+
+          
+            <nav role="navigation" class="top-nav-list left tablet-hide">
+              <a id="nav-portal" data-langlabel="portal" href="../../../../zh-CN/portal/" class="top-nav-link">Portal</a>
+
+                <div class="dropdown js-dropdown ">
+                  <a class="top-nav-link js-dropdown-toggle" tabindex="0" aria-haspopup="true" aria-expanded="false" href="#">Servers</a>
+                  <nav class="dropdown-menu featured" role="menu">
+                    <ul class="dropdown-sublist-featured">
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/get-started/latest/windows/additional-server-deployment.htm" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path  d="M42.92 6.1H4.12v8.566l.833.832-.835.833-.018 7.332.845.847-.825.824V33.9h25v5.2h-2v1.075H8.02v.8h19.1v.925h4.8v-.925H40v-.8h-8.08V39.1h-2v-5.2h13v-8.566l-.834-.834.835-.834v-7.332l-.835-.834.835-.834zm-11.8 35h-3.2v-1.2h3.2zm11-8H4.92v-7.434l.767-.766h35.668l.765.766zm0-9.766l-.766.766H5.666l-.766-.767.017-6.669.766-.764h35.671l.766.766zm0-9l-.766.766H5.687l-.766-.766V6.9h37.2zM19 11.9h-2v-.8h2zm-4 0h-2v-.8h2zm-4 0H9v-.8h2zm6 8.2h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9zm8 9h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9z"/></svg></span>
+                          <span class="sublink-text">所有服务器</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/server/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M45.98 33.575a.616.616 0 0 0-.335-.51l-3.362-2.03 3.362-2.031a.556.556 0 0 0 0-1.02l-11.1-6.704a1.293 1.293 0 0 0-1.112 0L22.33 27.982a.556.556 0 0 0 0 1.02l3.36 2.03-3.358 2.03a.556.556 0 0 0-.002 1.021l3.322 2.006-3.324 2.008a.555.555 0 0 0 .002 1.017l11.102 6.703a1.25 1.25 0 0 0 1.11.002l11.104-6.706a.556.556 0 0 0 0-1.02l-3.32-2.006 3.318-2.004a.607.607 0 0 0 .335-.509zM33.837 21.97c.026-.01.286-.005.29-.005l10.814 6.53-10.8 6.523c-.028.01-.284.005-.294.006l-10.813-6.53zm11.105 16.636l-10.8 6.523a2.564 2.564 0 0 1-.295.006l-10.81-6.529 3.39-2.047 7.004 4.23a1.083 1.083 0 0 0 .557.131 1.101 1.101 0 0 0 .554-.13l7.01-4.233zM34.14 40.098a2.545 2.545 0 0 1-.294.006l-10.812-6.53 3.43-2.073 6.97 4.208a1.25 1.25 0 0 0 1.107-.001l6.966-4.206 3.431 2.073zM9 8H7V7h2zm8 8h-2v-1h2zm-4-8h-2V7h2zm4 0h-2V7h2zm-4 8h-2v-1h2zm7.316 11.1H3.9v-6.434l.766-.766h35.668l.766.766v2.12l.8.483v-2.935l-.826-.826.826-.845v-6.329l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9h16.88a2.632 2.632 0 0 1 .336-.8zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zm0 8v-5.668l.766-.766h35.668l.766.766v5.67l-.746.764H4.666zM15 24v-1h2v1zm-4 0v-1h2v1zm-2-8H7v-1h2zm-2 8v-1h2v1z"/></svg></span>
+                          <span class="sublink-text">GIS Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/image/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 8h-2V7h2zm-4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm8 8h-2v1h2zm-8 0H7v1h2zm4 9v-1h-2v1zm-4 0v-1H7v1zm8 0v-1h-2v1zm4 3.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V21h-.8v-.334l-.766-.766H4.666l-.766.766V27.1H21zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zm40.234 4v21.8H23.1V23.1zm-.8 16.366L39.466 44.1h2.868l1.766-1.766zm-20.2-9.932l5.634-5.634h-2.868L23.9 26.666zm6.2-5.068L24.466 30.1h2.868l2.766-2.766zM28.466 30.1H30.1v-1.634zm2.434 0h6.2v-6.2h-6.2zm-7 7h6.2v-6.2h-6.2zm7 0h6.2v-6.2h-6.2zm0 6.434l5.634-5.634h-2.868L30.9 40.666zm7-7l5.634-5.634h-2.868L37.9 33.666zm1.634-5.634H37.9v1.634zm-8.634 7v1.634l1.634-1.634zm.566 6.2h2.868l2.766-2.766v-2.868zm6.434-3.566l2.634-2.634H37.9zM35.466 44.1H37.1v-1.634zm2.434 0h.434l5.766-5.766V37.9h-2.434L37.9 41.666zm6.2-8.634L42.466 37.1H44.1zm0-4L38.466 37.1h2.868l2.766-2.766zm0-7.566h-6.2v6.2h6.2zm-20.2 0v1.634l1.634-1.634zm0 20.2h6.2v-6.2h-6.2zm20.2 0v-.634l-.634.634z"/></svg></span>
+                          <span class="sublink-text">Image Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/geoanalytics/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 16h-2v-1h2zm-8 8v-1H7v1zm8 0v-1h-2v1zM13 7h-2v1h2zm4 0h-2v1h2zM9 7H7v1h2zm21.45 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V27.9h-1.464l-.801-.8H41.1v-6.434l-.766-.766H4.666l-.766.766V27.1h27.15zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM13 24v-1h-2v1zm0-9h-2v1h2zm-4 0H7v1h2zm26.672 27.148A1.87 1.87 0 0 1 35.9 43a1.91 1.91 0 1 1-3.763-.222l-9.845-3.414A1.88 1.88 0 0 1 21 39.9a1.9 1.9 0 1 1 1.474-3.084l4.692-2.346A1.878 1.878 0 0 1 27.1 34a1.902 1.902 0 0 1 1.9-1.9 1.867 1.867 0 0 1 .781.191l3.788-5.05A1.88 1.88 0 0 1 33.1 26a1.9 1.9 0 1 1 3.491 1.026l4.889 4.888c-.069.056-.144.1-.21.162a3.986 3.986 0 0 0-.358.402l-4.883-4.883A1.889 1.889 0 0 1 35 27.9a1.867 1.867 0 0 1-.781-.191l-3.788 5.049a1.868 1.868 0 0 1 .437.965l9.204.614c-.018.11-.049.218-.058.33A3.93 3.93 0 0 0 40 35c0 .046.01.09.01.135l-9.185-.612A1.913 1.913 0 0 1 29 35.9a1.889 1.889 0 0 1-1.474-.716l-4.692 2.346a1.878 1.878 0 0 1 .066.47 1.9 1.9 0 0 1-.105.625c-.007.02-.022.036-.03.056l9.63 3.34a1.87 1.87 0 0 1 2.786-.505l5.415-4.437c.067.108.127.22.204.322a3.9 3.9 0 0 0 .292.306zM33.9 26a1.092 1.092 0 0 0 .43.872 1.12 1.12 0 0 0 1.42-.068A1.1 1.1 0 1 0 33.9 26zm-6 8a1.1 1.1 0 0 0 2.196.093 1.135 1.135 0 0 0-.426-.965A1.087 1.087 0 0 0 29 32.9a1.101 1.101 0 0 0-1.1 1.1zm-5.8 4a1.098 1.098 0 1 0-.06.362A1.101 1.101 0 0 0 22.1 38zm13 5a1.1 1.1 0 1 0-2.2 0 1.1 1.1 0 0 0 2.2 0zm10.8-8a1.9 1.9 0 1 1-3.8 0c0-.053.003-.105.007-.158A1.9 1.9 0 0 1 45.9 35zm-.8 0a1.1 1.1 0 0 0-2.196-.093 1.153 1.153 0 0 0 .216.752A1.1 1.1 0 0 0 45.1 35z"/></svg></span>
+                          <span class="sublink-text">GeoAnalytics Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/geoevent/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M13 8h-2V7h2zm4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm12.418 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826v2.117c-.259-.177-.53-.337-.8-.497v-1.288l-.766-.766H4.666l-.766.766V27.1h17.933c-.148.26-.283.53-.415.8zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM9 24v-1H7v1zm4-9h-2v1h2zm0 9v-1h-2v1zm-4-9H7v1h2zm8 9v-1h-2v1zm16.9 2h-.8v8.9H39v-.8h-5.1zm.1-3.901a11.9 11.9 0 1 0 11.9 11.9 11.914 11.914 0 0 0-11.9-11.9zm0 23a11.1 11.1 0 1 1 11.1-11.1 11.112 11.112 0 0 1-11.1 11.1z"/></svg></span>
+                          <span class="sublink-text">GeoEvent Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/notebook/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M22 27.1H3.9v-6.434l.766-.766h18.576a5.262 5.262 0 0 1 .83-.8H4.666l-.766-.766v-5.668l.766-.766h35.668l.766.766V18h.8v-5.666l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9H22zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zM9 8H7V7h2zm8 0h-2V7h2zm-4 0h-2V7h2zm2 16v-1h2v1zm-4 0v-1h2v1zm-4 0v-1h2v1zm0-8v-1h2v1zm8 0v-1h2v1zm-4 0v-1h2v1zm18.9 8.1h-1.8v1.8h1.8zm-.8 1h-.2v-.2h.2zm15.498-4.48a2.727 2.727 0 0 0-1.62-.5v-.02H27.25a3.154 3.154 0 0 0-3.15 3.15V38.1h-1.68a3.386 3.386 0 0 0-2.872 1.58 3.49 3.49 0 0 0-.157 3.419 3.241 3.241 0 0 0 2.954 1.801h15.161a3.404 3.404 0 0 0 3.394-3.4V26.9h5v-3.65a3.224 3.224 0 0 0-1.302-2.63zM22.345 44.1a2.44 2.44 0 0 1-2.23-1.341 2.706 2.706 0 0 1 .11-2.65A2.588 2.588 0 0 1 22.42 38.9h12.89a3.395 3.395 0 0 0 0 5.2zM40.1 23.192V41.5a2.6 2.6 0 1 1-2.6-2.6v-.8H24.9V23.25a2.352 2.352 0 0 1 2.35-2.35h13.795a3.183 3.183 0 0 0-.945 2.292zm5 2.908h-4.2v-2.908a2.274 2.274 0 0 1 1.44-2.18 1.944 1.944 0 0 1 1.791.259 2.423 2.423 0 0 1 .97 1.979zm-17.1 5h9v.8h-9zm0 3h7v.8h-7zm0-6h9v.8h-9zm4-3h5v.8h-5z"/></svg></span>
+                          <span class="sublink-text">Notebook Server</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+
+              <a id="nav-data-store" data-langlabel="data-store" href="../../../../zh-CN/data-store/" class="top-nav-link">Data Stores</a>
+              <a id="nav-cloud" data-langlabel="cloud" href="../../../../zh-CN/cloud/" class="top-nav-link">云</a>
+              <a id="nav-apps" data-langlabel="apps" href="../../../../zh-CN/apps/" class="top-nav-link">应用程序</a>
+            </nav>
+
+
+            
+            
+            
+
+            <div class="margin-left-1 top-nav-list right hide-if-logged-in logged-out-navigation">
+               
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+              
+              <a data-langlabel="sign-in" id="login-link" class="icon-ui-user top-nav-link link-blue login-link" href="#">登录</a>
+              
+            </div>
+
+            
+            <nav class="margin-left-1 top-nav-list right hide-if-logged-out logged-in-navigation">
+              
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+             
+              <div class="dropdown js-dropdown right">
+
+                <div class="tablet-show top-nav-link">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a href="#" data-drawer="user-nav" class="user-nav-name js-drawer-toggle" data-first-name></a>
+                </div>
+
+                <div class="tablet-hide top-nav-link js-dropdown-toggle">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a class="user-nav-name top-nav-dropdown dropdown-btn" data-first-name>&nbsp;</a>
+                </div>
+
+                <nav class="dropdown-menu dropdown-right">
+                
+                  <a class="dropdown-link agolProfile" id="agolProfile" href="#">我的个人资料</a>
+                  <a class="dropdown-link js-log-out" id="agolLogout" href="#">登出</a>
+                </nav>
+              </div>
+            </nav>
+            
+
+            
+          </div>
+        </div>
+      </header>
+
+      <div class="js-search search-overlay">
+        <div class="search-content" role="dialog" aria-labelledby="search">
+          <form method="GET" id="helpSearchForm">
+            <label>
+              搜索 ArcGIS Enterprise 帮助
+              <div class="search-bar">
+                <input type="search" name="q"  placeholder="搜索 ArcGIS Enterprise 帮助" class="search-input js-search-input">
+                <input type="hidden" name="collection" value="help" />
+                <input type="hidden" name="product" value="arcgis-image" />
+                <input type="hidden" name="version" value="10.8" />
+                <input type="hidden" name="language" value="zh-CN" />
+              </div>
+            </label>
+            <input type="hidden" name="relativePath" value="../../../../" /><button type="submit" class="btn btn-large right">搜索</button>
+          </form>
+        </div>
+      </div>
+
+      <!--googleon: all-->
+
+      <div id="skip-to-content">
+        <!--googleoff: all-->
+        <header class="sub-nav sub-nav-learn">
+          <div class="grid-container">
+            
+            <div class="column-24">
+              <div style="display:table;" class="sdk-home-banner">
+                <div class="sdk-home-banner-content">
+                  <h1 class="sub-nav-title link-white">ArcGIS Image Server</h1>
+                </div>
+              </div>
+            </div>
+
+            <div class="column-24">
+              <nav class='sub-nav-list tablet-hide'><a class="sub-nav-link" href="../../../../zh-CN/image/" target="_top" title="ArcGIS Image Server 概览和文档">主页</a><a class="sub-nav-link" href="../../../../zh-CN/image/latest/get-started/windows/" target="_top" title="了解 ArcGIS Image Server">简介</a><a class="sub-nav-link is-active" href="../../../../zh-CN/image/latest/raster-analytics/" target="_top" title="为 RA 工作流配置 Image Server">栅格分析</a></nav><select class='tablet-show select-full trailer-half js-select-nav'><option value="../../../../zh-CN/image/">主页</option><option value="../../../../zh-CN/image/latest/get-started/windows/">简介</option><option selected="true" value="../../../../zh-CN/image/latest/raster-analytics/">栅格分析</option></select>
+            </div>
+
+          </div>
+        </header>
+        <!--googleon: all-->
+       
+        <!-- content goes here -->
+        <div class="grid-container ">
+          
+
+            
+              
+  <!--BREADCRUMB-BEG--><div id="bigmac" class="sticky-breadcrumbs trailer-2" data-spy="affix" data-offset-top="180"> </div><!--BREADCRUMB-END-->
+  <!--googleoff: all-->
+    <div class="column-5 tablet-column-12 trailer-2 ">
+      <aside class="js-accordion accordion reference-index" aria-live="polite" role="tablist">
+        <div></div>
+      </aside>
+
+      <div class="js-sticky scroll-show tablet-hide leader-1 back-to-top" data-top="0" style="top: 0px;">
+        <a href="#" class="btn btn-fill btn-clear">返回顶部</a>
+      </div>
+    </div>
+  <!--googleon: all-->
+  
+            
+            
+            
+	
+		<div class="column-13  pre-1 content-section">
+	
+		<header class="trailer-1"><h1>执行栅格分析</h1></header>
+
+		 
+	<!--googleoff: all-->
+	
+		
+				<aside id="main-toc-small" class="js-accordion accordion tablet-show trailer-1">
+			      <div class="accordion-section">
+			        <h4 class="accordion-title">在本主题中</h4>
+			        <div class="accordion-content list-plain">
+			          <ol class="list-plain pre-0 trailer-0"><li><a href="#GUID-D8BA99AF-D9E0-4B66-94B9-2E886C459CE0">访问栅格分析工具</a></li></ol>
+			        </div>
+			      </div>
+			     </aside>
+		
+    
+   <!--googleon: all-->
+
+
+		<main>
+			
+	
+    	
+    
+
+
+			
+<p id="GUID-C7FDFE75-DD76-42C5-AD35-277AFBAB6AAE"><span class="ph">ArcGIS Image Server</span> 包括分布式栅格分析和分布式影像处理。<span class="ph">ArcGIS Image Server</span> 分布式分析可用于单个大型栅格数据集，例如世界高程或者高分辨率卫星影像。它也可以应用于大量的影像集合，例如当前的 Landsat 8 存档或增长的 Sentinel-2 存档。</p><p id="GUID-E76771B1-A39F-4952-83A9-B024469EFB1C">栅格分析为大型影像和栅格集合（包括现有 GIS 和影像数据）提供可扩展的分布式处理功能。借助 <span class="ph">ArcGIS Enterprise</span> 门户，您可以使用内置的栅格分析工具来处理和创建新的保留图层，这些图层可以作为影像和要素 Web 图层提供。</p><p id="GUID-D8227AF2-8F6B-4458-BB55-ABCF94D64413">以下是执行栅格分析的两个示例：
+<ul purpose="ul" id="UL_C03BBAABE85A4DE3B85B249CEF80D443"><li purpose="li" id="LI_2D0EE7794BB34FF38DE6BA2748D8D33D">从多波段影像计算植被覆盖面，从而进行农业评估</li><li purpose="li" id="LI_0CF7491A089D46409F32178CC288BB1F">找到合适的位置构建太阳能发电厂，使用全州高程和土地覆被数据</li></ul></p><p id="GUID-0E25CEA9-E33C-4DBC-97E2-2D19F3DDD88E"><div class="panel trailer-1 note" id="GUID-18690E22-9B64-4BE8-A942-7B8DCA7D205F"><h5 class="icon-ui-comment trailer-0">注：</h5>从 <span class="ph">ArcGIS Enterprise 10.7.1</span> 版本开始，介绍了多种深度学习栅格分析服务。这些深度学习服务任务可用于从影像中导出训练样本并执行影像要素识别，以使用现有的深度学习模型对像素进行分类并检测要素。<p id="GUID-31268BE3-0D49-47FA-9DFD-3B3B609D7078">为了执行这些深度学习工作流，<span class="ph">Portal for ArcGIS</span> 和 <span class="ph">ArcGIS Server</span> 还需要其他配置来安装深度学习 python 模块。有关详细信息，请参阅<a class="xref xref" href="../../../../zh-CN/image/latest/raster-analytics/configure-and-deploy-arcgis-enterprise-for-deep-learning-raster-analytics.htm">针对深度学习栅格分析配置和部署 <span class="ph">ArcGIS Enterprise</span></a>。</p></div></p><section class="section1 padded-anchor" id="GUID-D8BA99AF-D9E0-4B66-94B9-2E886C459CE0" purpose="section1"><h2>访问栅格分析工具</h2><p id="GUID-C34400F9-88B5-4B75-A605-2BCE81EC93EE">可以在 <span class="ph">Map Viewer</span>、<a target="_blank" class="xref xref" href="http://links.esri.com/RasterPythonAPI">ArcGIS Python API</a>、<a class="xref xref" esrisubtype="extrel" hrefpfx="https://resources.arcgis.com/zh-cn/noweb" href="https://resources.arcgis.com/zh-cn/noweb/noweb/04r900000003000000.htm">ArcGIS REST API</a> 以及 <a class="xref xref" esrisubtype="extrel" hrefpfx="https://pro.arcgis.com/zh-cn/pro-app/help/data" href="https://pro.arcgis.com/zh-cn/pro-app/help/data/imagery/raster-analysis-with-portal.htm">ArcGIS Pro</a> 中使用栅格分析工具。</p><section class="section2 padded-anchor" id="ESRI_SECTION2_C4B0DD9CF3C84500BF7E6A9D852CFF8A" purpose="section2"><h3>从 <span class="ph">Map Viewer</span> 中访问工具</h3><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_3887EA7771EF47D4B934D90FE7336290"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_72D7201964594B0F810F270E4E1583FE"><span purpose="cmd" id="GUID-62A1CD00-88A5-4A80-B2B8-CF518ACFB402">以具有适当权限的成员身份登录到门户。</span><div class="info" purpose="info"><p id="GUID-359617EF-6EF7-4C8A-A263-B741152A5447">要执行栅格分析，所需的最低<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/portal/latest/administer" href="../../../../zh-CN/portal/latest/administer/windows/roles.htm">权限</a>集为发布和栅格分析：
+<ul purpose="ul" id="UL_69EE854672FB4685B8524C28763ADCCA"><li purpose="li" id="LI_B26D79F8580042BB93FA2B53DEA138D2"><span class="uicontrol">内容</span> - <span class="uicontrol">创建、更新和删除</span>以及<span class="uicontrol">发布托管要素图层</span></li><li purpose="li" id="LI_D06BFA13170D4719AF2B4BA1F25FA59F"><span class="uicontrol">内容和分析</span> - <span class="uicontrol">栅格分析</span></li></ul></p><p id="GUID-09CBEC5B-178B-47C0-A68B-B7DB140B25D5"><img purpose="img" placement="inline" alt="发布者权限" title="发布者权限" src="GUID-F8980912-943E-4CEC-988B-78A82327766A-web.png"> <img purpose="img" placement="inline" alt="栅格分析权限" title="栅格分析权限" src="GUID-1E5536C2-ECC3-4A4D-9646-EE6B58FFAD75-web.png"></p><p id="GUID-9F3FE9F9-51A8-4843-B40A-33493721C5D2">有关设置适当权限的详细信息，请参阅<a class="xref xref" href="../../../../zh-CN/image/latest/raster-analytics/configure-and-deploy-arcgis-enterprise-for-raster-analytics.htm#GUID-DDEF2077-F62F-466F-9991-3E8C78BBF9E8">配置门户以执行栅格分析</a>。</p></div></li><li purpose="step" id="ESRI_STEP_DF490EBABBD44EE9B1917C1AC235F2ED"><span purpose="cmd" id="GUID-AB1AE76D-7B71-4BB9-88FA-2A1923C6100D">单击<span class="uicontrol">地图</span>以打开 <span class="ph">Map Viewer</span>。</span></li><li purpose="step" id="ESRI_STEP_5510D57F7059445292A20B1F7E55C1AA"><span purpose="cmd" id="GUID-BA02DF0B-65A7-44AD-8CE5-33F4A01AFF31">单击<span class="uicontrol">分析</span>并选择<span class="uicontrol">栅格分析</span>工具。</span></li></ol></div></section><div class="panel trailer-1 note" id="GUID-6E4BFABB-8443-4C8F-8D8D-7453C28055AC"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-EEEF04ED-29CC-4A2E-B4AB-45858168337D">如果在 <span class="ph">Map Viewer</span> 中没有看到<span class="uicontrol">分析</span>按钮或<span class="uicontrol">栅格分析</span>选项卡，请联系您的门户管理员。可能无法为您的门户配置 <span class="ph">ArcGIS Image Server</span>，或者您不具备运行工具的权限。如果您不具备工具所要求的权限，则无法看到工具。</p></div></section><section class="section2 padded-anchor" id="ESRI_SECTION2_D6CCBC622B494CEAA3BCE5FB49710270" purpose="section2"><h3><span class="ph">Map Viewer</span> 工具概述</h3><p id="GUID-475E271E-D377-48E3-B85F-2CAAF593D273">您可以针对以下两种数据类型运行栅格分析工具：
+<ul purpose="ul" id="UL_C7F57B7C5A67424EB45384AB3AAE3576"><li purpose="li" id="LI_0E8FC75926C44B8E8C8B9044D3C475A4">影像图层</li><li purpose="li" id="LI_AB5CD78D5B8A41FFB028539BC5BC198F">要素图层</li></ul></p><p id="GUID-4619DE82-4A9C-465C-A790-698AB0049294">下表包含栅格分析工具的描述。分析工具按类别排列。这些类别为逻辑分组，不会对工具的访问或使用方式造成任何影响。</p><section class="section3 padded-anchor" id="ESRI_SECTION3_186137AA75914ADF99B92A6E68D4E802" purpose="section3"><h4>分析影像</h4><p id="GUID-F45349B3-498E-4BAB-B80F-735E09F48991">这些工具基于特定用途的算法（例如植被分析、变化检测或图像分类）从图像中获取信息。</p><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><thead><tr><th colspan="1">工具</th><th colspan="1">描述</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-9527EDF6-9369-47DF-AEC8-05ED3CF5F641">监测植被</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-D7F137D4-6131-4823-851A-F81725C4B071">该工具会对多波段栅格图层的波段执行算术运算，以显示研究区域的植被覆盖度信息。</p><p id="GUID-11DB1126-F78D-4A83-ADF7-8BBFA22E5F05">此工具的输出为托管影像图层。</p></td></tr></tbody><caption></caption></table></div></section><section class="section3 padded-anchor" id="ESRI_SECTION3_5F642EC98B6B4ECCAEBC7A931B8E4D71" purpose="section3"><h4>分析模式</h4><p id="GUID-AD9E6197-077C-46CA-8F1B-E509D4A4E130">这些工具用于探索数据中的空间模式。</p><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><thead><tr><th colspan="1">工具</th><th colspan="1">描述</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-EDAA6077-E714-4969-A1DB-BA9C81F2AC97">计算密度</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-24AA5F44-EBA8-450E-ACB0-0A5695D887A5">此工具通过将已知量的某种现象（表示为点或线属性）扩散到整个地图上，从而依据点要素或线要素创建密度地图。结果是按密度从小到大分类的面图层。</p><p id="GUID-4447EA55-C58B-48E8-B4D4-C21E496F51D2">此工具的输出为托管影像图层。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-4D1170C5-BBC8-476F-AB50-A18242C731CD">点插值</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-3167024B-1362-483B-BB7E-F9780BCAAD38">该工具用于根据一组点的测量结果来预测新位置上的值。该工具对具有数值的点数据进行处理，并返回预测值的栅格。</p><p id="GUID-D23A620D-A3D7-4EE4-BD4A-819421F415EF">此工具的输出为托管影像图层和托管要素图层（以表格形式呈现）。</p></td></tr></tbody><caption></caption></table></div></section><section class="section3 padded-anchor" id="ESRI_SECTION3_55655680DB114BE2A1502E4F4A44BFEB" purpose="section3"><h4>分析 Terrain</h4><p id="GUID-E91D8123-8456-4AD4-A90E-6D61C96CDEC8">这些工具根据数字高程模型 (DEM) 计算坡度、坡向和视域表面。</p><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><thead><tr><th colspan="1">工具</th><th colspan="1">描述</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-87B85D65-AC63-4798-8B24-7CBC455588A3">计算坡度</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-85031860-B4F5-4E79-9F73-956EC61C581F">该工具将创建一个表面来显示输入高程数据的坡度。坡度表示各数字高程模型 (DEM) 像元的高程变化率。</p><p id="GUID-295F9439-CDFE-43AF-B9D3-E70DED70C069">此工具的输出为托管影像图层。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-53C5A1C3-F783-42F8-A66B-E1AE91239AFF">创建视域</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-B4E54EE4-E39C-4DDC-A5FD-2C7FFAA6E001">该工具可确定观察点能够看到的区域，以说明表面地形。输入点位置可以表示观察点（例如地面上的人或火警瞭望塔上的人）或被观察的对象（例如，风力涡轮机、水塔、车辆或其他人）。结果即可从观察点位置看到的区域。</p><p id="GUID-17BE0DDD-D941-4188-B394-9772FA8CAC82">此工具的输出为托管影像图层。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-28E1F3D9-FC1A-4BB3-B3B9-22F10ACB516C">派生坡向</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-24249679-D543-4978-A605-C7A73D49E795">该工具可利用高程数据源创建坡向地图。Aspect（坡向）用于标识从每个像元到其相邻像元方向上值的变化率最大的下坡方向。坡向可以被视为坡度方向。输出栅格的值将是坡向的罗盘方向。</p><p id="GUID-30067AD0-B359-4BEB-9C48-BB91361A0A36">此工具的输出为托管影像图层。</p> 
+</td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-CA5DD8B3-CF66-45DB-87DE-1ADBC83B2922">集水区</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-D862AC6C-21BA-4366-96D8-26209633C470">该工具用于确定栅格中一组像元之上的汇流区域。</p><p id="GUID-CE9C90D4-0DC5-4667-B64E-E80EC0F552C8">此工具的输出为托管影像图层。</p></td></tr></tbody><caption></caption></table></div></section><section class="section3 padded-anchor" id="ESRI_SECTION3_A6609009397F4F218D762438C6AB4E1B" purpose="section3"><h4>深度学习</h4><p id="GUID-609E8DFF-528B-41C4-9CC1-D40B8E7E3299">这些工具可使用深度学习推断工具来检测影像中的特定要素或对栅格数据集中的像素进行分类。</p><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><thead><tr><th colspan="1">工具</th><th colspan="1">描述</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-0EBCCC4B-DA23-45C2-96B4-3F34CA7D52F1">使用深度学习分类像素</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-C95FA7C8-0563-4F8A-A54F-37D274D8E35A">此工具用于运行输入栅格上的训练深度学习模型，以生成分类栅格，其中每个有效像素都被分配了一个类标注。</p><p id="GUID-F9F4A980-3A71-4D35-9B8A-6956A04C2D95">此工具的输出为托管影像图层。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-AACAD7EE-B958-48DA-97C9-46994CC737B6">使用深度学习检测对象</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-1C8CA45F-7519-4BFB-A61D-D2D3C6434938">此工具用于运行输入栅格上的训练深度学习模型，以生成包含其找到对象的要素类。这些要素可以是所找到对象周围的边界框或面，也可以是对象中心的点。</p><p id="GUID-2E7BB369-D808-4AA7-89B3-0911150F034C">此工具的输出为托管影像图层。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-7EB7D92D-14B1-4FEA-8F0C-2419CFAC0FDE">导出训练数据进行深度学习</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-F4ACDB9A-6004-4DEF-B989-BAF1619D7399">利用具有标注矢量数据或分类影像的输入影像数据生成训练样本影像芯片。</p><p id="GUID-3B758ECC-20D2-4D42-AB3F-5DE5F115864D">此服务工具的输出是数据存储字符串，该字符串将用于存储输出影像芯片、标注和元数据文件。</p></td></tr></tbody><caption></caption></table></div><p id="GUID-FEC9D2F5-14E4-4E9F-BF44-68BECB8DD308"><div class="panel trailer-1 note" id="GUID-D513FA16-86BA-4222-AA43-E27E2FCBA8F9"><h5 class="icon-ui-comment trailer-0">注：</h5>在 <span class="ph">ArcGIS Enterprise 10.7.1</span> 中，只能通过 <span class="ph">ArcGIS API for Python</span> 和 <span class="ph">ArcGIS REST API</span> 使用<a class="xref xref" esrisubtype="extrel" hrefpfx="https://developers.arcgis.com/rest" href="https://developers.arcgis.com/rest/services-reference/export-training-data-for-deep-learning.htm">导出训练数据进行深度学习</a>工具。该工具在 <span class="ph">Map Viewer</span> 或 <span class="ph">ArcGIS Pro</span> 中不可用</div></p></section><section class="section3 padded-anchor" id="ESRI_SECTION3_34947BD3920549F2AFE0280506073DAE" purpose="section3"><h4>管理数据</h4><p id="GUID-2A3CA012-4046-42DF-8AA1-52AD8B814D36">这些工具用于管理影像数据，其中包括剪裁/掩膜、重新映射像素值以及转换至要素数和转换自要素数据。</p><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><thead><tr><th colspan="1">工具</th><th colspan="1">描述</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-FD226994-7C8F-47F4-8009-A63AAEBD81E6">要素转栅格</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-99EE9D47-0D44-4F32-9D1E-75220D93430D">该工具用于将要素转换为栅格数据集。</p><p id="GUID-EE2982B9-905D-414E-A1A1-0B245A087A50">任何包含点、线或面要素的要素类都可以转换为栅格数据集。</p><p id="GUID-1BA96243-3F64-488A-BDE9-A0B435A393CA">此工具的输出为托管影像图层。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-465F33DC-3868-41B6-B619-22EB714A14F2">栅格转要素</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-ED2579E4-CF26-448E-B676-5F6B88D689A6">该工具用于将栅格转换为点、线或面的要素数据集。</p><p id="GUID-5B6FA6DA-BA38-4471-8EE8-BCB5529C668F">此工具的输出为托管要素图层。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-3A9315FB-AE83-4C16-9A22-710161E612F3">提取栅格</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-6F97D950-FC72-4C28-8FD0-8A65C25DF710">该工具用于将栅格裁剪至矩形区域的边界或在屏幕上交互定义的形状的边界。可以裁剪至地图上当前所显示的区域范围或通过由面定义的研究区域进行裁剪。</p><p id="GUID-EFF9DA12-148D-4698-9B47-CAA42B2ADBA0">此工具的输出为托管影像图层。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-A9235A5A-AB50-4C79-9484-B1A35CD3C0D3">重映射值</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-A3B8C21A-AB86-4ADF-958C-582D612DEBF1">该工具可用于更改或重分类栅格数据的像素值。通过指定要映射到输出像素值的像素值范围来重映射像素值。输出像素值可以是有效值或 NoData 值，即无与其关联的已知值的像素。</p><p id="GUID-5185BBAC-B24D-4DB2-8F7C-E0099D8A58AB">此工具的输出为托管影像图层。</p></td></tr></tbody><caption></caption></table></div></section><section class="section3 padded-anchor" id="ESRI_SECTION3_4DE0B8A653674450924C4A8A9C39BF46" purpose="section3"><h4>汇总数据</h4><p id="GUID-C3B04E3B-E7F8-4284-9E69-5F842C85F9A2">此工具允许您使用一个数据集根据另一个数据集的值来定义要汇总的区域。</p><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><thead><tr><th colspan="1">工具</th><th colspan="1">描述</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-CCCD22BC-73CB-4090-9F7F-8C5997B24C5D">汇总范围内的栅格</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-CA844AC4-76C1-4085-AE31-27EA56DF6999">该工具可根据第一个输入图层定义的区域（区）汇总栅格。</p><p id="GUID-7C8235BA-D2DF-492F-A763-D278FDE70CBC">此工具的输出为托管影像图层。</p></td></tr></tbody><caption></caption></table></div></section><section class="section3 padded-anchor" id="ESRI_SECTION3_AC803A94A3E64BF9B5E4C256468EB834" purpose="section3"><h4>邻近分析</h4><p id="GUID-CBF33301-11C0-48B2-98D1-8825E1EBB760">利用这些工具，您可以执行基于邻近性的分析，找到前往目的地的最优路径。</p><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><thead><tr><th colspan="1">工具</th><th colspan="1">描述</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-33CB9B89-1238-4263-892F-5E2BBBAEA6F8">计算距离</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-902CCA46-2A3A-483C-BC8A-39AF06445434">该工具用于根据单个源或一组源计算欧氏距离、方向和分配。</p><p id="GUID-4B26E712-3871-4A40-B432-8D1F3D5B0F26">此工具的输出为托管影像图层。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-BCF631F3-8653-44FA-A77B-E0BB0911976F">确定最佳行程成本网络</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-3D341CA4-0022-4E6B-BA66-26C78DE8238D">该工具用于根据一组输入区域计算最佳成本网络。</p><p id="GUID-2B0A202C-31E0-48FC-9001-D4D039CA0C2D">此工具的输出为托管要素图层。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-78BC4C13-D550-4237-895E-074955D0B0AC">确定行程成本路径折线</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-AA461473-D2C0-48D3-AB08-B3C89DBF0911">该工具用于计算源和已知目的地之间的最低成本折线路径。</p><p id="GUID-A3B1F5CA-BA1E-4B8C-B230-712DB68D99DA">此工具的输出为托管要素图层。</p></td></tr></tbody><caption></caption></table></div></section></section><section class="section2 padded-anchor" id="ESRI_SECTION2_5E2119DF7A234193B386653B77B6C090" purpose="section2"><h3>从 <span class="ph">ArcGIS API for Python</span> 中访问工具</h3><p id="GUID-BBB3AEDF-F812-4DAB-9936-13C750EAEA90">GIS 分析师和数据科学家可通过 <span class="ph">ArcGIS API for Python</span> 使用其组织中提供的栅格分析工具查询、显示、分析并变换空间数据。要了解有关 API 的分析功能的更多信息，请参阅<a target="_blank" class="xref xref" href="https://developers.arcgis.com/python/guide/overview-of-the-arcgis-api-for-python/">文档站点</a>。</p><p id="GUID-998CD098-27E4-4F51-9BAC-35FEB878F946">栅格分析工具可通过 <span class="usertext">raster</span> 模块进行访问。</p></section><section class="section2 padded-anchor" id="ESRI_SECTION2_EFE0C358A37C47DA92C089F02CEEB27A" purpose="section2"><h3>从 <span class="ph">ArcGIS REST API</span> 中访问工具</h3><p id="GUID-11E8E50A-BFAE-42BE-8162-EEE29B30BF44">除了用户界面客户端 <span class="ph">ArcGIS Pro</span> 或 <span class="ph">Map Viewer</span> 之外，还可以通过 <a class="xref xref" esrisubtype="extrel" hrefpfx="https://resources.arcgis.com/zh-cn/noweb" href="https://resources.arcgis.com/zh-cn/noweb/noweb/04r900000003000000.htm">ArcGIS REST API</a> 访问栅格分析服务。栅格分析服务任务基于地理处理工具，提供常用的栅格分析工具，这些工具按任务进行分类，分别用于分析模式、分析地形、管理数据、汇总数据、使用并行处理来处理栅格数据，以及分类数据。</p><p id="GUID-FFC1BF3C-E19E-4E56-9B2C-1E0827A54B2B">该<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/portal/latest" href="../../../../zh-CN/portal/latest/use/raster-function-editor.htm"><span class="uicontrol">栅格函数编辑器</span></a>通过 <span class="ph">Enterprise</span> 门户显示在 <span class="ph">Map Viewer</span> 中。<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/portal/latest" href="../../../../zh-CN/portal/latest/use/raster-function-editor.htm"><span class="uicontrol">栅格函数编辑器</span></a>是一种可视化编程接口，用于构建影像和栅格分析处理链。可将工作流另存为栅格函数模板 (RFT)，以便自动执行影像分析和处理。您可以在函数编辑器面板中创建和修改 RFT。<span class="uicontrol">栅格函数编辑器</span>包含一个大型<a class="xref xref" esrisubtype="extrel" hrefpfx="https://pro.arcgis.com/zh-cn/pro-app/help/data" href="https://pro.arcgis.com/zh-cn/pro-app/help/data/imagery/list-of-raster-functions.htm">栅格函数</a>图库。借助可视化编程工具，您可以将这些栅格函数组合成栅格函数处理链（称为<span class="uicontrol">栅格函数模板</span> (RFT)）。RFT 可以进行测试、编辑和保存，还可以与企业的其他成员进行共享。</p><p id="GUID-BB202D33-3136-4B12-967A-F7E0EE653366">除了上述栅格分析服务任务之外，还可以使用<a target="_blank" class="xref xref" href="http://links.esri.com/GenerateRaster_RestAPI">生成栅格</a>分析工具，利用单个栅格函数或组合成栅格函数链的栅格函数执行分布式栅格分析。该工具采用定义明确的栅格函数 JSON 对象作为输入，并根据函数定义执行分析。用户可以直接使用我们目前支持的系统内置栅格函数，或自己的自定义栅格模型。有关分布式输出的分布式栅格分析处理和存储的大量可用函数列表，请参阅<a target="_blank" class="xref xref" href="http://links.esri.com/qt/rasterFunctionRest">栅格函数对象</a>。</p></section><section class="section2 padded-anchor" id="ESRI_SECTION2_333DAEFD77E04B7083472A9E3468D301" purpose="section2"><h3>创建影像图层</h3><p id="GUID-E272BEF7-0C45-41A6-BCD1-2C8D711C497F">使用<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/portal/latest" href="../../../../zh-CN/portal/latest/use/create-imagery-layer.htm"><span class="uicontrol">创建影像图层</span></a>创建优化的影像图层，以用于上文所述的栅格分析工具、REST API 和 Python API。创建的影像图层可以写入栅格存储并作为影像服务发布。用作输入的影像数据可以来自本地文件夹或数据存储。输出可以是托管影像图层或引用已注册数据源的影像图层。企业不对引用已注册数据源的影像图层进行管理。删除引用的影像图层时，数据不会从数据存储中删除。</p></section><section class="section2 padded-anchor" id="ESRI_SECTION2_42B69255E571465BAA3F92D0ADD97477" purpose="section2"><h3>从 <span class="ph">ArcGIS Pro</span> 中访问工具</h3><p id="GUID-5E704C62-CBE0-4353-85E6-CA2DCE546002">可以从 <span class="ph">ArcGIS Pro</span> 门户访问栅格分析工具。有关详细信息，请参阅 <a class="xref xref" href="http://links.esri.com/pro_rasteranalysiswithportal"><span class="ph">ArcGIS Pro</span> 中的帮助文档</a>。</p></section></section>
+			
+				<hr>
+				<!--googleoff: all-->
+				
+	
+        
+		    <p class="feedback right">
+		        <a id="afb" class="icon-ui-contact" href="/feedback/" data-langlabel="feedback-on-this-topic" >有关此主题的反馈?</a>
+		    </p>
+        
+	
+
+				<!--googleon: all-->
+			
+		</main>
+	</div>
+	
+	<!--googleoff: all-->
+	
+		
+			<div id="main-toc-large" class="column-5">
+			    <div class="panel font-size--2 tablet-hide trailer-1">
+			      <h5 class="trailer-half">在本主题中</h5>
+			      <ol class="list-plain pre-0 trailer-0"><li><a href="#GUID-D8BA99AF-D9E0-4B66-94B9-2E886C459CE0">访问栅格分析工具</a></li></ol>
+			    </div>
+			    
+			    
+	  		</div>
+		
+    
+   <!--googleon: all-->
+
+
+
+
+          
+        </div>
+        <!-- ENDPAGECONTENT -->
+
+      </div>
+
+    </div>  <!-- End of wrapper -->
+
+  <footer class="footer leader-3 link-dark-gray" role="contentinfo">
+    <div class="grid-container">
+      <div class="row">
+        <nav class="column-6">
+          <h6 data-langlabel="arcgis-for-server">Arc<span>GIS Enterprise</span></h6>
+          <ul class="list-plain">
+            <li><a data-langlabel="home" href="../../../../zh-CN/">主页</a></li>
+            <li><a data-langlabel="portal" href="../../../../zh-CN/portal/">Portal</a></li>
+            <li><a data-langlabel="server" href="../../../../zh-CN/server/">Server</a></li>
+            <li><a data-langlabel="data-store" href="../../../../zh-CN/data-store/">Data Stores</a></li>
+            <li><a data-langlabel="cloud" href="../../../../zh-CN/cloud/">云</a></li>
+            <li><a data-langlabel="apps" href="../../../../zh-CN/apps/">应用程序</a></li>
+            <li><a data-langlabel="documentation" href="../../../../zh-CN/documentation/">文档</a></li>
+          </ul>
+        </nav>
+
+        
+  <nav class="column-6">
+    <h6 data-langlabel="arcgis-platform">ArcGIS 平台</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="arcgis" href="//www.arcgis.com/">ArcGIS Online</a></li>
+      <li><a data-langlabel="arcgis-for-professionals" href="//pro.arcgis.com/">ArcGIS Pro</a></li>
+      <li><a data-langlabel="arcgis-for-server" href="//enterprise.arcgis.com/">ArcGIS Enterprise</a></li>
+      <li><a data-langlabel="arcgis-for-developers" href="https://developers.arcgis.com/">ArcGIS for Developers</a></li>
+      <li><a data-langlabel="arcgis-solutions" href="//solutions.arcgis.com/">ArcGIS Solutions</a></li>
+      <li><a data-langlabel="arcgis-marketplace" href="//marketplace.arcgis.com/">ArcGIS Marketplace</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <h6 data-langlabel="about-esri">关于 Esri</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="about-us" href="//www.esri.com/about-esri/">关于我们</a></li>
+      <li><a data-langlabel="careers" href="//www.esri.com/careers/">招贤纳士</a></li>
+      <li><a data-langlabel="insiders-blog" href="https://www.esri.com/about/newsroom/blog/">Esri 博客</a></li>
+      <li><a data-langlabel="user-conference" href="//www.esri.com/events/user-conference/index.html">用户大会</a></li>
+      <li><a data-langlabel="developer-summit" href="//www.esri.com/events/devsummit/index.html">开发者峰会</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <a class="esri-logo" href="//www.esri.com/" aria-label="Esri Home"></a>
+    <section class="footer-social-nav leader-1">
+            <a class="icon-social-twitter" aria-label="Esri on Twitter" href="https://twitter.com/Esri/"></a>
+            <a class="icon-social-facebook" aria-label="Esri on Facebook" href="https://www.facebook.com/esrigis/"></a>
+            <a class="icon-social-github" aria-label="Esri on GitHub" href="//esri.github.io/"></a>
+            <a class="icon-social-contact" aria-label="Contact Esri" href="//www.esri.com/about-esri/contact/"></a>
+    </section>
+	  
+  </nav>
+  
+  <div class="column-24 leader-1">
+    <p class="font-size--3"><a href="http://www.esri.com/legal/copyright-trademarks">Copyright &copy; 2019 Esri.</a> All rights reserved. | <a href="http://www.esri.com/legal/privacy/">隐私政策</a> | <a href="http://www.esri.com/legal/software-license">法律声明</a></p>
+  </div>
+  
+
+
+      </div>
+    </div>
+  </footer>
+  <!--googleoff: all-->
+
+  
+  
+	<script src="../../../../zh-CN/assets/js/init.js" type="text/javascript"></script>
+	<!--<script src="../../../../zh-CN/assets/js/drop-down.js" type="text/javascript"></script>-->
+	<script src="../../../../zh-CN/assets/js/search/searchform.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/cdn/js/link-modifier.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/cdn/js/sitewide.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/cdn/js/libs/highlight.pack.js" type="text/javascript"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+
+
+  
+    
+
+  <script src="../../../../zh-CN/cdn/js/affix.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    $(function () {
+          var appendFlg = true;
+
+          $("#bigmac")
+          .on("affixed.bs.affix", function (evt) {
+            if (appendFlg) {
+              $("<a class='crumb' href='#'>执行栅格分析</a>").insertAfter ($("#bigmac nav a").last());
+              appendFlg = false;
+            }
+          })
+          .on ("affix-top.bs.affix", function(evt) {
+            if (!appendFlg) {
+              $("#bigmac nav a").last().remove();
+            }
+            appendFlg = true;
+          })
+    })
+  </script>
+  
+        <script type="text/javascript">
+          window.doctoc = {
+            pubID: "2503",
+            tpcID: "2",
+            
+              prefix: "栅格分析",
+              prefixUrl: "/zh-cn/image/latest/raster-analytics/",
+          
+            hideToc: false
+          }
+        </script>
+
+        <script type="text/javascript" src="../../../../zh-CN/image/latest/raster-analytics/2503.js" ></script>
+        <script type="text/javascript" src="../../../../zh-CN/cdn/calcite/js/protoc.js" ></script>
+        
+        
+
+  <noscript>
+        <p>
+            <a href="flisting.htm">flist</a>
+        </p>
+    </noscript>
+    <script type="text/javascript"></script>
+  
+  
+    
+    
+
+  </body>
+</html>

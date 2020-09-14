@@ -1,0 +1,543 @@
+
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>  <html class="ie lt-ie9 lt-ie8 lt-ie7 ie6" dir="ltr"> <![endif]-->
+<!--[if IE 7]>     <html class="ie lt-ie9 lt-ie8 ie7" dir="ltr"> <![endif]-->
+<!--[if IE 8]>     <html class="ie lt-ie9 ie8" dir="ltr"> <![endif]-->
+<!--[if IE 9]>     <html class="ie ie9" dir="ltr"> <![endif]-->
+<!--[if !IE]><!--> <html dir="ltr" lang="zh-CN"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>样式化数值&mdash;Portal for ArcGIS | ArcGIS Enterprise 文档</title>
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+    <script>
+      var docConfig = {
+        locale: 'zh-CN'
+        ,localedir: 'zh-cn'
+        ,langSelector: ''
+        
+        ,relativeUrl: false
+        
+
+        ,searchformUrl: '/search/'
+        ,tertiaryNavIndex: ''
+
+        
+      };
+    </script>
+	 
+
+
+    
+    <!--[if lt IE 9]>
+      <script src="../../../../zh-CN/cdn/js/libs/html5shiv.js" type="text/javascript"></script>
+      <script src="../../../../zh-CN/cdn/js/libs/selectivizr-min.js" type="text/javascript"></script>
+      <script src="../../../../zh-CN/cdn/js/libs/json2.js" type="text/javascript"></script>
+      <script src="../../../../zh-CN/cdn/js/libs/html5shiv-printshiv.js" type="text/javascript" >
+
+    <![endif]-->
+
+     <!--[if lt IE 11]>
+    <script>
+      $$(document).ready(function(){
+        $$(".hideOnIE").hide();
+      });
+    </script>
+    <![endif]-->
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<link href="../../../../zh-CN/assets/img/favicon.ico" rel="shortcut icon" >
+	<link href="../../../../zh-CN/assets/css/screen.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/cdn/calcite/css/documentation.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/assets/css/print.css" media="print" type="text/css" rel="stylesheet" />
+
+	<!--
+	<link href="../../../../zh-CN/assets/css/screen_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/assets/css/documentation/base_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/assets/css/print_l10n.css" media="print" type="text/css" rel="stylesheet" />
+	-->
+	
+	
+		<script src="../../../../zh-CN/cdn/js/libs/jquery.1.9.1.min.js" type="text/javascript"></script>
+	
+	<script src="../../../../zh-CN/cdn/js/libs/jquery.cookie.js" type="text/javascript"></script>
+	<link href="../../../../zh-CN/cdn/css/colorbox.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/cdn/css/colorbox_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<script src="../../../../zh-CN/cdn/js/libs/jquery.colorbox-min.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/assets/js/video-init.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/assets/js/sitecfg.js" type="text/javascript"></script>
+	
+		<script src="../../../../zh-CN/assets/js/signIn.js" type="text/javascript"></script>
+	
+
+	<!--- Language Picker -->
+	<script src="../../../../zh-CN/assets/js/locale/l10NStrings.js" type="text/javascript"></script>
+	
+		 
+	
+
+	<script src="../../../../zh-CN/assets/js/calcite-web.js" type="text/javascript"></script>
+
+
+
+  <!--- search MD -->
+    <META name="description" content="有些样式选项可用于根据数据的数值对要素进行可视化。"><META name="last-modified" content="2019-12-6"><META name="product" content="arcgis-portal-windows,arcgis-portal-linux,arcgis-enterprise-windows,arcgis-enterprise-linux"><META name="sub_category" content="Portal for ArcGIS"><META name="search-collection" content="help"><META name="content_type_label" content="帮助主题"><META name="sub_category_label" content="Portal for ArcGIS"><META name="search-category" content="help-general"><META name="subject_label" content="PORTAL,服务,SERVER"><META name="version" content="10.8"><META name="content_type" content="Help Topic"><META name="subject" content="PORTAL,SERVICES,SERVER"><META name="content-language" content="zh-cn">
+    <!--- search MD -->
+
+  
+  <script src="../../../../zh-CN/assets/js/switchers/portal-1.js" type="text/javascript"></script>
+  
+      
+
+</head>
+
+<!--
+      pub: GUID-7B47163B-CE1B-465F-BEEE-4DADDB8DFF09=37
+      tpc: GUID-4860944D-BE87-4F01-85B8-797461C6FB61=13
+      -->
+
+
+<!-- variable declaration, if any -->
+<!-- can change following macro to set variable once we are on Jinja 2.8 -->
+
+
+
+
+
+<body class="claro zh-CN server">
+  
+
+  <!-- Drawer location -->
+  <div class="drawer drawer-left js-drawer" data-drawer="top-nav">
+        <nav class="drawer-nav" role="navigation">
+          <aside class="side-nav">
+            <h2 class="side-nav-title">Arc<span>GIS</span> Enterprise</h2>
+            <form id="helpSearchForm" class="margin-left-half margin-right-half leader-half trailer-half drawer-search-form" method="GET">
+              <input type="search" name="q"  placeholder="搜索 ArcGIS Enterprise 帮助">
+              <input type="hidden" name="collection" value="help" />
+              <input type="hidden" name="product" value="arcgis-portal-windows" />
+              <input type="hidden" name="version" value="10.8" />
+              <input type="hidden" name="language" value="zh-CN" />
+            </form>    
+             <a id="nav-portal" data-langlabel="portal" href="../../../../zh-CN/portal/" class="side-nav-link">Portal</a>
+             
+            <a id="all-servers" data-langlabel="all-servers" href="../../../../zh-CN/server/" class="side-nav-link">所有服务器</a>
+            <a id="gis-server" data-langlabel="gis-server" href="../../../../zh-CN/server/" class="side-nav-link">GIS Server</a>
+            <a id="image-server" data-langlabel="image-server" href="../../../../zh-CN/image/" class="side-nav-link">Image Server</a>
+            <a id="geo-analytics-server" data-langlabel="geo-analytics-server" href="../../../../zh-CN/geoanalytics/" class="side-nav-link">GeoAnalytics Server</a>
+            <a id="geoevent-server" data-langlabel="geoevent-server" href="../../../../zh-CN/geoevent/" class="side-nav-link">GeoEvent Server</a>
+            <a id="notebook-server" data-langlabel="notebook-server" href="../../../../zh-CN/notebook/" class="side-nav-link">Notebook Server</a>
+            <a id="nav-data-store" data-langlabel="data-store" href="../../../../zh-CN/data-store/" class="side-nav-link">Data Stores</a>
+            <a id="nav-cloud" data-langlabel="cloud" href="../../../../zh-CN/cloud/" class="side-nav-link">云</a>
+            <a id="nav-apps" data-langlabel="apps" href="../../../../zh-CN/apps/" class="side-nav-link">应用程序</a>
+            <a id="nav-doc" data-langlabel="documentation" href="../../../../zh-CN/documentation/" class="side-nav-link">文档</a>
+
+          </aside>
+        </nav>
+    </div>
+
+    <!-- user navigation collapses to drawer on mobile -->
+    
+    <div class="drawer drawer-right js-drawer hide-if-logged-out logged-in-navigation" data-drawer="user-nav">
+      <nav class="drawer-nav">
+        <aside class="side-nav">
+          <a class="side-nav-link agolProfile" href="#">我的个人资料</a>
+          <a class="side-nav-link icon-ui-sign-out js-log-out" href="#">登出</a>
+        </aside>
+      </nav>
+    </div>
+    
+<!-- End of drawer -->
+
+  
+  <div class="wrapper">
+      <!--googleoff: all-->
+
+      <header class="top-nav" data-skin="learn">
+        <a class="skip-to-content" href="#skip-to-content">Skip To Content</a>
+        <div class="grid-container">
+          <div class="column-24">
+
+
+            <!--<div class="top-nav-title-wrapper text-center ">-->
+              <a href='../../../../zh-CN/' class="top-nav-title tablet-hide"><span>Arc</span>GIS  Enterprise</a>
+              <a href='../../../../zh-CN/' class="icon-ui-menu top-nav-title js-drawer-toggle tablet-show" data-drawer="top-nav"><span>Arc</span>GIS Enterprise</a>
+            <!--</div> -->
+
+          
+            <nav role="navigation" class="top-nav-list left tablet-hide">
+              <a id="nav-portal" data-langlabel="portal" href="../../../../zh-CN/portal/" class="top-nav-link">Portal</a>
+
+                <div class="dropdown js-dropdown ">
+                  <a class="top-nav-link js-dropdown-toggle" tabindex="0" aria-haspopup="true" aria-expanded="false" href="#">Servers</a>
+                  <nav class="dropdown-menu featured" role="menu">
+                    <ul class="dropdown-sublist-featured">
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/get-started/latest/windows/additional-server-deployment.htm" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path  d="M42.92 6.1H4.12v8.566l.833.832-.835.833-.018 7.332.845.847-.825.824V33.9h25v5.2h-2v1.075H8.02v.8h19.1v.925h4.8v-.925H40v-.8h-8.08V39.1h-2v-5.2h13v-8.566l-.834-.834.835-.834v-7.332l-.835-.834.835-.834zm-11.8 35h-3.2v-1.2h3.2zm11-8H4.92v-7.434l.767-.766h35.668l.765.766zm0-9.766l-.766.766H5.666l-.766-.767.017-6.669.766-.764h35.671l.766.766zm0-9l-.766.766H5.687l-.766-.766V6.9h37.2zM19 11.9h-2v-.8h2zm-4 0h-2v-.8h2zm-4 0H9v-.8h2zm6 8.2h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9zm8 9h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9z"/></svg></span>
+                          <span class="sublink-text">所有服务器</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/server/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M45.98 33.575a.616.616 0 0 0-.335-.51l-3.362-2.03 3.362-2.031a.556.556 0 0 0 0-1.02l-11.1-6.704a1.293 1.293 0 0 0-1.112 0L22.33 27.982a.556.556 0 0 0 0 1.02l3.36 2.03-3.358 2.03a.556.556 0 0 0-.002 1.021l3.322 2.006-3.324 2.008a.555.555 0 0 0 .002 1.017l11.102 6.703a1.25 1.25 0 0 0 1.11.002l11.104-6.706a.556.556 0 0 0 0-1.02l-3.32-2.006 3.318-2.004a.607.607 0 0 0 .335-.509zM33.837 21.97c.026-.01.286-.005.29-.005l10.814 6.53-10.8 6.523c-.028.01-.284.005-.294.006l-10.813-6.53zm11.105 16.636l-10.8 6.523a2.564 2.564 0 0 1-.295.006l-10.81-6.529 3.39-2.047 7.004 4.23a1.083 1.083 0 0 0 .557.131 1.101 1.101 0 0 0 .554-.13l7.01-4.233zM34.14 40.098a2.545 2.545 0 0 1-.294.006l-10.812-6.53 3.43-2.073 6.97 4.208a1.25 1.25 0 0 0 1.107-.001l6.966-4.206 3.431 2.073zM9 8H7V7h2zm8 8h-2v-1h2zm-4-8h-2V7h2zm4 0h-2V7h2zm-4 8h-2v-1h2zm7.316 11.1H3.9v-6.434l.766-.766h35.668l.766.766v2.12l.8.483v-2.935l-.826-.826.826-.845v-6.329l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9h16.88a2.632 2.632 0 0 1 .336-.8zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zm0 8v-5.668l.766-.766h35.668l.766.766v5.67l-.746.764H4.666zM15 24v-1h2v1zm-4 0v-1h2v1zm-2-8H7v-1h2zm-2 8v-1h2v1z"/></svg></span>
+                          <span class="sublink-text">GIS Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/image/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 8h-2V7h2zm-4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm8 8h-2v1h2zm-8 0H7v1h2zm4 9v-1h-2v1zm-4 0v-1H7v1zm8 0v-1h-2v1zm4 3.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V21h-.8v-.334l-.766-.766H4.666l-.766.766V27.1H21zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zm40.234 4v21.8H23.1V23.1zm-.8 16.366L39.466 44.1h2.868l1.766-1.766zm-20.2-9.932l5.634-5.634h-2.868L23.9 26.666zm6.2-5.068L24.466 30.1h2.868l2.766-2.766zM28.466 30.1H30.1v-1.634zm2.434 0h6.2v-6.2h-6.2zm-7 7h6.2v-6.2h-6.2zm7 0h6.2v-6.2h-6.2zm0 6.434l5.634-5.634h-2.868L30.9 40.666zm7-7l5.634-5.634h-2.868L37.9 33.666zm1.634-5.634H37.9v1.634zm-8.634 7v1.634l1.634-1.634zm.566 6.2h2.868l2.766-2.766v-2.868zm6.434-3.566l2.634-2.634H37.9zM35.466 44.1H37.1v-1.634zm2.434 0h.434l5.766-5.766V37.9h-2.434L37.9 41.666zm6.2-8.634L42.466 37.1H44.1zm0-4L38.466 37.1h2.868l2.766-2.766zm0-7.566h-6.2v6.2h6.2zm-20.2 0v1.634l1.634-1.634zm0 20.2h6.2v-6.2h-6.2zm20.2 0v-.634l-.634.634z"/></svg></span>
+                          <span class="sublink-text">Image Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/geoanalytics/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 16h-2v-1h2zm-8 8v-1H7v1zm8 0v-1h-2v1zM13 7h-2v1h2zm4 0h-2v1h2zM9 7H7v1h2zm21.45 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V27.9h-1.464l-.801-.8H41.1v-6.434l-.766-.766H4.666l-.766.766V27.1h27.15zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM13 24v-1h-2v1zm0-9h-2v1h2zm-4 0H7v1h2zm26.672 27.148A1.87 1.87 0 0 1 35.9 43a1.91 1.91 0 1 1-3.763-.222l-9.845-3.414A1.88 1.88 0 0 1 21 39.9a1.9 1.9 0 1 1 1.474-3.084l4.692-2.346A1.878 1.878 0 0 1 27.1 34a1.902 1.902 0 0 1 1.9-1.9 1.867 1.867 0 0 1 .781.191l3.788-5.05A1.88 1.88 0 0 1 33.1 26a1.9 1.9 0 1 1 3.491 1.026l4.889 4.888c-.069.056-.144.1-.21.162a3.986 3.986 0 0 0-.358.402l-4.883-4.883A1.889 1.889 0 0 1 35 27.9a1.867 1.867 0 0 1-.781-.191l-3.788 5.049a1.868 1.868 0 0 1 .437.965l9.204.614c-.018.11-.049.218-.058.33A3.93 3.93 0 0 0 40 35c0 .046.01.09.01.135l-9.185-.612A1.913 1.913 0 0 1 29 35.9a1.889 1.889 0 0 1-1.474-.716l-4.692 2.346a1.878 1.878 0 0 1 .066.47 1.9 1.9 0 0 1-.105.625c-.007.02-.022.036-.03.056l9.63 3.34a1.87 1.87 0 0 1 2.786-.505l5.415-4.437c.067.108.127.22.204.322a3.9 3.9 0 0 0 .292.306zM33.9 26a1.092 1.092 0 0 0 .43.872 1.12 1.12 0 0 0 1.42-.068A1.1 1.1 0 1 0 33.9 26zm-6 8a1.1 1.1 0 0 0 2.196.093 1.135 1.135 0 0 0-.426-.965A1.087 1.087 0 0 0 29 32.9a1.101 1.101 0 0 0-1.1 1.1zm-5.8 4a1.098 1.098 0 1 0-.06.362A1.101 1.101 0 0 0 22.1 38zm13 5a1.1 1.1 0 1 0-2.2 0 1.1 1.1 0 0 0 2.2 0zm10.8-8a1.9 1.9 0 1 1-3.8 0c0-.053.003-.105.007-.158A1.9 1.9 0 0 1 45.9 35zm-.8 0a1.1 1.1 0 0 0-2.196-.093 1.153 1.153 0 0 0 .216.752A1.1 1.1 0 0 0 45.1 35z"/></svg></span>
+                          <span class="sublink-text">GeoAnalytics Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/geoevent/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M13 8h-2V7h2zm4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm12.418 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826v2.117c-.259-.177-.53-.337-.8-.497v-1.288l-.766-.766H4.666l-.766.766V27.1h17.933c-.148.26-.283.53-.415.8zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM9 24v-1H7v1zm4-9h-2v1h2zm0 9v-1h-2v1zm-4-9H7v1h2zm8 9v-1h-2v1zm16.9 2h-.8v8.9H39v-.8h-5.1zm.1-3.901a11.9 11.9 0 1 0 11.9 11.9 11.914 11.914 0 0 0-11.9-11.9zm0 23a11.1 11.1 0 1 1 11.1-11.1 11.112 11.112 0 0 1-11.1 11.1z"/></svg></span>
+                          <span class="sublink-text">GeoEvent Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/notebook/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M22 27.1H3.9v-6.434l.766-.766h18.576a5.262 5.262 0 0 1 .83-.8H4.666l-.766-.766v-5.668l.766-.766h35.668l.766.766V18h.8v-5.666l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9H22zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zM9 8H7V7h2zm8 0h-2V7h2zm-4 0h-2V7h2zm2 16v-1h2v1zm-4 0v-1h2v1zm-4 0v-1h2v1zm0-8v-1h2v1zm8 0v-1h2v1zm-4 0v-1h2v1zm18.9 8.1h-1.8v1.8h1.8zm-.8 1h-.2v-.2h.2zm15.498-4.48a2.727 2.727 0 0 0-1.62-.5v-.02H27.25a3.154 3.154 0 0 0-3.15 3.15V38.1h-1.68a3.386 3.386 0 0 0-2.872 1.58 3.49 3.49 0 0 0-.157 3.419 3.241 3.241 0 0 0 2.954 1.801h15.161a3.404 3.404 0 0 0 3.394-3.4V26.9h5v-3.65a3.224 3.224 0 0 0-1.302-2.63zM22.345 44.1a2.44 2.44 0 0 1-2.23-1.341 2.706 2.706 0 0 1 .11-2.65A2.588 2.588 0 0 1 22.42 38.9h12.89a3.395 3.395 0 0 0 0 5.2zM40.1 23.192V41.5a2.6 2.6 0 1 1-2.6-2.6v-.8H24.9V23.25a2.352 2.352 0 0 1 2.35-2.35h13.795a3.183 3.183 0 0 0-.945 2.292zm5 2.908h-4.2v-2.908a2.274 2.274 0 0 1 1.44-2.18 1.944 1.944 0 0 1 1.791.259 2.423 2.423 0 0 1 .97 1.979zm-17.1 5h9v.8h-9zm0 3h7v.8h-7zm0-6h9v.8h-9zm4-3h5v.8h-5z"/></svg></span>
+                          <span class="sublink-text">Notebook Server</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+
+              <a id="nav-data-store" data-langlabel="data-store" href="../../../../zh-CN/data-store/" class="top-nav-link">Data Stores</a>
+              <a id="nav-cloud" data-langlabel="cloud" href="../../../../zh-CN/cloud/" class="top-nav-link">云</a>
+              <a id="nav-apps" data-langlabel="apps" href="../../../../zh-CN/apps/" class="top-nav-link">应用程序</a>
+            </nav>
+
+
+            
+            
+            
+
+            <div class="margin-left-1 top-nav-list right hide-if-logged-in logged-out-navigation">
+               
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+              
+              <a data-langlabel="sign-in" id="login-link" class="icon-ui-user top-nav-link link-blue login-link" href="#">登录</a>
+              
+            </div>
+
+            
+            <nav class="margin-left-1 top-nav-list right hide-if-logged-out logged-in-navigation">
+              
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+             
+              <div class="dropdown js-dropdown right">
+
+                <div class="tablet-show top-nav-link">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a href="#" data-drawer="user-nav" class="user-nav-name js-drawer-toggle" data-first-name></a>
+                </div>
+
+                <div class="tablet-hide top-nav-link js-dropdown-toggle">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a class="user-nav-name top-nav-dropdown dropdown-btn" data-first-name>&nbsp;</a>
+                </div>
+
+                <nav class="dropdown-menu dropdown-right">
+                
+                  <a class="dropdown-link agolProfile" id="agolProfile" href="#">我的个人资料</a>
+                  <a class="dropdown-link js-log-out" id="agolLogout" href="#">登出</a>
+                </nav>
+              </div>
+            </nav>
+            
+
+            
+          </div>
+        </div>
+      </header>
+
+      <div class="js-search search-overlay">
+        <div class="search-content" role="dialog" aria-labelledby="search">
+          <form method="GET" id="helpSearchForm">
+            <label>
+              搜索 ArcGIS Enterprise 帮助
+              <div class="search-bar">
+                <input type="search" name="q"  placeholder="搜索 ArcGIS Enterprise 帮助" class="search-input js-search-input">
+                <input type="hidden" name="collection" value="help" />
+                <input type="hidden" name="product" value="arcgis-portal-windows" />
+                <input type="hidden" name="version" value="10.8" />
+                <input type="hidden" name="language" value="zh-CN" />
+              </div>
+            </label>
+            <input type="hidden" name="relativePath" value="../../../../" /><button type="submit" class="btn btn-large right">搜索</button>
+          </form>
+        </div>
+      </div>
+
+      <!--googleon: all-->
+
+      <div id="skip-to-content">
+        <!--googleoff: all-->
+        <header class="sub-nav sub-nav-learn">
+          <div class="grid-container">
+            
+            <div class="column-24">
+              <div style="display:table;" class="sdk-home-banner">
+                <div class="sdk-home-banner-content">
+                  <h1 class="sub-nav-title link-white">Portal for ArcGIS</h1>
+                </div>
+              </div>
+            </div>
+
+            <div class="column-24">
+              <nav class='sub-nav-list tablet-hide'><a class="sub-nav-link" href="../../../../zh-CN/portal/" target="_top" title="Portal for ArcGIS 主页">主页</a><a class="sub-nav-link is-active" href="../../../../zh-CN/portal/latest/use/" target="_top" title="使用 Portal for ArcGIS">使用</a><a class="sub-nav-link" href="../../../../zh-CN/portal/latest/administer/windows/" target="_top" title="安装、管理和保护 Portal for ArcGIS">管理</a></nav><select class='tablet-show select-full trailer-half js-select-nav'><option value="../../../../zh-CN/portal/">主页</option><option selected="true" value="../../../../zh-CN/portal/latest/use/">使用</option><option value="../../../../zh-CN/portal/latest/administer/windows/">管理</option></select>
+            </div>
+
+          </div>
+        </header>
+        <!--googleon: all-->
+       
+        <!-- content goes here -->
+        <div class="grid-container ">
+          
+
+            
+              
+  <!--BREADCRUMB-BEG--><div id="bigmac" class="sticky-breadcrumbs trailer-2" data-spy="affix" data-offset-top="180"> </div><!--BREADCRUMB-END-->
+  <!--googleoff: all-->
+    <div class="column-5 tablet-column-12 trailer-2 ">
+      <aside class="js-accordion accordion reference-index" aria-live="polite" role="tablist">
+        <div></div>
+      </aside>
+
+      <div class="js-sticky scroll-show tablet-hide leader-1 back-to-top" data-top="0" style="top: 0px;">
+        <a href="#" class="btn btn-fill btn-clear">返回顶部</a>
+      </div>
+    </div>
+  <!--googleon: all-->
+  
+            
+            
+            
+	
+		<div class="column-13  pre-1 content-section">
+	
+		<header class="trailer-1"><h1>样式化数值</h1></header>
+
+		 
+	<!--googleoff: all-->
+	
+		
+				<aside id="main-toc-small" class="js-accordion accordion tablet-show trailer-1">
+			      <div class="accordion-section">
+			        <h4 class="accordion-title">在本主题中</h4>
+			        <div class="accordion-content list-plain">
+			          <ol class="list-plain pre-0 trailer-0"><li><a href="#ESRI_SECTION1_1D8BD412F83148C6ABF315CA10111E66">计数和数量（颜色）</a></li><li><a href="#ESRI_SECTION1_872438351B424ECE9B435B47F6E7432F">计数和数量（大小）</a></li><li><a href="#ESRI_SECTION1_5746532688614A4C805AACCBFE18BD0C">颜色和大小</a></li><li><a href="#ESRI_SECTION1_F269A11801BF4CCDA1E9584B585C4671">比较 A 和 B</a></li><li><a href="#ESRI_SECTION1_EA0A604A4E9C46A590DA783F989190CD">主要类别</a></li><li><a href="#ESRI_SECTION1_C188623AB09249C8AB88621A99307E23">主要类别和大小</a></li><li><a href="#ESRI_SECTION1_C7FAB061D60344CAB6AC9A190DAED1D2">关系</a></li><li><a href="#ESRI_SECTION1_DD8025A4999E4FA9A7D6F27C87D43AFA">关系和大小</a></li></ol>
+			        </div>
+			      </div>
+			     </aside>
+		
+    
+   <!--googleon: all-->
+
+
+		<main>
+			
+	
+    	
+    
+
+
+			
+<p id="GUID-764181E8-6C0D-4B8F-854F-F543DE650849">您可使用 <span class="ph">Map Viewer</span> 的各种智能绘图样式以不同的方式浏览数据。当您在 <span class="ph">Map Viewer</span> 中使用<a class="xref xref" href="../../../../zh-CN/portal/latest/use/change-style.htm"><span class="uicontrol">更改样式</span></a>时，数据的性质会决定您默认看到的样式建议。确定图层的显示方式后，您可以对其外观进行更改，这些更改会立即反映在地图中。您可以通过<span class="ph">Map Viewer</span>对色带、线条粗细、透明度和符号等样式元素进行控制。</p><p id="GUID-6E058A25-2D34-4EDF-8F5A-AA40B5A9C5FB">有些样式选项可用于根据数据的数值对要素进行可视化。</p><section class="section1 padded-anchor" id="ESRI_SECTION1_1D8BD412F83148C6ABF315CA10111E66" purpose="section1"><h2>计数和数量（颜色）</h2><p id="GUID-A2021400-AF82-4107-B13A-FD73762A1687">如果您拥有数值数据，可能会希望使用渐变颜色来反映计数或数量，以区分各要素。有多种色带可供您使用 - 例如，由浅到深的简单色带适用于显示由低到高的数据值（如年龄、收入或比率）。如下所示的色带可应用于点、线或面。例如，您可以使用由浅到深的色带来表示以县为单位从低到高的耕地面积占一般土地面积的比率。</p><p id="GUID-761F6B94-4988-4BC2-8E8E-1B3BB4F188F5">要使用颜色设置计数和数量的样式，请执行以下操作：</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_B3BF35251D304F69A7BD26926B91C954"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_3C2BD5842FC74D2D808CA9A9C947619A"><span purpose="cmd" id="GUID-DA7AA8C8-EC61-4D62-A7EA-DAD9AC6A3EA4">执行<a class="xref xref" href="../../../../zh-CN/portal/latest/use/change-style.htm#ESRI_SECTION1_C8F654A7EF384CCB823F9D1B59995D38">更改样式</a>工作流中的前四个步骤。</span></li><li purpose="step" id="ESRI_STEP_EB48835DC7034720A78BE72163FA160F"><span purpose="cmd" id="GUID-ED36B1A9-C808-49A6-99C5-650FB7EC89AD"> 选择<span class="uicontrol">要显示的属性</span>。对于这种制图样式，请选择包含数值的属性。</span></li><li purpose="step" id="ESRI_STEP_4F163A8E88CC469E8B9F8B219E31402D"><span purpose="cmd" id="GUID-149BC64F-08A4-4989-8113-6C8A344D1FFE">单击<span class="uicontrol">计数和数量（颜色）</span>样式并单击<span class="uicontrol">选项</span>。</span></li><li purpose="step" id="ESRI_STEP_7FAF0CF5FBFC446ABF5CCDEA770D463A" ishcondition="agol_plat=portal"><span purpose="cmd">执行以下任一操作：</span><ul purpose="choices" id="ESRI_CHOICES_62ECB32E1ACA444884C0B6B3561E367F"><li purpose="choice" id="ESRI_CHOICE_87C8FD724CDE4AD296C0B0273E6FD0F4">如果数据尚未进行归一化或标准化，请使用<span class="uicontrol">除以</span>将原始数据转换为比率或百分比。归一化数据的示例包括：人均的 X、每平方千米的 Y 或 x 相对于 y 的比率。相比之下，标准化后原始计数可更好地利用颜色进行显示。</li><li purpose="choice" id="ESRI_CHOICE_877B19ECE6B44D8494F19D7CEB1C9D9B"> 为色带选择主题。<span class="ph">有各种不同的<a class="xref xref" href="../../../../zh-CN/portal/latest/use/styling-reference.htm#ESRI_SECTION2_B69DF0363E1540C5AADC464C3460D11D">颜色主题</a>可供选择：<span class="uicontrol">由高至低</span>、<span class="uicontrol">高于和低于</span>、<span class="uicontrol">极值</span>和<span class="uicontrol">居中</span>。将颜色与数据以不同方式匹配，便可呈现出不同的效果。</span></li><li purpose="choice" id="ESRI_CHOICE_44DFC6C6E67648CFA12F27EFBCD4224D"> 要更改将色带应用于数据的方式，请调整色带上的边界控点。您可以拖动控点或者单击控点旁的数字并输入精确值。对控点的位置进行试验并使用直方图和计算的平均值<img purpose="img" placement="inline" alt="计算的平均值" title="计算的平均值" src="GUID-5C357C7F-7B70-4D95-A058-0E8F978AAA40-web.png"> 了解数据分布以微调地图消息。</li><li purpose="choice" id="ESRI_CHOICE_E2823DF6A2954F749AE53CBA7CEB99A2">要选择其他色带，或更改线条粗细和颜色等其他图形参数，请单击<span class="uicontrol">符号</span>并选择所需设置。有关详细信息，请参阅<a class="xref xref" href="../../../../zh-CN/portal/latest/use/styling-reference.htm#ESRI_SECTION2_C2A7CD38796547A29DAA48A0C9A25C95">更改符号</a>。</li><li purpose="choice" id="ESRI_CHOICE_70E3E8BCD176490D955C185B5EF91337">要更细致地查看直方图中的详细信息，请单击<span class="uicontrol">放大</span>。</li><li purpose="choice" id="ESRI_CHOICE_EA5BE640BBB04DA4817A70E2F151C646">要进一步概化地图，请选中<span class="uicontrol">分类数据</span>，选择<a class="xref xref" href="../../../../zh-CN/portal/latest/use/styling-reference.htm#ESRI_SECTION1_E3130A70037C45ED996CB6646ABC7330">分类方法</a>和分类数量或间距（如果使用的是标准差）。也可以单击<span class="uicontrol">图例</span>手动编辑地图图例中各类的符号和标注。</li><li purpose="choice" id="ESRI_CHOICE_6AEAC62DBEDA4B008AF08DCD6F64B628">如果要对点符号进行制图，则可根据另一个数值字段选择<a class="xref xref" href="../../../../zh-CN/portal/latest/use/styling-reference.htm#ESRI_SECTION2_943D2C8E61684446B11D3E1F1A6E6225">旋转符号</a>。例如，点的颜色可以表示气象站的气温，而点的旋转则可以表示湿度。默认符号为圆形，无法很好地表示旋转。最好选择其他形状。</li><li purpose="choice" id="ESRI_CHOICE_946DE8DB6B43436CBD33CCA491FDB7E8">要在地图上绘制缺失数据的位置，请选中<span class="uicontrol">绘制不含值的要素</span>。取消选中此选项以隐藏要素。</li><li purpose="choice" id="ESRI_CHOICE_3E7691754A3D4018836DEAF3520E1D19">要隐藏图例中的色带，请取消选中<span class="uicontrol">在图例中显示</span>框。<div class="panel trailer-1 note" id="GUID-6957E691-D489-4790-9FC4-1257DB772C62"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-3BDCD003-2E7F-4DA9-9D42-F729D2DCA263">如果您选择了<span class="uicontrol">分类数据</span>，则该选项不可用。</p></div> </li><li purpose="choice" id="ESRI_CHOICE_19172D5FF9D445BCAE6727C50F480B37">要计算和设置最佳可见范围，请单击<span class="uicontrol">可见范围</span>滑块旁的<span class="uicontrol">建议</span>。您还可以手动设置<a class="xref xref" href="../../../../zh-CN/portal/latest/use/set-visibility.htm">可见范围</a>。</li><li purpose="choice" id="ESRI_CHOICE_BFEC996B1D794C678AD3DF4A2341D6A0">要更改<a class="xref xref" href="../../../../zh-CN/portal/latest/use/change-transparency.htm">透明度</a>，请将<span class="uicontrol">透明度</span>滑块向左（减少透明度）或右（增加透明度）移动。要调整每个要素计数和数量的透明度，请单击<span class="uicontrol">属性值</span>，选择属性字段并根据需要选择作为划分依据的属性（用于对数据进行归一化），然后设置精确的透明度值。仅当您的位置已关联了数值数据时，才可使用该选项。例如，如果图层包含人口数据，则可以根据人口相应调整各位置的透明度。</li></ul></li><li purpose="step" id="ESRI_STEP_31CBB2EB43C0457B8CE8755A150FCBEE"><span purpose="cmd" id="GUID-317886F4-5AD5-4E5E-922D-07A732924EEB">完成自定义样式后，单击<span class="uicontrol">确定</span>，或单击<span class="uicontrol">取消</span>返回<span class="uicontrol">更改样式</span>窗格，而不保存所做的任何选择。</span></li></ol></div></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_872438351B424ECE9B435B47F6E7432F" purpose="section1"><h2>计数和数量（大小）</h2><p id="GUID-4D079C6E-8F79-49C4-BD5A-06C31AFB80F3">该地图样式使用了不同大小的排序序列来表示数值数据或排序类别。可使用此方法绘制所有点、线和面。面要素将作为比例点显示在面上方。这些比例符号地图使用的是直观逻辑，即符号越大，数字越大。可调整符号大小来确定所要讲述的故事。例如，可使用比例符号来显示各个城市的总人口。</p><p id="GUID-51A50DD5-921B-41F9-ACA0-06C96FF3E8C4">要按大小设置计数和数量的样式，请执行以下操作：</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_D4BF6C1E5F9D45E090B60697AAF7F9CE"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_EA569378317C46CFA72FD72EE30919F7"><span purpose="cmd" id="GUID-A9C8AFE0-098E-4203-9805-90DE306985A3">执行<a class="xref xref" href="../../../../zh-CN/portal/latest/use/change-style.htm#ESRI_SECTION1_C8F654A7EF384CCB823F9D1B59995D38">更改样式</a>工作流中的前四个步骤。</span></li><li purpose="step" id="ESRI_STEP_9FF4A45C0AA94CE6A248D4412B090250"><span purpose="cmd" id="GUID-F47B7F91-E5A5-4DF2-938D-9994B1B97905"> 选择<span class="uicontrol">要显示的属性</span>。对于这种制图样式，请选择包含数值的属性。</span></li><li purpose="step" id="ESRI_STEP_61364BBA306E4D688700D1F949656CF0"><span purpose="cmd" id="GUID-80AED90A-A514-4105-A2F3-BB172C050489">单击<span class="uicontrol">计数和数量（大小）</span>样式并单击<span class="uicontrol">选项</span>。</span></li><li purpose="step" id="ESRI_STEP_D316AD60FE8A4F5A9B5D41F8228ADA68"><span purpose="cmd" id="GUID-6BB77AE7-492F-4005-A094-60AAB5774E17">执行以下任一操作：</span><ul purpose="choices" id="ESRI_CHOICES_FABE5D1036E24A8582837817382446F4"><li purpose="choice" id="ESRI_CHOICE_829AA27F0BEA4040B1A3BAE488FBEEAB">要更改比例符号的样式（颜色、线条、不透明度），请单击<span class="uicontrol">符号</span>并更改设置。有关详细信息，请参阅<a class="xref xref" href="../../../../zh-CN/portal/latest/use/styling-reference.htm#ESRI_SECTION2_C2A7CD38796547A29DAA48A0C9A25C95">更改符号</a>。</li><li purpose="choice" id="ESRI_CHOICE_857DC71F16F14D7CB75FF6BED1B22469"> 要更改将比例符号应用于数据序列的方式，请调整直方图上的边界控点。您可以拖动控点或者单击控点旁的数字并输入精确值。使用相同的最大符号绘制高于高控点的所有值。使用相同的最小符号显示低于低控点的值。使用两个界限间大小的比例顺序绘制其余的值。对控点的位置进行试验并使用直方图查看数据分布以微调地图消息。</li><li purpose="choice" id="ESRI_CHOICE_8F7B86EC2E3B49E6ABC08B10F7B79FD4">要调整符号的大小，请单击<span class="uicontrol">大小</span>。</li><li purpose="choice" id="ESRI_CHOICE_C4A1A9842F8540A499CCEDA9AAAABD21">如果要对与面关联的数据进行制图，请选择自动调整大小范围或指定大小范围。对于自动选项，符号针对初始地图缩放级别进行了优化并将自动进行调整，因此它们比其他缩放级别能够获得更好的显示效果。</li><li purpose="choice" id="ESRI_CHOICE_077B4232AED74004A1E307B9D58B545D">要更细致地查看直方图中的详细信息，请单击<span class="uicontrol">放大</span>。</li><li purpose="choice" id="ESRI_CHOICE_D768056A712E4F0797211E6B46E8301E">如果要对与面关联的数据进行制图，请单击<span class="uicontrol">面</span>来调整面的填充属性和轮廓属性。</li><li purpose="choice" id="ESRI_CHOICE_18A4DAB5ACA44ACEBA33020EF55D6F6D">要进一步概化地图，请选中<span class="uicontrol">分类数据</span>，选择<a class="xref xref" href="../../../../zh-CN/portal/latest/use/styling-reference.htm#ESRI_SECTION1_E3130A70037C45ED996CB6646ABC7330">分类方法</a>和分类数量或间距（如果使用的是标准差）。也可以单击<span class="uicontrol">图例</span>手动编辑地图图例中各类的符号和标注。<div class="panel trailer-1 note" id="GUID-EA731495-1381-4886-8940-63B18C406E84"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-C54865A6-4AC6-4F4A-8A41-ED7F920687A5"><a class="xref xref" href="../../../../zh-CN/portal/latest/use/style-numbers.htm#ESRI_SECTION1_5746532688614A4C805AACCBFE18BD0C">颜色和大小</a>、<a class="xref xref" href="../../../../zh-CN/portal/latest/use/style-categories.htm#ESRI_SECTION1_29829A2CC31649F7B7E0CA2095267B8D">样式和大小</a>或<a class="xref xref" href="../../../../zh-CN/portal/latest/use/style-numbers.htm#ESRI_SECTION1_C188623AB09249C8AB88621A99307E23">主要类别和大小</a>样式下无法使用这些选项。</p></div></li><li purpose="choice" id="ESRI_CHOICE_DD04181ECFC04876BEB8DF38BE67B508">要在地图上绘制缺失数据的位置，请选中<span class="uicontrol">绘制不含值的要素</span>。取消选中此选项以隐藏要素。</li><li purpose="choice" id="ESRI_CHOICE_B7EF5B8953514C6C9FA27CE962D75E93">要计算和设置最佳可见范围，请单击<span class="uicontrol">可见范围</span>滑块旁的<span class="uicontrol">建议</span>。您还可以手动设置<a class="xref xref" href="../../../../zh-CN/portal/latest/use/set-visibility.htm">可见范围</a>。</li><li purpose="choice" id="ESRI_CHOICE_29A0D5FE60674F5D9054DA6362B39DD7">要隐藏图例中的尺寸带，请取消选中<span class="uicontrol">在图例中显示</span>框。<div class="panel trailer-1 note" id="GUID-643C8451-A447-46E4-9F25-7741FC21E6E8"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-35CDF42E-2F56-40F5-A022-2E9A41BE5DB3">如果您选择了<span class="uicontrol">分类数据</span>，则该选项不可用。</p></div> </li><li purpose="choice" id="ESRI_CHOICE_BC77E8B2A5E5410A872C1947B8E1138B" ishcondition="agol_plat=portal">要更改<a class="xref xref" href="../../../../zh-CN/portal/latest/use/change-transparency.htm">透明度</a>，请将<span class="uicontrol">透明度</span>滑块向左（减少透明度）或右（增加透明度）移动。要调整每个要素计数和数量的透明度，请单击<span class="uicontrol">属性值</span>，选择属性字段并根据需要选择作为划分依据的属性（用于对数据进行归一化），然后设置精确的透明度值。仅当您的位置已关联数值或日期数据时，才可使用该选项。例如，如果图层包含城市区域，则可以根据大小相应调整各位置的透明度。如果要隐藏图例中的透明度带，请取消选中<span class="uicontrol">在图例中显示</span>框。</li></ul></li><li purpose="step" id="ESRI_STEP_1DC70727F3934CB58942A79DBCAB3443"><span purpose="cmd" id="GUID-6474D828-ACCD-48A7-BD53-C9E4B4D3F480">完成自定义样式后，单击<span class="uicontrol">确定</span>，或单击<span class="uicontrol">取消</span>返回<span class="uicontrol">更改样式</span>窗格，而不保存所做的任何选择。</span></li></ol></div></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_5746532688614A4C805AACCBFE18BD0C" purpose="section1"><h2>颜色和大小</h2><p id="GUID-C406C720-91B8-4AD5-9726-D2C96593F5A5"> 在该样式下，可选择数据中的两个属性，并在地图中完成点符号的颜色和大小样式。或者，也可基于想要强调的数据，两次使用同一属性：设置符号的大小和颜色。如果想要显示计数信息（例如按诸如女性单亲家庭率等因素晕渲女性单亲家庭数），此样式十分适用。</p><p id="GUID-C43DC81B-508B-4449-AF35-F07195806E1B">要使用颜色和大小设置两个属性的样式，请执行以下操作：</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_4E516997B0ED40AAB2CFDA90A585D5E9"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_6592EC3E120040A9876633DD96D2BD14"><span purpose="cmd" id="GUID-08ED1F66-F675-4EAF-BE85-DC57E342F1B0">执行<a class="xref xref" href="../../../../zh-CN/portal/latest/use/change-style.htm#ESRI_SECTION1_C8F654A7EF384CCB823F9D1B59995D38">更改样式</a>工作流中的前四个步骤。</span></li><li purpose="step" id="ESRI_STEP_FF1DD2FFD5294C7789DDDEAAD36AA301"><span purpose="cmd" id="GUID-D85886E0-E13B-445E-A007-01C556B417C6">选择第一个<span class="uicontrol">要显示的属性</span>。</span></li><li purpose="step" id="ESRI_STEP_FB9CC025A1A74F1C98CA1E714304FB41"><span purpose="cmd" id="GUID-F54CD448-E66A-4061-895D-D0126843CC4C">单击<span class="uicontrol">添加属性</span>并选择第二个<span class="uicontrol">要显示的属性</span>。</span><div class="info" purpose="info"><div class="panel trailer-1" id="GUID-47D0D7DF-1FC3-47A6-A5A7-CAD4BA4C4B39"><h5 class="icon-ui-description trailer-0">提示：</h5><p id="GUID-B92638FA-0451-44C6-94F6-73AF899B26C4">第一个属性使用颜色，第二个属性使用不同的符号大小。通过单击<span class="uicontrol">切换属性</span>按钮 <img purpose="img" placement="inline" alt="切换属性" title="切换属性" src="GUID-148DBB77-00E3-4EFE-A4D6-36C00C44A5E9-web.png"> 来切换要应用的样式以切换属性的顺序。</p></div></div></li><li purpose="step" id="ESRI_STEP_E0CEF2CBAD66407EB84977D63B2DD28E"><span purpose="cmd" id="GUID-1D0723FA-87D7-4096-B27D-D7BC8C93C63A">单击<span class="uicontrol">颜色和大小</span>样式，然后单击<span class="uicontrol">选项</span>。</span></li><li purpose="step" id="ESRI_STEP_9A2A5E4C351B495E907A933479F1E09F" ishcondition="agol_plat=portal"><span purpose="cmd">向<a class="xref xref" href="../../../../zh-CN/portal/latest/use/style-numbers.htm#ESRI_SECTION1_1D8BD412F83148C6ABF315CA10111E66">计数和数量（颜色）</a>（第一个属性）和<a class="xref xref" href="../../../../zh-CN/portal/latest/use/style-numbers.htm#ESRI_SECTION1_872438351B424ECE9B435B47F6E7432F">计数和数量（大小）</a>（第二个属性）应用选项。</span></li></ol></div></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_F269A11801BF4CCDA1E9584B585C4671" purpose="section1"><h2>比较 A 和 B</h2><p id="GUID-8E033B62-F4A5-44F7-B469-F886BB695601">该样式可用于绘制两个数字之间的比率，并以百分比、简单比率或总体百分比等方式表示该关系。例如，您可以按照占 2015 年已知人口百分比的形式绘制 2025 年的估算人口来观察人口变化趋势。</p><p id="GUID-47AFE085-6444-425F-B60A-B9A5F22A82B9">要设置比率的样式，请执行以下操作：</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_AF172BC3CA0B472BAEBFA351ECC5AF17"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_3FB691EB3C574545A46D9C7F0694E03B"><span purpose="cmd" id="GUID-0CB772E0-912C-4366-97B9-ACD0D38AC3CB">执行<a class="xref xref" href="../../../../zh-CN/portal/latest/use/change-style.htm#ESRI_SECTION1_C8F654A7EF384CCB823F9D1B59995D38">更改样式</a>工作流中的前四个步骤。</span></li><li purpose="step" id="ESRI_STEP_B4A6990064A24126B041A3EB9F825B50"><span purpose="cmd" id="GUID-57DF697A-13C8-4CD7-A27D-A264076C960C">选择最先<span class="uicontrol">要显示的属性</span>。</span></li><li purpose="step" id="ESRI_STEP_90B8951DF0E241258A785697FA65FB05"><span purpose="cmd" id="GUID-317BFAC4-2FAE-4A39-A5EE-3D813A078431">单击<span class="uicontrol">添加属性</span>并选择第二个<span class="uicontrol">要显示的属性</span>。</span></li><li purpose="step" id="ESRI_STEP_C857DB98044B40BB9AA7CB773C8AD765"><span purpose="cmd" id="GUID-01F1348D-9C50-4DA5-8C11-AAEB6ED99F34">单击<span class="uicontrol">比较 A 和 B</span> 样式并单击<span class="uicontrol">选项</span>。</span></li><li purpose="step" id="ESRI_STEP_99944A09531443E1A0C226001ABCEA67" ishcondition="agol_plat=portal"><span purpose="cmd">执行以下任一操作：</span><ul purpose="choices" id="ESRI_CHOICES_50974093C9D84633A3C9BA322E2D9C51"><li purpose="choice" id="ESRI_CHOICE_5A1EA224EA5F4D27833D62BD68331C66">要更改图例和直方图中的标注，请单击<span class="uicontrol">标注</span>。可在下列选项之间进行切换：<img purpose="img" placement="inline" alt="比率" title="比率" src="GUID-56006669-66FE-4BDE-9FE2-FA58E81FED3E-web.png">（显示 A 和 B 的比率）、<img purpose="img" placement="inline" alt="A 占 A 与 B 总和的百分比" title="A 占 A 与 B 总和的百分比" src="GUID-43C13B05-320D-4366-9944-2DC6C1121C95-web.png">（显示 A 占 A 与 B 总和的百分比）以及 <img purpose="img" placement="inline" alt="百分比" title="百分比" src="GUID-D773E4FE-8CFF-4A03-8C18-3AACDF906E14-web.png">（显示 A 占 B 的百分比）。单击<span class="uicontrol">标注</span>后图标会发生变化。</li><li purpose="choice" id="ESRI_CHOICE_04AB872B4AD6426493E174F1BACD7672">要按等值居中直方图，单击<span class="uicontrol">居中方式</span> <img purpose="img" placement="inline" alt="a=b" title="a=b" src="GUID-3D277C19-03A4-4AC3-8C1C-38CA46C2C699-web.png">。要按平均值居中直方图，单击<span class="uicontrol">居中方式</span> <img purpose="img" placement="inline" alt="平均值" title="平均值" src="GUID-5C357C7F-7B70-4D95-A058-0E8F978AAA40-web.png">。</li><li purpose="choice" id="ESRI_CHOICE_B8EFE6E7E6FF42899EF8F107EDDC55C1"> 要更改将颜色应用于数据的方式，请调整色带上的边界控点。您可以拖动控点或者单击控点旁的数字并输入精确值。对控点的位置进行试验并使用色带旁的直方图查看数据分布以微调地图消息。</li><li purpose="choice" id="ESRI_CHOICE_453CC25318CB484F9B6220E541CA42AC">要选择其他色带，或更改线条粗细和颜色等其他图形参数，请单击<a class="xref xref" href="../../../../zh-CN/portal/latest/use/styling-reference.htm#ESRI_SECTION2_C2A7CD38796547A29DAA48A0C9A25C95"><span class="uicontrol">符号</span></a>并更改设置。</li><li purpose="choice" id="ESRI_CHOICE_3AF205A4B9964966B723031A5DF58005">要更细致地查看直方图中的详细信息，请单击<span class="uicontrol">放大</span>。</li><li purpose="choice" id="ESRI_CHOICE_54B0465743BF4756B49BBD5E77F8CA5B"> 如果要对点符号进行制图，则可根据另一个数值字段选择<a class="xref xref" href="../../../../zh-CN/portal/latest/use/styling-reference.htm#ESRI_SECTION2_943D2C8E61684446B11D3E1F1A6E6225">旋转符号</a>。例如，点的颜色可以表示气象站的气温，而点的旋转则可以表示湿度。默认符号为圆形，无法很好地表示旋转。最好选择其他形状。</li><li purpose="choice" id="ESRI_CHOICE_08BF1CBC9C5A41E8B02BD3E32A676D66">要在地图上绘制缺失数据的位置，请选中<span class="uicontrol">绘制不含值的要素</span>。取消选中此选项以隐藏要素。</li><li purpose="choice" id="ESRI_CHOICE_B663CDBC8106479EA0FFA7DB48A25D98">要计算和设置最佳可见范围，请单击<span class="uicontrol">可见范围</span>滑块旁的<span class="uicontrol">建议</span>。您还可以手动设置<a class="xref xref" href="../../../../zh-CN/portal/latest/use/set-visibility.htm">可见范围</a>。</li><li purpose="choice" id="ESRI_CHOICE_6B4CAE67625A4EA584DB3DD6BE4478A7">要隐藏图例中的色带，请取消选中<span class="uicontrol">在图例中显示</span>框。</li><li purpose="choice" id="ESRI_CHOICE_45EA5BC3A93A40DAA12F55E6F0FAC01C">要更改<a class="xref xref" href="../../../../zh-CN/portal/latest/use/change-transparency.htm">透明度</a>，请将<span class="uicontrol">透明度</span>滑块向左（减少透明度）或右（增加透明度）移动。</li></ul></li></ol></div></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_EA0A604A4E9C46A590DA783F989190CD" purpose="section1"><h2>主要类别</h2><p id="GUID-16EA0D4E-E977-464E-B2AC-9FE6C0B8FC98"> 当图层中包含多个您想要进行比较的相关属性，并显示哪个属性是主要的 - 即具有最高值 - 以及和图层中的其他属性相比该属性的优势程度时，该地图样式非常有用。例如，在显示一定年份范围内美国各县人均个人收入的图层中，查看每个县中拥有最高人均个人收入的年份，以及优势年份值较之其他年份值的优势程度是非常有价值的。</p><p id="GUID-11B1DA1D-E7F1-4367-AB37-C2FD73ABAD03">要使用<span class="uicontrol">主要类别</span>样式，请选择二到十个具有相同测量单位的数值属性（例如，美国美元），每个属性代表一个与地图主题（例如，各县的人均个人收入）相关的不同类别（例如，2006、2007、2008 和 2009）。每个属性使用一种不同的颜色绘制 - 例如，2006 年使用红色、2007 年使用蓝色 - 由应用于图层的色带或应用于单个属性类别的颜色进行定义。</p><p id="GUID-78DB279E-569F-4E3B-83FC-AD9544FEDD6C"> 该样式使用透明度显示图层中每个要素的主要属性的相对强度。优势的强度或程度按给定要素的所有属性总值的百分比进行计算。通常，要素的透明度越高（即颜色越浅），与总值相比它的主要属性的强度越低。在人均个人收入示例中，这意味着优势年份为 2007 的各县以不同深浅的蓝色进行绘制，来反映 2007 年人均个人收入值占所有年份人均收入总值的百分比。</p><div class="panel trailer-1 note" id="GUID-FF96F8D7-BD0A-4308-AB07-9E8C7FE7D91E"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-2AEA3663-A676-4E0E-A4A9-877B28DDDE48">此样式适用于要素集合、CSV 图层和 CSV 文件以及添加到 <span class="ph">Map Viewer</span> 的压缩 SHP 文件。</p></div><p id="GUID-478B908C-5644-4776-B01E-4FCB8E67B321">要了解有关优势智能制图的详细信息，请浏览<a target="_blank" class="xref xref" href="http://links.esri.com/agol-help/storymap/predominance">此故事地图</a>。</p><p id="GUID-183B97F9-2807-4630-91FF-903B2222F9A0"> 要按主要类别设置要素的样式，请执行以下操作：</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_8F361739B86E404DA304DCE7B7F54A21"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_20271AF2894B405FB5F0810F4FF324C9"><span purpose="cmd" id="GUID-0A2EBAAE-70AF-4476-89F0-90AF3D4123B9">执行<a class="xref xref" href="../../../../zh-CN/portal/latest/use/change-style.htm#ESRI_SECTION1_C8F654A7EF384CCB823F9D1B59995D38">更改样式</a>工作流中的前四个步骤。</span></li><li purpose="step" id="ESRI_STEP_48FDA18E82C94CBAA1C8F1F213DC285C"><span purpose="cmd" id="GUID-7186038C-DF0C-47A0-9C23-60882511B8A8">选择<span class="uicontrol">要显示的属性</span>。对于这种制图样式，请选择包含数值的属性。</span></li><li purpose="step" id="ESRI_STEP_8E98778A8679483D920888FE21752B97"><span purpose="cmd" id="GUID-5916BFAB-67A9-4D16-9D65-337BEA0C7FED"> 单击<span class="uicontrol">添加属性</span>并选择第二个<span class="uicontrol">要显示的数值属性</span>。该属性应代表与第一个属性相关的不同类别，并且应该拥有相同的测量单位。</span></li><li purpose="step" id="ESRI_STEP_6285EA6BD60B425C9D9040742230D987" ishcondition="agol_plat=portal"><span purpose="cmd"> 通过对每个您想包含的其他属性重复以上步骤来指定不超过三个其他数值属性。</span></li><li purpose="step" id="ESRI_STEP_112DCE78F32B4D8DBD7207AF55F1847B"><span purpose="cmd" id="GUID-A487A07B-126F-44ED-A6F2-E1FDC41D3ED2"> 选择<span class="uicontrol">主要类别</span>样式并单击<span class="uicontrol">选项</span>。</span></li><li purpose="step" id="ESRI_STEP_27E2B83F0F46441A866010F30E02A6E0"><span purpose="cmd" id="GUID-9180F2EA-E8A0-4121-9274-16D341BB07F7">执行以下任一操作：</span><ul purpose="choices" id="ESRI_CHOICES_E217CB4B9BC744C9A56D6D4DA273F4E9"><li purpose="choice" id="ESRI_CHOICE_58C5CA879D8A4378B74174D4EEA8512D">要选择其他色带，或更改线宽和轮廓模式等其他图形参数，请单击<span class="uicontrol">符号</span>并更改设置。有关详细信息，请参阅<a class="xref xref" href="../../../../zh-CN/portal/latest/use/styling-reference.htm#ESRI_SECTION2_C2A7CD38796547A29DAA48A0C9A25C95">更改符号</a>。</li><li purpose="choice" id="ESRI_CHOICE_32C9CF50633A4AF8A26BAA490734DB81"> 要单独自定义任何类别的颜色，请在列表中单击类别旁边的彩色符号。根据数据是点、线还是面，您将看到每种符号相应的样式选项。例如，如果数据是点，则可更改点符号的形状、填充颜色、轮廓和大小。</li><li purpose="choice" id="ESRI_CHOICE_CE0FF43F720F47D6A9356BBC16F1A140"> 要自定义任何类别标注，请单击您想要更改的标注，输入新的标注，然后按 <span class="shortcut">Enter</span> 键。</li><li purpose="choice" id="ESRI_CHOICE_74B354CAB1DD4599AC267EC2800A5BE4"> 如果要对点符号进行制图，则可根据另一个数值字段选择<a class="xref xref" href="../../../../zh-CN/portal/latest/use/styling-reference.htm#ESRI_SECTION2_943D2C8E61684446B11D3E1F1A6E6225">旋转符号</a>。例如，点的颜色可以表示气象站的气温，而点的旋转则可以表示湿度。默认符号为圆形，无法表示旋转，所以最好选择其他形状。</li><li purpose="choice" id="ESRI_CHOICE_46348D0ADB19427987C933D0D1D83B51"> 要更改整个图层的<a class="xref xref" href="../../../../zh-CN/portal/latest/use/change-transparency.htm">透明度</a>，请将<span class="uicontrol">透明度</span>滑块向左（减少透明度）或右（增加透明度）移动。</li><li purpose="choice" id="ESRI_CHOICE_90CF125E2764453BA3B2094C2FB7CD3D"> 要基于主要属性的相对强度调整每个要素的透明度，请单击<span class="uicontrol">主要百分比</span>。要更改应用透明度的方式，请调整透明度带上的边界控点。值反映主要属性的相对强度占所有属性总值的百分比。您可以拖动控点或者单击控点旁的数字并输入精确值。主要百分比值高于高控点值（高值）的要素使用相同透明度（较深或透明度较低）绘制。主要百分比值低于低控点值（低值）的要素使用相同透明度（较浅或透明度较较高）显示。主要百分比在两者之间的要素使用两个界限间的连续透明度绘制。对控点的位置进行试验并使用计算的平均值 <img purpose="img" placement="inline" alt="计算的平均值" title="计算的平均值" src="GUID-5C357C7F-7B70-4D95-A058-0E8F978AAA40-web.png"> 有效地应用透明度。<p id="GUID-0DADBF45-CB3E-415A-964B-269EE4E98091">如果要隐藏图例中的透明度带，请取消选中<span class="uicontrol">在图例中显示</span>框。</p><p id="GUID-F701BF53-02D9-44E6-AEF0-131948E69B5F"> 如果要更改应用于高或低值的透明度值，请在<span class="uicontrol">高值</span>和<span class="uicontrol">低值</span>框中输入新值。默认情况下，不应用透明度 (0%) 适用于高值（高于高控点），85% 透明度适用于低值（低于低控点）。透明度设置完成后，请单击<span class="uicontrol">确定</span>。</p></li><li purpose="choice" id="ESRI_CHOICE_F983123B96F147269389E5B236392DD2">要计算和设置最佳可见范围，请单击<span class="uicontrol">可见范围</span>滑块旁的<span class="uicontrol">建议</span>。您还可以手动设置<a class="xref xref" href="../../../../zh-CN/portal/latest/use/set-visibility.htm">可见范围</a>。</li></ul></li><li purpose="step" id="ESRI_STEP_3CC1105EA268465F96325C42F2549BD5"><span purpose="cmd" id="GUID-98F4D788-0422-406F-BBA1-84541824C1C7">完成自定义样式后，单击<span class="uicontrol">确定</span>，或单击<span class="uicontrol">取消</span>返回<span class="uicontrol">更改样式</span>窗格，而不保存所做的任何选择。</span></li></ol></div></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_C188623AB09249C8AB88621A99307E23" purpose="section1"><h2>主要类别和大小</h2><p id="GUID-E1B048FF-200E-44DE-8018-7FB35FDC7BBE">使用此地图样式比较拥有相同测量单位的多个相关属性。与<a class="xref xref" href="../../../../zh-CN/portal/latest/use/style-numbers.htm#ESRI_SECTION1_EA0A604A4E9C46A590DA783F989190CD">主要类别</a>样式类似，此样式使用颜色显示主要属性和透明度及其较之其他属性的优势程度。此外，<span class="uicontrol">主要类别和大小</span>样式使用第三个元素 - 大小 - 表示每个要素的属性总和。例如，在显示美国各县庄稼产量的图层中，可以应用该样式查看哪种庄稼 - 小麦、玉米、大豆等 - 在各县中拥有最高值，以及与其他庄稼相比优势庄稼值的优势程度。此外，通过将比例符号应用于图层，可以比较各县的庄稼总产量，显示庄稼总产量高的县以及产量低的县。</p><p id="GUID-ECD68ED9-1615-4F6D-A03A-5B1A7C944209">要使用<span class="uicontrol">主要类别和大小</span>样式，选择二到十个具有相同测量单位的数值属性（例如，英亩），每个属性代表一个与地图主题（例如，庄稼产量）相关的不同类别（例如，小麦、棉花或大豆）。每个主题使用一种不同的颜色绘制，由应用于图层的色带或应用于单个属性类别的颜色进行定义。与<a class="xref xref" href="../../../../zh-CN/portal/latest/use/style-numbers.htm#ESRI_SECTION1_EA0A604A4E9C46A590DA783F989190CD">主要类别</a>样式类似，该样式使用透明度显示与总量相比主要属性（例如，小麦）的相对强度；通常情况下，较高的透明度意味着较低的强度（即所有属性总值的较低百分比）。对于该样式的大小组件，比例符号用于显示类别总和（例如，县的庄稼总产量）；大的符号表示大的数值。</p><div class="panel trailer-1 note" id="GUID-EEFB177C-27AD-4D71-AFE5-57481FFC2185"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-A020C0FF-8FBE-405A-848C-D37331E994EF">此样式适用于要素集合、CSV 图层和 CSV 文件以及添加到 <span class="ph">Map Viewer</span> 的压缩 SHP 文件。</p></div><p id="GUID-074CB403-0AFB-40BC-A763-C932B30A545F"> 要按主要类别和大小设置要素，请执行以下操作：</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_0EC2EE8711124A6B95FBD29937A12F76"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_30B5739C5F8B48DFBAD996B7C5363600"><span purpose="cmd" id="GUID-317EC1AB-27D6-44F4-A0D0-065A1507A8F7">执行<a class="xref xref" href="../../../../zh-CN/portal/latest/use/change-style.htm#ESRI_SECTION1_C8F654A7EF384CCB823F9D1B59995D38">更改样式</a>工作流中的前四个步骤。</span></li><li purpose="step" id="ESRI_STEP_20FB394311BB46C9A15B36E9EC190EDC"><span purpose="cmd" id="GUID-8C5ED47B-DDAC-4285-86CC-48A0F0046CE6">选择<span class="uicontrol">要显示的属性</span>。对于这种制图样式，请选择包含数值的属性。</span></li><li purpose="step" id="ESRI_STEP_9D51E4F613124D5D8EE5BFA7851E8313"><span purpose="cmd" id="GUID-07A108D4-6164-434C-9532-09519DD73D89"> 单击<span class="uicontrol">添加属性</span>并选择第二个<span class="uicontrol">要显示的数值属性</span>。该属性应代表与第一个属性相关的不同类别，并且应该拥有相同的测量单位。</span></li><li purpose="step" id="ESRI_STEP_48F75DD9F80843C3B36E41E0195CF0BC" ishcondition="agol_plat=portal"><span purpose="cmd" id="GUID-34AF4CFC-74DA-4ACE-BAAE-44F0AFFC248F"> 通过对每个您想包含的其他属性重复以上步骤来指定不超过三个其他数值属性。</span></li><li purpose="step" id="ESRI_STEP_307DEFA4D73741F5B1C51D0FCC6FD4E3"><span purpose="cmd" id="GUID-67F0DAF1-CC96-4D5B-89AD-878046827EC7"> 选择<span class="uicontrol">主要类别</span>样式并单击<span class="uicontrol">选项</span>。</span></li><li purpose="step" id="ESRI_STEP_4B71DA9528BA49959E8BCFB083F81DF2"><span purpose="cmd" id="GUID-1971C793-A90E-40E2-9B41-593B52816551">将选项应用于<a class="xref xref" href="../../../../zh-CN/portal/latest/use/style-numbers.htm#ESRI_SECTION1_EA0A604A4E9C46A590DA783F989190CD"><span class="uicontrol">主要类别</span></a>（具有最高值的属性）和<a class="xref xref" href="../../../../zh-CN/portal/latest/use/style-numbers.htm#ESRI_SECTION1_872438351B424ECE9B435B47F6E7432F"><span class="uicontrol">大小</span></a>（属性的总和）。</span></li></ol></div></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_C7FAB061D60344CAB6AC9A190DAED1D2" purpose="section1"><h2>关系</h2><p id="GUID-5B1EFBB3-608A-42D2-BA51-71F89A4885AF"> 使用<span class="uicontrol">关系</span>智能制图样式，可以可视化点、线或面要素数据中两个数值属性之间的关系。例如，你可能想知道美国的吸烟率和过度饮酒率之间是否存在关系，以及这种关系在美国哪个地区最为明显。基于二元分区统计图制图技术，<span class="uicontrol">关系</span>样式可将不同的分级色带应用于各个属性中的<a class="xref xref" href="../../../../zh-CN/portal/latest/use/styling-reference.htm#ESRI_SECTION1_E3130A70037C45ED996CB6646ABC7330">已分类</a>数据，然后合并色带，以便允许您查看可能存在属性关联的位置。您可以使用不同的侧重选项探索关系，例如可以聚焦于吸烟率和过度饮酒率皆高的区域，也可以将焦点更改为突出显示二者皆低的区域。您还可以更改分类方法和其他选项。</p><div class="panel trailer-1 note" id="GUID-8EFCCC2F-8A5B-4E69-AB2C-24C22CF35CBD"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-4C270B32-BDB1-4672-A55A-57A2341E02CA">此样式适用于 <a class="xref xref" href="../../../../zh-CN/portal/latest/use/feature-layers.htm#ESRI_SECTION1_0BEFA4197C154A219A5B113039AB73F2"><span class="ph">ArcGIS Server</span> 要素图层</a>、<a class="xref xref" href="../../../../zh-CN/portal/latest/use/hosted-web-layers.htm#ESRI_SECTION2_706D4510832549F6BDE997EFAE1B3ACF">托管要素图层</a>、<a class="xref xref" href="../../../../zh-CN/portal/latest/use/feature-layers.htm#GUID-304463C0-25BD-4FEA-8DD6-AD82F2C96B56">要素集合</a>、<a class="xref xref" href="../../../../zh-CN/portal/latest/use/csv-gpx.htm">CSV 图层</a>和 <span class="ph">ArcGIS Server</span> 10.6 或更高版本中启用了动态图层的地图服务。</p></div><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_E2F252D37EBF4FC99A00D77BC6B23806"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_8AA2EBB4D3D445CC92FD121E49DA7ED9"><span purpose="cmd">执行<a class="xref xref" href="../../../../zh-CN/portal/latest/use/change-style.htm#ESRI_SECTION1_C8F654A7EF384CCB823F9D1B59995D38">更改样式</a>工作流中的前四个步骤。</span></li><li purpose="step" id="ESRI_STEP_390041CEC13246C39EA0C56AAB3913A9"><span purpose="cmd">从<span class="uicontrol">要显示的属性</span>中选择一个属性作为关系中的第一个属性。对于这种制图样式，请选择包含数值的属性。</span><div class="info" purpose="info"><p id="GUID-627B5DAC-1AF6-4CC3-B274-1F581CDC85F8">将使用颜色设置第一个属性的样式，以便显示该属性与第二个属性之间的潜在关系。</p></div></li><li purpose="step" id="ESRI_STEP_86AB1E1E600547F9BAFCC3DFD8321AE4"><span purpose="cmd"> 单击<span class="uicontrol">添加属性</span>并从<span class="uicontrol">要显示的属性</span>中选择一个数值属性作为关系中的第二个属性。</span><div class="info" purpose="info"><p id="GUID-DE1147D2-AC20-4091-9E18-3B73729F22AD">将使用颜色设置第二个属性的样式，以便显示该属性与第一个属性之间的潜在关系。</p></div></li><li purpose="step" id="ESRI_STEP_CB0FE10382E64FC4BC5E3F1A15E64437"><span purpose="cmd">选择<span class="uicontrol">关系</span>样式并单击<span class="uicontrol">选项</span>。</span></li><li purpose="step" id="ESRI_STEP_3E50AF4F70EA44E4A75221C1165F98C3"><span purpose="cmd">从<span class="uicontrol">侧重</span>下拉菜单中，选择以下一个选项来指定想要突出显示的属性方面：</span><ul purpose="choices" id="ESRI_CHOICES_3431CB105D8247D5A7EB3AEC6D32D424"><li purpose="choice" id="ESRI_CHOICE_F6AF2818F5914E69813CE29D2B165A75"><span class="uicontrol">高值</span> - 图例侧重于两个属性都具有高值的要素。</li><li purpose="choice" id="ESRI_CHOICE_25597733D7A94F2C97CAB340CFDB5A83"><span class="uicontrol">高值/低值</span> - 图例侧重于第一个属性具有高值而第二个属性具有低值的要素。</li><li purpose="choice" id="ESRI_CHOICE_9BE1DBE47F604C1DA3C460B76F7B965B"><span class="uicontrol">低值/高值</span> - 图例侧重于第一个属性具有低值而第二个属性具有高值的要素。</li><li purpose="choice" id="ESRI_CHOICE_0D77A1CD62E0493B8B9B965903FC93E0"><span class="uicontrol">低值</span> - 图例着重于两个属性都具有低值的要素。</li><li purpose="choice" id="ESRI_CHOICE_537948FB67A344A796A683D312495838"><span class="uicontrol">无</span> - 图例没有特定的侧重。</li></ul></li><li purpose="step" id="ESRI_STEP_A36A5EE81FBF47969D8206B7553A0A2F"><span purpose="cmd">在<span class="uicontrol">格网大小</span>下拉菜单中，选择用于图例的格网大小。</span><div class="info" purpose="info"><p id="GUID-D7C40D88-AF36-47A0-85FF-8BBB0D79B004">格网数字越高，应用色带的颜色渐变越详细。</p></div></li><li purpose="step" id="ESRI_STEP_6C3A083B211245F2B3052EEF6B9C7B9D"><span purpose="cmd">在<span class="uicontrol">方法</span>下拉菜单中，选择想要分类数据中属性值的<a class="xref xref" href="../../../../zh-CN/portal/latest/use/styling-reference.htm#ESRI_SECTION1_E3130A70037C45ED996CB6646ABC7330">分类方法</a>。也可以单击<span class="uicontrol">图例</span>手动编辑地图图例中各类的符号和标注。</span></li><li purpose="step" id="ESRI_STEP_C72D058E8FC24F138B792DEB688095CF"><span purpose="cmd">执行以下任一操作：</span><ul purpose="choices" id="ESRI_CHOICES_74F9F49F735644AE943FC0F548BDC588"><li purpose="choice" id="ESRI_CHOICE_333AC942769C4A4899B5E449F459B864">要选择其他色带，或更改线宽和轮廓模式等其他图形参数，请单击<span class="uicontrol">符号</span>并更改设置。有关详细信息，请参阅<a class="xref xref" href="../../../../zh-CN/portal/latest/use/styling-reference.htm#ESRI_SECTION2_C2A7CD38796547A29DAA48A0C9A25C95">更改符号</a>。</li><li purpose="choice" id="ESRI_CHOICE_91674DE7C7B54CA3BA538FEB7EB85BCF">如果数据尚未进行归一化或标准化，请将原始数据转换为比率或百分比。绘制关系地图时，建议归一化数据。归一化数据的示例包括：人均的 X、每平方千米的 Y 或 x 相对于 y 的比率。相比之下，标准化后原始计数可更好地利用颜色进行显示。对于绘制地图的各个属性，展开属性并从<span class="uicontrol">划分依据</span>下拉菜单中选择一个选项。要更改数据的分布方式，可拖动控点或单击控点旁的数字并输入精确的值，从而调整直方图的边界控点。您也可以使用计算的平均值 <img purpose="img" placement="inline" alt="计算的平均值" title="计算的平均值" src="GUID-5C357C7F-7B70-4D95-A058-0E8F978AAA40-web.png">来了解数据的分布情况并微调地图的消息。</li><li purpose="choice" id="ESRI_CHOICE_62B654354A03403EAC8E5316A6DF83AB">要在地图上绘制缺失数据的位置，请选中<span class="uicontrol">绘制不含值的要素</span>。取消选中此选项以隐藏要素。</li><li purpose="choice" id="ESRI_CHOICE_7D77928CF38F4327A5B1F74B05F81494"> 如果要绘制点符号的地图，则可根据第二个数值字段选择<a class="xref xref" href="../../../../zh-CN/portal/latest/use/styling-reference.htm#ESRI_SECTION2_943D2C8E61684446B11D3E1F1A6E6225">旋转符号</a>。例如，点的颜色可以表示气象站的气温，而点的旋转则可以表示湿度。默认符号为圆形，无法表示旋转，所以最好选择其他形状。</li><li purpose="choice" id="ESRI_CHOICE_04D5B642105B45349A9576024A137673">要更改<a class="xref xref" href="../../../../zh-CN/portal/latest/use/change-transparency.htm">透明度</a>，请将<span class="uicontrol">透明度</span>滑块向左（减少透明度）或右（增加透明度）移动。要调整每个要素数值的透明度，请单击<span class="uicontrol">属性值</span>，选择属性字段并根据需要选择作为划分依据的属性（用于对数据进行归一化），然后设置精确的透明度值。仅当您的位置已关联数值或日期数据时，才可使用该选项。例如，如果图层包含人口数据，则可以根据人口相应调整各位置的透明度。如果要隐藏图例中的透明度带，请取消选中<span class="uicontrol">在图例中显示</span>复选框。</li><li purpose="choice" id="ESRI_CHOICE_4AA3A31C22B1437985B9912B148512A3">要计算和设置最佳可见范围，请单击<span class="uicontrol">可见范围</span>滑块旁的<span class="uicontrol">建议</span>。您还可以手动设置<a class="xref xref" href="../../../../zh-CN/portal/latest/use/set-visibility.htm">可见范围</a>。</li></ul></li><li purpose="step" id="ESRI_STEP_580D6DC3781248CAB08D6160C198EC01"><span purpose="cmd">完成自定义样式后，单击<span class="uicontrol">确定</span>，或单击<span class="uicontrol">取消</span>返回<span class="uicontrol">更改样式</span>窗格，而不保存所做的任何选择。</span></li></ol></div></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_DD8025A4999E4FA9A7D6F27C87D43AFA" purpose="section1"><h2>关系和大小</h2><p id="GUID-C0747C61-B337-4C95-B49C-B811C547C29D"> 使用<span class="uicontrol">关系和大小</span>制图样式查看点、线或面要素数据中数值属性之间的关系。与<a class="xref xref" href="../../../../zh-CN/portal/latest/use/style-numbers.htm#ESRI_SECTION1_C7FAB061D60344CAB6AC9A190DAED1D2"><span class="uicontrol">关系</span></a>样式一样，该样式将不同的分级色带应用于两个属性中的<a class="xref xref" href="../../../../zh-CN/portal/latest/use/styling-reference.htm#ESRI_SECTION1_E3130A70037C45ED996CB6646ABC7330">已分类</a>数据，然后合并色带以显示属性之间的关系。此外，<span class="uicontrol">关系和大小</span>样式还使用不同大小的符号来表示您指定的第三个数值属性。例如，您可能想要了解美国肥胖率和糖尿病患病率之间是否存在关系，以及缺乏身体锻炼率是否与这种模式保持一致的关系。使用这一地图样式，您还可以直观确认国内关系最明显和最不明显的区域。利用<span class="uicontrol">关系和大小</span>，您可以使用不同的侧重选项、分类方法和其他选项来探索数据中的关系。</p><div class="panel trailer-1 note" id="GUID-AD9AC5D3-8A0F-4012-9EC7-B27843890181"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-4A0476BF-60F0-4368-B7F1-707CB0E8E945">此样式适用于 <a class="xref xref" href="../../../../zh-CN/portal/latest/use/feature-layers.htm#ESRI_SECTION1_0BEFA4197C154A219A5B113039AB73F2"><span class="ph">ArcGIS Server</span> 要素图层</a>、<a class="xref xref" href="../../../../zh-CN/portal/latest/use/hosted-web-layers.htm#ESRI_SECTION2_706D4510832549F6BDE997EFAE1B3ACF">托管要素图层</a>、<a class="xref xref" href="../../../../zh-CN/portal/latest/use/feature-layers.htm#GUID-304463C0-25BD-4FEA-8DD6-AD82F2C96B56">要素集合</a>、<a class="xref xref" href="../../../../zh-CN/portal/latest/use/csv-gpx.htm">CSV 图层</a>和 <span class="ph">ArcGIS Server</span> 10.6 或更高版本中启用了动态图层的地图服务。</p></div><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_CDD9F42169324DE8A0CFE0F3E79B5C8F"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_53A418DF9D51460490D8AD79AC07999A"><span purpose="cmd">执行<a class="xref xref" href="../../../../zh-CN/portal/latest/use/change-style.htm#ESRI_SECTION1_C8F654A7EF384CCB823F9D1B59995D38">更改样式</a>工作流中的前四个步骤。</span></li><li purpose="step" id="ESRI_STEP_B91C7DA5915F4433BA9E60BD8C776D37"><span purpose="cmd">从<span class="uicontrol">要显示的属性</span>中选择一个属性作为关系中的第一个属性。对于这种制图样式，请选择包含数值的属性。</span><div class="info" purpose="info"><p id="GUID-1F23910C-7B43-416F-9661-4EE4FAFF76A1">将使用颜色设置第一个属性的样式，以便显示该属性与第二个属性之间的潜在关系。</p></div></li><li purpose="step" id="ESRI_STEP_77D0730200EF4C6089D40CF7F692A473"><span purpose="cmd"> 单击<span class="uicontrol">添加属性</span>并从<span class="uicontrol">要显示的属性</span>中选择一个数值属性作为关系中的第二个属性。</span><div class="info" purpose="info"><p id="GUID-21AB6351-13C3-4B2D-ACD6-76EF9709CB5A">将使用颜色设置第二个属性的样式，以便显示该属性与第一个属性之间的潜在关系。</p></div></li><li purpose="step" id="ESRI_STEP_6078465827204A44820A700E2D3F47FB"><span purpose="cmd">重复上一步骤，以从<span class="uicontrol">要显示的属性</span>中选择第三个数值属性。</span><div class="info" purpose="info"><p id="GUID-7D261002-3DBA-4659-820D-0E9D3B4D7A2A">将在地图中使用不同大小的符号设置第三个属性的样式。</p></div></li><li purpose="step" id="ESRI_STEP_D715366263CC40B0A31D4C952041A44C"><span purpose="cmd">选择<span class="uicontrol">关系和大小</span>样式，然后单击<span class="uicontrol">选项</span>。</span></li><li purpose="step" id="ESRI_STEP_BD3FA76FF804421AAD884CC7990CC33A"><span purpose="cmd">将选项应用至<a class="xref xref" href="../../../../zh-CN/portal/latest/use/style-numbers.htm#ESRI_SECTION1_C7FAB061D60344CAB6AC9A190DAED1D2"><span class="uicontrol">关系</span></a>（针对前两个选项）和<a class="xref xref" href="../../../../zh-CN/portal/latest/use/style-numbers.htm#ESRI_SECTION1_872438351B424ECE9B435B47F6E7432F"><span class="uicontrol">大小</span></a>（针对第三个选项）。</span></li></ol></div></section></section>
+			
+				<hr>
+				<!--googleoff: all-->
+				
+	
+        
+		    <p class="feedback right">
+		        <a id="afb" class="icon-ui-contact" href="/feedback/" data-langlabel="feedback-on-this-topic" >有关此主题的反馈?</a>
+		    </p>
+        
+	
+
+				<!--googleon: all-->
+			
+		</main>
+	</div>
+	
+	<!--googleoff: all-->
+	
+		
+			<div id="main-toc-large" class="column-5">
+			    <div class="panel font-size--2 tablet-hide trailer-1">
+			      <h5 class="trailer-half">在本主题中</h5>
+			      <ol class="list-plain pre-0 trailer-0"><li><a href="#ESRI_SECTION1_1D8BD412F83148C6ABF315CA10111E66">计数和数量（颜色）</a></li><li><a href="#ESRI_SECTION1_872438351B424ECE9B435B47F6E7432F">计数和数量（大小）</a></li><li><a href="#ESRI_SECTION1_5746532688614A4C805AACCBFE18BD0C">颜色和大小</a></li><li><a href="#ESRI_SECTION1_F269A11801BF4CCDA1E9584B585C4671">比较 A 和 B</a></li><li><a href="#ESRI_SECTION1_EA0A604A4E9C46A590DA783F989190CD">主要类别</a></li><li><a href="#ESRI_SECTION1_C188623AB09249C8AB88621A99307E23">主要类别和大小</a></li><li><a href="#ESRI_SECTION1_C7FAB061D60344CAB6AC9A190DAED1D2">关系</a></li><li><a href="#ESRI_SECTION1_DD8025A4999E4FA9A7D6F27C87D43AFA">关系和大小</a></li></ol>
+			    </div>
+			    
+			    
+	  		</div>
+		
+    
+   <!--googleon: all-->
+
+
+
+
+          
+        </div>
+        <!-- ENDPAGECONTENT -->
+
+      </div>
+
+    </div>  <!-- End of wrapper -->
+
+  <footer class="footer leader-3 link-dark-gray" role="contentinfo">
+    <div class="grid-container">
+      <div class="row">
+        <nav class="column-6">
+          <h6 data-langlabel="arcgis-for-server">Arc<span>GIS Enterprise</span></h6>
+          <ul class="list-plain">
+            <li><a data-langlabel="home" href="../../../../zh-CN/">主页</a></li>
+            <li><a data-langlabel="portal" href="../../../../zh-CN/portal/">Portal</a></li>
+            <li><a data-langlabel="server" href="../../../../zh-CN/server/">Server</a></li>
+            <li><a data-langlabel="data-store" href="../../../../zh-CN/data-store/">Data Stores</a></li>
+            <li><a data-langlabel="cloud" href="../../../../zh-CN/cloud/">云</a></li>
+            <li><a data-langlabel="apps" href="../../../../zh-CN/apps/">应用程序</a></li>
+            <li><a data-langlabel="documentation" href="../../../../zh-CN/documentation/">文档</a></li>
+          </ul>
+        </nav>
+
+        
+  <nav class="column-6">
+    <h6 data-langlabel="arcgis-platform">ArcGIS 平台</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="arcgis" href="//www.arcgis.com/">ArcGIS Online</a></li>
+      <li><a data-langlabel="arcgis-for-professionals" href="//pro.arcgis.com/">ArcGIS Pro</a></li>
+      <li><a data-langlabel="arcgis-for-server" href="//enterprise.arcgis.com/">ArcGIS Enterprise</a></li>
+      <li><a data-langlabel="arcgis-for-developers" href="https://developers.arcgis.com/">ArcGIS for Developers</a></li>
+      <li><a data-langlabel="arcgis-solutions" href="//solutions.arcgis.com/">ArcGIS Solutions</a></li>
+      <li><a data-langlabel="arcgis-marketplace" href="//marketplace.arcgis.com/">ArcGIS Marketplace</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <h6 data-langlabel="about-esri">关于 Esri</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="about-us" href="//www.esri.com/about-esri/">关于我们</a></li>
+      <li><a data-langlabel="careers" href="//www.esri.com/careers/">招贤纳士</a></li>
+      <li><a data-langlabel="insiders-blog" href="https://www.esri.com/about/newsroom/blog/">Esri 博客</a></li>
+      <li><a data-langlabel="user-conference" href="//www.esri.com/events/user-conference/index.html">用户大会</a></li>
+      <li><a data-langlabel="developer-summit" href="//www.esri.com/events/devsummit/index.html">开发者峰会</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <a class="esri-logo" href="//www.esri.com/" aria-label="Esri Home"></a>
+    <section class="footer-social-nav leader-1">
+            <a class="icon-social-twitter" aria-label="Esri on Twitter" href="https://twitter.com/Esri/"></a>
+            <a class="icon-social-facebook" aria-label="Esri on Facebook" href="https://www.facebook.com/esrigis/"></a>
+            <a class="icon-social-github" aria-label="Esri on GitHub" href="//esri.github.io/"></a>
+            <a class="icon-social-contact" aria-label="Contact Esri" href="//www.esri.com/about-esri/contact/"></a>
+    </section>
+	  
+  </nav>
+  
+  <div class="column-24 leader-1">
+    <p class="font-size--3"><a href="http://www.esri.com/legal/copyright-trademarks">Copyright &copy; 2019 Esri.</a> All rights reserved. | <a href="http://www.esri.com/legal/privacy/">隐私政策</a> | <a href="http://www.esri.com/legal/software-license">法律声明</a></p>
+  </div>
+  
+
+
+      </div>
+    </div>
+  </footer>
+  <!--googleoff: all-->
+
+  
+  
+	<script src="../../../../zh-CN/assets/js/init.js" type="text/javascript"></script>
+	<!--<script src="../../../../zh-CN/assets/js/drop-down.js" type="text/javascript"></script>-->
+	<script src="../../../../zh-CN/assets/js/search/searchform.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/cdn/js/link-modifier.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/cdn/js/sitewide.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/cdn/js/libs/highlight.pack.js" type="text/javascript"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+
+
+  
+    
+
+  <script src="../../../../zh-CN/cdn/js/affix.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    $(function () {
+          var appendFlg = true;
+
+          $("#bigmac")
+          .on("affixed.bs.affix", function (evt) {
+            if (appendFlg) {
+              $("<a class='crumb' href='#'>样式化数值</a>").insertAfter ($("#bigmac nav a").last());
+              appendFlg = false;
+            }
+          })
+          .on ("affix-top.bs.affix", function(evt) {
+            if (!appendFlg) {
+              $("#bigmac nav a").last().remove();
+            }
+            appendFlg = true;
+          })
+    })
+  </script>
+  
+        <script type="text/javascript">
+          window.doctoc = {
+            pubID: "583",
+            tpcID: "615",
+            
+              prefix: "使用",
+              prefixUrl: "/zh-cn/portal/latest/use/",
+          
+            hideToc: false
+          }
+        </script>
+
+        <script type="text/javascript" src="../../../../zh-CN/portal/latest/use/583.js" ></script>
+        <script type="text/javascript" src="../../../../zh-CN/cdn/calcite/js/protoc.js" ></script>
+        
+        
+
+  <noscript>
+        <p>
+            <a href="flisting.htm">flist</a>
+        </p>
+    </noscript>
+    <script type="text/javascript"></script>
+  
+  
+    
+    
+
+  </body>
+</html>

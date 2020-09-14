@@ -1,0 +1,549 @@
+
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>  <html class="ie lt-ie9 lt-ie8 lt-ie7 ie6" dir="ltr"> <![endif]-->
+<!--[if IE 7]>     <html class="ie lt-ie9 lt-ie8 ie7" dir="ltr"> <![endif]-->
+<!--[if IE 8]>     <html class="ie lt-ie9 ie8" dir="ltr"> <![endif]-->
+<!--[if IE 9]>     <html class="ie ie9" dir="ltr"> <![endif]-->
+<!--[if !IE]><!--> <html dir="ltr" lang="zh-CN"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>设置点图层样式&mdash;Portal for ArcGIS | ArcGIS Enterprise 文档</title>
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+    <script>
+      var docConfig = {
+        locale: 'zh-CN'
+        ,localedir: 'zh-cn'
+        ,langSelector: ''
+        
+        ,relativeUrl: false
+        
+
+        ,searchformUrl: '/search/'
+        ,tertiaryNavIndex: ''
+
+        
+      };
+    </script>
+	 
+
+
+    
+    <!--[if lt IE 9]>
+      <script src="../../../../zh-CN/cdn/js/libs/html5shiv.js" type="text/javascript"></script>
+      <script src="../../../../zh-CN/cdn/js/libs/selectivizr-min.js" type="text/javascript"></script>
+      <script src="../../../../zh-CN/cdn/js/libs/json2.js" type="text/javascript"></script>
+      <script src="../../../../zh-CN/cdn/js/libs/html5shiv-printshiv.js" type="text/javascript" >
+
+    <![endif]-->
+
+     <!--[if lt IE 11]>
+    <script>
+      $$(document).ready(function(){
+        $$(".hideOnIE").hide();
+      });
+    </script>
+    <![endif]-->
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<link href="../../../../zh-CN/assets/img/favicon.ico" rel="shortcut icon" >
+	<link href="../../../../zh-CN/assets/css/screen.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/cdn/calcite/css/documentation.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/assets/css/print.css" media="print" type="text/css" rel="stylesheet" />
+
+	<!--
+	<link href="../../../../zh-CN/assets/css/screen_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/assets/css/documentation/base_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/assets/css/print_l10n.css" media="print" type="text/css" rel="stylesheet" />
+	-->
+	
+	
+		<script src="../../../../zh-CN/cdn/js/libs/jquery.1.9.1.min.js" type="text/javascript"></script>
+	
+	<script src="../../../../zh-CN/cdn/js/libs/jquery.cookie.js" type="text/javascript"></script>
+	<link href="../../../../zh-CN/cdn/css/colorbox.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/cdn/css/colorbox_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<script src="../../../../zh-CN/cdn/js/libs/jquery.colorbox-min.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/assets/js/video-init.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/assets/js/sitecfg.js" type="text/javascript"></script>
+	
+		<script src="../../../../zh-CN/assets/js/signIn.js" type="text/javascript"></script>
+	
+
+	<!--- Language Picker -->
+	<script src="../../../../zh-CN/assets/js/locale/l10NStrings.js" type="text/javascript"></script>
+	
+		 
+	
+
+	<script src="../../../../zh-CN/assets/js/calcite-web.js" type="text/javascript"></script>
+
+
+
+  <!--- search MD -->
+    <META name="description" content="选择场景中点的样式。"><META name="last-modified" content="2019-12-6"><META name="product" content="arcgis-portal-windows,arcgis-portal-linux,arcgis-enterprise-windows,arcgis-enterprise-linux"><META name="sub_category" content="Portal for ArcGIS"><META name="search-collection" content="help"><META name="content_type_label" content="帮助主题"><META name="sub_category_label" content="Portal for ArcGIS"><META name="search-category" content="help-general"><META name="subject_label" content="PORTAL,服务,SERVER"><META name="version" content="10.8"><META name="content_type" content="Help Topic"><META name="subject" content="PORTAL,SERVICES,SERVER"><META name="content-language" content="zh-cn">
+    <!--- search MD -->
+
+  
+  <script src="../../../../zh-CN/assets/js/switchers/portal-1.js" type="text/javascript"></script>
+  
+      
+
+</head>
+
+<!--
+      pub: GUID-7B47163B-CE1B-465F-BEEE-4DADDB8DFF09=37
+      tpc: GUID-E7AECB0A-FDDD-4692-A371-C7F7301192CB=14
+      -->
+
+
+<!-- variable declaration, if any -->
+<!-- can change following macro to set variable once we are on Jinja 2.8 -->
+
+
+
+
+
+<body class="claro zh-CN server">
+  
+
+  <!-- Drawer location -->
+  <div class="drawer drawer-left js-drawer" data-drawer="top-nav">
+        <nav class="drawer-nav" role="navigation">
+          <aside class="side-nav">
+            <h2 class="side-nav-title">Arc<span>GIS</span> Enterprise</h2>
+            <form id="helpSearchForm" class="margin-left-half margin-right-half leader-half trailer-half drawer-search-form" method="GET">
+              <input type="search" name="q"  placeholder="搜索 ArcGIS Enterprise 帮助">
+              <input type="hidden" name="collection" value="help" />
+              <input type="hidden" name="product" value="arcgis-portal-windows" />
+              <input type="hidden" name="version" value="10.8" />
+              <input type="hidden" name="language" value="zh-CN" />
+            </form>    
+             <a id="nav-portal" data-langlabel="portal" href="../../../../zh-CN/portal/" class="side-nav-link">Portal</a>
+             
+            <a id="all-servers" data-langlabel="all-servers" href="../../../../zh-CN/server/" class="side-nav-link">所有服务器</a>
+            <a id="gis-server" data-langlabel="gis-server" href="../../../../zh-CN/server/" class="side-nav-link">GIS Server</a>
+            <a id="image-server" data-langlabel="image-server" href="../../../../zh-CN/image/" class="side-nav-link">Image Server</a>
+            <a id="geo-analytics-server" data-langlabel="geo-analytics-server" href="../../../../zh-CN/geoanalytics/" class="side-nav-link">GeoAnalytics Server</a>
+            <a id="geoevent-server" data-langlabel="geoevent-server" href="../../../../zh-CN/geoevent/" class="side-nav-link">GeoEvent Server</a>
+            <a id="notebook-server" data-langlabel="notebook-server" href="../../../../zh-CN/notebook/" class="side-nav-link">Notebook Server</a>
+            <a id="nav-data-store" data-langlabel="data-store" href="../../../../zh-CN/data-store/" class="side-nav-link">Data Stores</a>
+            <a id="nav-cloud" data-langlabel="cloud" href="../../../../zh-CN/cloud/" class="side-nav-link">云</a>
+            <a id="nav-apps" data-langlabel="apps" href="../../../../zh-CN/apps/" class="side-nav-link">应用程序</a>
+            <a id="nav-doc" data-langlabel="documentation" href="../../../../zh-CN/documentation/" class="side-nav-link">文档</a>
+
+          </aside>
+        </nav>
+    </div>
+
+    <!-- user navigation collapses to drawer on mobile -->
+    
+    <div class="drawer drawer-right js-drawer hide-if-logged-out logged-in-navigation" data-drawer="user-nav">
+      <nav class="drawer-nav">
+        <aside class="side-nav">
+          <a class="side-nav-link agolProfile" href="#">我的个人资料</a>
+          <a class="side-nav-link icon-ui-sign-out js-log-out" href="#">登出</a>
+        </aside>
+      </nav>
+    </div>
+    
+<!-- End of drawer -->
+
+  
+  <div class="wrapper">
+      <!--googleoff: all-->
+
+      <header class="top-nav" data-skin="learn">
+        <a class="skip-to-content" href="#skip-to-content">Skip To Content</a>
+        <div class="grid-container">
+          <div class="column-24">
+
+
+            <!--<div class="top-nav-title-wrapper text-center ">-->
+              <a href='../../../../zh-CN/' class="top-nav-title tablet-hide"><span>Arc</span>GIS  Enterprise</a>
+              <a href='../../../../zh-CN/' class="icon-ui-menu top-nav-title js-drawer-toggle tablet-show" data-drawer="top-nav"><span>Arc</span>GIS Enterprise</a>
+            <!--</div> -->
+
+          
+            <nav role="navigation" class="top-nav-list left tablet-hide">
+              <a id="nav-portal" data-langlabel="portal" href="../../../../zh-CN/portal/" class="top-nav-link">Portal</a>
+
+                <div class="dropdown js-dropdown ">
+                  <a class="top-nav-link js-dropdown-toggle" tabindex="0" aria-haspopup="true" aria-expanded="false" href="#">Servers</a>
+                  <nav class="dropdown-menu featured" role="menu">
+                    <ul class="dropdown-sublist-featured">
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/get-started/latest/windows/additional-server-deployment.htm" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path  d="M42.92 6.1H4.12v8.566l.833.832-.835.833-.018 7.332.845.847-.825.824V33.9h25v5.2h-2v1.075H8.02v.8h19.1v.925h4.8v-.925H40v-.8h-8.08V39.1h-2v-5.2h13v-8.566l-.834-.834.835-.834v-7.332l-.835-.834.835-.834zm-11.8 35h-3.2v-1.2h3.2zm11-8H4.92v-7.434l.767-.766h35.668l.765.766zm0-9.766l-.766.766H5.666l-.766-.767.017-6.669.766-.764h35.671l.766.766zm0-9l-.766.766H5.687l-.766-.766V6.9h37.2zM19 11.9h-2v-.8h2zm-4 0h-2v-.8h2zm-4 0H9v-.8h2zm6 8.2h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9zm8 9h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9z"/></svg></span>
+                          <span class="sublink-text">所有服务器</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/server/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M45.98 33.575a.616.616 0 0 0-.335-.51l-3.362-2.03 3.362-2.031a.556.556 0 0 0 0-1.02l-11.1-6.704a1.293 1.293 0 0 0-1.112 0L22.33 27.982a.556.556 0 0 0 0 1.02l3.36 2.03-3.358 2.03a.556.556 0 0 0-.002 1.021l3.322 2.006-3.324 2.008a.555.555 0 0 0 .002 1.017l11.102 6.703a1.25 1.25 0 0 0 1.11.002l11.104-6.706a.556.556 0 0 0 0-1.02l-3.32-2.006 3.318-2.004a.607.607 0 0 0 .335-.509zM33.837 21.97c.026-.01.286-.005.29-.005l10.814 6.53-10.8 6.523c-.028.01-.284.005-.294.006l-10.813-6.53zm11.105 16.636l-10.8 6.523a2.564 2.564 0 0 1-.295.006l-10.81-6.529 3.39-2.047 7.004 4.23a1.083 1.083 0 0 0 .557.131 1.101 1.101 0 0 0 .554-.13l7.01-4.233zM34.14 40.098a2.545 2.545 0 0 1-.294.006l-10.812-6.53 3.43-2.073 6.97 4.208a1.25 1.25 0 0 0 1.107-.001l6.966-4.206 3.431 2.073zM9 8H7V7h2zm8 8h-2v-1h2zm-4-8h-2V7h2zm4 0h-2V7h2zm-4 8h-2v-1h2zm7.316 11.1H3.9v-6.434l.766-.766h35.668l.766.766v2.12l.8.483v-2.935l-.826-.826.826-.845v-6.329l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9h16.88a2.632 2.632 0 0 1 .336-.8zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zm0 8v-5.668l.766-.766h35.668l.766.766v5.67l-.746.764H4.666zM15 24v-1h2v1zm-4 0v-1h2v1zm-2-8H7v-1h2zm-2 8v-1h2v1z"/></svg></span>
+                          <span class="sublink-text">GIS Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/image/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 8h-2V7h2zm-4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm8 8h-2v1h2zm-8 0H7v1h2zm4 9v-1h-2v1zm-4 0v-1H7v1zm8 0v-1h-2v1zm4 3.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V21h-.8v-.334l-.766-.766H4.666l-.766.766V27.1H21zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zm40.234 4v21.8H23.1V23.1zm-.8 16.366L39.466 44.1h2.868l1.766-1.766zm-20.2-9.932l5.634-5.634h-2.868L23.9 26.666zm6.2-5.068L24.466 30.1h2.868l2.766-2.766zM28.466 30.1H30.1v-1.634zm2.434 0h6.2v-6.2h-6.2zm-7 7h6.2v-6.2h-6.2zm7 0h6.2v-6.2h-6.2zm0 6.434l5.634-5.634h-2.868L30.9 40.666zm7-7l5.634-5.634h-2.868L37.9 33.666zm1.634-5.634H37.9v1.634zm-8.634 7v1.634l1.634-1.634zm.566 6.2h2.868l2.766-2.766v-2.868zm6.434-3.566l2.634-2.634H37.9zM35.466 44.1H37.1v-1.634zm2.434 0h.434l5.766-5.766V37.9h-2.434L37.9 41.666zm6.2-8.634L42.466 37.1H44.1zm0-4L38.466 37.1h2.868l2.766-2.766zm0-7.566h-6.2v6.2h6.2zm-20.2 0v1.634l1.634-1.634zm0 20.2h6.2v-6.2h-6.2zm20.2 0v-.634l-.634.634z"/></svg></span>
+                          <span class="sublink-text">Image Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/geoanalytics/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 16h-2v-1h2zm-8 8v-1H7v1zm8 0v-1h-2v1zM13 7h-2v1h2zm4 0h-2v1h2zM9 7H7v1h2zm21.45 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V27.9h-1.464l-.801-.8H41.1v-6.434l-.766-.766H4.666l-.766.766V27.1h27.15zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM13 24v-1h-2v1zm0-9h-2v1h2zm-4 0H7v1h2zm26.672 27.148A1.87 1.87 0 0 1 35.9 43a1.91 1.91 0 1 1-3.763-.222l-9.845-3.414A1.88 1.88 0 0 1 21 39.9a1.9 1.9 0 1 1 1.474-3.084l4.692-2.346A1.878 1.878 0 0 1 27.1 34a1.902 1.902 0 0 1 1.9-1.9 1.867 1.867 0 0 1 .781.191l3.788-5.05A1.88 1.88 0 0 1 33.1 26a1.9 1.9 0 1 1 3.491 1.026l4.889 4.888c-.069.056-.144.1-.21.162a3.986 3.986 0 0 0-.358.402l-4.883-4.883A1.889 1.889 0 0 1 35 27.9a1.867 1.867 0 0 1-.781-.191l-3.788 5.049a1.868 1.868 0 0 1 .437.965l9.204.614c-.018.11-.049.218-.058.33A3.93 3.93 0 0 0 40 35c0 .046.01.09.01.135l-9.185-.612A1.913 1.913 0 0 1 29 35.9a1.889 1.889 0 0 1-1.474-.716l-4.692 2.346a1.878 1.878 0 0 1 .066.47 1.9 1.9 0 0 1-.105.625c-.007.02-.022.036-.03.056l9.63 3.34a1.87 1.87 0 0 1 2.786-.505l5.415-4.437c.067.108.127.22.204.322a3.9 3.9 0 0 0 .292.306zM33.9 26a1.092 1.092 0 0 0 .43.872 1.12 1.12 0 0 0 1.42-.068A1.1 1.1 0 1 0 33.9 26zm-6 8a1.1 1.1 0 0 0 2.196.093 1.135 1.135 0 0 0-.426-.965A1.087 1.087 0 0 0 29 32.9a1.101 1.101 0 0 0-1.1 1.1zm-5.8 4a1.098 1.098 0 1 0-.06.362A1.101 1.101 0 0 0 22.1 38zm13 5a1.1 1.1 0 1 0-2.2 0 1.1 1.1 0 0 0 2.2 0zm10.8-8a1.9 1.9 0 1 1-3.8 0c0-.053.003-.105.007-.158A1.9 1.9 0 0 1 45.9 35zm-.8 0a1.1 1.1 0 0 0-2.196-.093 1.153 1.153 0 0 0 .216.752A1.1 1.1 0 0 0 45.1 35z"/></svg></span>
+                          <span class="sublink-text">GeoAnalytics Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/geoevent/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M13 8h-2V7h2zm4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm12.418 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826v2.117c-.259-.177-.53-.337-.8-.497v-1.288l-.766-.766H4.666l-.766.766V27.1h17.933c-.148.26-.283.53-.415.8zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM9 24v-1H7v1zm4-9h-2v1h2zm0 9v-1h-2v1zm-4-9H7v1h2zm8 9v-1h-2v1zm16.9 2h-.8v8.9H39v-.8h-5.1zm.1-3.901a11.9 11.9 0 1 0 11.9 11.9 11.914 11.914 0 0 0-11.9-11.9zm0 23a11.1 11.1 0 1 1 11.1-11.1 11.112 11.112 0 0 1-11.1 11.1z"/></svg></span>
+                          <span class="sublink-text">GeoEvent Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/notebook/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M22 27.1H3.9v-6.434l.766-.766h18.576a5.262 5.262 0 0 1 .83-.8H4.666l-.766-.766v-5.668l.766-.766h35.668l.766.766V18h.8v-5.666l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9H22zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zM9 8H7V7h2zm8 0h-2V7h2zm-4 0h-2V7h2zm2 16v-1h2v1zm-4 0v-1h2v1zm-4 0v-1h2v1zm0-8v-1h2v1zm8 0v-1h2v1zm-4 0v-1h2v1zm18.9 8.1h-1.8v1.8h1.8zm-.8 1h-.2v-.2h.2zm15.498-4.48a2.727 2.727 0 0 0-1.62-.5v-.02H27.25a3.154 3.154 0 0 0-3.15 3.15V38.1h-1.68a3.386 3.386 0 0 0-2.872 1.58 3.49 3.49 0 0 0-.157 3.419 3.241 3.241 0 0 0 2.954 1.801h15.161a3.404 3.404 0 0 0 3.394-3.4V26.9h5v-3.65a3.224 3.224 0 0 0-1.302-2.63zM22.345 44.1a2.44 2.44 0 0 1-2.23-1.341 2.706 2.706 0 0 1 .11-2.65A2.588 2.588 0 0 1 22.42 38.9h12.89a3.395 3.395 0 0 0 0 5.2zM40.1 23.192V41.5a2.6 2.6 0 1 1-2.6-2.6v-.8H24.9V23.25a2.352 2.352 0 0 1 2.35-2.35h13.795a3.183 3.183 0 0 0-.945 2.292zm5 2.908h-4.2v-2.908a2.274 2.274 0 0 1 1.44-2.18 1.944 1.944 0 0 1 1.791.259 2.423 2.423 0 0 1 .97 1.979zm-17.1 5h9v.8h-9zm0 3h7v.8h-7zm0-6h9v.8h-9zm4-3h5v.8h-5z"/></svg></span>
+                          <span class="sublink-text">Notebook Server</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+
+              <a id="nav-data-store" data-langlabel="data-store" href="../../../../zh-CN/data-store/" class="top-nav-link">Data Stores</a>
+              <a id="nav-cloud" data-langlabel="cloud" href="../../../../zh-CN/cloud/" class="top-nav-link">云</a>
+              <a id="nav-apps" data-langlabel="apps" href="../../../../zh-CN/apps/" class="top-nav-link">应用程序</a>
+            </nav>
+
+
+            
+            
+            
+
+            <div class="margin-left-1 top-nav-list right hide-if-logged-in logged-out-navigation">
+               
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+              
+              <a data-langlabel="sign-in" id="login-link" class="icon-ui-user top-nav-link link-blue login-link" href="#">登录</a>
+              
+            </div>
+
+            
+            <nav class="margin-left-1 top-nav-list right hide-if-logged-out logged-in-navigation">
+              
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+             
+              <div class="dropdown js-dropdown right">
+
+                <div class="tablet-show top-nav-link">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a href="#" data-drawer="user-nav" class="user-nav-name js-drawer-toggle" data-first-name></a>
+                </div>
+
+                <div class="tablet-hide top-nav-link js-dropdown-toggle">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a class="user-nav-name top-nav-dropdown dropdown-btn" data-first-name>&nbsp;</a>
+                </div>
+
+                <nav class="dropdown-menu dropdown-right">
+                
+                  <a class="dropdown-link agolProfile" id="agolProfile" href="#">我的个人资料</a>
+                  <a class="dropdown-link js-log-out" id="agolLogout" href="#">登出</a>
+                </nav>
+              </div>
+            </nav>
+            
+
+            
+          </div>
+        </div>
+      </header>
+
+      <div class="js-search search-overlay">
+        <div class="search-content" role="dialog" aria-labelledby="search">
+          <form method="GET" id="helpSearchForm">
+            <label>
+              搜索 ArcGIS Enterprise 帮助
+              <div class="search-bar">
+                <input type="search" name="q"  placeholder="搜索 ArcGIS Enterprise 帮助" class="search-input js-search-input">
+                <input type="hidden" name="collection" value="help" />
+                <input type="hidden" name="product" value="arcgis-portal-windows" />
+                <input type="hidden" name="version" value="10.8" />
+                <input type="hidden" name="language" value="zh-CN" />
+              </div>
+            </label>
+            <input type="hidden" name="relativePath" value="../../../../" /><button type="submit" class="btn btn-large right">搜索</button>
+          </form>
+        </div>
+      </div>
+
+      <!--googleon: all-->
+
+      <div id="skip-to-content">
+        <!--googleoff: all-->
+        <header class="sub-nav sub-nav-learn">
+          <div class="grid-container">
+            
+            <div class="column-24">
+              <div style="display:table;" class="sdk-home-banner">
+                <div class="sdk-home-banner-content">
+                  <h1 class="sub-nav-title link-white">Portal for ArcGIS</h1>
+                </div>
+              </div>
+            </div>
+
+            <div class="column-24">
+              <nav class='sub-nav-list tablet-hide'><a class="sub-nav-link" href="../../../../zh-CN/portal/" target="_top" title="Portal for ArcGIS 主页">主页</a><a class="sub-nav-link is-active" href="../../../../zh-CN/portal/latest/use/" target="_top" title="使用 Portal for ArcGIS">使用</a><a class="sub-nav-link" href="../../../../zh-CN/portal/latest/administer/windows/" target="_top" title="安装、管理和保护 Portal for ArcGIS">管理</a></nav><select class='tablet-show select-full trailer-half js-select-nav'><option value="../../../../zh-CN/portal/">主页</option><option selected="true" value="../../../../zh-CN/portal/latest/use/">使用</option><option value="../../../../zh-CN/portal/latest/administer/windows/">管理</option></select>
+            </div>
+
+          </div>
+        </header>
+        <!--googleon: all-->
+       
+        <!-- content goes here -->
+        <div class="grid-container ">
+          
+
+            
+              
+  <!--BREADCRUMB-BEG--><div id="bigmac" class="sticky-breadcrumbs trailer-2" data-spy="affix" data-offset-top="180"> </div><!--BREADCRUMB-END-->
+  <!--googleoff: all-->
+    <div class="column-5 tablet-column-12 trailer-2 ">
+      <aside class="js-accordion accordion reference-index" aria-live="polite" role="tablist">
+        <div></div>
+      </aside>
+
+      <div class="js-sticky scroll-show tablet-hide leader-1 back-to-top" data-top="0" style="top: 0px;">
+        <a href="#" class="btn btn-fill btn-clear">返回顶部</a>
+      </div>
+    </div>
+  <!--googleon: all-->
+  
+            
+            
+            
+	
+		<div class="column-13  pre-1 content-section">
+	
+		<header class="trailer-1"><h1>设置点图层样式</h1></header>
+
+		 
+	<!--googleoff: all-->
+	
+		
+				<aside id="main-toc-small" class="js-accordion accordion tablet-show trailer-1">
+			      <div class="accordion-section">
+			        <h4 class="accordion-title">在本主题中</h4>
+			        <div class="accordion-content list-plain">
+			          <ol class="list-plain pre-0 trailer-0"><li><a href="#ESRI_SECTION1_07C23D7053044ECEAA9D745BBF60D23D">2D 标记</a></li><li><a href="#ESRI_SECTION1_DA1996687B1449D390244E95B70AAF1A">3D 对象</a></li><li><a href="#ESRI_SECTION1_E66D3856408245219C7860B8A99AC838">2D 计数和数量</a></li><li><a href="#ESRI_SECTION1_4A175B6A642F490BA3ECCBD55DCAB42E">3D 计数和数量</a></li><li><a href="#ESRI_SECTION1_E25966A001A74A8EADCDF03C111C216E">2D 类型</a></li><li><a href="#ESRI_SECTION1_3537554C57044B9DA1EEB22972BF73DD">3D 类型</a></li><li><a href="#ESRI_SECTION1_BA3902DA9A284BA994875B11AD51EB4E">更改高程模式</a></li><li><a href="#ESRI_SECTION1_D9CB7FC46B0540DDA5B1F3422562232C">插入注释</a></li><li><a href="#ESRI_SECTION1_62F0B5648B034CC5A58733F22C569C1D">应用标注</a></li><li><a href="#ESRI_SECTION1_8BD4D931A44A4B719D13EC886E540139">上传自定义标记</a></li></ol>
+			        </div>
+			      </div>
+			     </aside>
+		
+    
+   <!--googleon: all-->
+
+
+		<main>
+			
+	
+    	
+    
+
+
+			
+<p id="GUID-18C2AA90-78DF-4D53-8AFB-412B133878D1">您可以对数据应用智能制图样式，来在场景中创建自定义可视化。您可以使用点样式更改要素或具有点数据的场景图层的外观。您可以选择使用属性将连续颜色或单个颜色应用于点的样式，或者选择将单个颜色应用于所有点的样式。</p><section class="section1 padded-anchor" id="ESRI_SECTION1_07C23D7053044ECEAA9D745BBF60D23D" purpose="section1"><h2>2D 标记</h2><p id="GUID-F09D9369-22AF-4C6F-AC09-133BF24556B6">当要素位置的优先级更高时，请使用 <span class="uicontrol">2D 标记</span>样式。此样式适用于整个国家/地区的零售店位置或某个城市的公园。例如，如果您拥有整个城市内的医院位置，在缩小至某一区域视图时，屏幕上的标记大小将保持不变，用户可轻松确定城市中的医院位置。</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_66B95C4CC9E2439AA0725A729064B731"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_06D95ED28D604010966BD529642326FA"><span purpose="cmd">执行<a class="xref xref" href="../../../../zh-CN/portal/latest/use/configure-content-in-scene.htm#ESRI_SECTION1_A23EBC107DD1416BA5167E8E2B1EF802">更改图层样式</a>工作流中的步骤。</span></li><li purpose="step" id="ESRI_STEP_B85E1182C4AA4E99B66CBF7C11A58431"><span purpose="cmd">对于<span class="uicontrol">标记</span>，从库中为您的标记选择 2D 形状和图标。</span><div class="info" purpose="info"><ul purpose="ul" id="UL_311AE7B00DDD4BF8BF4F628C219111EC"><li purpose="li" id="LI_8BC76CCBB3404D7E93F35AB1EE401C7B">从下拉菜单中选择<span class="uicontrol">基本形状</span>或<span class="uicontrol">图标</span>。例如，<span class="uicontrol">图标</span>下的标记可显示场景中的不同点，例如机场或加油站。</li><li purpose="li" id="LI_0B7C2BC57BA94945BF01DDA48F191C9E">您也可以从桌面上传自定义标记。请参阅<a class="xref xref" href="../../../../zh-CN/portal/latest/use/scene-style-points.htm#ESRI_SECTION1_8BD4D931A44A4B719D13EC886E540139">上传自定义标记</a>。</li></ul></div></li><li purpose="step" id="ESRI_STEP_4727C90014714FFAB35E01A2C902CFF5"><span purpose="cmd" id="GUID-0D60A8AC-B6E1-45E0-B2A4-0D8FA2968B63">对于<span class="uicontrol">颜色</span>，单击颜色选取器可查看<span class="uicontrol">填充</span>、<span class="uicontrol">轮廓</span>和<span class="uicontrol">透明度</span>选项。</span><div class="substeps" id="ESRI_SUBSTEPS_82F59CC49E484E1585FEC354103987ED" purpose="substeps"><ol class="list-numbered" purpose="ol"><li purpose="substep" id="ESRI_SUBSTEP_E3AF5341A2AE45DFA48CACEA841292FF"><span purpose="cmd">单击<span class="uicontrol">填充</span>可调整填充颜色和透明度。</span></li><li purpose="substep" id="ESRI_SUBSTEP_BF3663DD77364481AF7A2562DBAD04AA"><span purpose="cmd">单击<span class="uicontrol">轮廓</span>可调整轮廓颜色、线宽和透明度。</span><div class="stepresult" purpose="stepresult"><div class="panel trailer-1 note" id="GUID-DC6CA4D0-B82F-4E5A-ACEE-8BC8E75E55A8"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-2A9B31BE-072F-497C-8262-668116865CA4"><span class="uicontrol">图标</span>下的标记不包括轮廓选项。</p></div></div></li></ol></div></li><li purpose="step" id="ESRI_STEP_FA288FCB6C094701965AD01604D3B27C"><span purpose="cmd" id="GUID-DF672E41-69FB-4AF0-B4AC-AB4EB7B65609">对于<span class="uicontrol">大小</span>，以像素为单位手动输入大小来更改标记的大小。</span></li><li purpose="step" id="ESRI_STEP_62BE2D13CF48469287DCAD301E5ACBE5"><span purpose="cmd">有关<span class="uicontrol">高程模式</span>，请参阅<a class="xref xref" href="../../../../zh-CN/portal/latest/use/scene-style-points.htm#ESRI_SECTION1_847CC559EF18401D89145687B808D445">更改高程模式</a>。</span></li><li purpose="step" id="ESRI_STEP_B0C45C1D23684940BCF68A86239030A9"><span purpose="cmd">有关<span class="uicontrol">注释</span>，请参阅<a class="xref xref" href="../../../../zh-CN/portal/latest/use/scene-style-points.htm#ESRI_SECTION1_D9CB7FC46B0540DDA5B1F3422562232C">插入注释</a>。</span></li><li purpose="step" id="ESRI_STEP_ACF5B63D4B324664A86F9F9035C03048"><span purpose="cmd">有关<span class="uicontrol">标注</span>，请参阅<a class="xref xref" href="../../../../zh-CN/portal/latest/use/scene-style-points.htm#ESRI_SECTION1_62F0B5648B034CC5A58733F22C569C1D">应用标注</a>。</span></li><li purpose="step" id="ESRI_STEP_042F8674B8BC49ABB4C4558D53DE0D4E"><span purpose="cmd">对于<span class="uicontrol">清理</span>，单击切换键可在导航场景时移除重叠要素。</span></li><li purpose="step" id="ESRI_STEP_AFD8A51E400E44C9B76B2D40FFD78CC0"><span purpose="cmd">对于<span class="uicontrol">增强透视</span>，单击切换键可打开和关闭屏幕尺寸点标记的透视缩放。</span><div class="stepresult" purpose="stepresult"><p id="GUID-E9955614-48A1-4E2A-9804-D07A72623BD0">当<span class="uicontrol">增强透视</span>开启时，图标、标注和注释等对象可在 3D 场景中实现更好的集成，这是因为距离照相机位置越远，尺寸越小。</p></div></li></ol></div></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_DA1996687B1449D390244E95B70AAF1A" purpose="section1"><h2>3D 对象</h2><p id="GUID-D92DA9F0-B0C0-4CDA-BC47-FF189342FFAF">如果您希望对场景中的实际尺寸对象进行符号化，请使用 <span class="uicontrol">3D 对象</span>样式。您可以设置属性以提供这些对象的实际尺寸。在显示城市公园中的树时，使用高度属性设置每个树要素的大小就是一个很好的示例。</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_DD7A6C1856AA44638C013CC7027BB7B0"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_058455DD649F4D2C9219EF1EE9AEBF16"><span purpose="cmd">执行<a class="xref xref" href="../../../../zh-CN/portal/latest/use/configure-content-in-scene.htm#ESRI_SECTION1_A23EBC107DD1416BA5167E8E2B1EF802">更改图层样式</a>工作流中的步骤。</span></li><li purpose="step" id="ESRI_STEP_C91FDFE487BC4B7EBB355F328CF45A77"><span purpose="cmd" id="GUID-29DCA2D0-B1B8-4CED-91A5-0BA85067817E">对于<span class="uicontrol">标记</span>，请从 3D 对象的库中进行选择。</span><div class="info" purpose="info">从 3D 对象（已分为多个主题）中进行选择。例如，您可以使用<span class="uicontrol">植被</span>标记显示各种植物和树木。  <span class="ph">如果您的<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/portal/latest/administer" href="../../../../zh-CN/portal/latest/administer/windows/configure-map.htm#ESRI_SECTION1_8E391B84AFEF40C88EB764334893C9B5">组织配置了 web 样式</a>，则可以从<a target="_blank" class="xref xref" href="http://links.esri.com/scene/style-points/custom-styles">通过 <span class="ph">ArcGIS Pro</span> 创建的样式</a>中选择自定义标记。</span><p id="GUID-0C5BB127-C107-4AFF-BAA2-FDF6770CD3A6" ishcondition="agol_plat=portal"><div class="panel trailer-1 note" id="GUID-ABA23C7A-5ABB-49BC-A059-A7017C73197C"><h5 class="icon-ui-comment trailer-0">注：</h5> <p id="GUID-9882713B-A122-4E16-89D2-264DD49FFBD0">要在场景中获取完整的 3D 符号系统集（例如，植被），请安装 web 样式安装程序。有关其他信息，请参阅 <a class="xref xref" href="../../../../zh-CN/portal/latest/use/scene-viewer-requirements.htm#ESRI_SECTION1_024E404971864F418E2929B51D2FE1F4">Scene Viewer 要求</a>。</p></div></p></div></li><li purpose="step" id="ESRI_STEP_B1BD8D7EF5DD40CEB63084E41F7C7BD7"><span purpose="cmd" id="GUID-80FE86E7-9CAD-415D-B1EE-50530CA157B0">对于<span class="uicontrol">颜色</span>，可选择颜色并调整<span class="uicontrol">透明度</span>。</span></li><li purpose="step" id="ESRI_STEP_84EE60DAF8CD413CA67CD9280BBA5D9E"><span purpose="cmd" id="GUID-9E3B5165-1E07-4B6B-8C28-509CD814C164">对于<span class="uicontrol">大小</span>，更改 3D 对象的大小。</span><div class="substeps" id="ESRI_SUBSTEPS_CDF76AD7D42749868A84F32D2AA07CF7" purpose="substeps"><ol class="list-numbered" purpose="ol"><li purpose="substep" id="ESRI_SUBSTEP_655DF70362F3442CA1D06214099FC9AA"><span purpose="cmd">从下拉菜单中选择属性以调整 3D 对象的尺寸。选择 <span class="uicontrol">&lt;固定值&gt;</span>，手动输入统一尺寸。</span></li><li purpose="substep" id="ESRI_SUBSTEP_4609BACB2697428E84B1603539DD5D45"><span purpose="cmd">从下拉菜单中选择测量单位。</span></li><li purpose="substep" id="ESRI_SUBSTEP_88B49ABFD66B4A2AB876A2AA05ACB034"><span purpose="cmd">在缩放时，请单击<span class="uicontrol">适应视图</span>按钮 <img purpose="img" placement="inline" alt="适应视图的符号" title="适应视图的符号" src="GUID-4256BD93-3E75-40EA-8533-7F3EC103E6EE-web.png">以在当前视图下将 3D 对象调整为适当的尺寸。</span></li></ol></div></li><li purpose="step" id="ESRI_STEP_9E98E70B718F4A02B87156A16926E7B8"><span purpose="cmd">您还可以单击<span class="uicontrol">旋转</span>下拉菜单基于属性旋转 3D 对象。</span><div class="info" purpose="info"><p id="GUID-D35722C7-E335-46F3-8D66-544D4946258A">可通过<span class="uicontrol">算术法（从 12 点钟方向顺时针）</span>或<span class="uicontrol">地理法（从 3 点钟方向逆时针）</span>旋转 3D 对象。如果不希望旋转对象，请从下拉菜单中选择 <span class="uicontrol">&lt;无&gt;</span>。</p></div></li><li purpose="step" id="ESRI_STEP_BF74E3988893447EAE41FA4C3088E0AA"><span purpose="cmd">有关<span class="uicontrol">高程模式</span>，请参阅<a class="xref xref" href="../../../../zh-CN/portal/latest/use/scene-style-points.htm#ESRI_SECTION1_847CC559EF18401D89145687B808D445">更改高程模式</a>。</span></li><li purpose="step" id="ESRI_STEP_2AC8778DAA254327A82A002674082B32"><span purpose="cmd">有关<span class="uicontrol">标注</span>，请参阅<a class="xref xref" href="../../../../zh-CN/portal/latest/use/scene-style-points.htm#ESRI_SECTION1_62F0B5648B034CC5A58733F22C569C1D">应用标注</a>。</span></li></ol></div></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_E66D3856408245219C7860B8A99AC838" purpose="section1"><h2>2D 计数和数量</h2><p id="GUID-F1ACF74B-DD33-4E3B-AE0F-8A36B489A327">如果您拥有诸如人口统计数据等数据，并且要使用 2D 标记显示数据，请使用 <span class="uicontrol">2D 计数和数量</span>样式。例如，您可以通过一系列颜色和对象来以 3D 效果显示社区的平均收入水平，例如从浅色小尺寸到深色大尺寸。可选择最适合您场景的色带和单色。</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_82ACA4A4076E4F4193FAC43495A3924E"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_EFEF48D50CEB4F8098778E0CA76F22AF"><span purpose="cmd">执行<a class="xref xref" href="../../../../zh-CN/portal/latest/use/configure-content-in-scene.htm#ESRI_SECTION1_A23EBC107DD1416BA5167E8E2B1EF802">更改图层样式</a>工作流中的步骤。</span></li><li purpose="step" id="ESRI_STEP_87E003466ED8460298B202DE50115B3A"><span purpose="cmd" id="GUID-3CFF42AB-B5B7-435D-8146-33BA8E892151">移动顶部和底部滑块控点可基于所选属性调整颜色和大小。</span><div class="stepresult" purpose="stepresult"><p id="GUID-9C6E9637-B009-45F6-8DB9-A0557A964DDF">有关详细信息，请参阅<a class="xref xref" href="../../../../zh-CN/portal/latest/use/configure-content-in-scene.htm#SLIDER_CONSID">计数和数量滑块注意事项</a>。</p></div></li><li purpose="step" id="ESRI_STEP_1231BB331B364ED0B10780ED076E1FBC"><span purpose="cmd" id="GUID-9DF467B5-8BDD-4E2F-8F31-793FDB77BA24">对于<span class="uicontrol">标记</span>，请从 2D 形状和图标库中进行选择。</span><div class="stepresult" purpose="stepresult"><p id="GUID-E3DD7FA0-2FA2-418B-952B-E551A77EA879"> 您也可以从桌面上传自定义标记。请参阅<a class="xref xref" href="../../../../zh-CN/portal/latest/use/scene-style-points.htm#ESRI_SECTION1_8BD4D931A44A4B719D13EC886E540139">上传自定义标记</a>。</p></div></li><li purpose="step" id="ESRI_STEP_FEE17F7BFF6548D0A76980A1C8286596"><span purpose="cmd" id="GUID-6A9D2DE5-35CA-4E81-BB56-95A365FDC9BF">在<span class="uicontrol">颜色</span>的<span class="uicontrol">填充</span>选项下从库中选择色带。</span><div class="substeps" id="ESRI_SUBSTEPS_49692A64E31147E498F27E7F1DC2E2B9" purpose="substeps"><ol class="list-numbered" purpose="ol"><li purpose="substep" id="ESRI_SUBSTEP_70B6DE3287BF4C0D976C1036CC462B85"><span purpose="cmd">单击<span class="uicontrol">反向色带</span><img purpose="img" placement="inline" alt="反向色带" title="反向色带" src="GUID-DF4E1B94-1F73-4E6F-B3EC-208E1089AB35-web.png"> 翻转颜色。</span></li><li purpose="substep" id="ESRI_SUBSTEP_3453C2E9B4D246B094D0B2295D97D09C"><span purpose="cmd"> 单击<span class="uicontrol">单色</span>以更改为单色。如果使用单色，可调整<span class="uicontrol">透明度</span>设置。</span></li><li purpose="substep" id="ESRI_SUBSTEP_7B0995068B674B6982853FD93F12DD3B"><span purpose="cmd">单击<span class="uicontrol">轮廓</span>可调整轮廓颜色、线宽和透明度。</span><div class="stepresult" purpose="stepresult"><div class="panel trailer-1 note" id="GUID-6816E1DA-71CC-4CD2-B59D-76B17391DA46"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-2B7BF769-8191-4707-AEE3-DFF0FA601AFB"><span class="uicontrol">图标</span>下的标记不包括轮廓选项。</p></div></div></li></ol></div></li><li purpose="step" id="ESRI_STEP_E6DBA6903C794FE19D8F653C8BA2E864"><span purpose="cmd" id="GUID-8B1A6F02-E96C-4A9F-B18E-B2083F8ACC56">对于<span class="uicontrol">大小（最小 - 最大）</span>，选择希望如何调整标记的大小。</span><div class="info" purpose="info"><p id="GUID-F887973B-F3EC-4544-81EA-C3D34FF7A200"><span class="ph">Scene Viewer</span> 会自动为像素大小提供默认范围。<span class="uicontrol">大小（最小 - 最大）</span>字段可显示标记范围的最小尺寸和最大尺寸（以像素为单位）。</p></div></li><li purpose="step" id="ESRI_STEP_FADBED54DC414E18BC3FA430F7CA6400"><span purpose="cmd">有关<span class="uicontrol">高程模式</span>，请参阅<a class="xref xref" href="../../../../zh-CN/portal/latest/use/scene-style-points.htm#ESRI_SECTION1_847CC559EF18401D89145687B808D445">更改高程模式</a>。</span></li><li purpose="step" id="ESRI_STEP_2BAFE1FF872A41549FAE6FB11065F097"><span purpose="cmd">有关<span class="uicontrol">注释</span>，请参阅<a class="xref xref" href="../../../../zh-CN/portal/latest/use/scene-style-points.htm#ESRI_SECTION1_D9CB7FC46B0540DDA5B1F3422562232C">插入注释</a>。</span></li><li purpose="step" id="ESRI_STEP_9182F9A31BD948A5B03F26961394ADC6"><span purpose="cmd">有关<span class="uicontrol">标注</span>，请参阅<a class="xref xref" href="../../../../zh-CN/portal/latest/use/scene-style-points.htm#ESRI_SECTION1_62F0B5648B034CC5A58733F22C569C1D">应用标注</a>。</span></li><li purpose="step" id="ESRI_STEP_D7EBC0F672CD4F16AFCB318BD72C2C8E"><span purpose="cmd">对于<span class="uicontrol">增强透视</span>，单击切换键可打开和关闭屏幕尺寸点标记的透视缩放。</span><div class="stepresult" purpose="stepresult"><p id="GUID-01966DF9-17CF-4BAE-A8D4-C9A24CF8515D">当<span class="uicontrol">增强透视</span>开启时，图标、标注和注释等对象可在 3D 场景中实现更好的集成，这是因为距离照相机位置越远，尺寸越小。</p></div></li></ol></div></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_4A175B6A642F490BA3ECCBD55DCAB42E" purpose="section1"><h2>3D 计数和数量</h2><p id="GUID-F2E75E25-20F0-4480-813D-0B65847110FB">要使用实际尺寸对点数据进行符号化，请使用 <span class="uicontrol">3D 计数和数量</span>样式。例如，如果您拥有城市资产的数据（如消火栓），则可以根据水量将消火栓显示为高型圆柱。因此，水量越大的消火栓颜色越深，尺寸越大。</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_6DFE18FD4E514D0682A0F0A15F153E77"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_277A3959027E462389B4C0E5BE3F7330"><span purpose="cmd">执行<a class="xref xref" href="../../../../zh-CN/portal/latest/use/configure-content-in-scene.htm#ESRI_SECTION1_A23EBC107DD1416BA5167E8E2B1EF802">更改图层样式</a>工作流中的步骤。</span></li><li purpose="step" id="ESRI_STEP_7E12C466B5074E83BFA92EB0C292FD70"><span purpose="cmd">移动顶部和底部滑块控点可基于所选属性调整颜色和大小。</span><div class="stepresult" purpose="stepresult"><p id="GUID-BB30BE39-BFFC-4992-B3F1-8510FA22CA41">有关详细信息，请参阅<a class="xref xref" href="../../../../zh-CN/portal/latest/use/configure-content-in-scene.htm#SLIDER_CONSID">计数和数量滑块注意事项</a>。</p></div></li><li purpose="step" id="ESRI_STEP_B448A4F8F745436C891347D74B6C417E"><span purpose="cmd" id="GUID-EA088A27-FA72-4C1B-8700-0307557E0AC6">对于<span class="uicontrol">标记</span>，选择具有简单几何（例如圆锥或圆柱）的 3D 模型。</span></li><li purpose="step" id="ESRI_STEP_FD90DFE3155E46B99B148562A50B44D9"><span purpose="cmd">对于<span class="uicontrol">颜色</span>，从色带库中进行选择。</span><div class="substeps" id="ESRI_SUBSTEPS_3638F6F3A19B4E97AA8F166E9A91B5B0" purpose="substeps"><ol class="list-numbered" purpose="ol"><li purpose="substep" id="ESRI_SUBSTEP_D62D9352A26546B3A7B62EA7E76B5B14"><span purpose="cmd">单击<span class="uicontrol">反向色带</span><img purpose="img" placement="inline" alt="反向色带" title="反向色带" src="GUID-DF4E1B94-1F73-4E6F-B3EC-208E1089AB35-web.png"> 翻转颜色。</span></li><li purpose="substep" id="ESRI_SUBSTEP_BD6B02BD1D8E42669E36E6E9E5813C48"><span purpose="cmd"> 单击<span class="uicontrol">单色</span>以更改为单色。如果使用单色，可调整<span class="uicontrol">透明度</span>设置。</span></li></ol></div></li> <li purpose="step" id="ESRI_STEP_6424D7A6A7944D57B373A1D12F1EC8C2"><span purpose="cmd" id="GUID-0DBD1F53-9F91-4FD3-A979-21B6EACE1077">对于<span class="uicontrol">大小（最小 - 最大）</span>，选择希望如何调整 3D 对象的大小。</span><div class="stepresult" purpose="stepresult">在缩放时，单击<span class="uicontrol">适应视图</span>按钮 <img purpose="img" placement="inline" alt="适应视图" title="适应视图" src="GUID-4256BD93-3E75-40EA-8533-7F3EC103E6EE-web.png"> 来将 3D 对象调整为适合当前视图的尺寸。<span class="uicontrol">大小（最小 - 最大）</span>字段可显示对象的最小和最大实际尺寸。<ul purpose="ul" id="UL_06C593CD671A4295BCFC91F41FE4997C"><li purpose="li" id="LI_3DA4378123DD40DDADCF01C69BA3F19B">例如，如果您拥有的点图层将十字路口的交通量显示为高型圆柱，您可能需要随着缩放更改高型圆柱的尺寸。为此，先单击<span class="uicontrol">适应视图</span>按钮 <img purpose="img" placement="inline" alt="适应视图" title="适应视图" src="GUID-4256BD93-3E75-40EA-8533-7F3EC103E6EE-web.png"> 以对当前视图下的圆柱进行比例化。然后更改<span class="uicontrol">大小（最小 - 最大）</span>值来微调圆柱。</li></ul></div></li><li purpose="step" id="ESRI_STEP_D2F44F09FFFF4157AB05E910337A44A8"><span purpose="cmd">对于<span class="uicontrol">旋转</span>，您可以基于属性旋转对象。</span><div class="info" purpose="info"><p id="GUID-B077E777-7383-4DD7-AC5A-9669756C7CA2">可通过<span class="uicontrol">算术法（从 12 点钟方向顺时针）</span>或<span class="uicontrol">地理法（从 3 点钟方向逆时针）</span>旋转 3D 对象。如果不希望旋转对象，请从下拉菜单中选择 <span class="uicontrol">&lt;无&gt;</span>。</p></div></li><li purpose="step" id="ESRI_STEP_3E5408719D904A32AA6582064B2C4CFE"><span purpose="cmd">有关<span class="uicontrol">高程模式</span>，请参阅<a class="xref xref" href="../../../../zh-CN/portal/latest/use/scene-style-points.htm#ESRI_SECTION1_847CC559EF18401D89145687B808D445">更改高程模式</a>。</span></li><li purpose="step" id="ESRI_STEP_264FD575C46C4AECB90C6B9B30B7B8C0"><span purpose="cmd">有关<span class="uicontrol">标注</span>，请参阅<a class="xref xref" href="../../../../zh-CN/portal/latest/use/scene-style-points.htm#ESRI_SECTION1_62F0B5648B034CC5A58733F22C569C1D">应用标注</a>。</span></li></ol></div></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_E25966A001A74A8EADCDF03C111C216E" purpose="section1"><h2>2D 类型</h2><p id="GUID-6D462D94-6F39-4E27-872B-455A34B6462E">如果您的点数据具有文本或数值属性，请使用 <span class="uicontrol">2D 类型</span>样式。您可以使用不同的标记、颜色和大小来显示属性值。例如，您可以使用 <span class="uicontrol">2D 类型</span>样式，以独特的符号系统来显示城市的感兴趣点。</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_789798D63D684FA5A907324D19B3409A"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_D689787D24464E08B54009AFE31E27D9"><span purpose="cmd">执行<a class="xref xref" href="../../../../zh-CN/portal/latest/use/configure-content-in-scene.htm#ESRI_SECTION1_A23EBC107DD1416BA5167E8E2B1EF802">更改图层样式</a>工作流中的步骤。</span></li><li purpose="step" id="ESRI_STEP_26C490BC8745487182B59FA5E89E1B24"><span purpose="cmd">修改<span class="uicontrol">属性值</span>列表。</span><div class="info" purpose="info"><p id="GUID-7D650C0A-2CC3-45EE-A161-3E00D2E970E6"><span class="uicontrol">2D 类型</span>样式列出了<span class="uicontrol">已映射属性</span>旁的之前已选属性的单个属性值。您可以针对每个值自定义符号系统。列表顶部显示了<span class="uicontrol">属性值</span>、<span class="uicontrol">计数</span>和<span class="uicontrol">操作</span>标题。</p></div><div class="info" purpose="info"><p id="GUID-99602EF9-F8CF-441F-9DA5-76C9D995C06A"><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="uicontrol">属性值</span></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-17EE755A-F843-4087-9985-F2A9B5131701">针对<span class="uicontrol">已映射属性</span>列出最常见属性值的名称。其余属性值将自动分组为 。理想情况下，图层显示的值将少于 10 个；如果超过 10 个，用户将难以进行区分。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="uicontrol">计数</span></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-7986A811-5594-4425-B0AD-F5FA992899D8">显示每个属性值的要素数。默认情况下，这些属性值将按要素数量的降序列出。您可以在<span class="uicontrol">属性值</span>列表中向上或向下拖动值来自定义值在图例中的顺序。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="uicontrol">操作</span></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-E1B17A1C-7B13-41B2-AC49-D59524283084">可用于将值从<span class="uicontrol">其他</span>移入主<span class="uicontrol">属性值</span>列表，方法为单击<span class="uicontrol">移出值</span><img purpose="img" placement="inline" alt="移出值" title="移出值" src="GUID-EC1A30A1-86F3-46D2-8DB3-232B034A8B0D-web.png"> 或<span class="uicontrol">移出所有值</span><img purpose="img" placement="inline" alt="移出所有值" title="移出所有值" src="GUID-4F247F7F-E27F-4B46-AA76-D5F94A030FCE-web.png">。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="uicontrol">其他</span></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-3CEE7283-D09D-4CE1-B2C0-0681E766BC48">允许您将任何值从主<span class="uicontrol">属性值</span>列表拖动到<span class="uicontrol">其他</span>。单击<span class="uicontrol">显示</span>或<span class="uicontrol">隐藏</span>可显示或隐藏场景和图例中的<span class="uicontrol">其他</span>要素。</p></td></tr></tbody><caption></caption></table></div>通过选择属性值并单击其名称可对其进行重命名。</p></div></li><li purpose="step" id="ESRI_STEP_961B1C6EF9034753BDBCC0C9219181A7"><span purpose="cmd"> 单击<span class="uicontrol">属性值</span>顶部的 <span class="uicontrol">&lt;全选&gt;</span> 可修改所有值。</span><div class="info" purpose="info"><p id="GUID-F37FDC4D-D32D-487B-A1AC-EB4C232DBD47">要返回修改单个值，请单击某值，或单击<span class="uicontrol">属性值</span>列表顶部的 <span class="uicontrol">&lt;单选&gt;</span>。</p></div></li><li purpose="step" id="ESRI_STEP_FF0ABC79F5F0409AB6604C61479D7DD8"><span purpose="cmd">对于<span class="uicontrol">标记</span>，请从标记库中进行选择。</span><div class="info" purpose="info"><ul purpose="ul" id="UL_1A8397A5CC44402CA963714A158FE877"><li purpose="li" id="LI_B369A24C9BBF4FB192A94EF8A5E57AB3">从下拉菜单中选择<span class="uicontrol">基本形状</span>或<span class="uicontrol">图标</span>。例如，<span class="uicontrol">图标</span>下的标记可显示场景中的不同点，例如机场或加油站。</li><li purpose="li" id="LI_FC1044DFC95A482495169A1AE5AB44EA">您也可以从桌面上传自定义标记。请参阅<a class="xref xref" href="../../../../zh-CN/portal/latest/use/scene-style-points.htm#ESRI_SECTION1_8BD4D931A44A4B719D13EC886E540139">上传自定义标记</a>。</li></ul></div></li><li purpose="step" id="ESRI_STEP_CADB21DA7DAC4C01A67CF1D5D36C1CA8"><span purpose="cmd">对于<span class="uicontrol">颜色</span>，单击颜色选取器可查看<span class="uicontrol">填充</span>、<span class="uicontrol">轮廓</span>和<span class="uicontrol">透明度</span>选项。</span><div class="substeps" id="ESRI_SUBSTEPS_7803A500FDA64DB1A472A512A8625646" purpose="substeps"><ol class="list-numbered" purpose="ol"><li purpose="substep" id="ESRI_SUBSTEP_5E5368B3128341EB95D2C6EC13A6C5DC"><span purpose="cmd">单击<span class="uicontrol">填充</span>可调整填充颜色和透明度。</span></li><li purpose="substep" id="ESRI_SUBSTEP_AF2C51248A70467F9EC6DB46739B6814"><span purpose="cmd">单击<span class="uicontrol">轮廓</span>可调整轮廓颜色、线宽和透明度。</span><div class="stepresult" purpose="stepresult"><div class="panel trailer-1 note" id="GUID-7F43E34F-F4B8-40BB-8E8E-0D8F3F2D5C98"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-754987C2-496A-49FA-BA44-56A123DE12BC"><span class="uicontrol">图标样式</span>标记不包括<span class="uicontrol">轮廓</span>选项。</p></div></div></li><li purpose="substep" id="ESRI_SUBSTEP_93989994E86140C587060A35CDE6B507"><span purpose="cmd"> 要为所有属性值应用色带，请单击 <span class="uicontrol">&lt;全选&gt;</span>。单色随即变为色带。</span><div class="stepresult" purpose="stepresult"><ul purpose="ul" id="UL_9F6C1EBA05F3448C82E831C1EF0D0D8F"><li purpose="li" id="LI_D88E44BD92C246C08248545F3ED8A7F1">单击<span class="uicontrol">反向色带</span><img purpose="img" placement="inline" alt="反向色带" title="反向色带" src="GUID-DF4E1B94-1F73-4E6F-B3EC-208E1089AB35-web.png"> 翻转颜色。</li><li purpose="li" id="LI_1AEE7DF91859464A9D22BB5FDDFE4507">单击<span class="uicontrol">单色</span>返回到选择单一颜色。</li></ul></div></li></ol></div></li><li purpose="step" id="ESRI_STEP_5244CC102138493BA70000F7C5648089"><span purpose="cmd">对于<span class="uicontrol">大小</span>，以像素为单位手动输入大小来更改标记的大小。</span></li><li purpose="step" id="ESRI_STEP_6D62933A530E4E82BEEEDF5DB6BC4B81"><span purpose="cmd">有关<span class="uicontrol">高程模式</span>，请参阅<a class="xref xref" href="../../../../zh-CN/portal/latest/use/scene-style-points.htm#ESRI_SECTION1_847CC559EF18401D89145687B808D445">更改高程模式</a>。</span></li><li purpose="step" id="ESRI_STEP_663BC2EF07BE4FF7B116C198EC9A616C"><span purpose="cmd">有关<span class="uicontrol">注释</span>，请参阅<a class="xref xref" href="../../../../zh-CN/portal/latest/use/scene-style-points.htm#ESRI_SECTION1_D9CB7FC46B0540DDA5B1F3422562232C">插入注释</a>。</span></li><li purpose="step" id="ESRI_STEP_1130AD5CCC4B43C98929FC80D25B26A6"><span purpose="cmd">有关<span class="uicontrol">标注</span>，请参阅<a class="xref xref" href="../../../../zh-CN/portal/latest/use/scene-style-points.htm#ESRI_SECTION1_62F0B5648B034CC5A58733F22C569C1D">应用标注</a>。</span></li><li purpose="step" id="ESRI_STEP_9ED6E5A3AD554C52BD27982B9BE82D3C"><span purpose="cmd">对于<span class="uicontrol">清理</span>，在导航场景时单击切换键以移除重叠要素。</span></li><li purpose="step" id="ESRI_STEP_24F0FA33981247AAAD9F7D349DBDF998"><span purpose="cmd">对于<span class="uicontrol">增强透视</span>，单击切换键可打开和关闭屏幕尺寸点标记的透视缩放。</span><div class="stepresult" purpose="stepresult"><p id="GUID-F6961FA7-4942-4789-B1E6-C692E9BE50F5">当<span class="uicontrol">增强透视</span>开启时，图标、标注和注释等对象可在 3D 场景中实现更好的集成，这是因为距离照相机位置越远，尺寸越小。</p></div></li></ol></div></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_3537554C57044B9DA1EEB22972BF73DD" purpose="section1"><h2>3D 类型</h2><p id="GUID-FC7609CE-5E0A-4407-A411-07DCD7EFD450">当您拥有具有文本或数值属性的点数据时，请使用 <span class="uicontrol">3D 类型</span>。您可以使用不同的 3D 对象、颜色和大小来显示单个符号系统。例如，您可以使用 <span class="uicontrol">3D 类型</span>样式以唯一方式显示不同类型街道设施的 3D 对象。</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_53A107EE53FD4480AB9B0B98EF3FF5B7"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_7027279CB07A4F1598323AB9DAA24DB3"><span purpose="cmd">执行<a class="xref xref" href="../../../../zh-CN/portal/latest/use/configure-content-in-scene.htm#ESRI_SECTION1_A23EBC107DD1416BA5167E8E2B1EF802">更改图层样式</a>工作流中的步骤。</span></li><li purpose="step" id="ESRI_STEP_F017EFFA7A214010BD7523198E709986"><span purpose="cmd">修改<span class="uicontrol">属性值</span>列表。</span><div class="info" purpose="info"><p id="GUID-E960C010-0C6E-4C0C-A859-51AADA6A673D"><span class="uicontrol">3D 类型</span>样式列出了<span class="uicontrol">已映射属性</span>旁的之前已选属性的单个属性值。您可以针对每个值自定义符号系统。列表顶部显示了<span class="uicontrol">属性值</span>、<span class="uicontrol">计数</span>和<span class="uicontrol">操作</span>标题。</p></div><div class="info" purpose="info"><p id="GUID-EC547D61-A88A-4F08-86BE-9A78B26E1F9E"><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="uicontrol">属性值</span></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-B4C73E51-8071-4273-A375-3AE81286BEE7">针对<span class="uicontrol">已映射属性</span>列出最常见属性值的名称。其余属性值将自动分组为 。理想情况下，图层显示的值将少于 10 个；如果超过 10 个，用户将难以进行区分。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="uicontrol">计数</span></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-B88D081C-0110-48C9-B6BB-FE6B1AF20106">显示每个属性值的要素数。默认情况下，这些属性值将按要素数量的降序列出。您可以在<span class="uicontrol">属性值</span>列表中向上或向下拖动值来自定义值在图例中的顺序。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="uicontrol">操作</span></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-1BA17338-993F-4A5E-A353-E57964B19511">可用于将值从<span class="uicontrol">其他</span>移入主<span class="uicontrol">属性值</span>列表，方法为单击<span class="uicontrol">移出值</span><img purpose="img" placement="inline" alt="移出值" title="移出值" src="GUID-EC1A30A1-86F3-46D2-8DB3-232B034A8B0D-web.png"> 或<span class="uicontrol">移出所有值</span><img purpose="img" placement="inline" alt="移出所有值" title="移出所有值" src="GUID-4F247F7F-E27F-4B46-AA76-D5F94A030FCE-web.png">。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="uicontrol">其他</span></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-0F0D0B31-4CF1-4F73-95A8-F047949B6CDD">允许您将任何值从主<span class="uicontrol">属性值</span>列表拖动到<span class="uicontrol">其他</span>。单击<span class="uicontrol">显示</span>或<span class="uicontrol">隐藏</span>可显示或隐藏场景和图例中的<span class="uicontrol">其他</span>要素。</p></td></tr></tbody><caption></caption></table></div>通过选择属性值并单击其名称可对其进行重命名。</p></div></li><li purpose="step" id="ESRI_STEP_3423E5E8EFD14AE3B3CFDD6B06CB5A6C"><span purpose="cmd"> 单击<span class="uicontrol">属性值</span>顶部的 <span class="uicontrol">&lt;全选&gt;</span> 可修改所有值。</span><div class="info" purpose="info"><p id="GUID-6DD9DF10-17FB-4350-98BA-325572C5FDB1">要返回修改单个值，请单击某值，或单击<span class="uicontrol">属性值</span>列表顶部的 <span class="uicontrol">&lt;单选&gt;</span>。</p></div></li><li purpose="step" id="ESRI_STEP_CFC5ED49DA8E4DF4847B6EEDC48BF9EC"><span purpose="cmd">对于<span class="uicontrol">标记</span>，请从 3D 对象的库中进行选择。</span><div class="info" purpose="info">从 3D 对象（已分为多个主题）扩展库中进行选择。例如，您可以使用<span class="uicontrol">植被</span>标记显示各种植物和树木。<span class="ph">如果您的<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/portal/latest/administer" href="../../../../zh-CN/portal/latest/administer/windows/configure-map.htm#ESRI_SECTION1_8E391B84AFEF40C88EB764334893C9B5">组织配置了 web 样式</a>，则可以从<a target="_blank" class="xref xref" href="http://links.esri.com/scene/style-points/custom-styles">通过 <span class="ph">ArcGIS Pro</span> 创建的样式</a>中选择自定义标记。</span><p id="GUID-786C1017-AA7B-433C-AA53-50105BAFAD62" ishcondition="agol_plat=portal"><div class="panel trailer-1 note" id="GUID-A8A90FB2-6664-4E3E-99F2-534CCCEDECFF"><h5 class="icon-ui-comment trailer-0">注：</h5> <p id="GUID-CE5FA643-600A-4DB1-9AA2-3079B82D5D8A">要在场景中获取完整的 3D 符号系统集（例如，植被），请安装 web 样式安装程序。有关其他信息，请参阅 <a class="xref xref" href="../../../../zh-CN/portal/latest/use/scene-viewer-requirements.htm#ESRI_SECTION1_024E404971864F418E2929B51D2FE1F4">Scene Viewer 要求</a>。</p></div></p></div></li><li purpose="step" id="ESRI_STEP_569A37DA978D402AB3A1F924E4EC50CD"><span purpose="cmd">对于<span class="uicontrol">颜色</span>，将颜色更改为 3D 对象。</span><div class="substeps" id="ESRI_SUBSTEPS_A0BCDA3C1BF541B8A0CA56A86164BA35" purpose="substeps"><ol class="list-numbered" purpose="ol"><li purpose="substep" id="ESRI_SUBSTEP_D5DEE752D7E24CFD9E77F2621D917732"><span purpose="cmd">选择一个颜色，并调整<span class="uicontrol">透明度</span>设置。</span></li><li purpose="substep" id="ESRI_SUBSTEP_D56064B025E44291B5DF58C8D2435F25"><span purpose="cmd"> 要为所有属性值应用色带，请单击 <span class="uicontrol">&lt;全选&gt;</span>。单色随即变为色带。</span><div class="stepresult" purpose="stepresult"><ul purpose="ul" id="UL_9FCD661719B7480DB9D80EB30B0FD5E9"><li purpose="li" id="LI_13F095FA36934EB597E9567B157682D4">单击<span class="uicontrol">反向色带</span><img purpose="img" placement="inline" alt="反向色带" title="反向色带" src="GUID-DF4E1B94-1F73-4E6F-B3EC-208E1089AB35-web.png"> 翻转颜色。</li><li purpose="li" id="LI_8E2A9B5881CD4B04A6FB0A8C9F467AC2">单击<span class="uicontrol">单色</span>返回到选择单一颜色。</li></ul></div></li></ol></div></li><li purpose="step" id="ESRI_STEP_4D16DEDF6E4C4AB8A9AB4C42B6A0F156"><span purpose="cmd">对于<span class="uicontrol">大小</span>，更改 3D 对象的大小。</span><ul purpose="choices" id="ESRI_CHOICES_E10CEDC7ECB14409B074F5C22171C563"><li purpose="choice" id="ESRI_CHOICE_86F5CF07F0FE43E3B9936A06ED02DB73">您可以手动输入大小或选择用于调整 3D 对象大小的属性。从下拉菜单中选择尺寸的单位。在缩放时，可单击<span class="uicontrol">适应视图</span>按钮 <img purpose="img" placement="inline" alt="适应视图" title="适应视图" src="GUID-4256BD93-3E75-40EA-8533-7F3EC103E6EE-web.png">以在当前视图下将 3D 对象调整为适当的尺寸。</li><li purpose="choice" id="ESRI_CHOICE_CC09FBDBD3AD41139D5134EB442BBD38">如果在<span class="uicontrol">所有标记</span>中选择属性，则标记将根据所选属性自动调整大小，且<span class="uicontrol">大小</span>将无法使用。</li></ul></li><li purpose="step" id="ESRI_STEP_3016D0BA2FF845C28D3ECFCEB451D84E"><span purpose="cmd">对于<span class="uicontrol">所有标记</span>，调整标记的大小和旋转。</span><div class="substeps" id="ESRI_SUBSTEPS_05BF3138F3834A2A8A1A975E06650575" purpose="substeps"><ol class="list-numbered" purpose="ol"><li purpose="substep" id="ESRI_SUBSTEP_7B17CEE16EF94F3397D06B665C8C7E2B"><span purpose="cmd">选择属性和单位来定义所有属性值的大小。</span></li><li purpose="substep" id="ESRI_SUBSTEP_2316FA23C23D4A97B96176C3548F1D76"><span purpose="cmd">按属性设置<span class="uicontrol">旋转</span>选项。</span><div class="stepresult" purpose="stepresult"><ul purpose="ul" id="UL_27740EF1889A4679B53F3D7A14AE2F93"><li purpose="li" id="LI_E4C7456D7AF3431C84BFFFD5725BC5D8">单击<span class="uicontrol">旋转</span>下拉菜单，然后选择旋转所基于的属性。</li><li purpose="li" id="LI_2041837E106748F18047F1F848BEB64C">可通过<span class="uicontrol">算术法（从 12 点钟方向顺时针）</span>或<span class="uicontrol">地理法（从 3 点钟方向逆时针）</span>旋转 3D 对象。如果不希望旋转 3D 对象，请从下拉菜单中选择 <span class="uicontrol">&lt;无&gt;</span>。</li></ul></div></li></ol></div></li><li purpose="step" id="ESRI_STEP_1830394546614197ADF1548A81AC59D2"><span purpose="cmd">有关<span class="uicontrol">高程模式</span>，请参阅<a class="xref xref" href="../../../../zh-CN/portal/latest/use/scene-style-points.htm#ESRI_SECTION1_847CC559EF18401D89145687B808D445">更改高程模式</a>。</span></li><li purpose="step" id="ESRI_STEP_134A4948A013431C81B17208EF38188D"><span purpose="cmd">有关<span class="uicontrol">标注</span>，请参阅<a class="xref xref" href="../../../../zh-CN/portal/latest/use/scene-style-points.htm#ESRI_SECTION1_62F0B5648B034CC5A58733F22C569C1D">应用标注</a>。</span></li></ol></div></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_BA3902DA9A284BA994875B11AD51EB4E" purpose="section1"><h2>更改高程模式</h2><p id="GUID-112B7345-C3D9-411E-B244-720580515396">您可以更改高程模式以自定义图层的位置。单击<span class="uicontrol">高程模式</span>下拉箭头 <img purpose="img" placement="inline" alt="下拉箭头" title="下拉箭头" src="GUID-9714E94D-341B-4346-AADB-9AC06E9AE2F9-web.png">。将出现可以确定图层与其数据垂直放置位置的选项。</p><p id="GUID-61D81A6B-EBF1-452A-ADBE-2DBA2ABDF6C0"><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="uicontrol">地面上</span></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-EBB2522A-FD80-425D-AE61-750055808421">在地面上叠加图层。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="uicontrol">相对于地面</span></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-36753C2E-19E3-4037-8F26-0384FD710E86">相对于地面高程放置数据。z 值会在可用时添加到地面高程。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="uicontrol">相对于场景</span></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-C9177E4E-D97B-4D81-9B62-16AB61A9666A">将数据与 3D 对象场景图层和集成式网格场景图层的顶部对齐，具体取决于哪一对象具有较高的高程。如果图形并非直接位于 3D 对象或任何其他要素之上，则会与 terrain 表面高程对齐。<div class="panel trailer-1 note" id="GUID-41DE7E6B-F648-49AE-BD48-A11146F351FE"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-E5B270C5-E83C-431C-8A4B-3A1ECE4838BC">Z 值将被忽略（如果存在）。</p></div></p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="uicontrol">绝对高度</span></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-5A9483FF-87BC-4708-BC95-F4114B9A1681">根据要素的几何 z 值位置垂直放置数据。如果几何不包括 z 值，则默认高程为海平面。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="uicontrol">&lt;自定义&gt;</span></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-74EDEB21-7F5D-4CC1-9B32-48FCD10B5E7C">根据图层中定义的自定义高程（例如属性表达式）垂直放置数据。<span class="uicontrol">&lt;自定义&gt;</span>选项仅在图层具有自定义高程时可见。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="uicontrol">偏移</span></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-0E777050-23EF-49F3-BC6D-B2BF2BF73C27">基于所选<span class="uicontrol">高程模式</span>，应用正整数值或负整数值（以米为单位）在垂直方向上偏移高程。<ul purpose="ul" id="UL_E7A37C44424C42DBAB2E270DAC1FF772"><li purpose="li" id="LI_FCA0AC8BCD704A6DA6B74558531985B1"><span class="uicontrol">相对于地面</span> - 图层将与地面对齐，并基于输入的高度值在垂直方向上相对于地面进行偏移。</li><li purpose="li" id="LI_F9DF824653BA4CC4A6056F7A17FB58AC"><span class="uicontrol">相对于场景</span> - 图层将与场景图层顶部对齐，并基于输入的高度值在垂直方向上相对于场景图层进行偏移。</li><li purpose="li" id="LI_B0818D456826488FBABD96786723536B"><span class="uicontrol">绝对高度</span> - 图层将与分配的 z 值位置对齐，或默认为海平面位置，并基于输入的高度值在垂直方向上进行偏移。</li></ul></p><div class="panel trailer-1 note" id="GUID-D9D86C3E-AAE4-43F9-AF36-8591B95BBF9C"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-3DA252BA-2539-4B15-9B08-5C156223CE53"><span class="uicontrol">偏移</span>不适用于<span class="uicontrol">在地面上</span>高程模式。</p></div></td></tr></tbody><caption></caption></table></div></p></section><section class="section1 padded-anchor" id="ESRI_SECTION1_D9CB7FC46B0540DDA5B1F3422562232C" purpose="section1"><h2>插入注释</h2><p id="GUID-DAA7C1DF-3774-4154-9BF6-405D13515C56">对于 2D 点样式，请使用<span class="uicontrol">注释</span>选项改善 3D 场景中图标位置的感知。垂直注释线可将点标记与其描述的要素的位置相连。例如，可以在场景中将视觉上连接警察局图标标记的注释线与图标下方的警察局建筑物顶部相连。</p><p id="GUID-49CA156E-C09F-4017-96AB-D2AB30D7990E">要使用<span class="uicontrol">注释</span>选项，请执行以下操作：</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_363D5203DC8C468AB7E101CAAB3FFE5B"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_3073391D9C98432285BB47FD12615784"><span purpose="cmd">单击<span class="uicontrol">注释</span>切换键以在图层中打开和关闭注释。</span></li><li purpose="step" id="ESRI_STEP_678F40F3A61949F09C9BBFED7E16791A"><span purpose="cmd">对于注释选项，请执行以下操作：</span><ul purpose="choices" id="ESRI_CHOICES_AAAB162488324703A6E82252E43BDDA0"><li purpose="choice" id="ESRI_CHOICE_2EB3046E633041ACB607F614D3945498"> 对于<span class="uicontrol">大小</span>，需要选择注释线的长度以及将从图标原始位置提升图标的高度。可以选择较大或较小的注释线。还需要设置数据的合适比例：城市、地区或世界比例。比例将影响缩小时能够看到注释线所需的时间。</li><li purpose="choice" id="ESRI_CHOICE_5C42FC88437E4BBA835F3FEEF451D4A3"> 对于<span class="uicontrol">颜色</span>，您可选择浅色或深色注释线。</li></ul></li></ol></div></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_62F0B5648B034CC5A58733F22C569C1D" purpose="section1"><h2>应用标注</h2><p id="GUID-B7462838-4467-41A3-B618-281ECEF21FE9">如果图层中的标注可用，您将会看到<span class="uicontrol">标注</span>切换键。通过在场景中显示标注，您可以立即根据图层中的相关属性传达有关场景的信息。</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_44A4C72A303946BD82885F7E029983A7"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_D63432776A8D47CBBF570C50D37CB81E"><span purpose="cmd" id="GUID-02520AF8-3B54-42FB-9DE6-0420313E891B">单击<span class="uicontrol">标注</span>切换键以在图层中打开和关闭标注。</span></li><li purpose="step" id="ESRI_STEP_F880C122B03D4FA2BC547852D6A4D7C9"><span purpose="cmd" id="GUID-8EFECE55-0E5E-467F-858C-79C999D9430F">可以通过以下任一操作在样式选项中配置标注：</span><ul purpose="choices" id="ESRI_CHOICES_0A0F45D91C084D30B8BD56B75AC04F48"><li purpose="choice" id="ESRI_CHOICE_3F4712AF9EC84D03B2AD95D14096861C">对于<span class="uicontrol">文本</span>，请单击下拉菜单选择用于标注标记的属性。请在标记周围选择标注的定位。</li><li purpose="choice" id="ESRI_CHOICE_FFD5A6A6DAC14DE388DA7BBA407BF95E">在<span class="uicontrol">大小</span>下，选择标注大小（<span class="uicontrol">小</span>、<span class="uicontrol">中</span>或<span class="uicontrol">大</span>）。</li><li purpose="choice" id="ESRI_CHOICE_3D97FE4577894AF1974CDF1FBC6757B4">对于<span class="uicontrol">颜色</span>，您可选择浅色或深色文本。</li><li purpose="choice" id="ESRI_CHOICE_2124C11A42B744898659BCCB9AE7D613">对于 3D 点样式，单击<span class="uicontrol">增强透视</span>切换键可更加直观地显示标注，标注的位置越远，其大小越小。</li></ul></li></ol></div></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_8BD4D931A44A4B719D13EC886E540139" purpose="section1"><h2>上传自定义标记</h2><p id="GUID-E14E4A5E-FD6F-42CF-AFA4-F74B03C1A1F2"> 对于 2D 点样式，您可以从桌面上传自定义标记。在上传图标前请先保存场景。</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_4B3387A7FC6B46BEA3E6AA70EB9A6788"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_D20BB8140B0B47068CF06CF0B575E999"><span purpose="cmd">单击<span class="uicontrol">标记</span>。</span></li><li purpose="step" id="ESRI_STEP_9A61661B3CAB492CB59631C7C6533CA2"><span purpose="cmd">单击<span class="uicontrol">自定义</span>。</span></li><li purpose="step" id="ESRI_STEP_47A217E49A784994AD50061A6829E058"><span purpose="cmd">单击 <span class="uicontrol">+ 上传图像</span>以添加自定义图标。</span></li><li purpose="step" id="ESRI_STEP_445ECF9992FB4DFDA01DAFA8AFE2BF30"><span purpose="cmd">找到要上传的图像。</span></li><li purpose="step" id="ESRI_STEP_A13B836E68924599ACDE26F7C1308C70"><span purpose="cmd">单击 <span class="uicontrol">+ 上传图像</span>以添加其他图标。</span></li><li purpose="step" id="ESRI_STEP_590D66A162C446129160E1473F781347"><span purpose="cmd">在自定义图库中单击您想要添加到场景的图标。</span></li><li purpose="step" id="ESRI_STEP_0BAD683C424D4C3F9E10CE5FF722FC7A"><span purpose="cmd">单击<span class="uicontrol">完成</span>。</span><div class="stepresult" purpose="stepresult"><p id="GUID-F17DFB74-506C-4B48-9C04-196AA7E92AC8">图像要求：<ul purpose="ul" id="UL_62188D40D64F4D5A8F3C8E15E437A02E"><li purpose="li" id="LI_B1D327D7AA4C4996996D614142EC3FFA">不超过 256 x 256 像素</li><li purpose="li" id="LI_0DE61F3E86374520991FDB9B113584F9">不超过 1 MB</li><li purpose="li" id="LI_4748B88D9C5848EAB714C121EC957C18">图像格式：PNG 或 JPEG</li></ul></p><p id="GUID-E161016C-1F8C-4F11-9F12-CA06998DB54D"><div class="panel trailer-1 note" id="GUID-40F5B692-FFAB-482C-9322-2E53625BF57E"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-A3D8FEE3-7EF5-40C6-B5C4-8C422D5C70F3"> 上传的图标仅在您的场景中可用。您可以共享含有自定义图标的场景，但不会保存该场景的副本。</p></div></p></div></li></ol></div></section></section>
+			
+				<hr>
+				<!--googleoff: all-->
+				
+	
+        
+		    <p class="feedback right">
+		        <a id="afb" class="icon-ui-contact" href="/feedback/" data-langlabel="feedback-on-this-topic" >有关此主题的反馈?</a>
+		    </p>
+        
+	
+
+				<!--googleon: all-->
+			
+		</main>
+	</div>
+	
+	<!--googleoff: all-->
+	
+		
+			<div id="main-toc-large" class="column-5">
+			    <div class="panel font-size--2 tablet-hide trailer-1">
+			      <h5 class="trailer-half">在本主题中</h5>
+			      <ol class="list-plain pre-0 trailer-0"><li><a href="#ESRI_SECTION1_07C23D7053044ECEAA9D745BBF60D23D">2D 标记</a></li><li><a href="#ESRI_SECTION1_DA1996687B1449D390244E95B70AAF1A">3D 对象</a></li><li><a href="#ESRI_SECTION1_E66D3856408245219C7860B8A99AC838">2D 计数和数量</a></li><li><a href="#ESRI_SECTION1_4A175B6A642F490BA3ECCBD55DCAB42E">3D 计数和数量</a></li><li><a href="#ESRI_SECTION1_E25966A001A74A8EADCDF03C111C216E">2D 类型</a></li><li><a href="#ESRI_SECTION1_3537554C57044B9DA1EEB22972BF73DD">3D 类型</a></li><li><a href="#ESRI_SECTION1_BA3902DA9A284BA994875B11AD51EB4E">更改高程模式</a></li><li><a href="#ESRI_SECTION1_D9CB7FC46B0540DDA5B1F3422562232C">插入注释</a></li><li><a href="#ESRI_SECTION1_62F0B5648B034CC5A58733F22C569C1D">应用标注</a></li><li><a href="#ESRI_SECTION1_8BD4D931A44A4B719D13EC886E540139">上传自定义标记</a></li></ol>
+			    </div>
+			    
+			    
+	  		</div>
+		
+    
+   <!--googleon: all-->
+
+
+
+
+          
+        </div>
+        <!-- ENDPAGECONTENT -->
+
+      </div>
+
+    </div>  <!-- End of wrapper -->
+
+  <footer class="footer leader-3 link-dark-gray" role="contentinfo">
+    <div class="grid-container">
+      <div class="row">
+        <nav class="column-6">
+          <h6 data-langlabel="arcgis-for-server">Arc<span>GIS Enterprise</span></h6>
+          <ul class="list-plain">
+            <li><a data-langlabel="home" href="../../../../zh-CN/">主页</a></li>
+            <li><a data-langlabel="portal" href="../../../../zh-CN/portal/">Portal</a></li>
+            <li><a data-langlabel="server" href="../../../../zh-CN/server/">Server</a></li>
+            <li><a data-langlabel="data-store" href="../../../../zh-CN/data-store/">Data Stores</a></li>
+            <li><a data-langlabel="cloud" href="../../../../zh-CN/cloud/">云</a></li>
+            <li><a data-langlabel="apps" href="../../../../zh-CN/apps/">应用程序</a></li>
+            <li><a data-langlabel="documentation" href="../../../../zh-CN/documentation/">文档</a></li>
+          </ul>
+        </nav>
+
+        
+  <nav class="column-6">
+    <h6 data-langlabel="arcgis-platform">ArcGIS 平台</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="arcgis" href="//www.arcgis.com/">ArcGIS Online</a></li>
+      <li><a data-langlabel="arcgis-for-professionals" href="//pro.arcgis.com/">ArcGIS Pro</a></li>
+      <li><a data-langlabel="arcgis-for-server" href="//enterprise.arcgis.com/">ArcGIS Enterprise</a></li>
+      <li><a data-langlabel="arcgis-for-developers" href="https://developers.arcgis.com/">ArcGIS for Developers</a></li>
+      <li><a data-langlabel="arcgis-solutions" href="//solutions.arcgis.com/">ArcGIS Solutions</a></li>
+      <li><a data-langlabel="arcgis-marketplace" href="//marketplace.arcgis.com/">ArcGIS Marketplace</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <h6 data-langlabel="about-esri">关于 Esri</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="about-us" href="//www.esri.com/about-esri/">关于我们</a></li>
+      <li><a data-langlabel="careers" href="//www.esri.com/careers/">招贤纳士</a></li>
+      <li><a data-langlabel="insiders-blog" href="https://www.esri.com/about/newsroom/blog/">Esri 博客</a></li>
+      <li><a data-langlabel="user-conference" href="//www.esri.com/events/user-conference/index.html">用户大会</a></li>
+      <li><a data-langlabel="developer-summit" href="//www.esri.com/events/devsummit/index.html">开发者峰会</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <a class="esri-logo" href="//www.esri.com/" aria-label="Esri Home"></a>
+    <section class="footer-social-nav leader-1">
+            <a class="icon-social-twitter" aria-label="Esri on Twitter" href="https://twitter.com/Esri/"></a>
+            <a class="icon-social-facebook" aria-label="Esri on Facebook" href="https://www.facebook.com/esrigis/"></a>
+            <a class="icon-social-github" aria-label="Esri on GitHub" href="//esri.github.io/"></a>
+            <a class="icon-social-contact" aria-label="Contact Esri" href="//www.esri.com/about-esri/contact/"></a>
+    </section>
+	  
+  </nav>
+  
+  <div class="column-24 leader-1">
+    <p class="font-size--3"><a href="http://www.esri.com/legal/copyright-trademarks">Copyright &copy; 2019 Esri.</a> All rights reserved. | <a href="http://www.esri.com/legal/privacy/">隐私政策</a> | <a href="http://www.esri.com/legal/software-license">法律声明</a></p>
+  </div>
+  
+
+
+      </div>
+    </div>
+  </footer>
+  <!--googleoff: all-->
+
+  
+  
+	<script src="../../../../zh-CN/assets/js/init.js" type="text/javascript"></script>
+	<!--<script src="../../../../zh-CN/assets/js/drop-down.js" type="text/javascript"></script>-->
+	<script src="../../../../zh-CN/assets/js/search/searchform.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/cdn/js/link-modifier.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/cdn/js/sitewide.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/cdn/js/libs/highlight.pack.js" type="text/javascript"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+
+
+  
+    
+
+  <script src="../../../../zh-CN/cdn/js/affix.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    $(function () {
+          var appendFlg = true;
+
+          $("#bigmac")
+          .on("affixed.bs.affix", function (evt) {
+            if (appendFlg) {
+              $("<a class='crumb' href='#'>设置点图层样式</a>").insertAfter ($("#bigmac nav a").last());
+              appendFlg = false;
+            }
+          })
+          .on ("affix-top.bs.affix", function(evt) {
+            if (!appendFlg) {
+              $("#bigmac nav a").last().remove();
+            }
+            appendFlg = true;
+          })
+    })
+  </script>
+  
+        <script type="text/javascript">
+          window.doctoc = {
+            pubID: "583",
+            tpcID: "617",
+            
+              prefix: "使用",
+              prefixUrl: "/zh-cn/portal/latest/use/",
+          
+            hideToc: false
+          }
+        </script>
+
+        <script type="text/javascript" src="../../../../zh-CN/portal/latest/use/583.js" ></script>
+        <script type="text/javascript" src="../../../../zh-CN/cdn/calcite/js/protoc.js" ></script>
+        
+        
+
+  <noscript>
+        <p>
+            <a href="flisting.htm">flist</a>
+        </p>
+    </noscript>
+    <script type="text/javascript"></script>
+  
+  
+    
+    
+
+  </body>
+</html>

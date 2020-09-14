@@ -1,0 +1,546 @@
+
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>  <html class="ie lt-ie9 lt-ie8 lt-ie7 ie6" dir="ltr"> <![endif]-->
+<!--[if IE 7]>     <html class="ie lt-ie9 lt-ie8 ie7" dir="ltr"> <![endif]-->
+<!--[if IE 8]>     <html class="ie lt-ie9 ie8" dir="ltr"> <![endif]-->
+<!--[if IE 9]>     <html class="ie ie9" dir="ltr"> <![endif]-->
+<!--[if !IE]><!--> <html dir="ltr" lang="zh-CN"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>教程：在 Desktop 中使用地理处理任务&mdash;文档 | ArcGIS Enterprise 文档</title>
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+    <script>
+      var docConfig = {
+        locale: 'zh-CN'
+        ,localedir: 'zh-cn'
+        ,langSelector: ''
+        
+        ,relativeUrl: false
+        
+
+        ,searchformUrl: '/search/'
+        ,tertiaryNavIndex: ''
+
+        
+      };
+    </script>
+	 
+
+
+    
+    <!--[if lt IE 9]>
+      <script src="../../../../../zh-CN/cdn/js/libs/html5shiv.js" type="text/javascript"></script>
+      <script src="../../../../../zh-CN/cdn/js/libs/selectivizr-min.js" type="text/javascript"></script>
+      <script src="../../../../../zh-CN/cdn/js/libs/json2.js" type="text/javascript"></script>
+      <script src="../../../../../zh-CN/cdn/js/libs/html5shiv-printshiv.js" type="text/javascript" >
+
+    <![endif]-->
+
+     <!--[if lt IE 11]>
+    <script>
+      $$(document).ready(function(){
+        $$(".hideOnIE").hide();
+      });
+    </script>
+    <![endif]-->
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<link href="../../../../../zh-CN/assets/img/favicon.ico" rel="shortcut icon" >
+	<link href="../../../../../zh-CN/assets/css/screen.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/cdn/calcite/css/documentation.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/assets/css/print.css" media="print" type="text/css" rel="stylesheet" />
+
+	<!--
+	<link href="../../../../../zh-CN/assets/css/screen_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/assets/css/documentation/base_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/assets/css/print_l10n.css" media="print" type="text/css" rel="stylesheet" />
+	-->
+	
+	
+		<script src="../../../../../zh-CN/cdn/js/libs/jquery.1.9.1.min.js" type="text/javascript"></script>
+	
+	<script src="../../../../../zh-CN/cdn/js/libs/jquery.cookie.js" type="text/javascript"></script>
+	<link href="../../../../../zh-CN/cdn/css/colorbox.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/cdn/css/colorbox_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<script src="../../../../../zh-CN/cdn/js/libs/jquery.colorbox-min.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/assets/js/video-init.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/assets/js/sitecfg.js" type="text/javascript"></script>
+	
+		<script src="../../../../../zh-CN/assets/js/signIn.js" type="text/javascript"></script>
+	
+
+	<!--- Language Picker -->
+	<script src="../../../../../zh-CN/assets/js/locale/l10NStrings.js" type="text/javascript"></script>
+	
+		 
+	
+
+	<script src="../../../../../zh-CN/assets/js/calcite-web.js" type="text/javascript"></script>
+
+
+
+  <!--- search MD -->
+    <META name="description" content="通过直接从连接节点执行任务，可在 ArcMap 中使用地理处理任务，或者通过将任务包含到模型中，从而将其集成到您自己的任务中。"><META name="last-modified" content="2019-12-6"><META name="product" content="arcgis-server-windows,arcgis-enterprise-windows"><META name="sub_category" content="ArcGIS Server (Windows)"><META name="search-collection" content="help"><META name="content_type_label" content="帮助主题"><META name="sub_category_label" content="ArcGIS Server (Windows)"><META name="search-category" content="help-general"><META name="subject_label" content="服务"><META name="version" content="10.8"><META name="content_type" content="Help Topic"><META name="subject" content="SERVICES"><META name="content-language" content="zh-cn">
+    <!--- search MD -->
+
+  
+  <script src="../../../../../zh-CN/assets/js/switchers/server-1.js" type="text/javascript"></script>
+  
+      
+
+</head>
+
+<!--
+      pub: GUID-F157DF68-7F60-4427-A561-AD2F0FA30861=22
+      tpc: GUID-7B50A83F-124A-4020-AF5D-C560F139E672=3
+      -->
+
+
+<!-- variable declaration, if any -->
+<!-- can change following macro to set variable once we are on Jinja 2.8 -->
+
+
+
+
+
+<body class="claro zh-CN server">
+  
+
+  <!-- Drawer location -->
+  <div class="drawer drawer-left js-drawer" data-drawer="top-nav">
+        <nav class="drawer-nav" role="navigation">
+          <aside class="side-nav">
+            <h2 class="side-nav-title">Arc<span>GIS</span> Enterprise</h2>
+            <form id="helpSearchForm" class="margin-left-half margin-right-half leader-half trailer-half drawer-search-form" method="GET">
+              <input type="search" name="q"  placeholder="搜索 ArcGIS Server 10.8 帮助">
+              <input type="hidden" name="collection" value="help" />
+              <input type="hidden" name="product" value="arcgis-server-windows" />
+              <input type="hidden" name="version" value="10.8" />
+              <input type="hidden" name="language" value="zh-CN" />
+            </form>    
+             <a id="nav-portal" data-langlabel="portal" href="../../../../../zh-CN/portal/" class="side-nav-link">Portal</a>
+             
+            <a id="all-servers" data-langlabel="all-servers" href="../../../../../zh-CN/server/" class="side-nav-link">所有服务器</a>
+            <a id="gis-server" data-langlabel="gis-server" href="../../../../../zh-CN/server/" class="side-nav-link">GIS Server</a>
+            <a id="image-server" data-langlabel="image-server" href="../../../../../zh-CN/image/" class="side-nav-link">Image Server</a>
+            <a id="geo-analytics-server" data-langlabel="geo-analytics-server" href="../../../../../zh-CN/geoanalytics/" class="side-nav-link">GeoAnalytics Server</a>
+            <a id="geoevent-server" data-langlabel="geoevent-server" href="../../../../../zh-CN/geoevent/" class="side-nav-link">GeoEvent Server</a>
+            <a id="notebook-server" data-langlabel="notebook-server" href="../../../../../zh-CN/notebook/" class="side-nav-link">Notebook Server</a>
+            <a id="nav-data-store" data-langlabel="data-store" href="../../../../../zh-CN/data-store/" class="side-nav-link">Data Stores</a>
+            <a id="nav-cloud" data-langlabel="cloud" href="../../../../../zh-CN/cloud/" class="side-nav-link">云</a>
+            <a id="nav-apps" data-langlabel="apps" href="../../../../../zh-CN/apps/" class="side-nav-link">应用程序</a>
+            <a id="nav-doc" data-langlabel="documentation" href="../../../../../zh-CN/documentation/" class="side-nav-link">文档</a>
+
+          </aside>
+        </nav>
+    </div>
+
+    <!-- user navigation collapses to drawer on mobile -->
+    
+    <div class="drawer drawer-right js-drawer hide-if-logged-out logged-in-navigation" data-drawer="user-nav">
+      <nav class="drawer-nav">
+        <aside class="side-nav">
+          <a class="side-nav-link agolProfile" href="#">我的个人资料</a>
+          <a class="side-nav-link icon-ui-sign-out js-log-out" href="#">登出</a>
+        </aside>
+      </nav>
+    </div>
+    
+<!-- End of drawer -->
+
+  
+  <div class="wrapper">
+      <!--googleoff: all-->
+
+      <header class="top-nav" data-skin="learn">
+        <a class="skip-to-content" href="#skip-to-content">Skip To Content</a>
+        <div class="grid-container">
+          <div class="column-24">
+
+
+            <!--<div class="top-nav-title-wrapper text-center ">-->
+              <a href='../../../../../zh-CN/' class="top-nav-title tablet-hide"><span>Arc</span>GIS  Enterprise</a>
+              <a href='../../../../../zh-CN/' class="icon-ui-menu top-nav-title js-drawer-toggle tablet-show" data-drawer="top-nav"><span>Arc</span>GIS Enterprise</a>
+            <!--</div> -->
+
+          
+            <nav role="navigation" class="top-nav-list left tablet-hide">
+              <a id="nav-portal" data-langlabel="portal" href="../../../../../zh-CN/portal/" class="top-nav-link">Portal</a>
+
+                <div class="dropdown js-dropdown ">
+                  <a class="top-nav-link js-dropdown-toggle" tabindex="0" aria-haspopup="true" aria-expanded="false" href="#">Servers</a>
+                  <nav class="dropdown-menu featured" role="menu">
+                    <ul class="dropdown-sublist-featured">
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/get-started/latest/windows/additional-server-deployment.htm" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path  d="M42.92 6.1H4.12v8.566l.833.832-.835.833-.018 7.332.845.847-.825.824V33.9h25v5.2h-2v1.075H8.02v.8h19.1v.925h4.8v-.925H40v-.8h-8.08V39.1h-2v-5.2h13v-8.566l-.834-.834.835-.834v-7.332l-.835-.834.835-.834zm-11.8 35h-3.2v-1.2h3.2zm11-8H4.92v-7.434l.767-.766h35.668l.765.766zm0-9.766l-.766.766H5.666l-.766-.767.017-6.669.766-.764h35.671l.766.766zm0-9l-.766.766H5.687l-.766-.766V6.9h37.2zM19 11.9h-2v-.8h2zm-4 0h-2v-.8h2zm-4 0H9v-.8h2zm6 8.2h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9zm8 9h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9z"/></svg></span>
+                          <span class="sublink-text">所有服务器</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/server/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M45.98 33.575a.616.616 0 0 0-.335-.51l-3.362-2.03 3.362-2.031a.556.556 0 0 0 0-1.02l-11.1-6.704a1.293 1.293 0 0 0-1.112 0L22.33 27.982a.556.556 0 0 0 0 1.02l3.36 2.03-3.358 2.03a.556.556 0 0 0-.002 1.021l3.322 2.006-3.324 2.008a.555.555 0 0 0 .002 1.017l11.102 6.703a1.25 1.25 0 0 0 1.11.002l11.104-6.706a.556.556 0 0 0 0-1.02l-3.32-2.006 3.318-2.004a.607.607 0 0 0 .335-.509zM33.837 21.97c.026-.01.286-.005.29-.005l10.814 6.53-10.8 6.523c-.028.01-.284.005-.294.006l-10.813-6.53zm11.105 16.636l-10.8 6.523a2.564 2.564 0 0 1-.295.006l-10.81-6.529 3.39-2.047 7.004 4.23a1.083 1.083 0 0 0 .557.131 1.101 1.101 0 0 0 .554-.13l7.01-4.233zM34.14 40.098a2.545 2.545 0 0 1-.294.006l-10.812-6.53 3.43-2.073 6.97 4.208a1.25 1.25 0 0 0 1.107-.001l6.966-4.206 3.431 2.073zM9 8H7V7h2zm8 8h-2v-1h2zm-4-8h-2V7h2zm4 0h-2V7h2zm-4 8h-2v-1h2zm7.316 11.1H3.9v-6.434l.766-.766h35.668l.766.766v2.12l.8.483v-2.935l-.826-.826.826-.845v-6.329l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9h16.88a2.632 2.632 0 0 1 .336-.8zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zm0 8v-5.668l.766-.766h35.668l.766.766v5.67l-.746.764H4.666zM15 24v-1h2v1zm-4 0v-1h2v1zm-2-8H7v-1h2zm-2 8v-1h2v1z"/></svg></span>
+                          <span class="sublink-text">GIS Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/image/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 8h-2V7h2zm-4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm8 8h-2v1h2zm-8 0H7v1h2zm4 9v-1h-2v1zm-4 0v-1H7v1zm8 0v-1h-2v1zm4 3.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V21h-.8v-.334l-.766-.766H4.666l-.766.766V27.1H21zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zm40.234 4v21.8H23.1V23.1zm-.8 16.366L39.466 44.1h2.868l1.766-1.766zm-20.2-9.932l5.634-5.634h-2.868L23.9 26.666zm6.2-5.068L24.466 30.1h2.868l2.766-2.766zM28.466 30.1H30.1v-1.634zm2.434 0h6.2v-6.2h-6.2zm-7 7h6.2v-6.2h-6.2zm7 0h6.2v-6.2h-6.2zm0 6.434l5.634-5.634h-2.868L30.9 40.666zm7-7l5.634-5.634h-2.868L37.9 33.666zm1.634-5.634H37.9v1.634zm-8.634 7v1.634l1.634-1.634zm.566 6.2h2.868l2.766-2.766v-2.868zm6.434-3.566l2.634-2.634H37.9zM35.466 44.1H37.1v-1.634zm2.434 0h.434l5.766-5.766V37.9h-2.434L37.9 41.666zm6.2-8.634L42.466 37.1H44.1zm0-4L38.466 37.1h2.868l2.766-2.766zm0-7.566h-6.2v6.2h6.2zm-20.2 0v1.634l1.634-1.634zm0 20.2h6.2v-6.2h-6.2zm20.2 0v-.634l-.634.634z"/></svg></span>
+                          <span class="sublink-text">Image Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/geoanalytics/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 16h-2v-1h2zm-8 8v-1H7v1zm8 0v-1h-2v1zM13 7h-2v1h2zm4 0h-2v1h2zM9 7H7v1h2zm21.45 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V27.9h-1.464l-.801-.8H41.1v-6.434l-.766-.766H4.666l-.766.766V27.1h27.15zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM13 24v-1h-2v1zm0-9h-2v1h2zm-4 0H7v1h2zm26.672 27.148A1.87 1.87 0 0 1 35.9 43a1.91 1.91 0 1 1-3.763-.222l-9.845-3.414A1.88 1.88 0 0 1 21 39.9a1.9 1.9 0 1 1 1.474-3.084l4.692-2.346A1.878 1.878 0 0 1 27.1 34a1.902 1.902 0 0 1 1.9-1.9 1.867 1.867 0 0 1 .781.191l3.788-5.05A1.88 1.88 0 0 1 33.1 26a1.9 1.9 0 1 1 3.491 1.026l4.889 4.888c-.069.056-.144.1-.21.162a3.986 3.986 0 0 0-.358.402l-4.883-4.883A1.889 1.889 0 0 1 35 27.9a1.867 1.867 0 0 1-.781-.191l-3.788 5.049a1.868 1.868 0 0 1 .437.965l9.204.614c-.018.11-.049.218-.058.33A3.93 3.93 0 0 0 40 35c0 .046.01.09.01.135l-9.185-.612A1.913 1.913 0 0 1 29 35.9a1.889 1.889 0 0 1-1.474-.716l-4.692 2.346a1.878 1.878 0 0 1 .066.47 1.9 1.9 0 0 1-.105.625c-.007.02-.022.036-.03.056l9.63 3.34a1.87 1.87 0 0 1 2.786-.505l5.415-4.437c.067.108.127.22.204.322a3.9 3.9 0 0 0 .292.306zM33.9 26a1.092 1.092 0 0 0 .43.872 1.12 1.12 0 0 0 1.42-.068A1.1 1.1 0 1 0 33.9 26zm-6 8a1.1 1.1 0 0 0 2.196.093 1.135 1.135 0 0 0-.426-.965A1.087 1.087 0 0 0 29 32.9a1.101 1.101 0 0 0-1.1 1.1zm-5.8 4a1.098 1.098 0 1 0-.06.362A1.101 1.101 0 0 0 22.1 38zm13 5a1.1 1.1 0 1 0-2.2 0 1.1 1.1 0 0 0 2.2 0zm10.8-8a1.9 1.9 0 1 1-3.8 0c0-.053.003-.105.007-.158A1.9 1.9 0 0 1 45.9 35zm-.8 0a1.1 1.1 0 0 0-2.196-.093 1.153 1.153 0 0 0 .216.752A1.1 1.1 0 0 0 45.1 35z"/></svg></span>
+                          <span class="sublink-text">GeoAnalytics Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/geoevent/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M13 8h-2V7h2zm4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm12.418 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826v2.117c-.259-.177-.53-.337-.8-.497v-1.288l-.766-.766H4.666l-.766.766V27.1h17.933c-.148.26-.283.53-.415.8zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM9 24v-1H7v1zm4-9h-2v1h2zm0 9v-1h-2v1zm-4-9H7v1h2zm8 9v-1h-2v1zm16.9 2h-.8v8.9H39v-.8h-5.1zm.1-3.901a11.9 11.9 0 1 0 11.9 11.9 11.914 11.914 0 0 0-11.9-11.9zm0 23a11.1 11.1 0 1 1 11.1-11.1 11.112 11.112 0 0 1-11.1 11.1z"/></svg></span>
+                          <span class="sublink-text">GeoEvent Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/notebook/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M22 27.1H3.9v-6.434l.766-.766h18.576a5.262 5.262 0 0 1 .83-.8H4.666l-.766-.766v-5.668l.766-.766h35.668l.766.766V18h.8v-5.666l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9H22zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zM9 8H7V7h2zm8 0h-2V7h2zm-4 0h-2V7h2zm2 16v-1h2v1zm-4 0v-1h2v1zm-4 0v-1h2v1zm0-8v-1h2v1zm8 0v-1h2v1zm-4 0v-1h2v1zm18.9 8.1h-1.8v1.8h1.8zm-.8 1h-.2v-.2h.2zm15.498-4.48a2.727 2.727 0 0 0-1.62-.5v-.02H27.25a3.154 3.154 0 0 0-3.15 3.15V38.1h-1.68a3.386 3.386 0 0 0-2.872 1.58 3.49 3.49 0 0 0-.157 3.419 3.241 3.241 0 0 0 2.954 1.801h15.161a3.404 3.404 0 0 0 3.394-3.4V26.9h5v-3.65a3.224 3.224 0 0 0-1.302-2.63zM22.345 44.1a2.44 2.44 0 0 1-2.23-1.341 2.706 2.706 0 0 1 .11-2.65A2.588 2.588 0 0 1 22.42 38.9h12.89a3.395 3.395 0 0 0 0 5.2zM40.1 23.192V41.5a2.6 2.6 0 1 1-2.6-2.6v-.8H24.9V23.25a2.352 2.352 0 0 1 2.35-2.35h13.795a3.183 3.183 0 0 0-.945 2.292zm5 2.908h-4.2v-2.908a2.274 2.274 0 0 1 1.44-2.18 1.944 1.944 0 0 1 1.791.259 2.423 2.423 0 0 1 .97 1.979zm-17.1 5h9v.8h-9zm0 3h7v.8h-7zm0-6h9v.8h-9zm4-3h5v.8h-5z"/></svg></span>
+                          <span class="sublink-text">Notebook Server</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+
+              <a id="nav-data-store" data-langlabel="data-store" href="../../../../../zh-CN/data-store/" class="top-nav-link">Data Stores</a>
+              <a id="nav-cloud" data-langlabel="cloud" href="../../../../../zh-CN/cloud/" class="top-nav-link">云</a>
+              <a id="nav-apps" data-langlabel="apps" href="../../../../../zh-CN/apps/" class="top-nav-link">应用程序</a>
+            </nav>
+
+
+            
+            
+            
+
+            <div class="margin-left-1 top-nav-list right hide-if-logged-in logged-out-navigation">
+               
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+              
+              <a data-langlabel="sign-in" id="login-link" class="icon-ui-user top-nav-link link-blue login-link" href="#">登录</a>
+              
+            </div>
+
+            
+            <nav class="margin-left-1 top-nav-list right hide-if-logged-out logged-in-navigation">
+              
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+             
+              <div class="dropdown js-dropdown right">
+
+                <div class="tablet-show top-nav-link">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a href="#" data-drawer="user-nav" class="user-nav-name js-drawer-toggle" data-first-name></a>
+                </div>
+
+                <div class="tablet-hide top-nav-link js-dropdown-toggle">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a class="user-nav-name top-nav-dropdown dropdown-btn" data-first-name>&nbsp;</a>
+                </div>
+
+                <nav class="dropdown-menu dropdown-right">
+                
+                  <a class="dropdown-link agolProfile" id="agolProfile" href="#">我的个人资料</a>
+                  <a class="dropdown-link js-log-out" id="agolLogout" href="#">登出</a>
+                </nav>
+              </div>
+            </nav>
+            
+
+            
+          </div>
+        </div>
+      </header>
+
+      <div class="js-search search-overlay">
+        <div class="search-content" role="dialog" aria-labelledby="search">
+          <form method="GET" id="helpSearchForm">
+            <label>
+              搜索 ArcGIS Server 10.8 帮助
+              <div class="search-bar">
+                <input type="search" name="q"  placeholder="搜索 ArcGIS Server 10.8 帮助" class="search-input js-search-input">
+                <input type="hidden" name="collection" value="help" />
+                <input type="hidden" name="product" value="arcgis-server-windows" />
+                <input type="hidden" name="version" value="10.8" />
+                <input type="hidden" name="language" value="zh-CN" />
+              </div>
+            </label>
+            <input type="hidden" name="relativePath" value="../../../../../" /><button type="submit" class="btn btn-large right">搜索</button>
+          </form>
+        </div>
+      </div>
+
+      <!--googleon: all-->
+
+      <div id="skip-to-content">
+        <!--googleoff: all-->
+        <header class="sub-nav sub-nav-learn">
+          <div class="grid-container">
+            
+            <div class="column-24">
+              <div style="display:table;" class="sdk-home-banner">
+                <div class="sdk-home-banner-content">
+                  <h1 class="sub-nav-title link-white">ArcGIS Server</h1>
+                </div>
+              </div>
+            </div>
+
+            <div class="column-24">
+              <nav class='sub-nav-list tablet-hide'><a class="sub-nav-link" href="../../../../../zh-CN/server/" target="_top" title="ArcGIS Server 的概述和文档">主页</a><a class="sub-nav-link" href="../../../../../zh-CN/server/latest/get-started/windows/" target="_top" title="了解有关 ArcGIS Server 和服务器角色的信息">简介</a><a class="sub-nav-link" href="../../../../../zh-CN/server/latest/deploy/windows/" target="_top" title="构建、配置和升级部署">部署</a><a class="sub-nav-link" href="../../../../../zh-CN/server/latest/manage-data/windows/" target="_top" title="管理企业的空间数据">管理数据</a><a class="sub-nav-link is-active" href="../../../../../zh-CN/server/latest/publish-services/windows/" target="_top" title="使用 GIS 服务">管理服务</a><a class="sub-nav-link" href="../../../../../zh-CN/server/latest/create-web-apps/windows/" target="_top" title="创建 Web 应用程序和可打印地图">共享</a><a class="sub-nav-link" href="../../../../../zh-CN/server/latest/administer/windows/" target="_top" title="管理和保护 ArcGIS Server">管理</a><a class="sub-nav-link" href="../../../../../zh-CN/server/latest/develop/windows/" target="_top" title="构建扩展模块并自动执行常见任务">开发</a></nav><select class='tablet-show select-full trailer-half js-select-nav'><option value="../../../../../zh-CN/server/">主页</option><option value="../../../../../zh-CN/server/latest/get-started/windows/">简介</option><option value="../../../../../zh-CN/server/latest/deploy/windows/">部署</option><option value="../../../../../zh-CN/server/latest/manage-data/windows/">管理数据</option><option selected="true" value="../../../../../zh-CN/server/latest/publish-services/windows/">管理服务</option><option value="../../../../../zh-CN/server/latest/create-web-apps/windows/">共享</option><option value="../../../../../zh-CN/server/latest/administer/windows/">管理</option><option value="../../../../../zh-CN/server/latest/develop/windows/">开发</option></select>
+            </div>
+
+          </div>
+        </header>
+        <!--googleon: all-->
+       
+        <!-- content goes here -->
+        <div class="grid-container ">
+          
+
+            
+              
+  <!--BREADCRUMB-BEG--><div id="bigmac" class="sticky-breadcrumbs trailer-2" data-spy="affix" data-offset-top="180"> </div><!--BREADCRUMB-END-->
+  <!--googleoff: all-->
+    <div class="column-5 tablet-column-12 trailer-2 ">
+      <aside class="js-accordion accordion reference-index" aria-live="polite" role="tablist">
+        <div></div>
+      </aside>
+
+      <div class="js-sticky scroll-show tablet-hide leader-1 back-to-top" data-top="0" style="top: 0px;">
+        <a href="#" class="btn btn-fill btn-clear">返回顶部</a>
+      </div>
+    </div>
+  <!--googleon: all-->
+  
+            
+            
+            
+	
+		<div class="column-13  pre-1 content-section">
+	
+		<header class="trailer-1"><h1>教程：在 Desktop 中使用地理处理任务</h1></header>
+
+		 
+	<!--googleoff: all-->
+	
+		
+				<aside id="main-toc-small" class="js-accordion accordion tablet-show trailer-1">
+			      <div class="accordion-section">
+			        <h4 class="accordion-title">在本主题中</h4>
+			        <div class="accordion-content list-plain">
+			          <ol class="list-plain pre-0 trailer-0"><li><a href="#ESRI_SECTION1_EC7E0D6220504CCC87566B5411680CE4">连接到 Esri 示例服务器</a></li><li><a href="#ESRI_SECTION1_3884DF9044B24E09B21DD304DC1944B6">使用任务对话框</a></li><li><a href="#ESRI_SECTION1_B7C9E20B65A24B00BB3970A97D8588E3">创建使用任务的模型工具</a></li><li><a href="#ESRI_SECTION1_E8B657492358430F9DD924B13E210D5B">发布为服务</a></li><li><a href="#ESRI_SECTION1_D9FDAEE0FE0E409AB6AA015D4A30F82E">高级版：使用迭代计算多个点的视域</a></li></ol>
+			        </div>
+			      </div>
+			     </aside>
+		
+    
+   <!--googleon: all-->
+
+
+		<main>
+			
+	
+    	
+    
+
+
+			
+<p id="GUID-D203D9EE-C09C-4F12-A26D-3B30809E5026">在 <span class="ph">ArcGIS Desktop</span> 中，地理处理服务和任务显示为工具箱和工具，并且可以像任何其他地理处理工具一样使用。通过将任务从<span class="wintitle">目录</span> 窗口拖放到模型构建器中，或者使用模型构建器主工具条的<span class="uicontrol">添加数据或工具</span> <img purpose="img" placement="inline" alt="添加数据或工具" title="添加数据或工具" src="GUID-DDFE928F-A36A-45F7-A6C5-1DF5CEEAE541-web.png">，可以将任务添加到模型中。</p><p id="GUID-32437AFE-43B6-4782-9899-7F793D1813DC">以下步骤将指导您完成整个过程，包括连接到 Esri 示例服务器、从对话框运行任务以及在模型构建器中创建使用该任务的模型工具。示例服务为高程/ESRI 高程世界，其中包含一个视域任务，用于计算一个人在 15 千米的缓冲区内可能观测的范围。  </p>
+<section class="section1 padded-anchor" id="ESRI_SECTION1_EC7E0D6220504CCC87566B5411680CE4" purpose="section1"><h2>连接到 Esri 示例服务器</h2><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_758B8704CB7F4EC282BC83F873490C52"><ol class="list-numbered" purpose="ol"><li purpose="step" id="GUID-5E564FCE-97BC-43B4-99D3-0F795B603CE5"><span purpose="cmd" id="GUID-B978E0C3-B878-4A6E-9F51-68C101935CBE">在<span class="wintitle">目录</span> 窗口的 <span class="uicontrol">GIS 服务器</span>节点中，通过双击<span class="uicontrol">添加新的 GIS 服务器</span>建立与 Esri <span class="usertext">SampleServer1</span> 的新连接。
+</span><div class="substeps" id="ESRI_SUBSTEPS_9228B0B3EDCB4B1BAB29F9CE60BD3901" purpose="substeps"><ol class="list-numbered" purpose="ol"><li purpose="substep" id="ESRI_SUBSTEP_EF17AADFBBB34ABBB646E25B1DE4B7B2"><span purpose="cmd" id="GUID-B41123B9-BE3E-4BAB-B240-F0870C48609E">在<span class="wintitle">添加 ArcGIS Server</span> 对话框中，选择<span class="uicontrol">使用 GIS 服务</span>。单击<span class="uicontrol">下一步</span>。</span></li><li purpose="substep" id="ESRI_SUBSTEP_E0D726FD0AA6444EAEC2067A761A3214"><span purpose="cmd" id="GUID-88D6EB04-FE62-4CFA-AEC4-B8A701128514">在<span class="uicontrol">服务器 URL</span> 中，输入 <span class="usertext">http://sampleserver1.arcgisonline.com/ArcGIS/services</span>，如下图所示。</span><div class="stepexample" purpose="stepexample"><p id="GUID-FED66F9B-2415-44B2-B96E-770873DBC5E8"><img purpose="img" placement="inline" alt="连接到 Esri SampleServer1" title="连接到 Esri SampleServer1" src="GUID-07D756D2-120F-4571-BA24-AA9CA88F1ADD-web.png"></p></div></li></ol></div><div class="stepresult" purpose="stepresult"><p id="GUID-526469E9-F395-4FA3-93D9-B70809C41BCF">此时，您已连接到 Esri 示例服务器。在 <span class="uicontrol">GIS 服务器</span>节点中，将会有新的连接，即 <span class="usertext">ArcGIS on sampleserver1.arcgisonline.com (user)</span>。</p></div></li><li purpose="step" id="ESRI_STEP_D56F88C5407D4FBDB5DE88C85369B8C2"><span purpose="cmd" id="GUID-BD77183D-46B1-4DB0-AB4A-CE871DED2264">展开该连接，并浏览至<span class="uicontrol">高程</span>文件夹。查找包含视域任务的 <span class="usertext">ESRI 高程世界</span>服务。</span></li></ol></div></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_3884DF9044B24E09B21DD304DC1944B6" purpose="section1"><h2>使用任务对话框</h2><p id="GUID-1BA61767-52C4-417D-A1CE-12EFECCF45B4">下列步骤说明了如何使用工具对话框执行视域任务。</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_413A1EB7D7C843599A64DBB3B99C567E"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_F6CC7F1D2AE54787B39FF3982E391DD3"><span purpose="cmd" id="GUID-F9A562EA-5E44-4582-B758-6CA370160DF7">执行任务之前，需要世界地形底图。在 ArcMap 标准工具条中，单击<span class="uicontrol">添加底图</span> <img purpose="img" placement="inline" alt="添加底图" title="添加底图" src="GUID-4658F8EF-F91A-4B59-AD49-ADE14F736227-web.png">，可以添加一个底图（单击<span class="uicontrol">添加数据</span> <img purpose="img" placement="inline" alt="添加数据" title="添加数据" src="GUID-DDFE928F-A36A-45F7-A6C5-1DF5CEEAE541-web.png">旁边的向下箭头可找到<span class="uicontrol">添加底图</span>）。选择地形底图。</span></li><li purpose="step" id="ESRI_STEP_BDCA91A348A347C492EB2F56A5FE8EB8"><span purpose="cmd" id="GUID-AF4A460F-A1AB-44B0-8164-9C34E1C0AB8F">在<span class="wintitle">目录</span> 窗口中，双击<span class="uicontrol">视域</span>任务，打开其对话框。</span><ul purpose="choices" id="ESRI_CHOICES_07FED845141D482799BE9C4091468EAE"><li purpose="choice" id="ESRI_CHOICE_D035997D2BE041A7A564F0A6A9D85DE1">或者，可以右键单击<span class="uicontrol">视域</span>，然后选择<span class="uicontrol">打开</span>。</li></ul><div class="info" purpose="info"><p id="GUID-8BCFCB46-7844-4E61-BF8C-D4648A169650">此任务需要输入两项：点<a class="xref xref" esrisubtype="extrel" hrefpfx="https://desktop.arcgis.com/zh-cn/arcmap/latest/analyze" href="https://desktop.arcgis.com/zh-cn/arcmap/latest/analyze/modelbuilder/a-quick-tour-of-using-feature-set-and-record-set.htm">要素集</a>（点位置）和线性单位（距离）。输出为面，表示可从输入点看到的区域。<div class="panel trailer-1 note" id="GUID-9D3E2734-0CA1-41A9-A91F-719832E9A0D9"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-1E320391-1240-4E87-B07D-2D50C7992A19">视域服务具有逻辑限制，最大视域为 20 千米（20,000 米）。执行时，任何大于此限值的输入距离都将缩减至 20 千米。</p></div></p></div><div class="substeps" id="ESRI_SUBSTEPS_F2847ACF524A4D8DBB4B6A9DB3EC4DEA" purpose="substeps"><ol class="list-numbered" purpose="ol"><li purpose="substep" id="ESRI_SUBSTEP_7185ED685C8E45849BB43D225AC78503"><span purpose="cmd" id="GUID-3D659995-888A-444C-902E-1C8B14AB4698">单击<span class="uicontrol">显示帮助</span>按钮；对话框将展开以显示<a class="xref xref" esrisubtype="extrel" hrefpfx="https://desktop.arcgis.com/zh-cn/arcmap/latest/analyze" href="https://desktop.arcgis.com/zh-cn/arcmap/latest/analyze/executing-tools/a-quick-tour-of-tool-dialogs.htm#ESRI_SECTION1_74A791A4D9194DE09BD4CEB6F6971AD2">侧面板帮助</a>。与本地工具箱中的工具不同，任务没有单独的参数帮助。</span></li><li purpose="substep" id="ESRI_SUBSTEP_5B9F292939DA486DA07AC461C573ACB5"><span purpose="cmd" id="GUID-5E903673-9C66-45DD-8991-D2BE8798E816"> 单击<span class="uicontrol">工具帮助</span>按钮，在默认的 Internet 浏览器中查看详细帮助。</span><div class="info" purpose="info"><p id="GUID-ABFFA7FB-D81C-4F92-9AE6-1982A60A127D">或者，在<span class="wintitle">目录</span> 窗口中，可以右键单击<span class="uicontrol">视域</span>，然后选择<span class="uicontrol">帮助</span>以查看详细帮助。</p></div></li></ol></div></li><li purpose="step" id="ESRI_STEP_05BBBA081E3948189EABBE5E5E422CDB"><span purpose="cmd" id="GUID-817C675A-96F7-475C-92D6-FE6ACB57E086">在工具对话框中，单击<span class="uicontrol">输入观测点</span>，再单击地图，即可添加起点。下图显示了在旧金山的山上添加点。</span><div class="stepexample" purpose="stepexample"><p id="GUID-22ED5E9C-E609-4628-BF9F-BEB7CC99E0DB"><img purpose="img" placement="inline" alt="视域服务对话框" title="视域服务对话框" src="GUID-00E94BDD-8BD3-4156-9258-20799C9ECA6C-web.png"></p></div><ul purpose="choices" id="ESRI_CHOICES_538DB5FE8EEB4078875DBE62DFF8978A"><li purpose="choice" id="ESRI_CHOICE_D6D115052A3D47BB911F6490D817BF08">通过单击<span class="uicontrol">输入观测点</span>参数上的向下箭头，可选择现有点要素图层作为输入起点，而不是对点进行数字化，如下图所示，在此选择要输入的图层 <span class="usertext">StartPoint</span>。仅使用要素图层的第一个点；忽略后续点。<p id="GUID-B5C89884-6A9C-4D21-9625-9511326D9C29"><img purpose="img" placement="inline" alt="在视域服务的要素集输入中使用现有图层" title="在视域服务的要素集输入中使用现有图层" src="GUID-372DB445-4690-4DE8-9719-B71299DF2896-web.png"></p></li></ul></li><li purpose="step" id="ESRI_STEP_13115C4882A34C72853D1C2F042BDB6B"><span purpose="cmd" id="GUID-39DCCBFA-B1DB-4C9D-AF95-8524C742E7AF">单击<span class="uicontrol">确定</span>以运行工具。</span><div class="stepresult" purpose="stepresult"><p id="GUID-A8CB96A3-6524-4219-A219-82A945512894">工具运行后，将新的面要素图层添加至 ArcMap 内容列表，并将新结果添加至<span class="wintitle">结果</span> 窗口。</p></div></li></ol></div></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_B7C9E20B65A24B00BB3970A97D8588E3" purpose="section1"><h2>创建使用任务的模型工具</h2><p id="GUID-7E9A09FE-9A01-497D-9A21-DCD0A41A8798">以下步骤假设已掌握一些相关知识，包括创建新模型、将工具添加至模型、连接数据与工具以及显示参数。您将创建模型，并将其保存到自定义工具箱中。如果没有自定义工具箱，请遵循<a class="xref xref" esrisubtype="extrel" hrefpfx="https://desktop.arcgis.com/zh-cn/arcmap/latest/analyze" href="https://desktop.arcgis.com/zh-cn/arcmap/latest/analyze/managing-tools-and-toolboxes/creating-a-custom-toolbox.htm">创建工具箱</a>主题中的步骤。在工作目录中创建工具箱。<div class="panel trailer-1 note" id="GUID-FD8287C8-E484-461B-B4E4-6057D19C5412"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-BEFE3182-83AC-4E53-82E2-ECEB5BBBE29F">以下工作流假设具有面数据集以及需要基于重叠输入进行制表的数值。将要构建的模型可根据给定输入点创建视域。使用视域，根据人口普查区块组计算视域范围内的大致人口。<span purpose="gptoolref"><a class="xref xref" esrisubtype="extrel" hrefpfx="https://desktop.arcgis.com/zh-cn/arcmap/latest/tools" href="https://desktop.arcgis.com/zh-cn/arcmap/latest/tools/analysis-toolbox/tabulate-intersection.htm">交集制表</a></span>工具用于确定研究区域内的人口。只要具有与每个要素相关的整型值，任何面类型数据都可代入此工作流中。</p></div></p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_E7B3FAB015E94EFE86696725C1CB4371"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_0934954B88804F77977CB71F6BA9AE33"><span purpose="cmd" id="GUID-9FC0FD2E-1FEC-47D2-AEF7-F88E13E6E4AE">在以下步骤中，将创建一个模型，并将其保存到自定义工具箱中。如果没有自定义工具箱，请遵循<a class="xref xref" esrisubtype="extrel" hrefpfx="https://desktop.arcgis.com/zh-cn/arcmap/latest/analyze" href="https://desktop.arcgis.com/zh-cn/arcmap/latest/analyze/managing-tools-and-toolboxes/creating-a-custom-toolbox.htm">创建工具箱</a>主题中的步骤。在工作目录中创建工具箱。</span></li><li purpose="step" id="ESRI_STEP_9E256BBFDDAB4F8D945D0C176AE3F78B"><span purpose="cmd" id="GUID-E727F189-9F05-44FC-A3D6-F8316606945B">在标准工具条中单击模型构建器工具 <img purpose="img" placement="inline" alt="模型构建器" title="模型构建器" src="GUID-075F1E9F-9F62-4DE7-8491-385B020363F8-web.png">，从而创建新的模型。</span></li><li purpose="step" id="ESRI_STEP_A8E2904807E54B1789071E82D2DEBACB"><span purpose="cmd" id="GUID-D9A6B464-87E2-4027-8B7B-BA03A30EC18E">从<span class="wintitle">目录</span> 窗口中，将<span class="usertext">视域</span>任务拖放到模型构建器画布上。</span><ul purpose="choices" id="ESRI_CHOICES_200B7FA0D92343C1B06CD173AB40D6C0"><li purpose="choice" id="ESRI_CHOICE_887724FBBE6C4085A8E307B6449C4694">将视域任务重命名为<span class="usertext">视域服务</span>。</li></ul></li><li purpose="step" id="ESRI_STEP_D607FB319EB745D89C57C0B20F09AA85"><span purpose="cmd" id="GUID-D3457C8D-B3D7-40A2-B321-1E21BEC2B321">将<span purpose="gptoolref"><a class="xref xref" esrisubtype="extrel" hrefpfx="https://desktop.arcgis.com/zh-cn/arcmap/latest/tools" href="https://desktop.arcgis.com/zh-cn/arcmap/latest/tools/data-management-toolbox/make-feature-layer.htm">创建要素图层</a></span>工具添加到模型构建器画布中。将<span class="usertext">人口普查区块</span>数据（或相应数据）拖入模型构建器画布中。将输入数据连接至<span class="modelbuilder">创建要素图层</span>工具。</span><div class="substeps" id="ESRI_SUBSTEPS_84EC2BA86BAF4F239DE2DDC0A0533D5A" purpose="substeps"><ol class="list-numbered" purpose="ol"><li purpose="substep" id="ESRI_SUBSTEP_4D55DDA429FB471CB693E59F9DFEDF85"><span purpose="cmd" id="GUID-7A97FC6E-0FA4-4BA0-B27F-87EC62F57F03">在模型构建器窗口中，打开<span class="modelbuilder">创建要素图层</span>工具元素。</span></li><li purpose="substep" id="ESRI_SUBSTEP_2AD52D9323E64422A32A8B6D734AA7F2"><span purpose="cmd" id="GUID-14F4CACD-348A-471B-9227-F0CE22D0DD74">为要制表的每个字段选中<span class="uicontrol">使用比率策略</span>复选框。</span></li><li purpose="substep" id="ESRI_SUBSTEP_BBE7DCD8E5DE4B1BA4CBAE893ABFCE0B"><span purpose="cmd" id="GUID-C1F812EC-9C96-4A72-9F99-F172B8C73026">单击工具对话框中的<span class="uicontrol">确定</span>，接受所作更改。</span></li></ol></div></li><li purpose="step" id="ESRI_STEP_823A3C45747B4548A2296BB3FC49E298"><span purpose="cmd" id="GUID-3CDBF3FA-3216-404F-9ADA-DDD1A06ED7FD">将<span purpose="gptoolref"><a class="xref xref" esrisubtype="extrel" hrefpfx="https://desktop.arcgis.com/zh-cn/arcmap/latest/tools" href="https://desktop.arcgis.com/zh-cn/arcmap/latest/tools/analysis-toolbox/tabulate-intersection.htm">交集制表</a></span>工具添加到模型。可使用<span class="wintitle">搜索</span> 窗口查找该工具，然后将其拖放到模型构建器画布上。</span></li><li purpose="step" id="ESRI_STEP_185E5DE09E2E462A8D098F8E129FC800"><span purpose="cmd" id="GUID-57E316F8-279C-4350-8DEC-477C3255997B">在模型构建器中，使用<span class="uicontrol">添加连接</span>工具 <img purpose="img" placement="inline" alt="添加连接" title="添加连接" src="GUID-6B1E1260-C692-4D3B-8D03-5667C0BAEF27-web.png">，将<span class="modelbuilder">视域服务</span>的输出连接到<span class="modelbuilder">交集制表</span>作为<span class="uicontrol">输入区域要素</span>。将<span class="modelbuilder">创建要素图层</span>的输出连接到<span class="modelbuilder">交集制表</span>工具作为<span class="uicontrol">输入要素类</span>。</span><div class="substeps" id="ESRI_SUBSTEPS_4904EA4804594A56BFD6995D7493050D" purpose="substeps"><ol class="list-numbered" purpose="ol"><li purpose="substep" id="ESRI_SUBSTEP_6856235BB25C4F91AFC18C874CB140DD"><span purpose="cmd" id="GUID-C20E2501-98E4-42FE-BD07-C68F59EF62E5">通过双击打开<span class="modelbuilder">交集制表</span>工具。</span></li><li purpose="substep" id="ESRI_SUBSTEP_88A810A7B5264465A5BADCF13E6BBF82"><span purpose="cmd" id="GUID-805796F3-B8DF-43AD-8D5D-B70600162353">将<span class="modelbuilder">区域字段</span>设置为<span class="usertext">格网代码</span>；这是视域服务结果中的已知字段。</span></li><li purpose="substep" id="ESRI_SUBSTEP_1678198C92F94D33BABA9D1333C806DC"><span purpose="cmd" id="GUID-E85C0FC8-85F8-4758-ADF9-5BE84133FED4">单击工具对话框中的<span class="uicontrol">确定</span>，接受所作更改。</span></li></ol></div></li><li purpose="step" id="ESRI_STEP_29B90FD9B88B4A5F97439EEBEE9BE052"><span purpose="cmd" id="GUID-EEA93365-952E-4E30-813B-2E49A4CAA793">添加<span purpose="gptoolref"><a class="xref xref" esrisubtype="extrel" hrefpfx="https://desktop.arcgis.com/zh-cn/arcmap/latest/tools" href="https://desktop.arcgis.com/zh-cn/arcmap/latest/tools/analysis-toolbox/summary-statistics.htm">汇总统计</a></span>工具，然后将<span class="modelbuilder">交集制表</span>的输出连接到此工具。</span><div class="substeps" id="ESRI_SUBSTEPS_1142B13BA01A4A07B05857F43022E20F" purpose="substeps"><ol class="list-numbered" purpose="ol"><li purpose="substep" id="ESRI_SUBSTEP_FFD0188D290E48B590F1B33EBCCB39CB"><span purpose="cmd" id="GUID-55E8E87E-CCC1-4CB0-A0C2-38EE8845E931">通过双击打开<span class="modelbuilder">汇总统计数据</span>工具。</span></li><li purpose="substep" id="ESRI_SUBSTEP_5AE74D32B8BA4375B86C99FE8EC57BEB"><span purpose="cmd" id="GUID-DE2257F4-F711-4C98-AEB7-495146720133">为<span class="uicontrol">统计字段</span>选择合适的值。相应地设置<span class="uicontrol">统计类型</span>。此示例使用人口普查区块组中的<span class="usertext">总人口</span>字段，并执行<span class="usertext">总和</span>计算。</span></li></ol></div></li><li purpose="step" id="ESRI_STEP_798EBDB028C94A9689FF56331906DB3B"><span purpose="cmd" id="GUID-68A05857-2C11-4335-AB05-5C68BCA9761B">显示<span class="modelbuilder">输入观测点</span>、<span class="modelbuilder">视域结果</span>和<span class="modelbuilder">汇总表输出</span>变量作为<a class="xref xref" esrisubtype="extrel" hrefpfx="https://desktop.arcgis.com/zh-cn/arcmap/latest/analyze" href="https://desktop.arcgis.com/zh-cn/arcmap/latest/analyze/modelbuilder/creating-model-parameter.htm">模型参数</a>。</span><div class="stepresult" purpose="stepresult"><p id="GUID-C0984C0E-5687-448D-A788-A63521454717">模型应如下图所示：</p><img purpose="img" placement="inline" alt="使用视域服务完成的模型" title="使用视域服务完成的模型" src="GUID-2FE123EB-6B52-4A87-A75E-B5B0110183D2-web.png"></div></li><li purpose="step" id="ESRI_STEP_81EC4B80CD7F4E178221439B95175204"><span purpose="cmd" id="GUID-D5B99BF0-E69C-489E-A1DA-0BC97DC0F4B9">将模型保存 <img purpose="img" placement="inline" alt="保存" title="保存" src="GUID-5F3971CB-D982-4D97-B56E-6D5AE2378950-web.png">到自定义工具箱。可接受默认名称（在本例中为<span class="usertext">模型</span>），也可为模型提供自定义名称。退出模型构建器。</span></li><li purpose="step" id="ESRI_STEP_66896A6ADB2F40C482167F4CE451593B"><span purpose="cmd" id="GUID-85137ABE-1430-44B9-A8DC-BA6499D57A61">在<span class="wintitle">目录</span> 窗口中，双击模型工具，打开其对话框。</span><ul purpose="choices" id="ESRI_CHOICES_9A067EB1CBD04C9D816D79B41B242F43"><li purpose="choice" id="ESRI_CHOICE_34066C45E312406ABADD6E17E73B77CF">或者，右键单击模型工具，然后选择<span class="uicontrol">打开</span>。</li></ul></li><li purpose="step" id="ESRI_STEP_BBE038312496413EBFDB0CCBD2B9F476"><span purpose="cmd" id="GUID-E3086D13-C924-4761-8325-987B4DA29C66">在研究区域中的某处提供输入点。</span></li><li purpose="step" id="ESRI_STEP_4BE1A9E3232C433797DEADD9AFC63E49"><span purpose="cmd" id="GUID-9E6F3581-1314-481E-BD16-97664CA7DBE9">单击<span class="uicontrol">确定</span>以运行模型工具。下图显示了蓝岭东侧、科林伍德西部的输入点，计算视域区域内的人口超过 16,000 人。</span><div class="stepexample" purpose="stepexample"><p id="GUID-289F26C6-437A-47FA-BCB8-05DDE897E05A"><img purpose="img" placement="inline" alt="由 Esri SampleServer1 生成的视域与计算人口值" title="由 Esri SampleServer1 生成的视域与计算人口值" src="GUID-3CEB3ECD-C5E7-42F4-8068-737BB68D3F33-web.png"></p></div></li></ol></div></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_E8B657492358430F9DD924B13E210D5B" purpose="section1"><h2>发布为服务</h2><p id="GUID-03AD2A1E-92C1-4649-8C91-74D27BFDAFD8">此时，可将模型发布为服务。这需要管理员与任一 ArcGIS Server 进行连接。执行服务时，将在 Esri 示例服务器上依次执行视域任务。</p><p id="GUID-760A3027-B6EF-4FAA-BE93-2CE31611B319"><a class="xref xref" href="../../../../../zh-CN/server/latest/publish-services/windows/a-quick-tour-of-publishing-a-geoprocessing-service.htm">了解有关创建地理处理服务的详细信息</a></p></section><section class="section1 padded-anchor" id="ESRI_SECTION1_D9FDAEE0FE0E409AB6AA015D4A30F82E" purpose="section1"><h2>高级版：使用迭代计算多个点的视域</h2><p id="GUID-9DEF90F3-9DED-4B2E-B22C-05EF6FB85BBF">之前创建的模型一次处理一个输入位置，同时计算视域并确定人口。您所连接的视域服务将接受多个点，并分别为每个输入点创建一个视域。该模型可以更改为使用<a class="xref xref" esrisubtype="extrel" hrefpfx="https://desktop.arcgis.com/zh-cn/arcmap/latest/analyze" href="https://desktop.arcgis.com/zh-cn/arcmap/latest/analyze/modelbuilder/a-quick-tour-of-using-iterators-for-iteration-looping-.htm">迭代器</a>在多个输入点上循环，同时创建视域并返回每个视域的人口计算结果。下列模型使用迭代器来执行此任务。</p><p id="GUID-20A9F697-4BF3-4F99-8AF7-8F5F8237FA9F"><img purpose="img" placement="inline" alt="使用迭代器创建多个分析视域。" title="使用迭代器创建多个分析视域。" src="GUID-582F32BD-10C2-45E6-986F-9A2BCC4FFADF-web.png"></p><p id="GUID-AC67327D-213C-42A0-86BC-32545299E79C">启动模型时，<span purpose="gptoolref"><a class="xref xref" esrisubtype="extrel" hrefpfx="https://desktop.arcgis.com/zh-cn/arcmap/latest/tools" href="https://desktop.arcgis.com/zh-cn/arcmap/latest/tools/modelbuilder-toolbox/iterate-row-selection.htm">迭代行选择</a></span>工具将运行每个输入点的工作流。<a class="xref xref" esrisubtype="extrel" hrefpfx="https://desktop.arcgis.com/zh-cn/arcmap/latest/tools" href="https://desktop.arcgis.com/zh-cn/arcmap/latest/tools/modelbuilder-toolbox/collect-values.htm">收集值</a>工具收集各个视域结果和汇总统计数据输出以添加到显示画面中。<a class="xref xref" esrisubtype="extrel" hrefpfx="https://desktop.arcgis.com/zh-cn/arcmap/latest/analyze" href="https://desktop.arcgis.com/zh-cn/arcmap/latest/analyze/modelbuilder/examples-of-inline-model-variable-substitution.htm">行内变量</a> (<span class="usertext">%Value%</span>) 使用<span class="modelbuilder">迭代行选择</span>的<span class="modelbuilder">值</span>输出来创建唯一的输出名称。</p><p id="GUID-F7FECB6A-FA2B-40EF-98CD-5E979077FC54"><a class="xref xref" esrisubtype="extrel" hrefpfx="https://desktop.arcgis.com/zh-cn/arcmap/latest/tools" href="https://desktop.arcgis.com/zh-cn/arcmap/latest/tools/modelbuilder-toolbox/collect-values.htm">了解“收集值”在模型构建器中的工作原理</a>  </p></section><section class="wfsummary padded-anchor" id="GUID-0C5B6B8D-52BD-492F-A9AD-86F120118286" purpose="wfsummary">
+</section><section class="section2 leader-1" purpose="relatedtopics"><h4 class="trailer-0">相关主题</h4><ul class="pre-0 trailer-2"><li><a class="xref relatedtopic" esrisubtype="extrel" hrefpfx="https://desktop.arcgis.com/zh-cn/arcmap/latest/analyze" href="https://desktop.arcgis.com/zh-cn/arcmap/latest/analyze/modelbuilder/what-is-modelbuilder.htm">什么是模型构建器？</a></li></ul></section>
+			
+				<hr>
+				<!--googleoff: all-->
+				
+	
+        
+		    <p class="feedback right">
+		        <a id="afb" class="icon-ui-contact" href="/feedback/" data-langlabel="feedback-on-this-topic" >有关此主题的反馈?</a>
+		    </p>
+        
+	
+
+				<!--googleon: all-->
+			
+		</main>
+	</div>
+	
+	<!--googleoff: all-->
+	
+		
+			<div id="main-toc-large" class="column-5">
+			    <div class="panel font-size--2 tablet-hide trailer-1">
+			      <h5 class="trailer-half">在本主题中</h5>
+			      <ol class="list-plain pre-0 trailer-0"><li><a href="#ESRI_SECTION1_EC7E0D6220504CCC87566B5411680CE4">连接到 Esri 示例服务器</a></li><li><a href="#ESRI_SECTION1_3884DF9044B24E09B21DD304DC1944B6">使用任务对话框</a></li><li><a href="#ESRI_SECTION1_B7C9E20B65A24B00BB3970A97D8588E3">创建使用任务的模型工具</a></li><li><a href="#ESRI_SECTION1_E8B657492358430F9DD924B13E210D5B">发布为服务</a></li><li><a href="#ESRI_SECTION1_D9FDAEE0FE0E409AB6AA015D4A30F82E">高级版：使用迭代计算多个点的视域</a></li></ol>
+			    </div>
+			    
+			    
+	  		</div>
+		
+    
+   <!--googleon: all-->
+
+
+
+
+          
+        </div>
+        <!-- ENDPAGECONTENT -->
+
+      </div>
+
+    </div>  <!-- End of wrapper -->
+
+  <footer class="footer leader-3 link-dark-gray" role="contentinfo">
+    <div class="grid-container">
+      <div class="row">
+        <nav class="column-6">
+          <h6 data-langlabel="arcgis-for-server">Arc<span>GIS Enterprise</span></h6>
+          <ul class="list-plain">
+            <li><a data-langlabel="home" href="../../../../../zh-CN/">主页</a></li>
+            <li><a data-langlabel="portal" href="../../../../../zh-CN/portal/">Portal</a></li>
+            <li><a data-langlabel="server" href="../../../../../zh-CN/server/">Server</a></li>
+            <li><a data-langlabel="data-store" href="../../../../../zh-CN/data-store/">Data Stores</a></li>
+            <li><a data-langlabel="cloud" href="../../../../../zh-CN/cloud/">云</a></li>
+            <li><a data-langlabel="apps" href="../../../../../zh-CN/apps/">应用程序</a></li>
+            <li><a data-langlabel="documentation" href="../../../../../zh-CN/documentation/">文档</a></li>
+          </ul>
+        </nav>
+
+        
+  <nav class="column-6">
+    <h6 data-langlabel="arcgis-platform">ArcGIS 平台</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="arcgis" href="//www.arcgis.com/">ArcGIS Online</a></li>
+      <li><a data-langlabel="arcgis-for-professionals" href="//pro.arcgis.com/">ArcGIS Pro</a></li>
+      <li><a data-langlabel="arcgis-for-server" href="//enterprise.arcgis.com/">ArcGIS Enterprise</a></li>
+      <li><a data-langlabel="arcgis-for-developers" href="https://developers.arcgis.com/">ArcGIS for Developers</a></li>
+      <li><a data-langlabel="arcgis-solutions" href="//solutions.arcgis.com/">ArcGIS Solutions</a></li>
+      <li><a data-langlabel="arcgis-marketplace" href="//marketplace.arcgis.com/">ArcGIS Marketplace</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <h6 data-langlabel="about-esri">关于 Esri</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="about-us" href="//www.esri.com/about-esri/">关于我们</a></li>
+      <li><a data-langlabel="careers" href="//www.esri.com/careers/">招贤纳士</a></li>
+      <li><a data-langlabel="insiders-blog" href="https://www.esri.com/about/newsroom/blog/">Esri 博客</a></li>
+      <li><a data-langlabel="user-conference" href="//www.esri.com/events/user-conference/index.html">用户大会</a></li>
+      <li><a data-langlabel="developer-summit" href="//www.esri.com/events/devsummit/index.html">开发者峰会</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <a class="esri-logo" href="//www.esri.com/" aria-label="Esri Home"></a>
+    <section class="footer-social-nav leader-1">
+            <a class="icon-social-twitter" aria-label="Esri on Twitter" href="https://twitter.com/Esri/"></a>
+            <a class="icon-social-facebook" aria-label="Esri on Facebook" href="https://www.facebook.com/esrigis/"></a>
+            <a class="icon-social-github" aria-label="Esri on GitHub" href="//esri.github.io/"></a>
+            <a class="icon-social-contact" aria-label="Contact Esri" href="//www.esri.com/about-esri/contact/"></a>
+    </section>
+	  
+  </nav>
+  
+  <div class="column-24 leader-1">
+    <p class="font-size--3"><a href="http://www.esri.com/legal/copyright-trademarks">Copyright &copy; 2019 Esri.</a> All rights reserved. | <a href="http://www.esri.com/legal/privacy/">隐私政策</a> | <a href="http://www.esri.com/legal/software-license">法律声明</a></p>
+  </div>
+  
+
+
+      </div>
+    </div>
+  </footer>
+  <!--googleoff: all-->
+
+  
+  
+	<script src="../../../../../zh-CN/assets/js/init.js" type="text/javascript"></script>
+	<!--<script src="../../../../../zh-CN/assets/js/drop-down.js" type="text/javascript"></script>-->
+	<script src="../../../../../zh-CN/assets/js/search/searchform.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/cdn/js/link-modifier.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/cdn/js/sitewide.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/cdn/js/libs/highlight.pack.js" type="text/javascript"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+
+
+  
+    
+
+  <script src="../../../../../zh-CN/cdn/js/affix.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    $(function () {
+          var appendFlg = true;
+
+          $("#bigmac")
+          .on("affixed.bs.affix", function (evt) {
+            if (appendFlg) {
+              $("<a class='crumb' href='#'>教程：在 Desktop 中使用地理处理任务</a>").insertAfter ($("#bigmac nav a").last());
+              appendFlg = false;
+            }
+          })
+          .on ("affix-top.bs.affix", function(evt) {
+            if (!appendFlg) {
+              $("#bigmac nav a").last().remove();
+            }
+            appendFlg = true;
+          })
+    })
+  </script>
+  
+        <script type="text/javascript">
+          window.doctoc = {
+            pubID: "1634",
+            tpcID: "336",
+            
+              prefix: "管理服务",
+              prefixUrl: "/zh-cn/server/latest/publish-services/windows/",
+          
+            hideToc: false
+          }
+        </script>
+
+        <script type="text/javascript" src="../../../../../zh-CN/server/latest/publish-services/windows/1634.js" ></script>
+        <script type="text/javascript" src="../../../../../zh-CN/cdn/calcite/js/protoc.js" ></script>
+        
+        
+
+  <noscript>
+        <p>
+            <a href="flisting.htm">flist</a>
+        </p>
+    </noscript>
+    <script type="text/javascript"></script>
+  
+  
+    
+    
+
+  </body>
+</html>

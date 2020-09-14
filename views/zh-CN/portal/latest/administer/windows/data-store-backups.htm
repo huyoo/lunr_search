@@ -1,0 +1,559 @@
+
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>  <html class="ie lt-ie9 lt-ie8 lt-ie7 ie6" dir="ltr"> <![endif]-->
+<!--[if IE 7]>     <html class="ie lt-ie9 lt-ie8 ie7" dir="ltr"> <![endif]-->
+<!--[if IE 8]>     <html class="ie lt-ie9 ie8" dir="ltr"> <![endif]-->
+<!--[if IE 9]>     <html class="ie ie9" dir="ltr"> <![endif]-->
+<!--[if !IE]><!--> <html dir="ltr" lang="zh-CN"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>管理数据存储备份&mdash;Portal for ArcGIS 
+  (10.8) | ArcGIS Enterprise 文档</title>
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+    <script>
+      var docConfig = {
+        locale: 'zh-CN'
+        ,localedir: 'zh-cn'
+        ,langSelector: ''
+        
+        ,relativeUrl: false
+        
+
+        ,searchformUrl: '/search/'
+        ,tertiaryNavIndex: ''
+
+        
+      };
+    </script>
+	 
+
+
+    
+    <!--[if lt IE 9]>
+      <script src="../../../../../zh-CN/cdn/js/libs/html5shiv.js" type="text/javascript"></script>
+      <script src="../../../../../zh-CN/cdn/js/libs/selectivizr-min.js" type="text/javascript"></script>
+      <script src="../../../../../zh-CN/cdn/js/libs/json2.js" type="text/javascript"></script>
+      <script src="../../../../../zh-CN/cdn/js/libs/html5shiv-printshiv.js" type="text/javascript" >
+
+    <![endif]-->
+
+     <!--[if lt IE 11]>
+    <script>
+      $$(document).ready(function(){
+        $$(".hideOnIE").hide();
+      });
+    </script>
+    <![endif]-->
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<link href="../../../../../zh-CN/assets/img/favicon.ico" rel="shortcut icon" >
+	<link href="../../../../../zh-CN/assets/css/screen.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/cdn/calcite/css/documentation.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/assets/css/print.css" media="print" type="text/css" rel="stylesheet" />
+
+	<!--
+	<link href="../../../../../zh-CN/assets/css/screen_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/assets/css/documentation/base_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/assets/css/print_l10n.css" media="print" type="text/css" rel="stylesheet" />
+	-->
+	
+	
+		<script src="../../../../../zh-CN/cdn/js/libs/jquery.1.9.1.min.js" type="text/javascript"></script>
+	
+	<script src="../../../../../zh-CN/cdn/js/libs/jquery.cookie.js" type="text/javascript"></script>
+	<link href="../../../../../zh-CN/cdn/css/colorbox.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/cdn/css/colorbox_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<script src="../../../../../zh-CN/cdn/js/libs/jquery.colorbox-min.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/assets/js/video-init.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/assets/js/sitecfg.js" type="text/javascript"></script>
+	
+		<script src="../../../../../zh-CN/assets/js/signIn.js" type="text/javascript"></script>
+	
+
+	<!--- Language Picker -->
+	<script src="../../../../../zh-CN/assets/js/locale/l10NStrings.js" type="text/javascript"></script>
+	
+		 
+	
+
+	<script src="../../../../../zh-CN/assets/js/calcite-web.js" type="text/javascript"></script>
+
+
+
+  <!--- search MD -->
+    <META name="description" content="通过备份可确保您在发生数据损坏或硬件故障等故障时恢复数据。可以决定在何时何地创建要素图层、场景切片缓存和存档实时数据的备份。"><META name="last-modified" content="2019-12-6"><META name="product" content="arcgis-portal-windows,arcgis-enterprise-windows"><META name="sub_category" content="Portal for ArcGIS (Windows)"><META name="search-collection" content="help"><META name="content_type_label" content="帮助主题"><META name="sub_category_label" content="Portal for ArcGIS (Windows)"><META name="search-category" content="help-general"><META name="subject_label" content="PORTAL,服务,SERVER"><META name="version" content="10.8"><META name="content_type" content="Help Topic"><META name="subject" content="PORTAL,SERVICES,SERVER"><META name="content-language" content="zh-cn">
+    <!--- search MD -->
+
+  
+  <script src="../../../../../zh-CN/assets/js/switchers/portal-1.js" type="text/javascript"></script>
+  
+      
+
+</head>
+
+<!--
+      pub: GUID-86E3206A-3CAD-43C1-9F16-FFB7CA3AEC71=33
+      tpc: GUID-A36674BB-D99B-4180-8E21-916F85DBB64F=21
+      -->
+
+
+<!-- variable declaration, if any -->
+<!-- can change following macro to set variable once we are on Jinja 2.8 -->
+
+
+
+
+
+<body class="claro zh-CN server">
+  
+
+  <!-- Drawer location -->
+  <div class="drawer drawer-left js-drawer" data-drawer="top-nav">
+        <nav class="drawer-nav" role="navigation">
+          <aside class="side-nav">
+            <h2 class="side-nav-title">Arc<span>GIS</span> Enterprise</h2>
+            <form id="helpSearchForm" class="margin-left-half margin-right-half leader-half trailer-half drawer-search-form" method="GET">
+              <input type="search" name="q"  placeholder="搜索 ArcGIS Enterprise 帮助">
+              <input type="hidden" name="collection" value="help" />
+              <input type="hidden" name="product" value="arcgis-portal-windows" />
+              <input type="hidden" name="version" value="10.8" />
+              <input type="hidden" name="language" value="zh-CN" />
+            </form>    
+             <a id="nav-portal" data-langlabel="portal" href="../../../../../zh-CN/portal/" class="side-nav-link">Portal</a>
+             
+            <a id="all-servers" data-langlabel="all-servers" href="../../../../../zh-CN/server/" class="side-nav-link">所有服务器</a>
+            <a id="gis-server" data-langlabel="gis-server" href="../../../../../zh-CN/server/" class="side-nav-link">GIS Server</a>
+            <a id="image-server" data-langlabel="image-server" href="../../../../../zh-CN/image/" class="side-nav-link">Image Server</a>
+            <a id="geo-analytics-server" data-langlabel="geo-analytics-server" href="../../../../../zh-CN/geoanalytics/" class="side-nav-link">GeoAnalytics Server</a>
+            <a id="geoevent-server" data-langlabel="geoevent-server" href="../../../../../zh-CN/geoevent/" class="side-nav-link">GeoEvent Server</a>
+            <a id="notebook-server" data-langlabel="notebook-server" href="../../../../../zh-CN/notebook/" class="side-nav-link">Notebook Server</a>
+            <a id="nav-data-store" data-langlabel="data-store" href="../../../../../zh-CN/data-store/" class="side-nav-link">Data Stores</a>
+            <a id="nav-cloud" data-langlabel="cloud" href="../../../../../zh-CN/cloud/" class="side-nav-link">云</a>
+            <a id="nav-apps" data-langlabel="apps" href="../../../../../zh-CN/apps/" class="side-nav-link">应用程序</a>
+            <a id="nav-doc" data-langlabel="documentation" href="../../../../../zh-CN/documentation/" class="side-nav-link">文档</a>
+
+          </aside>
+        </nav>
+    </div>
+
+    <!-- user navigation collapses to drawer on mobile -->
+    
+    <div class="drawer drawer-right js-drawer hide-if-logged-out logged-in-navigation" data-drawer="user-nav">
+      <nav class="drawer-nav">
+        <aside class="side-nav">
+          <a class="side-nav-link agolProfile" href="#">我的个人资料</a>
+          <a class="side-nav-link icon-ui-sign-out js-log-out" href="#">登出</a>
+        </aside>
+      </nav>
+    </div>
+    
+<!-- End of drawer -->
+
+  
+  <div class="wrapper">
+      <!--googleoff: all-->
+
+      <header class="top-nav" data-skin="learn">
+        <a class="skip-to-content" href="#skip-to-content">Skip To Content</a>
+        <div class="grid-container">
+          <div class="column-24">
+
+
+            <!--<div class="top-nav-title-wrapper text-center ">-->
+              <a href='../../../../../zh-CN/' class="top-nav-title tablet-hide"><span>Arc</span>GIS  Enterprise</a>
+              <a href='../../../../../zh-CN/' class="icon-ui-menu top-nav-title js-drawer-toggle tablet-show" data-drawer="top-nav"><span>Arc</span>GIS Enterprise</a>
+            <!--</div> -->
+
+          
+            <nav role="navigation" class="top-nav-list left tablet-hide">
+              <a id="nav-portal" data-langlabel="portal" href="../../../../../zh-CN/portal/" class="top-nav-link">Portal</a>
+
+                <div class="dropdown js-dropdown ">
+                  <a class="top-nav-link js-dropdown-toggle" tabindex="0" aria-haspopup="true" aria-expanded="false" href="#">Servers</a>
+                  <nav class="dropdown-menu featured" role="menu">
+                    <ul class="dropdown-sublist-featured">
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/get-started/latest/windows/additional-server-deployment.htm" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path  d="M42.92 6.1H4.12v8.566l.833.832-.835.833-.018 7.332.845.847-.825.824V33.9h25v5.2h-2v1.075H8.02v.8h19.1v.925h4.8v-.925H40v-.8h-8.08V39.1h-2v-5.2h13v-8.566l-.834-.834.835-.834v-7.332l-.835-.834.835-.834zm-11.8 35h-3.2v-1.2h3.2zm11-8H4.92v-7.434l.767-.766h35.668l.765.766zm0-9.766l-.766.766H5.666l-.766-.767.017-6.669.766-.764h35.671l.766.766zm0-9l-.766.766H5.687l-.766-.766V6.9h37.2zM19 11.9h-2v-.8h2zm-4 0h-2v-.8h2zm-4 0H9v-.8h2zm6 8.2h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9zm8 9h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9z"/></svg></span>
+                          <span class="sublink-text">所有服务器</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/server/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M45.98 33.575a.616.616 0 0 0-.335-.51l-3.362-2.03 3.362-2.031a.556.556 0 0 0 0-1.02l-11.1-6.704a1.293 1.293 0 0 0-1.112 0L22.33 27.982a.556.556 0 0 0 0 1.02l3.36 2.03-3.358 2.03a.556.556 0 0 0-.002 1.021l3.322 2.006-3.324 2.008a.555.555 0 0 0 .002 1.017l11.102 6.703a1.25 1.25 0 0 0 1.11.002l11.104-6.706a.556.556 0 0 0 0-1.02l-3.32-2.006 3.318-2.004a.607.607 0 0 0 .335-.509zM33.837 21.97c.026-.01.286-.005.29-.005l10.814 6.53-10.8 6.523c-.028.01-.284.005-.294.006l-10.813-6.53zm11.105 16.636l-10.8 6.523a2.564 2.564 0 0 1-.295.006l-10.81-6.529 3.39-2.047 7.004 4.23a1.083 1.083 0 0 0 .557.131 1.101 1.101 0 0 0 .554-.13l7.01-4.233zM34.14 40.098a2.545 2.545 0 0 1-.294.006l-10.812-6.53 3.43-2.073 6.97 4.208a1.25 1.25 0 0 0 1.107-.001l6.966-4.206 3.431 2.073zM9 8H7V7h2zm8 8h-2v-1h2zm-4-8h-2V7h2zm4 0h-2V7h2zm-4 8h-2v-1h2zm7.316 11.1H3.9v-6.434l.766-.766h35.668l.766.766v2.12l.8.483v-2.935l-.826-.826.826-.845v-6.329l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9h16.88a2.632 2.632 0 0 1 .336-.8zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zm0 8v-5.668l.766-.766h35.668l.766.766v5.67l-.746.764H4.666zM15 24v-1h2v1zm-4 0v-1h2v1zm-2-8H7v-1h2zm-2 8v-1h2v1z"/></svg></span>
+                          <span class="sublink-text">GIS Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/image/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 8h-2V7h2zm-4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm8 8h-2v1h2zm-8 0H7v1h2zm4 9v-1h-2v1zm-4 0v-1H7v1zm8 0v-1h-2v1zm4 3.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V21h-.8v-.334l-.766-.766H4.666l-.766.766V27.1H21zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zm40.234 4v21.8H23.1V23.1zm-.8 16.366L39.466 44.1h2.868l1.766-1.766zm-20.2-9.932l5.634-5.634h-2.868L23.9 26.666zm6.2-5.068L24.466 30.1h2.868l2.766-2.766zM28.466 30.1H30.1v-1.634zm2.434 0h6.2v-6.2h-6.2zm-7 7h6.2v-6.2h-6.2zm7 0h6.2v-6.2h-6.2zm0 6.434l5.634-5.634h-2.868L30.9 40.666zm7-7l5.634-5.634h-2.868L37.9 33.666zm1.634-5.634H37.9v1.634zm-8.634 7v1.634l1.634-1.634zm.566 6.2h2.868l2.766-2.766v-2.868zm6.434-3.566l2.634-2.634H37.9zM35.466 44.1H37.1v-1.634zm2.434 0h.434l5.766-5.766V37.9h-2.434L37.9 41.666zm6.2-8.634L42.466 37.1H44.1zm0-4L38.466 37.1h2.868l2.766-2.766zm0-7.566h-6.2v6.2h6.2zm-20.2 0v1.634l1.634-1.634zm0 20.2h6.2v-6.2h-6.2zm20.2 0v-.634l-.634.634z"/></svg></span>
+                          <span class="sublink-text">Image Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/geoanalytics/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 16h-2v-1h2zm-8 8v-1H7v1zm8 0v-1h-2v1zM13 7h-2v1h2zm4 0h-2v1h2zM9 7H7v1h2zm21.45 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V27.9h-1.464l-.801-.8H41.1v-6.434l-.766-.766H4.666l-.766.766V27.1h27.15zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM13 24v-1h-2v1zm0-9h-2v1h2zm-4 0H7v1h2zm26.672 27.148A1.87 1.87 0 0 1 35.9 43a1.91 1.91 0 1 1-3.763-.222l-9.845-3.414A1.88 1.88 0 0 1 21 39.9a1.9 1.9 0 1 1 1.474-3.084l4.692-2.346A1.878 1.878 0 0 1 27.1 34a1.902 1.902 0 0 1 1.9-1.9 1.867 1.867 0 0 1 .781.191l3.788-5.05A1.88 1.88 0 0 1 33.1 26a1.9 1.9 0 1 1 3.491 1.026l4.889 4.888c-.069.056-.144.1-.21.162a3.986 3.986 0 0 0-.358.402l-4.883-4.883A1.889 1.889 0 0 1 35 27.9a1.867 1.867 0 0 1-.781-.191l-3.788 5.049a1.868 1.868 0 0 1 .437.965l9.204.614c-.018.11-.049.218-.058.33A3.93 3.93 0 0 0 40 35c0 .046.01.09.01.135l-9.185-.612A1.913 1.913 0 0 1 29 35.9a1.889 1.889 0 0 1-1.474-.716l-4.692 2.346a1.878 1.878 0 0 1 .066.47 1.9 1.9 0 0 1-.105.625c-.007.02-.022.036-.03.056l9.63 3.34a1.87 1.87 0 0 1 2.786-.505l5.415-4.437c.067.108.127.22.204.322a3.9 3.9 0 0 0 .292.306zM33.9 26a1.092 1.092 0 0 0 .43.872 1.12 1.12 0 0 0 1.42-.068A1.1 1.1 0 1 0 33.9 26zm-6 8a1.1 1.1 0 0 0 2.196.093 1.135 1.135 0 0 0-.426-.965A1.087 1.087 0 0 0 29 32.9a1.101 1.101 0 0 0-1.1 1.1zm-5.8 4a1.098 1.098 0 1 0-.06.362A1.101 1.101 0 0 0 22.1 38zm13 5a1.1 1.1 0 1 0-2.2 0 1.1 1.1 0 0 0 2.2 0zm10.8-8a1.9 1.9 0 1 1-3.8 0c0-.053.003-.105.007-.158A1.9 1.9 0 0 1 45.9 35zm-.8 0a1.1 1.1 0 0 0-2.196-.093 1.153 1.153 0 0 0 .216.752A1.1 1.1 0 0 0 45.1 35z"/></svg></span>
+                          <span class="sublink-text">GeoAnalytics Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/geoevent/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M13 8h-2V7h2zm4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm12.418 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826v2.117c-.259-.177-.53-.337-.8-.497v-1.288l-.766-.766H4.666l-.766.766V27.1h17.933c-.148.26-.283.53-.415.8zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM9 24v-1H7v1zm4-9h-2v1h2zm0 9v-1h-2v1zm-4-9H7v1h2zm8 9v-1h-2v1zm16.9 2h-.8v8.9H39v-.8h-5.1zm.1-3.901a11.9 11.9 0 1 0 11.9 11.9 11.914 11.914 0 0 0-11.9-11.9zm0 23a11.1 11.1 0 1 1 11.1-11.1 11.112 11.112 0 0 1-11.1 11.1z"/></svg></span>
+                          <span class="sublink-text">GeoEvent Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/notebook/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M22 27.1H3.9v-6.434l.766-.766h18.576a5.262 5.262 0 0 1 .83-.8H4.666l-.766-.766v-5.668l.766-.766h35.668l.766.766V18h.8v-5.666l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9H22zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zM9 8H7V7h2zm8 0h-2V7h2zm-4 0h-2V7h2zm2 16v-1h2v1zm-4 0v-1h2v1zm-4 0v-1h2v1zm0-8v-1h2v1zm8 0v-1h2v1zm-4 0v-1h2v1zm18.9 8.1h-1.8v1.8h1.8zm-.8 1h-.2v-.2h.2zm15.498-4.48a2.727 2.727 0 0 0-1.62-.5v-.02H27.25a3.154 3.154 0 0 0-3.15 3.15V38.1h-1.68a3.386 3.386 0 0 0-2.872 1.58 3.49 3.49 0 0 0-.157 3.419 3.241 3.241 0 0 0 2.954 1.801h15.161a3.404 3.404 0 0 0 3.394-3.4V26.9h5v-3.65a3.224 3.224 0 0 0-1.302-2.63zM22.345 44.1a2.44 2.44 0 0 1-2.23-1.341 2.706 2.706 0 0 1 .11-2.65A2.588 2.588 0 0 1 22.42 38.9h12.89a3.395 3.395 0 0 0 0 5.2zM40.1 23.192V41.5a2.6 2.6 0 1 1-2.6-2.6v-.8H24.9V23.25a2.352 2.352 0 0 1 2.35-2.35h13.795a3.183 3.183 0 0 0-.945 2.292zm5 2.908h-4.2v-2.908a2.274 2.274 0 0 1 1.44-2.18 1.944 1.944 0 0 1 1.791.259 2.423 2.423 0 0 1 .97 1.979zm-17.1 5h9v.8h-9zm0 3h7v.8h-7zm0-6h9v.8h-9zm4-3h5v.8h-5z"/></svg></span>
+                          <span class="sublink-text">Notebook Server</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+
+              <a id="nav-data-store" data-langlabel="data-store" href="../../../../../zh-CN/data-store/" class="top-nav-link">Data Stores</a>
+              <a id="nav-cloud" data-langlabel="cloud" href="../../../../../zh-CN/cloud/" class="top-nav-link">云</a>
+              <a id="nav-apps" data-langlabel="apps" href="../../../../../zh-CN/apps/" class="top-nav-link">应用程序</a>
+            </nav>
+
+
+            
+            
+            
+
+            <div class="margin-left-1 top-nav-list right hide-if-logged-in logged-out-navigation">
+               
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+              
+              <a data-langlabel="sign-in" id="login-link" class="icon-ui-user top-nav-link link-blue login-link" href="#">登录</a>
+              
+            </div>
+
+            
+            <nav class="margin-left-1 top-nav-list right hide-if-logged-out logged-in-navigation">
+              
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+             
+              <div class="dropdown js-dropdown right">
+
+                <div class="tablet-show top-nav-link">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a href="#" data-drawer="user-nav" class="user-nav-name js-drawer-toggle" data-first-name></a>
+                </div>
+
+                <div class="tablet-hide top-nav-link js-dropdown-toggle">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a class="user-nav-name top-nav-dropdown dropdown-btn" data-first-name>&nbsp;</a>
+                </div>
+
+                <nav class="dropdown-menu dropdown-right">
+                
+                  <a class="dropdown-link agolProfile" id="agolProfile" href="#">我的个人资料</a>
+                  <a class="dropdown-link js-log-out" id="agolLogout" href="#">登出</a>
+                </nav>
+              </div>
+            </nav>
+            
+
+            
+          </div>
+        </div>
+      </header>
+
+      <div class="js-search search-overlay">
+        <div class="search-content" role="dialog" aria-labelledby="search">
+          <form method="GET" id="helpSearchForm">
+            <label>
+              搜索 ArcGIS Enterprise 帮助
+              <div class="search-bar">
+                <input type="search" name="q"  placeholder="搜索 ArcGIS Enterprise 帮助" class="search-input js-search-input">
+                <input type="hidden" name="collection" value="help" />
+                <input type="hidden" name="product" value="arcgis-portal-windows" />
+                <input type="hidden" name="version" value="10.8" />
+                <input type="hidden" name="language" value="zh-CN" />
+              </div>
+            </label>
+            <input type="hidden" name="relativePath" value="../../../../../" /><button type="submit" class="btn btn-large right">搜索</button>
+          </form>
+        </div>
+      </div>
+
+      <!--googleon: all-->
+
+      <div id="skip-to-content">
+        <!--googleoff: all-->
+        <header class="sub-nav sub-nav-learn">
+          <div class="grid-container">
+            
+            <div class="column-24">
+              <div style="display:table;" class="sdk-home-banner">
+                <div class="sdk-home-banner-content">
+                  <h1 class="sub-nav-title link-white">Portal for ArcGIS</h1>
+                </div>
+              </div>
+            </div>
+
+            <div class="column-24">
+              <nav class='sub-nav-list tablet-hide'><a class="sub-nav-link" href="../../../../../zh-CN/portal/" target="_top" title="Portal for ArcGIS 主页">主页</a><a class="sub-nav-link" href="../../../../../zh-CN/portal/latest/use/" target="_top" title="使用 Portal for ArcGIS">使用</a><a class="sub-nav-link is-active" href="../../../../../zh-CN/portal/latest/administer/windows/" target="_top" title="安装、管理和保护 Portal for ArcGIS">管理</a></nav><select class='tablet-show select-full trailer-half js-select-nav'><option value="../../../../../zh-CN/portal/">主页</option><option value="../../../../../zh-CN/portal/latest/use/">使用</option><option selected="true" value="../../../../../zh-CN/portal/latest/administer/windows/">管理</option></select>
+            </div>
+
+          </div>
+        </header>
+        <!--googleon: all-->
+       
+        <!-- content goes here -->
+        <div class="grid-container ">
+          
+
+            
+              
+  <!--BREADCRUMB-BEG--><div id="bigmac" class="sticky-breadcrumbs trailer-2" data-spy="affix" data-offset-top="180"> </div><!--BREADCRUMB-END-->
+  <!--googleoff: all-->
+    <div class="column-5 tablet-column-12 trailer-2 ">
+      <aside class="js-accordion accordion reference-index" aria-live="polite" role="tablist">
+        <div></div>
+      </aside>
+
+      <div class="js-sticky scroll-show tablet-hide leader-1 back-to-top" data-top="0" style="top: 0px;">
+        <a href="#" class="btn btn-fill btn-clear">返回顶部</a>
+      </div>
+    </div>
+  <!--googleon: all-->
+  
+            
+            
+            
+	
+		<div class="column-13  pre-1 content-section">
+	
+		<header class="trailer-1"><h1>管理数据存储备份</h1></header>
+
+		 
+	<!--googleoff: all-->
+	
+		
+				<aside id="main-toc-small" class="js-accordion accordion tablet-show trailer-1">
+			      <div class="accordion-section">
+			        <h4 class="accordion-title">在本主题中</h4>
+			        <div class="accordion-content list-plain">
+			          <ol class="list-plain pre-0 trailer-0"><li><a href="#ESRI_SECTION1_EF7D193843A34C2887E6EB88B14FBCB8"><ph translate="no" varid="datastore">ArcGIS Data Store</ph> 备份注意事项</a></li><li><a href="#GUID-ADC50D62-2A28-4414-BC8C-63C2ACF527D0">定义备份位置</a></li><li><a href="#ESRI_SECTION1_EF539D3A928E40EA833279AB621905A6">管理自动备份</a></li><li><a href="#ESRI_SECTION1_BA5A32CD1AB740EC8C502ED8720ECFE2">手动创建和删除备份</a></li></ol>
+			        </div>
+			      </div>
+			     </aside>
+		
+    
+   <!--googleon: all-->
+
+
+		<main>
+			
+	
+    	
+    
+
+
+			
+<p id="GUID-FF5B5C6D-083D-4790-9066-B6B2AB3782DA"> 您需要进行备份以在发生数据损坏或数据存储故障等故障时恢复数据。如果您创建了数据存储备份并将其放置在安全位置，则当您的数据存储出于某些原因发生了故障且无法重新启动时，您可以创建新的 <span class="ph">ArcGIS Data Store</span>，访问备份文件，然后恢复数据。</p><p id="GUID-6EA4D30F-92E5-46BA-B58F-797647E39A9A">阅读 <a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/data-store-backups.htm#ESRI_SECTION1_EF7D193843A34C2887E6EB88B14FBCB8"><span class="ph">ArcGIS Data Store</span> 备份注意事项</a>，然后使用其他部分中的信息来配置和管理 <span class="ph">ArcGIS Data Store</span> 备份。<ol class="list-numbered" purpose="ol" id="OL_0EFADDC898C745DF9190B5AD4788ABA3"><li purpose="li" id="LI_A354A08F3DBA4557925EF3AD61154CE4"><a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/data-store-backups.htm#GUID-ADC50D62-2A28-4414-BC8C-63C2ACF527D0">定义备份位置</a>。</li><li purpose="li" id="LI_C1ECF6CD5FA941428CD760DF0514798B"><a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/data-store-backups.htm#ESRI_SECTION1_EF539D3A928E40EA833279AB621905A6">配置自动备份</a>。</li><li purpose="li" id="LI_941A622D24E84A25B5B0E39FB7899F02">根据需要<a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/data-store-backups.htm#ESRI_SECTION1_BA5A32CD1AB740EC8C502ED8720ECFE2">手动创建备份</a>。</li></ol></p><section class="section1 padded-anchor" id="ESRI_SECTION1_EF7D193843A34C2887E6EB88B14FBCB8" purpose="section1"><h2><span class="ph">ArcGIS Data Store</span> 备份注意事项</h2><p id="GUID-C2281610-E2A2-4F1B-A24C-CBA03A6D9A01">在对数据存储实施备份和恢复策略时，请注意以下几点：<ul purpose="ul" id="UL_4F35F89D4CD54BC09B43119908541EAD"><li purpose="li" id="LI_AAB0F94CA15443D99A4C71BBA1F8FAE0">当灾难发生时，例如服务器发生故障或遭到洪水冲毁，备份可以帮助您恢复数据。如果备份位于遭到洪水冲毁的服务器上，则不能恢复数据。因此，您需要将备份文件存储在与数据存储不同的服务器上，如果可能，还应存储在与数据存储不同的物理位置上。</li><li purpose="li" id="LI_1BD69CE06C8A464FB986FB20B03E7694"><span class="ph">ArcGIS Data Store</span> 备份文件仅包含关系、切片缓存或时空大数据存储。备份文件不包含 <span class="ph">GIS Server</span> 站点的备份、您的门户或您注册到 <span class="ph">GIS Server</span> 站点的用户管理的数据存储。您必须单独创建这些组件的备份。<p id="GUID-969D1204-B2AA-474C-ACB9-C6E9E891654E">如果使用关系或切片缓存数据存储（或两者），则可以使用随 <span class="ph">Portal for ArcGIS</span> 一起安装的 webgisdr 工具创建备份。使用 webgisdr 工具时，还将创建门户、托管服务器和联合服务器的备份。有关使用此工具的详细信息，请参阅 <a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/overview-backup-restore-web-gis.htm"><span class="ph">ArcGIS Enterprise</span> 备份</a>。您仍需要为您注册到 <span class="ph">GIS Server</span> 站点的用户管理数据存储以及时空大数据存储创建单独的备份。</p></li><li purpose="li" id="LI_BF748B4F83914953AC4B27BCE68CD5B1">如果 <span class="ph">ArcGIS Data Store</span> 计算机发生故障或数据损坏，<span class="ph">ArcGIS Data Store</span> 备份可以帮助您恢复丢失的数据。这些计算机的可用性并不高。如果您希望即使单台 <span class="ph">ArcGIS Data Store</span> 计算机发生故障，仍可继续使用托管要素、时空和场景图层，则请向每个数据存储<a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/add-standby-machine.htm">添加计算机</a>，以提高其可用性。可以将多台计算机添加到切片缓存和时空大数据存储。</li><li purpose="li" id="LI_7B45A4D49E9544F49AF30DE7B48FBB74">由于基础存储机制和 ArcGIS 软件发生变更，您使用旧版 <span class="ph">ArcGIS Data Store</span> 创建的数据存储备份将无法用于恢复新版 <span class="ph">ArcGIS Data Store</span> 的数据。因此，在升级 <span class="ph">ArcGIS Data Store</span> 后，请始终为每个数据存储创建一个完整的备份。</li><li purpose="li" id="LI_000210F97D554EA098CA89E4B1FCF94F">如果在本地部署 <span class="ph">ArcGIS Enterprise</span>，但数据存储备份文件位于云存储中，则与备份文件存储在本地文件共享中相比，创建备份以及从这些备份中进行恢复所需的时间更长。</li></ul></p></section><section class="section1 padded-anchor" id="GUID-ADC50D62-2A28-4414-BC8C-63C2ACF527D0" purpose="section1"><h2>定义备份位置</h2><p id="GUID-EB779A2E-2B79-4C7D-9A08-7A7466793F04">备份位置和行为可能有所不同，这取决于数据存储的具体类型。请阅读您所管理的数据存储类型的相关信息。</p><p id="GUID-814A8B40-A2C9-44F1-B24F-BE355EB3F519"><ul purpose="ul" id="UL_BC384C41DC524BA5A611ECA81070D273"><li purpose="li" id="LI_5755F8084ECE41CEB3D68548D89A9A6B">关系数据存储<p id="GUID-02841CDD-039F-4113-A178-660D92EF4ECF">当您创建关系数据存储时，系统将在与数据存储相同的计算机上自动配置备份位置。<span class="ph">默认情况下，<span class="ph">ArcGIS Data Store</span> 将在 <span class="usertext">c:\arcgisdatastore\backups\relational</span> 中创建关系数据存储备份。</span>  如果主数据存储计算机发生故障，则您无法访问备份文件，因此无法恢复托管要素图层数据。</p><p id="GUID-A7F16E4A-E3DF-46E1-9979-E45EC0033DD9">您不能将备份文件保留在数据存储所在的计算机上的另一个原因是，这些文件可能迅速占满计算机上的磁盘空间。如果磁盘空间不足，则关系数据存储将处于只读模式以避免数据损坏。</p><p id="GUID-B2E7F6D5-1956-4AF0-AE4D-8DDA408EB4BE">因此，请在其他计算机上的安全共享文件目录中<a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/data-store-backups.htm#GUID-ADC50D62-2A28-4414-BC8C-63C2ACF527D0">定义要自动备份的文件目录</a>，而不要在默认位置进行定义。此文件目录将被视为默认备份位置。由 <span class="ph">ArcGIS Data Store</span> 自动创建的备份始终移至默认的备份位置。您可以通过 <span class="usertext"> configurebackuplocation</span> 实用程序的 <span class="usertext">change</span> 操作来更改默认备份位置。</p><p id="GUID-5703A8F2-A529-4691-9421-657FA5549CCB">您可以为关系数据存储<a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/data-store-backups.htm#ESRI_SECTION2_B2AEE83E11034391B4E7624ADF1B8564">注册其他备份位置</a>，包括其他文件共享、<span class="ph">Amazon Simple Storage Service (S3)</span> 存储段和 <span class="ph">Microsoft Azure</span> Blob 存储容器。 这些附加位置可用于存储<a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/data-store-backups.htm#ESRI_SECTION1_BA5A32CD1AB740EC8C502ED8720ECFE2">使用 <span class="usertext">backupdatastore</span> 实用程序创建的完整备份</a>。</p></li><li purpose="li" id="LI_A6DEB277A05B4A4F90315C29C559EFAB">切片缓存数据存储<p id="GUID-2E2E3898-1CB4-4866-8227-AD4201477283">创建切片缓存数据存储时，不存在默认备份位置。必须在<a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/data-store-backups.htm#ESRI_SECTION2_BDDF3EBE5A2B4961BA45EF2E77829DB6">注册至少一个备份位置</a>之后，才能创建切片缓存数据存储备份文件。您可以注册文件共享、<span class="ph">Amazon S3</span> 存储段或 <span class="ph">Microsoft Azure</span> Blob 存储容器。您还可以为切片缓存数据存储指定多个备份位置，并将其中一个设置为默认位置。由 <span class="ph">ArcGIS Data Store</span> 自动创建的备份始终移至默认的备份位置。</p><p id="GUID-8170D00C-FCC0-4C60-939D-99CA1FC10B68">您可以将手动完整备份写入到使用 <span class="usertext">backupdatastore</span> 实用程序创建的其他备份位置。要进行此操作，您必须<a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/data-store-backups.htm#ESRI_SECTION2_B2AEE83E11034391B4E7624ADF1B8564">注册另一个备份位置</a>。</p><p id="GUID-E7569C92-7B97-4D5C-AA10-FC62516A6E4B">在 <span class="ph">ArcGIS Data Store</span> 10.7.1 及更早版本中，切片缓存数据存储确实已配置默认备份位置。如果未更改默认备份位置并添加了备用切片缓存数据存储，请确保备用计算机在升级 <span class="ph">ArcGIS Data Store</span> 之前可以访问备份位置。如果未执行此操作，则必须在升级后注册默认备份位置。</p></li><li purpose="li" id="LI_1F6607422F6446CE97FF3D6FE313E09F">时空大数据存储<p id="GUID-DC19EC16-E731-4185-8E18-94514CFD7AC0">创建时，时空大数据存储没有默认备份位置。必须在<a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/data-store-backups.htm#ESRI_SECTION2_BDDF3EBE5A2B4961BA45EF2E77829DB6">注册至少一个备份位置</a>之后，才能创建时空大数据存储备份文件。您可以注册文件共享、<span class="ph">Amazon S3</span> 存储段或 <span class="ph">Microsoft Azure</span> Blob 存储容器。您还可以为时空大数据存储指定多个备份位置，并将其中一个设置为默认位置。由 <span class="ph">ArcGIS Data Store</span> 自动创建的备份始终移至默认的备份位置。</p><p id="GUID-F20BB278-A870-43A6-9791-DEF70AF71DAA">您可以将手动完整备份写入到使用 backupdatastore 实用程序创建的其他备份位置。要进行此操作，您必须<a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/data-store-backups.htm#ESRI_SECTION2_B2AEE83E11034391B4E7624ADF1B8564">注册另一个备份位置</a>。</p></li></ul></p><section class="section2 padded-anchor" id="ESRI_SECTION2_BDDF3EBE5A2B4961BA45EF2E77829DB6" purpose="section2"><h3>注册默认备份位置</h3><p id="GUID-8C5CF0BD-3F00-449B-92AE-61C20D6964BC">注册一个安全、共享默认备份位置，其中<span class="ph">ArcGIS Data Store</span> 可以在计划（自动）备份中放置文件。</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><section class="context padded-anchor" id="ESRI_CONTEXT_F7C8F3FD98AE4568A6938BA7D2F3C7F5" purpose="context"><p id="GUID-B08FAFA2-ED76-43DA-855C-32076228FAF1">按照以下步骤配置共享目录以存储数据存储备份文件：</p></section><div class="steps" id="ESRI_STEPS_CCD4CFB88D13498698D4D6A3B856D3ED"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_B164E629F0FA4C3A954A7F562F5E9791"><span purpose="cmd" id="GUID-AF274318-F5AF-410C-99C9-AFE2A72BFABD">在其他计算机上创建用于存储备份文件的共享目录。</span><div class="info" purpose="info"><p id="GUID-AD4850F2-B792-4369-9A6A-C3B33C80DD68"><div class="panel trailer-1 note" id="GUID-DB2AD320-938E-4CE8-A1D3-E04467E2529C"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-39D632E8-DC66-4DE7-B984-CD6D7D8BD7D7"> 确保存储空间足以保存数据存储备份中包含的所有文件。文件的数量和大小将根据您的数据和当前使用的数据存储类型而变化。切片缓存数据存储可能相当大，时空大数据存储可能更大。数据存储备份将自动创建，备份位置的填充速率取决于您的<a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/data-store-backups.htm#ESRI_SECTION2_72BEF8CBC0E84FA5850449A1FD598D36">备份计划</a>和<a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/data-store-backups.htm#ESRI_SECTION2_3D2426FE02434A04BCA5CE076A580F83">保留备份的天数</a>。确保对备份目录的大小进行监控并根据需要调整这些设置和存储大小。</p><p id="GUID-8AC7A7DC-E861-4B27-9FCE-D1DC15614D90">另请注意，同一 <span class="ph">ArcGIS Data Store</span> 部署中的所有时空大数据计算机和所有切片缓存数据存储计算机必须有权访问此共享目录。</p></div></p></div></li><li purpose="step" id="ESRI_STEP_F7AC349220584F039F2BE01672C0AFA0" ishcondition="srv_os=windows"><span purpose="cmd" id="GUID-FC43651C-5C49-4186-A219-DE1760E51D96">如果您没有在安装或升级 <span class="ph">ArcGIS Data Store</span> 时指定 <span class="ph">ArcGIS Data Store</span> 域帐户，则立即<a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/data-store-account.htm">设置该数据存储服务以使用域帐户运行</a>，然后授予该帐户对共享网络目录的读取和写入访问权限。</span></li><li purpose="step" id="ESRI_STEP_3000200BE4644631B23B81D2D9C62181"><span purpose="cmd" id="GUID-FBB134EF-6234-4079-981E-477A68AA0943">运行 <a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/data-store-utility-reference.htm#ESRI_SECTION1_35FC910709804CC0AA43C44C5B15F810">configurebackuplocation</a> 实用程序以将共享目录指定为数据存储备份的默认输出位置。</span><div class="info" purpose="info"><p id="GUID-49B938D1-4967-4A69-B67F-1EAD0947DD1F">创建时，切片缓存和时空大数据存储没有默认备份位置。必须先注册至少一个备份位置，然后才能创建这些类型的数据存储的备份。您可以注册文件共享、<span class="ph">Amazon S3</span> 存储段或 <span class="ph">Microsoft Azure</span> Blob 存储容器作为默认备份位置。</p><p id="GUID-82C4E6EC-822C-4627-97D0-70D0265DBEBB">如果用户在为备份配置推荐的共享目录之前发布了托管要素图层和自动备份位置，configurebackuplocation 实用程序会将现有关系数据存储备份文件从默认备份位置移至共享目录。</p></div><div class="stepexample" purpose="stepexample"><p id="GUID-1E2816D8-B111-404D-95C5-D926DEB050AA">在该示例中，关系数据存储的备份位置被更改为：在计算机 sysshare 上名为 ds_backups 的目录。</p><p id="GUID-D31813EB-4F15-4B3F-BB46-460A68ECD76F" ishcondition="srv_os=windows"><section class="codeblock padded-anchor" purpose="codeblock"><div class="codeblockbody"><pre><code class="other no-highlight">configurebackuplocation --operation change --store relational 
+--location \\sysshare\ds_backups 
+You are going to change the backup location of the data store. Existing backups will be copied to the new location and it could take a few moments.
+Please do not interrupt the process once it has started.
+Do you want to continue (Yes or No)? Yes</code></pre></div></section></p><p id="GUID-D382292E-0FE0-4E80-A931-48A627B8D952">在此示例中，将为时空大数据存储注册备份位置。该位置为 sysshare 上名为 bigdatabus 的共享目录。</p><p id="GUID-2AA41F05-E630-4E40-924F-5BCB79B72E87" ishcondition="srv_os=windows"><section class="codeblock padded-anchor" purpose="codeblock"><div class="codeblockbody"><pre><code class="other no-highlight">configurebackuplocation --operation register --store spatiotemporal 
+--location \\sysshare\bigdatabus</code></pre></div></section></p><p id="GUID-CED52C98-AABD-4FFD-8BB2-A8C4B365E229">有关完整语法和其他示例（包括配置云存储备份位置的示例），请参阅<a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/data-store-utility-reference.htm#ESRI_SECTION1_35FC910709804CC0AA43C44C5B15F810"><span class="ph">ArcGIS Data Store</span>实用程序参考</a>。</p></div></li></ol></div></section><p id="GUID-765EEB07-E10B-4CC8-A29E-9A2B5B397079"><div class="panel trailer-1" id="GUID-3ED62DFA-5946-4A1E-BE1D-2BF00A2EDBB9"><h5 class="icon-ui-description trailer-0">提示：</h5><p id="GUID-77B91694-F4C7-4F69-8F4B-09C029CD6F97">如果您的远程备份目录离线几分钟，需在共享备份位置可用后立即执行数据存储的<a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/data-store-backups.htm#ESRI_SECTION2_9427655F153A4A69BFA1701E3CD8991C">完整手动备份</a>。</p></div></p></section><section class="section2 padded-anchor" id="ESRI_SECTION2_B2AEE83E11034391B4E7624ADF1B8564" purpose="section2"><h3>注册其他备份位置</h3><p id="GUID-59CF6A45-F626-4D2D-B16F-3BF135A23F83">您可以选择注册其他备份位置。这些可用于存储<a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/data-store-backups.htm#ESRI_SECTION1_BA5A32CD1AB740EC8C502ED8720ECFE2">通过 <span class="usertext">backupdatastore</span> 实用程序创建</a>的备份。</p><p id="GUID-3708D1B9-29E4-43E7-92AA-010944158A5D"><div class="panel trailer-1 note" id="GUID-E01DC2CC-CE53-4E30-AD8D-848E10478E93"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-DFC127BD-E6B8-4F14-BAB5-C64C46C5D0EB">您需要<a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/data-store-backups.htm#ESRI_SECTION2_DBB5E63927C24E008BC0427D853064FD">清理手动备份存储位置</a>；<span class="ph">ArcGIS Data Store</span> 不会为您删除文件。</p></div></p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><section class="context padded-anchor" id="ESRI_CONTEXT_B8853840790A450DB0FDA934F84EE5CF" purpose="context"><p id="GUID-1DCFF53D-42FC-411F-B916-222DEA691B6E">请按照以下步骤为备份文件添加其他位置：</p></section><div class="steps" id="ESRI_STEPS_8A4D3292D8B843C2AA3E76AE425B90C7"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_9A08B2DE4E3846289DBFE8E48055FB2C"><span purpose="cmd">为备份文件创建另一个位置。</span><ul purpose="choices" id="ESRI_CHOICES_123FF60BBC634BE69159E84EC78579BC"><li purpose="choice" id="ESRI_CHOICE_79D77479961B41DBB00C7D8A4B3F238C">如需注册共享目录，请在另一台机器上创建目录。请确保存储空间足够大以至于能够容纳所有备份文件，并确保连接到该 <span class="ph">ArcGIS Data Store</span> 机器运行 backupdatastore 实用程序时使用的登录名具有对此目录的写入权限。如果您正在为切片缓存或时空大数据存储创建另一个共享目录，则在同一 <span class="ph">ArcGIS Data Store</span> 部署的所有切片缓存或时空大数据机器都必须有权访问此共享目录。如果要为关系数据存储备份创建其他共享目录，则备用计算机必须能够访问共享目录。</li><li purpose="choice" id="ESRI_CHOICE_E767F410ED0840FDB6762E9DB8D27D39">要注册 <span class="ph">S3</span> 存储段，请在您的 <span class="ph">Amazon Web Services</span> 帐户下创建存储段。选择可容纳备份文件的存储段大小。</li><li purpose="choice" id="ESRI_CHOICE_B8841BA3D3E844ED9CC303922A06B73C">要注册 <span class="ph">Azure</span> Blob 存储容器，请在您的 <span class="ph">Azure</span> Blob 存储帐户下创建容器。</li></ul></li><li purpose="step" id="ESRI_STEP_0A739AC5C14D4968B955236F277D00AD"><span purpose="cmd">运行 <a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/data-store-utility-reference.htm#ESRI_SECTION1_35FC910709804CC0AA43C44C5B15F810">configurebackuplocation</a> 实用程序并通过 <span class="usertext">register</span> 操作来注册这一额外的备份位置。</span></li></ol></div></section></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_EF539D3A928E40EA833279AB621905A6" purpose="section1"><h2>管理自动备份</h2><p id="GUID-5B235242-EC52-4EBD-BDA3-9CFCD730D5D7">默认情况下， <span class="ph">ArcGIS Data Store</span> 每四天会创建一个完整备份，但您可以通过运行 updatebackupschedule 实用程序更改数据存储创建完整备份的频率。</p><section class="section2 padded-anchor" id="ESRI_SECTION2_72BEF8CBC0E84FA5850449A1FD598D36" purpose="section2"><h3>更改备份频率</h3><p id="GUID-3F184495-1BE9-45EC-82FA-2EA410352842">如果您的门户成员发布并编辑了大量的托管图层，或者您存档了大量的流数据，则需要提高备份的频率。</p><div class="panel trailer-1 note" id="GUID-B9E29F1E-5A1F-420A-871D-24A947F85AA8"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-5DE9F6E8-C70B-4A70-980E-5562CAF06C3F">默认情况下，关系数据存储禁用了增量备份。如果<a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/data-store-utility-reference.htm#LI_36B1C533A840477C8B8EF280640B2361">启用时间点恢复</a>，则将在每五分钟或不足五分钟但日志文件已满时（以较先者为准）创建增量备份。数据库可控制增量备份的创建；您无法控制增量备份的创建频率。</p></div><p id="GUID-81E94B02-366D-4B61-AD6C-44C8E6188B72">备份位置必须具有足够的空间来存储所有备份文件。备份大小取决于数据量的多少，但如果您使用默认备份设置，备份将包含两个完整备份和 7 天的增量备份文件。这些文件的大小将取决于数据量及其大小。默认情况下，如果重新启用关系数据存储的时间点恢复，备份也将包括七天的增量备份文件。</p><p id="GUID-DBFD9E4F-C6E3-4FE1-A197-311EE49E253B">请注意，没有自动清除切片缓存或时空大数据存储备份文件。如果您提高这些数据存储的备份频率，则您可能还需要更频繁地清理备份位置。</p><p id="GUID-DDCC1E0C-582C-44A9-8A31-193C2F368747">如果决定手动创建备份并希望禁用自动备份，则将备份频率设置为 0。如果禁用自动备份，则您必须自行创建备份，以防止发生机器故障或其他数据灾害时的数据丢失。</p><p id="GUID-A56C1CF2-98EF-4287-9E27-8F491D20ECD8" ishcondition="srv_os=windows">updatebackschedule 实用程序安装在 <span class="usertext">&lt;ArcGIS Data Store installation directory&gt;\datastore\tools</span> 目录下。</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_838A7666FB8844FAACD4FAF5D8561F0B"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_F38BF4DC987D43599496883AC1F81CA4" ishcondition="srv_os=windows"><span purpose="cmd" id="GUID-D2A66C59-F69C-4565-935D-48D06907CD9A">使用<span class="uicontrol">以管理员身份运行</span>选项打开命令提示符。</span></li><li purpose="step" id="ESRI_STEP_B3B89EB5D1A94981A57BAB6CC07D20E8"><span purpose="cmd" id="GUID-66BA5058-2329-4499-BDAF-58A230119D74">运行 updatebackschedule 实用程序以指定所需的备份频率。</span><div class="info" purpose="info"><p id="GUID-63D5175E-433D-4E95-B344-2F4672957468">运行此实用程序的语法如下：</p></div><div class="stepexample" purpose="stepexample"><p id="GUID-0ABD9A3B-8258-4EA3-AB30-5ED945289614"><section class="codeblock padded-anchor" purpose="codeblock"><div class="codeblockbody"><pre><code class="other no-highlight">updatebackupschedule [--store relational|tileCache|spatiotemporal] [--starttime &lt;local server time&gt;] --frequency &lt;number of days&gt;</code></pre></div></section></p><p id="GUID-03BCEC5A-5DA0-4C02-BA6E-957683C96380">例如，输入以下内容以计划在上午 3:00 进行完整关系数据存储备份 （本地服务器时间）每天：</p><p id="GUID-58C3B264-050D-4599-9925-143FA1BD03DA" ishcondition="srv_os=windows"><section class="codeblock padded-anchor" purpose="codeblock"><div class="codeblockbody"><pre><code class="other no-highlight">updatebackupschedule --store relational --starttime 03:00:00 --frequency 1</code></pre></div></section></p><p id="GUID-4EB44842-2FBD-4EF9-8421-7048950309E6">在此示例中，时空大数据存储的备份计划在晚上 11:30 进行 （本地服务器时间）每 3 天：</p><p id="GUID-11DADA52-78F7-4D8F-B27D-56130494FA1D" ishcondition="srv_os=windows"><section class="codeblock padded-anchor" purpose="codeblock"><div class="codeblockbody"><pre><code class="other no-highlight">updatebackupschedule --store spatiotemporal --starttime 23:30:00 --frequency 3</code></pre></div></section></p></div></li></ol></div></section></section><section class="section2 padded-anchor" id="ESRI_SECTION2_3D2426FE02434A04BCA5CE076A580F83" purpose="section2"><h3>更改保留自动关系数据存储备份文件的时间</h3><p id="GUID-7C63E7FC-0403-4831-A77B-FD376EAE43CB">默认情况下，备份目录将保留关系数据存储备份文件 7 天。这表示如果您保留默认备份频率（每 4 天）和保留计划（7 天），备份目录将包含 2 个完整备份。如果<a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/data-store-utility-reference.htm#LI_36B1C533A840477C8B8EF280640B2361">重新启用时间点恢复</a>，备份目录还将包含 7 天的增量备份文件。这些文件的大小将取决于数据量及其大小。存储备份的计算机必须要有足够的磁盘空间以存储所有这些文件。如果提高备份频率，则需考虑缩短备份文件的保留期间。在前一部分已将备份频率增加到每天。要防止备份目录过大，请缩短备份文件保留期间。</p><p id="GUID-F2FEFBBC-6CCF-456E-A7E1-9B87731DCB93">运行 updatebackupretaindays 实用程序的语法如下：</p><p id="GUID-DB35A57B-ED0D-4030-9548-5092E4E5516E"><section class="codeblock padded-anchor" purpose="codeblock"><div class="codeblockbody"><pre><code class="other no-highlight">updatebackupretaindays &lt;number of days&gt;</code></pre></div></section></p><p id="GUID-FFDBE2F3-6638-49A4-AA2D-521A37F7BE3A">在接下来的示例中，会将备份文件保留时间更改为 4 天：</p><p id="GUID-4B0DCB93-008E-48AA-9618-109EEDD242FA" ishcondition="srv_os=windows"><section class="codeblock padded-anchor" purpose="codeblock"><div class="codeblockbody"><pre><code class="other no-highlight">updatebackupretaindays 4</code></pre></div></section></p></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_BA5A32CD1AB740EC8C502ED8720ECFE2" purpose="section1"><h2>手动创建和删除备份</h2><p id="GUID-309E44E5-EED3-48FC-B844-9B1434A21248">即使您使用了自动备份，有时您也可能希望为常规备份计划之外的特定目的而创建备份，例如在升级系统之前或在其他位置创建一个备用的完全备份。</p><p id="GUID-6188BE32-AC1D-4BE7-B05C-FA8B24F0A9E6">如果您禁用了自动备份，则应定期创建手动备份。</p><p id="GUID-20D8D33A-B796-4FC7-AE5F-11F72A01AAAF">所有您手动创建的备份文件，甚至用于关系数据存储的文件都必须<a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/data-store-backups.htm#ESRI_SECTION2_DBB5E63927C24E008BC0427D853064FD">手动删除</a>。</p><section class="section2 padded-anchor" id="ESRI_SECTION2_9427655F153A4A69BFA1701E3CD8991C" purpose="section2"><h3>运行实用程序以创建数据存储备份</h3><p id="GUID-A99FAFFF-7B4A-4AD6-A631-757281CFE384">您可以使用 <a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/data-store-utility-reference.htm#ESRI_SECTION1_3F745CDA9DCD4B38A8F928CF25B49E78">backupdatastore</a> 实用程序对数据存储中的要素图层数据进行完整备份。对数据存储进行大量更改前或升级数据存储前，您可能想要手动创建完整备份。或者您可能想要创建备份以保存特定状态的数据副本，例如，工程第一个阶段的末尾。</p><p id="GUID-7BB12450-2E95-4CC4-ADA1-CF3206000F33">首次运行 backupdatastore 实用程序进行切片缓存数据存储时，备份副本由所有现有的切片缓存数据存储数据库构成。同样，第一次为时空数据存储运行 backupdatastore 实用程序时，将创建完整备份。由于这两种类型的数据存储可能非常大，第一次之后每次运行 backupdatastore 实用程序时，该实用程序将仅为上次运行该实用程序时创建的数据创建备份副本。</p><p id="GUID-B7E2530E-95DE-4BE5-99BA-778208D92562">用于连接至数据存储计算机以运行 backupdatastore 实用程序的登录帐户必须具有对<a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/data-store-backups.htm#GUID-ADC50D62-2A28-4414-BC8C-63C2ACF527D0">数据存储备份位置</a>的读写权限。</p><p id="GUID-E3922168-534B-46D1-B2BF-8EA1DE038BF4">运行 backupdatastore 实用程序的语法如下：</p><p id="GUID-FDFD61CF-535F-44F7-B734-C3E931D713B1"><span class="usertext">backupdatastore [&lt;backup file name&gt;] [--store {relational|tileCache|spatiotemporal}] [--location &lt;backup_arguments&gt;] [--prompt &lt;yes | no&gt;]</span></p><p id="GUID-45A8C437-A30E-4E2A-893E-01FD616D05D4"><span class="usertext">--location</span> 参数的参数如下且必须用分号 (;) 隔开：<ul purpose="ul" id="UL_5D5402DDDF994343803B6629F28CDF90"><li purpose="li" id="LI_E67F9A9403AD49BAAB3B4A6CA34D0ADE"><span class="usertext">type=</span>：有效类型为 <span class="usertext">fs</span>（文件共享）、<span class="usertext">s3</span>（<span class="ph">Amazon Simple Storage Service (S3)</span> 存储段）或 <span class="usertext">azure</span>（<span class="ph">Microsoft Azure</span> Blob 存储容器）。</li><li purpose="li" id="LI_46D0CB51999A4BC2A081E3F8F293D32D"><span class="usertext">name=</span>：如果已向为数据存储配置的备份位置分配名称，则可使用该位置名称来指定在运行 backupdatastore 实用程序时创建备份文件的位置。</li><li purpose="li" id="LI_BB9E083B5E7E416B9E85D78E0339AEF4"><span class="usertext">location=</span>：如果没有指定备份位置名称，则必须指定备份的 <span class="usertext">type</span> 和 <span class="usertext">location</span>。如需共享文件，请提供文件路径。如存储在 <span class="ph">S3</span> 存储段，请提供存储段名称。如存储在 <span class="ph">Azure</span> Blob 存储容器，请提供容器名称。</li></ul></p><p id="GUID-4553B13A-A28E-451A-B4F9-0268634AEFBE">为文件提供一个有意义的备份名称，这样在您希望恢复该数据时可以找到它。如果未指定名称，实用程序将向该文件分配一个默认名称。默认名称的格式为“数据存储名称-时间戳”。例如，如果将数据存储命名为 <span class="usertext">corpds</span> 且您是在 2014 年 7 月 10 日 14:25:49:554 UTC 创建的备份，则备份文件名称是 <span class="usertext">corpds-20140710142549554</span>。</p><p id="GUID-16448944-7A64-471E-9FA9-2303698AF290">您需要确认是否希望创建备份。输入<span class="usertext">是</span>或 <span class="usertext">y</span> 继续执行备份创建。</p><div class="panel trailer-1" id="GUID-01D0E572-7544-41CB-9230-A99A7A9EDF4D"><h5 class="icon-ui-description trailer-0">提示：</h5><p id="GUID-9FC15237-2C30-410A-B8C2-B55C1F3FE51D">如果希望将手动备份（包括禁止确认提示符的标记）改写为脚本，则请按以下示例操作：</p><p id="GUID-BB23E472-97DA-4CCE-AC94-D702B00F1070"><section class="codeblock padded-anchor" purpose="codeblock"><div class="codeblockbody"><pre><code class="other no-highlight">backupdatastore --store tilecache --prompt no</code></pre></div></section></p><p id="GUID-E034C434-AD68-4648-BBFA-271D52EC5125">在本示例中，数据存储将生成备份文件名称。为确保备份文件名称唯一，需要在脚本中执行此操作。</p></div></section><section class="section2 padded-anchor" id="ESRI_SECTION2_DBB5E63927C24E008BC0427D853064FD" purpose="section2"><h3>删除数据存储手动备份</h3><p id="GUID-A4307B66-191A-4A6E-B8B6-9D810CDCF349">如果不再需要保留使用 backupdatastore 实用程序创建的数据存储备份文件，则可以运行 <a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/data-store-utility-reference.htm#ESRI_SECTION1_8DEE5E0704094BAF81F20D9FA14D3176">listbackups</a> 实用程序获取特定备份文件的名称，然后运行 <a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/data-store-utility-reference.htm#ESRI_SECTION1_3E958A91D1AB4FD4B18D009CB706B65F">deletebackup</a> 实用程序移除不需要的文件。例如，升级数据存储且确认所有图层按预期执行后，可以删除升级之前创建的数据存储备份。</p><p id="GUID-FB420615-CD65-413A-BCA8-B8AF83D916D6">本示例中已删除数据库 preupgrade1104_bu：</p><p id="GUID-35EA5730-92FF-4206-8523-240E7FEB5BB7"><pre purpose="pre" id="GUID-7F3D9381-FE9C-43A4-B3F1-794DCB69BF3F" ishcondition="srv_os=windows">listbackups --store relational
+Backup_Name                      Status           Backup_Time         Mode
+====================================================================================
+phase1proj_bu                    BackupComplete   2014-03-08 14:12    manual
+phase2proj_bu                    BackupComplete   2014-06-21 11:43    manual
+preupgrade1104_bu                BackupComplete   2014-10-04 09:30    manual
+ds_gdt1oomh-20141103160748082    BackupComplete   2014-11-01 03:00    scheduled
+deletebackup preupgrade1104_bu
+You are attempting to delete backup 'preupgrade1104_bu'. This operation is irreversible.
+Do you wish to continue (Yes or No)?yes
+Operation completed successfully</pre></p><p id="GUID-9241ED63-5B83-42B7-93B9-B3B2745FEF73"></p></section></section>
+			
+				<hr>
+				<!--googleoff: all-->
+				
+	
+        
+		    <p class="feedback right">
+		        <a id="afb" class="icon-ui-contact" href="/feedback/" data-langlabel="feedback-on-this-topic" >有关此主题的反馈?</a>
+		    </p>
+        
+	
+
+				<!--googleon: all-->
+			
+		</main>
+	</div>
+	
+	<!--googleoff: all-->
+	
+		
+			<div id="main-toc-large" class="column-5">
+			    <div class="panel font-size--2 tablet-hide trailer-1">
+			      <h5 class="trailer-half">在本主题中</h5>
+			      <ol class="list-plain pre-0 trailer-0"><li><a href="#ESRI_SECTION1_EF7D193843A34C2887E6EB88B14FBCB8"><ph translate="no" varid="datastore">ArcGIS Data Store</ph> 备份注意事项</a></li><li><a href="#GUID-ADC50D62-2A28-4414-BC8C-63C2ACF527D0">定义备份位置</a></li><li><a href="#ESRI_SECTION1_EF539D3A928E40EA833279AB621905A6">管理自动备份</a></li><li><a href="#ESRI_SECTION1_BA5A32CD1AB740EC8C502ED8720ECFE2">手动创建和删除备份</a></li></ol>
+			    </div>
+			    
+			    
+	  		</div>
+		
+    
+   <!--googleon: all-->
+
+
+
+
+          
+        </div>
+        <!-- ENDPAGECONTENT -->
+
+      </div>
+
+    </div>  <!-- End of wrapper -->
+
+  <footer class="footer leader-3 link-dark-gray" role="contentinfo">
+    <div class="grid-container">
+      <div class="row">
+        <nav class="column-6">
+          <h6 data-langlabel="arcgis-for-server">Arc<span>GIS Enterprise</span></h6>
+          <ul class="list-plain">
+            <li><a data-langlabel="home" href="../../../../../zh-CN/">主页</a></li>
+            <li><a data-langlabel="portal" href="../../../../../zh-CN/portal/">Portal</a></li>
+            <li><a data-langlabel="server" href="../../../../../zh-CN/server/">Server</a></li>
+            <li><a data-langlabel="data-store" href="../../../../../zh-CN/data-store/">Data Stores</a></li>
+            <li><a data-langlabel="cloud" href="../../../../../zh-CN/cloud/">云</a></li>
+            <li><a data-langlabel="apps" href="../../../../../zh-CN/apps/">应用程序</a></li>
+            <li><a data-langlabel="documentation" href="../../../../../zh-CN/documentation/">文档</a></li>
+          </ul>
+        </nav>
+
+        
+  <nav class="column-6">
+    <h6 data-langlabel="arcgis-platform">ArcGIS 平台</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="arcgis" href="//www.arcgis.com/">ArcGIS Online</a></li>
+      <li><a data-langlabel="arcgis-for-professionals" href="//pro.arcgis.com/">ArcGIS Pro</a></li>
+      <li><a data-langlabel="arcgis-for-server" href="//enterprise.arcgis.com/">ArcGIS Enterprise</a></li>
+      <li><a data-langlabel="arcgis-for-developers" href="https://developers.arcgis.com/">ArcGIS for Developers</a></li>
+      <li><a data-langlabel="arcgis-solutions" href="//solutions.arcgis.com/">ArcGIS Solutions</a></li>
+      <li><a data-langlabel="arcgis-marketplace" href="//marketplace.arcgis.com/">ArcGIS Marketplace</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <h6 data-langlabel="about-esri">关于 Esri</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="about-us" href="//www.esri.com/about-esri/">关于我们</a></li>
+      <li><a data-langlabel="careers" href="//www.esri.com/careers/">招贤纳士</a></li>
+      <li><a data-langlabel="insiders-blog" href="https://www.esri.com/about/newsroom/blog/">Esri 博客</a></li>
+      <li><a data-langlabel="user-conference" href="//www.esri.com/events/user-conference/index.html">用户大会</a></li>
+      <li><a data-langlabel="developer-summit" href="//www.esri.com/events/devsummit/index.html">开发者峰会</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <a class="esri-logo" href="//www.esri.com/" aria-label="Esri Home"></a>
+    <section class="footer-social-nav leader-1">
+            <a class="icon-social-twitter" aria-label="Esri on Twitter" href="https://twitter.com/Esri/"></a>
+            <a class="icon-social-facebook" aria-label="Esri on Facebook" href="https://www.facebook.com/esrigis/"></a>
+            <a class="icon-social-github" aria-label="Esri on GitHub" href="//esri.github.io/"></a>
+            <a class="icon-social-contact" aria-label="Contact Esri" href="//www.esri.com/about-esri/contact/"></a>
+    </section>
+	  
+  </nav>
+  
+  <div class="column-24 leader-1">
+    <p class="font-size--3"><a href="http://www.esri.com/legal/copyright-trademarks">Copyright &copy; 2019 Esri.</a> All rights reserved. | <a href="http://www.esri.com/legal/privacy/">隐私政策</a> | <a href="http://www.esri.com/legal/software-license">法律声明</a></p>
+  </div>
+  
+
+
+      </div>
+    </div>
+  </footer>
+  <!--googleoff: all-->
+
+  
+  
+	<script src="../../../../../zh-CN/assets/js/init.js" type="text/javascript"></script>
+	<!--<script src="../../../../../zh-CN/assets/js/drop-down.js" type="text/javascript"></script>-->
+	<script src="../../../../../zh-CN/assets/js/search/searchform.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/cdn/js/link-modifier.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/cdn/js/sitewide.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/cdn/js/libs/highlight.pack.js" type="text/javascript"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+
+
+  
+    
+
+  <script src="../../../../../zh-CN/cdn/js/affix.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    $(function () {
+          var appendFlg = true;
+
+          $("#bigmac")
+          .on("affixed.bs.affix", function (evt) {
+            if (appendFlg) {
+              $("<a class='crumb' href='#'>管理数据存储备份</a>").insertAfter ($("#bigmac nav a").last());
+              appendFlg = false;
+            }
+          })
+          .on ("affix-top.bs.affix", function(evt) {
+            if (!appendFlg) {
+              $("#bigmac nav a").last().remove();
+            }
+            appendFlg = true;
+          })
+    })
+  </script>
+  
+        <script type="text/javascript">
+          window.doctoc = {
+            pubID: "555",
+            tpcID: "198",
+            
+              prefix: "管理",
+              prefixUrl: "/zh-cn/portal/latest/administer/windows/",
+          
+            hideToc: false
+          }
+        </script>
+
+        <script type="text/javascript" src="../../../../../zh-CN/portal/latest/administer/windows/555.js" ></script>
+        <script type="text/javascript" src="../../../../../zh-CN/cdn/calcite/js/protoc.js" ></script>
+        
+        
+
+  <noscript>
+        <p>
+            <a href="flisting.htm">flist</a>
+        </p>
+    </noscript>
+    <script type="text/javascript"></script>
+  
+  
+    
+    
+
+  </body>
+</html>

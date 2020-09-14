@@ -1,0 +1,544 @@
+
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>  <html class="ie lt-ie9 lt-ie8 lt-ie7 ie6" dir="ltr"> <![endif]-->
+<!--[if IE 7]>     <html class="ie lt-ie9 lt-ie8 ie7" dir="ltr"> <![endif]-->
+<!--[if IE 8]>     <html class="ie lt-ie9 ie8" dir="ltr"> <![endif]-->
+<!--[if IE 9]>     <html class="ie ie9" dir="ltr"> <![endif]-->
+<!--[if !IE]><!--> <html dir="ltr" lang="zh-CN"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>Scene Viewer 要求&mdash;Portal for ArcGIS | ArcGIS Enterprise 文档</title>
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+    <script>
+      var docConfig = {
+        locale: 'zh-CN'
+        ,localedir: 'zh-cn'
+        ,langSelector: ''
+        
+        ,relativeUrl: false
+        
+
+        ,searchformUrl: '/search/'
+        ,tertiaryNavIndex: ''
+
+        
+      };
+    </script>
+	 
+
+
+    
+    <!--[if lt IE 9]>
+      <script src="../../../../zh-CN/cdn/js/libs/html5shiv.js" type="text/javascript"></script>
+      <script src="../../../../zh-CN/cdn/js/libs/selectivizr-min.js" type="text/javascript"></script>
+      <script src="../../../../zh-CN/cdn/js/libs/json2.js" type="text/javascript"></script>
+      <script src="../../../../zh-CN/cdn/js/libs/html5shiv-printshiv.js" type="text/javascript" >
+
+    <![endif]-->
+
+     <!--[if lt IE 11]>
+    <script>
+      $$(document).ready(function(){
+        $$(".hideOnIE").hide();
+      });
+    </script>
+    <![endif]-->
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<link href="../../../../zh-CN/assets/img/favicon.ico" rel="shortcut icon" >
+	<link href="../../../../zh-CN/assets/css/screen.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/cdn/calcite/css/documentation.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/assets/css/print.css" media="print" type="text/css" rel="stylesheet" />
+
+	<!--
+	<link href="../../../../zh-CN/assets/css/screen_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/assets/css/documentation/base_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/assets/css/print_l10n.css" media="print" type="text/css" rel="stylesheet" />
+	-->
+	
+	
+		<script src="../../../../zh-CN/cdn/js/libs/jquery.1.9.1.min.js" type="text/javascript"></script>
+	
+	<script src="../../../../zh-CN/cdn/js/libs/jquery.cookie.js" type="text/javascript"></script>
+	<link href="../../../../zh-CN/cdn/css/colorbox.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/cdn/css/colorbox_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<script src="../../../../zh-CN/cdn/js/libs/jquery.colorbox-min.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/assets/js/video-init.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/assets/js/sitecfg.js" type="text/javascript"></script>
+	
+		<script src="../../../../zh-CN/assets/js/signIn.js" type="text/javascript"></script>
+	
+
+	<!--- Language Picker -->
+	<script src="../../../../zh-CN/assets/js/locale/l10NStrings.js" type="text/javascript"></script>
+	
+		 
+	
+
+	<script src="../../../../zh-CN/assets/js/calcite-web.js" type="text/javascript"></script>
+
+
+
+  <!--- search MD -->
+    <META name="description" content="请确认您的浏览器和硬件符合使用 Scene Viewer 以及基于场景的应用程序的要求。"><META name="last-modified" content="2019-12-6"><META name="product" content="arcgis-portal-windows,arcgis-portal-linux,arcgis-enterprise-windows,arcgis-enterprise-linux"><META name="sub_category" content="Portal for ArcGIS"><META name="search-collection" content="help"><META name="content_type_label" content="帮助主题"><META name="sub_category_label" content="Portal for ArcGIS"><META name="search-category" content="help-general"><META name="subject_label" content="PORTAL,服务,SERVER"><META name="version" content="10.8"><META name="content_type" content="Help Topic"><META name="subject" content="PORTAL,SERVICES,SERVER"><META name="content-language" content="zh-cn">
+    <!--- search MD -->
+
+  
+  <script src="../../../../zh-CN/assets/js/switchers/portal-1.js" type="text/javascript"></script>
+  
+      
+
+</head>
+
+<!--
+      pub: GUID-7B47163B-CE1B-465F-BEEE-4DADDB8DFF09=37
+      tpc: GUID-7E831097-F573-4AA8-8C3C-75F482F8B01F=19
+      -->
+
+
+<!-- variable declaration, if any -->
+<!-- can change following macro to set variable once we are on Jinja 2.8 -->
+
+
+
+
+
+<body class="claro zh-CN server">
+  
+
+  <!-- Drawer location -->
+  <div class="drawer drawer-left js-drawer" data-drawer="top-nav">
+        <nav class="drawer-nav" role="navigation">
+          <aside class="side-nav">
+            <h2 class="side-nav-title">Arc<span>GIS</span> Enterprise</h2>
+            <form id="helpSearchForm" class="margin-left-half margin-right-half leader-half trailer-half drawer-search-form" method="GET">
+              <input type="search" name="q"  placeholder="搜索 ArcGIS Enterprise 帮助">
+              <input type="hidden" name="collection" value="help" />
+              <input type="hidden" name="product" value="arcgis-portal-windows" />
+              <input type="hidden" name="version" value="10.8" />
+              <input type="hidden" name="language" value="zh-CN" />
+            </form>    
+             <a id="nav-portal" data-langlabel="portal" href="../../../../zh-CN/portal/" class="side-nav-link">Portal</a>
+             
+            <a id="all-servers" data-langlabel="all-servers" href="../../../../zh-CN/server/" class="side-nav-link">所有服务器</a>
+            <a id="gis-server" data-langlabel="gis-server" href="../../../../zh-CN/server/" class="side-nav-link">GIS Server</a>
+            <a id="image-server" data-langlabel="image-server" href="../../../../zh-CN/image/" class="side-nav-link">Image Server</a>
+            <a id="geo-analytics-server" data-langlabel="geo-analytics-server" href="../../../../zh-CN/geoanalytics/" class="side-nav-link">GeoAnalytics Server</a>
+            <a id="geoevent-server" data-langlabel="geoevent-server" href="../../../../zh-CN/geoevent/" class="side-nav-link">GeoEvent Server</a>
+            <a id="notebook-server" data-langlabel="notebook-server" href="../../../../zh-CN/notebook/" class="side-nav-link">Notebook Server</a>
+            <a id="nav-data-store" data-langlabel="data-store" href="../../../../zh-CN/data-store/" class="side-nav-link">Data Stores</a>
+            <a id="nav-cloud" data-langlabel="cloud" href="../../../../zh-CN/cloud/" class="side-nav-link">云</a>
+            <a id="nav-apps" data-langlabel="apps" href="../../../../zh-CN/apps/" class="side-nav-link">应用程序</a>
+            <a id="nav-doc" data-langlabel="documentation" href="../../../../zh-CN/documentation/" class="side-nav-link">文档</a>
+
+          </aside>
+        </nav>
+    </div>
+
+    <!-- user navigation collapses to drawer on mobile -->
+    
+    <div class="drawer drawer-right js-drawer hide-if-logged-out logged-in-navigation" data-drawer="user-nav">
+      <nav class="drawer-nav">
+        <aside class="side-nav">
+          <a class="side-nav-link agolProfile" href="#">我的个人资料</a>
+          <a class="side-nav-link icon-ui-sign-out js-log-out" href="#">登出</a>
+        </aside>
+      </nav>
+    </div>
+    
+<!-- End of drawer -->
+
+  
+  <div class="wrapper">
+      <!--googleoff: all-->
+
+      <header class="top-nav" data-skin="learn">
+        <a class="skip-to-content" href="#skip-to-content">Skip To Content</a>
+        <div class="grid-container">
+          <div class="column-24">
+
+
+            <!--<div class="top-nav-title-wrapper text-center ">-->
+              <a href='../../../../zh-CN/' class="top-nav-title tablet-hide"><span>Arc</span>GIS  Enterprise</a>
+              <a href='../../../../zh-CN/' class="icon-ui-menu top-nav-title js-drawer-toggle tablet-show" data-drawer="top-nav"><span>Arc</span>GIS Enterprise</a>
+            <!--</div> -->
+
+          
+            <nav role="navigation" class="top-nav-list left tablet-hide">
+              <a id="nav-portal" data-langlabel="portal" href="../../../../zh-CN/portal/" class="top-nav-link">Portal</a>
+
+                <div class="dropdown js-dropdown ">
+                  <a class="top-nav-link js-dropdown-toggle" tabindex="0" aria-haspopup="true" aria-expanded="false" href="#">Servers</a>
+                  <nav class="dropdown-menu featured" role="menu">
+                    <ul class="dropdown-sublist-featured">
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/get-started/latest/windows/additional-server-deployment.htm" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path  d="M42.92 6.1H4.12v8.566l.833.832-.835.833-.018 7.332.845.847-.825.824V33.9h25v5.2h-2v1.075H8.02v.8h19.1v.925h4.8v-.925H40v-.8h-8.08V39.1h-2v-5.2h13v-8.566l-.834-.834.835-.834v-7.332l-.835-.834.835-.834zm-11.8 35h-3.2v-1.2h3.2zm11-8H4.92v-7.434l.767-.766h35.668l.765.766zm0-9.766l-.766.766H5.666l-.766-.767.017-6.669.766-.764h35.671l.766.766zm0-9l-.766.766H5.687l-.766-.766V6.9h37.2zM19 11.9h-2v-.8h2zm-4 0h-2v-.8h2zm-4 0H9v-.8h2zm6 8.2h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9zm8 9h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9z"/></svg></span>
+                          <span class="sublink-text">所有服务器</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/server/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M45.98 33.575a.616.616 0 0 0-.335-.51l-3.362-2.03 3.362-2.031a.556.556 0 0 0 0-1.02l-11.1-6.704a1.293 1.293 0 0 0-1.112 0L22.33 27.982a.556.556 0 0 0 0 1.02l3.36 2.03-3.358 2.03a.556.556 0 0 0-.002 1.021l3.322 2.006-3.324 2.008a.555.555 0 0 0 .002 1.017l11.102 6.703a1.25 1.25 0 0 0 1.11.002l11.104-6.706a.556.556 0 0 0 0-1.02l-3.32-2.006 3.318-2.004a.607.607 0 0 0 .335-.509zM33.837 21.97c.026-.01.286-.005.29-.005l10.814 6.53-10.8 6.523c-.028.01-.284.005-.294.006l-10.813-6.53zm11.105 16.636l-10.8 6.523a2.564 2.564 0 0 1-.295.006l-10.81-6.529 3.39-2.047 7.004 4.23a1.083 1.083 0 0 0 .557.131 1.101 1.101 0 0 0 .554-.13l7.01-4.233zM34.14 40.098a2.545 2.545 0 0 1-.294.006l-10.812-6.53 3.43-2.073 6.97 4.208a1.25 1.25 0 0 0 1.107-.001l6.966-4.206 3.431 2.073zM9 8H7V7h2zm8 8h-2v-1h2zm-4-8h-2V7h2zm4 0h-2V7h2zm-4 8h-2v-1h2zm7.316 11.1H3.9v-6.434l.766-.766h35.668l.766.766v2.12l.8.483v-2.935l-.826-.826.826-.845v-6.329l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9h16.88a2.632 2.632 0 0 1 .336-.8zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zm0 8v-5.668l.766-.766h35.668l.766.766v5.67l-.746.764H4.666zM15 24v-1h2v1zm-4 0v-1h2v1zm-2-8H7v-1h2zm-2 8v-1h2v1z"/></svg></span>
+                          <span class="sublink-text">GIS Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/image/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 8h-2V7h2zm-4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm8 8h-2v1h2zm-8 0H7v1h2zm4 9v-1h-2v1zm-4 0v-1H7v1zm8 0v-1h-2v1zm4 3.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V21h-.8v-.334l-.766-.766H4.666l-.766.766V27.1H21zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zm40.234 4v21.8H23.1V23.1zm-.8 16.366L39.466 44.1h2.868l1.766-1.766zm-20.2-9.932l5.634-5.634h-2.868L23.9 26.666zm6.2-5.068L24.466 30.1h2.868l2.766-2.766zM28.466 30.1H30.1v-1.634zm2.434 0h6.2v-6.2h-6.2zm-7 7h6.2v-6.2h-6.2zm7 0h6.2v-6.2h-6.2zm0 6.434l5.634-5.634h-2.868L30.9 40.666zm7-7l5.634-5.634h-2.868L37.9 33.666zm1.634-5.634H37.9v1.634zm-8.634 7v1.634l1.634-1.634zm.566 6.2h2.868l2.766-2.766v-2.868zm6.434-3.566l2.634-2.634H37.9zM35.466 44.1H37.1v-1.634zm2.434 0h.434l5.766-5.766V37.9h-2.434L37.9 41.666zm6.2-8.634L42.466 37.1H44.1zm0-4L38.466 37.1h2.868l2.766-2.766zm0-7.566h-6.2v6.2h6.2zm-20.2 0v1.634l1.634-1.634zm0 20.2h6.2v-6.2h-6.2zm20.2 0v-.634l-.634.634z"/></svg></span>
+                          <span class="sublink-text">Image Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/geoanalytics/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 16h-2v-1h2zm-8 8v-1H7v1zm8 0v-1h-2v1zM13 7h-2v1h2zm4 0h-2v1h2zM9 7H7v1h2zm21.45 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V27.9h-1.464l-.801-.8H41.1v-6.434l-.766-.766H4.666l-.766.766V27.1h27.15zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM13 24v-1h-2v1zm0-9h-2v1h2zm-4 0H7v1h2zm26.672 27.148A1.87 1.87 0 0 1 35.9 43a1.91 1.91 0 1 1-3.763-.222l-9.845-3.414A1.88 1.88 0 0 1 21 39.9a1.9 1.9 0 1 1 1.474-3.084l4.692-2.346A1.878 1.878 0 0 1 27.1 34a1.902 1.902 0 0 1 1.9-1.9 1.867 1.867 0 0 1 .781.191l3.788-5.05A1.88 1.88 0 0 1 33.1 26a1.9 1.9 0 1 1 3.491 1.026l4.889 4.888c-.069.056-.144.1-.21.162a3.986 3.986 0 0 0-.358.402l-4.883-4.883A1.889 1.889 0 0 1 35 27.9a1.867 1.867 0 0 1-.781-.191l-3.788 5.049a1.868 1.868 0 0 1 .437.965l9.204.614c-.018.11-.049.218-.058.33A3.93 3.93 0 0 0 40 35c0 .046.01.09.01.135l-9.185-.612A1.913 1.913 0 0 1 29 35.9a1.889 1.889 0 0 1-1.474-.716l-4.692 2.346a1.878 1.878 0 0 1 .066.47 1.9 1.9 0 0 1-.105.625c-.007.02-.022.036-.03.056l9.63 3.34a1.87 1.87 0 0 1 2.786-.505l5.415-4.437c.067.108.127.22.204.322a3.9 3.9 0 0 0 .292.306zM33.9 26a1.092 1.092 0 0 0 .43.872 1.12 1.12 0 0 0 1.42-.068A1.1 1.1 0 1 0 33.9 26zm-6 8a1.1 1.1 0 0 0 2.196.093 1.135 1.135 0 0 0-.426-.965A1.087 1.087 0 0 0 29 32.9a1.101 1.101 0 0 0-1.1 1.1zm-5.8 4a1.098 1.098 0 1 0-.06.362A1.101 1.101 0 0 0 22.1 38zm13 5a1.1 1.1 0 1 0-2.2 0 1.1 1.1 0 0 0 2.2 0zm10.8-8a1.9 1.9 0 1 1-3.8 0c0-.053.003-.105.007-.158A1.9 1.9 0 0 1 45.9 35zm-.8 0a1.1 1.1 0 0 0-2.196-.093 1.153 1.153 0 0 0 .216.752A1.1 1.1 0 0 0 45.1 35z"/></svg></span>
+                          <span class="sublink-text">GeoAnalytics Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/geoevent/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M13 8h-2V7h2zm4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm12.418 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826v2.117c-.259-.177-.53-.337-.8-.497v-1.288l-.766-.766H4.666l-.766.766V27.1h17.933c-.148.26-.283.53-.415.8zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM9 24v-1H7v1zm4-9h-2v1h2zm0 9v-1h-2v1zm-4-9H7v1h2zm8 9v-1h-2v1zm16.9 2h-.8v8.9H39v-.8h-5.1zm.1-3.901a11.9 11.9 0 1 0 11.9 11.9 11.914 11.914 0 0 0-11.9-11.9zm0 23a11.1 11.1 0 1 1 11.1-11.1 11.112 11.112 0 0 1-11.1 11.1z"/></svg></span>
+                          <span class="sublink-text">GeoEvent Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/notebook/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M22 27.1H3.9v-6.434l.766-.766h18.576a5.262 5.262 0 0 1 .83-.8H4.666l-.766-.766v-5.668l.766-.766h35.668l.766.766V18h.8v-5.666l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9H22zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zM9 8H7V7h2zm8 0h-2V7h2zm-4 0h-2V7h2zm2 16v-1h2v1zm-4 0v-1h2v1zm-4 0v-1h2v1zm0-8v-1h2v1zm8 0v-1h2v1zm-4 0v-1h2v1zm18.9 8.1h-1.8v1.8h1.8zm-.8 1h-.2v-.2h.2zm15.498-4.48a2.727 2.727 0 0 0-1.62-.5v-.02H27.25a3.154 3.154 0 0 0-3.15 3.15V38.1h-1.68a3.386 3.386 0 0 0-2.872 1.58 3.49 3.49 0 0 0-.157 3.419 3.241 3.241 0 0 0 2.954 1.801h15.161a3.404 3.404 0 0 0 3.394-3.4V26.9h5v-3.65a3.224 3.224 0 0 0-1.302-2.63zM22.345 44.1a2.44 2.44 0 0 1-2.23-1.341 2.706 2.706 0 0 1 .11-2.65A2.588 2.588 0 0 1 22.42 38.9h12.89a3.395 3.395 0 0 0 0 5.2zM40.1 23.192V41.5a2.6 2.6 0 1 1-2.6-2.6v-.8H24.9V23.25a2.352 2.352 0 0 1 2.35-2.35h13.795a3.183 3.183 0 0 0-.945 2.292zm5 2.908h-4.2v-2.908a2.274 2.274 0 0 1 1.44-2.18 1.944 1.944 0 0 1 1.791.259 2.423 2.423 0 0 1 .97 1.979zm-17.1 5h9v.8h-9zm0 3h7v.8h-7zm0-6h9v.8h-9zm4-3h5v.8h-5z"/></svg></span>
+                          <span class="sublink-text">Notebook Server</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+
+              <a id="nav-data-store" data-langlabel="data-store" href="../../../../zh-CN/data-store/" class="top-nav-link">Data Stores</a>
+              <a id="nav-cloud" data-langlabel="cloud" href="../../../../zh-CN/cloud/" class="top-nav-link">云</a>
+              <a id="nav-apps" data-langlabel="apps" href="../../../../zh-CN/apps/" class="top-nav-link">应用程序</a>
+            </nav>
+
+
+            
+            
+            
+
+            <div class="margin-left-1 top-nav-list right hide-if-logged-in logged-out-navigation">
+               
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+              
+              <a data-langlabel="sign-in" id="login-link" class="icon-ui-user top-nav-link link-blue login-link" href="#">登录</a>
+              
+            </div>
+
+            
+            <nav class="margin-left-1 top-nav-list right hide-if-logged-out logged-in-navigation">
+              
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+             
+              <div class="dropdown js-dropdown right">
+
+                <div class="tablet-show top-nav-link">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a href="#" data-drawer="user-nav" class="user-nav-name js-drawer-toggle" data-first-name></a>
+                </div>
+
+                <div class="tablet-hide top-nav-link js-dropdown-toggle">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a class="user-nav-name top-nav-dropdown dropdown-btn" data-first-name>&nbsp;</a>
+                </div>
+
+                <nav class="dropdown-menu dropdown-right">
+                
+                  <a class="dropdown-link agolProfile" id="agolProfile" href="#">我的个人资料</a>
+                  <a class="dropdown-link js-log-out" id="agolLogout" href="#">登出</a>
+                </nav>
+              </div>
+            </nav>
+            
+
+            
+          </div>
+        </div>
+      </header>
+
+      <div class="js-search search-overlay">
+        <div class="search-content" role="dialog" aria-labelledby="search">
+          <form method="GET" id="helpSearchForm">
+            <label>
+              搜索 ArcGIS Enterprise 帮助
+              <div class="search-bar">
+                <input type="search" name="q"  placeholder="搜索 ArcGIS Enterprise 帮助" class="search-input js-search-input">
+                <input type="hidden" name="collection" value="help" />
+                <input type="hidden" name="product" value="arcgis-portal-windows" />
+                <input type="hidden" name="version" value="10.8" />
+                <input type="hidden" name="language" value="zh-CN" />
+              </div>
+            </label>
+            <input type="hidden" name="relativePath" value="../../../../" /><button type="submit" class="btn btn-large right">搜索</button>
+          </form>
+        </div>
+      </div>
+
+      <!--googleon: all-->
+
+      <div id="skip-to-content">
+        <!--googleoff: all-->
+        <header class="sub-nav sub-nav-learn">
+          <div class="grid-container">
+            
+            <div class="column-24">
+              <div style="display:table;" class="sdk-home-banner">
+                <div class="sdk-home-banner-content">
+                  <h1 class="sub-nav-title link-white">Portal for ArcGIS</h1>
+                </div>
+              </div>
+            </div>
+
+            <div class="column-24">
+              <nav class='sub-nav-list tablet-hide'><a class="sub-nav-link" href="../../../../zh-CN/portal/" target="_top" title="Portal for ArcGIS 主页">主页</a><a class="sub-nav-link is-active" href="../../../../zh-CN/portal/latest/use/" target="_top" title="使用 Portal for ArcGIS">使用</a><a class="sub-nav-link" href="../../../../zh-CN/portal/latest/administer/windows/" target="_top" title="安装、管理和保护 Portal for ArcGIS">管理</a></nav><select class='tablet-show select-full trailer-half js-select-nav'><option value="../../../../zh-CN/portal/">主页</option><option selected="true" value="../../../../zh-CN/portal/latest/use/">使用</option><option value="../../../../zh-CN/portal/latest/administer/windows/">管理</option></select>
+            </div>
+
+          </div>
+        </header>
+        <!--googleon: all-->
+       
+        <!-- content goes here -->
+        <div class="grid-container ">
+          
+
+            
+              
+  <!--BREADCRUMB-BEG--><div id="bigmac" class="sticky-breadcrumbs trailer-2" data-spy="affix" data-offset-top="180"> </div><!--BREADCRUMB-END-->
+  <!--googleoff: all-->
+    <div class="column-5 tablet-column-12 trailer-2 ">
+      <aside class="js-accordion accordion reference-index" aria-live="polite" role="tablist">
+        <div></div>
+      </aside>
+
+      <div class="js-sticky scroll-show tablet-hide leader-1 back-to-top" data-top="0" style="top: 0px;">
+        <a href="#" class="btn btn-fill btn-clear">返回顶部</a>
+      </div>
+    </div>
+  <!--googleon: all-->
+  
+            
+            
+            
+	
+		<div class="column-13  pre-1 content-section">
+	
+		<header class="trailer-1"><h1>Scene Viewer 要求</h1></header>
+
+		 
+	<!--googleoff: all-->
+	
+		
+				<aside id="main-toc-small" class="js-accordion accordion tablet-show trailer-1">
+			      <div class="accordion-section">
+			        <h4 class="accordion-title">在本主题中</h4>
+			        <div class="accordion-content list-plain">
+			          <ol class="list-plain pre-0 trailer-0"><li><a href="#SV_BROWSER_REQS">浏览器要求</a></li><li><a href="#ESRI_SECTION1_236FB02EB59E427EA5D97A14BE32737A">硬件要求</a></li><li><a href="#SV_MOBILE_REQS">移动要求</a></li><li><a href="#ESRI_SECTION1_024E404971864F418E2929B51D2FE1F4">Web 样式安装</a></li><li><a href="#ESRI_SECTION1_BB22F4AF75F4468BAA45EAFC86498B4D">解决渲染问题</a></li></ol>
+			        </div>
+			      </div>
+			     </aside>
+		
+    
+   <!--googleon: all-->
+
+
+		<main>
+			
+	
+    	
+    
+
+
+			
+
+<p id="GUID-2ED54C7B-43D6-413D-9CC2-5338C73E9A85" ishcondition="agol_plat=portal">可以在支持 WebGL 的桌面 Web 浏览器中使用 <span class="ph">Scene Viewer</span> 和<a class="xref xref" href="../../../../zh-CN/portal/latest/use/create-scene-apps.htm">基于场景的应用程序</a>，其中 WebGL 是渲染 3D 图形的 Web 技术标准。为了在 <span class="ph">Scene Viewer</span> 中获得最佳效果，请验证您的<a class="xref xref" href="../../../../zh-CN/portal/latest/use/scene-viewer-requirements.htm#ESRI_SECTION1_CCF7723485A34F509CEAA6A1C56F34B8">浏览器</a>和<a class="xref xref" href="../../../../zh-CN/portal/latest/use/scene-viewer-requirements.htm#ESRI_SECTION1_236FB02EB59E427EA5D97A14BE32737A">计算机硬件</a>是否符合 <span class="ph">Scene Viewer</span> 要求。并且建议您使用最新版本的 <span class="ph">Chrome</span> 或 <span class="ph">Firefox</span>。目前，<span class="ph">ArcGIS Enterprise</span> 移动设备不支持 <span class="ph">Scene Viewer</span>。</p><section class="section1 padded-anchor" id="SV_BROWSER_REQS" purpose="section1"><h2>浏览器要求</h2><p id="GUID-67107EB5-2D41-453A-A88D-BA0E5E4A1074"><span class="ph">Scene Viewer</span> 和基于场景的应用程序需要一个支持 WebGL 的桌面 Web 浏览器。最新版本的最常见桌面浏览器都内置有 WebGL。要测试浏览器是否启用了 WebGL，请打开 <a target="_blank" class="xref xref" href="http://get.webgl.org/">get.webgl.org</a>。要解决与 WebGL 相关的问题，请访问 <a target="_blank" class="xref xref" href="http://get.webgl.org/troubleshooting/">WebGL 疑难解答</a>。由于 WebGL 技术在不断发展，每一浏览器版本都会融入改进的成果，而 <span class="ph">Scene Viewer</span> 正是使用这些改进才能实现最佳性能，因此，请确保您的浏览器为最新版本。要使用 <span class="ph">Scene Viewer</span>，您的浏览器应<a class="xref xref" href="../../../../zh-CN/portal/latest/use/scene-viewer-requirements.htm#SV_TROUBLESHOOTING">启用硬件加速</a>。</p><p id="GUID-E68DAD67-2AEA-47BB-A624-36801197925A"><span class="ph">Scene Viewer</span> 和基于场景的应用程序支持以下 web 浏览器： </p><ul purpose="ul" id="UL_E270798D3D6848579CCCAFCA72F70AF2"><li purpose="li" id="LI_A74F886F4B614E63BA8AA1465546E8D2"><span class="ph">Chrome</span></li><li purpose="li" id="LI_88581F79151046BBB87FC5F54474451A"><span class="ph">Firefox</span></li><li purpose="li" id="LI_1F29B04F73B546B396FDE01C3053E478"><span class="ph">Internet Explorer</span>  11*</li><li purpose="li" id="LI_A9D08E7F312B42CA99145AE823C80FA8"><span class="ph">Edge</span>*</li><li purpose="li" id="LI_80A9014EF50C42E581EAC74084F7EF89"><span class="ph">Safari</span> 9 及更高版本*</li></ul><p id="GUID-1177A56F-26FB-4543-91A1-0151B4256C5D">*此浏览器在 WebGL 实施方面未针对存储密集型应用程序进行优化，因此，打开某些场景时可能会出现不稳定的情况。<div class="panel trailer-1" id="GUID-8098C949-9A3C-4E51-9A81-6F92A331B116"><h5 class="icon-ui-description trailer-0">提示：</h5><p id="GUID-C3B5B373-4D6F-4863-95BE-0AF4F810CC2C">调整浏览器中的<a class="xref xref" href="../../../../zh-CN/portal/latest/use/view-scenes.htm#ESRI_SECTION2_BF14FE913A16432EB98E1E08EFC2C9F6">性能质量设置</a>，以优化场景中的性能或质量。</p></div></p><section class="section2 padded-anchor" id="ESRI_SECTION2_5F75CA0B3F4944E298D8993748C1A7BB" purpose="section2"><h3><span class="ph">Internet Explorer</span> 11</h3><p id="GUID-27991813-9E03-49CD-9EBD-D4231D10EAC7">使用 <span class="ph">Internet Explorer</span> 11 (IE 11) 时，请确保将浏览器更新为最新版本。<span class="ph">Scene Viewer</span> 仅在具有 WebGL 0.94 的 IE 11 中受支持。较早的 WebGL 版本已过期并且不兼容 <span class="ph">Scene Viewer</span> 或基于场景的应用程序。要检查 WebGL 版本，可访问 <a target="_blank" class="xref xref" href="http://webglreport.com/">www.Webglreport.com</a>。</p><div class="panel trailer-1 note" id="GUID-00A47E77-A4F4-481A-A083-D522DC48406C"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-EAE1C134-9294-47C1-8C0C-DF08A48DD9BF">将 IE 11 与 <span class="ph">Scene Viewer</span> 和基于场景的应用程序配合使用存在明显的内存问题。如果您遇到性能问题，请关闭浏览器，然后重新打开。重新加载该页面或打开新选项卡将不会清除内存。您必须关闭并重新打开浏览器。</p></div></section><section class="section2 padded-anchor" id="ESRI_SECTION2_79D3766105E6431FA1939E6ECB8559D5" purpose="section2"><h3>其他 WebGL 要求</h3><p id="GUID-1BD414FE-1896-4AE3-9306-3A0F0053DE66">除了基本的 WebGL 支持外，<span class="ph">Scene Viewer</span> 和基于场景的应用程序对 WebGL 有以下要求：</p><ul purpose="ul" id="UL_953B2A1E654D44ABBB8EBD5A7B386200"><li purpose="li" id="LI_335EABE615C842829E8D02D7E615CC36">高精度片元着色器</li><li purpose="li" id="LI_757FFC8CAC46470488DA0888DCC70502">Vertex shader 采样器</li><li purpose="li" id="LI_5F2F0E2D0FB24439BA21D0EB32D2578F">Uint 折点索引（OES_element_index_uint 扩展名）</li></ul><p id="GUID-AAC5FB37-FB57-4EBE-B22C-F9E586A97B14">可在 <a target="_blank" class="xref xref" href="http://webglreport.com/">www.webglreport.com</a> 上验证您的浏览器是否满足这些要求。</p></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_236FB02EB59E427EA5D97A14BE32737A" purpose="section1"><h2>硬件要求</h2><p id="GUID-6B5DF17A-07F6-4D18-BE6B-C0C60DCAC78E">计算机硬件必须至少具有 2 GB 的系统内存以及支持 WebGL 且显存为1 GB 的显卡。为了获得最佳效果，尤其在处理较大场景或占用大量内存的场景时，建议配置至少 4 GB 系统内存。</p><section class="section2 padded-anchor" id="ESRI_SECTION2_0108B5A41C5E43539B3CE8B73C96CC4F" purpose="section2"><h3>显卡</h3><p id="GUID-FDE3BC57-5EEE-4FD4-9BF5-6E7B2FFA2ED4">显卡需要支持具有以下规格的 OpenGL 3.0 (Shader Model 4.0)：</p><ul purpose="ul" id="UL_59C2120EA88B4A80B89E6BB9A1DF7AD7"><li purpose="li" id="LI_26BAD01C8B444F5E9C3653D8928E0F53">AMD/ATI：Radeon 4xxx 或更高版本。</li><li purpose="li" id="LI_BE6CF252F40146E58D61FD008125735D"><span class="ph">NVIDIA</span>：GeForce 2xx 或更高版本，或 Quadro FX 3800 或更高版本。</li><li purpose="li" id="LI_08ABDE45DF34431484B8A8FE6D28FB0E"><span class="ph">Intel</span>：HD 4000 或更高版本 </li></ul><p id="GUID-6F7168C6-C89A-4B07-88C0-CC1122D7B44B">与移动显卡相比（以 m 或 mobile 表示），非移动版本的显卡通常具有更好的性能。</p><div class="panel trailer-1 note" id="GUID-7D993632-B351-4411-95E9-481A61230AD5"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-284B18AB-C081-4A99-8F6A-032445481437"> 一些系统可以自动在集成显卡和独立显卡之间进行切换，以渲染 3D 图形。<span class="ph">Scene Viewer</span> 和基于场景的应用程序使用独立显卡时性能最佳；因此，需在显卡驱动程序设置中确保 Web 浏览器的每个应用程序设置均设置为独立显卡。如果未进行设置，则无法正确显示一些点符号和标注。</p></div><p id="GUID-D17B9E66-DA6A-4927-9E2A-80A9F3C1F89E">有关 WebGL 要求的更多详细信息，请访问 <a target="_blank" class="xref xref" href="http://get.webgl.org/troubleshooting/">WebGL 疑难解答</a>。</p></section></section><section class="section1 padded-anchor" id="SV_MOBILE_REQS" purpose="section1"><h2>移动要求</h2><p id="GUID-2F132192-AACF-4151-8D6C-DAE94C4BAFFE"><span class="ph">Scene Viewer</span> 可提供以下方面的移动支持：  </p><ul purpose="ul" id="UL_DA6A404C54834D649E7AFFAF6FC92F81"><li purpose="li" id="LI_EF146FF09FCC4D189D6BAC83809EC31F"><span class="ph">iOS</span>：<span class="ph">iPhone</span> 8、<span class="ph">iPhone</span> XS、<span class="ph">iPad</span> Pro（<span class="ph">Safari</span> 浏览器）</li><li purpose="li" id="LI_5349D24839494C2EAEEC9F0234A7A12D"><span class="ph">Android</span>：<span class="ph">Samsung</span> S8、<span class="ph">Samsung</span> S9、<span class="ph">Samsung</span> Tab S3（<span class="ph">Chrome</span> 浏览器）</li></ul><p id="GUID-4575A709-25C3-433F-ACAD-EA0C4E1D5678">如果您使用的移动设备不在上述设备之列，那么您的设备应至少具有 2GB 内存（推荐 4GB）、强大的多核处理器和 GPU，并安装最新的 <span class="ph">Android</span> 或 <span class="ph">iOS</span> 版本。</p></section><section class="section1 padded-anchor" id="ESRI_SECTION1_024E404971864F418E2929B51D2FE1F4" purpose="section1"><h2>Web 样式安装</h2><p id="GUID-B5511AAF-176B-427E-B9D0-0413D54DBFB5"> <span class="ph">Esri</span> 提供了一组不断增加的 3D 模型，以对场景中的点进行符号化。因此，默认情况下会在符号库中安装一组有限的 3D 模型（基本形状）。对于 <span class="ph">ArcGIS Enterprise</span> 10.7.1 及更高版本，为了在符号库中获取一整套 3D 符号系统（例如，植被），请安装 Web 样式安装程序。可从 <span class="ph"><a target="_blank" class="xref xref" href="https://my.esri.com/">My Esri</a></span> 中下载 Web 样式。</p><p id="GUID-DFFBF77A-0C22-45D8-B73B-0BD29BCB8E00">通过 <span class="ph">ArcGIS Enterprise Builder</span> 安装 <span class="ph">ArcGIS Enterprise</span> 时，Web 样式将自动安装。如果未自动安装，则先安装所有其他 ArcGIS Enterprise 组件，再安装 Web 样式。</p></section><section class="section1 padded-anchor" id="ESRI_SECTION1_BB22F4AF75F4468BAA45EAFC86498B4D" purpose="section1"><h2>解决渲染问题</h2><p id="GUID-694180CC-96D4-4AAB-B289-241D0FABBFAB">要使 <span class="ph">Scene Viewer</span> 正常运行，需要浏览器功能达到最佳。当 <span class="ph">Scene Viewer</span> 检测到您的浏览器渲染受到影响时，您会看到加载 <span class="ph">Scene Viewer</span> 时出现问题的消息。此外，错误消息将提供有关问题性质的更多详细信息：</p><ul purpose="ul" id="UL_66F61B35C17D4041AC54F1DC71943B43"><li purpose="li" id="LI_292933FB8AC94775BEFF423A85055AB9"><a class="xref xref" href="../../../../zh-CN/portal/latest/use/scene-viewer-requirements.htm#SV_TROUBLESHOOTING"><span class="uicontrol">您的浏览器没有使用硬件加速进行渲染</span></a></li><li purpose="li" id="LI_26427FD345D74F54AB0F9678073B53DF"><a class="xref xref" href="../../../../zh-CN/portal/latest/use/scene-viewer-requirements.htm#SV_NOWEBGL"><span class="uicontrol">您的浏览器似乎不支持 WebGL</span></a></li></ul><p id="GUID-8FB473DA-4132-4A59-92CE-9F1DA1FC40DC">此外，<span class="ph">Scene Viewer</span> 打开时可能没有错误消息，但<a class="xref xref" href="../../../../zh-CN/portal/latest/use/scene-viewer-requirements.htm#ESRI_SECTION2_3321FF48FC1245B08172B04E22765335">渲染质量仍然会受到影响。</a> </p><section class="section2 padded-anchor" id="SV_TROUBLESHOOTING" purpose="section2"><h3>您的浏览器没有使用硬件加速进行渲染</h3><p id="GUID-EC6DE93E-6DBF-46D0-B238-D6EA797BE205"> 如果 <span class="ph">Scene Viewer</span> 未在您的浏览器中检测到硬件加速，您将收到此消息。没有启用硬件加速的常见原因可能是您的<a class="xref xref" href="../../../../zh-CN/portal/latest/use/scene-viewer-requirements.htm#ESRI_SECTION3_676D1B8653C748248E0878A7C86E26CF">浏览器设置</a>未正确配置或浏览器已<a class="xref xref" href="../../../../zh-CN/portal/latest/use/scene-viewer-requirements.htm#ESRI_SECTION3_00715EDEED434F8EA400AA333CBF3564">将您的显卡列入黑名单</a>。</p><section class="section3 padded-anchor" id="ESRI_SECTION3_676D1B8653C748248E0878A7C86E26CF" purpose="section3"><h4>在您的浏览器设置中配置硬件加速</h4><p id="GUID-E09FD7EF-7E26-4D4C-B21D-B6DFFBE88AEC"> 每个浏览器都有其自己的配置选项，可以禁用硬件加速。要在浏览器中启用硬件加速进行渲染，请参阅下文：</p><p id="GUID-8870487C-C239-4B58-817A-2F0AFCFB818D">对于 <span class="ph">Chrome</span>，请执行以下操作：</p><ol class="list-numbered" purpose="ol" id="OL_F3FF7310E00D41408EB61FFAC099FD9A"><li purpose="li" id="LI_9D738E0D45B84F1E968FEC8829338A79"> 转至<span class="uicontrol">设置 <span class="greaterthan">&gt;</span> 高级 <span class="greaterthan">&gt;</span> 系统</span>。</li><li purpose="li" id="LI_F5EF59DD2082470288047C0222EBD6CA"> 单击<span class="uicontrol">可用时使用硬件加速</span>切换键来打开显卡渲染。</li><li purpose="li" id="LI_3F5F6DE87AAA48FC981DE41036EAD2E8"> 重新启动浏览器。</li></ol><p id="GUID-D8058A96-836E-40EA-B2F1-51F8EC9E7121">对于 <span class="ph">Firefox</span>，请执行以下操作：</p><ol class="list-numbered" purpose="ol" id="OL_3821B7C7C7F74FE5AC9D18F72F2AA955"><li purpose="li" id="LI_885188DD290C4158BA456F55E5D3B64D">转至<span class="uicontrol">工具选项 <span class="greaterthan">&gt;</span> 高级 <span class="greaterthan">&gt;</span> 浏览</span>。</li><li purpose="li" id="LI_1202EC8E92564B3FA4218A92BACB49AC"> 选中<span class="uicontrol">可用时使用硬件加速</span>选项。</li><li purpose="li" id="LI_07A5CE6D84C44431904D6607C70DFEC5"> 重新启动浏览器。</li></ol><p id="GUID-D399CE0E-2178-4711-A535-983F85D183B8">对于 IE 11，请执行以下操作：</p><ol class="list-numbered" purpose="ol" id="OL_A482C55BE96A446093B2F04399FEED86"><li purpose="li" id="LI_0AD85368452343A49CC7975E089E9D69">单击<span class="uicontrol">高级</span>设置。</li><li purpose="li" id="LI_84C9AAE27B6542E1B098C579324C2638"> 取消选中<span class="uicontrol">使用软件渲染代替 GPU</span>选项。如果选中后仍不可用，则需要更新您的显卡或视频驱动程序。</li><li purpose="li" id="LI_E589F7C716E447AEA60A904679A9B432"> 重新启动计算机。</li></ol></section><section class="section3 padded-anchor" id="ESRI_SECTION3_00715EDEED434F8EA400AA333CBF3564" purpose="section3"><h4>您的浏览器已将显卡列入黑名单</h4><p id="GUID-F4AFBDA5-7B61-4F07-9484-E14790177AFA"> 某些浏览器会确定特定显卡不符合浏览器的要求，并将阻止显卡或将显卡“列入黑名单”。在这种情况下，您仍可以选择绕过浏览器阻止显卡的决策。虽然并不推荐每次都这样做，但它可以解决 <span class="ph">Scene Viewer</span> 中的问题。</p><p id="GUID-84A6C76F-8E6E-44D1-88E6-0C8FCB4DA24D">对于 <span class="ph">Chrome</span>，请执行以下操作：</p><ol class="list-numbered" purpose="ol" id="OL_25CDE2CCF8234D6EA6ABAC9FDCC9DA00"><li purpose="li" id="LI_4E852E41376E4F9CA86CC9F53AA0284E"> 在地址栏中输入 <span class="usertext">chrome://flags</span>。</li><li purpose="li" id="LI_D26980A697394F7EA8B9B3FCD1973F00"> 单击<span class="uicontrol">覆盖软件渲染列表</span>下的<span class="uicontrol">启用</span>。</li><li purpose="li" id="LI_A8B5B3041005422D905510E32ECF03A7"> 重新启动浏览器。</li></ol><p id="GUID-C05E551C-3242-472A-A4F8-1BDEB2ED055C">对于 <span class="ph">Firefox</span>，请执行以下操作：</p><ol class="list-numbered" purpose="ol" id="OL_BCD7693404AB428580CC1089E9DD167F"><li purpose="li" id="LI_DC0F4DF5FB284DE09D3CA8F69ABFFD02">在地址栏中输入 <span class="usertext">about:config</span>。</li><li purpose="li" id="LI_8A10EE36AD584221B59C285F5373DAF5">在搜索栏中输入 <span class="usertext">webgl.force-enabled</span>。</li><li purpose="li" id="LI_7D687D4DAB68487C998053D32D4211E7"> 将值设置为 <span class="uicontrol">true</span>。</li><li purpose="li" id="LI_5ED16A613E054CEFAA7E69350822A01B">重新启动浏览器。</li></ol></section></section><section class="section2 padded-anchor" id="SV_NOWEBGL" purpose="section2"><h3>您的浏览器似乎不支持 WebGL</h3><p id="GUID-4231F15E-F511-4EAD-85D1-E0086EC65D33">当 <span class="ph">Scene Viewer</span> 未在浏览器中检测到 WebGL 时，您将收到此消息。转到 <a target="_blank" class="xref xref" href="https://get.webgl.org/"> get.webgl.org</a> 是一个很好的确认方法。您会看到旋转的立方体，以确认 WebGL 在浏览器中可用。否则，网站会显示浏览器不支持 WebGL。如果您未看到旋转的立方体，可以尝试下述方法：</p><ol class="list-numbered" purpose="ol" id="OL_E2AFB79A34684ACEA701370B2CF8F5F1"><li purpose="li" id="LI_4D69BD8775B840C4A52073E3A79BF563">确保通过浏览器设置来启用 WebGL。</li><li purpose="li" id="LI_9F21D807693F4189A40A98CD8F4A669A">确保浏览器和硬件满足 <a class="xref xref" href="../../../../zh-CN/portal/latest/use/scene-viewer-requirements.htm#SV_MOBILE_REQS"><span class="ph">Scene Viewer</span> 要求</a>。</li></ol></section><section class="section2 padded-anchor" id="ESRI_SECTION2_3321FF48FC1245B08172B04E22765335" purpose="section2"><h3><span class="ph">Scene Viewer</span> 会打开，但渲染质量会受到影响</h3><p id="GUID-0AA6124E-5D73-40BD-A20B-DD23A892A348">有时，<span class="ph">Scene Viewer</span> 打开时不会出现错误消息，但您仍然可能会遇到问题。其中的一些示例如下：</p><ul purpose="ul" id="UL_50E63E5AA8404ED5B89581D2C902DB5C"><li purpose="li" id="LI_2F1344DC693649FE92226A7F5C1A3782"> 所有图标和标注都丢失，但显示在其他浏览器或设备中。</li><li purpose="li" id="LI_E18029A615924F4F97F39EEC84989056">渲染伪影（即，黑色渲染的大气和阴影、用点渲染的几何）。</li><li purpose="li" id="LI_212F8E6A28EC4E93AAC03F9F22F5D7B6">场景中的主要颜色问题（即，所有颜色均反转、所有颜色均呈现为绿色或黑色）。</li></ul><p id="GUID-BA605798-5D7A-4675-B88A-EE9FE0247298">如果您遇到上述任何问题，请确认以下内容：</p><ul purpose="ul" id="UL_2F34B764625F448DA712299CFC3963D8"><li purpose="li" id="LI_EC3FF36FD51B49F6AE06E274965D17DB">您的浏览器已<a class="xref xref" href="../../../../zh-CN/portal/latest/use/scene-viewer-requirements.htm#SV_TROUBLESHOOTING">启用硬件加速</a>。</li><li purpose="li" id="LI_6930C2609D0E4A23A71FADEF7ABB6ED0"><a class="xref xref" href="../../../../zh-CN/portal/latest/use/scene-viewer-requirements.htm#SV_NOWEBGL">您的浏览器已启用 WebGL</a>。</li><li purpose="li" id="LI_1BD297136D6E4C97AE45AB1F25501359">您的浏览器和计算机满足所有 <a class="xref xref" href="../../../../zh-CN/portal/latest/use/scene-viewer-requirements.htm#SV_MOBILE_REQS"><span class="ph">Scene Viewer</span> 要求</a>。</li></ul><p id="GUID-05E1643C-1EB3-47BB-92A6-2A09D022B71E"> 如果您的 <span class="ph">Scene Viewer</span> 仍然有问题，请尝试切换到其他浏览器。另一个选择是更新视频驱动程序。建议您从供应商的网站下载最新的驱动程序。最后，如果以上所有建议都无法解决问题，请在 <a target="_blank" class="xref xref" href="https://geonet.esri.com/">GeoNet</a> 论坛中报告您的问题，或联系 <a target="_blank" class="xref xref" href="http://support.esri.com/en/contact-tech-support"><span class="ph">Esri</span> 技术支持部门</a>获取更多帮助。</p></section></section>
+			
+				<hr>
+				<!--googleoff: all-->
+				
+	
+        
+		    <p class="feedback right">
+		        <a id="afb" class="icon-ui-contact" href="/feedback/" data-langlabel="feedback-on-this-topic" >有关此主题的反馈?</a>
+		    </p>
+        
+	
+
+				<!--googleon: all-->
+			
+		</main>
+	</div>
+	
+	<!--googleoff: all-->
+	
+		
+			<div id="main-toc-large" class="column-5">
+			    <div class="panel font-size--2 tablet-hide trailer-1">
+			      <h5 class="trailer-half">在本主题中</h5>
+			      <ol class="list-plain pre-0 trailer-0"><li><a href="#SV_BROWSER_REQS">浏览器要求</a></li><li><a href="#ESRI_SECTION1_236FB02EB59E427EA5D97A14BE32737A">硬件要求</a></li><li><a href="#SV_MOBILE_REQS">移动要求</a></li><li><a href="#ESRI_SECTION1_024E404971864F418E2929B51D2FE1F4">Web 样式安装</a></li><li><a href="#ESRI_SECTION1_BB22F4AF75F4468BAA45EAFC86498B4D">解决渲染问题</a></li></ol>
+			    </div>
+			    
+			    
+	  		</div>
+		
+    
+   <!--googleon: all-->
+
+
+
+
+          
+        </div>
+        <!-- ENDPAGECONTENT -->
+
+      </div>
+
+    </div>  <!-- End of wrapper -->
+
+  <footer class="footer leader-3 link-dark-gray" role="contentinfo">
+    <div class="grid-container">
+      <div class="row">
+        <nav class="column-6">
+          <h6 data-langlabel="arcgis-for-server">Arc<span>GIS Enterprise</span></h6>
+          <ul class="list-plain">
+            <li><a data-langlabel="home" href="../../../../zh-CN/">主页</a></li>
+            <li><a data-langlabel="portal" href="../../../../zh-CN/portal/">Portal</a></li>
+            <li><a data-langlabel="server" href="../../../../zh-CN/server/">Server</a></li>
+            <li><a data-langlabel="data-store" href="../../../../zh-CN/data-store/">Data Stores</a></li>
+            <li><a data-langlabel="cloud" href="../../../../zh-CN/cloud/">云</a></li>
+            <li><a data-langlabel="apps" href="../../../../zh-CN/apps/">应用程序</a></li>
+            <li><a data-langlabel="documentation" href="../../../../zh-CN/documentation/">文档</a></li>
+          </ul>
+        </nav>
+
+        
+  <nav class="column-6">
+    <h6 data-langlabel="arcgis-platform">ArcGIS 平台</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="arcgis" href="//www.arcgis.com/">ArcGIS Online</a></li>
+      <li><a data-langlabel="arcgis-for-professionals" href="//pro.arcgis.com/">ArcGIS Pro</a></li>
+      <li><a data-langlabel="arcgis-for-server" href="//enterprise.arcgis.com/">ArcGIS Enterprise</a></li>
+      <li><a data-langlabel="arcgis-for-developers" href="https://developers.arcgis.com/">ArcGIS for Developers</a></li>
+      <li><a data-langlabel="arcgis-solutions" href="//solutions.arcgis.com/">ArcGIS Solutions</a></li>
+      <li><a data-langlabel="arcgis-marketplace" href="//marketplace.arcgis.com/">ArcGIS Marketplace</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <h6 data-langlabel="about-esri">关于 Esri</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="about-us" href="//www.esri.com/about-esri/">关于我们</a></li>
+      <li><a data-langlabel="careers" href="//www.esri.com/careers/">招贤纳士</a></li>
+      <li><a data-langlabel="insiders-blog" href="https://www.esri.com/about/newsroom/blog/">Esri 博客</a></li>
+      <li><a data-langlabel="user-conference" href="//www.esri.com/events/user-conference/index.html">用户大会</a></li>
+      <li><a data-langlabel="developer-summit" href="//www.esri.com/events/devsummit/index.html">开发者峰会</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <a class="esri-logo" href="//www.esri.com/" aria-label="Esri Home"></a>
+    <section class="footer-social-nav leader-1">
+            <a class="icon-social-twitter" aria-label="Esri on Twitter" href="https://twitter.com/Esri/"></a>
+            <a class="icon-social-facebook" aria-label="Esri on Facebook" href="https://www.facebook.com/esrigis/"></a>
+            <a class="icon-social-github" aria-label="Esri on GitHub" href="//esri.github.io/"></a>
+            <a class="icon-social-contact" aria-label="Contact Esri" href="//www.esri.com/about-esri/contact/"></a>
+    </section>
+	  
+  </nav>
+  
+  <div class="column-24 leader-1">
+    <p class="font-size--3"><a href="http://www.esri.com/legal/copyright-trademarks">Copyright &copy; 2019 Esri.</a> All rights reserved. | <a href="http://www.esri.com/legal/privacy/">隐私政策</a> | <a href="http://www.esri.com/legal/software-license">法律声明</a></p>
+  </div>
+  
+
+
+      </div>
+    </div>
+  </footer>
+  <!--googleoff: all-->
+
+  
+  
+	<script src="../../../../zh-CN/assets/js/init.js" type="text/javascript"></script>
+	<!--<script src="../../../../zh-CN/assets/js/drop-down.js" type="text/javascript"></script>-->
+	<script src="../../../../zh-CN/assets/js/search/searchform.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/cdn/js/link-modifier.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/cdn/js/sitewide.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/cdn/js/libs/highlight.pack.js" type="text/javascript"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+
+
+  
+    
+
+  <script src="../../../../zh-CN/cdn/js/affix.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    $(function () {
+          var appendFlg = true;
+
+          $("#bigmac")
+          .on("affixed.bs.affix", function (evt) {
+            if (appendFlg) {
+              $("<a class='crumb' href='#'>Scene Viewer 要求</a>").insertAfter ($("#bigmac nav a").last());
+              appendFlg = false;
+            }
+          })
+          .on ("affix-top.bs.affix", function(evt) {
+            if (!appendFlg) {
+              $("#bigmac nav a").last().remove();
+            }
+            appendFlg = true;
+          })
+    })
+  </script>
+  
+        <script type="text/javascript">
+          window.doctoc = {
+            pubID: "583",
+            tpcID: "332",
+            
+              prefix: "使用",
+              prefixUrl: "/zh-cn/portal/latest/use/",
+          
+            hideToc: false
+          }
+        </script>
+
+        <script type="text/javascript" src="../../../../zh-CN/portal/latest/use/583.js" ></script>
+        <script type="text/javascript" src="../../../../zh-CN/cdn/calcite/js/protoc.js" ></script>
+        
+        
+
+  <noscript>
+        <p>
+            <a href="flisting.htm">flist</a>
+        </p>
+    </noscript>
+    <script type="text/javascript"></script>
+  
+  
+    
+    
+
+  </body>
+</html>

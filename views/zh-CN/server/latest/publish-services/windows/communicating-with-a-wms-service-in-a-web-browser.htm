@@ -1,0 +1,771 @@
+
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>  <html class="ie lt-ie9 lt-ie8 lt-ie7 ie6" dir="ltr"> <![endif]-->
+<!--[if IE 7]>     <html class="ie lt-ie9 lt-ie8 ie7" dir="ltr"> <![endif]-->
+<!--[if IE 8]>     <html class="ie lt-ie9 ie8" dir="ltr"> <![endif]-->
+<!--[if IE 9]>     <html class="ie ie9" dir="ltr"> <![endif]-->
+<!--[if !IE]><!--> <html dir="ltr" lang="zh-CN"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>在 Web 浏览器中与 WMS 服务进行通信&mdash;文档 | ArcGIS Enterprise 文档</title>
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+    <script>
+      var docConfig = {
+        locale: 'zh-CN'
+        ,localedir: 'zh-cn'
+        ,langSelector: ''
+        
+        ,relativeUrl: false
+        
+
+        ,searchformUrl: '/search/'
+        ,tertiaryNavIndex: ''
+
+        
+      };
+    </script>
+	 
+
+
+    
+    <!--[if lt IE 9]>
+      <script src="../../../../../zh-CN/cdn/js/libs/html5shiv.js" type="text/javascript"></script>
+      <script src="../../../../../zh-CN/cdn/js/libs/selectivizr-min.js" type="text/javascript"></script>
+      <script src="../../../../../zh-CN/cdn/js/libs/json2.js" type="text/javascript"></script>
+      <script src="../../../../../zh-CN/cdn/js/libs/html5shiv-printshiv.js" type="text/javascript" >
+
+    <![endif]-->
+
+     <!--[if lt IE 11]>
+    <script>
+      $$(document).ready(function(){
+        $$(".hideOnIE").hide();
+      });
+    </script>
+    <![endif]-->
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<link href="../../../../../zh-CN/assets/img/favicon.ico" rel="shortcut icon" >
+	<link href="../../../../../zh-CN/assets/css/screen.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/cdn/calcite/css/documentation.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/assets/css/print.css" media="print" type="text/css" rel="stylesheet" />
+
+	<!--
+	<link href="../../../../../zh-CN/assets/css/screen_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/assets/css/documentation/base_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/assets/css/print_l10n.css" media="print" type="text/css" rel="stylesheet" />
+	-->
+	
+	
+		<script src="../../../../../zh-CN/cdn/js/libs/jquery.1.9.1.min.js" type="text/javascript"></script>
+	
+	<script src="../../../../../zh-CN/cdn/js/libs/jquery.cookie.js" type="text/javascript"></script>
+	<link href="../../../../../zh-CN/cdn/css/colorbox.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/cdn/css/colorbox_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<script src="../../../../../zh-CN/cdn/js/libs/jquery.colorbox-min.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/assets/js/video-init.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/assets/js/sitecfg.js" type="text/javascript"></script>
+	
+		<script src="../../../../../zh-CN/assets/js/signIn.js" type="text/javascript"></script>
+	
+
+	<!--- Language Picker -->
+	<script src="../../../../../zh-CN/assets/js/locale/l10NStrings.js" type="text/javascript"></script>
+	
+		 
+	
+
+	<script src="../../../../../zh-CN/assets/js/calcite-web.js" type="text/javascript"></script>
+
+
+
+  <!--- search MD -->
+    <META name="description" content="您可以使用多种 URL 参数在 Web 浏览器中与 WMS 服务进行通信。"><META name="last-modified" content="2019-12-6"><META name="product" content="arcgis-server-windows,arcgis-enterprise-windows"><META name="sub_category" content="ArcGIS Server (Windows)"><META name="search-collection" content="help"><META name="content_type_label" content="帮助主题"><META name="sub_category_label" content="ArcGIS Server (Windows)"><META name="search-category" content="help-general"><META name="subject_label" content="服务"><META name="version" content="10.8"><META name="content_type" content="Help Topic"><META name="subject" content="SERVICES"><META name="content-language" content="zh-cn">
+    <!--- search MD -->
+
+  
+  <script src="../../../../../zh-CN/assets/js/switchers/server-1.js" type="text/javascript"></script>
+  
+      
+
+</head>
+
+<!--
+      pub: GUID-F157DF68-7F60-4427-A561-AD2F0FA30861=22
+      tpc: GUID-7491402B-DB79-4A9E-B0F4-C8EBF4321E5A=10
+      -->
+
+
+<!-- variable declaration, if any -->
+<!-- can change following macro to set variable once we are on Jinja 2.8 -->
+
+
+
+
+
+<body class="claro zh-CN server">
+  
+
+  <!-- Drawer location -->
+  <div class="drawer drawer-left js-drawer" data-drawer="top-nav">
+        <nav class="drawer-nav" role="navigation">
+          <aside class="side-nav">
+            <h2 class="side-nav-title">Arc<span>GIS</span> Enterprise</h2>
+            <form id="helpSearchForm" class="margin-left-half margin-right-half leader-half trailer-half drawer-search-form" method="GET">
+              <input type="search" name="q"  placeholder="搜索 ArcGIS Server 10.8 帮助">
+              <input type="hidden" name="collection" value="help" />
+              <input type="hidden" name="product" value="arcgis-server-windows" />
+              <input type="hidden" name="version" value="10.8" />
+              <input type="hidden" name="language" value="zh-CN" />
+            </form>    
+             <a id="nav-portal" data-langlabel="portal" href="../../../../../zh-CN/portal/" class="side-nav-link">Portal</a>
+             
+            <a id="all-servers" data-langlabel="all-servers" href="../../../../../zh-CN/server/" class="side-nav-link">所有服务器</a>
+            <a id="gis-server" data-langlabel="gis-server" href="../../../../../zh-CN/server/" class="side-nav-link">GIS Server</a>
+            <a id="image-server" data-langlabel="image-server" href="../../../../../zh-CN/image/" class="side-nav-link">Image Server</a>
+            <a id="geo-analytics-server" data-langlabel="geo-analytics-server" href="../../../../../zh-CN/geoanalytics/" class="side-nav-link">GeoAnalytics Server</a>
+            <a id="geoevent-server" data-langlabel="geoevent-server" href="../../../../../zh-CN/geoevent/" class="side-nav-link">GeoEvent Server</a>
+            <a id="notebook-server" data-langlabel="notebook-server" href="../../../../../zh-CN/notebook/" class="side-nav-link">Notebook Server</a>
+            <a id="nav-data-store" data-langlabel="data-store" href="../../../../../zh-CN/data-store/" class="side-nav-link">Data Stores</a>
+            <a id="nav-cloud" data-langlabel="cloud" href="../../../../../zh-CN/cloud/" class="side-nav-link">云</a>
+            <a id="nav-apps" data-langlabel="apps" href="../../../../../zh-CN/apps/" class="side-nav-link">应用程序</a>
+            <a id="nav-doc" data-langlabel="documentation" href="../../../../../zh-CN/documentation/" class="side-nav-link">文档</a>
+
+          </aside>
+        </nav>
+    </div>
+
+    <!-- user navigation collapses to drawer on mobile -->
+    
+    <div class="drawer drawer-right js-drawer hide-if-logged-out logged-in-navigation" data-drawer="user-nav">
+      <nav class="drawer-nav">
+        <aside class="side-nav">
+          <a class="side-nav-link agolProfile" href="#">我的个人资料</a>
+          <a class="side-nav-link icon-ui-sign-out js-log-out" href="#">登出</a>
+        </aside>
+      </nav>
+    </div>
+    
+<!-- End of drawer -->
+
+  
+  <div class="wrapper">
+      <!--googleoff: all-->
+
+      <header class="top-nav" data-skin="learn">
+        <a class="skip-to-content" href="#skip-to-content">Skip To Content</a>
+        <div class="grid-container">
+          <div class="column-24">
+
+
+            <!--<div class="top-nav-title-wrapper text-center ">-->
+              <a href='../../../../../zh-CN/' class="top-nav-title tablet-hide"><span>Arc</span>GIS  Enterprise</a>
+              <a href='../../../../../zh-CN/' class="icon-ui-menu top-nav-title js-drawer-toggle tablet-show" data-drawer="top-nav"><span>Arc</span>GIS Enterprise</a>
+            <!--</div> -->
+
+          
+            <nav role="navigation" class="top-nav-list left tablet-hide">
+              <a id="nav-portal" data-langlabel="portal" href="../../../../../zh-CN/portal/" class="top-nav-link">Portal</a>
+
+                <div class="dropdown js-dropdown ">
+                  <a class="top-nav-link js-dropdown-toggle" tabindex="0" aria-haspopup="true" aria-expanded="false" href="#">Servers</a>
+                  <nav class="dropdown-menu featured" role="menu">
+                    <ul class="dropdown-sublist-featured">
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/get-started/latest/windows/additional-server-deployment.htm" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path  d="M42.92 6.1H4.12v8.566l.833.832-.835.833-.018 7.332.845.847-.825.824V33.9h25v5.2h-2v1.075H8.02v.8h19.1v.925h4.8v-.925H40v-.8h-8.08V39.1h-2v-5.2h13v-8.566l-.834-.834.835-.834v-7.332l-.835-.834.835-.834zm-11.8 35h-3.2v-1.2h3.2zm11-8H4.92v-7.434l.767-.766h35.668l.765.766zm0-9.766l-.766.766H5.666l-.766-.767.017-6.669.766-.764h35.671l.766.766zm0-9l-.766.766H5.687l-.766-.766V6.9h37.2zM19 11.9h-2v-.8h2zm-4 0h-2v-.8h2zm-4 0H9v-.8h2zm6 8.2h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9zm8 9h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9z"/></svg></span>
+                          <span class="sublink-text">所有服务器</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/server/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M45.98 33.575a.616.616 0 0 0-.335-.51l-3.362-2.03 3.362-2.031a.556.556 0 0 0 0-1.02l-11.1-6.704a1.293 1.293 0 0 0-1.112 0L22.33 27.982a.556.556 0 0 0 0 1.02l3.36 2.03-3.358 2.03a.556.556 0 0 0-.002 1.021l3.322 2.006-3.324 2.008a.555.555 0 0 0 .002 1.017l11.102 6.703a1.25 1.25 0 0 0 1.11.002l11.104-6.706a.556.556 0 0 0 0-1.02l-3.32-2.006 3.318-2.004a.607.607 0 0 0 .335-.509zM33.837 21.97c.026-.01.286-.005.29-.005l10.814 6.53-10.8 6.523c-.028.01-.284.005-.294.006l-10.813-6.53zm11.105 16.636l-10.8 6.523a2.564 2.564 0 0 1-.295.006l-10.81-6.529 3.39-2.047 7.004 4.23a1.083 1.083 0 0 0 .557.131 1.101 1.101 0 0 0 .554-.13l7.01-4.233zM34.14 40.098a2.545 2.545 0 0 1-.294.006l-10.812-6.53 3.43-2.073 6.97 4.208a1.25 1.25 0 0 0 1.107-.001l6.966-4.206 3.431 2.073zM9 8H7V7h2zm8 8h-2v-1h2zm-4-8h-2V7h2zm4 0h-2V7h2zm-4 8h-2v-1h2zm7.316 11.1H3.9v-6.434l.766-.766h35.668l.766.766v2.12l.8.483v-2.935l-.826-.826.826-.845v-6.329l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9h16.88a2.632 2.632 0 0 1 .336-.8zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zm0 8v-5.668l.766-.766h35.668l.766.766v5.67l-.746.764H4.666zM15 24v-1h2v1zm-4 0v-1h2v1zm-2-8H7v-1h2zm-2 8v-1h2v1z"/></svg></span>
+                          <span class="sublink-text">GIS Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/image/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 8h-2V7h2zm-4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm8 8h-2v1h2zm-8 0H7v1h2zm4 9v-1h-2v1zm-4 0v-1H7v1zm8 0v-1h-2v1zm4 3.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V21h-.8v-.334l-.766-.766H4.666l-.766.766V27.1H21zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zm40.234 4v21.8H23.1V23.1zm-.8 16.366L39.466 44.1h2.868l1.766-1.766zm-20.2-9.932l5.634-5.634h-2.868L23.9 26.666zm6.2-5.068L24.466 30.1h2.868l2.766-2.766zM28.466 30.1H30.1v-1.634zm2.434 0h6.2v-6.2h-6.2zm-7 7h6.2v-6.2h-6.2zm7 0h6.2v-6.2h-6.2zm0 6.434l5.634-5.634h-2.868L30.9 40.666zm7-7l5.634-5.634h-2.868L37.9 33.666zm1.634-5.634H37.9v1.634zm-8.634 7v1.634l1.634-1.634zm.566 6.2h2.868l2.766-2.766v-2.868zm6.434-3.566l2.634-2.634H37.9zM35.466 44.1H37.1v-1.634zm2.434 0h.434l5.766-5.766V37.9h-2.434L37.9 41.666zm6.2-8.634L42.466 37.1H44.1zm0-4L38.466 37.1h2.868l2.766-2.766zm0-7.566h-6.2v6.2h6.2zm-20.2 0v1.634l1.634-1.634zm0 20.2h6.2v-6.2h-6.2zm20.2 0v-.634l-.634.634z"/></svg></span>
+                          <span class="sublink-text">Image Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/geoanalytics/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 16h-2v-1h2zm-8 8v-1H7v1zm8 0v-1h-2v1zM13 7h-2v1h2zm4 0h-2v1h2zM9 7H7v1h2zm21.45 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V27.9h-1.464l-.801-.8H41.1v-6.434l-.766-.766H4.666l-.766.766V27.1h27.15zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM13 24v-1h-2v1zm0-9h-2v1h2zm-4 0H7v1h2zm26.672 27.148A1.87 1.87 0 0 1 35.9 43a1.91 1.91 0 1 1-3.763-.222l-9.845-3.414A1.88 1.88 0 0 1 21 39.9a1.9 1.9 0 1 1 1.474-3.084l4.692-2.346A1.878 1.878 0 0 1 27.1 34a1.902 1.902 0 0 1 1.9-1.9 1.867 1.867 0 0 1 .781.191l3.788-5.05A1.88 1.88 0 0 1 33.1 26a1.9 1.9 0 1 1 3.491 1.026l4.889 4.888c-.069.056-.144.1-.21.162a3.986 3.986 0 0 0-.358.402l-4.883-4.883A1.889 1.889 0 0 1 35 27.9a1.867 1.867 0 0 1-.781-.191l-3.788 5.049a1.868 1.868 0 0 1 .437.965l9.204.614c-.018.11-.049.218-.058.33A3.93 3.93 0 0 0 40 35c0 .046.01.09.01.135l-9.185-.612A1.913 1.913 0 0 1 29 35.9a1.889 1.889 0 0 1-1.474-.716l-4.692 2.346a1.878 1.878 0 0 1 .066.47 1.9 1.9 0 0 1-.105.625c-.007.02-.022.036-.03.056l9.63 3.34a1.87 1.87 0 0 1 2.786-.505l5.415-4.437c.067.108.127.22.204.322a3.9 3.9 0 0 0 .292.306zM33.9 26a1.092 1.092 0 0 0 .43.872 1.12 1.12 0 0 0 1.42-.068A1.1 1.1 0 1 0 33.9 26zm-6 8a1.1 1.1 0 0 0 2.196.093 1.135 1.135 0 0 0-.426-.965A1.087 1.087 0 0 0 29 32.9a1.101 1.101 0 0 0-1.1 1.1zm-5.8 4a1.098 1.098 0 1 0-.06.362A1.101 1.101 0 0 0 22.1 38zm13 5a1.1 1.1 0 1 0-2.2 0 1.1 1.1 0 0 0 2.2 0zm10.8-8a1.9 1.9 0 1 1-3.8 0c0-.053.003-.105.007-.158A1.9 1.9 0 0 1 45.9 35zm-.8 0a1.1 1.1 0 0 0-2.196-.093 1.153 1.153 0 0 0 .216.752A1.1 1.1 0 0 0 45.1 35z"/></svg></span>
+                          <span class="sublink-text">GeoAnalytics Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/geoevent/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M13 8h-2V7h2zm4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm12.418 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826v2.117c-.259-.177-.53-.337-.8-.497v-1.288l-.766-.766H4.666l-.766.766V27.1h17.933c-.148.26-.283.53-.415.8zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM9 24v-1H7v1zm4-9h-2v1h2zm0 9v-1h-2v1zm-4-9H7v1h2zm8 9v-1h-2v1zm16.9 2h-.8v8.9H39v-.8h-5.1zm.1-3.901a11.9 11.9 0 1 0 11.9 11.9 11.914 11.914 0 0 0-11.9-11.9zm0 23a11.1 11.1 0 1 1 11.1-11.1 11.112 11.112 0 0 1-11.1 11.1z"/></svg></span>
+                          <span class="sublink-text">GeoEvent Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/notebook/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M22 27.1H3.9v-6.434l.766-.766h18.576a5.262 5.262 0 0 1 .83-.8H4.666l-.766-.766v-5.668l.766-.766h35.668l.766.766V18h.8v-5.666l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9H22zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zM9 8H7V7h2zm8 0h-2V7h2zm-4 0h-2V7h2zm2 16v-1h2v1zm-4 0v-1h2v1zm-4 0v-1h2v1zm0-8v-1h2v1zm8 0v-1h2v1zm-4 0v-1h2v1zm18.9 8.1h-1.8v1.8h1.8zm-.8 1h-.2v-.2h.2zm15.498-4.48a2.727 2.727 0 0 0-1.62-.5v-.02H27.25a3.154 3.154 0 0 0-3.15 3.15V38.1h-1.68a3.386 3.386 0 0 0-2.872 1.58 3.49 3.49 0 0 0-.157 3.419 3.241 3.241 0 0 0 2.954 1.801h15.161a3.404 3.404 0 0 0 3.394-3.4V26.9h5v-3.65a3.224 3.224 0 0 0-1.302-2.63zM22.345 44.1a2.44 2.44 0 0 1-2.23-1.341 2.706 2.706 0 0 1 .11-2.65A2.588 2.588 0 0 1 22.42 38.9h12.89a3.395 3.395 0 0 0 0 5.2zM40.1 23.192V41.5a2.6 2.6 0 1 1-2.6-2.6v-.8H24.9V23.25a2.352 2.352 0 0 1 2.35-2.35h13.795a3.183 3.183 0 0 0-.945 2.292zm5 2.908h-4.2v-2.908a2.274 2.274 0 0 1 1.44-2.18 1.944 1.944 0 0 1 1.791.259 2.423 2.423 0 0 1 .97 1.979zm-17.1 5h9v.8h-9zm0 3h7v.8h-7zm0-6h9v.8h-9zm4-3h5v.8h-5z"/></svg></span>
+                          <span class="sublink-text">Notebook Server</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+
+              <a id="nav-data-store" data-langlabel="data-store" href="../../../../../zh-CN/data-store/" class="top-nav-link">Data Stores</a>
+              <a id="nav-cloud" data-langlabel="cloud" href="../../../../../zh-CN/cloud/" class="top-nav-link">云</a>
+              <a id="nav-apps" data-langlabel="apps" href="../../../../../zh-CN/apps/" class="top-nav-link">应用程序</a>
+            </nav>
+
+
+            
+            
+            
+
+            <div class="margin-left-1 top-nav-list right hide-if-logged-in logged-out-navigation">
+               
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+              
+              <a data-langlabel="sign-in" id="login-link" class="icon-ui-user top-nav-link link-blue login-link" href="#">登录</a>
+              
+            </div>
+
+            
+            <nav class="margin-left-1 top-nav-list right hide-if-logged-out logged-in-navigation">
+              
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+             
+              <div class="dropdown js-dropdown right">
+
+                <div class="tablet-show top-nav-link">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a href="#" data-drawer="user-nav" class="user-nav-name js-drawer-toggle" data-first-name></a>
+                </div>
+
+                <div class="tablet-hide top-nav-link js-dropdown-toggle">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a class="user-nav-name top-nav-dropdown dropdown-btn" data-first-name>&nbsp;</a>
+                </div>
+
+                <nav class="dropdown-menu dropdown-right">
+                
+                  <a class="dropdown-link agolProfile" id="agolProfile" href="#">我的个人资料</a>
+                  <a class="dropdown-link js-log-out" id="agolLogout" href="#">登出</a>
+                </nav>
+              </div>
+            </nav>
+            
+
+            
+          </div>
+        </div>
+      </header>
+
+      <div class="js-search search-overlay">
+        <div class="search-content" role="dialog" aria-labelledby="search">
+          <form method="GET" id="helpSearchForm">
+            <label>
+              搜索 ArcGIS Server 10.8 帮助
+              <div class="search-bar">
+                <input type="search" name="q"  placeholder="搜索 ArcGIS Server 10.8 帮助" class="search-input js-search-input">
+                <input type="hidden" name="collection" value="help" />
+                <input type="hidden" name="product" value="arcgis-server-windows" />
+                <input type="hidden" name="version" value="10.8" />
+                <input type="hidden" name="language" value="zh-CN" />
+              </div>
+            </label>
+            <input type="hidden" name="relativePath" value="../../../../../" /><button type="submit" class="btn btn-large right">搜索</button>
+          </form>
+        </div>
+      </div>
+
+      <!--googleon: all-->
+
+      <div id="skip-to-content">
+        <!--googleoff: all-->
+        <header class="sub-nav sub-nav-learn">
+          <div class="grid-container">
+            
+            <div class="column-24">
+              <div style="display:table;" class="sdk-home-banner">
+                <div class="sdk-home-banner-content">
+                  <h1 class="sub-nav-title link-white">ArcGIS Server</h1>
+                </div>
+              </div>
+            </div>
+
+            <div class="column-24">
+              <nav class='sub-nav-list tablet-hide'><a class="sub-nav-link" href="../../../../../zh-CN/server/" target="_top" title="ArcGIS Server 的概述和文档">主页</a><a class="sub-nav-link" href="../../../../../zh-CN/server/latest/get-started/windows/" target="_top" title="了解有关 ArcGIS Server 和服务器角色的信息">简介</a><a class="sub-nav-link" href="../../../../../zh-CN/server/latest/deploy/windows/" target="_top" title="构建、配置和升级部署">部署</a><a class="sub-nav-link" href="../../../../../zh-CN/server/latest/manage-data/windows/" target="_top" title="管理企业的空间数据">管理数据</a><a class="sub-nav-link is-active" href="../../../../../zh-CN/server/latest/publish-services/windows/" target="_top" title="使用 GIS 服务">管理服务</a><a class="sub-nav-link" href="../../../../../zh-CN/server/latest/create-web-apps/windows/" target="_top" title="创建 Web 应用程序和可打印地图">共享</a><a class="sub-nav-link" href="../../../../../zh-CN/server/latest/administer/windows/" target="_top" title="管理和保护 ArcGIS Server">管理</a><a class="sub-nav-link" href="../../../../../zh-CN/server/latest/develop/windows/" target="_top" title="构建扩展模块并自动执行常见任务">开发</a></nav><select class='tablet-show select-full trailer-half js-select-nav'><option value="../../../../../zh-CN/server/">主页</option><option value="../../../../../zh-CN/server/latest/get-started/windows/">简介</option><option value="../../../../../zh-CN/server/latest/deploy/windows/">部署</option><option value="../../../../../zh-CN/server/latest/manage-data/windows/">管理数据</option><option selected="true" value="../../../../../zh-CN/server/latest/publish-services/windows/">管理服务</option><option value="../../../../../zh-CN/server/latest/create-web-apps/windows/">共享</option><option value="../../../../../zh-CN/server/latest/administer/windows/">管理</option><option value="../../../../../zh-CN/server/latest/develop/windows/">开发</option></select>
+            </div>
+
+          </div>
+        </header>
+        <!--googleon: all-->
+       
+        <!-- content goes here -->
+        <div class="grid-container ">
+          
+
+            
+              
+  <!--BREADCRUMB-BEG--><div id="bigmac" class="sticky-breadcrumbs trailer-2" data-spy="affix" data-offset-top="180"> </div><!--BREADCRUMB-END-->
+  <!--googleoff: all-->
+    <div class="column-5 tablet-column-12 trailer-2 ">
+      <aside class="js-accordion accordion reference-index" aria-live="polite" role="tablist">
+        <div></div>
+      </aside>
+
+      <div class="js-sticky scroll-show tablet-hide leader-1 back-to-top" data-top="0" style="top: 0px;">
+        <a href="#" class="btn btn-fill btn-clear">返回顶部</a>
+      </div>
+    </div>
+  <!--googleon: all-->
+  
+            
+            
+            
+	
+		<div class="column-13  pre-1 content-section">
+	
+		<header class="trailer-1"><h1>在 Web 浏览器中与 WMS 服务进行通信</h1></header>
+
+		 
+	<!--googleoff: all-->
+	
+		
+				<aside id="main-toc-small" class="js-accordion accordion tablet-show trailer-1">
+			      <div class="accordion-section">
+			        <h4 class="accordion-title">在本主题中</h4>
+			        <div class="accordion-content list-plain">
+			          <ol class="list-plain pre-0 trailer-0"><li><a href="#GUID-EF5721D1-C928-447A-8EA5-5AF60FFE2EFC">WMS 请求和响应</a></li><li><a href="#GUID-90AAB875-0337-451B-86BD-FC5E30F6990A">WMS 请求参数</a></li><li><a href="#GUID-5B1493CF-E8F2-4EAA-9EE0-E96265DA2ED3">WMS GetCapabilities 请求 URL 的参数</a></li><li><a href="#GUID-065A3C56-2B13-473C-9765-E2D1545539B8">WMS GetMap 请求 URL 的参数</a></li><li><a href="#GUID-59B315F3-33F1-48F9-BD6E-53FCDDFC07CC">WMS GetFeatureInfo 请求 URL 的参数</a></li><li><a href="#ESRI_SECTION1_184B3AAB5FED4A2CBA8D41FC8F0EDF90">WMS GetStyles 请求的参数</a></li><li><a href="#ESRI_SECTION1_E788078769A94BFFA77684C817AE90E1">WMS GetLegendGraphic 请求的参数</a></li></ol>
+			        </div>
+			      </div>
+			     </aside>
+		
+    
+   <!--googleon: all-->
+
+
+		<main>
+			
+	
+    	
+    
+
+
+			
+<p id="GUID-7008ACBA-FA8A-4324-B99C-0D6FF90E7E78">您可以使用 URL 参数在 Web 浏览器中与 WMS 服务进行通信。</p><section class="section1 padded-anchor" id="GUID-EF5721D1-C928-447A-8EA5-5AF60FFE2EFC" purpose="section1"><h2>WMS 请求和响应</h2><p id="GUID-AE8289D3-F1F3-4B25-A9BB-4323404B3AB1">兼容 WMS 服务器所支持的每种操作的在线资源都是一个 HTTP 统一资源定位器 (URL)，所以 WMS 服务可被视为一项表述性状态转移 (REST) 服务。与标准 Web 服务不同，使用 WMS 服务不需要 SOAP 客户端，Web 浏览器是其最简单的客户端。通过将 URL 请求发送到服务器并在浏览器中查看 XML 文档或图像形式的相应响应，您可以获取 WMS 服务的服务级别元数据、地图图像或要素属性值。</p><p id="GUID-AAE4801E-978C-4FE1-A9B7-F52D9DE76B51">以下是一些 WMS 服务所支持的每项操作的请求和响应的示例。</p><section class="section2 padded-anchor" id="ESRI_SECTION2_DE4A2F3AA7C24C298B615290551B9456" purpose="section2"><h3>GetCapabilities</h3><p id="GUID-073CA2FC-3113-4E1F-8496-891016F769EA"><b>请求</b></p><p id="GUID-F4200FA1-D52A-47EA-BA20-E0BE27DEEA25"><a target="_blank" class="xref xref" href="http://sampleserver1.arcgisonline.com/ArcGIS/services/Specialty/ESRI_StatesCitiesRivers_USA/MapServer/WMSServer?version=1.3.0&amp;request=GetCapabilities&amp;service=WMS">http://sampleserver1.arcgisonline.com/ArcGIS/services/Specialty/ESRI_StatesCitiesRivers_USA/MapServer/WMSServer?version=1.3.0&amp;amp;request=GetCapabilities&amp;amp;service=WMS</a></p><p id="GUID-A49D24B3-7143-44EC-859D-25F65F1BD093"><b>XML 响应</b></p><p id="GUID-59538F29-8D79-4E07-8269-FCE69375E892"><section class="codeblock padded-anchor" purpose="codeblock"><div class="codeblockbody"><pre><code class="xml">&lt;WMS_Capabilities version=&quot;1.3.0&quot; xsi:schemaLocation=&quot;http://www.opengis.net/wms http://schemas.opengis.net/wms/1.3.0/capabilities_1_3_0.xsd http://www.esri.com/wms http://sampleserver1a.arcgisonline.com/ArcGIS/services/Specialty/ESRI_StatesCitiesRivers_USA/MapServer/WMSServer?version=1.3.0&amp;service=WMS&amp;request=GetSchemaExtension&quot;&gt;
+ &lt;Service&gt;
+  &lt;Name&gt;WMS&lt;/Name&gt;
+  &lt;Title&gt;Specialty/ESRI_StatesCitiesRivers_USA&lt;/Title&gt;
+  &lt;Abstract&gt;WMS&lt;/Abstract&gt;
+  &lt;KeywordList&gt;
+   &lt;Keyword&gt;&lt;/Keyword&gt;
+  &lt;/KeywordList&gt;
+  &lt;OnlineResource xlink:type=&quot;simple&quot; xlink:href=&quot;http://sampleserver1a.arcgisonline.com/ArcGIS/services/Specialty/ESRI_StatesCitiesRivers_USA/MapServer/WMSServer&quot;/&gt;
+  &lt;ContactInformation&gt;
+   &lt;ContactPersonPrimary&gt;
+    &lt;ContactPerson&gt;&lt;/ContactPerson&gt;
+    &lt;ContactOrganization&gt;&lt;/ContactOrganization&gt;
+   &lt;/ContactPersonPrimary&gt;
+    &lt;ContactPosition&gt;&lt;/ContactPosition&gt;
+    &lt;ContactAddress&gt;
+     &lt;AddressType&gt;&lt;/AddressType&gt;
+     &lt;Address&gt;&lt;/Address&gt;
+     &lt;City&gt;&lt;/City&gt;
+     &lt;StateOrProvince&gt;&lt;/StateOrProvince&gt;
+     &lt;PostCode&gt;&lt;/PostCode&gt;
+     &lt;Country&gt;&lt;/Country&gt;
+    &lt;/ContactAddress&gt;
+    &lt;ContactVoiceTelephone&gt;&lt;/ContactVoiceTelephone&gt;
+    &lt;ContactFacsimileTelephone&gt;&lt;/ContactFacsimileTelephone&gt;
+    &lt;ContactElectronicMailAddress&gt;&lt;/ContactElectronicMailAddress&gt;
+  &lt;/ContactInformation&gt;
+  &lt;Fees&gt;&lt;/Fees&gt;
+  &lt;AccessConstraints&gt;&lt;/AccessConstraints&gt;
+  &lt;MaxWidth&gt;2048&lt;/MaxWidth&gt;
+  &lt;MaxHeight&gt;2048&lt;/MaxHeight&gt;
+ &lt;/Service&gt;
+ &lt;Capability&gt;
+  &lt;Request&gt;
+   &lt;GetCapabilities&gt;
+    &lt;Format&gt;application/vnd.ogc.wms_xml&lt;/Format&gt;
+    &lt;Format&gt;text/xml&lt;/Format&gt;
+    &lt;DCPType&gt;
+     &lt;HTTP&gt;
+      &lt;Get&gt;
+       &lt;OnlineResource xlink:type=&quot;simple&quot; xlink:href=&quot;http://sampleserver1a.arcgisonline.com/ArcGIS/services/Specialty/ESRI_StatesCitiesRivers_USA/MapServer/WMSServer&quot;/&gt;
+      &lt;/Get&gt;
+     &lt;/HTTP&gt;
+    &lt;/DCPType&gt;
+   &lt;/GetCapabilities&gt;
+   &lt;GetMap&gt;
+    &lt;Format&gt;image/bmp&lt;/Format&gt;
+    &lt;Format&gt;image/jpeg&lt;/Format&gt;
+    &lt;Format&gt;image/tiff&lt;/Format&gt;
+    &lt;Format&gt;image/png&lt;/Format&gt;
+    &lt;Format&gt;image/png8&lt;/Format&gt;
+    &lt;Format&gt;image/png24&lt;/Format&gt;
+    &lt;Format&gt;image/png32&lt;/Format&gt;
+    &lt;Format&gt;image/gif&lt;/Format&gt;
+    &lt;Format&gt;image/svg+xml&lt;/Format&gt;
+    &lt;DCPType&gt;
+     &lt;HTTP&gt;
+      &lt;Get&gt;
+       &lt;OnlineResource xlink:type=&quot;simple&quot; xlink:href=&quot;http://sampleserver1a.arcgisonline.com/ArcGIS/services/Specialty/ESRI_StatesCitiesRivers_USA/MapServer/WMSServer&quot;/&gt;
+      &lt;/Get&gt;
+     &lt;/HTTP&gt;
+    &lt;/DCPType&gt;
+   &lt;/GetMap&gt;
+   &lt;GetFeatureInfo&gt;
+    &lt;Format&gt;application/vnd.esri.wms_raw_xml&lt;/Format&gt;
+    &lt;Format&gt;application/vnd.esri.wms_featureinfo_xml&lt;/Format&gt;
+    &lt;Format&gt;application/vnd.ogc.wms_xml&lt;/Format&gt;
+    &lt;Format&gt;text/xml&lt;/Format&gt;
+    &lt;Format&gt;text/html&lt;/Format&gt;
+    &lt;Format&gt;text/plain&lt;/Format&gt;
+    &lt;DCPType&gt;
+     &lt;HTTP&gt;
+      &lt;Get&gt;
+       &lt;OnlineResource xlink:type=&quot;simple&quot; xlink:href=&quot;http://sampleserver1a.arcgisonline.com/ArcGIS/services/Specialty/ESRI_StatesCitiesRivers_USA/MapServer/WMSServer&quot;/&gt;
+      &lt;/Get&gt;
+     &lt;/HTTP&gt;
+    &lt;/DCPType&gt;
+   &lt;/GetFeatureInfo&gt;
+   &lt;esri_wms:GetStyles&gt;
+    &lt;Format&gt;application/vnd.ogc.sld+xml&lt;/Format&gt;
+    &lt;DCPType&gt;
+     &lt;HTTP&gt;
+      &lt;Get&gt;
+       &lt;OnlineResource xlink:type=&quot;simple&quot; xlink:href=&quot;http://sampleserver1a.arcgisonline.com/ArcGIS/services/Specialty/ESRI_StatesCitiesRivers_USA/MapServer/WMSServer&quot;/&gt;
+      &lt;/Get&gt;
+     &lt;/HTTP&gt;
+    &lt;/DCPType&gt;
+   &lt;/esri_wms:GetStyles&gt;
+  &lt;/Request&gt;
+  &lt;Exception&gt;
+   &lt;Format&gt;application/vnd.ogc.se_xml&lt;/Format&gt;
+   &lt;Format&gt;application/vnd.ogc.se_inimage&lt;/Format&gt;
+   &lt;Format&gt;application/vnd.ogc.se_blank&lt;/Format&gt;
+   &lt;Format&gt;text/xml&lt;/Format&gt;
+   &lt;Format&gt;XML&lt;/Format&gt;
+  &lt;/Exception&gt;
+  &lt;Layer&gt;
+   &lt;Title&gt;Layers&lt;/Title&gt;
+   &lt;CRS&gt;CRS:84&lt;/CRS&gt;
+   &lt;CRS&gt;EPSG:4326&lt;/CRS&gt;
+   &lt;EX_GeographicBoundingBox&gt;
+    &lt;westBoundLongitude&gt;-125.192865&lt;/westBoundLongitude&gt;
+    &lt;eastBoundLongitude&gt;-66.105824&lt;/eastBoundLongitude&gt;
+    &lt;southBoundLatitude&gt;19.416377&lt;/southBoundLatitude&gt;
+    &lt;northBoundLatitude&gt;54.318281&lt;/northBoundLatitude&gt;
+   &lt;/EX_GeographicBoundingBox&gt;
+   &lt;BoundingBox CRS=&quot;CRS:84&quot; minx=&quot;-125.192865&quot; miny=&quot;19.416377&quot; maxx=&quot;-66.105824&quot; maxy=&quot;54.318281&quot;/&gt;
+   &lt;BoundingBox CRS=&quot;EPSG:4326&quot; minx=&quot;19.416377&quot; miny=&quot;-125.192865&quot; maxx=&quot;54.318281&quot; maxy=&quot;-66.105824&quot;/&gt;
+   &lt;Layer queryable=&quot;1&quot;&gt;
+    &lt;Name&gt;0&lt;/Name&gt;
+    &lt;Title&gt;States&lt;/Title&gt;
+    &lt;Abstract&gt;States&lt;/Abstract&gt;
+    &lt;CRS&gt;CRS:84&lt;/CRS&gt;
+    &lt;CRS&gt;EPSG:4326&lt;/CRS&gt;
+    &lt;EX_GeographicBoundingBox&gt;
+     &lt;westBoundLongitude&gt;-178.217598&lt;/westBoundLongitude&gt;
+     &lt;eastBoundLongitude&gt;-66.969271&lt;/eastBoundLongitude&gt;
+     &lt;southBoundLatitude&gt;18.924782&lt;/southBoundLatitude&gt;
+     &lt;northBoundLatitude&gt;71.406235&lt;/northBoundLatitude&gt;
+    &lt;/EX_GeographicBoundingBox&gt;
+    &lt;BoundingBox CRS=&quot;CRS:84&quot; minx=&quot;-178.217598&quot; miny=&quot;18.924782&quot; maxx=&quot;-66.969271&quot; maxy=&quot;71.406235&quot;/&gt;
+    &lt;BoundingBox CRS=&quot;EPSG:4326&quot; minx=&quot;18.924782&quot; miny=&quot;-178.217598&quot; maxx=&quot;71.406235&quot; maxy=&quot;-66.969271&quot;/&gt;
+    &lt;Style&gt;
+     &lt;Name&gt;default&lt;/Name&gt;
+     &lt;Title&gt;0&lt;/Title&gt;
+     &lt;LegendURL width=&quot;76&quot; height=&quot;16&quot;&gt;
+      &lt;Format&gt;image/png&lt;/Format&gt;
+      &lt;OnlineResource xlink:href=&quot;http://sampleserver1a.arcgisonline.com/ArcGIS/services/Specialty/ESRI_StatesCitiesRivers_USA/MapServer/WMSServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=0&quot; xlink:type=&quot;simple&quot;/&gt;
+     &lt;/LegendURL&gt;
+    &lt;/Style&gt;
+   &lt;/Layer&gt;
+   &lt;Layer queryable=&quot;1&quot;&gt;
+    &lt;Name&gt;1&lt;/Name&gt;
+    &lt;Title&gt;Rivers&lt;/Title&gt;
+    &lt;Abstract&gt;Rivers&lt;/Abstract&gt;
+    &lt;CRS&gt;CRS:84&lt;/CRS&gt;
+    &lt;CRS&gt;EPSG:4326&lt;/CRS&gt;
+    &lt;EX_GeographicBoundingBox&gt;
+     &lt;westBoundLongitude&gt;-164.765831&lt;/westBoundLongitude&gt;
+     &lt;eastBoundLongitude&gt;-67.790980&lt;/eastBoundLongitude&gt;
+     &lt;southBoundLatitude&gt;25.845557&lt;/southBoundLatitude&gt;
+     &lt;northBoundLatitude&gt;70.409756&lt;/northBoundLatitude&gt;
+    &lt;/EX_GeographicBoundingBox&gt;
+    &lt;BoundingBox CRS=&quot;CRS:84&quot; minx=&quot;-164.765831&quot; miny=&quot;25.845557&quot; maxx=&quot;-67.790980&quot; maxy=&quot;70.409756&quot;/&gt;
+    &lt;BoundingBox CRS=&quot;EPSG:4326&quot; minx=&quot;25.845557&quot; miny=&quot;-164.765831&quot; maxx=&quot;70.409756&quot; maxy=&quot;-67.790980&quot;/&gt;
+    &lt;Style&gt;
+     &lt;Name&gt;default&lt;/Name&gt;
+     &lt;Title&gt;1&lt;/Title&gt;
+     &lt;LegendURL width=&quot;76&quot; height=&quot;16&quot;&gt;
+      &lt;Format&gt;image/png&lt;/Format&gt;
+      &lt;OnlineResource xlink:href=&quot;http://sampleserver1a.arcgisonline.com/ArcGIS/services/Specialty/ESRI_StatesCitiesRivers_USA/MapServer/WMSServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=1&quot; xlink:type=&quot;simple&quot;/&gt;
+     &lt;/LegendURL&gt;
+    &lt;/Style&gt;
+   &lt;/Layer&gt;
+   &lt;Layer queryable=&quot;1&quot;&gt;
+    &lt;Name&gt;2&lt;/Name&gt;
+    &lt;Title&gt;Cities&lt;/Title&gt;
+    &lt;Abstract&gt;Cities&lt;/Abstract&gt;
+    &lt;CRS&gt;CRS:84&lt;/CRS&gt;
+    &lt;CRS&gt;EPSG:4326&lt;/CRS&gt;
+    &lt;EX_GeographicBoundingBox&gt;
+     &lt;westBoundLongitude&gt;-158.064606&lt;/westBoundLongitude&gt;
+     &lt;eastBoundLongitude&gt;-67.986769&lt;/eastBoundLongitude&gt;
+     &lt;southBoundLatitude&gt;19.696150&lt;/southBoundLatitude&gt;
+     &lt;northBoundLatitude&gt;64.869104&lt;/northBoundLatitude&gt;
+    &lt;/EX_GeographicBoundingBox&gt;
+    &lt;BoundingBox CRS=&quot;CRS:84&quot; minx=&quot;-158.064606&quot; miny=&quot;19.696150&quot; maxx=&quot;-67.986769&quot; maxy=&quot;64.869104&quot;/&gt;
+    &lt;BoundingBox CRS=&quot;EPSG:4326&quot; minx=&quot;19.696150&quot; miny=&quot;-158.064606&quot; maxx=&quot;64.869104&quot; maxy=&quot;-67.986769&quot;/&gt;
+    &lt;Style&gt;
+     &lt;Name&gt;default&lt;/Name&gt;
+     &lt;Title&gt;2&lt;/Title&gt;
+     &lt;LegendURL width=&quot;72&quot; height=&quot;16&quot;&gt;
+      &lt;Format&gt;image/png&lt;/Format&gt;
+      &lt;OnlineResource xlink:href=&quot;http://sampleserver1a.arcgisonline.com/ArcGIS/services/Specialty/ESRI_StatesCitiesRivers_USA/MapServer/WMSServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=2&quot; xlink:type=&quot;simple&quot;/&gt;
+     &lt;/LegendURL&gt;
+    &lt;/Style&gt;
+   &lt;/Layer&gt;
+  &lt;/Layer&gt;
+ &lt;/Capability&gt;
+&lt;/WMS_Capabilities&gt;</code></pre></div></section></p></section><section class="section2 padded-anchor" id="ESRI_SECTION2_B992DD4C3755459E986F690288CC8B81" purpose="section2"><h3>GetMap</h3><p id="GUID-0B1B3698-CA19-4135-8F7C-D3C9A196147B"><b>请求</b></p><p id="GUID-7F4D229B-5BB8-4955-839F-0F889ACE3B3C"><a target="_blank" class="xref xref" href="http://sampleserver1.arcgisonline.com/ArcGIS/services/Specialty/ESRI_StatesCitiesRivers_USA/MapServer/WMSServer?version=1.3.0&amp;request=GetMap&amp;CRS=CRS:84&amp;bbox=-178.217598,18.924782,-66.969271,71.406235&amp;width=760&amp;height=360&amp;layers=0&amp;styles=default&amp;format=image/png">http://sampleserver1.arcgisonline.com/ArcGIS/services/Specialty/ESRI_StatesCitiesRivers_USA/MapServer/WMSServer?version=1.3.0&amp;request=GetMap&amp;CRS=CRS:84&amp;bbox=-178.217598,18.924782,-66.969271,71.406235&amp;width=760&amp;height=360&amp;layers=0&amp;styles=default&amp;format=image/png</a></p><p id="GUID-2E6C5604-E6B0-4A3A-BEA0-3EBB22C1ABA7"><b>响应地图</b></p><figure class="fig" href="#"><img src="GUID-CB53CF48-1027-435A-B068-0E98E75D01D1-web.png" alt="WMS GetMap 响应地图" title="WMS GetMap 响应地图"></figure><p id="GUID-5971DE6E-8E8E-47C2-8381-E00F1280A39F"><b>请求</b></p><p id="GUID-457A1652-0612-4550-A2DF-AE47347FE735"><span class="usertext">http://gisserver.domain.com:6080/arcgis/services/folder/service/MapServer/WMSServer?REQUEST=GetMap&amp;SERVICE=WMS&amp;VERSION=1.3.0&amp;LAYERS=0&amp;STYLES=&amp;FORMAT=image/png&amp;BGCOLOR=0xFFFFFF&amp;TRANSPARENT=TRUE&amp;CRS=EPSG:4326&amp;BBOX=17.9995833333334,-161.000416666667,23.0004166666666,-153.999583333333&amp;WIDTH=981&amp;HEIGHT=826&amp;DIM_DEPTH=2000</span></p></section><section class="section2 padded-anchor" id="ESRI_SECTION2_5D2CE01E27E54829B2FDB3BC17868B3E" purpose="section2"><h3></h3><p id="GUID-266D340F-8FD9-479E-9817-3993B41833D5"> 对于包含任何时间感知图层或高程感知图层的 WMS 服务来说，可以添加 <span class="usertext">TIME</span> 或 <span class="usertext">ELEVATION</span> 参数。</p><section class="section3 padded-anchor" id="ESRI_SECTION3_941E8F08536D4F6D9B45AC4A2992F141" purpose="section3"><h4>时间</h4><p id="GUID-3BDE7097-FDC1-4795-99BE-4C041C466AC9"><span class="usertext">TIME</span> - 通过指定时间实例或时间范围来支持时间查询。</p><p id="GUID-2A69F65C-3915-46D2-BDE7-88D5A551C652"> <span class="usertext">TIME=1999</span>（时间为 1999 年）</p><p id="GUID-B9BA4832-01B0-4BFA-98D9-5DB916E41478"><b>请求</b></p><p id="GUID-0058D358-7B2D-46E0-8217-9F6938EBFE44"><span class="usertext">http://gisserver.domain.com:6080/arcgis/services/folder/service/ImageServer/WMSServer?REQUEST=GetMap&amp;SERVICE=WMS&amp;VERSION=1.3.0&amp;LAYERS=0&amp;STYLES=&amp;FORMAT=image/png&amp;BGCOLOR=0xFFFFFF&amp;TRANSPARENT=TRUE&amp;CRS=EPSG:4326&amp;BBOX=17.9995833333334,-161.000416666667,23.0004166666666,-153.999583333333&amp;WIDTH=981&amp;HEIGHT=826&amp;TIME=1999</span></p><p id="GUID-F7345AF2-C254-401E-AACD-88517485B163"><span class="usertext">TIME=1980/2010</span>（时间为 1980 年至 2010 年）</p><p id="GUID-9ED89A21-30EE-4CA4-A10B-175F7ED0B790"><b>请求</b></p><p id="GUID-D8FF5F4B-6FF0-4CB0-BA29-1841B5662885"><span class="usertext">http://gisserver.domain.com:6080/arcgis/services/folder/service/ImageServer/WMSServer?REQUEST=GetMap&amp;SERVICE=WMS&amp;VERSION=1.3.0&amp;LAYERS=0&amp;STYLES=&amp;FORMAT=image/png&amp;BGCOLOR=0xFFFFFF&amp;TRANSPARENT=TRUE&amp;CRS=EPSG:4326&amp;BBOX=17.9995833333334,-161.000416666667,23.0004166666666,-153.999583333333&amp;WIDTH=981&amp;HEIGHT=826&amp;TIME=1980/2010</span></p><p id="GUID-640EE3A7-72C5-490A-B741-CC06DA5BFD44"> <span class="usertext">TIME=1999-12-31T14:30:30/2000-01-01T14:30:30</span></p><p id="GUID-900C359F-FDF7-435D-BE59-A7ED4E8D6276"><b>请求</b></p><p id="GUID-F5B0CFAE-D7E7-4D94-9351-D34EDB4D2D27"><span class="usertext">http://gisserver.domain.com:6080/arcgis/services/folder/service/ImageServer/WMSServer?REQUEST=GetMap&amp;SERVICE=WMS&amp;VERSION=1.3.0&amp;LAYERS=0&amp;STYLES=&amp;FORMAT=image/png&amp;BGCOLOR=0xFFFFFF&amp;TRANSPARENT=TRUE&amp;CRS=EPSG:4326&amp;BBOX=17.9995833333334,-161.000416666667,23.0004166666666,-153.999583333333&amp;WIDTH=981&amp;HEIGHT=826&amp;TIME=1999-12-31T14:30:30/2000-01-01T14:30:30</span></p></section><section class="section3 padded-anchor" id="ESRI_SECTION3_13C209BBDDB1433487E316C9B4B6D898" purpose="section3"><h4> 高程</h4><p id="GUID-9A5911EF-6FD6-4D0B-B5A1-5C3AF20188C7">如果在发布服务之前已在镶嵌数据集或 NetCDF 图层中专门定义了垂直维度字段，还可执行 <span class="usertext">getMap</span> 请求以使用 <span class="usertext">ELEVATION</span>（WMS 规范中定义的关键字）。您可为镶嵌数据集指定<span class="uicontrol">镶嵌数据集属性默认值</span><span class="uicontrol">垂直</span>属性中的垂直维度字段，或为 NetCDF 图层指定<span class="uicontrol">图层属性</span>页面中 <span class="uicontrol">NetCDF</span> 选项卡上的垂直维度字段。</p><p id="GUID-ABE67C76-0D54-4F3B-8350-B889609923C4"><span class="usertext">http://gisserver.domain.com:6080/arcgis/services/folder/service/ImageServer/WMSServer?REQUEST=GetMap&amp;SERVICE=WMS&amp;VERSION=1.3.0&amp;LAYERS=0&amp;STYLES=&amp;FORMAT=image/png&amp;BGCOLOR=0xFFFFFF&amp;TRANSPARENT=TRUE&amp;CRS=EPSG:4326&amp;BBOX=17.9995833333334,-161.000416666667,23.0004166666666,-153.999583333333&amp;WIDTH=981&amp;HEIGHT=826&amp;TIME=2000-01-01T14:30:30&amp;ELEVATION=-30</span></p></section></section><section class="section2 padded-anchor" id="ESRI_SECTION2_996753166D6F43A8A10A390534725DA9" purpose="section2"><h3>GetFeatureInfo</h3><p id="GUID-DBE5161F-0596-4C81-84FC-B38C28EAD977"><b>请求</b></p><p id="GUID-7E617C48-B5B3-4CC1-8973-C2D5CBC079D6"><a target="_blank" class="xref xref" href="http://sampleserver1.arcgisonline.com/arcgis/services/Specialty/ESRI_StatesCitiesRivers_USA/MapServer/WMSServer?version=1.1.1&amp;request=GetFeatureInfo&amp;layers=0&amp;styles=default&amp;SRS=EPSG:4326&amp;bbox=-125.192865,11.2289864971264,-66.105824,62.5056715028736&amp;width=1044&amp;height=906&amp;format=text/html&amp;X=500&amp;Y=400&amp;query_layers=0">http://sampleserver1.arcgisonline.com/arcgis/services/Specialty/ESRI_StatesCitiesRivers_USA/MapServer/WMSServer?version=1.1.1&amp;request=GetFeatureInfo&amp;layers=0&amp;styles=default&amp;SRS=EPSG:4326&amp;bbox=-125.192865,11.2289864971264,-66.105824,62.5056715028736&amp;width=1044&amp;height=906&amp;format=text/html&amp;X=500&amp;Y=400&amp;query_layers=0</a></p><p id="GUID-F5E3CB73-E9BB-4344-A897-02828333978C"><b>XML 响应</b></p><p id="GUID-FA536F34-0361-461E-AA32-20A336491C21"><section class="codeblock padded-anchor" purpose="codeblock"><div class="codeblockbody"><pre><code class="xml">&lt;FeatureInfoResponse&gt;
+ &lt;FIELDS FID=&quot;14&quot; Shape=&quot;Null&quot; AREA=&quot;77330.258&quot; STATE_NAME=&quot;Nebraska&quot; STATE_FIPS=&quot;31&quot; SUB_REGION=&quot;W N Cen&quot; 
+  STATE_ABBR=&quot;NE&quot; POP1990=&quot;1578385&quot; POP1999=&quot;1671251&quot; POP90_SQMI=&quot;20&quot; HOUSEHOLDS=&quot;602363&quot; MALES=&quot;769439&quot; 
+  FEMALES=&quot;808946&quot; WHITE=&quot;1480558&quot; BLACK=&quot;57404&quot; AMERI_ES=&quot;12410&quot; ASIAN_PI=&quot;12422&quot; OTHER=&quot;15591&quot; 
+  HISPANIC=&quot;36969&quot; AGE_UNDER5=&quot;119606&quot; AGE_5_17=&quot;309406&quot; AGE_18_29=&quot;281105&quot; AGE_30_49=&quot;441470&quot; 
+  AGE_50_64=&quot;203730&quot; AGE_65_UP=&quot;223068&quot; NEVERMARRY=&quot;295873&quot; MARRIED=&quot;719288&quot; SEPARATED=&quot;13552&quot; 
+  WIDOWED=&quot;96052&quot; DIVORCED=&quot;90230&quot; HSEHLD_1_M=&quot;63686&quot; HSEHLD_1_F=&quot;95985&quot; MARHH_CHD=&quot;171428&quot; 
+  MARHH_NO_C=&quot;179086&quot; MHH_CHILD=&quot;7603&quot; FHH_CHILD=&quot;34583&quot; HSE_UNITS=&quot;660621&quot; VACANT=&quot;58258&quot; 
+  OWNER_OCC=&quot;400394&quot; RENTER_OCC=&quot;201969&quot; MEDIAN_VAL=&quot;50400&quot; MEDIANRENT=&quot;282&quot; UNITS_1DET=&quot;479124&quot; 
+  UNITS_1ATT=&quot;15767&quot; UNITS2=&quot;18369&quot; UNITS3_9=&quot;46246&quot; UNITS10_49=&quot;49402&quot; UNITS50_UP=&quot;9656&quot; 
+  MOBILEHOME=&quot;37046&quot; NO_FARMS87=&quot;60502&quot; AVG_SIZE87=&quot;749&quot; CROP_ACR87=&quot;23320162&quot; AVG_SALE87=&quot;110197&quot;/&gt;
+&lt;/FeatureInfoResponse&gt;</code></pre></div></section></p></section><section class="section2 padded-anchor" id="ESRI_SECTION2_0654598FCA8B4F4880FC88AEF401B70B" purpose="section2"><h3>GetStyles</h3><p id="GUID-D77E8E5C-871A-426A-BA87-0F837B095882"><b>请求</b></p><p id="GUID-5DE95197-DB19-4587-9761-C9F5597302CA"><a target="_blank" class="xref xref" href="http://sampleserver1.arcgisonline.com/ArcGIS/services/Specialty/ESRI_StateCityHighway_USA/MapServer/WMSServer?version=1.3.0&amp;request=GetStyles&amp;layers=0,1,2">http://sampleserver1.arcgisonline.com/ArcGIS/services/Specialty/ESRI_StateCityHighway_USA/MapServer/WMSServer?version=1.3.0&amp;request=GetStyles&amp;layers=0,1,2</a></p><p id="GUID-F827E9D5-7EFD-46C0-8F87-0F37E4411FDF"><b>XML 响应</b></p><p id="GUID-2F35ED2A-D7E6-417A-A4D2-29E6297C16BA"><section class="codeblock padded-anchor" purpose="codeblock"><div class="codeblockbody"><pre><code class="xml">&lt;sld:StyledLayerDescriptor version=&quot;1.0.0&quot; xsi:schemaLocation=&quot;http://www.opengis.net/sld http://schemas.opengis.net/sld/1.0.0/StyledLayerDescriptor.xsd&quot;&gt;
+ &lt;!-- layer &quot;0&quot; --&gt;
+ &lt;sld:NamedLayer&gt;
+  &lt;sld:Name&gt;0&lt;/sld:Name&gt;
+  &lt;!-- NamedStyle --&gt;
+  &lt;sld:NamedStyle&gt;
+   &lt;sld:Name&gt;default&lt;/sld:Name&gt;
+  &lt;/sld:NamedStyle&gt;
+  &lt;!-- UserStyle --&gt;
+ &lt;/sld:NamedLayer&gt;
+ &lt;!-- layer &quot;1&quot; --&gt;
+ &lt;sld:NamedLayer&gt;
+  &lt;sld:Name&gt;1&lt;/sld:Name&gt;
+  &lt;!-- NamedStyle --&gt;
+  &lt;sld:NamedStyle&gt;
+   &lt;sld:Name&gt;default&lt;/sld:Name&gt;
+  &lt;/sld:NamedStyle&gt;
+  &lt;!-- UserStyle --&gt;
+ &lt;/sld:NamedLayer&gt;
+ &lt;!-- layer &quot;2&quot; --&gt;
+ &lt;sld:NamedLayer&gt;
+  &lt;sld:Name&gt;2&lt;/sld:Name&gt;
+  &lt;!-- NamedStyle --&gt;
+  &lt;sld:NamedStyle&gt;
+   &lt;sld:Name&gt;default&lt;/sld:Name&gt;
+  &lt;/sld:NamedStyle&gt;
+  &lt;!-- UserStyle --&gt;
+ &lt;/sld:NamedLayer&gt;
+&lt;/sld:StyledLayerDescriptor&gt;</code></pre></div></section></p></section><section class="section2 padded-anchor" id="ESRI_SECTION2_E0F47CCF630C4C4CAA393B642F70527D" purpose="section2"><h3>GetLegendGraphic</h3><p id="GUID-3D3BA2E1-2A2C-473F-8CC2-1629B05400BC"><b>请求</b></p><p id="GUID-5F6D063F-9F4F-4290-88F9-8B09445CB12E"><a target="_blank" class="xref xref" href="http://sampleserver1.arcgisonline.com/ArcGIS/services/Specialty/ESRI_StatesCitiesRivers_USA/MapServer/WMSServer?version=1.1.1&amp;request=GetLegendGraphic&amp;layer=0&amp;style=default&amp;format=image/png&amp;width=95&amp;height=65">http://sampleserver1.arcgisonline.com/ArcGIS/services/Specialty/ESRI_StatesCitiesRivers_USA/MapServer/WMSServer?version=1.1.1&amp;request=GetLegendGraphic&amp;layer=0&amp;style=default&amp;format=image/png&amp;width=95&amp;height=65</a></p><p id="GUID-ED55E287-2210-4CCE-B407-8F23A4FFEE08"><b>响应图例图形</b></p><figure class="fig" href="#"><img src="GUID-5582E0B4-A501-4812-82E2-CF9C16EA5B2E-web.png" alt="WMS GetLegendGraphic 图例图形响应" title="WMS GetLegendGraphic 图例图形响应"></figure><div class="panel trailer-1 note" id="GUID-843A9870-0C10-48DC-B5DC-1525141D11FA"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-AAB758F1-B8F4-4602-B722-E934ECDE136E">许多情况下，Web 浏览器可能并不是首选的 WMS 客户端，但对于 WMS 服务器和客户端之间的通信，Web 浏览器却始终是一个很好的追踪和调试工具。</p></div></section></section><section class="section1 padded-anchor" id="GUID-90AAB875-0337-451B-86BD-FC5E30F6990A" purpose="section1"><h2>WMS 请求参数</h2><p id="GUID-30446233-B223-4FAF-89B1-A50AFD075260">OGC 网络地图服务规范定义了一份可用于每项 WMS 操作的完整请求参数列表。有关 OGC WMS 执行规范的不同版本，请参见以下链接：</p><p id="GUID-AB72A406-A9E1-41B3-B11D-7A93EEF2827C"><a target="_blank" class="xref xref" href="http://portal.opengeospatial.org/files/?artifact_id=14416">版本 1.3.0</a></p><p id="GUID-AB5BFC99-9782-407C-9C18-A4EF8A9A9F09"><a target="_blank" class="xref xref" href="http://portal.opengeospatial.org/files/?artifact_id=1081">版本 1.1.1</a></p><p id="GUID-52A4C710-8E39-499C-9950-B584ABAC341E"><a target="_blank" class="xref xref" href="http://portal.opengeospatial.org/files/?artifact_id=1058">版本 1.1.0</a></p><p id="GUID-62F9653C-C7F2-4C18-BB77-387CC10A5766"><a target="_blank" class="xref xref" href="http://portal.opengeospatial.org/files/?artifact_id=7196">版本 1.0.0</a></p><p id="GUID-06E026BC-C5F9-4DDF-8726-9A56E32799CA">下表列出了可用于执行 WMS 的所有请求参数，这只是规范所定义的参数的一个子集。</p></section><section class="section1 padded-anchor" id="GUID-5B1493CF-E8F2-4EAA-9EE0-E96265DA2ED3" purpose="section1"><h2>WMS GetCapabilities 请求 URL 的参数</h2><p id="GUID-7DBCAC41-3D5D-4442-B89F-AAE655A603FD"><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><colgroup width="*"></colgroup><colgroup width="*"></colgroup><thead><tr><th colspan="1">参数</th><th colspan="1">必选/可选</th><th colspan="1">默认值</th><th colspan="1">说明</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-DD95B565-DC50-46A5-9ABC-9724ED890009"><b>VERSION/WMTVER</b></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-D047B4DE-D3AC-462E-A143-D04F3D8E4A04">可选</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-BC3A5820-64AD-4695-B24F-E45458B5FF75"> <span class="usertext">1.3.0</span>（9.3 及以上）</p><p id="GUID-0B2AA424-28EF-4426-A830-27C83B4D530A"> <span class="usertext">1.1.1</span> (9.2)</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-13C66CC8-DB93-4A53-9D28-FCA0296E7703"> 请求版本。只在 WMS 1.0.0 中使用 <span class="usertext">WMTVER</span>；其他情况下使用 <span class="usertext">VERSION</span>。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-7D83FFE9-A2DA-41B3-98D5-C27DA65052A0"><b>SERVICE</b></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-146F4B4D-5289-4A9E-BCCE-D4520DA115F5">必选</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-D45BF9D2-26B9-4B43-9C01-B0490C2D4DD8">N/A</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-EE7F2595-4842-4FD2-92B9-5B9FCC265270"> 服务类型。必须设置为 <span class="usertext">WMS</span>。该参数在 WMS 1.0.0 中不可用。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-D5D125D5-9E88-4B28-862D-B8D154B91532"><b>REQUEST</b></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-F708E410-3D38-494F-87FD-AA4BD0DDD587">必选</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-40BFE52C-3C2A-4798-879A-CE03A894988C">N/A</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-1FE6AB67-D4A5-4427-B867-AA2D56049229"> 请求名称。必须设置为 <span class="usertext">GetCapabilities</span>。对于 WMS 1.0.0，则必须设置为 <span class="usertext">capabilities</span>。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-76607A10-ED06-442A-A737-BD665AE2C4DF"><b>FORMAT</b></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-1E7C211E-6274-45FF-961F-C852DCB5CB24">可选</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-81B5F9E7-B86B-4903-81C3-DC19CEC81B87"><span class="usertext">text/xml</span>（9.3 及以上）</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-590BCEE4-ECE1-44F2-A99F-34E13B64D934"> 服务元数据的输出格式。仅在 WMS 1.3.0 中可用（例如 <span class="usertext">application/vnd.ogc.wms_xml</span>、<span class="usertext">text/plain</span> 或 <span class="usertext">text/html</span>）。</p></td></tr></tbody><caption></caption></table></div></p></section><section class="section1 padded-anchor" id="GUID-065A3C56-2B13-473C-9765-E2D1545539B8" purpose="section1"><h2>WMS GetMap 请求 URL 的参数</h2><p id="GUID-36678142-DF8B-4C19-A475-881E5410FB5F"><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="1.15*"></colgroup><colgroup width="1.00*"></colgroup><colgroup width="1.16*"></colgroup><colgroup width="1.38*"></colgroup><thead><tr><th colspan="1">参数</th><th colspan="1">必选/可选</th><th colspan="1">默认值</th><th colspan="1">说明</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-C62C4FB2-FD93-4F40-B3F8-8D4CC6715F11"><b>VERSION/WMTVER</b></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-C712B48C-08FF-45A4-83DF-84F0225AAA6D">必选</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-3C12575A-8D68-4C50-89BF-AD0C3D12FAA3">N/A</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-6BE67AE8-6FE3-47AA-B790-0DC9E7674A0E"> 请求版本。只在 WMS 1.0.0 中使用 <span class="usertext">WMTVER</span>；其他情况下使用 <span class="usertext">VERSION</span>。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-7BF1C1B0-D04D-4330-8373-5C918D67C48A"><b>REQUEST</b></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-29C72C7D-5A3F-4074-98B1-D369547C8F36">必选</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-59CD1121-273B-4D82-ADA8-2A5621213AD6">N/A</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-FF2D10C5-8FD7-4BBC-83CA-F20DB73A5758"> 请求名称。必须设置为 <span class="usertext">GetMap</span>。对于 WMS 1.0.0，则必须设置为 <span class="usertext">map</span>。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-D3F3706C-345C-4F4B-90A4-28A2F0E0BE67"><b>LAYERS</b></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-06CAE132-9600-491F-AB7C-0795D6489F0E">必选</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-D4717FC5-EA2F-46C2-AEB3-1021AE979332">N/A</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-C819B1B1-6932-4747-8059-EC04B6D98A6C"> 一个或多个地图图层的逗号分隔列表（例如 <span class="usertext">0,1,2</span> 或 <span class="usertext">layer1,layer2</span>）。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-C1D868F2-513E-4660-B862-B5F926E76EFF"><b>STYLES</b></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-77107176-C26F-4DFC-83FE-FBDD9CE887C8">必选</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-90D18C58-2AAA-417E-A892-7A49E77077A7">N/A</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-796DAB8E-EB38-4B1F-9C4F-BD36C9B48508"> 一种或多种样式的逗号分隔列表，每个请求图层一种样式（例如 <span class="usertext">0,1,2</span> 或 <span class="usertext">style1,style2</span>）。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-23A63057-B36D-42FE-B3F3-54AF8ED8E1CD"><b>CRS/SRS</b></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-F8E111C9-E2A6-4688-A75F-D1C4B1CDF86C">必选</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-57D1250A-8B98-4569-BCFB-DADC1F54BD1F">N/A</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-7FA67337-8F1F-4F7A-A354-9DD1E1655949"> 坐标参考系统。CRS 仅可在 WMS 1.3.0 中使用；其他情况下使用 SRS（例如 <span class="usertext">EPSG:4326</span> 或 <span class="usertext">EPSG:4269</span>）。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-3511086A-8F64-424C-B05B-09B83F174928"><b>BBOX</b></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-AC35F42F-6A6A-4547-9BD5-140E6F507864">必选</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-22B74978-29A5-4893-8582-1987ABF6EABE">N/A</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-F2FF7671-4321-4935-9A30-284FF7C249D1">以 CRS/SRS 为单位的（左下和右上）边框角（例如 <span class="usertext">-180,-90,180,90</span>）。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-6F95C87F-52FE-49CF-9153-719C5F07F5FC"><b>WIDTH</b></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-1565C683-E7FD-484B-86BA-FA6F5EB3AA60">必选</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-26D9E09A-3313-4FCD-B243-5F1B6CD14BAA">N/A</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-0A2755AB-8E2B-43FA-842A-0A591066F222"> 以像素为单位的地图图片宽度（例如 <span class="usertext">1024</span>）。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-0095F2F6-EF5E-4BD5-A198-141EAE803718"><b>HEIGHT</b></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-830867EB-D557-46E1-BD8D-9FB5E2DD3842">必选</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-ADC073A8-FE3F-4B73-8ACA-CD51A0EF08E1">N/A</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-99F127B6-EC57-4C6F-975B-BF6530A426DF"> 以像素为单位的地图图片高度（例如 <span class="usertext">768</span>）。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-D77FCFB1-775C-471F-A3ED-4B60FFD6E765"><b>FORMAT</b></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-3C170E18-3F71-470C-BD15-C51DA52DC986">必选</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-8547F4F6-33D3-4583-964D-8D0615D7DD7D">N/A</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-6B825846-FB47-4DB1-87A7-AC5FFB4A1D1A"> 地图的输出格式（例如 <span class="usertext">image/png</span>、<span class="usertext">image/jpeg</span>、<span class="usertext">image/svg+xml</span> 或 <span class="usertext">image/bil</span>）。</p><p id="GUID-FD0C7981-F71B-4349-ACC3-5B50EA4E6D02">如果将输出格式指定为 <span class="usertext">image/bil</span>，则 WMS 客户端还需生成相应的头文件 (.hdr) 才能正确读取图像。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-1204FD5D-8F67-4C9D-824F-E4E143961D59"><b>TRANSPARENT</b></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-2493DE27-E188-44DB-B452-18B0226A8598">可选</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-591994FC-617C-45F9-A069-77947C25C4C9"><span class="usertext">False</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-FB263826-AAEC-48FF-81AD-2DA7A9AC8C36">确定背景是否透明（例如 <span class="usertext">True</span> 或 <span class="usertext">False</span>）。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-2163F5F2-A5F8-4D5D-96E9-89BBDEB16EBD"><b>BGCOLOR</b></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-4D59456B-ACBD-48B5-B786-1AECA670AC5F">可选</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-EC6A1E3F-0576-4B63-A0BF-DD6E48F8858E"> <span class="usertext">0xFFFFFF</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-46BA189D-95D4-4AD3-BCB3-3B131B853B12">十六进制 RGB 地图背景色（例如 <span class="usertext">0xFFFFFF</span> 或 <span class="usertext">FFFFFF</span>）。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-9933B2D4-E88C-4346-B6F9-1BFA941BFD88"><b>SLD</b></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-4C3FA8F3-FCC0-44D2-BBF2-CDAED241B7A4">可选</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-371E7AF6-154B-47EF-9CDA-0C97245238A4">""</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-48F18157-79FF-4B83-BEA7-45BFA6B5454F">样式化图层描述符 XML 文件的 URL。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-C29CC710-DC20-40F0-BE9D-CD9808D56CB6"><b>SLD_BODY</b></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-3E184133-CE3C-4137-8A62-B7EDE9C982EF">可选</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-7E89191A-CBBB-4634-88AE-E5C8031D3A2B">""</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-0F97B921-F01C-4624-9C94-71E692B295CA">样式化图层描述符文件的 XML 正文。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-2F990561-0F08-4F35-AFCF-7AC0785492EC"><b>TIME</b></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-B181F9B4-B9AE-4640-99F1-728512FA3EA5">可选</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-61C7FD45-DED9-452C-9463-E7352EA39D9F">""</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-1E9C5612-D8FC-497A-BC21-06B6A2723AB1">请求图层的时间值。</p><p id="GUID-B1E821C9-622F-4773-86EB-658F2BD94033"> 如果图层已启用时间，则 ArcGIS 客户端应用程序将仅支持 TIME 维度。如果图层未启用时间，您需要通过 web 浏览器或自定义客户端使用 DIM_ 参数（已在下面列出）提交 GetMap 请求。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-635C0DC9-2A60-42EB-8EF6-EBEA20C3EE67"><b>ELEVATION</b></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-F3D510F8-CA9C-43BD-B4A5-C5C1C607B74C">可选</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-CEA270C9-D8B4-43C3-B3D3-E49C3E3D8569">""</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-6BA39D82-A3F5-4845-8578-8191CF0FF9BF"> 请求图层的高程值。</p><p id="GUID-34967949-0F02-46F4-AE06-7CA1EEBA8DC8"> 如果图层是高程感知图层，则 ArcGIS 客户端应用程序将仅支持 ELEVATION 维度。您只能在 NetCDF 和镶嵌数据集中设置高程。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-596ADBB1-20CC-459F-A4D0-7F9A7E283DE2"><b>EXCEPTIONS</b></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-4C67D904-0299-44FB-A4CF-B41EFB599CD0">可选</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-04E40CF1-17D2-41FB-B0F0-3E2CF145E3E0"><span class="usertext">text/xml</span> (WMS 1.3.0)</p><p id="GUID-A74D2013-493E-4033-97ED-6AD788AC6AE1"> <span class="usertext">application/vnd.ogc.se_xml</span>（WMS 1.1.1 和 WMS 1.1.0）</p><p id="GUID-56A3F74A-29AE-472D-9AE7-223BBD5C89C4"> <span class="usertext">application/vnd.ogc.inimage</span> (WMS 1.0.0)</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-D4F9E545-7269-49F9-A447-F3B1122BD22A">报告异常应使用的格式（例如 <span class="usertext">text/xml</span> 或 <span class="usertext">text/html</span>）。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-6AE0CEE4-0000-464D-9850-C73C76D512E9"><b>DIM_</b><span class="usertext">&lt;名称&gt;</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-C180F045-A91C-46CF-AB82-738CC2A1F263">可选</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-3B48A5FA-BBF6-4663-ABF4-16A122678CFC">""</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-A24DCF4F-836E-4D6B-8BE8-A3D92E86A9BD">所请求地图图层的维度值；<span class="usertext">&lt;名称&gt;</span> 必须替换为维度名称，例如 <span class="usertext">DEPTH</span>。</p><p id="GUID-94A4FCD8-9544-410E-BB8E-B4BA537DF044">DIM_ 在 WMS 1.1.0 和更高版本中受支持。</p><p id="GUID-D31CFB94-DD87-4D49-950B-EE16D9872655"> ArcGIS 客户端应用程序当前不支持维度。要使用维度，您需要使用 Web 浏览器或通过 ArcObjects 或其他语言创建自定义 OGC 客户端应用程序。</p></td></tr></tbody><caption></caption></table></div></p></section><section class="section1 padded-anchor" id="GUID-59B315F3-33F1-48F9-BD6E-53FCDDFC07CC" purpose="section1"><h2>WMS GetFeatureInfo 请求 URL 的参数</h2><p id="GUID-488FC612-6B10-4D27-A125-57C43D05C012"><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="1.08*"></colgroup><colgroup width="1.00*"></colgroup><colgroup width="1.14*"></colgroup><colgroup width="1.35*"></colgroup><thead><tr><th colspan="1">参数</th><th colspan="1">必选/可选</th><th colspan="1">默认值</th><th colspan="1">说明</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-CE80335C-A279-43EE-9D81-A8D3D85B1586"><b>VERSION/WMTVER</b></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-84986D3A-B376-4880-A1C5-DBF30732A490">必选</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-2FF34393-FA17-4BEF-8AD0-4D8743409365">N/A</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-32C8AD83-6830-488C-AB2F-1DDB994B1BB7">请求版本。只在 WMS 1.0.0 中使用 <span class="usertext">WMTVER</span>；其他情况下使用 <span class="usertext">VERSION</span>。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-D2F3FC2C-F3E2-466B-9F79-FE23918094CE"><b>REQUEST</b></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-41D94C16-777F-43D1-99D4-09310CC22C5A">必选</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-0C686A39-CC62-47E9-8DF0-39087DF99AC1">N/A</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-46CAF379-0512-4E29-BFEA-18B915BCAAD5">请求名称。必须设置为 <span class="usertext">GetFeatureInfo</span>。对于 WMS 1.0.0，则必须设置为 <span class="usertext">feature_info</span>。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-CA5B6FCE-AF19-4F7E-91F3-7B816FF409F6"><b>地图请求部分</b></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-AEA6976B-7B62-4A23-BC4B-802790CB890A">必选</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-FB7B0E9D-3861-4D73-B91A-D4141177A116">N/A</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-D6FF32C2-3588-49DA-B882-C6EA56F83221">生成地图所需信息的 GetMap 请求参数的部分副本。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-E9E7257F-F31A-4E66-AC5D-EF4F0BB5C277"><b>QUERY_LAYERS</b></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-2ACE1BC4-FEEB-413B-89AF-B5D3FB817F92">必选</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-2E5DE2F3-B58F-4F80-AC33-D2979E57EBEE">N/A</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-248B8A13-C7C0-43F6-8EE6-9FD47AC8691B">一个或多个待查询地图图层的逗号分隔列表（例如 <span class="usertext">0,1,2</span> 或 <span class="usertext">layer1,layer2</span>）。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-D9F54F67-F6C5-48B5-B6BA-B53D5A46B8A3"><b>INFO_FORMAT</b></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-685CE930-BDC5-426F-AE46-0C477DBA9FED"> 必选 (WMS 1.3.0)</p><p id="GUID-73417DEE-DDFC-43DC-8F63-36040D5192FD"> 可选（WMS 1.1.1、1.1.0 和 1.0.0）</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-3125985B-AB0E-441C-A765-950E52B6E537"> 无效 (WMS 1.3.0)</p><p id="GUID-EADF55C5-F0B2-4893-B09D-9BE6E808CB00"> <span class="usertext">text/xml</span>（WMS 1.1.1、1.1.0 和 1.0.0）</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-429E0170-74B0-4216-AA56-A7ABEC6C87AE"> 要素信息的返回格式（例如 <span class="usertext">text/xml</span> 或 <span class="usertext">text/html</span>）。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-9DF86674-FA29-447D-A17F-0429A31A7529"><b>I/X</b></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-CD2AD245-C059-447F-BB7C-17586AE955FC">必选</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-266AB2CE-1205-4335-AA1E-BFA1861C3F37">N/A</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-72D9E82A-59F4-4CD9-A710-FBC9CDBD830B">要素在地图坐标系中以像素为单位的 X 坐标（例如 <span class="usertext">100</span>）。对于 WMS 1.3.0，使用 <span class="usertext">I</span>；其他情况下使用 <span class="usertext">X</span>。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-B366CC4A-FFFF-4CCF-986C-2D05049A7D51"><b>J/Y</b></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-0C2E2EC2-7F71-4B5E-87E7-7456F6630A13">必选</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-B639C3C5-871A-47F4-9BC2-24BA50633337">N/A</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-76651751-A3E8-4B74-B661-325759DF7E84">要素在地图坐标系中以像素为单位的 Y 坐标（例如 <span class="usertext">100</span>）。对于 WMS 1.3.0，使用 <span class="usertext">J</span>；其他情况下使用 <span class="usertext">Y</span>。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-4AD22807-5C5E-4EAC-8692-CC7C3A4392EB"><b>TIME</b></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-AD21C286-3062-479E-B234-533D78EC849A">可选</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-79633641-691C-4651-BC60-4357ECCF06A7">""</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-48497E02-5B26-467F-BFB5-DDD854574A8D">请求图层的时间值。</p><p id="GUID-F88E5383-8C56-469D-BF01-569DEEE21996"> 如果图层已启用时间，则 ArcGIS 客户端应用程序将仅支持 TIME 维度。如果图层未启用时间，您需要通过 web 浏览器或自定义客户端使用 DIM_ 参数（已在下面列出）提交 GetMap 请求。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-A4F3013E-71E2-48E0-AD1A-05D4295A5C19"><b>ELEVATION</b></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-E7FB5F05-3CF2-439A-B970-A1BAF34A1AB7">可选</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-04A4744A-29E5-4CCF-8443-B39CDAA3A0C7">""</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-EAE120EE-AAA8-4FA3-81D8-A975F61D4FF8"> 请求图层的高程值。</p><p id="GUID-AF5F6A59-F9C7-44B7-999E-AEE29B5BB0AA"> 如果图层是高程感知图层，则 ArcGIS 客户端应用程序将仅支持 ELEVATION 维度。您只能在 NetCDF 和镶嵌数据集中设置高程。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-56638D7C-2763-4EB3-B70F-C8353C741051"><b>EXCEPTIONS</b></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-095B7C1D-A98C-44B2-A6F3-FD158279CA6E">可选</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-469434CD-AF91-4A57-ABFF-1C41A8216EB9"><span class="usertext">text/xml</span> (WMS 1.3.0)</p><p id="GUID-965C3C33-2D6B-46DD-97CC-8D2D1EDF9158"> <span class="usertext">application/vnd.ogc.se_xml</span>（WMS 1.1.1 和 WMS 1.1.0）</p><p id="GUID-E6F3FE56-8359-4DB1-8651-5332CA354BB6"> <span class="usertext">application/vnd.ogc.inimage</span> (WMS 1.0.0) </p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-6C24E9A3-F670-40C7-88F2-306232335900">报告异常应使用的格式（例如 <span class="usertext">text/xml</span> 或 <span class="usertext">text/html</span>）。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-04DF59D2-125A-4C7F-BBD3-FAD3D71CFB3D"><b>DIM_</b><span class="usertext">&lt;名称&gt;</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-6CC49A9D-1EF4-4010-A7E0-AF9A06F6E207">可选</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-E4D2825F-0EA9-4409-A2BB-AF044F6C7006">""</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-6CAD6586-7978-43C3-A879-ECBCD8794AF1">所请求地图图层的维度值；<span class="usertext">&lt;名称&gt;</span> 必须替换为维度名称，例如 <span class="usertext">DEPTH</span>。</p><p id="GUID-7B611802-9BDB-4C3F-B334-B80E06495A05">DIM_ 在 WMS 1.1.0 和更高版本中受支持。</p><p id="GUID-A2FD3CDA-C543-42B6-835A-A89737064E5A"> ArcGIS 客户端应用程序当前不支持维度。要使用维度，您需要使用 Web 浏览器或通过 ArcObjects 或其他语言创建自定义 OGC 客户端应用程序。</p></td></tr></tbody><caption></caption></table></div></p></section><section class="section1 padded-anchor" id="ESRI_SECTION1_184B3AAB5FED4A2CBA8D41FC8F0EDF90" purpose="section1"><h2>WMS GetStyles 请求的参数</h2><p id="GUID-E552CFB7-AE7A-44C4-9D06-AC494DEEB36C"><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="1.02*"></colgroup><colgroup width="1.00*"></colgroup><colgroup width="1.09*"></colgroup><colgroup width="1.36*"></colgroup><thead><tr><th colspan="1">参数</th><th colspan="1">必选/可选</th><th colspan="1">默认值</th><th colspan="1">说明</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-D8598362-C9A0-427A-BA19-5317880996CB"><b>VERSION</b></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-B10ADE01-5DDD-4D77-8CF1-DFC337684CDB">必选</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-487F68D6-3F91-472E-ACC8-A88461E9BF92"> <span class="usertext">1.3.0</span>（9.3 及以上）</p><p id="GUID-8D0369A7-5673-462C-90CA-3FB77A61562D"><span class="usertext">1.1.1</span> (9.2)</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-C6156D12-52F2-4241-86BD-C3ED9FC209C7">OGC 接口要求的版本。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-13CBDF8F-F31D-4482-B87D-A24869906581"><b>REQUEST</b></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-BE82FD9A-FB41-44FE-8BDD-04FCEF80D247">必选</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-86D0FF80-DDFD-4600-839A-2D1661C98F55">N/A</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-BECE0556-1B1E-4311-B43D-F4076C6FEBDC">请求名称。必须设置为 <span class="usertext">GetStyles</span>。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-BBC21225-025C-42DF-B33C-8F6F2F7A858B"><b>LAYERS</b></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-FAA44E21-C589-4A72-8CA4-97723C73D14B">必选</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-F97579E3-F572-4482-831E-CE11E86216D1">N/A</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-2C8B98DC-24D6-48B2-BF3D-BA4C094C7D9E">要检索样式描述的指定图层的逗号分隔列表。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-7D6891B5-D823-4BEE-90EC-A613457876CB"><b>SLDVER</b></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-52821821-414E-4F14-AE45-05C1A2DD6BC4">可选</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-9373FB0C-A7AD-4178-B1BB-12537572E777"><span class="usertext">1.0.0</span> (10.0)</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-BFF67079-AD9D-4A3E-BC6B-BBAE2ECBDC45">为 SLD 文档请求的 SLD 版本。仅支持 1.0.0 版本。</p></td></tr></tbody><caption></caption></table></div></p></section><section class="section1 padded-anchor" id="ESRI_SECTION1_E788078769A94BFFA77684C817AE90E1" purpose="section1"><h2>WMS GetLegendGraphic 请求的参数</h2><p id="GUID-988ABB5F-CDF9-43A4-812D-588566403C93"><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="1.00*"></colgroup><colgroup width="1.01*"></colgroup><colgroup width="1.12*"></colgroup><colgroup width="1.39*"></colgroup><thead><tr><th colspan="1">参数</th><th colspan="1">必选/可选</th><th colspan="1">默认值</th><th colspan="1">说明</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-F9A20EA7-9E47-442D-B1B9-98AC69EDAADC"><b>VERSION</b></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-A676E16E-6098-4E3D-AA05-8BE0B669573A">必选</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-04443CD7-DBDC-487C-84F3-48EB2281BD61"> <span class="usertext">1.3.0</span>（9.3 及以上）</p><p id="GUID-449FC3F6-3E50-4463-AF5E-DDEE1AACC4E8"><span class="usertext">1.1.1</span> (9.2)</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-A37D0265-5206-45D5-9386-57F2D8E6418A">OGC 接口要求的版本。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-64BA54E3-796E-4BD7-9B99-B3529486CF64"><b>REQUEST</b></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-7FF35E04-B2A4-4E98-AEA6-4F173A85E968">必选</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-38A70C5D-69CF-4AF9-9FDF-01FEAAD3C1C7">N/A</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-B6054D2C-0C4C-44D7-AC90-A3A13F80B8CE">请求名称。必须设置为 <span class="usertext">GetLegendGraphic</span>。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-D45315EB-FF01-4222-9E44-A72B6F653AAC"><b>LAYER</b></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-60260243-6F97-4924-A7DC-B4D72BEAAD39">必选</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-4E3DB986-F9AD-4865-B887-6C9BAE747E30">N/A</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-80EB8641-AF7C-4E69-A9C8-B0701615ECA7">要生成图例图形的图层。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-F4BF52BF-C9F0-4CD2-BBC3-E7CBB5ECA43F"><b>STYLE</b></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-8DBE4FAD-0FDE-45A0-BE60-6B7D13F5A1EB">可选</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-C804FE48-26D8-4AD4-A49C-DE376B6C39E4"><span class="usertext">default</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-5DE011F9-AAFF-4A32-880D-A49A0D9C620B">要生成图例图形的图层的样式。如果不存在，将选择默认样式。该样式可以是任何可用于图层的有效样式，包括非 SLD 内部定义样式。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-3A877112-4C0B-430C-8CE0-AEE78BB25929"><b>RULE</b></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-6AD2EFD0-0E0F-4CCF-AA0D-816B07622ECC">可选</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-E6D5796A-F23E-4CA6-A99C-BE11C728D05D">""</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-02C6B816-5D14-46A9-B419-C170396834A9">要用于生成图例图形的样式规则（如果适用）。样式具有多条规则但未选择任何特定规则时，地图服务负责生成表示所有样式规则的图形。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-7EABB429-0621-405D-9343-E3465A118174"><b>SLD</b></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-DF7110C6-14F7-4C23-8047-48143273072E">可选</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-2035EA7C-A914-48B5-8512-9E65F11D1742">""</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-45618262-F094-4EDE-9654-1D96816FF727">指定 SLD 文档的引用。其工作原理与 WMS GetMap 操作的 SLD= 参数相同。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-D1F8794E-420E-4EB3-B811-E95BED9D5D9B"><b>SLD_BODY</b></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-FE35B69F-2AB6-401A-B2F5-B8788CD5DEEB">可选</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-CE2E6D50-1D8C-4D81-9C60-C6C90E554917">""</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-F6E82F3E-59C0-4B50-8A8E-93ACCECD8D4B">允许 HTTP GET 请求直接包括 SLD 文档。其工作原理与 WMS GetMap 操作的 SLD_BODY 参数相同。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-7F35F1D0-0A3C-472A-A11B-513933AB4C5B"><b>FORMAT</b></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-31AC055C-FB13-40BC-919F-FF4941E44EED">可选</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-E92C2299-7F1C-4D83-B079-474026E5155F"><span class="usertext">image/png</span> (png24)</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-B6EA432D-591F-49F8-9F0D-AA4BB7E92B66">用于返回图例的 MIME 文件格式类型。所允许的值与 WMS GetMap 请求的 FORMAT= 参数相同。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-89993E4E-1119-4737-A889-1D99B0498ADA"><b>WIDTH</b></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-274AA6BA-7EBF-4F71-9FDE-32CBB2EA21A9">可选</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-577B5A60-21C7-4E3C-8993-C35C513A7C8C">取决于具体的图例图像</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-ACBFC82D-6FCC-41EA-9668-FD9B999CBFF4">对返回的图形提供以像素为单位的宽度提示。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-2183018E-F916-4ACA-B4C7-572B56F15670"><b>HEIGHT</b></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-995AC4C0-1F6C-469F-9827-417DA5B49281">可选</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-DB6C9575-9794-4A31-950D-5C7394566F35">取决于具体的图例图像</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-38A0555D-5F95-4494-A02C-E0FC4EE573AE">对返回的图形提供以像素为单位的高度提示。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-CE207238-CD0A-4AE9-97FA-C174B92425D7"><b>EXCEPTIONS</b></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-666F4E8D-3CC4-429B-A339-F68FCD22ECC2">可选</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-49358AF6-9429-451E-9B18-8E36098DC8AD"><span class="usertext">text/xml</span> (WMS 1.3.0)</p><p id="GUID-6AAE524B-5F7F-47CB-9715-BE5812C9DFCE"> <span class="usertext">application/vnd.ogc.se_xml</span>（WMS 1.1.1 和 WMS 1.1.0）</p><p id="GUID-487BD4CA-8CFF-42DC-A87C-8B8797486DA4"><span class="usertext">application/vnd.ogc.inimage</span> (WMS 1.0.0)</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-89216814-1D57-4E14-98AB-25A9078A078D">用于返回异常的 MIME 格式类型。所允许的值与 WMS GetMap 请求的 EXCEPTIONS= 参数相同。</p></td></tr></tbody><caption></caption></table></div></p></section>
+			
+				<hr>
+				<!--googleoff: all-->
+				
+	
+        
+		    <p class="feedback right">
+		        <a id="afb" class="icon-ui-contact" href="/feedback/" data-langlabel="feedback-on-this-topic" >有关此主题的反馈?</a>
+		    </p>
+        
+	
+
+				<!--googleon: all-->
+			
+		</main>
+	</div>
+	
+	<!--googleoff: all-->
+	
+		
+			<div id="main-toc-large" class="column-5">
+			    <div class="panel font-size--2 tablet-hide trailer-1">
+			      <h5 class="trailer-half">在本主题中</h5>
+			      <ol class="list-plain pre-0 trailer-0"><li><a href="#GUID-EF5721D1-C928-447A-8EA5-5AF60FFE2EFC">WMS 请求和响应</a></li><li><a href="#GUID-90AAB875-0337-451B-86BD-FC5E30F6990A">WMS 请求参数</a></li><li><a href="#GUID-5B1493CF-E8F2-4EAA-9EE0-E96265DA2ED3">WMS GetCapabilities 请求 URL 的参数</a></li><li><a href="#GUID-065A3C56-2B13-473C-9765-E2D1545539B8">WMS GetMap 请求 URL 的参数</a></li><li><a href="#GUID-59B315F3-33F1-48F9-BD6E-53FCDDFC07CC">WMS GetFeatureInfo 请求 URL 的参数</a></li><li><a href="#ESRI_SECTION1_184B3AAB5FED4A2CBA8D41FC8F0EDF90">WMS GetStyles 请求的参数</a></li><li><a href="#ESRI_SECTION1_E788078769A94BFFA77684C817AE90E1">WMS GetLegendGraphic 请求的参数</a></li></ol>
+			    </div>
+			    
+			    
+	  		</div>
+		
+    
+   <!--googleon: all-->
+
+
+
+
+          
+        </div>
+        <!-- ENDPAGECONTENT -->
+
+      </div>
+
+    </div>  <!-- End of wrapper -->
+
+  <footer class="footer leader-3 link-dark-gray" role="contentinfo">
+    <div class="grid-container">
+      <div class="row">
+        <nav class="column-6">
+          <h6 data-langlabel="arcgis-for-server">Arc<span>GIS Enterprise</span></h6>
+          <ul class="list-plain">
+            <li><a data-langlabel="home" href="../../../../../zh-CN/">主页</a></li>
+            <li><a data-langlabel="portal" href="../../../../../zh-CN/portal/">Portal</a></li>
+            <li><a data-langlabel="server" href="../../../../../zh-CN/server/">Server</a></li>
+            <li><a data-langlabel="data-store" href="../../../../../zh-CN/data-store/">Data Stores</a></li>
+            <li><a data-langlabel="cloud" href="../../../../../zh-CN/cloud/">云</a></li>
+            <li><a data-langlabel="apps" href="../../../../../zh-CN/apps/">应用程序</a></li>
+            <li><a data-langlabel="documentation" href="../../../../../zh-CN/documentation/">文档</a></li>
+          </ul>
+        </nav>
+
+        
+  <nav class="column-6">
+    <h6 data-langlabel="arcgis-platform">ArcGIS 平台</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="arcgis" href="//www.arcgis.com/">ArcGIS Online</a></li>
+      <li><a data-langlabel="arcgis-for-professionals" href="//pro.arcgis.com/">ArcGIS Pro</a></li>
+      <li><a data-langlabel="arcgis-for-server" href="//enterprise.arcgis.com/">ArcGIS Enterprise</a></li>
+      <li><a data-langlabel="arcgis-for-developers" href="https://developers.arcgis.com/">ArcGIS for Developers</a></li>
+      <li><a data-langlabel="arcgis-solutions" href="//solutions.arcgis.com/">ArcGIS Solutions</a></li>
+      <li><a data-langlabel="arcgis-marketplace" href="//marketplace.arcgis.com/">ArcGIS Marketplace</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <h6 data-langlabel="about-esri">关于 Esri</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="about-us" href="//www.esri.com/about-esri/">关于我们</a></li>
+      <li><a data-langlabel="careers" href="//www.esri.com/careers/">招贤纳士</a></li>
+      <li><a data-langlabel="insiders-blog" href="https://www.esri.com/about/newsroom/blog/">Esri 博客</a></li>
+      <li><a data-langlabel="user-conference" href="//www.esri.com/events/user-conference/index.html">用户大会</a></li>
+      <li><a data-langlabel="developer-summit" href="//www.esri.com/events/devsummit/index.html">开发者峰会</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <a class="esri-logo" href="//www.esri.com/" aria-label="Esri Home"></a>
+    <section class="footer-social-nav leader-1">
+            <a class="icon-social-twitter" aria-label="Esri on Twitter" href="https://twitter.com/Esri/"></a>
+            <a class="icon-social-facebook" aria-label="Esri on Facebook" href="https://www.facebook.com/esrigis/"></a>
+            <a class="icon-social-github" aria-label="Esri on GitHub" href="//esri.github.io/"></a>
+            <a class="icon-social-contact" aria-label="Contact Esri" href="//www.esri.com/about-esri/contact/"></a>
+    </section>
+	  
+  </nav>
+  
+  <div class="column-24 leader-1">
+    <p class="font-size--3"><a href="http://www.esri.com/legal/copyright-trademarks">Copyright &copy; 2019 Esri.</a> All rights reserved. | <a href="http://www.esri.com/legal/privacy/">隐私政策</a> | <a href="http://www.esri.com/legal/software-license">法律声明</a></p>
+  </div>
+  
+
+
+      </div>
+    </div>
+  </footer>
+  <!--googleoff: all-->
+
+  
+  
+	<script src="../../../../../zh-CN/assets/js/init.js" type="text/javascript"></script>
+	<!--<script src="../../../../../zh-CN/assets/js/drop-down.js" type="text/javascript"></script>-->
+	<script src="../../../../../zh-CN/assets/js/search/searchform.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/cdn/js/link-modifier.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/cdn/js/sitewide.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/cdn/js/libs/highlight.pack.js" type="text/javascript"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+
+
+  
+    
+
+  <script src="../../../../../zh-CN/cdn/js/affix.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    $(function () {
+          var appendFlg = true;
+
+          $("#bigmac")
+          .on("affixed.bs.affix", function (evt) {
+            if (appendFlg) {
+              $("<a class='crumb' href='#'>在 Web 浏览器中与 WMS 服务进行通信</a>").insertAfter ($("#bigmac nav a").last());
+              appendFlg = false;
+            }
+          })
+          .on ("affix-top.bs.affix", function(evt) {
+            if (!appendFlg) {
+              $("#bigmac nav a").last().remove();
+            }
+            appendFlg = true;
+          })
+    })
+  </script>
+  
+        <script type="text/javascript">
+          window.doctoc = {
+            pubID: "1634",
+            tpcID: "504",
+            
+              prefix: "管理服务",
+              prefixUrl: "/zh-cn/server/latest/publish-services/windows/",
+          
+            hideToc: false
+          }
+        </script>
+
+        <script type="text/javascript" src="../../../../../zh-CN/server/latest/publish-services/windows/1634.js" ></script>
+        <script type="text/javascript" src="../../../../../zh-CN/cdn/calcite/js/protoc.js" ></script>
+        
+        
+
+  <noscript>
+        <p>
+            <a href="flisting.htm">flist</a>
+        </p>
+    </noscript>
+    <script type="text/javascript"></script>
+  
+  
+    
+    
+
+  </body>
+</html>

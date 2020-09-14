@@ -1,0 +1,561 @@
+
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>  <html class="ie lt-ie9 lt-ie8 lt-ie7 ie6" dir="ltr"> <![endif]-->
+<!--[if IE 7]>     <html class="ie lt-ie9 lt-ie8 ie7" dir="ltr"> <![endif]-->
+<!--[if IE 8]>     <html class="ie lt-ie9 ie8" dir="ltr"> <![endif]-->
+<!--[if IE 9]>     <html class="ie ie9" dir="ltr"> <![endif]-->
+<!--[if !IE]><!--> <html dir="ltr" lang="zh-CN"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>配置对仪表盘元素的操作&mdash;Portal for ArcGIS | ArcGIS Enterprise 文档</title>
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+    <script>
+      var docConfig = {
+        locale: 'zh-CN'
+        ,localedir: 'zh-cn'
+        ,langSelector: ''
+        
+        ,relativeUrl: false
+        
+
+        ,searchformUrl: '/search/'
+        ,tertiaryNavIndex: ''
+
+        
+      };
+    </script>
+	 
+
+
+    
+    <!--[if lt IE 9]>
+      <script src="../../../../zh-CN/cdn/js/libs/html5shiv.js" type="text/javascript"></script>
+      <script src="../../../../zh-CN/cdn/js/libs/selectivizr-min.js" type="text/javascript"></script>
+      <script src="../../../../zh-CN/cdn/js/libs/json2.js" type="text/javascript"></script>
+      <script src="../../../../zh-CN/cdn/js/libs/html5shiv-printshiv.js" type="text/javascript" >
+
+    <![endif]-->
+
+     <!--[if lt IE 11]>
+    <script>
+      $$(document).ready(function(){
+        $$(".hideOnIE").hide();
+      });
+    </script>
+    <![endif]-->
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<link href="../../../../zh-CN/assets/img/favicon.ico" rel="shortcut icon" >
+	<link href="../../../../zh-CN/assets/css/screen.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/cdn/calcite/css/documentation.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/assets/css/print.css" media="print" type="text/css" rel="stylesheet" />
+
+	<!--
+	<link href="../../../../zh-CN/assets/css/screen_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/assets/css/documentation/base_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/assets/css/print_l10n.css" media="print" type="text/css" rel="stylesheet" />
+	-->
+	
+	
+		<script src="../../../../zh-CN/cdn/js/libs/jquery.1.9.1.min.js" type="text/javascript"></script>
+	
+	<script src="../../../../zh-CN/cdn/js/libs/jquery.cookie.js" type="text/javascript"></script>
+	<link href="../../../../zh-CN/cdn/css/colorbox.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/cdn/css/colorbox_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<script src="../../../../zh-CN/cdn/js/libs/jquery.colorbox-min.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/assets/js/video-init.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/assets/js/sitecfg.js" type="text/javascript"></script>
+	
+		<script src="../../../../zh-CN/assets/js/signIn.js" type="text/javascript"></script>
+	
+
+	<!--- Language Picker -->
+	<script src="../../../../zh-CN/assets/js/locale/l10NStrings.js" type="text/javascript"></script>
+	
+		 
+	
+
+	<script src="../../../../zh-CN/assets/js/calcite-web.js" type="text/javascript"></script>
+
+
+
+  <!--- search MD -->
+    <META name="description" content="了解如何为多种仪表盘元素配置操作。"><META name="last-modified" content="2019-12-6"><META name="product" content="arcgis-portal-windows,arcgis-portal-linux,arcgis-enterprise-windows,arcgis-enterprise-linux"><META name="sub_category" content="Portal for ArcGIS"><META name="search-collection" content="help"><META name="content_type_label" content="帮助主题"><META name="sub_category_label" content="Portal for ArcGIS"><META name="search-category" content="help-general"><META name="subject_label" content="PORTAL,服务,SERVER"><META name="version" content="10.8"><META name="content_type" content="Help Topic"><META name="subject" content="PORTAL,SERVICES,SERVER"><META name="content-language" content="zh-cn">
+    <!--- search MD -->
+
+  
+  <script src="../../../../zh-CN/assets/js/switchers/portal-1.js" type="text/javascript"></script>
+  
+      
+
+</head>
+
+<!--
+      pub: GUID-7B47163B-CE1B-465F-BEEE-4DADDB8DFF09=37
+      tpc: GUID-EBFA6753-380D-4080-ACEC-3AB272623889=2
+      -->
+
+
+<!-- variable declaration, if any -->
+<!-- can change following macro to set variable once we are on Jinja 2.8 -->
+
+
+
+
+
+<body class="claro zh-CN server">
+  
+
+  <!-- Drawer location -->
+  <div class="drawer drawer-left js-drawer" data-drawer="top-nav">
+        <nav class="drawer-nav" role="navigation">
+          <aside class="side-nav">
+            <h2 class="side-nav-title">Arc<span>GIS</span> Enterprise</h2>
+            <form id="helpSearchForm" class="margin-left-half margin-right-half leader-half trailer-half drawer-search-form" method="GET">
+              <input type="search" name="q"  placeholder="搜索 ArcGIS Enterprise 帮助">
+              <input type="hidden" name="collection" value="help" />
+              <input type="hidden" name="product" value="arcgis-portal-windows" />
+              <input type="hidden" name="version" value="10.8" />
+              <input type="hidden" name="language" value="zh-CN" />
+            </form>    
+             <a id="nav-portal" data-langlabel="portal" href="../../../../zh-CN/portal/" class="side-nav-link">Portal</a>
+             
+            <a id="all-servers" data-langlabel="all-servers" href="../../../../zh-CN/server/" class="side-nav-link">所有服务器</a>
+            <a id="gis-server" data-langlabel="gis-server" href="../../../../zh-CN/server/" class="side-nav-link">GIS Server</a>
+            <a id="image-server" data-langlabel="image-server" href="../../../../zh-CN/image/" class="side-nav-link">Image Server</a>
+            <a id="geo-analytics-server" data-langlabel="geo-analytics-server" href="../../../../zh-CN/geoanalytics/" class="side-nav-link">GeoAnalytics Server</a>
+            <a id="geoevent-server" data-langlabel="geoevent-server" href="../../../../zh-CN/geoevent/" class="side-nav-link">GeoEvent Server</a>
+            <a id="notebook-server" data-langlabel="notebook-server" href="../../../../zh-CN/notebook/" class="side-nav-link">Notebook Server</a>
+            <a id="nav-data-store" data-langlabel="data-store" href="../../../../zh-CN/data-store/" class="side-nav-link">Data Stores</a>
+            <a id="nav-cloud" data-langlabel="cloud" href="../../../../zh-CN/cloud/" class="side-nav-link">云</a>
+            <a id="nav-apps" data-langlabel="apps" href="../../../../zh-CN/apps/" class="side-nav-link">应用程序</a>
+            <a id="nav-doc" data-langlabel="documentation" href="../../../../zh-CN/documentation/" class="side-nav-link">文档</a>
+
+          </aside>
+        </nav>
+    </div>
+
+    <!-- user navigation collapses to drawer on mobile -->
+    
+    <div class="drawer drawer-right js-drawer hide-if-logged-out logged-in-navigation" data-drawer="user-nav">
+      <nav class="drawer-nav">
+        <aside class="side-nav">
+          <a class="side-nav-link agolProfile" href="#">我的个人资料</a>
+          <a class="side-nav-link icon-ui-sign-out js-log-out" href="#">登出</a>
+        </aside>
+      </nav>
+    </div>
+    
+<!-- End of drawer -->
+
+  
+  <div class="wrapper">
+      <!--googleoff: all-->
+
+      <header class="top-nav" data-skin="learn">
+        <a class="skip-to-content" href="#skip-to-content">Skip To Content</a>
+        <div class="grid-container">
+          <div class="column-24">
+
+
+            <!--<div class="top-nav-title-wrapper text-center ">-->
+              <a href='../../../../zh-CN/' class="top-nav-title tablet-hide"><span>Arc</span>GIS  Enterprise</a>
+              <a href='../../../../zh-CN/' class="icon-ui-menu top-nav-title js-drawer-toggle tablet-show" data-drawer="top-nav"><span>Arc</span>GIS Enterprise</a>
+            <!--</div> -->
+
+          
+            <nav role="navigation" class="top-nav-list left tablet-hide">
+              <a id="nav-portal" data-langlabel="portal" href="../../../../zh-CN/portal/" class="top-nav-link">Portal</a>
+
+                <div class="dropdown js-dropdown ">
+                  <a class="top-nav-link js-dropdown-toggle" tabindex="0" aria-haspopup="true" aria-expanded="false" href="#">Servers</a>
+                  <nav class="dropdown-menu featured" role="menu">
+                    <ul class="dropdown-sublist-featured">
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/get-started/latest/windows/additional-server-deployment.htm" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path  d="M42.92 6.1H4.12v8.566l.833.832-.835.833-.018 7.332.845.847-.825.824V33.9h25v5.2h-2v1.075H8.02v.8h19.1v.925h4.8v-.925H40v-.8h-8.08V39.1h-2v-5.2h13v-8.566l-.834-.834.835-.834v-7.332l-.835-.834.835-.834zm-11.8 35h-3.2v-1.2h3.2zm11-8H4.92v-7.434l.767-.766h35.668l.765.766zm0-9.766l-.766.766H5.666l-.766-.767.017-6.669.766-.764h35.671l.766.766zm0-9l-.766.766H5.687l-.766-.766V6.9h37.2zM19 11.9h-2v-.8h2zm-4 0h-2v-.8h2zm-4 0H9v-.8h2zm6 8.2h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9zm8 9h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9z"/></svg></span>
+                          <span class="sublink-text">所有服务器</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/server/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M45.98 33.575a.616.616 0 0 0-.335-.51l-3.362-2.03 3.362-2.031a.556.556 0 0 0 0-1.02l-11.1-6.704a1.293 1.293 0 0 0-1.112 0L22.33 27.982a.556.556 0 0 0 0 1.02l3.36 2.03-3.358 2.03a.556.556 0 0 0-.002 1.021l3.322 2.006-3.324 2.008a.555.555 0 0 0 .002 1.017l11.102 6.703a1.25 1.25 0 0 0 1.11.002l11.104-6.706a.556.556 0 0 0 0-1.02l-3.32-2.006 3.318-2.004a.607.607 0 0 0 .335-.509zM33.837 21.97c.026-.01.286-.005.29-.005l10.814 6.53-10.8 6.523c-.028.01-.284.005-.294.006l-10.813-6.53zm11.105 16.636l-10.8 6.523a2.564 2.564 0 0 1-.295.006l-10.81-6.529 3.39-2.047 7.004 4.23a1.083 1.083 0 0 0 .557.131 1.101 1.101 0 0 0 .554-.13l7.01-4.233zM34.14 40.098a2.545 2.545 0 0 1-.294.006l-10.812-6.53 3.43-2.073 6.97 4.208a1.25 1.25 0 0 0 1.107-.001l6.966-4.206 3.431 2.073zM9 8H7V7h2zm8 8h-2v-1h2zm-4-8h-2V7h2zm4 0h-2V7h2zm-4 8h-2v-1h2zm7.316 11.1H3.9v-6.434l.766-.766h35.668l.766.766v2.12l.8.483v-2.935l-.826-.826.826-.845v-6.329l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9h16.88a2.632 2.632 0 0 1 .336-.8zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zm0 8v-5.668l.766-.766h35.668l.766.766v5.67l-.746.764H4.666zM15 24v-1h2v1zm-4 0v-1h2v1zm-2-8H7v-1h2zm-2 8v-1h2v1z"/></svg></span>
+                          <span class="sublink-text">GIS Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/image/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 8h-2V7h2zm-4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm8 8h-2v1h2zm-8 0H7v1h2zm4 9v-1h-2v1zm-4 0v-1H7v1zm8 0v-1h-2v1zm4 3.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V21h-.8v-.334l-.766-.766H4.666l-.766.766V27.1H21zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zm40.234 4v21.8H23.1V23.1zm-.8 16.366L39.466 44.1h2.868l1.766-1.766zm-20.2-9.932l5.634-5.634h-2.868L23.9 26.666zm6.2-5.068L24.466 30.1h2.868l2.766-2.766zM28.466 30.1H30.1v-1.634zm2.434 0h6.2v-6.2h-6.2zm-7 7h6.2v-6.2h-6.2zm7 0h6.2v-6.2h-6.2zm0 6.434l5.634-5.634h-2.868L30.9 40.666zm7-7l5.634-5.634h-2.868L37.9 33.666zm1.634-5.634H37.9v1.634zm-8.634 7v1.634l1.634-1.634zm.566 6.2h2.868l2.766-2.766v-2.868zm6.434-3.566l2.634-2.634H37.9zM35.466 44.1H37.1v-1.634zm2.434 0h.434l5.766-5.766V37.9h-2.434L37.9 41.666zm6.2-8.634L42.466 37.1H44.1zm0-4L38.466 37.1h2.868l2.766-2.766zm0-7.566h-6.2v6.2h6.2zm-20.2 0v1.634l1.634-1.634zm0 20.2h6.2v-6.2h-6.2zm20.2 0v-.634l-.634.634z"/></svg></span>
+                          <span class="sublink-text">Image Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/geoanalytics/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 16h-2v-1h2zm-8 8v-1H7v1zm8 0v-1h-2v1zM13 7h-2v1h2zm4 0h-2v1h2zM9 7H7v1h2zm21.45 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V27.9h-1.464l-.801-.8H41.1v-6.434l-.766-.766H4.666l-.766.766V27.1h27.15zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM13 24v-1h-2v1zm0-9h-2v1h2zm-4 0H7v1h2zm26.672 27.148A1.87 1.87 0 0 1 35.9 43a1.91 1.91 0 1 1-3.763-.222l-9.845-3.414A1.88 1.88 0 0 1 21 39.9a1.9 1.9 0 1 1 1.474-3.084l4.692-2.346A1.878 1.878 0 0 1 27.1 34a1.902 1.902 0 0 1 1.9-1.9 1.867 1.867 0 0 1 .781.191l3.788-5.05A1.88 1.88 0 0 1 33.1 26a1.9 1.9 0 1 1 3.491 1.026l4.889 4.888c-.069.056-.144.1-.21.162a3.986 3.986 0 0 0-.358.402l-4.883-4.883A1.889 1.889 0 0 1 35 27.9a1.867 1.867 0 0 1-.781-.191l-3.788 5.049a1.868 1.868 0 0 1 .437.965l9.204.614c-.018.11-.049.218-.058.33A3.93 3.93 0 0 0 40 35c0 .046.01.09.01.135l-9.185-.612A1.913 1.913 0 0 1 29 35.9a1.889 1.889 0 0 1-1.474-.716l-4.692 2.346a1.878 1.878 0 0 1 .066.47 1.9 1.9 0 0 1-.105.625c-.007.02-.022.036-.03.056l9.63 3.34a1.87 1.87 0 0 1 2.786-.505l5.415-4.437c.067.108.127.22.204.322a3.9 3.9 0 0 0 .292.306zM33.9 26a1.092 1.092 0 0 0 .43.872 1.12 1.12 0 0 0 1.42-.068A1.1 1.1 0 1 0 33.9 26zm-6 8a1.1 1.1 0 0 0 2.196.093 1.135 1.135 0 0 0-.426-.965A1.087 1.087 0 0 0 29 32.9a1.101 1.101 0 0 0-1.1 1.1zm-5.8 4a1.098 1.098 0 1 0-.06.362A1.101 1.101 0 0 0 22.1 38zm13 5a1.1 1.1 0 1 0-2.2 0 1.1 1.1 0 0 0 2.2 0zm10.8-8a1.9 1.9 0 1 1-3.8 0c0-.053.003-.105.007-.158A1.9 1.9 0 0 1 45.9 35zm-.8 0a1.1 1.1 0 0 0-2.196-.093 1.153 1.153 0 0 0 .216.752A1.1 1.1 0 0 0 45.1 35z"/></svg></span>
+                          <span class="sublink-text">GeoAnalytics Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/geoevent/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M13 8h-2V7h2zm4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm12.418 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826v2.117c-.259-.177-.53-.337-.8-.497v-1.288l-.766-.766H4.666l-.766.766V27.1h17.933c-.148.26-.283.53-.415.8zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM9 24v-1H7v1zm4-9h-2v1h2zm0 9v-1h-2v1zm-4-9H7v1h2zm8 9v-1h-2v1zm16.9 2h-.8v8.9H39v-.8h-5.1zm.1-3.901a11.9 11.9 0 1 0 11.9 11.9 11.914 11.914 0 0 0-11.9-11.9zm0 23a11.1 11.1 0 1 1 11.1-11.1 11.112 11.112 0 0 1-11.1 11.1z"/></svg></span>
+                          <span class="sublink-text">GeoEvent Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/notebook/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M22 27.1H3.9v-6.434l.766-.766h18.576a5.262 5.262 0 0 1 .83-.8H4.666l-.766-.766v-5.668l.766-.766h35.668l.766.766V18h.8v-5.666l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9H22zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zM9 8H7V7h2zm8 0h-2V7h2zm-4 0h-2V7h2zm2 16v-1h2v1zm-4 0v-1h2v1zm-4 0v-1h2v1zm0-8v-1h2v1zm8 0v-1h2v1zm-4 0v-1h2v1zm18.9 8.1h-1.8v1.8h1.8zm-.8 1h-.2v-.2h.2zm15.498-4.48a2.727 2.727 0 0 0-1.62-.5v-.02H27.25a3.154 3.154 0 0 0-3.15 3.15V38.1h-1.68a3.386 3.386 0 0 0-2.872 1.58 3.49 3.49 0 0 0-.157 3.419 3.241 3.241 0 0 0 2.954 1.801h15.161a3.404 3.404 0 0 0 3.394-3.4V26.9h5v-3.65a3.224 3.224 0 0 0-1.302-2.63zM22.345 44.1a2.44 2.44 0 0 1-2.23-1.341 2.706 2.706 0 0 1 .11-2.65A2.588 2.588 0 0 1 22.42 38.9h12.89a3.395 3.395 0 0 0 0 5.2zM40.1 23.192V41.5a2.6 2.6 0 1 1-2.6-2.6v-.8H24.9V23.25a2.352 2.352 0 0 1 2.35-2.35h13.795a3.183 3.183 0 0 0-.945 2.292zm5 2.908h-4.2v-2.908a2.274 2.274 0 0 1 1.44-2.18 1.944 1.944 0 0 1 1.791.259 2.423 2.423 0 0 1 .97 1.979zm-17.1 5h9v.8h-9zm0 3h7v.8h-7zm0-6h9v.8h-9zm4-3h5v.8h-5z"/></svg></span>
+                          <span class="sublink-text">Notebook Server</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+
+              <a id="nav-data-store" data-langlabel="data-store" href="../../../../zh-CN/data-store/" class="top-nav-link">Data Stores</a>
+              <a id="nav-cloud" data-langlabel="cloud" href="../../../../zh-CN/cloud/" class="top-nav-link">云</a>
+              <a id="nav-apps" data-langlabel="apps" href="../../../../zh-CN/apps/" class="top-nav-link">应用程序</a>
+            </nav>
+
+
+            
+            
+            
+
+            <div class="margin-left-1 top-nav-list right hide-if-logged-in logged-out-navigation">
+               
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+              
+              <a data-langlabel="sign-in" id="login-link" class="icon-ui-user top-nav-link link-blue login-link" href="#">登录</a>
+              
+            </div>
+
+            
+            <nav class="margin-left-1 top-nav-list right hide-if-logged-out logged-in-navigation">
+              
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+             
+              <div class="dropdown js-dropdown right">
+
+                <div class="tablet-show top-nav-link">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a href="#" data-drawer="user-nav" class="user-nav-name js-drawer-toggle" data-first-name></a>
+                </div>
+
+                <div class="tablet-hide top-nav-link js-dropdown-toggle">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a class="user-nav-name top-nav-dropdown dropdown-btn" data-first-name>&nbsp;</a>
+                </div>
+
+                <nav class="dropdown-menu dropdown-right">
+                
+                  <a class="dropdown-link agolProfile" id="agolProfile" href="#">我的个人资料</a>
+                  <a class="dropdown-link js-log-out" id="agolLogout" href="#">登出</a>
+                </nav>
+              </div>
+            </nav>
+            
+
+            
+          </div>
+        </div>
+      </header>
+
+      <div class="js-search search-overlay">
+        <div class="search-content" role="dialog" aria-labelledby="search">
+          <form method="GET" id="helpSearchForm">
+            <label>
+              搜索 ArcGIS Enterprise 帮助
+              <div class="search-bar">
+                <input type="search" name="q"  placeholder="搜索 ArcGIS Enterprise 帮助" class="search-input js-search-input">
+                <input type="hidden" name="collection" value="help" />
+                <input type="hidden" name="product" value="arcgis-portal-windows" />
+                <input type="hidden" name="version" value="10.8" />
+                <input type="hidden" name="language" value="zh-CN" />
+              </div>
+            </label>
+            <input type="hidden" name="relativePath" value="../../../../" /><button type="submit" class="btn btn-large right">搜索</button>
+          </form>
+        </div>
+      </div>
+
+      <!--googleon: all-->
+
+      <div id="skip-to-content">
+        <!--googleoff: all-->
+        <header class="sub-nav sub-nav-learn">
+          <div class="grid-container">
+            
+            <div class="column-24">
+              <div style="display:table;" class="sdk-home-banner">
+                <div class="sdk-home-banner-content">
+                  <h1 class="sub-nav-title link-white">Portal for ArcGIS</h1>
+                </div>
+              </div>
+            </div>
+
+            <div class="column-24">
+              <nav class='sub-nav-list tablet-hide'><a class="sub-nav-link" href="../../../../zh-CN/portal/" target="_top" title="Portal for ArcGIS 主页">主页</a><a class="sub-nav-link is-active" href="../../../../zh-CN/portal/latest/use/" target="_top" title="使用 Portal for ArcGIS">使用</a><a class="sub-nav-link" href="../../../../zh-CN/portal/latest/administer/windows/" target="_top" title="安装、管理和保护 Portal for ArcGIS">管理</a></nav><select class='tablet-show select-full trailer-half js-select-nav'><option value="../../../../zh-CN/portal/">主页</option><option selected="true" value="../../../../zh-CN/portal/latest/use/">使用</option><option value="../../../../zh-CN/portal/latest/administer/windows/">管理</option></select>
+            </div>
+
+          </div>
+        </header>
+        <!--googleon: all-->
+       
+        <!-- content goes here -->
+        <div class="grid-container ">
+          
+
+            
+              
+  <!--BREADCRUMB-BEG--><div id="bigmac" class="sticky-breadcrumbs trailer-2" data-spy="affix" data-offset-top="180"> </div><!--BREADCRUMB-END-->
+  <!--googleoff: all-->
+    <div class="column-5 tablet-column-12 trailer-2 ">
+      <aside class="js-accordion accordion reference-index" aria-live="polite" role="tablist">
+        <div></div>
+      </aside>
+
+      <div class="js-sticky scroll-show tablet-hide leader-1 back-to-top" data-top="0" style="top: 0px;">
+        <a href="#" class="btn btn-fill btn-clear">返回顶部</a>
+      </div>
+    </div>
+  <!--googleon: all-->
+  
+            
+            
+            
+	
+		<div class="column-13  pre-1 content-section">
+	
+		<header class="trailer-1"><h1>配置对仪表盘元素的操作</h1></header>
+
+		 
+	<!--googleoff: all-->
+	
+		
+				<aside id="main-toc-small" class="js-accordion accordion tablet-show trailer-1">
+			      <div class="accordion-section">
+			        <h4 class="accordion-title">在本主题中</h4>
+			        <div class="accordion-content list-plain">
+			          <ol class="list-plain pre-0 trailer-0"><li><a href="#ESRI_SECTION1_A9655F3A1C344D6599B72CF46EE7B92E">配置操作</a></li><li><a href="#ESRI_SECTION1_A8948E0885C244B1B28D7BD8B4E86166">地图元素</a></li><li><a href="#ESRI_SECTION1_1BD7BC3D9C144DFDB4B920F23E5D77AF">业务图层</a></li><li><a href="#ESRI_SECTION1_E3EC792D9D05428A8899C14B7FB4F43A">列表元素</a></li><li><a href="#ESRI_SECTION1_B0AAE1ADB5D34729804EDED4DEE295BE">系列图表和饼图</a></li><li><a href="#ESRI_SECTION1_8A31C6F78B764E75A5D4BC76141534F4">类别选择器</a></li><li><a href="#ESRI_SECTION1_757179DDE8BC4B59AF34C53D59997DD3">数字选择器</a></li><li><a href="#ESRI_SECTION1_5DB5FC4E07944C2D8E7568B0D9EC920E">日期选择器</a></li></ol>
+			        </div>
+			      </div>
+			     </aside>
+		
+    
+   <!--googleon: all-->
+
+
+		<main>
+			
+	
+    	
+    
+
+
+			
+<section class="section1 padded-anchor" id="ESRI_SECTION1_A9655F3A1C344D6599B72CF46EE7B92E" purpose="section1"><h2>配置操作</h2><p id="GUID-877497E6-A915-4C78-BB0D-FC092D1A7766"> 可以通过源元素来配置操作，源元素也是最终用户用来与事件进行交互以及触发事件的元素。</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><section class="context padded-anchor" id="ESRI_CONTEXT_3BD75566B2D34332A7B7E37E05069C88" purpose="context"><p id="GUID-D1410D5C-2FE9-4E95-B205-2F3BE356BC57">要在元素上配置操作，请执行以下操作：</p></section><div class="steps" id="ESRI_STEPS_A7F5D9DF10DE429293FD874118F824D5"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_DC8232EF26334A8785205B7AF02416B9"><span purpose="cmd">将鼠标悬停在元素上，然后单击<span class="uicontrol">配置</span> <img purpose="img" placement="inline" alt="配置按钮" title="配置按钮" src="GUID-CBF1F202-1463-4D6A-931E-941829EA8243-web.png">。</span></li><li purpose="step" id="ESRI_STEP_FBAF9E2315C0412DB63882E652196077"><span purpose="cmd">单击<span class="uicontrol">操作</span>选项卡。</span></li><li purpose="step" id="ESRI_STEP_529A787D4A2742A2B2E4048547325B44"><span purpose="cmd">单击<span class="uicontrol">添加操作</span>并选择可用操作。</span><div class="info" purpose="info"><p id="GUID-66ECEBC6-DB73-41FF-B52E-EDAB3F89165B">如果需要多个操作，请重复此步骤。</p></div></li><li purpose="step" id="ESRI_STEP_D12421F3E3A841C58B5762286BAA3063"><span purpose="cmd">单击<span class="uicontrol">添加目标</span>并选择可用目标。</span><div class="info" purpose="info"><p id="GUID-302E7284-BFC8-4057-82E3-01593FC8675A">要为该操作添加其他目标，请重复此步骤。</p></div></li></ol></div></section><div class="panel trailer-1 note" id="GUID-1BA1243B-831B-4573-9D2F-0B7EED0B02CF"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-56670DB7-862C-46BA-B35D-85511CFF5728"><ul purpose="ul" id="UL_C3B051C48AF0449EB6E46D0D1C08BD6D"><li purpose="li" id="LI_477661D989A7448A8EFDA3991FD5A43C">配置地图元素时，有两个与操作相关的选项卡：<span class="uicontrol">地图操作</span>和<span class="uicontrol">图层操作</span>。</li><li purpose="li" id="LI_39EB49A149E54BEC8BCE636E8AEBA5C6">配置类别、数字和日期选择器时，只能将其添加到标题或侧面板。这些元素不能通过<span class="uicontrol">添加</span>菜单进行添加。有关详细信息，请参阅<a class="xref xref" href="../../../../zh-CN/portal/latest/use/selectors.htm">选择器</a>。</li></ul></p></div><p id="GUID-14A71A49-48D9-406F-AA03-1BEEDAFAA783">在仪表盘中配置源元素和目标元素的方式可以确定可为其配置的操作的类型。以下各部分概述了可根据源元素和目标元素的配置进行的可能操作。如果未列出特定源到目标对，则无法进行该类型的交互。</p></section><section class="section1 padded-anchor" id="ESRI_SECTION1_A8948E0885C244B1B28D7BD8B4E86166" purpose="section1"><h2>地图元素</h2><p id="GUID-DE175CA4-110F-45B5-83D1-B418877D9FBD"> 您可以配置以下操作，以响应地图范围中的更改事件。设置另一个地图的范围或将空间过滤器应用于另一个类型的目标元素时，将使用源地图的范围。有关详细信息，请参阅<a class="xref xref" href="../../../../zh-CN/portal/latest/use/map-element-and-tools.htm">地图元素</a>。</p><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><colgroup width="*"></colgroup><colgroup width="*"></colgroup><thead><tr><th colspan="1">源元素</th><th colspan="1">可能的操作</th><th colspan="1">目标元素</th><th colspan="1">目标子元素</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="15" colspan="1"><p id="GUID-D819CB0F-4287-491D-ADAA-783C40AC1877">地图</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-5C877C26-8402-4A43-8718-2555A745CA88">设置范围</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-716F51A9-6B7A-4009-9E1F-AE85A77DAC63">地图</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="14" colspan="1"><p id="GUID-A004238D-8FDA-4F0D-AF43-027D1C20ECF6">过滤器（空间）</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-260B4DD8-EF03-44D0-8F7A-8F6461070206">地图的业务图层</p></td><td outputclass="" purpose="entry" rowspan="5" colspan="1"></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-2EDEDD1A-018D-40E0-BA61-43AD3380B3E6">列表</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-6D055D6B-B38B-4C9C-9099-7DDC66310B28">详细信息</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-0FD445C1-7665-493F-A9BB-B571A60FC8FA">系列图表</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-52BBC8C7-0B14-4755-9D6C-2C9DFF8D38CE">饼图</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="2" colspan="1"><p id="GUID-098A46E8-356A-436E-96A3-782246C526E6">指示器</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-97C99A4C-6341-475A-A4D1-833DB3A0E34B">值</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-D45A91FA-0DE1-4995-85AF-50115F3DCFBE">参考</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="3" colspan="1"><p id="GUID-8B3CBC60-251A-41F4-9FFD-DCB840624F80">仪表</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-DB9EF0B3-1749-425E-99B2-DF81CAF1E8CC">值</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-D70456C8-660A-445E-B2E2-56301E381798">最小值</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-3CA160EB-5B07-417C-AAE0-A0770663672C">最大值</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-0F84EF51-2D2B-414B-B372-B04739A5972D">嵌入内容</p></td><td outputclass="" purpose="entry" rowspan="2" colspan="1"></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-63B23EF1-2173-4707-B7C0-0FD886F18025">分组值中的类别</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="2" colspan="1"><p id="GUID-A11882ED-B8A6-42B6-A84E-FE0F39CE04F1">数字选择器</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-4D036C5D-104D-4171-B716-D6E2EE8B1C8A">最小值</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-549494E4-03E9-4C98-AAAB-5CEEA2F07D16">最大值</p></td></tr></tbody><caption></caption></table></div></section><section class="section1 padded-anchor" id="ESRI_SECTION1_1BD7BC3D9C144DFDB4B920F23E5D77AF" purpose="section1"><h2>业务图层</h2><p id="GUID-8D51E67F-D3DF-41A8-8B1B-1A2404CA1329">您可以配置以下操作，以响应业务图层上选择的更改：</p><p id="GUID-AD8BF550-219C-4243-A870-658B39EB7986"><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><colgroup width="*"></colgroup><colgroup width="*"></colgroup><thead><tr><th colspan="1">源元素</th><th colspan="1">可能的操作</th><th colspan="1">目标元素</th><th colspan="1">目标子元素</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="17" colspan="1"><p id="GUID-E81442F7-05C5-4911-B1E0-527F04A21131">业务图层</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-9679D413-587A-4F7A-9A34-A145DF36A598">缩放</p></td><td outputclass="" purpose="entry" rowspan="3" colspan="1"><p id="GUID-1A2B4C98-2595-4ECE-BE0C-C08BCB6729FF">地图</p></td><td outputclass="" purpose="entry" rowspan="3" colspan="1"></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-360D1BA3-6938-44CC-8F0C-CAB43289497D">平移</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-A603698B-F8BE-45E0-94B9-5E7664D95DB8">闪烁</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="14" colspan="1"><p id="GUID-97B08E04-4A36-4E16-995D-0AC64C6A24E1">过滤器（属性或空间）</p><div class="panel trailer-1 note" id="GUID-B594690E-DC3B-4D2A-AEE2-ED3F799F9289"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-97778D9B-4E2F-4095-B43B-30EB8CFE2853">如果源图层具有面几何类型，则可将空间过滤器应用于目标元素。点和线要素无法用于应用空间过滤器。</p></div></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-F858FC9B-FEEC-44B9-9EE4-AD821A23E782">地图的业务图层</p></td><td outputclass="" purpose="entry" rowspan="5" colspan="1"></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-D4F24FF5-4071-401C-84D0-8DF9F56ED6A6">列表</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-A2D05089-852E-44F5-92D3-F5AA926FADBF">详细信息</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-263FBEFF-009B-43F9-817A-010C47BAF116">系列图表</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-086034CE-F3D5-4EAC-8491-35E789ED9C1A">饼图</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="2" colspan="1"><p id="GUID-5283A701-EAE8-4F2F-8ADC-835FC585D8DA">指示器</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-8E8B8612-16B8-4BBA-8D61-51DB20734A99">值</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-E9BB5FE2-5798-42E3-9829-A4D93B8101E3">参考</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="3" colspan="1"><p id="GUID-174EC2B4-F445-4F73-9F18-9BC227B7467A">仪表</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-9E2D8D02-9B43-4038-9810-A8F41C50E47B">值</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-3FE5E49C-7C2C-4DF6-828F-AA2245E9271B">最小值</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-50B8249C-0F96-417E-8373-F1D5C88245CE">最大值</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-DA6201A4-9663-43B9-A540-8B00C1C74C21">嵌入内容</p></td><td outputclass="" purpose="entry" rowspan="2" colspan="1"></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-340174DB-80E9-45D3-9459-EF495AF1AEEA">类别选择器</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="2" colspan="1"><p id="GUID-3BEF961B-95F1-48F1-9F75-91772CDFEA88">数字选择器</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-87311654-9FB9-480A-9CC6-30F47614936F">最小值</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-E435570D-983F-4CA4-B7AA-9F26964803ED">最大值</p></td></tr></tbody><caption></caption></table></div></p></section><section class="section1 padded-anchor" id="ESRI_SECTION1_E3EC792D9D05428A8899C14B7FB4F43A" purpose="section1"><h2>列表元素</h2><p id="GUID-56E7F9D5-8BED-4A4D-92CE-B827BCDA86FF">您可以配置以下操作，以响应列表选择的更改。</p><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><colgroup width="*"></colgroup><colgroup width="*"></colgroup><thead><tr><th colspan="1">源元素</th><th colspan="1">可能的操作</th><th colspan="1">目标元素</th><th colspan="1">目标子元素</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="19" colspan="1"><p id="GUID-4BFF97A6-CDDA-4619-A533-AAFA1B638B3C">列表</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-9E0331B9-8C23-4554-AEBF-5A2AC0D039B6">缩放</p></td><td outputclass="" purpose="entry" rowspan="5" colspan="1"><p id="GUID-5B29E989-68FA-4ED0-96BB-8CD0260018E6">地图</p></td><td outputclass="" purpose="entry" rowspan="5" colspan="1"></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-0B149A11-7A84-47E0-8D3E-36E7D328239C">平移</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-A7E22905-E418-4129-AF8B-0085B8E1F9E2">闪烁</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-56659725-71B1-45A1-BCB6-237DBDC59D49">显示弹出窗口</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-E2A08202-860B-461F-942F-92702A75C29A">随沿要素</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="14" colspan="1"><p id="GUID-223AD0A0-DB75-43AA-B939-1FC6C0546356">过滤器（属性或空间）</p><p id="GUID-819AF883-CE87-46A5-A9F4-8A0A1A2AF685"><div class="panel trailer-1 note" id="GUID-1A3739A6-E6EB-40EC-BBFF-930C472C4472"><h5 class="icon-ui-comment trailer-0">注：</h5>请注意：如果使用数据源（要素图层而非表格）对列表进行了配置，则 Operations Dashboard 可以使用要素几何，并且可以将空间过滤器应用于目标元素。</div></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-B2058999-7446-47CB-9B86-F36B54D457D5">地图的业务图层</p></td><td outputclass="" purpose="entry" rowspan="5" colspan="1"></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-AC188B41-2DAC-49B2-9AEF-543BCD8FDDAF">列表</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-EB87BDA9-FE3B-4F3E-AC25-A0E5F357DCD9">详细信息</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-395208CB-F497-48E9-902F-4F692E174867">系列图表</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-8170A279-8370-4238-A019-9CE8F3888981">饼图</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="2" colspan="1"><p id="GUID-6FB4FE60-9C25-4278-BCF8-BBA8BEC0F057">指示器</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-E149A3A6-835B-4FE1-9E34-3F32EAA15ACB">值</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-AA15325E-6034-4B09-A95B-7307D06C10A1">参考</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="3" colspan="1"><p id="GUID-10856CEB-25AC-4961-8512-F2416FED3119">仪表</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-7E15B029-1048-4ACF-9EB1-3B852EF5ACC3">值</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-74C1BF69-1F71-48BA-879A-B71A8F49F16E">最小值</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-6CB1545C-AD45-4305-8C25-AF6D6E1E26E3">最大值</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-1E329623-D664-4392-B0A8-77C535DE8D9F">嵌入内容</p></td><td outputclass="" purpose="entry" rowspan="2" colspan="1"></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-FB0C7CC6-6E16-4F7A-BA3B-CEF34AAC0E44">类别选择器</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="2" colspan="1"><p id="GUID-69BECD07-9760-499C-A201-9AFBD23F5C41">数字选择器</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-9C6383FB-CF25-4EDD-AE96-350F88A86461">最小值</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-ECA1C11C-28CD-485E-AF43-5080926CFBF5">最大值</p></td></tr></tbody><caption></caption></table></div></section><section class="section1 padded-anchor" id="ESRI_SECTION1_B0AAE1ADB5D34729804EDED4DEE295BE" purpose="section1"><h2>系列图表和饼图</h2><div class="panel trailer-1 note" id="GUID-87316438-E6C1-493A-B5B9-C370309F3215"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-18DEA1BD-FEC8-4535-93A5-A47DC635CFCE">只有仪表盘元素基于与系列图表或饼图相同的数据源，才能被识别为目标元素。这适用于下面列出的“要素中的类别”和“分组值中的类别”配置选项。如果系列图表的源配置选项是“字段中的类别”，则不支持操作。</p></div><p id="GUID-0C8E051E-5BBD-4F9A-AB7C-3BDDC7215826">如果系列图表或饼图的源配置选项是“分组值中的类别”，则可以配置以下操作，以响应图表选择的更改。</p><p id="GUID-3E827B1D-D701-4B69-ADDB-E199FA2726AA"><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><colgroup width="*"></colgroup><colgroup width="*"></colgroup><thead><tr><th colspan="1">源元素</th><th colspan="1">可能的操作</th><th colspan="1">目标元素</th><th colspan="1">目标子元素</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="14" colspan="1"><p id="GUID-C2B55034-1312-4388-B639-1626099B6FDD">分组值中的类别</p></td><td outputclass="" purpose="entry" rowspan="14" colspan="1"><p id="GUID-1A3DDF51-E917-46E0-9B8C-33749D6F80B5">过滤器（属性）</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-1BF00CB8-3643-4214-954C-F2492E6A9708">地图的业务图层</p></td><td outputclass="" purpose="entry" rowspan="5" colspan="1"></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-487A17A2-98A6-4D23-967F-5B5830A33C24">列表</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-0C8518A3-8ADF-4BDA-A2B6-D1CCD573C5DF">详细信息</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-292BC5F3-2396-41B5-BD31-43A0B10978EB">系列图表</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-481B70D2-094C-48C8-A7E8-83B059F81A88">饼图</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="2" colspan="1"><p id="GUID-8488B698-92F9-443E-8E40-B097C1F4F912">指示器</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-36EA9435-91CF-48FC-B4E6-2C17F036B284">值</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-0D6BD083-E4AC-45F2-9E04-FC0356CA6A46">参考</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="3" colspan="1"><p id="GUID-AFAB916E-9AA0-4F93-8A73-ADA97387C4BF">仪表</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-9A5C1FE1-0F93-418A-B8A9-E7FBE698A45E">值</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-215B2ADC-5520-42B1-B7F1-E22994F92426">最小值</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-69B23108-3C4B-44A4-A54A-0827187A7B5A">最大值</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-CDD9B184-185B-4653-915C-99061E62BC41">嵌入内容</p></td><td outputclass="" purpose="entry" rowspan="2" colspan="1"></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-45205600-ED32-4C3E-9FFE-BE5E533DDEC4">类别选择器</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="2" colspan="1"><p id="GUID-162944D6-8DE6-4EE5-B164-FAA9FEDA740B">数字选择器</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-FF328E60-1E73-4B35-9D20-BBFEFA5A7402">最小值</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-FC691CD9-4F76-4305-B771-E7ADFDDDA896">最大值</p></td></tr></tbody><caption></caption></table></div></p><div class="panel trailer-1 note" id="GUID-FAF06E21-2A0B-4AC8-8F23-1B2DFE494195"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-883FCB30-7B82-4676-A4EA-0CDD1F334D7D">系列图表能够解析来自不同字段类型的数据。将基于日期的图表配置为生成“分组值中的类别”时，只有在解析的字段类型为日期时才支持操作。</p></div><p id="GUID-0D9BD157-2166-4BCB-B46F-7F10772D17D5">如果系列图表或饼图的源配置选项是“要素中的类别”，则可以配置以下操作，以响应图表选择的更改。</p><p id="GUID-52B05F1A-C05A-4F3A-ADDA-D60294B0F253"><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><colgroup width="*"></colgroup><colgroup width="*"></colgroup><thead><tr><th colspan="1">源元素</th><th colspan="1">可能的操作</th><th colspan="1">目标元素</th><th colspan="1">目标子元素</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="18" colspan="1"><p id="GUID-1BCA587D-44C8-4F75-A2CA-9446DB304952">要素中的类别</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-B2F25A5F-DDE6-4526-B181-358E5B866852">缩放</p></td><td outputclass="" purpose="entry" rowspan="5" colspan="1"><p id="GUID-A172D4E1-5E50-488D-A41E-4D721C94678D">地图</p></td><td outputclass="" purpose="entry" rowspan="5" colspan="1"></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-E9FAF7C8-E4A0-4AA1-82B8-EE02C9F11B7E">平移</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-05142802-F2DD-441A-A091-AB7116466F5E">闪烁</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-3574B19D-9CEB-485A-B676-4554AD825078">显示弹出窗口</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-C983F6F3-5567-4357-A1CA-F8B1281BCBBB">随沿要素</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="13" colspan="1"><p id="GUID-27B7F2F8-6D2F-4184-8C84-B88293A2D382">过滤器（属性）</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-2A5BE92A-B346-4056-A61B-21E428931CD9">地图的业务图层</p></td><td outputclass="" purpose="entry" rowspan="5" colspan="1"></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-790B3B78-9445-4C9B-8930-1D79EBEE6523">列表</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-23AA1A94-9617-497C-9D17-6DA8F713BA86">详细信息</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-C11B2F0A-00F8-4577-A4D5-D67D24BAD9F8">系列图表</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-42CCA8FA-7202-46B5-AD3C-C06CF2F254F0">饼图</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="2" colspan="1"><p id="GUID-F24212B9-6378-49AA-9FC4-6382108C2DEA">指示器</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-C5757113-BE94-4D1D-8178-2DBFE2C55BF4">值</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-82C3D112-8C2D-40EA-89BB-DAEE137FDBA9">参考</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="2" colspan="1"><p id="GUID-4F61322D-F8BD-44A8-AACB-62BEF21DC598">仪表</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-715D6E08-406D-4162-9A8B-2F5C6504688D">值</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-8135580E-913D-41D1-870F-CB90BBE9D0C7">最小值</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-1805BDF7-C1C5-408E-B076-F91BA038EEF4">嵌入内容</p></td><td outputclass="" purpose="entry" rowspan="2" colspan="1"></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-5C64ED91-45C2-42EA-9719-1702DCFD51B0">类别选择器</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="2" colspan="1"><p id="GUID-80BAB678-2C09-4C7E-8D79-617695C685E2">数字选择器</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-0FF92A87-4CE0-4D25-BB09-8D4A0EB678C9">最小值</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-21E9256D-D755-4175-86EE-BBA28C00BA2F">最大值</p></td></tr></tbody><caption></caption></table></div></p></section><section class="section1 padded-anchor" id="ESRI_SECTION1_8A31C6F78B764E75A5D4BC76141534F4" purpose="section1"><h2>类别选择器</h2><p id="GUID-05CF597F-C3B8-4E9F-B949-1DC796ABB996">如果源配置选项为“要素中的类别”，则可以配置以下操作，以响应类别选择器值的更改（即选择更改事件）：</p><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><colgroup width="*"></colgroup><colgroup width="*"></colgroup><thead><tr><th colspan="1">源元素</th><th colspan="1">可能的操作</th><th colspan="1">目标元素</th><th colspan="1">目标子元素</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="19" colspan="1"><p id="GUID-DBE229EB-B49F-49DC-88F1-9E9A17FC10FB">要素中的类别</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-D4E6099A-B6B8-447A-90E4-38A417811070">缩放</p></td><td outputclass="" purpose="entry" rowspan="5" colspan="1"><p id="GUID-85EC0DBA-13AA-4252-BEA9-5E617F0EFA35">地图</p></td><td outputclass="" purpose="entry" rowspan="5" colspan="1"></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-73A54C9A-09B3-4E3D-A8DD-FEF32D192699">平移</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-8C28840B-F9C7-4FCE-BFD2-2B7EC246CC9B">闪烁</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-AE210D4F-8487-47BA-A84B-9900724DE43E">显示弹出窗口</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-E9F3C1ED-4C55-45A6-9ECA-BBB22BBB86CA">随沿要素</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="14" colspan="1"><p id="GUID-2C754855-0741-4A5B-AFB8-1A2EADA0EEC2">过滤器（属性或空间）</p><div class="panel trailer-1 note" id="GUID-57A87B89-F72F-4E78-A3FF-BE2C8EFEEF0F"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-1681CFBE-2583-4C30-B46D-B7774F7DC128">如果针对要素中的类别对源选择器进行了配置，则 Operations Dashboard 可以使用要素几何，并且可以将空间过滤器应用于目标元素。</p></div></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-6CC6C0F8-A28C-4BE4-A84D-467032042672">地图的业务图层</p></td><td outputclass="" purpose="entry" rowspan="5" colspan="1"></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-BE189988-79F8-4D34-8B6D-DEAF9E8BB8EB">列表</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-3D9F7393-29DC-4CD0-B03E-B11138C9529D">详细信息</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-DB43A344-0A66-4B6A-AA56-A66ADCC2CE1B">系列图表</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-1F849508-0CFF-4016-A4C7-36193AE8AA4D">饼图</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="2" colspan="1"><p id="GUID-D4EB5744-7BBB-43D1-89D4-903BDA108248">指示器</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-181E6BDE-CF98-4376-A2EA-BF43A8F31B90">值</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-F449C008-CAAC-4849-8CCB-5FED8E9FFCEA">参考</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="3" colspan="1"><p id="GUID-13184466-B374-4FA6-80FE-E76B7C00DDDD">仪表</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-08A2DDD5-85D4-4DC7-A840-C7F5B84D4C2E">值</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-43A72C86-A62F-442A-99C4-BE96D97DB9CF">最小值</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-CAE01AC6-9F76-4A15-A7F4-727C4B5223EA">最大值</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-A4AB8D13-6AE6-44A2-BA1A-944D399AC5C6">嵌入内容</p></td><td outputclass="" purpose="entry" rowspan="2" colspan="1"></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-32CDEC80-97A9-4B4C-B5D5-630F8C277702">类别选择器</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="2" colspan="1"><p id="GUID-474B7EBC-F72B-491F-A57C-54190824499A">数字选择器</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-D4DE2D4F-22D7-4649-9030-59835D27F762">最小值</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-3CFAF839-38F1-4E5F-B89B-4A8DFEEE49B5">最大值</p></td></tr></tbody><caption></caption></table></div><p id="GUID-2EBC506E-B3D9-4FDE-97B4-E98B4D32DF7D"> 如果源配置选项为“分组值中的类别”或“固定值中的类别”，则可以配置以下操作，以响应类别选择器值的更改（即选择更改事件）：</p><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><colgroup width="*"></colgroup><colgroup width="*"></colgroup><thead><tr><th colspan="1">源元素</th><th colspan="1">可能的操作</th><th colspan="1">目标元素</th><th colspan="1">目标子元素</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="14" colspan="1"><p id="GUID-323697C3-2D64-41FC-AB80-C2A24DA0420F">分组值中的类别</p><p id="GUID-F1A3E7A8-2CC8-4212-A8B1-D10FE57EE976">固定值中的类别</p><p id="GUID-8D6EAFF4-D0EA-4A55-9751-CBCBB22D9C80">数字选择器</p><p id="GUID-AAA228D0-6758-47C3-9A32-7C38323E4709">日期选择器</p></td><td outputclass="" purpose="entry" rowspan="14" colspan="1"><p id="GUID-22B32C1C-94B8-49AA-9BE8-5E61C3507A53">过滤器（属性）</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-DC738401-8348-4C9B-BEA9-1518B8FEA18A">地图的业务图层</p></td><td outputclass="" purpose="entry" rowspan="5" colspan="1"></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-089ED688-9695-4B57-9B68-202509EDA9CF">列表</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-CEEFD36A-0FF0-4D05-9E25-9D9AF5C53E01">详细信息</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-28EF33D8-B441-4F46-92F7-BD64D05E8E73">系列图表</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-9EBBCD17-42E2-41BB-A0A7-9EDA01BC34B2">饼图</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="2" colspan="1"><p id="GUID-FA43BCB8-E0C7-41F9-AB61-18C94388CB70">指示器</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-25033336-0B6B-4608-9072-EC27DA81295A">值</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-7D17603E-6C10-408F-BBFF-526220CDEF67">参考</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="3" colspan="1"><p id="GUID-32F11BD0-5E3B-4DBB-8A1B-2C79186BC4F8">仪表</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-9D50A7F6-D91F-469C-A094-6DF67C2D66F7">值</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-F49565DE-84DE-4FD6-9962-D91B2E67F7B0">最小值</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-C207121A-63CB-4D82-A5B5-40627ADD483F">最大值</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-6FEECF1C-FC2A-4BC7-BD5E-6ACC732F51C7">嵌入内容</p></td><td outputclass="" purpose="entry" rowspan="2" colspan="1"></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-E35144C2-01C8-4B1F-A393-32B875A7EB4B">类别选择器</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="2" colspan="1"><p id="GUID-01AC5928-B75E-4BF3-A1F5-37E149294D07">数字选择器</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-647F158C-3E1F-4DA3-B920-F4A7B214B8A7">最小值</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-FD27115F-6DB3-4228-A13A-D80314E9C46F">最大值</p></td></tr></tbody><caption></caption></table></div></section><section class="section1 padded-anchor" id="ESRI_SECTION1_757179DDE8BC4B59AF34C53D59997DD3" purpose="section1"><h2>数字选择器</h2><p id="GUID-528C6997-7428-4A07-A191-A7D3A2F8BC1A"> 您可以配置以下操作，以响应日期选择器值的更改（即选择更改事件）：</p><p id="GUID-1882CBB0-05B9-47AF-B820-3EDD2213640B"><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><colgroup width="*"></colgroup><colgroup width="*"></colgroup><thead><tr><th colspan="1">源元素</th><th colspan="1">可能的操作</th><th colspan="1">目标元素</th><th colspan="1">目标子元素</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="14" colspan="1"><p id="GUID-A9E82DB3-5A3E-4CCC-875D-174F7D96B9EB">数字选择器</p></td><td outputclass="" purpose="entry" rowspan="14" colspan="1"><p id="GUID-E484DB03-6A73-44B5-B472-A4C8FEF0AE51">过滤器（属性）</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-BA6744FA-6263-4835-89DF-6BE009765824">地图的业务图层</p></td><td outputclass="" purpose="entry" rowspan="5" colspan="1"></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-BE152602-AD79-4BA0-99B7-F0F31B81A89B">列表</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-981D8006-9290-4D4E-B153-42F6F5E6050D">详细信息</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-39E68506-207E-47D9-B660-08CE63029AA4">系列图表</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-90BBED12-B513-42F5-BBA7-97A49AC77D30">饼图</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="2" colspan="1"><p id="GUID-74ABCABA-0CFA-45E4-94F4-7B4A348B0CDE">指示器</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-B68A2C5C-A093-4530-BDE5-449B61804290">值</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-CE4FFDB6-84CF-4B80-BB63-85571CA2C631">参考</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="3" colspan="1"><p id="GUID-8F6A4E65-084B-4620-BE37-0A6C35E9DF4A">仪表</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-89C0276B-6775-4E0F-8FD5-3A96B92C5B24">值</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-70EFBF78-EEB8-44EB-A5D9-93AE12A47171">最小值</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-670CB7D2-CF87-416E-A036-4E16F06FE220">最大值</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-81C25275-B08F-4733-AE65-C6956C2F82C6">嵌入内容</p></td><td outputclass="" purpose="entry" rowspan="2" colspan="1"></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-18AF814B-BF96-46FE-A4FA-B216D26A1A8D">类别选择器</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="2" colspan="1"><p id="GUID-40BBF03B-2D38-4594-BE44-60412DF41DCF">数字选择器</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-1B731EAA-AD9F-495F-83AA-2D4F05A06F82">最小值</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-9EE3BCEF-6B52-4B59-B1D9-433559C80191">最大值</p></td></tr></tbody><caption></caption></table></div></p></section><section class="section1 padded-anchor" id="ESRI_SECTION1_5DB5FC4E07944C2D8E7568B0D9EC920E" purpose="section1"><h2>日期选择器</h2><p id="GUID-C4DDBB24-7B85-4AA2-8BF5-02F8828C72DC">您可以配置以下操作，以响应日期选择器值的更改（即选择更改事件）：</p><p id="GUID-BD53461F-67DB-4E65-AAF5-4E9D8914380B"><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><colgroup width="*"></colgroup><colgroup width="*"></colgroup><thead><tr><th colspan="1">源元素</th><th colspan="1">可能的操作</th><th colspan="1">目标元素</th><th colspan="1">目标子元素</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="14" colspan="1"><p id="GUID-E7AC84B4-1A9E-49F6-8BF5-6C8A50E32E9C">日期选择器</p></td><td outputclass="" purpose="entry" rowspan="14" colspan="1"><p id="GUID-F0D6E933-888A-4B01-A280-2689910567AB">过滤器（属性）</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-ACF3AB1F-5758-4C82-A90A-D19733978144">地图的业务图层</p></td><td outputclass="" purpose="entry" rowspan="5" colspan="1"></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-C60E475B-070F-4BB1-8D14-5E72E25FC883">列表</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-46C22BC7-967A-4BAC-BE28-34CCDB2DDB3F">详细信息</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-2E730DA0-96BC-4240-AB9B-8CACE0306317">系列图表</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-4E80403C-58C6-482D-934F-AA44E8BE75DF">饼图</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="2" colspan="1"><p id="GUID-EDE7329F-A6B1-4782-8245-7DC9917305ED">指示器</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-483B6296-0490-4D00-9563-3A21DA287BC4">值</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-13AECE64-69ED-4E8C-AA12-9C2EBA60C657">参考</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="3" colspan="1"><p id="GUID-6FD583F5-C9AF-4695-8B1D-6F33FFE407EA">仪表</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-C5C02991-A96C-464F-B46E-2BC534ACEED4">值</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-0A87B0D9-0006-4AAC-8875-B9EC405B565F">最小值</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-80B856A9-E1BC-4F22-8A3C-05E6AC51A701">最大值</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-639BEF98-C4A6-46EA-B8B4-84DC9247A88C">嵌入内容</p></td><td outputclass="" purpose="entry" rowspan="2" colspan="1"></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-DD379B93-4A9D-42EE-9BB1-2C8CADC8CF3F">类别选择器</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="2" colspan="1"><p id="GUID-5CAA93CB-874F-42C4-B57B-9393BD12F9AA">数字选择器</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-0F15C490-148E-4C3A-956D-B3DC2615F98A">最小值</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-A2971C7F-6875-4F87-81ED-4F11381D70D9">最大值</p></td></tr></tbody><caption></caption></table></div></p></section>
+			
+				<hr>
+				<!--googleoff: all-->
+				
+	
+        
+		    <p class="feedback right">
+		        <a id="afb" class="icon-ui-contact" href="/feedback/" data-langlabel="feedback-on-this-topic" >有关此主题的反馈?</a>
+		    </p>
+        
+	
+
+				<!--googleon: all-->
+			
+		</main>
+	</div>
+	
+	<!--googleoff: all-->
+	
+		
+			<div id="main-toc-large" class="column-5">
+			    <div class="panel font-size--2 tablet-hide trailer-1">
+			      <h5 class="trailer-half">在本主题中</h5>
+			      <ol class="list-plain pre-0 trailer-0"><li><a href="#ESRI_SECTION1_A9655F3A1C344D6599B72CF46EE7B92E">配置操作</a></li><li><a href="#ESRI_SECTION1_A8948E0885C244B1B28D7BD8B4E86166">地图元素</a></li><li><a href="#ESRI_SECTION1_1BD7BC3D9C144DFDB4B920F23E5D77AF">业务图层</a></li><li><a href="#ESRI_SECTION1_E3EC792D9D05428A8899C14B7FB4F43A">列表元素</a></li><li><a href="#ESRI_SECTION1_B0AAE1ADB5D34729804EDED4DEE295BE">系列图表和饼图</a></li><li><a href="#ESRI_SECTION1_8A31C6F78B764E75A5D4BC76141534F4">类别选择器</a></li><li><a href="#ESRI_SECTION1_757179DDE8BC4B59AF34C53D59997DD3">数字选择器</a></li><li><a href="#ESRI_SECTION1_5DB5FC4E07944C2D8E7568B0D9EC920E">日期选择器</a></li></ol>
+			    </div>
+			    
+			    
+	  		</div>
+		
+    
+   <!--googleon: all-->
+
+
+
+
+          
+        </div>
+        <!-- ENDPAGECONTENT -->
+
+      </div>
+
+    </div>  <!-- End of wrapper -->
+
+  <footer class="footer leader-3 link-dark-gray" role="contentinfo">
+    <div class="grid-container">
+      <div class="row">
+        <nav class="column-6">
+          <h6 data-langlabel="arcgis-for-server">Arc<span>GIS Enterprise</span></h6>
+          <ul class="list-plain">
+            <li><a data-langlabel="home" href="../../../../zh-CN/">主页</a></li>
+            <li><a data-langlabel="portal" href="../../../../zh-CN/portal/">Portal</a></li>
+            <li><a data-langlabel="server" href="../../../../zh-CN/server/">Server</a></li>
+            <li><a data-langlabel="data-store" href="../../../../zh-CN/data-store/">Data Stores</a></li>
+            <li><a data-langlabel="cloud" href="../../../../zh-CN/cloud/">云</a></li>
+            <li><a data-langlabel="apps" href="../../../../zh-CN/apps/">应用程序</a></li>
+            <li><a data-langlabel="documentation" href="../../../../zh-CN/documentation/">文档</a></li>
+          </ul>
+        </nav>
+
+        
+  <nav class="column-6">
+    <h6 data-langlabel="arcgis-platform">ArcGIS 平台</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="arcgis" href="//www.arcgis.com/">ArcGIS Online</a></li>
+      <li><a data-langlabel="arcgis-for-professionals" href="//pro.arcgis.com/">ArcGIS Pro</a></li>
+      <li><a data-langlabel="arcgis-for-server" href="//enterprise.arcgis.com/">ArcGIS Enterprise</a></li>
+      <li><a data-langlabel="arcgis-for-developers" href="https://developers.arcgis.com/">ArcGIS for Developers</a></li>
+      <li><a data-langlabel="arcgis-solutions" href="//solutions.arcgis.com/">ArcGIS Solutions</a></li>
+      <li><a data-langlabel="arcgis-marketplace" href="//marketplace.arcgis.com/">ArcGIS Marketplace</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <h6 data-langlabel="about-esri">关于 Esri</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="about-us" href="//www.esri.com/about-esri/">关于我们</a></li>
+      <li><a data-langlabel="careers" href="//www.esri.com/careers/">招贤纳士</a></li>
+      <li><a data-langlabel="insiders-blog" href="https://www.esri.com/about/newsroom/blog/">Esri 博客</a></li>
+      <li><a data-langlabel="user-conference" href="//www.esri.com/events/user-conference/index.html">用户大会</a></li>
+      <li><a data-langlabel="developer-summit" href="//www.esri.com/events/devsummit/index.html">开发者峰会</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <a class="esri-logo" href="//www.esri.com/" aria-label="Esri Home"></a>
+    <section class="footer-social-nav leader-1">
+            <a class="icon-social-twitter" aria-label="Esri on Twitter" href="https://twitter.com/Esri/"></a>
+            <a class="icon-social-facebook" aria-label="Esri on Facebook" href="https://www.facebook.com/esrigis/"></a>
+            <a class="icon-social-github" aria-label="Esri on GitHub" href="//esri.github.io/"></a>
+            <a class="icon-social-contact" aria-label="Contact Esri" href="//www.esri.com/about-esri/contact/"></a>
+    </section>
+	  
+  </nav>
+  
+  <div class="column-24 leader-1">
+    <p class="font-size--3"><a href="http://www.esri.com/legal/copyright-trademarks">Copyright &copy; 2019 Esri.</a> All rights reserved. | <a href="http://www.esri.com/legal/privacy/">隐私政策</a> | <a href="http://www.esri.com/legal/software-license">法律声明</a></p>
+  </div>
+  
+
+
+      </div>
+    </div>
+  </footer>
+  <!--googleoff: all-->
+
+  
+  
+	<script src="../../../../zh-CN/assets/js/init.js" type="text/javascript"></script>
+	<!--<script src="../../../../zh-CN/assets/js/drop-down.js" type="text/javascript"></script>-->
+	<script src="../../../../zh-CN/assets/js/search/searchform.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/cdn/js/link-modifier.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/cdn/js/sitewide.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/cdn/js/libs/highlight.pack.js" type="text/javascript"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+
+
+  
+    
+
+  <script src="../../../../zh-CN/cdn/js/affix.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    $(function () {
+          var appendFlg = true;
+
+          $("#bigmac")
+          .on("affixed.bs.affix", function (evt) {
+            if (appendFlg) {
+              $("<a class='crumb' href='#'>配置对仪表盘元素的操作</a>").insertAfter ($("#bigmac nav a").last());
+              appendFlg = false;
+            }
+          })
+          .on ("affix-top.bs.affix", function(evt) {
+            if (!appendFlg) {
+              $("#bigmac nav a").last().remove();
+            }
+            appendFlg = true;
+          })
+    })
+  </script>
+  
+        <script type="text/javascript">
+          window.doctoc = {
+            pubID: "583",
+            tpcID: "784",
+            
+              prefix: "使用",
+              prefixUrl: "/zh-cn/portal/latest/use/",
+          
+            hideToc: false
+          }
+        </script>
+
+        <script type="text/javascript" src="../../../../zh-CN/portal/latest/use/583.js" ></script>
+        <script type="text/javascript" src="../../../../zh-CN/cdn/calcite/js/protoc.js" ></script>
+        
+        
+
+  <noscript>
+        <p>
+            <a href="flisting.htm">flist</a>
+        </p>
+    </noscript>
+    <script type="text/javascript"></script>
+  
+  
+    
+    
+
+  </body>
+</html>

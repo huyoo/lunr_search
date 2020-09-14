@@ -1,0 +1,556 @@
+
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>  <html class="ie lt-ie9 lt-ie8 lt-ie7 ie6" dir="ltr"> <![endif]-->
+<!--[if IE 7]>     <html class="ie lt-ie9 lt-ie8 ie7" dir="ltr"> <![endif]-->
+<!--[if IE 8]>     <html class="ie lt-ie9 ie8" dir="ltr"> <![endif]-->
+<!--[if IE 9]>     <html class="ie ie9" dir="ltr"> <![endif]-->
+<!--[if !IE]><!--> <html dir="ltr" lang="zh-CN"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>使用高级搜索&mdash;Portal for ArcGIS | ArcGIS Enterprise 文档</title>
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+    <script>
+      var docConfig = {
+        locale: 'zh-CN'
+        ,localedir: 'zh-cn'
+        ,langSelector: ''
+        
+        ,relativeUrl: false
+        
+
+        ,searchformUrl: '/search/'
+        ,tertiaryNavIndex: ''
+
+        
+      };
+    </script>
+	 
+
+
+    
+    <!--[if lt IE 9]>
+      <script src="../../../../zh-CN/cdn/js/libs/html5shiv.js" type="text/javascript"></script>
+      <script src="../../../../zh-CN/cdn/js/libs/selectivizr-min.js" type="text/javascript"></script>
+      <script src="../../../../zh-CN/cdn/js/libs/json2.js" type="text/javascript"></script>
+      <script src="../../../../zh-CN/cdn/js/libs/html5shiv-printshiv.js" type="text/javascript" >
+
+    <![endif]-->
+
+     <!--[if lt IE 11]>
+    <script>
+      $$(document).ready(function(){
+        $$(".hideOnIE").hide();
+      });
+    </script>
+    <![endif]-->
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<link href="../../../../zh-CN/assets/img/favicon.ico" rel="shortcut icon" >
+	<link href="../../../../zh-CN/assets/css/screen.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/cdn/calcite/css/documentation.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/assets/css/print.css" media="print" type="text/css" rel="stylesheet" />
+
+	<!--
+	<link href="../../../../zh-CN/assets/css/screen_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/assets/css/documentation/base_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/assets/css/print_l10n.css" media="print" type="text/css" rel="stylesheet" />
+	-->
+	
+	
+		<script src="../../../../zh-CN/cdn/js/libs/jquery.1.9.1.min.js" type="text/javascript"></script>
+	
+	<script src="../../../../zh-CN/cdn/js/libs/jquery.cookie.js" type="text/javascript"></script>
+	<link href="../../../../zh-CN/cdn/css/colorbox.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/cdn/css/colorbox_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<script src="../../../../zh-CN/cdn/js/libs/jquery.colorbox-min.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/assets/js/video-init.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/assets/js/sitecfg.js" type="text/javascript"></script>
+	
+		<script src="../../../../zh-CN/assets/js/signIn.js" type="text/javascript"></script>
+	
+
+	<!--- Language Picker -->
+	<script src="../../../../zh-CN/assets/js/locale/l10NStrings.js" type="text/javascript"></script>
+	
+		 
+	
+
+	<script src="../../../../zh-CN/assets/js/calcite-web.js" type="text/javascript"></script>
+
+
+
+  <!--- search MD -->
+    <META name="description" content="当您在网站中搜索项目以及要在 Map Viewer 和 Scene Viewer 中添加的图层时，高级关键字搜索可以帮助缩小搜索结果范围。"><META name="last-modified" content="2019-12-6"><META name="product" content="arcgis-portal-windows,arcgis-portal-linux,arcgis-enterprise-windows,arcgis-enterprise-linux"><META name="sub_category" content="Portal for ArcGIS"><META name="search-collection" content="help"><META name="content_type_label" content="帮助主题"><META name="sub_category_label" content="Portal for ArcGIS"><META name="search-category" content="help-general"><META name="subject_label" content="PORTAL,服务,SERVER"><META name="version" content="10.8"><META name="content_type" content="Help Topic"><META name="subject" content="PORTAL,SERVICES,SERVER"><META name="content-language" content="zh-cn">
+    <!--- search MD -->
+
+  
+  <script src="../../../../zh-CN/assets/js/switchers/portal-1.js" type="text/javascript"></script>
+  
+      
+
+</head>
+
+<!--
+      pub: GUID-7B47163B-CE1B-465F-BEEE-4DADDB8DFF09=37
+      tpc: GUID-DAEE6AE4-FB29-4F4B-97A7-9D11579A32A6=1
+      -->
+
+
+<!-- variable declaration, if any -->
+<!-- can change following macro to set variable once we are on Jinja 2.8 -->
+
+
+
+
+
+<body class="claro zh-CN server">
+  
+
+  <!-- Drawer location -->
+  <div class="drawer drawer-left js-drawer" data-drawer="top-nav">
+        <nav class="drawer-nav" role="navigation">
+          <aside class="side-nav">
+            <h2 class="side-nav-title">Arc<span>GIS</span> Enterprise</h2>
+            <form id="helpSearchForm" class="margin-left-half margin-right-half leader-half trailer-half drawer-search-form" method="GET">
+              <input type="search" name="q"  placeholder="搜索 ArcGIS Enterprise 帮助">
+              <input type="hidden" name="collection" value="help" />
+              <input type="hidden" name="product" value="arcgis-portal-windows" />
+              <input type="hidden" name="version" value="10.8" />
+              <input type="hidden" name="language" value="zh-CN" />
+            </form>    
+             <a id="nav-portal" data-langlabel="portal" href="../../../../zh-CN/portal/" class="side-nav-link">Portal</a>
+             
+            <a id="all-servers" data-langlabel="all-servers" href="../../../../zh-CN/server/" class="side-nav-link">所有服务器</a>
+            <a id="gis-server" data-langlabel="gis-server" href="../../../../zh-CN/server/" class="side-nav-link">GIS Server</a>
+            <a id="image-server" data-langlabel="image-server" href="../../../../zh-CN/image/" class="side-nav-link">Image Server</a>
+            <a id="geo-analytics-server" data-langlabel="geo-analytics-server" href="../../../../zh-CN/geoanalytics/" class="side-nav-link">GeoAnalytics Server</a>
+            <a id="geoevent-server" data-langlabel="geoevent-server" href="../../../../zh-CN/geoevent/" class="side-nav-link">GeoEvent Server</a>
+            <a id="notebook-server" data-langlabel="notebook-server" href="../../../../zh-CN/notebook/" class="side-nav-link">Notebook Server</a>
+            <a id="nav-data-store" data-langlabel="data-store" href="../../../../zh-CN/data-store/" class="side-nav-link">Data Stores</a>
+            <a id="nav-cloud" data-langlabel="cloud" href="../../../../zh-CN/cloud/" class="side-nav-link">云</a>
+            <a id="nav-apps" data-langlabel="apps" href="../../../../zh-CN/apps/" class="side-nav-link">应用程序</a>
+            <a id="nav-doc" data-langlabel="documentation" href="../../../../zh-CN/documentation/" class="side-nav-link">文档</a>
+
+          </aside>
+        </nav>
+    </div>
+
+    <!-- user navigation collapses to drawer on mobile -->
+    
+    <div class="drawer drawer-right js-drawer hide-if-logged-out logged-in-navigation" data-drawer="user-nav">
+      <nav class="drawer-nav">
+        <aside class="side-nav">
+          <a class="side-nav-link agolProfile" href="#">我的个人资料</a>
+          <a class="side-nav-link icon-ui-sign-out js-log-out" href="#">登出</a>
+        </aside>
+      </nav>
+    </div>
+    
+<!-- End of drawer -->
+
+  
+  <div class="wrapper">
+      <!--googleoff: all-->
+
+      <header class="top-nav" data-skin="learn">
+        <a class="skip-to-content" href="#skip-to-content">Skip To Content</a>
+        <div class="grid-container">
+          <div class="column-24">
+
+
+            <!--<div class="top-nav-title-wrapper text-center ">-->
+              <a href='../../../../zh-CN/' class="top-nav-title tablet-hide"><span>Arc</span>GIS  Enterprise</a>
+              <a href='../../../../zh-CN/' class="icon-ui-menu top-nav-title js-drawer-toggle tablet-show" data-drawer="top-nav"><span>Arc</span>GIS Enterprise</a>
+            <!--</div> -->
+
+          
+            <nav role="navigation" class="top-nav-list left tablet-hide">
+              <a id="nav-portal" data-langlabel="portal" href="../../../../zh-CN/portal/" class="top-nav-link">Portal</a>
+
+                <div class="dropdown js-dropdown ">
+                  <a class="top-nav-link js-dropdown-toggle" tabindex="0" aria-haspopup="true" aria-expanded="false" href="#">Servers</a>
+                  <nav class="dropdown-menu featured" role="menu">
+                    <ul class="dropdown-sublist-featured">
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/get-started/latest/windows/additional-server-deployment.htm" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path  d="M42.92 6.1H4.12v8.566l.833.832-.835.833-.018 7.332.845.847-.825.824V33.9h25v5.2h-2v1.075H8.02v.8h19.1v.925h4.8v-.925H40v-.8h-8.08V39.1h-2v-5.2h13v-8.566l-.834-.834.835-.834v-7.332l-.835-.834.835-.834zm-11.8 35h-3.2v-1.2h3.2zm11-8H4.92v-7.434l.767-.766h35.668l.765.766zm0-9.766l-.766.766H5.666l-.766-.767.017-6.669.766-.764h35.671l.766.766zm0-9l-.766.766H5.687l-.766-.766V6.9h37.2zM19 11.9h-2v-.8h2zm-4 0h-2v-.8h2zm-4 0H9v-.8h2zm6 8.2h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9zm8 9h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9z"/></svg></span>
+                          <span class="sublink-text">所有服务器</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/server/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M45.98 33.575a.616.616 0 0 0-.335-.51l-3.362-2.03 3.362-2.031a.556.556 0 0 0 0-1.02l-11.1-6.704a1.293 1.293 0 0 0-1.112 0L22.33 27.982a.556.556 0 0 0 0 1.02l3.36 2.03-3.358 2.03a.556.556 0 0 0-.002 1.021l3.322 2.006-3.324 2.008a.555.555 0 0 0 .002 1.017l11.102 6.703a1.25 1.25 0 0 0 1.11.002l11.104-6.706a.556.556 0 0 0 0-1.02l-3.32-2.006 3.318-2.004a.607.607 0 0 0 .335-.509zM33.837 21.97c.026-.01.286-.005.29-.005l10.814 6.53-10.8 6.523c-.028.01-.284.005-.294.006l-10.813-6.53zm11.105 16.636l-10.8 6.523a2.564 2.564 0 0 1-.295.006l-10.81-6.529 3.39-2.047 7.004 4.23a1.083 1.083 0 0 0 .557.131 1.101 1.101 0 0 0 .554-.13l7.01-4.233zM34.14 40.098a2.545 2.545 0 0 1-.294.006l-10.812-6.53 3.43-2.073 6.97 4.208a1.25 1.25 0 0 0 1.107-.001l6.966-4.206 3.431 2.073zM9 8H7V7h2zm8 8h-2v-1h2zm-4-8h-2V7h2zm4 0h-2V7h2zm-4 8h-2v-1h2zm7.316 11.1H3.9v-6.434l.766-.766h35.668l.766.766v2.12l.8.483v-2.935l-.826-.826.826-.845v-6.329l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9h16.88a2.632 2.632 0 0 1 .336-.8zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zm0 8v-5.668l.766-.766h35.668l.766.766v5.67l-.746.764H4.666zM15 24v-1h2v1zm-4 0v-1h2v1zm-2-8H7v-1h2zm-2 8v-1h2v1z"/></svg></span>
+                          <span class="sublink-text">GIS Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/image/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 8h-2V7h2zm-4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm8 8h-2v1h2zm-8 0H7v1h2zm4 9v-1h-2v1zm-4 0v-1H7v1zm8 0v-1h-2v1zm4 3.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V21h-.8v-.334l-.766-.766H4.666l-.766.766V27.1H21zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zm40.234 4v21.8H23.1V23.1zm-.8 16.366L39.466 44.1h2.868l1.766-1.766zm-20.2-9.932l5.634-5.634h-2.868L23.9 26.666zm6.2-5.068L24.466 30.1h2.868l2.766-2.766zM28.466 30.1H30.1v-1.634zm2.434 0h6.2v-6.2h-6.2zm-7 7h6.2v-6.2h-6.2zm7 0h6.2v-6.2h-6.2zm0 6.434l5.634-5.634h-2.868L30.9 40.666zm7-7l5.634-5.634h-2.868L37.9 33.666zm1.634-5.634H37.9v1.634zm-8.634 7v1.634l1.634-1.634zm.566 6.2h2.868l2.766-2.766v-2.868zm6.434-3.566l2.634-2.634H37.9zM35.466 44.1H37.1v-1.634zm2.434 0h.434l5.766-5.766V37.9h-2.434L37.9 41.666zm6.2-8.634L42.466 37.1H44.1zm0-4L38.466 37.1h2.868l2.766-2.766zm0-7.566h-6.2v6.2h6.2zm-20.2 0v1.634l1.634-1.634zm0 20.2h6.2v-6.2h-6.2zm20.2 0v-.634l-.634.634z"/></svg></span>
+                          <span class="sublink-text">Image Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/geoanalytics/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 16h-2v-1h2zm-8 8v-1H7v1zm8 0v-1h-2v1zM13 7h-2v1h2zm4 0h-2v1h2zM9 7H7v1h2zm21.45 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V27.9h-1.464l-.801-.8H41.1v-6.434l-.766-.766H4.666l-.766.766V27.1h27.15zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM13 24v-1h-2v1zm0-9h-2v1h2zm-4 0H7v1h2zm26.672 27.148A1.87 1.87 0 0 1 35.9 43a1.91 1.91 0 1 1-3.763-.222l-9.845-3.414A1.88 1.88 0 0 1 21 39.9a1.9 1.9 0 1 1 1.474-3.084l4.692-2.346A1.878 1.878 0 0 1 27.1 34a1.902 1.902 0 0 1 1.9-1.9 1.867 1.867 0 0 1 .781.191l3.788-5.05A1.88 1.88 0 0 1 33.1 26a1.9 1.9 0 1 1 3.491 1.026l4.889 4.888c-.069.056-.144.1-.21.162a3.986 3.986 0 0 0-.358.402l-4.883-4.883A1.889 1.889 0 0 1 35 27.9a1.867 1.867 0 0 1-.781-.191l-3.788 5.049a1.868 1.868 0 0 1 .437.965l9.204.614c-.018.11-.049.218-.058.33A3.93 3.93 0 0 0 40 35c0 .046.01.09.01.135l-9.185-.612A1.913 1.913 0 0 1 29 35.9a1.889 1.889 0 0 1-1.474-.716l-4.692 2.346a1.878 1.878 0 0 1 .066.47 1.9 1.9 0 0 1-.105.625c-.007.02-.022.036-.03.056l9.63 3.34a1.87 1.87 0 0 1 2.786-.505l5.415-4.437c.067.108.127.22.204.322a3.9 3.9 0 0 0 .292.306zM33.9 26a1.092 1.092 0 0 0 .43.872 1.12 1.12 0 0 0 1.42-.068A1.1 1.1 0 1 0 33.9 26zm-6 8a1.1 1.1 0 0 0 2.196.093 1.135 1.135 0 0 0-.426-.965A1.087 1.087 0 0 0 29 32.9a1.101 1.101 0 0 0-1.1 1.1zm-5.8 4a1.098 1.098 0 1 0-.06.362A1.101 1.101 0 0 0 22.1 38zm13 5a1.1 1.1 0 1 0-2.2 0 1.1 1.1 0 0 0 2.2 0zm10.8-8a1.9 1.9 0 1 1-3.8 0c0-.053.003-.105.007-.158A1.9 1.9 0 0 1 45.9 35zm-.8 0a1.1 1.1 0 0 0-2.196-.093 1.153 1.153 0 0 0 .216.752A1.1 1.1 0 0 0 45.1 35z"/></svg></span>
+                          <span class="sublink-text">GeoAnalytics Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/geoevent/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M13 8h-2V7h2zm4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm12.418 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826v2.117c-.259-.177-.53-.337-.8-.497v-1.288l-.766-.766H4.666l-.766.766V27.1h17.933c-.148.26-.283.53-.415.8zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM9 24v-1H7v1zm4-9h-2v1h2zm0 9v-1h-2v1zm-4-9H7v1h2zm8 9v-1h-2v1zm16.9 2h-.8v8.9H39v-.8h-5.1zm.1-3.901a11.9 11.9 0 1 0 11.9 11.9 11.914 11.914 0 0 0-11.9-11.9zm0 23a11.1 11.1 0 1 1 11.1-11.1 11.112 11.112 0 0 1-11.1 11.1z"/></svg></span>
+                          <span class="sublink-text">GeoEvent Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/notebook/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M22 27.1H3.9v-6.434l.766-.766h18.576a5.262 5.262 0 0 1 .83-.8H4.666l-.766-.766v-5.668l.766-.766h35.668l.766.766V18h.8v-5.666l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9H22zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zM9 8H7V7h2zm8 0h-2V7h2zm-4 0h-2V7h2zm2 16v-1h2v1zm-4 0v-1h2v1zm-4 0v-1h2v1zm0-8v-1h2v1zm8 0v-1h2v1zm-4 0v-1h2v1zm18.9 8.1h-1.8v1.8h1.8zm-.8 1h-.2v-.2h.2zm15.498-4.48a2.727 2.727 0 0 0-1.62-.5v-.02H27.25a3.154 3.154 0 0 0-3.15 3.15V38.1h-1.68a3.386 3.386 0 0 0-2.872 1.58 3.49 3.49 0 0 0-.157 3.419 3.241 3.241 0 0 0 2.954 1.801h15.161a3.404 3.404 0 0 0 3.394-3.4V26.9h5v-3.65a3.224 3.224 0 0 0-1.302-2.63zM22.345 44.1a2.44 2.44 0 0 1-2.23-1.341 2.706 2.706 0 0 1 .11-2.65A2.588 2.588 0 0 1 22.42 38.9h12.89a3.395 3.395 0 0 0 0 5.2zM40.1 23.192V41.5a2.6 2.6 0 1 1-2.6-2.6v-.8H24.9V23.25a2.352 2.352 0 0 1 2.35-2.35h13.795a3.183 3.183 0 0 0-.945 2.292zm5 2.908h-4.2v-2.908a2.274 2.274 0 0 1 1.44-2.18 1.944 1.944 0 0 1 1.791.259 2.423 2.423 0 0 1 .97 1.979zm-17.1 5h9v.8h-9zm0 3h7v.8h-7zm0-6h9v.8h-9zm4-3h5v.8h-5z"/></svg></span>
+                          <span class="sublink-text">Notebook Server</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+
+              <a id="nav-data-store" data-langlabel="data-store" href="../../../../zh-CN/data-store/" class="top-nav-link">Data Stores</a>
+              <a id="nav-cloud" data-langlabel="cloud" href="../../../../zh-CN/cloud/" class="top-nav-link">云</a>
+              <a id="nav-apps" data-langlabel="apps" href="../../../../zh-CN/apps/" class="top-nav-link">应用程序</a>
+            </nav>
+
+
+            
+            
+            
+
+            <div class="margin-left-1 top-nav-list right hide-if-logged-in logged-out-navigation">
+               
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+              
+              <a data-langlabel="sign-in" id="login-link" class="icon-ui-user top-nav-link link-blue login-link" href="#">登录</a>
+              
+            </div>
+
+            
+            <nav class="margin-left-1 top-nav-list right hide-if-logged-out logged-in-navigation">
+              
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+             
+              <div class="dropdown js-dropdown right">
+
+                <div class="tablet-show top-nav-link">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a href="#" data-drawer="user-nav" class="user-nav-name js-drawer-toggle" data-first-name></a>
+                </div>
+
+                <div class="tablet-hide top-nav-link js-dropdown-toggle">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a class="user-nav-name top-nav-dropdown dropdown-btn" data-first-name>&nbsp;</a>
+                </div>
+
+                <nav class="dropdown-menu dropdown-right">
+                
+                  <a class="dropdown-link agolProfile" id="agolProfile" href="#">我的个人资料</a>
+                  <a class="dropdown-link js-log-out" id="agolLogout" href="#">登出</a>
+                </nav>
+              </div>
+            </nav>
+            
+
+            
+          </div>
+        </div>
+      </header>
+
+      <div class="js-search search-overlay">
+        <div class="search-content" role="dialog" aria-labelledby="search">
+          <form method="GET" id="helpSearchForm">
+            <label>
+              搜索 ArcGIS Enterprise 帮助
+              <div class="search-bar">
+                <input type="search" name="q"  placeholder="搜索 ArcGIS Enterprise 帮助" class="search-input js-search-input">
+                <input type="hidden" name="collection" value="help" />
+                <input type="hidden" name="product" value="arcgis-portal-windows" />
+                <input type="hidden" name="version" value="10.8" />
+                <input type="hidden" name="language" value="zh-CN" />
+              </div>
+            </label>
+            <input type="hidden" name="relativePath" value="../../../../" /><button type="submit" class="btn btn-large right">搜索</button>
+          </form>
+        </div>
+      </div>
+
+      <!--googleon: all-->
+
+      <div id="skip-to-content">
+        <!--googleoff: all-->
+        <header class="sub-nav sub-nav-learn">
+          <div class="grid-container">
+            
+            <div class="column-24">
+              <div style="display:table;" class="sdk-home-banner">
+                <div class="sdk-home-banner-content">
+                  <h1 class="sub-nav-title link-white">Portal for ArcGIS</h1>
+                </div>
+              </div>
+            </div>
+
+            <div class="column-24">
+              <nav class='sub-nav-list tablet-hide'><a class="sub-nav-link" href="../../../../zh-CN/portal/" target="_top" title="Portal for ArcGIS 主页">主页</a><a class="sub-nav-link is-active" href="../../../../zh-CN/portal/latest/use/" target="_top" title="使用 Portal for ArcGIS">使用</a><a class="sub-nav-link" href="../../../../zh-CN/portal/latest/administer/windows/" target="_top" title="安装、管理和保护 Portal for ArcGIS">管理</a></nav><select class='tablet-show select-full trailer-half js-select-nav'><option value="../../../../zh-CN/portal/">主页</option><option selected="true" value="../../../../zh-CN/portal/latest/use/">使用</option><option value="../../../../zh-CN/portal/latest/administer/windows/">管理</option></select>
+            </div>
+
+          </div>
+        </header>
+        <!--googleon: all-->
+       
+        <!-- content goes here -->
+        <div class="grid-container ">
+          
+
+            
+              
+  <!--BREADCRUMB-BEG--><div id="bigmac" class="sticky-breadcrumbs trailer-2" data-spy="affix" data-offset-top="180"> </div><!--BREADCRUMB-END-->
+  <!--googleoff: all-->
+    <div class="column-5 tablet-column-12 trailer-2 ">
+      <aside class="js-accordion accordion reference-index" aria-live="polite" role="tablist">
+        <div></div>
+      </aside>
+
+      <div class="js-sticky scroll-show tablet-hide leader-1 back-to-top" data-top="0" style="top: 0px;">
+        <a href="#" class="btn btn-fill btn-clear">返回顶部</a>
+      </div>
+    </div>
+  <!--googleon: all-->
+  
+            
+            
+            
+	
+		<div class="column-13  pre-1 content-section">
+	
+		<header class="trailer-1"><h1>使用高级搜索</h1></header>
+
+		 
+	<!--googleoff: all-->
+	
+		
+				<aside id="main-toc-small" class="js-accordion accordion tablet-show trailer-1">
+			      <div class="accordion-section">
+			        <h4 class="accordion-title">在本主题中</h4>
+			        <div class="accordion-content list-plain">
+			          <ol class="list-plain pre-0 trailer-0"><li><a href="#ESRI_SECTION1_18FD99A1020547BA864FCEBECBE267F3">字段</a></li><li><a href="#ESRI_SECTION1_C30D73392D964D51A8B606128A8A6E8F">范围搜索</a></li><li><a href="#ESRI_SECTION1_96E74103871649FE8B525F65ABB6889B">为搜索词加权</a></li><li><a href="#ESRI_SECTION1_D75FAFC270CF4D269667E84F0CD6D0EA">布尔运算符</a></li><li><a href="#ESRI_SECTION1_12503ECCB45D4B5EB048F78810D61915">分组</a></li></ol>
+			        </div>
+			      </div>
+			     </aside>
+		
+    
+   <!--googleon: all-->
+
+
+		<main>
+			
+	
+    	
+    
+
+
+			
+<p id="GUID-8E230AAF-125B-4827-A681-FB0B4D0557AB">在任何内容页面选项卡上使用网站搜索或专用搜索来<a class="xref xref" href="../../../../zh-CN/portal/latest/use/search.htm">搜索项目</a>时，您可以执行高级关键字搜索来缩小结果范围。当您<a class="xref xref" href="../../../../zh-CN/portal/latest/use/add-layers.htm#ESRI_SECTION1_16F13402AF194F8E8DD8A227DB1E1E30">搜索图层以添加</a>到 <span class="ph">Map Viewer</span> 和 <span class="ph">Scene Viewer</span> 时，也可以进行高级关键字搜索。您可以在高级搜索中使用以下任何一项：<a class="xref xref" href="../../../../zh-CN/portal/latest/use/advanced-search.htm#ESRI_SECTION1_18FD99A1020547BA864FCEBECBE267F3">字段</a>、<a class="xref xref" href="../../../../zh-CN/portal/latest/use/advanced-search.htm#ESRI_SECTION1_C30D73392D964D51A8B606128A8A6E8F">范围搜索</a>、<a class="xref xref" href="../../../../zh-CN/portal/latest/use/advanced-search.htm#ESRI_SECTION1_96E74103871649FE8B525F65ABB6889B">加权</a>、<a class="xref xref" href="../../../../zh-CN/portal/latest/use/advanced-search.htm#ESRI_SECTION1_D75FAFC270CF4D269667E84F0CD6D0EA">布尔运算符</a>和<a class="xref xref" href="../../../../zh-CN/portal/latest/use/advanced-search.htm#ESRI_SECTION1_12503ECCB45D4B5EB048F78810D61915">分组</a>。这些参数将在下面的章节中介绍。</p><section class="section1 padded-anchor" id="ESRI_SECTION1_18FD99A1020547BA864FCEBECBE267F3" purpose="section1"><h2>字段</h2><p id="GUID-BD09C62E-0F0D-449F-8056-8873196D6D21">通过执行搜索来查找网站、<span class="ph">Map Viewer</span> 或 <span class="ph">Scene Viewer</span> 中的内容或群组时，可以指定字段，也可以使用默认字段。对于<a class="xref xref" href="../../../../zh-CN/portal/latest/use/advanced-search.htm#ESRI_SECTION2_3FE763AAB6564BBCBAC577F8D9E73DD6">项目</a>，默认字段为 title、tags、snippet、description、type 和 typekeywords。对于<a class="xref xref" href="../../../../zh-CN/portal/latest/use/advanced-search.htm#ESRI_SECTION2_2C018D6F0CC340A0A822B4AFC05D7B65">群组</a>，默认字段为 id、 title、description、snippet、tags 和 owner。始终会返回最佳匹配项。有关这些字段的描述，请参阅下表。</p><p id="GUID-0C7D1FF1-AE71-4D77-A2A7-3378DD253BE5"> 您可以通过键入字段名称后跟冒号和您要查找的术语来搜索特定字段，例如 <span class="usertext">type:geojson</span>。对于包含多个单词的术语，请使用双引号。例如，<span class="usertext">"map services"</span> 返回字段中带有术语地图服务的项目，而 <span class="usertext">map services</span> 则返回字段中包含地图或服务的项目。</p><p id="GUID-6EB1B7D1-32D7-425F-993A-468468529C4F">如果未使用字段指示符，则会搜索默认字段。例如，如果您希望向地图<a class="xref xref" href="../../../../zh-CN/portal/latest/use/add-layers.htm#ESRI_SECTION1_16F13402AF194F8E8DD8A227DB1E1E30">添加图层</a>，并且知道所有者的名称，则可以在搜索范围内输入 <span class="usertext">owner:</span>，后加所有者的用户名，以减少可能出现的一长串结果。</p><div class="panel trailer-1" id="GUID-AE6600AB-8968-45FC-B758-B5A281E4112F"><h5 class="icon-ui-description trailer-0">提示：</h5><p id="GUID-344A564D-CD87-41A6-929A-DE6D998D0A53">您可以通过将字段与 AND 运算符链接在一起来创建搜索字符串，例如 <span class="usertext">owner:esri AND tags:streets</span>。</p></div><section class="section2 padded-anchor" id="ESRI_SECTION2_3FE763AAB6564BBCBAC577F8D9E73DD6" purpose="section2"><h3>项目字段</h3><p id="GUID-760092E4-587F-4E53-A0D8-467805308590">可以在搜索字符串中使用特定字段来细化项目搜索。这些字段包括：
+<h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><thead><tr><th colspan="1">字段
+</th><th colspan="1">详细信息
+</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-AAB47B5F-04BE-4AD8-91C8-71205C9A21BA">ID</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-A65D9C6C-824F-4A49-A96D-0B85361023E9">项目的 ID；例如，<span class="usertext">id:4e770315ad9049e7950b552aa1e40869</span> 会返回与此 ID 对应的项目。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-14F86A83-AF09-4B39-840E-ECB320EB8E63">所有者</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-AAED0F46-3B59-421C-BEE9-EA00126944FF"> 项目的所有者；例如，<span class="usertext">owner:esri</span> 会返回 Esri 发布的所有内容。字段和值区分大小写。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-6484AC1E-F000-485B-8AD3-BCF406A303A5">created</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-DAE2C391-65F8-4D9F-816D-4FD9362B7731">以 <a class="xref xref" href="../../../../zh-CN/portal/latest/use/search.htm#GUID-A3243DD3-A7FE-4CBB-A5C9-6F25F6E518B3">UNIX 时间</a>表示创建项目的日期；例如，<span class="usertext">created: [0000001249084800000 TO 0000001249548000000]</span> 将返回 2009 年 8 月 1 日中午 12 点至 2009 年 8 月 6 日上午 8 点 40 分之间发布的所有项目。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-8BDD7D2B-C62D-4505-B2AB-ED25200B58DD">标题</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-EDD92790-468C-4A04-8B0D-B05EDB639EE4"> 项目标题；例如，<span class="usertext">title:"Southern California"</span> 会返回标题中包含 Southern California 的项目。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-C27C788B-E3A9-4023-B2B1-8837769328D5">类型</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-AA707BD6-4672-479D-AA8B-6297B1AF6D12"> Type 会返回<a class="xref xref" href="../../../../zh-CN/portal/latest/use/supported-items.htm">项目的类型</a>，它是预定义字段。例如，<span class="usertext">type:KML</span> 会返回类型为 KML 的项目，而 <span class="usertext">type:"Geocoding Service"</span> 会返回类型为“地理编码服务”的项目。为得到更精确的结果，请使用引号，特别是对于包括空格的类型。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-097B248C-9940-4753-A1C8-6D1B4E921F39">说明</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-FF3FD340-5DB7-4D20-A12D-0846CC79B40F">项目描述；例如，<span class="usertext">description:California</span> 会查找描述中包含 California 一词的所有项目。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-0A216D9B-F5B9-492D-B60C-0A8DE8391734">tags</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-413D9956-2066-4A62-8A5C-045D84756A61">标签字段；例如，<span class="usertext">tags:"San Francisco"</span> 会返回具有 San Francisco 标签的项目。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-7834B3B9-3B08-4DDC-B7A4-4300C1FB28CF">snippet</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-8EB43245-0AE2-4BFF-8807-E1A6BC33A357">摘要；例如，<span class="usertext">snippet:"natural resources"</span> 会返回摘要中包含 natural resources 的项目。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-4B694CEB-6326-44DC-BCF8-4F24D0DB5A59">spatialreference</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-7CC7BD3B-2544-4050-BB16-D3435F29DA61">空间参考；例如，<span class="usertext">spatialreference:102100</span> 会返回采用 Web 墨卡托辅助球体投影的项目。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-91DF175C-BF66-4202-94C9-E71BEFDFD1B3">accessinformation</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-4667BDF2-A822-4BBB-A868-676C8B707FEC"> 访问信息，例如，<span class="usertext">accessinformation:esri</span> 会返回使用 esri 作为资源制作者的项目。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-70EFFFC8-6A79-4EB9-9185-3801DCCBE078">访问</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-5DF25091-AD46-481B-916B-9637F200F2E3"> 访问字段；例如，<span class="usertext">access:public</span> 会返回公开的项目。该字段是预定义字段，其选项包括 public、private 和 shared。您只能看到您具有访问权限的私有或共享项目。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-FBB8967F-C962-47A2-8983-B1A2134EDEA7">群组</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-228439E1-9EFB-4DD3-AEE9-0DF16CE4C71A"> 群组 ID；例如，<span class="usertext">group:1652a410f59c4d8f98fb87b25e0a2669</span> 会返回指定群组内的项目。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-256A672C-2299-49BC-ADFF-E4B91847B85F">numratings</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-560915DB-B7AF-486A-A711-7660A8B31A7E">评级；例如，<span class="usertext">numratings:6</span> 会返回评级为 6 的项目。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-2A809A0C-ED5B-4E05-978B-9977EE9EB4A0"> numcomments</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-D1E05A0B-724A-4778-B53D-4809380A50C3">评论次数；例如，<span class="usertext">numcomments:[1 TO 3]</span> 会返回具有 1 到 3 次评论的项目。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-99C9919B-8DCD-4C4F-9F4F-AEFE4E577D4C">avgrating</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-0DB89F49-F7B8-4C8C-AE7D-B00261416E7F">平均评级；例如，<span class="usertext">avgrating:3.5</span> 会返回平均评级为 3.5 的项目。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-2B9CF0BE-3F75-4C69-B104-ACBD7DAEA4C1">orgid</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-84A8F794-8AD4-499F-8452-732EF47864CF"> 组织的 ID，例如，<span class="usertext">orgid:5uh3wwYLNzBuU0Ef</span> 会返回指定组织内的项目。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-83614F33-8A9A-4B1E-8EFD-81575007FD02">modified</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-4E55F2D5-02E9-41E1-AD2E-C95A90249DD8">以 <a class="xref xref" href="../../../../zh-CN/portal/latest/use/search.htm#GUID-A3243DD3-A7FE-4CBB-A5C9-6F25F6E518B3">UNIX 时间</a>表示上次修改项目的日期；例如，<span class="usertext">modified:[0000001249084800000 TO 0000001249548000000]</span> 将返回 2009 年 8 月 1 日中午 12 点至 2009 年 8 月 6 日上午 8 点 40 分之间修改的所有项目。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-5B76CE4E-1CEF-4DFD-8950-4B9D12B347CB">categories</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-D75BC292-4DCE-41AE-AF3F-B17791F18A29" ishcondition="agol_plat=portal">组织<a class="xref xref" href="../../../../zh-CN/portal/latest/use/content-categories.htm">内容类别</a>；例如<span class="usertext">类别：“历史地图”</span>将返回门户中归类为历史地图的项目。</p></td></tr></tbody><caption></caption></table></div></p></section><section class="section2 padded-anchor" id="ESRI_SECTION2_2C018D6F0CC340A0A822B4AFC05D7B65" purpose="section2"><h3>群组字段</h3><p id="GUID-2A732E8F-3F0C-478B-A8CD-4F5416A55B76">可以在搜索字符串中使用特定字段来细化对群组进行的搜索。只会搜索公开群组或您具有访问权的群组。这些字段包括：
+<h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><thead><tr><th colspan="1">群组字段
+</th><th colspan="1">详细信息</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-C9EE32AE-2797-4361-9F55-4338A150CFCC">ID</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-16D9F2D6-39C2-4A08-971C-78306FAB0C30"> 群组 ID；例如，<span class="usertext">id:1db70a32f5f84ea9a88f5f460f22557b</span> 会返回与此 ID 对应的群组。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-F704AA0F-FD1C-4873-B541-5C9245FC3E6D">标题</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-3E68B6C1-F788-47F0-BF04-04FA0564D40C">群组标题；例如，<span class="usertext">title:redlands</span> 会返回标题中包含 Redlands 的群组。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-7A2CCB5F-39BC-4BB4-93C4-AD4E3FC6631D">所有者</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-12B34A4B-A323-440F-9D53-56F1A51664B4"> 群组所有者；例如，<span class="usertext">owner:esri</span> 会返回由 Esri 所有的群组。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-B7C1E4FE-202D-4BC0-81A0-D54250E7EF31">说明</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-94A32739-7289-4D9A-97BB-2C940FA76BC1">描述；例如，<span class="usertext">description:"street maps"</span> 会返回描述字段中包含 street maps 的群组。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-D85134D7-4E6B-4934-A626-909D3EDD9825">snippet</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-6740E9F3-7E30-4E03-8DF4-00E0133D7EB9"> 摘要；例如，<span class="usertext">snippet:transportation</span> 会返回群组摘要中包含 transportation 的群组。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-6E8A2C2C-CBCA-4A92-9828-235CFC323EB9">tags</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-EB962C8A-FC87-4D3D-8D91-930813130A28"> 标签字段；例如，<span class="usertext">tags:"bike lanes"</span> 会返回具有 bike lanes 标签的群组。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-CCEB16DF-DA6A-402C-9D1A-F758945E4EE2">phone</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-15328A09-1C42-4908-815B-E94B8EA828FF">联系信息；例如，<span class="usertext">phone:jsmith33@esri.com</span> 会返回联系信息为 jsmith33@esri.com 的群组。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-47F88347-2DA1-4C19-90F9-B4A1A55A7AFA">created</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-66E4F597-A88D-4737-A4B4-4DEDB68D2A79">以 <a class="xref xref" href="../../../../zh-CN/portal/latest/use/search.htm#GUID-A3243DD3-A7FE-4CBB-A5C9-6F25F6E518B3">UNIX 时间</a>表示创建群组的日期；例如，<span class="usertext">created:0000001247085176000</span> 将返回 2009 年 7 月 8 日创建的群组。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-459DC2C1-8722-4985-94A2-1384BE56260E">modified</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-17C1F8D9-DB2D-4081-9C0B-C6401E7FDF7D">以 <a class="xref xref" href="../../../../zh-CN/portal/latest/use/search.htm#GUID-A3243DD3-A7FE-4CBB-A5C9-6F25F6E518B3">UNIX 时间</a>表示上次修改群组的日期；例如，<span class="usertext">modified:0000001247085176000</span> 将返回 2009 年 7 月 8 日修改的群组。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-90DCE854-2460-4C43-B59A-1E26D7AE7F5F">访问</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-DD5EA59F-B0D9-4309-9CBC-344A6274FC9A">群组的访问等级。值为 private 和 public。默认值为 private；例如，<span class="usertext">access:private</span> 会返回私有群组。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-C95D5F7D-3308-4899-9502-233F88FAD8BC">isinvitationonly</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-68CF76D8-5FA7-42B6-B405-AA1F049366F6">isinvitationonly 字段会返回需要邀请才能加入的群组。例如，<span class="usertext">isinvitationonly:false</span> 会返回不需要邀请即可加入的群组。该字段是预定义字段，其选项包括 true 和 false。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-714DE5A3-2C7A-4A67-A6CA-525CA7B22EE8">orgid</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-F3D59221-D471-458A-8095-413BA8F7969C"> 组织的 ID，例如，<span class="usertext">orgid:5uh3wwYLNzBuU0Ef</span> 会返回指定组织内的群组。</p></td></tr></tbody><caption></caption></table></div></p></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_C30D73392D964D51A8B606128A8A6E8F" purpose="section1"><h2>范围搜索</h2><p id="GUID-12956AF3-9FB8-4001-A1F9-BC5DD9EB4406">利用范围搜索可以匹配下限与上限之间的字段值。范围查询可以包括上限和下限，也可以不包括上限和下限。包含范围查询用括号 ([]) 表示。不包含范围查询用大括号 ({}) 表示。</p><p id="GUID-2FCB53CA-DD7E-4B91-A1DF-5DBCFB143E89">例如，要查找 2009 年 12 月 1 日到 2009 年 12 月 9 日之间创建的所有项目，可使用<span class="usertext">created:[0000001259692864000 TO 0000001260384065000]</span>。</p><p id="GUID-A3243DD3-A7FE-4CBB-A5C9-6F25F6E518B3">创建字段包含创建项目的日期和时间（UNIX 时间）。UNIX 时间（也用于修改字段）定义为从 1970 年 1 月 1 日午夜起至现在经过的总秒数。网站以毫秒为单位存储时间，因此您需要在 UNIX 时间的末尾添加三个零。<span class="ph">此外，还需要在该数字前添上六个零。这是因为该数字以字符串形式存储在数据库中。</span></p><p id="GUID-3985B22A-AB2E-4B43-A213-4FFE13BF8CB7">范围搜索并不限于日期字段。也可以对非日期字段使用范围查询，例如 <span class="usertext">owner:[arcgis_explorer TO esri]</span>。这将查找 arcgis_explorer 和 esri 之间（包括 arcgis_explorer 和 esri）的所有者的所有项目。</p></section><section class="section1 padded-anchor" id="ESRI_SECTION1_96E74103871649FE8B525F65ABB6889B" purpose="section1"><h2>为搜索词加权</h2><p id="GUID-42FC9742-8147-4C95-BA0B-4F300046D2D1">加权允许您控制项目的相关性。要为搜索词加权，请在搜索词的末尾使用带有加权因子（数字）的插入字符 (^)。加权因子越高，搜索词的相关性就越高。例如，如果要搜索 recent fires 并且希望 fires 的相关性更高，那么可以创建表达式 <span class="usertext">recent fires^5</span>。</p></section><section class="section1 padded-anchor" id="ESRI_SECTION1_D75FAFC270CF4D269667E84F0CD6D0EA" purpose="section1"><h2>布尔运算符</h2><p id="GUID-6232107C-0DC4-4D61-BF5E-5079104380E8">利用布尔运算符，可以通过逻辑运算符将搜索词组合在一起。网站支持将 AND、加号 (+)、OR、NOT 和减号 (-) 用作布尔运算符。布尔运算符必须为大写。<h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="140"></colgroup><colgroup width="*"></colgroup><thead><tr><th colspan="1">布尔运算符</th><th colspan="1">详细信息</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-C5321D07-B5B9-4845-B10A-2FD884205968">且</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-72B09302-7D4D-4763-9751-4C12D451B336">AND 运算符是默认的连接运算符。这意味着如果两个搜索词之间没有任何布尔运算符，则使用 AND 运算符。只有给定字段或默认字段中同时存在这两个搜索词时，AND 运算符才会执行匹配。这等效于获取集合的交集。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-EB4D9766-6715-4108-8468-B668CAABA4A7">或者</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-19032EE8-42B6-438E-A263-1024208D1BE8">OR 运算符用于链接两个搜索词，只要存在其中一个搜索词，即可找到匹配项。这等效于获取集合的并集。</p><p id="GUID-596BDCA4-29C9-4E08-AFC5-26D41BCD9554">如要要搜索包含搜索词 recent fires 或仅包含 fires 的项目，可以使用查询 <span class="usertext">"recent fires" OR fires</span>。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-7334B3AD-13F9-4BC4-9914-1C268593DE2C">+</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-8CEABDC4-F8E7-4B71-B7EC-CCCBDA26C6F0">加号或所需运算符要求该符号后的搜索词存在于给定字段或默认字段中的某个位置。</p><p id="GUID-6A811FF7-36AE-46D4-AC9B-C908D9571F5B">如果要搜索必须包含 fires 也可以包含 recent 的项目，可以使用查询 <span class="usertext">recent +fires</span>。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-EFCCF862-7508-40F5-A020-FD0DECE97526">NOT</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-DB0B9766-F729-45CC-889E-0DA143F3A5DE"> NOT 运算符用于排除包含 NOT 后的搜索词的项目。这等效于获取集合的补集。如果要搜索包含 California 但不包含 imagery 的文档，可以使用查询 <span class="usertext">California NOT Imagery</span>。NOT 运算符不能用于单个搜索词。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-A51F0264-7474-467B-9514-01D72518A9D1">-</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-336F6B4B-66ED-435E-A272-8BF988B3372F">减号即禁止运算符，用于排除包含该符号后的搜索词的项目。</p><p id="GUID-C5972A42-4CDF-41C4-B01C-4DE3822D5445">如果要搜索包含 California 但不包含 imagery 的文档，可以使用查询 <span class="usertext">California -Imagery</span>。</p></td></tr></tbody><caption></caption></table></div></p></section><section class="section1 padded-anchor" id="ESRI_SECTION1_12503ECCB45D4B5EB048F78810D61915" purpose="section1"><h2>分组</h2><p id="GUID-123BB779-099C-4648-81AC-EC3136D105B5">可以创建使用括号的子查询对子句进行分组。当您要控制查询的布尔逻辑时，这非常有用。</p><p id="GUID-F213B4D1-30D3-4C97-8713-024935D8C234">如果要搜索 California 或 recent 和 fires，可以创建表达式 <span class="usertext">(California OR recent) AND fires</span>。</p><p id="GUID-BF87A625-6A0A-4C92-9E8B-28E8A771E1FC">可以使用括号将多个子句组合成单个字段。</p><p id="GUID-94AD737D-CE1F-48C8-B50C-19AAB8618506">如果要搜索同时包含短语 population change 和单词 recent 的标题，可以使用查询
+<span class="usertext">title:(+"population change" +recent)</span>。</p></section><section class="wfsummary padded-anchor" id="ESRI_WORKFLOWSUMMARY_9E2EBB687C9E4101B631BA4BEA924BAD" purpose="wfsummary"><p id="GUID-D2FC59A7-E2B0-485C-9906-A90DE3010590">
+</p></section>
+			
+				<hr>
+				<!--googleoff: all-->
+				
+	
+        
+		    <p class="feedback right">
+		        <a id="afb" class="icon-ui-contact" href="/feedback/" data-langlabel="feedback-on-this-topic" >有关此主题的反馈?</a>
+		    </p>
+        
+	
+
+				<!--googleon: all-->
+			
+		</main>
+	</div>
+	
+	<!--googleoff: all-->
+	
+		
+			<div id="main-toc-large" class="column-5">
+			    <div class="panel font-size--2 tablet-hide trailer-1">
+			      <h5 class="trailer-half">在本主题中</h5>
+			      <ol class="list-plain pre-0 trailer-0"><li><a href="#ESRI_SECTION1_18FD99A1020547BA864FCEBECBE267F3">字段</a></li><li><a href="#ESRI_SECTION1_C30D73392D964D51A8B606128A8A6E8F">范围搜索</a></li><li><a href="#ESRI_SECTION1_96E74103871649FE8B525F65ABB6889B">为搜索词加权</a></li><li><a href="#ESRI_SECTION1_D75FAFC270CF4D269667E84F0CD6D0EA">布尔运算符</a></li><li><a href="#ESRI_SECTION1_12503ECCB45D4B5EB048F78810D61915">分组</a></li></ol>
+			    </div>
+			    
+			    
+	  		</div>
+		
+    
+   <!--googleon: all-->
+
+
+
+
+          
+        </div>
+        <!-- ENDPAGECONTENT -->
+
+      </div>
+
+    </div>  <!-- End of wrapper -->
+
+  <footer class="footer leader-3 link-dark-gray" role="contentinfo">
+    <div class="grid-container">
+      <div class="row">
+        <nav class="column-6">
+          <h6 data-langlabel="arcgis-for-server">Arc<span>GIS Enterprise</span></h6>
+          <ul class="list-plain">
+            <li><a data-langlabel="home" href="../../../../zh-CN/">主页</a></li>
+            <li><a data-langlabel="portal" href="../../../../zh-CN/portal/">Portal</a></li>
+            <li><a data-langlabel="server" href="../../../../zh-CN/server/">Server</a></li>
+            <li><a data-langlabel="data-store" href="../../../../zh-CN/data-store/">Data Stores</a></li>
+            <li><a data-langlabel="cloud" href="../../../../zh-CN/cloud/">云</a></li>
+            <li><a data-langlabel="apps" href="../../../../zh-CN/apps/">应用程序</a></li>
+            <li><a data-langlabel="documentation" href="../../../../zh-CN/documentation/">文档</a></li>
+          </ul>
+        </nav>
+
+        
+  <nav class="column-6">
+    <h6 data-langlabel="arcgis-platform">ArcGIS 平台</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="arcgis" href="//www.arcgis.com/">ArcGIS Online</a></li>
+      <li><a data-langlabel="arcgis-for-professionals" href="//pro.arcgis.com/">ArcGIS Pro</a></li>
+      <li><a data-langlabel="arcgis-for-server" href="//enterprise.arcgis.com/">ArcGIS Enterprise</a></li>
+      <li><a data-langlabel="arcgis-for-developers" href="https://developers.arcgis.com/">ArcGIS for Developers</a></li>
+      <li><a data-langlabel="arcgis-solutions" href="//solutions.arcgis.com/">ArcGIS Solutions</a></li>
+      <li><a data-langlabel="arcgis-marketplace" href="//marketplace.arcgis.com/">ArcGIS Marketplace</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <h6 data-langlabel="about-esri">关于 Esri</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="about-us" href="//www.esri.com/about-esri/">关于我们</a></li>
+      <li><a data-langlabel="careers" href="//www.esri.com/careers/">招贤纳士</a></li>
+      <li><a data-langlabel="insiders-blog" href="https://www.esri.com/about/newsroom/blog/">Esri 博客</a></li>
+      <li><a data-langlabel="user-conference" href="//www.esri.com/events/user-conference/index.html">用户大会</a></li>
+      <li><a data-langlabel="developer-summit" href="//www.esri.com/events/devsummit/index.html">开发者峰会</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <a class="esri-logo" href="//www.esri.com/" aria-label="Esri Home"></a>
+    <section class="footer-social-nav leader-1">
+            <a class="icon-social-twitter" aria-label="Esri on Twitter" href="https://twitter.com/Esri/"></a>
+            <a class="icon-social-facebook" aria-label="Esri on Facebook" href="https://www.facebook.com/esrigis/"></a>
+            <a class="icon-social-github" aria-label="Esri on GitHub" href="//esri.github.io/"></a>
+            <a class="icon-social-contact" aria-label="Contact Esri" href="//www.esri.com/about-esri/contact/"></a>
+    </section>
+	  
+  </nav>
+  
+  <div class="column-24 leader-1">
+    <p class="font-size--3"><a href="http://www.esri.com/legal/copyright-trademarks">Copyright &copy; 2019 Esri.</a> All rights reserved. | <a href="http://www.esri.com/legal/privacy/">隐私政策</a> | <a href="http://www.esri.com/legal/software-license">法律声明</a></p>
+  </div>
+  
+
+
+      </div>
+    </div>
+  </footer>
+  <!--googleoff: all-->
+
+  
+  
+	<script src="../../../../zh-CN/assets/js/init.js" type="text/javascript"></script>
+	<!--<script src="../../../../zh-CN/assets/js/drop-down.js" type="text/javascript"></script>-->
+	<script src="../../../../zh-CN/assets/js/search/searchform.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/cdn/js/link-modifier.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/cdn/js/sitewide.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/cdn/js/libs/highlight.pack.js" type="text/javascript"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+
+
+  
+    
+
+  <script src="../../../../zh-CN/cdn/js/affix.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    $(function () {
+          var appendFlg = true;
+
+          $("#bigmac")
+          .on("affixed.bs.affix", function (evt) {
+            if (appendFlg) {
+              $("<a class='crumb' href='#'>使用高级搜索</a>").insertAfter ($("#bigmac nav a").last());
+              appendFlg = false;
+            }
+          })
+          .on ("affix-top.bs.affix", function(evt) {
+            if (!appendFlg) {
+              $("#bigmac nav a").last().remove();
+            }
+            appendFlg = true;
+          })
+    })
+  </script>
+  
+        <script type="text/javascript">
+          window.doctoc = {
+            pubID: "583",
+            tpcID: "822",
+            
+              prefix: "使用",
+              prefixUrl: "/zh-cn/portal/latest/use/",
+          
+            hideToc: false
+          }
+        </script>
+
+        <script type="text/javascript" src="../../../../zh-CN/portal/latest/use/583.js" ></script>
+        <script type="text/javascript" src="../../../../zh-CN/cdn/calcite/js/protoc.js" ></script>
+        
+        
+
+  <noscript>
+        <p>
+            <a href="flisting.htm">flist</a>
+        </p>
+    </noscript>
+    <script type="text/javascript"></script>
+  
+  
+    
+    
+
+  </body>
+</html>

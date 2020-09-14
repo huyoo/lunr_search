@@ -1,0 +1,999 @@
+
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>  <html class="ie lt-ie9 lt-ie8 lt-ie7 ie6" dir="ltr"> <![endif]-->
+<!--[if IE 7]>     <html class="ie lt-ie9 lt-ie8 ie7" dir="ltr"> <![endif]-->
+<!--[if IE 8]>     <html class="ie lt-ie9 ie8" dir="ltr"> <![endif]-->
+<!--[if IE 9]>     <html class="ie ie9" dir="ltr"> <![endif]-->
+<!--[if !IE]><!--> <html dir="ltr" lang="zh-CN"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>ExportWebMap 规范&mdash;文档 
+  (10.7) | ArcGIS Enterprise 文档</title>
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+    <script>
+      var docConfig = {
+        locale: 'zh-CN'
+        ,localedir: 'zh-cn'
+        ,langSelector: ''
+        
+        ,relativeUrl: false
+        
+
+        ,searchformUrl: '/search/'
+        ,tertiaryNavIndex: ''
+
+        
+      };
+    </script>
+	 
+
+
+    
+    <!--[if lt IE 9]>
+      <script src="../../../../../zh-CN/cdn/js/libs/html5shiv.js" type="text/javascript"></script>
+      <script src="../../../../../zh-CN/cdn/js/libs/selectivizr-min.js" type="text/javascript"></script>
+      <script src="../../../../../zh-CN/cdn/js/libs/json2.js" type="text/javascript"></script>
+      <script src="../../../../../zh-CN/cdn/js/libs/html5shiv-printshiv.js" type="text/javascript" >
+
+    <![endif]-->
+
+     <!--[if lt IE 11]>
+    <script>
+      $$(document).ready(function(){
+        $$(".hideOnIE").hide();
+      });
+    </script>
+    <![endif]-->
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<link href="../../../../../zh-CN/assets/img/favicon.ico" rel="shortcut icon" >
+	<link href="../../../../../zh-CN/assets/css/screen.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/cdn/calcite/css/documentation.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/assets/css/print.css" media="print" type="text/css" rel="stylesheet" />
+
+	<!--
+	<link href="../../../../../zh-CN/assets/css/screen_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/assets/css/documentation/base_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/assets/css/print_l10n.css" media="print" type="text/css" rel="stylesheet" />
+	-->
+	
+	
+		<script src="../../../../../zh-CN/cdn/js/libs/jquery.1.9.1.min.js" type="text/javascript"></script>
+	
+	<script src="../../../../../zh-CN/cdn/js/libs/jquery.cookie.js" type="text/javascript"></script>
+	<link href="../../../../../zh-CN/cdn/css/colorbox.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/cdn/css/colorbox_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<script src="../../../../../zh-CN/cdn/js/libs/jquery.colorbox-min.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/assets/js/video-init.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/assets/js/sitecfg.js" type="text/javascript"></script>
+	
+		<script src="../../../../../zh-CN/assets/js/signIn.js" type="text/javascript"></script>
+	
+
+	<!--- Language Picker -->
+	<script src="../../../../../zh-CN/assets/js/locale/l10NStrings.js" type="text/javascript"></script>
+	
+		 
+	
+
+	<script src="../../../../../zh-CN/assets/js/calcite-web.js" type="text/javascript"></script>
+
+
+
+  <!--- search MD -->
+    <META name="description" content="ExportWebMap 规范使用“JavaScript 对象标记法”(JSON) 定义了 Web 地图的状态。此规范包含了创建地图的可打印图像的图层和范围所必需的信息。"><META name="last-modified" content="2019-12-6"><META name="product" content="arcgis-server-windows,arcgis-enterprise-windows"><META name="sub_category" content="ArcGIS Server (Windows)"><META name="search-collection" content="help"><META name="content_type_label" content="帮助主题"><META name="sub_category_label" content="ArcGIS Server (Windows)"><META name="search-category" content="help-general"><META name="subject_label" content="服务"><META name="version" content="10.8"><META name="content_type" content="Help Topic"><META name="subject" content="SERVICES"><META name="content-language" content="zh-cn">
+    <!--- search MD -->
+
+  
+  <script src="../../../../../zh-CN/assets/js/switchers/server-1.js" type="text/javascript"></script>
+  
+      
+
+</head>
+
+<!--
+      pub: GUID-8CEA0D8A-F25F-4291-9901-6B9833BA91EE=15
+      tpc: GUID-0E73F217-FBA8-4873-87C1-7423EAB77F91=15
+      -->
+
+
+<!-- variable declaration, if any -->
+<!-- can change following macro to set variable once we are on Jinja 2.8 -->
+
+
+
+
+
+<body class="claro zh-CN server">
+  
+
+  <!-- Drawer location -->
+  <div class="drawer drawer-left js-drawer" data-drawer="top-nav">
+        <nav class="drawer-nav" role="navigation">
+          <aside class="side-nav">
+            <h2 class="side-nav-title">Arc<span>GIS</span> Enterprise</h2>
+            <form id="helpSearchForm" class="margin-left-half margin-right-half leader-half trailer-half drawer-search-form" method="GET">
+              <input type="search" name="q"  placeholder="搜索 ArcGIS Server 10.8 帮助">
+              <input type="hidden" name="collection" value="help" />
+              <input type="hidden" name="product" value="arcgis-server-windows" />
+              <input type="hidden" name="version" value="10.8" />
+              <input type="hidden" name="language" value="zh-CN" />
+            </form>    
+             <a id="nav-portal" data-langlabel="portal" href="../../../../../zh-CN/portal/" class="side-nav-link">Portal</a>
+             
+            <a id="all-servers" data-langlabel="all-servers" href="../../../../../zh-CN/server/" class="side-nav-link">所有服务器</a>
+            <a id="gis-server" data-langlabel="gis-server" href="../../../../../zh-CN/server/" class="side-nav-link">GIS Server</a>
+            <a id="image-server" data-langlabel="image-server" href="../../../../../zh-CN/image/" class="side-nav-link">Image Server</a>
+            <a id="geo-analytics-server" data-langlabel="geo-analytics-server" href="../../../../../zh-CN/geoanalytics/" class="side-nav-link">GeoAnalytics Server</a>
+            <a id="geoevent-server" data-langlabel="geoevent-server" href="../../../../../zh-CN/geoevent/" class="side-nav-link">GeoEvent Server</a>
+            <a id="notebook-server" data-langlabel="notebook-server" href="../../../../../zh-CN/notebook/" class="side-nav-link">Notebook Server</a>
+            <a id="nav-data-store" data-langlabel="data-store" href="../../../../../zh-CN/data-store/" class="side-nav-link">Data Stores</a>
+            <a id="nav-cloud" data-langlabel="cloud" href="../../../../../zh-CN/cloud/" class="side-nav-link">云</a>
+            <a id="nav-apps" data-langlabel="apps" href="../../../../../zh-CN/apps/" class="side-nav-link">应用程序</a>
+            <a id="nav-doc" data-langlabel="documentation" href="../../../../../zh-CN/documentation/" class="side-nav-link">文档</a>
+
+          </aside>
+        </nav>
+    </div>
+
+    <!-- user navigation collapses to drawer on mobile -->
+    
+    <div class="drawer drawer-right js-drawer hide-if-logged-out logged-in-navigation" data-drawer="user-nav">
+      <nav class="drawer-nav">
+        <aside class="side-nav">
+          <a class="side-nav-link agolProfile" href="#">我的个人资料</a>
+          <a class="side-nav-link icon-ui-sign-out js-log-out" href="#">登出</a>
+        </aside>
+      </nav>
+    </div>
+    
+<!-- End of drawer -->
+
+  
+  <div class="wrapper">
+      <!--googleoff: all-->
+
+      <header class="top-nav" data-skin="learn">
+        <a class="skip-to-content" href="#skip-to-content">Skip To Content</a>
+        <div class="grid-container">
+          <div class="column-24">
+
+
+            <!--<div class="top-nav-title-wrapper text-center ">-->
+              <a href='../../../../../zh-CN/' class="top-nav-title tablet-hide"><span>Arc</span>GIS  Enterprise</a>
+              <a href='../../../../../zh-CN/' class="icon-ui-menu top-nav-title js-drawer-toggle tablet-show" data-drawer="top-nav"><span>Arc</span>GIS Enterprise</a>
+            <!--</div> -->
+
+          
+            <nav role="navigation" class="top-nav-list left tablet-hide">
+              <a id="nav-portal" data-langlabel="portal" href="../../../../../zh-CN/portal/" class="top-nav-link">Portal</a>
+
+                <div class="dropdown js-dropdown ">
+                  <a class="top-nav-link js-dropdown-toggle" tabindex="0" aria-haspopup="true" aria-expanded="false" href="#">Servers</a>
+                  <nav class="dropdown-menu featured" role="menu">
+                    <ul class="dropdown-sublist-featured">
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/get-started/latest/windows/additional-server-deployment.htm" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path  d="M42.92 6.1H4.12v8.566l.833.832-.835.833-.018 7.332.845.847-.825.824V33.9h25v5.2h-2v1.075H8.02v.8h19.1v.925h4.8v-.925H40v-.8h-8.08V39.1h-2v-5.2h13v-8.566l-.834-.834.835-.834v-7.332l-.835-.834.835-.834zm-11.8 35h-3.2v-1.2h3.2zm11-8H4.92v-7.434l.767-.766h35.668l.765.766zm0-9.766l-.766.766H5.666l-.766-.767.017-6.669.766-.764h35.671l.766.766zm0-9l-.766.766H5.687l-.766-.766V6.9h37.2zM19 11.9h-2v-.8h2zm-4 0h-2v-.8h2zm-4 0H9v-.8h2zm6 8.2h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9zm8 9h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9z"/></svg></span>
+                          <span class="sublink-text">所有服务器</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/server/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M45.98 33.575a.616.616 0 0 0-.335-.51l-3.362-2.03 3.362-2.031a.556.556 0 0 0 0-1.02l-11.1-6.704a1.293 1.293 0 0 0-1.112 0L22.33 27.982a.556.556 0 0 0 0 1.02l3.36 2.03-3.358 2.03a.556.556 0 0 0-.002 1.021l3.322 2.006-3.324 2.008a.555.555 0 0 0 .002 1.017l11.102 6.703a1.25 1.25 0 0 0 1.11.002l11.104-6.706a.556.556 0 0 0 0-1.02l-3.32-2.006 3.318-2.004a.607.607 0 0 0 .335-.509zM33.837 21.97c.026-.01.286-.005.29-.005l10.814 6.53-10.8 6.523c-.028.01-.284.005-.294.006l-10.813-6.53zm11.105 16.636l-10.8 6.523a2.564 2.564 0 0 1-.295.006l-10.81-6.529 3.39-2.047 7.004 4.23a1.083 1.083 0 0 0 .557.131 1.101 1.101 0 0 0 .554-.13l7.01-4.233zM34.14 40.098a2.545 2.545 0 0 1-.294.006l-10.812-6.53 3.43-2.073 6.97 4.208a1.25 1.25 0 0 0 1.107-.001l6.966-4.206 3.431 2.073zM9 8H7V7h2zm8 8h-2v-1h2zm-4-8h-2V7h2zm4 0h-2V7h2zm-4 8h-2v-1h2zm7.316 11.1H3.9v-6.434l.766-.766h35.668l.766.766v2.12l.8.483v-2.935l-.826-.826.826-.845v-6.329l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9h16.88a2.632 2.632 0 0 1 .336-.8zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zm0 8v-5.668l.766-.766h35.668l.766.766v5.67l-.746.764H4.666zM15 24v-1h2v1zm-4 0v-1h2v1zm-2-8H7v-1h2zm-2 8v-1h2v1z"/></svg></span>
+                          <span class="sublink-text">GIS Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/image/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 8h-2V7h2zm-4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm8 8h-2v1h2zm-8 0H7v1h2zm4 9v-1h-2v1zm-4 0v-1H7v1zm8 0v-1h-2v1zm4 3.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V21h-.8v-.334l-.766-.766H4.666l-.766.766V27.1H21zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zm40.234 4v21.8H23.1V23.1zm-.8 16.366L39.466 44.1h2.868l1.766-1.766zm-20.2-9.932l5.634-5.634h-2.868L23.9 26.666zm6.2-5.068L24.466 30.1h2.868l2.766-2.766zM28.466 30.1H30.1v-1.634zm2.434 0h6.2v-6.2h-6.2zm-7 7h6.2v-6.2h-6.2zm7 0h6.2v-6.2h-6.2zm0 6.434l5.634-5.634h-2.868L30.9 40.666zm7-7l5.634-5.634h-2.868L37.9 33.666zm1.634-5.634H37.9v1.634zm-8.634 7v1.634l1.634-1.634zm.566 6.2h2.868l2.766-2.766v-2.868zm6.434-3.566l2.634-2.634H37.9zM35.466 44.1H37.1v-1.634zm2.434 0h.434l5.766-5.766V37.9h-2.434L37.9 41.666zm6.2-8.634L42.466 37.1H44.1zm0-4L38.466 37.1h2.868l2.766-2.766zm0-7.566h-6.2v6.2h6.2zm-20.2 0v1.634l1.634-1.634zm0 20.2h6.2v-6.2h-6.2zm20.2 0v-.634l-.634.634z"/></svg></span>
+                          <span class="sublink-text">Image Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/geoanalytics/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 16h-2v-1h2zm-8 8v-1H7v1zm8 0v-1h-2v1zM13 7h-2v1h2zm4 0h-2v1h2zM9 7H7v1h2zm21.45 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V27.9h-1.464l-.801-.8H41.1v-6.434l-.766-.766H4.666l-.766.766V27.1h27.15zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM13 24v-1h-2v1zm0-9h-2v1h2zm-4 0H7v1h2zm26.672 27.148A1.87 1.87 0 0 1 35.9 43a1.91 1.91 0 1 1-3.763-.222l-9.845-3.414A1.88 1.88 0 0 1 21 39.9a1.9 1.9 0 1 1 1.474-3.084l4.692-2.346A1.878 1.878 0 0 1 27.1 34a1.902 1.902 0 0 1 1.9-1.9 1.867 1.867 0 0 1 .781.191l3.788-5.05A1.88 1.88 0 0 1 33.1 26a1.9 1.9 0 1 1 3.491 1.026l4.889 4.888c-.069.056-.144.1-.21.162a3.986 3.986 0 0 0-.358.402l-4.883-4.883A1.889 1.889 0 0 1 35 27.9a1.867 1.867 0 0 1-.781-.191l-3.788 5.049a1.868 1.868 0 0 1 .437.965l9.204.614c-.018.11-.049.218-.058.33A3.93 3.93 0 0 0 40 35c0 .046.01.09.01.135l-9.185-.612A1.913 1.913 0 0 1 29 35.9a1.889 1.889 0 0 1-1.474-.716l-4.692 2.346a1.878 1.878 0 0 1 .066.47 1.9 1.9 0 0 1-.105.625c-.007.02-.022.036-.03.056l9.63 3.34a1.87 1.87 0 0 1 2.786-.505l5.415-4.437c.067.108.127.22.204.322a3.9 3.9 0 0 0 .292.306zM33.9 26a1.092 1.092 0 0 0 .43.872 1.12 1.12 0 0 0 1.42-.068A1.1 1.1 0 1 0 33.9 26zm-6 8a1.1 1.1 0 0 0 2.196.093 1.135 1.135 0 0 0-.426-.965A1.087 1.087 0 0 0 29 32.9a1.101 1.101 0 0 0-1.1 1.1zm-5.8 4a1.098 1.098 0 1 0-.06.362A1.101 1.101 0 0 0 22.1 38zm13 5a1.1 1.1 0 1 0-2.2 0 1.1 1.1 0 0 0 2.2 0zm10.8-8a1.9 1.9 0 1 1-3.8 0c0-.053.003-.105.007-.158A1.9 1.9 0 0 1 45.9 35zm-.8 0a1.1 1.1 0 0 0-2.196-.093 1.153 1.153 0 0 0 .216.752A1.1 1.1 0 0 0 45.1 35z"/></svg></span>
+                          <span class="sublink-text">GeoAnalytics Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/geoevent/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M13 8h-2V7h2zm4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm12.418 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826v2.117c-.259-.177-.53-.337-.8-.497v-1.288l-.766-.766H4.666l-.766.766V27.1h17.933c-.148.26-.283.53-.415.8zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM9 24v-1H7v1zm4-9h-2v1h2zm0 9v-1h-2v1zm-4-9H7v1h2zm8 9v-1h-2v1zm16.9 2h-.8v8.9H39v-.8h-5.1zm.1-3.901a11.9 11.9 0 1 0 11.9 11.9 11.914 11.914 0 0 0-11.9-11.9zm0 23a11.1 11.1 0 1 1 11.1-11.1 11.112 11.112 0 0 1-11.1 11.1z"/></svg></span>
+                          <span class="sublink-text">GeoEvent Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/notebook/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M22 27.1H3.9v-6.434l.766-.766h18.576a5.262 5.262 0 0 1 .83-.8H4.666l-.766-.766v-5.668l.766-.766h35.668l.766.766V18h.8v-5.666l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9H22zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zM9 8H7V7h2zm8 0h-2V7h2zm-4 0h-2V7h2zm2 16v-1h2v1zm-4 0v-1h2v1zm-4 0v-1h2v1zm0-8v-1h2v1zm8 0v-1h2v1zm-4 0v-1h2v1zm18.9 8.1h-1.8v1.8h1.8zm-.8 1h-.2v-.2h.2zm15.498-4.48a2.727 2.727 0 0 0-1.62-.5v-.02H27.25a3.154 3.154 0 0 0-3.15 3.15V38.1h-1.68a3.386 3.386 0 0 0-2.872 1.58 3.49 3.49 0 0 0-.157 3.419 3.241 3.241 0 0 0 2.954 1.801h15.161a3.404 3.404 0 0 0 3.394-3.4V26.9h5v-3.65a3.224 3.224 0 0 0-1.302-2.63zM22.345 44.1a2.44 2.44 0 0 1-2.23-1.341 2.706 2.706 0 0 1 .11-2.65A2.588 2.588 0 0 1 22.42 38.9h12.89a3.395 3.395 0 0 0 0 5.2zM40.1 23.192V41.5a2.6 2.6 0 1 1-2.6-2.6v-.8H24.9V23.25a2.352 2.352 0 0 1 2.35-2.35h13.795a3.183 3.183 0 0 0-.945 2.292zm5 2.908h-4.2v-2.908a2.274 2.274 0 0 1 1.44-2.18 1.944 1.944 0 0 1 1.791.259 2.423 2.423 0 0 1 .97 1.979zm-17.1 5h9v.8h-9zm0 3h7v.8h-7zm0-6h9v.8h-9zm4-3h5v.8h-5z"/></svg></span>
+                          <span class="sublink-text">Notebook Server</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+
+              <a id="nav-data-store" data-langlabel="data-store" href="../../../../../zh-CN/data-store/" class="top-nav-link">Data Stores</a>
+              <a id="nav-cloud" data-langlabel="cloud" href="../../../../../zh-CN/cloud/" class="top-nav-link">云</a>
+              <a id="nav-apps" data-langlabel="apps" href="../../../../../zh-CN/apps/" class="top-nav-link">应用程序</a>
+            </nav>
+
+
+            
+            
+            
+
+            <div class="margin-left-1 top-nav-list right hide-if-logged-in logged-out-navigation">
+               
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+              
+              <a data-langlabel="sign-in" id="login-link" class="icon-ui-user top-nav-link link-blue login-link" href="#">登录</a>
+              
+            </div>
+
+            
+            <nav class="margin-left-1 top-nav-list right hide-if-logged-out logged-in-navigation">
+              
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+             
+              <div class="dropdown js-dropdown right">
+
+                <div class="tablet-show top-nav-link">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a href="#" data-drawer="user-nav" class="user-nav-name js-drawer-toggle" data-first-name></a>
+                </div>
+
+                <div class="tablet-hide top-nav-link js-dropdown-toggle">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a class="user-nav-name top-nav-dropdown dropdown-btn" data-first-name>&nbsp;</a>
+                </div>
+
+                <nav class="dropdown-menu dropdown-right">
+                
+                  <a class="dropdown-link agolProfile" id="agolProfile" href="#">我的个人资料</a>
+                  <a class="dropdown-link js-log-out" id="agolLogout" href="#">登出</a>
+                </nav>
+              </div>
+            </nav>
+            
+
+            
+          </div>
+        </div>
+      </header>
+
+      <div class="js-search search-overlay">
+        <div class="search-content" role="dialog" aria-labelledby="search">
+          <form method="GET" id="helpSearchForm">
+            <label>
+              搜索 ArcGIS Server 10.8 帮助
+              <div class="search-bar">
+                <input type="search" name="q"  placeholder="搜索 ArcGIS Server 10.8 帮助" class="search-input js-search-input">
+                <input type="hidden" name="collection" value="help" />
+                <input type="hidden" name="product" value="arcgis-server-windows" />
+                <input type="hidden" name="version" value="10.8" />
+                <input type="hidden" name="language" value="zh-CN" />
+              </div>
+            </label>
+            <input type="hidden" name="relativePath" value="../../../../../" /><button type="submit" class="btn btn-large right">搜索</button>
+          </form>
+        </div>
+      </div>
+
+      <!--googleon: all-->
+
+      <div id="skip-to-content">
+        <!--googleoff: all-->
+        <header class="sub-nav sub-nav-learn">
+          <div class="grid-container">
+            
+            <div class="column-24">
+              <div style="display:table;" class="sdk-home-banner">
+                <div class="sdk-home-banner-content">
+                  <h1 class="sub-nav-title link-white">ArcGIS Server</h1>
+                </div>
+              </div>
+            </div>
+
+            <div class="column-24">
+              <nav class='sub-nav-list tablet-hide'><a class="sub-nav-link" href="../../../../../zh-CN/server/" target="_top" title="ArcGIS Server 的概述和文档">主页</a><a class="sub-nav-link" href="../../../../../zh-CN/server/latest/get-started/windows/" target="_top" title="了解有关 ArcGIS Server 和服务器角色的信息">简介</a><a class="sub-nav-link" href="../../../../../zh-CN/server/latest/deploy/windows/" target="_top" title="构建、配置和升级部署">部署</a><a class="sub-nav-link" href="../../../../../zh-CN/server/latest/manage-data/windows/" target="_top" title="管理企业的空间数据">管理数据</a><a class="sub-nav-link" href="../../../../../zh-CN/server/latest/publish-services/windows/" target="_top" title="使用 GIS 服务">管理服务</a><a class="sub-nav-link is-active" href="../../../../../zh-CN/server/latest/create-web-apps/windows/" target="_top" title="创建 Web 应用程序和可打印地图">共享</a><a class="sub-nav-link" href="../../../../../zh-CN/server/latest/administer/windows/" target="_top" title="管理和保护 ArcGIS Server">管理</a><a class="sub-nav-link" href="../../../../../zh-CN/server/latest/develop/windows/" target="_top" title="构建扩展模块并自动执行常见任务">开发</a></nav><select class='tablet-show select-full trailer-half js-select-nav'><option value="../../../../../zh-CN/server/">主页</option><option value="../../../../../zh-CN/server/latest/get-started/windows/">简介</option><option value="../../../../../zh-CN/server/latest/deploy/windows/">部署</option><option value="../../../../../zh-CN/server/latest/manage-data/windows/">管理数据</option><option value="../../../../../zh-CN/server/latest/publish-services/windows/">管理服务</option><option selected="true" value="../../../../../zh-CN/server/latest/create-web-apps/windows/">共享</option><option value="../../../../../zh-CN/server/latest/administer/windows/">管理</option><option value="../../../../../zh-CN/server/latest/develop/windows/">开发</option></select>
+            </div>
+
+          </div>
+        </header>
+        <!--googleon: all-->
+       
+        <!-- content goes here -->
+        <div class="grid-container ">
+          
+
+            
+              
+  <!--BREADCRUMB-BEG--><div id="bigmac" class="sticky-breadcrumbs trailer-2" data-spy="affix" data-offset-top="180"> </div><!--BREADCRUMB-END-->
+  <!--googleoff: all-->
+    <div class="column-5 tablet-column-12 trailer-2 ">
+      <aside class="js-accordion accordion reference-index" aria-live="polite" role="tablist">
+        <div></div>
+      </aside>
+
+      <div class="js-sticky scroll-show tablet-hide leader-1 back-to-top" data-top="0" style="top: 0px;">
+        <a href="#" class="btn btn-fill btn-clear">返回顶部</a>
+      </div>
+    </div>
+  <!--googleon: all-->
+  
+            
+            
+            
+	
+		<div class="column-13  pre-1 content-section">
+	
+		<header class="trailer-1"><h1>ExportWebMap 规范</h1></header>
+
+		 
+	<!--googleoff: all-->
+	
+		
+				<aside id="main-toc-small" class="js-accordion accordion tablet-show trailer-1">
+			      <div class="accordion-section">
+			        <h4 class="accordion-title">在本主题中</h4>
+			        <div class="accordion-content list-plain">
+			          <ol class="list-plain pre-0 trailer-0"><li><a href="#GUID-6E0122E8-3B4B-4CD3-8E51-B234F812C160">mapOptions</a></li><li><a href="#ESRI_SECTION1_FC212A2B579B425A9FE4358ACC89482A"> operationalLayers</a></li><li><a href="#ESRI_SECTION1_198C3BA4CEA64F00AB45176FC85F3006">地理处理结果</a></li><li><a href="#ESRI_SECTION1_11D33961584F4025AAE2CAF7DDE61599">baseMap</a></li><li><a href="#ESRI_SECTION1_8D5A14DEBA974762B4BEC5C9FB19B273">exportOptions</a></li><li><a href="#ESRI_SECTION1_58F5F403FCF048C2A5EBEF921BB97A10">layoutOptions</a></li><li><a href="#ESRI_SECTION1_03636EC8A2554A14B9642933FD79CAFF">限制</a></li></ol>
+			        </div>
+			      </div>
+			     </aside>
+		
+    
+   <!--googleon: all-->
+
+
+		<main>
+			
+	
+    	
+    
+
+
+			
+<p id="GUID-F44A6867-4560-453A-B31D-604655730BB0">当您尝试使用随 <span class="ph">ArcGIS Server</span> 的安装而提供的 PrintingTools 地理处理服务打印地图时，必须提供地图的“JavaScript 对象标记法”(JSON) 表示，包括地图的图层和范围信息。此 JSON 必须根据 Esri ExportWebMap 规范构建。</p><p id="GUID-53FF55CA-CD17-4299-A3BB-37CC89E240A3">使用 ArcGIS Web API 时，无需为创建 JSON 担心，因为 API 会为您解决这个问题。但是，本主题对相关内容进行了介绍，以方便您在需要自己构建 JSON 时进行参考。在需要直接调用 PrintingTools 服务或从其他应用程序运行此服务的源地理处理工具“导出 Web 地图”时，就可能发生这种情况。<div class="panel trailer-1 note" id="GUID-D434DF04-6973-48A0-8A30-914137A9E2F3"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-BF68FA21-313E-4FEF-8D9B-D9B35BABEAC9">为了清晰起见和便于阅读，已格式化本主题中 JSON 示例。但是，实际上，应通过打印服务传递未格式化的 JSON。在 10.6 及更高版本中，默认打印服务、所有基于 ArcPy 的打印服务以及从 <span class="ph">ArcGIS Pro</span> 发布的任何打印服务仅接受未格式化的 JSON。</p></div></p><p id="GUID-013CE303-0676-4BA2-A919-4C3CED163078">Web 地图由五个顶层对象构成：</p><section class="codeblock padded-anchor" purpose="codeblock"><div class="codeblockbody"><pre><code class="other no-highlight">{
+ &quot;mapOptions&quot;: {},
+ &quot;operationalLayers&quot;: [],
+ &quot;baseMap&quot;: [],
+ &quot;exportOptions&quot;: {},
+ &quot;layoutOptions&quot;: {}
+}</code></pre></div></section><section class="section1 padded-anchor" id="GUID-6E0122E8-3B4B-4CD3-8E51-B234F812C160" purpose="section1"><h2>mapOptions</h2><p id="GUID-F1334EA5-823A-4076-B465-8C128FD9E9ED">mapOptions 对象是必要对象，用于定义地图的显示属性。</p><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><thead><tr><th colspan="1">语法：</th><th colspan="1">示例</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><section class="codeblock padded-anchor" purpose="codeblock"><div class="codeblockbody"><pre><code class="other no-highlight">&quot;mapOptions&quot; : {
+ &quot;extent&quot; : {
+  &quot;xmin&quot; : &lt;xmin&gt;,
+  &quot;ymin&quot; : &lt;ymin&gt;,
+  &quot;xmax&quot; : &lt;xmax&gt;,
+  &quot;ymax&quot; : &lt;ymax&gt;,
+  &quot;spatialReference&quot; : {&lt;spatialReference&gt;}
+ },
+ &quot;scale&quot; : &lt;mapScale&gt;,
+ &quot;rotation&quot; : &lt;mapRotation&gt;,
+ &quot;spatialReference&quot; :  {&lt;spatialReference&gt;},
+ &quot;time&quot; : [
+  &lt;timeInstant&gt; | &lt;startTime&gt;,&lt;endTime&gt;
+ ]
+}</code></pre></div></section></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><section class="codeblock padded-anchor" purpose="codeblock"><div class="codeblockbody"><pre><code class="other no-highlight">&quot;mapOptions&quot; : {
+ &quot;extent&quot; : {
+  &quot;xmin&quot;:-12933906.537,  &quot;ymin&quot;:3993856.886,  &quot;xmax&quot;:-12933371.998,  &quot;ymax&quot;:3994375.189,  &quot;spatialReference&quot; : {
+   &quot;wkid&quot; : 102100  }
+ }, &quot;scale&quot; : 1234.5, &quot;rotation&quot; : -45, &quot;spatialReference&quot; : {
+  &quot;wkid&quot; : 102100 }, &quot;time&quot; : [  1199145600000,  1230768000000 ]
+}</code></pre></div></section></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="2"><p id="GUID-B64DB559-0196-402A-86E9-685F949E0C95">说明</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="2"><ul purpose="ul" id="UL_AC5B5809F8144FEBABEF525B54020BDE"><li purpose="li" id="LI_E12DD434308441E1AA5CDD1E42B839B8"> extent：必要属性，用于定义地图的范围。extent 对象的空间参考是可选的；如果未提供此项，则假定使用的是地图的空间参考。当地图范围的横纵比与输出页面上或 exportOptions:outputSize 的地图大小不同时，您可能会发现地图输出中将包含更多要素。</li><li purpose="li" id="LI_A4BCE0E94AA446059DD3A5A07FF107FC">scale（可选）：导出地图时所使用的地图比例。此属性为可选项，但建议使用以便获得最佳结果。当此 Web 地图中的地图服务具有与比例相关的图层或参考比例设置时，此 scale 属性特别有用。由于在 Web 应用程序上查看的地图可能比输出地图的尺寸小（例如，8.5 x 11 英寸或 A4 尺寸），所以输出地图的比例将会不同，您会看到 Web 应用程序中的要素和/或符号与输出地图相比存在差异。<p id="GUID-F447D9E6-1258-40CF-A3CE-B46396BB18AA">使用 scale 时，它的优先级会高于 extent，但输出地图会以请求的比例在范围的中心进行绘制。</p></li><li purpose="li" id="LI_B006B8A193914AB1A2DE1FD89F94D9B9">rotation（可选）：用于表示数据框将从正北方向按逆时针旋转的度数。要顺时针旋转，可使用负值。</li><li purpose="li" id="LI_0083219CB2C546CDBB3C95F17D22C81D">spatialReference（可选）：地图的空间参考。缺少 spatialReference 时的首选顺序如下：<ol class="list-numbered" purpose="ol" id="OL_5E6F03402F22400FAF9EE6BA55BFAADA"><li purpose="li" id="LI_35EB8BC792B84956BC8FBE4564CD7F15">mapOptions.extent.spatialReference</li><li purpose="li" id="LI_878BC0B72F5B47F397FCEDBACE7E1728">baseMap.baseMapLayers.spatialReference</li><li purpose="li" id="LI_E8CCF74A1A734EE0B48591E37A54142C">地图模板的空间参考</li></ol></li><li purpose="li" id="LI_384791777188448091AABF874D6AB6F0">time（可选）：如果存在时间感知图层并希望在指定的时间进行绘制，则指定此属性。此顺序列表可包含一个或两个元素。添加两个元素（startTime 后跟 endTime）用于表示一个时间范围，或仅提供一个时间元素用于表示某一时刻。时间始终以 UTC 表示。</li></ul></td></tr></tbody><caption></caption></table></div></section><section class="section1 padded-anchor" id="ESRI_SECTION1_FC212A2B579B425A9FE4358ACC89482A" purpose="section1"><h2> operationalLayers</h2><p id="GUID-FBBD86B9-A207-45B9-A38C-DBBA093D793A">OperationalLayers 列表包含要在地图中显示的所有业务图层。数组的顺序定义了地图中图层的顺序。各图层的类型由 URL 资源响应定义。如果资源不能由 URL 确定，则由 type 属性来定义类型。例如，WMS 图层需要您指定 "type" : "wms"。有一些属性是所有类型的业务图层共用的，而其他属性是特定于各类型业务图层的。</p><p id="GUID-FA1FE9C8-D6A1-4158-8204-AFE33B440494">如果是受保护的图层，请在图层定义中指定令牌。不支持在 URL 中包含用户名和密码。</p><div class="panel trailer-1 note" id="GUID-41B9276C-132F-41CB-944B-8C978863162D"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-DAAB587E-BDBA-4F1E-A9DB-B60537CD4654">对于地图服务、要素服务或影像服务，需使用指向服务的 REST 端点的 URL。不支持 SOAP 端点。</p></div><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><thead><tr><th colspan="1">业务图层的语法</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><section class="codeblock padded-anchor" purpose="codeblock"><div class="codeblockbody"><pre><code class="other no-highlight">&quot;operationalLayers&quot; : [
+ {
+  &quot;id&quot; : &quot;&lt;webmapOperationalLayerId&gt;&quot;,
+  &quot;url&quot; : &quot;&lt;url1&gt;&quot;,
+  &quot;token&quot; : &quot;&lt;tokenString1&gt;&quot;,
+  &quot;title&quot; : &quot;&lt;title1&gt;&quot;,
+  &quot;opacity&quot; : &lt;opacity1&gt;,
+  &quot;visibility&quot; : &lt;true | false&gt;,
+  &quot;minScale&quot; : &lt;minScale1&gt;,
+  &quot;maxScale&quot; : &lt;maxScale1&gt;
+ }
+]</code></pre></div></section></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-7ED75C6A-93C8-4333-AC91-7DF328417D03">说明</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-39E899D4-195B-4897-994E-DE89D0688E44"><div class="panel trailer-1 note" id="GUID-2EBDD69C-B791-4F61-B3F9-00BE1AA27426"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-4AB055F4-F1B9-4D13-B14E-836CE68F965D">下述属性对于各种业务图层（例如，地图服务图层、客户端图形和 KML 图层等）是通用的。因此，本部分并不会针对以下各种业务图层介绍这些属性。</p></div><ul purpose="ul" id="UL_E868AEB0721D4A2C9709A005427BD274"><li purpose="li" id="LI_907B2A76FD444C098B0F0327221B5BD1"> id（可选）：唯一标识业务图层的字符串。主要用于图例。</li><li purpose="li" id="LI_721ABCF48EDA45188277940FA0D8DB74">url：服务的终点。"featureCollection" 不需要此项。</li><li purpose="li" id="LI_2C42F161402247DC803F43124B2FD635">token（可选）：用来访问受保护服务的令牌。</li><li purpose="li" id="LI_71CE0DCE70434B88ABB93CEAE3599D39">title（可选）：业务图层的名称。如果在图例上显示此名称，则布局上的图例应予以支持。</li><li purpose="li" id="LI_62617666AE574230B2195BD494541289">visibility（可选）：默认值为 true。</li><li purpose="li" id="LI_2BF0321BB827437EAEF09C8814C8480B">opacity（可选）：值范围是 0 至 1（默认），1 表示完全不透明，0 表示完全透明。</li><li purpose="li" id="LI_733A86D7587942DF8A9A2351F15F70CB">minScale（可选）：图层缩小超出此比例时，将不进行绘制。</li><li purpose="li" id="LI_19855F0A3029472890E916EB2640C34F">maxScale（可选）：图层放大超出此比例时，将不进行绘制。</li></ul></p></td></tr></tbody><caption></caption></table></div><p id="GUID-1A9D84BF-79C2-4942-A78A-F2CBCF42B7F3"></p><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><thead><tr><th colspan="1">地图服务图层的语法</th><th colspan="1">示例</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><section class="codeblock padded-anchor" purpose="codeblock"><div class="codeblockbody"><pre><code class="other no-highlight">&quot;operationalLayers&quot; : [ {
+  &quot;url&quot; : &quot;&lt;url1&gt;&quot;,  &quot;title&quot; : &quot;&lt;title1&gt;&quot;,  &quot;opacity&quot; : &lt;opacity2&gt;,  &quot;gdbVersion&quot;: &quot;&lt;gdbVersion&gt;&quot;,  &quot;visibleLayers&quot; : [   &lt;layerId1&gt;,   &lt;layerId2&gt;
+  ],  &quot;layers&quot; : [   {
+    &quot;id&quot;: &lt;sublayerId1&gt;,    &quot;name&quot;: &lt;name&gt;,    &quot;layerDefinition&quot;: {
+     &quot;definitionExpression&quot;: &quot;&lt;definitionExpression&gt;&quot;,     &quot;layerTimeOptions&quot;: {
+      &quot;useTime&quot;: &lt;true | false&gt;,      &quot;timeDataCumulative&quot;: &lt;true | false&gt;,      &quot;timeOffset&quot;: &lt;timeOffset1&gt;,      &quot;timeOffsetUnits&quot;: &quot;&lt;esriTimeUnits&gt;&quot;
+     },     &quot;drawingInfo&quot;: {
+      &quot;renderer&quot; : {&lt;renderer&gt;},      &quot;transparency&quot; : &lt;transparency&gt;,      &quot;scaleSymbols&quot; : &lt;true | false&gt;,      &quot;showLabels&quot; : &lt;true | false&gt;,      &quot;labelingInfo&quot; : {&lt;labelingInfo&gt;},     },     &quot;source&quot;: {&lt;layerSource&gt;},     &quot;gdbVersion&quot;: &quot;&lt;Geodatabase version name&gt;&quot;
+    }
+   }
+  ] }
+]</code></pre></div></section></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><section class="codeblock padded-anchor" purpose="codeblock"><div class="codeblockbody"><pre><code class="other no-highlight">&quot;operationalLayers&quot; : [ {
+  &quot;url&quot; : &quot;https://servicesbeta.esri.com/ArcGIS/rest/
+           services/HomelandSecurity/operations/
+           MapServer&quot;,  &quot;title&quot; : &quot;Homeland security operations&quot;,  &quot;opacity&quot; : 0.8,  &quot;visibleLayers&quot; : [   0,   1  ] }
+]</code></pre></div></section></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="2"><p id="GUID-CA051197-F4CE-4E99-A9F0-2848A4DEA0A1">说明</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="2"><ul purpose="ul" id="UL_9F8E6771170A4245B987872D3C84A35A"><li purpose="li" id="LI_A6809D99C12D4C04B196DDA6C5D6F283">  visibleLayers（可选）：应在地图服务图层内可见的子图层 ID 的数组。如果忽略此项，则业务图层将使用各子图层的默认可见状态进行绘制。您无需指定图层组的 Id。请注意，如果地图服务支持动态图层，则 "layers" 优先于 "visibleLayers"。对于不使用动态图层的地图服务，仅支持 "layers" 属性中的 "layerDefinition"。</li><li purpose="li" id="LI_E5F9F1CBF33D4D36A2BD6E9958D9A9A7">layers（可选）：要导出的图层的列表。如果地图服务使用动态图层，则将导出 "layers" 数组中指定的所有图层，而会忽略 "visibleLayers"。使用 "name" 属性定义图层名称。通常，当图层 "source" 类型为 "dataLayer" 时需要上述操作。</li>	<li purpose="li" id="LI_F5051BDA29AF41D0B61A89856576BDED">  drawingInfo（可选）：
+使用此项可覆盖子图层的绘制设置，例如，子图层的渲染器。<ul purpose="ul" id="UL_488DDE79E9B841DF9095257911FF4210"><li purpose="li" id="LI_AF6399FFB96A4502B1C30CBC74F53228">  renderer（可选）：
+指定此项后，它会覆盖子图层的原始渲染器。</li></ul></li><li purpose="li" id="LI_1AF2208378EB4ADD8A156D04B4A4FAC8">  source（可选）：
+表示根据请求动态添加到地图服务的图层源。有关如何定义源的详细信息，请参阅 <a target="_blank" class="xref xref" href="http://links.esri.com/arcgis/rest/api">ArcGIS REST API</a>。</li><li purpose="li" id="LI_A477669F7C3B41C2851FF4C113FA1E71">gdbVersion（可选）：
+如果想要查看从不同地理数据库版本绘制的要素，请指定此项。您可以在业务图层级别定义此项以便将所有图层切换到指定的版本，或定义为 "layers" 数组中的子图层以更改任何单独图层的地理数据库版本。</li></ul></td></tr></tbody><caption></caption></table></div><p id="GUID-FC9ED34A-2EE5-47E3-9C56-BB38E4C37439"></p><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><thead><tr><th colspan="1">要素图层的语法</th><th colspan="1">示例</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><section class="codeblock padded-anchor" purpose="codeblock"><div class="codeblockbody"><pre><code class="other no-highlight">&quot;operationalLayers&quot; : [
+ {
+  &quot;url&quot; : &quot;&lt;url1&gt;&quot;,
+  &quot;title&quot; : &quot;&lt;title1&gt;&quot;,
+  &quot;opacity&quot; : &lt;opacity2&gt;,
+  &quot;layerDefinition&quot; : {
+   &quot;drawingInfo&quot; : {
+    &quot;renderer&quot; : {&lt;renderer1&gt;}
+   },
+   &quot;definitionExpression&quot; : &quot;&lt;definitionExpression1&gt;&quot;,
+   &quot;objectIds&quot; : [
+    &lt;oid1&gt;,
+    &lt;oid2&gt;
+   ],
+   &quot;timeInfo&quot; : {  //可选
+    &quot;trackIdField&quot; : &quot;&lt;trackIdFieldName&gt;&quot;
+   },
+   &quot;geometry&quot; : {&lt;geometry&gt;},
+   &quot;geometryType&quot; : &quot;&lt;geometryType&gt;&quot;,
+   &quot;spatialRel&quot; : &quot;&lt;spatialRel&gt;&quot;,
+   &quot;relationParam&quot; : &quot;&lt;relationParam&gt;&quot;,
+   &quot;gdbVersion&quot; : &quot;&lt;geodatabaseVersionName&gt;&quot;,
+   &quot;source&quot;: {&lt;layerSource&gt;}
+  },
+  &quot;selectionObjectIds&quot; : [
+   &lt;oid1&gt;,
+   &lt;oid2&gt;
+  ],
+  &quot;selectionSymbol&quot; : {&lt;symbol&gt;}
+ }
+]</code></pre></div></section></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><section class="codeblock padded-anchor" purpose="codeblock"><div class="codeblockbody"><pre><code class="other no-highlight">&quot;operationalLayers&quot; : [ {
+  &quot;url&quot; : &quot;https://servicesbeta.esri.com/ArcGIS/rest/
+           services/Hydrography/Watershed173811/
+           FeatureServer/1&quot;,  &quot;title&quot; : &quot;Watershed&quot;,  &quot;opacity&quot; : 1,  &quot;layerDefinition&quot; : {
+   &quot;drawingInfo&quot; : {
+    &quot;renderer&quot; : {&lt;renderer&gt;}
+   },   &quot;definitionExpression&quot; : &quot;Type = 1&quot;,   &quot;objectIds&quot; : [    534,    434   ]  },  &quot;selectionObjectIds&quot; : [   434  ],  &quot;selectionSymbol&quot; : {&lt;symbol&gt;}
+ }
+]</code></pre></div></section></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="2"><p id="GUID-B94BADD4-1544-48AF-A28C-FBD7818653AB">说明</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="2"><ul purpose="ul" id="UL_9643F281D1664810BB37C7A849312457"><li purpose="li" id="LI_63D44EA0DBD54600A1DCDF75DA525292">url（必选）：图层的 URL。如果要素图层以使用动态图层的地图服务中的图层为基础，此属性应以 /dynamicLayer 结束。</li><li purpose="li" id="LI_A9B936E502764F64957811B695259F40">drawingInfo（可选）：
+指定此图层的渲染器。<ul purpose="ul" id="UL_0955BD3BD9BA44D49ABA0ED285B5A43C"><li purpose="li" id="LI_B04FB99453C44D158E2AA2A790464A18">要使用时态渲染器渲染，除了渲染器以外，请指定 latestObservationRenderer、trackLinesRenderer 和 observationAger 属性。</li><li purpose="li" id="LI_6230B8D1189746028582C913E07544BC">observationAger（可选）：时态渲染器支持两种类型的 observationAger：rampAger 和 classBreaksAger。对于任何给定请求，图层可以包含 rampAger 或 classBreaksAger，但不能同时包含两者。</li></ul></li>	<li purpose="li" id="LI_A89F673B724C459BB07F5304709F8EFA">    definitionExpression（可选）：
+用于限制将绘制哪些要素的 SQL 语句。</li><li purpose="li" id="LI_73F8E7EFFC1A4862A420C5AF2541689C">     objectIds（可选）：
+根据对象 ID 来限定绘制哪些要素。</li><li purpose="li" id="LI_6A05E2D62D5B464DB482BCCD14098695">timeInfo（可选）：<ul purpose="ul" id="UL_5A21516B7AB14C6B8BA12F275B2BED91"><li purpose="li" id="LI_DB40B7874DE545EF9D1EBC52CE4027A3">trackIdField（可选）：唯一表示给定对象或正被观察的对象的字段。如果该字段为空或未填写，则使用 latestObservationRenderer 将只绘制最新的观察结果。</li></ul></li><li purpose="li" id="LI_429C592BFEDB4166B15C7683B27C8CDA">      geometry（可选）：
+通过几何来限定要绘制的要素。</li><li purpose="li" id="LI_4EA10152834940DD9DF48D38DAD4E12A">    geometryType（可选）：
+指定几何时，必须提供此项。</li><li purpose="li" id="LI_22931729897949468BD34480BC4CF121">    spatialRel（可选）：
+这表示在执行查询时应用到输入几何上的空间关系。</li><li purpose="li" id="LI_8D16874A946241E9BEDBCE42ED0DE4CD">    relationParam（可选）：
+执行查询时，可应用的空间关联函数。此空间关联函数的示例为 FFFTTT***。</li><li purpose="li" id="LI_9E79F39236CA476F9A892E6FEF59F086">       selectionObjectIds（可选）：使用提供的符号高亮显示具有给定对象 ID 的要素；必须设置 selectionSymbol。</li><li purpose="li" id="LI_ADAC8552C1CD4AF294027AB56823EBD8">     selectionSymbol（可选）：使用此符号来突出显示要素。指定 selectionObjectIds 时，必须提供此项。</li><li purpose="li" id="LI_219439C7C796482CAFDB7DB585050C01">  gdbVersion（可选）：如果您使用的版本与地图或要素服务所涉及的版本不同，则需指定地理数据库版本名称。</li><li purpose="li" id="LI_2421095B6FEA4A569EBCFE7CDC751D48">source（可选）：仅当要素图层以使用动态图层的地图服务为基础时，才必须选择该选项。</li></ul></td></tr></tbody><caption></caption></table></div><p id="GUID-311984BA-69DC-4840-ADEE-3FA4E58D4F63"></p><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><thead><tr><th colspan="1">影像服务图层的语法</th><th colspan="1">示例</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><section class="codeblock padded-anchor" purpose="codeblock"><div class="codeblockbody"><pre><code class="other no-highlight">&quot;operationalLayers&quot; : [
+ {
+  &quot;url&quot; : &quot;&lt;url1&gt;&quot;,
+  &quot;title&quot; : &quot;&lt;title1&gt;&quot;,
+  &quot;opacity&quot; : &lt;opacity2&gt;,
+  &quot;noData&quot; : &lt;noDataValue&gt;,
+  &quot;format&quot; : &quot;&lt;jpgpng | png | png8 | png24 | png32 |
+               jpg | bmp | gif | tiff &gt;&quot;,
+  &quot;interpolation&quot; : &quot;&lt;RSP_BilinearInterpolation | 
+                     RSP_CubicConvolution | 
+                     RSP_Majority | 
+                     RSP_NearestNeighbor&gt;&quot;,
+  &quot;compressionQuality&quot; : &lt;compress&gt;,
+  &quot;bandIds&quot; : [
+   &lt;bandId1&gt;,
+   &lt;bandId2&gt;
+  ],
+  &quot;mosaicRule&quot; : &quot;&lt;mosaicRule&gt;&quot;,
+  &quot;renderingRule&quot; : &quot;&lt;renderingRule&gt;&quot;,
+  &quot;noDataInterpretation&quot; : &quot;&lt;esriNoDataMatchAny | 
+                             esriNoDataMatchAll&gt;&quot;
+ }
+]</code></pre></div></section></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><section class="codeblock padded-anchor" purpose="codeblock"><div class="codeblockbody"><pre><code class="other no-highlight">&quot;operationalLayers&quot; : [ {
+  &quot;url&quot; : &quot;https://ais3/ArcGIS/rest/services/QB16/
+           ImageServer&quot;,  &quot;title&quot; : &quot;Satellite image from 1990&quot;,  &quot;opacity&quot; : 0.8,  &quot;bandIds&quot; : [   0,   1,   2  ] }
+]</code></pre></div></section></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="2"><p id="GUID-2FB98811-1DAE-414E-AB4C-7C0FCBE742E0">说明</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="2"><div class="panel trailer-1 note" id="GUID-5AA1647D-EB35-4EE5-9F0A-D81B747A01BC"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-19F8829C-61ED-4510-9EEF-209DB5E4E54F">有关影像服务图层的详细信息，请参阅 <a target="_blank" class="xref xref" href="http://links.esri.com/arcgis/rest/api">ArcGIS REST API</a>。</p></div></td></tr></tbody><caption></caption></table></div><p id="GUID-84BF31CB-B60A-4C5F-9EB0-C5F389C20ED5"></p><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><thead><tr><th colspan="2">WMS 服务图层的语法</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="2"><section class="codeblock padded-anchor" purpose="codeblock"><div class="codeblockbody"><pre><code class="other no-highlight">&quot;operationalLayers&quot; : [ {
+  &quot;url&quot; : &quot;&lt;url1&gt;&quot;,  &quot;title&quot; : &quot;&lt;title1&gt;&quot;,  &quot;type&quot; : &quot;wms&quot;,  &quot;opacity&quot; : &lt;opacity1&gt;,  &quot;version&quot; : &quot;&lt;wmsServerVersion&gt;&quot;,  &quot;format&quot; : &quot;&lt;jpg | png8 | png24 | png32&gt;&quot;,  &quot;transparentBackground&quot; : &lt;true | false&gt;,  &quot;layers&quot; : [   {&quot;name&quot;: &quot;&lt;layerName1&gt;&quot;},   {&quot;name&quot;: &quot;&lt;layerName2&gt;&quot;}
+  ],  &quot;visibleLayers&quot; : [   &quot;&lt;layerName1&gt;&quot;,   &quot;&lt;layerName2&gt;&quot;
+  ],  &quot;styles&quot; : [   &quot;&lt;style1&gt;&quot;,   &quot;&lt;style2&gt;&quot;
+  ] }
+]</code></pre></div></section></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="2"><p id="GUID-8E987540-D885-496C-BCD2-520EF88BB4D7">说明</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="2"><ul purpose="ul" id="UL_7E0625AE16054E2CAA0D930597E8B63A"><li purpose="li" id="LI_7AB49F2D908E44FFBE7F97411CBFF759">  type（必选）：对于 WMS 图层，必须将其指定为 "wms"。</li><li purpose="li" id="LI_233AB06B675F444AB1CA95A4EC98531E">  format（可选）：
+从服务器请求的图像格式。</li><li purpose="li" id="LI_0E8BC4D2ADB84670B7239A602FB9D9FE">  transparentBackground（可选）：
+如果值为 true，背景会变为透明，前提是请求的图像格式支持透明颜色。（JPEG 是一种不支持透明颜色的图像格式的示例。） 默认值为 false。</li><li purpose="li" id="LI_C490FD7D355F45158B9F732F9E42A055">  visibleLayers（可选）：应在 WMS 服务图层内可见的子图层名称的数组。顺序也很重要；此顺序必须符合 WMS 服务的要求。如果未提供，则 WMS 服务的所有图层都将可见。</li><li purpose="li" id="LI_C715A2D9A8FE49D0AB730D510F3DCB24">layers（可选）：要添加到地图的子图层名称的数组。如果未提供，则 WMS 服务的所有图层都将添加到该地图。</li><li purpose="li" id="LI_9E2A764024C94B7897392988BCC4152C">  styles（可选）：
+使用此项可覆盖子图层的默认绘制样式。指定后，请确保样式的数目和顺序与 visibleLayers 数组匹配。无需更改某个特定子图层的样式时，可以传递一个空字符串，例如 "styles" : ["highways","","population"]。</li><li purpose="li" id="LI_AD21DB88143740DCB92192B8A34C59A7">version（可选）：要连接的 WMS 版本。默认版本是给定 WMS 服务所支持的最新版本。</li>		</ul></td></tr></tbody><caption></caption></table></div><p id="GUID-BC6D7437-F5D7-4CCC-AC73-9D3E9FBC3799"></p><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><thead><tr><th colspan="1">KML 图层的语法</th><th colspan="1">示例</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><section class="codeblock padded-anchor" purpose="codeblock"><div class="codeblockbody"><pre><code class="other no-highlight">&quot;operationalLayers&quot; : [
+ {
+  &quot;type&quot; : &quot;kml&quot;,
+  &quot;url&quot; : &quot;&lt;url1&gt;&quot;,
+  &quot;title&quot; : &quot;&lt;title1&gt;&quot;,
+  &quot;showLabels&quot; : &quot;&lt;true | false&gt;&quot;,
+  &quot;visibleFolders&quot; : [
+   &lt;folderId1&gt;,
+   &lt;folderId2&gt;
+  ]
+ }
+]</code></pre></div></section></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><section class="codeblock padded-anchor" purpose="codeblock"><div class="codeblockbody"><pre><code class="other no-highlight">&quot;operationalLayers&quot; : [ {
+  &quot;type&quot; : &quot;kml&quot;,  &quot;url&quot; : &quot;https://myMachine/.../vermont.kmz&quot;,  &quot;title&quot; : &quot;Vermont weather stations&quot;,  &quot;opacity&quot; : 0.75,  &quot;showLabels&quot; : true,  &quot;visibleFolders&quot; : [   0,   1,   2  ] }
+]</code></pre></div></section></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="2"><p id="GUID-F3013724-8C73-4E75-A5FD-091D802A59D2">说明</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="2"><ul purpose="ul" id="UL_2995A46A7524434CA9919FC45B78E977"><li purpose="li" id="LI_F75EDC5A858742CFAE6DB7E86F0F0DB5">type（必选）：这种图层的类型必须为 "kml"。</li><li purpose="li" id="LI_40A4C9F236D74211B7402A819F111B6E">  url（必选）：
+kmz 文件的 URL。</li><li purpose="li" id="LI_892969EB64CE42DEA7BB0CC56331CA0F">  showLabels（可选）：
+默认值为 false。</li><li purpose="li" id="LI_A9E2090FF8AE49FCA814A41B1753720F">  visibleFolders：将变为可见的文件夹数字 ID 的数组。</li>		</ul></td></tr></tbody><caption></caption></table></div><p id="GUID-C3DB0B01-CA77-4779-AB3A-F22DED5C91AD"></p><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><thead><tr><th colspan="1">客户端图像的语法</th><th colspan="1">示例</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><section class="codeblock padded-anchor" purpose="codeblock"><div class="codeblockbody"><pre><code class="other no-highlight">&quot;operationalLayers&quot; : [
+ {
+  &quot;type&quot; : &quot;image&quot;,
+  &quot;title&quot; : &quot;&lt;title1&gt;&quot;,
+  &quot;opacity&quot; : &lt;opacity2&gt;,
+  &quot;extent&quot; : {
+   &quot;xmin&quot; : &lt;xmin&gt;,
+   &quot;ymin&quot; : &lt;ymin&gt;,
+   &quot;xmax&quot; : &lt;xmax&gt;,
+   &quot;ymax&quot; : &lt;ymax&gt;,
+   &quot;spatialReference&quot; : {&lt;spatialReference&gt;}
+  },
+  &quot;url&quot; : &quot;&lt;url1&gt;&quot;,
+  &quot;imageData&quot; : &quot;&lt;base64EncodedImageData&gt;&quot;
+ }
+]</code></pre></div></section></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><section class="codeblock padded-anchor" purpose="codeblock"><div class="codeblockbody"><pre><code class="other no-highlight">&quot;operationalLayers&quot; : [ {
+  &quot;type&quot; : &quot;image&quot;,  &quot;title&quot; : &quot;heat map&quot;,  &quot;opacity&quot; : 0.75,  &quot;extent&quot; : {
+   &quot;xmin&quot;:-12933906.537,   &quot;ymin&quot;:3993856.886,   &quot;xmax&quot;:-12933371.998,   &quot;ymax&quot;:3994375.189,   &quot;spatialReference&quot; : {
+    &quot;wkid&quot; : 102100   }
+  },  &quot;url&quot; : &quot;https://myMachine/anImage.png&quot;,  &quot;imageData&quot; : &quot;iVBORw0KGg....&quot;, }
+]</code></pre></div></section></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="2"><p id="GUID-EF4EA2AB-E08B-48A0-82AB-D25B265A2F2B">说明</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="2"><ul purpose="ul" id="UL_C2C8EECA01594CB8A9945071F22D5B74"><li purpose="li" id="LI_60CA1863BBA84D4F8F3B9C600981FD8D">type（必选）：这种图层的类型必须为 "image"。</li><li purpose="li" id="LI_E9BDFCD9CD6044CC82AC76A7AABABF2B">  extent（必选）：
+适合图像的最小边界框。</li><li purpose="li" id="LI_39950E846E434D7FAFA628486C8A8BB2">  url（可选）：
+要绘制的图像的 URL。仅当未传递 imageData 时，才需提供此项。</li><li purpose="li" id="LI_A36340C39E7245378FA64561E6AA1788">  imageData（可选）：以 base64 形式编码的影像。未传递 "url" 属性时，需提供此项。</li>		</ul></td></tr></tbody><caption></caption></table></div><p id="GUID-D7D4B64D-950F-49CF-B77B-CEDB4C6856FB"></p><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><colgroup width="1.50*"></colgroup><thead><tr><th colspan="2">客户端图形的语法</th><th colspan="1">示例</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="2"><section class="codeblock padded-anchor" purpose="codeblock"><div class="codeblockbody"><pre><code class="other no-highlight">&quot;operationalLayers&quot; : [
+ {
+  &quot;featureCollection&quot;: {
+   &quot;layers&quot;: [
+    {
+     &quot;layerDefinition&quot;: {
+      &quot;name&quot;: &quot;&lt;layerName&gt;&quot;,
+      &quot;geometryType&quot;: &quot;&lt;esriGeometryType&gt;&quot;,
+      &quot;drawingInfo&quot;: {&lt;drawingInfo&gt;},
+      &quot;objectIdField&quot;: &quot;&lt;objectIdFieldName&gt;&quot;,  //可选
+      &quot;fields&quot;: [  //可选
+       {
+        &quot;name&quot;: &quot;&lt;fieldName&gt;&quot;,
+        &quot;type&quot;: &quot;&lt;esriFieldType&gt;&quot;,
+        &quot;alias&quot;: &quot;&lt;fieldAliasName&gt;&quot;
+       }
+      ]
+     },
+     &quot;featureSet&quot;: {
+      &quot;features&quot;: [
+       {
+        &quot;geometry&quot;: {&lt;geometry&gt;},
+        &quot;attributes&quot;: {  //可选
+         &quot;&lt;fieldName&gt;&quot;: &quot;&lt;value&gt;&quot;
+        },
+        &quot;symbol&quot;: {&lt;symbol&gt;}  //覆盖符号
+		                              在渲染器中进行定义
+       }
+      ]
+     }
+    }
+   ]
+  }
+ }
+]</code></pre></div></section></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><section class="codeblock padded-anchor" purpose="codeblock"><div class="codeblockbody"><pre><code class="other no-highlight">&quot;operationalLayers&quot;: [  {
+   &quot;id&quot;: &quot;map_graphics&quot;,   &quot;featureCollection&quot;: {
+    &quot;layers&quot;: [     {
+      &quot;layerDefinition&quot;: {
+       &quot;name&quot;: &quot;pointLayer&quot;,       &quot;geometryType&quot;: &quot;esriGeometryPoint&quot;,        &quot;drawingInfo&quot;: {
+        &quot;renderer&quot;: {
+         &quot;type&quot;: &quot;simple&quot;,         &quot;symbol&quot;: {
+          &quot;type&quot;: &quot;esriSMS&quot;,          &quot;style&quot;: &quot;esriSMSCircle&quot;,          &quot;color&quot;: [           76,           115,           0,           255          ],          &quot;size&quot;: 20,          &quot;outline&quot;: {
+           &quot;color&quot;: [            255,            0,            0,            255           ],           &quot;width&quot;: 1          }
+         }
+        }
+       }
+      },      &quot;featureSet&quot;: {
+       &quot;features&quot;: [        {
+         &quot;geometry&quot;: {
+          &quot;x&quot;: -10253568.722284,          &quot;y&quot;: 5463514.62565701,          &quot;spatialReference&quot;: {
+           &quot;wkid&quot;: 102100          }
+         }
+        },        {
+         &quot;geometry&quot;: {
+          &quot;x&quot;: -13267022.125398,          &quot;y&quot;: 5463514.62565701,          &quot;spatialReference&quot;: {
+           &quot;wkid&quot;: 102100          }
+         },         &quot;symbol&quot;: {
+          &quot;color&quot;: [           255,           138,           255,           191          ],          &quot;size&quot;: 12,          &quot;type&quot;: &quot;esriSMS&quot;,          &quot;style&quot;: &quot;esriSMSSquare&quot;
+         }
+        }
+       ]      }
+     }
+    ]   }
+  }
+ ]</code></pre></div></section></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="3"><p id="GUID-D34398D1-9C99-4B19-92C6-8A7DE211A4A4">说明</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="3"><ul purpose="ul" id="UL_1B04DB21A3614F1F833BDF6BB435A3B3">		<li purpose="li" id="LI_A9AC8A74E7654516820215E8DD18BF1C">layers（必选）：图层的集合。图层有两个属性：layerDefinition 和 featureSet。</li><li purpose="li" id="LI_CC44F05EEDFB4E538C45EDDC5C36E5D4">layerDefinition（必选）：包含定义图层的属性：name、geometryType、drawingInfo、objectIdField 和 fields。</li><li purpose="li" id="LI_01CBED6B179D4987AF245D2D673339D3">name（可选）：图层的名称。</li><li purpose="li" id="LI_19302EDFF002400B95A83405E3840453"> geometryType（必选）：对于文本图层，geometryType 必须为 esriGeometryPoint。</li><li purpose="li" id="LI_69CA02FFEDB948DB8143DD908474F0B4">drawingInfo（可选）：如果缺少 drawingInfo，则图形用符号进行符号化处理。</li><li purpose="li" id="LI_99AE1494AF734D6A9DCA1390774D3D85">objectIdField（可选）：包含对象 ID 的字段的名称。</li><li purpose="li" id="LI_EF429E3240D0499FBC77751D4B841479">fields（可选）：字段的集合。</li><li purpose="li" id="LI_0422CCCC9CEB444D9630925AE66FCF1D">featureSet（必选）：要素容器。</li><li purpose="li" id="LI_89D2651E93E44299A3FDF1BB028E4627">features（必选）：要素的集合。</li><li purpose="li" id="LI_9E9907348D2E4F2E8053DA4191E02385">geometry（必选）：定义要素或图形的几何形状。</li><li purpose="li" id="LI_245301EAFDD54A8CAE9E93576130A6A9">attributes（可选）：要素属性的集合。</li><li purpose="li" id="LI_34EC2B835FF7445DB96ECF2D0BB4FAEC">symbol（可选）：如果指定，此符号覆盖渲染器中定义的符号。</li></ul></td></tr></tbody><caption></caption></table></div><p id="GUID-FCF6D7DC-5554-4B56-8510-CA846DE43068"></p><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><colgroup width="1.50*"></colgroup><thead><tr><th colspan="2">通过 URL 的逗号分隔值 (CSV) 文件的语法</th><th colspan="1">示例</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="2"><section class="codeblock padded-anchor" purpose="codeblock"><div class="codeblockbody"><pre><code class="other no-highlight">&quot;operationalLayers&quot; : [ {
+  {
+   &quot;type&quot; : &quot;CSV&quot;,   &quot;url&quot; : &quot;&lt;url&gt;&quot;,   &quot;layerDefinition&quot; : {
+    &quot;drawingInfo&quot;: {
+     &quot;renderer&quot;: {&lt;renderer&gt;}
+    }
+   },   &quot;locationInfo&quot; : {
+    &quot;latitudeFieldName&quot; : &quot;&lt;latitudeFieldName&gt;&quot;,    &quot;longitudeFieldName&quot; : &quot;&lt;longitudeFieldName&gt;&quot;
+   }
+  }
+ }
+]</code></pre></div></section></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><section class="codeblock padded-anchor" purpose="codeblock"><div class="codeblockbody"><pre><code class="other no-highlight">&quot;operationalLayers&quot;: [ {
+  &quot;type&quot;: &quot;CSV&quot;,  &quot;url&quot;: &quot;https://servicesbeta.esri.com/demos/exp/data/earthquakes.csv&quot;,  &quot;id&quot;: &quot;Earthquakes&quot;,  &quot;title&quot;: &quot;Earthquakes&quot;,  &quot;visibility&quot;: true,  &quot;opacity&quot;: 1,  &quot;layerDefinition&quot;: {
+   &quot;drawingInfo&quot;: {
+    &quot;renderer&quot;: {
+     &quot;symbol&quot;: {
+      &quot;height&quot;: 15,      &quot;type&quot;: &quot;esriPMS&quot;,      &quot;url&quot;: &quot;https://static.arcgis.com/images/Symbols/Basic/RedSphere.png&quot;,      &quot;width&quot;: 15     },     &quot;type&quot;: &quot;simple&quot;
+    },    &quot;transparency&quot;: 0   }
+  },  &quot;locationInfo&quot;: {
+   &quot;latitudeFieldName&quot;: &quot;lat&quot;,   &quot;longitudeFieldName&quot;: &quot;lon&quot;
+  }
+ }
+]</code></pre></div></section></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="3"><p id="GUID-627C6A39-3329-4F97-AAE1-EA1426E26C83">说明</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="3"><ul purpose="ul" id="UL_65480A566EB3439DB771948A8FF924F0">		<li purpose="li" id="LI_FB10A79FAC8C47E0BB0D4529B25DE25B">latitudeFieldName（必选）：包含 Y 坐标的字段的名称。</li><li purpose="li" id="LI_FD2F01E8C3A14652AB3195276738DE8F">longitudeFieldName（必选）：包含 X 坐标的字段的名称。</li></ul></td></tr></tbody><caption></caption></table></div><section class="section2 padded-anchor" id="ESRI_SECTION2_5B8D0DFC4F5243A08E28BE894BAC6DA8" purpose="section2"><h3>其他属性</h3><div class="panel trailer-1 note" id="GUID-ABFF7D03-87B6-480A-94F8-5196D5D1D2B6"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-E2EB2371-5515-4D27-9EDC-38671855E850">有关下列属性的详细信息，请参阅 <a target="_blank" class="xref xref" href="http://links.esri.com/arcgis/rest/api">ArcGIS REST API</a>。</p><ul purpose="ul" id="UL_620ADA6981414D18A5A06C8695B68E70"><li purpose="li" id="LI_EB606DCBE00A4D3794157ED2070E72ED">源</li><li purpose="li" id="LI_4C87F30F1019409680154B4CFDA5B309"> 渲染器</li><li purpose="li" id="LI_C63653D8205B414991341B0CEFED91E3">符号</li><li purpose="li" id="LI_4B363A485C2441C28838BE14EFE3DA38">textSymbol</li><li purpose="li" id="LI_21BBCCDDA0FB4AC693AAB822EB75B147">labelingInfo</li><li purpose="li" id="LI_1A0C3F857CBD4CDD99DC2BB31E3C0E0B">几何体</li><li purpose="li" id="LI_3743D7B86CF345C2855BACC297AF1B77">geometryType</li><li purpose="li" id="LI_57EF338F44E84D84A7898412B787FF57">spatialRel</li><li purpose="li" id="LI_EEB8FF20C6524D7D8F22F31363BBDF46">relationParam</li></ul></div><p id="GUID-E875F7BF-7BA1-480E-B13B-D9559D5EBA74"></p><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><thead><tr><th colspan="1">定义时态渲染器的 drawingInfo 的语法</th><th colspan="1">示例</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><div class="panel trailer-1 note" id="GUID-827BDBCE-BB0B-4957-92F9-24D961272FEA"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-C511013D-CEA5-4D9E-86A2-BDA2498F02BC">从 ArcGIS Pro 发布的打印服务不支持时态渲染器。</p></div><section class="codeblock padded-anchor" purpose="codeblock"><div class="codeblockbody"><pre><code class="other no-highlight">&quot;drawingInfo&quot;: {
+ &quot;observationAger&quot;: {&lt;symbolAger&gt;},
+ &quot;latestObservationRenderer&quot;: {&lt;renderer&gt;},
+ &quot;trackLinesRenderer&quot;: {&lt;renderer&gt;},
+ &quot;renderer&quot;: {&lt;renderer&gt;}
+}</code></pre></div></section></td><td outputclass="" purpose="entry" rowspan="5" colspan="1"><section class="codeblock padded-anchor" purpose="codeblock"><div class="codeblockbody"><pre><code class="other no-highlight">&quot;drawingInfo&quot;: {
+ &quot;observationAger&quot;: {
+  &quot;alphaRange&quot;: [   0,   255  ] }, &quot;latestObservationRenderer&quot;: {
+  &quot;type&quot;: &quot;simple&quot;,  &quot;symbol&quot;: {
+   &quot;type&quot;: &quot;esriPMS&quot;,   &quot;url&quot;: &quot;https://help.arcgis.com/.../hurr_100_icon.png&quot;,   &quot;contentType&quot;: &quot;image/png&quot;,   &quot;width&quot;: 30,   &quot;height&quot;: 30  }
+ }, &quot;trackLinesRenderer&quot;: {
+  &quot;type&quot;: &quot;simple&quot;,  &quot;symbol&quot;: {
+   &quot;type&quot;: &quot;esriSLS&quot;,   &quot;style&quot;: &quot;esriSLSSolid&quot;,   &quot;width&quot;: 1,   &quot;color&quot;: [    0,    0,    0,    255   ]  }
+ }, &quot;renderer&quot;: {
+  &quot;type&quot;: &quot;simple&quot;,  &quot;symbol&quot;: {
+   &quot;type&quot;: &quot;esriSMS&quot;,   &quot;style&quot;: &quot;esriSMSCircle&quot;,   &quot;size&quot;: 24,   &quot;outline&quot;: {
+    &quot;color&quot;: [     255,     255,     255,     255    ],    &quot;width&quot;: 1   }
+  }
+ }
+}</code></pre></div></section></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-CC4E9042-37B9-45CE-BFF7-4C8BE6482077"><b>定义 symbolAger 的语法</b></p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><section class="codeblock padded-anchor" purpose="codeblock"><div class="codeblockbody"><pre><code class="other no-highlight">//rampAger
+{
+ &quot;colorRange&quot;: [                {&lt;color&gt;}, //针对最旧的事件
+                {&lt;color&gt;}  //针对最新的事件
+ ], &quot;alphaRange&quot;: [                &lt;alpha&gt;, //针对最旧的事件
+                &lt;alpha&gt;  //针对最新的事件
+ ], &quot;sizeRange&quot;: [                &lt;size&gt;, //针对最旧的事件
+                &lt;size&gt;  //针对最新的事件
+ ]
+}
+//classBreaksAger
+{
+ &quot;timeUnits&quot;: &quot;&lt;esriTimeUnits&gt;&quot;, &quot;agerClassBreakInfos&quot; : [{&lt;agerClassBreakInfo&gt;},...]
+}</code></pre></div></section></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-12606DCC-B2F9-4679-B164-E133E34B7762"><b>定义 agerClassBreakInfo 的语法</b></p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><section class="codeblock padded-anchor" purpose="codeblock"><div class="codeblockbody"><pre><code class="other no-highlight">{
+ &quot;oldestAge&quot;: &lt;age&gt;, &quot;color&quot;: {&lt;color&gt;}, &quot;alpha&quot;: &lt;alpha&gt;, &quot;size&quot;: &lt;size&gt;
+}</code></pre></div></section></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="2"><p id="GUID-9433B001-9A33-414C-86F7-3ADB8A419781">说明</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="2"><ul purpose="ul" id="UL_89B1CD16036244258862E4F99CA30D69"><li purpose="li" id="LI_8975668B04FE4859B584881B42D2B149">时态渲染器仅受要素图层支持，不受客户端图形图层或动态地图服务图层支持。</li><li purpose="li" id="LI_BA933C04CF4D44EEAD26BE42951D007D">Alpha 是介于 0 到 255 之间的整数值。</li></ul></td></tr></tbody><caption></caption></table></div></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_198C3BA4CEA64F00AB45176FC85F3006" purpose="section1"><h2>地理处理结果</h2><p id="GUID-F389284E-B463-45CD-B822-144371E45294">可通过两种方式来包括地理处理结果：</p><ol class="list-numbered" purpose="ol" id="OL_7BB903D2A7894C83AEBF8E4154282700"><li purpose="li" id="LI_5DBBE631849E407986BEB398683EB0FD">如果地理处理结果作为要素集返回并在客户端上以图形方式进行绘制，则以要素集合形式发送此结果。</li><li purpose="li" id="LI_DE73573A6F1F47ED9B18C5B88D23EF82">如果通过作业的结果地图服务绘制结果，则在 operationalLayers 中添加新的地图服务图层，并将 URL 属性设置为指向结果的端点。例如：<ul purpose="ul" id="UL_1719B0AF706E47F0A4500202CEA41E22"><li purpose="li" id="LI_15B56191B4DE4F0295532538CB4ACB1B">来自 10.1 或更高版本的地理处理结果：https://gisserver.domain.com:6080/arcgis/rest/services/GPJobMapServiceName/MapServer/jobs/job_id</li> <li purpose="li" id="LI_F8A1F0842CC7430199D905DDE0EC5DCC">来自 10.0 及之前版本的地理处理结果：https://gisserver.domain.com/arcgis/rest/services/GPServiceName/GPServer/GPTaskName/jobs/job_id/results/out_param_name</li></ul></li></ol><p id="GUID-79C5BF00-BA4A-4812-B191-EDD185AAE14E">例如：通过作业的结果地图服务绘制的作为业务图层的地理处理结果</p><section class="codeblock padded-anchor" purpose="codeblock"><div class="codeblockbody"><pre><code class="other no-highlight">&quot;operationalLayers&quot; : [
+ {
+  &quot;url&quot; : &quot;https://gisserver.domain.com:6080/arcgis/rest/services/Buffer/MapServer/jobs/j9aa6c36d59f44829a0daeadb2d0ff87b&quot;,
+  &quot;title&quot; : &quot;Geoprocessing Result&quot;
+ }
+]</code></pre></div></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_11D33961584F4025AAE2CAF7DDE61599" purpose="section1"><h2>baseMap</h2><p id="GUID-44C2C99C-5F04-40FD-88BC-CA714F2B0EC8">地图中包含一个 baseMap，它具有一个标题以及一个包含 baseMapLayer 有序列表的 baseMapLayers 属性。各 baseMapLayer 必须具有相同的空间参考和切片方案。存在 baseMap 时，其可定义地图的空间参考。</p><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><thead><tr><th colspan="1">baseMap 的语法</th><th colspan="1">示例</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><section class="codeblock padded-anchor" purpose="codeblock"><div class="codeblockbody"><pre><code class="other no-highlight">&quot;baseMap&quot; : {
+ &quot;title&quot; : &quot;&lt;title&gt;&quot;,
+ &quot;baseMapLayers&quot; :  [
+  {
+   &quot;url&quot; : &quot;&lt;url1&gt;&quot;,
+   &quot;opacity&quot; : &lt;opacity1&gt;
+  },
+  {
+   &quot;url&quot; : &quot;&lt;url2&gt;&quot;,
+   &quot;opacity&quot; : &lt;opacity2&gt;
+  }
+ ]
+}</code></pre></div></section></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><section class="codeblock padded-anchor" purpose="codeblock"><div class="codeblockbody"><pre><code class="other no-highlight">&quot;baseMap&quot; : {
+ &quot;title&quot; : &quot;Shared Imagery Basemap&quot;, &quot;baseMapLayers&quot; :  [  {
+   &quot;url&quot; : &quot;https://services.arcgisonline.com/ArcGIS/
+            rest/services/ESRI_Imagery_World_2D/
+            MapServer&quot;,  },  {
+   &quot;url&quot; : &quot;https://services.arcgisonline.com/ArcGIS/
+            rest/services/CSP_Imagery_World_2D/
+            MapServer&quot;,  }
+ ]
+}</code></pre></div></section></td></tr></tbody><caption></caption></table></div><p id="GUID-85D0B746-50DE-43E1-98F5-38659C714984"></p><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><thead><tr><th colspan="1">作为 baseMapLayer 的矢量切片图层的语法</th><th colspan="1">示例</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><div class="panel trailer-1 note" id="GUID-918406B9-24B7-4D4E-B3A5-B2427EC8AA79"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-DD4FEA79-92AE-43E2-8104-2C172898AB7E">矢量切片图层仅受 ArcGIS Pro 发布的打印服务支持。</p></div><section class="codeblock padded-anchor" purpose="codeblock"><div class="codeblockbody"><pre><code class="other no-highlight">&quot;baseMap&quot; : {
+  &quot;title&quot; : &quot;&lt;title&gt;&quot;,  &quot;baseMapLayers&quot;: [    {
+      &quot;id&quot;: &quot;&lt;id1&gt;&quot;,      &quot;type&quot;: &quot;VectorTileLayer&quot;,      &quot;layerType&quot;: &quot;VectorTileLayer&quot;,      &quot;title&quot;: &quot;&lt;title1&gt;&quot;,      &quot;styleUrl&quot;: &quot;&lt;Url1&gt;&quot;
+      &quot;visibility&quot;: &lt;true | false&gt;,      &quot;opacity&quot;: &lt;opacity1&gt;
+    }
+  ]
+}</code></pre></div></section></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><section class="codeblock padded-anchor" purpose="codeblock"><div class="codeblockbody"><pre><code class="other no-highlight">&quot;baseMap&quot; : {
+  &quot;title&quot; : &quot;VectorTileLayer as BaseMap&quot;,  &quot;baseMapLayers&quot;: [    {
+      &quot;id&quot;: &quot;VectorTile_1933&quot;,      &quot;type&quot;: &quot;VectorTileLayer&quot;,      &quot;layerType&quot;: &quot;VectorTileLayer&quot;,      &quot;title&quot;: &quot;World_Basemap&quot;,      &quot;styleUrl&quot;: &quot;https://basemaps.arcgis.com/b2/arcgis/rest/services/World_Basemap/VectorTileServer/resources/styles/root.json&quot;,      &quot;visibility&quot;: true,      &quot;opacity&quot;: 1    }
+  ]
+}</code></pre></div></section></td></tr></tbody><caption></caption></table></div><p id="GUID-9318D4E0-F1A8-42D3-869D-C1E623DCE542"></p><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><thead><tr><th colspan="1">作为 basemapLayer 的 Bing 地图的语法</th><th colspan="1">示例</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><section class="codeblock padded-anchor" purpose="codeblock"><div class="codeblockbody"><pre><code class="other no-highlight">&quot;baseMap&quot; : {
+ &quot;title&quot; : &quot;&lt;title&gt;&quot;, &quot;baseMapLayers&quot; :  [  {
+   &quot;id&quot; : &quot;&lt;id1&gt;&quot;,   &quot;type&quot; : &quot;&lt;BingMapsRoad | BingMapsAerial |              BingMapsHybrid&gt;&quot;,
+   &quot;culture&quot; : &quot;&lt;Bing Maps supported culture&gt;&quot;,   &quot;key&quot; : &quot;&lt;bing_key&gt;&quot; //optional  }
+ ]
+}</code></pre></div></section></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><section class="codeblock padded-anchor" purpose="codeblock"><div class="codeblockbody"><pre><code class="other no-highlight">&quot;baseMap&quot; : {
+ &quot;title&quot; : &quot;Bing Maps&quot;, &quot;baseMapLayers&quot; :  [  {
+   &quot;id&quot; : &quot;BingMap&quot;,   &quot;visibility&quot; : true,   &quot;type&quot; : &quot;BingMapsRoad&quot;,   &quot;culture&quot; : &quot;fr-ca&quot;
+  }
+ ]
+}</code></pre></div></section></td></tr></tbody><caption></caption></table></div><p id="GUID-71735D91-50CD-4812-B5F6-37CA246223B7"></p><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><thead><tr><th colspan="1">作为 basemapLayer 的 OpenStreetMap 的语法</th><th colspan="1">示例</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><section class="codeblock padded-anchor" purpose="codeblock"><div class="codeblockbody"><pre><code class="other no-highlight">&quot;baseMap&quot; : {
+ &quot;title&quot; : &quot;&lt;title&gt;&quot;, &quot;baseMapLayers&quot; :  [  {
+   &quot;type&quot; : &quot;OpenStreetMap&quot;,   &quot;url&quot; : &quot;&lt;url&gt;&quot;,  //optional   &quot;credits&quot; : &quot;&lt;credits&gt;&quot;  //optional  }
+ ]
+}</code></pre></div></section></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><section class="codeblock padded-anchor" purpose="codeblock"><div class="codeblockbody"><pre><code class="other no-highlight">&quot;baseMap&quot; : {
+ &quot;title&quot; : &quot;OpenCycle Map&quot;, &quot;baseMapLayers&quot; :  [  {
+   &quot;type&quot; : &quot;OpenStreetMap&quot;,   &quot;url&quot; : &quot;https://a.tile.opencyclemap.org/cycle&quot;
+  }
+ ]
+}</code></pre></div></section></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="2"><p id="GUID-567E83E9-61EC-471B-B2F4-809E7CC06D41">说明</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="2"><ul purpose="ul" id="UL_6C38D7791D9747C1A5020E7285575A2C"><li purpose="li" id="LI_360A385BAB4B441BBFA5465C9B15103B">url（可选）：如未指定，默认使用 openstreetmap.org。</li><li purpose="li" id="LI_935E0FFCE4344F83BC0E8AC5E58254E5">credits（可选）：确认图层的共同制作者。未指定 "url" 时忽略此属性的值。改为使用默认 OpenStreetMap 服务的制作者名单。</li></ul></td></tr></tbody><caption></caption></table></div><p id="GUID-513FE40D-7306-403D-B9C9-9118A669DC0D"></p><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><thead><tr><th colspan="1">作为 basemapLayer 的 WebTiledLayer 的语法</th><th colspan="1">示例</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><section class="codeblock padded-anchor" purpose="codeblock"><div class="codeblockbody"><pre><code class="other no-highlight">&quot;baseMap&quot; : {
+ &quot;title&quot; : &quot;&lt;title&gt;&quot;, &quot;baseMapLayers&quot; :  [  {
+   &quot;type&quot; : &quot;WebTiledLayer&quot;,   &quot;urlTemplate&quot; : &quot;&lt;urlTemplate1&gt;&quot;,   &quot;subDomains&quot;: [  //optional    &lt;subDomain1&gt;,    &lt;subDomain2&gt;
+   ],   &quot;tileInfo&quot; : {},  //optional   &quot;credits&quot; : &quot;&lt;credits&gt;&quot;  //optional  }
+ ]
+}</code></pre></div></section></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><section class="codeblock padded-anchor" purpose="codeblock"><div class="codeblockbody"><pre><code class="other no-highlight">&quot;baseMap&quot; : {
+ &quot;title&quot; : &quot;MapQuest&quot;, &quot;baseMapLayers&quot; :  [  {
+   &quot;type&quot; : &quot;WebTiledLayer&quot;,   &quot;urlTemplate&quot; : &quot;https://{subDomain}.mqcdn.com/
+      tiles/1.0.0/vx/map/{level}/{col}/{row}.jpg,   &quot;subDomains&quot; : [     &quot;mtile01&quot;,      &quot;mtile02&quot;, 
+     &quot;mtile03&quot;,      &quot;mtile04&quot;
+   ]  }
+ ]
+}</code></pre></div></section></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="2"><p id="GUID-F768DA7A-A342-4BF8-A329-EB02B050BE39">说明</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="2"><ul purpose="ul" id="UL_EE8D9B3C6C8E4D3484570DD85106BBA8"><li purpose="li" id="LI_E0ADAC906A8C48B9BB9E302725116DD8">urlTemplate（必选）：用于检索切片的 URL 模板。URL 模板采用模式 https://some.domain.com/{level}/{col}/{row}/，其中 "level" 对应缩放级别，而
+"col" 和 "row" 分别代表切片的列和行。</li><li purpose="li" id="LI_47925A016CD74F4AAF944231459FF271">subDomains（可选）：其中一个指定的 subDomain 将用于替换 urlTemplate 中的 {subDomain} 占位符，从而构成切片请求 URL。</li><li purpose="li" id="LI_F1AE1891A04944AE80E9722A1D1D7AF6">tileInfo（可选）：定义图层的切片信息，包括细节层次、行、列、
+原点和空间参考。如果未提供 tileInfo，则假定图层位于使用 Web 墨卡托切片方案的 Web 墨卡托中。有关 tileInfo 的详细信息，请参阅 <a target="_blank" class="xref xref" href="http://links.esri.com/arcgis/rest/api">ArcGIS REST API</a>。</li><li purpose="li" id="LI_169C78E2114D44CFB9842423D81B7209">credits（可选）：确认图层的共同制作者。</li></ul></td></tr></tbody><caption></caption></table></div><p id="GUID-CFE307D2-3C50-4C96-9E7D-C3300622B129"></p><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><thead><tr><th colspan="1">作为 basemapLayer 的 WMTS 的语法</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><section class="codeblock padded-anchor" purpose="codeblock"><div class="codeblockbody"><pre><code class="other no-highlight">&quot;baseMap&quot; : {
+ &quot;title&quot; : &quot;&lt;title&gt;&quot;,
+ &quot;baseMapLayers&quot; :  [
+  {
+   &quot;type&quot; : &quot;wmts&quot;,
+   &quot;url&quot; : &quot;&lt;url1&gt;&quot;,
+   &quot;layer&quot; : &quot;&lt;layerName&gt;&quot;,    //optional
+   &quot;style&quot; : &quot;&lt;style&gt;&quot;,        //optional
+   &quot;format&quot; : &quot;&lt;imageFormat&gt;&quot;, //optional
+   &quot;tileMatrixSet&quot; : &quot;&lt;tileMatrixSet&gt;&quot;  //optional
+  }
+ ]
+}</code></pre></div></section></td></tr></tbody><caption></caption></table></div></section><section class="section1 padded-anchor" id="ESRI_SECTION1_8D5A14DEBA974762B4BEC5C9FB19B273" purpose="section1"><h2>exportOptions</h2><p id="GUID-42A66B13-3852-4428-A29B-269852F785B7">此对象用于指定输出地图的设置。</p><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><thead><tr><th colspan="1">语法</th><th colspan="1">示例</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><section class="codeblock padded-anchor" purpose="codeblock"><div class="codeblockbody"><pre><code class="other no-highlight">&quot;exportOptions&quot; : {
+ &quot;dpi&quot; : &lt;dpi&gt;,
+ &quot;outputSize&quot; :  [
+  &lt;width&gt;,
+  &lt;height&gt;
+ ]
+}</code></pre></div></section></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><section class="codeblock padded-anchor" purpose="codeblock"><div class="codeblockbody"><pre><code class="other no-highlight">&quot;exportOptions&quot;: {
+ &quot;dpi&quot; : 300, &quot;outputSize&quot; :  [  500,  500 ]
+}</code></pre></div></section></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="2"><p id="GUID-7D739CBE-5A02-4258-B41C-A5274135BCE9">说明</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="2"><ul purpose="ul" id="UL_E0E144FF65614202A31F23336FE22A24"><li purpose="li" id="LI_73ED605D505B43E9A0F7FA0FD459B6E6"> dpi（可选）：分辨率，单位为每英寸点数。默认值为 96 dpi。</li><li purpose="li" id="LI_88337D47AD984AD0B34FF7C6702E1E16"> outputSize（可选）：以像素为单位的地图尺寸。将空字符串或 MAP_ONLY（无引号）作为值传递到 layout_template 参数时，必须定义尺寸。如果 layout_template 未指定为 MAP_ONLY 或空字符串，则 layout_template 的优先级高于 outputSize。</li></ul></td></tr></tbody><caption></caption></table></div></section><section class="section1 padded-anchor" id="ESRI_SECTION1_58F5F403FCF048C2A5EBEF921BB97A10" purpose="section1"><h2>layoutOptions</h2><p id="GUID-2BDD42C8-AE2E-47EB-9320-CF3E8DE7CF1F">此项可为各种可用的页面布局元素定义设置，并且仅当选择了可用布局模板时才需指定此项。页面布局元素包括标题、版权文本、比例尺、作者姓名，以及自定义文本元素。</p><div class="panel trailer-1 note" id="GUID-E6EF3083-0B01-4F42-A8E7-F840F3CA604C"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-07E65313-BF9C-4EB5-B46C-7ECB6393DC05">此选项仅替换现有元素的属性。如果某个元素在所选布局模板中不存在，则忽略相关属性。例如，如果布局模板不具有版权文本元素，即使在 layoutOptions 中指定了 copyrightText 元素，也不会向布局新增任何新版权文本元素。</p></div><p id="GUID-5F32DD3F-E4C0-432A-9D7F-4F9641B38B07">此对象的所有属性为可选项。如果指定了某个属性的值，则会替换相应页面布局元素的值；否则，现有元素将保持不变。</p><p id="GUID-D6F235A0-406E-4BEE-9561-5CB07DD2B900"><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="1.00*"></colgroup><colgroup width="1.38*"></colgroup><colgroup width="1.66*"></colgroup><thead><tr><th colspan="1">ExportWebMap 文本元素</th><th colspan="1">ArcGIS Pro 中的相应动态文本</th><th colspan="1">ArcMap 中的相应动态文本</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-E8B759F1-F079-44B0-8492-86A5A89E318C">titleText</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-9ABDA88F-C22D-4986-86F6-8B6FE445930C">&lt;dyn type="layout" property="metadata" attribute="title" emptyStr=""/&gt;</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-6102A533-C4AB-487D-B8FE-5C272F1702B7">&lt;dyn type="document" property="title" /&gt;</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-098DD3D6-3586-4F3F-9B2C-67A0428DD8F1">authorText</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-BBA03E7D-6304-41AB-ACDC-580C7F78881C">&lt;dyn type="layout" property="metadata" attribute="contactname" emptyStr=""/&gt;</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-DE55A993-905C-4C14-B832-1457166430F3">&lt;dyn type="document" property="author" /&gt;</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-61FB1D77-5258-4DD2-8053-0F18D6C84FE6">copyrightText</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-581A2175-5E0D-4C39-B052-CB555CA4F5E7">&lt;dyn type="layout" property="metadata" attribute="credits" emptyStr=""/&gt;</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-1B71985E-BAE6-4913-88B9-5E6D67BE1B11">&lt;dyn type="document" property="credits" /&gt;</p></td></tr></tbody><caption></caption></table></div><div class="panel trailer-1 note" id="GUID-2F19518F-BE22-4004-B8E5-BD25E445425B"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-A0281541-513D-458F-AEB7-992684360DD6">有关详细信息，请参阅 ArcGIS 帮助中的 dynamicText。</p></div></p><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><thead><tr><th colspan="1">语法</th><th colspan="1">示例</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><section class="codeblock padded-anchor" purpose="codeblock"><div class="codeblockbody"><pre><code class="other no-highlight">&quot;layoutOptions&quot; : {
+ &quot;titleText&quot; : &quot;&lt;title&gt;&quot;,
+ &quot;authorText&quot; : &quot;&lt;authorName&gt;&quot;,
+ &quot;copyrightText&quot; : &quot;&lt;copyright&gt;&quot;,
+ &quot;scaleBarOptions&quot; :  {
+  &quot;metricUnit&quot; : &quot;&lt;esriMeters | esriKilometers&gt;&quot; ,
+  &quot;metricLabel&quot; : &quot;&lt;metricUnitLabel&gt;&quot;,
+  &quot;nonMetricUnit&quot; : &quot;&lt;esriFeet | esriYards | esriMiles | 
+                    esriNauticalMiles&gt;&quot; ,
+  &quot;nonMetricLabel&quot; : &quot;&lt;nonMetricUnitLabel&gt;&quot;
+ },
+ &quot;customTextElements&quot; : [
+  {&quot;&lt;textElementName1&gt;&quot; : &quot;&lt;value1&gt;&quot;},
+  {&quot;&lt;textElementName2&gt;&quot; : &quot;&lt;value2&gt;&quot;}
+ ],
+ &quot;legendOptions&quot; : {
+  &quot;operationalLayers&quot; : [
+   {
+    &quot;id&quot; : &quot;&lt;webmapOperationalLayerId&gt;&quot;,
+    &quot;sublayerIds&quot; : [  //array of string or number
+      &lt;mapServerSublayerId1&gt;,
+      &lt;mapServerSublayerId2&gt;
+    ]
+   }
+  ]
+ }
+}</code></pre></div></section></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><section class="codeblock padded-anchor" purpose="codeblock"><div class="codeblockbody"><pre><code class="other no-highlight">&quot;layoutOptions&quot;: {
+ &quot;titleText&quot; : &quot;City Land Use Map&quot;, &quot;authorText&quot; : &quot;Print by: XYZ&quot;, &quot;copyrightText&quot; : &quot;© esri&quot;, &quot;scaleBarOptions&quot; :  {
+  &quot;metricUnit&quot; : &quot;esriKilometers&quot;,  &quot;metricLabel&quot; : &quot;km&quot;,  &quot;nonMetricUnit&quot; : &quot;esriMiles&quot;,  &quot;nonMetricLabel&quot; : &quot;mi&quot;
+ }
+ &quot;customTextElements&quot; : [  {&quot;townshipName&quot; : &quot;Town ABC&quot;}
+ ], &quot;legendOptions&quot;: {
+  &quot;operationalLayers&quot;: [   { //for dynamic mapservicelayer    &quot;id&quot;: &quot;myMapserviceLayer&quot;,    &quot;subLayerIds&quot;: [ //array of integer     0,     1     ]   },   { //for WMS layer    &quot;id&quot;: &quot;myWMSLayer&quot;,    &quot;subLayerIds&quot;: [ //array of string     &quot;layer1&quot;,     &quot;layer2&quot;     ]   },   { //for FeatureLayer    &quot;id&quot;: &quot;myFeatureLayer&quot;
+   }
+  ] }
+}</code></pre></div></section></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="2"><p id="GUID-FF8DCD27-192E-42EF-934B-3098F8D7EE27">说明</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="2"><ul purpose="ul" id="UL_CC626D91018C4BED87B99A445582433B"><li purpose="li" id="LI_2FEBF200840B4CEBA2523D89A3BB4662">  titleText（可选）：如果在布局上存在地图标题文本元素的文本，则会对其进行更新。</li><li purpose="li" id="LI_4FD6DE85FC3247A8B4A28002DA831040"> authorText（可选）：如果在布局上存在作者文本元素的文本，则会对其进行更新。</li><li purpose="li" id="LI_896289EFAE70496B9C88460226E66FD2"> copyrightText（可选）：如果在布局上存在版权文本元素的文本，则会对其进行更新。</li><li purpose="li" id="LI_2D5BB14EA22644A1B92BB8E4B3FD4AE8">  scaleBarOptions（可选）：用于更新比例尺（如果存在）。<ul purpose="ul" id="UL_DAE7AE3933244392B08CFEF66141C0A3"><li purpose="li" id="LI_756AF8D3CD1D4BCF81FB1C310DCCDE2C">  metricUnit（可选）：将比例尺的单位设置为公制单位。</li><li purpose="li" id="LI_42017020400946A89459AC0A4EFF13BE">   metricLabel（可选）：用于指示单位的标注方式的字符串，例如 KM、Kilometers 或 kms。如果未指定此项或传递的是空字符串，则使用单位的文本值。</li><li purpose="li" id="LI_CA1258A808E74726AE28798B1A25301D">  nonMetricUnit（可选）：将比例尺的单位设置为非公制单位。</li><li purpose="li" id="LI_43A8E43E57B243E4BFD4A1755C9DC7EE">nonMetricLabel（可选）：用于指示单位的标注方式的字符串，例如 Miles 或 mi。如果未指定此项或传递的是空字符串，则使用单位的文本值。</li></ul></li><li purpose="li" id="LI_D944B314807A409DAFCAD15703DBD078"> customTextElements（可选）：这是名称-值对的数组。如果想要更新页面布局上文本元素的文本（不是动态文本），则需使用此项。值必须为字符串。</li><li purpose="li" id="LI_8A01C9EE72324D5097B8B2808D1EB100"> legendOptions（可选）：指定布局上图例元素的属性。请注意，如果布局上的图例元素为空（不包含任何图层），将由打印服务移除。<ul purpose="ul" id="UL_A58F2B776C404EFFA83E9F3382B53A42"><li purpose="li" id="LI_46052C3B5D8E4DA1B06E9323E7FBE63A">operationalLayers（可选）：指定要将其图例将添加到布局的业务图层。<ul purpose="ul" id="UL_7A1729D018BC4E53B534DA531E2CF4B8"><li purpose="li" id="LI_886B7C2105B24172B92BEDD1155E8F79">id：表示图层 ID 的字符串。此 ID 必须唯一，并且必须与定义业务图层的 operationalLayers 元素中的图层 ID 匹配。</li><li purpose="li" id="LI_3FF287960C3E46278444E906BA992A4D">subLayerIds（可选）：子图层的数组，这些子图层的元素类型为字符串或长整型，并且与业务图层类型相关。例如，对于地图服务图层，其必须为数字；对于 WMS 图层，其必须为字符串。建议为具有子图层的业务图层指定 subLayerIds 值。如果忽略此项，则对于地图服务图层和 WMS 图层，会将所有子图层的图例添加到布局上的图例元素。对于要素图层或图形图层，无需设置子图层属性。</li></ul></li></ul></li></ul></td></tr></tbody><caption></caption></table></div></section><section class="section1 padded-anchor" id="ESRI_SECTION1_03636EC8A2554A14B9642933FD79CAFF" purpose="section1"><h2>限制</h2><p id="GUID-E15DCBAA-7655-4BBB-8CB9-5BE8CC022290">渲染器类型为分类间隔或简单渲染器时，不支持注释图层中覆盖的要素级符号。</p></section>
+			
+				<hr>
+				<!--googleoff: all-->
+				
+	
+        
+		    <p class="feedback right">
+		        <a id="afb" class="icon-ui-contact" href="/feedback/" data-langlabel="feedback-on-this-topic" >有关此主题的反馈?</a>
+		    </p>
+        
+	
+
+				<!--googleon: all-->
+			
+		</main>
+	</div>
+	
+	<!--googleoff: all-->
+	
+		
+			<div id="main-toc-large" class="column-5">
+			    <div class="panel font-size--2 tablet-hide trailer-1">
+			      <h5 class="trailer-half">在本主题中</h5>
+			      <ol class="list-plain pre-0 trailer-0"><li><a href="#GUID-6E0122E8-3B4B-4CD3-8E51-B234F812C160">mapOptions</a></li><li><a href="#ESRI_SECTION1_FC212A2B579B425A9FE4358ACC89482A"> operationalLayers</a></li><li><a href="#ESRI_SECTION1_198C3BA4CEA64F00AB45176FC85F3006">地理处理结果</a></li><li><a href="#ESRI_SECTION1_11D33961584F4025AAE2CAF7DDE61599">baseMap</a></li><li><a href="#ESRI_SECTION1_8D5A14DEBA974762B4BEC5C9FB19B273">exportOptions</a></li><li><a href="#ESRI_SECTION1_58F5F403FCF048C2A5EBEF921BB97A10">layoutOptions</a></li><li><a href="#ESRI_SECTION1_03636EC8A2554A14B9642933FD79CAFF">限制</a></li></ol>
+			    </div>
+			    
+			    
+	  		</div>
+		
+    
+   <!--googleon: all-->
+
+
+
+
+          
+        </div>
+        <!-- ENDPAGECONTENT -->
+
+      </div>
+
+    </div>  <!-- End of wrapper -->
+
+  <footer class="footer leader-3 link-dark-gray" role="contentinfo">
+    <div class="grid-container">
+      <div class="row">
+        <nav class="column-6">
+          <h6 data-langlabel="arcgis-for-server">Arc<span>GIS Enterprise</span></h6>
+          <ul class="list-plain">
+            <li><a data-langlabel="home" href="../../../../../zh-CN/">主页</a></li>
+            <li><a data-langlabel="portal" href="../../../../../zh-CN/portal/">Portal</a></li>
+            <li><a data-langlabel="server" href="../../../../../zh-CN/server/">Server</a></li>
+            <li><a data-langlabel="data-store" href="../../../../../zh-CN/data-store/">Data Stores</a></li>
+            <li><a data-langlabel="cloud" href="../../../../../zh-CN/cloud/">云</a></li>
+            <li><a data-langlabel="apps" href="../../../../../zh-CN/apps/">应用程序</a></li>
+            <li><a data-langlabel="documentation" href="../../../../../zh-CN/documentation/">文档</a></li>
+          </ul>
+        </nav>
+
+        
+  <nav class="column-6">
+    <h6 data-langlabel="arcgis-platform">ArcGIS 平台</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="arcgis" href="//www.arcgis.com/">ArcGIS Online</a></li>
+      <li><a data-langlabel="arcgis-for-professionals" href="//pro.arcgis.com/">ArcGIS Pro</a></li>
+      <li><a data-langlabel="arcgis-for-server" href="//enterprise.arcgis.com/">ArcGIS Enterprise</a></li>
+      <li><a data-langlabel="arcgis-for-developers" href="https://developers.arcgis.com/">ArcGIS for Developers</a></li>
+      <li><a data-langlabel="arcgis-solutions" href="//solutions.arcgis.com/">ArcGIS Solutions</a></li>
+      <li><a data-langlabel="arcgis-marketplace" href="//marketplace.arcgis.com/">ArcGIS Marketplace</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <h6 data-langlabel="about-esri">关于 Esri</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="about-us" href="//www.esri.com/about-esri/">关于我们</a></li>
+      <li><a data-langlabel="careers" href="//www.esri.com/careers/">招贤纳士</a></li>
+      <li><a data-langlabel="insiders-blog" href="https://www.esri.com/about/newsroom/blog/">Esri 博客</a></li>
+      <li><a data-langlabel="user-conference" href="//www.esri.com/events/user-conference/index.html">用户大会</a></li>
+      <li><a data-langlabel="developer-summit" href="//www.esri.com/events/devsummit/index.html">开发者峰会</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <a class="esri-logo" href="//www.esri.com/" aria-label="Esri Home"></a>
+    <section class="footer-social-nav leader-1">
+            <a class="icon-social-twitter" aria-label="Esri on Twitter" href="https://twitter.com/Esri/"></a>
+            <a class="icon-social-facebook" aria-label="Esri on Facebook" href="https://www.facebook.com/esrigis/"></a>
+            <a class="icon-social-github" aria-label="Esri on GitHub" href="//esri.github.io/"></a>
+            <a class="icon-social-contact" aria-label="Contact Esri" href="//www.esri.com/about-esri/contact/"></a>
+    </section>
+	  
+  </nav>
+  
+  <div class="column-24 leader-1">
+    <p class="font-size--3"><a href="http://www.esri.com/legal/copyright-trademarks">Copyright &copy; 2019 Esri.</a> All rights reserved. | <a href="http://www.esri.com/legal/privacy/">隐私政策</a> | <a href="http://www.esri.com/legal/software-license">法律声明</a></p>
+  </div>
+  
+
+
+      </div>
+    </div>
+  </footer>
+  <!--googleoff: all-->
+
+  
+  
+	<script src="../../../../../zh-CN/assets/js/init.js" type="text/javascript"></script>
+	<!--<script src="../../../../../zh-CN/assets/js/drop-down.js" type="text/javascript"></script>-->
+	<script src="../../../../../zh-CN/assets/js/search/searchform.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/cdn/js/link-modifier.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/cdn/js/sitewide.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/cdn/js/libs/highlight.pack.js" type="text/javascript"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+
+
+  
+    
+
+  <script src="../../../../../zh-CN/cdn/js/affix.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    $(function () {
+          var appendFlg = true;
+
+          $("#bigmac")
+          .on("affixed.bs.affix", function (evt) {
+            if (appendFlg) {
+              $("<a class='crumb' href='#'>ExportWebMap 规范</a>").insertAfter ($("#bigmac nav a").last());
+              appendFlg = false;
+            }
+          })
+          .on ("affix-top.bs.affix", function(evt) {
+            if (!appendFlg) {
+              $("#bigmac nav a").last().remove();
+            }
+            appendFlg = true;
+          })
+    })
+  </script>
+  
+        <script type="text/javascript">
+          window.doctoc = {
+            pubID: "1636",
+            tpcID: "7",
+            
+              prefix: "共享",
+              prefixUrl: "/zh-cn/server/latest/create-web-apps/windows/",
+          
+            hideToc: false
+          }
+        </script>
+
+        <script type="text/javascript" src="../../../../../zh-CN/server/latest/create-web-apps/windows/1636.js" ></script>
+        <script type="text/javascript" src="../../../../../zh-CN/cdn/calcite/js/protoc.js" ></script>
+        
+        
+
+  <noscript>
+        <p>
+            <a href="flisting.htm">flist</a>
+        </p>
+    </noscript>
+    <script type="text/javascript"></script>
+  
+  
+    
+    
+
+  </body>
+</html>

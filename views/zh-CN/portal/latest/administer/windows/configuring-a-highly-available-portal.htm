@@ -1,0 +1,549 @@
+
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>  <html class="ie lt-ie9 lt-ie8 lt-ie7 ie6" dir="ltr"> <![endif]-->
+<!--[if IE 7]>     <html class="ie lt-ie9 lt-ie8 ie7" dir="ltr"> <![endif]-->
+<!--[if IE 8]>     <html class="ie lt-ie9 ie8" dir="ltr"> <![endif]-->
+<!--[if IE 9]>     <html class="ie ie9" dir="ltr"> <![endif]-->
+<!--[if !IE]><!--> <html dir="ltr" lang="zh-CN"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>配置高可用性门户&mdash;Portal for ArcGIS 
+  (10.8) | ArcGIS Enterprise 文档</title>
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+    <script>
+      var docConfig = {
+        locale: 'zh-CN'
+        ,localedir: 'zh-cn'
+        ,langSelector: ''
+        
+        ,relativeUrl: false
+        
+
+        ,searchformUrl: '/search/'
+        ,tertiaryNavIndex: ''
+
+        
+      };
+    </script>
+	 
+
+
+    
+    <!--[if lt IE 9]>
+      <script src="../../../../../zh-CN/cdn/js/libs/html5shiv.js" type="text/javascript"></script>
+      <script src="../../../../../zh-CN/cdn/js/libs/selectivizr-min.js" type="text/javascript"></script>
+      <script src="../../../../../zh-CN/cdn/js/libs/json2.js" type="text/javascript"></script>
+      <script src="../../../../../zh-CN/cdn/js/libs/html5shiv-printshiv.js" type="text/javascript" >
+
+    <![endif]-->
+
+     <!--[if lt IE 11]>
+    <script>
+      $$(document).ready(function(){
+        $$(".hideOnIE").hide();
+      });
+    </script>
+    <![endif]-->
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<link href="../../../../../zh-CN/assets/img/favicon.ico" rel="shortcut icon" >
+	<link href="../../../../../zh-CN/assets/css/screen.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/cdn/calcite/css/documentation.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/assets/css/print.css" media="print" type="text/css" rel="stylesheet" />
+
+	<!--
+	<link href="../../../../../zh-CN/assets/css/screen_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/assets/css/documentation/base_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/assets/css/print_l10n.css" media="print" type="text/css" rel="stylesheet" />
+	-->
+	
+	
+		<script src="../../../../../zh-CN/cdn/js/libs/jquery.1.9.1.min.js" type="text/javascript"></script>
+	
+	<script src="../../../../../zh-CN/cdn/js/libs/jquery.cookie.js" type="text/javascript"></script>
+	<link href="../../../../../zh-CN/cdn/css/colorbox.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/cdn/css/colorbox_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<script src="../../../../../zh-CN/cdn/js/libs/jquery.colorbox-min.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/assets/js/video-init.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/assets/js/sitecfg.js" type="text/javascript"></script>
+	
+		<script src="../../../../../zh-CN/assets/js/signIn.js" type="text/javascript"></script>
+	
+
+	<!--- Language Picker -->
+	<script src="../../../../../zh-CN/assets/js/locale/l10NStrings.js" type="text/javascript"></script>
+	
+		 
+	
+
+	<script src="../../../../../zh-CN/assets/js/calcite-web.js" type="text/javascript"></script>
+
+
+
+  <!--- search MD -->
+    <META name="description" content="在任何情况下都不能出现停机的组织中，可以将 Portal for ArcGIS 以高可用性方式进行配置。"><META name="last-modified" content="2019-12-6"><META name="product" content="arcgis-portal-windows,arcgis-enterprise-windows"><META name="sub_category" content="Portal for ArcGIS (Windows)"><META name="search-collection" content="help"><META name="content_type_label" content="帮助主题"><META name="sub_category_label" content="Portal for ArcGIS (Windows)"><META name="search-category" content="help-general"><META name="subject_label" content="PORTAL,服务,SERVER"><META name="version" content="10.8"><META name="content_type" content="Help Topic"><META name="subject" content="PORTAL,SERVICES,SERVER"><META name="content-language" content="zh-cn">
+    <!--- search MD -->
+
+  
+  <script src="../../../../../zh-CN/assets/js/switchers/portal-1.js" type="text/javascript"></script>
+  
+      
+
+</head>
+
+<!--
+      pub: GUID-86E3206A-3CAD-43C1-9F16-FFB7CA3AEC71=33
+      tpc: GUID-682C81A7-3977-4808-9F94-7CC65B530D4F=29
+      -->
+
+
+<!-- variable declaration, if any -->
+<!-- can change following macro to set variable once we are on Jinja 2.8 -->
+
+
+
+
+
+<body class="claro zh-CN server">
+  
+
+  <!-- Drawer location -->
+  <div class="drawer drawer-left js-drawer" data-drawer="top-nav">
+        <nav class="drawer-nav" role="navigation">
+          <aside class="side-nav">
+            <h2 class="side-nav-title">Arc<span>GIS</span> Enterprise</h2>
+            <form id="helpSearchForm" class="margin-left-half margin-right-half leader-half trailer-half drawer-search-form" method="GET">
+              <input type="search" name="q"  placeholder="搜索 ArcGIS Enterprise 帮助">
+              <input type="hidden" name="collection" value="help" />
+              <input type="hidden" name="product" value="arcgis-portal-windows" />
+              <input type="hidden" name="version" value="10.8" />
+              <input type="hidden" name="language" value="zh-CN" />
+            </form>    
+             <a id="nav-portal" data-langlabel="portal" href="../../../../../zh-CN/portal/" class="side-nav-link">Portal</a>
+             
+            <a id="all-servers" data-langlabel="all-servers" href="../../../../../zh-CN/server/" class="side-nav-link">所有服务器</a>
+            <a id="gis-server" data-langlabel="gis-server" href="../../../../../zh-CN/server/" class="side-nav-link">GIS Server</a>
+            <a id="image-server" data-langlabel="image-server" href="../../../../../zh-CN/image/" class="side-nav-link">Image Server</a>
+            <a id="geo-analytics-server" data-langlabel="geo-analytics-server" href="../../../../../zh-CN/geoanalytics/" class="side-nav-link">GeoAnalytics Server</a>
+            <a id="geoevent-server" data-langlabel="geoevent-server" href="../../../../../zh-CN/geoevent/" class="side-nav-link">GeoEvent Server</a>
+            <a id="notebook-server" data-langlabel="notebook-server" href="../../../../../zh-CN/notebook/" class="side-nav-link">Notebook Server</a>
+            <a id="nav-data-store" data-langlabel="data-store" href="../../../../../zh-CN/data-store/" class="side-nav-link">Data Stores</a>
+            <a id="nav-cloud" data-langlabel="cloud" href="../../../../../zh-CN/cloud/" class="side-nav-link">云</a>
+            <a id="nav-apps" data-langlabel="apps" href="../../../../../zh-CN/apps/" class="side-nav-link">应用程序</a>
+            <a id="nav-doc" data-langlabel="documentation" href="../../../../../zh-CN/documentation/" class="side-nav-link">文档</a>
+
+          </aside>
+        </nav>
+    </div>
+
+    <!-- user navigation collapses to drawer on mobile -->
+    
+    <div class="drawer drawer-right js-drawer hide-if-logged-out logged-in-navigation" data-drawer="user-nav">
+      <nav class="drawer-nav">
+        <aside class="side-nav">
+          <a class="side-nav-link agolProfile" href="#">我的个人资料</a>
+          <a class="side-nav-link icon-ui-sign-out js-log-out" href="#">登出</a>
+        </aside>
+      </nav>
+    </div>
+    
+<!-- End of drawer -->
+
+  
+  <div class="wrapper">
+      <!--googleoff: all-->
+
+      <header class="top-nav" data-skin="learn">
+        <a class="skip-to-content" href="#skip-to-content">Skip To Content</a>
+        <div class="grid-container">
+          <div class="column-24">
+
+
+            <!--<div class="top-nav-title-wrapper text-center ">-->
+              <a href='../../../../../zh-CN/' class="top-nav-title tablet-hide"><span>Arc</span>GIS  Enterprise</a>
+              <a href='../../../../../zh-CN/' class="icon-ui-menu top-nav-title js-drawer-toggle tablet-show" data-drawer="top-nav"><span>Arc</span>GIS Enterprise</a>
+            <!--</div> -->
+
+          
+            <nav role="navigation" class="top-nav-list left tablet-hide">
+              <a id="nav-portal" data-langlabel="portal" href="../../../../../zh-CN/portal/" class="top-nav-link">Portal</a>
+
+                <div class="dropdown js-dropdown ">
+                  <a class="top-nav-link js-dropdown-toggle" tabindex="0" aria-haspopup="true" aria-expanded="false" href="#">Servers</a>
+                  <nav class="dropdown-menu featured" role="menu">
+                    <ul class="dropdown-sublist-featured">
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/get-started/latest/windows/additional-server-deployment.htm" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path  d="M42.92 6.1H4.12v8.566l.833.832-.835.833-.018 7.332.845.847-.825.824V33.9h25v5.2h-2v1.075H8.02v.8h19.1v.925h4.8v-.925H40v-.8h-8.08V39.1h-2v-5.2h13v-8.566l-.834-.834.835-.834v-7.332l-.835-.834.835-.834zm-11.8 35h-3.2v-1.2h3.2zm11-8H4.92v-7.434l.767-.766h35.668l.765.766zm0-9.766l-.766.766H5.666l-.766-.767.017-6.669.766-.764h35.671l.766.766zm0-9l-.766.766H5.687l-.766-.766V6.9h37.2zM19 11.9h-2v-.8h2zm-4 0h-2v-.8h2zm-4 0H9v-.8h2zm6 8.2h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9zm8 9h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9z"/></svg></span>
+                          <span class="sublink-text">所有服务器</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/server/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M45.98 33.575a.616.616 0 0 0-.335-.51l-3.362-2.03 3.362-2.031a.556.556 0 0 0 0-1.02l-11.1-6.704a1.293 1.293 0 0 0-1.112 0L22.33 27.982a.556.556 0 0 0 0 1.02l3.36 2.03-3.358 2.03a.556.556 0 0 0-.002 1.021l3.322 2.006-3.324 2.008a.555.555 0 0 0 .002 1.017l11.102 6.703a1.25 1.25 0 0 0 1.11.002l11.104-6.706a.556.556 0 0 0 0-1.02l-3.32-2.006 3.318-2.004a.607.607 0 0 0 .335-.509zM33.837 21.97c.026-.01.286-.005.29-.005l10.814 6.53-10.8 6.523c-.028.01-.284.005-.294.006l-10.813-6.53zm11.105 16.636l-10.8 6.523a2.564 2.564 0 0 1-.295.006l-10.81-6.529 3.39-2.047 7.004 4.23a1.083 1.083 0 0 0 .557.131 1.101 1.101 0 0 0 .554-.13l7.01-4.233zM34.14 40.098a2.545 2.545 0 0 1-.294.006l-10.812-6.53 3.43-2.073 6.97 4.208a1.25 1.25 0 0 0 1.107-.001l6.966-4.206 3.431 2.073zM9 8H7V7h2zm8 8h-2v-1h2zm-4-8h-2V7h2zm4 0h-2V7h2zm-4 8h-2v-1h2zm7.316 11.1H3.9v-6.434l.766-.766h35.668l.766.766v2.12l.8.483v-2.935l-.826-.826.826-.845v-6.329l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9h16.88a2.632 2.632 0 0 1 .336-.8zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zm0 8v-5.668l.766-.766h35.668l.766.766v5.67l-.746.764H4.666zM15 24v-1h2v1zm-4 0v-1h2v1zm-2-8H7v-1h2zm-2 8v-1h2v1z"/></svg></span>
+                          <span class="sublink-text">GIS Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/image/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 8h-2V7h2zm-4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm8 8h-2v1h2zm-8 0H7v1h2zm4 9v-1h-2v1zm-4 0v-1H7v1zm8 0v-1h-2v1zm4 3.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V21h-.8v-.334l-.766-.766H4.666l-.766.766V27.1H21zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zm40.234 4v21.8H23.1V23.1zm-.8 16.366L39.466 44.1h2.868l1.766-1.766zm-20.2-9.932l5.634-5.634h-2.868L23.9 26.666zm6.2-5.068L24.466 30.1h2.868l2.766-2.766zM28.466 30.1H30.1v-1.634zm2.434 0h6.2v-6.2h-6.2zm-7 7h6.2v-6.2h-6.2zm7 0h6.2v-6.2h-6.2zm0 6.434l5.634-5.634h-2.868L30.9 40.666zm7-7l5.634-5.634h-2.868L37.9 33.666zm1.634-5.634H37.9v1.634zm-8.634 7v1.634l1.634-1.634zm.566 6.2h2.868l2.766-2.766v-2.868zm6.434-3.566l2.634-2.634H37.9zM35.466 44.1H37.1v-1.634zm2.434 0h.434l5.766-5.766V37.9h-2.434L37.9 41.666zm6.2-8.634L42.466 37.1H44.1zm0-4L38.466 37.1h2.868l2.766-2.766zm0-7.566h-6.2v6.2h6.2zm-20.2 0v1.634l1.634-1.634zm0 20.2h6.2v-6.2h-6.2zm20.2 0v-.634l-.634.634z"/></svg></span>
+                          <span class="sublink-text">Image Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/geoanalytics/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 16h-2v-1h2zm-8 8v-1H7v1zm8 0v-1h-2v1zM13 7h-2v1h2zm4 0h-2v1h2zM9 7H7v1h2zm21.45 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V27.9h-1.464l-.801-.8H41.1v-6.434l-.766-.766H4.666l-.766.766V27.1h27.15zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM13 24v-1h-2v1zm0-9h-2v1h2zm-4 0H7v1h2zm26.672 27.148A1.87 1.87 0 0 1 35.9 43a1.91 1.91 0 1 1-3.763-.222l-9.845-3.414A1.88 1.88 0 0 1 21 39.9a1.9 1.9 0 1 1 1.474-3.084l4.692-2.346A1.878 1.878 0 0 1 27.1 34a1.902 1.902 0 0 1 1.9-1.9 1.867 1.867 0 0 1 .781.191l3.788-5.05A1.88 1.88 0 0 1 33.1 26a1.9 1.9 0 1 1 3.491 1.026l4.889 4.888c-.069.056-.144.1-.21.162a3.986 3.986 0 0 0-.358.402l-4.883-4.883A1.889 1.889 0 0 1 35 27.9a1.867 1.867 0 0 1-.781-.191l-3.788 5.049a1.868 1.868 0 0 1 .437.965l9.204.614c-.018.11-.049.218-.058.33A3.93 3.93 0 0 0 40 35c0 .046.01.09.01.135l-9.185-.612A1.913 1.913 0 0 1 29 35.9a1.889 1.889 0 0 1-1.474-.716l-4.692 2.346a1.878 1.878 0 0 1 .066.47 1.9 1.9 0 0 1-.105.625c-.007.02-.022.036-.03.056l9.63 3.34a1.87 1.87 0 0 1 2.786-.505l5.415-4.437c.067.108.127.22.204.322a3.9 3.9 0 0 0 .292.306zM33.9 26a1.092 1.092 0 0 0 .43.872 1.12 1.12 0 0 0 1.42-.068A1.1 1.1 0 1 0 33.9 26zm-6 8a1.1 1.1 0 0 0 2.196.093 1.135 1.135 0 0 0-.426-.965A1.087 1.087 0 0 0 29 32.9a1.101 1.101 0 0 0-1.1 1.1zm-5.8 4a1.098 1.098 0 1 0-.06.362A1.101 1.101 0 0 0 22.1 38zm13 5a1.1 1.1 0 1 0-2.2 0 1.1 1.1 0 0 0 2.2 0zm10.8-8a1.9 1.9 0 1 1-3.8 0c0-.053.003-.105.007-.158A1.9 1.9 0 0 1 45.9 35zm-.8 0a1.1 1.1 0 0 0-2.196-.093 1.153 1.153 0 0 0 .216.752A1.1 1.1 0 0 0 45.1 35z"/></svg></span>
+                          <span class="sublink-text">GeoAnalytics Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/geoevent/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M13 8h-2V7h2zm4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm12.418 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826v2.117c-.259-.177-.53-.337-.8-.497v-1.288l-.766-.766H4.666l-.766.766V27.1h17.933c-.148.26-.283.53-.415.8zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM9 24v-1H7v1zm4-9h-2v1h2zm0 9v-1h-2v1zm-4-9H7v1h2zm8 9v-1h-2v1zm16.9 2h-.8v8.9H39v-.8h-5.1zm.1-3.901a11.9 11.9 0 1 0 11.9 11.9 11.914 11.914 0 0 0-11.9-11.9zm0 23a11.1 11.1 0 1 1 11.1-11.1 11.112 11.112 0 0 1-11.1 11.1z"/></svg></span>
+                          <span class="sublink-text">GeoEvent Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/notebook/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M22 27.1H3.9v-6.434l.766-.766h18.576a5.262 5.262 0 0 1 .83-.8H4.666l-.766-.766v-5.668l.766-.766h35.668l.766.766V18h.8v-5.666l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9H22zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zM9 8H7V7h2zm8 0h-2V7h2zm-4 0h-2V7h2zm2 16v-1h2v1zm-4 0v-1h2v1zm-4 0v-1h2v1zm0-8v-1h2v1zm8 0v-1h2v1zm-4 0v-1h2v1zm18.9 8.1h-1.8v1.8h1.8zm-.8 1h-.2v-.2h.2zm15.498-4.48a2.727 2.727 0 0 0-1.62-.5v-.02H27.25a3.154 3.154 0 0 0-3.15 3.15V38.1h-1.68a3.386 3.386 0 0 0-2.872 1.58 3.49 3.49 0 0 0-.157 3.419 3.241 3.241 0 0 0 2.954 1.801h15.161a3.404 3.404 0 0 0 3.394-3.4V26.9h5v-3.65a3.224 3.224 0 0 0-1.302-2.63zM22.345 44.1a2.44 2.44 0 0 1-2.23-1.341 2.706 2.706 0 0 1 .11-2.65A2.588 2.588 0 0 1 22.42 38.9h12.89a3.395 3.395 0 0 0 0 5.2zM40.1 23.192V41.5a2.6 2.6 0 1 1-2.6-2.6v-.8H24.9V23.25a2.352 2.352 0 0 1 2.35-2.35h13.795a3.183 3.183 0 0 0-.945 2.292zm5 2.908h-4.2v-2.908a2.274 2.274 0 0 1 1.44-2.18 1.944 1.944 0 0 1 1.791.259 2.423 2.423 0 0 1 .97 1.979zm-17.1 5h9v.8h-9zm0 3h7v.8h-7zm0-6h9v.8h-9zm4-3h5v.8h-5z"/></svg></span>
+                          <span class="sublink-text">Notebook Server</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+
+              <a id="nav-data-store" data-langlabel="data-store" href="../../../../../zh-CN/data-store/" class="top-nav-link">Data Stores</a>
+              <a id="nav-cloud" data-langlabel="cloud" href="../../../../../zh-CN/cloud/" class="top-nav-link">云</a>
+              <a id="nav-apps" data-langlabel="apps" href="../../../../../zh-CN/apps/" class="top-nav-link">应用程序</a>
+            </nav>
+
+
+            
+            
+            
+
+            <div class="margin-left-1 top-nav-list right hide-if-logged-in logged-out-navigation">
+               
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+              
+              <a data-langlabel="sign-in" id="login-link" class="icon-ui-user top-nav-link link-blue login-link" href="#">登录</a>
+              
+            </div>
+
+            
+            <nav class="margin-left-1 top-nav-list right hide-if-logged-out logged-in-navigation">
+              
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+             
+              <div class="dropdown js-dropdown right">
+
+                <div class="tablet-show top-nav-link">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a href="#" data-drawer="user-nav" class="user-nav-name js-drawer-toggle" data-first-name></a>
+                </div>
+
+                <div class="tablet-hide top-nav-link js-dropdown-toggle">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a class="user-nav-name top-nav-dropdown dropdown-btn" data-first-name>&nbsp;</a>
+                </div>
+
+                <nav class="dropdown-menu dropdown-right">
+                
+                  <a class="dropdown-link agolProfile" id="agolProfile" href="#">我的个人资料</a>
+                  <a class="dropdown-link js-log-out" id="agolLogout" href="#">登出</a>
+                </nav>
+              </div>
+            </nav>
+            
+
+            
+          </div>
+        </div>
+      </header>
+
+      <div class="js-search search-overlay">
+        <div class="search-content" role="dialog" aria-labelledby="search">
+          <form method="GET" id="helpSearchForm">
+            <label>
+              搜索 ArcGIS Enterprise 帮助
+              <div class="search-bar">
+                <input type="search" name="q"  placeholder="搜索 ArcGIS Enterprise 帮助" class="search-input js-search-input">
+                <input type="hidden" name="collection" value="help" />
+                <input type="hidden" name="product" value="arcgis-portal-windows" />
+                <input type="hidden" name="version" value="10.8" />
+                <input type="hidden" name="language" value="zh-CN" />
+              </div>
+            </label>
+            <input type="hidden" name="relativePath" value="../../../../../" /><button type="submit" class="btn btn-large right">搜索</button>
+          </form>
+        </div>
+      </div>
+
+      <!--googleon: all-->
+
+      <div id="skip-to-content">
+        <!--googleoff: all-->
+        <header class="sub-nav sub-nav-learn">
+          <div class="grid-container">
+            
+            <div class="column-24">
+              <div style="display:table;" class="sdk-home-banner">
+                <div class="sdk-home-banner-content">
+                  <h1 class="sub-nav-title link-white">Portal for ArcGIS</h1>
+                </div>
+              </div>
+            </div>
+
+            <div class="column-24">
+              <nav class='sub-nav-list tablet-hide'><a class="sub-nav-link" href="../../../../../zh-CN/portal/" target="_top" title="Portal for ArcGIS 主页">主页</a><a class="sub-nav-link" href="../../../../../zh-CN/portal/latest/use/" target="_top" title="使用 Portal for ArcGIS">使用</a><a class="sub-nav-link is-active" href="../../../../../zh-CN/portal/latest/administer/windows/" target="_top" title="安装、管理和保护 Portal for ArcGIS">管理</a></nav><select class='tablet-show select-full trailer-half js-select-nav'><option value="../../../../../zh-CN/portal/">主页</option><option value="../../../../../zh-CN/portal/latest/use/">使用</option><option selected="true" value="../../../../../zh-CN/portal/latest/administer/windows/">管理</option></select>
+            </div>
+
+          </div>
+        </header>
+        <!--googleon: all-->
+       
+        <!-- content goes here -->
+        <div class="grid-container ">
+          
+
+            
+              
+  <!--BREADCRUMB-BEG--><div id="bigmac" class="sticky-breadcrumbs trailer-2" data-spy="affix" data-offset-top="180"> </div><!--BREADCRUMB-END-->
+  <!--googleoff: all-->
+    <div class="column-5 tablet-column-12 trailer-2 ">
+      <aside class="js-accordion accordion reference-index" aria-live="polite" role="tablist">
+        <div></div>
+      </aside>
+
+      <div class="js-sticky scroll-show tablet-hide leader-1 back-to-top" data-top="0" style="top: 0px;">
+        <a href="#" class="btn btn-fill btn-clear">返回顶部</a>
+      </div>
+    </div>
+  <!--googleon: all-->
+  
+            
+            
+            
+	
+		<div class="column-13  pre-1 content-section">
+	
+		<header class="trailer-1"><h1>配置高可用性门户</h1></header>
+
+		 
+	<!--googleoff: all-->
+	
+		
+				<aside id="main-toc-small" class="js-accordion accordion tablet-show trailer-1">
+			      <div class="accordion-section">
+			        <h4 class="accordion-title">在本主题中</h4>
+			        <div class="accordion-content list-plain">
+			          <ol class="list-plain pre-0 trailer-0"><li><a href="#ESRI_SECTION1_56A6B398CCE44747BDA017980D96B555">规划高可用性部署</a></li><li><a href="#ESRI_SECTION1_E9E60E7F010F42ECA1DBCC610C7D0EE3">配置高可用性门户的先决条件</a></li><li><a href="#ESRI_SECTION1_6F6B723AFFE5411BA5E246AF479FEEC1">配置门户</a></li><li><a href="#ESRI_SECTION1_63C3F7683D89411187470BEB75A38FB9">升级高可用性门户</a></li></ol>
+			        </div>
+			      </div>
+			     </aside>
+		
+    
+   <!--googleon: all-->
+
+
+		<main>
+			
+	
+    	
+    
+
+
+			
+<p id="GUID-224A26D5-9F96-429A-AE87-8CFA9DE39AD1">对于必须尽可能减少停机时间的组织，<a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/configure-highly-available-system.htm">可以为 <span class="ph">ArcGIS Enterprise</span> 部署配置高可用性</a>。为使部署高度可用，包括门户在内的所有部署组件都必须高度可用。</p><p id="GUID-4134858E-900E-4E3D-B7C4-C8A6A24470B9">本主题将介绍配置高可用性部署的门户组件。您将在两台计算机上安装 <span class="ph">Portal for ArcGIS</span> 软件，在第一台计算机上创建 <span class="ph">ArcGIS Enterprise</span> 门户，然后将第二台计算机连接到该门户。</p><p id="GUID-D3F3C78C-6FDD-4F60-9D14-4F72A3621A05">配置高可用性是一项高级任务，需要对门户管理、脚本和网络有深入了解。安装和配置高可用性门户之前，您必须配置组织的负载均衡器，以将请求转发至门户软件。此外，您还需要设置文件服务器以包含门户的内容目录，并决定 <a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/ha-scenarios-web-gis.htm"><span class="ph">ArcGIS Server</span> 与 <span class="ph">Portal for ArcGIS</span></a> 的通信方式。建议您与组织的信息技术人员协作，这样便可了解配置高可用性门户的要求。</p><p id="GUID-168F725B-AED7-45AF-BAF0-D9E2509233FC">本主题主要介绍高可用性 <span class="ph">ArcGIS Enterprise</span> 部署 <span class="ph">Portal for ArcGIS</span> 组件的配置与升级，但是您通过高可用性门户配置的 <span class="ph">ArcGIS Server</span> 站点也应该和数据存储一样配置高可用性。有关配置其他组件的概述和文档链接，请参阅<a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/configure-highly-available-system.htm">配置高可用性 <span class="ph">ArcGIS Enterprise</span></a>。</p><section class="section1 padded-anchor" id="ESRI_SECTION1_56A6B398CCE44747BDA017980D96B555" purpose="section1"><h2>规划高可用性部署</h2><p id="GUID-BF3E6D17-FE16-461B-B201-05D0ACC3B1E3">有多个一般模式可用于实施高可用性 <span class="ph">ArcGIS Enterprise</span> 门户。以下内容介绍了设置两种常规架构模式的步骤。</p><p id="GUID-68CDA247-CFDE-4EC7-AB3C-92EBBF7F2976">在两种模式中，负载均衡器将配置为组织的网关。管理员以外的其他用户将始终使用负载均衡器定义的 URL 来访问门户及其项目。门户具有两台计算机以确保高可用性。</p><p id="GUID-EAFA9B31-6AEB-4CB0-AD6B-9450CA024B38">第一种模式使用 Web 层身份验证来确保门户的安全，这需要包括 <span class="ph">ArcGIS Web Adaptor</span>。要维持高可用性，需要配置两个 <span class="ph">ArcGIS Web Adaptor</span> 实例，每台门户计算机配置一个实例。门户的流量将从负载均衡器传输到 <span class="ph">ArcGIS Web Adaptor</span>，然后传输到门户。</p><figure class="fig" href="#"><img src="GUID-D84F04AA-86FF-451C-BA1A-3451CFAD08D6-web.png" alt="使用两个负载均衡器的高可用性部署" title="使用两个负载均衡器的高可用性部署"></figure><p id="GUID-1D559B45-C5DB-4147-9093-78D39DE2DD73">在第二种模式中，第一个负载均衡器直接将流量传输到门户。配置第二个负载均衡器以处理门户和与门户联合的一个或多个 <span class="ph">ArcGIS Server</span> 站点之间的流量。</p><figure class="fig" href="#"><img src="GUID-06841104-CA37-4ADC-8FE2-CB3BB7860540-web.png" alt="使用一个负载均衡器的高可用性部署" title="使用一个负载均衡器的高可用性部署"></figure><p id="GUID-083C7C29-A836-461B-A36E-0C7237D5DE0B">两台门户计算机均包含存储内容信息的系统数据库。第一台计算机上的门户系统数据库将复制对第二台计算机上的数据库进行的更改。索引服务可保持两台计算机之间用户和项目搜索的同步。</p></section><section class="section1 padded-anchor" id="ESRI_SECTION1_E9E60E7F010F42ECA1DBCC610C7D0EE3" purpose="section1"><h2>配置高可用性门户的先决条件</h2><p id="GUID-852E7B77-3651-4777-A153-C43F07F47C63">以下为高可用性门户的组件：</p><ul purpose="ul" id="UL_6A17A9EAEDF2478EB84C4BC4396D1FB7"><li purpose="li" id="LI_C83AE265AE24401091DDA17A467B4550"><p id="GUID-EC449EA1-BBB6-49AC-8CE5-385F5C75EF40">至少一个负载均衡器 - 这是根据需要使用分配算法在两个门户计算机之间均衡网络流量的第三方组件，用于增强门户的可扩展性和可用性。它必须通过检测计算机故障和向可用门户计算机自动重新分配流量来实现高可用性。通过 ArcGIS REST API 门户管理访问的<a target="_blank" class="xref xref" href="https://developers.arcgis.com/rest/enterprise-administration/portal/health-check-portal.htm">健康检查</a>可用于检测门户中的计算机故障。如果使用 <span class="ph">ArcGIS Web Adaptor</span>，则加载上下文名称必须与 <span class="ph">ArcGIS Web Adaptor</span> 上下文相同（例如，如果 Web Adaptor 上下文为 <span class="usertext">portal</span>，则该名称为 <span class="usertext">https://lb.domain.com/portal</span>）。如果将 <span class="ph">ArcGIS Web Adaptor</span> 用作网关，则可以选择负载均衡器。</p><p id="GUID-86C5DC11-4CD3-4D4A-8FC4-C91C374F9E6F"><div class="panel trailer-1 note" id="GUID-4793BEDA-468A-44E9-877A-A7FB9B4DAD00"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-DBDD1450-5716-49E0-BB59-7EE571DCBC8B"> 如果您不使用 <span class="ph">ArcGIS Web Adaptor</span>，请确保负载均衡器上下文名称仅深入一级。例如，您的负载均衡器 URL 可以为 <span class="usertext">https://lb.domain.com/enterprise</span>，但是负载均衡器 URL 不能为 <span class="usertext">https://lb.domain.com/myorg/enterprise</span>。</p></div></p></li><li purpose="li" id="LI_C5A34985E1144C03A8D0A88D51C09A25"><p id="GUID-387611FD-71CF-45F3-86CC-3D8FF569FEEA">两个 <span class="ph">Portal for ArcGIS</span> 计算机 - 您需要两个安装有 <span class="ph">Portal for ArcGIS</span> 的计算机来配置高可用性。<span class="ph">这些计算机必须满足最低<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/system-requirements/latest" href="../../../../../zh-CN/system-requirements/latest/windows/portal-for-arcgis-system-requirements.htm">操作系统要求</a>并配置有相同的 <span class="ph">Portal for ArcGIS</span> 帐户。</span></p></li><li purpose="li" id="LI_74127FB953B6491F8B6E8D97628C6308"><p id="GUID-B6415BBD-E6FC-45FA-A66F-0D924BB8D01F"><span class="ph">ArcGIS GIS Server</span> - <span class="ph">Portal for ArcGIS</span> 必须具有一个<a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/configure-hosting-server-for-portal.htm">托管服务器</a>来运行已发布到门户的服务。您也可以从独立 <span class="ph">ArcGIS Server</span> 站点添加项目或将其他 <span class="ph">ArcGIS Server</span> 站点与您的门户联合以使 GIS web 服务对您门户组织中的其他人可用。将 <span class="ph">ArcGIS Server</span> 和门户配合使用可<a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/about-using-your-server-with-portal-for-arcgis.htm">提供更多益处</a>。</p></li><li purpose="li" id="LI_8D43DFCED3FF4425AF77AA2D22CFA587"><p id="GUID-A19A847B-252C-4D0D-9CEB-AB7E78F8CA80">高可用性文件服务器 - 这是用于存储和共享门户内容目录的第三方组件。<span class="ph">两台计算机以及将用于运行门户的帐户（称为 <a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/the-portal-for-arcgis-account.htm"><span class="ph">Portal for ArcGIS</span> 帐户</a>）必须能够访问您选择的文件目录。它可以是本地帐户，也可以是域帐户。如果是本地帐户，则其必须存在于两台门户计算机上。</span></p></li><li purpose="li" id="LI_219F2C5D555344DEB3E6A76FEE331FC7"><p id="GUID-EA81892C-1564-4C1F-83BD-92E634DAB0B7"><span class="ph">ArcGIS Web Adaptor</span> - 这是高可用性配置中的可选组件，位于每个门户计算机的前面以强制执行 web 层身份验证。如果不使用 Web 层身份验证，则不需要 <span class="ph">ArcGIS Web Adaptor</span>。有关详细信息，请参阅<a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/about-the-arcgis-web-adaptor.htm">关于 <span class="ph">ArcGIS Web Adaptor</span></a>。</p></li></ul><div class="panel trailer-1" id="GUID-4CF9666B-A606-4920-89DE-026F9BC10038"><h5 class="icon-ui-notice-triangle trailer-0">警告：</h5><p id="GUID-5FD18C1A-4584-402A-A8C6-918CBFC66134">如果您要使用 <span class="ph">ArcGIS Web Adaptor (IIS)</span> 进行 Web 层身份验证，您需要在 IIS 中执行一些配置步骤，确保 <span class="ph">ArcGIS Web Adaptor</span> 在高可用性门户部署下正常运行。建议您查看<a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/configuring-a-highly-available-portal.htm#ESRI_SECTION2_631486D5D58B481389603817D050C030">相应部分</a>中的配置步骤，确保您所在的组织能够支持 IIS 中的 Web 层身份验证。</p></div></section><section class="section1 padded-anchor" id="ESRI_SECTION1_6F6B723AFFE5411BA5E246AF479FEEC1" purpose="section1"><h2>配置门户</h2><p id="GUID-F53AB3C6-1331-4B8E-AAA5-A10974E5108F">要配置高可用性门户，请执行以下步骤。</p><div class="panel trailer-1 note" id="GUID-29207175-2A38-4465-803F-39251AD8067D"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-98BAF35E-0AF1-496B-BC63-C203A0E1D113">要将您的高可用性门户版本升级到 <span class="ph">10.8</span>，请执行以下<a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/configuring-a-highly-available-portal.htm#ESRI_SECTION1_63C3F7683D89411187470BEB75A38FB9">升级高可用性门户</a>部分中的步骤。</p></div><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="GUID-AB7C529A-D0DE-44DF-9AD9-11A5B8BE0DB9"><ol class="list-numbered" purpose="ol"><li purpose="step" id="GUID-3B207D11-2FEC-449E-82A3-433806E64B62"><span purpose="cmd" id="GUID-568F47E0-F0BB-4F71-BE3F-06FAEE8B875F"><a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/configuring-a-highly-available-portal.htm#ESRI_SECTION2_48DD7BEF0D794F459E3D839635EFCB42">在文件服务器上设置门户内容目录</a></span></li><li purpose="step" id="GUID-AD932BCD-3AEB-481D-BA3F-C0205E65F7BD"><span purpose="cmd" id="GUID-9E09554C-0A3C-4FB2-8263-8A7B8FA30AF4"><a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/configuring-a-highly-available-portal.htm#ESRI_SECTION2_275FCCEE45564FFF889A11F35EA2F9FE">安装和配置第一个门户计算机</a></span></li><li purpose="step" id="GUID-7E8B3D5B-33DE-4400-8509-3E70E945AD16"><span purpose="cmd" id="GUID-DA7B804E-72A2-4D11-A0C3-2DDD11618F78"><a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/configuring-a-highly-available-portal.htm#ESRI_SECTION2_51B684E109F1414B98C09792CBB65D8D">安装和配置第二个门户计算机</a></span></li><li purpose="step" id="GUID-FDD94B0C-4071-45C2-B3A4-9574BE453452"><span purpose="cmd" id="GUID-21578EC0-8B5C-4C96-8676-AC8605DC66EA"><a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/configuring-a-highly-available-portal.htm#ESRI_SECTION2_58DE55E20FA54E04BC966D1792E96AD2">安装和配置 <span class="ph">ArcGIS Web Adaptor</span></a></span></li><li purpose="step" id="GUID-A84FF524-6E94-4C6A-B7CD-0A1370DF6B80"><span purpose="cmd" id="GUID-3FDDAB42-373C-4341-97A2-08169AAAA0F3"><a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/configuring-a-highly-available-portal.htm#ESRI_SECTION2_7C8FCA9F8F704A28A0D07582DA0D8E42">配置负载均衡器</a></span></li><li purpose="step" id="ESRI_STEP_C91DFA707F4F439B863FB865F1A2918D" ishcondition="srv_os=windows"><span purpose="cmd" id="GUID-965D15D7-EC6E-47F2-88E8-68BEF1A5220B"><a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/configuring-a-highly-available-portal.htm#ESRI_SECTION2_631486D5D58B481389603817D050C030">配置 IIS 中的 Web 层身份验证</a></span></li><li purpose="step" id="ESRI_STEP_5015B316B1E3489D86B8AE0D93F474EF"><span purpose="cmd">配置门户的托管服务器</span></li><li purpose="step" id="GUID-C16CC43D-2476-485C-AFAC-FAAF53057373"><span purpose="cmd" id="GUID-C50C9812-AB83-4A51-A5B0-EC92728873DF"><a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/configuring-a-highly-available-portal.htm#ESRI_SECTION2_77043210CC984A6999D5CA27AF54F948">联合其他 <span class="ph">ArcGIS Server</span> 站点</a></span></li></ol></div></section><section class="section2 padded-anchor" id="ESRI_SECTION2_48DD7BEF0D794F459E3D839635EFCB42" purpose="section2"><h3>在文件服务器上设置门户内容目录</h3><p id="GUID-E5187164-BA1C-48C6-8F78-0A051B0E890A">在高可用性配置中，门户内容目录将在两台计算机之间共享。</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="GUID-E4EB29E8-1CBC-4B93-9B03-3FCE0945FD4F"><ol class="list-numbered" purpose="ol"><li purpose="step" id="GUID-75E30BA4-C1B1-4B4A-9832-388799656CA5"><span purpose="cmd" id="GUID-2CACD1C9-4B59-4030-A90C-B938F0976373">在文件服务器上，为门户内容目录创建一个目录并将其共享，这样两个门户计算机便可对其进行访问。<span class="ph">例如，<span class="usertext">\\share\portal\content</span>。</span></span></li><li purpose="step" id="GUID-9E6F38C9-DBB4-401A-BD98-C7EDED7C78B7"><span purpose="cmd" id="GUID-F9D6332F-D711-4B0B-964C-EF1D58DB59B0"> <span class="ph">向 <span class="ph">Portal for ArcGIS</span> 帐户授予对文件夹的<span class="uicontrol">完全控制</span>级别文件权限。</span></span></li><li purpose="step" id="GUID-CF907AB2-691F-4EC9-AA19-931C1FCFD845"><span purpose="cmd" id="GUID-3ED4FBA7-F438-473B-AC61-43D45E06E134"><span class="ph">验证两台计算机上的 <span class="ph">Portal for ArcGIS</span> 帐户是否可访问目录。</span></span></li></ol></div></section><p id="GUID-E88DCC33-CDBA-46D8-A0FC-FFDA5A29DFCD">配置门户后，如果需要更改内容目录位置，请参阅<a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/changing-the-portal-content-directory.htm">更改门户内容目录</a>获取详细信息。</p></section><section class="section2 padded-anchor" id="ESRI_SECTION2_275FCCEE45564FFF889A11F35EA2F9FE" purpose="section2"><h3>安装和配置第一个门户计算机</h3><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="GUID-1AA33CEF-DAC9-485D-8898-F6CCF2BF8CD3"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_007ABE9B77E94D40A47150057B789AE4"><span purpose="cmd" id="GUID-C9CB0478-8662-4F41-AA54-28A0DE1A0F02">在第一台门户计算机上，请确保门户 5701-5703、7005、7099、7654、7120 和 7220 被您的防火墙所允许，且当前没有其他应用程序使用。高可用性部署<a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/ports-used-by-portal-for-arcgis.htm">使用这些端口</a>用于计算机间的通信和同步。</span></li><li purpose="step" id="GUID-9893C7E8-FBB5-48A5-A5F0-EEC2DF0CBA7B"><span purpose="cmd" id="GUID-4140BA33-0105-4832-8C19-BC0FB99ABAFC">在第一台计算机上安装 <span class="ph">Portal for ArcGIS</span>。<span class="ph">有关说明，请参阅<a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/installing-portal-for-arcgis.htm">安装 <span class="ph">Portal for ArcGIS</span></a>。</span></span></li><li purpose="step" id="GUID-354A79D7-398C-4F29-8EBA-D417883C9B50"><span purpose="cmd" id="GUID-D5076F74-C7ED-4308-92A1-1C65FE81B8AE"> 打开门户网站并<a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/create-a-single-machine-portal.htm">创建一个门户</a>。网站 URL 地址格式为 <span class="usertext">https://p1.domain.com:7443/arcgis/home</span>。创建门户时，需要定义<a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/about-the-initial-administrator-account.htm">初始管理员帐户</a>的信息和凭据并指定内容目录的位置。确保该内容目录位置可供两台门户计算机访问。<span class="ph">初始管理员帐户不是操作系统帐户，且与
+<span class="ph">Portal for ArcGIS</span> 帐户没有任何关联。有关 <span class="ph">Portal for ArcGIS</span> 帐户的详细信息，请参阅 <a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/the-portal-for-arcgis-account.htm"><span class="ph">Portal for ArcGIS</span> 帐户</a>。可以按照<a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/changing-the-portal-for-arcgis-account.htm">更改 <span class="ph">Portal for ArcGIS</span> 帐户</a>中的说明更改此帐户。</span></span><div class="info" purpose="info"><p id="GUID-C3E6D0F1-E827-4FCF-A124-9AB37DEFA008">要使您的门户实现高可用性，内容目录必须放置在一个高可用性文件服务器中。</p></div></li><li purpose="step" id="GUID-8EA6B880-33B3-4A52-820B-71200EE707E6"><span purpose="cmd" id="GUID-B4139274-FF1A-4FB3-9390-34B26F1C19B4"> 门户创建后，将显示一条消息，提示门户将重新启动。单击<span class="uicontrol">确定</span>。</span></li></ol></div></section></section><section class="section2 padded-anchor" id="ESRI_SECTION2_51B684E109F1414B98C09792CBB65D8D" purpose="section2"><h3>安装和配置第二个门户计算机</h3><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="GUID-8CD70565-CA9E-480A-83C2-40F208DBE6BD"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_B1900010DCA04A569929ECA7EBA80863"><span purpose="cmd" id="GUID-CEED2CF4-C3FB-4A09-84B1-49315E8A0526">在第二台门户计算机上，请确保门户 5701-5703、7005、7099、7654、7120 和 7220 被您的防火墙所允许，且当前没有其他应用程序使用。高可用性部署<a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/ports-used-by-portal-for-arcgis.htm">使用这些端口</a>用于计算机间的通信和同步。</span></li><li purpose="step" id="GUID-7D4A7084-228F-4ED5-9A9A-F0A0901B1B81"><span purpose="cmd" id="GUID-8EE88807-F0DA-47F7-97EE-F018129E5138">在第二台计算机上安装 <span class="ph">Portal for ArcGIS</span>。<span class="ph">有关说明，请参阅<a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/installing-portal-for-arcgis.htm">安装 <span class="ph">Portal for ArcGIS</span></a>。</span></span></li><li purpose="step" id="GUID-9F689514-FD4F-4FAE-928F-712D397B7D14"><span purpose="cmd" id="GUID-9B867880-B7E0-484B-8C55-9951491F91DA"> 打开门户网站并将该门户加入您在第一台计算机上创建的门户。网站 URL 地址格式为 <span class="usertext">https://p2.domain.com:7443/arcgis/home</span>。无法通过 <span class="ph">ArcGIS Web Adaptor</span> 加入门户。确保两台门户计算机均使用相同版本的 <span class="ph">Portal for ArcGIS</span>。</span><div class="substeps" id="ESRI_SUBSTEPS_58A317C25A0B4B90991C08879F6FEDA6" purpose="substeps"><ol class="list-numbered" purpose="ol"><li purpose="substep" id="ESRI_SUBSTEP_30F44A5C906C454CBF1DBEBB71DD9E82"><span purpose="cmd" id="GUID-9E822684-AA6D-498F-B145-C163087D2F54">单击<span class="uicontrol">加入现有门户</span>。</span></li><li purpose="substep" id="ESRI_SUBSTEP_5B5D41BAE76B41928AA1E058A795E1BA"><span purpose="cmd" id="GUID-D43BD560-88F0-4073-96C4-382115802C41">输入您要加入的现有门户的<span class="uicontrol">门户 URL</span>。此 URL 的格式为 <span class="usertext">https://p1.domain.com:7443</span>。</span></li><li purpose="substep" id="ESRI_SUBSTEP_CC2F0A5D2C83482DA94DF65DB5000058"><span purpose="cmd" id="GUID-481B96EB-1A15-40EF-B809-E23DC2D47C14">输入现有门户的<span class="uicontrol">管理员用户名</span>和<span class="uicontrol">管理员密码</span>。</span></li><li purpose="substep" id="ESRI_SUBSTEP_C4B61AC928F8464A88A701A2F0E03C1C"><span purpose="cmd" id="GUID-1CBF2967-D726-4A3F-B35F-545B2BFA57C1">单击<span class="uicontrol">加入</span>。</span></li></ol></div></li><li purpose="step" id="ESRI_STEP_567CCBF7C198446599CAB57E9780A377"><span purpose="cmd" id="GUID-C0F9CF98-CD4B-4E83-A5B8-1AA1E0043B86">还可以定义门户的故障转移属性。高可用性门户会检查门户计算机上是否发生了故障。您可以使用以下步骤定义检查计算机状态的时间间隔（以秒为单位）和频率。必须在门户中的每台计算机上更改这些属性，且两台计算机的属性必须相同。</span><div class="substeps" id="ESRI_SUBSTEPS_2CA14E7C1E21415799FD64EDFE895305" purpose="substeps"><ol class="list-numbered" purpose="ol"><li purpose="substep" id="ESRI_SUBSTEP_45584364B42541709EDBC144A993838F"><span purpose="cmd" id="GUID-4EDE6EDA-CF22-457C-AA35-7A068ED799A3"> <span class="ph">转至 <span class="usertext">&lt;installdir&gt;\ArcGIS\Portal\framework\etc</span>，然后打开 <span class="usertext">portal-ha-config.properties</span>。</span></span></li><li purpose="substep" id="ESRI_SUBSTEP_759A3FC571304FB9B98BF7E585A7C9D5"><span purpose="cmd" id="GUID-9DB98C6F-F49E-4D36-83B5-D0C08D04E447">编辑 <span class="usertext">portal.ha.monitor.interval</span> 属性来设置两次检查之间的时间间隔。默认值为 1 秒。</span><div class="info" purpose="info"><p id="GUID-0496D8DE-C809-4646-B6A5-2B7C9BE751F4"><div class="panel trailer-1" id="GUID-898A3405-7F7D-4890-8040-D08ADCE16C16"><h5 class="icon-ui-time-clock trailer-0">旧版本：</h5>在 10.8 之前的版本中，默认间隔为 30 秒。</div></p></div></li><li purpose="substep" id="ESRI_SUBSTEP_72F3C2FDCCD34044B3944AC6C3805DB4"><span purpose="cmd" id="GUID-6673BCF3-9226-49A1-88D8-1513AAAB5DC3">编辑 <span class="usertext">portal.ha.monitor.frequency</span> 属性来定义故障转移前进行的检查次数。默认值为三。</span><div class="info" purpose="info"><p id="GUID-9F93D8BE-8352-4BDE-BD56-857A4F691364"><div class="panel trailer-1" id="GUID-A5A9C845-5836-4AEC-9530-CA2BCD55A1EB"><h5 class="icon-ui-time-clock trailer-0">旧版本：</h5>在 10.8 之前的版本中，默认检查次数为五。</div></p></div></li><li purpose="substep" id="ESRI_SUBSTEP_1D149237B0124A3EA4D188DE7A79FDD0"><span purpose="cmd" id="GUID-A4A3BD24-8DFC-41C4-AD1A-8751AA418FEB">保存 <span class="usertext">portal-ha-config.properties</span> 文件。</span></li><li purpose="substep" id="ESRI_SUBSTEP_9D331168DC8C4975A6F8758AE851071B"><span purpose="cmd" id="GUID-35EB78E1-D76C-4C89-99F2-E38F95FCEEA6">重新启动门户以获取更改。</span></li><li purpose="substep" id="ESRI_SUBSTEP_C8A467CD92FF46EAB2085B662C66BCC3"><span purpose="cmd" id="GUID-F40B1EE5-43B6-4BA7-A48E-15333EC5CDC1">在第二台门户计算机上重复这些步骤。</span><div class="info" purpose="info"><p id="GUID-6AC169E7-8CDC-412B-824F-BE374FD5289A"><div class="panel trailer-1 note" id="GUID-8902AE8D-7599-4799-9710-4E3D2E48C0F9"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-B66CFD04-9EA5-416A-BD13-B057D9AFA5A0">在两台计算机上使用完全相同的故障属性。</p></div></p></div></li></ol></div></li></ol></div></section></section><section class="section2 padded-anchor" id="ESRI_SECTION2_58DE55E20FA54E04BC966D1792E96AD2" purpose="section2"><h3>安装并配置 <span class="ph">ArcGIS Web Adaptor</span>。</h3><p id="GUID-8A4154CE-B051-426D-A261-D3ADBA8543E1">如果要使用 Web 层身份验证，您需要安装和配置两个 <span class="ph">ArcGIS Web Adaptor</span> 实例，每台门户计算机配置一个实例。只能通过 Web 服务器端口 443 来使用 <span class="ph">ArcGIS Web Adaptor</span> 实例。不支持使用其他的端口。如果不使用 Web 层身份验证，则不需要 <span class="ph">ArcGIS Web Adaptor</span>。</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_F82A1A60F0F34A76B9B15FBE3C14BCD9"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_BAC603A9F96B4D46A9447FB15C7BC72E"><span purpose="cmd" id="GUID-3A796703-1E89-4E74-9215-D496A17EFBA4">在 Web 服务器计算机上安装 <span class="ph">ArcGIS Web Adaptor</span> 的每个实例。<span class="ph">有关说明，请参阅 <a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/web-adaptor/latest/install" href="../../../../../zh-CN/web-adaptor/latest/install/iis/install-arcgis-web-adaptor-portal.htm">IIS</a> 或 <a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/web-adaptor/latest/install" href="../../../../../zh-CN/web-adaptor/latest/install/java-windows/install-arcgis-web-adaptor-portal.htm">Java (Windows)</a> 安装主题。</span> 为实现高可用性，建议您将两个 <span class="ph">ArcGIS Web Adaptor</span> 示例安装在单独的计算机上。</span></li><li purpose="step" id="ESRI_STEP_CDCA8D2F4D7B43DAB53EAE86F0C0139D"><span purpose="cmd" id="GUID-EDD2841D-047A-4CFA-B04E-C8986A0FC8C9">为第一个门户计算机配置 Web Adaptor。指定<span class="uicontrol">门户 URL</span> 时，输入其中一台门户计算机的 URL，例如 <span class="usertext">https://p1.domain.com:7443</span>。<span class="ph">有关详细说明，请参阅 <a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/web-adaptor/latest/install" href="../../../../../zh-CN/web-adaptor/latest/install/iis/configure-arcgis-web-adaptor-portal.htm">IIS</a> 或 <a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/web-adaptor/latest/install" href="../../../../../zh-CN/web-adaptor/latest/install/java-windows/configure-arcgis-web-adaptor-portal.htm">Java (Windows)</a> 的配置主题。</span></span></li><li purpose="step" id="ESRI_STEP_EB098CC388FD4C6A89B9E9F5B647D6CD"><span purpose="cmd" id="GUID-2E476C37-123B-435A-88CF-54A8EDAC62F2">通过门户配置 <span class="ph">ArcGIS Web Adaptor</span>。指定<span class="uicontrol">门户 URL</span> 时，输入其中一台门户计算机的 URL，例如 <span class="usertext">https://p1.domain.com:7443</span>。<span class="ph">有关说明，请参阅 <a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/web-adaptor/latest/install" href="../../../../../zh-CN/web-adaptor/latest/install/iis/configure-arcgis-web-adaptor-portal.htm">IIS</a> 或 <a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/web-adaptor/latest/install" href="../../../../../zh-CN/web-adaptor/latest/install/java-windows/configure-arcgis-web-adaptor-portal.htm">Java (Windows)</a> 配置主题。</span></span></li></ol></div></section><div class="panel trailer-1 note" id="GUID-C1CF4F68-ABCC-41C5-94FC-387184981845"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-F9365FCB-A2D6-4DE2-9FEF-2351A2995729">无法通过 <span class="ph">ArcGIS Web Adaptor</span> 创建和加入门户。使用 <span class="usertext">https://portal.domain.com:7443</span> 格式的门户网站 URL 创建并加入门户。</p></div></section><section class="section2 padded-anchor" id="ESRI_SECTION2_7C8FCA9F8F704A28A0D07582DA0D8E42" purpose="section2"><h3>配置负载均衡器</h3><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><section class="context padded-anchor" id="ESRI_CONTEXT_F27C14C295CE42E787081745619C0C06" purpose="context"><p id="GUID-2DA2264E-40DA-4EC1-BD88-C7E08BFEDFA5">您需要为高可用性门户配置至少一个负载均衡器，以处理外部流量。如果您要为门户设置 web 层身份验证，建议您配置另外一个负载均衡器，以处理内部流量，例如管理 API 请求。您可以在任一位置使用 <span class="ph">ArcGIS Web Adaptor</span> 或第三方负载均衡器。</p><p id="GUID-9E7BDF06-996F-4B78-B966-08DBD1C49D67">以下步骤描述了设置第一个负载均衡器以处理外部流量的方法：</p></section><div class="steps" id="GUID-7058B1EC-92AB-4B45-A19A-2761ADEDE77A"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_E899EAC2E2DE4B21B28EDCB9F89F841B"><span purpose="cmd" id="GUID-E65F3B5D-18F5-40AB-B027-41AD4C670FD2">如果您使用 <span class="ph">ArcGIS Web Adaptor</span>，请将负载均衡器上下文名称设置为与 <span class="ph">ArcGIS Web Adaptor</span> <span class="usertext">WebContextURL</span> 相同。如果您没有使用 <span class="ph">ArcGIS Web Adaptor</span>，请提供一个负载均衡器上下文名称，并配置负载均衡器来使用该名称。</span></li><li purpose="step" id="GUID-3924883E-3275-481D-8443-C85E27225D81"><span purpose="cmd" id="GUID-A0048F8A-3C41-452A-8556-D18FD471251E">在负载均衡器上配置 HTTPS。由于 <span class="ph">Portal for ArcGIS</span> 需要使用 HTTPS 进行通信，因此此操作是必要的。有关如何设置 HTTPS 的信息，请参阅负载均衡器的产品文档。</span></li><li purpose="step" id="GUID-F54D294A-8A30-481B-9E3B-65FB273A1AEE"><span purpose="cmd" id="GUID-0EF3F26B-1770-4131-A211-A74C09FD80FE">配置负载均衡器以将请求分配至两个门户计算机（<span class="usertext">p1.domain.com</span> 和 <span class="usertext">p2.domain.com</span>）。如果适合您的部署的情况，也可以配置另外一个负载均衡器以实现服务器和门户之间通信的高可用性。</span><ul purpose="choices" id="ESRI_CHOICES_B8DC5947F446438C83634C9595370CA8"><li purpose="choice" id="ESRI_CHOICE_EDDDC69E44DF4C08B9687FDB45C2E55D">在加载配置中，设置 <span class="usertext">X-Forwarded-Host</span> 标题。<span class="ph">Portal for ArcGIS</span> 应在负载均衡器发送的标题中设置此属性，并将返回与负载均衡器的 URL 匹配的负载均衡器请求。例如，对 <span class="ph">Portal for ArcGIS</span> REST 端点 (<span class="usertext">https://lb.domain.com/arcgis/sharing/rest</span>) 的请求将向客户端返回相同的 URL。如果未设置此属性，<span class="ph">Portal for ArcGIS</span> 可能会返回请求已定向的内部计算机的 URL（例如 <span class="usertext">https://p1.domain.com/arcgis/sharing/rest</span>，而不是 <span class="usertext">https://lb.domain.com/arcgis/sharing/rest</span>）。这会带来问题，因为客户端将无法访问 URL（通常称为浏览器 404 错误）。而且，客户端将有权访问有关内部计算机的一些信息。</li><li purpose="choice" id="ESRI_CHOICE_6065AFA896DB430A96639291FDBB94E8">如果不使用 Web 层身份验证，则配置负载均衡器将请求分配至端口 7443 (HTTPS)。默认情况下，<span class="ph">Portal for ArcGIS</span> 使用此端口进行通信；您需要将此端口包括在配置中。例如，在 Apache 上，端口在 <span class="usertext">httpd.conf</span> 和 <span class="usertext">httpd-ssl.conf</span> 配置文件中指定。有关详细信息，请参阅 <a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/ports-used-by-portal-for-arcgis.htm"><span class="ph">Portal for ArcGIS</span> 使用的端口</a>。</li><li purpose="choice" id="ESRI_CHOICE_9DE076AFBC7348E5A5E2F133B91898C4">如果使用 Web 层身份验证，则配置负载均衡器将请求分配至端口 443 (HTTPS)。您只能将 <span class="ph">ArcGIS Web Adaptor</span> 用于此端口。更新健康检查 URL，以获得 <span class="ph">ArcGIS Web Adaptor</span> 的 401 响应而非 200 响应。</li></ul></li><li purpose="step" id="ESRI_STEP_2EAFE24A34AF4C39B0E891B8EFD5756F"><span purpose="cmd" id="GUID-517C9D4A-573C-4AAF-95D2-0D4CFD8B40E1">设置负载均衡器上下文名称（<span class="usertext">WebContextURL</span> 属性）。</span><div class="substeps" id="ESRI_SUBSTEPS_F52CC19D080440029BF065DB412BE532" purpose="substeps"><ol class="list-numbered" purpose="ol"><li purpose="substep" id="ESRI_SUBSTEP_CEF530A8C2A74BAFBC2DD987FD74D058"><span purpose="cmd" id="GUID-40B55229-DF6C-43B7-B69C-1A595FEBD94A">打开 Web 浏览器并以组织管理员的身份登录到 ArcGIS Portal Directory。ArcGIS Portal Directory URL 格式为 <span class="usertext">https://portal.domain.com:7443/arcgis/portaladmin</span>。</span></li><li purpose="substep" id="ESRI_SUBSTEP_786E0238F56649B8961B68CE6230B24F"><span purpose="cmd" id="GUID-A79140EC-6B8E-440A-9912-938BE453D426">单击<span class="uicontrol">系统 <span class="greaterthan">&gt;</span> 属性 <span class="greaterthan">&gt;</span> 更新属性</span>。</span></li><li purpose="substep" id="ESRI_SUBSTEP_4EAEB72FD8934C9EBFADC00433B6A3FA"><span purpose="cmd" id="GUID-9254C287-14A7-49B1-84CE-FF88E5AA0FF3">在<span class="uicontrol">更新系统属性</span>对话框中，插入以下 JSON，以替换您自己的负载均衡器 URL：</span><div class="info" purpose="info"><section class="codeblock padded-anchor" purpose="codeblock"><div class="codeblockbody"><pre><code class="other no-highlight">{
+   &quot;WebContextURL&quot;: &quot;https://lb.domain.com/arcgis&quot;
+}</code></pre></div></section></div></li><li purpose="substep" id="ESRI_SUBSTEP_468FBC3FA11A426D8908CC4E43354628"><span purpose="cmd" id="GUID-BCDEF3F2-0870-4C0F-806B-BF40BD4EC565">单击<span class="uicontrol">更新属性</span>。</span></li></ol></div></li><li purpose="step" id="ESRI_STEP_3CC88F9E380B4C95BA9282AF6FE75165"><span purpose="cmd" id="GUID-B1A67714-DD55-40E6-AA3C-15924F95E269">设置 <span class="usertext">privatePortalURL</span> 属性。</span><div class="substeps" id="ESRI_SUBSTEPS_7F89366178BC4366B1AE601E2A101415" purpose="substeps"><ol class="list-numbered" purpose="ol"><li purpose="substep" id="ESRI_SUBSTEP_E15D29434F524B509D64D64F5840E0D4"><span purpose="cmd" id="GUID-67EFA94C-A037-48D8-A867-1B89B025C43C">打开 Web 浏览器并以门户组织中默认管理员角色成员的身份登录到 ArcGIS Portal Directory。ArcGIS Portal Directory URL 格式为 <span class="usertext">https://portal.domain.com:7443/arcgis/portaladmin</span>。</span></li><li purpose="substep" id="ESRI_SUBSTEP_6B8507B7D25A4F7F8EAE01310B6B3B5C"><span purpose="cmd" id="GUID-0B4843F4-CF04-49EC-AFB8-388E7B226DF4">单击<span class="uicontrol">系统 <span class="greaterthan">&gt;</span> 属性 <span class="greaterthan">&gt;</span> 更新属性</span>。</span></li><li purpose="substep" id="ESRI_SUBSTEP_661B448ECCD44A0A8B30322A77344586"><span purpose="cmd" id="GUID-24B3A38D-7773-41AD-8B03-D01D0932422D">在<span class="uicontrol">更新系统属性</span>对话框中，插入以下 JSON，以替换您自己的负载均衡器 URL：</span><div class="info" purpose="info"><section class="codeblock padded-anchor" purpose="codeblock"><div class="codeblockbody"><pre><code class="other no-highlight">{
+   &quot;privatePortalURL&quot;: &quot;https://lbprivate.domain.com:7443/arcgis&quot;
+}</code></pre></div></section><div class="panel trailer-1 note" id="GUID-2A389D85-23BB-429A-B29F-2A150C364DF1"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-E6B95587-FFA0-45B1-B10E-EC130F943D50">请勿设置该 URL 的 <span class="usertext">X-Forwarded-Host</span> 标题。</p></div></div></li><li purpose="substep" id="ESRI_SUBSTEP_E451B4C19FD14164B41A117DB1FA7844"><span purpose="cmd" id="GUID-E3E280D4-6A7C-401F-ACDB-5BE9D665AC06">单击<span class="uicontrol">更新属性</span>。</span></li></ol></div></li><li purpose="step" id="ESRI_STEP_CD19B2D43D864E7FA7D4A0E27F105263"><span purpose="cmd">配置负载均衡器以使用<a target="_blank" class="xref xref" href="https://developers.arcgis.com/rest/enterprise-administration/portal/health-check-portal.htm">健康检查 URL</a>。这可确保负载均衡器对每台门户计算机进行检查以检测其是否可用。</span></li></ol></div></section></section><section class="section2 padded-anchor" id="ESRI_SECTION2_631486D5D58B481389603817D050C030" purpose="section2"><h3>配置 IIS 中的 Web 层身份验证</h3><p id="GUID-A1C9E649-C53A-4F8C-858D-E5BCA6AB4A38">如果您要在负载均衡器后面安装两个 Web Adaptor (IIS)，您需要在 IIS 中执行额外的配置步骤，确保 Web 层身份验证在高可用性门户部署下正常运行。有关 Web 层身份验证的更多信息，请参阅<a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/use-integrated-windows-authentication-with-your-portal.htm">在门户中使用集成的 Windows 身份验证</a>。</p><p id="GUID-FEC3DD23-0C2E-4B65-BCDE-874C99BE430E">有关说明，请参阅 Esri 支持网站的<a target="_blank" class="xref xref" href="http://links.esri.com/PortalHAKBIWA">技术文章 000012357</a>。</p><p id="GUID-AB9CBBA3-350B-4602-A832-C7F9965D3F86">如果您在负载均衡器后面没有配置两个 Web Adaptor (IIS)，请跳过此步骤。</p></section><section class="section2 padded-anchor" id="ESRI_SECTION2_77043210CC984A6999D5CA27AF54F948" purpose="section2"><h3>配置门户的托管服务器</h3><p id="GUID-E58087B2-ADAD-4CBB-900C-5EAA9A9E457A"><span class="ph">Portal for ArcGIS</span> 需要托管服务器允许成员执行一些任务，例如在门户网站发布托管 web 图层和将文件添加到 <span class="ph">Map Viewer</span>。一个门户可以有一个托管服务器。</p><p id="GUID-1BA547E2-039E-43F0-B867-EE1DA839E4D7">设置第二个负载均衡器来使托管服务器和门户间的通信具有高可用性并将 <span class="ph">GIS Server</span> 站点设置为门户托管服务器。</p><p id="GUID-B08FCF3B-5C3D-4226-B244-A0EEFF043B89">查看<a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/ha-scenarios-web-gis.htm">高可用性 <span class="ph">ArcGIS Enterprise</span> 的部署方案</a>以了解负载均衡器的不同配置。</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_F7484711BB2844DFB147AA9657172446"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_68CCC4C51D9D448FAACAF42A455746E3"><span purpose="cmd" id="GUID-612D9578-5397-49FD-B625-B02E6402A51A">如果设置第二个负载均衡器，则会将请求直接发送至两台门户计算机上的端口 7443。请确保负载均衡器配置为可识别 URL 中使用的上下文。此外，可配置 URL 将请求发送到服务器计算机</span><div class="info" purpose="info"><p id="GUID-B9E44411-7BC3-4AF3-87A2-1439F6212351">在步骤 5 中的示例中，该上下文设置为 <span class="usertext">arcgis</span>，因此负载均衡器上下文名称必须是 <span class="usertext">arcgis</span>；例如 <span class="usertext">https://lbprivate.domain.com:7443/arcgis</span>。</p></div></li><li purpose="step" id="ESRI_STEP_F503E102FE41440E99DB504CD83E4B74"><span purpose="cmd" id="GUID-85FF5A44-E192-4666-80F4-BB7266FB5312"><a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/federate-an-arcgis-server-site-with-your-portal.htm">将 <span class="ph">ArcGIS Server</span> 站点与高可用性门户联合</a>。</span></li><li purpose="step" id="ESRI_STEP_42165DD0DAD140DFAEFAF59445AE3839"><span purpose="cmd" id="GUID-C2E48B49-6D11-40E5-86BC-1E9D0E8E29E2"><a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/configure-hosting-server-for-portal.htm">将服务器配置为门户的托管服务器</a></span></li></ol></div></section></section><section class="section2 padded-anchor" id="ESRI_SECTION2_8734E32A557A49B18BC8807C8E000F37" purpose="section2"><h3>联合其他 <span class="ph">ArcGIS Server</span> 站点</h3><p id="GUID-4480EC65-7352-4CD2-87B1-ACB184573182" ishcondition="srv_os=windows">您可以选择<a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/federate-an-arcgis-server-site-with-your-portal.htm">联合</a>其他 <span class="ph">GIS Server</span> 站点与门户，或联合其他 <span class="ph">ArcGIS Server</span> 站点，例如 <span class="ph">ArcGIS GeoAnalytics Server</span>、<span class="ph">ArcGIS GeoEvent Server</span> 和 <span class="ph">ArcGIS Image Server</span>。这些其他站点可以使用第二个负载均衡器来与门户通信。</p></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_63C3F7683D89411187470BEB75A38FB9" purpose="section1"><h2>升级高可用性门户</h2><p id="GUID-8AF01111-D9FF-40CD-9878-1423334BEE73">请按照以下部分中的步骤来将高可用性门户升级至 <span class="ph">10.8</span>。首先，您将在两台门户计算机上安装 <span class="ph">10.8</span> 软件，然后在任意一台计算机上启动升级过程。</p><div class="panel trailer-1 note" id="GUID-EA68B74B-6193-429E-AD9B-149C63055DE2"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-558F37B1-F3F5-48DD-944B-979F905BF5E3">高可用性门户的升级过程已在 10.7 中进行简化。</p></div><section class="section2 padded-anchor" id="ESRI_SECTION2_25844D0D244C40ABBA0E4701AF46872C" purpose="section2"><h3>在两台计算机上安装 <span class="ph">Portal for ArcGIS</span></h3><p id="GUID-177655AC-A773-410E-BFA4-9260E102FC7C">要开始高可用性门户的升级，请在两台门户计算机上<span class="ph"><a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/installing-portal-for-arcgis.htm">安装 <span class="ph">Portal for ArcGIS</span></a></span> <span class="ph">10.8</span>。您可以同时在两台计算机上运行升级过程。</p></section><section class="section2 padded-anchor" id="ESRI_SECTION2_7AC79376DEC44E039A6751D44EC8AC2C" purpose="section2"><h3>继续门户升级</h3><p id="GUID-8D5C22BC-F4B6-4117-BF09-4CA111792F9E">在两台计算机上完成 <span class="ph">Portal for ArcGIS</span> <span class="ph">10.8</span> 的安装后，继续进行升级。完成此操作将需要花费几分钟的时间。</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_5C3AB0F658C64C03A4F7049AB21EAF92"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_FE6339E1293242DABC17712C79CBCC57"><span purpose="cmd" id="GUID-AE30C8E4-508D-44FE-9B4D-5297E195EBC0"> 在任何一台门户计算机上打开门户网站，提供当前许可文件的路径，然后选择<span class="uicontrol">继续门户升级</span>。门户网站的 URL 格式为 <span class="usertext">https://portal.domain.com:7443/arcgis/home</span>。</span></li><li purpose="step" id="ESRI_STEP_F6BF11353FC3408B9538C4823D043FDE"><span purpose="cmd" id="GUID-7D8680FE-7B33-4845-A190-DE313EF5EF4E"> 升级完成后，将显示一条消息，提示门户将重新启动。单击<span class="uicontrol">确定</span>。</span></li></ol></div></section></section><section class="section2 padded-anchor" id="ESRI_SECTION2_AA2D8D7826774AE696C24BD6A5B1D139" purpose="section2"><h3>升级 <span class="ph">ArcGIS Living Atlas of the World</span></h3><p id="GUID-26B0D8A1-1314-4AB5-BB28-21C91FE046C6">升级高可用性门户时的最后一步是升级您的 <span class="ph">ArcGIS Living Atlas of the World</span> 内容。</p><p id="GUID-404FEE58-1AA0-479F-A3B8-5706A642F32D">以管理员身份登录后，请转至<span class="uicontrol">组织 <span class="greaterthan">&gt;</span> 设置 <span class="greaterthan">&gt;</span> ArcGIS Online</span>。在<span class="uicontrol">配置 Living Atlas 内容</span>部分中，单击<span class="uicontrol">升级内容</span>。在门户完成对 ArcGIS Online 内容的升级前，请勿关闭 ArcGIS Online 页面。</p><p id="GUID-70DB02D2-A64A-4CD6-980C-FFECE523D117">单击<span class="uicontrol">保存</span>返回到<span class="uicontrol">组织</span>页面。如果您的门户没有配置访问 <span class="ph">Living Atlas</span> 内容，则无需进行此步骤。</p></section><section class="section2 padded-anchor" id="ESRI_SECTION2_13F5CA0923EE4890A79DEBD1F823D3B7" purpose="section2"><h3>替换根证书</h3><p id="GUID-876E87F8-10C7-44A4-8947-42613749A7AB">如果从 <span class="ph">Portal for ArcGIS</span> 10.3 或 10.3.1 进行升级，并且您的门户被配置为信任主要门户计算机和次要门户计算机之间的证书，那么您必须在升级后向主要门户计算机和次要门户计算机再次<a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/configuring-the-portal-to-trust-certificates-from-your-certifying-authority.htm">导入证书</a>。</p><p id="GUID-490258DD-E137-4FAA-AA4C-B2B77EE82256">如果从 <span class="ph">Portal for ArcGIS</span> 10.4、10.4.1 或 10.5 进行升级，并且您的门户被配置为信任主要门户计算机和次要门户计算机之间的证书，那么您必须在升级后向次要计算机再次<a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/configuring-the-portal-to-trust-certificates-from-your-certifying-authority.htm">导入证书</a>。</p></section><section class="section2 padded-anchor" id="ESRI_SECTION2_7A9DAE99E7004330A34421692739A685" purpose="section2"><h3>安装和配置 Web Adaptor</h3><p id="GUID-4857DA2A-1E5F-43B2-88B2-93635F098865">如果使用 <span class="ph">ArcGIS Web Adaptor</span>，请按以下步骤为门户安装和配置新的 Web Adaptor。</p><div class="panel trailer-1 note" id="GUID-E246EC32-0762-4270-9447-6C3445C4B06C"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-E0F8525F-20C3-4ABB-A818-65F5DB7D8E26">如果要从 10.3 或 10.3.1 版本进行升级，并且已在高可用性门户前使用了负载均衡器，请将已配置的 Web Adaptor 取消注册到门户，然后更新系统属性以添加指向负载均衡器 URL 的 <span class="usertext">WebContextURL</span> 属性。</p></div><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_60BEC5284D8C46C9B4659F6C0F5F3C05"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_CAD2DA27AAB5470CB3C0D81F9DCFCF0A"><span purpose="cmd" id="GUID-8ABDC0B2-15C3-4BF6-A5E6-035BD6E65245">在 Web 服务器计算机上安装 <span class="ph">ArcGIS Web Adaptor</span> <span class="ph">10.8</span>。<span class="ph">有关说明，请参阅 <a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/web-adaptor/latest/install" href="../../../../../zh-CN/web-adaptor/latest/install/iis/install-arcgis-web-adaptor-portal.htm">IIS</a> 或 <a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/web-adaptor/latest/install" href="../../../../../zh-CN/web-adaptor/latest/install/java-windows/install-arcgis-web-adaptor-portal.htm">Java (Windows)</a> 安装主题。</span></span></li><li purpose="step" id="ESRI_STEP_58EE28D4FAF74A969A1D7F156EFC4B33"><span purpose="cmd" id="GUID-3E6E6DA6-C9C5-4347-A306-F70833121AA5">为门户配置 Web Adaptor。指定<span class="uicontrol">门户 URL</span> 时，输入其中一台门户计算机的 URL，例如 <span class="usertext">https://p1.domain.com:7443</span>。该 URL 将用于在高可用性配置中查找这两台计算机，并将 <span class="ph">ArcGIS Web Adaptor</span> 注册到这些计算机中。<span class="ph">有关说明，请参阅 <a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/web-adaptor/latest/install" href="../../../../../zh-CN/web-adaptor/latest/install/iis/configure-arcgis-web-adaptor-portal.htm">IIS</a> 或 <a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/web-adaptor/latest/install" href="../../../../../zh-CN/web-adaptor/latest/install/java-windows/configure-arcgis-web-adaptor-portal.htm">Java (Windows)</a> 配置主题。</span></span></li><li purpose="step" id="ESRI_STEP_16955ABA714846D084CAB8D549ACC96D"><span purpose="cmd" id="GUID-DFB6B9D2-6832-4C8B-B826-E61DF6DABB98">安装第二个 <span class="ph">ArcGIS Web Adaptor</span> 并通过您的门户对其进行配置，如前两个步骤所示。</span></li></ol></div></section></section><section class="section2 padded-anchor" id="ESRI_SECTION2_7ED0E94B0D2D41BDB12D5291E161FA22" purpose="section2"><h3>升级其余 ArcGIS 组件</h3><p id="GUID-40B2152F-515C-451E-AC8F-B9990C69B88F">将您部署中的其余 ArcGIS 组件升级至 <span class="ph">10.8</span>。</p><ul purpose="ul" id="UL_706E12727B9D4AF5AB1F50CBE0977D8D"><li purpose="li" id="LI_A35E4495A59E451A932881B2B697F2E9" ishcondition="srv_os=windows"><a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/server/latest/install" href="../../../../../zh-CN/server/latest/install/windows/upgrade-arcgis-server.htm"><span class="ph">ArcGIS Server</span></a>（运行 <span class="ph">10.8</span> 安装程序进行升级）</li><li purpose="li" id="LI_AD2CD96E81474800B8B95C731F4BEFD3"><a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/upgrade-data-store.htm"><span class="ph">ArcGIS Data Store</span></a>（运行 <span class="ph">10.8</span> 安装程序进行升级）</li></ul><div class="panel trailer-1" id="GUID-9DB0C03C-F221-45E1-BC25-6FD1B90AE18A"><h5 class="icon-ui-description trailer-0">提示：</h5><p id="GUID-9659D524-0AD1-4F48-8285-054B65357281"><a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/upgrade-portal-for-arcgis.htm">升级 <span class="ph">Portal for ArcGIS</span></a> 概述了将部署升级至 <span class="ph">10.8</span> 时的其他注意事项。</p></div></section></section>
+			
+				<hr>
+				<!--googleoff: all-->
+				
+	
+        
+		    <p class="feedback right">
+		        <a id="afb" class="icon-ui-contact" href="/feedback/" data-langlabel="feedback-on-this-topic" >有关此主题的反馈?</a>
+		    </p>
+        
+	
+
+				<!--googleon: all-->
+			
+		</main>
+	</div>
+	
+	<!--googleoff: all-->
+	
+		
+			<div id="main-toc-large" class="column-5">
+			    <div class="panel font-size--2 tablet-hide trailer-1">
+			      <h5 class="trailer-half">在本主题中</h5>
+			      <ol class="list-plain pre-0 trailer-0"><li><a href="#ESRI_SECTION1_56A6B398CCE44747BDA017980D96B555">规划高可用性部署</a></li><li><a href="#ESRI_SECTION1_E9E60E7F010F42ECA1DBCC610C7D0EE3">配置高可用性门户的先决条件</a></li><li><a href="#ESRI_SECTION1_6F6B723AFFE5411BA5E246AF479FEEC1">配置门户</a></li><li><a href="#ESRI_SECTION1_63C3F7683D89411187470BEB75A38FB9">升级高可用性门户</a></li></ol>
+			    </div>
+			    
+			    
+	  		</div>
+		
+    
+   <!--googleon: all-->
+
+
+
+
+          
+        </div>
+        <!-- ENDPAGECONTENT -->
+
+      </div>
+
+    </div>  <!-- End of wrapper -->
+
+  <footer class="footer leader-3 link-dark-gray" role="contentinfo">
+    <div class="grid-container">
+      <div class="row">
+        <nav class="column-6">
+          <h6 data-langlabel="arcgis-for-server">Arc<span>GIS Enterprise</span></h6>
+          <ul class="list-plain">
+            <li><a data-langlabel="home" href="../../../../../zh-CN/">主页</a></li>
+            <li><a data-langlabel="portal" href="../../../../../zh-CN/portal/">Portal</a></li>
+            <li><a data-langlabel="server" href="../../../../../zh-CN/server/">Server</a></li>
+            <li><a data-langlabel="data-store" href="../../../../../zh-CN/data-store/">Data Stores</a></li>
+            <li><a data-langlabel="cloud" href="../../../../../zh-CN/cloud/">云</a></li>
+            <li><a data-langlabel="apps" href="../../../../../zh-CN/apps/">应用程序</a></li>
+            <li><a data-langlabel="documentation" href="../../../../../zh-CN/documentation/">文档</a></li>
+          </ul>
+        </nav>
+
+        
+  <nav class="column-6">
+    <h6 data-langlabel="arcgis-platform">ArcGIS 平台</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="arcgis" href="//www.arcgis.com/">ArcGIS Online</a></li>
+      <li><a data-langlabel="arcgis-for-professionals" href="//pro.arcgis.com/">ArcGIS Pro</a></li>
+      <li><a data-langlabel="arcgis-for-server" href="//enterprise.arcgis.com/">ArcGIS Enterprise</a></li>
+      <li><a data-langlabel="arcgis-for-developers" href="https://developers.arcgis.com/">ArcGIS for Developers</a></li>
+      <li><a data-langlabel="arcgis-solutions" href="//solutions.arcgis.com/">ArcGIS Solutions</a></li>
+      <li><a data-langlabel="arcgis-marketplace" href="//marketplace.arcgis.com/">ArcGIS Marketplace</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <h6 data-langlabel="about-esri">关于 Esri</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="about-us" href="//www.esri.com/about-esri/">关于我们</a></li>
+      <li><a data-langlabel="careers" href="//www.esri.com/careers/">招贤纳士</a></li>
+      <li><a data-langlabel="insiders-blog" href="https://www.esri.com/about/newsroom/blog/">Esri 博客</a></li>
+      <li><a data-langlabel="user-conference" href="//www.esri.com/events/user-conference/index.html">用户大会</a></li>
+      <li><a data-langlabel="developer-summit" href="//www.esri.com/events/devsummit/index.html">开发者峰会</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <a class="esri-logo" href="//www.esri.com/" aria-label="Esri Home"></a>
+    <section class="footer-social-nav leader-1">
+            <a class="icon-social-twitter" aria-label="Esri on Twitter" href="https://twitter.com/Esri/"></a>
+            <a class="icon-social-facebook" aria-label="Esri on Facebook" href="https://www.facebook.com/esrigis/"></a>
+            <a class="icon-social-github" aria-label="Esri on GitHub" href="//esri.github.io/"></a>
+            <a class="icon-social-contact" aria-label="Contact Esri" href="//www.esri.com/about-esri/contact/"></a>
+    </section>
+	  
+  </nav>
+  
+  <div class="column-24 leader-1">
+    <p class="font-size--3"><a href="http://www.esri.com/legal/copyright-trademarks">Copyright &copy; 2019 Esri.</a> All rights reserved. | <a href="http://www.esri.com/legal/privacy/">隐私政策</a> | <a href="http://www.esri.com/legal/software-license">法律声明</a></p>
+  </div>
+  
+
+
+      </div>
+    </div>
+  </footer>
+  <!--googleoff: all-->
+
+  
+  
+	<script src="../../../../../zh-CN/assets/js/init.js" type="text/javascript"></script>
+	<!--<script src="../../../../../zh-CN/assets/js/drop-down.js" type="text/javascript"></script>-->
+	<script src="../../../../../zh-CN/assets/js/search/searchform.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/cdn/js/link-modifier.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/cdn/js/sitewide.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/cdn/js/libs/highlight.pack.js" type="text/javascript"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+
+
+  
+    
+
+  <script src="../../../../../zh-CN/cdn/js/affix.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    $(function () {
+          var appendFlg = true;
+
+          $("#bigmac")
+          .on("affixed.bs.affix", function (evt) {
+            if (appendFlg) {
+              $("<a class='crumb' href='#'>配置高可用性门户</a>").insertAfter ($("#bigmac nav a").last());
+              appendFlg = false;
+            }
+          })
+          .on ("affix-top.bs.affix", function(evt) {
+            if (!appendFlg) {
+              $("#bigmac nav a").last().remove();
+            }
+            appendFlg = true;
+          })
+    })
+  </script>
+  
+        <script type="text/javascript">
+          window.doctoc = {
+            pubID: "555",
+            tpcID: "122",
+            
+              prefix: "管理",
+              prefixUrl: "/zh-cn/portal/latest/administer/windows/",
+          
+            hideToc: false
+          }
+        </script>
+
+        <script type="text/javascript" src="../../../../../zh-CN/portal/latest/administer/windows/555.js" ></script>
+        <script type="text/javascript" src="../../../../../zh-CN/cdn/calcite/js/protoc.js" ></script>
+        
+        
+
+  <noscript>
+        <p>
+            <a href="flisting.htm">flist</a>
+        </p>
+    </noscript>
+    <script type="text/javascript"></script>
+  
+  
+    
+    
+
+  </body>
+</html>

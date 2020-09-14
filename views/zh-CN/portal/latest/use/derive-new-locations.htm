@@ -1,0 +1,549 @@
+
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>  <html class="ie lt-ie9 lt-ie8 lt-ie7 ie6" dir="ltr"> <![endif]-->
+<!--[if IE 7]>     <html class="ie lt-ie9 lt-ie8 ie7" dir="ltr"> <![endif]-->
+<!--[if IE 8]>     <html class="ie lt-ie9 ie8" dir="ltr"> <![endif]-->
+<!--[if IE 9]>     <html class="ie ie9" dir="ltr"> <![endif]-->
+<!--[if !IE]><!--> <html dir="ltr" lang="zh-CN"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>派生新位置&mdash;Portal for ArcGIS | ArcGIS Enterprise 文档</title>
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+    <script>
+      var docConfig = {
+        locale: 'zh-CN'
+        ,localedir: 'zh-cn'
+        ,langSelector: ''
+        
+        ,relativeUrl: false
+        
+
+        ,searchformUrl: '/search/'
+        ,tertiaryNavIndex: ''
+
+        
+      };
+    </script>
+	 
+
+
+    
+    <!--[if lt IE 9]>
+      <script src="../../../../zh-CN/cdn/js/libs/html5shiv.js" type="text/javascript"></script>
+      <script src="../../../../zh-CN/cdn/js/libs/selectivizr-min.js" type="text/javascript"></script>
+      <script src="../../../../zh-CN/cdn/js/libs/json2.js" type="text/javascript"></script>
+      <script src="../../../../zh-CN/cdn/js/libs/html5shiv-printshiv.js" type="text/javascript" >
+
+    <![endif]-->
+
+     <!--[if lt IE 11]>
+    <script>
+      $$(document).ready(function(){
+        $$(".hideOnIE").hide();
+      });
+    </script>
+    <![endif]-->
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<link href="../../../../zh-CN/assets/img/favicon.ico" rel="shortcut icon" >
+	<link href="../../../../zh-CN/assets/css/screen.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/cdn/calcite/css/documentation.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/assets/css/print.css" media="print" type="text/css" rel="stylesheet" />
+
+	<!--
+	<link href="../../../../zh-CN/assets/css/screen_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/assets/css/documentation/base_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/assets/css/print_l10n.css" media="print" type="text/css" rel="stylesheet" />
+	-->
+	
+	
+		<script src="../../../../zh-CN/cdn/js/libs/jquery.1.9.1.min.js" type="text/javascript"></script>
+	
+	<script src="../../../../zh-CN/cdn/js/libs/jquery.cookie.js" type="text/javascript"></script>
+	<link href="../../../../zh-CN/cdn/css/colorbox.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/cdn/css/colorbox_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<script src="../../../../zh-CN/cdn/js/libs/jquery.colorbox-min.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/assets/js/video-init.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/assets/js/sitecfg.js" type="text/javascript"></script>
+	
+		<script src="../../../../zh-CN/assets/js/signIn.js" type="text/javascript"></script>
+	
+
+	<!--- Language Picker -->
+	<script src="../../../../zh-CN/assets/js/locale/l10NStrings.js" type="text/javascript"></script>
+	
+		 
+	
+
+	<script src="../../../../zh-CN/assets/js/calcite-web.js" type="text/javascript"></script>
+
+
+
+  <!--- search MD -->
+    <META name="description" content="使用一个或多个查询来创建新要素的分析工具。"><META name="last-modified" content="2019-12-6"><META name="product" content="arcgis-portal-windows,arcgis-portal-linux,arcgis-enterprise-windows,arcgis-enterprise-linux"><META name="sub_category" content="Portal for ArcGIS"><META name="search-collection" content="help"><META name="content_type_label" content="帮助主题"><META name="sub_category_label" content="Portal for ArcGIS"><META name="search-category" content="help-general"><META name="subject_label" content="PORTAL,服务,SERVER"><META name="version" content="10.8"><META name="content_type" content="Help Topic"><META name="subject" content="PORTAL,SERVICES,SERVER"><META name="content-language" content="zh-cn">
+    <!--- search MD -->
+
+  
+  <script src="../../../../zh-CN/assets/js/switchers/portal-1.js" type="text/javascript"></script>
+  
+      
+
+</head>
+
+<!--
+      pub: GUID-7B47163B-CE1B-465F-BEEE-4DADDB8DFF09=37
+      tpc: GUID-3E6E3813-4670-4483-A9E7-72C6B096E52F=8
+      -->
+
+
+<!-- variable declaration, if any -->
+<!-- can change following macro to set variable once we are on Jinja 2.8 -->
+
+
+
+
+
+<body class="claro zh-CN server">
+  
+
+  <!-- Drawer location -->
+  <div class="drawer drawer-left js-drawer" data-drawer="top-nav">
+        <nav class="drawer-nav" role="navigation">
+          <aside class="side-nav">
+            <h2 class="side-nav-title">Arc<span>GIS</span> Enterprise</h2>
+            <form id="helpSearchForm" class="margin-left-half margin-right-half leader-half trailer-half drawer-search-form" method="GET">
+              <input type="search" name="q"  placeholder="搜索 ArcGIS Enterprise 帮助">
+              <input type="hidden" name="collection" value="help" />
+              <input type="hidden" name="product" value="arcgis-portal-windows" />
+              <input type="hidden" name="version" value="10.8" />
+              <input type="hidden" name="language" value="zh-CN" />
+            </form>    
+             <a id="nav-portal" data-langlabel="portal" href="../../../../zh-CN/portal/" class="side-nav-link">Portal</a>
+             
+            <a id="all-servers" data-langlabel="all-servers" href="../../../../zh-CN/server/" class="side-nav-link">所有服务器</a>
+            <a id="gis-server" data-langlabel="gis-server" href="../../../../zh-CN/server/" class="side-nav-link">GIS Server</a>
+            <a id="image-server" data-langlabel="image-server" href="../../../../zh-CN/image/" class="side-nav-link">Image Server</a>
+            <a id="geo-analytics-server" data-langlabel="geo-analytics-server" href="../../../../zh-CN/geoanalytics/" class="side-nav-link">GeoAnalytics Server</a>
+            <a id="geoevent-server" data-langlabel="geoevent-server" href="../../../../zh-CN/geoevent/" class="side-nav-link">GeoEvent Server</a>
+            <a id="notebook-server" data-langlabel="notebook-server" href="../../../../zh-CN/notebook/" class="side-nav-link">Notebook Server</a>
+            <a id="nav-data-store" data-langlabel="data-store" href="../../../../zh-CN/data-store/" class="side-nav-link">Data Stores</a>
+            <a id="nav-cloud" data-langlabel="cloud" href="../../../../zh-CN/cloud/" class="side-nav-link">云</a>
+            <a id="nav-apps" data-langlabel="apps" href="../../../../zh-CN/apps/" class="side-nav-link">应用程序</a>
+            <a id="nav-doc" data-langlabel="documentation" href="../../../../zh-CN/documentation/" class="side-nav-link">文档</a>
+
+          </aside>
+        </nav>
+    </div>
+
+    <!-- user navigation collapses to drawer on mobile -->
+    
+    <div class="drawer drawer-right js-drawer hide-if-logged-out logged-in-navigation" data-drawer="user-nav">
+      <nav class="drawer-nav">
+        <aside class="side-nav">
+          <a class="side-nav-link agolProfile" href="#">我的个人资料</a>
+          <a class="side-nav-link icon-ui-sign-out js-log-out" href="#">登出</a>
+        </aside>
+      </nav>
+    </div>
+    
+<!-- End of drawer -->
+
+  
+  <div class="wrapper">
+      <!--googleoff: all-->
+
+      <header class="top-nav" data-skin="learn">
+        <a class="skip-to-content" href="#skip-to-content">Skip To Content</a>
+        <div class="grid-container">
+          <div class="column-24">
+
+
+            <!--<div class="top-nav-title-wrapper text-center ">-->
+              <a href='../../../../zh-CN/' class="top-nav-title tablet-hide"><span>Arc</span>GIS  Enterprise</a>
+              <a href='../../../../zh-CN/' class="icon-ui-menu top-nav-title js-drawer-toggle tablet-show" data-drawer="top-nav"><span>Arc</span>GIS Enterprise</a>
+            <!--</div> -->
+
+          
+            <nav role="navigation" class="top-nav-list left tablet-hide">
+              <a id="nav-portal" data-langlabel="portal" href="../../../../zh-CN/portal/" class="top-nav-link">Portal</a>
+
+                <div class="dropdown js-dropdown ">
+                  <a class="top-nav-link js-dropdown-toggle" tabindex="0" aria-haspopup="true" aria-expanded="false" href="#">Servers</a>
+                  <nav class="dropdown-menu featured" role="menu">
+                    <ul class="dropdown-sublist-featured">
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/get-started/latest/windows/additional-server-deployment.htm" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path  d="M42.92 6.1H4.12v8.566l.833.832-.835.833-.018 7.332.845.847-.825.824V33.9h25v5.2h-2v1.075H8.02v.8h19.1v.925h4.8v-.925H40v-.8h-8.08V39.1h-2v-5.2h13v-8.566l-.834-.834.835-.834v-7.332l-.835-.834.835-.834zm-11.8 35h-3.2v-1.2h3.2zm11-8H4.92v-7.434l.767-.766h35.668l.765.766zm0-9.766l-.766.766H5.666l-.766-.767.017-6.669.766-.764h35.671l.766.766zm0-9l-.766.766H5.687l-.766-.766V6.9h37.2zM19 11.9h-2v-.8h2zm-4 0h-2v-.8h2zm-4 0H9v-.8h2zm6 8.2h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9zm8 9h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9z"/></svg></span>
+                          <span class="sublink-text">所有服务器</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/server/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M45.98 33.575a.616.616 0 0 0-.335-.51l-3.362-2.03 3.362-2.031a.556.556 0 0 0 0-1.02l-11.1-6.704a1.293 1.293 0 0 0-1.112 0L22.33 27.982a.556.556 0 0 0 0 1.02l3.36 2.03-3.358 2.03a.556.556 0 0 0-.002 1.021l3.322 2.006-3.324 2.008a.555.555 0 0 0 .002 1.017l11.102 6.703a1.25 1.25 0 0 0 1.11.002l11.104-6.706a.556.556 0 0 0 0-1.02l-3.32-2.006 3.318-2.004a.607.607 0 0 0 .335-.509zM33.837 21.97c.026-.01.286-.005.29-.005l10.814 6.53-10.8 6.523c-.028.01-.284.005-.294.006l-10.813-6.53zm11.105 16.636l-10.8 6.523a2.564 2.564 0 0 1-.295.006l-10.81-6.529 3.39-2.047 7.004 4.23a1.083 1.083 0 0 0 .557.131 1.101 1.101 0 0 0 .554-.13l7.01-4.233zM34.14 40.098a2.545 2.545 0 0 1-.294.006l-10.812-6.53 3.43-2.073 6.97 4.208a1.25 1.25 0 0 0 1.107-.001l6.966-4.206 3.431 2.073zM9 8H7V7h2zm8 8h-2v-1h2zm-4-8h-2V7h2zm4 0h-2V7h2zm-4 8h-2v-1h2zm7.316 11.1H3.9v-6.434l.766-.766h35.668l.766.766v2.12l.8.483v-2.935l-.826-.826.826-.845v-6.329l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9h16.88a2.632 2.632 0 0 1 .336-.8zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zm0 8v-5.668l.766-.766h35.668l.766.766v5.67l-.746.764H4.666zM15 24v-1h2v1zm-4 0v-1h2v1zm-2-8H7v-1h2zm-2 8v-1h2v1z"/></svg></span>
+                          <span class="sublink-text">GIS Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/image/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 8h-2V7h2zm-4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm8 8h-2v1h2zm-8 0H7v1h2zm4 9v-1h-2v1zm-4 0v-1H7v1zm8 0v-1h-2v1zm4 3.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V21h-.8v-.334l-.766-.766H4.666l-.766.766V27.1H21zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zm40.234 4v21.8H23.1V23.1zm-.8 16.366L39.466 44.1h2.868l1.766-1.766zm-20.2-9.932l5.634-5.634h-2.868L23.9 26.666zm6.2-5.068L24.466 30.1h2.868l2.766-2.766zM28.466 30.1H30.1v-1.634zm2.434 0h6.2v-6.2h-6.2zm-7 7h6.2v-6.2h-6.2zm7 0h6.2v-6.2h-6.2zm0 6.434l5.634-5.634h-2.868L30.9 40.666zm7-7l5.634-5.634h-2.868L37.9 33.666zm1.634-5.634H37.9v1.634zm-8.634 7v1.634l1.634-1.634zm.566 6.2h2.868l2.766-2.766v-2.868zm6.434-3.566l2.634-2.634H37.9zM35.466 44.1H37.1v-1.634zm2.434 0h.434l5.766-5.766V37.9h-2.434L37.9 41.666zm6.2-8.634L42.466 37.1H44.1zm0-4L38.466 37.1h2.868l2.766-2.766zm0-7.566h-6.2v6.2h6.2zm-20.2 0v1.634l1.634-1.634zm0 20.2h6.2v-6.2h-6.2zm20.2 0v-.634l-.634.634z"/></svg></span>
+                          <span class="sublink-text">Image Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/geoanalytics/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 16h-2v-1h2zm-8 8v-1H7v1zm8 0v-1h-2v1zM13 7h-2v1h2zm4 0h-2v1h2zM9 7H7v1h2zm21.45 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V27.9h-1.464l-.801-.8H41.1v-6.434l-.766-.766H4.666l-.766.766V27.1h27.15zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM13 24v-1h-2v1zm0-9h-2v1h2zm-4 0H7v1h2zm26.672 27.148A1.87 1.87 0 0 1 35.9 43a1.91 1.91 0 1 1-3.763-.222l-9.845-3.414A1.88 1.88 0 0 1 21 39.9a1.9 1.9 0 1 1 1.474-3.084l4.692-2.346A1.878 1.878 0 0 1 27.1 34a1.902 1.902 0 0 1 1.9-1.9 1.867 1.867 0 0 1 .781.191l3.788-5.05A1.88 1.88 0 0 1 33.1 26a1.9 1.9 0 1 1 3.491 1.026l4.889 4.888c-.069.056-.144.1-.21.162a3.986 3.986 0 0 0-.358.402l-4.883-4.883A1.889 1.889 0 0 1 35 27.9a1.867 1.867 0 0 1-.781-.191l-3.788 5.049a1.868 1.868 0 0 1 .437.965l9.204.614c-.018.11-.049.218-.058.33A3.93 3.93 0 0 0 40 35c0 .046.01.09.01.135l-9.185-.612A1.913 1.913 0 0 1 29 35.9a1.889 1.889 0 0 1-1.474-.716l-4.692 2.346a1.878 1.878 0 0 1 .066.47 1.9 1.9 0 0 1-.105.625c-.007.02-.022.036-.03.056l9.63 3.34a1.87 1.87 0 0 1 2.786-.505l5.415-4.437c.067.108.127.22.204.322a3.9 3.9 0 0 0 .292.306zM33.9 26a1.092 1.092 0 0 0 .43.872 1.12 1.12 0 0 0 1.42-.068A1.1 1.1 0 1 0 33.9 26zm-6 8a1.1 1.1 0 0 0 2.196.093 1.135 1.135 0 0 0-.426-.965A1.087 1.087 0 0 0 29 32.9a1.101 1.101 0 0 0-1.1 1.1zm-5.8 4a1.098 1.098 0 1 0-.06.362A1.101 1.101 0 0 0 22.1 38zm13 5a1.1 1.1 0 1 0-2.2 0 1.1 1.1 0 0 0 2.2 0zm10.8-8a1.9 1.9 0 1 1-3.8 0c0-.053.003-.105.007-.158A1.9 1.9 0 0 1 45.9 35zm-.8 0a1.1 1.1 0 0 0-2.196-.093 1.153 1.153 0 0 0 .216.752A1.1 1.1 0 0 0 45.1 35z"/></svg></span>
+                          <span class="sublink-text">GeoAnalytics Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/geoevent/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M13 8h-2V7h2zm4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm12.418 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826v2.117c-.259-.177-.53-.337-.8-.497v-1.288l-.766-.766H4.666l-.766.766V27.1h17.933c-.148.26-.283.53-.415.8zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM9 24v-1H7v1zm4-9h-2v1h2zm0 9v-1h-2v1zm-4-9H7v1h2zm8 9v-1h-2v1zm16.9 2h-.8v8.9H39v-.8h-5.1zm.1-3.901a11.9 11.9 0 1 0 11.9 11.9 11.914 11.914 0 0 0-11.9-11.9zm0 23a11.1 11.1 0 1 1 11.1-11.1 11.112 11.112 0 0 1-11.1 11.1z"/></svg></span>
+                          <span class="sublink-text">GeoEvent Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/notebook/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M22 27.1H3.9v-6.434l.766-.766h18.576a5.262 5.262 0 0 1 .83-.8H4.666l-.766-.766v-5.668l.766-.766h35.668l.766.766V18h.8v-5.666l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9H22zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zM9 8H7V7h2zm8 0h-2V7h2zm-4 0h-2V7h2zm2 16v-1h2v1zm-4 0v-1h2v1zm-4 0v-1h2v1zm0-8v-1h2v1zm8 0v-1h2v1zm-4 0v-1h2v1zm18.9 8.1h-1.8v1.8h1.8zm-.8 1h-.2v-.2h.2zm15.498-4.48a2.727 2.727 0 0 0-1.62-.5v-.02H27.25a3.154 3.154 0 0 0-3.15 3.15V38.1h-1.68a3.386 3.386 0 0 0-2.872 1.58 3.49 3.49 0 0 0-.157 3.419 3.241 3.241 0 0 0 2.954 1.801h15.161a3.404 3.404 0 0 0 3.394-3.4V26.9h5v-3.65a3.224 3.224 0 0 0-1.302-2.63zM22.345 44.1a2.44 2.44 0 0 1-2.23-1.341 2.706 2.706 0 0 1 .11-2.65A2.588 2.588 0 0 1 22.42 38.9h12.89a3.395 3.395 0 0 0 0 5.2zM40.1 23.192V41.5a2.6 2.6 0 1 1-2.6-2.6v-.8H24.9V23.25a2.352 2.352 0 0 1 2.35-2.35h13.795a3.183 3.183 0 0 0-.945 2.292zm5 2.908h-4.2v-2.908a2.274 2.274 0 0 1 1.44-2.18 1.944 1.944 0 0 1 1.791.259 2.423 2.423 0 0 1 .97 1.979zm-17.1 5h9v.8h-9zm0 3h7v.8h-7zm0-6h9v.8h-9zm4-3h5v.8h-5z"/></svg></span>
+                          <span class="sublink-text">Notebook Server</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+
+              <a id="nav-data-store" data-langlabel="data-store" href="../../../../zh-CN/data-store/" class="top-nav-link">Data Stores</a>
+              <a id="nav-cloud" data-langlabel="cloud" href="../../../../zh-CN/cloud/" class="top-nav-link">云</a>
+              <a id="nav-apps" data-langlabel="apps" href="../../../../zh-CN/apps/" class="top-nav-link">应用程序</a>
+            </nav>
+
+
+            
+            
+            
+
+            <div class="margin-left-1 top-nav-list right hide-if-logged-in logged-out-navigation">
+               
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+              
+              <a data-langlabel="sign-in" id="login-link" class="icon-ui-user top-nav-link link-blue login-link" href="#">登录</a>
+              
+            </div>
+
+            
+            <nav class="margin-left-1 top-nav-list right hide-if-logged-out logged-in-navigation">
+              
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+             
+              <div class="dropdown js-dropdown right">
+
+                <div class="tablet-show top-nav-link">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a href="#" data-drawer="user-nav" class="user-nav-name js-drawer-toggle" data-first-name></a>
+                </div>
+
+                <div class="tablet-hide top-nav-link js-dropdown-toggle">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a class="user-nav-name top-nav-dropdown dropdown-btn" data-first-name>&nbsp;</a>
+                </div>
+
+                <nav class="dropdown-menu dropdown-right">
+                
+                  <a class="dropdown-link agolProfile" id="agolProfile" href="#">我的个人资料</a>
+                  <a class="dropdown-link js-log-out" id="agolLogout" href="#">登出</a>
+                </nav>
+              </div>
+            </nav>
+            
+
+            
+          </div>
+        </div>
+      </header>
+
+      <div class="js-search search-overlay">
+        <div class="search-content" role="dialog" aria-labelledby="search">
+          <form method="GET" id="helpSearchForm">
+            <label>
+              搜索 ArcGIS Enterprise 帮助
+              <div class="search-bar">
+                <input type="search" name="q"  placeholder="搜索 ArcGIS Enterprise 帮助" class="search-input js-search-input">
+                <input type="hidden" name="collection" value="help" />
+                <input type="hidden" name="product" value="arcgis-portal-windows" />
+                <input type="hidden" name="version" value="10.8" />
+                <input type="hidden" name="language" value="zh-CN" />
+              </div>
+            </label>
+            <input type="hidden" name="relativePath" value="../../../../" /><button type="submit" class="btn btn-large right">搜索</button>
+          </form>
+        </div>
+      </div>
+
+      <!--googleon: all-->
+
+      <div id="skip-to-content">
+        <!--googleoff: all-->
+        <header class="sub-nav sub-nav-learn">
+          <div class="grid-container">
+            
+            <div class="column-24">
+              <div style="display:table;" class="sdk-home-banner">
+                <div class="sdk-home-banner-content">
+                  <h1 class="sub-nav-title link-white">Portal for ArcGIS</h1>
+                </div>
+              </div>
+            </div>
+
+            <div class="column-24">
+              <nav class='sub-nav-list tablet-hide'><a class="sub-nav-link" href="../../../../zh-CN/portal/" target="_top" title="Portal for ArcGIS 主页">主页</a><a class="sub-nav-link is-active" href="../../../../zh-CN/portal/latest/use/" target="_top" title="使用 Portal for ArcGIS">使用</a><a class="sub-nav-link" href="../../../../zh-CN/portal/latest/administer/windows/" target="_top" title="安装、管理和保护 Portal for ArcGIS">管理</a></nav><select class='tablet-show select-full trailer-half js-select-nav'><option value="../../../../zh-CN/portal/">主页</option><option selected="true" value="../../../../zh-CN/portal/latest/use/">使用</option><option value="../../../../zh-CN/portal/latest/administer/windows/">管理</option></select>
+            </div>
+
+          </div>
+        </header>
+        <!--googleon: all-->
+       
+        <!-- content goes here -->
+        <div class="grid-container ">
+          
+
+            
+              
+  <!--BREADCRUMB-BEG--><div id="bigmac" class="sticky-breadcrumbs trailer-2" data-spy="affix" data-offset-top="180"> </div><!--BREADCRUMB-END-->
+  <!--googleoff: all-->
+    <div class="column-5 tablet-column-12 trailer-2 ">
+      <aside class="js-accordion accordion reference-index" aria-live="polite" role="tablist">
+        <div></div>
+      </aside>
+
+      <div class="js-sticky scroll-show tablet-hide leader-1 back-to-top" data-top="0" style="top: 0px;">
+        <a href="#" class="btn btn-fill btn-clear">返回顶部</a>
+      </div>
+    </div>
+  <!--googleon: all-->
+  
+            
+            
+            
+	
+		<div class="column-13  pre-1 content-section">
+	
+		<header class="trailer-1"><h1>派生新位置</h1></header>
+
+		 
+	<!--googleoff: all-->
+	
+		
+				<aside id="main-toc-small" class="js-accordion accordion tablet-show trailer-1">
+			      <div class="accordion-section">
+			        <h4 class="accordion-title">在本主题中</h4>
+			        <div class="accordion-content list-plain">
+			          <ol class="list-plain pre-0 trailer-0"><li><a href="#ESRI_SECTION1_9864ECE4C0834B1F979DE8FA1C65AEBF">工作流示意图</a></li><li><a href="#ESRI_SECTION1_28B62182618B4CD98FB37FA0AA24DD07">术语</a></li><li><a href="#ESRI_SECTION1_3926003C29874A0ABC51D58DDEF0C70C">示例</a></li><li><a href="#ESRI_SECTION1_7CF8D4C1E6A94DE1BCCC02492DCE2987">用法说明</a></li><li><a href="#ESRI_SECTION1_1745A58C27D249B8A3A71217262A1F3A">派生新位置的工作原理</a></li><li><a href="#ESRI_SECTION1_BF1149EA334B40DEA55B812B413D6EF2">类似工具</a></li></ol>
+			        </div>
+			      </div>
+			     </aside>
+		
+    
+   <!--googleon: all-->
+
+
+		<main>
+			
+	
+    	
+    
+
+
+			
+<p id="GUID-802F995F-BC2E-46E8-BD69-7235CC876824"><img purpose="img" placement="inline" alt="派生新位置" title="派生新位置" src="GUID-8BF2D5F3-DE71-4C6F-9706-22EEF2FB770F-web.png"><span purpose="gptoolref">派生新位置</span>用于根据一个或多个属性或空间查询创建新要素。</p> <section class="section1 padded-anchor" id="ESRI_SECTION1_9864ECE4C0834B1F979DE8FA1C65AEBF" purpose="section1"><h2>工作流示意图</h2><figure class="fig" href="#"><img src="GUID-4A756008-8431-4AA5-BD42-7135296560DD-web.png" alt="派生新位置" title="派生新位置"></figure></section><section class="section1 padded-anchor" id="ESRI_SECTION1_28B62182618B4CD98FB37FA0AA24DD07" purpose="section1"><h2>术语</h2><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><thead><tr><th colspan="1">术语</th><th colspan="1">描述</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-EEDC52B2-CD74-44F6-B892-6C0ECE0E42E3">空间查询</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-CE6DB53C-FA6A-4764-8BC1-1DC4BC5BC927">空间关系查询。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-D0B8C58D-40B9-40E5-A19C-2D5FEB0E4A35">属性查询</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-F639FDAF-1A8B-493D-924B-14C0CCCC5839">字段值查询。</p></td></tr></tbody><caption></caption></table></div></section><section class="section1 padded-anchor" id="ESRI_SECTION1_3926003C29874A0ABC51D58DDEF0C70C" purpose="section1"><h2>示例</h2><p id="GUID-85C82817-2D4A-49B2-BF63-57F2195313EF"> 房地产开发公司正在寻找适合综合性开发的区域。此开发区域将位于具有大量 20 至 30 岁的年轻人且便于乘坐城市轻轨系统的区域。<span purpose="gptoolref">派生新位置</span>可用于在划定为综合性开发区域并符合选择条件的城市范围内创建新要素。</p><p id="GUID-BC036037-E3DD-4AFF-884A-28EE23F5054A">州立公园工作人员关注美洲狮和人类的交互情况，并决定绘制公园内潜在美洲狮栖息地的地图。栖息地将以植被、坡度以及与道路的邻近性等条件为基础。<span purpose="gptoolref">派生新位置</span>可用于创建符合适宜性条件的新栖息地区域。</p></section><section class="section1 padded-anchor" id="ESRI_SECTION1_7CF8D4C1E6A94DE1BCCC02492DCE2987" purpose="section1"><h2>用法说明</h2><p id="GUID-BF78E79A-65E6-42E6-AB36-CBF5DB8BE127"> 输入图层在表达式内确定，而非作为输入参数。</p><p id="GUID-7E49EBEA-8C5F-43F9-B642-BE47A09FFAB2"> 可通过<span class="uicontrol">添加表达式</span>来构建查询。可添加多个表达式，包括空间和属性查询的组合。输入图层中满足表达式的要素或要素部分将被写入结果图层。</p><p id="GUID-08812562-8225-4CB9-B1B6-93E66E7DD2BE"> 存在多种可用于属性查询的运算符，具体取决于您所查询的字段是分类字段还是数字字段。</p><p id="GUID-F237191A-A492-4A82-A35C-0F421B71F11F"> 如果字段为分类字段，则可以使用以下运算符：<ul purpose="ul" id="UL_882AD47FE6214199BE77F3B604CE9837"><li purpose="li" id="LI_7A40512E54774F71B3005935B8A031A7">等于</li><li purpose="li" id="LI_43CE3B78F9074F5FAC5A44FAF1048F3F">不等于</li><li purpose="li" id="LI_EF77837D5445481EA726CF72ED37AD32">开头是</li><li purpose="li" id="LI_6435C9090FBE45CCAD3C600E54268278">结尾是</li><li purpose="li" id="LI_DDEC42ED78E84D6181EA2C8AC8925767">包含</li><li purpose="li" id="LI_DB1EA3C0AA224981896AF61C8E46CA88">不包含</li><li purpose="li" id="LI_CC59B47380E54556A320B56AA480EF4B">为空</li><li purpose="li" id="LI_DB1F73097E294966B219D9BE4BD7C97B">不为空</li></ul> </p><p id="GUID-A6E4CFA5-9A92-4CBD-BA4C-095FFC5864E1">如果字段为数字字段，则可以使用以下运算符：<ul purpose="ul" id="UL_B14901223BF840359088FF74BD19693C"><li purpose="li" id="LI_A280442C77BD48468F0597476001E511">等于</li><li purpose="li" id="LI_4F41CC2A7EEB43989CE0FD4AE8FEDD75">不等于</li><li purpose="li" id="LI_7FC60BC3A00846E98F2AF7356BAC474A">最小为</li><li purpose="li" id="LI_18116C169BA147F88486C7D3E36C4789">小于</li><li purpose="li" id="LI_F9BE1AF56BAF492B821A9A0A0AEA6D1B">最大为</li><li purpose="li" id="LI_8807BADCD1AF46BEA9F348B673960622">大于</li><li purpose="li" id="LI_D24B5BAEEBAF4277BFCA6C0E1A81E78D">介于</li><li purpose="li" id="LI_4F6BB797D877408EAEE5A522F13EFB58">不介于</li><li purpose="li" id="LI_11CF945396E34EE886C7F67A2A52A0BB">为空</li><li purpose="li" id="LI_8CC9FC0CC39C4A488823C4495B32BC73">不为空</li></ul></p><p id="GUID-B64FF552-E268-4EC1-BF4F-4FBC801915D7">有关构建属性表达式的详细信息，请参阅<a class="xref xref" href="../../../../zh-CN/portal/latest/use/derive-new-locations.htm#ESRI_SECTION3_50AD6D61E3BB4F988C596158ABD50B0A"><span purpose="gptoolref">派生新位置</span>的工作原理</a>部分。</p><p id="GUID-ECD3BCEB-79EC-4839-B844-6421C6A719E7"> 可以在空间查询中使用以下空间表达式：<ul purpose="ul" id="UL_64117BC2D2D942AB9D3C316C7B60EB62"><li purpose="li" id="LI_5F1924B968B6485D881D4EBF6F8DEB3F">相交</li><li purpose="li" id="LI_81E433BD7AF8451FB40387F82792B9B4">不相交</li><li purpose="li" id="LI_596C3CB2192C404E84151AF1D33428A5">某一距离范围内</li><li purpose="li" id="LI_FA8F110838154006848A4449F587B9E3">不在某一距离范围内</li><li purpose="li" id="LI_05684550AF68482C8A1E92C8EC73493A">完全包含</li><li purpose="li" id="LI_3AC345687FF841958CE0E885E3B0FC68">不完全包含</li><li purpose="li" id="LI_2806863F000841B48704C6A9DDD4CEAA">完全位于</li><li purpose="li" id="LI_E6112A7498AB46499584FC8B260CB7DD">不完全位于</li><li purpose="li" id="LI_269BA55B4A7A462682C3B75E50591E13">最邻近</li></ul></p><p id="GUID-CD1D2378-6846-4950-A45F-1997DD920AAF">有关构建空间表达式的详细信息，请参阅<a class="xref xref" href="../../../../zh-CN/portal/latest/use/derive-new-locations.htm#ESRI_SECTION3_FD96A31ABCC340C89ADFD7386A50B3D7"><span purpose="gptoolref">派生新位置</span>的工作原理</a>部分。</p><p id="GUID-2556D5A6-4354-4120-9919-6096E9AB3783"> 可使用<span class="uicontrol">添加表达式</span>按钮将多个表达式添加至查询。可使用 <span class="uicontrol">and</span> 或 <span class="uicontrol">or</span> 作为运算符来组合表达式。</p><p id="GUID-FA0B3E7D-5942-4923-93CA-797E498CC3B1">如果选中<span class="uicontrol">使用当前地图范围</span>，则仅对当前地图范围中可见的要素进行分析。如果未选中，则将对所有要素进行分析，包括超出当前地图范围的要素。</p><p conref="GUID-CD6DB769-1897-4121-A874-7A47416EDE2E.xml#GUID-CD6DB769-1897-4121-A874-7A47416EDE2E/GUID-971FB965-FE27-49D9-A1CB-F68B7039A56B" id="GUID-3D25E736-973F-4F29-B663-7578B95C3BFB" badconref="GUID-CD6DB769-1897-4121-A874-7A47416EDE2E/GUID-971FB965-FE27-49D9-A1CB-F68B7039A56B"></p></section><section class="section1 padded-anchor" id="ESRI_SECTION1_1745A58C27D249B8A3A71217262A1F3A" purpose="section1"><h2>派生新位置的工作原理</h2><section class="section2 padded-anchor" id="ESRI_SECTION2_C4C52505AD48424D94A91A22A8FA7CA0" purpose="section2"><h3>构建表达式</h3><p id="GUID-AAD4B889-B0FA-4B43-B96B-E00FEB8D2658">要构建表达式，请单击<span class="uicontrol">添加表达式</span>按钮打开<span class="uicontrol">添加表达式</span>对话框。</p><section class="section3 padded-anchor" id="ESRI_SECTION3_50AD6D61E3BB4F988C596158ABD50B0A" purpose="section3"><h4>属性表达式</h4><p id="GUID-928CC824-CC5A-4E0B-A9FB-D852E00E0645"> 使用<span class="uicontrol">位置（属性查询）</span>作为表达式类型来创建属性表达式。</p><p id="GUID-433996A1-6B44-4ABB-A429-0A73EB826398"><figure class="fig" href="#"><img src="GUID-1912EF85-7825-480A-BB94-F370E71F8876-web.png" alt="添加属性表达式示例" title="添加属性表达式示例"><figcaption class="fig-caption">属性表达式的“添加表达式”对话框</figcaption></figure></p><p id="GUID-880FD48A-3B53-4306-B5B4-DAFF12BAC161"><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><thead><tr><th colspan="1">编号</th><th colspan="1">描述</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><img purpose="img" placement="inline" alt="输入图层" title="输入图层" src="GUID-78A423C3-0D12-452C-B3CB-52DF46714551-web.png"></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-7951E930-9844-417E-82B2-A1B2CFC97454">此处列出了可在表达式中使用的图层。将提供内容列表中的所有图层。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><img purpose="img" placement="inline" alt="表达式类型" title="表达式类型" src="GUID-3C955DC5-FBCE-43A4-8415-CC71E4588CC2-web.png"></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-6A24338E-A387-4BBE-A1FE-2E5BA92D1D74">这是表达式类型。对于属性表达式，请选择<span class="uicontrol">位置（属性查询）</span>。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><img purpose="img" placement="inline" alt="字段" title="字段" src="GUID-1A3147EA-C0F6-471B-AE7D-6FA5EFA0771C-web.png"></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-FF55AC1D-A064-466C-AC17-2FE036D55FAA">从列表中选择要查询的字段。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><img purpose="img" placement="inline" alt="运算符" title="运算符" src="GUID-CA8C4C76-4C99-4AC1-8246-12E15B385D58-web.png"></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-BD9537CA-F6CD-4216-8E9C-8D83AB45419F">为表达式选择运算符。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><img purpose="img" placement="inline" alt="值、字段或唯一值" title="值、字段或唯一值" src="GUID-CA234000-C8F7-46D1-ABBC-9768B1CD97CB-web.png"></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"> <p id="GUID-C33A0809-6B08-4649-B28C-454486A03A40"> <ul purpose="ul" id="UL_6BABDCA1765E4CBA872EE3AFA303F16E"> <li purpose="li" id="LI_92560C9AC23E43E7A3E898F4731A0F35">如果想根据特定值查找要素，请选择<span class="uicontrol">值</span>，然后在输入框中输入值。</li> <li purpose="li" id="LI_73EC322C34554AFB99BF811525373FC2">如果想要对一个字段中的值和另一个字段中的值进行比较，则选择<span class="uicontrol">字段</span>，单击下拉箭头，然后选择表达式的字段。例如，在上面的屏幕截图中，将查找 <span class="usertext">POP UNDER 18</span> 的值大于 <span class="usertext">POP OVER 18</span> 的值的要素。</li> <li purpose="li" id="LI_80D64584F52A439495A59CF84CD1937A">如果想要根据为表达式选择的字段中的特定值查找要素，可选择<span class="uicontrol">唯一值</span>，然后从字段中选择唯一值。唯一值过滤器要求要素服务使用 <span class="ph">ArcGIS Pro</span> 或者 <span class="ph">ArcGIS  10.1 for Desktop</span> 或更高版本进行发布。</li> </ul> </p></td></tr></tbody><caption></caption></table></div></p><div class="panel trailer-1 note" id="GUID-BA55061A-64B7-42BF-B310-5AD3B5395908"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-B6F48F1B-8186-4895-8715-77F7E4F9A136">如果任意图层<a class="xref xref" href="../../../../zh-CN/portal/latest/use/apply-filters.htm">应用了过滤器</a>，则只有满足过滤表达式的要素才会应用到分析中。</p></div></section><section class="section3 padded-anchor" id="ESRI_SECTION3_FD96A31ABCC340C89ADFD7386A50B3D7" purpose="section3"><h4>空间表达式</h4><p id="GUID-D7012EF0-3349-41F2-B8D2-415AF886F507"> 空间表达式是通过选择诸如<span class="uicontrol">完全位于</span>或<span class="uicontrol">相交</span>等表达式类型（完整的列表可在<a class="xref xref" href="../../../../zh-CN/portal/latest/use/derive-new-locations.htm#ESRI_SECTION2_970732FAE3894792AD9410C9B8999C93">空间表达式类型</a>部分中找到）创建的。</p><p id="GUID-11A675F8-E4B8-4143-B26D-ABCC4A5FAA53">在选择空间表达式类型时，<span class="uicontrol">添加表达式</span>对话框会根据您选择的表达式类型而有所改变。</p><p id="GUID-CBA1B0D3-AD45-4935-98B8-ACA6448BDB14"> <figure class="fig" href="#"><img src="GUID-084D9BF2-D17F-4193-B5EF-DBDA868AB748-web.png" alt="空间表达式" title="空间表达式"><figcaption class="fig-caption">空间表达式的“添加表达式”对话框 </figcaption></figure></p><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><thead><tr><th colspan="1">编号</th><th colspan="1">描述</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><img purpose="img" placement="inline" alt="第一个图层" title="第一个图层" src="GUID-78A423C3-0D12-452C-B3CB-52DF46714551-web.png"></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-94B7F777-6227-4FDB-B081-BA330A82EE52">第一个图层。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><img purpose="img" placement="inline" alt="表达式类型" title="表达式类型" src="GUID-3C955DC5-FBCE-43A4-8415-CC71E4588CC2-web.png"></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-38CD95A4-531B-4EB7-8B2A-9C4EC7B2370F">空间表达式类型。有关每种空间表达式类型的详细信息，请参阅<a class="xref xref" href="../../../../zh-CN/portal/latest/use/derive-new-locations.htm#ESRI_SECTION2_970732FAE3894792AD9410C9B8999C93">下文</a>。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><img purpose="img" placement="inline" alt="第二个图层" title="第二个图层" src="GUID-1A3147EA-C0F6-471B-AE7D-6FA5EFA0771C-web.png"></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-1AA64EAE-87B1-406F-B45A-E7C2EA282CDF">第二个图层。这些是地图中的其他图层。</p></td></tr></tbody><caption></caption></table></div></section></section><section class="section2 padded-anchor" id="ESRI_SECTION2_798D6872FC6B4EA0A53C66AA6BC35D02" purpose="section2"><h3>已完成查询示例</h3><p id="GUID-360E4E7B-9AC8-4112-B653-AD363200730A" ishcondition="agol_plat=portal">本示例旨在基于一系列条件派生新的区域作为美洲狮的主要栖息地。美洲狮的主要栖息地条件包含：<ul purpose="ul" id="UL_3C727FAE421B4492AAC7E5477C9FEB03"><li purpose="li" id="LI_772E97013F9440F298660EC2D8170300">美洲狮偏爱陡峭地形。</li><li purpose="li" id="LI_7047FD3320E84A2D9A34FD2DBDB80866">地形必须覆盖有森林。</li><li purpose="li" id="LI_18470CCD6B734F9491D9FA3E4D21F7BC">该位置必须距离溪流 2,500 英尺以内。</li><li purpose="li" id="LI_41A356291B974DB4A29E66910C54FD48"> 该位置必须距离高速公路 2,500 英尺以外。</li></ul></p><p id="GUID-EF77D934-A8FE-42AA-8A5F-B57B07A9A915">以下屏幕截图演示了如何使用名为 <span class="usertext">Vegetation</span>、<span class="usertext">Slope</span>、<span class="usertext">Streams</span> 和 <span class="usertext">Highways</span> 的图层基于以上条件进行<span purpose="gptoolref">派生新位置</span>查询：<figure class="fig" href="#"><img src="GUID-BA2ED5EE-52EA-444E-8D00-75CB4BCB85AC-web.png" alt="“派生新位置”查询" title="“派生新位置”查询"></figure></p><div class="panel trailer-1 note" id="GUID-E46B0742-CED2-4DAF-A849-A98F301D1EF9"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-43B8594F-30EF-4115-B4A6-40801890FDE6"><ul purpose="ul" id="UL_DAE82916E1984679AC478D0E448EC252"><li purpose="li" id="LI_0B5495EFA96B4D5FBEA3B31F62301BF4">表达式顺序会影响分析结果。</li><li purpose="li" id="LI_72C16326225D44088DD02A46A1C11689">可通过单击分组与取消分组按钮 <img purpose="img" placement="inline" alt="分组与取消分组" title="分组与取消分组" src="GUID-65B23E6F-74D0-46D1-B9E1-14D0C96B1124-web.png"> 对表达式进行分组与取消分组。要创建分组，请选择两个或两个以上表达式，然后单击分组按钮。有关分组的详细信息，请参阅<a class="xref xref" href="../../../../zh-CN/portal/latest/use/derive-new-locations.htm#ESRI_SECTION2_4E7F9AC2FF34486ABF8CF5716152D42E">分组</a>部分。</li><li purpose="li" id="LI_5F2ED30599BA4A7690EAC5A087BDB39C">单击 <img purpose="img" placement="inline" alt="and" title="and" src="GUID-3D1AAD10-B065-4F08-BFCD-AB3DCEDA042D-web.png"> 可以将运算符切换为 <img purpose="img" placement="inline" alt="or" title="or" src="GUID-DAD05372-8B12-47D6-8BFB-2F745BE0E07A-web.png">。单击 <img purpose="img" placement="inline" alt="or" title="or" src="GUID-DAD05372-8B12-47D6-8BFB-2F745BE0E07A-web.png"> 可以将运算符切换为 <img purpose="img" placement="inline" alt="and" title="and" src="GUID-3D1AAD10-B065-4F08-BFCD-AB3DCEDA042D-web.png">。</li></ul></p></div></section><section class="section2 padded-anchor" id="ESRI_SECTION2_970732FAE3894792AD9410C9B8999C93" purpose="section2"><h3>空间表达式类型</h3><p id="GUID-10B25211-074B-4FCE-AA41-45DB74DBC280">空间表达式可在两个图层之间建立关系。如果需要在同一图层的要素之间建立空间关系（例如，希望选择在工业用宗地某一距离范围内的闲置宗地），请复制宗地图层并将其添加到您的地图中，这样您便拥有两个使用同一宗地要素的图层。</p><section class="section3 padded-anchor" id="ESRI_SECTION3_98842708F1BD47F9B8105E96C312573E" purpose="section3"><h4>在某一距离范围内/不在某一距离范围内</h4><p id="GUID-6791670C-29DD-4E07-BDA1-7A2AAF277D66"><figure class="fig" href="#"><img src="GUID-3F06597D-F4EA-4B64-9777-64776A67F478-web.png" alt="在某一距离范围内" title="在某一距离范围内"></figure></p><p id="GUID-56B8D744-15C4-477A-B8E1-363112A77382">在某一距离范围内的关系使用第一个图层中要素与第二个图层中要素之间的直线距离。<ul purpose="ul" id="UL_EA8CBFB66C194438AF9927459D45196B"><li purpose="li" id="LI_E5AEDCA852694180B13D0A271ACA2D11"><span class="uicontrol">在某一距离范围内</span> - 在第二个图层要素指定距离范围内的第一个图层要素部分中派生新要素，例如，只有距离河流 100 米范围内的部分宗地才包括在输出之内。</li><li purpose="li" id="LI_C0BD2BB572FF4D5EB3D0DB9D6D5759C7"><span class="uicontrol">不在某一距离范围内</span> - 不在第二个图层要素指定距离范围内的第一个图层要素部分中派生新要素，例如，位于河流 100 米距离范围内的宗地将不会包括到输出中。您可将此关系视为“距离大于”。</li></ul></p><div class="panel trailer-1 note" id="GUID-F9EDA53F-91B8-4AA8-A071-D707DC7C4E7A"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-C492CA09-EE27-4101-B105-044490C5D926">计算的距离为要素最近部分之间的距离。在以上示例中，植被需在距溪流 2,500 英尺的范围之内，将为 2,500 英尺范围之内的植被部分图层创建新区域。<figure class="fig" href="#"><img src="GUID-34B5B3BC-126B-4883-8619-3F0B6FC70BD8-web.png" alt="在距溪流 2,500 英尺范围内的区域" title="在距溪流 2,500 英尺范围内的区域"></figure></p></div></section><section class="section3 padded-anchor" id="ESRI_SECTION3_8AB4F73773284D26B24313B0176F5367" purpose="section3"><h4>完全包含/不完全包含</h4><p id="GUID-AEF366DF-5528-4794-A5FA-EF40667A7126"><figure class="fig" href="#"><img src="GUID-80EB2084-7EB8-46C1-AE14-DB20D6C81548-web.png" alt="完全包含" title="完全包含"></figure></p><p id="GUID-951D2112-0D96-4299-A741-83AEFFECFE01">如果第一个图层中的要素能够完全包围第二个图层中的要素，则第一个图层中的要素通过该测试。被包含的要素不得有任何部分位于包含要素之外；但允许被包含要素与包含要素相接触（即，沿边界共享公共点）。</p><p id="GUID-27E1E8A4-E1D1-4639-9ECD-337ECDE7419D"> <ul purpose="ul" id="UL_DFD4DD969B3C488FAE706B74E04B0525"><li purpose="li" id="LI_DFCC2C87CE0F4A8986E4DCA3A7F19F7A"><span class="uicontrol">完全包含</span> - 如果第一个图层中的要素包含第二个图层中的要素，则会将第一个图层中的要素包括到输出中。</li><li purpose="li" id="LI_7B3DC28FBFA44BD392301D3C7A8BF365"><span class="uicontrol">不完全包含</span> - 如果第一个图层中的要素包含第二个图层中的要素，则不会将第一个图层中的要素包括到输出中。</li></ul>   </p><div class="panel trailer-1 note" id="GUID-AD4AD339-6C5A-4EBD-B6A3-C93CD103E3F0"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-EC0B80E2-70C8-4736-948B-6DACC774F279">可将此包含关系用于点和线。例如，您拥有街道中心线（线）图层和检修孔盖（点）图层，且您希望查找包含检修孔盖的街道。可以使用<span class="uicontrol">完全包含</span>来查找包含检修孔盖的街道，但为了使线能够包含点，点必须正好位于该线上（即，在 GIS 术语中，它们互相捕捉）。如果对此存在任何疑问，请在<span class="uicontrol">某一距离范围内</span>关系中使用适当的距离值。</p></div></section><section class="section3 padded-anchor" id="ESRI_SECTION3_CA30055426DF4DC685AC1CB88EEE9BD3" purpose="section3"><h4>完全位于/不完全位于</h4><p id="GUID-D5917F94-6074-45C9-AE68-17AFA2DC943F"><figure class="fig" href="#"><img src="GUID-E8E1DE3A-B619-447F-B902-8AD5FA89F44A-web.png" alt="完全位于" title="完全位于"></figure></p><p id="GUID-BFD20030-0158-484C-8AB8-5FB12BD45A0E">如果第一个图层中的要素能够被第二个图层中的要素完全包围，则第一个图层中的要素通过该测试。第一个图层中的整个要素都必须位于包含要素之内；但允许这两个要素相接触（即，沿边界共享公共点）。</p><p id="GUID-8C4083EF-82B4-4EDA-A9C4-49487A2ACDDA"> <ul purpose="ul" id="UL_20C9B5B16A9B4E7C830BB6F635E19312"><li purpose="li" id="LI_7EB2055096EF4FB78EFF72294FE4969F"><span class="uicontrol">完全位于</span> - 如果第一个图层中的要素完全位于第二个图层的要素中，则会将第一个图层中的要素包括在输出中。</li><li purpose="li" id="LI_09F6E3C2E38541B39A25BFA0800537FD"><span class="uicontrol">不完全位于</span> - 如果第一个图层中的要素完全位于第二个图层的要素中，则不会将第一个图层中的要素包括在输出中。</li></ul>   </p><div class="panel trailer-1 note" id="GUID-E2F9A59E-EA3B-433C-9077-9D4C584E9191"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-93DBFC44-A583-493E-AC8A-12CDAF6BE378">和包含关系一样，此范围内关系也可用于点和线。例如，您的第一个图层中包含表示检修孔盖的点，且您希望查找位于街道中心线上的检修孔（相对于停车场或其他非街道要素）。可以使用<span class="uicontrol">完全位于</span>来查找街道中心线中的检修孔点，但为了使点能够包含线，点必须正好位于该线上（即，在 GIS 术语中，它们互相捕捉）。如果对此存在任何疑问，请在<span class="uicontrol">某一距离范围内</span>关系中使用适当的距离值。</p></div></section><section class="section3 padded-anchor" id="ESRI_SECTION3_A19C582A6D434837BFB7C8F8546A6F55" purpose="section3"><h4>相交/不相交</h4><p id="GUID-94D396C5-2DBB-46DC-AF17-77D61B63C787"><figure class="fig" href="#"><img src="GUID-F1DC9A2D-F670-4D2B-A3C0-225F7500C8FC-web.png" alt="相交" title="相交"></figure></p><p id="GUID-40327F35-EC33-4E24-8CAA-50568B06B330">如果第一个图层中的要素与第二个图层中要素的任何部分相重叠，包括相接触（要素共享公共点），则第一个图层中的要素将通过此相交测试。</p><p id="GUID-38781767-ECF7-4FFF-B4FA-34CFAC2468FC"><ul purpose="ul" id="UL_D7B13632FE3F46FAB9D2EFC2BC1F089E"><li purpose="li" id="LI_DF82701524CC428A95F29A4DD6043B21"><b>相交</b> - 如果第一个图层中的要素与第二个图层中的要素相交，则只有叠加的那部分要素才会包括在输出之内。</li><li purpose="li" id="LI_61BF5C444B764C00ACBF95C822F42770"><b>不相交</b> - 如果第一个图层中的要素与第二个图层中的要素相交，则叠加的那部分要素不会包括在输出之内。</li></ul></p></section><section class="section3 padded-anchor" id="ESRI_SECTION3_152F62355B0041E0B8C0A872A91D2DBD" purpose="section3"><h4>最邻近</h4><p id="GUID-34E6ED7F-E83B-4FFC-A7BA-1FE70C017C2E"><img purpose="img" placement="inline" alt="最邻近" title="最邻近" src="GUID-0FB3EFB8-C36A-4580-99F7-88C88FC325AD-web.png"></p><p id="GUID-1748D68B-D49D-4A1C-A8D7-1A6E81D30382">如果第一个图层中的要素最邻近第二个图层中的要素，则第一个图层中的要素通过该测试。</p><p id="GUID-9BB8C3A7-584E-4C4B-9E59-76ECEC25AA42"><ul purpose="ul" id="UL_3BA9DFAD63434EDF9410A43DBC4F9E23"><li purpose="li" id="LI_750E6ABBEF694B898DD6E618863187BD"><span class="uicontrol">最邻近</span> - 如果第一个图层中的要素最邻近第二个图层的要素，则会将第一个图层中的要素包括在输出中。</li></ul></p></section></section><section class="section2 padded-anchor" id="ESRI_SECTION2_4E7F9AC2FF34486ABF8CF5716152D42E" purpose="section2"><h3>分组</h3><p id="GUID-F898F776-D415-4425-B6DB-6A4FE786A39F">可使用分组按钮 <img purpose="img" placement="inline" alt="分组" title="分组" src="GUID-A9D4700F-8C7A-41F1-A7B9-08BAFCEB0552-web.png">将两个或两个以上的连续表达式分为一组。使用 <span class="shortcut">Shift + 单击</span>选择要分组的多个表达式。</p><p id="GUID-A54D10BA-9BE0-4FBA-A799-620667516B34">下面是一个需要进行分组的示例：<ul purpose="ul" id="UL_45C19854410B4DAA96281BD51B256197"><li purpose="li" id="LI_95C3A3AFD38A4D69BFA0E3D9768DC023">您拥有包含有毒化学物质的站点的点图层。每个点都具有属性 <span class="usertext">CHEMICAL</span>，其中包含该站点中已知存在的有毒化学物质的名称。</li><li purpose="li" id="LI_3D87040F52A147E08B4EFC97B289EA65">您希望查找位于河流附近的含 <span class="usertext">MERCURY</span> 或 <span class="usertext">SELENIUM</span> 的有毒站点。</li><li purpose="li" id="LI_08D988C793C848D1A36208CE611F4358">您还希望查找位于公园附近的含 <span class="usertext">BENZENE</span> 或 <span class="usertext">LEAD</span> 的有毒站点。</li></ul></p><p id="GUID-B9D8938B-703F-4651-A469-C101B729939D">上述示例在同一有毒站点图层中创建了两组要素：公园附近的有毒站点和河流附近的有毒站点。这两组要素彼此之间是独立的。</p><p id="GUID-0C7BD0CF-C2B6-468C-B4AC-C464472B539C">由于河流附近的有毒站点组与公园附近的有毒站点之间是独立的，您可能希望使用分组来构建查询。图 1 显示了未进行逻辑运算符（逻辑运算符均为 <img purpose="img" placement="inline" alt="and" title="and" src="GUID-3D1AAD10-B065-4F08-BFCD-AB3DCEDA042D-web.png">）的任何分组或修改的初始查询。此查询的结果是同时位于公园及河流一千米范围内的有毒站点。这并不是我们想要的结果；我们希望得到一组位于河流一千米距离范围内的有毒站点，以及另一组位于公园一千米距离范围内的有毒站点。</p><p id="GUID-BD82913E-82CE-4C0D-A54E-5DB4E80C9723"><figure class="fig" href="#"><img src="GUID-D5136FC3-CC68-41ED-BFA1-94ABACAA79CA-web.png" alt="初始查询" title="初始查询"><figcaption class="fig-caption">图 1：初始查询</figcaption></figure></p><p id="GUID-459E85E2-E5BC-4B83-A13E-A328CF8D92DE">要构建满足上述条件的查询，需要创建分组。每个分组构成一个子查询，其结果将与之前的表达式相结合。</p><p id="GUID-5747531F-C0F6-4134-A794-EBF526C6B9B5">由选择前两个属性表达式开始，如图 2 所示。</p><p id="GUID-0E747BC6-659B-4DD2-B5C7-5BDBF4141DA8"><figure class="fig" href="#"><img src="GUID-6DEC2AF0-647F-4336-9C59-6BA401264765-web.png" alt="选择第一组属性表达式" title="选择第一组属性表达式"><figcaption class="fig-caption">图 2：选择第一组属性表达式。</figcaption></figure></p><p id="GUID-01D25ECD-D353-4C87-8EB6-1FC7CDC593D6">在选择这两个属性表达式后，单击分组按钮 <img purpose="img" placement="inline" alt="分组" title="分组" src="GUID-A9D4700F-8C7A-41F1-A7B9-08BAFCEB0552-web.png">。该分组会发生缩进，如图 3 所示。</p><p id="GUID-94522C11-00B9-42A8-A3F0-E01573FE2D91">选择第二组属性表达式，如图 3 所示。</p><p id="GUID-CD5CB054-6773-477D-9812-687E47A5B134"><figure class="fig" href="#"><img src="GUID-5676FE32-0CDD-443B-ACF0-9C1CD3925B6A-web.png" alt="选择下一组属性表达式" title="选择下一组属性表达式"><figcaption class="fig-caption">图 3：选择第二组属性表达式。</figcaption></figure></p><p id="GUID-EB9A0F78-008E-4AA9-99F4-85E5689AD663">在选择第二组之后，单击分组按钮。</p><p id="GUID-6876D925-94DB-4E2A-A04A-51C88FA9C414">最后，选择第二组属性表达式及其所属的空间表达式，如图 4 所示。</p><p id="GUID-66DCC298-6E81-45C3-BEDA-BBD198129926"><figure class="fig" href="#"><img src="GUID-6B3B3964-3CE2-44C3-9378-3B03D3F04E57-web.png" alt="选择第二组属性表达式及其所属的空间表达式" title="选择第二组属性表达式及其所属的空间表达式"><figcaption class="fig-caption">图 4：选择第二组属性选择及其所属的空间表达式。</figcaption></figure></p><p id="GUID-B91DE066-C80E-4EA6-A094-33B90F5E1FE0">单击分组按钮，查询会发生缩进，如图 5 所示。最后一步，将 <img purpose="img" placement="inline" alt="and" title="and" src="GUID-3D1AAD10-B065-4F08-BFCD-AB3DCEDA042D-web.png"> 切换为 <img purpose="img" placement="inline" alt="or" title="or" src="GUID-DAD05372-8B12-47D6-8BFB-2F745BE0E07A-web.png">，如图 5 所示。</p><p id="GUID-52BB8E67-C809-4C5E-83CB-5D8EDEED3E8B"><figure class="fig" href="#"><img src="GUID-3910643D-3E8B-40E2-8E15-56EDBB16FB20-web.png" alt="最终查询" title="最终查询"><figcaption class="fig-caption">图 5：最终查询</figcaption></figure></p><p id="GUID-C0C1AA91-A9EF-4120-90F0-9A0B1EC8677C">图 5 中显示的查询将生成所需的结果。<ul purpose="ul" id="UL_E5F6327B6D14442FA922700D99E14B73"><li purpose="li" id="LI_93C3F1CDEF844FBAA82FDC2F160450FE">查找到具有 <span class="usertext">LEAD</span> 或 <span class="usertext">BENZENE</span> 的 <span class="usertext">Toxic Sites</span>，这些要素是查找位于 <span class="usertext">Parks</span> 一千米距离范围内的有毒站点的子集。</li><li purpose="li" id="LI_79307D2321A3448E9FEBE7E83668B50B">接下来，查找到具有 <span class="usertext">SELENIUM</span> 或 <span class="usertext">MERCURY</span> 的 <span class="usertext">Toxic Sites</span>，这些要素是查找位于 <span class="usertext">River</span> 一千米距离范围内的有毒站点的子集。</li><li purpose="li" id="LI_FA727E2F2ECD48208E6020A6C83E1B94">  最后，使用逻辑 <img purpose="img" placement="inline" alt="or" title="or" src="GUID-DAD05372-8B12-47D6-8BFB-2F745BE0E07A-web.png"> 对这两组要素进行组合。</li></ul></p><p id="GUID-EC7555C2-E427-42F2-B906-ED5285E0F7BA">只有需要在同一图层中创建两组或两组以上不同的要素时才需要进行表达式分组。可以这样理解分组：如果不分组，则需要执行两遍<span purpose="gptoolref">查找当前位置</span>，第一遍用于查找位于河流附近的站点，第二遍用于查找位于公园附近的站点。然后使用<span purpose="gptoolref">合并</span>工具对这两个结果进行组合。</p><p id="GUID-67B95CDF-8302-4547-864D-C0E17ADF2E2B">可单击文本按钮 <img purpose="img" placement="inline" alt="文本" title="文本" src="GUID-E31CA738-EE3A-4E35-990A-0DD88518A702-web.png">以查看查询的文本表达。文本表达使用括号来表示分组。</p></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_BF1149EA334B40DEA55B812B413D6EF2" purpose="section1"><h2>类似工具</h2><p id="GUID-D091DDC6-78F7-446A-B3F3-763B03D9A6C3">使用<span purpose="gptoolref">派生新位置</span>来根据查询创建新要素。其他工具或许在解决略有差异的类似问题时十分有用。</p><section class="section2 padded-anchor" id="ESRI_SECTION2_ABF03F0F52F74C7E8AC9EE70914A5044" purpose="section2"><h3><span class="ph">Map Viewer</span> 分析工具</h3><p id="GUID-95EDBBCD-99B7-45F8-B6D0-C658FD0EE7B2"> 如果要查找与参考位置相似的位置，请使用<a class="xref xref" href="../../../../zh-CN/portal/latest/use/find-similar-locations.htm"><span purpose="gptoolref">查找相似位置</span></a>。</p><p id="GUID-C48DBD3E-4AF3-4B25-8A36-12A27C1FE89B">如果尝试使用查询选择现有要素，请使用<a class="xref xref" href="../../../../zh-CN/portal/latest/use/find-existing-locations.htm"><span purpose="gptoolref">查找现有位置</span></a>。</p><div class="panel trailer-1 note" id="GUID-712B599A-47F0-4559-875B-C3EE4068B4E1"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-7E177F00-9CF2-44A2-89A4-53D89CB6DB4D"><span purpose="gptoolref">查找现有位置</span>工具和<span purpose="gptoolref">派生新位置</span>工具的主要区别在于<span purpose="gptoolref">派生新位置</span>的结果可包含部分要素。<ul purpose="ul" id="UL_2715A69F0ABB438DB1FD9BF516D7138B"><li purpose="li" id="LI_7C719FF9CB91401082ED784389DADB42">在两种工具中，属性表达式<span class="uicontrol">位置</span>以及空间表达式<span class="uicontrol">完全在其他要素范围内</span>和<span class="uicontrol">完全包含</span>会返回相同的结果，因为这些表达式都返回整个要素。</li><li purpose="li" id="LI_0D01253EC2A543F69B3E21974AE2F2D0">使用<span class="uicontrol">相交</span>或<span class="uicontrol">在某一距离范围内</span>时，<span purpose="gptoolref">派生新位置</span>将在输出结果图层中创建新要素。</li></ul></p></div></section><section class="section2 padded-anchor" id="ESRI_SECTION2_F340D7A88D7944C1B81961E4F0031E1E" purpose="section2"><h3><span class="ph">ArcGIS Pro</span> 分析工具</h3><p id="GUID-28D3A7CC-EB84-49CD-B81D-D77F449B904C"> <span purpose="gptoolref">派生新位置</span>在 <span class="ph">ArcGIS Pro</span> 中执行与<a class="xref xref" esrisubtype="extrel" hrefpfx="https://desktop.arcgis.com/zh-cn/arcmap/latest/tools" href="https://desktop.arcgis.com/zh-cn/arcmap/latest/tools/data-management-toolbox/select-layer-by-attribute.htm"><span purpose="gptoolref">按属性选择图层</span></a>和<a class="xref xref" esrisubtype="extrel" hrefpfx="https://desktop.arcgis.com/zh-cn/arcmap/latest/tools" href="https://desktop.arcgis.com/zh-cn/arcmap/latest/tools/data-management-toolbox/select-layer-by-location.htm"><span purpose="gptoolref">按位置选择图层</span></a>相似的功能。</p></section></section>
+			
+				<hr>
+				<!--googleoff: all-->
+				
+	
+        
+		    <p class="feedback right">
+		        <a id="afb" class="icon-ui-contact" href="/feedback/" data-langlabel="feedback-on-this-topic" >有关此主题的反馈?</a>
+		    </p>
+        
+	
+
+				<!--googleon: all-->
+			
+		</main>
+	</div>
+	
+	<!--googleoff: all-->
+	
+		
+			<div id="main-toc-large" class="column-5">
+			    <div class="panel font-size--2 tablet-hide trailer-1">
+			      <h5 class="trailer-half">在本主题中</h5>
+			      <ol class="list-plain pre-0 trailer-0"><li><a href="#ESRI_SECTION1_9864ECE4C0834B1F979DE8FA1C65AEBF">工作流示意图</a></li><li><a href="#ESRI_SECTION1_28B62182618B4CD98FB37FA0AA24DD07">术语</a></li><li><a href="#ESRI_SECTION1_3926003C29874A0ABC51D58DDEF0C70C">示例</a></li><li><a href="#ESRI_SECTION1_7CF8D4C1E6A94DE1BCCC02492DCE2987">用法说明</a></li><li><a href="#ESRI_SECTION1_1745A58C27D249B8A3A71217262A1F3A">派生新位置的工作原理</a></li><li><a href="#ESRI_SECTION1_BF1149EA334B40DEA55B812B413D6EF2">类似工具</a></li></ol>
+			    </div>
+			    
+			    
+	  		</div>
+		
+    
+   <!--googleon: all-->
+
+
+
+
+          
+        </div>
+        <!-- ENDPAGECONTENT -->
+
+      </div>
+
+    </div>  <!-- End of wrapper -->
+
+  <footer class="footer leader-3 link-dark-gray" role="contentinfo">
+    <div class="grid-container">
+      <div class="row">
+        <nav class="column-6">
+          <h6 data-langlabel="arcgis-for-server">Arc<span>GIS Enterprise</span></h6>
+          <ul class="list-plain">
+            <li><a data-langlabel="home" href="../../../../zh-CN/">主页</a></li>
+            <li><a data-langlabel="portal" href="../../../../zh-CN/portal/">Portal</a></li>
+            <li><a data-langlabel="server" href="../../../../zh-CN/server/">Server</a></li>
+            <li><a data-langlabel="data-store" href="../../../../zh-CN/data-store/">Data Stores</a></li>
+            <li><a data-langlabel="cloud" href="../../../../zh-CN/cloud/">云</a></li>
+            <li><a data-langlabel="apps" href="../../../../zh-CN/apps/">应用程序</a></li>
+            <li><a data-langlabel="documentation" href="../../../../zh-CN/documentation/">文档</a></li>
+          </ul>
+        </nav>
+
+        
+  <nav class="column-6">
+    <h6 data-langlabel="arcgis-platform">ArcGIS 平台</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="arcgis" href="//www.arcgis.com/">ArcGIS Online</a></li>
+      <li><a data-langlabel="arcgis-for-professionals" href="//pro.arcgis.com/">ArcGIS Pro</a></li>
+      <li><a data-langlabel="arcgis-for-server" href="//enterprise.arcgis.com/">ArcGIS Enterprise</a></li>
+      <li><a data-langlabel="arcgis-for-developers" href="https://developers.arcgis.com/">ArcGIS for Developers</a></li>
+      <li><a data-langlabel="arcgis-solutions" href="//solutions.arcgis.com/">ArcGIS Solutions</a></li>
+      <li><a data-langlabel="arcgis-marketplace" href="//marketplace.arcgis.com/">ArcGIS Marketplace</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <h6 data-langlabel="about-esri">关于 Esri</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="about-us" href="//www.esri.com/about-esri/">关于我们</a></li>
+      <li><a data-langlabel="careers" href="//www.esri.com/careers/">招贤纳士</a></li>
+      <li><a data-langlabel="insiders-blog" href="https://www.esri.com/about/newsroom/blog/">Esri 博客</a></li>
+      <li><a data-langlabel="user-conference" href="//www.esri.com/events/user-conference/index.html">用户大会</a></li>
+      <li><a data-langlabel="developer-summit" href="//www.esri.com/events/devsummit/index.html">开发者峰会</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <a class="esri-logo" href="//www.esri.com/" aria-label="Esri Home"></a>
+    <section class="footer-social-nav leader-1">
+            <a class="icon-social-twitter" aria-label="Esri on Twitter" href="https://twitter.com/Esri/"></a>
+            <a class="icon-social-facebook" aria-label="Esri on Facebook" href="https://www.facebook.com/esrigis/"></a>
+            <a class="icon-social-github" aria-label="Esri on GitHub" href="//esri.github.io/"></a>
+            <a class="icon-social-contact" aria-label="Contact Esri" href="//www.esri.com/about-esri/contact/"></a>
+    </section>
+	  
+  </nav>
+  
+  <div class="column-24 leader-1">
+    <p class="font-size--3"><a href="http://www.esri.com/legal/copyright-trademarks">Copyright &copy; 2019 Esri.</a> All rights reserved. | <a href="http://www.esri.com/legal/privacy/">隐私政策</a> | <a href="http://www.esri.com/legal/software-license">法律声明</a></p>
+  </div>
+  
+
+
+      </div>
+    </div>
+  </footer>
+  <!--googleoff: all-->
+
+  
+  
+	<script src="../../../../zh-CN/assets/js/init.js" type="text/javascript"></script>
+	<!--<script src="../../../../zh-CN/assets/js/drop-down.js" type="text/javascript"></script>-->
+	<script src="../../../../zh-CN/assets/js/search/searchform.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/cdn/js/link-modifier.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/cdn/js/sitewide.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/cdn/js/libs/highlight.pack.js" type="text/javascript"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+
+
+  
+    
+
+  <script src="../../../../zh-CN/cdn/js/affix.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    $(function () {
+          var appendFlg = true;
+
+          $("#bigmac")
+          .on("affixed.bs.affix", function (evt) {
+            if (appendFlg) {
+              $("<a class='crumb' href='#'>派生新位置</a>").insertAfter ($("#bigmac nav a").last());
+              appendFlg = false;
+            }
+          })
+          .on ("affix-top.bs.affix", function(evt) {
+            if (!appendFlg) {
+              $("#bigmac nav a").last().remove();
+            }
+            appendFlg = true;
+          })
+    })
+  </script>
+  
+        <script type="text/javascript">
+          window.doctoc = {
+            pubID: "583",
+            tpcID: "369",
+            
+              prefix: "使用",
+              prefixUrl: "/zh-cn/portal/latest/use/",
+          
+            hideToc: false
+          }
+        </script>
+
+        <script type="text/javascript" src="../../../../zh-CN/portal/latest/use/583.js" ></script>
+        <script type="text/javascript" src="../../../../zh-CN/cdn/calcite/js/protoc.js" ></script>
+        
+        
+
+  <noscript>
+        <p>
+            <a href="flisting.htm">flist</a>
+        </p>
+    </noscript>
+    <script type="text/javascript"></script>
+  
+  
+    
+    
+
+  </body>
+</html>

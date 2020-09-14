@@ -1,0 +1,545 @@
+
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>  <html class="ie lt-ie9 lt-ie8 lt-ie7 ie6" dir="ltr"> <![endif]-->
+<!--[if IE 7]>     <html class="ie lt-ie9 lt-ie8 ie7" dir="ltr"> <![endif]-->
+<!--[if IE 8]>     <html class="ie lt-ie9 ie8" dir="ltr"> <![endif]-->
+<!--[if IE 9]>     <html class="ie ie9" dir="ltr"> <![endif]-->
+<!--[if !IE]><!--> <html dir="ltr" lang="zh-CN"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>离线地图与传统版本化数据&mdash;文档 | ArcGIS Enterprise 文档</title>
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+    <script>
+      var docConfig = {
+        locale: 'zh-CN'
+        ,localedir: 'zh-cn'
+        ,langSelector: ''
+        
+        ,relativeUrl: false
+        
+
+        ,searchformUrl: '/search/'
+        ,tertiaryNavIndex: ''
+
+        
+      };
+    </script>
+	 
+
+
+    
+    <!--[if lt IE 9]>
+      <script src="../../../../../zh-CN/cdn/js/libs/html5shiv.js" type="text/javascript"></script>
+      <script src="../../../../../zh-CN/cdn/js/libs/selectivizr-min.js" type="text/javascript"></script>
+      <script src="../../../../../zh-CN/cdn/js/libs/json2.js" type="text/javascript"></script>
+      <script src="../../../../../zh-CN/cdn/js/libs/html5shiv-printshiv.js" type="text/javascript" >
+
+    <![endif]-->
+
+     <!--[if lt IE 11]>
+    <script>
+      $$(document).ready(function(){
+        $$(".hideOnIE").hide();
+      });
+    </script>
+    <![endif]-->
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<link href="../../../../../zh-CN/assets/img/favicon.ico" rel="shortcut icon" >
+	<link href="../../../../../zh-CN/assets/css/screen.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/cdn/calcite/css/documentation.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/assets/css/print.css" media="print" type="text/css" rel="stylesheet" />
+
+	<!--
+	<link href="../../../../../zh-CN/assets/css/screen_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/assets/css/documentation/base_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/assets/css/print_l10n.css" media="print" type="text/css" rel="stylesheet" />
+	-->
+	
+	
+		<script src="../../../../../zh-CN/cdn/js/libs/jquery.1.9.1.min.js" type="text/javascript"></script>
+	
+	<script src="../../../../../zh-CN/cdn/js/libs/jquery.cookie.js" type="text/javascript"></script>
+	<link href="../../../../../zh-CN/cdn/css/colorbox.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/cdn/css/colorbox_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<script src="../../../../../zh-CN/cdn/js/libs/jquery.colorbox-min.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/assets/js/video-init.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/assets/js/sitecfg.js" type="text/javascript"></script>
+	
+		<script src="../../../../../zh-CN/assets/js/signIn.js" type="text/javascript"></script>
+	
+
+	<!--- Language Picker -->
+	<script src="../../../../../zh-CN/assets/js/locale/l10NStrings.js" type="text/javascript"></script>
+	
+		 
+	
+
+	<script src="../../../../../zh-CN/assets/js/calcite-web.js" type="text/javascript"></script>
+
+
+
+  <!--- search MD -->
+    <META name="description" content="下载包含版本化数据的地图进行离线编辑时，将通过已发布数据使用的版本创建新的地理数据库版本。管理员和要素服务所有者可以确定是针对每个下载的地图创建版本还是针对下载地图的每位用户创建版本。"><META name="last-modified" content="2019-12-6"><META name="product" content="arcgis-server-windows,arcgis-enterprise-windows"><META name="sub_category" content="ArcGIS Server (Windows)"><META name="search-collection" content="help"><META name="content_type_label" content="帮助主题"><META name="sub_category_label" content="ArcGIS Server (Windows)"><META name="search-category" content="help-general"><META name="subject_label" content="服务"><META name="version" content="10.8"><META name="content_type" content="Help Topic"><META name="subject" content="SERVICES"><META name="content-language" content="zh-cn">
+    <!--- search MD -->
+
+  
+  <script src="../../../../../zh-CN/assets/js/switchers/server-1.js" type="text/javascript"></script>
+  
+      
+
+</head>
+
+<!--
+      pub: GUID-F157DF68-7F60-4427-A561-AD2F0FA30861=22
+      tpc: GUID-76C25129-0741-4599-B4EB-82FAA272C942=9
+      -->
+
+
+<!-- variable declaration, if any -->
+<!-- can change following macro to set variable once we are on Jinja 2.8 -->
+
+
+
+
+
+<body class="claro zh-CN server">
+  
+
+  <!-- Drawer location -->
+  <div class="drawer drawer-left js-drawer" data-drawer="top-nav">
+        <nav class="drawer-nav" role="navigation">
+          <aside class="side-nav">
+            <h2 class="side-nav-title">Arc<span>GIS</span> Enterprise</h2>
+            <form id="helpSearchForm" class="margin-left-half margin-right-half leader-half trailer-half drawer-search-form" method="GET">
+              <input type="search" name="q"  placeholder="搜索 ArcGIS Server 10.8 帮助">
+              <input type="hidden" name="collection" value="help" />
+              <input type="hidden" name="product" value="arcgis-server-windows" />
+              <input type="hidden" name="version" value="10.8" />
+              <input type="hidden" name="language" value="zh-CN" />
+            </form>    
+             <a id="nav-portal" data-langlabel="portal" href="../../../../../zh-CN/portal/" class="side-nav-link">Portal</a>
+             
+            <a id="all-servers" data-langlabel="all-servers" href="../../../../../zh-CN/server/" class="side-nav-link">所有服务器</a>
+            <a id="gis-server" data-langlabel="gis-server" href="../../../../../zh-CN/server/" class="side-nav-link">GIS Server</a>
+            <a id="image-server" data-langlabel="image-server" href="../../../../../zh-CN/image/" class="side-nav-link">Image Server</a>
+            <a id="geo-analytics-server" data-langlabel="geo-analytics-server" href="../../../../../zh-CN/geoanalytics/" class="side-nav-link">GeoAnalytics Server</a>
+            <a id="geoevent-server" data-langlabel="geoevent-server" href="../../../../../zh-CN/geoevent/" class="side-nav-link">GeoEvent Server</a>
+            <a id="notebook-server" data-langlabel="notebook-server" href="../../../../../zh-CN/notebook/" class="side-nav-link">Notebook Server</a>
+            <a id="nav-data-store" data-langlabel="data-store" href="../../../../../zh-CN/data-store/" class="side-nav-link">Data Stores</a>
+            <a id="nav-cloud" data-langlabel="cloud" href="../../../../../zh-CN/cloud/" class="side-nav-link">云</a>
+            <a id="nav-apps" data-langlabel="apps" href="../../../../../zh-CN/apps/" class="side-nav-link">应用程序</a>
+            <a id="nav-doc" data-langlabel="documentation" href="../../../../../zh-CN/documentation/" class="side-nav-link">文档</a>
+
+          </aside>
+        </nav>
+    </div>
+
+    <!-- user navigation collapses to drawer on mobile -->
+    
+    <div class="drawer drawer-right js-drawer hide-if-logged-out logged-in-navigation" data-drawer="user-nav">
+      <nav class="drawer-nav">
+        <aside class="side-nav">
+          <a class="side-nav-link agolProfile" href="#">我的个人资料</a>
+          <a class="side-nav-link icon-ui-sign-out js-log-out" href="#">登出</a>
+        </aside>
+      </nav>
+    </div>
+    
+<!-- End of drawer -->
+
+  
+  <div class="wrapper">
+      <!--googleoff: all-->
+
+      <header class="top-nav" data-skin="learn">
+        <a class="skip-to-content" href="#skip-to-content">Skip To Content</a>
+        <div class="grid-container">
+          <div class="column-24">
+
+
+            <!--<div class="top-nav-title-wrapper text-center ">-->
+              <a href='../../../../../zh-CN/' class="top-nav-title tablet-hide"><span>Arc</span>GIS  Enterprise</a>
+              <a href='../../../../../zh-CN/' class="icon-ui-menu top-nav-title js-drawer-toggle tablet-show" data-drawer="top-nav"><span>Arc</span>GIS Enterprise</a>
+            <!--</div> -->
+
+          
+            <nav role="navigation" class="top-nav-list left tablet-hide">
+              <a id="nav-portal" data-langlabel="portal" href="../../../../../zh-CN/portal/" class="top-nav-link">Portal</a>
+
+                <div class="dropdown js-dropdown ">
+                  <a class="top-nav-link js-dropdown-toggle" tabindex="0" aria-haspopup="true" aria-expanded="false" href="#">Servers</a>
+                  <nav class="dropdown-menu featured" role="menu">
+                    <ul class="dropdown-sublist-featured">
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/get-started/latest/windows/additional-server-deployment.htm" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path  d="M42.92 6.1H4.12v8.566l.833.832-.835.833-.018 7.332.845.847-.825.824V33.9h25v5.2h-2v1.075H8.02v.8h19.1v.925h4.8v-.925H40v-.8h-8.08V39.1h-2v-5.2h13v-8.566l-.834-.834.835-.834v-7.332l-.835-.834.835-.834zm-11.8 35h-3.2v-1.2h3.2zm11-8H4.92v-7.434l.767-.766h35.668l.765.766zm0-9.766l-.766.766H5.666l-.766-.767.017-6.669.766-.764h35.671l.766.766zm0-9l-.766.766H5.687l-.766-.766V6.9h37.2zM19 11.9h-2v-.8h2zm-4 0h-2v-.8h2zm-4 0H9v-.8h2zm6 8.2h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9zm8 9h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9z"/></svg></span>
+                          <span class="sublink-text">所有服务器</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/server/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M45.98 33.575a.616.616 0 0 0-.335-.51l-3.362-2.03 3.362-2.031a.556.556 0 0 0 0-1.02l-11.1-6.704a1.293 1.293 0 0 0-1.112 0L22.33 27.982a.556.556 0 0 0 0 1.02l3.36 2.03-3.358 2.03a.556.556 0 0 0-.002 1.021l3.322 2.006-3.324 2.008a.555.555 0 0 0 .002 1.017l11.102 6.703a1.25 1.25 0 0 0 1.11.002l11.104-6.706a.556.556 0 0 0 0-1.02l-3.32-2.006 3.318-2.004a.607.607 0 0 0 .335-.509zM33.837 21.97c.026-.01.286-.005.29-.005l10.814 6.53-10.8 6.523c-.028.01-.284.005-.294.006l-10.813-6.53zm11.105 16.636l-10.8 6.523a2.564 2.564 0 0 1-.295.006l-10.81-6.529 3.39-2.047 7.004 4.23a1.083 1.083 0 0 0 .557.131 1.101 1.101 0 0 0 .554-.13l7.01-4.233zM34.14 40.098a2.545 2.545 0 0 1-.294.006l-10.812-6.53 3.43-2.073 6.97 4.208a1.25 1.25 0 0 0 1.107-.001l6.966-4.206 3.431 2.073zM9 8H7V7h2zm8 8h-2v-1h2zm-4-8h-2V7h2zm4 0h-2V7h2zm-4 8h-2v-1h2zm7.316 11.1H3.9v-6.434l.766-.766h35.668l.766.766v2.12l.8.483v-2.935l-.826-.826.826-.845v-6.329l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9h16.88a2.632 2.632 0 0 1 .336-.8zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zm0 8v-5.668l.766-.766h35.668l.766.766v5.67l-.746.764H4.666zM15 24v-1h2v1zm-4 0v-1h2v1zm-2-8H7v-1h2zm-2 8v-1h2v1z"/></svg></span>
+                          <span class="sublink-text">GIS Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/image/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 8h-2V7h2zm-4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm8 8h-2v1h2zm-8 0H7v1h2zm4 9v-1h-2v1zm-4 0v-1H7v1zm8 0v-1h-2v1zm4 3.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V21h-.8v-.334l-.766-.766H4.666l-.766.766V27.1H21zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zm40.234 4v21.8H23.1V23.1zm-.8 16.366L39.466 44.1h2.868l1.766-1.766zm-20.2-9.932l5.634-5.634h-2.868L23.9 26.666zm6.2-5.068L24.466 30.1h2.868l2.766-2.766zM28.466 30.1H30.1v-1.634zm2.434 0h6.2v-6.2h-6.2zm-7 7h6.2v-6.2h-6.2zm7 0h6.2v-6.2h-6.2zm0 6.434l5.634-5.634h-2.868L30.9 40.666zm7-7l5.634-5.634h-2.868L37.9 33.666zm1.634-5.634H37.9v1.634zm-8.634 7v1.634l1.634-1.634zm.566 6.2h2.868l2.766-2.766v-2.868zm6.434-3.566l2.634-2.634H37.9zM35.466 44.1H37.1v-1.634zm2.434 0h.434l5.766-5.766V37.9h-2.434L37.9 41.666zm6.2-8.634L42.466 37.1H44.1zm0-4L38.466 37.1h2.868l2.766-2.766zm0-7.566h-6.2v6.2h6.2zm-20.2 0v1.634l1.634-1.634zm0 20.2h6.2v-6.2h-6.2zm20.2 0v-.634l-.634.634z"/></svg></span>
+                          <span class="sublink-text">Image Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/geoanalytics/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 16h-2v-1h2zm-8 8v-1H7v1zm8 0v-1h-2v1zM13 7h-2v1h2zm4 0h-2v1h2zM9 7H7v1h2zm21.45 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V27.9h-1.464l-.801-.8H41.1v-6.434l-.766-.766H4.666l-.766.766V27.1h27.15zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM13 24v-1h-2v1zm0-9h-2v1h2zm-4 0H7v1h2zm26.672 27.148A1.87 1.87 0 0 1 35.9 43a1.91 1.91 0 1 1-3.763-.222l-9.845-3.414A1.88 1.88 0 0 1 21 39.9a1.9 1.9 0 1 1 1.474-3.084l4.692-2.346A1.878 1.878 0 0 1 27.1 34a1.902 1.902 0 0 1 1.9-1.9 1.867 1.867 0 0 1 .781.191l3.788-5.05A1.88 1.88 0 0 1 33.1 26a1.9 1.9 0 1 1 3.491 1.026l4.889 4.888c-.069.056-.144.1-.21.162a3.986 3.986 0 0 0-.358.402l-4.883-4.883A1.889 1.889 0 0 1 35 27.9a1.867 1.867 0 0 1-.781-.191l-3.788 5.049a1.868 1.868 0 0 1 .437.965l9.204.614c-.018.11-.049.218-.058.33A3.93 3.93 0 0 0 40 35c0 .046.01.09.01.135l-9.185-.612A1.913 1.913 0 0 1 29 35.9a1.889 1.889 0 0 1-1.474-.716l-4.692 2.346a1.878 1.878 0 0 1 .066.47 1.9 1.9 0 0 1-.105.625c-.007.02-.022.036-.03.056l9.63 3.34a1.87 1.87 0 0 1 2.786-.505l5.415-4.437c.067.108.127.22.204.322a3.9 3.9 0 0 0 .292.306zM33.9 26a1.092 1.092 0 0 0 .43.872 1.12 1.12 0 0 0 1.42-.068A1.1 1.1 0 1 0 33.9 26zm-6 8a1.1 1.1 0 0 0 2.196.093 1.135 1.135 0 0 0-.426-.965A1.087 1.087 0 0 0 29 32.9a1.101 1.101 0 0 0-1.1 1.1zm-5.8 4a1.098 1.098 0 1 0-.06.362A1.101 1.101 0 0 0 22.1 38zm13 5a1.1 1.1 0 1 0-2.2 0 1.1 1.1 0 0 0 2.2 0zm10.8-8a1.9 1.9 0 1 1-3.8 0c0-.053.003-.105.007-.158A1.9 1.9 0 0 1 45.9 35zm-.8 0a1.1 1.1 0 0 0-2.196-.093 1.153 1.153 0 0 0 .216.752A1.1 1.1 0 0 0 45.1 35z"/></svg></span>
+                          <span class="sublink-text">GeoAnalytics Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/geoevent/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M13 8h-2V7h2zm4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm12.418 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826v2.117c-.259-.177-.53-.337-.8-.497v-1.288l-.766-.766H4.666l-.766.766V27.1h17.933c-.148.26-.283.53-.415.8zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM9 24v-1H7v1zm4-9h-2v1h2zm0 9v-1h-2v1zm-4-9H7v1h2zm8 9v-1h-2v1zm16.9 2h-.8v8.9H39v-.8h-5.1zm.1-3.901a11.9 11.9 0 1 0 11.9 11.9 11.914 11.914 0 0 0-11.9-11.9zm0 23a11.1 11.1 0 1 1 11.1-11.1 11.112 11.112 0 0 1-11.1 11.1z"/></svg></span>
+                          <span class="sublink-text">GeoEvent Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/notebook/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M22 27.1H3.9v-6.434l.766-.766h18.576a5.262 5.262 0 0 1 .83-.8H4.666l-.766-.766v-5.668l.766-.766h35.668l.766.766V18h.8v-5.666l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9H22zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zM9 8H7V7h2zm8 0h-2V7h2zm-4 0h-2V7h2zm2 16v-1h2v1zm-4 0v-1h2v1zm-4 0v-1h2v1zm0-8v-1h2v1zm8 0v-1h2v1zm-4 0v-1h2v1zm18.9 8.1h-1.8v1.8h1.8zm-.8 1h-.2v-.2h.2zm15.498-4.48a2.727 2.727 0 0 0-1.62-.5v-.02H27.25a3.154 3.154 0 0 0-3.15 3.15V38.1h-1.68a3.386 3.386 0 0 0-2.872 1.58 3.49 3.49 0 0 0-.157 3.419 3.241 3.241 0 0 0 2.954 1.801h15.161a3.404 3.404 0 0 0 3.394-3.4V26.9h5v-3.65a3.224 3.224 0 0 0-1.302-2.63zM22.345 44.1a2.44 2.44 0 0 1-2.23-1.341 2.706 2.706 0 0 1 .11-2.65A2.588 2.588 0 0 1 22.42 38.9h12.89a3.395 3.395 0 0 0 0 5.2zM40.1 23.192V41.5a2.6 2.6 0 1 1-2.6-2.6v-.8H24.9V23.25a2.352 2.352 0 0 1 2.35-2.35h13.795a3.183 3.183 0 0 0-.945 2.292zm5 2.908h-4.2v-2.908a2.274 2.274 0 0 1 1.44-2.18 1.944 1.944 0 0 1 1.791.259 2.423 2.423 0 0 1 .97 1.979zm-17.1 5h9v.8h-9zm0 3h7v.8h-7zm0-6h9v.8h-9zm4-3h5v.8h-5z"/></svg></span>
+                          <span class="sublink-text">Notebook Server</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+
+              <a id="nav-data-store" data-langlabel="data-store" href="../../../../../zh-CN/data-store/" class="top-nav-link">Data Stores</a>
+              <a id="nav-cloud" data-langlabel="cloud" href="../../../../../zh-CN/cloud/" class="top-nav-link">云</a>
+              <a id="nav-apps" data-langlabel="apps" href="../../../../../zh-CN/apps/" class="top-nav-link">应用程序</a>
+            </nav>
+
+
+            
+            
+            
+
+            <div class="margin-left-1 top-nav-list right hide-if-logged-in logged-out-navigation">
+               
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+              
+              <a data-langlabel="sign-in" id="login-link" class="icon-ui-user top-nav-link link-blue login-link" href="#">登录</a>
+              
+            </div>
+
+            
+            <nav class="margin-left-1 top-nav-list right hide-if-logged-out logged-in-navigation">
+              
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+             
+              <div class="dropdown js-dropdown right">
+
+                <div class="tablet-show top-nav-link">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a href="#" data-drawer="user-nav" class="user-nav-name js-drawer-toggle" data-first-name></a>
+                </div>
+
+                <div class="tablet-hide top-nav-link js-dropdown-toggle">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a class="user-nav-name top-nav-dropdown dropdown-btn" data-first-name>&nbsp;</a>
+                </div>
+
+                <nav class="dropdown-menu dropdown-right">
+                
+                  <a class="dropdown-link agolProfile" id="agolProfile" href="#">我的个人资料</a>
+                  <a class="dropdown-link js-log-out" id="agolLogout" href="#">登出</a>
+                </nav>
+              </div>
+            </nav>
+            
+
+            
+          </div>
+        </div>
+      </header>
+
+      <div class="js-search search-overlay">
+        <div class="search-content" role="dialog" aria-labelledby="search">
+          <form method="GET" id="helpSearchForm">
+            <label>
+              搜索 ArcGIS Server 10.8 帮助
+              <div class="search-bar">
+                <input type="search" name="q"  placeholder="搜索 ArcGIS Server 10.8 帮助" class="search-input js-search-input">
+                <input type="hidden" name="collection" value="help" />
+                <input type="hidden" name="product" value="arcgis-server-windows" />
+                <input type="hidden" name="version" value="10.8" />
+                <input type="hidden" name="language" value="zh-CN" />
+              </div>
+            </label>
+            <input type="hidden" name="relativePath" value="../../../../../" /><button type="submit" class="btn btn-large right">搜索</button>
+          </form>
+        </div>
+      </div>
+
+      <!--googleon: all-->
+
+      <div id="skip-to-content">
+        <!--googleoff: all-->
+        <header class="sub-nav sub-nav-learn">
+          <div class="grid-container">
+            
+            <div class="column-24">
+              <div style="display:table;" class="sdk-home-banner">
+                <div class="sdk-home-banner-content">
+                  <h1 class="sub-nav-title link-white">ArcGIS Server</h1>
+                </div>
+              </div>
+            </div>
+
+            <div class="column-24">
+              <nav class='sub-nav-list tablet-hide'><a class="sub-nav-link" href="../../../../../zh-CN/server/" target="_top" title="ArcGIS Server 的概述和文档">主页</a><a class="sub-nav-link" href="../../../../../zh-CN/server/latest/get-started/windows/" target="_top" title="了解有关 ArcGIS Server 和服务器角色的信息">简介</a><a class="sub-nav-link" href="../../../../../zh-CN/server/latest/deploy/windows/" target="_top" title="构建、配置和升级部署">部署</a><a class="sub-nav-link" href="../../../../../zh-CN/server/latest/manage-data/windows/" target="_top" title="管理企业的空间数据">管理数据</a><a class="sub-nav-link is-active" href="../../../../../zh-CN/server/latest/publish-services/windows/" target="_top" title="使用 GIS 服务">管理服务</a><a class="sub-nav-link" href="../../../../../zh-CN/server/latest/create-web-apps/windows/" target="_top" title="创建 Web 应用程序和可打印地图">共享</a><a class="sub-nav-link" href="../../../../../zh-CN/server/latest/administer/windows/" target="_top" title="管理和保护 ArcGIS Server">管理</a><a class="sub-nav-link" href="../../../../../zh-CN/server/latest/develop/windows/" target="_top" title="构建扩展模块并自动执行常见任务">开发</a></nav><select class='tablet-show select-full trailer-half js-select-nav'><option value="../../../../../zh-CN/server/">主页</option><option value="../../../../../zh-CN/server/latest/get-started/windows/">简介</option><option value="../../../../../zh-CN/server/latest/deploy/windows/">部署</option><option value="../../../../../zh-CN/server/latest/manage-data/windows/">管理数据</option><option selected="true" value="../../../../../zh-CN/server/latest/publish-services/windows/">管理服务</option><option value="../../../../../zh-CN/server/latest/create-web-apps/windows/">共享</option><option value="../../../../../zh-CN/server/latest/administer/windows/">管理</option><option value="../../../../../zh-CN/server/latest/develop/windows/">开发</option></select>
+            </div>
+
+          </div>
+        </header>
+        <!--googleon: all-->
+       
+        <!-- content goes here -->
+        <div class="grid-container ">
+          
+
+            
+              
+  <!--BREADCRUMB-BEG--><div id="bigmac" class="sticky-breadcrumbs trailer-2" data-spy="affix" data-offset-top="180"> </div><!--BREADCRUMB-END-->
+  <!--googleoff: all-->
+    <div class="column-5 tablet-column-12 trailer-2 ">
+      <aside class="js-accordion accordion reference-index" aria-live="polite" role="tablist">
+        <div></div>
+      </aside>
+
+      <div class="js-sticky scroll-show tablet-hide leader-1 back-to-top" data-top="0" style="top: 0px;">
+        <a href="#" class="btn btn-fill btn-clear">返回顶部</a>
+      </div>
+    </div>
+  <!--googleon: all-->
+  
+            
+            
+            
+	
+		<div class="column-13  pre-1 content-section">
+	
+		<header class="trailer-1"><h1>离线地图与传统版本化数据</h1></header>
+
+		 
+	<!--googleoff: all-->
+	
+		
+				<aside id="main-toc-small" class="js-accordion accordion tablet-show trailer-1">
+			      <div class="accordion-section">
+			        <h4 class="accordion-title">在本主题中</h4>
+			        <div class="accordion-content list-plain">
+			          <ol class="list-plain pre-0 trailer-0"><li><a href="#GUID-E001AFA7-B923-4329-96BA-679498F3168E">为每个离线地图创建版本</a></li><li><a href="#ESRI_SECTION1_C9FD7367B2154F488EF2F6F73D003B0E">为每个用户创建版本</a></li><li><a href="#ESRI_SECTION1_D1CD93805BDA48E5B92F5E9B2A317753">示例</a></li><li><a href="#ESRI_SECTION1_BBD9623A85B54378AEF34AB44A50F8A8">工作流 1：下载用于数据维护的地图</a></li><li><a href="#ESRI_SECTION1_52F9F44273974A1F9B7F01A45069F218">工作流 2：下载用于持续时间较短的项目的地图</a></li><li><a href="#ESRI_SECTION1_C4EC44F1F6754819A61585B3418D3442">工作流 3：下载用于正在进行的项目的地图</a></li></ol>
+			        </div>
+			      </div>
+			     </aside>
+		
+    
+   <!--googleon: all-->
+
+
+		<main>
+			
+	
+    	
+    
+
+
+			
+<p id="GUID-3E4A64B8-DCCC-4012-A343-FED616689E91">下载并离线使用包含可编辑要素服务（使用已注册传统版本化数据）的地图时，将通过已发布数据使用的版本创建新的<a class="xref xref" esrisubtype="extrel" hrefpfx="https://desktop.arcgis.com/zh-cn/arcmap/latest/manage-data" href="https://desktop.arcgis.com/zh-cn/arcmap/latest/manage-data/geodatabases/versioning-terms.htm#GUID-5A5CF626-E63E-402D-A18C-57D1E08C1D0F">地理数据库版本</a>。当客户端与要素服务同步编辑内容时，编辑内容将应用于此新版本。因此，您需要额外执行<a class="xref xref" esrisubtype="extrel" hrefpfx="https://desktop.arcgis.com/zh-cn/arcmap/latest/manage-data" href="https://desktop.arcgis.com/zh-cn/arcmap/latest/manage-data/geodatabases/versioning-terms.htm#GUID-B0233C7F-4F2B-4A9F-B75E-087CCEAC5682">协调</a>和<a class="xref xref" esrisubtype="extrel" hrefpfx="https://desktop.arcgis.com/zh-cn/arcmap/latest/manage-data" href="https://desktop.arcgis.com/zh-cn/arcmap/latest/manage-data/geodatabases/versioning-terms.htm#GUID-D9784E05-FD8E-4011-A73E-0CA5E7AF25AA">提交</a>过程，将编辑内容转换为已发布版本，并将编辑内容与其他用户共享。</p><p id="GUID-4EA3B952-316F-416E-8F85-DA9387DDD942">如果地图包含只读要素服务（仅在要素服务上启用查询和同步）且要素服务包含版本化数据，则下载地图时不会创建任何版本。同样，在<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/portal/latest/administer" href="../../../../../zh-CN/portal/latest/administer/windows/about-distributed-collaboration.htm">分布式协作</a>工作流过程中复制数据时，也不会创建任何版本。在这些情况下，客户端与要素服务同步时，它们对源数据的所有编辑内容都有访问权限。</p><p id="GUID-53F9D6FA-8C8C-49D2-8AF6-BD6EE354AE8B">即使要素服务为只读（仅启用查询和同步），发布时连接到地理数据库的数据库用户也必须具有数据编辑权限。</p><p id="GUID-95C23E30-2866-4B16-BFC7-56E940CF766A">提供的以下两个选项允许要素服务所有者或 <span class="ph">ArcGIS Server</span> 管理员选择针对特定可编辑要素内容创建版本的方式。在发布要素服务时，发布者将设置这些选项。</p><p id="GUID-AA1D841D-155C-4555-9837-4C0F2C0703E3"><div class="panel trailer-1 note" id="GUID-25B52EB6-6F7D-4ADC-83D1-08136FBDF7C3"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-FAAA74F4-597E-4CFA-9FD0-08447E209307">这些选项不适用于注册为分支版本的数据。</p></div></p><section class="section1 padded-anchor" id="GUID-E001AFA7-B923-4329-96BA-679498F3168E" purpose="section1"><h2>为每个离线地图创建版本</h2><p id="GUID-FAD08B48-50AA-407D-A69C-EC20A04BC90A">这是默认选项。通过此选项，在每次离线使用包含可编辑要素服务的地图时都会使用已发布的版本生成新版本。版本名称包括：<ul purpose="ul" id="UL_E7941FA5ABF44A51955ED87E4CA5B784"><li purpose="li" id="LI_87F69C3DDE34494587F606A00616D308">下载地图的用户的姓名</li><li purpose="li" id="LI_4B1FF77F3DC6479C8680400BAE0D1C8C">要素服务的名称</li><li purpose="li" id="LI_C41D28CAB76D472B81B1EB5920807738">唯一标识符 (ID)</li></ul></p><p id="GUID-AC99B56A-4F8E-4D6F-8063-BCDF57391E9B">这三个组件可确保版本名称唯一。例如，如果用户 Bob 下载包含要素服务 NetFS 的地图，则创建的版本的名称为 Bob_NetFS_1404578882000。如果同一用户多次下载该地图（例如在多个设备上），则用户在每台设备进行同步时均采用不同的版本。因此，一台设备不具有对其他设备的编辑内容的访问权限。但新下载的地图与已发布的版本匹配。如果存在多个已下载的地图，则存在多个地图版本。从用于离线编辑的应用程序中移除下载的地图后，可协调、提交和删除其版本。</p><p id="GUID-FC6B634D-4D4A-41A3-9CEE-C4A45C350E43"><div class="panel trailer-1 note" id="GUID-792D11E2-85BA-4286-AB22-BCC61570D01C"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-5E018424-9E56-4319-BF09-8376F7AAF684">如果要素服务已发布到未<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/server/latest/deploy" href="../../../../../zh-CN/server/latest/deploy/windows/federate-an-arcgis-server-site-with-your-portal.htm">与门户联合</a>的 <span class="ph">ArcGIS Server</span> 站点或您不具有 <a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/server/latest/administer" href="../../../../../zh-CN/server/latest/administer/windows/configuring-arcgis-server-security.htm"><span class="ph">ArcGIS Server</span> 中的单个用户帐户</a>，则地图版本的名称将为 <span class="uicontrol">Esri_Anonymous_&lt;要素服务名称&gt;_&lt;ID&gt;</span>。</p></div></p></section><section class="section1 padded-anchor" id="ESRI_SECTION1_C9FD7367B2154F488EF2F6F73D003B0E" purpose="section1"><h2>为每个用户创建版本</h2><p id="GUID-A8780972-B369-4575-B124-69500D1553A4">通过此选项，将为每个下载包含可编辑要素服务的地图的用户生成版本。例如，如果 10 位用户下载同一地图，则会生成 10 个版本。每个版本特定于一位用户，版本名称由用户名和服务名称组成（如 Joe_InspectionFS）。如果用户多次下载该地图（例如在多个设备上），则用户在每台设备进行同步时均采用相同版本。因此，一台设备具有对其他设备的编辑内容的访问权限。但是，新下载的地图将仅更新至用户最后一次协调的版本。只要用户下载地图就会一直保留用户版本。</p><p id="GUID-41F6CC7C-C770-489D-9C4E-78BD3A80341D"><div class="panel trailer-1 note" id="GUID-B14AF440-A6E6-429F-AB81-3311D666A223"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-FEDBE2B9-2B06-4ADC-B085-CD07DF6F2888">如果使用此选项，您应<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/server/latest/deploy" href="../../../../../zh-CN/server/latest/deploy/windows/federate-an-arcgis-server-site-with-your-portal.htm">将 <span class="ph">ArcGIS Server</span> 站点与门户联合</a>或<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/server/latest/administer" href="../../../../../zh-CN/server/latest/administer/windows/configuring-arcgis-server-security.htm">配置 <span class="ph">ArcGIS Server</span> 中的用户帐户</a>。如果未执行此操作，创建的地图版本的名称将为 <span class="uicontrol">Esri_Anonymous_&lt;要素服务名称&gt;</span>，连接至门户的每个用户均使用同一版本。</p></div></p></section><section class="section1 padded-anchor" id="ESRI_SECTION1_D1CD93805BDA48E5B92F5E9B2A317753" purpose="section1"><h2>示例</h2><p id="GUID-8A726EAF-8767-42B0-8D78-B298E4B745AF">以下部分将指导您使用之前两个部分中描述的版本选项完成工作流示例：<ul purpose="ul" id="UL_4E4EFED4B54847D9948505E37ADDCE95"><li purpose="li" id="LI_31858904EBF24190B3D91F3A00D6B944">工作流 1：<a class="xref xref" href="../../../../../zh-CN/server/latest/publish-services/windows/offline-maps-and-versioned-data.htm#ESRI_SECTION1_BBD9623A85B54378AEF34AB44A50F8A8">下载用于数据维护的地图</a></li><li purpose="li" id="LI_63EF2B29D9BD4D46A1FA17289EEEFD29">工作流 2：<a class="xref xref" href="../../../../../zh-CN/server/latest/publish-services/windows/offline-maps-and-versioned-data.htm#ESRI_SECTION1_52F9F44273974A1F9B7F01A45069F218">下载用于持续时间较短的项目的地图</a></li><li purpose="li" id="LI_BC041FB807E440A3A6B065B63ADEB4C1">工作流 3：<a class="xref xref" href="../../../../../zh-CN/server/latest/publish-services/windows/offline-maps-and-versioned-data.htm#ESRI_SECTION1_C4EC44F1F6754819A61585B3418D3442">下载用于正在进行的项目的地图</a></li></ul></p><p id="GUID-134D33C6-3B1D-4DE5-8A29-7FD2565E4B1F">下面将比较每个工作流的组件：</p><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><colgroup width="*"></colgroup><colgroup width="*"></colgroup><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-6E0EA2E9-E298-40F1-ACE7-0E4C72B7E3B2">工作流 1</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-615FD251-F356-4835-86B4-4A2DF75570A5">工作流 2</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-010259C6-CABA-4D3A-A08A-190DB7222E8C">工作流 3</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-8595EDAA-E09E-41B8-8E8A-F625738E358A">发布要素服务所使用的版本</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-1B9D3C54-7ECA-46A9-9416-E52656C39113"><a class="xref xref" esrisubtype="extrel" hrefpfx="https://desktop.arcgis.com/zh-cn/arcmap/latest/manage-data" href="https://desktop.arcgis.com/zh-cn/arcmap/latest/manage-data/geodatabases/versioning-terms.htm#GUID-DFC4BEF1-B33A-4C0C-A5D5-D890124C8CF6">默认版本</a></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-4115C564-619D-4D61-96BC-2D1900FDF5BB"><a class="xref xref" esrisubtype="extrel" hrefpfx="https://desktop.arcgis.com/zh-cn/arcmap/latest/manage-data" href="https://desktop.arcgis.com/zh-cn/arcmap/latest/manage-data/geodatabases/versioning-terms.htm#GUID-22ED69C1-345F-42DB-A776-2970385A5653">子版本</a></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-92CF74B6-63A5-43DB-AF9D-8DBD55E4E5E0"><a class="xref xref" esrisubtype="extrel" hrefpfx="https://desktop.arcgis.com/zh-cn/arcmap/latest/manage-data" href="https://desktop.arcgis.com/zh-cn/arcmap/latest/manage-data/geodatabases/versioning-terms.htm#GUID-22ED69C1-345F-42DB-A776-2970385A5653">子版本</a></p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-3E944044-5E92-481D-A88B-4958B9AC2CA4">针对每项创建离线版本</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-15670F52-F1C2-4056-8D7E-BA56C62E187E">下载地图</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-7C453752-197C-4CC9-8D79-47F3286BE217">用户</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-B2C45C5E-05FA-40BB-8B27-18A6D7CA1745">用户</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-7061996B-F10E-4DB7-8671-535BFBBF4D31">创建的版本数</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-7E74678D-A32B-4CEF-B78A-02E28F77DA14">许多</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-7EB08D8C-623A-4FDE-A9B4-F1A04CCB1806">少量</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-3E9C908F-F379-4B0E-9453-5F161ADA96F9">少量</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-50408D1B-2407-4295-883D-F4520922B0EE">默认版本的离线编辑以及更新之间的延迟</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-F7A0FFC8-1DFE-421E-B41E-CC789C4A5D99">Low</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-108569F7-7EA7-43A9-85D9-9E18047CC49A">高（1 周）</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-1256512D-D013-406C-8D28-0299CEC159ED">高（每天）</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-AF071053-CE24-431F-A92E-F52E504DA6E9">质量保证中涉及的地图</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-978900CC-0E9A-41CC-9969-110C89723D2C">一个地图</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-A4BB12E5-1B26-4323-95A7-6C909A7F208B">所有地图</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-E571EBE6-940D-4DCC-8B23-FF97DA8EE969">所有地图</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-C6A4564D-99BE-462E-A982-D21480A57667">删除离线版本的频率</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-C7574E50-C498-417E-B294-75153BC7250B">每天</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-31791267-4011-48EB-8BD4-5B5D382B9D9F">项目完成时</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-641F02BB-4FAF-455C-8786-852EAFEF7277">从不</p></td></tr></tbody><caption></caption></table></div></section><section class="section1 padded-anchor" id="ESRI_SECTION1_BBD9623A85B54378AEF34AB44A50F8A8" purpose="section1"><h2>工作流 1：下载用于数据维护的地图</h2><p id="GUID-84A53FF6-A4A4-4778-B277-4075D903D120">本工作流面向在外业使用 <span class="ph">Collector for ArcGIS</span> 确认红线地图提供的编辑内容的组织成员。在本例中，数据将进行版本化，同时工作人员需要从<a class="xref xref" esrisubtype="extrel" hrefpfx="https://desktop.arcgis.com/zh-cn/arcmap/latest/manage-data" href="https://desktop.arcgis.com/zh-cn/arcmap/latest/manage-data/geodatabases/versioning-terms.htm#GUID-DFC4BEF1-B33A-4C0C-A5D5-D890124C8CF6">默认版本</a>的地理数据库下载地图以获得最新数据。返回办公室后，工作人员将与默认地理数据库版本一同同步外业的编辑内容、移除地图并<a class="xref xref" esrisubtype="extrel" hrefpfx="https://desktop.arcgis.com/zh-cn/arcmap/latest/manage-data" href="https://desktop.arcgis.com/zh-cn/arcmap/latest/manage-data/geodatabases/versioning-terms.htm#GUID-B0233C7F-4F2B-4A9F-B75E-087CCEAC5682">协调</a>并<a class="xref xref" esrisubtype="extrel" hrefpfx="https://desktop.arcgis.com/zh-cn/arcmap/latest/manage-data" href="https://desktop.arcgis.com/zh-cn/arcmap/latest/manage-data/geodatabases/versioning-terms.htm#GUID-D9784E05-FD8E-4011-A73E-0CA5E7AF25AA">提交</a>地图的版本。该过程每天可能重复多次。每一步完成后，工作人员都将删除离线地图版本。</p><p id="GUID-224268E1-F457-4F38-82C9-B91D21623990">为此，Web 地图由办公室工作人员组成员的公司组织帐户提供。如果工作人员是该组的成员，则可以使用办公室中其中一个可用设备上运行的 <span class="ph">Collector for ArcGIS</span> 访问 Web 地图。在离开办公室前，该工作人员会使用 Collector 下载地图。然后工作人员会转到现场并检查请求的更新。使用 Collector 在外业进行校正。返回办公室后，工作人员的校正会同步到要素服务，然后使用默认版本进行协调和提交。</p><p id="GUID-9BB241D0-DC40-48A4-92B0-68A8F47E62AA">以下部分介绍了此工作流：</p><ul purpose="ul" id="UL_5AC11BB407D9438C9207863782D476E9"><li purpose="li" id="LI_3B221B1BE47C47968FAAADCD9174C0F9"><a class="xref xref" href="../../../../../zh-CN/server/latest/publish-services/windows/offline-maps-and-versioned-data.htm#ESRI_SECTION2_720DCC030430449CB17DF64F43615F4E">发布要素服务</a></li><li purpose="li" id="LI_0735A0DC78F749BC940AC8618C395B29"><a class="xref xref" href="../../../../../zh-CN/server/latest/publish-services/windows/offline-maps-and-versioned-data.htm#ESRI_SECTION2_3F511040D0EB4BB094943FFF69B2B651">创建 Web 地图</a></li><li purpose="li" id="LI_A1B20CF6D8D54E76A2C449756096B6FF"><a class="xref xref" href="../../../../../zh-CN/server/latest/publish-services/windows/offline-maps-and-versioned-data.htm#ESRI_SECTION2_49A85B3432C74E508023EABEF8920E15">下载 Web 地图</a></li><li purpose="li" id="LI_112406CC479F4D64B18EDD02CBBDBE93"><a class="xref xref" href="../../../../../zh-CN/server/latest/publish-services/windows/offline-maps-and-versioned-data.htm#ESRI_SECTION2_634E4C4C593D44C8ADD869DD5F85E1ED">同步编辑内容</a></li></ul><section class="section2 padded-anchor" id="ESRI_SECTION2_720DCC030430449CB17DF64F43615F4E" purpose="section2"><h3>发布要素服务</h3><p id="GUID-8A55C4A9-5F21-40C6-AEC3-ECC2D9B025D7">要创建 Web 地图，首先应发布要素服务。</p><p id="GUID-4ADA62E4-28C8-4103-9B71-25FBB6B9D2CB">发布者启用 ArcMap 并将默认版本中的数据添加到此地图。在本示例中，数据包括一些来自公司企业级地理数据库中要素类的新型传感器。已将此要素类注册为版本。</p><p id="GUID-494B91D5-AD9D-4F16-A3C3-9891CA8D6198"><img purpose="img" placement="inline" alt="默认版本" title="默认版本" src="GUID-8FF7FC43-5C0C-4C06-B810-A8B230A36026-web.png"></p><p id="GUID-40C12EC8-C092-42BC-8CE3-AAE2FD56F6BC">发布者将通过 ArcMap 发布名为 NetFS 的要素服务。</p><p id="GUID-C4A68A0D-8EA5-40DF-8AF5-8AC976A619B5"><img purpose="img" placement="inline" alt="从默认版本发布要素服务" title="从默认版本发布要素服务" src="GUID-4B143C68-2FE7-44C2-86E2-A472BB4CC434-web.png"></p><p id="GUID-729912D2-D1B3-471D-83B6-AD2964E4D8E1">发布期间，发布者选中<span class="uicontrol">服务编辑器</span>中的<span class="uicontrol">同步</span>功能，因为该服务设计为用于离线地图中。由于将对此数据进行编辑，发布者还会选中<span class="uicontrol">查询</span>、<span class="uicontrol">更新</span>、<span class="uicontrol">创建</span>以及<span class="uicontrol">删除</span>功能。发布者还将单击<span class="uicontrol">高级选项</span>以显示<span class="uicontrol">要素服务高级选项</span>。</p><p id="GUID-6C434D3C-5024-45F2-94A0-09E2D34D6220">在<span class="uicontrol">高级选项</span>对话框中启用<span class="uicontrol">针对每项创建版本</span>选项。对于此示例，发布者将选中<span class="uicontrol">下载地图</span>。通过设置此选项，外业工作人员离线使用地图时将为离线地图创建唯一命名的版本。然后工作人员同步时将使用此版本。</p><p id="GUID-456AFF0F-E42F-4EBD-AC4D-2F43DDA144DD">发布者同时还会与办公室工作人员组共享服务，从而使组织中的其他成员可访问数据。</p></section><section class="section2 padded-anchor" id="ESRI_SECTION2_3F511040D0EB4BB094943FFF69B2B651" purpose="section2"><h3>创建 Web 地图</h3><p id="GUID-AA6720E7-33BE-4933-A305-18FEFDC6A031">创建要素服务后的下一步是创建 Web 地图。发布者通过登录到组织（<span class="ph">ArcGIS Enterprise</span> 或 ArcGIS Online）、创建 Web 地图、向地图添加要素图层以及与办公室工作人员组共享地图来完成此操作。将 Web 地图的离线模式属性设置为已启用，使其可离线用于 <span class="ph">Collector for ArcGIS</span> 中。现在，办公室工作人员组的员工可下载此地图。</p></section><section class="section2 padded-anchor" id="ESRI_SECTION2_49A85B3432C74E508023EABEF8920E15" purpose="section2"><h3>下载 Web 地图</h3><p id="GUID-239AA63F-A3E8-471F-AD70-8386D67AECDF">如有可用的 Web 地图，工作人员可将该地图下载到 <span class="ph">Collector for ArcGIS</span>，然后到外业检查所需更新。为此，工作人员 Bob 将启动 Collector 并登录到组织中。随即显示新分享的 web 地图。</p><p id="GUID-E8693FF6-AD6D-4F55-82B9-1548659BC46D">由于 web 地图已启用了离线模式，因此其在 Collector 中显示有下载按钮。Bob 单击下载按钮开始下载过程。</p><p id="GUID-4DDFB586-B539-441D-89F7-215CA1035921"><img purpose="img" placement="inline" alt="从" title="从" src="GUID-1BA21146-DFA5-492D-8714-02216C0C227C-web.png"></p><p id="GUID-17980B3A-E07F-40FA-8D93-51B57BE0FA63">然后，Bob 选择已下载地图的范围和底图分辨率。</p><p id="GUID-9176BAFE-F00A-4988-9D91-AAA8BF0C2CDA">下载进程开始时，将通过后台地理数据库中的已发布版本（默认）创建一个名为 Bob_NetFS_1404578882000 的版本。由于已将服务设置为创建每个下载地图的版本，因此将生成唯一的版本名称。名称由外业工作人员的登录名 (Bob)、要素服务名称 (NetFS) 和唯一 ID 组成。同步下载的地图时将使用该版本。</p><p id="GUID-9744A365-F1CE-4431-AC72-85F7E5FA6530"><img purpose="img" placement="inline" alt="将地图下载到 Collector 时创建的版本" title="将地图下载到 Collector 时创建的版本" src="GUID-7930461F-E56D-4C29-AFF2-47E4978E70B9-web.png"></p><p id="GUID-739612A7-C60D-4751-B84D-7F4C3D66222B">随即会将数据下载到设备中。下载完成后，Collector 会将地图切换至引用本地数据。此时，无需连接网络即可编辑地图。Collector 地图中出现同步按钮，表示现在正在引用本地数据。</p></section><section class="section2 padded-anchor" id="ESRI_SECTION2_634E4C4C593D44C8ADD869DD5F85E1ED" purpose="section2"><h3>同步编辑内容</h3><p id="GUID-C1FE23DF-ADB9-4E4A-B627-A4D456736887">在外业中，Bob 注意到其中一个传感器的位置不正确，它位于街道的错误一侧。Bob 在外业中使用 Collector 对其进行了校正。</p><p id="GUID-41C87AA4-4839-4422-B5EE-91AADEC933C6">Bob 在白天访问了其他位置并进行了其他校正。如果连通性可用，Bob 还会选择同步外业中的编辑内容。Bob 回到办公室后，他连接到了设备上的内部网络并进行了最终同步。这可保证在外业进行的所有校正均已应用到 Bob_NetFS_1404578882000 版本。</p><p id="GUID-A8F29068-EB0B-4B85-9A54-7B4EF8056483"><img purpose="img" placement="inline" alt="连接到网络并同步编辑内容" title="连接到网络并同步编辑内容" src="GUID-D41329DB-E5DE-4436-8862-84E772632CD0-web.png"></p><p id="GUID-87DA9631-C2E6-4D39-9340-5FBC386FA46D">现在 Bob 已回到办公室且已同步编辑内容，将从 Collector 中移除本地地图并返回到设备。移除本地地图的过程会将 Bob_NetFS_1404578882000 版本标记为不再与离线地图相关。随后，Bob 会连接到 ArcMap 中的 Bob_NetFS_1404578882000 版本，并以默认版本对其进行协调和提交。Bob 使用基于属性的冲突检测并手动解决所有冲突。</p><p id="GUID-13BE775B-EB20-4CFE-858D-B8BD34C05551"><img purpose="img" placement="inline" alt="使用默认版本进行协调后，将编辑内容提交到默认版本" title="使用默认版本进行协调后，将编辑内容提交到默认版本" src="GUID-A71345B6-B68C-4C0D-83C3-A49AD00EA564-web.png"></p><p id="GUID-33E0C816-3707-4ADF-99F7-CAE20482010F">保存编辑内容且 Bob 已切换回默认版本后，需要删除 Bob_NetFS_1404578882000 版本。</p><p id="GUID-CC3543F0-EF2C-4D42-972D-F40A1BA1F113">由于 Bob 会在办公室中进一步检查红线编辑内容，因此他需要再次出外业。每次出外业时均需要一个新的下载地图和 Bob_NetFS_&lt;ID&gt; 版本。每个新版本都将包括默认版本的最新编辑内容。在与地图断开连接、协调和提交之前，这些版本将保存在地理数据库中。</p><p id="GUID-A93BFA90-25E4-42ED-A8A6-A9C23F831974">除 Bob 外，其他办公室工作人员可同时与 Bob 执行类似的任务。</p><p id="GUID-14A1F1E2-DE46-4BB6-B8F0-5C3080DD877E">将 Bob 的更改内容协调并提交到默认版本后，他需要删除 Bob_NetFS_&lt;ID&gt; 版本。</p></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_52F9F44273974A1F9B7F01A45069F218" purpose="section1"><h2>工作流 2：下载用于持续时间较短的项目的地图</h2><p id="GUID-92892E74-75A5-4C06-9E19-FC1D370D8730">在本示例中，外业工作人员将离线编辑版本化数据。然后在早上或一天结束的时候同步编辑内容。夜间运行<a class="xref xref" esrisubtype="extrel" hrefpfx="https://desktop.arcgis.com/zh-cn/arcmap/latest/manage-data" href="https://desktop.arcgis.com/zh-cn/arcmap/latest/manage-data/geodatabases/versioning-terms.htm#GUID-B0233C7F-4F2B-4A9F-B75E-087CCEAC5682">协调</a>和<a class="xref xref" esrisubtype="extrel" hrefpfx="https://desktop.arcgis.com/zh-cn/arcmap/latest/manage-data" href="https://desktop.arcgis.com/zh-cn/arcmap/latest/manage-data/geodatabases/versioning-terms.htm#GUID-D9784E05-FD8E-4011-A73E-0CA5E7AF25AA">提交</a>过程以使该外业工作人员的版本始终与其他外业工作人员的编辑保持一致。每位外业工作人员在第二天早上进行同步时都会看见其他外业工作人员的编辑。项目完成后，外业的所有编辑内容均会进行同步并应用到项目版本。然后对项目版本进行检查，并将其协调并提交到<a class="xref xref" esrisubtype="extrel" hrefpfx="https://desktop.arcgis.com/zh-cn/arcmap/latest/manage-data" href="https://desktop.arcgis.com/zh-cn/arcmap/latest/manage-data/geodatabases/versioning-terms.htm#GUID-DFC4BEF1-B33A-4C0C-A5D5-D890124C8CF6">默认地理数据库版本</a>。项目完成后，将由员工删除要素服务和外业工作人员版本。在本工作流中，外业工作人员数据的延迟不得长于 1 周。</p><p id="GUID-A61AA97E-B6E5-4B25-A3B2-4B96CC1F0CA0">以下介绍了完成此工作流所需的步骤：</p><ul purpose="ul" id="UL_31715B5EBE69431E94412CB91A754E8A"><li purpose="li" id="LI_9FB281481BFD427590AC9E116A0A590F"><a class="xref xref" href="../../../../../zh-CN/server/latest/publish-services/windows/offline-maps-and-versioned-data.htm#ESRI_SECTION2_9C35DE9C4FA1498EA14B7B14980A209D">发布要素服务</a></li><li purpose="li" id="LI_A14CFB92803F4866A6904A8C71EFB31D"><a class="xref xref" href="../../../../../zh-CN/server/latest/publish-services/windows/offline-maps-and-versioned-data.htm#ESRI_SECTION2_BAF0B7C4EEB7462EAD15EC30A6CA2EFC">创建 Web 地图</a></li><li purpose="li" id="LI_DAFB838D76174515A675006384168761"><a class="xref xref" href="../../../../../zh-CN/server/latest/publish-services/windows/offline-maps-and-versioned-data.htm#ESRI_SECTION2_9574B156AE394804875D373F7EF6FB31">下载 Web 地图</a></li><li purpose="li" id="LI_40E66D7C97A34DB7898EA7902E1386F8"><a class="xref xref" href="../../../../../zh-CN/server/latest/publish-services/windows/offline-maps-and-versioned-data.htm#ESRI_SECTION2_EA4ACB5A05724C38A2EE8A07D0F6CD03">同步编辑内容</a></li><li purpose="li" id="LI_C41F55127E694700BF7E0D323DDFD5BA"><a class="xref xref" href="../../../../../zh-CN/server/latest/publish-services/windows/offline-maps-and-versioned-data.htm#ESRI_SECTION2_A6BA7EA321EE4165979B03EB5061BAF4">夜间运行地理数据库处理</a></li><li purpose="li" id="LI_1EDB7DE3DD5747EFB968A3F8BBA16EC0"><a class="xref xref" href="../../../../../zh-CN/server/latest/publish-services/windows/offline-maps-and-versioned-data.htm#ESRI_SECTION2_721AA70FB0574850A8B7DDC57CE8652F">删除离线地图并执行最终协调和提交过程</a></li></ul><section class="section2 padded-anchor" id="ESRI_SECTION2_9C35DE9C4FA1498EA14B7B14980A209D" purpose="section2"><h3>发布要素服务</h3><p id="GUID-0827F31D-B96F-408C-829C-AE291F5F1440">在本示例中，项目经理需要将工作人员分配到外业执行传感器检查。每年会定期执行传感器检查。检查期间，外业工作人员将检查并记录传感器损坏和可访问性等问题。该信息用于计划修复并了解可以轻松访问哪些传感器。计划在一周的某个时间段发生此项目。对于数据几何，向每个外业工作人员提供一个运行 <span class="ph">Collector for ArcGIS</span> 的智能手机。</p><p id="GUID-23ED3DAD-F6AF-475D-98E1-A27010EEB704">对于此项目，项目经理计划在公司的组织帐户中创建并共享传感器检查的 Web 地图。该 Web 地图将引用公司的预置 <span class="ph">ArcGIS Server</span> 中运行的要素服务。</p><p id="GUID-50275A0B-922C-49F7-BC43-702049BCD3ED">为创建要素服务，项目经理启动了 ArcMap 并添加了默认版本的源企业级地理数据库中的传感器要素类。已将此要素类注册为版本。用黄色标记用于检查的传感器。</p><p id="GUID-E3108C6A-DC5C-463A-84DA-A5259DB1CFA6">为组织工作，项目经理创建了一个名为“检查”的版本并更改了地图以引用此版本。</p><p id="GUID-D950A40C-EF9E-4EEE-BCE7-30C1914531F3"><img purpose="img" placement="inline" alt="通过默认版本创建检查版本" title="通过默认版本创建检查版本" src="GUID-D7F2FE1E-73EA-4557-B116-BF1EDF40D0EF-web.png"></p><p id="GUID-D848F86E-8607-4D19-9147-07728CAEC169">接下来，项目经理将从 ArcMap 发布 InspectionFS 要素。</p><p id="GUID-F467CFC1-F556-48BF-9BCE-3FF0E577C50E"><img purpose="img" placement="inline" alt="从检查版本发布要素服务" title="从检查版本发布要素服务" src="GUID-CC6C723F-F637-441C-B8F4-ADDD00718B09-web.png"></p><p id="GUID-5A6258D6-9AAE-474D-A3C5-9F121759A87D">项目经理将检查<span class="uicontrol">服务编辑器</span>中的<span class="uicontrol">同步</span>功能，因为该服务将用于离线地图中。项目经理还将单击<span class="uicontrol">高级选项</span>显示<span class="uicontrol">要素服务高级选项</span>。</p><p id="GUID-F65F6482-93E8-4704-8D01-A88324FD4D9E">在<span class="uicontrol">要素服务高级选项</span>中，项目经理将选择<span class="uicontrol">为每位用户创建版本</span>选项。借助此选项，外业工作人员首次下载地图时，ArcGIS 将为其创建版本。工作人员同步编辑内容时将使用此版本。</p></section><section class="section2 padded-anchor" id="ESRI_SECTION2_BAF0B7C4EEB7462EAD15EC30A6CA2EFC" purpose="section2"><h3>创建 Web 地图</h3><p id="GUID-C07BF811-BC9F-46E0-9F22-B4D85020458D">发布要素服务后，项目经理将在 <span class="ph">ArcGIS Enterprise</span> 门户中创建 Web 地图并会将其与所有成员均为外业工作人员的组进行共享。</p><p id="GUID-35CF665E-16F4-4AE2-A5D6-E34949ABDA39">项目经理将执行以下步骤：</p><ol class="list-numbered" purpose="ol" id="OL_1A230B2FF46F409AB64806BE6D7BB134"><li purpose="li" id="LI_7D7EF67A472E4B5F9EE765C0160CC2B6">登录到组织。</li><li purpose="li" id="LI_60AE1140FE144057BE6CF51D8CBF1AF2">创建 Web 地图。</li><li purpose="li" id="LI_C048E2574B7444A1B483BDFD4C811145">从刚刚发布的 <span class="ph">ArcGIS Server</span> 添加要素服务。</li><li purpose="li" id="LI_8A56951EA2DB470D8445B3529324BA63">保存 Web 地图。</li><li purpose="li" id="LI_48ED21817962495F819990E15FFF73FA">与包括外业工作人员的组共享 Web 地图和要素服务。</li><li purpose="li" id="LI_5AC0C653AA09405C9D6D4DC20C319797">启用 Web 地图上的离线模式属性以使该地图可离线用于 <span class="ph">Collector for ArcGIS</span>。</li></ol></section><section class="section2 padded-anchor" id="ESRI_SECTION2_9574B156AE394804875D373F7EF6FB31" purpose="section2"><h3>下载 Web 地图</h3><p id="GUID-93E4BFA2-2FC1-4DF0-B73D-3E9C10F86DC8">每个外业工作人员均可通过 <span class="ph">Collector for ArcGIS</span> 登录到他们的帐户来访问 Web 地图。</p><p id="GUID-7281E91D-A8F5-4636-BE43-20294843DAB5">通过可用的 Web 地图，每个外业工作人员可启动 Collector 并登录到组织。随即显示新分享的 web 地图。</p><p id="GUID-42308212-2816-48A8-AD00-9B7F43574BFC">由于 Web 地图已启用了离线模式，因此在 Collector 中显示时具有下载按钮（标有箭头的云）。其中一个外业工作人员 (Joe) 单击下载按钮开始下载过程。</p><p id="GUID-FB8BF309-398C-4E80-ADB0-C1E1B3E15E87"><img purpose="img" placement="inline" alt="从" title="从" src="GUID-62BD1BD5-700C-40B9-AFB7-F7E0FA77EC9F-web.png"></p><p id="GUID-26003CDD-767D-49D6-82A1-0D65B79D613B">Joe 将为他的地图选择范围和底图分辨率。</p><p id="GUID-06563D6B-607C-4657-BF5F-75FCE2DBC3B7">下载进程开始时，将根据已发布的版本在源地理数据库中创建一个名为 Joe_InspectionFS 的版本。由于要素服务已设置为为每个用户创建版本，版本名称将取决于外业工作人员的登录帐户 (Joe) 和从其中创建该版本的要素名称 (InspectionFS)。同步下载的地图时将使用该版本。</p><p id="GUID-099B6E97-2237-4686-A8D4-F4F870473549"><img purpose="img" placement="inline" alt="下载地图时创建的地图版本" title="下载地图时创建的地图版本" src="GUID-702E8F66-8CA8-4542-8BE4-D598930D8227-web.png"></p><p id="GUID-C7A7327E-7410-496B-A5D7-78AAFA6E4F77"><div class="panel trailer-1 note" id="GUID-CE8E39EF-36AA-4722-8024-24958FAADC8F"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-5D477808-EA67-4083-865C-24CC523E5B79">Joe 无论在何时从 InspectionFS 服务下载地图时，均要引用 Joe_InspectionFS 版本。例如，某些情况下 Joe 可能需要移除本地地图并使用较大的范围重新创建。再次下载地图时，Joe 将查看之前从 Joe_InspectionFS 版本同步的所有编辑内容。</p></div></p><p id="GUID-83AC52D5-1468-4F2F-98DE-083EC44A10A6">下载地图和数据后，Collector 会将地图切换至引用本地数据。此时，Joe 无需连接网络即可编辑地图。Collector 地图中出现的<span class="uicontrol">同步</span>按钮表示现在正在引用本地数据。</p><p id="GUID-1AB98549-3337-46CB-A53F-9A41407AD871">第二个外业工作人员 (Mary) 将执行的步骤与 Joe 相同。这将导致在源地理数据库中创建 Mary_InspectionFS 版本。</p><p id="GUID-F6782A8D-7497-4FE0-9F97-511B4A436423"><img purpose="img" placement="inline" alt="其他客户端下载该地图时将创建第二个地图版本" title="其他客户端下载该地图时将创建第二个地图版本" src="GUID-0810C3CC-5762-4B0C-B621-7FBEC151A5C2-web.png"></p></section><section class="section2 padded-anchor" id="ESRI_SECTION2_EA4ACB5A05724C38A2EE8A07D0F6CD03" purpose="section2"><h3>同步编辑内容</h3><p id="GUID-C68EB486-4E60-42CA-B8C7-07A162F94EB5">在外业中，Joe 被分配在地图的东侧进行工作。Joe 完成传感器检查后，将适当标记传感器要素的状态。如果传感器通过检查，将显示为绿色。如果传感器损坏且需要修复，则显示为红色。</p><p id="GUID-78DC9773-F0B9-42AE-9548-1C1F68BBB716">如果 Joe 在一天结束时建立网络连接，需要单击 Collector 上的<span class="uicontrol">同步</span>按钮。这会将编辑内容应用到源地理数据库中的 Joe_InspectionFS 版本。</p><p id="GUID-21D36078-B740-43BC-8562-07205C6D104D"><img purpose="img" placement="inline" alt="Joe 将连接并同步编辑内容" title="Joe 将连接并同步编辑内容" src="GUID-579636BF-9D4D-4F6E-9367-7B1B41C862E7-web.png"></p><p id="GUID-735C1215-F1A4-4F8A-9424-4C5BE765AE46">在一天结束时，Mary 还会从地图西侧同步她的传感器检查。</p><p id="GUID-F3162D95-6158-406D-809C-6A020BAC32A9"><img purpose="img" placement="inline" alt="Mary 将连接并同步编辑内容" title="Mary 将连接并同步编辑内容" src="GUID-ED454A04-C7CB-4F47-9FA2-A0703EAA588D-web.png"></p></section><section class="section2 padded-anchor" id="ESRI_SECTION2_A6BA7EA321EE4165979B03EB5061BAF4" purpose="section2"><h3>夜间运行地理数据库处理</h3><p id="GUID-DE4A9120-EBAD-47CE-8CDA-B7B566FAA7DD">在晚上，<a class="xref xref" esrisubtype="extrel" hrefpfx="https://desktop.arcgis.com/zh-cn/arcmap/latest/manage-data" href="https://desktop.arcgis.com/zh-cn/arcmap/latest/manage-data/geodatabases/automate-reconcile-post-after-sync.htm">将运行自动过程以协调并提交</a>外业工作人员编辑内容。该过程首先将每个外业版本与检查版本进行协调并提交。该过程将应用冲突策略，在该策略中将保留最后的编辑内容且基于属性进行冲突检测。</p><p id="GUID-0D3B1982-9853-4470-9407-2F148EF4D848">将外业中的所有编辑内容应用于检查版本中后，将在数据上运行验证脚本。这些脚本会查找并更正具有无效值或超出边界要素的编辑内容。例如，状态字段必须具有有效的状态值。如果该值无效，会将其设置回<span class="usertext">需要检查</span>并使用黄点进行符号化。验证完成后，该过程会将外业工作人员版本与检查版本进行协调以确保每个版本的更改内容均为最新的。</p><p id="GUID-A6471210-ABE7-4C45-ADFC-54CA52A887E6"><img purpose="img" placement="inline" alt="与检查版本协调编辑内容并进行提交" title="与检查版本协调编辑内容并进行提交" src="GUID-39C2D6D6-4617-4617-A12E-DFB9F2CD3799-web.png"></p><p id="GUID-9323624B-6546-409B-9903-1103A3053402">Joe 和 Mary 在第二天早上进行同步后，将可以看见彼此的更新内容。</p><p id="GUID-15F76E78-F6F8-49E8-9C91-01926B71CDBC"><img purpose="img" placement="inline" alt="Joe 和 Mary 将下拉协调的编辑内容" title="Joe 和 Mary 将下拉协调的编辑内容" src="GUID-D95DC263-5133-4B25-BB75-C60B88683FFB-web.png"></p><p id="GUID-AA7202AF-A7C5-4450-814C-A40D7F686719"><div class="panel trailer-1 note" id="GUID-D11309F0-BE54-406B-8DF7-D2B335E04FBB"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-A2DDCA43-D8C5-4A1E-A524-78D992168AC1">夜间处理过程还可与默认版本进行协调以引入由于启动项目而对默认版本进行的编辑。但项目经理仅选择在项目结束时与默认版本进行协调。该操作允许检测冲突并在提交到默认版本前手动进行检查。如果在项目结束时完成此过程，工作人员可能会对最终协调过程上未显示为冲突的这些要素执行其他编辑内容。</p><p id="GUID-D4F2E925-9FD8-411F-98DC-18D1BDB8142D">同时在此示例中还需注意将在夜间运行协调和提交外业工作人员编辑内容的自动过程。这表示外业工作人员在第二天之前不会看见由其他工作人员的最新编辑。要减少此延迟，可更频繁地运行该过程。例如，如果每小时运行一次此过程，外业工作人员可每小时进行一次同步以获取其他工作人员的最新编辑。</p></div></p></section><section class="section2 padded-anchor" id="ESRI_SECTION2_721AA70FB0574850A8B7DDC57CE8652F" purpose="section2"><h3>删除下载的地图并执行最终协调和提交过程</h3><p id="GUID-620B984F-F7A2-4844-B9C4-6A863BC2DE11">上述过程将在项目的一周时间范围内继续。完成对所有传感器的检查后，项目完成。外业工作人员需要在项目结束时同步最后的编辑内容并从 <span class="ph">Collector for ArcGIS</span> 中移除本地地图。从 Collector 中移除本地地图后，外业工作人员的版本将不再与下载的地图相关联。随后项目经理将停止并删除要素服务。</p><p id="GUID-87CCFE71-474E-49CA-9E7D-A8BC3DAD3849">项目经理将针对所有外业工作人员的版本执行最终协调和提交过程并删除这些版本。然后，项目经理会将检查版本与默认版本进行协调并提交。项目经理会在此过程中手动检查并解决冲突。完成后，最新的传感器检查信息可用于默认版本中的所有步骤。项目经理要完成的最后一步是删除检查版本。</p><p id="GUID-36A0FC57-48BD-44A6-B723-8461ED1DE4D8"><img purpose="img" placement="inline" alt="将检查版本与默认版本进行协调并提交为默认版本" title="将检查版本与默认版本进行协调并提交为默认版本" src="GUID-422F7D86-7B52-47F9-9E6C-9EAA6BD3F793-web.png"></p></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_C4EC44F1F6754819A61585B3418D3442" purpose="section1"><h2>工作流 3：下载用于正在进行的项目的地图</h2><p id="GUID-6198D861-FCD7-4472-B1F0-F46C0B64E851">此示例工作流与之前的工作流相似（<a class="xref xref" href="../../../../../zh-CN/server/latest/publish-services/windows/offline-maps-and-versioned-data.htm#ESRI_SECTION1_52F9F44273974A1F9B7F01A45069F218">下载用于持续时间较短的项目的地图</a>），因为外业工作人员同步了离线所做的编辑。然后在早上或一天结束的时候连接至网络并进行同步。但由于在此工作流中项目正在继续，因此从质量保证版本发布要素服务而不是直接从默认版本发布。这表示需要其他检查、<a class="xref xref" esrisubtype="extrel" hrefpfx="https://desktop.arcgis.com/zh-cn/arcmap/latest/manage-data" href="https://desktop.arcgis.com/zh-cn/arcmap/latest/manage-data/geodatabases/versioning-terms.htm#GUID-B0233C7F-4F2B-4A9F-B75E-087CCEAC5682">协调</a>和<a class="xref xref" esrisubtype="extrel" hrefpfx="https://desktop.arcgis.com/zh-cn/arcmap/latest/manage-data" href="https://desktop.arcgis.com/zh-cn/arcmap/latest/manage-data/geodatabases/versioning-terms.htm#GUID-D9784E05-FD8E-4011-A73E-0CA5E7AF25AA">提交</a>过程。</p><p id="GUID-A26E0CB5-7127-4ADB-8ED6-248D909C775C">以下介绍了完成此工作流所需的步骤。</p><ul purpose="ul" id="UL_47DBE77C4C31430A9D2CFB1F3BD2AF8C"><li purpose="li" id="LI_17D6959AE99D42149CBF9F79F1E9A614"><a class="xref xref" href="../../../../../zh-CN/server/latest/publish-services/windows/offline-maps-and-versioned-data.htm#ESRI_SECTION2_F31B568F51574E4884A3B2C380288861">发布要素服务</a></li><li purpose="li" id="LI_991092F4FEFC47618D87CFEDD864D6EA"><a class="xref xref" href="../../../../../zh-CN/server/latest/publish-services/windows/offline-maps-and-versioned-data.htm#ESRI_SECTION2_6071D376278C4444BA59129AF625311C">创建 Web 地图</a></li><li purpose="li" id="LI_C8ECFBCB55814B00BC44A21B63B20DC5"><a class="xref xref" href="../../../../../zh-CN/server/latest/publish-services/windows/offline-maps-and-versioned-data.htm#ESRI_SECTION2_5BD1EC7B17664FF8994F8A6FD4AED0C2">下载 Web 地图</a></li><li purpose="li" id="LI_A5CB4D1D231D4CB081343A79E344C4B4"><a class="xref xref" href="../../../../../zh-CN/server/latest/publish-services/windows/offline-maps-and-versioned-data.htm#ESRI_SECTION2_06A195D57613495FAE1FAF135835C611">同步编辑内容</a></li><li purpose="li" id="LI_5079988A64754AEBAD1A9C84C2183E10"><a class="xref xref" href="../../../../../zh-CN/server/latest/publish-services/windows/offline-maps-and-versioned-data.htm#ESRI_SECTION2_87AD8858F5054D49B029994D5C11A4E4">夜间运行地理数据库处理</a></li></ul><section class="section2 padded-anchor" id="ESRI_SECTION2_F31B568F51574E4884A3B2C380288861" purpose="section2"><h3>发布要素服务</h3><p id="GUID-F92253C6-8E67-485C-B76F-7D24BBA8CB51">对于此项目，项目经理计划在公司的组织帐户中创建并共享传感器检查的 Web 地图。该 Web 地图将引用公司的预置 <span class="ph">ArcGIS Server</span> 中运行的要素服务。</p><p id="GUID-9046AB24-D30D-458C-8CC9-CD1819E78099">为创建要素服务，项目经理启动了 ArcMap 并添加了默认版本的源企业级地理数据库中的传感器要素类。已将此要素类注册为版本。用黄色标记用于检查的传感器。</p><p id="GUID-08AB55AF-3888-4457-91E3-F4ED9B150971">为组织工作，项目经理创建了一个名为“检查”的版本并更改了地图以引用此版本。</p><p id="GUID-41EF782F-6438-4702-A13B-91766156CF69"><img purpose="img" placement="inline" alt="通过默认版本创建检查版本" title="通过默认版本创建检查版本" src="GUID-D7F2FE1E-73EA-4557-B116-BF1EDF40D0EF-web.png"></p><p id="GUID-538AA4AC-9CBA-4992-8E27-683EA9581E9B">接下来，项目经理将从 ArcMap 发布 InspectionFS 要素。</p><p id="GUID-D5AC0810-A3B0-47DF-83A0-165EA5C2C25A"><img purpose="img" placement="inline" alt="从检查版本发布要素服务" title="从检查版本发布要素服务" src="GUID-CC6C723F-F637-441C-B8F4-ADDD00718B09-web.png"></p><p id="GUID-819622E2-4BA4-44F4-B454-B892740D2BCC">项目经理将选中<span class="uicontrol">服务编辑器</span>中的<span class="uicontrol">同步</span>功能，因为该服务可用于离线地图中。项目经理还将单击<span class="uicontrol">高级选项</span>显示<span class="uicontrol">要素服务高级选项</span>。</p><p id="GUID-DC19238F-F326-499C-B00C-B94BBEF1F628">在<span class="uicontrol">要素服务高级选项</span>中，项目经理将选择<span class="uicontrol">为每位用户创建版本</span>选项。借助此选项，外业工作人员首次下载地图时将为其创建版本。然后工作人员同步编辑内容时将使用此版本。</p></section><section class="section2 padded-anchor" id="ESRI_SECTION2_6071D376278C4444BA59129AF625311C" purpose="section2"><h3>创建 Web 地图</h3><p id="GUID-65B10658-4198-44E5-B998-487A247F50F3">发布要素服务后，项目经理将在 <span class="ph">ArcGIS Enterprise</span> 门户中创建 Web 地图并会将其与所有成员均为外业工作人员的组进行共享。</p><p id="GUID-F5A70C31-CF65-4DDE-8252-18F51C46B92B">项目经理将执行以下步骤：</p><ol class="list-numbered" purpose="ol" id="OL_E02E60436314408C8E5FC6680266D664"><li purpose="li" id="LI_A74AF5C020DB41B79AC7C51FCC743186">登录到组织。</li><li purpose="li" id="LI_6D6CF355F1A646379909F9E64885174D">创建 Web 地图。</li><li purpose="li" id="LI_4221AE4D5E304598AC355B62AE7B3406">从刚刚发布的 <span class="ph">ArcGIS Server</span> 添加要素服务。</li><li purpose="li" id="LI_5C07457DED6E404A932FD536CDAC9F04">保存 Web 地图。</li><li purpose="li" id="LI_AF14FE017A384CD3A093A3A3A4940A25">与包括外业工作人员的组共享 Web 地图和要素服务。</li><li purpose="li" id="LI_76659368947A4044B576B19F175D2D91">启用 Web 地图上的离线模式属性以使该地图可离线用于 <span class="ph">Collector for ArcGIS</span>。</li></ol></section><section class="section2 padded-anchor" id="ESRI_SECTION2_5BD1EC7B17664FF8994F8A6FD4AED0C2" purpose="section2"><h3>下载 Web 地图</h3><p id="GUID-9F1E6252-5BAE-4389-A3FD-8E30849C960E">每个外业工作人员均可通过 <span class="ph">Collector for ArcGIS</span> 登录到他们的帐户来访问 Web 地图。</p><p id="GUID-95D128FD-1B07-4506-989A-97B25A3FEAA1">通过可用的 Web 地图，每个外业工作人员可启动 Collector 并登录到组织。随即显示新分享的 web 地图。</p><p id="GUID-4F8D1C1F-A2B1-4E0E-891F-99F7D75B7753">由于 Web 地图已启用了离线模式，因此在 Collector 中显示时具有下载按钮（标有箭头的云）。其中一个外业工作人员 (Joe) 单击下载按钮开始下载过程。</p><p id="GUID-E6F4D059-4E6B-4BA4-8BF4-F4B23C769B2F"><img purpose="img" placement="inline" alt="从" title="从" src="GUID-62BD1BD5-700C-40B9-AFB7-F7E0FA77EC9F-web.png"></p><p id="GUID-048FF9D8-EB56-4832-89BD-9100B95CE9A6">Joe 将为他的地图选择范围和底图分辨率。</p><p id="GUID-7C3C8D0C-1C13-4442-B3CE-9251D9047F4F">下载进程开始时，ArcGIS 将根据已发布的版本在源地理数据库中创建一个版本 (Joe_InspectionFS)。由于要素服务已设置为为每个用户创建版本，版本名称将取决于外业工作人员的登录帐户 (Joe) 和从其中创建该版本的要素名称 (InspectionFS)。同步地图时将使用该版本。</p><p id="GUID-0E518CEB-C990-41C3-A5E8-F8628026B435"><div class="panel trailer-1 note" id="GUID-A12A2F23-C717-4F11-8CEB-894075BF7A71"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-B082E07E-BABB-4C68-8518-D6B40A4D0828">Joe 无论在何时从 InspectionFS 服务下载地图时，均要引用 Joe_InspectionFS 版本。例如，某些情况下 Joe 可能需要移除本地地图并使用较大的范围重新创建。再次下载地图时，Joe 将查看之前从 Joe_InspectionFS 版本同步的所有编辑内容。</p></div></p><p id="GUID-E6E15F13-D665-47C0-9133-CA9B179FDFB2"> 下载数据和地图后，Collector 会将地图切换至引用本地数据。此时，Joe 无需连接网络即可编辑地图。Collector 地图中出现的<span class="uicontrol">同步</span>按钮表示现在正在引用本地数据。</p><p id="GUID-B489C98D-051B-4E01-8938-C1726E9518D5">第二个外业工作人员 (Mary) 将执行的步骤与 Joe 相同。这将导致在源地理数据库中创建 Mary_InspectionFS 版本。</p><p id="GUID-19B44927-BB38-4A81-8CF8-7D55E65175C7"><img purpose="img" placement="inline" alt="其他客户端下载该地图时将创建第二个地图版本" title="其他客户端下载该地图时将创建第二个地图版本" src="GUID-0810C3CC-5762-4B0C-B621-7FBEC151A5C2-web.png"></p><p id="GUID-45A93819-5976-4EEA-AC85-D0A3B336D846">Mary 和 Joe 在外业编辑内容时，办公室工作人员会向默认地图数据库添加新的传感器。新型传感器是此区域中新项目的结果。安装新型传感器后需要进行检测，因此显示为黄色。</p><p id="GUID-B81A97B6-967D-4162-9899-89B0C815CB9D"><img purpose="img" placement="inline" alt="外业工作人员同步编辑内容之前，对默认版本进行编辑" title="外业工作人员同步编辑内容之前，对默认版本进行编辑" src="GUID-7FF62B72-8852-4FFE-A47A-2DBA551C443C-web.png"></p></section><section class="section2 padded-anchor" id="ESRI_SECTION2_06A195D57613495FAE1FAF135835C611" purpose="section2"><h3>同步编辑内容</h3><p id="GUID-F551A16C-4328-45CB-936C-14C7CDE0D5BA">在外业中，Joe 被分配在地图的东侧进行工作。Joe 完成传感器检查后，将适当标记传感器要素的状态。如果传感器通过检查，将显示为绿色。如果传感器损坏且需要修复，则显示为红色。</p><p id="GUID-0DE05EDF-7F7B-4C1A-8892-25F06D845FB7">如果 Joe 在一天结束时建立连接，需要单击 Collector 上的<span class="uicontrol">同步</span>按钮。这会将编辑内容应用到源地理数据库中的 Joe_InspectionFS 版本。</p><p id="GUID-C0FB182A-1386-4445-B21B-A89ADC076FF1"><img purpose="img" placement="inline" alt="Joe 将进行同步并更新他的地图版本" title="Joe 将进行同步并更新他的地图版本" src="GUID-D14E92DF-F985-47AA-BCAC-147B4E496FF9-web.png"></p><p id="GUID-442E8FC9-E007-40AD-AB06-85A07DA28201">在一天结束时，Mary 还会从地图西侧同步她的传感器检查。</p><p id="GUID-F90B63F6-615F-4E21-97DB-8F03978C70A2"><img purpose="img" placement="inline" alt="Mary 将进行同步并更新她的地图版本" title="Mary 将进行同步并更新她的地图版本" src="GUID-C523F561-BF07-4848-8A66-9D87CE680123-web.png"></p></section><section class="section2 padded-anchor" id="ESRI_SECTION2_87AD8858F5054D49B029994D5C11A4E4" purpose="section2"><h3>夜间运行地理数据库处理</h3><p id="GUID-B0D4BACE-911E-4EBB-94D4-02AFB940FF42">在晚上，<a class="xref xref" esrisubtype="extrel" hrefpfx="https://desktop.arcgis.com/zh-cn/arcmap/latest/manage-data" href="https://desktop.arcgis.com/zh-cn/arcmap/latest/manage-data/geodatabases/automate-reconcile-post-after-sync.htm">将运行自动过程以协调并提交</a>外业工作人员编辑内容。该过程首先将每个外业工作人员版本与检查版本进行协调并提交。该过程将应用冲突策略，在该策略中将保留最后的编辑内容且基于属性进行冲突检测。</p><p id="GUID-76117957-FACF-410A-8D28-5D5615D422DF">将外业中的所有编辑内容应用于检查版本中后，将在检查版本的数据上运行验证脚本。这些脚本会查找并更正具有无效值或超出边界要素的编辑内容。</p><p id="GUID-6F7F46B6-42DE-4AE3-BBEB-D86E686BEC08"><div class="panel trailer-1 note" id="GUID-E0AF29C3-8EF4-49DD-AAC0-B14D7FB3B071"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-427CD54A-AC2E-4B48-B902-43295AA7676E">此时，该过程中的 Mary_InspectionFS 版本会具有 Joe 的编辑内容，但 Joe_InspectionFS 版本不具有 Mary 的编辑内容。这是因为已在 Mary_InspectionFS 版本前协调并提交 Joe_InspectionFS 版本。</p></div></p><p id="GUID-3DABBE35-C014-411F-A3C6-E42213A834E5"><img purpose="img" placement="inline" alt="对已同步的外业编辑内容进行协调并将其提交到检查版本" title="对已同步的外业编辑内容进行协调并将其提交到检查版本" src="GUID-F43662A4-D91F-401F-8363-525E14A225A6-web.png"></p><p id="GUID-844735EF-6786-406B-83FA-0C97135EA6B4">自动过程的下一步骤涉及将检查版本与默认版本进行协调并提交。该过程使用基于属性的冲突检测并自动解决冲突。此协调过程可将默认版本（新型传感器）中的编辑内容引入到检查版本中，而提交过程可将检查版本（Joe 和 Mary 的编辑内容）中的编辑内容应用到默认版本中。</p><p id="GUID-C6C9789E-CA74-4539-82D0-0B64C74DC27A"><img purpose="img" placement="inline" alt="通过协调会将新型传感器从默认版本提取到检查版本中" title="通过协调会将新型传感器从默认版本提取到检查版本中" src="GUID-0D71ABA5-7D81-4418-8171-37DA7DA02D26-web.png"></p><p id="GUID-300826E3-6EAF-492F-BEFC-DDF3394419C4">会将每个外业工作人员版本与检查版本再次进行协调以完成该自动过程。现在，每个外业工作人员的版本将保持最新状态。</p><p id="GUID-E3A87ED4-4E77-4048-98BF-3875A88686ED"><div class="panel trailer-1" id="GUID-056279B7-B1B5-4D0B-8372-73796FBA06F5"><h5 class="icon-ui-description trailer-0">提示：</h5><p id="GUID-648808B1-ABE3-4344-820C-306CF82FC385">要将最新更改应用到外业工作人员，需要协调过程但不需要提交过程。一些组织可能会运行单独的过程以将编辑内容提交到默认版本，因为通过该操作可将编辑内容用于项目外部的其他成员。</p></div></p><p id="GUID-E7A4B60D-54F1-4B16-9462-798B9452CD81"><img purpose="img" placement="inline" alt="与检查版本进行协调的客户端版本" title="与检查版本进行协调的客户端版本" src="GUID-DFE5A72A-41F5-4F3F-A3E7-61D2E84ADFCE-web.png"></p><p id="GUID-BDB6D074-7461-436D-BC5A-179419B02D10">Joe 和 Mary 在第二天进行同步时会看到其他外业工作人员版本的已更新传感器以及默认版本的新型传感器。由于位于地图的东侧，因此 Joe 将检查新型传感器并同步结果。夜间运行该过程后，Joe 针对新型传感器检查的信息将在第二天应用到默认版本中。</p><p id="GUID-F657985D-489B-4FC8-8E77-FA18A6BCAEB3"><img purpose="img" placement="inline" alt="客户端同步以获取检查版本中的编辑内容" title="客户端同步以获取检查版本中的编辑内容" src="GUID-66BB337E-E749-48CE-AA29-014C126D1FEC-web.png"></p><p id="GUID-988B1CFD-F090-4B9F-85F0-68870BE8977D">将每天不断重复此过程。只要 Joe 和 Mary 继续执行传感器检查，就会保留 Joe_InspectionFS 和 Mary_InspectionFS 版本。如果在某一时刻停止处理项目，则在 Joe 和 Mary 执行完最终同步、取消注册其本地地图且已在 Joe_InspectionFS 和 Mary_InspectionFS 版本上执行最终协调和提交过程后可移除这些版本。</p></section></section>
+			
+				<hr>
+				<!--googleoff: all-->
+				
+	
+        
+		    <p class="feedback right">
+		        <a id="afb" class="icon-ui-contact" href="/feedback/" data-langlabel="feedback-on-this-topic" >有关此主题的反馈?</a>
+		    </p>
+        
+	
+
+				<!--googleon: all-->
+			
+		</main>
+	</div>
+	
+	<!--googleoff: all-->
+	
+		
+			<div id="main-toc-large" class="column-5">
+			    <div class="panel font-size--2 tablet-hide trailer-1">
+			      <h5 class="trailer-half">在本主题中</h5>
+			      <ol class="list-plain pre-0 trailer-0"><li><a href="#GUID-E001AFA7-B923-4329-96BA-679498F3168E">为每个离线地图创建版本</a></li><li><a href="#ESRI_SECTION1_C9FD7367B2154F488EF2F6F73D003B0E">为每个用户创建版本</a></li><li><a href="#ESRI_SECTION1_D1CD93805BDA48E5B92F5E9B2A317753">示例</a></li><li><a href="#ESRI_SECTION1_BBD9623A85B54378AEF34AB44A50F8A8">工作流 1：下载用于数据维护的地图</a></li><li><a href="#ESRI_SECTION1_52F9F44273974A1F9B7F01A45069F218">工作流 2：下载用于持续时间较短的项目的地图</a></li><li><a href="#ESRI_SECTION1_C4EC44F1F6754819A61585B3418D3442">工作流 3：下载用于正在进行的项目的地图</a></li></ol>
+			    </div>
+			    
+			    
+	  		</div>
+		
+    
+   <!--googleon: all-->
+
+
+
+
+          
+        </div>
+        <!-- ENDPAGECONTENT -->
+
+      </div>
+
+    </div>  <!-- End of wrapper -->
+
+  <footer class="footer leader-3 link-dark-gray" role="contentinfo">
+    <div class="grid-container">
+      <div class="row">
+        <nav class="column-6">
+          <h6 data-langlabel="arcgis-for-server">Arc<span>GIS Enterprise</span></h6>
+          <ul class="list-plain">
+            <li><a data-langlabel="home" href="../../../../../zh-CN/">主页</a></li>
+            <li><a data-langlabel="portal" href="../../../../../zh-CN/portal/">Portal</a></li>
+            <li><a data-langlabel="server" href="../../../../../zh-CN/server/">Server</a></li>
+            <li><a data-langlabel="data-store" href="../../../../../zh-CN/data-store/">Data Stores</a></li>
+            <li><a data-langlabel="cloud" href="../../../../../zh-CN/cloud/">云</a></li>
+            <li><a data-langlabel="apps" href="../../../../../zh-CN/apps/">应用程序</a></li>
+            <li><a data-langlabel="documentation" href="../../../../../zh-CN/documentation/">文档</a></li>
+          </ul>
+        </nav>
+
+        
+  <nav class="column-6">
+    <h6 data-langlabel="arcgis-platform">ArcGIS 平台</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="arcgis" href="//www.arcgis.com/">ArcGIS Online</a></li>
+      <li><a data-langlabel="arcgis-for-professionals" href="//pro.arcgis.com/">ArcGIS Pro</a></li>
+      <li><a data-langlabel="arcgis-for-server" href="//enterprise.arcgis.com/">ArcGIS Enterprise</a></li>
+      <li><a data-langlabel="arcgis-for-developers" href="https://developers.arcgis.com/">ArcGIS for Developers</a></li>
+      <li><a data-langlabel="arcgis-solutions" href="//solutions.arcgis.com/">ArcGIS Solutions</a></li>
+      <li><a data-langlabel="arcgis-marketplace" href="//marketplace.arcgis.com/">ArcGIS Marketplace</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <h6 data-langlabel="about-esri">关于 Esri</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="about-us" href="//www.esri.com/about-esri/">关于我们</a></li>
+      <li><a data-langlabel="careers" href="//www.esri.com/careers/">招贤纳士</a></li>
+      <li><a data-langlabel="insiders-blog" href="https://www.esri.com/about/newsroom/blog/">Esri 博客</a></li>
+      <li><a data-langlabel="user-conference" href="//www.esri.com/events/user-conference/index.html">用户大会</a></li>
+      <li><a data-langlabel="developer-summit" href="//www.esri.com/events/devsummit/index.html">开发者峰会</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <a class="esri-logo" href="//www.esri.com/" aria-label="Esri Home"></a>
+    <section class="footer-social-nav leader-1">
+            <a class="icon-social-twitter" aria-label="Esri on Twitter" href="https://twitter.com/Esri/"></a>
+            <a class="icon-social-facebook" aria-label="Esri on Facebook" href="https://www.facebook.com/esrigis/"></a>
+            <a class="icon-social-github" aria-label="Esri on GitHub" href="//esri.github.io/"></a>
+            <a class="icon-social-contact" aria-label="Contact Esri" href="//www.esri.com/about-esri/contact/"></a>
+    </section>
+	  
+  </nav>
+  
+  <div class="column-24 leader-1">
+    <p class="font-size--3"><a href="http://www.esri.com/legal/copyright-trademarks">Copyright &copy; 2019 Esri.</a> All rights reserved. | <a href="http://www.esri.com/legal/privacy/">隐私政策</a> | <a href="http://www.esri.com/legal/software-license">法律声明</a></p>
+  </div>
+  
+
+
+      </div>
+    </div>
+  </footer>
+  <!--googleoff: all-->
+
+  
+  
+	<script src="../../../../../zh-CN/assets/js/init.js" type="text/javascript"></script>
+	<!--<script src="../../../../../zh-CN/assets/js/drop-down.js" type="text/javascript"></script>-->
+	<script src="../../../../../zh-CN/assets/js/search/searchform.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/cdn/js/link-modifier.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/cdn/js/sitewide.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/cdn/js/libs/highlight.pack.js" type="text/javascript"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+
+
+  
+    
+
+  <script src="../../../../../zh-CN/cdn/js/affix.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    $(function () {
+          var appendFlg = true;
+
+          $("#bigmac")
+          .on("affixed.bs.affix", function (evt) {
+            if (appendFlg) {
+              $("<a class='crumb' href='#'>离线地图与传统版本化数据</a>").insertAfter ($("#bigmac nav a").last());
+              appendFlg = false;
+            }
+          })
+          .on ("affix-top.bs.affix", function(evt) {
+            if (!appendFlg) {
+              $("#bigmac nav a").last().remove();
+            }
+            appendFlg = true;
+          })
+    })
+  </script>
+  
+        <script type="text/javascript">
+          window.doctoc = {
+            pubID: "1634",
+            tpcID: "547",
+            
+              prefix: "管理服务",
+              prefixUrl: "/zh-cn/server/latest/publish-services/windows/",
+          
+            hideToc: false
+          }
+        </script>
+
+        <script type="text/javascript" src="../../../../../zh-CN/server/latest/publish-services/windows/1634.js" ></script>
+        <script type="text/javascript" src="../../../../../zh-CN/cdn/calcite/js/protoc.js" ></script>
+        
+        
+
+  <noscript>
+        <p>
+            <a href="flisting.htm">flist</a>
+        </p>
+    </noscript>
+    <script type="text/javascript"></script>
+  
+  
+    
+    
+
+  </body>
+</html>

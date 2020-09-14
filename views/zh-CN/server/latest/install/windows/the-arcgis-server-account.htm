@@ -1,0 +1,541 @@
+
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>  <html class="ie lt-ie9 lt-ie8 lt-ie7 ie6" dir="ltr"> <![endif]-->
+<!--[if IE 7]>     <html class="ie lt-ie9 lt-ie8 ie7" dir="ltr"> <![endif]-->
+<!--[if IE 8]>     <html class="ie lt-ie9 ie8" dir="ltr"> <![endif]-->
+<!--[if IE 9]>     <html class="ie ie9" dir="ltr"> <![endif]-->
+<!--[if !IE]><!--> <html dir="ltr" lang="zh-CN"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>ArcGIS Server 帐户&mdash;ArcGIS Server (Windows) 安装指南 | ArcGIS Enterprise 文档</title>
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+    <script>
+      var docConfig = {
+        locale: 'zh-CN'
+        ,localedir: 'zh-cn'
+        ,langSelector: ''
+        
+        ,relativeUrl: false
+        
+
+        ,searchformUrl: '/search/'
+        ,tertiaryNavIndex: ''
+
+        
+      };
+    </script>
+	 
+
+
+    
+    <!--[if lt IE 9]>
+      <script src="../../../../../zh-CN/cdn/js/libs/html5shiv.js" type="text/javascript"></script>
+      <script src="../../../../../zh-CN/cdn/js/libs/selectivizr-min.js" type="text/javascript"></script>
+      <script src="../../../../../zh-CN/cdn/js/libs/json2.js" type="text/javascript"></script>
+      <script src="../../../../../zh-CN/cdn/js/libs/html5shiv-printshiv.js" type="text/javascript" >
+
+    <![endif]-->
+
+     <!--[if lt IE 11]>
+    <script>
+      $$(document).ready(function(){
+        $$(".hideOnIE").hide();
+      });
+    </script>
+    <![endif]-->
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<link href="../../../../../zh-CN/assets/img/favicon.ico" rel="shortcut icon" >
+	<link href="../../../../../zh-CN/assets/css/screen.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/cdn/calcite/css/documentation.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/assets/css/print.css" media="print" type="text/css" rel="stylesheet" />
+
+	<!--
+	<link href="../../../../../zh-CN/assets/css/screen_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/assets/css/documentation/base_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/assets/css/print_l10n.css" media="print" type="text/css" rel="stylesheet" />
+	-->
+	
+	
+		<script src="../../../../../zh-CN/cdn/js/libs/jquery.1.9.1.min.js" type="text/javascript"></script>
+	
+	<script src="../../../../../zh-CN/cdn/js/libs/jquery.cookie.js" type="text/javascript"></script>
+	<link href="../../../../../zh-CN/cdn/css/colorbox.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/cdn/css/colorbox_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<script src="../../../../../zh-CN/cdn/js/libs/jquery.colorbox-min.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/assets/js/video-init.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/assets/js/sitecfg.js" type="text/javascript"></script>
+	
+		<script src="../../../../../zh-CN/assets/js/signIn.js" type="text/javascript"></script>
+	
+
+	<!--- Language Picker -->
+	<script src="../../../../../zh-CN/assets/js/locale/l10NStrings.js" type="text/javascript"></script>
+	
+		 
+	
+
+	<script src="../../../../../zh-CN/assets/js/calcite-web.js" type="text/javascript"></script>
+
+
+
+  <!--- search MD -->
+    <META name="description" content="ArcGIS Server 在工作时，需要启动和停止进程、读取数据并将数据写入到文件系统中的相应位置以及在计算机之间进行通信。为了安全地执行这些任务，ArcGIS Server 将使用安装 ArcGIS Server 时所指定的操作系统帐户。"><META name="last-modified" content="2019-12-6"><META name="product" content="arcgis-server-windows,arcgis-enterprise-windows"><META name="sub_category" content="ArcGIS Server (Windows)"><META name="search-collection" content="help"><META name="content_type_label" content="安装指南主题"><META name="sub_category_label" content="ArcGIS Server (Windows)"><META name="search-category" content="help-install"><META name="subject_label" content="服务,SERVER"><META name="version" content="10.8"><META name="content_type" content="Install Guide Topic"><META name="subject" content="SERVICES,SERVER"><META name="content-language" content="zh-cn">
+    <!--- search MD -->
+
+  
+  <script src="../../../../../zh-CN/assets/js/switchers/server-1.js" type="text/javascript"></script>
+  
+      
+
+</head>
+
+<!--
+      pub: GUID-E5F4147F-CDF4-4B5F-8B52-732BCE1BB16A=26
+      tpc: GUID-22B75A0E-5AD4-4592-B8A3-20D344DD46DC=16
+      -->
+
+
+<!-- variable declaration, if any -->
+<!-- can change following macro to set variable once we are on Jinja 2.8 -->
+
+
+
+
+
+<body class="claro zh-CN server">
+  
+
+  <!-- Drawer location -->
+  <div class="drawer drawer-left js-drawer" data-drawer="top-nav">
+        <nav class="drawer-nav" role="navigation">
+          <aside class="side-nav">
+            <h2 class="side-nav-title">Arc<span>GIS</span> Enterprise</h2>
+            <form id="helpSearchForm" class="margin-left-half margin-right-half leader-half trailer-half drawer-search-form" method="GET">
+              <input type="search" name="q"  placeholder="搜索 ArcGIS Enterprise 帮助">
+              <input type="hidden" name="collection" value="help" />
+              <input type="hidden" name="product" value="arcgis-server-windows" />
+              <input type="hidden" name="version" value="10.8" />
+              <input type="hidden" name="language" value="zh-CN" />
+            </form>    
+             <a id="nav-portal" data-langlabel="portal" href="../../../../../zh-CN/portal/" class="side-nav-link">Portal</a>
+             
+            <a id="all-servers" data-langlabel="all-servers" href="../../../../../zh-CN/server/" class="side-nav-link">所有服务器</a>
+            <a id="gis-server" data-langlabel="gis-server" href="../../../../../zh-CN/server/" class="side-nav-link">GIS Server</a>
+            <a id="image-server" data-langlabel="image-server" href="../../../../../zh-CN/image/" class="side-nav-link">Image Server</a>
+            <a id="geo-analytics-server" data-langlabel="geo-analytics-server" href="../../../../../zh-CN/geoanalytics/" class="side-nav-link">GeoAnalytics Server</a>
+            <a id="geoevent-server" data-langlabel="geoevent-server" href="../../../../../zh-CN/geoevent/" class="side-nav-link">GeoEvent Server</a>
+            <a id="notebook-server" data-langlabel="notebook-server" href="../../../../../zh-CN/notebook/" class="side-nav-link">Notebook Server</a>
+            <a id="nav-data-store" data-langlabel="data-store" href="../../../../../zh-CN/data-store/" class="side-nav-link">Data Stores</a>
+            <a id="nav-cloud" data-langlabel="cloud" href="../../../../../zh-CN/cloud/" class="side-nav-link">云</a>
+            <a id="nav-apps" data-langlabel="apps" href="../../../../../zh-CN/apps/" class="side-nav-link">应用程序</a>
+            <a id="nav-doc" data-langlabel="documentation" href="../../../../../zh-CN/documentation/" class="side-nav-link">文档</a>
+
+          </aside>
+        </nav>
+    </div>
+
+    <!-- user navigation collapses to drawer on mobile -->
+    
+    <div class="drawer drawer-right js-drawer hide-if-logged-out logged-in-navigation" data-drawer="user-nav">
+      <nav class="drawer-nav">
+        <aside class="side-nav">
+          <a class="side-nav-link agolProfile" href="#">我的个人资料</a>
+          <a class="side-nav-link icon-ui-sign-out js-log-out" href="#">登出</a>
+        </aside>
+      </nav>
+    </div>
+    
+<!-- End of drawer -->
+
+  
+  <div class="wrapper">
+      <!--googleoff: all-->
+
+      <header class="top-nav" data-skin="learn">
+        <a class="skip-to-content" href="#skip-to-content">Skip To Content</a>
+        <div class="grid-container">
+          <div class="column-24">
+
+
+            <!--<div class="top-nav-title-wrapper text-center ">-->
+              <a href='../../../../../zh-CN/' class="top-nav-title tablet-hide"><span>Arc</span>GIS  Enterprise</a>
+              <a href='../../../../../zh-CN/' class="icon-ui-menu top-nav-title js-drawer-toggle tablet-show" data-drawer="top-nav"><span>Arc</span>GIS Enterprise</a>
+            <!--</div> -->
+
+          
+            <nav role="navigation" class="top-nav-list left tablet-hide">
+              <a id="nav-portal" data-langlabel="portal" href="../../../../../zh-CN/portal/" class="top-nav-link">Portal</a>
+
+                <div class="dropdown js-dropdown ">
+                  <a class="top-nav-link js-dropdown-toggle" tabindex="0" aria-haspopup="true" aria-expanded="false" href="#">Servers</a>
+                  <nav class="dropdown-menu featured" role="menu">
+                    <ul class="dropdown-sublist-featured">
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/get-started/latest/windows/additional-server-deployment.htm" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path  d="M42.92 6.1H4.12v8.566l.833.832-.835.833-.018 7.332.845.847-.825.824V33.9h25v5.2h-2v1.075H8.02v.8h19.1v.925h4.8v-.925H40v-.8h-8.08V39.1h-2v-5.2h13v-8.566l-.834-.834.835-.834v-7.332l-.835-.834.835-.834zm-11.8 35h-3.2v-1.2h3.2zm11-8H4.92v-7.434l.767-.766h35.668l.765.766zm0-9.766l-.766.766H5.666l-.766-.767.017-6.669.766-.764h35.671l.766.766zm0-9l-.766.766H5.687l-.766-.766V6.9h37.2zM19 11.9h-2v-.8h2zm-4 0h-2v-.8h2zm-4 0H9v-.8h2zm6 8.2h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9zm8 9h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9z"/></svg></span>
+                          <span class="sublink-text">所有服务器</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/server/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M45.98 33.575a.616.616 0 0 0-.335-.51l-3.362-2.03 3.362-2.031a.556.556 0 0 0 0-1.02l-11.1-6.704a1.293 1.293 0 0 0-1.112 0L22.33 27.982a.556.556 0 0 0 0 1.02l3.36 2.03-3.358 2.03a.556.556 0 0 0-.002 1.021l3.322 2.006-3.324 2.008a.555.555 0 0 0 .002 1.017l11.102 6.703a1.25 1.25 0 0 0 1.11.002l11.104-6.706a.556.556 0 0 0 0-1.02l-3.32-2.006 3.318-2.004a.607.607 0 0 0 .335-.509zM33.837 21.97c.026-.01.286-.005.29-.005l10.814 6.53-10.8 6.523c-.028.01-.284.005-.294.006l-10.813-6.53zm11.105 16.636l-10.8 6.523a2.564 2.564 0 0 1-.295.006l-10.81-6.529 3.39-2.047 7.004 4.23a1.083 1.083 0 0 0 .557.131 1.101 1.101 0 0 0 .554-.13l7.01-4.233zM34.14 40.098a2.545 2.545 0 0 1-.294.006l-10.812-6.53 3.43-2.073 6.97 4.208a1.25 1.25 0 0 0 1.107-.001l6.966-4.206 3.431 2.073zM9 8H7V7h2zm8 8h-2v-1h2zm-4-8h-2V7h2zm4 0h-2V7h2zm-4 8h-2v-1h2zm7.316 11.1H3.9v-6.434l.766-.766h35.668l.766.766v2.12l.8.483v-2.935l-.826-.826.826-.845v-6.329l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9h16.88a2.632 2.632 0 0 1 .336-.8zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zm0 8v-5.668l.766-.766h35.668l.766.766v5.67l-.746.764H4.666zM15 24v-1h2v1zm-4 0v-1h2v1zm-2-8H7v-1h2zm-2 8v-1h2v1z"/></svg></span>
+                          <span class="sublink-text">GIS Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/image/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 8h-2V7h2zm-4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm8 8h-2v1h2zm-8 0H7v1h2zm4 9v-1h-2v1zm-4 0v-1H7v1zm8 0v-1h-2v1zm4 3.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V21h-.8v-.334l-.766-.766H4.666l-.766.766V27.1H21zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zm40.234 4v21.8H23.1V23.1zm-.8 16.366L39.466 44.1h2.868l1.766-1.766zm-20.2-9.932l5.634-5.634h-2.868L23.9 26.666zm6.2-5.068L24.466 30.1h2.868l2.766-2.766zM28.466 30.1H30.1v-1.634zm2.434 0h6.2v-6.2h-6.2zm-7 7h6.2v-6.2h-6.2zm7 0h6.2v-6.2h-6.2zm0 6.434l5.634-5.634h-2.868L30.9 40.666zm7-7l5.634-5.634h-2.868L37.9 33.666zm1.634-5.634H37.9v1.634zm-8.634 7v1.634l1.634-1.634zm.566 6.2h2.868l2.766-2.766v-2.868zm6.434-3.566l2.634-2.634H37.9zM35.466 44.1H37.1v-1.634zm2.434 0h.434l5.766-5.766V37.9h-2.434L37.9 41.666zm6.2-8.634L42.466 37.1H44.1zm0-4L38.466 37.1h2.868l2.766-2.766zm0-7.566h-6.2v6.2h6.2zm-20.2 0v1.634l1.634-1.634zm0 20.2h6.2v-6.2h-6.2zm20.2 0v-.634l-.634.634z"/></svg></span>
+                          <span class="sublink-text">Image Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/geoanalytics/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 16h-2v-1h2zm-8 8v-1H7v1zm8 0v-1h-2v1zM13 7h-2v1h2zm4 0h-2v1h2zM9 7H7v1h2zm21.45 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V27.9h-1.464l-.801-.8H41.1v-6.434l-.766-.766H4.666l-.766.766V27.1h27.15zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM13 24v-1h-2v1zm0-9h-2v1h2zm-4 0H7v1h2zm26.672 27.148A1.87 1.87 0 0 1 35.9 43a1.91 1.91 0 1 1-3.763-.222l-9.845-3.414A1.88 1.88 0 0 1 21 39.9a1.9 1.9 0 1 1 1.474-3.084l4.692-2.346A1.878 1.878 0 0 1 27.1 34a1.902 1.902 0 0 1 1.9-1.9 1.867 1.867 0 0 1 .781.191l3.788-5.05A1.88 1.88 0 0 1 33.1 26a1.9 1.9 0 1 1 3.491 1.026l4.889 4.888c-.069.056-.144.1-.21.162a3.986 3.986 0 0 0-.358.402l-4.883-4.883A1.889 1.889 0 0 1 35 27.9a1.867 1.867 0 0 1-.781-.191l-3.788 5.049a1.868 1.868 0 0 1 .437.965l9.204.614c-.018.11-.049.218-.058.33A3.93 3.93 0 0 0 40 35c0 .046.01.09.01.135l-9.185-.612A1.913 1.913 0 0 1 29 35.9a1.889 1.889 0 0 1-1.474-.716l-4.692 2.346a1.878 1.878 0 0 1 .066.47 1.9 1.9 0 0 1-.105.625c-.007.02-.022.036-.03.056l9.63 3.34a1.87 1.87 0 0 1 2.786-.505l5.415-4.437c.067.108.127.22.204.322a3.9 3.9 0 0 0 .292.306zM33.9 26a1.092 1.092 0 0 0 .43.872 1.12 1.12 0 0 0 1.42-.068A1.1 1.1 0 1 0 33.9 26zm-6 8a1.1 1.1 0 0 0 2.196.093 1.135 1.135 0 0 0-.426-.965A1.087 1.087 0 0 0 29 32.9a1.101 1.101 0 0 0-1.1 1.1zm-5.8 4a1.098 1.098 0 1 0-.06.362A1.101 1.101 0 0 0 22.1 38zm13 5a1.1 1.1 0 1 0-2.2 0 1.1 1.1 0 0 0 2.2 0zm10.8-8a1.9 1.9 0 1 1-3.8 0c0-.053.003-.105.007-.158A1.9 1.9 0 0 1 45.9 35zm-.8 0a1.1 1.1 0 0 0-2.196-.093 1.153 1.153 0 0 0 .216.752A1.1 1.1 0 0 0 45.1 35z"/></svg></span>
+                          <span class="sublink-text">GeoAnalytics Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/geoevent/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M13 8h-2V7h2zm4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm12.418 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826v2.117c-.259-.177-.53-.337-.8-.497v-1.288l-.766-.766H4.666l-.766.766V27.1h17.933c-.148.26-.283.53-.415.8zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM9 24v-1H7v1zm4-9h-2v1h2zm0 9v-1h-2v1zm-4-9H7v1h2zm8 9v-1h-2v1zm16.9 2h-.8v8.9H39v-.8h-5.1zm.1-3.901a11.9 11.9 0 1 0 11.9 11.9 11.914 11.914 0 0 0-11.9-11.9zm0 23a11.1 11.1 0 1 1 11.1-11.1 11.112 11.112 0 0 1-11.1 11.1z"/></svg></span>
+                          <span class="sublink-text">GeoEvent Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/notebook/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M22 27.1H3.9v-6.434l.766-.766h18.576a5.262 5.262 0 0 1 .83-.8H4.666l-.766-.766v-5.668l.766-.766h35.668l.766.766V18h.8v-5.666l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9H22zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zM9 8H7V7h2zm8 0h-2V7h2zm-4 0h-2V7h2zm2 16v-1h2v1zm-4 0v-1h2v1zm-4 0v-1h2v1zm0-8v-1h2v1zm8 0v-1h2v1zm-4 0v-1h2v1zm18.9 8.1h-1.8v1.8h1.8zm-.8 1h-.2v-.2h.2zm15.498-4.48a2.727 2.727 0 0 0-1.62-.5v-.02H27.25a3.154 3.154 0 0 0-3.15 3.15V38.1h-1.68a3.386 3.386 0 0 0-2.872 1.58 3.49 3.49 0 0 0-.157 3.419 3.241 3.241 0 0 0 2.954 1.801h15.161a3.404 3.404 0 0 0 3.394-3.4V26.9h5v-3.65a3.224 3.224 0 0 0-1.302-2.63zM22.345 44.1a2.44 2.44 0 0 1-2.23-1.341 2.706 2.706 0 0 1 .11-2.65A2.588 2.588 0 0 1 22.42 38.9h12.89a3.395 3.395 0 0 0 0 5.2zM40.1 23.192V41.5a2.6 2.6 0 1 1-2.6-2.6v-.8H24.9V23.25a2.352 2.352 0 0 1 2.35-2.35h13.795a3.183 3.183 0 0 0-.945 2.292zm5 2.908h-4.2v-2.908a2.274 2.274 0 0 1 1.44-2.18 1.944 1.944 0 0 1 1.791.259 2.423 2.423 0 0 1 .97 1.979zm-17.1 5h9v.8h-9zm0 3h7v.8h-7zm0-6h9v.8h-9zm4-3h5v.8h-5z"/></svg></span>
+                          <span class="sublink-text">Notebook Server</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+
+              <a id="nav-data-store" data-langlabel="data-store" href="../../../../../zh-CN/data-store/" class="top-nav-link">Data Stores</a>
+              <a id="nav-cloud" data-langlabel="cloud" href="../../../../../zh-CN/cloud/" class="top-nav-link">云</a>
+              <a id="nav-apps" data-langlabel="apps" href="../../../../../zh-CN/apps/" class="top-nav-link">应用程序</a>
+            </nav>
+
+
+            
+            
+            
+
+            <div class="margin-left-1 top-nav-list right hide-if-logged-in logged-out-navigation">
+               
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+              
+              <a data-langlabel="sign-in" id="login-link" class="icon-ui-user top-nav-link link-blue login-link" href="#">登录</a>
+              
+            </div>
+
+            
+            <nav class="margin-left-1 top-nav-list right hide-if-logged-out logged-in-navigation">
+              
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+             
+              <div class="dropdown js-dropdown right">
+
+                <div class="tablet-show top-nav-link">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a href="#" data-drawer="user-nav" class="user-nav-name js-drawer-toggle" data-first-name></a>
+                </div>
+
+                <div class="tablet-hide top-nav-link js-dropdown-toggle">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a class="user-nav-name top-nav-dropdown dropdown-btn" data-first-name>&nbsp;</a>
+                </div>
+
+                <nav class="dropdown-menu dropdown-right">
+                
+                  <a class="dropdown-link agolProfile" id="agolProfile" href="#">我的个人资料</a>
+                  <a class="dropdown-link js-log-out" id="agolLogout" href="#">登出</a>
+                </nav>
+              </div>
+            </nav>
+            
+
+            
+          </div>
+        </div>
+      </header>
+
+      <div class="js-search search-overlay">
+        <div class="search-content" role="dialog" aria-labelledby="search">
+          <form method="GET" id="helpSearchForm">
+            <label>
+              搜索 ArcGIS Enterprise 帮助
+              <div class="search-bar">
+                <input type="search" name="q"  placeholder="搜索 ArcGIS Enterprise 帮助" class="search-input js-search-input">
+                <input type="hidden" name="collection" value="help" />
+                <input type="hidden" name="product" value="arcgis-server-windows" />
+                <input type="hidden" name="version" value="10.8" />
+                <input type="hidden" name="language" value="zh-CN" />
+              </div>
+            </label>
+            <input type="hidden" name="relativePath" value="../../../../../" /><button type="submit" class="btn btn-large right">搜索</button>
+          </form>
+        </div>
+      </div>
+
+      <!--googleon: all-->
+
+      <div id="skip-to-content">
+        <!--googleoff: all-->
+        <header class="sub-nav sub-nav-learn">
+          <div class="grid-container">
+            
+            <div class="column-24">
+              <div style="display:table;" class="sdk-home-banner">
+                <div class="sdk-home-banner-content">
+                  <h1 class="sub-nav-title link-white">ArcGIS Enterprise</h1>
+                </div>
+              </div>
+            </div>
+
+            <div class="column-24">
+              <nav class='sub-nav-list tablet-hide'><a class="sub-nav-link" href="../../../../../zh-CN/" target="_top" title="ArcGIS Enterprise 概述和文档">主页</a><a class="sub-nav-link" href="../../../../../zh-CN/get-started/latest/windows/what-is-arcgis-enterprise-.htm" target="_top" title="ArcGIS Enterprise 简介">简介</a><a class="sub-nav-link is-active" href="../../../../../zh-CN/documentation/install/" target="_top" title="安装 ArcGIS Enterprise 及相关组件的指南">安装指南</a></nav><select class='tablet-show select-full trailer-half js-select-nav'><option value="../../../../../zh-CN/">主页</option><option value="../../../../../zh-CN/get-started/latest/windows/what-is-arcgis-enterprise-.htm">简介</option><option selected="true" value="../../../../../zh-CN/documentation/install/">安装指南</option></select>
+            </div>
+
+          </div>
+        </header>
+        <!--googleon: all-->
+       
+        <!-- content goes here -->
+        <div class="grid-container ">
+          
+
+            
+              
+  <!--BREADCRUMB-BEG--><div id="bigmac" class="sticky-breadcrumbs trailer-2" data-spy="affix" data-offset-top="180"> </div><!--BREADCRUMB-END-->
+  <!--googleoff: all-->
+    <div class="column-5 tablet-column-12 trailer-2 ">
+      <aside class="js-accordion accordion reference-index" aria-live="polite" role="tablist">
+        <div></div>
+      </aside>
+
+      <div class="js-sticky scroll-show tablet-hide leader-1 back-to-top" data-top="0" style="top: 0px;">
+        <a href="#" class="btn btn-fill btn-clear">返回顶部</a>
+      </div>
+    </div>
+  <!--googleon: all-->
+  
+            
+            
+            
+	
+		<div class="column-13  pre-1 content-section">
+	
+		<header class="trailer-1"><h1>ArcGIS Server 帐户</h1></header>
+
+		 
+	<!--googleoff: all-->
+	
+		
+				<aside id="main-toc-small" class="js-accordion accordion tablet-show trailer-1">
+			      <div class="accordion-section">
+			        <h4 class="accordion-title">在本主题中</h4>
+			        <div class="accordion-content list-plain">
+			          <ol class="list-plain pre-0 trailer-0"><li><a href="#GUID-0D981D49-B5DB-4CD1-A8FC-39366064439A">何时使用 <ph translate="no" varid="ArcGISforServer">ArcGIS Server</ph> 帐户？</a></li><li><a href="#ESRI_SECTION1_B0836C672B4449568F88626F8A0165B7">应将哪个帐户指定为 <ph translate="no" varid="ArcGISforServer">ArcGIS Server</ph> 帐户？</a></li><li><a href="#ESRI_SECTION1_453BDC7A97964BEBB2FF92B1995F0539">需要为 <ph translate="no" varid="ArcGISforServer">ArcGIS Server</ph> 帐户授予哪些权限？</a></li><li><a href="#ESRI_SECTION1_0F6C4F96AA1D4121872A381B0B59A4C8">更改 <ph translate="no" varid="ArcGISforServer">ArcGIS Server</ph> 帐户</a></li><li><a href="#ESRI_SECTION1_487A8FA0B75745489005E225899C89F4">指定 <ph translate="no" varid="ArcGISforServer">ArcGIS Server</ph> 帐户的区域设置</a></li></ol>
+			        </div>
+			      </div>
+			     </aside>
+		
+    
+   <!--googleon: all-->
+
+
+		<main>
+			
+	
+    	
+    
+
+
+			
+<p id="GUID-625970E3-1534-41A8-BE74-CCD644A4242C"><span class="ph">ArcGIS Server</span> 在工作时，需要启动和停止进程、读取数据并将数据写入到文件系统中的相应位置以及在计算机之间进行通信。为了安全地执行这些任务，ArcGIS Server 将使用安装 <span class="ph">ArcGIS Server</span> 时所指定的操作系统帐户。本文档中将其称为 <span class="ph">ArcGIS Server</span> 帐户。</p><section class="section1 padded-anchor" id="GUID-0D981D49-B5DB-4CD1-A8FC-39366064439A" purpose="section1"><h2>何时使用 <span class="ph">ArcGIS Server</span> 帐户？</h2><p id="GUID-54BB0DA2-ACF8-4D4D-A964-90D9CC0549EE"> <span class="ph">ArcGIS Server</span> 帐户有以下几种用途：</p><ul purpose="ul" id="UL_8F0563FE2553479E94CDDC5A37038636"><li purpose="li" id="LI_F42F98DFDD1542F7BA017881C14A909E">启动和停止支持 <span class="ph">ArcGIS Server</span> 和服务的进程。</li><li purpose="li" id="LI_73DA9B39C52F4DD9A24A6F7D78E357AD">如果注册数据库使用操作系统身份验证，请读取服务后的 GIS 数据。</li><li purpose="li" id="LI_D9A812304334400CB168916A3215376F">读取文件并将文件写入到 <span class="ph">ArcGIS Server</span> 目录；例如，创建地图缓存时，<span class="ph">ArcGIS Server</span> 帐户会将缓存切片写入服务器缓存目录中。</li><li purpose="li" id="LI_1D420A84D7AA4BBB83113F91B1658E41">读取和写入文件到配置存储。</li><li purpose="li" id="LI_150F4C3DF5184637BA4C6BB042604EE2">读取文件并将文件写入 <span class="ph">ArcGIS Server</span> 安装位置与系统临时目录中；例如，该帐户会写入可用于排除服务器故障的日志文件。</li><li purpose="li" id="LI_08A748B4B3DB407297B592CF00F324BE">读取日志消息并将日志消息写入日志目录中。</li></ul><div class="panel trailer-1 note" id="GUID-CC9E8E63-540A-4F59-A0C2-90111058F301"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-69895261-D858-4613-BA23-BDF8916EC627"><span class="ph">ArcGIS Server</span> 帐户与创建 <span class="ph">ArcGIS Server</span> 站点时所定义的主站点管理员不同。有关详细信息，请参阅<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/server/latest/administer" href="../../../../../zh-CN/server/latest/administer/windows/securing-your-arcgis-server-site.htm">确保 <span class="ph">ArcGIS Server</span> 站点安全</a>。</p></div></section><section class="section1 padded-anchor" id="ESRI_SECTION1_B0836C672B4449568F88626F8A0165B7" purpose="section1"><h2>应将哪个帐户指定为 <span class="ph">ArcGIS Server</span> 帐户？</h2><p id="GUID-9CBD370C-C8AA-40A7-9756-AC03F11E247C"><span class="ph">ArcGIS Server</span> 帐户的默认名称为 arcgis。对于大多数非生产部署，接受此默认值便已足够；但是，对于生产系统，Esri 建议在安装 <span class="ph">ArcGIS Server</span> 之前创建域帐户或活动目录帐户。请注意，如果组织的安全策略要求密码过期，则需要运行<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/server/latest/get-started" href="../../../../../zh-CN/server/latest/get-started/windows/what-s-included-with-arcgis-server.htm#ESRI_SECTION1_A257E9A10181416BA314EAFF5BE85D98">配置 ArcGIS Server 帐户实用程序</a>来更新已过期的密码。</p><p id="GUID-0EA8F80E-A44C-43AB-AF35-0987B10B88AD">可指定本地帐户或域帐户。在站点的第一台计算机上安装 <span class="ph">ArcGIS Server</span> 时，您可以导出安装程序配置文件，在站点的其他计算机上安装 <span class="ph">ArcGIS Server</span> 时，可以使用该配置文件。由此可以保证站点中所有计算机上的 <span class="ph">ArcGIS Server</span> 帐户配置均完全相同。</p><section class="section2 padded-anchor" id="ESRI_SECTION2_48F01E1157444899B656B5D8811B9F1F" purpose="section2"><h3>域帐户</h3><p id="GUID-C9D505E9-EFBC-41B1-A63C-5169886BA237">使用域帐户更容易访问远程系统中的数据。出于安全考虑，也最好使用域帐户，因为域帐户采用集中管理。</p><p id="GUID-F2D09E74-5021-47D5-8D4B-955078A852D7">在指定域帐户时使用格式 <span class="usertext">DOMAIN\username</span>。如果未指定域，则 <span class="ph">ArcGIS Server</span> 安装向导将使用您指定的用户名创建一个本地帐户。如果指定的域帐户不存在，安装程序将返回错误。</p><p id="GUID-D39C9138-85FB-4EDE-992B-0A4BEF1D8A16"> 如果登录设置拒绝您登录安装 <span class="ph">ArcGIS Server</span> 的计算机，则安装过程中将会出现错误。无需向 <span class="ph">ArcGIS Server</span> 帐户授予<span class="usertext">本地登录</span>组策略设置。有关详细信息，请参阅<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/server/latest/administer" href="../../../../../zh-CN/server/latest/administer/windows/advanced-considerations-when-using-domain-accounts.htm#GUID-1355896B-C547-4FAD-9299-D2D35A0D3D75">使用域帐户时的高级注意事项</a>。</p></section><section class="section2 padded-anchor" id="ESRI_SECTION2_A35EDBE575B047CEA8F3F5BECD4EEA3A" purpose="section2"><h3>本地帐户</h3><p id="GUID-45F0FEC9-638E-485D-90A0-30FE6742E01E">   如果已经选择本地帐户，则 <span class="ph">ArcGIS Server</span> 站点中的每台计算机都必须具有本地帐户和密码，并且其完全相同。安装 <span class="ph">ArcGIS Server</span> 之前，您可以在每台计算机上使用相同的密码创建本地帐户，或者可以使用 <span class="ph">ArcGIS Server</span> 安装向导创建本地帐户；只需确保在站点中的每台计算机上使用相同的用户名和密码。</p><p id="GUID-39F9C826-1CE4-41A9-B6EF-2376FE6D85C0">如果要将新本地帐户的创建作为安装过程的一部分，则为该帐户指定的密码必须符合您操作系统的本地安全策略。如果密码不满足您操作系统的最小强度要求，则安装程序将返回错误。要了解如何检查计算机上的安全策略，请参阅您正在使用的 Windows 版本的 Microsoft 文档。</p></section><section class="section2 padded-anchor" id="ESRI_SECTION2_84882E2409554EE88AC05D6AB17BA4B7" purpose="section2"><h3>组托管服务帐户</h3><p id="GUID-694AACFD-3B0C-4D15-9863-97486CE924DA"> 组托管服务帐户 (gMSA) 是一个可提供自动密码管理的特殊 Active Directory 域账户。该帐户不能用于交互式登录，仅限用于预定义的服务器组。</p><p id="GUID-711BC588-59BC-4D3B-AC7F-4D75CB04000C">当一个服务帐户管理多台计算机上的软件（例如在多机 <span class="ph">ArcGIS Server</span> 站点中）时，使用 gMSA 尤其有用。 由于 gMSA 是在域级别运行的，它可以定期更改每台计算机上的服务帐户密码，且无需手动步骤。</p><p id="GUID-0D346969-0975-4794-8B91-F2B2CD2BF359">自 10.8 版本起，可以使用如下所述的 <span class="usertext">ServerConfigurationUtility</span> 命令行工具来配置 <span class="ph">ArcGIS Server</span> 服务以在 gMSA 下运行。对于用户名参数，可以指定组托管服务帐户末尾是否有 <span class="usertext">$</span> 符号。不需要密码参数。<span class="usertext">readconfig</span> 和 <span class="usertext">writeconfig</span> 参数均使用组托管服务帐户达到相同效果。</p><section class="codeblock padded-anchor" purpose="codeblock"><div class="codeblockdesc" purpose="codeblockdesc"><p id="GUID-C92157B3-3B78-4276-BE91-B327A0DC920F">将 gMSA 配置为 ArcGIS Server 帐户的示例命令：</p></div><div class="codeblockbody"><pre><code class="other no-highlight">ServerConfigurationUtility.exe /username mydomain\enterprise-gmsa$ /writeconfig c:\temp\domainaccountconfig.xml</code></pre></div></section></section><section class="section2 padded-anchor" id="ESRI_SECTION2_CC4AB65195D94E9A895F36B79187A2C9" purpose="section2"><h3>是否可以使用 Windows 本地 LocalSystem 帐户来运行 <span class="ph">ArcGIS Server</span> 服务？</h3><p id="GUID-B78E361B-EF31-46C0-9219-3E32F8199D64">是；但是，由于以下原因，不建议执行此操作：</p><ul purpose="ul" id="UL_BE3F879CE2C943F3A456132C1390A7F6"><li purpose="li" id="LI_6D572CA25320427C99E412BC5FB89368">Windows LocalSystem 帐户需要高级权限，并且这具有安全隐患。有关详细信息，请参阅 Microsoft 开发中心的 <a target="_blank" class="xref xref" href="http://links.esri.com/msdn/LocalSystem">LocalSystem 帐户</a>。</li><li purpose="li" id="LI_CC112FEB03804F0D9FFE2EA566949A4E">LocalSystem 帐户不用于访问网络位置。要访问您的服务和站点数据，必须在本地存储数据。</li><li purpose="li" id="LI_5F4FD56FFF21473C9D10E5AD9E8EA63C">在具有多台计算机的站点中，不要使用 LocalSystem 作为 <span class="ph">ArcGIS Server</span> 帐户。</li></ul></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_453BDC7A97964BEBB2FF92B1995F0539" purpose="section1"><h2>需要为 <span class="ph">ArcGIS Server</span> 帐户授予哪些权限？</h2><p id="GUID-3189D876-485D-4C14-A342-6801CDEDE615"><span class="ph">ArcGIS Server</span> 安装程序授予 <span class="ph">ArcGIS Server</span> 帐户执行服务器启动和停止进程等基本功能的权限。它还为帐户授予对 <span class="ph">ArcGIS Server</span> 安装目录中所有文件夹的读取权限和对以下文件夹的完全控制权限：</p><ul purpose="ul" id="UL_02A814AA36F44CA68F15DE40FBC22CC3"><li purpose="li" id="LI_FC324570801843D58D1BF3A675D0DBD8">&lt;<span class="ph">ArcGIS Server</span> 安装目录&gt;\framework</li><li purpose="li" id="LI_D3665322B6DD4941A661BF0CD5312FF9">&lt;<span class="ph">ArcGIS Server</span> 安装目录&gt;\usr</li><li purpose="li" id="LI_7C93B85F9F754A218B55486808717D06">&lt;<span class="ph">ArcGIS Server</span> 安装目录&gt;\bin</li><li purpose="li" id="LI_D872F00730724FD7B481B39AE22FDA03">&lt;<span class="ph">ArcGIS Server</span> 安装目录&gt;\XMLSchema</li><li purpose="li" id="LI_A978AC5A1330467891C0D86304DA5A88">&lt;<span class="ph">ArcGIS Server</span> 安装目录&gt; \DatabaseSupport</li></ul><p id="GUID-9B22492A-54F8-45C3-A62D-ED23FB4F64E7">创建站点之前，应授予 <span class="ph">ArcGIS Server</span> 帐户下列权限：</p><ul purpose="ul" id="UL_161885F630C0451195893B5D9ADCEBF8"><li purpose="li" id="LI_7D78A72AB12A463DA6CCE7F00EE21045">对服务器目录创建位置的完全控制权限。请注意，您必须授予 <span class="ph">ArcGIS Server</span> 帐户对您在配置站点后所创建的任何新服务器目录的读写权限。</li><li purpose="li" id="LI_3FF798038C704ABBBFA3D1C830996AB8">对配置存储创建位置的完全控制权限。</li><li purpose="li" id="LI_ECB7119B1A994D88A2C25CBD50149F41">对将包含 <span class="ph">ArcGIS Server</span> 日志目录的完全控制权限和创建此文件夹的权限（如果尚未手动创建）。默认情况下，此目录为 <span class="usertext">C:\arcgisserver\logs</span>。</li><li purpose="li" id="LI_1EA91CCA352A4584B3A4508C4AB1A850">对包含将在发布 web 服务之前注册到 <span class="ph">ArcGIS Server</span> 站点的数据库连接文件的目录的读取权限。如果使用的是 Windows 身份验证而非数据库身份验证，还必须授予 <span class="ph">ArcGIS Server</span> 帐户写入权限。</li><li purpose="li" id="LI_B41C84856DDF4AC49C7F4CD2E5CC3356">对将在发布 web 服务之前注册到 <span class="ph">ArcGIS Server</span> 站点的 GIS 数据文件夹的读取权限。如果允许发布进程将数据复制到服务器中（请参阅<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/server/latest/manage-data" href="../../../../../zh-CN/server/latest/manage-data/windows/copying-data-to-the-server-automatically-when-publishing.htm">发布时自动将数据复制到服务器</a>），则数据会放置在已对 <span class="ph">ArcGIS Server</span> 帐户授予权限的服务器目录中。不必再为原始服务器目录应用任何其他权限。</li><li purpose="li" id="LI_16C904A4F9F84956883FE6756F6DF7FA">对 Python27 文件夹的完全控制权限。默认情况下，此文件夹位于 <span class="usertext">C:\Python27</span>（如果已在 <span class="usertext">C:</span> 硬盘中安装 <span class="ph">ArcGIS Server</span>）。</li></ul><p id="GUID-6599397A-4656-4C89-8AAE-132C30FD444C">创建站点时，将授予 <span class="ph">ArcGIS Server</span> 帐户对 <span class="ph">ArcGIS Server</span> 日志目录的读写权限。如果创建新的日志位置，则需要为 <span class="ph">ArcGIS Server</span> 帐户手动授予对此位置的读写权限。</p><p id="GUID-A56E44A3-9E66-410F-A1A7-46033B145041"><span class="ph">ArcGIS Server</span> 帐户无需属于站点中任何计算机的 Windows 管理员组。</p></section><section class="section1 padded-anchor" id="ESRI_SECTION1_0F6C4F96AA1D4121872A381B0B59A4C8" purpose="section1"><h2>更改 <span class="ph">ArcGIS Server</span> 帐户</h2><p id="GUID-18BB1305-6FBE-4E35-8AB6-C90E1A0E0F0F">无需重新运行 <span class="ph">ArcGIS Server</span> 安装程序也能更改 <span class="ph">ArcGIS Server</span> 帐户。安装后，可通过运行随此软件提供的<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/server/latest/get-started" href="../../../../../zh-CN/server/latest/get-started/windows/what-s-included-with-arcgis-server.htm#ESRI_SECTION1_A257E9A10181416BA314EAFF5BE85D98">配置 <span class="ph">ArcGIS Server</span> 帐户实用程序</a>来更改帐户。此操作可用来响应安全策略更改，或者在排除服务器故障时实施。</p><p id="GUID-FBF43926-D964-4233-967B-B1382BA8487E">请使用本实用程序，而不要尝试使用操作系统工具手动更改 <span class="ph">ArcGIS Server</span> 帐户。该实用程序旨在对部署中的所有计算机上的所有必要目录（如上所述）应用权限。如果尝试手动更改帐户并出现误操作，服务器可能出现故障并停止运行。</p><p id="GUID-F085B6B9-5DF9-4FB9-A3BF-5E5C14950FE1">要使用该实用程序来更改 <span class="ph">ArcGIS Server</span> 帐户，请执行以下步骤：</p><ol class="list-numbered" purpose="ol" id="OL_9FE689233A92475EA452AE68C924FD0A"><li purpose="li" id="LI_DE5E0A644C11475AB44A23E4E7AF337C">在 <span class="ph">ArcGIS Server</span> 站点的一台计算机上，打开<span class="uicontrol">配置 ArcGIS Server 帐户</span>实用程序。</li><li purpose="li" id="LI_07201C23F21D4FE4927FB828F751FFFE">为要指定为 <span class="ph">ArcGIS Server</span> 帐户的帐户指定帐户名和密码。单击<span class="uicontrol">下一步</span>。</li><li purpose="li" id="LI_3408B0B1CF974969A29BB01FA8E10D63">也可以指定 <span class="ph">ArcGIS Server</span> 站点所使用的根服务器目录和配置存储位置。例如<ul purpose="ul" id="UL_3BE09FDA354849D88B102AC801348E8B"><li purpose="li" id="LI_F0EB672D80D44BF5B275598FFAACA9B3">如果根服务器目录和配置存储在本地驱动器盘符路径中可用，并且您在该实用程序中指定了这些目录，则该实用程序会将该目录的读写权限自动授予新帐户。</li><li purpose="li" id="LI_C3F3BD9E155847FB9671F6AE0487D8DD">如果根服务器目录和配置存储使用网络 (UNC) 路径，则将这些字段留空并在完成该实用程序后将该目录的读写权限手动授予新帐户。</li></ul></li><li purpose="li" id="LI_61B3ABD489C744938D54DF3E695CA4EF">也可以指定日志目录位置。如果输入一个位置，则该实用程序会将该目录的读写权限自动授予新帐户。如果将此字段留空，需要在完成该实用程序后，在 <span class="ph">ArcGIS Server</span> 站点的每台计算机上将该目录的读写权限手动授予新帐户。<div class="panel trailer-1 note" id="GUID-91175F46-272C-4168-9B67-FFA440D0CDD6"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-C7BCBF6E-C6ED-4CFE-BA6E-450B2E5A2F74">日志目录与服务器目录或配置存储位置无关。如果更改日志目录的位置，请尝试将该位置保留在 <span class="ph">ArcGIS Server</span> 站点的根级别。无法将网络目录指定为日志位置。有关详细信息，请参阅<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/server/latest/administer" href="../../../../../zh-CN/server/latest/administer/windows/about-server-logs.htm">关于服务器日志</a>。</p></div></li><li purpose="li" id="LI_E9150F07B69B4EF4B2778BA292E04ECE">单击<span class="uicontrol">下一步</span>。</li><li purpose="li" id="LI_616EAD5E9BEC4C808BB7C9D9443BB5B0">在<span class="uicontrol">导出服务器配置文件</span>对话框中，考虑以下情形：<ul purpose="ul" id="UL_B5BD99E681EB4EB088036024CCBB399A"><li purpose="li" id="LI_99FAA62E5D1E4321B24590CF13B48E9E">如果 <span class="ph">ArcGIS Server</span> 站点中具有多台计算机，请导出配置文件。对于站点中其余的计算机，这样做就不必将此信息重新输入该实用程序。由此可以保证站点中所有计算机上的 <span class="ph">ArcGIS Server</span> 帐户配置均完全相同。为配置文件指定安全位置并单击<span class="uicontrol">下一步</span>。</li><li purpose="li" id="LI_F4ACDBA3EBED471789FBAF2DE4EB6B27">如果您的 <span class="ph">ArcGIS Server</span> 站点中只有一台计算机，您可以导出并保存配置文件，也可以选择保存配置文件。务必将其存储在安全位置，然后单击<span class="uicontrol">下一步</span>。</li></ul></li><li purpose="li" id="LI_700267B8496944B6AFC6E5B3F097F6C5">在汇总面板中，查看帐户属性并单击<span class="uicontrol">配置</span>。您的新帐户被配置为 <span class="ph">ArcGIS Server</span> 帐户。关闭该实用程序。</li><li purpose="li" id="LI_04C2DB6964504AC69B0EDBC486275626">在站点中其余每台计算机上运行该实用程序。可将该实用程序指向之前创建的配置文件，或重新输入上面所提供的信息。</li><li purpose="li" id="LI_9345578C97454E399F79DA769F89DAA8">将已注册到 <span class="ph">ArcGIS Server</span> 站点的数据目录和数据库连接文件的读取权限授予新帐户。如果使用的是 Windows 身份验证而非数据库身份验证，还需要授予帐户对连接文件的写入权限。</li></ol><section class="section2 padded-anchor" id="ESRI_SECTION2_C739C1452D4C43239CFE92EADD2E7C60" purpose="section2"><h3>通过命令行更改 <span class="ph">ArcGIS Server</span> 帐户</h3><p id="GUID-17822D17-FE16-4DBD-816E-D85DD29DE137">您可以通过命令提示符运行可执行文件，而非运行“配置 <span class="ph">ArcGIS Server</span> 帐户”实用程序向导。<span class="usertext">ServerConfigurationUtility.exe</span> 命令行实用程序安装在 <span class="usertext">&lt;ArcGIS Server installation location&gt;\bin</span> 中。将更新应用到组织的安全策略后，可以将更新写入 <span class="ph">ArcGIS Server</span> 帐户的脚本。</p><p id="GUID-73BB1611-1500-4FED-AA34-9DA710413E2C">可用参数包括：</p><p id="GUID-536D3C1F-8991-40A1-8349-BB4660D26EAE"><span class="usertext">ServerConfigurationUtility [/readconfig] | [/writeconfig] | [/username] | [/password] | [/rsdir] | [/csdir] | [/logsdir]</span><ul purpose="ul" id="UL_B11E3B4D610945CF87D492995944A337"><li purpose="li" id="LI_86C60FF29BEF482A917524699C9B07E6">&lt;readconfig&gt; - 先前运行实用程序时保存的配置文件的可选路径。</li><li purpose="li" id="LI_A954D5ECAF72415CBD2B789F1688216B">&lt;writeconfig&gt; - 保存配置文件的可选路径，以便将来运行实用程序时应用相同属性。</li><li purpose="li" id="LI_F8A65871294C4E48BB354532AB528FEF">&lt;username&gt; - 要用于 <span class="ph">ArcGIS Server</span> 帐户的名称。</li><li purpose="li" id="LI_A000AA3D7D9C4DFDA44436E4CE898F33">&lt;password&gt; - <span class="ph">ArcGIS Server</span> 帐户的密码。</li><li purpose="li" id="LI_36250DB942CE4ED2BF3C63C7A8D07BB6">&lt;rsdir&gt; - 根服务器目录的路径。本参数可选，但如果不提供它，您需要为 <span class="ph">ArcGIS Server</span> 帐户手动授予对根服务器目录的读写权限。</li><li purpose="li" id="LI_5512FBD80D3C43C590EA4E32E96A3D62">&lt;csdir&gt; - 配置存储目录。本参数可选，但如果不提供它，您需要为 <span class="ph">ArcGIS Server</span> 帐户手动授予对配置存储的读写权限。</li><li purpose="li" id="LI_3B98D5E1E36D40C49A6D9335C6419C48">&lt;logsdir&gt; - <span class="ph">ArcGIS Server</span> 日志目录的路径。本参数可选，但如果不提供它，您需要为 <span class="ph">ArcGIS Server</span> 帐户手动授予对日志目录的读写权限。</li></ul></p><p id="GUID-A3CA10DC-1151-4A78-A07B-894025F2C5FF">示例：<span class="usertext">ServerConfigurationUtility /writeconfig c:\temp\myconfig.xml /username arcgisnew /password secret /rsdir c:\arcgisserver\directories /csdir c:\arcgisserver\config-store /logsdir c:\arcgisserver\logs</span></p></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_487A8FA0B75745489005E225899C89F4" purpose="section1"><h2>指定 <span class="ph">ArcGIS Server</span> 帐户的区域设置</h2><p id="GUID-35ED0FC1-377D-4858-99DE-95F873F2E4F3">将 <span class="ph">ArcGIS Server</span> 帐户的区域设置设置为安装期间指定的 Windows 帐户的区域设置。如果未指定帐户且使用默认帐户 (arcgis)，则帐户的区域设置由操作系统设置确定。由于 <span class="ph">ArcGIS Server</span> 生成的所有消息（如日志）将显示在 <span class="ph">ArcGIS Server</span> 帐户的区域设置中，因此区域设置尤为重要。要以不同的语言或格式显示消息，需要针对 <span class="ph">ArcGIS Server</span> 站点中的每台计算机，更改 <span class="ph">ArcGIS Server</span> 帐户的显示语言。有关您正在使用的操作系统版本的具体说明，请参阅 Microsoft 文档。</p></section>
+			
+				<hr>
+				<!--googleoff: all-->
+				
+	
+        
+		    <p class="feedback right">
+		        <a id="afb" class="icon-ui-contact" href="/feedback/" data-langlabel="feedback-on-this-topic" >有关此主题的反馈?</a>
+		    </p>
+        
+	
+
+				<!--googleon: all-->
+			
+		</main>
+	</div>
+	
+	<!--googleoff: all-->
+	
+		
+			<div id="main-toc-large" class="column-5">
+			    <div class="panel font-size--2 tablet-hide trailer-1">
+			      <h5 class="trailer-half">在本主题中</h5>
+			      <ol class="list-plain pre-0 trailer-0"><li><a href="#GUID-0D981D49-B5DB-4CD1-A8FC-39366064439A">何时使用 <ph translate="no" varid="ArcGISforServer">ArcGIS Server</ph> 帐户？</a></li><li><a href="#ESRI_SECTION1_B0836C672B4449568F88626F8A0165B7">应将哪个帐户指定为 <ph translate="no" varid="ArcGISforServer">ArcGIS Server</ph> 帐户？</a></li><li><a href="#ESRI_SECTION1_453BDC7A97964BEBB2FF92B1995F0539">需要为 <ph translate="no" varid="ArcGISforServer">ArcGIS Server</ph> 帐户授予哪些权限？</a></li><li><a href="#ESRI_SECTION1_0F6C4F96AA1D4121872A381B0B59A4C8">更改 <ph translate="no" varid="ArcGISforServer">ArcGIS Server</ph> 帐户</a></li><li><a href="#ESRI_SECTION1_487A8FA0B75745489005E225899C89F4">指定 <ph translate="no" varid="ArcGISforServer">ArcGIS Server</ph> 帐户的区域设置</a></li></ol>
+			    </div>
+			    
+			    
+	  		</div>
+		
+    
+   <!--googleon: all-->
+
+
+
+
+          
+        </div>
+        <!-- ENDPAGECONTENT -->
+
+      </div>
+
+    </div>  <!-- End of wrapper -->
+
+  <footer class="footer leader-3 link-dark-gray" role="contentinfo">
+    <div class="grid-container">
+      <div class="row">
+        <nav class="column-6">
+          <h6 data-langlabel="arcgis-for-server">Arc<span>GIS Enterprise</span></h6>
+          <ul class="list-plain">
+            <li><a data-langlabel="home" href="../../../../../zh-CN/">主页</a></li>
+            <li><a data-langlabel="portal" href="../../../../../zh-CN/portal/">Portal</a></li>
+            <li><a data-langlabel="server" href="../../../../../zh-CN/server/">Server</a></li>
+            <li><a data-langlabel="data-store" href="../../../../../zh-CN/data-store/">Data Stores</a></li>
+            <li><a data-langlabel="cloud" href="../../../../../zh-CN/cloud/">云</a></li>
+            <li><a data-langlabel="apps" href="../../../../../zh-CN/apps/">应用程序</a></li>
+            <li><a data-langlabel="documentation" href="../../../../../zh-CN/documentation/">文档</a></li>
+          </ul>
+        </nav>
+
+        
+  <nav class="column-6">
+    <h6 data-langlabel="arcgis-platform">ArcGIS 平台</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="arcgis" href="//www.arcgis.com/">ArcGIS Online</a></li>
+      <li><a data-langlabel="arcgis-for-professionals" href="//pro.arcgis.com/">ArcGIS Pro</a></li>
+      <li><a data-langlabel="arcgis-for-server" href="//enterprise.arcgis.com/">ArcGIS Enterprise</a></li>
+      <li><a data-langlabel="arcgis-for-developers" href="https://developers.arcgis.com/">ArcGIS for Developers</a></li>
+      <li><a data-langlabel="arcgis-solutions" href="//solutions.arcgis.com/">ArcGIS Solutions</a></li>
+      <li><a data-langlabel="arcgis-marketplace" href="//marketplace.arcgis.com/">ArcGIS Marketplace</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <h6 data-langlabel="about-esri">关于 Esri</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="about-us" href="//www.esri.com/about-esri/">关于我们</a></li>
+      <li><a data-langlabel="careers" href="//www.esri.com/careers/">招贤纳士</a></li>
+      <li><a data-langlabel="insiders-blog" href="https://www.esri.com/about/newsroom/blog/">Esri 博客</a></li>
+      <li><a data-langlabel="user-conference" href="//www.esri.com/events/user-conference/index.html">用户大会</a></li>
+      <li><a data-langlabel="developer-summit" href="//www.esri.com/events/devsummit/index.html">开发者峰会</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <a class="esri-logo" href="//www.esri.com/" aria-label="Esri Home"></a>
+    <section class="footer-social-nav leader-1">
+            <a class="icon-social-twitter" aria-label="Esri on Twitter" href="https://twitter.com/Esri/"></a>
+            <a class="icon-social-facebook" aria-label="Esri on Facebook" href="https://www.facebook.com/esrigis/"></a>
+            <a class="icon-social-github" aria-label="Esri on GitHub" href="//esri.github.io/"></a>
+            <a class="icon-social-contact" aria-label="Contact Esri" href="//www.esri.com/about-esri/contact/"></a>
+    </section>
+	  
+  </nav>
+  
+  <div class="column-24 leader-1">
+    <p class="font-size--3"><a href="http://www.esri.com/legal/copyright-trademarks">Copyright &copy; 2019 Esri.</a> All rights reserved. | <a href="http://www.esri.com/legal/privacy/">隐私政策</a> | <a href="http://www.esri.com/legal/software-license">法律声明</a></p>
+  </div>
+  
+
+
+      </div>
+    </div>
+  </footer>
+  <!--googleoff: all-->
+
+  
+  
+	<script src="../../../../../zh-CN/assets/js/init.js" type="text/javascript"></script>
+	<!--<script src="../../../../../zh-CN/assets/js/drop-down.js" type="text/javascript"></script>-->
+	<script src="../../../../../zh-CN/assets/js/search/searchform.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/cdn/js/link-modifier.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/cdn/js/sitewide.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/cdn/js/libs/highlight.pack.js" type="text/javascript"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+
+
+  
+    
+
+  <script src="../../../../../zh-CN/cdn/js/affix.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    $(function () {
+          var appendFlg = true;
+
+          $("#bigmac")
+          .on("affixed.bs.affix", function (evt) {
+            if (appendFlg) {
+              $("<a class='crumb' href='#'>ArcGIS Server 帐户</a>").insertAfter ($("#bigmac nav a").last());
+              appendFlg = false;
+            }
+          })
+          .on ("affix-top.bs.affix", function(evt) {
+            if (!appendFlg) {
+              $("#bigmac nav a").last().remove();
+            }
+            appendFlg = true;
+          })
+    })
+  </script>
+  
+        <script type="text/javascript">
+          window.doctoc = {
+            pubID: "630",
+            tpcID: "17",
+            
+            hideToc : false
+          }
+        </script>
+
+        <script type="text/javascript" src="../../../../../zh-CN/documentation/install/more/latest/windows/1657.js" ></script>
+        <script type="text/javascript" src="../../../../../zh-CN/server/latest/install/windows/630.js" ></script>
+        <script type="text/javascript" src="../../../../../zh-CN/cdn/calcite/js/protoc.js" ></script>
+
+        
+
+  <noscript>
+        <p>
+            <a href="flisting.htm">flist</a>
+        </p>
+    </noscript>
+    <script type="text/javascript"></script>
+  
+  
+    
+    
+
+  </body>
+</html>

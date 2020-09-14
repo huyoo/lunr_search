@@ -1,0 +1,543 @@
+
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>  <html class="ie lt-ie9 lt-ie8 lt-ie7 ie6" dir="ltr"> <![endif]-->
+<!--[if IE 7]>     <html class="ie lt-ie9 lt-ie8 ie7" dir="ltr"> <![endif]-->
+<!--[if IE 8]>     <html class="ie lt-ie9 ie8" dir="ltr"> <![endif]-->
+<!--[if IE 9]>     <html class="ie ie9" dir="ltr"> <![endif]-->
+<!--[if !IE]><!--> <html dir="ltr" lang="zh-CN"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>管理托管要素图层&mdash;Portal for ArcGIS | ArcGIS Enterprise 文档</title>
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+    <script>
+      var docConfig = {
+        locale: 'zh-CN'
+        ,localedir: 'zh-cn'
+        ,langSelector: ''
+        
+        ,relativeUrl: false
+        
+
+        ,searchformUrl: '/search/'
+        ,tertiaryNavIndex: ''
+
+        
+      };
+    </script>
+	 
+
+
+    
+    <!--[if lt IE 9]>
+      <script src="../../../../zh-CN/cdn/js/libs/html5shiv.js" type="text/javascript"></script>
+      <script src="../../../../zh-CN/cdn/js/libs/selectivizr-min.js" type="text/javascript"></script>
+      <script src="../../../../zh-CN/cdn/js/libs/json2.js" type="text/javascript"></script>
+      <script src="../../../../zh-CN/cdn/js/libs/html5shiv-printshiv.js" type="text/javascript" >
+
+    <![endif]-->
+
+     <!--[if lt IE 11]>
+    <script>
+      $$(document).ready(function(){
+        $$(".hideOnIE").hide();
+      });
+    </script>
+    <![endif]-->
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<link href="../../../../zh-CN/assets/img/favicon.ico" rel="shortcut icon" >
+	<link href="../../../../zh-CN/assets/css/screen.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/cdn/calcite/css/documentation.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/assets/css/print.css" media="print" type="text/css" rel="stylesheet" />
+
+	<!--
+	<link href="../../../../zh-CN/assets/css/screen_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/assets/css/documentation/base_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/assets/css/print_l10n.css" media="print" type="text/css" rel="stylesheet" />
+	-->
+	
+	
+		<script src="../../../../zh-CN/cdn/js/libs/jquery.1.9.1.min.js" type="text/javascript"></script>
+	
+	<script src="../../../../zh-CN/cdn/js/libs/jquery.cookie.js" type="text/javascript"></script>
+	<link href="../../../../zh-CN/cdn/css/colorbox.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/cdn/css/colorbox_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<script src="../../../../zh-CN/cdn/js/libs/jquery.colorbox-min.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/assets/js/video-init.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/assets/js/sitecfg.js" type="text/javascript"></script>
+	
+		<script src="../../../../zh-CN/assets/js/signIn.js" type="text/javascript"></script>
+	
+
+	<!--- Language Picker -->
+	<script src="../../../../zh-CN/assets/js/locale/l10NStrings.js" type="text/javascript"></script>
+	
+		 
+	
+
+	<script src="../../../../zh-CN/assets/js/calcite-web.js" type="text/javascript"></script>
+
+
+
+  <!--- search MD -->
+    <META name="description" content="托管要素图层的所有者和管理员可以更改托管要素图层的设置，这些设置会影响对图层用户可用的功能。他们还可以覆盖现有的托管要素图层。"><META name="last-modified" content="2019-12-6"><META name="product" content="arcgis-portal-windows,arcgis-portal-linux,arcgis-enterprise-windows,arcgis-enterprise-linux"><META name="sub_category" content="Portal for ArcGIS"><META name="search-collection" content="help"><META name="content_type_label" content="帮助主题"><META name="sub_category_label" content="Portal for ArcGIS"><META name="search-category" content="help-general"><META name="subject_label" content="PORTAL,服务,SERVER"><META name="version" content="10.8"><META name="content_type" content="Help Topic"><META name="subject" content="PORTAL,SERVICES,SERVER"><META name="content-language" content="zh-cn">
+    <!--- search MD -->
+
+  
+  <script src="../../../../zh-CN/assets/js/switchers/portal-1.js" type="text/javascript"></script>
+  
+      
+
+</head>
+
+<!--
+      pub: GUID-7B47163B-CE1B-465F-BEEE-4DADDB8DFF09=37
+      tpc: GUID-1E207051-6C89-4A26-B28B-181E3859FADF=23
+      -->
+
+
+<!-- variable declaration, if any -->
+<!-- can change following macro to set variable once we are on Jinja 2.8 -->
+
+
+
+
+
+<body class="claro zh-CN server">
+  
+
+  <!-- Drawer location -->
+  <div class="drawer drawer-left js-drawer" data-drawer="top-nav">
+        <nav class="drawer-nav" role="navigation">
+          <aside class="side-nav">
+            <h2 class="side-nav-title">Arc<span>GIS</span> Enterprise</h2>
+            <form id="helpSearchForm" class="margin-left-half margin-right-half leader-half trailer-half drawer-search-form" method="GET">
+              <input type="search" name="q"  placeholder="搜索 ArcGIS Enterprise 帮助">
+              <input type="hidden" name="collection" value="help" />
+              <input type="hidden" name="product" value="arcgis-portal-windows" />
+              <input type="hidden" name="version" value="10.8" />
+              <input type="hidden" name="language" value="zh-CN" />
+            </form>    
+             <a id="nav-portal" data-langlabel="portal" href="../../../../zh-CN/portal/" class="side-nav-link">Portal</a>
+             
+            <a id="all-servers" data-langlabel="all-servers" href="../../../../zh-CN/server/" class="side-nav-link">所有服务器</a>
+            <a id="gis-server" data-langlabel="gis-server" href="../../../../zh-CN/server/" class="side-nav-link">GIS Server</a>
+            <a id="image-server" data-langlabel="image-server" href="../../../../zh-CN/image/" class="side-nav-link">Image Server</a>
+            <a id="geo-analytics-server" data-langlabel="geo-analytics-server" href="../../../../zh-CN/geoanalytics/" class="side-nav-link">GeoAnalytics Server</a>
+            <a id="geoevent-server" data-langlabel="geoevent-server" href="../../../../zh-CN/geoevent/" class="side-nav-link">GeoEvent Server</a>
+            <a id="notebook-server" data-langlabel="notebook-server" href="../../../../zh-CN/notebook/" class="side-nav-link">Notebook Server</a>
+            <a id="nav-data-store" data-langlabel="data-store" href="../../../../zh-CN/data-store/" class="side-nav-link">Data Stores</a>
+            <a id="nav-cloud" data-langlabel="cloud" href="../../../../zh-CN/cloud/" class="side-nav-link">云</a>
+            <a id="nav-apps" data-langlabel="apps" href="../../../../zh-CN/apps/" class="side-nav-link">应用程序</a>
+            <a id="nav-doc" data-langlabel="documentation" href="../../../../zh-CN/documentation/" class="side-nav-link">文档</a>
+
+          </aside>
+        </nav>
+    </div>
+
+    <!-- user navigation collapses to drawer on mobile -->
+    
+    <div class="drawer drawer-right js-drawer hide-if-logged-out logged-in-navigation" data-drawer="user-nav">
+      <nav class="drawer-nav">
+        <aside class="side-nav">
+          <a class="side-nav-link agolProfile" href="#">我的个人资料</a>
+          <a class="side-nav-link icon-ui-sign-out js-log-out" href="#">登出</a>
+        </aside>
+      </nav>
+    </div>
+    
+<!-- End of drawer -->
+
+  
+  <div class="wrapper">
+      <!--googleoff: all-->
+
+      <header class="top-nav" data-skin="learn">
+        <a class="skip-to-content" href="#skip-to-content">Skip To Content</a>
+        <div class="grid-container">
+          <div class="column-24">
+
+
+            <!--<div class="top-nav-title-wrapper text-center ">-->
+              <a href='../../../../zh-CN/' class="top-nav-title tablet-hide"><span>Arc</span>GIS  Enterprise</a>
+              <a href='../../../../zh-CN/' class="icon-ui-menu top-nav-title js-drawer-toggle tablet-show" data-drawer="top-nav"><span>Arc</span>GIS Enterprise</a>
+            <!--</div> -->
+
+          
+            <nav role="navigation" class="top-nav-list left tablet-hide">
+              <a id="nav-portal" data-langlabel="portal" href="../../../../zh-CN/portal/" class="top-nav-link">Portal</a>
+
+                <div class="dropdown js-dropdown ">
+                  <a class="top-nav-link js-dropdown-toggle" tabindex="0" aria-haspopup="true" aria-expanded="false" href="#">Servers</a>
+                  <nav class="dropdown-menu featured" role="menu">
+                    <ul class="dropdown-sublist-featured">
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/get-started/latest/windows/additional-server-deployment.htm" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path  d="M42.92 6.1H4.12v8.566l.833.832-.835.833-.018 7.332.845.847-.825.824V33.9h25v5.2h-2v1.075H8.02v.8h19.1v.925h4.8v-.925H40v-.8h-8.08V39.1h-2v-5.2h13v-8.566l-.834-.834.835-.834v-7.332l-.835-.834.835-.834zm-11.8 35h-3.2v-1.2h3.2zm11-8H4.92v-7.434l.767-.766h35.668l.765.766zm0-9.766l-.766.766H5.666l-.766-.767.017-6.669.766-.764h35.671l.766.766zm0-9l-.766.766H5.687l-.766-.766V6.9h37.2zM19 11.9h-2v-.8h2zm-4 0h-2v-.8h2zm-4 0H9v-.8h2zm6 8.2h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9zm8 9h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9z"/></svg></span>
+                          <span class="sublink-text">所有服务器</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/server/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M45.98 33.575a.616.616 0 0 0-.335-.51l-3.362-2.03 3.362-2.031a.556.556 0 0 0 0-1.02l-11.1-6.704a1.293 1.293 0 0 0-1.112 0L22.33 27.982a.556.556 0 0 0 0 1.02l3.36 2.03-3.358 2.03a.556.556 0 0 0-.002 1.021l3.322 2.006-3.324 2.008a.555.555 0 0 0 .002 1.017l11.102 6.703a1.25 1.25 0 0 0 1.11.002l11.104-6.706a.556.556 0 0 0 0-1.02l-3.32-2.006 3.318-2.004a.607.607 0 0 0 .335-.509zM33.837 21.97c.026-.01.286-.005.29-.005l10.814 6.53-10.8 6.523c-.028.01-.284.005-.294.006l-10.813-6.53zm11.105 16.636l-10.8 6.523a2.564 2.564 0 0 1-.295.006l-10.81-6.529 3.39-2.047 7.004 4.23a1.083 1.083 0 0 0 .557.131 1.101 1.101 0 0 0 .554-.13l7.01-4.233zM34.14 40.098a2.545 2.545 0 0 1-.294.006l-10.812-6.53 3.43-2.073 6.97 4.208a1.25 1.25 0 0 0 1.107-.001l6.966-4.206 3.431 2.073zM9 8H7V7h2zm8 8h-2v-1h2zm-4-8h-2V7h2zm4 0h-2V7h2zm-4 8h-2v-1h2zm7.316 11.1H3.9v-6.434l.766-.766h35.668l.766.766v2.12l.8.483v-2.935l-.826-.826.826-.845v-6.329l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9h16.88a2.632 2.632 0 0 1 .336-.8zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zm0 8v-5.668l.766-.766h35.668l.766.766v5.67l-.746.764H4.666zM15 24v-1h2v1zm-4 0v-1h2v1zm-2-8H7v-1h2zm-2 8v-1h2v1z"/></svg></span>
+                          <span class="sublink-text">GIS Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/image/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 8h-2V7h2zm-4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm8 8h-2v1h2zm-8 0H7v1h2zm4 9v-1h-2v1zm-4 0v-1H7v1zm8 0v-1h-2v1zm4 3.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V21h-.8v-.334l-.766-.766H4.666l-.766.766V27.1H21zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zm40.234 4v21.8H23.1V23.1zm-.8 16.366L39.466 44.1h2.868l1.766-1.766zm-20.2-9.932l5.634-5.634h-2.868L23.9 26.666zm6.2-5.068L24.466 30.1h2.868l2.766-2.766zM28.466 30.1H30.1v-1.634zm2.434 0h6.2v-6.2h-6.2zm-7 7h6.2v-6.2h-6.2zm7 0h6.2v-6.2h-6.2zm0 6.434l5.634-5.634h-2.868L30.9 40.666zm7-7l5.634-5.634h-2.868L37.9 33.666zm1.634-5.634H37.9v1.634zm-8.634 7v1.634l1.634-1.634zm.566 6.2h2.868l2.766-2.766v-2.868zm6.434-3.566l2.634-2.634H37.9zM35.466 44.1H37.1v-1.634zm2.434 0h.434l5.766-5.766V37.9h-2.434L37.9 41.666zm6.2-8.634L42.466 37.1H44.1zm0-4L38.466 37.1h2.868l2.766-2.766zm0-7.566h-6.2v6.2h6.2zm-20.2 0v1.634l1.634-1.634zm0 20.2h6.2v-6.2h-6.2zm20.2 0v-.634l-.634.634z"/></svg></span>
+                          <span class="sublink-text">Image Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/geoanalytics/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 16h-2v-1h2zm-8 8v-1H7v1zm8 0v-1h-2v1zM13 7h-2v1h2zm4 0h-2v1h2zM9 7H7v1h2zm21.45 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V27.9h-1.464l-.801-.8H41.1v-6.434l-.766-.766H4.666l-.766.766V27.1h27.15zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM13 24v-1h-2v1zm0-9h-2v1h2zm-4 0H7v1h2zm26.672 27.148A1.87 1.87 0 0 1 35.9 43a1.91 1.91 0 1 1-3.763-.222l-9.845-3.414A1.88 1.88 0 0 1 21 39.9a1.9 1.9 0 1 1 1.474-3.084l4.692-2.346A1.878 1.878 0 0 1 27.1 34a1.902 1.902 0 0 1 1.9-1.9 1.867 1.867 0 0 1 .781.191l3.788-5.05A1.88 1.88 0 0 1 33.1 26a1.9 1.9 0 1 1 3.491 1.026l4.889 4.888c-.069.056-.144.1-.21.162a3.986 3.986 0 0 0-.358.402l-4.883-4.883A1.889 1.889 0 0 1 35 27.9a1.867 1.867 0 0 1-.781-.191l-3.788 5.049a1.868 1.868 0 0 1 .437.965l9.204.614c-.018.11-.049.218-.058.33A3.93 3.93 0 0 0 40 35c0 .046.01.09.01.135l-9.185-.612A1.913 1.913 0 0 1 29 35.9a1.889 1.889 0 0 1-1.474-.716l-4.692 2.346a1.878 1.878 0 0 1 .066.47 1.9 1.9 0 0 1-.105.625c-.007.02-.022.036-.03.056l9.63 3.34a1.87 1.87 0 0 1 2.786-.505l5.415-4.437c.067.108.127.22.204.322a3.9 3.9 0 0 0 .292.306zM33.9 26a1.092 1.092 0 0 0 .43.872 1.12 1.12 0 0 0 1.42-.068A1.1 1.1 0 1 0 33.9 26zm-6 8a1.1 1.1 0 0 0 2.196.093 1.135 1.135 0 0 0-.426-.965A1.087 1.087 0 0 0 29 32.9a1.101 1.101 0 0 0-1.1 1.1zm-5.8 4a1.098 1.098 0 1 0-.06.362A1.101 1.101 0 0 0 22.1 38zm13 5a1.1 1.1 0 1 0-2.2 0 1.1 1.1 0 0 0 2.2 0zm10.8-8a1.9 1.9 0 1 1-3.8 0c0-.053.003-.105.007-.158A1.9 1.9 0 0 1 45.9 35zm-.8 0a1.1 1.1 0 0 0-2.196-.093 1.153 1.153 0 0 0 .216.752A1.1 1.1 0 0 0 45.1 35z"/></svg></span>
+                          <span class="sublink-text">GeoAnalytics Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/geoevent/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M13 8h-2V7h2zm4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm12.418 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826v2.117c-.259-.177-.53-.337-.8-.497v-1.288l-.766-.766H4.666l-.766.766V27.1h17.933c-.148.26-.283.53-.415.8zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM9 24v-1H7v1zm4-9h-2v1h2zm0 9v-1h-2v1zm-4-9H7v1h2zm8 9v-1h-2v1zm16.9 2h-.8v8.9H39v-.8h-5.1zm.1-3.901a11.9 11.9 0 1 0 11.9 11.9 11.914 11.914 0 0 0-11.9-11.9zm0 23a11.1 11.1 0 1 1 11.1-11.1 11.112 11.112 0 0 1-11.1 11.1z"/></svg></span>
+                          <span class="sublink-text">GeoEvent Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/notebook/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M22 27.1H3.9v-6.434l.766-.766h18.576a5.262 5.262 0 0 1 .83-.8H4.666l-.766-.766v-5.668l.766-.766h35.668l.766.766V18h.8v-5.666l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9H22zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zM9 8H7V7h2zm8 0h-2V7h2zm-4 0h-2V7h2zm2 16v-1h2v1zm-4 0v-1h2v1zm-4 0v-1h2v1zm0-8v-1h2v1zm8 0v-1h2v1zm-4 0v-1h2v1zm18.9 8.1h-1.8v1.8h1.8zm-.8 1h-.2v-.2h.2zm15.498-4.48a2.727 2.727 0 0 0-1.62-.5v-.02H27.25a3.154 3.154 0 0 0-3.15 3.15V38.1h-1.68a3.386 3.386 0 0 0-2.872 1.58 3.49 3.49 0 0 0-.157 3.419 3.241 3.241 0 0 0 2.954 1.801h15.161a3.404 3.404 0 0 0 3.394-3.4V26.9h5v-3.65a3.224 3.224 0 0 0-1.302-2.63zM22.345 44.1a2.44 2.44 0 0 1-2.23-1.341 2.706 2.706 0 0 1 .11-2.65A2.588 2.588 0 0 1 22.42 38.9h12.89a3.395 3.395 0 0 0 0 5.2zM40.1 23.192V41.5a2.6 2.6 0 1 1-2.6-2.6v-.8H24.9V23.25a2.352 2.352 0 0 1 2.35-2.35h13.795a3.183 3.183 0 0 0-.945 2.292zm5 2.908h-4.2v-2.908a2.274 2.274 0 0 1 1.44-2.18 1.944 1.944 0 0 1 1.791.259 2.423 2.423 0 0 1 .97 1.979zm-17.1 5h9v.8h-9zm0 3h7v.8h-7zm0-6h9v.8h-9zm4-3h5v.8h-5z"/></svg></span>
+                          <span class="sublink-text">Notebook Server</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+
+              <a id="nav-data-store" data-langlabel="data-store" href="../../../../zh-CN/data-store/" class="top-nav-link">Data Stores</a>
+              <a id="nav-cloud" data-langlabel="cloud" href="../../../../zh-CN/cloud/" class="top-nav-link">云</a>
+              <a id="nav-apps" data-langlabel="apps" href="../../../../zh-CN/apps/" class="top-nav-link">应用程序</a>
+            </nav>
+
+
+            
+            
+            
+
+            <div class="margin-left-1 top-nav-list right hide-if-logged-in logged-out-navigation">
+               
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+              
+              <a data-langlabel="sign-in" id="login-link" class="icon-ui-user top-nav-link link-blue login-link" href="#">登录</a>
+              
+            </div>
+
+            
+            <nav class="margin-left-1 top-nav-list right hide-if-logged-out logged-in-navigation">
+              
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+             
+              <div class="dropdown js-dropdown right">
+
+                <div class="tablet-show top-nav-link">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a href="#" data-drawer="user-nav" class="user-nav-name js-drawer-toggle" data-first-name></a>
+                </div>
+
+                <div class="tablet-hide top-nav-link js-dropdown-toggle">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a class="user-nav-name top-nav-dropdown dropdown-btn" data-first-name>&nbsp;</a>
+                </div>
+
+                <nav class="dropdown-menu dropdown-right">
+                
+                  <a class="dropdown-link agolProfile" id="agolProfile" href="#">我的个人资料</a>
+                  <a class="dropdown-link js-log-out" id="agolLogout" href="#">登出</a>
+                </nav>
+              </div>
+            </nav>
+            
+
+            
+          </div>
+        </div>
+      </header>
+
+      <div class="js-search search-overlay">
+        <div class="search-content" role="dialog" aria-labelledby="search">
+          <form method="GET" id="helpSearchForm">
+            <label>
+              搜索 ArcGIS Enterprise 帮助
+              <div class="search-bar">
+                <input type="search" name="q"  placeholder="搜索 ArcGIS Enterprise 帮助" class="search-input js-search-input">
+                <input type="hidden" name="collection" value="help" />
+                <input type="hidden" name="product" value="arcgis-portal-windows" />
+                <input type="hidden" name="version" value="10.8" />
+                <input type="hidden" name="language" value="zh-CN" />
+              </div>
+            </label>
+            <input type="hidden" name="relativePath" value="../../../../" /><button type="submit" class="btn btn-large right">搜索</button>
+          </form>
+        </div>
+      </div>
+
+      <!--googleon: all-->
+
+      <div id="skip-to-content">
+        <!--googleoff: all-->
+        <header class="sub-nav sub-nav-learn">
+          <div class="grid-container">
+            
+            <div class="column-24">
+              <div style="display:table;" class="sdk-home-banner">
+                <div class="sdk-home-banner-content">
+                  <h1 class="sub-nav-title link-white">Portal for ArcGIS</h1>
+                </div>
+              </div>
+            </div>
+
+            <div class="column-24">
+              <nav class='sub-nav-list tablet-hide'><a class="sub-nav-link" href="../../../../zh-CN/portal/" target="_top" title="Portal for ArcGIS 主页">主页</a><a class="sub-nav-link is-active" href="../../../../zh-CN/portal/latest/use/" target="_top" title="使用 Portal for ArcGIS">使用</a><a class="sub-nav-link" href="../../../../zh-CN/portal/latest/administer/windows/" target="_top" title="安装、管理和保护 Portal for ArcGIS">管理</a></nav><select class='tablet-show select-full trailer-half js-select-nav'><option value="../../../../zh-CN/portal/">主页</option><option selected="true" value="../../../../zh-CN/portal/latest/use/">使用</option><option value="../../../../zh-CN/portal/latest/administer/windows/">管理</option></select>
+            </div>
+
+          </div>
+        </header>
+        <!--googleon: all-->
+       
+        <!-- content goes here -->
+        <div class="grid-container ">
+          
+
+            
+              
+  <!--BREADCRUMB-BEG--><div id="bigmac" class="sticky-breadcrumbs trailer-2" data-spy="affix" data-offset-top="180"> </div><!--BREADCRUMB-END-->
+  <!--googleoff: all-->
+    <div class="column-5 tablet-column-12 trailer-2 ">
+      <aside class="js-accordion accordion reference-index" aria-live="polite" role="tablist">
+        <div></div>
+      </aside>
+
+      <div class="js-sticky scroll-show tablet-hide leader-1 back-to-top" data-top="0" style="top: 0px;">
+        <a href="#" class="btn btn-fill btn-clear">返回顶部</a>
+      </div>
+    </div>
+  <!--googleon: all-->
+  
+            
+            
+            
+	
+		<div class="column-13  pre-1 content-section">
+	
+		<header class="trailer-1"><h1>管理托管要素图层</h1></header>
+
+		 
+	<!--googleoff: all-->
+	
+		
+				<aside id="main-toc-small" class="js-accordion accordion tablet-show trailer-1">
+			      <div class="accordion-section">
+			        <h4 class="accordion-title">在本主题中</h4>
+			        <div class="accordion-content list-plain">
+			          <ol class="list-plain pre-0 trailer-0"><li><a href="#ESRI_SECTION1_C8FBC73B2DB44EF09AB7DE27328A4794">重命名图层</a></li><li><a href="#ESRI_SECTION1_030A9819DFF7498E9DFCDE6030E5FFBA">管理编辑器设置</a></li><li><a href="#ESRI_SECTION1_1CA88C296B3D4C4E94EAB92392DDDC0B">允许数据导出</a></li><li><a href="#ESRI_SECTION1_3FA256DBA3D94BBB9F21CA1481E656E3">允许附件</a></li><li><a href="#ESRI_SECTION1_8D27C2EDD6C245C793E474BF902ED4D2">启用时间设置</a></li><li><a href="#ESRI_SECTION1_1D3A87A80E3E4CD2A71744715F1522FE">覆盖托管要素图层</a></li></ol>
+			        </div>
+			      </div>
+			     </aside>
+		
+    
+   <!--googleon: all-->
+
+
+		<main>
+			
+	
+    	
+    
+
+
+			
+<p id="GUID-3AB03CFA-5972-4920-9B0D-C3FF625C4836">您可以在托管要素（或表格）图层上更改特定设置，同时在托管要素图层中的各个图层上设置其他设置。以下部分介绍了图层的所有者或管理员如何管理托管要素图层及其所包含图层的设置。</p><div class="panel trailer-1" id="GUID-6FE02237-D1B6-47B7-B722-FFFF600BBA3A"><h5 class="icon-ui-description trailer-0">提示：</h5><p id="GUID-4FB6898E-DCDC-4F9A-9073-D6EDDE47FC9B">以下设置适用于可以访问您的托管要素图层的所有人。在<a class="xref xref" href="../../../../zh-CN/portal/latest/use/share-items.htm">共享</a>您的图层时请考虑这一点。<ul purpose="ul" id="UL_FEDD87975CF142E5B718B200B9C6C048"><li purpose="li" id="LI_275B4944601B45F8B671AF39B788D771">在离线状态或者在协作中使用托管要素图层（<span class="uicontrol">启用同步（同步离线编辑）</span>）</li><li purpose="li" id="LI_C6BA53689729462493071918C6D3237F">从托管要素图层导出数据（<span class="uicontrol">允许其他用户导出不同格式</span>）</li><li purpose="li" id="LI_BD6BC0B83FDA4657BC1D868BFD8D185F">在托管要素图层中向要素添加附件的功能（<span class="uicontrol">启用附件</span>）</li></ul></p></div><section class="section1 padded-anchor" id="ESRI_SECTION1_C8FBC73B2DB44EF09AB7DE27328A4794" purpose="section1"><h2>重命名图层</h2><p id="GUID-6723511E-906F-4841-B7C2-181B2F4DC1E5">您可以更改托管要素图层的项目名称和托管要素图层中的图层名称。</p><p id="GUID-35EC3D3D-DD19-4357-8689-83A617149069">更改托管要素图层中的项目名称或图层名称不会影响任何依赖托管图层或视图中的名称。同样，更改依赖图层的项目名称或依赖图层中的图层名称也不会更改源托管要素图层中的名称。</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_A3BF44A21149440BAAF57F6D0D1AA454"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_949550CFA8F84BE3B548CFDB6248C145"><span purpose="cmd">登录到您的组织并打开托管要素图层的项目页面。</span></li><li purpose="step" id="ESRI_STEP_23D580C53EF94D219D076C24A4F3795A"><span purpose="cmd">在<span class="uicontrol">概览</span>选项卡中，单击想要更改的项目名称或图层名称旁的<span class="uicontrol">编辑</span>。</span></li><li purpose="step" id="ESRI_STEP_269759828B124FBDBF1A4AB9B533C6E1"><span purpose="cmd">输入图层或项目的新名称，然后单击<span class="uicontrol">保存</span>。</span></li></ol></div></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_030A9819DFF7498E9DFCDE6030E5FFBA" purpose="section1"><h2>管理编辑器设置</h2><p id="GUID-98E14F64-E875-431D-9420-418BA9770C8F">作为托管要素图层的所有者或者管理员，您可以<a class="xref xref" href="../../../../zh-CN/portal/latest/use/manage-hosted-feature-layers.htm#ESRI_SECTION2_CF5B6C3A15F94A6A81FC2083CEEC2A6E">允许其他人编辑托管要素图层</a>。<span class="ph">如果允许其他人编辑，您可以记录编辑者的登录信息，并根据这些登录信息进一步限制要素访问。</span></p><p id="GUID-B52C0B19-B07A-42C4-8690-741356A4980C">即使未在图层上启用编辑，托管要素图层的所有者也可以编辑图层。</p><p id="GUID-0B82B768-DF00-4FC0-B575-3AF6C98EFA27"><div class="panel trailer-1 note" id="GUID-40269E35-83DF-409A-A49A-13A88E6CA676"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-D7266D6C-EE28-468E-928A-00AD7D8A3AB8">此处的术语编辑器指的是可以编辑图层中数据的任何成员。不仅限于具有 <span class="ph">Editor</span> 用户类型的成员。</p></div></p><section class="section2 padded-anchor" id="ESRI_SECTION2_CF5B6C3A15F94A6A81FC2083CEEC2A6E" purpose="section2"><h3>允许其他人编辑</h3><p id="GUID-5AD78DE7-47A2-4F80-A171-7E121F2FF3DB">作为托管要素图层的所有者或组织的管理员，您可以控制可对托管要素图层进行哪些编辑（如果需要编辑）。您可以配置图层以追踪图层中的每个要素在何时、由何人进行了编辑。如果您选择追踪托管要素图层上的编辑，则将追踪您从托管要素图层创建的所有可编辑视图的编辑内容。</p><p id="GUID-37AB28D8-DEEC-4156-92D8-59C53CBD95AA">按照以下步骤启用编辑并指定可进行的编辑类型：</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_3AA7129484764CAD936CB4BC71F2EEBE"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_8EF029BC65E046F09DFE4DE75C953038"><span purpose="cmd" id="GUID-CF1A0989-1101-4F34-8B73-732B900FCACB">打开您希望允许其他人编辑的托管要素图层的详细信息页面。</span></li><li purpose="step" id="ESRI_STEP_734786EE7EBB40559458FF2CAB88944F"><span purpose="cmd" id="GUID-1077C232-45C8-48F6-9238-652E1A676086">单击<span class="uicontrol">设置</span>选项卡。</span></li><li purpose="step" id="ESRI_STEP_3C97CFA98E584EA6BA4E1E3A9798A916"><span purpose="cmd" id="GUID-5D940881-FCFA-464C-B15A-95C4B3F8DAD7">滚动至<span class="uicontrol">要素图层（托管）设置</span>或<span class="uicontrol">要素图层（托管，视图）设置</span>部分，然后选中<span class="uicontrol">启用编辑</span>。</span><div class="info" purpose="info"></div></li><li purpose="step" id="ESRI_STEP_D8034969B1BF4B0097D01E770FF1DB59"><span purpose="cmd" id="GUID-344BE7E6-1894-4365-AA0D-EC62E79BEC4B">选中<span class="uicontrol">追踪要素创建者和最后更新要素的用户</span>以追踪编辑者的登录信息，并进一步控制编辑者可以查看的内容以及可通过托管要素图层执行的操作。</span><div class="info" purpose="info"><p id="GUID-4B506C69-53B1-45FD-BD79-FDB6043850FB">托管要素图层视图从创建它们的托管要素图层继承这一设置，且不能单独配置。要为托管要素图层视图启用或禁用编辑者追踪，请更改创建视图的托管要素图层上的编辑者追踪设置。</p></div></li><li purpose="step" id="ESRI_STEP_A9683C018BE649C0AEB5B8BC01C13C9D"><span purpose="cmd" id="GUID-AF1B2045-A906-45DE-AAC9-D4D15CEF0976">对于<span class="uicontrol">允许哪种类型的编辑？</span>设置，可选择以下选项之一 ：</span><ul purpose="choices" id="ESRI_CHOICES_B701EF8411554F288927064E7E1AF721"><li purpose="choice" id="ESRI_CHOICE_9551A028832A4E8B95A5B68526688936">选择<span class="uicontrol">添加、更新和删除要素</span>以允许编辑者添加、更新和删除要素几何以及更改要素属性。</li><li purpose="choice" id="ESRI_CHOICE_2DE6A40D3BAA4311A892EE5F1AF80A35">选择<span class="uicontrol">添加和更新要素</span>以允许编辑者添加和更新要素几何以及更改要素属性。</li><li purpose="choice" id="ESRI_CHOICE_20A78D96E0C44AB3BDF9D548A5AFC7CD">选择<span class="uicontrol">添加要素</span>允许编辑者添加要素几何。如果非空间属性与几何同时添加，该要素将具有空间属性和非空间属性。</li><li purpose="choice" id="ESRI_CHOICE_A8AB98733C8A4F938017D21E9AD9C0D6">选择<span class="uicontrol">更新要素</span>允许编辑者更新要素几何与属性。</li><li purpose="choice" id="ESRI_CHOICE_53F3172E1E2D4A8F8E918E2ABE29A9FE">如果希望编辑者在不更改任何要素几何的情况下输入属性信息，可选择<span class="uicontrol">仅更新属性</span>。</li></ul></li><div class="stepinfo" purpose="stepinfo">如果已配置了托管要素图层，以追踪创建和编辑数据的用户，则可以选择对托管要素图层或其依赖要素图层视图应用以下附加限制。如果要在众包应用程序中使用托管要素图层或要素图层视图，并在其中限制贡献者可以查看的内容或者每个贡献者对数据的控制，则这些限制非常有用。</div><li purpose="step" id="ESRI_STEP_6BD4DD9CB08E48B5AFA5938D30B7C981"><span purpose="cmd" id="GUID-9F96881F-35DD-4E45-A3AA-3B96CE3F4B9C">如果希望编辑者只能查看他们创建的要素，请选择<span class="uicontrol">编辑者可以查看哪些要素？</span>设置下方的<span class="uicontrol">编辑者只能查看自己的要素（需要追踪）</span> 设置。如果图层中包含敏感信息或专用信息（如医疗记录或搜索数据），且对此编辑者仅有权使用自己收集的数据，则可以启用此选项。</span></li><li purpose="step" id="ESRI_STEP_3060D958CA5E46839CAFFD51A9AB5171"><span purpose="cmd">如果您不希望编辑者看到任何要素（包括他们添加的要素），请在<span class="uicontrol">编辑者可以查看哪些要素？</span>设置下选择<span class="uicontrol">编辑者看不到任何要素，即使是他们添加的要素</span> 设置。在编辑器不需要或不应看到新添加的要素时，启用该选项。例如，如果您让人员使用诸如 <span class="ph">Survey123 for ArcGIS</span> 之类的应用程序或 GeoForm 或 Crowd Source Polling 可配置应用程序从公众收集调查信息，您可能不希望编辑器看到调查对象提供的信息，因为这些信息可能是私人信息或敏感信息（例如调查对象家庭住址）。</span><div class="info" purpose="info"><p id="GUID-C81B6C37-3833-47B6-9692-A0FAEED963C0">当托管要素图层的所有者或默认管理员角色的成员以完全编辑控制功能将图层添加到地图时，即使启用了<span class="uicontrol">编辑者看不到任何要素，即使是他们添加的要素</span>，他/她也将看到该图层中的所有要素。同样，如果您将托管要素图层与<a class="xref xref" href="../../../../zh-CN/portal/latest/use/create-groups.htm#ESRI_STEP_D1DD1E6C1D8947CDB26CEE2EE30CDE63">配置为允许编辑所有内容的群组</a>共享，则该群组的成员也会看到所有要素。</p><p id="GUID-EBAD8577-F249-41D6-A23F-CEA6885D4C62"><div class="panel trailer-1" id="GUID-8D885812-6516-4DE3-81A3-1C654265D6C0"><h5 class="icon-ui-notice-triangle trailer-0">警告：</h5><p id="GUID-F7D14A94-00E7-4951-A637-FDCC54E94863">如果启用<span class="uicontrol">编辑者看不到任何要素，即使是他们添加的要素</span>选项，则该图层将无法在 <span class="ph">Collector for ArcGIS</span> 中使用。</p></div></p></div></li><li purpose="step" id="ESRI_STEP_AF255BD682B645F7B46043D6D0A82065"><span purpose="cmd" id="GUID-BAB48144-549E-440D-8CCF-C1F46CF7C1D3">如果要根据要素的创建者限制要素编辑内容，可选择<span class="uicontrol">编辑者可以编辑什么要素？</span>设置下方的<span class="uicontrol">编辑者只能编辑自己的要素（需要追踪）</span> 设置。该操作允许编辑者删除或修改其创建的要素，但无法删除或修改其他用户的要素。</span></li><li purpose="step" id="ESRI_STEP_AFFC300BE9984FE28548BF1B7D2D6F09"><span purpose="cmd" id="GUID-45DF5D90-D4ED-4C32-AD43-220F261570AD">如果希望匿名用户（无需登录组织即可访问托管要素图层的用户）仅被允许添加要素，请选择<span class="uicontrol">匿名编辑者（未登录）具有哪些权限？</span>设置下的<span class="uicontrol">仅添加新要素（需要追踪）</span> 设置。该操作可在仍允许组织成员身份的编辑者进行相关编辑的同时，防止匿名用户编辑现有要素。</span><div class="info" purpose="info"><p id="GUID-CD4FA7BA-84B0-4A0B-8B4C-A2F5B7F0C432"><div class="panel trailer-1 note" id="GUID-121DFA21-12B7-453A-8D57-6BC4E2EE1B9C"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-9BF33DF6-F20B-4180-8E82-BB87C7C6155A">此设置仅在图层与所有人（公众）共享时适用。如果图层未公开，则匿名用户不可对其进行访问。</p></div></p></div></li><li purpose="step" id="ESRI_STEP_846DC3B16F31491CA043F84CFEFE92BB"><span purpose="cmd" id="GUID-B4EE54B5-40B9-4C6D-8533-92DE01420768">单击<span class="uicontrol">设置</span>选项卡底部的<span class="uicontrol">保存</span>。</span></li></ol></div></section><section class="section3 padded-anchor" id="ESRI_SECTION3_45D2E9578ACA49D18482B0656E06824E" purpose="section3"><h4>所有者的完全编辑控制权限</h4><p id="GUID-F50DFDB6-CF89-4623-B016-342649784F33">您可在 <span class="ph">Map Viewer</span> 中通过已启用的编辑功能打开任何托管要素图层。不管此要素图层是否可供其他用户进行编辑，您都可以执行此操作。该功能允许您使用单个要素图层进行公共显示以及内部编辑。</p><p id="GUID-2B7957C0-29CD-4CDB-875B-1CC558C65277">要启用编辑功能，请打开托管要素图层详细信息页面，单击<span class="uicontrol">打开</span>按钮，然后单击<span class="uicontrol">使用完全编辑控制权限向新地图添加图层</span>。</p></section><section class="section3 padded-anchor" id="ESRI_SECTION3_D30CD673E08E4105A8585A01E361308A" purpose="section3"><h4>进一步控制图层编辑</h4><p id="GUID-0B2C32EF-BC6A-4370-B54D-7AAEAC42E1B8">有时，您需要使托管要素图层供公众或具有大量成员的群组进行访问，但只想让您组织中的少数成员对其进行编辑。如果在公共托管要素图层上启用编辑，则所有人都可以对其进行编辑。同样，如果针对群组共享的托管要素图层启用了编辑，那么该群组中的全部成员均可编辑该托管要素图层。</p><p id="GUID-9C91AA85-DCDD-47FD-9851-147E2F19535D">若希望公众或具有大量用户的群组查看图层，但只允许少数用户进行编辑，则可由组织中的管理员创建<a class="xref xref" href="../../../../zh-CN/portal/latest/use/create-groups.htm#ESRI_STEP_D1DD1E6C1D8947CDB26CEE2EE30CDE63">配置为允许编辑所有内容</a>的群组。将您想让其编辑项目的组织成员添加或邀请到群组中。所有共享到此群组中的项目，包括未启用编辑的托管要素图层，都可以被该群组成员更新。</p><p id="GUID-7C5E32BB-E470-4565-9E26-91D70525FA75"> 当群组成员需要编辑托管要素图层时，他们必须打开托管要素图层的详细信息并单击<span class="uicontrol">打开 <span class="greaterthan">&gt;</span> 使用完全编辑控制权限向新地图添加图层</span>。</p></section><section class="section3 padded-anchor" id="ESRI_SECTION3_1B433CEC51E24ABCA6E0C6E866123677" purpose="section3"><h4>管理员的完全编辑控制功能</h4><p id="GUID-A10F12ED-DE4E-43D4-950B-1271A8CCB926">如果您是组织中默认管理员角色的成员，则可在 <span class="ph">Map Viewer</span> 中通过已启用的编辑功能打开托管要素图层。无论您为非管理员设置的编辑功能等级如何，也不管此图层是否可供其他用户进行编辑，您都可以执行此操作。如果需要对其他人正在编辑的地图进行协助管理或清理，该功能会很有帮助。该功能还允许您使用单个要素图层进行公共显示以及内部编辑。</p><p id="GUID-FFCABD6F-C715-484A-9A7F-D91CB7509A2F">要启用编辑功能，请打开托管要素图层详细信息页面，单击<span class="uicontrol">打开</span>按钮，然后单击<span class="uicontrol">使用完全编辑控制权限向新地图添加图层</span>。</p></section><section class="section3 padded-anchor" id="ESRI_SECTION3_B83A0349E5F043A3AC8E953118927BE7" purpose="section3"><h4>数据管理者的完全编辑控制权限</h4><p id="GUID-459D2C8B-2308-44E8-83A1-99749772635A">如果您具有对编辑内容的完全控制<a class="xref xref" href="../../../../zh-CN/portal/latest/use/roles.htm">权限</a>，则可在 <span class="ph">Map Viewer</span> 中打开一个可编辑的托管要素图层，并添加、更新和删除要素。无论图层的编辑级别设置如何，您都可以执行此操作。图层必须已启用编辑功能。</p><p id="GUID-A2E62850-3E36-44A5-BC77-20AD57BC46AE">要进行编辑，可打开托管要素图层的详细信息页面并单击<span class="uicontrol">打开 <span class="greaterthan">&gt;</span> 使用完全编辑控制权限向新地图添加图层</span>。请注意，<span class="uicontrol">使用完全编辑控制权限向新地图添加图层</span>选项仅在图层已启用编辑功能时才会提供。</p></section></section><section class="section2 padded-anchor" id="ESRI_SECTION2_C1D5C1A8F6084949B8C5BB444F0F44EC" purpose="section2"><h3>允许离线编辑或协作</h3><p id="GUID-240A8184-AF85-42B1-8A85-F3881C7A632D">要允许用户离线使用托管要素图层并在与网络断开连接的情况下进行操作，或者要在分布式协作中将托管要素图层数据共享为副本，则必须在托管要素图层上启用同步。</p><p id="GUID-B75A4EB4-B0FC-4152-B53F-6C3A8DD14067">请执行以下步骤来编辑 Web 图层详细信息并选中<span class="uicontrol">设置</span>选项卡上的<span class="uicontrol">启用同步（同步离线编辑）</span>。这样离线编辑者可在连接时获得要素的最新更新。编辑器在断开网络时对要素所做的任何编辑也都将在连接时得到应用。还允许对协作发送组织中的图层进行更改，以同步到参与组织的要素图层。</p><p id="GUID-16246714-EE48-4B8B-A6C8-68154C7F0C53"> 为图层启用同步时请考虑如下事项：<ul purpose="ul" id="UL_5169D6282BED4B16ABC15DFFB38F3827"><li purpose="li" id="LI_A9FF9C9FA91643F9920EF0F66AD847D6">启用同步可能增加图层的要素存储大小。</li><li purpose="li" id="LI_ADA618AD3A994676A1F011FADE103FCA">要在托管要素图层视图上启用同步，必须对创建托管要素图层视图的托管要素图层启用同步。</li><li purpose="li" id="LI_2F8EF14F4B0D41BA99E6114A15A77391" ishcondition="agol_plat=portal">如果您在托管要素图层视图中的图层上定义了多个感兴趣区域，则无法启用同步。</li><li purpose="li" id="LI_C6F6404D5933471AB2D42DA2BE27E362">要对具有依赖视图的托管要素图层禁用同步，必须先对所有视图禁用同步。</li></ul></p><p id="GUID-3F209723-6284-4657-B487-5F1A4E55B397"><div class="panel trailer-1" id="GUID-0AE1CB7E-3D7F-41F0-885A-69170C4EA644"><h5 class="icon-ui-notice-triangle trailer-0">警告：</h5><p id="GUID-F956A249-23EB-4641-AB40-7CEEFE20FE71">在所有离线用户同步其编辑之前，请勿禁用同步。如果他们正在使用 <span class="ph">Collector for ArcGIS</span>，他们还必须在您禁用同步之前从其设备中删除包含该图层的离线 web 地图。</p><p id="GUID-ACB197B6-DD85-4F41-A385-B467BAB7E01A">如果通过取消选中<span class="uicontrol">启用同步（同步离线编辑）</span>而禁用同步，但托管要素图层或视图参与离线 web 地图，则无法同步离线用户在断开网络连接时所做的任何编辑。即使您再次启用同步，也无法同步这些编辑。</p><p id="GUID-57705B11-CFF6-4ECB-8CD3-4F9BC9DFF847">同样，如果您对托管要素图层或托管要素图层视图禁用同步，请打开并保存包含该图层或视图的每个地图，以确保地图反映其包含的托管要素图层的状态。</p></div></p></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_1CA88C296B3D4C4E94EAB92392DDDC0B" purpose="section1"><h2>允许数据导出</h2><p id="GUID-CC09A96F-7576-4A19-B360-76FC3E716A95" ishcondition="agol_plat=portal">作为托管要素图层的所有者或管理员，您可以将图层中的数据导出为逗号分隔值 (CSV) 文件、<span class="ph">Microsoft Excel</span> 文件、shapefile、文件地理数据库要素类、GeoJSON 文件或要素集合。您还可以配置托管要素图层，以允许其他人在门户中访问图层时导出图层中的数据。</p><p id="GUID-315646D1-74C9-4E36-BBA8-311936AC092F">当所有者或管理员以外的用户从应用了<a class="xref xref" href="../../../../zh-CN/portal/latest/use/set-view-definition.htm">字段或要素定义</a>的托管要素图层视图导出时，导出的文件将只包含定义允许的字段或要素。当所有者或管理员导出时，不应用定义，且导出的文件将包含所有字段和要素。</p><p id="GUID-1963AF61-6159-41D7-A53F-3030CAB8C635" ishcondition="agol_plat=portal">可以执行以下步骤，以允许其他人在门户中访问图层时，可以从托管要素图层或托管要素图层视图中导出数据：</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_15C409936F6D4BC88EB01D6CC52090DD"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_7CC4A9A19EDB4FC48A8373E7652B5DB5"><span purpose="cmd" id="GUID-130480FB-840C-45F5-9390-0C9833A3A961">以托管要素图层或托管要素图层视图的所有者身份登录，或以管理员身份登录。</span></li><li purpose="step" id="ESRI_STEP_3E8FC78BA50B42CAA1E4A49D885A33BB"><span purpose="cmd" id="GUID-35DED2DB-9CA3-4475-830B-15284507069B">打开您希望允许其他用户导出的图层的项目页面。</span></li><li purpose="step" id="ESRI_STEP_5A6A860955594BEDA542114452A73BF4"><span purpose="cmd" id="GUID-D28C1A73-A228-4D43-A268-8205F702200C">单击<span class="uicontrol">设置</span>选项卡，然后滚动到<span class="uicontrol">要素图层设置</span>部分。</span></li><li purpose="step" id="ESRI_STEP_E1A10E0BF1CD4D1C9BFA8D8AB3A72FC1"><span purpose="cmd" id="GUID-BA6BEF7A-AD32-4F5A-809F-FAD6144D4DD7">单击<span class="uicontrol">允许其他用户导出不同格式</span>，然后单击<span class="uicontrol">保存</span>。</span></li></ol></div><section class="result padded-anchor" id="ESRI_RESULT_ADE40952CA7148A595DCFA87BFDA1CD2" purpose="result"><p id="GUID-FEAF3610-FC22-49A0-96F4-FFAF1666EF2E">现在，组织中的其他成员可以<a class="xref xref" href="../../../../zh-CN/portal/latest/use/use-hosted-layers.htm#GUID-47A1D795-B330-45D7-89F7-9203A99E6924">从托管要素图层中执行导出操作</a>。</p></section><section class="postreq padded-anchor" id="ESRI_POSTREQ_EBAD112974A64557BC253B25F4B8B1F0" purpose="postreq"><p id="GUID-4F4DB559-2269-4619-9382-2B7D5B213023"><div class="panel trailer-1 note" id="GUID-3FD554EA-B436-4E3E-994C-30E13F83FED6"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-346E4E80-554A-4F1B-BD76-80C4AB0480AD">此设置不会影响从基础服务中导出数据的功能。即使您未在要素图层上启用此导出设置，在其他客户端中访问该图层的任何人都可以从中导出数据。</p></div></p></section></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_3FA256DBA3D94BBB9F21CA1481E656E3" purpose="section1"><h2>允许附件</h2><p id="GUID-FCD903A5-F2FA-45A8-B0F3-2479376D63CD">可允许编辑者向托管要素图层中图层的各个要素附加图片和其他文件。此操作十分有用，因为其允许您将文档或照片与特定的相关要素相关联。例如，合规专员可能为特定的地址点附加一张违规照片，或者建筑检查员可能为建筑要素随附一张 PDF 格式的许可证。</p><p id="GUID-AF0890DD-B5EF-40CB-A7FB-CA0823D1E18C">每个托管要素图层视图从创建其的托管要素图层继承附件设置。默认情况下，所有视图用户均可查看从托管要素图层继承的附件。要控制具有这些附件访问权限的用户，您可以在托管要素图层视图中<a class="xref xref" href="../../../../zh-CN/portal/latest/use/manage-hosted-feature-layers.htm#ESRI_SECTION2_7DD979D7969D403AAF08CD372197998C">隐藏附件</a>。</p><p id="GUID-8BC061DF-BEBD-4938-B18C-71EC5EFA7E3B" ishcondition="agol_plat=portal"> 附加到要素的每个文件最大为 2 GB。要附加大于 2 GB 的文件，您可以使用 ArcGIS REST API 中的<a target="_blank" class="xref xref" href="https://developers.arcgis.com/rest/services-reference/upload-part.htm">上传部分</a>和<a target="_blank" class="xref xref" href="https://developers.arcgis.com/rest/services-reference/add-attachment.htm">添加附件</a>操作进行多部分上传。</p><p id="GUID-A64AADF7-8BC0-4F36-AC4C-FA355FBF973F">有关可附加的支持文件类型的列表，请参阅<a class="xref xref" href="../../../../zh-CN/portal/latest/use/work-with-tables.htm#ESRI_SECTION2_3C99CF74A5C74A0AA0AD4A619F4457D7">编辑表</a>。</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><section class="context padded-anchor" id="ESRI_CONTEXT_ECA4F4AEA8364D418BCB6CC5CBB25CB5" purpose="context"><p id="GUID-C9CE180F-D366-4B41-848E-8718C49AA350">执行以下步骤以允许用户将文件附加到托管要素图层内图层中的要素：</p></section><div class="steps" id="ESRI_STEPS_8D46C2B94AF8450D92D281D43CA87AF1"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_10EA52C9390A41CB8A074AAD4DEF1B27"><span purpose="cmd" id="GUID-AFBC33D5-280E-4274-9902-D724DF3D8FE8">在托管要素图层上<a class="xref xref" href="../../../../zh-CN/portal/latest/use/manage-hosted-feature-layers.htm#ESRI_SECTION2_CF5B6C3A15F94A6A81FC2083CEEC2A6E">启用编辑</a></span><div class="info" purpose="info"><p id="GUID-15A5AA3B-3F8F-4031-80F9-7B49828C64D6">如果不启用编辑，则用户无法向图层添加附件。</p></div></li><li purpose="step" id="ESRI_STEP_41FAB5A3BDE44FDAA158E8EA6F07D372" ishcondition="agol_plat=portal"><span purpose="cmd" id="GUID-6E00CBA8-F83C-4EB9-8EA2-5A5B31A480D6">在内容页面的<span class="uicontrol">我的内容</span>选项卡中单击此图层，以打开要素图层的详细信息页面。</span></li><li purpose="step" id="ESRI_STEP_0819BA9DD5754CE89A4FC3260D22F8B4"><span purpose="cmd" id="GUID-790D767C-0645-4904-8570-FEFF1DFDA5B7">查找<span class="uicontrol">概览</span>选项卡上的<span class="uicontrol">图层</span>列表。单击希望允许添加附件的图层下的<span class="uicontrol">启用附件</span>链接。</span></li></ol></div><section class="result padded-anchor" id="ESRI_RESULT_8812B70016E742B1A724FFA301725D27" purpose="result"><p id="GUID-FBFFBACC-B1DE-4DA2-BF23-FFABC19939F1">现在，用户在编辑图层时便可将文件附加到各个要素。</p></section></section><p id="GUID-5C55DAC2-2A14-421D-B1FD-9D4AEE3ED939">如果您决定不再需要将任何文件附加到图层，请单击托管要素图层详细信息页面<span class="uicontrol">概览</span>选项卡上的图层下的<span class="uicontrol">禁用附件</span>链接。但请注意，此操作将移除图层中的所有现有附件并阻止用户再添加附件。</p><section class="section2 padded-anchor" id="ESRI_SECTION2_7DD979D7969D403AAF08CD372197998C" purpose="section2"><h3>在视图中隐藏附件</h3><p id="GUID-24ECA1BE-2959-4145-8A2F-1E704ADE7806">如果用户子集需要要素属性的访问权限，但他们不应查看附件或不需要附件的访问权限，则可以在托管要素图层视图中隐藏附件。</p><p id="GUID-4563CA41-DEDC-4E9C-AD5C-E753F046BA7C">例如，如果附件包含只有少数组织成员应查看的敏感信息，则可以与包含这些少数成员的群组共享托管要素图层。从图层创建托管要素图层视图，隐藏附件，然后与更多受众共享视图。</p><p id="GUID-807A7600-FFD7-46EA-8028-E51390DF0CA9">要针对托管要素图层视图内的各个图层隐藏附件，请按照以下步骤进行操作：</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_44362D0837AC4B80AB128D5946FF945A"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_1C7250B065A846DFAEF555356ADFA8DC"><span purpose="cmd">打开托管要素图层视图的详细信息页面。</span></li><li purpose="step" id="ESRI_STEP_27A74851A32642C284ECAE3E5DD48CBE"><span purpose="cmd">查找<span class="uicontrol">概览</span>选项卡上的<span class="uicontrol">图层</span>列表。</span></li><li purpose="step" id="ESRI_STEP_56FE49F1EBF6485C847715F063FA3621"><span purpose="cmd">单击每个图层下方的<span class="uicontrol">隐藏附件</span>链接，以防止托管要素图层视图的用户访问附件。</span></li></ol></div></section><p id="GUID-70B4C194-F723-47B6-9364-F87CA50A3247">如果您确定视图用户确实需要视图中一个或多个图层的附件的访问权限，请在托管要素图层视图的详细信息页面的<span class="uicontrol">概览</span>选项卡上单击适用图层下方的<span class="uicontrol">显示附件</span>链接。</p></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_8D27C2EDD6C245C793E474BF902ED4D2" purpose="section1"><h2>启用时间设置</h2><p id="GUID-8DDD84C7-9585-4237-9A8D-9AF76E958DB5">如果您拥有能够根据日期和时间记录同一位置不同信息的托管要素图层，则可以在托管要素图层的图层上<a class="xref xref" href="../../../../zh-CN/portal/latest/use/configure-time.htm">启用时间设置</a>。配置完时间设置并向地图中添加托管要素图层后，您可以在地图上配置时间设置，并查看在特定时间发生的事情或可视化表示数据随时间变化的模式和趋势。</p></section><section class="section1 padded-anchor" id="ESRI_SECTION1_1D3A87A80E3E4CD2A71744715F1522FE" purpose="section1"><h2>覆盖托管要素图层</h2><p id="GUID-472480CD-9051-4BF3-8BBE-4973E9E4AF5D"><span class="ph">要更新文件地理数据库、shapefile、GeoJSON 或<a class="xref xref" href="../../../../zh-CN/portal/latest/use/csv-gpx.htm#GUID-4EDCE12E-285E-41D0-A3B8-1BAB4B111922">包含坐标的 CSV 文件</a>中发布的托管要素图层中的数据，可使用图层项目页面中的<span class="uicontrol">覆盖</span>选项，将数据替换为更新的源文件中的数据。</span> 例如，如果托管要素图层为公开图层，且您不希望其可编辑，或如果其他部门定期向您发送 shapefile 格式的数据更新，则您可以覆盖托管要素图层中的数据。此操作可维护 URL、您在托管要素图层项目页面中设置的图层属性、符号系统以及弹出窗口配置。</p><p id="GUID-94B57D5A-1D34-4780-8DFB-31A1E81FE331" ishcondition="agol_plat=portal">覆盖数据后，源文件数据和托管要素图层数据将替换为更新后源文件中的数据。如果源是带有元数据的 shapefile 或包含带有元数据的要素类的文件地理数据库，则门户将添加或替换托管要素图层中的图层级元数据。</p><p id="GUID-17F1CBAC-8BF6-4CC3-86D1-64C423961F0E">覆盖托管要素图层时，必须使用相同的源文件类型和方案。</p><p id="GUID-9C72F8C8-91B4-4A6A-9BC4-AF55F6946E50"><span class="ph">如果没有提供<span class="uicontrol">覆盖</span>选项，则由于下列情况之一，您的托管图层无法被覆盖：</span><ul purpose="ul" id="UL_59F2DB25286940C5BA53050F93D59023"><li purpose="li" id="LI_81CCBC004E9C415B962F4E0E14466EBC" ishcondition="agol_plat=portal">第一次发布图层时，您使用了地址或地点来定位要素。您只能覆盖在发布时使用坐标信息定位要素的图层。</li><li purpose="li" id="LI_6D87562754514ECCA24FC2CC3C77F71B"><span class="ph">此托管要素图层由 <span class="ph">ArcGIS Enterprise</span> 门户之外的客户端发布。</span> 例如，如果从 <span class="ph">ArcMap</span> 发布托管要素图层，则会覆盖源于 <span class="ph">ArcMap</span> 的服务。<div class="panel trailer-1 note" id="GUID-3526EE26-CB57-48A8-8DE2-9A46EE9B5B81"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-1FEAFC75-076F-4507-92B3-E77205AE0AC2">从 <span class="ph">ArcMap</span> 覆盖托管要素图层时，最初使用 web 图层创建的服务定义必须位于门户中。</p></div></li><li purpose="li" id="LI_00A7AA0519FA43F79718644E4EEFBFB6" ishcondition="agol_plat=portal">此托管要素图层是在门户版本为 10.4.1 或更早版本时发布的。</li><li purpose="li" id="LI_92B5AB8CF19B47FD90B117342D5268EE">托管要素图层上的<a class="xref xref" href="../../../../zh-CN/portal/latest/use/manage-hosted-feature-layers.htm#ESRI_SECTION2_C1D5C1A8F6084949B8C5BB444F0F44EC">同步功能已启用</a>。</li><li purpose="li" id="LI_4779B2E2D6C145B78EA5AEFE1BD3D3DD">它是托管要素图层视图，而不是主托管要素图层。要更新托管要素图层视图和创建其的托管要素图层中的数据，请覆盖托管要素图层，更新将反映在视图中。</li></ul></p><p id="GUID-E07EB832-F3AC-4774-8241-6D75310B1D46"><div class="panel trailer-1" id="GUID-B3CBE8B4-39A3-4F8A-8807-11FAB50E7B15"><h5 class="icon-ui-notice-triangle trailer-0">警告：</h5><p id="GUID-E0CAECE0-DBF9-4E64-B496-7678E8DA2F84"><ul purpose="ul" id="UL_0EA6D15AF7144C31BB562672318B0685"><li purpose="li" id="LI_43F59644C693435FA69E995AA4BCD20D">如果已在托管要素图层上启用编辑功能，则会使用更新后源文件中的数据替换图层数据的所有编辑内容。</li><li purpose="li" id="LI_6552FB99785F4041A31212F46424A8F8" ishcondition="agol_plat=portal">文件、字段以及要素类名称必须与上传的原始文件中的名称相同。</li><li purpose="li" id="LI_BBBC56AD95D34E7886BC5D7801C6782F">相同字段和要素类（在使用文件地理数据库的情况下）在更新后的文件中的显示形式必须与在原始文件中相同。例如，如果您从文件地理数据库中删除了要素类，或将字段添加到 shapefile 或要素类，则不要执行覆盖。</li><li purpose="li" id="LI_A1A1AB516FC34A4BB6344F02CCC14997">如果您进行了覆盖且字段和要素类名称与方案不匹配，则要素图层和使用该要素图层的 Web 地图可能无法按预期运行。<span class="ph">如果源数据方案更改，或者如果您希望保留通过托管图层编辑的内容，请将 shapefile、文件地理数据库或 CSV 文件加载为新项目并改为发布新图层。</span></li><li purpose="li" id="LI_562369EEF28341B3855121BD75F6E75F">数据源与托管图层必须由同一帐户所有。如果改变其中一个的所有者，则也应改变另一个的所有者。否则，无法覆盖托管图层。</li></ul> </p></div></p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_6ACA847D64E5471C8E7A443F3F352614"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_DB261555AD3E438FA9BEB56723BAD8A1"><span purpose="cmd" id="GUID-84B90C43-7787-4FE1-B0E2-E1EDE9F7D0CE">以托管要素图层所有者的身份或以管理员的身份登录到组织。</span></li><li purpose="step" id="ESRI_STEP_FD75FD286C5549C5957E9129EF6166F4"><span purpose="cmd" id="GUID-1DA9EA58-410B-48B1-8874-B1AB2D52AF21">打开托管要素图层的项目页面。</span><ul purpose="choices" id="ESRI_CHOICES_81F03BC5E3754F47AE24CCB59DEE8C39"><li purpose="choice" id="ESRI_CHOICE_7BC8F3F8FACC43049E7947429A570493">如果您作为图层的所有者登录，请单击内容页面的<span class="uicontrol">我的内容</span>选项卡，然后单击托管要素图层以打开项目页面。</li><li purpose="choice" id="ESRI_CHOICE_EC757A0683DB40A58DC2833724976D33">如果您作为管理员登录，请单击内容页面的<span class="uicontrol">我的组织内容</span>选项卡，然后单击图层名称以打开项目页面。</li></ul></li><li purpose="step" id="ESRI_STEP_753A3555F0DE4D65ABD271881F6DE003" ishcondition="agol_plat=portal"><span purpose="cmd">单击<span class="uicontrol">覆盖</span>。</span></li><li purpose="step" id="ESRI_STEP_56F636052E19499A80B73F9CC786F7B2" ishcondition="agol_plat=portal"><span purpose="cmd" id="GUID-4B7E637E-DB99-410A-99E3-A553D521111F">单击<span class="uicontrol">浏览</span>或<span class="uicontrol">选择文件</span>（具体取决于您的浏览器）并浏览到磁盘上源文件的位置。</span></li><li purpose="step" id="ESRI_STEP_C39FF58F17064956B9C0AE1C3319A26E" ishcondition="agol_plat=portal"><span purpose="cmd" id="GUID-7AE6F037-9EA6-466F-98A2-36B512C07A52">单击<span class="uicontrol">覆盖</span>。</span></li></ol></div></section></section>
+			
+				<hr>
+				<!--googleoff: all-->
+				
+	
+        
+		    <p class="feedback right">
+		        <a id="afb" class="icon-ui-contact" href="/feedback/" data-langlabel="feedback-on-this-topic" >有关此主题的反馈?</a>
+		    </p>
+        
+	
+
+				<!--googleon: all-->
+			
+		</main>
+	</div>
+	
+	<!--googleoff: all-->
+	
+		
+			<div id="main-toc-large" class="column-5">
+			    <div class="panel font-size--2 tablet-hide trailer-1">
+			      <h5 class="trailer-half">在本主题中</h5>
+			      <ol class="list-plain pre-0 trailer-0"><li><a href="#ESRI_SECTION1_C8FBC73B2DB44EF09AB7DE27328A4794">重命名图层</a></li><li><a href="#ESRI_SECTION1_030A9819DFF7498E9DFCDE6030E5FFBA">管理编辑器设置</a></li><li><a href="#ESRI_SECTION1_1CA88C296B3D4C4E94EAB92392DDDC0B">允许数据导出</a></li><li><a href="#ESRI_SECTION1_3FA256DBA3D94BBB9F21CA1481E656E3">允许附件</a></li><li><a href="#ESRI_SECTION1_8D27C2EDD6C245C793E474BF902ED4D2">启用时间设置</a></li><li><a href="#ESRI_SECTION1_1D3A87A80E3E4CD2A71744715F1522FE">覆盖托管要素图层</a></li></ol>
+			    </div>
+			    
+			    
+	  		</div>
+		
+    
+   <!--googleon: all-->
+
+
+
+
+          
+        </div>
+        <!-- ENDPAGECONTENT -->
+
+      </div>
+
+    </div>  <!-- End of wrapper -->
+
+  <footer class="footer leader-3 link-dark-gray" role="contentinfo">
+    <div class="grid-container">
+      <div class="row">
+        <nav class="column-6">
+          <h6 data-langlabel="arcgis-for-server">Arc<span>GIS Enterprise</span></h6>
+          <ul class="list-plain">
+            <li><a data-langlabel="home" href="../../../../zh-CN/">主页</a></li>
+            <li><a data-langlabel="portal" href="../../../../zh-CN/portal/">Portal</a></li>
+            <li><a data-langlabel="server" href="../../../../zh-CN/server/">Server</a></li>
+            <li><a data-langlabel="data-store" href="../../../../zh-CN/data-store/">Data Stores</a></li>
+            <li><a data-langlabel="cloud" href="../../../../zh-CN/cloud/">云</a></li>
+            <li><a data-langlabel="apps" href="../../../../zh-CN/apps/">应用程序</a></li>
+            <li><a data-langlabel="documentation" href="../../../../zh-CN/documentation/">文档</a></li>
+          </ul>
+        </nav>
+
+        
+  <nav class="column-6">
+    <h6 data-langlabel="arcgis-platform">ArcGIS 平台</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="arcgis" href="//www.arcgis.com/">ArcGIS Online</a></li>
+      <li><a data-langlabel="arcgis-for-professionals" href="//pro.arcgis.com/">ArcGIS Pro</a></li>
+      <li><a data-langlabel="arcgis-for-server" href="//enterprise.arcgis.com/">ArcGIS Enterprise</a></li>
+      <li><a data-langlabel="arcgis-for-developers" href="https://developers.arcgis.com/">ArcGIS for Developers</a></li>
+      <li><a data-langlabel="arcgis-solutions" href="//solutions.arcgis.com/">ArcGIS Solutions</a></li>
+      <li><a data-langlabel="arcgis-marketplace" href="//marketplace.arcgis.com/">ArcGIS Marketplace</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <h6 data-langlabel="about-esri">关于 Esri</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="about-us" href="//www.esri.com/about-esri/">关于我们</a></li>
+      <li><a data-langlabel="careers" href="//www.esri.com/careers/">招贤纳士</a></li>
+      <li><a data-langlabel="insiders-blog" href="https://www.esri.com/about/newsroom/blog/">Esri 博客</a></li>
+      <li><a data-langlabel="user-conference" href="//www.esri.com/events/user-conference/index.html">用户大会</a></li>
+      <li><a data-langlabel="developer-summit" href="//www.esri.com/events/devsummit/index.html">开发者峰会</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <a class="esri-logo" href="//www.esri.com/" aria-label="Esri Home"></a>
+    <section class="footer-social-nav leader-1">
+            <a class="icon-social-twitter" aria-label="Esri on Twitter" href="https://twitter.com/Esri/"></a>
+            <a class="icon-social-facebook" aria-label="Esri on Facebook" href="https://www.facebook.com/esrigis/"></a>
+            <a class="icon-social-github" aria-label="Esri on GitHub" href="//esri.github.io/"></a>
+            <a class="icon-social-contact" aria-label="Contact Esri" href="//www.esri.com/about-esri/contact/"></a>
+    </section>
+	  
+  </nav>
+  
+  <div class="column-24 leader-1">
+    <p class="font-size--3"><a href="http://www.esri.com/legal/copyright-trademarks">Copyright &copy; 2019 Esri.</a> All rights reserved. | <a href="http://www.esri.com/legal/privacy/">隐私政策</a> | <a href="http://www.esri.com/legal/software-license">法律声明</a></p>
+  </div>
+  
+
+
+      </div>
+    </div>
+  </footer>
+  <!--googleoff: all-->
+
+  
+  
+	<script src="../../../../zh-CN/assets/js/init.js" type="text/javascript"></script>
+	<!--<script src="../../../../zh-CN/assets/js/drop-down.js" type="text/javascript"></script>-->
+	<script src="../../../../zh-CN/assets/js/search/searchform.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/cdn/js/link-modifier.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/cdn/js/sitewide.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/cdn/js/libs/highlight.pack.js" type="text/javascript"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+
+
+  
+    
+
+  <script src="../../../../zh-CN/cdn/js/affix.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    $(function () {
+          var appendFlg = true;
+
+          $("#bigmac")
+          .on("affixed.bs.affix", function (evt) {
+            if (appendFlg) {
+              $("<a class='crumb' href='#'>管理托管要素图层</a>").insertAfter ($("#bigmac nav a").last());
+              appendFlg = false;
+            }
+          })
+          .on ("affix-top.bs.affix", function(evt) {
+            if (!appendFlg) {
+              $("#bigmac nav a").last().remove();
+            }
+            appendFlg = true;
+          })
+    })
+  </script>
+  
+        <script type="text/javascript">
+          window.doctoc = {
+            pubID: "583",
+            tpcID: "567",
+            
+              prefix: "使用",
+              prefixUrl: "/zh-cn/portal/latest/use/",
+          
+            hideToc: false
+          }
+        </script>
+
+        <script type="text/javascript" src="../../../../zh-CN/portal/latest/use/583.js" ></script>
+        <script type="text/javascript" src="../../../../zh-CN/cdn/calcite/js/protoc.js" ></script>
+        
+        
+
+  <noscript>
+        <p>
+            <a href="flisting.htm">flist</a>
+        </p>
+    </noscript>
+    <script type="text/javascript"></script>
+  
+  
+    
+    
+
+  </body>
+</html>

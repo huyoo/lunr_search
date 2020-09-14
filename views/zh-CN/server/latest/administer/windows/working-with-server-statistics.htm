@@ -1,0 +1,546 @@
+
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>  <html class="ie lt-ie9 lt-ie8 lt-ie7 ie6" dir="ltr"> <![endif]-->
+<!--[if IE 7]>     <html class="ie lt-ie9 lt-ie8 ie7" dir="ltr"> <![endif]-->
+<!--[if IE 8]>     <html class="ie lt-ie9 ie8" dir="ltr"> <![endif]-->
+<!--[if IE 9]>     <html class="ie ie9" dir="ltr"> <![endif]-->
+<!--[if !IE]><!--> <html dir="ltr" lang="zh-CN"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>使用服务器统计数据&mdash;ArcGIS Server 管理 (Windows) | ArcGIS Enterprise 文档</title>
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+    <script>
+      var docConfig = {
+        locale: 'zh-CN'
+        ,localedir: 'zh-cn'
+        ,langSelector: ''
+        
+        ,relativeUrl: false
+        
+
+        ,searchformUrl: '/search/'
+        ,tertiaryNavIndex: ''
+
+        
+      };
+    </script>
+	 
+
+
+    
+    <!--[if lt IE 9]>
+      <script src="../../../../../zh-CN/cdn/js/libs/html5shiv.js" type="text/javascript"></script>
+      <script src="../../../../../zh-CN/cdn/js/libs/selectivizr-min.js" type="text/javascript"></script>
+      <script src="../../../../../zh-CN/cdn/js/libs/json2.js" type="text/javascript"></script>
+      <script src="../../../../../zh-CN/cdn/js/libs/html5shiv-printshiv.js" type="text/javascript" >
+
+    <![endif]-->
+
+     <!--[if lt IE 11]>
+    <script>
+      $$(document).ready(function(){
+        $$(".hideOnIE").hide();
+      });
+    </script>
+    <![endif]-->
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<link href="../../../../../zh-CN/assets/img/favicon.ico" rel="shortcut icon" >
+	<link href="../../../../../zh-CN/assets/css/screen.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/cdn/calcite/css/documentation.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/assets/css/print.css" media="print" type="text/css" rel="stylesheet" />
+
+	<!--
+	<link href="../../../../../zh-CN/assets/css/screen_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/assets/css/documentation/base_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/assets/css/print_l10n.css" media="print" type="text/css" rel="stylesheet" />
+	-->
+	
+	
+		<script src="../../../../../zh-CN/cdn/js/libs/jquery.1.9.1.min.js" type="text/javascript"></script>
+	
+	<script src="../../../../../zh-CN/cdn/js/libs/jquery.cookie.js" type="text/javascript"></script>
+	<link href="../../../../../zh-CN/cdn/css/colorbox.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/cdn/css/colorbox_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<script src="../../../../../zh-CN/cdn/js/libs/jquery.colorbox-min.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/assets/js/video-init.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/assets/js/sitecfg.js" type="text/javascript"></script>
+	
+		<script src="../../../../../zh-CN/assets/js/signIn.js" type="text/javascript"></script>
+	
+
+	<!--- Language Picker -->
+	<script src="../../../../../zh-CN/assets/js/locale/l10NStrings.js" type="text/javascript"></script>
+	
+		 
+	
+
+	<script src="../../../../../zh-CN/assets/js/calcite-web.js" type="text/javascript"></script>
+
+
+
+  <!--- search MD -->
+    <META name="description" content="通过 ArcGIS Server Manager 中的统计数据模块可显示、配置、更新、导出和删除服务器统计数据的报表。"><META name="last-modified" content="2019-12-6"><META name="product" content="arcgis-server-windows,arcgis-enterprise-windows"><META name="sub_category" content="ArcGIS Server (Windows)"><META name="search-collection" content="help"><META name="content_type_label" content="帮助主题"><META name="sub_category_label" content="ArcGIS Server (Windows)"><META name="search-category" content="help-general"><META name="subject_label" content="服务"><META name="version" content="10.8"><META name="content_type" content="Help Topic"><META name="subject" content="SERVICES"><META name="content-language" content="zh-cn">
+    <!--- search MD -->
+
+  
+  <script src="../../../../../zh-CN/assets/js/switchers/server-1.js" type="text/javascript"></script>
+  
+      
+
+</head>
+
+<!--
+      pub: GUID-7EF2A884-9DD0-4341-BA8B-FEB95EBECC37=19
+      tpc: GUID-A9E12805-B255-401A-B9F2-0A676C91331E=7
+      -->
+
+
+<!-- variable declaration, if any -->
+<!-- can change following macro to set variable once we are on Jinja 2.8 -->
+
+
+
+
+
+<body class="claro zh-CN server">
+  
+
+  <!-- Drawer location -->
+  <div class="drawer drawer-left js-drawer" data-drawer="top-nav">
+        <nav class="drawer-nav" role="navigation">
+          <aside class="side-nav">
+            <h2 class="side-nav-title">Arc<span>GIS</span> Enterprise</h2>
+            <form id="helpSearchForm" class="margin-left-half margin-right-half leader-half trailer-half drawer-search-form" method="GET">
+              <input type="search" name="q"  placeholder="搜索 ArcGIS Server 10.8 帮助">
+              <input type="hidden" name="collection" value="help" />
+              <input type="hidden" name="product" value="arcgis-server-windows" />
+              <input type="hidden" name="version" value="10.8" />
+              <input type="hidden" name="language" value="zh-CN" />
+            </form>    
+             <a id="nav-portal" data-langlabel="portal" href="../../../../../zh-CN/portal/" class="side-nav-link">Portal</a>
+             
+            <a id="all-servers" data-langlabel="all-servers" href="../../../../../zh-CN/server/" class="side-nav-link">所有服务器</a>
+            <a id="gis-server" data-langlabel="gis-server" href="../../../../../zh-CN/server/" class="side-nav-link">GIS Server</a>
+            <a id="image-server" data-langlabel="image-server" href="../../../../../zh-CN/image/" class="side-nav-link">Image Server</a>
+            <a id="geo-analytics-server" data-langlabel="geo-analytics-server" href="../../../../../zh-CN/geoanalytics/" class="side-nav-link">GeoAnalytics Server</a>
+            <a id="geoevent-server" data-langlabel="geoevent-server" href="../../../../../zh-CN/geoevent/" class="side-nav-link">GeoEvent Server</a>
+            <a id="notebook-server" data-langlabel="notebook-server" href="../../../../../zh-CN/notebook/" class="side-nav-link">Notebook Server</a>
+            <a id="nav-data-store" data-langlabel="data-store" href="../../../../../zh-CN/data-store/" class="side-nav-link">Data Stores</a>
+            <a id="nav-cloud" data-langlabel="cloud" href="../../../../../zh-CN/cloud/" class="side-nav-link">云</a>
+            <a id="nav-apps" data-langlabel="apps" href="../../../../../zh-CN/apps/" class="side-nav-link">应用程序</a>
+            <a id="nav-doc" data-langlabel="documentation" href="../../../../../zh-CN/documentation/" class="side-nav-link">文档</a>
+
+          </aside>
+        </nav>
+    </div>
+
+    <!-- user navigation collapses to drawer on mobile -->
+    
+    <div class="drawer drawer-right js-drawer hide-if-logged-out logged-in-navigation" data-drawer="user-nav">
+      <nav class="drawer-nav">
+        <aside class="side-nav">
+          <a class="side-nav-link agolProfile" href="#">我的个人资料</a>
+          <a class="side-nav-link icon-ui-sign-out js-log-out" href="#">登出</a>
+        </aside>
+      </nav>
+    </div>
+    
+<!-- End of drawer -->
+
+  
+  <div class="wrapper">
+      <!--googleoff: all-->
+
+      <header class="top-nav" data-skin="learn">
+        <a class="skip-to-content" href="#skip-to-content">Skip To Content</a>
+        <div class="grid-container">
+          <div class="column-24">
+
+
+            <!--<div class="top-nav-title-wrapper text-center ">-->
+              <a href='../../../../../zh-CN/' class="top-nav-title tablet-hide"><span>Arc</span>GIS  Enterprise</a>
+              <a href='../../../../../zh-CN/' class="icon-ui-menu top-nav-title js-drawer-toggle tablet-show" data-drawer="top-nav"><span>Arc</span>GIS Enterprise</a>
+            <!--</div> -->
+
+          
+            <nav role="navigation" class="top-nav-list left tablet-hide">
+              <a id="nav-portal" data-langlabel="portal" href="../../../../../zh-CN/portal/" class="top-nav-link">Portal</a>
+
+                <div class="dropdown js-dropdown ">
+                  <a class="top-nav-link js-dropdown-toggle" tabindex="0" aria-haspopup="true" aria-expanded="false" href="#">Servers</a>
+                  <nav class="dropdown-menu featured" role="menu">
+                    <ul class="dropdown-sublist-featured">
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/get-started/latest/windows/additional-server-deployment.htm" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path  d="M42.92 6.1H4.12v8.566l.833.832-.835.833-.018 7.332.845.847-.825.824V33.9h25v5.2h-2v1.075H8.02v.8h19.1v.925h4.8v-.925H40v-.8h-8.08V39.1h-2v-5.2h13v-8.566l-.834-.834.835-.834v-7.332l-.835-.834.835-.834zm-11.8 35h-3.2v-1.2h3.2zm11-8H4.92v-7.434l.767-.766h35.668l.765.766zm0-9.766l-.766.766H5.666l-.766-.767.017-6.669.766-.764h35.671l.766.766zm0-9l-.766.766H5.687l-.766-.766V6.9h37.2zM19 11.9h-2v-.8h2zm-4 0h-2v-.8h2zm-4 0H9v-.8h2zm6 8.2h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9zm8 9h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9z"/></svg></span>
+                          <span class="sublink-text">所有服务器</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/server/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M45.98 33.575a.616.616 0 0 0-.335-.51l-3.362-2.03 3.362-2.031a.556.556 0 0 0 0-1.02l-11.1-6.704a1.293 1.293 0 0 0-1.112 0L22.33 27.982a.556.556 0 0 0 0 1.02l3.36 2.03-3.358 2.03a.556.556 0 0 0-.002 1.021l3.322 2.006-3.324 2.008a.555.555 0 0 0 .002 1.017l11.102 6.703a1.25 1.25 0 0 0 1.11.002l11.104-6.706a.556.556 0 0 0 0-1.02l-3.32-2.006 3.318-2.004a.607.607 0 0 0 .335-.509zM33.837 21.97c.026-.01.286-.005.29-.005l10.814 6.53-10.8 6.523c-.028.01-.284.005-.294.006l-10.813-6.53zm11.105 16.636l-10.8 6.523a2.564 2.564 0 0 1-.295.006l-10.81-6.529 3.39-2.047 7.004 4.23a1.083 1.083 0 0 0 .557.131 1.101 1.101 0 0 0 .554-.13l7.01-4.233zM34.14 40.098a2.545 2.545 0 0 1-.294.006l-10.812-6.53 3.43-2.073 6.97 4.208a1.25 1.25 0 0 0 1.107-.001l6.966-4.206 3.431 2.073zM9 8H7V7h2zm8 8h-2v-1h2zm-4-8h-2V7h2zm4 0h-2V7h2zm-4 8h-2v-1h2zm7.316 11.1H3.9v-6.434l.766-.766h35.668l.766.766v2.12l.8.483v-2.935l-.826-.826.826-.845v-6.329l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9h16.88a2.632 2.632 0 0 1 .336-.8zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zm0 8v-5.668l.766-.766h35.668l.766.766v5.67l-.746.764H4.666zM15 24v-1h2v1zm-4 0v-1h2v1zm-2-8H7v-1h2zm-2 8v-1h2v1z"/></svg></span>
+                          <span class="sublink-text">GIS Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/image/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 8h-2V7h2zm-4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm8 8h-2v1h2zm-8 0H7v1h2zm4 9v-1h-2v1zm-4 0v-1H7v1zm8 0v-1h-2v1zm4 3.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V21h-.8v-.334l-.766-.766H4.666l-.766.766V27.1H21zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zm40.234 4v21.8H23.1V23.1zm-.8 16.366L39.466 44.1h2.868l1.766-1.766zm-20.2-9.932l5.634-5.634h-2.868L23.9 26.666zm6.2-5.068L24.466 30.1h2.868l2.766-2.766zM28.466 30.1H30.1v-1.634zm2.434 0h6.2v-6.2h-6.2zm-7 7h6.2v-6.2h-6.2zm7 0h6.2v-6.2h-6.2zm0 6.434l5.634-5.634h-2.868L30.9 40.666zm7-7l5.634-5.634h-2.868L37.9 33.666zm1.634-5.634H37.9v1.634zm-8.634 7v1.634l1.634-1.634zm.566 6.2h2.868l2.766-2.766v-2.868zm6.434-3.566l2.634-2.634H37.9zM35.466 44.1H37.1v-1.634zm2.434 0h.434l5.766-5.766V37.9h-2.434L37.9 41.666zm6.2-8.634L42.466 37.1H44.1zm0-4L38.466 37.1h2.868l2.766-2.766zm0-7.566h-6.2v6.2h6.2zm-20.2 0v1.634l1.634-1.634zm0 20.2h6.2v-6.2h-6.2zm20.2 0v-.634l-.634.634z"/></svg></span>
+                          <span class="sublink-text">Image Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/geoanalytics/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 16h-2v-1h2zm-8 8v-1H7v1zm8 0v-1h-2v1zM13 7h-2v1h2zm4 0h-2v1h2zM9 7H7v1h2zm21.45 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V27.9h-1.464l-.801-.8H41.1v-6.434l-.766-.766H4.666l-.766.766V27.1h27.15zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM13 24v-1h-2v1zm0-9h-2v1h2zm-4 0H7v1h2zm26.672 27.148A1.87 1.87 0 0 1 35.9 43a1.91 1.91 0 1 1-3.763-.222l-9.845-3.414A1.88 1.88 0 0 1 21 39.9a1.9 1.9 0 1 1 1.474-3.084l4.692-2.346A1.878 1.878 0 0 1 27.1 34a1.902 1.902 0 0 1 1.9-1.9 1.867 1.867 0 0 1 .781.191l3.788-5.05A1.88 1.88 0 0 1 33.1 26a1.9 1.9 0 1 1 3.491 1.026l4.889 4.888c-.069.056-.144.1-.21.162a3.986 3.986 0 0 0-.358.402l-4.883-4.883A1.889 1.889 0 0 1 35 27.9a1.867 1.867 0 0 1-.781-.191l-3.788 5.049a1.868 1.868 0 0 1 .437.965l9.204.614c-.018.11-.049.218-.058.33A3.93 3.93 0 0 0 40 35c0 .046.01.09.01.135l-9.185-.612A1.913 1.913 0 0 1 29 35.9a1.889 1.889 0 0 1-1.474-.716l-4.692 2.346a1.878 1.878 0 0 1 .066.47 1.9 1.9 0 0 1-.105.625c-.007.02-.022.036-.03.056l9.63 3.34a1.87 1.87 0 0 1 2.786-.505l5.415-4.437c.067.108.127.22.204.322a3.9 3.9 0 0 0 .292.306zM33.9 26a1.092 1.092 0 0 0 .43.872 1.12 1.12 0 0 0 1.42-.068A1.1 1.1 0 1 0 33.9 26zm-6 8a1.1 1.1 0 0 0 2.196.093 1.135 1.135 0 0 0-.426-.965A1.087 1.087 0 0 0 29 32.9a1.101 1.101 0 0 0-1.1 1.1zm-5.8 4a1.098 1.098 0 1 0-.06.362A1.101 1.101 0 0 0 22.1 38zm13 5a1.1 1.1 0 1 0-2.2 0 1.1 1.1 0 0 0 2.2 0zm10.8-8a1.9 1.9 0 1 1-3.8 0c0-.053.003-.105.007-.158A1.9 1.9 0 0 1 45.9 35zm-.8 0a1.1 1.1 0 0 0-2.196-.093 1.153 1.153 0 0 0 .216.752A1.1 1.1 0 0 0 45.1 35z"/></svg></span>
+                          <span class="sublink-text">GeoAnalytics Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/geoevent/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M13 8h-2V7h2zm4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm12.418 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826v2.117c-.259-.177-.53-.337-.8-.497v-1.288l-.766-.766H4.666l-.766.766V27.1h17.933c-.148.26-.283.53-.415.8zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM9 24v-1H7v1zm4-9h-2v1h2zm0 9v-1h-2v1zm-4-9H7v1h2zm8 9v-1h-2v1zm16.9 2h-.8v8.9H39v-.8h-5.1zm.1-3.901a11.9 11.9 0 1 0 11.9 11.9 11.914 11.914 0 0 0-11.9-11.9zm0 23a11.1 11.1 0 1 1 11.1-11.1 11.112 11.112 0 0 1-11.1 11.1z"/></svg></span>
+                          <span class="sublink-text">GeoEvent Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/notebook/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M22 27.1H3.9v-6.434l.766-.766h18.576a5.262 5.262 0 0 1 .83-.8H4.666l-.766-.766v-5.668l.766-.766h35.668l.766.766V18h.8v-5.666l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9H22zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zM9 8H7V7h2zm8 0h-2V7h2zm-4 0h-2V7h2zm2 16v-1h2v1zm-4 0v-1h2v1zm-4 0v-1h2v1zm0-8v-1h2v1zm8 0v-1h2v1zm-4 0v-1h2v1zm18.9 8.1h-1.8v1.8h1.8zm-.8 1h-.2v-.2h.2zm15.498-4.48a2.727 2.727 0 0 0-1.62-.5v-.02H27.25a3.154 3.154 0 0 0-3.15 3.15V38.1h-1.68a3.386 3.386 0 0 0-2.872 1.58 3.49 3.49 0 0 0-.157 3.419 3.241 3.241 0 0 0 2.954 1.801h15.161a3.404 3.404 0 0 0 3.394-3.4V26.9h5v-3.65a3.224 3.224 0 0 0-1.302-2.63zM22.345 44.1a2.44 2.44 0 0 1-2.23-1.341 2.706 2.706 0 0 1 .11-2.65A2.588 2.588 0 0 1 22.42 38.9h12.89a3.395 3.395 0 0 0 0 5.2zM40.1 23.192V41.5a2.6 2.6 0 1 1-2.6-2.6v-.8H24.9V23.25a2.352 2.352 0 0 1 2.35-2.35h13.795a3.183 3.183 0 0 0-.945 2.292zm5 2.908h-4.2v-2.908a2.274 2.274 0 0 1 1.44-2.18 1.944 1.944 0 0 1 1.791.259 2.423 2.423 0 0 1 .97 1.979zm-17.1 5h9v.8h-9zm0 3h7v.8h-7zm0-6h9v.8h-9zm4-3h5v.8h-5z"/></svg></span>
+                          <span class="sublink-text">Notebook Server</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+
+              <a id="nav-data-store" data-langlabel="data-store" href="../../../../../zh-CN/data-store/" class="top-nav-link">Data Stores</a>
+              <a id="nav-cloud" data-langlabel="cloud" href="../../../../../zh-CN/cloud/" class="top-nav-link">云</a>
+              <a id="nav-apps" data-langlabel="apps" href="../../../../../zh-CN/apps/" class="top-nav-link">应用程序</a>
+            </nav>
+
+
+            
+            
+            
+
+            <div class="margin-left-1 top-nav-list right hide-if-logged-in logged-out-navigation">
+               
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+              
+              <a data-langlabel="sign-in" id="login-link" class="icon-ui-user top-nav-link link-blue login-link" href="#">登录</a>
+              
+            </div>
+
+            
+            <nav class="margin-left-1 top-nav-list right hide-if-logged-out logged-in-navigation">
+              
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+             
+              <div class="dropdown js-dropdown right">
+
+                <div class="tablet-show top-nav-link">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a href="#" data-drawer="user-nav" class="user-nav-name js-drawer-toggle" data-first-name></a>
+                </div>
+
+                <div class="tablet-hide top-nav-link js-dropdown-toggle">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a class="user-nav-name top-nav-dropdown dropdown-btn" data-first-name>&nbsp;</a>
+                </div>
+
+                <nav class="dropdown-menu dropdown-right">
+                
+                  <a class="dropdown-link agolProfile" id="agolProfile" href="#">我的个人资料</a>
+                  <a class="dropdown-link js-log-out" id="agolLogout" href="#">登出</a>
+                </nav>
+              </div>
+            </nav>
+            
+
+            
+          </div>
+        </div>
+      </header>
+
+      <div class="js-search search-overlay">
+        <div class="search-content" role="dialog" aria-labelledby="search">
+          <form method="GET" id="helpSearchForm">
+            <label>
+              搜索 ArcGIS Server 10.8 帮助
+              <div class="search-bar">
+                <input type="search" name="q"  placeholder="搜索 ArcGIS Server 10.8 帮助" class="search-input js-search-input">
+                <input type="hidden" name="collection" value="help" />
+                <input type="hidden" name="product" value="arcgis-server-windows" />
+                <input type="hidden" name="version" value="10.8" />
+                <input type="hidden" name="language" value="zh-CN" />
+              </div>
+            </label>
+            <input type="hidden" name="relativePath" value="../../../../../" /><button type="submit" class="btn btn-large right">搜索</button>
+          </form>
+        </div>
+      </div>
+
+      <!--googleon: all-->
+
+      <div id="skip-to-content">
+        <!--googleoff: all-->
+        <header class="sub-nav sub-nav-learn">
+          <div class="grid-container">
+            
+            <div class="column-24">
+              <div style="display:table;" class="sdk-home-banner">
+                <div class="sdk-home-banner-content">
+                  <h1 class="sub-nav-title link-white">ArcGIS Server</h1>
+                </div>
+              </div>
+            </div>
+
+            <div class="column-24">
+              <nav class='sub-nav-list tablet-hide'><a class="sub-nav-link" href="../../../../../zh-CN/server/" target="_top" title="ArcGIS Server 的概述和文档">主页</a><a class="sub-nav-link" href="../../../../../zh-CN/server/latest/get-started/windows/" target="_top" title="了解有关 ArcGIS Server 和服务器角色的信息">简介</a><a class="sub-nav-link" href="../../../../../zh-CN/server/latest/deploy/windows/" target="_top" title="构建、配置和升级部署">部署</a><a class="sub-nav-link" href="../../../../../zh-CN/server/latest/manage-data/windows/" target="_top" title="管理企业的空间数据">管理数据</a><a class="sub-nav-link" href="../../../../../zh-CN/server/latest/publish-services/windows/" target="_top" title="使用 GIS 服务">管理服务</a><a class="sub-nav-link" href="../../../../../zh-CN/server/latest/create-web-apps/windows/" target="_top" title="创建 Web 应用程序和可打印地图">共享</a><a class="sub-nav-link is-active" href="../../../../../zh-CN/server/latest/administer/windows/" target="_top" title="管理和保护 ArcGIS Server">管理</a><a class="sub-nav-link" href="../../../../../zh-CN/server/latest/develop/windows/" target="_top" title="构建扩展模块并自动执行常见任务">开发</a></nav><select class='tablet-show select-full trailer-half js-select-nav'><option value="../../../../../zh-CN/server/">主页</option><option value="../../../../../zh-CN/server/latest/get-started/windows/">简介</option><option value="../../../../../zh-CN/server/latest/deploy/windows/">部署</option><option value="../../../../../zh-CN/server/latest/manage-data/windows/">管理数据</option><option value="../../../../../zh-CN/server/latest/publish-services/windows/">管理服务</option><option value="../../../../../zh-CN/server/latest/create-web-apps/windows/">共享</option><option selected="true" value="../../../../../zh-CN/server/latest/administer/windows/">管理</option><option value="../../../../../zh-CN/server/latest/develop/windows/">开发</option></select>
+            </div>
+
+          </div>
+        </header>
+        <!--googleon: all-->
+       
+        <!-- content goes here -->
+        <div class="grid-container ">
+          
+
+            
+              
+  <!--BREADCRUMB-BEG--><div id="bigmac" class="sticky-breadcrumbs trailer-2" data-spy="affix" data-offset-top="180"> </div><!--BREADCRUMB-END-->
+  <!--googleoff: all-->
+    <div class="column-5 tablet-column-12 trailer-2 ">
+      <aside class="js-accordion accordion reference-index" aria-live="polite" role="tablist">
+        <div></div>
+      </aside>
+
+      <div class="js-sticky scroll-show tablet-hide leader-1 back-to-top" data-top="0" style="top: 0px;">
+        <a href="#" class="btn btn-fill btn-clear">返回顶部</a>
+      </div>
+    </div>
+  <!--googleon: all-->
+  
+            
+            
+            
+	
+		<div class="column-13  pre-1 content-section">
+	
+		<header class="trailer-1"><h1>使用服务器统计数据</h1></header>
+
+		 
+	<!--googleoff: all-->
+	
+		
+				<aside id="main-toc-small" class="js-accordion accordion tablet-show trailer-1">
+			      <div class="accordion-section">
+			        <h4 class="accordion-title">在本主题中</h4>
+			        <div class="accordion-content list-plain">
+			          <ol class="list-plain pre-0 trailer-0"><li><a href="#GUID-826FDA9B-CED1-4187-A043-2370A8CFA9A9">可用服务器统计数据</a></li><li><a href="#ESRI_SECTION1_7A80C1FCAE4A4870BCE6291243699272">默认报表</a></li><li><a href="#ESRI_SECTION1_4679AF9AFE534EE9A401F09C6CF03C40">创建新报表</a></li><li><a href="#ESRI_SECTION1_1CCCC003B21242F7BF209A41A951DF22">查看和修改现有报表</a></li><li><a href="#ESRI_SECTION1_C9D7D271825D42BFAD0096DB33479E44">删除报表</a></li><li><a href="#ESRI_SECTION1_A67614D6FB5D4691BCEE18BE8706401D">导出报表</a></li><li><a href="#ESRI_SECTION1_D468E0FED95446E092D0A4C43EF36903">搜索报表</a></li><li><a href="#ESRI_SECTION1_0322D2F667CF4FCFB561C9872585B14A">配置服务器统计数据</a></li></ol>
+			        </div>
+			      </div>
+			     </aside>
+		
+    
+   <!--googleon: all-->
+
+
+		<main>
+			
+	
+    	
+    
+
+
+			
+<p id="GUID-4B323EAC-5D1B-49D7-89CD-B149ACC5F948">通过 <span class="ph">ArcGIS Server</span> Manager 中的统计数据报表库可显示、配置、更新、导出和删除服务器统计数据的报表。要访问报表库，请单击<span class="uicontrol">日志 <span class="greaterthan">&gt;</span> 统计数据</span>。有关如何使用报表和统计数据的描述，请参阅以下各部分内容。</p><section class="section1 padded-anchor" id="GUID-826FDA9B-CED1-4187-A043-2370A8CFA9A9" purpose="section1"><h2>可用服务器统计数据</h2><p id="GUID-9D00388A-0EAA-4222-9BC2-66BDA8CA7E14">可在报表中显示以下统计数据。如果您的 <span class="ph">ArcGIS Server</span> 站点有多台计算机，统计信息将聚合站点中的所有计算机，<span class="uicontrol">最大运行实例数</span>除外。<aside class="panel trailer-1" id="GUID-A470B6D4-DF34-45F7-876F-3836FDEC2FEC"><h5 class="icon-ui-directions trailer-0">解决办法：</h5><p id="GUID-AB1CD350-8F78-477D-8F33-19D6C21FE21A">您可以使用 <a class="xref xref" href="../../../../../zh-CN/server/latest/administer/windows/about-the-arcgis-server-administrator-directory.htm">ArcGIS Server 管理员目录</a>查看多机站点中各个计算机的统计信息。</p></aside></p><p id="GUID-32393B83-6C05-49CB-8639-4C9B08E1023B">每个报表仅能显示一个统计数据。要选择统计数据，请在报表中单击<span class="uicontrol">显示</span>下拉对话框。</p><ul purpose="ul" id="UL_0733DE8643A94F75A045A5C264DFB52D"><li purpose="li" id="LI_5836902BD4C949909F7541DD2BEF4F50">请求总数 - 指定时间范围内客户端向服务发出请求的总数。</li><li purpose="li" id="LI_234F943B172343E78C5A42599ECFFE8E">平均响应时间 - <span class="ph">ArcGIS Server</span> 向客户端返回请求的结果所花费的平均时间。以秒为单位显示平均响应时间。</li><li purpose="li" id="LI_606E0FE700DC44AD9C70F8040640513B">最长响应时间 - <span class="ph">ArcGIS Server</span> 向客户端返回请求的结果所花费的最长时间。以秒为单位显示最长响应时间。</li><li purpose="li" id="LI_F9084F4FF1DE412E8FD43DD47F8A8B50">超时 - 以下一种或多种情况的组合可能会报告<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/server/latest/publish-services" href="../../../../../zh-CN/server/latest/publish-services/windows/tuning-and-configuring-services.htm#GUID-2927D13A-A234-4E90-9CD2-C0515A440735">服务超时</a>：<ul purpose="ul" id="UL_27A8765C83AD46C48D0C7BE334FD5DB7"><li purpose="li" id="LI_822FA2EE63024267BBAA0D55A990957E">客户端保持某一服务的时间超过指定的最长使用时间，客户端将失去对此服务的引用。</li><li purpose="li" id="LI_72E9FE31DB65428A9E0A3621632DD364">客户端的等待时间超过为服务指定的最长等待时间。</li></ul></li><li purpose="li" id="LI_1B4BE86D9582463883397EDC426C6B83">最大运行实例数 - 指定时间范围内对特定服务运行的最大运行实例数。</li></ul><p id="GUID-579F1283-9D23-4856-89A6-E5D4ACAC3825">默认情况下，每 30 分钟采集和存储一次统计数据。要更改统计数据的采集频率，请参阅下面的<a class="xref xref" href="../../../../../zh-CN/server/latest/administer/windows/working-with-server-statistics.htm#ESRI_SECTION1_0322D2F667CF4FCFB561C9872585B14A">配置服务器统计数据</a>部分。</p><section class="section2 padded-anchor" id="ESRI_SECTION2_B08299E130D64EF9A9DEC7A134FE033B" purpose="section2"><h3>支持的服务类型</h3><p id="GUID-C8B75B2D-3DD3-4258-B6AC-7C911CCB5A62">统计数据仅适用于以下服务类型。有关这些服务类型的详细信息，请参阅<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/server/latest/publish-services" href="../../../../../zh-CN/server/latest/publish-services/windows/what-types-of-services-can-you-publish.htm">可发布什么类型的服务</a>。</p><ul purpose="ul" id="UL_0E7246651FB74FE7A13CC045645E307D"><li purpose="li" id="LI_114534F37A7E469E9EFF57BA53E6E32E">要素（也支持托管要素服务）</li><li purpose="li" id="LI_3D789AD3D10043AFA91D7A7FE99F9C01">地理编码</li><li purpose="li" id="LI_6B21161EAABD42EC9FD1D9F78469D064">地理数据</li><li purpose="li" id="LI_E3E53071339A49BB9E3CB620E3DCEC00">地理处理（仅支持同步；不支持异步）</li><li purpose="li" id="LI_F1205459FA3E45409D382C7C265C6DDD">影像（仅支持动态影像；不支持缓存影像）</li><li purpose="li" id="LI_A5FB46452F8541428E9E02E2CEACB738">地图（仅支持动态地图；不支持缓存地图）</li><li purpose="li" id="LI_17020E2242A14546907F356B66EBCEB2">网络分析</li><li purpose="li" id="LI_31D9FE87FBA8426383122719D7DE34E3">搜索</li><li purpose="li" id="LI_A8C08FD597A24B6AA6AC29864C728328">Workflow Manager</li></ul></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_7A80C1FCAE4A4870BCE6291243699272" purpose="section1"><h2>默认报表</h2><p id="GUID-14C2417A-B104-426B-A78C-8DC8A7DE5D1D">默认情况下，安装 <span class="ph">ArcGIS Server</span> 时，可获取统计数据报表库中显示的三个预配置报表。这些报表基于已在服务器上运行的服务。通过在模块中选择默认报表并更改显示的服务数量、统计数据类型和时间值可修改默认报表。此外，通过单击报表缩略图上的 <span class="uicontrol">X</span> 按钮可删除报表。</p></section><section class="section1 padded-anchor" id="ESRI_SECTION1_4679AF9AFE534EE9A401F09C6CF03C40" purpose="section1"><h2>创建新报表</h2><p id="GUID-6E7B97CA-4547-437B-9AB0-9C25C9076A70">要创建新报表，请执行以下步骤：</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="GUID-EE13B201-134E-42AD-85BD-A35015118A19"><ol class="list-numbered" purpose="ol"><li purpose="step" id="GUID-9FCF6335-370C-4DF4-8E9B-D2DCDEF03DBF"><span purpose="cmd" id="GUID-D368AB5C-49FE-4974-9D77-92DFF85E2CAF">打开 Manager，然后使用具有管理员权限的帐户登录。如需此步骤的帮助，请参阅<a class="xref xref" href="../../../../../zh-CN/server/latest/administer/windows/log-in-to-manager.htm">登录 Manager</a>。属于用户或发布者角色的帐户无法创建报表。</span></li><li purpose="step" id="ESRI_STEP_F279C9B399504810828F4168CC622EFA"><span purpose="cmd" id="GUID-B0501D74-27B0-497B-85F4-BEAC17284B2E">单击<span class="uicontrol">日志 <span class="greaterthan">&gt;</span> 统计数据</span>。</span></li><li purpose="step" id="ESRI_STEP_D3785F12B4064F22B57A8197CADC8E5E"><span purpose="cmd" id="GUID-738DA1C6-35A0-45BA-B58F-3C0EF13B9CBC">单击<span class="uicontrol">新建报表</span>。</span></li><li purpose="step" id="ESRI_STEP_06B77C558C0B4F46B6DFA783ED197B92"><span purpose="cmd" id="GUID-A07A2FBD-F8ED-4FEA-B986-D8D8A62721A6">在图表的左侧，选择要显示统计数据的一个或多个服务，也可以选择一个文件夹。还可使用搜索字段来搜索服务。选择文件夹时，图表中将显示文件夹下所有服务的聚合值。还可通过单击复选框旁边的标记来更改资源（服务或文件夹）的颜色和标记符号。</span></li><li purpose="step" id="ESRI_STEP_3ACBB27C5CDC4DE692AE8E06205AF40B"><span purpose="cmd" id="GUID-037B9C16-A0AB-4850-B9DA-F339AEDA5722">单击<span class="uicontrol">显示</span>下拉对话框，然后选择要在图表中显示的统计数据。统计数据始终在图表的 Y 轴（左）上显示。</span></li><li purpose="step" id="ESRI_STEP_58AB2CA25DD04675B1D284250E31316F"><span purpose="cmd" id="GUID-2D674CF7-0D51-478B-8694-4E4A6E142E2E">单击<span class="uicontrol">期限</span>下拉对话框，然后为统计数据选择要显示的时间段。期限始终显示在图表的 X 轴
+（底部）上。选择<span class="uicontrol">自定义时间段</span>可指定要显示统计数据的自定义时间范围。报告的时间与安装 <span class="ph">ArcGIS Server</span> 的计算机的时区相符。</span></li><li purpose="step" id="ESRI_STEP_A10394274C254A5B8C1DDBE1C03431EE"><span purpose="cmd" id="GUID-AB6B8640-D34E-4F55-97C0-DD1B701B6E29">通过单击图表顶部的<span class="uicontrol">输入报表标题</span>文本可赋予报表一个标题。</span></li><li purpose="step" id="ESRI_STEP_ABACFA7FB3F44422BD7F71ECDDD0F35B"><span purpose="cmd" id="GUID-1852611A-B15E-4F57-B8BE-D1B2BCF0F9D5">单击<span class="uicontrol">保存</span>。</span></li></ol></div><section class="result padded-anchor" id="ESRI_RESULT_6BF88B200BA64B86A3B02FAB57C319A2" purpose="result"><p id="GUID-C4C2ED86-E880-4B7F-B9FC-B04BEDE26C68">随即保存报表且其他管理员和发布者可查看报表。还可通过单击<span class="uicontrol">导出</span>按钮将图表导出为逗号分隔值 (CSV) 文件。默认情况下，报表每隔 30 分钟将自动更新。</p></section></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_1CCCC003B21242F7BF209A41A951DF22" purpose="section1"><h2>查看和修改现有报表</h2><p id="GUID-9D8FD99A-75F7-4261-B1BC-BFBF48FFC94F">如果使用具有发布者或管理员权限的帐户登录，通过在<span class="uicontrol">统计数据</span>模块中单击现有报表的缩略图可查看现有报表。查看报表时，悬停在图表中折点的上方可获取详细信息。例如，如果您有地图服务的最长响应时间图，则悬停在特定数据点上方会显示特定响应时间 1.91 秒。</p><p id="GUID-01B40694-E281-4981-94BB-7816170DF7C3">如果使用具有管理员权限的帐户登录，还可修改现有报表并通过单击<span class="uicontrol">保存</span>来应用所有更改。如果单击<span class="uicontrol">关闭</span>，系统会提示您保存更改。如果关闭浏览器，则不会保存更改。</p><p id="GUID-5745E355-4053-489D-800C-B6816F5C67FB">要打开和修改报表，请执行以下步骤：</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_ADBFF3F314E749E087D76E3A8497D0CD"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_332CE6F38075415AB5FB36DA79B0FB3C"><span purpose="cmd" id="GUID-320D4FAC-2E4D-4BC1-84EB-BEB9D4578071">打开 Manager，然后使用具有管理员权限的帐户登录。如需此步骤的帮助，请参阅 <a class="xref xref" href="../../../../../zh-CN/server/latest/administer/windows/log-in-to-manager.htm">登录 Manager</a>。</span></li><li purpose="step" id="ESRI_STEP_FDA49793F9154D2BB3FEA8087DF53410"><span purpose="cmd" id="GUID-51227D8D-6F88-4F05-A1CD-3F6BDE27F990">单击<span class="uicontrol">日志 <span class="greaterthan">&gt;</span> 统计数据</span>。</span></li><li purpose="step" id="ESRI_STEP_C3C79DCAC95F466E93D0E7DC3E2C6710"><span purpose="cmd" id="GUID-56757AB0-5574-4F2D-802B-DD0F8D462B01">单击要修改的报表的缩略图。</span></li><li purpose="step" id="ESRI_STEP_5BAED8F7E6B64AAA82A07BEE4CC07C10"><span purpose="cmd" id="GUID-FE3178A4-42F4-49A4-8260-DFA66328D3CA">应用对报表进行的更改。下面几个章节将对可更改的内容进行概述。</span></li><li purpose="step" id="ESRI_STEP_5535EF64D3C2471EA01A89A09B1B6438"><span purpose="cmd" id="GUID-E24AB182-058F-4DFC-9880-4CB24A72E290">单击<span class="uicontrol">保存</span>。</span></li></ol></div></section><section class="section2 padded-anchor" id="ESRI_SECTION2_6136517CEB1B46B58F59831F602A4076" purpose="section2"><h3>更改显示的服务或文件夹</h3><p id="GUID-16D1E1DB-973B-4DCC-98B2-71FCB0EF7C69">可更改图表中显示的服务数量或文件夹中的服务数量。使用复选框可将服务和文件夹切换为打开或关闭。选择文件夹时，文件夹下所有服务的聚合值会在图表中显示为一行。</p><p id="GUID-D298EB90-60FB-4997-9B28-15330729D181">将文件夹切换为打开或关闭时，不会自动选中文件夹下所有资源的复选框。同样，取消选中父文件夹下的子资源不会自动取消选中父文件夹。通过设计此行为，可将整个文件夹与单个资源
+（服务或文件夹）进行比较。例如，可选择<span class="uicontrol">站点（根）</span>文件夹，然后将其与嵌套在子文件夹中的单个地图服务进行比较。</p></section><section class="section2 padded-anchor" id="ESRI_SECTION2_5414BE012EE240D1A663946EC7520755" purpose="section2"><h3>更改服务或文件夹的颜色和标记符号</h3><p id="GUID-076E1998-9BE4-457D-9A06-B3735121E3D1">可更改单个文件夹或服务的颜色和标记符号。为此，请单击资源（文件夹或服务）旁的相关标记，然后从列表中选择适用的标记和颜色。默认情况下，有八种颜色和四个标记可供选择。</p></section><section class="section2 padded-anchor" id="ESRI_SECTION2_8C03660732144660AA6E785803C552FA" purpose="section2"><h3>更改统计数据类型和时间范围</h3><p id="GUID-5EA84250-B83B-43C6-8042-7F5CAC974CF1">可更改图表中显示的统计数据和时间范围（期限）。要更改显示的统计数据，请单击<span class="uicontrol">显示</span>下拉对话框并选择所需统计数据。统计数据始终在图表的 Y 轴（左）上显示。有关各统计数据的说明，请参阅上面的<a class="xref xref" href="../../../../../zh-CN/server/latest/administer/windows/working-with-server-statistics.htm#GUID-826FDA9B-CED1-4187-A043-2370A8CFA9A9">可用服务器统计数据</a>部分。</p><p id="GUID-23BFBD76-C14A-400C-99AA-9C6DE0B417DE">要更改显示统计数据的时间段，请单击<span class="uicontrol">期限</span>下拉对话框并选择所需的时间窗口。选择<span class="uicontrol">自定义时间段</span>以在<span class="uicontrol">自</span>和<span class="uicontrol">至</span>输入对话框中指定要显示统计数据的自定义时间范围。期限始终显示在图表的 X 轴
+（底部）上。报告的时间与安装 ArcGIS Server 的计算机的时区相符。</p><p id="GUID-90927259-0E2B-4924-A12E-85305E6B11BC">统计数据报表有不同的 x 轴间距，具体取决于报表中所显示的时间窗口。数据点之间的 x 轴间距表示以下时间间隔：</p><ul purpose="ul" id="UL_8547BD6E215E4140933710DA02E67B32"><li purpose="li" id="LI_F7C70EB23018488CA1CCA3503774F2F3">等于或小于 24 小时的时间窗口的间隔为 30 分钟</li><li purpose="li" id="LI_FE5607BC297A4BF4BD4B88B38C4406B2">1 天到 7 天的时间窗口的间隔为 4 小时</li><li purpose="li" id="LI_6A9622F4209D42738999889A4365F6BE">7 天到 30 天的时间窗口的间隔为 1 天</li><li purpose="li" id="LI_2F91F99B5FA04D149205DC15F8C7F573"> 大于 30 天的时间窗口的间隔为 7 天</li></ul><p id="GUID-BA3B0423-83DF-460C-B599-C25D115764A4">x 轴开始时间也将有所不同，具体取决于报表的时间窗口和对应的 x 轴间距。每个预配置报表时间段（<span class="uicontrol">最近 24 小时</span>、<span class="uicontrol">最近 7 天</span>和<span class="uicontrol">最近 30 天</span>）的开始时间将为该报表时间段中所述的四舍五入到过去的最近半小时时间。例如，如果<span class="uicontrol">最近 24 小时</span>报表的请求时间为 10:11 a.m.，则 x 轴开始时间应为前一天的 10:00 a.m.。自定义时间段会显示第一个时间间隔结束时的 x 轴开始时间。这意味着，自定义时间段为 12 月 1 日 12:00 a.m. 至 12 月 5 日 12:00 a.m. 的报表的 x 轴开始时间将显示为 12 月 1 日 4:00 a.m.，由于时间窗口介于 1 天和 7 天之间，因此时间间隔为 4 小时。将鼠标悬停在报表的第一个数据点上时，将显示汇总 12 月 1 日 12:00 a.m. 至 12 月 1 日 4:00 a.m. 数据的点。</p></section><section class="section2 padded-anchor" id="ESRI_SECTION2_044CA92895534E37B36CB71B12A53656" purpose="section2"><h3>更改标题</h3><p id="GUID-59AF2A79-D0E4-449F-B04F-7987C4078F6F">修改报表时可更新标题。为此，请单击标题文本并提供适当信息。确保明确指明图表中报告的内容。还可添加一些说明文本来支持标题。</p></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_C9D7D271825D42BFAD0096DB33479E44" purpose="section1"><h2>删除报表</h2><p id="GUID-FC49EC30-8CB5-41CC-8B19-15CD3B937443">要删除报表，请使用具有管理员权限的帐户登录，然后单击<span class="uicontrol">统计数据</span>模块中报表缩略图上的 <span class="uicontrol">X</span> 按钮。</p></section><section class="section1 padded-anchor" id="ESRI_SECTION1_A67614D6FB5D4691BCEE18BE8706401D" purpose="section1"><h2>导出报表</h2><p id="GUID-474A03EC-8994-42C2-849F-4579021D03D9">保存报表时，还可以选择将报表导出为逗号分隔值 (CSV) 文件。这样您便可以将报表导入到第三方应用程序（如 Microsoft Excel）中。这种方法可以方便您共享和显示报表数据，而无需以物理方式登录到 <span class="ph">ArcGIS Server</span> Manager。要导出报表，请使用具有管理员权限的帐户登录并打开报表，然后单击<span class="uicontrol">导出</span>按钮。</p></section><section class="section1 padded-anchor" id="ESRI_SECTION1_D468E0FED95446E092D0A4C43EF36903" purpose="section1"><h2>搜索报表</h2><p id="GUID-DA88FD69-7BBE-4A54-BEF6-200335CEA9AA">通过向<span class="uicontrol">统计数据</span>模块中的<span class="uicontrol">搜索报表</span>对话框中输入文本可搜索特定报表。例如，可提供以下信息来帮助您查找要查找的报表：</p><ul purpose="ul" id="UL_60CB3885E65C49E3A1E55964C8B9A4AC"><li purpose="li" id="LI_1FA6D7CEA956428FB2243596C8622C54">服务名称（显示包含该特定服务的报表）</li><li purpose="li" id="LI_32440C8AF88147C6AC81C286FD414F65">文件夹名称（显示包含该特定文件夹的报表）</li><li purpose="li" id="LI_3172B870E8544662B8420979862B6462">关键字（显示与以下关键字相匹配的报表）<ul purpose="ul" id="UL_B64FA3B92793401D9873DEC1A13F58BF"><li purpose="li" id="LI_FAD6507C4E80480EB0AE39E9E98238CC">根（显示包含站点 [根] 文件夹的报表）</li><li purpose="li" id="LI_F4732ED17FE3404F87EC53F9DE2373FD">日、周、月，自定义（显示与指定的持续时间相匹配的报表）</li><li purpose="li" id="LI_C231672793874AA5A64B137773660EBA">请求、平均、响应、超时（显示与指定的统计数据类型相匹配的报表）</li></ul></li></ul></section><section class="section1 padded-anchor" id="ESRI_SECTION1_0322D2F667CF4FCFB561C9872585B14A" purpose="section1"><h2>配置服务器统计数据</h2><p id="GUID-AE13DFC6-DF0B-483B-BF10-3AAFB14E49BE">默认情况下，每 30 分钟采集和存储一次统计数据。可以更改统计数据的采集频率和在磁盘上保存统计数据历史记录的时间。此外，还可禁用服务器统计数据。</p><p id="GUID-C9F5F3F6-900F-4ACA-B3A8-914FA3E7D4EB">要配置服务器统计数据，请执行下列步骤。</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_B38EA20F2E6445E19B5A70A908AB3F9D"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_65B52AB62818441AA826C330BF1E53AC"><span purpose="cmd" id="GUID-481BAE0D-CB3B-4C8D-AA6C-11DA27003A89">打开 <a class="xref xref" href="../../../../../zh-CN/server/latest/administer/windows/about-the-arcgis-server-administrator-directory.htm">ArcGIS Server 管理员目录</a>并使用具有管理员权限的帐户登录。</span></li><li purpose="step" id="ESRI_STEP_8142C6E16AC847E3BC6CC9995532F757"><span purpose="cmd" id="GUID-7EC12F93-8FFD-4F22-ADE9-CA086399751D">单击<span class="uicontrol">使用情况报告 <span class="greaterthan">&gt;</span> 设置 <span class="greaterthan">&gt;</span> 编辑</span>。</span></li><li purpose="step" id="ESRI_STEP_9DB2E50103C24129A9A33653E9A6F8DC"><span purpose="cmd" id="GUID-A405C7FC-2116-41F3-9A3E-8D448A76E64F">使用以下选项配置服务器统计数据：</span><ul purpose="choices" id="ESRI_CHOICES_3B023C715F864CB98BFBCDBD6E93032A"><li purpose="choice" id="ESRI_CHOICE_D73F2BF3EECE4FC2AD8EA7175177D807"> 要禁用服务器生成统计数据，请单击<span class="uicontrol">启用使用情况报告</span>下拉对话框，然后选择<span class="uicontrol">否</span>。</li><li purpose="choice" id="ESRI_CHOICE_78EDECF80CF543EA96CA2B1C9F89B512">要更改聚合统计数据的持续时间，请在<span class="uicontrol">聚合统计数据间隔（分钟）</span>字段中指定新值（以分钟为单位）。默认设置为 30 分钟。例如，要将持续时间更改为一天，请输入 1440。</li><li purpose="choice" id="ESRI_CHOICE_33F094253A9C4CEFA75F153A56C7BFFA">要更改在磁盘上保留服务器统计数据的最大时间段，请在<span class="uicontrol">保留统计数据历史记录的时间（天）</span>字段中输入新值。默认设置为永久 (*)。例如，要将时间段更改为一年，请输入 365。统计数据信息将保存在 <span class="ph">ArcGIS Server</span> 系统目录中。</li></ul></li></ol></div></section></section>
+			
+				<hr>
+				<!--googleoff: all-->
+				
+	
+        
+		    <p class="feedback right">
+		        <a id="afb" class="icon-ui-contact" href="/feedback/" data-langlabel="feedback-on-this-topic" >有关此主题的反馈?</a>
+		    </p>
+        
+	
+
+				<!--googleon: all-->
+			
+		</main>
+	</div>
+	
+	<!--googleoff: all-->
+	
+		
+			<div id="main-toc-large" class="column-5">
+			    <div class="panel font-size--2 tablet-hide trailer-1">
+			      <h5 class="trailer-half">在本主题中</h5>
+			      <ol class="list-plain pre-0 trailer-0"><li><a href="#GUID-826FDA9B-CED1-4187-A043-2370A8CFA9A9">可用服务器统计数据</a></li><li><a href="#ESRI_SECTION1_7A80C1FCAE4A4870BCE6291243699272">默认报表</a></li><li><a href="#ESRI_SECTION1_4679AF9AFE534EE9A401F09C6CF03C40">创建新报表</a></li><li><a href="#ESRI_SECTION1_1CCCC003B21242F7BF209A41A951DF22">查看和修改现有报表</a></li><li><a href="#ESRI_SECTION1_C9D7D271825D42BFAD0096DB33479E44">删除报表</a></li><li><a href="#ESRI_SECTION1_A67614D6FB5D4691BCEE18BE8706401D">导出报表</a></li><li><a href="#ESRI_SECTION1_D468E0FED95446E092D0A4C43EF36903">搜索报表</a></li><li><a href="#ESRI_SECTION1_0322D2F667CF4FCFB561C9872585B14A">配置服务器统计数据</a></li></ol>
+			    </div>
+			    
+			    
+	  		</div>
+		
+    
+   <!--googleon: all-->
+
+
+
+
+          
+        </div>
+        <!-- ENDPAGECONTENT -->
+
+      </div>
+
+    </div>  <!-- End of wrapper -->
+
+  <footer class="footer leader-3 link-dark-gray" role="contentinfo">
+    <div class="grid-container">
+      <div class="row">
+        <nav class="column-6">
+          <h6 data-langlabel="arcgis-for-server">Arc<span>GIS Enterprise</span></h6>
+          <ul class="list-plain">
+            <li><a data-langlabel="home" href="../../../../../zh-CN/">主页</a></li>
+            <li><a data-langlabel="portal" href="../../../../../zh-CN/portal/">Portal</a></li>
+            <li><a data-langlabel="server" href="../../../../../zh-CN/server/">Server</a></li>
+            <li><a data-langlabel="data-store" href="../../../../../zh-CN/data-store/">Data Stores</a></li>
+            <li><a data-langlabel="cloud" href="../../../../../zh-CN/cloud/">云</a></li>
+            <li><a data-langlabel="apps" href="../../../../../zh-CN/apps/">应用程序</a></li>
+            <li><a data-langlabel="documentation" href="../../../../../zh-CN/documentation/">文档</a></li>
+          </ul>
+        </nav>
+
+        
+  <nav class="column-6">
+    <h6 data-langlabel="arcgis-platform">ArcGIS 平台</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="arcgis" href="//www.arcgis.com/">ArcGIS Online</a></li>
+      <li><a data-langlabel="arcgis-for-professionals" href="//pro.arcgis.com/">ArcGIS Pro</a></li>
+      <li><a data-langlabel="arcgis-for-server" href="//enterprise.arcgis.com/">ArcGIS Enterprise</a></li>
+      <li><a data-langlabel="arcgis-for-developers" href="https://developers.arcgis.com/">ArcGIS for Developers</a></li>
+      <li><a data-langlabel="arcgis-solutions" href="//solutions.arcgis.com/">ArcGIS Solutions</a></li>
+      <li><a data-langlabel="arcgis-marketplace" href="//marketplace.arcgis.com/">ArcGIS Marketplace</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <h6 data-langlabel="about-esri">关于 Esri</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="about-us" href="//www.esri.com/about-esri/">关于我们</a></li>
+      <li><a data-langlabel="careers" href="//www.esri.com/careers/">招贤纳士</a></li>
+      <li><a data-langlabel="insiders-blog" href="https://www.esri.com/about/newsroom/blog/">Esri 博客</a></li>
+      <li><a data-langlabel="user-conference" href="//www.esri.com/events/user-conference/index.html">用户大会</a></li>
+      <li><a data-langlabel="developer-summit" href="//www.esri.com/events/devsummit/index.html">开发者峰会</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <a class="esri-logo" href="//www.esri.com/" aria-label="Esri Home"></a>
+    <section class="footer-social-nav leader-1">
+            <a class="icon-social-twitter" aria-label="Esri on Twitter" href="https://twitter.com/Esri/"></a>
+            <a class="icon-social-facebook" aria-label="Esri on Facebook" href="https://www.facebook.com/esrigis/"></a>
+            <a class="icon-social-github" aria-label="Esri on GitHub" href="//esri.github.io/"></a>
+            <a class="icon-social-contact" aria-label="Contact Esri" href="//www.esri.com/about-esri/contact/"></a>
+    </section>
+	  
+  </nav>
+  
+  <div class="column-24 leader-1">
+    <p class="font-size--3"><a href="http://www.esri.com/legal/copyright-trademarks">Copyright &copy; 2019 Esri.</a> All rights reserved. | <a href="http://www.esri.com/legal/privacy/">隐私政策</a> | <a href="http://www.esri.com/legal/software-license">法律声明</a></p>
+  </div>
+  
+
+
+      </div>
+    </div>
+  </footer>
+  <!--googleoff: all-->
+
+  
+  
+	<script src="../../../../../zh-CN/assets/js/init.js" type="text/javascript"></script>
+	<!--<script src="../../../../../zh-CN/assets/js/drop-down.js" type="text/javascript"></script>-->
+	<script src="../../../../../zh-CN/assets/js/search/searchform.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/cdn/js/link-modifier.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/cdn/js/sitewide.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/cdn/js/libs/highlight.pack.js" type="text/javascript"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+
+
+  
+    
+
+  <script src="../../../../../zh-CN/cdn/js/affix.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    $(function () {
+          var appendFlg = true;
+
+          $("#bigmac")
+          .on("affixed.bs.affix", function (evt) {
+            if (appendFlg) {
+              $("<a class='crumb' href='#'>使用服务器统计数据</a>").insertAfter ($("#bigmac nav a").last());
+              appendFlg = false;
+            }
+          })
+          .on ("affix-top.bs.affix", function(evt) {
+            if (!appendFlg) {
+              $("#bigmac nav a").last().remove();
+            }
+            appendFlg = true;
+          })
+    })
+  </script>
+  
+        <script type="text/javascript">
+          window.doctoc = {
+            pubID: "1640",
+            tpcID: "49",
+            
+              prefix: "管理",
+              prefixUrl: "/zh-cn/server/latest/administer/windows/",
+          
+            hideToc: false
+          }
+        </script>
+
+        <script type="text/javascript" src="../../../../../zh-CN/server/latest/administer/windows/1640.js" ></script>
+        <script type="text/javascript" src="../../../../../zh-CN/cdn/calcite/js/protoc.js" ></script>
+        
+        
+
+  <noscript>
+        <p>
+            <a href="flisting.htm">flist</a>
+        </p>
+    </noscript>
+    <script type="text/javascript"></script>
+  
+  
+    
+    
+
+  </body>
+</html>

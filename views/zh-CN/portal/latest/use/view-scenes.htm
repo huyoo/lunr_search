@@ -1,0 +1,545 @@
+
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>  <html class="ie lt-ie9 lt-ie8 lt-ie7 ie6" dir="ltr"> <![endif]-->
+<!--[if IE 7]>     <html class="ie lt-ie9 lt-ie8 ie7" dir="ltr"> <![endif]-->
+<!--[if IE 8]>     <html class="ie lt-ie9 ie8" dir="ltr"> <![endif]-->
+<!--[if IE 9]>     <html class="ie ie9" dir="ltr"> <![endif]-->
+<!--[if !IE]><!--> <html dir="ltr" lang="zh-CN"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>在 Scene Viewer 中查看场景&mdash;Portal for ArcGIS | ArcGIS Enterprise 文档</title>
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+    <script>
+      var docConfig = {
+        locale: 'zh-CN'
+        ,localedir: 'zh-cn'
+        ,langSelector: ''
+        
+        ,relativeUrl: false
+        
+
+        ,searchformUrl: '/search/'
+        ,tertiaryNavIndex: ''
+
+        
+      };
+    </script>
+	 
+
+
+    
+    <!--[if lt IE 9]>
+      <script src="../../../../zh-CN/cdn/js/libs/html5shiv.js" type="text/javascript"></script>
+      <script src="../../../../zh-CN/cdn/js/libs/selectivizr-min.js" type="text/javascript"></script>
+      <script src="../../../../zh-CN/cdn/js/libs/json2.js" type="text/javascript"></script>
+      <script src="../../../../zh-CN/cdn/js/libs/html5shiv-printshiv.js" type="text/javascript" >
+
+    <![endif]-->
+
+     <!--[if lt IE 11]>
+    <script>
+      $$(document).ready(function(){
+        $$(".hideOnIE").hide();
+      });
+    </script>
+    <![endif]-->
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<link href="../../../../zh-CN/assets/img/favicon.ico" rel="shortcut icon" >
+	<link href="../../../../zh-CN/assets/css/screen.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/cdn/calcite/css/documentation.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/assets/css/print.css" media="print" type="text/css" rel="stylesheet" />
+
+	<!--
+	<link href="../../../../zh-CN/assets/css/screen_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/assets/css/documentation/base_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/assets/css/print_l10n.css" media="print" type="text/css" rel="stylesheet" />
+	-->
+	
+	
+		<script src="../../../../zh-CN/cdn/js/libs/jquery.1.9.1.min.js" type="text/javascript"></script>
+	
+	<script src="../../../../zh-CN/cdn/js/libs/jquery.cookie.js" type="text/javascript"></script>
+	<link href="../../../../zh-CN/cdn/css/colorbox.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/cdn/css/colorbox_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<script src="../../../../zh-CN/cdn/js/libs/jquery.colorbox-min.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/assets/js/video-init.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/assets/js/sitecfg.js" type="text/javascript"></script>
+	
+		<script src="../../../../zh-CN/assets/js/signIn.js" type="text/javascript"></script>
+	
+
+	<!--- Language Picker -->
+	<script src="../../../../zh-CN/assets/js/locale/l10NStrings.js" type="text/javascript"></script>
+	
+		 
+	
+
+	<script src="../../../../zh-CN/assets/js/calcite-web.js" type="text/javascript"></script>
+
+
+
+  <!--- search MD -->
+    <META name="description" content="下面为如何在 Scene Viewer 中查看场景的快速指南。"><META name="last-modified" content="2019-12-6"><META name="product" content="arcgis-portal-windows,arcgis-portal-linux,arcgis-enterprise-windows,arcgis-enterprise-linux"><META name="sub_category" content="Portal for ArcGIS"><META name="search-collection" content="help"><META name="content_type_label" content="帮助主题"><META name="sub_category_label" content="Portal for ArcGIS"><META name="search-category" content="help-general"><META name="subject_label" content="PORTAL,服务,SERVER"><META name="version" content="10.8"><META name="content_type" content="Help Topic"><META name="subject" content="PORTAL,SERVICES,SERVER"><META name="content-language" content="zh-cn">
+    <!--- search MD -->
+
+  
+  <script src="../../../../zh-CN/assets/js/switchers/portal-1.js" type="text/javascript"></script>
+  
+      
+
+</head>
+
+<!--
+      pub: GUID-7B47163B-CE1B-465F-BEEE-4DADDB8DFF09=37
+      tpc: GUID-04F4B4BB-D5A9-4775-AAFF-27615F1D111F=22
+      -->
+
+
+<!-- variable declaration, if any -->
+<!-- can change following macro to set variable once we are on Jinja 2.8 -->
+
+
+
+
+
+<body class="claro zh-CN server">
+  
+
+  <!-- Drawer location -->
+  <div class="drawer drawer-left js-drawer" data-drawer="top-nav">
+        <nav class="drawer-nav" role="navigation">
+          <aside class="side-nav">
+            <h2 class="side-nav-title">Arc<span>GIS</span> Enterprise</h2>
+            <form id="helpSearchForm" class="margin-left-half margin-right-half leader-half trailer-half drawer-search-form" method="GET">
+              <input type="search" name="q"  placeholder="搜索 ArcGIS Enterprise 帮助">
+              <input type="hidden" name="collection" value="help" />
+              <input type="hidden" name="product" value="arcgis-portal-windows" />
+              <input type="hidden" name="version" value="10.8" />
+              <input type="hidden" name="language" value="zh-CN" />
+            </form>    
+             <a id="nav-portal" data-langlabel="portal" href="../../../../zh-CN/portal/" class="side-nav-link">Portal</a>
+             
+            <a id="all-servers" data-langlabel="all-servers" href="../../../../zh-CN/server/" class="side-nav-link">所有服务器</a>
+            <a id="gis-server" data-langlabel="gis-server" href="../../../../zh-CN/server/" class="side-nav-link">GIS Server</a>
+            <a id="image-server" data-langlabel="image-server" href="../../../../zh-CN/image/" class="side-nav-link">Image Server</a>
+            <a id="geo-analytics-server" data-langlabel="geo-analytics-server" href="../../../../zh-CN/geoanalytics/" class="side-nav-link">GeoAnalytics Server</a>
+            <a id="geoevent-server" data-langlabel="geoevent-server" href="../../../../zh-CN/geoevent/" class="side-nav-link">GeoEvent Server</a>
+            <a id="notebook-server" data-langlabel="notebook-server" href="../../../../zh-CN/notebook/" class="side-nav-link">Notebook Server</a>
+            <a id="nav-data-store" data-langlabel="data-store" href="../../../../zh-CN/data-store/" class="side-nav-link">Data Stores</a>
+            <a id="nav-cloud" data-langlabel="cloud" href="../../../../zh-CN/cloud/" class="side-nav-link">云</a>
+            <a id="nav-apps" data-langlabel="apps" href="../../../../zh-CN/apps/" class="side-nav-link">应用程序</a>
+            <a id="nav-doc" data-langlabel="documentation" href="../../../../zh-CN/documentation/" class="side-nav-link">文档</a>
+
+          </aside>
+        </nav>
+    </div>
+
+    <!-- user navigation collapses to drawer on mobile -->
+    
+    <div class="drawer drawer-right js-drawer hide-if-logged-out logged-in-navigation" data-drawer="user-nav">
+      <nav class="drawer-nav">
+        <aside class="side-nav">
+          <a class="side-nav-link agolProfile" href="#">我的个人资料</a>
+          <a class="side-nav-link icon-ui-sign-out js-log-out" href="#">登出</a>
+        </aside>
+      </nav>
+    </div>
+    
+<!-- End of drawer -->
+
+  
+  <div class="wrapper">
+      <!--googleoff: all-->
+
+      <header class="top-nav" data-skin="learn">
+        <a class="skip-to-content" href="#skip-to-content">Skip To Content</a>
+        <div class="grid-container">
+          <div class="column-24">
+
+
+            <!--<div class="top-nav-title-wrapper text-center ">-->
+              <a href='../../../../zh-CN/' class="top-nav-title tablet-hide"><span>Arc</span>GIS  Enterprise</a>
+              <a href='../../../../zh-CN/' class="icon-ui-menu top-nav-title js-drawer-toggle tablet-show" data-drawer="top-nav"><span>Arc</span>GIS Enterprise</a>
+            <!--</div> -->
+
+          
+            <nav role="navigation" class="top-nav-list left tablet-hide">
+              <a id="nav-portal" data-langlabel="portal" href="../../../../zh-CN/portal/" class="top-nav-link">Portal</a>
+
+                <div class="dropdown js-dropdown ">
+                  <a class="top-nav-link js-dropdown-toggle" tabindex="0" aria-haspopup="true" aria-expanded="false" href="#">Servers</a>
+                  <nav class="dropdown-menu featured" role="menu">
+                    <ul class="dropdown-sublist-featured">
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/get-started/latest/windows/additional-server-deployment.htm" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path  d="M42.92 6.1H4.12v8.566l.833.832-.835.833-.018 7.332.845.847-.825.824V33.9h25v5.2h-2v1.075H8.02v.8h19.1v.925h4.8v-.925H40v-.8h-8.08V39.1h-2v-5.2h13v-8.566l-.834-.834.835-.834v-7.332l-.835-.834.835-.834zm-11.8 35h-3.2v-1.2h3.2zm11-8H4.92v-7.434l.767-.766h35.668l.765.766zm0-9.766l-.766.766H5.666l-.766-.767.017-6.669.766-.764h35.671l.766.766zm0-9l-.766.766H5.687l-.766-.766V6.9h37.2zM19 11.9h-2v-.8h2zm-4 0h-2v-.8h2zm-4 0H9v-.8h2zm6 8.2h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9zm8 9h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9z"/></svg></span>
+                          <span class="sublink-text">所有服务器</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/server/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M45.98 33.575a.616.616 0 0 0-.335-.51l-3.362-2.03 3.362-2.031a.556.556 0 0 0 0-1.02l-11.1-6.704a1.293 1.293 0 0 0-1.112 0L22.33 27.982a.556.556 0 0 0 0 1.02l3.36 2.03-3.358 2.03a.556.556 0 0 0-.002 1.021l3.322 2.006-3.324 2.008a.555.555 0 0 0 .002 1.017l11.102 6.703a1.25 1.25 0 0 0 1.11.002l11.104-6.706a.556.556 0 0 0 0-1.02l-3.32-2.006 3.318-2.004a.607.607 0 0 0 .335-.509zM33.837 21.97c.026-.01.286-.005.29-.005l10.814 6.53-10.8 6.523c-.028.01-.284.005-.294.006l-10.813-6.53zm11.105 16.636l-10.8 6.523a2.564 2.564 0 0 1-.295.006l-10.81-6.529 3.39-2.047 7.004 4.23a1.083 1.083 0 0 0 .557.131 1.101 1.101 0 0 0 .554-.13l7.01-4.233zM34.14 40.098a2.545 2.545 0 0 1-.294.006l-10.812-6.53 3.43-2.073 6.97 4.208a1.25 1.25 0 0 0 1.107-.001l6.966-4.206 3.431 2.073zM9 8H7V7h2zm8 8h-2v-1h2zm-4-8h-2V7h2zm4 0h-2V7h2zm-4 8h-2v-1h2zm7.316 11.1H3.9v-6.434l.766-.766h35.668l.766.766v2.12l.8.483v-2.935l-.826-.826.826-.845v-6.329l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9h16.88a2.632 2.632 0 0 1 .336-.8zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zm0 8v-5.668l.766-.766h35.668l.766.766v5.67l-.746.764H4.666zM15 24v-1h2v1zm-4 0v-1h2v1zm-2-8H7v-1h2zm-2 8v-1h2v1z"/></svg></span>
+                          <span class="sublink-text">GIS Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/image/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 8h-2V7h2zm-4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm8 8h-2v1h2zm-8 0H7v1h2zm4 9v-1h-2v1zm-4 0v-1H7v1zm8 0v-1h-2v1zm4 3.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V21h-.8v-.334l-.766-.766H4.666l-.766.766V27.1H21zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zm40.234 4v21.8H23.1V23.1zm-.8 16.366L39.466 44.1h2.868l1.766-1.766zm-20.2-9.932l5.634-5.634h-2.868L23.9 26.666zm6.2-5.068L24.466 30.1h2.868l2.766-2.766zM28.466 30.1H30.1v-1.634zm2.434 0h6.2v-6.2h-6.2zm-7 7h6.2v-6.2h-6.2zm7 0h6.2v-6.2h-6.2zm0 6.434l5.634-5.634h-2.868L30.9 40.666zm7-7l5.634-5.634h-2.868L37.9 33.666zm1.634-5.634H37.9v1.634zm-8.634 7v1.634l1.634-1.634zm.566 6.2h2.868l2.766-2.766v-2.868zm6.434-3.566l2.634-2.634H37.9zM35.466 44.1H37.1v-1.634zm2.434 0h.434l5.766-5.766V37.9h-2.434L37.9 41.666zm6.2-8.634L42.466 37.1H44.1zm0-4L38.466 37.1h2.868l2.766-2.766zm0-7.566h-6.2v6.2h6.2zm-20.2 0v1.634l1.634-1.634zm0 20.2h6.2v-6.2h-6.2zm20.2 0v-.634l-.634.634z"/></svg></span>
+                          <span class="sublink-text">Image Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/geoanalytics/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 16h-2v-1h2zm-8 8v-1H7v1zm8 0v-1h-2v1zM13 7h-2v1h2zm4 0h-2v1h2zM9 7H7v1h2zm21.45 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V27.9h-1.464l-.801-.8H41.1v-6.434l-.766-.766H4.666l-.766.766V27.1h27.15zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM13 24v-1h-2v1zm0-9h-2v1h2zm-4 0H7v1h2zm26.672 27.148A1.87 1.87 0 0 1 35.9 43a1.91 1.91 0 1 1-3.763-.222l-9.845-3.414A1.88 1.88 0 0 1 21 39.9a1.9 1.9 0 1 1 1.474-3.084l4.692-2.346A1.878 1.878 0 0 1 27.1 34a1.902 1.902 0 0 1 1.9-1.9 1.867 1.867 0 0 1 .781.191l3.788-5.05A1.88 1.88 0 0 1 33.1 26a1.9 1.9 0 1 1 3.491 1.026l4.889 4.888c-.069.056-.144.1-.21.162a3.986 3.986 0 0 0-.358.402l-4.883-4.883A1.889 1.889 0 0 1 35 27.9a1.867 1.867 0 0 1-.781-.191l-3.788 5.049a1.868 1.868 0 0 1 .437.965l9.204.614c-.018.11-.049.218-.058.33A3.93 3.93 0 0 0 40 35c0 .046.01.09.01.135l-9.185-.612A1.913 1.913 0 0 1 29 35.9a1.889 1.889 0 0 1-1.474-.716l-4.692 2.346a1.878 1.878 0 0 1 .066.47 1.9 1.9 0 0 1-.105.625c-.007.02-.022.036-.03.056l9.63 3.34a1.87 1.87 0 0 1 2.786-.505l5.415-4.437c.067.108.127.22.204.322a3.9 3.9 0 0 0 .292.306zM33.9 26a1.092 1.092 0 0 0 .43.872 1.12 1.12 0 0 0 1.42-.068A1.1 1.1 0 1 0 33.9 26zm-6 8a1.1 1.1 0 0 0 2.196.093 1.135 1.135 0 0 0-.426-.965A1.087 1.087 0 0 0 29 32.9a1.101 1.101 0 0 0-1.1 1.1zm-5.8 4a1.098 1.098 0 1 0-.06.362A1.101 1.101 0 0 0 22.1 38zm13 5a1.1 1.1 0 1 0-2.2 0 1.1 1.1 0 0 0 2.2 0zm10.8-8a1.9 1.9 0 1 1-3.8 0c0-.053.003-.105.007-.158A1.9 1.9 0 0 1 45.9 35zm-.8 0a1.1 1.1 0 0 0-2.196-.093 1.153 1.153 0 0 0 .216.752A1.1 1.1 0 0 0 45.1 35z"/></svg></span>
+                          <span class="sublink-text">GeoAnalytics Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/geoevent/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M13 8h-2V7h2zm4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm12.418 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826v2.117c-.259-.177-.53-.337-.8-.497v-1.288l-.766-.766H4.666l-.766.766V27.1h17.933c-.148.26-.283.53-.415.8zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM9 24v-1H7v1zm4-9h-2v1h2zm0 9v-1h-2v1zm-4-9H7v1h2zm8 9v-1h-2v1zm16.9 2h-.8v8.9H39v-.8h-5.1zm.1-3.901a11.9 11.9 0 1 0 11.9 11.9 11.914 11.914 0 0 0-11.9-11.9zm0 23a11.1 11.1 0 1 1 11.1-11.1 11.112 11.112 0 0 1-11.1 11.1z"/></svg></span>
+                          <span class="sublink-text">GeoEvent Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/notebook/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M22 27.1H3.9v-6.434l.766-.766h18.576a5.262 5.262 0 0 1 .83-.8H4.666l-.766-.766v-5.668l.766-.766h35.668l.766.766V18h.8v-5.666l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9H22zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zM9 8H7V7h2zm8 0h-2V7h2zm-4 0h-2V7h2zm2 16v-1h2v1zm-4 0v-1h2v1zm-4 0v-1h2v1zm0-8v-1h2v1zm8 0v-1h2v1zm-4 0v-1h2v1zm18.9 8.1h-1.8v1.8h1.8zm-.8 1h-.2v-.2h.2zm15.498-4.48a2.727 2.727 0 0 0-1.62-.5v-.02H27.25a3.154 3.154 0 0 0-3.15 3.15V38.1h-1.68a3.386 3.386 0 0 0-2.872 1.58 3.49 3.49 0 0 0-.157 3.419 3.241 3.241 0 0 0 2.954 1.801h15.161a3.404 3.404 0 0 0 3.394-3.4V26.9h5v-3.65a3.224 3.224 0 0 0-1.302-2.63zM22.345 44.1a2.44 2.44 0 0 1-2.23-1.341 2.706 2.706 0 0 1 .11-2.65A2.588 2.588 0 0 1 22.42 38.9h12.89a3.395 3.395 0 0 0 0 5.2zM40.1 23.192V41.5a2.6 2.6 0 1 1-2.6-2.6v-.8H24.9V23.25a2.352 2.352 0 0 1 2.35-2.35h13.795a3.183 3.183 0 0 0-.945 2.292zm5 2.908h-4.2v-2.908a2.274 2.274 0 0 1 1.44-2.18 1.944 1.944 0 0 1 1.791.259 2.423 2.423 0 0 1 .97 1.979zm-17.1 5h9v.8h-9zm0 3h7v.8h-7zm0-6h9v.8h-9zm4-3h5v.8h-5z"/></svg></span>
+                          <span class="sublink-text">Notebook Server</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+
+              <a id="nav-data-store" data-langlabel="data-store" href="../../../../zh-CN/data-store/" class="top-nav-link">Data Stores</a>
+              <a id="nav-cloud" data-langlabel="cloud" href="../../../../zh-CN/cloud/" class="top-nav-link">云</a>
+              <a id="nav-apps" data-langlabel="apps" href="../../../../zh-CN/apps/" class="top-nav-link">应用程序</a>
+            </nav>
+
+
+            
+            
+            
+
+            <div class="margin-left-1 top-nav-list right hide-if-logged-in logged-out-navigation">
+               
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+              
+              <a data-langlabel="sign-in" id="login-link" class="icon-ui-user top-nav-link link-blue login-link" href="#">登录</a>
+              
+            </div>
+
+            
+            <nav class="margin-left-1 top-nav-list right hide-if-logged-out logged-in-navigation">
+              
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+             
+              <div class="dropdown js-dropdown right">
+
+                <div class="tablet-show top-nav-link">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a href="#" data-drawer="user-nav" class="user-nav-name js-drawer-toggle" data-first-name></a>
+                </div>
+
+                <div class="tablet-hide top-nav-link js-dropdown-toggle">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a class="user-nav-name top-nav-dropdown dropdown-btn" data-first-name>&nbsp;</a>
+                </div>
+
+                <nav class="dropdown-menu dropdown-right">
+                
+                  <a class="dropdown-link agolProfile" id="agolProfile" href="#">我的个人资料</a>
+                  <a class="dropdown-link js-log-out" id="agolLogout" href="#">登出</a>
+                </nav>
+              </div>
+            </nav>
+            
+
+            
+          </div>
+        </div>
+      </header>
+
+      <div class="js-search search-overlay">
+        <div class="search-content" role="dialog" aria-labelledby="search">
+          <form method="GET" id="helpSearchForm">
+            <label>
+              搜索 ArcGIS Enterprise 帮助
+              <div class="search-bar">
+                <input type="search" name="q"  placeholder="搜索 ArcGIS Enterprise 帮助" class="search-input js-search-input">
+                <input type="hidden" name="collection" value="help" />
+                <input type="hidden" name="product" value="arcgis-portal-windows" />
+                <input type="hidden" name="version" value="10.8" />
+                <input type="hidden" name="language" value="zh-CN" />
+              </div>
+            </label>
+            <input type="hidden" name="relativePath" value="../../../../" /><button type="submit" class="btn btn-large right">搜索</button>
+          </form>
+        </div>
+      </div>
+
+      <!--googleon: all-->
+
+      <div id="skip-to-content">
+        <!--googleoff: all-->
+        <header class="sub-nav sub-nav-learn">
+          <div class="grid-container">
+            
+            <div class="column-24">
+              <div style="display:table;" class="sdk-home-banner">
+                <div class="sdk-home-banner-content">
+                  <h1 class="sub-nav-title link-white">Portal for ArcGIS</h1>
+                </div>
+              </div>
+            </div>
+
+            <div class="column-24">
+              <nav class='sub-nav-list tablet-hide'><a class="sub-nav-link" href="../../../../zh-CN/portal/" target="_top" title="Portal for ArcGIS 主页">主页</a><a class="sub-nav-link is-active" href="../../../../zh-CN/portal/latest/use/" target="_top" title="使用 Portal for ArcGIS">使用</a><a class="sub-nav-link" href="../../../../zh-CN/portal/latest/administer/windows/" target="_top" title="安装、管理和保护 Portal for ArcGIS">管理</a></nav><select class='tablet-show select-full trailer-half js-select-nav'><option value="../../../../zh-CN/portal/">主页</option><option selected="true" value="../../../../zh-CN/portal/latest/use/">使用</option><option value="../../../../zh-CN/portal/latest/administer/windows/">管理</option></select>
+            </div>
+
+          </div>
+        </header>
+        <!--googleon: all-->
+       
+        <!-- content goes here -->
+        <div class="grid-container ">
+          
+
+            
+              
+  <!--BREADCRUMB-BEG--><div id="bigmac" class="sticky-breadcrumbs trailer-2" data-spy="affix" data-offset-top="180"> </div><!--BREADCRUMB-END-->
+  <!--googleoff: all-->
+    <div class="column-5 tablet-column-12 trailer-2 ">
+      <aside class="js-accordion accordion reference-index" aria-live="polite" role="tablist">
+        <div></div>
+      </aside>
+
+      <div class="js-sticky scroll-show tablet-hide leader-1 back-to-top" data-top="0" style="top: 0px;">
+        <a href="#" class="btn btn-fill btn-clear">返回顶部</a>
+      </div>
+    </div>
+  <!--googleon: all-->
+  
+            
+            
+            
+	
+		<div class="column-13  pre-1 content-section">
+	
+		<header class="trailer-1"><h1>在 Scene Viewer 中查看场景</h1></header>
+
+		 
+	<!--googleoff: all-->
+	
+		
+				<aside id="main-toc-small" class="js-accordion accordion tablet-show trailer-1">
+			      <div class="accordion-section">
+			        <h4 class="accordion-title">在本主题中</h4>
+			        <div class="accordion-content list-plain">
+			          <ol class="list-plain pre-0 trailer-0"><li><a href="#ESRI_SECTION1_BA0DB88221B44486AF448D2229F816BD"> 导航场景</a></li><li><a href="#ESRI_SECTION1_6BA42ECDB1F242FE87618B467D7C3967">浏览建筑场景图层</a></li><li><a href="#ESRI_SECTION1_B2855C049D65451FAED00F03E5F07E36">剖切场景内容</a></li><li><a href="#ESRI_SECTION1_91D3B6D58D4648789056FBC8988D5E27">测量场景</a></li><li><a href="#ESRI_SECTION1_92733D1AE8E54D029C563F4D7D604635">使用搜索</a></li><li><a href="#ESRI_SECTION1_9B852778E0494A82B1BAA7A14E0EB5CA"> 查看图层</a></li><li><a href="#ESRI_SECTION1_65CFD91739FF4DAEBF97492FC9112F30">选择底图</a></li><li><a href="#ESRI_SECTION1_24820A5B9A644DE990988DFD3C833F84">调整日光</a></li><li><a href="#ESRI_SECTION1_1D871AE2C0654F8FAADB63BFB6142E7F">共享场景</a></li><li><a href="#ESRI_SECTION1_D0346EF49EA7436899EB351BCF1F375B">更改设置</a></li><li><a href="#ESRI_SECTION1_B2577AA98B5C409BA0D3F8B41C693216">全屏显示场景</a></li></ol>
+			        </div>
+			      </div>
+			     </aside>
+		
+    
+   <!--googleon: all-->
+
+
+		<main>
+			
+	
+    	
+    
+
+
+			
+<p id="GUID-39EAE416-401A-4E65-AE2A-40F88E4653A0"><span class="ph">可以在门户网站中的 <span class="ph">Scene Viewer</span> 中查看地理空间内容。</span> <span class="ph">Scene Viewer</span> 可以与支持 <a target="_blank" class="xref xref" href="HTTP://GET.WEBGL.ORG/">WebGL</a>（内置于大多数现代化浏览器中的网络技术，用于渲染 3D 图形）的设备结合使用。您也可以在登录 <span class="ph">Scene Viewer</span> 时<a class="xref xref" href="../../../../zh-CN/portal/latest/use/create-maps-and-apps.htm#ESRI_SECTION1_94E86D18B9274B8084555A0ADEA19B29">创作自己的场景</a>。</p><div class="panel trailer-1 note" id="GUID-E9E53FBF-55C9-4B8B-B6F6-A279424A0C28"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-3E6F1910-B6BE-40E0-864F-77325C1F5C88">打开 <span class="ph">Scene Viewer</span> 之前，请<a class="xref xref" href="../../../../zh-CN/portal/latest/use/scene-viewer-requirements.htm">验证您的浏览器是否支持场景</a>。</p></div><section class="section1 padded-anchor" id="ESRI_SECTION1_BA0DB88221B44486AF448D2229F816BD" purpose="section1"><h2> 导航场景</h2><p id="GUID-5B8FFB93-A460-4D65-8A2D-F441E6A32852">使用 <span class="ph">Scene Viewer</span> 工具导航场景或使用鼠标或触摸设备在场景中移动。</p><section class="section2 padded-anchor" id="ESRI_SECTION2_389AC1783443421A9F2368DFDD3B5DBF" purpose="section2"><h3>基础工具</h3><p id="GUID-84623974-E870-4695-A7E4-F87708CDF9F8">您可以使用以下 <span class="ph">Scene Viewer</span> 工具四处移动场景。</p><ul purpose="ul" id="UL_3FA16423AE5B4B0B819C609972E9BC2A"><li purpose="li" id="LI_E218D82D7A9C45EAB0F125D7B9648EA5">单击<span class="uicontrol">初始视图</span> <img purpose="img" placement="inline" alt="初始视图" title="初始视图" src="GUID-F6741996-3C02-4323-B5B7-4BC8AE762B06-web.png">以返回到初始照相机位置。</li><li purpose="li" id="LI_9CF1B435BBA74787AEF5653CB0793DC1">单击 <span class="uicontrol">+</span> 以放大。</li><li purpose="li" id="LI_3A841373D0384A238B50F0D973EAF2D2">单击 <span class="uicontrol">-</span> 以缩小。</li><li purpose="li" id="LI_62A8CAD751F94482BC1E7C70C3E1D046">也可以使用鼠标和滚轮进行放大和缩小，或按住鼠标中键向上或向下移动来进行放大或缩小。</li><li purpose="li" id="LI_A524098B8BD2490DBE6AFD95E611E031">单击<span class="uicontrol">平移</span> <img purpose="img" placement="inline" alt="平移" title="平移" src="GUID-D2530729-A067-4414-BEA4-CDFA710CCF00-web.png">进行平移。单击并按住鼠标左键，向希望移动的方向拖动场景。还可以使用键盘上的箭头键进行平移。</li><li purpose="li" id="LI_D3C205A370504B7BA20ED47C18ED4AA8">单击<span class="uicontrol">旋转</span> <img purpose="img" placement="inline" alt="旋转" title="旋转" src="GUID-769A6E25-EA72-4B26-86E5-1E0322E3BDB8-web.png">进行旋转。单击并按住鼠标左键，向希望移动的方向旋转并倾斜场景。<div class="panel trailer-1 note" id="GUID-3C02466A-9672-48F8-94EA-E5D5B6594DC4"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-D1219493-2160-4932-907C-636BFAFD3AD9">单击任一工具时，鼠标左键都将成为主要导航，鼠标右键则成为次要导航。例如，单击<span class="uicontrol">旋转</span> <img purpose="img" placement="inline" alt="旋转" title="旋转" src="GUID-769A6E25-EA72-4B26-86E5-1E0322E3BDB8-web.png">，可以使用鼠标左键进行旋转，并使用鼠标右键进行平移。工具右上方的黑色三角形用来指示选定的工具。</p></div></li><li purpose="li" id="LI_5AA05AE9D7214A1EB665E1D875E544A6"><span class="uicontrol">罗盘</span> <img purpose="img" placement="inline" alt="罗盘" title="罗盘" src="GUID-15FA4917-15AB-4034-AE05-A5A01B36F7CE-web.png">可指示场景的方向。单击<span class="uicontrol">罗盘</span> <img purpose="img" placement="inline" alt="罗盘" title="罗盘" src="GUID-15FA4917-15AB-4034-AE05-A5A01B36F7CE-web.png">以将场景设置为向北。</li></ul></section><section class="section2 padded-anchor" id="ESRI_SECTION2_140DB8F3C6FB485087F4633504BBC01A" purpose="section2"><h3>设备</h3><p id="GUID-690C4183-5090-4F11-9D3C-D9DD3BD85BB6">可以通过设备使用以下两种导航方法：</p><p id="GUID-67381B50-9563-432D-AB82-176546784E43"><ul purpose="ul" id="UL_FB7732EF4135466C9670836D247436B5"><li purpose="li" id="LI_C9DB993F29CD4A78ADF734DD5DA3A2C1"><span class="ph">Scene Viewer</span> 可为手机和平板电脑提供查看体验。如果使用手机，则可以在导航场景时获得更为简化的体验，无需创作或工具。平板电脑提供的 UI 与台式计算机相同。</li><li purpose="li" id="LI_C084A6B4BC58425BAF0BD73FEDB1F37A">如果您的设备具有触摸功能，则可以使用两根手指进行双指缩放，使用一根手指进行平移。您也可以双击场景以朝向轻触位置放大步长。要旋转场景，请按顺时针或逆时针方向移动两根手指。要倾斜场景，请在屏幕上向上或向下拖动两根手指。<div class="panel trailer-1 note" id="GUID-FF3ECB45-7ED9-466B-A1D4-AD3EFDA0D431"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-F9CD8EB0-83C7-4C75-B9AA-425007D0044C"><span class="uicontrol">平移/旋转</span>开关导航控件和 3D 导航设置不会影响触摸。</p></div></li><li purpose="li" id="LI_88367BC46C9A4E709A98E65B2373E421" ishcondition="agol_plat=portal"><span class="ph">Scene Viewer</span> 支持通过标准手柄和 3Dconnexion SpaceMouse 设备进行直观的导航。有关详细信息，请参阅<a class="xref xref" href="../../../../zh-CN/portal/latest/use/troubleshoot-scenes.htm#ESRI_QUESTIONANSWER_F0F61FDD5084412AA4584E75A14BC4A6"><span class="ph">Scene Viewer</span>导航设备</a>。</li></ul></p></section><section class="section2 padded-anchor" id="ESRI_SECTION2_EA2940B95F5F48BCA1A0283D23C9877D" purpose="section2"><h3>操作</h3><p id="GUID-9AFF87B8-EC81-407B-9E6B-E59B8B59F481">以下是您可以使用的有用导航操作：</p><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><thead><tr><th colspan="1">操作</th><th colspan="1">说明</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p cid="1eTwKa" id="GUID-2586DEA8-D4B1-4B3A-A4EC-85D0C325BDCC">双击</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-162DFCBE-DCE6-4BC1-8C5C-4ACF0F82C809">在指针处放大。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-6B546CD0-9D6B-4319-B7A4-AA4F44B3FEAC">按<span class="shortcut">方向键</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-C4F89EAA-C187-4276-90B9-914A383EDEB7">向左、向右、向上或向下移动视图（仅适用于全局场景）。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-28313DD5-88D3-4B0C-A2AC-9CC0A43E9272">按 <span class="shortcut">B + 单击左键</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-CC756E5E-C82C-4BCF-9615-F69D1E4F24CE">从当前照相机位置查看。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-87283E04-08FA-4B32-B182-4D91E9DB64F5">按 <span class="shortcut">A</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-ED6857D5-D6DA-4FCF-BC4B-CD710005947A">逆时针旋转视图。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-3FD58881-6226-4199-919F-96B64CEBEF51">按 <span class="shortcut">D</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-66B7F522-077F-4FEE-8196-96E955CBDCD9">顺时针旋转视图。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-120B21DA-66D0-4D04-A2C7-26CFF41E8261">按 <span class="shortcut">W</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-F9842BBE-526D-4AF7-9659-5ABAEAE7225E">向上倾斜照相机。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-3B8092D3-F95C-4AB8-9D59-E6E726DD40CA">按 <span class="shortcut">S</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-2A09A571-C915-4E61-8650-E5CE9C40575A">向下倾斜照相机。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-C07DC5CF-00D6-43BD-9DCB-6A17D3B42F09">按 <span class="shortcut">J</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-8B4A5B4D-5757-436E-914D-8E49867C60AA">沿向下靠近视图的方向移动（仅适用于全局场景）。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-ABCFB507-2B45-4DF6-A33E-F278B01FB913">按 <span class="shortcut">U</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-266A9849-7198-4E1C-BCCE-F715DB21B17F">沿向上远离视图的方向移动（仅适用于全局场景）。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-239B147F-A6E8-4CE5-84CD-E50F9767513C">按 <span class="shortcut">P</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-6099BFB5-2D60-49DF-ACA5-94E8FE2869A8">将场景设置为垂直于地面。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-9768CBD9-6B7C-42E3-8CB9-B84FD93FF537">按 <span class="shortcut">N</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-3CE4654A-6CF6-4066-A30C-0C1DB7EC775F">将场景设置为向北。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-43934D43-FEE9-40E1-BE4A-F311F6B5E145">按 <span class="shortcut">Ctrl+S</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-2B399A22-84E9-4FD6-8CFA-9CD6FFDC3005">保存场景。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-0EA30568-F653-4B19-8F21-F5AD9202E6AC">按 <span class="shortcut">Ctrl+E</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-2DEB8E4C-A8FC-4E98-AF72-CF8501464BF2">开始和停止一天中的太阳动画。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p cid="2EIU3K" id="GUID-74F786E2-1160-4A97-955A-ABCA0E5029A8">使用一个或多个手指拖动</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-51D9EF8B-7E83-4FD5-A895-8094B617F963">平移。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p cid="bEYA2" id="GUID-926C3E76-AA25-44D4-A6CE-202444E96435">使用一个手指双击</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-FA8EB26E-3DF4-48B9-B6A5-76BFCE4EE60F">在手指位置放大。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p cid="BjNeb" id="GUID-D0196B73-5B0C-4AF4-81C0-219C9C9FA8F3">使用两个手指夹捏或拉伸</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-483C15C7-FCA9-4454-BDCB-A13F4F1E391B">放大或缩小。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p cid="effGG" id="GUID-CC944D89-5F29-45F0-9980-5B2ED9BCD356">按顺时针或逆时针方向移动两根手指</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-BD752C5E-4F8D-4ED1-9526-FC8C161938C2">旋转。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p cid="15xSw6" id="GUID-955C561D-FA8E-4651-B5DD-CB4EB540E635">在屏幕上向上或向下拖动两根手指</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-EC3AB4EC-0864-41DD-B92B-C17EAE98AAFC">倾斜场景。</p></td></tr></tbody><caption></caption></table></div></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_6BA42ECDB1F242FE87618B467D7C3967" purpose="section1"><h2>浏览建筑场景图层</h2><p id="GUID-0EE1B864-7CE9-4728-8AA9-B677D6BF29E0">使用<span class="uicontrol">建筑浏览器</span> 工具 <img purpose="img" placement="inline" alt="建筑浏览器工具" title="建筑浏览器工具" src="GUID-05C5DEA4-052F-4FAB-881D-DA69DED7FF37-web.png">可以浏览建筑场景图层，其中包含建筑细节，如墙面、灯具和机械系统等。当场景包含建筑场景图层时，建筑浏览器工具 <img purpose="img" placement="inline" alt="建筑浏览器工具" title="建筑浏览器工具" src="GUID-05C5DEA4-052F-4FAB-881D-DA69DED7FF37-web.png">会添加到 <span class="ph">Scene Viewer</span> 工具底部。</p><p id="GUID-0D12143E-6A92-4608-9989-52FFB3F9459A">建筑场景图层能够包含建筑及其内部的复杂数字模型，并允许通过多个图层与建筑的所有组件进行交互。通常这些图层会以概览图层作为外表面，这样就可以将建筑物模型作为单个要素进行查看。可以在<span class="uicontrol">领域和类别</span>标题下构建建筑场景图层。<span class="uicontrol">领域</span>图层，在可用的情况下，可以将建筑场景图层内容分组成“建筑”、“结构”、“机械”或“电子”。每个图层组包含若干<span class="uicontrol">类别</span>图层，如墙面、窗户、家具和灯具等。</p><section class="section2 padded-anchor" id="ESRI_SECTION2_8ABE654BD8814701A79C13A225668D76" purpose="section2"><h3>显示建筑场景图层</h3><p id="GUID-25175A1A-2148-4532-A760-A0EF07814A97">要浏览建筑场景图层，请执行以下操作：</p><ol class="list-numbered" purpose="ol" id="OL_91F788C89A634DA8AD5A91ACDF6CD5D9"><li purpose="li" id="LI_BC98309B18AE4477AD38B1409560229C">单击<span class="uicontrol">建筑浏览器</span>工具 <img purpose="img" placement="inline" alt="建筑浏览器工具" title="建筑浏览器工具" src="GUID-05C5DEA4-052F-4FAB-881D-DA69DED7FF37-web.png">。</li><li purpose="li" id="LI_BD3AE304F77C4B10A46B6C4AF763E245">在下拉菜单中，选择您想要浏览的建筑场景图层。<p id="GUID-8AA8E4B7-C050-44FA-A6A1-28395167F1CB">建筑场景图层随即展开，您可以查看<span class="uicontrol">领域和类别</span>标题下的所有图层。</p></li><li purpose="li" id="LI_B363EB71DAAA49F2B242DA0674DFF33C">单击一个建筑场景图层元素，如门或墙面，则会显示此要素的弹出窗口。</li><li purpose="li" id="LI_A7C92EB7806B425E989A9FDBD3060BDB">单击图层和子图层的复选框，以选择在场景中显示或隐藏要素。</li><li purpose="li" id="LI_317119730AAD47AFB83B989F81F8E602">要浏览其他建筑场景图层，请从下拉菜单中选择一个新图层，或单击场景中的其他建筑场景图层。<ul purpose="ul" id="UL_E81EA55D16AB42F7AABDE1FCD2360CC3"><li purpose="li" id="LI_F9ACDB6BDD69455FBBABB58EE9A43A87">每个建筑物场景图层的图层可见性设置状态都会保留在<span class="uicontrol">建筑浏览器</span>工具 <img purpose="img" placement="inline" alt="建筑浏览器工具" title="建筑浏览器工具" src="GUID-05C5DEA4-052F-4FAB-881D-DA69DED7FF37-web.png">中。</li><li purpose="li" id="LI_988BCF132E784A08971633102F54427C"> 当选择另一个建筑场景图层时，场景会缩放至该建筑场景图层并在工具中展开此图层以供浏览。</li></ul></li><li purpose="li" id="LI_9EFD1365C51C444E9EBE3410C04C8B72">单击<span class="uicontrol">无</span>以在工具中折叠图层，从而仅在场景中显示概览图层。<ul purpose="ul" id="UL_C19FDD0D6419463CB110FB44415BB44B"><li purpose="li" id="LI_23BC1E1A9A9D4D379002C36DBFAC4331">图层可见性设置状态会保留在<span class="uicontrol">建筑浏览器</span>工具 <img purpose="img" placement="inline" alt="建筑浏览器工具" title="建筑浏览器工具" src="GUID-05C5DEA4-052F-4FAB-881D-DA69DED7FF37-web.png">中。</li><li purpose="li" id="LI_12C065FB63CB4F4AA2D908DF2A56AE10">当建筑场景图层不包含概览图层时，图层会在工具中折叠，建筑场景图层会在场景中保持原样。</li></ul><p id="GUID-2F4B08C6-2AC0-4C57-B8D5-55772083938A">您可以在<span class="uicontrol">建筑浏览器</span>工具 <img purpose="img" placement="inline" alt="建筑浏览器工具" title="建筑浏览器工具" src="GUID-05C5DEA4-052F-4FAB-881D-DA69DED7FF37-web.png">中一次仅浏览一个建筑场景图层。</p></li></ol><p id="GUID-41753AF5-FCFD-4B6E-9FB0-8109332D1C73">或者，也可以在场景中单击不同的建筑场景图层，使用<span class="uicontrol">建筑浏览器</span>工具 <img purpose="img" placement="inline" alt="建筑浏览器工具" title="建筑浏览器工具" src="GUID-05C5DEA4-052F-4FAB-881D-DA69DED7FF37-web.png">对其进行浏览。<ul purpose="ul" id="UL_89822155328D4874BBBD00628A944772"><li purpose="li" id="LI_AADCFD0229734272B595C1B9D5FE60EE">当建筑场景图层包含概览图层时，<span class="uicontrol">建筑浏览器</span>工具 <img purpose="img" placement="inline" alt="建筑浏览器工具" title="建筑浏览器工具" src="GUID-05C5DEA4-052F-4FAB-881D-DA69DED7FF37-web.png">则会打开。</li><li purpose="li" id="LI_2E5C71DE429641A5B3036A41E70E81EF">当不存在概览图层时，会弹出关于突出显示元素的信息，且<span class="uicontrol">建筑浏览器</span>工具 <img purpose="img" placement="inline" alt="建筑浏览器工具" title="建筑浏览器工具" src="GUID-05C5DEA4-052F-4FAB-881D-DA69DED7FF37-web.png"> 不会打开。</li></ul>  </p></section><section class="section2 padded-anchor" id="ESRI_SECTION2_5FF5D5C30A6D4E41AAD4EF625094B2F6" purpose="section2"><h3>隔离楼层显示</h3><p id="GUID-71125D24-4602-4D1B-9DA1-1D0B960364E5">单击<span class="uicontrol">建筑浏览器</span>工具 <img purpose="img" placement="inline" alt="建筑浏览器工具" title="建筑浏览器工具" src="GUID-05C5DEA4-052F-4FAB-881D-DA69DED7FF37-web.png">中的楼层选择器<img purpose="img" placement="inline" alt="楼层选择器" title="楼层选择器" src="GUID-7A4F0FB1-8A52-4AB1-BEBB-5772C9925328-web.png">时，可以隔离场景中建筑物场景图层的每个楼层。</p></section><section class="section2 padded-anchor" id="ESRI_SECTION2_090D8D4196AA478693B5CCF44FD82BE3" purpose="section2"><h3>应用过滤器</h3><p id="GUID-78BA9E03-E5E8-4062-B30C-3B456A881EBC">当存在预定义过滤器时，<span class="uicontrol">建筑浏览器</span>工具 <img purpose="img" placement="inline" alt="建筑浏览器工具" title="建筑浏览器工具" src="GUID-05C5DEA4-052F-4FAB-881D-DA69DED7FF37-web.png">将显示过滤器按钮<img purpose="img" placement="inline" alt="过滤器按钮" title="过滤器按钮" src="GUID-88C5B93C-EB63-4B87-A59D-69DB5AFDE094-web.png">，以指示先前已在场景中配置了预定义过滤器（例如从 <a target="_blank" class="xref xref" href="https://links.esri.com/scene-layers/filter-building-scene-layer"><span class="ph">ArcGIS Pro</span> 2.4 或更高版本</a>）。</p><p id="GUID-2B636133-E4BD-4A64-9B73-575CB50869BD">要过滤建筑场景图层，请执行以下操作：</p><ol class="list-numbered" purpose="ol" id="OL_857C8A2CE19D44E1ACE8EC4172A8F346"><li purpose="li" id="LI_15D4BD4F4FF043B1909B06E11B56E6E1">单击过滤器按钮 <img purpose="img" placement="inline" alt="过滤器按钮" title="过滤器按钮" src="GUID-88C5B93C-EB63-4B87-A59D-69DB5AFDE094-web.png">。</li><li purpose="li" id="LI_5846F60AFCA043568F73B2791066983A">选择想要的预定义过滤器。<ul purpose="ul" id="UL_E4FB477EA7EC4D79965572ECC009D42C"><li purpose="li" id="LI_4C71776545DF4C00A8072C116C125498">场景将显示预定义过滤器中配置的组件。</li><li purpose="li" id="LI_B57275BEA9AB484BBBA0E493D7C450C6"><span class="uicontrol">领域和类别</span>标题下的图层设置将消失。</li></ul></li><li purpose="li" id="LI_BFA1ADF3EEEC4768A5950D737D44EF0C">再次单击过滤器按钮 <img purpose="img" placement="inline" alt="过滤器按钮" title="过滤器按钮" src="GUID-88C5B93C-EB63-4B87-A59D-69DB5AFDE094-web.png">并选择<span class="uicontrol">无预定义过滤器</span>，以移除过滤器并显示<span class="uicontrol">领域和类别</span>图层设置。</li></ol><div class="panel trailer-1" id="GUID-68E52555-A01C-47F0-B6E4-91426DEBFBA3"><h5 class="icon-ui-notice-triangle trailer-0">警告：</h5><p id="GUID-ED8A4E67-76CA-4B3E-941D-BBB8D423A664"><span class="uicontrol">领域和类别</span>下的<span class="uicontrol">建筑浏览器</span>工具 <img purpose="img" placement="inline" alt="建筑浏览器工具" title="建筑浏览器工具" src="GUID-05C5DEA4-052F-4FAB-881D-DA69DED7FF37-web.png">图层设置将覆盖预定义过滤器。要确保预定义过滤器的显示，请验证是否已在<span class="uicontrol">领域和类别</span>下选中相应图层。</p></div></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_B2855C049D65451FAED00F03E5F07E36" purpose="section1"><h2>剖切场景内容</h2><p id="GUID-41A5BBBB-BDF6-4DCD-869D-DA9C678E0EE4">可以使用<span class="uicontrol">剖切</span>工具 <img purpose="img" placement="inline" alt="剖切工具" title="剖切工具" src="GUID-88A168DD-DDA2-45AF-9FE3-07F4C54E4F28-web.png">在场景中显示遮挡内容。<span class="uicontrol">剖切</span>工具 <img purpose="img" placement="inline" alt="剖切工具" title="剖切工具" src="GUID-88A168DD-DDA2-45AF-9FE3-07F4C54E4F28-web.png">会隐藏任何与剖切相交的图层或地形。例如，可以剖切建筑以显示其内部图层，如内部墙面和家具等。</p><section class="section2 padded-anchor" id="ESRI_SECTION2_AA6FF0339FD644ABBCBF6A23BB7FE711" purpose="section2"><h3>创建剖切</h3><p id="GUID-AF01F87C-1BB3-422B-A3FE-B5C76A55A18F">要创建剖切，请执行以下步骤：</p><ol class="list-numbered" purpose="ol" id="OL_34213A5B5CD34895B5C1E02D8EDB100D"><li purpose="li" id="LI_8197536A2D0145DB99E883EAE5984385">单击<span class="uicontrol">分析</span> <img purpose="img" placement="inline" alt="分析" title="分析" src="GUID-9E106C4A-6596-418C-9191-0319D557097F-web.png">以访问<span class="uicontrol">剖切</span>工具 <img purpose="img" placement="inline" alt="剖切工具" title="剖切工具" src="GUID-88A168DD-DDA2-45AF-9FE3-07F4C54E4F28-web.png">。</li><li purpose="li" id="LI_980B2D59B5F849508DA600B952F0F556">单击<span class="uicontrol">剖切</span>工具 <img purpose="img" placement="inline" alt="剖切工具" title="剖切工具" src="GUID-88A168DD-DDA2-45AF-9FE3-07F4C54E4F28-web.png">。</li><li purpose="li" id="LI_A385689D44BF4BC6898E02B69BF6421D">单击<span class="uicontrol">新建剖切</span>。<ul purpose="ul" id="UL_21B6BFBDC1EF47B3B3CF69BD88746DE2"><li purpose="li" id="LI_875E3FF3272B450AA4F033D2C8500747">工具会指示您剖切位置。</li><li purpose="li" id="LI_E42EE1D48FDD42EFB47CC0D56E4101BE">单击时按住 <span class="shortcut">Ctrl/Cmd</span> 或 <span class="shortcut">Shift</span>，分别剖切水平或垂直平面。</li></ul></li><li purpose="li" id="LI_A0F4DA69F16243E2B6B57EF60C537C69">单击一个表面或对象进行剖切。<p id="GUID-78777662-88BF-4E0D-94BD-E271F162FACC">剖切会隐藏表面前方的任何内容。</p></li><li purpose="li" id="LI_5D5D482F3F044E80BDA37E9504B915BC">拖动剖切平面的控点对其进行移动、调整大小或旋转剖切。</li><li purpose="li" id="LI_9B11B0D335E64A3C8B93FE5E9A317950">再次单击<span class="uicontrol">新建剖切</span>将开始一个新的剖切。</li><li purpose="li" id="LI_89BC596FA8F94794A754CD666692D473">关闭<span class="uicontrol">分析</span> <img purpose="img" placement="inline" alt="分析" title="分析" src="GUID-9E106C4A-6596-418C-9191-0319D557097F-web.png"> 隐藏剖切。</li><li purpose="li" id="LI_EBD82D8B546D4847B6AD3BF1AAFCF2CB">再次单击<span class="uicontrol">剖切</span>工具 <img purpose="img" placement="inline" alt="剖切工具" title="剖切工具" src="GUID-88A168DD-DDA2-45AF-9FE3-07F4C54E4F28-web.png">以在场景中显示剖切。</li></ol></section><section class="section2 padded-anchor" id="ESRI_SECTION2_036ACF3665EA4BA698FE8DDD26E66E79" purpose="section2"><h3>排除图层</h3><p id="GUID-DDD9B350-21D0-4E4B-8D1F-ACD5AC5C8F1D">创建剖切后，可从剖切中排除图层。例如，可在剖切时选择建筑中的 HVAC 和窗户图层以保持可见。</p><ol class="list-numbered" purpose="ol" id="OL_FDE0846353964FEC8BD6D0C91E58326C"><li purpose="li" id="LI_0B3B942CFA2148008676B3F24FC4E326">单击<span class="uicontrol">从剖切中排除图层</span>。</li><li purpose="li" id="LI_A77F98C5B3134FDFBC68272B509BDCE7">在场景中单击想要从剖切中排除的图层。<p id="GUID-C44D84B7-9F43-4189-AD4A-86B90F06F4EA">该图层随即添加到<span class="uicontrol">已排除的图层</span>列表中。</p></li><li purpose="li" id="LI_C8356E1212024FFEBF90BAA40D339E39">单击<span class="uicontrol">取消</span>返回到初始视图。</li><li purpose="li" id="LI_AF6C16E92333421F9F75B7070503D9D7">再次单击<span class="uicontrol">从剖切中排除图层</span>使另外一个图层可见。</li><li purpose="li" id="LI_58682670FD294AEB9C4C68DFAF639BD2">单击图层名称旁边的<span class="uicontrol">移除</span>按钮 <img purpose="img" placement="inline" alt="移除" title="移除" src="GUID-7DE5DBD5-9A08-459D-8039-118E9DFDAAB3-web.png">将其从<span class="uicontrol">已排除的图层</span>列表中移除。</li></ol></section><section class="section2 padded-anchor" id="ESRI_SECTION2_627A1F32636D4AEDBE8142A3B2F0EFEF" purpose="section2"><h3>与剖切进行交互</h3><p id="GUID-EFA761E8-C2DB-41DB-A6EF-41FD55B5EFD8">创建剖切后，您可以使用工具进一步浏览和检查场景，如<span class="uicontrol">弹出窗口</span>和<span class="uicontrol">测量</span>工具。<span class="ph">Scene Viewer</span>   例如，您可以测量之前隐藏的建筑内部 HVAC 风道长度。</p></section></section> <section class="section1 padded-anchor" id="ESRI_SECTION1_91D3B6D58D4648789056FBC8988D5E27" purpose="section1"><h2>测量场景</h2><p id="GUID-A3BE3B07-004B-48B4-840C-5438990157D3"> 使用<span class="uicontrol">测量</span>工具可以测量两点之间的距离并计算场景中的面积。当单击<span class="uicontrol">测量距离</span>工具 <img purpose="img" placement="inline" alt="测量距离" title="测量距离" src="GUID-A73C4491-F614-485B-B71C-22FFDD480574-web.png">或<span class="uicontrol">测量面积</span>工具 <img purpose="img" placement="inline" alt="测量面积" title="测量面积" src="GUID-48FA1660-EDA5-4178-B8C2-5D5CB63841AD-web.png">时，水平激光线会投影到场景中的地形和其他对象上。这可以在您测量时直观地显示指针的垂直高度。这有助于查看对象相对于其他对象和地形的高度。例如，您可以将鼠标悬停在较小的建筑物上，并查看相对于地形另一部分突出显示的确切高度。</p><section class="section2 padded-anchor" id="ESRI_SECTION2_50568E52F85144C8AFAFCBDF6997D928" purpose="section2"><h3> 距离</h3><p id="GUID-5FAAEEB0-BCD4-4F55-9CF2-2D8284046416">使用 <span class="uicontrol">测量距离</span> <img purpose="img" placement="inline" alt="测量距离" title="测量距离" src="GUID-A73C4491-F614-485B-B71C-22FFDD480574-web.png">以计算场景中两点之间的距离。<span class="uicontrol">测量距离</span>工具 <img purpose="img" placement="inline" alt="测量距离" title="测量距离" src="GUID-A73C4491-F614-485B-B71C-22FFDD480574-web.png">会在场景中标记直线、水平和垂直距离线，并在面板中显示值。</p><ul purpose="ul" id="UL_5096E41FED544E5BA7ECA0310CA13895"><li purpose="li" id="LI_0D255499C9B34E1C98E07540ACD67A86"><span class="uicontrol">直线</span> - 两点之间的最短距离。</li><li purpose="li" id="LI_0F239370F226417497654F5AE4F20824"><span class="uicontrol">水平</span> - 两点之间的水平距离。</li><li purpose="li" id="LI_2619283F4DB345119F6540EA862F15DE"><span class="uicontrol">垂直</span> - 两点之间的垂直距离。</li></ul><p id="GUID-E88C64E5-3501-4C68-9872-9B6D4AAE5E43">当您进行测量时，第二条激光线可指示沿方格线的垂直平面在各个方向上与地形相交的位置，例如建筑物、桥梁和地面。</p><p id="GUID-02F9A872-DC15-4175-8A43-E142DC6769A9">要测量距离，请执行下列操作： </p><ol class="list-numbered" purpose="ol" id="OL_359F8D33C4A148C98C918A01528A3709"><li purpose="li" id="LI_47BA8311703B46ED9BDA5EC3952CE349">单击<span class="uicontrol">分析</span> <img purpose="img" placement="inline" alt="分析" title="分析" src="GUID-9E106C4A-6596-418C-9191-0319D557097F-web.png">以打开<span class="uicontrol">测量</span>工具</li><li purpose="li" id="LI_9E736F7FC18F406A8C71B3E1DD40A2B6">单击 <span class="uicontrol">测量距离</span><img purpose="img" placement="inline" alt="测量距离" title="测量距离" src="GUID-A73C4491-F614-485B-B71C-22FFDD480574-web.png">。</li><li purpose="li" id="LI_1BFF54E9EF6746A8B8A6A3EAC8E6649E">单击场景开始测量。</li><li purpose="li" id="LI_32D5CA3158344FA8B09B618AF0561575">单击以设置端点。</li><li purpose="li" id="LI_7591556619B4448CA66B619EE4D3474C">单击<span class="uicontrol">新测量</span>以开始新的测量。</li></ol><p id="GUID-80D4619C-EA7A-4259-B6BB-3B26E04509BC">当点之间的距离大于 100 公里时，  会显示圆形激光线，表明 <span class="ph">Scene Viewer</span>  已切换到测地线模式。在测地线模式下，<span class="ph">Scene Viewer</span> 只计算 水平 和 垂直 距离，并将地球曲率（即基于椭圆体的测地线距离）考虑在内。<span class="uicontrol">直线</span> 距离选项不可用。</p></section><section class="section2 padded-anchor" id="ESRI_SECTION2_EFB1C1CBEB6B4529925CCDAC0BF28BF7" purpose="section2"><h3>面积</h3><p id="GUID-FE88DC17-81F7-400E-938B-0DDFF043625F">使用 <span class="uicontrol">测量面积</span> <img purpose="img" placement="inline" alt="测量面积" title="测量面积" src="GUID-48FA1660-EDA5-4178-B8C2-5D5CB63841AD-web.png">来计算您绘制的面的面积。在测量时，<span class="uicontrol">测量面积</span>工具 <img purpose="img" placement="inline" alt="测量面积" title="测量面积" src="GUID-48FA1660-EDA5-4178-B8C2-5D5CB63841AD-web.png">会标记场景中当前线段的长度和路径的总长度。一旦您关闭了路径，就会为该面积和周长创建一个带有标记值的面。这些值也会显示在面板中。</p><ul purpose="ul" id="UL_F32DF08803B846D48489FE643A0A5CDA"><li purpose="li" id="LI_1AE85318DD6043CF83337CE19F5E4C6F"><span class="uicontrol">面积</span> - 面的面积</li><li purpose="li" id="LI_F0D1D4E050C74F96BA46C5B4A0D24510"><span class="uicontrol">周长</span> - 面的周长</li></ul><p id="GUID-9F425B02-C7B8-449C-9FAE-160633B03C01">要测量面积，请执行以下操作：</p><ol class="list-numbered" purpose="ol" id="OL_3DEA548206BA48F68C2A80F3C4D9B923"><li purpose="li" id="LI_8FF9BCFFF20B485CAA1AC32B5BF0066D">单击<span class="uicontrol">测量面积</span> <img purpose="img" placement="inline" alt="测量面积" title="测量面积" src="GUID-48FA1660-EDA5-4178-B8C2-5D5CB63841AD-web.png">。</li><li purpose="li" id="LI_689FDF24214F4076AFCA910B989986C6">单击场景开始向面添加点。</li><li purpose="li" id="LI_71583749FD5E4E38A6364431C416012B">双击关闭路径并计算面的面积。您也可以再次单击起点以关闭路径。</li><li purpose="li" id="LI_2AE8F3AC1FC64AA5BE432031CB89F586">单击<span class="uicontrol">新测量</span>以开始新的测量。</li></ol><p id="GUID-5CFEA137-3670-4FFE-A066-BD137E8570DC">当面的周长大于 100 公里时， <span class="ph">Scene Viewer</span> 会切换到测地线模式。在测地线模式下，<span class="ph">Scene Viewer</span> 会将地球的曲率（即基于椭圆体的测地线值）考虑在内来计算这些值。</p></section><section class="section2 padded-anchor" id="ESRI_SECTION2_DE4EBB04ACED4B3BAC5C25083B822579" purpose="section2"><h3>测量后</h3><p id="GUID-A67701B7-26AE-4D33-A4B1-01A1E2E43F7C">要调整<span class="uicontrol">测量距离</span><img purpose="img" placement="inline" alt="测量距离" title="测量距离" src="GUID-A73C4491-F614-485B-B71C-22FFDD480574-web.png">或者<span class="uicontrol">测量面积</span> <img purpose="img" placement="inline" alt="测量面积" title="测量面积" src="GUID-48FA1660-EDA5-4178-B8C2-5D5CB63841AD-web.png">测量，可将光标悬停在任何点上并进行拖动。当您拖动点时，<span class="ph">Scene Viewer</span> 会在场景和面板中显示调整后的值。可以在 <span class="uicontrol">单位</span>下更改测量的单位。</p><div class="panel trailer-1 note" id="GUID-43D450E0-44A0-41BA-8705-6D17C3EF63BD"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-2435DAE1-FE7A-4C49-9F8B-AD466A5E5685">在局部场景中，测量将显示为欧氏值，并且可能不准确，具体取决于场景的投影坐标系。Web 墨卡托场景可以显示精确的测地线值。</p></div></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_92733D1AE8E54D029C563F4D7D604635" purpose="section1"><h2>使用搜索</h2><p id="GUID-324D7AB8-EEA2-4A03-84FD-2428F53482F0"> 使用<a class="xref xref" href="../../../../zh-CN/portal/latest/use/configure-feature-search-scene.htm">搜索</a>查找位置，例如地址或地点。单击<span class="uicontrol">搜索</span> <img purpose="img" placement="inline" alt="搜索" title="搜索" src="GUID-4F71F43C-0E5D-4ADA-B873-AFAAA3F7DACC-web.png">，并在搜索框中输入关键词。<span class="uicontrol">搜索</span> <img purpose="img" placement="inline" alt="搜索" title="搜索" src="GUID-4F71F43C-0E5D-4ADA-B873-AFAAA3F7DACC-web.png">会返回匹配的结果。您可以单击列表中的一条结果或按 <span class="shortcut">Enter</span> 键导航至该位置。您还可以<a class="xref xref" href="../../../../zh-CN/portal/latest/use/configure-feature-search-scene.htm#ESRI_SECTION1_B2DEBA97A7F846FCB9735336F67DF81E">配置搜索</a>以查找图层中的特定要素，例如感兴趣点或建筑物名称。</p></section><section class="section1 padded-anchor" id="ESRI_SECTION1_9B852778E0494A82B1BAA7A14E0EB5CA" purpose="section1"><h2> 查看图层</h2><p id="GUID-42C84FAC-B1C5-4FE9-8762-E0E9301F14D4"> 使用<span class="uicontrol">图层</span>来管理在场景中显示<span class="uicontrol">内容</span>中的哪些图层。单击该复选框可在场景中打开和关闭图层。您具有以下几种选项：</p><ul purpose="ul" id="UL_92B1846785ED49D28B82B92080989AFC"><li purpose="li" id="LI_A2D4CA3D44E34C398793916BC9B213CA">单击<span class="uicontrol">图层</span> <img purpose="img" placement="inline" alt="图层" title="图层" src="GUID-8A739257-C3E9-4D68-8F69-A0D369F7EA36-web.png">以打开<span class="uicontrol">图层</span>并查看场景中的图层。</li><li purpose="li" id="LI_9727B966A3BF40D09D73D53E2DBD1AC7">单击<span class="uicontrol">缩放至</span>按钮 <img purpose="img" placement="inline" alt="缩放至" title="缩放至" src="GUID-C6E0F6D0-8083-4A7B-90EA-3D2C76AC822A-web.png">将您的场景缩放至图层的范围。</li><li purpose="li" id="LI_5238942511C84DB4BAAB2BEC8AB1A84F">单击<span class="uicontrol">图例</span>查看图层的符号系统。</li><li purpose="li" id="LI_2EA3299072CE432FAA2306437448D289">单击<span class="uicontrol">图层</span> <img purpose="img" placement="inline" alt="图层" title="图层" src="GUID-8A739257-C3E9-4D68-8F69-A0D369F7EA36-web.png">或其他工具将其关闭。</li></ul></section><section class="section1 padded-anchor" id="ESRI_SECTION1_65CFD91739FF4DAEBF97492FC9112F30" purpose="section1"><h2>选择底图</h2><p id="GUID-192397A5-9EAE-40FD-B9D8-BCBE32F3DA6F">单击<span class="uicontrol">底图</span> <img purpose="img" placement="inline" alt="底图" title="底图" src="GUID-A5FF53E9-5000-4C85-B745-570A5505CD9B-web.png">在场景中<a class="xref xref" href="../../../../zh-CN/portal/latest/use/choose-scene-basemap.htm">切换底图</a>并设置地面透明度。</p></section><section class="section1 padded-anchor" id="ESRI_SECTION1_24820A5B9A644DE990988DFD3C833F84" purpose="section1"><h2>调整日光</h2><p id="GUID-63B04F44-D2C7-4643-8EF7-1DD49D8FF36D">打开<span class="uicontrol">日光</span> <img purpose="img" placement="inline" alt="环境" title="环境" src="GUID-6E95C369-DABF-467D-9137-2A2B406EEF4A-web.png">以更改光照和阴影在一天和一年中的不同时间对场景的影响。</p><section class="section2 padded-anchor" id="ESRI_SECTION2_CBEDF04E2520483796BCFAA21AA29E31" purpose="section2"><h3>光照滑块</h3><p id="GUID-D92C7BDA-04B0-49C4-94D0-AC240E7874A6">左右拖动<span class="uicontrol">光照滑块</span> <img purpose="img" placement="inline" alt="光照滑块" title="光照滑块" src="GUID-307DCF93-C922-4A28-AF14-43E8D6EEC4D0-web.png">以调整一天中的不同时间场景内的光照和阴影。也可以通过手动输入时间或单击滑块上的特定时间来调整一天中的时间。要更改时区，请单击时间框右侧的当前时区并在时区的下拉列表中进行选择。</p><p id="GUID-7D650CDB-AB9B-4668-8CE4-43B125AC45B7">单击<span class="uicontrol">播放</span> <img purpose="img" placement="inline" alt="播放" title="播放" src="GUID-84CF3D8C-79B4-4446-B33D-6A0D995CCF6F-web.png"> 以动画形式呈现一天之内场景中的光照循环。</p></section><section class="section2 padded-anchor" id="ESRI_SECTION2_2AA0D0A21FF44B6BBF76B14F672323EF" purpose="section2"><h3>日历</h3><p id="GUID-D8B87121-5A98-4391-994D-643760B15581"> 单击<span class="uicontrol">日历</span> <img purpose="img" placement="inline" alt="日历" title="日历" src="GUID-E225612D-29C1-4A52-93D7-F6D5280B927C-web.png">以更改一年中不同时间的太阳位置。</p><p id="GUID-46E8CA17-E4AF-4DC9-8073-F0286A41A601">单击<span class="uicontrol">播放</span> <img purpose="img" placement="inline" alt="播放" title="播放" src="GUID-84CF3D8C-79B4-4446-B33D-6A0D995CCF6F-web.png"> 以动画形式呈现一年中各个月份场景中的光照循环。</p></section><section class="section2 padded-anchor" id="ESRI_SECTION2_F2CA9A2DF6024DA0B0988260CBB10A87" purpose="section2"><h3>阴影</h3><p id="GUID-40A6D4B9-5470-418A-85A2-CE3C0CD3DE1D"> 选中<span class="uicontrol">显示阴影</span>以表现场景中的阴影。您可以更改阴影效果，方法是调节<span class="uicontrol">光照滑块</span> <img purpose="img" placement="inline" alt="光照滑块" title="光照滑块" src="GUID-307DCF93-C922-4A28-AF14-43E8D6EEC4D0-web.png">、时区和<span class="uicontrol">日历</span> <img purpose="img" placement="inline" alt="日历" title="日历" src="GUID-E225612D-29C1-4A52-93D7-F6D5280B927C-web.png"> 选项。</p></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_1D871AE2C0654F8FAADB63BFB6142E7F" purpose="section1"><h2>共享场景</h2><p id="GUID-03A8200C-226E-4CDC-98C7-616CEDCD058F">单击<span class="uicontrol">共享</span> <img purpose="img" placement="inline" alt="共享" title="共享" src="GUID-2EC67453-B401-443B-ADBE-9446802A9908-web.png"> 通过电子邮件或社交网络<a class="xref xref" href="../../../../zh-CN/portal/latest/use/share-scenes.htm">共享场景</a>，将其嵌入网站，或从场景中创建一个 web 应用程序。</p></section><section class="section1 padded-anchor" id="ESRI_SECTION1_D0346EF49EA7436899EB351BCF1F375B" purpose="section1"><h2>更改设置</h2><p id="GUID-230D7E6B-A515-42FC-975D-C72FC56EA945"><span class="uicontrol">设置</span> <img purpose="img" placement="inline" alt="设置" title="设置" src="GUID-096DC215-8854-4D8D-8F81-7B68D5B177D3-web.png"> 包含了可用于调节浏览器的性能质量和鼠标导航设置的工具。</p><section class="section2 padded-anchor" id="ESRI_SECTION2_BF14FE913A16432EB98E1E08EFC2C9F6" purpose="section2"><h3>性能和质量</h3><p id="GUID-BF3F64AA-23BF-4D0F-B783-97CAED18943D">可以从以下设置中进行选择以优化 3D 图形渲染：</p><p id="GUID-E81A062C-561F-49D0-8DEB-DF3E22D7E42A"><ul purpose="ul" id="UL_34244C5482354A4191852D573D2ADED6"><li purpose="li" id="LI_EA31038C830047DDAE8189F99EE23F52"><span class="uicontrol">质量</span> - 高质量显示，例如：真实大气</li><li purpose="li" id="LI_0162F337D6A0499AB585006254425A23"><span class="uicontrol">平衡</span> - 性能和质量的平等优化</li><li purpose="li" id="LI_2E7691C828C44E0ABBA02484D748E0A9"><span class="uicontrol">性能</span> - 通过减少数据加载提高稳定性和速度</li></ul></p></section><section class="section2 padded-anchor" id="ESRI_SECTION2_259E1C1F8C37416EAA496DFADD8A4CE8" purpose="section2"><h3>3D 导航</h3><p id="GUID-1AC4E788-E827-4625-A9AC-AEDC8FA62952"> 选择更适合您的 <span class="uicontrol">3D 导航</span>选项：默认 <span class="ph">Scene Viewer</span> 导航或 <a target="_blank" class="xref xref" href="http://pro.arcgis.com/en/pro-app/help/mapping/navigation/overview-of-3d-navigation.htm"><span class="ph">ArcGIS Pro</span></a> 鼠标导航。</p></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_B2577AA98B5C409BA0D3F8B41C693216" purpose="section1"><h2>全屏显示场景</h2><p id="GUID-83B0162E-A13B-4D21-953B-E930DC709191">单击右下方的<span class="uicontrol">全屏</span> <img purpose="img" placement="inline" alt="全屏" title="全屏" src="GUID-577CD7D8-76FD-4909-AFE8-B68B6381F6B4-web.png"> 以切换至全屏模式。单击<span class="uicontrol">退出全屏 (Esc)</span> 或按键盘上的 <span class="shortcut">Esc</span> 退出全屏。</p></section>
+			
+				<hr>
+				<!--googleoff: all-->
+				
+	
+        
+		    <p class="feedback right">
+		        <a id="afb" class="icon-ui-contact" href="/feedback/" data-langlabel="feedback-on-this-topic" >有关此主题的反馈?</a>
+		    </p>
+        
+	
+
+				<!--googleon: all-->
+			
+		</main>
+	</div>
+	
+	<!--googleoff: all-->
+	
+		
+			<div id="main-toc-large" class="column-5">
+			    <div class="panel font-size--2 tablet-hide trailer-1">
+			      <h5 class="trailer-half">在本主题中</h5>
+			      <ol class="list-plain pre-0 trailer-0"><li><a href="#ESRI_SECTION1_BA0DB88221B44486AF448D2229F816BD"> 导航场景</a></li><li><a href="#ESRI_SECTION1_6BA42ECDB1F242FE87618B467D7C3967">浏览建筑场景图层</a></li><li><a href="#ESRI_SECTION1_B2855C049D65451FAED00F03E5F07E36">剖切场景内容</a></li><li><a href="#ESRI_SECTION1_91D3B6D58D4648789056FBC8988D5E27">测量场景</a></li><li><a href="#ESRI_SECTION1_92733D1AE8E54D029C563F4D7D604635">使用搜索</a></li><li><a href="#ESRI_SECTION1_9B852778E0494A82B1BAA7A14E0EB5CA"> 查看图层</a></li><li><a href="#ESRI_SECTION1_65CFD91739FF4DAEBF97492FC9112F30">选择底图</a></li><li><a href="#ESRI_SECTION1_24820A5B9A644DE990988DFD3C833F84">调整日光</a></li><li><a href="#ESRI_SECTION1_1D871AE2C0654F8FAADB63BFB6142E7F">共享场景</a></li><li><a href="#ESRI_SECTION1_D0346EF49EA7436899EB351BCF1F375B">更改设置</a></li><li><a href="#ESRI_SECTION1_B2577AA98B5C409BA0D3F8B41C693216">全屏显示场景</a></li></ol>
+			    </div>
+			    
+			    
+	  		</div>
+		
+    
+   <!--googleon: all-->
+
+
+
+
+          
+        </div>
+        <!-- ENDPAGECONTENT -->
+
+      </div>
+
+    </div>  <!-- End of wrapper -->
+
+  <footer class="footer leader-3 link-dark-gray" role="contentinfo">
+    <div class="grid-container">
+      <div class="row">
+        <nav class="column-6">
+          <h6 data-langlabel="arcgis-for-server">Arc<span>GIS Enterprise</span></h6>
+          <ul class="list-plain">
+            <li><a data-langlabel="home" href="../../../../zh-CN/">主页</a></li>
+            <li><a data-langlabel="portal" href="../../../../zh-CN/portal/">Portal</a></li>
+            <li><a data-langlabel="server" href="../../../../zh-CN/server/">Server</a></li>
+            <li><a data-langlabel="data-store" href="../../../../zh-CN/data-store/">Data Stores</a></li>
+            <li><a data-langlabel="cloud" href="../../../../zh-CN/cloud/">云</a></li>
+            <li><a data-langlabel="apps" href="../../../../zh-CN/apps/">应用程序</a></li>
+            <li><a data-langlabel="documentation" href="../../../../zh-CN/documentation/">文档</a></li>
+          </ul>
+        </nav>
+
+        
+  <nav class="column-6">
+    <h6 data-langlabel="arcgis-platform">ArcGIS 平台</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="arcgis" href="//www.arcgis.com/">ArcGIS Online</a></li>
+      <li><a data-langlabel="arcgis-for-professionals" href="//pro.arcgis.com/">ArcGIS Pro</a></li>
+      <li><a data-langlabel="arcgis-for-server" href="//enterprise.arcgis.com/">ArcGIS Enterprise</a></li>
+      <li><a data-langlabel="arcgis-for-developers" href="https://developers.arcgis.com/">ArcGIS for Developers</a></li>
+      <li><a data-langlabel="arcgis-solutions" href="//solutions.arcgis.com/">ArcGIS Solutions</a></li>
+      <li><a data-langlabel="arcgis-marketplace" href="//marketplace.arcgis.com/">ArcGIS Marketplace</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <h6 data-langlabel="about-esri">关于 Esri</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="about-us" href="//www.esri.com/about-esri/">关于我们</a></li>
+      <li><a data-langlabel="careers" href="//www.esri.com/careers/">招贤纳士</a></li>
+      <li><a data-langlabel="insiders-blog" href="https://www.esri.com/about/newsroom/blog/">Esri 博客</a></li>
+      <li><a data-langlabel="user-conference" href="//www.esri.com/events/user-conference/index.html">用户大会</a></li>
+      <li><a data-langlabel="developer-summit" href="//www.esri.com/events/devsummit/index.html">开发者峰会</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <a class="esri-logo" href="//www.esri.com/" aria-label="Esri Home"></a>
+    <section class="footer-social-nav leader-1">
+            <a class="icon-social-twitter" aria-label="Esri on Twitter" href="https://twitter.com/Esri/"></a>
+            <a class="icon-social-facebook" aria-label="Esri on Facebook" href="https://www.facebook.com/esrigis/"></a>
+            <a class="icon-social-github" aria-label="Esri on GitHub" href="//esri.github.io/"></a>
+            <a class="icon-social-contact" aria-label="Contact Esri" href="//www.esri.com/about-esri/contact/"></a>
+    </section>
+	  
+  </nav>
+  
+  <div class="column-24 leader-1">
+    <p class="font-size--3"><a href="http://www.esri.com/legal/copyright-trademarks">Copyright &copy; 2019 Esri.</a> All rights reserved. | <a href="http://www.esri.com/legal/privacy/">隐私政策</a> | <a href="http://www.esri.com/legal/software-license">法律声明</a></p>
+  </div>
+  
+
+
+      </div>
+    </div>
+  </footer>
+  <!--googleoff: all-->
+
+  
+  
+	<script src="../../../../zh-CN/assets/js/init.js" type="text/javascript"></script>
+	<!--<script src="../../../../zh-CN/assets/js/drop-down.js" type="text/javascript"></script>-->
+	<script src="../../../../zh-CN/assets/js/search/searchform.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/cdn/js/link-modifier.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/cdn/js/sitewide.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/cdn/js/libs/highlight.pack.js" type="text/javascript"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+
+
+  
+    
+
+  <script src="../../../../zh-CN/cdn/js/affix.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    $(function () {
+          var appendFlg = true;
+
+          $("#bigmac")
+          .on("affixed.bs.affix", function (evt) {
+            if (appendFlg) {
+              $("<a class='crumb' href='#'>在 Scene Viewer 中查看场景</a>").insertAfter ($("#bigmac nav a").last());
+              appendFlg = false;
+            }
+          })
+          .on ("affix-top.bs.affix", function(evt) {
+            if (!appendFlg) {
+              $("#bigmac nav a").last().remove();
+            }
+            appendFlg = true;
+          })
+    })
+  </script>
+  
+        <script type="text/javascript">
+          window.doctoc = {
+            pubID: "583",
+            tpcID: "318",
+            
+              prefix: "使用",
+              prefixUrl: "/zh-cn/portal/latest/use/",
+          
+            hideToc: false
+          }
+        </script>
+
+        <script type="text/javascript" src="../../../../zh-CN/portal/latest/use/583.js" ></script>
+        <script type="text/javascript" src="../../../../zh-CN/cdn/calcite/js/protoc.js" ></script>
+        
+        
+
+  <noscript>
+        <p>
+            <a href="flisting.htm">flist</a>
+        </p>
+    </noscript>
+    <script type="text/javascript"></script>
+  
+  
+    
+    
+
+  </body>
+</html>

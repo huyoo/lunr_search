@@ -1,0 +1,593 @@
+
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>  <html class="ie lt-ie9 lt-ie8 lt-ie7 ie6" dir="ltr"> <![endif]-->
+<!--[if IE 7]>     <html class="ie lt-ie9 lt-ie8 ie7" dir="ltr"> <![endif]-->
+<!--[if IE 8]>     <html class="ie lt-ie9 ie8" dir="ltr"> <![endif]-->
+<!--[if IE 9]>     <html class="ie ie9" dir="ltr"> <![endif]-->
+<!--[if !IE]><!--> <html dir="ltr" lang="zh-CN"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>静默安装 Portal for ArcGIS&mdash;Portal for ArcGIS (Windows) Installation Guide | ArcGIS Enterprise 文档</title>
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+    <script>
+      var docConfig = {
+        locale: 'zh-CN'
+        ,localedir: 'zh-cn'
+        ,langSelector: ''
+        
+        ,relativeUrl: false
+        
+
+        ,searchformUrl: '/search/'
+        ,tertiaryNavIndex: ''
+
+        
+      };
+    </script>
+	 
+
+
+    
+    <!--[if lt IE 9]>
+      <script src="../../../../../zh-CN/cdn/js/libs/html5shiv.js" type="text/javascript"></script>
+      <script src="../../../../../zh-CN/cdn/js/libs/selectivizr-min.js" type="text/javascript"></script>
+      <script src="../../../../../zh-CN/cdn/js/libs/json2.js" type="text/javascript"></script>
+      <script src="../../../../../zh-CN/cdn/js/libs/html5shiv-printshiv.js" type="text/javascript" >
+
+    <![endif]-->
+
+     <!--[if lt IE 11]>
+    <script>
+      $$(document).ready(function(){
+        $$(".hideOnIE").hide();
+      });
+    </script>
+    <![endif]-->
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<link href="../../../../../zh-CN/assets/img/favicon.ico" rel="shortcut icon" >
+	<link href="../../../../../zh-CN/assets/css/screen.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/cdn/calcite/css/documentation.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/assets/css/print.css" media="print" type="text/css" rel="stylesheet" />
+
+	<!--
+	<link href="../../../../../zh-CN/assets/css/screen_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/assets/css/documentation/base_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/assets/css/print_l10n.css" media="print" type="text/css" rel="stylesheet" />
+	-->
+	
+	
+		<script src="../../../../../zh-CN/cdn/js/libs/jquery.1.9.1.min.js" type="text/javascript"></script>
+	
+	<script src="../../../../../zh-CN/cdn/js/libs/jquery.cookie.js" type="text/javascript"></script>
+	<link href="../../../../../zh-CN/cdn/css/colorbox.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/cdn/css/colorbox_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<script src="../../../../../zh-CN/cdn/js/libs/jquery.colorbox-min.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/assets/js/video-init.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/assets/js/sitecfg.js" type="text/javascript"></script>
+	
+		<script src="../../../../../zh-CN/assets/js/signIn.js" type="text/javascript"></script>
+	
+
+	<!--- Language Picker -->
+	<script src="../../../../../zh-CN/assets/js/locale/l10NStrings.js" type="text/javascript"></script>
+	
+		 
+	
+
+	<script src="../../../../../zh-CN/assets/js/calcite-web.js" type="text/javascript"></script>
+
+
+
+  <!--- search MD -->
+    <META name="description" content="如果使用 Windows Installer 命令行参数来运行安装程序，您无需通过用户界面便可安装 Portal for ArcGIS。"><META name="last-modified" content="2019-12-6"><META name="product" content="arcgis-portal-windows,arcgis-enterprise-windows"><META name="sub_category" content="Portal for ArcGIS (Windows)"><META name="search-collection" content="help"><META name="content_type_label" content="安装指南主题"><META name="sub_category_label" content="Portal for ArcGIS (Windows)"><META name="search-category" content="help-install"><META name="subject_label" content="PORTAL,服务,SERVER"><META name="version" content="10.8"><META name="content_type" content="Install Guide Topic"><META name="subject" content="PORTAL,SERVICES,SERVER"><META name="content-language" content="zh-cn">
+    <!--- search MD -->
+
+  
+  <script src="../../../../../zh-CN/assets/js/switchers/portal-1.js" type="text/javascript"></script>
+  
+      
+
+</head>
+
+<!--
+      pub: GUID-C4975719-AF93-4C58-BA6B-54078D40ADDE=30
+      tpc: GUID-63100ACF-D822-4BA2-AB48-080D6C1D958D=11
+      -->
+
+
+<!-- variable declaration, if any -->
+<!-- can change following macro to set variable once we are on Jinja 2.8 -->
+
+
+
+
+
+<body class="claro zh-CN server">
+  
+
+  <!-- Drawer location -->
+  <div class="drawer drawer-left js-drawer" data-drawer="top-nav">
+        <nav class="drawer-nav" role="navigation">
+          <aside class="side-nav">
+            <h2 class="side-nav-title">Arc<span>GIS</span> Enterprise</h2>
+            <form id="helpSearchForm" class="margin-left-half margin-right-half leader-half trailer-half drawer-search-form" method="GET">
+              <input type="search" name="q"  placeholder="搜索 ArcGIS Enterprise 帮助">
+              <input type="hidden" name="collection" value="help" />
+              <input type="hidden" name="product" value="arcgis-portal-windows" />
+              <input type="hidden" name="version" value="10.8" />
+              <input type="hidden" name="language" value="zh-CN" />
+            </form>    
+             <a id="nav-portal" data-langlabel="portal" href="../../../../../zh-CN/portal/" class="side-nav-link">Portal</a>
+             
+            <a id="all-servers" data-langlabel="all-servers" href="../../../../../zh-CN/server/" class="side-nav-link">所有服务器</a>
+            <a id="gis-server" data-langlabel="gis-server" href="../../../../../zh-CN/server/" class="side-nav-link">GIS Server</a>
+            <a id="image-server" data-langlabel="image-server" href="../../../../../zh-CN/image/" class="side-nav-link">Image Server</a>
+            <a id="geo-analytics-server" data-langlabel="geo-analytics-server" href="../../../../../zh-CN/geoanalytics/" class="side-nav-link">GeoAnalytics Server</a>
+            <a id="geoevent-server" data-langlabel="geoevent-server" href="../../../../../zh-CN/geoevent/" class="side-nav-link">GeoEvent Server</a>
+            <a id="notebook-server" data-langlabel="notebook-server" href="../../../../../zh-CN/notebook/" class="side-nav-link">Notebook Server</a>
+            <a id="nav-data-store" data-langlabel="data-store" href="../../../../../zh-CN/data-store/" class="side-nav-link">Data Stores</a>
+            <a id="nav-cloud" data-langlabel="cloud" href="../../../../../zh-CN/cloud/" class="side-nav-link">云</a>
+            <a id="nav-apps" data-langlabel="apps" href="../../../../../zh-CN/apps/" class="side-nav-link">应用程序</a>
+            <a id="nav-doc" data-langlabel="documentation" href="../../../../../zh-CN/documentation/" class="side-nav-link">文档</a>
+
+          </aside>
+        </nav>
+    </div>
+
+    <!-- user navigation collapses to drawer on mobile -->
+    
+    <div class="drawer drawer-right js-drawer hide-if-logged-out logged-in-navigation" data-drawer="user-nav">
+      <nav class="drawer-nav">
+        <aside class="side-nav">
+          <a class="side-nav-link agolProfile" href="#">我的个人资料</a>
+          <a class="side-nav-link icon-ui-sign-out js-log-out" href="#">登出</a>
+        </aside>
+      </nav>
+    </div>
+    
+<!-- End of drawer -->
+
+  
+  <div class="wrapper">
+      <!--googleoff: all-->
+
+      <header class="top-nav" data-skin="learn">
+        <a class="skip-to-content" href="#skip-to-content">Skip To Content</a>
+        <div class="grid-container">
+          <div class="column-24">
+
+
+            <!--<div class="top-nav-title-wrapper text-center ">-->
+              <a href='../../../../../zh-CN/' class="top-nav-title tablet-hide"><span>Arc</span>GIS  Enterprise</a>
+              <a href='../../../../../zh-CN/' class="icon-ui-menu top-nav-title js-drawer-toggle tablet-show" data-drawer="top-nav"><span>Arc</span>GIS Enterprise</a>
+            <!--</div> -->
+
+          
+            <nav role="navigation" class="top-nav-list left tablet-hide">
+              <a id="nav-portal" data-langlabel="portal" href="../../../../../zh-CN/portal/" class="top-nav-link">Portal</a>
+
+                <div class="dropdown js-dropdown ">
+                  <a class="top-nav-link js-dropdown-toggle" tabindex="0" aria-haspopup="true" aria-expanded="false" href="#">Servers</a>
+                  <nav class="dropdown-menu featured" role="menu">
+                    <ul class="dropdown-sublist-featured">
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/get-started/latest/windows/additional-server-deployment.htm" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path  d="M42.92 6.1H4.12v8.566l.833.832-.835.833-.018 7.332.845.847-.825.824V33.9h25v5.2h-2v1.075H8.02v.8h19.1v.925h4.8v-.925H40v-.8h-8.08V39.1h-2v-5.2h13v-8.566l-.834-.834.835-.834v-7.332l-.835-.834.835-.834zm-11.8 35h-3.2v-1.2h3.2zm11-8H4.92v-7.434l.767-.766h35.668l.765.766zm0-9.766l-.766.766H5.666l-.766-.767.017-6.669.766-.764h35.671l.766.766zm0-9l-.766.766H5.687l-.766-.766V6.9h37.2zM19 11.9h-2v-.8h2zm-4 0h-2v-.8h2zm-4 0H9v-.8h2zm6 8.2h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9zm8 9h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9z"/></svg></span>
+                          <span class="sublink-text">所有服务器</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/server/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M45.98 33.575a.616.616 0 0 0-.335-.51l-3.362-2.03 3.362-2.031a.556.556 0 0 0 0-1.02l-11.1-6.704a1.293 1.293 0 0 0-1.112 0L22.33 27.982a.556.556 0 0 0 0 1.02l3.36 2.03-3.358 2.03a.556.556 0 0 0-.002 1.021l3.322 2.006-3.324 2.008a.555.555 0 0 0 .002 1.017l11.102 6.703a1.25 1.25 0 0 0 1.11.002l11.104-6.706a.556.556 0 0 0 0-1.02l-3.32-2.006 3.318-2.004a.607.607 0 0 0 .335-.509zM33.837 21.97c.026-.01.286-.005.29-.005l10.814 6.53-10.8 6.523c-.028.01-.284.005-.294.006l-10.813-6.53zm11.105 16.636l-10.8 6.523a2.564 2.564 0 0 1-.295.006l-10.81-6.529 3.39-2.047 7.004 4.23a1.083 1.083 0 0 0 .557.131 1.101 1.101 0 0 0 .554-.13l7.01-4.233zM34.14 40.098a2.545 2.545 0 0 1-.294.006l-10.812-6.53 3.43-2.073 6.97 4.208a1.25 1.25 0 0 0 1.107-.001l6.966-4.206 3.431 2.073zM9 8H7V7h2zm8 8h-2v-1h2zm-4-8h-2V7h2zm4 0h-2V7h2zm-4 8h-2v-1h2zm7.316 11.1H3.9v-6.434l.766-.766h35.668l.766.766v2.12l.8.483v-2.935l-.826-.826.826-.845v-6.329l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9h16.88a2.632 2.632 0 0 1 .336-.8zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zm0 8v-5.668l.766-.766h35.668l.766.766v5.67l-.746.764H4.666zM15 24v-1h2v1zm-4 0v-1h2v1zm-2-8H7v-1h2zm-2 8v-1h2v1z"/></svg></span>
+                          <span class="sublink-text">GIS Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/image/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 8h-2V7h2zm-4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm8 8h-2v1h2zm-8 0H7v1h2zm4 9v-1h-2v1zm-4 0v-1H7v1zm8 0v-1h-2v1zm4 3.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V21h-.8v-.334l-.766-.766H4.666l-.766.766V27.1H21zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zm40.234 4v21.8H23.1V23.1zm-.8 16.366L39.466 44.1h2.868l1.766-1.766zm-20.2-9.932l5.634-5.634h-2.868L23.9 26.666zm6.2-5.068L24.466 30.1h2.868l2.766-2.766zM28.466 30.1H30.1v-1.634zm2.434 0h6.2v-6.2h-6.2zm-7 7h6.2v-6.2h-6.2zm7 0h6.2v-6.2h-6.2zm0 6.434l5.634-5.634h-2.868L30.9 40.666zm7-7l5.634-5.634h-2.868L37.9 33.666zm1.634-5.634H37.9v1.634zm-8.634 7v1.634l1.634-1.634zm.566 6.2h2.868l2.766-2.766v-2.868zm6.434-3.566l2.634-2.634H37.9zM35.466 44.1H37.1v-1.634zm2.434 0h.434l5.766-5.766V37.9h-2.434L37.9 41.666zm6.2-8.634L42.466 37.1H44.1zm0-4L38.466 37.1h2.868l2.766-2.766zm0-7.566h-6.2v6.2h6.2zm-20.2 0v1.634l1.634-1.634zm0 20.2h6.2v-6.2h-6.2zm20.2 0v-.634l-.634.634z"/></svg></span>
+                          <span class="sublink-text">Image Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/geoanalytics/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 16h-2v-1h2zm-8 8v-1H7v1zm8 0v-1h-2v1zM13 7h-2v1h2zm4 0h-2v1h2zM9 7H7v1h2zm21.45 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V27.9h-1.464l-.801-.8H41.1v-6.434l-.766-.766H4.666l-.766.766V27.1h27.15zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM13 24v-1h-2v1zm0-9h-2v1h2zm-4 0H7v1h2zm26.672 27.148A1.87 1.87 0 0 1 35.9 43a1.91 1.91 0 1 1-3.763-.222l-9.845-3.414A1.88 1.88 0 0 1 21 39.9a1.9 1.9 0 1 1 1.474-3.084l4.692-2.346A1.878 1.878 0 0 1 27.1 34a1.902 1.902 0 0 1 1.9-1.9 1.867 1.867 0 0 1 .781.191l3.788-5.05A1.88 1.88 0 0 1 33.1 26a1.9 1.9 0 1 1 3.491 1.026l4.889 4.888c-.069.056-.144.1-.21.162a3.986 3.986 0 0 0-.358.402l-4.883-4.883A1.889 1.889 0 0 1 35 27.9a1.867 1.867 0 0 1-.781-.191l-3.788 5.049a1.868 1.868 0 0 1 .437.965l9.204.614c-.018.11-.049.218-.058.33A3.93 3.93 0 0 0 40 35c0 .046.01.09.01.135l-9.185-.612A1.913 1.913 0 0 1 29 35.9a1.889 1.889 0 0 1-1.474-.716l-4.692 2.346a1.878 1.878 0 0 1 .066.47 1.9 1.9 0 0 1-.105.625c-.007.02-.022.036-.03.056l9.63 3.34a1.87 1.87 0 0 1 2.786-.505l5.415-4.437c.067.108.127.22.204.322a3.9 3.9 0 0 0 .292.306zM33.9 26a1.092 1.092 0 0 0 .43.872 1.12 1.12 0 0 0 1.42-.068A1.1 1.1 0 1 0 33.9 26zm-6 8a1.1 1.1 0 0 0 2.196.093 1.135 1.135 0 0 0-.426-.965A1.087 1.087 0 0 0 29 32.9a1.101 1.101 0 0 0-1.1 1.1zm-5.8 4a1.098 1.098 0 1 0-.06.362A1.101 1.101 0 0 0 22.1 38zm13 5a1.1 1.1 0 1 0-2.2 0 1.1 1.1 0 0 0 2.2 0zm10.8-8a1.9 1.9 0 1 1-3.8 0c0-.053.003-.105.007-.158A1.9 1.9 0 0 1 45.9 35zm-.8 0a1.1 1.1 0 0 0-2.196-.093 1.153 1.153 0 0 0 .216.752A1.1 1.1 0 0 0 45.1 35z"/></svg></span>
+                          <span class="sublink-text">GeoAnalytics Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/geoevent/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M13 8h-2V7h2zm4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm12.418 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826v2.117c-.259-.177-.53-.337-.8-.497v-1.288l-.766-.766H4.666l-.766.766V27.1h17.933c-.148.26-.283.53-.415.8zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM9 24v-1H7v1zm4-9h-2v1h2zm0 9v-1h-2v1zm-4-9H7v1h2zm8 9v-1h-2v1zm16.9 2h-.8v8.9H39v-.8h-5.1zm.1-3.901a11.9 11.9 0 1 0 11.9 11.9 11.914 11.914 0 0 0-11.9-11.9zm0 23a11.1 11.1 0 1 1 11.1-11.1 11.112 11.112 0 0 1-11.1 11.1z"/></svg></span>
+                          <span class="sublink-text">GeoEvent Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/notebook/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M22 27.1H3.9v-6.434l.766-.766h18.576a5.262 5.262 0 0 1 .83-.8H4.666l-.766-.766v-5.668l.766-.766h35.668l.766.766V18h.8v-5.666l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9H22zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zM9 8H7V7h2zm8 0h-2V7h2zm-4 0h-2V7h2zm2 16v-1h2v1zm-4 0v-1h2v1zm-4 0v-1h2v1zm0-8v-1h2v1zm8 0v-1h2v1zm-4 0v-1h2v1zm18.9 8.1h-1.8v1.8h1.8zm-.8 1h-.2v-.2h.2zm15.498-4.48a2.727 2.727 0 0 0-1.62-.5v-.02H27.25a3.154 3.154 0 0 0-3.15 3.15V38.1h-1.68a3.386 3.386 0 0 0-2.872 1.58 3.49 3.49 0 0 0-.157 3.419 3.241 3.241 0 0 0 2.954 1.801h15.161a3.404 3.404 0 0 0 3.394-3.4V26.9h5v-3.65a3.224 3.224 0 0 0-1.302-2.63zM22.345 44.1a2.44 2.44 0 0 1-2.23-1.341 2.706 2.706 0 0 1 .11-2.65A2.588 2.588 0 0 1 22.42 38.9h12.89a3.395 3.395 0 0 0 0 5.2zM40.1 23.192V41.5a2.6 2.6 0 1 1-2.6-2.6v-.8H24.9V23.25a2.352 2.352 0 0 1 2.35-2.35h13.795a3.183 3.183 0 0 0-.945 2.292zm5 2.908h-4.2v-2.908a2.274 2.274 0 0 1 1.44-2.18 1.944 1.944 0 0 1 1.791.259 2.423 2.423 0 0 1 .97 1.979zm-17.1 5h9v.8h-9zm0 3h7v.8h-7zm0-6h9v.8h-9zm4-3h5v.8h-5z"/></svg></span>
+                          <span class="sublink-text">Notebook Server</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+
+              <a id="nav-data-store" data-langlabel="data-store" href="../../../../../zh-CN/data-store/" class="top-nav-link">Data Stores</a>
+              <a id="nav-cloud" data-langlabel="cloud" href="../../../../../zh-CN/cloud/" class="top-nav-link">云</a>
+              <a id="nav-apps" data-langlabel="apps" href="../../../../../zh-CN/apps/" class="top-nav-link">应用程序</a>
+            </nav>
+
+
+            
+            
+            
+
+            <div class="margin-left-1 top-nav-list right hide-if-logged-in logged-out-navigation">
+               
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+              
+              <a data-langlabel="sign-in" id="login-link" class="icon-ui-user top-nav-link link-blue login-link" href="#">登录</a>
+              
+            </div>
+
+            
+            <nav class="margin-left-1 top-nav-list right hide-if-logged-out logged-in-navigation">
+              
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+             
+              <div class="dropdown js-dropdown right">
+
+                <div class="tablet-show top-nav-link">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a href="#" data-drawer="user-nav" class="user-nav-name js-drawer-toggle" data-first-name></a>
+                </div>
+
+                <div class="tablet-hide top-nav-link js-dropdown-toggle">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a class="user-nav-name top-nav-dropdown dropdown-btn" data-first-name>&nbsp;</a>
+                </div>
+
+                <nav class="dropdown-menu dropdown-right">
+                
+                  <a class="dropdown-link agolProfile" id="agolProfile" href="#">我的个人资料</a>
+                  <a class="dropdown-link js-log-out" id="agolLogout" href="#">登出</a>
+                </nav>
+              </div>
+            </nav>
+            
+
+            
+          </div>
+        </div>
+      </header>
+
+      <div class="js-search search-overlay">
+        <div class="search-content" role="dialog" aria-labelledby="search">
+          <form method="GET" id="helpSearchForm">
+            <label>
+              搜索 ArcGIS Enterprise 帮助
+              <div class="search-bar">
+                <input type="search" name="q"  placeholder="搜索 ArcGIS Enterprise 帮助" class="search-input js-search-input">
+                <input type="hidden" name="collection" value="help" />
+                <input type="hidden" name="product" value="arcgis-portal-windows" />
+                <input type="hidden" name="version" value="10.8" />
+                <input type="hidden" name="language" value="zh-CN" />
+              </div>
+            </label>
+            <input type="hidden" name="relativePath" value="../../../../../" /><button type="submit" class="btn btn-large right">搜索</button>
+          </form>
+        </div>
+      </div>
+
+      <!--googleon: all-->
+
+      <div id="skip-to-content">
+        <!--googleoff: all-->
+        <header class="sub-nav sub-nav-learn">
+          <div class="grid-container">
+            
+            <div class="column-24">
+              <div style="display:table;" class="sdk-home-banner">
+                <div class="sdk-home-banner-content">
+                  <h1 class="sub-nav-title link-white">ArcGIS Enterprise</h1>
+                </div>
+              </div>
+            </div>
+
+            <div class="column-24">
+              <nav class='sub-nav-list tablet-hide'><a class="sub-nav-link" href="../../../../../zh-CN/" target="_top" title="ArcGIS Enterprise 概述和文档">主页</a><a class="sub-nav-link" href="../../../../../zh-CN/get-started/latest/windows/what-is-arcgis-enterprise-.htm" target="_top" title="ArcGIS Enterprise 简介">简介</a><a class="sub-nav-link is-active" href="../../../../../zh-CN/documentation/install/" target="_top" title="安装 ArcGIS Enterprise 及相关组件的指南">安装指南</a></nav><select class='tablet-show select-full trailer-half js-select-nav'><option value="../../../../../zh-CN/">主页</option><option value="../../../../../zh-CN/get-started/latest/windows/what-is-arcgis-enterprise-.htm">简介</option><option selected="true" value="../../../../../zh-CN/documentation/install/">安装指南</option></select>
+            </div>
+
+          </div>
+        </header>
+        <!--googleon: all-->
+       
+        <!-- content goes here -->
+        <div class="grid-container ">
+          
+
+            
+              
+  <!--BREADCRUMB-BEG--><div id="bigmac" class="sticky-breadcrumbs trailer-2" data-spy="affix" data-offset-top="180"> </div><!--BREADCRUMB-END-->
+  <!--googleoff: all-->
+    <div class="column-5 tablet-column-12 trailer-2 ">
+      <aside class="js-accordion accordion reference-index" aria-live="polite" role="tablist">
+        <div></div>
+      </aside>
+
+      <div class="js-sticky scroll-show tablet-hide leader-1 back-to-top" data-top="0" style="top: 0px;">
+        <a href="#" class="btn btn-fill btn-clear">返回顶部</a>
+      </div>
+    </div>
+  <!--googleon: all-->
+  
+            
+            
+            
+	
+		<div class="column-13  pre-1 content-section">
+	
+		<header class="trailer-1"><h1>静默安装 Portal for ArcGIS</h1></header>
+
+		 
+	<!--googleoff: all-->
+	
+		
+				<aside id="main-toc-small" class="js-accordion accordion tablet-show trailer-1">
+			      <div class="accordion-section">
+			        <h4 class="accordion-title">在本主题中</h4>
+			        <div class="accordion-content list-plain">
+			          <ol class="list-plain pre-0 trailer-0"><li><a href="#ESRI_SECTION1_3A92D0A06993403CA5B5D0179EAD544B">准备安装 <ph translate="no" varid="PortalForArcGIS">Portal for ArcGIS</ph></a></li><li><a href="#GUID-590EF5CB-BBDA-45B4-A3CB-5FE922B43063">静默安装 <ph translate="no" varid="PortalForArcGIS">Portal for ArcGIS</ph></a></li><li><a href="#ESRI_SECTION1_DE3737372F574C3FA3024D76CB765366">使用命令行参数配置 <ph translate="no" varid="PortalForArcGIS">Portal for ArcGIS</ph> 帐户</a></li><li><a href="#ESRI_SECTION1_EDF7ACDDAD2842B2BA61BEBF712D3EB8">  使用 createportal 命令行实用程序创建门户</a></li></ol>
+			        </div>
+			      </div>
+			     </aside>
+		
+    
+   <!--googleon: all-->
+
+
+		<main>
+			
+	
+    	
+    
+
+
+			
+<p id="GUID-A5BE6988-467D-499E-A098-A9DCFE93E66C">如果使用 Windows Installer 命令行参数来运行安装程序，您无需通过用户界面便可安装 <span class="ph">Portal for ArcGIS</span>。</p><div class="panel trailer-1 note" id="GUID-A714349C-C8DD-4E19-9234-B42B430511DC"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-C419117C-D344-4866-8125-EC750708292C">如果要升级到 <span class="ph">10.8</span>，请参阅<a class="xref xref" href="../../../../../zh-CN/portal/latest/install/windows/upgrade-portal-for-arcgis.htm">关于升级 <span class="ph">Portal for ArcGIS</span></a> 以了解更多信息。</p></div><section class="section1 padded-anchor" id="ESRI_SECTION1_3A92D0A06993403CA5B5D0179EAD544B" purpose="section1"><h2>准备安装 <span class="ph">Portal for ArcGIS</span></h2><ol class="list-numbered" purpose="ol" id="OL_BA35F0223BF1400EA2C379C787F6288F"><li purpose="li" id="LI_4F2EC250F73343488D7687D2B2B07BC8">验证站点是否满足最低<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/system-requirements/latest" href="../../../../../zh-CN/system-requirements/latest/windows/portal-for-arcgis-system-requirements.htm">系统要求</a>。</li><li purpose="li" id="LI_851CEA6EF3E849D68EDCF036954FA809">以具有管理权限的用户身份登录到计算机。</li><li purpose="li" id="LI_05BEF7C226A14C9CB6621A2F8086FC15">按 <a class="xref xref" href="../../../../../zh-CN/portal/latest/install/windows/ports-used-by-portal-for-arcgis.htm"><span class="ph">Portal for ArcGIS</span> 使用的端口</a>中所述的方式打开端口。</li><li purpose="li" id="LI_A8DB0B3B09B3462EA800720C4AF669FE">关闭服务器上的所有不重要应用程序。</li><li purpose="li" id="LI_824166AFF6C64A6ABB2DE786A6C17A03">按如下所述的方式运行安装命令。</li></ol></section><section class="section1 padded-anchor" id="GUID-590EF5CB-BBDA-45B4-A3CB-5FE922B43063" purpose="section1"><h2>静默安装 <span class="ph">Portal for ArcGIS</span></h2><p id="GUID-98D75BC9-DFBF-4EAE-81EA-9FABF4DC781E">以下是静默安装 <span class="ph">Portal for ArcGIS</span> 时使用的 Windows Installer 命令行参数。使用这些命令指定 <span class="ph">Portal for ArcGIS</span> 的安装位置或门户的内容目录。</p><ul purpose="ul" id="UL_01B65F2D75A84210A7DF6E1C213CAF7B"><li purpose="li" id="LI_6C377351CE6B41D2B77C7021F9128C18"><p id="GUID-5243857C-937E-4928-8C08-83DC032446A5"><span class="usertext">INSTALLDIR=&lt;installation location&gt;</span></p><p id="GUID-E5A0AC73-B1D3-46E1-97BA-E4C3610285C1">该属性用于通过命令行指定 <span class="ph">Portal for ArcGIS</span> 的安装位置。如果您没有设置其属性，则使用默认安装位置 <span class="usertext">C:\Program Files\ArcGIS\Portal</span>。</p></li></ul><ul purpose="ul" id="UL_EF19EB04A6194DCE871D564DB78C5349"><li purpose="li" id="LI_05A109BF359048098192724FE0D022FA"><p id="GUID-76F695E9-7296-4B6C-95EB-10E191E527A8"><span class="usertext">CONTENTDIR=&lt;installation location content&gt;</span></p><p id="GUID-BECF11F0-C93A-45A9-BAE5-7A9E1EF75336">此属性可用于指定门户的内容目录。指定的位置必须为本地目录；不能选择共享的网络目录。这是因为 <span class="ph">Portal for ArcGIS</span> 服务默认配置为在 Windows 本地 LocalSystem 帐户下运行。LocalSystem 帐户不能访问网络位置。有关详细信息，请参阅 <a class="xref xref" href="../../../../../zh-CN/portal/latest/install/windows/the-portal-for-arcgis-account.htm"><span class="ph">Portal for ArcGIS</span> 帐户</a>。如果您没有设置其属性，则使用默认安装位置 <span class="usertext">C:\arcgisportal</span>。</p></li></ul><p id="GUID-D5A13C9E-9A3C-460E-912B-A9CF8E5A5672">示例位置如下：</p><p id="GUID-38F5CC11-FFFB-4BBE-B36E-9912CE8BDC9D"><span class="usertext">&lt;path to the Portal for ArcGIS setup download&gt;\setup.exe /qb INSTALLDIR=C:\myportal CONTENTDIR=C:\arcgisportal</span></p></section><section class="section1 padded-anchor" id="ESRI_SECTION1_DE3737372F574C3FA3024D76CB765366" purpose="section1"><h2>使用命令行参数配置 <span class="ph">Portal for ArcGIS</span> 帐户</h2><p id="GUID-14776B00-1B04-4B82-8E31-E5D19B6E6030">以静默方式安装 <span class="ph">Portal for ArcGIS</span> 时必须配置 <span class="ph">Portal for ArcGIS</span> 帐户。对于生产系统，建议指定一个预先存在于域或活动目录中并且遵循组织安全策略的帐户。如果在静默安装中未使用命令行参数配置 <span class="ph">Portal for ArcGIS</span> 帐户，则帐户将被设置为本地系统帐户。这主要是为了方便快速安装 <span class="ph">Portal for ArcGIS</span>。</p><p id="GUID-1D1CD4F1-1BA2-40D1-A5B9-B1DD44B7F9DC">使用下面的命令行参数配置 <span class="ph">Portal for ArcGIS</span> 帐户。</p><section class="section2 padded-anchor" id="ESRI_SECTION2_238284A5DA7E44FFADACE1B15FF73012" purpose="section2"><h3>直接传送 <span class="ph">Portal for ArcGIS</span> 帐户凭据</h3><div class="panel trailer-1" id="GUID-E1D9EC0D-CD6A-4B47-B65E-463329AFF80B"><h5 class="icon-ui-notice-triangle trailer-0">警告：</h5><p id="GUID-F92B2FC6-12AF-4A5E-BC71-9C0E5B6A08DB">如果静默安装 (/qb) 过程中未定义 <span class="ph">Portal for ArcGIS</span> 帐户或凭据无效，<span class="ph">Portal for ArcGIS</span> 安装程序会在安装过程中显示警告消息。可单击<span class="uicontrol">确定</span>关闭消息。在上述情况下，<span class="ph">Portal for ArcGIS</span> 帐户将设置为本地系统帐户。</p></div><ul purpose="ul" id="UL_C055A1C2E6094E239F9FAB805F418894"><li purpose="li" id="LI_A8AA424184C44C3790B1CF69FCFCC7E5"><p id="GUID-B7AB9A3D-C6EE-4047-99B8-3D1647AC884F">USER_NAME=&lt;操作系统帐户&gt;</p><p id="GUID-01222C95-9DA7-4401-A4F3-5E2415CCC1F6">此帐户可以是域帐户，也可以是本地帐户。如果您使用的是域帐户，则其必须是一个已存在的帐户。如果您使用的是本地帐户，则帐户尚不存在时将创建一个帐户。如果帐户无效，则在安装过程中会弹出一个消息框，提示帐户或密码无效。</p></li></ul><ul purpose="ul" id="UL_A55FADF1C0FB427C841F738BD0826071"><li purpose="li" id="LI_411E716973E846948C5E591EDF57595D"><p id="GUID-B1C14406-E0D4-4C7D-9787-99429A5FF45D">MSA=TRUE</p><p id="GUID-19A7BDA4-4399-4E33-AB4B-3839B10CCC23">此参数应仅与托管服务帐户配合使用。托管服务帐户必须是一个在您的域上已存在的帐户。请勿将此参数与本地帐户或具有密码的域帐户配合使用。托管服务帐户将不会使用 PASSWORD 参数。</p></li></ul><ul purpose="ul" id="UL_4FB4FEAB1FF94D12B19BFED7F8ADC788"><li purpose="li" id="LI_73E5A96D57D1486E8681F9B93E816025"><p id="GUID-6A9D561D-F1C8-497E-AFF2-ECCBA8C0F2D3">PASSWORD=&lt;帐户密码&gt;</p><p id="GUID-984E5AF7-A9A1-4D23-8E56-6AB90C5796BC">这是为 USER_NAME 参数指定的帐户的密码。如果密码无效，则在安装过程中会弹出一个消息框，提示帐户或密码无效。</p></li></ul><p id="GUID-957600EA-B86A-4324-AE62-31156D1B4427">示例如下。</p><p id="GUID-C38B95FC-2F1F-4D8A-97E8-58ADE95AEB66"><div class="panel trailer-1" id="GUID-60F62345-7491-49B7-A10F-1BF6FF3644DF"><h5 class="icon-ui-notice-triangle trailer-0">警告：</h5><p id="GUID-A9484D39-FE82-4E2A-9A30-94818B1961B7">命令行参数区分大小写。如果进行命令行安装时出现问题，请确认大小写是否与示例中显示的属性相匹配。</p></div></p><section class="section3 padded-anchor" id="ESRI_SECTION3_24CCEDF806B745009BDBAE5EB8E269B1" purpose="section3"><h4>使用域帐户</h4><p id="GUID-8881189E-85D0-4A4E-88FC-70CAC13D7BCF"><span class="usertext">&lt;path to the Portal for ArcGIS setup download&gt;\setup.exe /qb USER_NAME=mydomain\mydomainaccount PASSWORD=my.password</span></p></section><section class="section3 padded-anchor" id="ESRI_SECTION3_77A48C7779A24D0D95AF6B80CE7A1DFC" purpose="section3"><h4>使用新的或现有的本地帐户</h4><p id="GUID-CF32BB59-DA3E-40A5-B9FD-2D814678CD98"><span class="usertext">&lt;path to the Portal for ArcGIS setup download&gt;\setup.exe /qb USER_NAME=myaccount PASSWORD=my.password</span></p></section><section class="section3 padded-anchor" id="ESRI_SECTION3_0F04E494A04A4169B4E90449A366D3B4" purpose="section3"><h4>使用托管服务帐户</h4><p id="GUID-1A515A86-4FA4-4C73-856B-088918173E9E"><span class="usertext">&lt;path to the Portal for ArcGIS setup download&gt;\setup.exe /qb MSA=TRUE USER_NAME=mydomain\mymsa </span></p></section></section><section class="section2 padded-anchor" id="ESRI_SECTION2_7EC576FBDD034F1D8B7DE8D01F1D57F5" purpose="section2"><h3>使用门户配置文件导入 <span class="ph">Portal for ArcGIS</span> 帐户凭据</h3><p id="GUID-AE89258C-C8C5-4440-BC3C-2A47463DF8F3">要使用门户配置文件导入 <span class="ph">Portal for ArcGIS</span> 帐户凭据，以下两个命令行参数必须同时使用：</p><ul purpose="ul" id="UL_CB95B67156544D7381165C9D81CB50EA"><li purpose="li" id="LI_9C08F8A51C074AFAAD83489516D0A3B9"><p id="GUID-24C6C18A-F115-4AE6-9FB0-4BB50AF4872E">ACCOUNT=UseConfigFile</p><p id="GUID-85BF4434-E6D3-45CE-98C8-CEFA7F031DA2">使用的 ACCOUNT 命令行参数必须与上面显示的完全相同。此属性没有其他有效值。</p></li></ul><ul purpose="ul" id="UL_09BEA6ED3938414F9789DAD799F6FC1B"><li purpose="li" id="LI_8843AE7152644DD8A018C70D22062E64"><p id="GUID-6F7D3C90-BFAC-4C35-B2FD-7476872C7BA1">CONFIGPATH=&lt;门户配置文件的完整路径和名称&gt;</p><p id="GUID-ED614301-AFCB-4898-BBEA-DE1E617B3423">与 ACCOUNT=UseConfigFile 配合使用，通过此属性可指定用于配置 <span class="ph">Portal for ArcGIS</span> 帐户的门户配置文件。通过在安装 <span class="ph">Portal for ArcGIS</span> 时导出门户配置文件（从早期安装或从其他计算机导出门户配置文件）的方式来创建门户配置文件。</p></li></ul><p id="GUID-14FFA442-CEA9-4571-9B21-E9808C6D0B5B">示例如下：</p><p id="GUID-EAA89892-8F0F-429E-93EC-8B4E8C91BA16"><span class="usertext">&lt;path to the Portal for ArcGIS setup download&gt;\setup.exe /qb ACCOUNT=UseConfigFile CONFIGPATH=\\networkmachine\portalconfigs\standardaccount.xml</span></p><div class="panel trailer-1" id="GUID-DA9591EC-88A0-4B06-A69B-066AB46B067F"><h5 class="icon-ui-notice-triangle trailer-0">警告：</h5><p id="GUID-986517D4-DF2F-4231-B8BA-E37A6B4DDA51">命令行参数区分大小写。如果进行命令行安装时出现问题，请确认大小写是否与示例中显示的属性相匹配。</p></div></section><section class="section2 padded-anchor" id="ESRI_SECTION2_7A6C69F47C0F45978EBA8976C252669F" purpose="section2"><h3>将 <span class="ph">Portal for ArcGIS</span> 帐户凭据导出至门户配置文件</h3><div class="panel trailer-1 note" id="GUID-5711F35D-D2DD-4968-A24B-7C46CCE0C12E"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-2AD583EB-98D8-4399-9CFB-F39B74187E83">将门户配置文件导出至网络共享时，计算机上安装 <span class="ph">Portal for ArcGIS</span> 所在的“本地系统”帐户必须具有对网络共享的写入权限。例如，如果您在名为 Quick 的计算机上安装 <span class="ph">Portal for ArcGIS</span>，则 Quick 上的“本地系统”帐户必须具有对网络共享的写入权限。如果未设置该权限，门户配置文件可能无法成功导出。如果您不确定如何正确设置网络共享的权限，请联系系统管理员，或本地导出门户配置文件，然后将其复制到网络共享。</p></div><p id="GUID-C85DF6DB-57CE-495D-96EE-72B7C7047A9E">要将 <span class="ph">Portal for ArcGIS</span> 帐户凭据导出至门户配置文件，以下两个命令行参数必须同时使用：</p><ul purpose="ul" id="UL_0EEE672847BF4A228AA1A519E61B086B"><li purpose="li" id="LI_53305C0CE6CC43BCA1FFEECA947B4A98"><p id="GUID-FF1CE520-5F47-42C5-8C0B-EF7B0CD2F843">EXPORTCONFIG=Yes</p><p id="GUID-E717160E-4A9A-40CC-8AB0-B7CA1F0EE5F9">利用此属性可导出通过 USER_NAME 和 PASSWORD 命令行参数输入的帐户信息。帐户信息存储在加密的 XML 文件中，称为门户配置文件。默认情况下此属性设置为 No。</p></li></ul><ul purpose="ul" id="UL_846A9A74A65142C698A9FA7882FA07B0"><li purpose="li" id="LI_3B1C8B41FA714D5CBF1FA28EAB986458"><p id="GUID-6184AD2F-438D-48F7-85AB-91288722BE74">CONFIGPATH=&lt;门户配置文件的完整路径和名称&gt;</p><p id="GUID-08605F01-54DF-40DA-A9C9-43CA85FC1BE4">与 EXPORTCONFIG=Yes 配合使用，此属性可用于定义门户配置文件的名称和存储位置。文件名必须以 <span class="usertext">.xml</span> 结尾，且指定的文件夹必须已存在。如果文件的扩展名不是 <span class="usertext">.xml</span> 而且指定的目录不存在，则无法成功创建门户配置文件。</p></li></ul><p id="GUID-E38FFB4A-C287-4DD7-9EDE-1A8C972E6DB2">示例如下：</p><p id="GUID-A8D5AED0-4B9C-436D-A3A8-6588BEE2B4DD"><span class="usertext">&lt;path to the Portal for ArcGIS setup download&gt;\setup.exe /qb EXPORTCONFIG=Yes CONFIGPATH=\\networkmachine\portalconfigs\standardaccount.xml</span></p><div class="panel trailer-1" id="GUID-67DA3E6F-F7E0-424E-B69B-36578EB89F4E"><h5 class="icon-ui-notice-triangle trailer-0">警告：</h5><p id="GUID-9A67A58B-4095-4573-9E1D-59FC5C69E5C6">命令行参数区分大小写。如果进行命令行安装时出现问题，请确认大小写是否与示例中显示的属性相匹配。</p></div></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_EDF7ACDDAD2842B2BA61BEBF712D3EB8" purpose="section1"><h2>  使用 createportal 命令行实用程序创建门户</h2><p id="GUID-9041118A-C9A2-4E44-9620-BE4B24CCC16D"> 安装 <span class="ph">Portal for ArcGIS</span> 后，您可以使用 <span class="usertext">createportal</span> 命令行实用程序创建一个门户。可通过以下方式使用 <span class="usertext">createportal</span> 使用程序：<ul purpose="ul" id="UL_CA7100783D03465E81BF581E300D101A"><li purpose="li" id="LI_32871BE0B17D41E4AD1593C5C8ED0602">以管理员身份在命令提示符中运行 <span class="usertext">createportal</span> 实用程序，并指定名字、姓氏、用户名、密码、电子邮件、密码提示问题、答案和内容目录参数。</li><li purpose="li" id="LI_1BABBBC6ED804E5BB63ABB04251A48C6">将提供一个包含指定参数的 <span class="usertext">createportal.properties</span> 文件。</li></ul> </p><p id="GUID-D0D1317D-C9CD-4B02-BC99-E9E0E68FA547">要使用 <span class="usertext">createportal</span> 命令行实用程序，请运行包含 <span class="usertext">createportal.bat</span> 或 <span class="usertext">-h</span> 的 <span class="usertext">-help</span> 脚本，如下所示：</p><p id="GUID-DE916042-226F-4CF9-B94F-256C65C32663"> <span class="usertext">&lt;Portal for ArcGIS Installation Directory&gt;\tools\createportal\createportal.bat -help</span></p><p id="GUID-847F2C70-26F9-4EE9-B10B-593272D047E3"> 该实用程序的使用示例：<span class="usertext">createportal.bat [-fn &lt;arg&gt;] [-ln
+&lt;arg&gt;] [-u &lt;arg&gt;] [-p &lt;arg&gt;] [-e &lt;arg&gt;] [-qi
+&lt;arg&gt;] [-qa &lt;arg&gt;] [-d &lt;arg&gt;] [-lf &lt;arg&gt;] [-ut &lt;arg&gt;]</span></p><p id="GUID-1D978ED9-5189-481E-90D0-A27E0FF0ABCC">文件的使用示例：<span class="usertext">createportal.bat [-f
+&lt;FILE&gt;]</span></p><p id="GUID-1EE77F4F-7D03-4338-970B-FF559BE336A3"><div class="panel trailer-1 note" id="GUID-A49FD918-59D1-43C2-AF1F-A78E1EA78216"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-94348801-A373-4F60-BDE3-BB186531AA0D">如果在 <span class="usertext">createportal.properties</span> 文件中引用路径，则需要转义反斜线，例如 <span class="usertext">C:\\arcgisportal</span> 或 <span class="usertext">\\\\&lt;Absolute path to&gt;\\&lt;portal arcgisportal&gt;</span>。</p></div></p><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><thead><tr><th colspan="1">选项</th><th colspan="1">描述</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-39231208-4504-4BD6-8EF2-456D4B101964"><span class="usertext">-fn; --firstname</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-FC4907CF-9635-44E8-8745-D9C86154F426"> 用于配置门户的初始管理帐户的名字。</p><p id="GUID-0106508D-52E9-414E-BB41-ABD39A3F2043"> 确保以引号括起多词语条目。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-6328091B-77F6-47B4-8029-59EF0EE0E576"><span class="usertext">-ln; --lastname</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-E009B845-127C-4F28-8FC6-DDA1C2E1D531">  用于配置门户的初始管理帐户的姓氏。</p><p id="GUID-FECF9864-0A58-4595-8FEE-68264B12E9A0"> 确保以引号括起多词语条目。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-B8C1B584-5239-4C1C-9013-D1F38693AD84"><span class="usertext">-u; --username</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-85670B3E-1A32-496A-B5C7-D54235D903FD">   用于配置门户的初始管理帐户的用户名。</p><p id="GUID-39D5024F-DC9F-42B3-96EB-4AF5D3F0951D">  用户名可以由数字 0-9、ASCII 字母 a-z 和 A-Z 以及点字符 (.) 组成。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-242A1CD4-3F4C-4900-A7D5-689922F922F8"><span class="usertext">-p; --password</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-5E9BB42D-0599-4529-98CF-67EFEDF8EA72"> 用于配置门户的初始管理帐户的密码。</p><p id="GUID-042BDC48-0E96-4E3E-86E0-011A9B51EF4D">密码可以由数字 0-9、ASCII 字母 a-z 和 A-Z 以及点字符 (.) 组成。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-C9B2021D-4F3D-4B6A-91A3-B8C57AD1FAEE"><span class="usertext">-e; --email</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-F66CE258-873D-4B37-81AA-B488AAF262F4">   用于配置门户的初始管理帐户的电子邮件地址。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-9A357989-248B-4957-BAB9-4EE60DA301F0"><span class="usertext">-qi; --question</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-DEA61C25-DA71-4AAB-A5FC-A958F1EA49E0">用于检索忘记的密码的密码提示问题索引。有关相应索引编号的可用问题如下：<ul purpose="ul" id="UL_FD2EBCDEDC5A478CBDB98CBDBA76DAF0"><li purpose="li" id="LI_11D7BB738B4243C18E2E397AD7C54FDE"> 1, 您出生于哪个城市?</li><li purpose="li" id="LI_08CDEA98A3304657AEDC09FFFA809689">2, 您高中的吉祥物是什么?</li><li purpose="li" id="LI_100A0BCF40C045689C1719160F9837CB">3, 您母亲的婚前姓氏是什么?</li><li purpose="li" id="LI_D630BD0ED59A460BA5E3CA29D22A66EE">4, 您购买的第一辆车是什么品牌?</li><li purpose="li" id="LI_72A5B4C8EC664F99A850C45F6EC128C8">5, 您就读于哪所高中?</li><li purpose="li" id="LI_67EB202557DC4DA5A58598D9BE3C0EE2">6, 您最好的朋友姓什么?</li><li purpose="li" id="LI_501C928AA57F4D1DAC5982092E0B442E">7, 您最年幼的兄弟姐妹的中间名是什么?</li><li purpose="li" id="LI_D14A34A16FD14016B802418181DCC217">8, 您所成长的街道叫什么?</li><li purpose="li" id="LI_63F59E390BDB436183EF5B518C26B4F9">9, 您最喜欢的虚拟角色叫什么?</li><li purpose="li" id="LI_F5D321B9B1B94D319526678D9DB5D088">10, 您最喜欢的宠物叫什么?</li><li purpose="li" id="LI_DCB2BAF503E24916BFFA5F798E5F8572"> 11, 您最喜欢的饭店是哪家?</li><li purpose="li" id="LI_74D620E8A8394C11B89427AC0AB98D61">12, 您最喜欢的书籍的名称是什么?</li><li purpose="li" id="LI_6A02F0AD6C1F4267B07E116D334384E7"> 13, 您梦想的工作是什么?</li><li purpose="li" id="LI_0AB904D4F04D4313ADCEF1E9EFF2B296"> 14, 您第一次约会的地点是哪里?</li></ul></p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-C86D2F92-A332-47FB-85DA-9047B3938B02"><span class="usertext">-qa; --answer</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-346E3127-B4F4-4E11-9E38-FD7BF0ACE19C"> 您为参数 <span class="usertext">-qi</span> 选择的密码提示问题的答案。</p><p id="GUID-59E362E8-0B5A-4EB5-8A3C-34C6F910706F"> 确保以引号括起多词语条目。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-FA307078-B2F7-45CB-BA24-E83EE2E234C3"><span class="usertext">-d; --contentDirectory</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-0C1B128D-8138-4893-AD85-8DD856118AB2"> 用于存储门户中托管的数据的内容目录的绝对路径和名称。</p><p id="GUID-57EC20BA-6DDD-4457-BE4D-AE181BB1B415">默认情况下，会在此位置创建门户内容目录：</p><p id="GUID-8F2969A0-8307-4AC5-A6EB-EBB38F30748A"> <span class="usertext">C:\arcgisportal</span></p><p id="GUID-9770A43F-5CC2-49E7-93EA-5D90A23D0199">或者</p><p id="GUID-1E230E16-320D-49E7-97EE-E029BFA3EF30"><span class="usertext"> \\&lt;Absolute path to&gt;\&lt;Content Directory&gt;</span></p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-514A6F25-E068-4C09-B107-FDCF80C1678C"><span class="usertext">-lf; --licenseFile</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-A8229529-D701-4155-A03F-A996589FFDFA">门户许可文件的路径。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-B46D32FB-A103-4745-8F74-17996910026D"><span class="usertext">-ut; --userTypeId</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-8AF6278C-14C8-4AC5-824E-980EAC3B1E1D">初始管理员的用户类型的 ID。</p><p id="GUID-641D3BE5-B18E-41A0-A444-C9F86E1AB97F">此参数属于可选操作。要为 <span class="usertext">-ut</span> 参数生成组织可用的兼容用户类型列表，请运行 <a class="xref xref" href="../../../../../zh-CN/portal/latest/install/windows/silently-installing-portal-for-arcgis.htm#ESRI_SECTION2_494E9AC8A43B438D9A193C34CABAD961"><span class="usertext">listadministratorusertypes</span> 实用程序</a>。如果未指定用户类型 ID，并且门户许可文件包含单个兼容的用户类型，则将分配该用户类型。如果许可文件包含多个兼容的用户类型，则将分配临时用户类型，且初始管理员必须在登录后<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/portal/latest/administer" href="../../../../../zh-CN/portal/latest/administer/windows/manage-members.htm#ESRI_SECTION1_65B95D0789454087806F4A2E4346D6C1">选择用户类型</a>。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-6BA4ED38-641A-4806-8D0C-AE48FADC5BA3"><span class="usertext">-f; --file</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-73E17CB3-D4EE-4B0E-A3BD-819378DC5CC4"><span class="usertext">createportal</span> 实用程序的属性文件。</p><p id="GUID-AC751C10-AC2E-4780-8830-25B85F208659"> 默认情况下，<span class="usertext">createportal.properties</span> 文件位于此位置： </p><p id="GUID-E0A92307-C40C-4E6F-A8C3-7CD86FD41E79"><span class="usertext">&lt;Portal for ArcGIS  Installation Directory&gt;/tools/createportal</span></p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-6F5046FE-44D3-421D-B105-DE3CB791AB90"><span class="usertext">-h; --help</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-EE1452A2-0EAD-481F-9509-05EA97769590">显示命令行帮助并退出。</p></td></tr></tbody><caption></caption></table></div><p id="GUID-40DB1331-3CF3-442F-B300-D7600C3FC1EE">以下为 <span class="usertext">createportal.properties</span> 文件示例： <section class="codeblock padded-anchor" purpose="codeblock"><div class="codeblockbody"><pre><code class="other no-highlight">#
+# Portal for ArcGIS site creation properties
+#
+# First name for initial administrator account
+PORTAL_ADMIN_FIRSTNAME = 
+# Last name for initial administrator account
+PORTAL_ADMIN_LASTNAME =
+# User name for initial administrator account
+# Can only have the numbers 0-9, the ASCII letters a-z, A-Z and the dot character (.)
+PORTAL_ADMIN_USERNAME =
+# Password for primary site administrator.
+# Can only have the numbers 0-9, the ASCII letters a-z, A-Z and the dot character (.)
+PORTAL_ADMIN_PASSWORD = 
+# Initially, leave PORTAL_ADMIN_PASSWORD_ENCRYPTED set to false.
+# When you run the tool the first time, the password will be
+# encrypted and PORTAL_ADMIN_PASSWORD_ENCRYPTED will change to true
+PORTAL_ADMIN_PASSWORD_ENCRYPTED = false
+# E-mail address for initial administrator account
+# e.g username@domain.com
+PORTAL_ADMIN_EMAIL =
+#This is the index of the secret question to retrieve a forgotten password. 
+#The list of questions with their respective index numbers is as follows:
+#1, What city were you born in ?&quot;
+#2, What was your high school mascot?&quot;
+#3, What is your mother's maiden name?&quot;
+#4, What was the make of your first car?&quot;
+#5, What high school did you go to?&quot;
+#6, What is the last name of your best friend?&quot;
+#7, What is the middle name of your youngest sibling?&quot;
+#8, What is the name of the street on which you grew up?&quot;
+#9, What is the name of your favorite fictional character?&quot;
+#10, What is the name of your favorite pet?&quot;
+#11, What is the name of your favorite restaurant?&quot;
+#12, What is the title of your favorite book?&quot;
+#13, What is your dream job?&quot;
+#14, Where did you go on your first date?&quot;);
+PORTAL_ADMIN_SECURITY_QUESTION_INDEX =
+# Answer to the secret question
+# e.g \&quot;My Answer\&quot;
+PORTAL_ADMIN_SECURITY_QUESTION_ANSWER =
+# Portal content directory where portal will store default and user-generated content.
+# By default, the portal content directory will be created locally. 
+# e.g. C:\\arcgisportal, or \\\\&lt;Absolute path to&gt;\\&lt;portal arcgisportal&gt;
+PORTAL_CONTENT_DIRECTORY =
+# The path to the portal license file
+PORTAL_LICENSE_FILE =
+# The ID of the user type for the Initial Administrator
+PORTAL_USER_TYPE_ID =</code></pre></div></section></p><p id="GUID-822D027C-847E-416C-B5BC-F9FFF9848AA5"> 在工具退出之前，您将收到一条消息，表明已成功创建门户。</p><section class="section2 padded-anchor" id="ESRI_SECTION2_494E9AC8A43B438D9A193C34CABAD961" purpose="section2"><h3>使用 listadministratorusertypes 命令行实用程序来识别兼容的用户类型</h3><p id="GUID-96254C38-0CEE-42A9-AA18-E2181A401AE7">要识别针对与管理员角色兼容的组织许可的用户类型 ID 列表，请运行 <span class="usertext">listadministratorusertypes</span> 命令行实用程序。这将为 <span class="usertext">-ut</span> 工具中的 <span class="usertext">createportal</span> 参数提供输入列表。运行带有 <span class="usertext">-la</span> 的工具，如下所示，将门户许可文件用作输入：</p><p id="GUID-911BEF6F-B826-4C6D-A193-A7A1363536FC"><span class="usertext">&lt;Portal for ArcGIS Installation Directory&gt;\tools\createportal\listadministratorusertypes.bat</span></p><p id="GUID-1CB6D380-1B04-4B04-BEC2-1CFA82CC9325">该实用程序的使用示例：<span class="usertext">listadministratorusertypes.bat [-la &lt;arg&gt;]</span> 或 <span class="usertext">listadministratorusertypes.bat [--listadministratorusertypes &lt;arg&gt;]</span></p></section></section>
+			
+				<hr>
+				<!--googleoff: all-->
+				
+	
+        
+		    <p class="feedback right">
+		        <a id="afb" class="icon-ui-contact" href="/feedback/" data-langlabel="feedback-on-this-topic" >有关此主题的反馈?</a>
+		    </p>
+        
+	
+
+				<!--googleon: all-->
+			
+		</main>
+	</div>
+	
+	<!--googleoff: all-->
+	
+		
+			<div id="main-toc-large" class="column-5">
+			    <div class="panel font-size--2 tablet-hide trailer-1">
+			      <h5 class="trailer-half">在本主题中</h5>
+			      <ol class="list-plain pre-0 trailer-0"><li><a href="#ESRI_SECTION1_3A92D0A06993403CA5B5D0179EAD544B">准备安装 <ph translate="no" varid="PortalForArcGIS">Portal for ArcGIS</ph></a></li><li><a href="#GUID-590EF5CB-BBDA-45B4-A3CB-5FE922B43063">静默安装 <ph translate="no" varid="PortalForArcGIS">Portal for ArcGIS</ph></a></li><li><a href="#ESRI_SECTION1_DE3737372F574C3FA3024D76CB765366">使用命令行参数配置 <ph translate="no" varid="PortalForArcGIS">Portal for ArcGIS</ph> 帐户</a></li><li><a href="#ESRI_SECTION1_EDF7ACDDAD2842B2BA61BEBF712D3EB8">  使用 createportal 命令行实用程序创建门户</a></li></ol>
+			    </div>
+			    
+			    
+	  		</div>
+		
+    
+   <!--googleon: all-->
+
+
+
+
+          
+        </div>
+        <!-- ENDPAGECONTENT -->
+
+      </div>
+
+    </div>  <!-- End of wrapper -->
+
+  <footer class="footer leader-3 link-dark-gray" role="contentinfo">
+    <div class="grid-container">
+      <div class="row">
+        <nav class="column-6">
+          <h6 data-langlabel="arcgis-for-server">Arc<span>GIS Enterprise</span></h6>
+          <ul class="list-plain">
+            <li><a data-langlabel="home" href="../../../../../zh-CN/">主页</a></li>
+            <li><a data-langlabel="portal" href="../../../../../zh-CN/portal/">Portal</a></li>
+            <li><a data-langlabel="server" href="../../../../../zh-CN/server/">Server</a></li>
+            <li><a data-langlabel="data-store" href="../../../../../zh-CN/data-store/">Data Stores</a></li>
+            <li><a data-langlabel="cloud" href="../../../../../zh-CN/cloud/">云</a></li>
+            <li><a data-langlabel="apps" href="../../../../../zh-CN/apps/">应用程序</a></li>
+            <li><a data-langlabel="documentation" href="../../../../../zh-CN/documentation/">文档</a></li>
+          </ul>
+        </nav>
+
+        
+  <nav class="column-6">
+    <h6 data-langlabel="arcgis-platform">ArcGIS 平台</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="arcgis" href="//www.arcgis.com/">ArcGIS Online</a></li>
+      <li><a data-langlabel="arcgis-for-professionals" href="//pro.arcgis.com/">ArcGIS Pro</a></li>
+      <li><a data-langlabel="arcgis-for-server" href="//enterprise.arcgis.com/">ArcGIS Enterprise</a></li>
+      <li><a data-langlabel="arcgis-for-developers" href="https://developers.arcgis.com/">ArcGIS for Developers</a></li>
+      <li><a data-langlabel="arcgis-solutions" href="//solutions.arcgis.com/">ArcGIS Solutions</a></li>
+      <li><a data-langlabel="arcgis-marketplace" href="//marketplace.arcgis.com/">ArcGIS Marketplace</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <h6 data-langlabel="about-esri">关于 Esri</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="about-us" href="//www.esri.com/about-esri/">关于我们</a></li>
+      <li><a data-langlabel="careers" href="//www.esri.com/careers/">招贤纳士</a></li>
+      <li><a data-langlabel="insiders-blog" href="https://www.esri.com/about/newsroom/blog/">Esri 博客</a></li>
+      <li><a data-langlabel="user-conference" href="//www.esri.com/events/user-conference/index.html">用户大会</a></li>
+      <li><a data-langlabel="developer-summit" href="//www.esri.com/events/devsummit/index.html">开发者峰会</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <a class="esri-logo" href="//www.esri.com/" aria-label="Esri Home"></a>
+    <section class="footer-social-nav leader-1">
+            <a class="icon-social-twitter" aria-label="Esri on Twitter" href="https://twitter.com/Esri/"></a>
+            <a class="icon-social-facebook" aria-label="Esri on Facebook" href="https://www.facebook.com/esrigis/"></a>
+            <a class="icon-social-github" aria-label="Esri on GitHub" href="//esri.github.io/"></a>
+            <a class="icon-social-contact" aria-label="Contact Esri" href="//www.esri.com/about-esri/contact/"></a>
+    </section>
+	  
+  </nav>
+  
+  <div class="column-24 leader-1">
+    <p class="font-size--3"><a href="http://www.esri.com/legal/copyright-trademarks">Copyright &copy; 2019 Esri.</a> All rights reserved. | <a href="http://www.esri.com/legal/privacy/">隐私政策</a> | <a href="http://www.esri.com/legal/software-license">法律声明</a></p>
+  </div>
+  
+
+
+      </div>
+    </div>
+  </footer>
+  <!--googleoff: all-->
+
+  
+  
+	<script src="../../../../../zh-CN/assets/js/init.js" type="text/javascript"></script>
+	<!--<script src="../../../../../zh-CN/assets/js/drop-down.js" type="text/javascript"></script>-->
+	<script src="../../../../../zh-CN/assets/js/search/searchform.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/cdn/js/link-modifier.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/cdn/js/sitewide.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/cdn/js/libs/highlight.pack.js" type="text/javascript"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+
+
+  
+    
+
+  <script src="../../../../../zh-CN/cdn/js/affix.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    $(function () {
+          var appendFlg = true;
+
+          $("#bigmac")
+          .on("affixed.bs.affix", function (evt) {
+            if (appendFlg) {
+              $("<a class='crumb' href='#'>静默安装 Portal for ArcGIS</a>").insertAfter ($("#bigmac nav a").last());
+              appendFlg = false;
+            }
+          })
+          .on ("affix-top.bs.affix", function(evt) {
+            if (!appendFlg) {
+              $("#bigmac nav a").last().remove();
+            }
+            appendFlg = true;
+          })
+    })
+  </script>
+  
+        <script type="text/javascript">
+          window.doctoc = {
+            pubID: "787",
+            tpcID: "38",
+            
+            hideToc : false
+          }
+        </script>
+
+        <script type="text/javascript" src="../../../../../zh-CN/documentation/install/more/latest/windows/1657.js" ></script>
+        <script type="text/javascript" src="../../../../../zh-CN/portal/latest/install/windows/787.js" ></script>
+        <script type="text/javascript" src="../../../../../zh-CN/cdn/calcite/js/protoc.js" ></script>
+
+        
+
+  <noscript>
+        <p>
+            <a href="flisting.htm">flist</a>
+        </p>
+    </noscript>
+    <script type="text/javascript"></script>
+  
+  
+    
+    
+
+  </body>
+</html>

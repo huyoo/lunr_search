@@ -1,0 +1,550 @@
+
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>  <html class="ie lt-ie9 lt-ie8 lt-ie7 ie6" dir="ltr"> <![endif]-->
+<!--[if IE 7]>     <html class="ie lt-ie9 lt-ie8 ie7" dir="ltr"> <![endif]-->
+<!--[if IE 8]>     <html class="ie lt-ie9 ie8" dir="ltr"> <![endif]-->
+<!--[if IE 9]>     <html class="ie ie9" dir="ltr"> <![endif]-->
+<!--[if !IE]><!--> <html dir="ltr" lang="zh-CN"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>创建群组&mdash;Portal for ArcGIS 
+  (10.8) | ArcGIS Enterprise 文档</title>
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+    <script>
+      var docConfig = {
+        locale: 'zh-CN'
+        ,localedir: 'zh-cn'
+        ,langSelector: ''
+        
+        ,relativeUrl: false
+        
+
+        ,searchformUrl: '/search/'
+        ,tertiaryNavIndex: ''
+
+        
+      };
+    </script>
+	 
+
+
+    
+    <!--[if lt IE 9]>
+      <script src="../../../../../zh-CN/cdn/js/libs/html5shiv.js" type="text/javascript"></script>
+      <script src="../../../../../zh-CN/cdn/js/libs/selectivizr-min.js" type="text/javascript"></script>
+      <script src="../../../../../zh-CN/cdn/js/libs/json2.js" type="text/javascript"></script>
+      <script src="../../../../../zh-CN/cdn/js/libs/html5shiv-printshiv.js" type="text/javascript" >
+
+    <![endif]-->
+
+     <!--[if lt IE 11]>
+    <script>
+      $$(document).ready(function(){
+        $$(".hideOnIE").hide();
+      });
+    </script>
+    <![endif]-->
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<link href="../../../../../zh-CN/assets/img/favicon.ico" rel="shortcut icon" >
+	<link href="../../../../../zh-CN/assets/css/screen.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/cdn/calcite/css/documentation.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/assets/css/print.css" media="print" type="text/css" rel="stylesheet" />
+
+	<!--
+	<link href="../../../../../zh-CN/assets/css/screen_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/assets/css/documentation/base_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/assets/css/print_l10n.css" media="print" type="text/css" rel="stylesheet" />
+	-->
+	
+	
+		<script src="../../../../../zh-CN/cdn/js/libs/jquery.1.9.1.min.js" type="text/javascript"></script>
+	
+	<script src="../../../../../zh-CN/cdn/js/libs/jquery.cookie.js" type="text/javascript"></script>
+	<link href="../../../../../zh-CN/cdn/css/colorbox.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/cdn/css/colorbox_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<script src="../../../../../zh-CN/cdn/js/libs/jquery.colorbox-min.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/assets/js/video-init.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/assets/js/sitecfg.js" type="text/javascript"></script>
+	
+		<script src="../../../../../zh-CN/assets/js/signIn.js" type="text/javascript"></script>
+	
+
+	<!--- Language Picker -->
+	<script src="../../../../../zh-CN/assets/js/locale/l10NStrings.js" type="text/javascript"></script>
+	
+		 
+	
+
+	<script src="../../../../../zh-CN/assets/js/calcite-web.js" type="text/javascript"></script>
+
+
+
+  <!--- search MD -->
+    <META name="description" content="群组是围绕特定主题或共同活动来组织和共享内容的一种方式。"><META name="last-modified" content="2019-12-6"><META name="product" content="arcgis-portal-windows,arcgis-enterprise-windows"><META name="sub_category" content="Portal for ArcGIS (Windows)"><META name="search-collection" content="help"><META name="content_type_label" content="帮助主题"><META name="sub_category_label" content="Portal for ArcGIS (Windows)"><META name="search-category" content="help-general"><META name="subject_label" content="PORTAL,服务,SERVER"><META name="version" content="10.8"><META name="content_type" content="Help Topic"><META name="subject" content="PORTAL,SERVICES,SERVER"><META name="content-language" content="zh-cn">
+    <!--- search MD -->
+
+  
+  <script src="../../../../../zh-CN/assets/js/switchers/portal-1.js" type="text/javascript"></script>
+  
+      
+
+</head>
+
+<!--
+      pub: GUID-86E3206A-3CAD-43C1-9F16-FFB7CA3AEC71=33
+      tpc: GUID-24E8F9F0-2968-46D2-A1E8-8090938EE1E7=40
+      -->
+
+
+<!-- variable declaration, if any -->
+<!-- can change following macro to set variable once we are on Jinja 2.8 -->
+
+
+
+
+
+<body class="claro zh-CN server">
+  
+
+  <!-- Drawer location -->
+  <div class="drawer drawer-left js-drawer" data-drawer="top-nav">
+        <nav class="drawer-nav" role="navigation">
+          <aside class="side-nav">
+            <h2 class="side-nav-title">Arc<span>GIS</span> Enterprise</h2>
+            <form id="helpSearchForm" class="margin-left-half margin-right-half leader-half trailer-half drawer-search-form" method="GET">
+              <input type="search" name="q"  placeholder="搜索 ArcGIS Enterprise 帮助">
+              <input type="hidden" name="collection" value="help" />
+              <input type="hidden" name="product" value="arcgis-portal-windows" />
+              <input type="hidden" name="version" value="10.8" />
+              <input type="hidden" name="language" value="zh-CN" />
+            </form>    
+             <a id="nav-portal" data-langlabel="portal" href="../../../../../zh-CN/portal/" class="side-nav-link">Portal</a>
+             
+            <a id="all-servers" data-langlabel="all-servers" href="../../../../../zh-CN/server/" class="side-nav-link">所有服务器</a>
+            <a id="gis-server" data-langlabel="gis-server" href="../../../../../zh-CN/server/" class="side-nav-link">GIS Server</a>
+            <a id="image-server" data-langlabel="image-server" href="../../../../../zh-CN/image/" class="side-nav-link">Image Server</a>
+            <a id="geo-analytics-server" data-langlabel="geo-analytics-server" href="../../../../../zh-CN/geoanalytics/" class="side-nav-link">GeoAnalytics Server</a>
+            <a id="geoevent-server" data-langlabel="geoevent-server" href="../../../../../zh-CN/geoevent/" class="side-nav-link">GeoEvent Server</a>
+            <a id="notebook-server" data-langlabel="notebook-server" href="../../../../../zh-CN/notebook/" class="side-nav-link">Notebook Server</a>
+            <a id="nav-data-store" data-langlabel="data-store" href="../../../../../zh-CN/data-store/" class="side-nav-link">Data Stores</a>
+            <a id="nav-cloud" data-langlabel="cloud" href="../../../../../zh-CN/cloud/" class="side-nav-link">云</a>
+            <a id="nav-apps" data-langlabel="apps" href="../../../../../zh-CN/apps/" class="side-nav-link">应用程序</a>
+            <a id="nav-doc" data-langlabel="documentation" href="../../../../../zh-CN/documentation/" class="side-nav-link">文档</a>
+
+          </aside>
+        </nav>
+    </div>
+
+    <!-- user navigation collapses to drawer on mobile -->
+    
+    <div class="drawer drawer-right js-drawer hide-if-logged-out logged-in-navigation" data-drawer="user-nav">
+      <nav class="drawer-nav">
+        <aside class="side-nav">
+          <a class="side-nav-link agolProfile" href="#">我的个人资料</a>
+          <a class="side-nav-link icon-ui-sign-out js-log-out" href="#">登出</a>
+        </aside>
+      </nav>
+    </div>
+    
+<!-- End of drawer -->
+
+  
+  <div class="wrapper">
+      <!--googleoff: all-->
+
+      <header class="top-nav" data-skin="learn">
+        <a class="skip-to-content" href="#skip-to-content">Skip To Content</a>
+        <div class="grid-container">
+          <div class="column-24">
+
+
+            <!--<div class="top-nav-title-wrapper text-center ">-->
+              <a href='../../../../../zh-CN/' class="top-nav-title tablet-hide"><span>Arc</span>GIS  Enterprise</a>
+              <a href='../../../../../zh-CN/' class="icon-ui-menu top-nav-title js-drawer-toggle tablet-show" data-drawer="top-nav"><span>Arc</span>GIS Enterprise</a>
+            <!--</div> -->
+
+          
+            <nav role="navigation" class="top-nav-list left tablet-hide">
+              <a id="nav-portal" data-langlabel="portal" href="../../../../../zh-CN/portal/" class="top-nav-link">Portal</a>
+
+                <div class="dropdown js-dropdown ">
+                  <a class="top-nav-link js-dropdown-toggle" tabindex="0" aria-haspopup="true" aria-expanded="false" href="#">Servers</a>
+                  <nav class="dropdown-menu featured" role="menu">
+                    <ul class="dropdown-sublist-featured">
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/get-started/latest/windows/additional-server-deployment.htm" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path  d="M42.92 6.1H4.12v8.566l.833.832-.835.833-.018 7.332.845.847-.825.824V33.9h25v5.2h-2v1.075H8.02v.8h19.1v.925h4.8v-.925H40v-.8h-8.08V39.1h-2v-5.2h13v-8.566l-.834-.834.835-.834v-7.332l-.835-.834.835-.834zm-11.8 35h-3.2v-1.2h3.2zm11-8H4.92v-7.434l.767-.766h35.668l.765.766zm0-9.766l-.766.766H5.666l-.766-.767.017-6.669.766-.764h35.671l.766.766zm0-9l-.766.766H5.687l-.766-.766V6.9h37.2zM19 11.9h-2v-.8h2zm-4 0h-2v-.8h2zm-4 0H9v-.8h2zm6 8.2h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9zm8 9h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9z"/></svg></span>
+                          <span class="sublink-text">所有服务器</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/server/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M45.98 33.575a.616.616 0 0 0-.335-.51l-3.362-2.03 3.362-2.031a.556.556 0 0 0 0-1.02l-11.1-6.704a1.293 1.293 0 0 0-1.112 0L22.33 27.982a.556.556 0 0 0 0 1.02l3.36 2.03-3.358 2.03a.556.556 0 0 0-.002 1.021l3.322 2.006-3.324 2.008a.555.555 0 0 0 .002 1.017l11.102 6.703a1.25 1.25 0 0 0 1.11.002l11.104-6.706a.556.556 0 0 0 0-1.02l-3.32-2.006 3.318-2.004a.607.607 0 0 0 .335-.509zM33.837 21.97c.026-.01.286-.005.29-.005l10.814 6.53-10.8 6.523c-.028.01-.284.005-.294.006l-10.813-6.53zm11.105 16.636l-10.8 6.523a2.564 2.564 0 0 1-.295.006l-10.81-6.529 3.39-2.047 7.004 4.23a1.083 1.083 0 0 0 .557.131 1.101 1.101 0 0 0 .554-.13l7.01-4.233zM34.14 40.098a2.545 2.545 0 0 1-.294.006l-10.812-6.53 3.43-2.073 6.97 4.208a1.25 1.25 0 0 0 1.107-.001l6.966-4.206 3.431 2.073zM9 8H7V7h2zm8 8h-2v-1h2zm-4-8h-2V7h2zm4 0h-2V7h2zm-4 8h-2v-1h2zm7.316 11.1H3.9v-6.434l.766-.766h35.668l.766.766v2.12l.8.483v-2.935l-.826-.826.826-.845v-6.329l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9h16.88a2.632 2.632 0 0 1 .336-.8zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zm0 8v-5.668l.766-.766h35.668l.766.766v5.67l-.746.764H4.666zM15 24v-1h2v1zm-4 0v-1h2v1zm-2-8H7v-1h2zm-2 8v-1h2v1z"/></svg></span>
+                          <span class="sublink-text">GIS Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/image/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 8h-2V7h2zm-4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm8 8h-2v1h2zm-8 0H7v1h2zm4 9v-1h-2v1zm-4 0v-1H7v1zm8 0v-1h-2v1zm4 3.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V21h-.8v-.334l-.766-.766H4.666l-.766.766V27.1H21zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zm40.234 4v21.8H23.1V23.1zm-.8 16.366L39.466 44.1h2.868l1.766-1.766zm-20.2-9.932l5.634-5.634h-2.868L23.9 26.666zm6.2-5.068L24.466 30.1h2.868l2.766-2.766zM28.466 30.1H30.1v-1.634zm2.434 0h6.2v-6.2h-6.2zm-7 7h6.2v-6.2h-6.2zm7 0h6.2v-6.2h-6.2zm0 6.434l5.634-5.634h-2.868L30.9 40.666zm7-7l5.634-5.634h-2.868L37.9 33.666zm1.634-5.634H37.9v1.634zm-8.634 7v1.634l1.634-1.634zm.566 6.2h2.868l2.766-2.766v-2.868zm6.434-3.566l2.634-2.634H37.9zM35.466 44.1H37.1v-1.634zm2.434 0h.434l5.766-5.766V37.9h-2.434L37.9 41.666zm6.2-8.634L42.466 37.1H44.1zm0-4L38.466 37.1h2.868l2.766-2.766zm0-7.566h-6.2v6.2h6.2zm-20.2 0v1.634l1.634-1.634zm0 20.2h6.2v-6.2h-6.2zm20.2 0v-.634l-.634.634z"/></svg></span>
+                          <span class="sublink-text">Image Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/geoanalytics/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 16h-2v-1h2zm-8 8v-1H7v1zm8 0v-1h-2v1zM13 7h-2v1h2zm4 0h-2v1h2zM9 7H7v1h2zm21.45 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V27.9h-1.464l-.801-.8H41.1v-6.434l-.766-.766H4.666l-.766.766V27.1h27.15zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM13 24v-1h-2v1zm0-9h-2v1h2zm-4 0H7v1h2zm26.672 27.148A1.87 1.87 0 0 1 35.9 43a1.91 1.91 0 1 1-3.763-.222l-9.845-3.414A1.88 1.88 0 0 1 21 39.9a1.9 1.9 0 1 1 1.474-3.084l4.692-2.346A1.878 1.878 0 0 1 27.1 34a1.902 1.902 0 0 1 1.9-1.9 1.867 1.867 0 0 1 .781.191l3.788-5.05A1.88 1.88 0 0 1 33.1 26a1.9 1.9 0 1 1 3.491 1.026l4.889 4.888c-.069.056-.144.1-.21.162a3.986 3.986 0 0 0-.358.402l-4.883-4.883A1.889 1.889 0 0 1 35 27.9a1.867 1.867 0 0 1-.781-.191l-3.788 5.049a1.868 1.868 0 0 1 .437.965l9.204.614c-.018.11-.049.218-.058.33A3.93 3.93 0 0 0 40 35c0 .046.01.09.01.135l-9.185-.612A1.913 1.913 0 0 1 29 35.9a1.889 1.889 0 0 1-1.474-.716l-4.692 2.346a1.878 1.878 0 0 1 .066.47 1.9 1.9 0 0 1-.105.625c-.007.02-.022.036-.03.056l9.63 3.34a1.87 1.87 0 0 1 2.786-.505l5.415-4.437c.067.108.127.22.204.322a3.9 3.9 0 0 0 .292.306zM33.9 26a1.092 1.092 0 0 0 .43.872 1.12 1.12 0 0 0 1.42-.068A1.1 1.1 0 1 0 33.9 26zm-6 8a1.1 1.1 0 0 0 2.196.093 1.135 1.135 0 0 0-.426-.965A1.087 1.087 0 0 0 29 32.9a1.101 1.101 0 0 0-1.1 1.1zm-5.8 4a1.098 1.098 0 1 0-.06.362A1.101 1.101 0 0 0 22.1 38zm13 5a1.1 1.1 0 1 0-2.2 0 1.1 1.1 0 0 0 2.2 0zm10.8-8a1.9 1.9 0 1 1-3.8 0c0-.053.003-.105.007-.158A1.9 1.9 0 0 1 45.9 35zm-.8 0a1.1 1.1 0 0 0-2.196-.093 1.153 1.153 0 0 0 .216.752A1.1 1.1 0 0 0 45.1 35z"/></svg></span>
+                          <span class="sublink-text">GeoAnalytics Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/geoevent/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M13 8h-2V7h2zm4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm12.418 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826v2.117c-.259-.177-.53-.337-.8-.497v-1.288l-.766-.766H4.666l-.766.766V27.1h17.933c-.148.26-.283.53-.415.8zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM9 24v-1H7v1zm4-9h-2v1h2zm0 9v-1h-2v1zm-4-9H7v1h2zm8 9v-1h-2v1zm16.9 2h-.8v8.9H39v-.8h-5.1zm.1-3.901a11.9 11.9 0 1 0 11.9 11.9 11.914 11.914 0 0 0-11.9-11.9zm0 23a11.1 11.1 0 1 1 11.1-11.1 11.112 11.112 0 0 1-11.1 11.1z"/></svg></span>
+                          <span class="sublink-text">GeoEvent Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/notebook/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M22 27.1H3.9v-6.434l.766-.766h18.576a5.262 5.262 0 0 1 .83-.8H4.666l-.766-.766v-5.668l.766-.766h35.668l.766.766V18h.8v-5.666l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9H22zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zM9 8H7V7h2zm8 0h-2V7h2zm-4 0h-2V7h2zm2 16v-1h2v1zm-4 0v-1h2v1zm-4 0v-1h2v1zm0-8v-1h2v1zm8 0v-1h2v1zm-4 0v-1h2v1zm18.9 8.1h-1.8v1.8h1.8zm-.8 1h-.2v-.2h.2zm15.498-4.48a2.727 2.727 0 0 0-1.62-.5v-.02H27.25a3.154 3.154 0 0 0-3.15 3.15V38.1h-1.68a3.386 3.386 0 0 0-2.872 1.58 3.49 3.49 0 0 0-.157 3.419 3.241 3.241 0 0 0 2.954 1.801h15.161a3.404 3.404 0 0 0 3.394-3.4V26.9h5v-3.65a3.224 3.224 0 0 0-1.302-2.63zM22.345 44.1a2.44 2.44 0 0 1-2.23-1.341 2.706 2.706 0 0 1 .11-2.65A2.588 2.588 0 0 1 22.42 38.9h12.89a3.395 3.395 0 0 0 0 5.2zM40.1 23.192V41.5a2.6 2.6 0 1 1-2.6-2.6v-.8H24.9V23.25a2.352 2.352 0 0 1 2.35-2.35h13.795a3.183 3.183 0 0 0-.945 2.292zm5 2.908h-4.2v-2.908a2.274 2.274 0 0 1 1.44-2.18 1.944 1.944 0 0 1 1.791.259 2.423 2.423 0 0 1 .97 1.979zm-17.1 5h9v.8h-9zm0 3h7v.8h-7zm0-6h9v.8h-9zm4-3h5v.8h-5z"/></svg></span>
+                          <span class="sublink-text">Notebook Server</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+
+              <a id="nav-data-store" data-langlabel="data-store" href="../../../../../zh-CN/data-store/" class="top-nav-link">Data Stores</a>
+              <a id="nav-cloud" data-langlabel="cloud" href="../../../../../zh-CN/cloud/" class="top-nav-link">云</a>
+              <a id="nav-apps" data-langlabel="apps" href="../../../../../zh-CN/apps/" class="top-nav-link">应用程序</a>
+            </nav>
+
+
+            
+            
+            
+
+            <div class="margin-left-1 top-nav-list right hide-if-logged-in logged-out-navigation">
+               
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+              
+              <a data-langlabel="sign-in" id="login-link" class="icon-ui-user top-nav-link link-blue login-link" href="#">登录</a>
+              
+            </div>
+
+            
+            <nav class="margin-left-1 top-nav-list right hide-if-logged-out logged-in-navigation">
+              
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+             
+              <div class="dropdown js-dropdown right">
+
+                <div class="tablet-show top-nav-link">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a href="#" data-drawer="user-nav" class="user-nav-name js-drawer-toggle" data-first-name></a>
+                </div>
+
+                <div class="tablet-hide top-nav-link js-dropdown-toggle">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a class="user-nav-name top-nav-dropdown dropdown-btn" data-first-name>&nbsp;</a>
+                </div>
+
+                <nav class="dropdown-menu dropdown-right">
+                
+                  <a class="dropdown-link agolProfile" id="agolProfile" href="#">我的个人资料</a>
+                  <a class="dropdown-link js-log-out" id="agolLogout" href="#">登出</a>
+                </nav>
+              </div>
+            </nav>
+            
+
+            
+          </div>
+        </div>
+      </header>
+
+      <div class="js-search search-overlay">
+        <div class="search-content" role="dialog" aria-labelledby="search">
+          <form method="GET" id="helpSearchForm">
+            <label>
+              搜索 ArcGIS Enterprise 帮助
+              <div class="search-bar">
+                <input type="search" name="q"  placeholder="搜索 ArcGIS Enterprise 帮助" class="search-input js-search-input">
+                <input type="hidden" name="collection" value="help" />
+                <input type="hidden" name="product" value="arcgis-portal-windows" />
+                <input type="hidden" name="version" value="10.8" />
+                <input type="hidden" name="language" value="zh-CN" />
+              </div>
+            </label>
+            <input type="hidden" name="relativePath" value="../../../../../" /><button type="submit" class="btn btn-large right">搜索</button>
+          </form>
+        </div>
+      </div>
+
+      <!--googleon: all-->
+
+      <div id="skip-to-content">
+        <!--googleoff: all-->
+        <header class="sub-nav sub-nav-learn">
+          <div class="grid-container">
+            
+            <div class="column-24">
+              <div style="display:table;" class="sdk-home-banner">
+                <div class="sdk-home-banner-content">
+                  <h1 class="sub-nav-title link-white">Portal for ArcGIS</h1>
+                </div>
+              </div>
+            </div>
+
+            <div class="column-24">
+              <nav class='sub-nav-list tablet-hide'><a class="sub-nav-link" href="../../../../../zh-CN/portal/" target="_top" title="Portal for ArcGIS 主页">主页</a><a class="sub-nav-link" href="../../../../../zh-CN/portal/latest/use/" target="_top" title="使用 Portal for ArcGIS">使用</a><a class="sub-nav-link is-active" href="../../../../../zh-CN/portal/latest/administer/windows/" target="_top" title="安装、管理和保护 Portal for ArcGIS">管理</a></nav><select class='tablet-show select-full trailer-half js-select-nav'><option value="../../../../../zh-CN/portal/">主页</option><option value="../../../../../zh-CN/portal/latest/use/">使用</option><option selected="true" value="../../../../../zh-CN/portal/latest/administer/windows/">管理</option></select>
+            </div>
+
+          </div>
+        </header>
+        <!--googleon: all-->
+       
+        <!-- content goes here -->
+        <div class="grid-container ">
+          
+
+            
+              
+  <!--BREADCRUMB-BEG--><div id="bigmac" class="sticky-breadcrumbs trailer-2" data-spy="affix" data-offset-top="180"> </div><!--BREADCRUMB-END-->
+  <!--googleoff: all-->
+    <div class="column-5 tablet-column-12 trailer-2 ">
+      <aside class="js-accordion accordion reference-index" aria-live="polite" role="tablist">
+        <div></div>
+      </aside>
+
+      <div class="js-sticky scroll-show tablet-hide leader-1 back-to-top" data-top="0" style="top: 0px;">
+        <a href="#" class="btn btn-fill btn-clear">返回顶部</a>
+      </div>
+    </div>
+  <!--googleon: all-->
+  
+            
+            
+            
+	
+		<div class="column-13  pre-1 content-section">
+	
+		<header class="trailer-1"><h1>创建群组</h1></header>
+
+		 
+	<!--googleoff: all-->
+	
+		
+				<aside id="main-toc-small" class="js-accordion accordion tablet-show trailer-1">
+			      <div class="accordion-section">
+			        <h4 class="accordion-title">在本主题中</h4>
+			        <div class="accordion-content list-plain">
+			          <ol class="list-plain pre-0 trailer-0"><li><a href="#ESRI_SECTION1_946848D9B81D4607B3E3AB706EB267E3">创建群组</a></li><li><a href="#ESRI_SECTION1_5E3FFFAA1B7E443FBB1E483E070B1979">从 IDP 链接企业群组</a></li><li><a href="#ESRI_SECTION1_0AE0F4912A3F4D41B420F4A37C6E02F3">编辑群组属性和设置</a></li></ol>
+			        </div>
+			      </div>
+			     </aside>
+		
+    
+   <!--googleon: all-->
+
+
+		<main>
+			
+	
+    	
+    
+
+
+			
+    <p id="GUID-A3A8C2C1-5E33-43FE-8E3C-CCA0B6B86D5A">群组是项目的集合，通常与特定的领域、主题或工程相关，由群组所有者进行创建和管理。<span class="ph">如果具有创建群组的权限，则可决定可以找到群组的人员、其他人是否可以申请加入群组、成员是否可以更新群组中共享的项目以及可以贡献内容的人员。</span>  即使您的群组不接受成员资格申请，您仍可以管理与群组共享的项目，并可以邀请他人加入。<span class="ph">默认管理员还可以限制谁可以查看群组成员列表并限制成员离开群组。</span></p>        
+        <p id="GUID-D02AA094-4F05-4A0E-8B00-DC9FC12B6F50" ishcondition="agol_plat=portal">组织管理员可创建允许成员更新与群组共享的项目的群组。在协作的情况下（多人需要更新同一项目），创建具有项目更新功能的群组是有用的 - 例如，运营中心的轮班工作人员需要更新其应用程序或仪表盘中的地图。当组织中的某些成员需要对公开显示的托管要素图层进行完全编辑控制时，创建具有上述功能的群组也是有用的，但是
+<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/portal/latest" href="../../../../../zh-CN/portal/latest/use/manage-hosted-layers.htm#ESRI_SECTION2_0D112A14838C447193174B0A4434C7D9">该图层的公开访问必须仅限于查看</a>。</p><p id="GUID-D3A03FF1-E9FC-4368-871C-8BF7B9E9734F"> 当成员<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/portal/latest" href="../../../../../zh-CN/portal/latest/use/share-items.htm#ESRI_SECTION1_0CF790E7414B48BEB0E69484A76D6A03">与启用项目更新功能的群组共享一个项目</a>时，他们仍然是该项目的所有者。其他群组成员可更新该项目。项目更新包括项目详细信息的更改以及内容的更新。例如，他们可向地图添加图层并将更新的内容保存到地图。</p><div class="panel trailer-1 note" id="GUID-88D755E4-59AF-4654-9475-774BB7B16C65"><h5 class="icon-ui-comment trailer-0">注：</h5>      <p id="GUID-1A7053C0-DC1B-4EB9-8256-B6197F48E3F9"> 目前，项目更新功能旨在用于项目详细信息以及地图、可配置应用程序和场景的内容。目前，大多数 <a class="xref xref" esrisubtype="extrel" hrefpfx="https://doc.arcgis.com/zh-cn/arcgis-online" href="https://doc.arcgis.com/zh-cn/arcgis-online/reference/arcgis-apps.htm">ArcGIS 应用程序</a>尚不支持项目更新功能。要确定特定的 ArcGIS 应用程序是否支持此功能，请参阅应用程序文档。</p>    </div>        
+    <p id="GUID-24E48054-14E7-4BE0-8A58-F94A4354A372" ishcondition="agol_plat=portal">组织管理员还可使用群组来<a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/about-configuring-the-portal-website.htm">配置门户网站</a>。这些站点配置群组包括组织的专题化内容、底图和模板。</p>    <section class="section1 padded-anchor" id="ESRI_SECTION1_946848D9B81D4607B3E3AB706EB267E3" purpose="section1"><h2>创建群组</h2><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><section class="context padded-anchor" id="ESRI_CONTEXT_E86220E5FCF349F0AA9F0F3612D4A336" purpose="context"><p id="GUID-00079ECC-E5E4-4829-92FB-55BD9AB16916">要创建群组，请完成以下步骤：</p></section><div class="steps" id="GUID-474DFA26-A29A-48A4-8AAC-FCB6FBE6FA2D"><ol class="list-numbered" purpose="ol">          <li purpose="step" id="GUID-B7E32A2A-B8A7-4062-904B-8C6774825B08">            <span purpose="cmd" id="GUID-1F73B311-E325-42AC-A28C-B76790DF4242">验证您是否已登录，以及是否具备创建群组的<a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/roles.htm">权限</a>。</span>          </li>          <li purpose="step" id="ESRI_STEP_83F06EDD9D254B868FF04839850408FE">            <span purpose="cmd" id="GUID-7B334F3E-20AC-42A2-A78D-1605ED4860D5">单击站点顶部的<span class="uicontrol">群组</span>，然后单击<span class="uicontrol">我的群组</span>选项卡上的<span class="uicontrol">创建群组</span>。</span>          </li>          <li purpose="step" id="ESRI_STEP_C2E268B7577B4AF3B347B2AAA16BA534">            <span purpose="cmd" id="GUID-7BA01509-4F02-4628-9412-4CF1195EF0F2">添加缩略图以表示群组。</span>            <div class="info" purpose="info">              <p id="GUID-5D8FED39-67AD-4D84-873D-AF973D6D52D2">可拖动一个图像或浏览到文件。为获得最佳效果，请添加不小于 400 x 400 像素或纵横比为 1:1 的 web 文件格式（如 PNG、JPEG 或 GIF）的图像。平移和缩放您希望在缩略图中显示的内容。根据图像文件的大小、分辨率以及自定义缩略图时的缩放程度，在保存该图像时可能需要重新采样和缩放。如果您添加 GIF 或 JPEG 格式的图像，则该图像在保存时将转换至 PNG 格式。</p>            </div>          </li><li purpose="step" id="ESRI_STEP_DA6DAA0EEB6C474DBF770F2CEEE6719A">            <span purpose="cmd" id="GUID-A20E6182-4F93-49D0-9702-BB2DE1F79090">请提供群组名称和标签。您还可以添加简短摘要。</span>          </li>                    
+                    <li purpose="step" id="ESRI_STEP_73EEBF658DA14BF29FBB3447B2213AAE" ishcondition="agol_plat=portal">            <span purpose="cmd" id="GUID-B2020E29-0BED-41ED-BE30-00004FBB5905">对于<span class="uicontrol">谁可以查看此群组？</span>，请选择下列选项之一： </span>            <ul purpose="choices" id="ESRI_CHOICES_FF617019CD0640A296D899E0ACB4FB23"><li purpose="choice" id="ESRI_CHOICE_7911EE9909A543DE9F1C04337312CAFC"><span class="uicontrol">仅群组成员</span> - 仅群组成员可以查找和查看此群组。如果您选择此选项，需要邀请门户成员到您的群组。</li><li purpose="choice" id="ESRI_CHOICE_63F9529C8ACC48AA9D5732335392EA48"><span class="uicontrol">组织中的人</span> - 仅组织的成员可以查找和查看此群组。成员可收到加入群组的邀请或申请加入群组。</li><li purpose="choice" id="ESRI_CHOICE_01444178D78946BAB88C2BB26D201882"><span class="uicontrol">所有人（公众）</span> - 具有门户访问权限的任何人都可以搜索并查看群组，还可以访问任何与群组和公众共享的内容，即使这些人不是门户组织的成员时也是如此。这是默认设置。</li></ul>          </li>          <li purpose="step" id="ESRI_STEP_3601716D35534CAEAE132D4983207CB7" ishcondition="agol_plat=portal">            <span purpose="cmd" id="GUID-E5E5A307-FDE4-47E5-838D-2A84895D9A03">如果您在上一步中选择了允许<span class="uicontrol">组织中的人</span>查看群组，请选择以下选项之一以指定谁可以加入群组。请注意，如果您的门户配置为使用企业群组，则只会看到第三个选项。另请注意，如果您选择允许<span class="uicontrol">所有人（公众）</span>查看该群组，不管您如何选择以下选项，除非未登录门户的用户是门户成员，否则将无法加入该群组，也不能被邀请进群组。</span>            <ul purpose="choices" id="ESRI_CHOICES_C58CB1507744440DB572695CCBF2BD71">              <li purpose="choice" id="ESRI_CHOICE_9023C2ED7FC14DB6A6CF99A3CFF10BF9"><span class="uicontrol">请求成员资格并获群组管理员批准的用户</span> - 仅提出加入请求并由群组所有者或群组管理员批准加入的成员才可加入群组。</li><li purpose="choice" id="ESRI_CHOICE_44ED361925F6428EA4FCCBDC82533D3C"><span class="uicontrol">仅限群组管理员邀请的用户</span> - 仅群组所有者或群组管理者邀请的成员才可加入群组。</li><li purpose="choice" id="ESRI_CHOICE_48A68EE21FB7457A9D7D1552F4B2DFC1">                <p id="GUID-A08D9881-D3E2-48A7-BFA5-BF834ACF1D8D">                  <span class="uicontrol">企业群组的成员</span> - 成员资格由企业群组在门户之外进行控制。只有在您是组织管理员或具有将内置群组链接到企业群组的<a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/roles.htm">权限</a>时，该选项才可用。<span class="ph">对此进行配置的具体过程取决于您的 IDP 是基于 AD/LDAP 还是基于 SAML，请参阅以下<a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/create-groups.htm#ESRI_SECTION1_5E3FFFAA1B7E443FBB1E483E070B1979">关于链接企业群组</a>部分。</span></p>                </li><li purpose="choice" id="ESRI_CHOICE_B0C638A265B84BB4A4FB378BD6D5AC93"><span class="uicontrol">所有人</span> - 任意组织成员均可加入群组而无需受到邀请或批准。在群组页面上单击<span class="uicontrol">加入该群组</span>的成员将被立即授予群组成员资格。</li>            </ul>                      </li><li purpose="step" id="ESRI_STEP_7BEB2C6F406B4253803682FEC10636EB">            <span purpose="cmd" id="GUID-3604A8DA-63A2-4AEC-A23D-0AE1E7488446">对于<span class="uicontrol">谁可以向该群组贡献内容?</span>，请选择下列选项之一：</span>            <ul purpose="choices" id="ESRI_CHOICES_532B2340729548C098323AA1CDF45ADE"><li purpose="choice" id="ESRI_CHOICE_7CC03BF0021B4E2BB20DCE467D247711"><span class="uicontrol">群组成员</span> - 所有群组成员均可以向群组贡献内容。</li><li purpose="choice" id="ESRI_CHOICE_6C42A99038E24E06B9E565E3573C032C"><span class="uicontrol">仅群组所有者和管理员</span> - 仅您（群组所有者）、群组管理员和组织中的管理员可以向群组贡献内容。如果选择了此选项，则群组成员可以查看并访问您的项目，但是不能将其自己的项目与群组共享。此种类型的群组是将您的权威地图和数据共享给目标受众的一种很好的方式。您可以控制在群组中显示的项目以及可以查看这些项目的用户。</li></ul>          </li><li purpose="step" id="ESRI_STEP_D1DD1E6C1D8947CDB26CEE2EE30CDE63">            <span purpose="cmd" id="GUID-222223FE-6815-49BD-A0CB-AE4FE8AD9C5D">对于<span class="uicontrol">成员可以更新群组中的哪些项目?</span>，请选择以下选项之一： </span>            <div class="info" purpose="info"><div class="panel trailer-1 note" id="GUID-BBBFB320-8BB2-4340-A68F-1A5824FB310E"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-8CF6F41F-D819-4334-9ABF-28C12DB49C7A">仅当您具有创建带有更新功能的群组的<a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/roles.htm#ESRI_SECTION2_DE533C0ED3D546E1BA5B47C8719D3BED">权限</a>时，此设置才可用。项目更新包括项目详细信息的更改以及内容的更新。当您创建新群组，且群组中的成员资格仅对受到邀请或其请求已获批准的用户开放时，此设置可用。</p></div></div><ul purpose="choices" id="ESRI_CHOICES_4A1963881C1F461C8AA9A45EEA1CA6B5"><li purpose="choice" id="ESRI_CHOICE_95AD16F852544402915BB1093DB07B6A"><span class="uicontrol">仅成员自己的项目</span> - 群组成员仅可以更新其拥有的项目。</li><li purpose="choice" id="ESRI_CHOICE_EF4993738D984377895FB797105491EE"><span class="uicontrol">所有项目（群组成员资格受限于组织）</span> - 群组成员可以更新与群组共享的任何项目，包括修改项目详情和更新内容。<span class="ph">如果选择此选项，则群组成员资格将仅限于有权创建、更新和删除内容的组织成员。</span><div class="panel trailer-1 note" id="GUID-CC64E170-8EA4-4E89-AAC2-E1DDCCA16022"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-4936360C-10B0-462E-A202-BB2ED0AE186D">只有项目所有者（或管理员）才能对项目执行以下操作（不是所有操作都适用于所有项目类型）：删除、共享、移动、更改所有者、更改删除保护、发布、注册应用程序、覆盖托管要素图层中的数据以及管理托管切片图层中的切片。</p></div></li></ul>          </li>                    
+                    
+          <li purpose="step" id="ESRI_STEP_B7940CBEB2D144AF9C81E5479672227E"><span purpose="cmd">对于<span class="uicontrol">谁可以查看“成员”选项卡上的成员列表？</span>选择其中一项：</span><div class="info" purpose="info"><div class="panel trailer-1 note" id="GUID-5A784E40-CD51-4270-80FD-D90DFF060130"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-B4E4999D-D7DA-40E1-88D7-F9448EAC9CBE">此设置仅适用于默认管理员。 </p></div></div><ul purpose="choices" id="ESRI_CHOICES_2496F03B38914DA8A7A7B66940BC6DA1"><li purpose="choice" id="ESRI_CHOICE_BAD65E7E3A9A4E5289A68B2C7AC058D9"><span class="uicontrol">所有群组成员</span> - 所有群组成员都可以看到群组成员列表。</li><li purpose="choice" id="ESRI_CHOICE_9182E741E03F498FAEA97A23CECC456A"><span class="uicontrol">仅群组所有者和管理员</span> - 仅群组所有者和管理员以及具有查看所有成员和群组的管理权限的用户能够查看群组成员的完整列表。群组的其他成员只能看到<span class="uicontrol">成员</span>选项卡上列出的群组所有者和群组管理员。对于您想要保护群组成员隐私的公共群组（例如，社区和众包群组），选择此选项。<div class="panel trailer-1 note" id="GUID-1CFB13E2-967B-4325-806E-FE82A770B977"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-623118EC-1AF3-4364-A33D-717A43F8BEEC">项目所有者仍将显示在群组中各个项目的项目页面上。此选项仅应用于群组页面的<span class="uicontrol">成员</span>选项卡。当邀请成员加入群组或从组织页面的<span class="uicontrol">成员</span>选项卡管理成员时，组织成员能够将该群组视为过滤选项。</p></div></li></ul></li><li purpose="step" id="ESRI_STEP_704C647BA3C24CCD87DCC29479696BAB">            <span purpose="cmd" id="GUID-CCE5A7AA-077B-4F8D-AB4B-83555DCE3CB6">要更改项目在群组页面上的排序方式，请从下拉菜单中选择字段。</span>            <div class="info" purpose="info">              <p id="GUID-4EFAF038-6AA5-4851-8683-A804688AC51A"><span class="ph">可以选择按标题（默认）、所有者、查看次数或日期来进行排序。要更改项目排列的方式，请选中或取消选中<span class="uicontrol">升序</span>复选框。在嵌入到网站、共享为应用程序以及用来配置门户网站时（如底图库），排序字段和顺序会扩展到您的群组。</span> 如果更改排序字段或顺序，项目显示将在使用群组的各个位置进行更新。</p>            </div>          </li><li purpose="step" id="ESRI_STEP_F1CA3F4880E840ADB5E21477426B57D4"><span purpose="cmd">在群组的<span class="uicontrol">内容</span>和<span class="uicontrol">概述</span>选项卡上指定默认要显示的项目类型（例如，地图或图层）。</span></li><li purpose="step" id="ESRI_STEP_5BF47FA5EFD14A4FA9D3A7296C4C55CD"><span purpose="cmd">如果您是默认管理员并希望限制群组成员离开群组，选中<span class="uicontrol">管理群组</span>框。如果选中此框，仅当群组所有者或群组管理员将群组成员移除时，成员才可离开群组。</span><div class="info" purpose="info"><div class="panel trailer-1 note" id="GUID-320982E6-FC69-4578-A52F-59477BD01A53"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-F60AD41D-A2E7-478D-8B4E-EBD0B888291D">此设置仅在创建新群组时可用。</p></div></div></li>          <li purpose="step" id="ESRI_STEP_7B541BB1C5BD4CF984FDDC7B14696971">            <span purpose="cmd" id="GUID-17FB6116-DC50-4DBB-A881-47A74697FEDF">单击<span class="uicontrol">创建群组</span>。</span>          <div class="stepresult" purpose="stepresult"><p id="GUID-143D1678-C2AE-4473-9E94-8C19381544CF"> 您的新群组将创建，将具有基本信息和您所指定的属性。建议您添加关于群组的简单介绍（如果尚未执行此操作），也可添加详细描述。</p><p id="GUID-1B94F0E2-A55B-4F5A-9851-1031CD0680D8">您可以随时使用群组。您可以<a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/create-groups.htm#ESRI_SECTION1_0AE0F4912A3F4D41B420F4A37C6E02F3">编辑</a><span class="uicontrol">概述</span>选项卡上的群组属性以及<span class="uicontrol">设置</span>选项卡上的群组设置。<span class="ph">使用<span class="uicontrol">概述</span>或<span class="uicontrol">成员</span>选项卡上的<span class="uicontrol">邀请用户</span>按钮来进行搜索并邀请成员加入群组。</span> </p></div></li>        </ol></div></section></section>    <section class="section1 padded-anchor" id="ESRI_SECTION1_5E3FFFAA1B7E443FBB1E483E070B1979" purpose="section1"><h2>从 IDP 链接企业群组</h2><p id="GUID-80941EB6-2493-4597-BB1B-19E402F41A14">如果您拥有为您的组织管理企业群组的基于 AD、LDAP 或 SAML 的 Windows IDP，您可以将这些群组链接到您在 <span class="ph">ArcGIS Enterprise</span> 门户中创建的新群组。在以上工作流中选择可加入新群组的成员时，请注意这些其他步骤：</p><section class="section2 padded-anchor" id="ESRI_SECTION2_548833A0EE444EFE90515BC0DE26670B" purpose="section2"><h3>基于 AD 或 LDAP 的 IDP</h3><p id="GUID-851BA0F1-8696-4346-8051-5A2B9E16C06D">如果您的门户<a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/about-configuring-portal-authentication.htm">配置有企业标识存储</a>并在标识存储中提供有关企业群组的元数据，您可以为现有企业群组中的成员设置新的门户群组的成员资格。要定义企业群组，请在文本框中键入企业群组名称的全部或部分，然后单击<span class="uicontrol">搜索群组</span>。从结果列表中选择所需的群组，然后单击<span class="uicontrol">选择群组</span>。</p><p id="GUID-A76C47A3-7069-475B-B13B-74AD5B37D5A7"><div class="panel trailer-1 note" id="GUID-AEC62CBF-3B8C-4B2C-8694-F730ACAA3A3F"><h5 class="icon-ui-comment trailer-0">注：</h5>                  <p id="GUID-2FEF6B00-E7BE-4D20-B405-B804B5D11DF4">企业群组中已作为门户成员的任何企业帐户创建后将马上被添加到门户群组中。如果企业帐户和群组来自 Windows AD 服务器，则该服务器中包含嵌套企业群组中的帐户。</p>                <p id="GUID-BABC988B-C842-4E8C-8484-F8187CB18833">AD 群组<span class="uicontrol">域用户</span>不得用作企业群组。这是因为对于大多数 AD 用户，AD 群组被认为是主要群组，且对于大多数用户，该群组没有在 <span class="usertext">memberOf</span> 属性中列出。</p></div></p></section><section class="section2 padded-anchor" id="ESRI_SECTION2_26F44DE88AD84BCCBFCA47C59FBB941F" purpose="section2"><h3>基于 SAML 的 IDP</h3><p id="GUID-4B04B819-5578-4E15-AF6A-BE2DDBF8CBEC">要从基于 SAML 的 IDP 将企业群组链接到门户中创建的新群组，请在门户设置中<a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/configuring-a-saml-compliant-identity-provider-with-your-portal.htm#GUID-0AFD5CF7-AFDF-4682-A604-A24B0C8875D6">设置 IDP 时，选中<span class="uicontrol">启用基于 SAML 的群组成员资格</span>复选框</a>。要链接企业群组，请在 <span class="ph">ArcGIS Enterprise</span> 门户中创建新群组时正确输入群组的名称，该名称应与 IDP 的 SAML 声明响应中返回的名称相同。当<span class="uicontrol">启用基于 SAML 的群组成员资格</span>被选中时，<span class="uicontrol">搜索群组</span>选项不可用。</p><p id="GUID-41348072-9372-45F3-BE14-E9530556C519">支持以下用于定义用户的群组成员资格的属性名称（不区分大小写）：<span class="usertext">Group</span>、<span class="usertext">Groups</span>、<span class="usertext">Roles</span>、<span class="usertext">MemberOf</span>、<span class="usertext">member-of</span>、<span class="usertext">http://schemas.xmlsoap.org/claims/Group</span>、<span class="usertext">http://schemas.microsoft.com/ws/2008/06/identity/claims/groups</span>、<span class="usertext">urn:oid:1.3.6.1.4.1.5923.1.5.1.1</span> 和 <span class="usertext">urn:oid:2.16.840.1.113719.1.1.4.1.25</span>。</p><div class="panel trailer-1 note" id="GUID-5FEFC35A-309A-4D1B-AE2E-234350F2F386"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-BF3687EA-64CE-44AC-8FA6-1526A56C1DCD"> 对于通过 IDP 的 SAML 声明响应获得的企业群组，每个用户的群组成员资格只有在每次用户登录到门户时才会更新。</p></div></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_0AE0F4912A3F4D41B420F4A37C6E02F3" purpose="section1"><h2>编辑群组属性和设置</h2><p id="GUID-BF48BEAB-0B2D-415E-9518-4E9539225D3A"> 创建群组后，您、您指定的任何<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/portal/latest" href="../../../../../zh-CN/portal/latest/use/own-groups.htm#ESRI_SECTION1_74F68E83299A4382B24141E7C3A592CA">群组管理员</a>、以及具有群组<a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/roles.htm">权限</a>的管理员均可编辑其属性和设置。例如，您可以修改群组标题或描述，也可更改谁可以贡献内容等设置。有关使用您拥有的群组（包括管理群组内容和成员）的详细信息，请参阅<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/portal/latest" href="../../../../../zh-CN/portal/latest/use/own-groups.htm">拥有群组</a>。</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_A239100D255D432995C8C02783A285E8"><ol class="list-numbered" purpose="ol">          <li purpose="step" id="ESRI_STEP_CE7B8CEB214A43599A98CB11CCCD35A9">            <span purpose="cmd" id="GUID-68089999-A5E9-4893-85FE-DE791C0E43E7">请确认您已使用要编辑群组的所有者、群组管理员或群组内管理员的身份登录。</span>          </li>          <li purpose="step" id="ESRI_STEP_68F06222333B4782925CBF6F6F7B815E">            <span purpose="cmd" id="GUID-0D04E839-DF26-49DD-BE24-4327788F2457">单击站点顶部的<span class="uicontrol">群组</span>使用选项卡、过滤器、排序选项，并根据需要搜索以查找要编辑的群组。</span>          </li>          <li purpose="step" id="ESRI_STEP_9D91D3C6D773429D91182FDA2D322B64">            <span purpose="cmd" id="GUID-040A35A8-0C3B-4B7F-8114-AF32E6B35BD8">单击群组名称以打开群组页面，然后执行以下任一操作：</span>            <ul purpose="choices" id="ESRI_CHOICES_8E8C4EED60BD436187B1C259C5BD4103"><li purpose="choice" id="ESRI_CHOICE_39053C454D5B4826AD6CFCD26E04E77B"> 在<span class="uicontrol">概述</span>选项卡上，单击要编辑的属性（例如描述或标签）旁的<span class="uicontrol">编辑</span>，进行相应更改，然后单击<span class="uicontrol">保存</span>以保存更改。您可以编辑群组的名称、摘要、描述、缩略图和标签。</li><li purpose="choice" id="ESRI_CHOICE_2517262BCF584644B96BA2F7725B1627"> 在<span class="uicontrol">设置</span>选项卡上，修改群组设置（例如，群组内容的排序方式、谁可以查看群组，谁可以加入群组或谁可以贡献内容）。您还可以在群组的<span class="uicontrol">内容</span>和<span class="uicontrol">概述</span>选项卡上指定默认要显示的项目类型（例如，地图或图层）。完成后，请单击<span class="uicontrol">设置</span>选项卡上的<span class="uicontrol">保存</span>。</li></ul><div class="info" purpose="info">              <div class="panel trailer-1 note" id="GUID-F40B882D-0A99-4C50-BC66-7B8948FC250F"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-CA8FBA63-F4A6-4FE5-87BF-2CE035A94495"> 编辑某些设置的能力取决于您的<a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/roles.htm">权限</a>和群组角色。<span class="ph">使用现有群组时，您无法更改<span class="uicontrol">成员可以更新群组中的哪些项目?</span> 设置。您仅可以对新群组指定更新选项。如果要更改此设置，必须删除群组并使用想要的选项创建新群组。</span></p></div>                          </div>          </li>                  </ol></div></section></section>  
+			
+				<hr>
+				<!--googleoff: all-->
+				
+	
+        
+		    <p class="feedback right">
+		        <a id="afb" class="icon-ui-contact" href="/feedback/" data-langlabel="feedback-on-this-topic" >有关此主题的反馈?</a>
+		    </p>
+        
+	
+
+				<!--googleon: all-->
+			
+		</main>
+	</div>
+	
+	<!--googleoff: all-->
+	
+		
+			<div id="main-toc-large" class="column-5">
+			    <div class="panel font-size--2 tablet-hide trailer-1">
+			      <h5 class="trailer-half">在本主题中</h5>
+			      <ol class="list-plain pre-0 trailer-0"><li><a href="#ESRI_SECTION1_946848D9B81D4607B3E3AB706EB267E3">创建群组</a></li><li><a href="#ESRI_SECTION1_5E3FFFAA1B7E443FBB1E483E070B1979">从 IDP 链接企业群组</a></li><li><a href="#ESRI_SECTION1_0AE0F4912A3F4D41B420F4A37C6E02F3">编辑群组属性和设置</a></li></ol>
+			    </div>
+			    
+			    
+	  		</div>
+		
+    
+   <!--googleon: all-->
+
+
+
+
+          
+        </div>
+        <!-- ENDPAGECONTENT -->
+
+      </div>
+
+    </div>  <!-- End of wrapper -->
+
+  <footer class="footer leader-3 link-dark-gray" role="contentinfo">
+    <div class="grid-container">
+      <div class="row">
+        <nav class="column-6">
+          <h6 data-langlabel="arcgis-for-server">Arc<span>GIS Enterprise</span></h6>
+          <ul class="list-plain">
+            <li><a data-langlabel="home" href="../../../../../zh-CN/">主页</a></li>
+            <li><a data-langlabel="portal" href="../../../../../zh-CN/portal/">Portal</a></li>
+            <li><a data-langlabel="server" href="../../../../../zh-CN/server/">Server</a></li>
+            <li><a data-langlabel="data-store" href="../../../../../zh-CN/data-store/">Data Stores</a></li>
+            <li><a data-langlabel="cloud" href="../../../../../zh-CN/cloud/">云</a></li>
+            <li><a data-langlabel="apps" href="../../../../../zh-CN/apps/">应用程序</a></li>
+            <li><a data-langlabel="documentation" href="../../../../../zh-CN/documentation/">文档</a></li>
+          </ul>
+        </nav>
+
+        
+  <nav class="column-6">
+    <h6 data-langlabel="arcgis-platform">ArcGIS 平台</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="arcgis" href="//www.arcgis.com/">ArcGIS Online</a></li>
+      <li><a data-langlabel="arcgis-for-professionals" href="//pro.arcgis.com/">ArcGIS Pro</a></li>
+      <li><a data-langlabel="arcgis-for-server" href="//enterprise.arcgis.com/">ArcGIS Enterprise</a></li>
+      <li><a data-langlabel="arcgis-for-developers" href="https://developers.arcgis.com/">ArcGIS for Developers</a></li>
+      <li><a data-langlabel="arcgis-solutions" href="//solutions.arcgis.com/">ArcGIS Solutions</a></li>
+      <li><a data-langlabel="arcgis-marketplace" href="//marketplace.arcgis.com/">ArcGIS Marketplace</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <h6 data-langlabel="about-esri">关于 Esri</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="about-us" href="//www.esri.com/about-esri/">关于我们</a></li>
+      <li><a data-langlabel="careers" href="//www.esri.com/careers/">招贤纳士</a></li>
+      <li><a data-langlabel="insiders-blog" href="https://www.esri.com/about/newsroom/blog/">Esri 博客</a></li>
+      <li><a data-langlabel="user-conference" href="//www.esri.com/events/user-conference/index.html">用户大会</a></li>
+      <li><a data-langlabel="developer-summit" href="//www.esri.com/events/devsummit/index.html">开发者峰会</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <a class="esri-logo" href="//www.esri.com/" aria-label="Esri Home"></a>
+    <section class="footer-social-nav leader-1">
+            <a class="icon-social-twitter" aria-label="Esri on Twitter" href="https://twitter.com/Esri/"></a>
+            <a class="icon-social-facebook" aria-label="Esri on Facebook" href="https://www.facebook.com/esrigis/"></a>
+            <a class="icon-social-github" aria-label="Esri on GitHub" href="//esri.github.io/"></a>
+            <a class="icon-social-contact" aria-label="Contact Esri" href="//www.esri.com/about-esri/contact/"></a>
+    </section>
+	  
+  </nav>
+  
+  <div class="column-24 leader-1">
+    <p class="font-size--3"><a href="http://www.esri.com/legal/copyright-trademarks">Copyright &copy; 2019 Esri.</a> All rights reserved. | <a href="http://www.esri.com/legal/privacy/">隐私政策</a> | <a href="http://www.esri.com/legal/software-license">法律声明</a></p>
+  </div>
+  
+
+
+      </div>
+    </div>
+  </footer>
+  <!--googleoff: all-->
+
+  
+  
+	<script src="../../../../../zh-CN/assets/js/init.js" type="text/javascript"></script>
+	<!--<script src="../../../../../zh-CN/assets/js/drop-down.js" type="text/javascript"></script>-->
+	<script src="../../../../../zh-CN/assets/js/search/searchform.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/cdn/js/link-modifier.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/cdn/js/sitewide.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/cdn/js/libs/highlight.pack.js" type="text/javascript"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+
+
+  
+    
+
+  <script src="../../../../../zh-CN/cdn/js/affix.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    $(function () {
+          var appendFlg = true;
+
+          $("#bigmac")
+          .on("affixed.bs.affix", function (evt) {
+            if (appendFlg) {
+              $("<a class='crumb' href='#'>创建群组</a>").insertAfter ($("#bigmac nav a").last());
+              appendFlg = false;
+            }
+          })
+          .on ("affix-top.bs.affix", function(evt) {
+            if (!appendFlg) {
+              $("#bigmac nav a").last().remove();
+            }
+            appendFlg = true;
+          })
+    })
+  </script>
+  
+        <script type="text/javascript">
+          window.doctoc = {
+            pubID: "555",
+            tpcID: "146",
+            
+              prefix: "管理",
+              prefixUrl: "/zh-cn/portal/latest/administer/windows/",
+          
+            hideToc: false
+          }
+        </script>
+
+        <script type="text/javascript" src="../../../../../zh-CN/portal/latest/administer/windows/555.js" ></script>
+        <script type="text/javascript" src="../../../../../zh-CN/cdn/calcite/js/protoc.js" ></script>
+        
+        
+
+  <noscript>
+        <p>
+            <a href="flisting.htm">flist</a>
+        </p>
+    </noscript>
+    <script type="text/javascript"></script>
+  
+  
+    
+    
+
+  </body>
+</html>

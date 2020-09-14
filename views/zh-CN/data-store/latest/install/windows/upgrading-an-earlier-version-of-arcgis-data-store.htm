@@ -1,0 +1,570 @@
+
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>  <html class="ie lt-ie9 lt-ie8 lt-ie7 ie6" dir="ltr"> <![endif]-->
+<!--[if IE 7]>     <html class="ie lt-ie9 lt-ie8 ie7" dir="ltr"> <![endif]-->
+<!--[if IE 8]>     <html class="ie lt-ie9 ie8" dir="ltr"> <![endif]-->
+<!--[if IE 9]>     <html class="ie ie9" dir="ltr"> <![endif]-->
+<!--[if !IE]><!--> <html dir="ltr" lang="zh-CN"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>Upgrade ArcGIS Data Store&mdash;ArcGIS Data Store (Windows) Installation Guide | ArcGIS Enterprise 文档</title>
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+    <script>
+      var docConfig = {
+        locale: 'zh-CN'
+        ,localedir: 'zh-cn'
+        ,langSelector: ''
+        
+        ,relativeUrl: false
+        
+
+        ,searchformUrl: '/search/'
+        ,tertiaryNavIndex: ''
+
+        
+      };
+    </script>
+	 
+
+
+    
+    <!--[if lt IE 9]>
+      <script src="../../../../../zh-CN/cdn/js/libs/html5shiv.js" type="text/javascript"></script>
+      <script src="../../../../../zh-CN/cdn/js/libs/selectivizr-min.js" type="text/javascript"></script>
+      <script src="../../../../../zh-CN/cdn/js/libs/json2.js" type="text/javascript"></script>
+      <script src="../../../../../zh-CN/cdn/js/libs/html5shiv-printshiv.js" type="text/javascript" >
+
+    <![endif]-->
+
+     <!--[if lt IE 11]>
+    <script>
+      $$(document).ready(function(){
+        $$(".hideOnIE").hide();
+      });
+    </script>
+    <![endif]-->
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<link href="../../../../../zh-CN/assets/img/favicon.ico" rel="shortcut icon" >
+	<link href="../../../../../zh-CN/assets/css/screen.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/cdn/calcite/css/documentation.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/assets/css/print.css" media="print" type="text/css" rel="stylesheet" />
+
+	<!--
+	<link href="../../../../../zh-CN/assets/css/screen_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/assets/css/documentation/base_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/assets/css/print_l10n.css" media="print" type="text/css" rel="stylesheet" />
+	-->
+	
+	
+		<script src="../../../../../zh-CN/cdn/js/libs/jquery.1.9.1.min.js" type="text/javascript"></script>
+	
+	<script src="../../../../../zh-CN/cdn/js/libs/jquery.cookie.js" type="text/javascript"></script>
+	<link href="../../../../../zh-CN/cdn/css/colorbox.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/cdn/css/colorbox_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<script src="../../../../../zh-CN/cdn/js/libs/jquery.colorbox-min.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/assets/js/video-init.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/assets/js/sitecfg.js" type="text/javascript"></script>
+	
+		<script src="../../../../../zh-CN/assets/js/signIn.js" type="text/javascript"></script>
+	
+
+	<!--- Language Picker -->
+	<script src="../../../../../zh-CN/assets/js/locale/l10NStrings.js" type="text/javascript"></script>
+	
+		 
+	
+
+	<script src="../../../../../zh-CN/assets/js/calcite-web.js" type="text/javascript"></script>
+
+
+
+  <!--- search MD -->
+    <META name="description" content="The setup package is capable of upgrading earlier versions of this product currently installed on your Windows system. To do this, follow the instructions in this topic."><META name="last-modified" content="2019-12-6"><META name="product" content="arcgis-portal-windows,arcgis-enterprise-windows"><META name="sub_category" content="ArcGIS Data Store (Windows)"><META name="search-collection" content="help"><META name="content_type_label" content="安装指南主题"><META name="sub_category_label" content="ArcGIS Data Store (Windows)"><META name="search-category" content="help-install"><META name="subject_label" content="PORTAL,服务,SERVER"><META name="version" content="10.8"><META name="content_type" content="Install Guide Topic"><META name="subject" content="PORTAL,SERVICES,SERVER"><META name="content-language" content="zh-cn">
+    <!--- search MD -->
+
+  
+  <script src="../../../../../zh-CN/assets/js/switchers/data-store-1.js" type="text/javascript"></script>
+  
+      
+
+</head>
+
+<!--
+      pub: GUID-63BE2DC8-C71A-4F52-9BB9-0EA576AF0ED0=24
+      tpc: GUID-8323F649-7871-44EC-87EA-8E4D624710C0=12
+      -->
+
+
+<!-- variable declaration, if any -->
+<!-- can change following macro to set variable once we are on Jinja 2.8 -->
+
+
+
+
+
+<body class="claro zh-CN server">
+  
+
+  <!-- Drawer location -->
+  <div class="drawer drawer-left js-drawer" data-drawer="top-nav">
+        <nav class="drawer-nav" role="navigation">
+          <aside class="side-nav">
+            <h2 class="side-nav-title">Arc<span>GIS</span> Enterprise</h2>
+            <form id="helpSearchForm" class="margin-left-half margin-right-half leader-half trailer-half drawer-search-form" method="GET">
+              <input type="search" name="q"  placeholder="搜索 ArcGIS Enterprise 帮助">
+              <input type="hidden" name="collection" value="help" />
+              <input type="hidden" name="product" value="arcgis-portal-windows" />
+              <input type="hidden" name="version" value="10.8" />
+              <input type="hidden" name="language" value="zh-CN" />
+            </form>    
+             <a id="nav-portal" data-langlabel="portal" href="../../../../../zh-CN/portal/" class="side-nav-link">Portal</a>
+             
+            <a id="all-servers" data-langlabel="all-servers" href="../../../../../zh-CN/server/" class="side-nav-link">所有服务器</a>
+            <a id="gis-server" data-langlabel="gis-server" href="../../../../../zh-CN/server/" class="side-nav-link">GIS Server</a>
+            <a id="image-server" data-langlabel="image-server" href="../../../../../zh-CN/image/" class="side-nav-link">Image Server</a>
+            <a id="geo-analytics-server" data-langlabel="geo-analytics-server" href="../../../../../zh-CN/geoanalytics/" class="side-nav-link">GeoAnalytics Server</a>
+            <a id="geoevent-server" data-langlabel="geoevent-server" href="../../../../../zh-CN/geoevent/" class="side-nav-link">GeoEvent Server</a>
+            <a id="notebook-server" data-langlabel="notebook-server" href="../../../../../zh-CN/notebook/" class="side-nav-link">Notebook Server</a>
+            <a id="nav-data-store" data-langlabel="data-store" href="../../../../../zh-CN/data-store/" class="side-nav-link">Data Stores</a>
+            <a id="nav-cloud" data-langlabel="cloud" href="../../../../../zh-CN/cloud/" class="side-nav-link">云</a>
+            <a id="nav-apps" data-langlabel="apps" href="../../../../../zh-CN/apps/" class="side-nav-link">应用程序</a>
+            <a id="nav-doc" data-langlabel="documentation" href="../../../../../zh-CN/documentation/" class="side-nav-link">文档</a>
+
+          </aside>
+        </nav>
+    </div>
+
+    <!-- user navigation collapses to drawer on mobile -->
+    
+    <div class="drawer drawer-right js-drawer hide-if-logged-out logged-in-navigation" data-drawer="user-nav">
+      <nav class="drawer-nav">
+        <aside class="side-nav">
+          <a class="side-nav-link agolProfile" href="#">我的个人资料</a>
+          <a class="side-nav-link icon-ui-sign-out js-log-out" href="#">登出</a>
+        </aside>
+      </nav>
+    </div>
+    
+<!-- End of drawer -->
+
+  
+  <div class="wrapper">
+      <!--googleoff: all-->
+
+      <header class="top-nav" data-skin="learn">
+        <a class="skip-to-content" href="#skip-to-content">Skip To Content</a>
+        <div class="grid-container">
+          <div class="column-24">
+
+
+            <!--<div class="top-nav-title-wrapper text-center ">-->
+              <a href='../../../../../zh-CN/' class="top-nav-title tablet-hide"><span>Arc</span>GIS  Enterprise</a>
+              <a href='../../../../../zh-CN/' class="icon-ui-menu top-nav-title js-drawer-toggle tablet-show" data-drawer="top-nav"><span>Arc</span>GIS Enterprise</a>
+            <!--</div> -->
+
+          
+            <nav role="navigation" class="top-nav-list left tablet-hide">
+              <a id="nav-portal" data-langlabel="portal" href="../../../../../zh-CN/portal/" class="top-nav-link">Portal</a>
+
+                <div class="dropdown js-dropdown ">
+                  <a class="top-nav-link js-dropdown-toggle" tabindex="0" aria-haspopup="true" aria-expanded="false" href="#">Servers</a>
+                  <nav class="dropdown-menu featured" role="menu">
+                    <ul class="dropdown-sublist-featured">
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/get-started/latest/windows/additional-server-deployment.htm" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path  d="M42.92 6.1H4.12v8.566l.833.832-.835.833-.018 7.332.845.847-.825.824V33.9h25v5.2h-2v1.075H8.02v.8h19.1v.925h4.8v-.925H40v-.8h-8.08V39.1h-2v-5.2h13v-8.566l-.834-.834.835-.834v-7.332l-.835-.834.835-.834zm-11.8 35h-3.2v-1.2h3.2zm11-8H4.92v-7.434l.767-.766h35.668l.765.766zm0-9.766l-.766.766H5.666l-.766-.767.017-6.669.766-.764h35.671l.766.766zm0-9l-.766.766H5.687l-.766-.766V6.9h37.2zM19 11.9h-2v-.8h2zm-4 0h-2v-.8h2zm-4 0H9v-.8h2zm6 8.2h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9zm8 9h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9z"/></svg></span>
+                          <span class="sublink-text">所有服务器</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/server/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M45.98 33.575a.616.616 0 0 0-.335-.51l-3.362-2.03 3.362-2.031a.556.556 0 0 0 0-1.02l-11.1-6.704a1.293 1.293 0 0 0-1.112 0L22.33 27.982a.556.556 0 0 0 0 1.02l3.36 2.03-3.358 2.03a.556.556 0 0 0-.002 1.021l3.322 2.006-3.324 2.008a.555.555 0 0 0 .002 1.017l11.102 6.703a1.25 1.25 0 0 0 1.11.002l11.104-6.706a.556.556 0 0 0 0-1.02l-3.32-2.006 3.318-2.004a.607.607 0 0 0 .335-.509zM33.837 21.97c.026-.01.286-.005.29-.005l10.814 6.53-10.8 6.523c-.028.01-.284.005-.294.006l-10.813-6.53zm11.105 16.636l-10.8 6.523a2.564 2.564 0 0 1-.295.006l-10.81-6.529 3.39-2.047 7.004 4.23a1.083 1.083 0 0 0 .557.131 1.101 1.101 0 0 0 .554-.13l7.01-4.233zM34.14 40.098a2.545 2.545 0 0 1-.294.006l-10.812-6.53 3.43-2.073 6.97 4.208a1.25 1.25 0 0 0 1.107-.001l6.966-4.206 3.431 2.073zM9 8H7V7h2zm8 8h-2v-1h2zm-4-8h-2V7h2zm4 0h-2V7h2zm-4 8h-2v-1h2zm7.316 11.1H3.9v-6.434l.766-.766h35.668l.766.766v2.12l.8.483v-2.935l-.826-.826.826-.845v-6.329l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9h16.88a2.632 2.632 0 0 1 .336-.8zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zm0 8v-5.668l.766-.766h35.668l.766.766v5.67l-.746.764H4.666zM15 24v-1h2v1zm-4 0v-1h2v1zm-2-8H7v-1h2zm-2 8v-1h2v1z"/></svg></span>
+                          <span class="sublink-text">GIS Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/image/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 8h-2V7h2zm-4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm8 8h-2v1h2zm-8 0H7v1h2zm4 9v-1h-2v1zm-4 0v-1H7v1zm8 0v-1h-2v1zm4 3.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V21h-.8v-.334l-.766-.766H4.666l-.766.766V27.1H21zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zm40.234 4v21.8H23.1V23.1zm-.8 16.366L39.466 44.1h2.868l1.766-1.766zm-20.2-9.932l5.634-5.634h-2.868L23.9 26.666zm6.2-5.068L24.466 30.1h2.868l2.766-2.766zM28.466 30.1H30.1v-1.634zm2.434 0h6.2v-6.2h-6.2zm-7 7h6.2v-6.2h-6.2zm7 0h6.2v-6.2h-6.2zm0 6.434l5.634-5.634h-2.868L30.9 40.666zm7-7l5.634-5.634h-2.868L37.9 33.666zm1.634-5.634H37.9v1.634zm-8.634 7v1.634l1.634-1.634zm.566 6.2h2.868l2.766-2.766v-2.868zm6.434-3.566l2.634-2.634H37.9zM35.466 44.1H37.1v-1.634zm2.434 0h.434l5.766-5.766V37.9h-2.434L37.9 41.666zm6.2-8.634L42.466 37.1H44.1zm0-4L38.466 37.1h2.868l2.766-2.766zm0-7.566h-6.2v6.2h6.2zm-20.2 0v1.634l1.634-1.634zm0 20.2h6.2v-6.2h-6.2zm20.2 0v-.634l-.634.634z"/></svg></span>
+                          <span class="sublink-text">Image Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/geoanalytics/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 16h-2v-1h2zm-8 8v-1H7v1zm8 0v-1h-2v1zM13 7h-2v1h2zm4 0h-2v1h2zM9 7H7v1h2zm21.45 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V27.9h-1.464l-.801-.8H41.1v-6.434l-.766-.766H4.666l-.766.766V27.1h27.15zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM13 24v-1h-2v1zm0-9h-2v1h2zm-4 0H7v1h2zm26.672 27.148A1.87 1.87 0 0 1 35.9 43a1.91 1.91 0 1 1-3.763-.222l-9.845-3.414A1.88 1.88 0 0 1 21 39.9a1.9 1.9 0 1 1 1.474-3.084l4.692-2.346A1.878 1.878 0 0 1 27.1 34a1.902 1.902 0 0 1 1.9-1.9 1.867 1.867 0 0 1 .781.191l3.788-5.05A1.88 1.88 0 0 1 33.1 26a1.9 1.9 0 1 1 3.491 1.026l4.889 4.888c-.069.056-.144.1-.21.162a3.986 3.986 0 0 0-.358.402l-4.883-4.883A1.889 1.889 0 0 1 35 27.9a1.867 1.867 0 0 1-.781-.191l-3.788 5.049a1.868 1.868 0 0 1 .437.965l9.204.614c-.018.11-.049.218-.058.33A3.93 3.93 0 0 0 40 35c0 .046.01.09.01.135l-9.185-.612A1.913 1.913 0 0 1 29 35.9a1.889 1.889 0 0 1-1.474-.716l-4.692 2.346a1.878 1.878 0 0 1 .066.47 1.9 1.9 0 0 1-.105.625c-.007.02-.022.036-.03.056l9.63 3.34a1.87 1.87 0 0 1 2.786-.505l5.415-4.437c.067.108.127.22.204.322a3.9 3.9 0 0 0 .292.306zM33.9 26a1.092 1.092 0 0 0 .43.872 1.12 1.12 0 0 0 1.42-.068A1.1 1.1 0 1 0 33.9 26zm-6 8a1.1 1.1 0 0 0 2.196.093 1.135 1.135 0 0 0-.426-.965A1.087 1.087 0 0 0 29 32.9a1.101 1.101 0 0 0-1.1 1.1zm-5.8 4a1.098 1.098 0 1 0-.06.362A1.101 1.101 0 0 0 22.1 38zm13 5a1.1 1.1 0 1 0-2.2 0 1.1 1.1 0 0 0 2.2 0zm10.8-8a1.9 1.9 0 1 1-3.8 0c0-.053.003-.105.007-.158A1.9 1.9 0 0 1 45.9 35zm-.8 0a1.1 1.1 0 0 0-2.196-.093 1.153 1.153 0 0 0 .216.752A1.1 1.1 0 0 0 45.1 35z"/></svg></span>
+                          <span class="sublink-text">GeoAnalytics Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/geoevent/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M13 8h-2V7h2zm4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm12.418 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826v2.117c-.259-.177-.53-.337-.8-.497v-1.288l-.766-.766H4.666l-.766.766V27.1h17.933c-.148.26-.283.53-.415.8zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM9 24v-1H7v1zm4-9h-2v1h2zm0 9v-1h-2v1zm-4-9H7v1h2zm8 9v-1h-2v1zm16.9 2h-.8v8.9H39v-.8h-5.1zm.1-3.901a11.9 11.9 0 1 0 11.9 11.9 11.914 11.914 0 0 0-11.9-11.9zm0 23a11.1 11.1 0 1 1 11.1-11.1 11.112 11.112 0 0 1-11.1 11.1z"/></svg></span>
+                          <span class="sublink-text">GeoEvent Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/notebook/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M22 27.1H3.9v-6.434l.766-.766h18.576a5.262 5.262 0 0 1 .83-.8H4.666l-.766-.766v-5.668l.766-.766h35.668l.766.766V18h.8v-5.666l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9H22zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zM9 8H7V7h2zm8 0h-2V7h2zm-4 0h-2V7h2zm2 16v-1h2v1zm-4 0v-1h2v1zm-4 0v-1h2v1zm0-8v-1h2v1zm8 0v-1h2v1zm-4 0v-1h2v1zm18.9 8.1h-1.8v1.8h1.8zm-.8 1h-.2v-.2h.2zm15.498-4.48a2.727 2.727 0 0 0-1.62-.5v-.02H27.25a3.154 3.154 0 0 0-3.15 3.15V38.1h-1.68a3.386 3.386 0 0 0-2.872 1.58 3.49 3.49 0 0 0-.157 3.419 3.241 3.241 0 0 0 2.954 1.801h15.161a3.404 3.404 0 0 0 3.394-3.4V26.9h5v-3.65a3.224 3.224 0 0 0-1.302-2.63zM22.345 44.1a2.44 2.44 0 0 1-2.23-1.341 2.706 2.706 0 0 1 .11-2.65A2.588 2.588 0 0 1 22.42 38.9h12.89a3.395 3.395 0 0 0 0 5.2zM40.1 23.192V41.5a2.6 2.6 0 1 1-2.6-2.6v-.8H24.9V23.25a2.352 2.352 0 0 1 2.35-2.35h13.795a3.183 3.183 0 0 0-.945 2.292zm5 2.908h-4.2v-2.908a2.274 2.274 0 0 1 1.44-2.18 1.944 1.944 0 0 1 1.791.259 2.423 2.423 0 0 1 .97 1.979zm-17.1 5h9v.8h-9zm0 3h7v.8h-7zm0-6h9v.8h-9zm4-3h5v.8h-5z"/></svg></span>
+                          <span class="sublink-text">Notebook Server</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+
+              <a id="nav-data-store" data-langlabel="data-store" href="../../../../../zh-CN/data-store/" class="top-nav-link">Data Stores</a>
+              <a id="nav-cloud" data-langlabel="cloud" href="../../../../../zh-CN/cloud/" class="top-nav-link">云</a>
+              <a id="nav-apps" data-langlabel="apps" href="../../../../../zh-CN/apps/" class="top-nav-link">应用程序</a>
+            </nav>
+
+
+            
+            
+            
+
+            <div class="margin-left-1 top-nav-list right hide-if-logged-in logged-out-navigation">
+               
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+              
+              <a data-langlabel="sign-in" id="login-link" class="icon-ui-user top-nav-link link-blue login-link" href="#">登录</a>
+              
+            </div>
+
+            
+            <nav class="margin-left-1 top-nav-list right hide-if-logged-out logged-in-navigation">
+              
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+             
+              <div class="dropdown js-dropdown right">
+
+                <div class="tablet-show top-nav-link">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a href="#" data-drawer="user-nav" class="user-nav-name js-drawer-toggle" data-first-name></a>
+                </div>
+
+                <div class="tablet-hide top-nav-link js-dropdown-toggle">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a class="user-nav-name top-nav-dropdown dropdown-btn" data-first-name>&nbsp;</a>
+                </div>
+
+                <nav class="dropdown-menu dropdown-right">
+                
+                  <a class="dropdown-link agolProfile" id="agolProfile" href="#">我的个人资料</a>
+                  <a class="dropdown-link js-log-out" id="agolLogout" href="#">登出</a>
+                </nav>
+              </div>
+            </nav>
+            
+
+            
+          </div>
+        </div>
+      </header>
+
+      <div class="js-search search-overlay">
+        <div class="search-content" role="dialog" aria-labelledby="search">
+          <form method="GET" id="helpSearchForm">
+            <label>
+              搜索 ArcGIS Enterprise 帮助
+              <div class="search-bar">
+                <input type="search" name="q"  placeholder="搜索 ArcGIS Enterprise 帮助" class="search-input js-search-input">
+                <input type="hidden" name="collection" value="help" />
+                <input type="hidden" name="product" value="arcgis-portal-windows" />
+                <input type="hidden" name="version" value="10.8" />
+                <input type="hidden" name="language" value="zh-CN" />
+              </div>
+            </label>
+            <input type="hidden" name="relativePath" value="../../../../../" /><button type="submit" class="btn btn-large right">搜索</button>
+          </form>
+        </div>
+      </div>
+
+      <!--googleon: all-->
+
+      <div id="skip-to-content">
+        <!--googleoff: all-->
+        <header class="sub-nav sub-nav-learn">
+          <div class="grid-container">
+            
+            <div class="column-24">
+              <div style="display:table;" class="sdk-home-banner">
+                <div class="sdk-home-banner-content">
+                  <h1 class="sub-nav-title link-white">ArcGIS Enterprise</h1>
+                </div>
+              </div>
+            </div>
+
+            <div class="column-24">
+              <nav class='sub-nav-list tablet-hide'><a class="sub-nav-link" href="../../../../../zh-CN/" target="_top" title="ArcGIS Enterprise 概述和文档">主页</a><a class="sub-nav-link" href="../../../../../zh-CN/get-started/latest/windows/what-is-arcgis-enterprise-.htm" target="_top" title="ArcGIS Enterprise 简介">简介</a><a class="sub-nav-link is-active" href="../../../../../zh-CN/documentation/install/" target="_top" title="安装 ArcGIS Enterprise 及相关组件的指南">安装指南</a></nav><select class='tablet-show select-full trailer-half js-select-nav'><option value="../../../../../zh-CN/">主页</option><option value="../../../../../zh-CN/get-started/latest/windows/what-is-arcgis-enterprise-.htm">简介</option><option selected="true" value="../../../../../zh-CN/documentation/install/">安装指南</option></select>
+            </div>
+
+          </div>
+        </header>
+        <!--googleon: all-->
+       
+        <!-- content goes here -->
+        <div class="grid-container ">
+          
+
+            
+              
+  <!--BREADCRUMB-BEG--><div id="bigmac" class="sticky-breadcrumbs trailer-2" data-spy="affix" data-offset-top="180"> </div><!--BREADCRUMB-END-->
+  <!--googleoff: all-->
+    <div class="column-5 tablet-column-12 trailer-2 ">
+      <aside class="js-accordion accordion reference-index" aria-live="polite" role="tablist">
+        <div></div>
+      </aside>
+
+      <div class="js-sticky scroll-show tablet-hide leader-1 back-to-top" data-top="0" style="top: 0px;">
+        <a href="#" class="btn btn-fill btn-clear">返回顶部</a>
+      </div>
+    </div>
+  <!--googleon: all-->
+  
+            
+            
+            
+	
+		<div class="column-13  pre-1 content-section">
+	
+		<header class="trailer-1"><h1>Upgrade ArcGIS Data Store</h1></header>
+
+		 
+	<!--googleoff: all-->
+	
+		
+				<aside id="main-toc-small" class="js-accordion accordion tablet-show trailer-1">
+			      <div class="accordion-section">
+			        <h4 class="accordion-title">在本主题中</h4>
+			        <div class="accordion-content list-plain">
+			          <ol class="list-plain pre-0 trailer-0"><li><a href="#GUID-C0EDA8EA-4309-4722-9A9E-DB27BCBE1CB1">准备升级 <ph translate="no" varid="datastore">ArcGIS Data Store</ph></a></li><li><a href="#GUID-FBB2127C-2793-4C21-9718-A64619A1BBD9">升级顺序</a></li><li><a href="#GUID-E4EF13D0-3DBC-42F7-B86F-C5BF88C2BF0F">Steps to upgrade
+<ph translate="no" varid="datastore">ArcGIS Data Store</ph></a></li><li><a href="#GUID-B9D62B14-A2C5-4C1D-A5F0-87A545C2A7D3">升级 <ph translate="no" varid="datastore">ArcGIS Data Store</ph> 后的注意事项</a></li></ol>
+			        </div>
+			      </div>
+			     </aside>
+		
+    
+   <!--googleon: all-->
+
+
+		<main>
+			
+	
+    	
+    
+
+
+			
+<p id="GUID-820616CD-57D1-4831-B27C-2401926B1F55"> <span class="ph">ArcGIS Data Store</span> 注册到您设置为 <span class="ph">ArcGIS Enterprise</span> 部署的托管服务器的 <span class="ph">GIS Server</span> 站点。必须将此系统中的所有组件升级到同一版本。</p><p id="GUID-065243BE-CE85-4F15-990A-6B5486173FE0"></p><section class="section1 padded-anchor" id="GUID-C0EDA8EA-4309-4722-9A9E-DB27BCBE1CB1" purpose="section1"><h2>准备升级 <span class="ph">ArcGIS Data Store</span></h2><p id="GUID-1AF00A50-99A2-4F14-8FF8-670F3FD1BB20">在升级 <span class="ph">ArcGIS Data Store</span> 之前，请仔细查看以下信息，并完成所有必需操作：</p><p id="GUID-DA7409F3-641B-4DC0-BF5B-0AA1EF3CB1FE"><ul purpose="ul" id="UL_5469553D3D6F4664A731EF0E6AEA85C1"><li purpose="li" id="LI_F88E383B04084A8D88D3625F0F90C488">在升级到 <span class="ph">10.8</span> 之前，请从 <span class="ph"><a target="_blank" class="xref xref" href="https://my.esri.com/">My Esri</a></span> 获取新的授权文件。</li><li purpose="li" id="LI_3665937D24CA477D88C5EACD092F747E">创建数据存储的备份，然后将备份文件存储在远程安全位置。创建备份的方式取决于从何种 <span class="ph">ArcGIS Data Store</span> 版本进行升级以及正在升级的数据存储类型。<ul purpose="ul" id="UL_D62BA3995F694EA4AA13A6169BF3E713"><li purpose="li" id="LI_A0BBC4D39EA4489CB048EE982829195B">如果是从 10.5.1 或更高版本进行升级，请使用 backupdatastore 实用程序<a class="xref xref" href="../../../../../zh-CN/data-store/latest/install/windows/data-store-backups.htm">创建每个数据存储的完整备份</a>。如果升级过程出错，而您需要恢复到之前的安装，则可以重新安装 <span class="ph">ArcGIS Data Store</span> 软件的旧版本，并使用这些备份文件和 restoredatastore 实用程序恢复数据。</li><li purpose="li" id="LI_5ED49E6428AB440C8DFF30C5386B1F38">如果是在升级 10.5 或之前版本的切片缓存或关系数据存储，请使用 exportmanageddb 实用程序创建这些数据存储的备份副本。如果升级过程出错，而您需要恢复到之前的安装，则可以重新安装 <span class="ph">ArcGIS Data Store</span> 软件的旧版本，并使用 importmanagedb 实用程序来导入导出文件。</li><li purpose="li" id="LI_5FC7646311C34A07B8F0479643ED99AF">如果是在升级 10.4 或 10.4.1 时空大数据存储，请在时空大数据存储的每台计算机上创建内容目录的备份副本。如果升级过程出错，而您需要恢复到之前的安装，则可以重新安装 <span class="ph">ArcGIS Data Store</span> 软件的旧版本，并使用目录的备份副本替换每台计算机上的内容目录。</li></ul></li><li purpose="li" id="LI_E83BA951463D47D99D973FDB7FE92090">下载最新的 <span class="ph">ArcGIS Data Store</span>、<span class="ph">Portal for ArcGIS</span>、<span class="ph">ArcGIS Server</span> 和 <span class="ph">ArcGIS Web Adaptor</span> 软件安装文件，请访问 <span class="ph"><a target="_blank" class="xref xref" href="https://my.esri.com/">My Esri</a></span>。</li><li purpose="li" id="LI_6F05A3051CE44F70A9E719F90BCD6894"> 运行 <span class="ph">10.8</span> 安装程序会自动将 <span class="ph">ArcGIS Data Store</span> 升级到 <span class="ph">10.8</span>。无需按序获取并安装之前的每个发行版本。不要卸载 <span class="ph">ArcGIS Data Store</span> 的之前版本。</li><li purpose="li" id="LI_B93FE4F993EE48079BFF8836C9F5E6FB"> 为了让 <span class="ph">ArcGIS Enterprise</span> 门户正常运行，它必须与托管服务器为相同版本。此外，您必须重新安装 Web Adaptor 实例，以使其版本与 <span class="ph">ArcGIS Server</span> 相同。</li><li purpose="li" id="LI_C727350CA5F34BF9BD502A7E241F455B">如果您要从 10.4 版本升级并要将来自联合 <span class="ph">ArcGIS GeoEvent Server</span> 站点的流式观测数据存档到您的时空大数据存储，则您必须将 <a target="_blank" class="xref xref" href="https://support.esri.com/en/download/6431">ArcGIS 10.4 GeoEvent Extension Patch 1</a> 应用到您的 10.4 <span class="ph">ArcGIS GeoEvent Server</span>。<span class="ph">应用修补程序后，请<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/geoevent/latest/install" href="../../../../../zh-CN/geoevent/latest/install/windows/upgrade-geoevent-server.htm">按照说明修复数据</a>，然后继续升级您的 <span class="ph">ArcGIS Enterprise</span> 部署组件。</span></li><li purpose="li" id="LI_7A837EFFF31A4C1183E03D55662E4E82">如果您要使用联合 <span class="ph">ArcGIS GeoEvent Server</span> 站点，请先停止所有计算机上的 <span class="ph">ArcGIS GeoEvent Server</span> 服务，然后再升级 <span class="ph">ArcGIS Server</span>。</li><li purpose="li" id="LI_ED63DED5573F4C6B8B3050486E1F00B4" ishcondition="srv_os=windows">如果从 10.3 或 10.3.1 升级，则需要将 <span class="ph">ArcGIS Data Store</span> 内容目录的完全控制权限授予 <a class="xref xref" href="../../../../../zh-CN/data-store/latest/install/windows/data-store-account.htm"><span class="ph">ArcGIS Data Store</span> 帐户</a>。如果从 10.4 或更高版本升级，则已经设置了权限。</li><li purpose="li" id="LI_E336707DD33648A8BF8B47B836A8B1A7">如果您具有高可用性切片缓存数据存储，则在升级之前，请确保备用计算机可以访问默认备份位置。如果没有，则在升级后，切片缓存数据存储不会拥有默认备份位置，而您将需要<a class="xref xref" href="../../../../../zh-CN/data-store/latest/install/windows/data-store-backups.htm#ESRI_SECTION2_BDDF3EBE5A2B4961BA45EF2E77829DB6">配置一个位置</a>。</li><li purpose="li" id="LI_524680F2B4064970965BA53D1D40770F">在升级 <span class="ph">ArcGIS Data Store</span> 之前，请阅读下一部分，并对必须升级的 <span class="ph">ArcGIS Enterprise</span> 组件进行升级。</li></ul></p></section><section class="section1 padded-anchor" id="GUID-FBB2127C-2793-4C21-9718-A64619A1BBD9" purpose="section1"><h2>升级顺序</h2><p id="GUID-AE2BFAD2-9E42-4ECD-9C79-AA3B6637F9A2">由于 <span class="ph">ArcGIS Data Store</span> 始终用作 <span class="ph">ArcGIS Enterprise</span> 部署的一部分，因此在升级 <span class="ph">ArcGIS Data Store</span> 之前，需要升级该部署的某些组件。请按照以下顺序升级组件：<ol class="list-numbered" purpose="ol" id="OL_790D10C703264A658E671455B87D8A14"><li purpose="li" id="LI_9396F1B0A23D425C979F02D9C208463B"><a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/portal/latest/administer" href="../../../../../zh-CN/portal/latest/administer/windows/upgrade-portal-for-arcgis.htm">升级 <span class="ph">Portal for ArcGIS</span></a>。</li><li purpose="li" id="LI_F1E9ED67528E44C68E0A7CB15388A4FE"><a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/web-adaptor/latest/install" href="../../../../../zh-CN/web-adaptor/latest/install/iis/install-arcgis-web-adaptor-portal.htm">升级 <span class="ph">ArcGIS Web Adaptor</span>（对于门户）</a>。</li><li purpose="li" id="LI_983768DE29B64D0284F5BAA9E59276D5"><a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/server/latest/install" href="../../../../../zh-CN/server/latest/install/windows/upgrade-arcgis-server.htm">升级 <span class="ph">ArcGIS Server</span> 站点</a>用作门户的托管服务器。在升级 <span class="ph">ArcGIS Data Store</span> 之前，必须升级托管服务器。</li><li purpose="li" id="LI_3CCF5FFAA6394FDFB8AB53873956451C"><a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/web-adaptor/latest/install" href="../../../../../zh-CN/web-adaptor/latest/install/iis/install-arcgis-web-adaptor-server.htm">升级 <span class="ph">ArcGIS Web Adaptor</span>（对于 <span class="ph">ArcGIS Server</span>）</a>。</li><li purpose="li" id="LI_45ABC8619D2043678DE6BF3B6919F277"><a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/portal/latest/administer" href="../../../../../zh-CN/portal/latest/administer/windows/upgrade-data-store.htm#GUID-FBB3BFAC-E026-4F5E-A60C-D0E2258F1814">升级 <span class="ph">ArcGIS Data Store</span></a>。</li><li purpose="li" id="LI_54D93AA1DBC04A8DA0859DFA9892A134">如果您的部署中包括这些组件，请<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/server/latest/install" href="../../../../../zh-CN/server/latest/install/windows/upgrade-arcgis-server.htm">升级所有其他 <span class="ph">ArcGIS Server</span> 站点</a>。这包括<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/geoevent/latest/install" href="../../../../../zh-CN/geoevent/latest/install/windows/upgrade-geoevent-server.htm">升级 <span class="ph">ArcGIS GeoEvent Server</span></a> 站点和<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/server/latest/install" href="../../../../../zh-CN/server/latest/install/windows/upgrade-arcgis-server.htm">升级 <span class="ph">ArcGIS GeoAnalytics Server</span> 站点</a>。</li></ol></p><section class="section2 padded-anchor" id="ESRI_SECTION2_3695343AFE314D2F8B2852300F60B06B" purpose="section2"><h3>高可用性数据存储</h3><p id="GUID-EB78344B-02A3-4CB7-985E-2BA0AB7D087E">从 <span class="ph">ArcGIS Data Store</span> 10.7 起，在高可用性数据存储中升级每台计算机的顺序无关紧要。但是，您需要首先在每台计算机上安装软件，然后从任意计算机进行升级。</p><p id="GUID-0FFCA21C-5878-43A7-94A2-4B854D08882F">升级高可用性关系或切片缓存数据存储时，必须先在主计算机和备用计算机上安装 <span class="ph">ArcGIS Data Store</span> 的新版本，然后才能通过从主计算机或备用计算机上运行数据存储配置向导或 <span class="usertext">configuredatastore</span> 实用程序来配置这两台计算机。由此可同时对两台计算机进行配置。</p><p id="GUID-DC68AF71-9A32-40E4-9303-43669448FFF8"><div class="panel trailer-1 note" id="GUID-F4F9BD34-AF6F-430E-851C-434354D5D0F2"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-E8A2E039-4F0E-4004-AF08-7657D5DC0237">从 <span class="ph">ArcGIS Data Store</span> 10.8 开始，切片缓存数据存储可以包含多台计算机。因此，升级高可用性切片缓存数据存储后，将拥有两台计算机的切片缓存数据存储。切片缓存数据存储不再有主计算机和备用计算机之分。您的切片缓存数据存储中应该包含奇数台计算机，因此您需要<a class="xref xref" href="../../../../../zh-CN/data-store/latest/install/windows/add-standby-machine.htm#ESRI_SECTION1_14017B86481E4CCAA32C3AB9781D77EC">再添加至少一台切片缓存数据存储计算机</a>并<a class="xref xref" href="../../../../../zh-CN/data-store/latest/install/windows/data-store-utility-reference.htm#ESRI_SECTION1_BAF681033AB248C2BF4718A917380C8D">恢复数据以平衡场景缓存</a>。</p></div></p><p id="GUID-C369B108-42A9-4FFA-9BD1-3CC10AFDA9F3">如果您的时空大数据存储包含多台计算机，请在所有计算机上安装 <span class="ph">ArcGIS Data Store</span> 的新版本。然后，以管理员身份登录到其中一台计算机，并运行数据存储配置向导或 <span class="usertext">configuredatastore</span> 实用程序配置时空大数据存储中的所有计算机。这会配置时空大数据存储中的所有计算机。</p><p id="GUID-58B8153C-FA1F-4D91-931C-422992BA6484"><div class="panel trailer-1" id="GUID-FBB3BFAC-E026-4F5E-A60C-D0E2258F1814"><h5 class="icon-ui-notice-triangle trailer-0">警告：</h5><p id="GUID-C3AFEA6E-C683-4AD1-924B-5BBEA4B49ADC">请确保在您完成时空大数据存储中所有计算机的升级之前，没有用户创建任何托管时空要素图层。在 <span class="ph">ArcGIS Server Manager</span> 中，您可以停止 GeoAnalyticsTools 系统服务，确保在您升级时无人运行 <span class="ph">GeoAnalytics 工具</span>。同时，停止 <span class="ph">Tracker for ArcGIS</span> 使用的位置追踪服务。</p></div></p></section></section><section class="section1 padded-anchor" id="GUID-E4EF13D0-3DBC-42F7-B86F-C5BF88C2BF0F" purpose="section1"><h2>Steps to upgrade
+<span class="ph">ArcGIS Data Store</span></h2><p id="GUID-375C247E-6785-4AE4-BC56-62DA08732E88">具有安装文件和备份文件，并已升级托管服务器后，请完成针对每种类型数据存储的升级步骤。注册到同一 <span class="ph">ArcGIS Server</span> 站点的所有数据存储必须运行相同的 <span class="ph">ArcGIS Data Store</span> 版本。升级 <span class="ph">ArcGIS Data Store</span> 时，请牢记以下内容： <ul purpose="ul" id="UL_69A1227595AB49ADB6D6A39A02E23982"><li purpose="li" id="LI_682D55293A4A4260826AEE846A303F84">在重新配置数据存储之前，务必在数据存储的所有计算机上安装 <span class="ph">ArcGIS Data Store</span>。</li><li purpose="li" id="LI_9E30341081DF42868E4AF8F35046D716">开始安装新版本之前，不要卸载 <span class="ph">ArcGIS Data Store</span>。</li><li purpose="li" id="LI_6C881E816794499F98970B798E4E427B">如果关系或切片缓存数据存储中具有主计算机和备用计算机，请在主计算机和备用计算机上安装 <span class="ph">ArcGIS Data Store</span> 的新版本，然后通过其中一台计算机重新配置数据存储。<p id="GUID-787087C4-5742-4C4A-924F-C02524440BBC"><div class="panel trailer-1 note" id="GUID-655A46B6-CBA7-40F3-BD44-C4946AD78B66"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-CA9E7F75-B49E-4A33-918E-48BBF8C6E9BF">从 <span class="ph">ArcGIS Data Store</span> 10.8 开始，切片缓存数据存储可以包含多台计算机。因此，升级高可用性切片缓存数据存储后，将拥有两台计算机的切片缓存数据存储。切片缓存数据存储不再有主计算机和备用计算机之分。您的切片缓存数据存储中应该包含奇数台计算机，因此您需要再添加至少一台切片缓存数据存储计算机并恢复数据以平衡场景缓存。有关详细信息，请参阅<a class="xref xref" href="../../../../../zh-CN/data-store/latest/install/windows/add-standby-machine.htm#ESRI_SECTION1_14017B86481E4CCAA32C3AB9781D77EC">向您的数据存储添加计算机</a>。</p></div></p></li><li purpose="li" id="LI_F0A41BCD130142BFAB51F7FD9A061201">如果有使用 <span class="ph">ArcGIS Server</span> 站点配置的多个时空大数据存储，请在每台时空大数据存储计算机上安装 <span class="ph">ArcGIS Data Store</span> 的新版本。</li></ul></p><p id="GUID-0822EF80-640A-4730-9B2D-8C62F0D385EE">You can upgrade using an interactive wizard-driven experience by launching the <span class="usertext">Setup.exe</span> program, or run <span class="usertext">Setup.exe</span> to install the software only and run the <a class="xref xref" href="../../../../../zh-CN/data-store/latest/install/windows/data-store-utility-reference.htm#ESRI_SECTION1_21824FB573434E5783C48F0D63C1F228">configuredatastore</a> utility from a command prompt or script to silently upgrade <span class="ph">ArcGIS Data Store</span>. No matter which method you use, the <span class="usertext">Setup.exe</span> installation file detects and updates the existing installation of <span class="ph">ArcGIS Data Store</span>.</p><p id="GUID-52CAF6F2-E0D2-46D8-8B77-250154B33BC0"><div class="panel trailer-1 note" id="GUID-D4986665-03A9-4274-9119-CBEEDE395E7D"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-A5176748-B3E7-4A7A-BD13-11212BB1CC28">Upgrading <span class="ph">ArcGIS Data Store</span> restarts the  <span class="ph">ArcGIS Data Store</span> service.</p></div></p><section class="section2 padded-anchor" id="ESRI_SECTION2_47ABC98AE8A74B41805EA11BA4152623" purpose="section2"><h3>Upgrade using an interactive wizard-driven experience</h3><p id="GUID-2A4FC550-D38E-4DD1-B40A-3F87988037DD">After you complete the steps outlined in <a class="xref xref" href="../../../../../zh-CN/data-store/latest/install/windows/upgrading-an-earlier-version-of-arcgis-data-store.htm#GUID-065243BE-CE85-4F15-990A-6B5486173FE0">Prepare to upgrade <span class="ph">ArcGIS Data Store</span></a> and have upgraded the <span class="ph">ArcGIS Enterprise</span> components that must be upgraded before <span class="ph">ArcGIS Data Store</span>, follow these steps to upgrade your data stores using an interactive wizard. If you want to upgrade using commands instead, proceed to the <a class="xref xref" href="../../../../../zh-CN/data-store/latest/install/windows/upgrading-an-earlier-version-of-arcgis-data-store.htm#ESRI_SECTION2_4762EBA664314478A794A4078CBF24A5">next section</a>.</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="GUID-181365FD-120B-4FD3-BB81-F6CEF96E36E4"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_AE0E3716D0124BCC9B83922BB56AA5D6"><span purpose="cmd">If you are using a spatiotemporal big data store with <span class="ph">ArcGIS GeoEvent Server</span>, sign in to <span class="ph">ArcGIS GeoEvent Server</span> Manager and stop the feature services used to archive data.</span></li><li purpose="step" id="ESRI_STEP_AA8E2096A27E4108BFD4C8C5D405676F"><span purpose="cmd">Optionally, if you want to prevent users from editing hosted feature layers while you are upgrading, connect to the hosting server (<span class="ph">GIS Server</span> site) from <span class="ph">ArcGIS Server Manager</span> and stop all hosted feature services. Similarly, if you have a federated  <span class="ph">ArcGIS GeoAnalytics Server</span> site, connect to it from <span class="ph">ArcGIS Server Manager</span> and stop all hosted feature services.</span></li><li purpose="step" id="ESRI_STEP_840E8D58CCAA4E9B8A45E5ABAB12CA59"><span purpose="cmd" id="GUID-C249506D-F9B5-42DE-B410-377C3654C97F">Update the <span class="ph">ArcGIS Data Store</span> installation on every data store machine.</span><div class="info" purpose="info"><p id="GUID-89C60B65-5A7D-4F0C-8D40-9093F0C65CED">To update the installation, run the <span class="ph">ArcGIS Data Store</span> <span class="usertext">Setup.exe</span> on every machine that participates in a data store that is configured with the same hosting server. Do not uninstall the existing <span class="ph">ArcGIS Data Store</span> installation.</p></div></li><li purpose="step" id="GUID-FA95CCC9-C6B3-43A2-82E4-110A49580F65"><span purpose="cmd" id="GUID-828B1838-4022-4B53-ABFE-5BFEB0496BC8">During the installation, read the license agreement and accept it, or exit if you do not agree with the terms.</span><div class="info" purpose="info"><p id="GUID-CAA0E423-34F6-4731-A96E-CAAEAE22A4F2">If you accept the license agreement, the <span class="ph">ArcGIS Data Store</span> setup program displays the features that will be installed.</p></div></li><li purpose="step" id="ESRI_STEP_EBBBF88A22F74AC6B28E01CF98F3A89F"><span purpose="cmd" id="GUID-2FAD49C8-7AAB-4684-849C-FD9404D74B2F">The
+account used by your existing installation is prepopulated in the
+ <span class="ph">ArcGIS Data Store</span> input box.
+Provide the password for the account. Typically, this
+is the password you defined when installing the software. If the
+password has changed since you installed the software, you need to
+provide the password you designated when modifying the account.
+If the password
+is not validated successfully, an error message is displayed
+indicating the password is invalid. If you are unsure of the
+password for the account, contact your system
+administrator.</span><div class="info" purpose="info"><p id="GUID-A2B6E307-D195-499D-A958-101EACBBF4C6"><div class="panel trailer-1 note" id="GUID-F3238CBD-3163-491C-A880-43263AD5F8AD"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-3C9BC279-EE8C-411A-9B27-F217A12EFFC6">Earlier versions of <span class="ph">ArcGIS Data Store</span> used the Local System account to create the <span class="ph">ArcGIS Data Store</span>  service. At version 10.4 and later, you specify a local user or domain user account to start the <span class="ph">ArcGIS Data Store</span> service. If you are upgrading from <span class="ph">ArcGIS Data Store</span> 10.3 or 10.3.1, you must manually provide this account  full control to your <span class="ph">ArcGIS Data Store</span> content directory (the default location is <span class="usertext">C:\arcgisdatastore</span>).</p></div></p></div></li><div class="stepinfo" purpose="stepinfo"><div class="panel trailer-1" id="GUID-08525433-59BF-464E-A29D-8CA768035AEB"><h5 class="icon-ui-notice-triangle trailer-0">警告：</h5><p id="GUID-92FBBCC1-27BA-406F-9777-6D384E538FE0">When the installation program completes, it automatically opens the <span class="uicontrol">Data Store Configuration wizard</span> in your default browser.  Do no proceed with configuration until you have installed the same version of <span class="ph">ArcGIS Data Store</span> on every data store machine.</p></div></div><li purpose="step" id="ESRI_STEP_7161A69130A84E439915192A3ED1D054"><span purpose="cmd" id="GUID-7411EE55-F305-4D1A-8658-A45DE32BF868">Once you have updated the <span class="ph">ArcGIS Data Store</span> installation on all data store machines, run the <span class="uicontrol">Data Store Configuration wizard</span> to configure each type of data store to complete the upgrade.</span><div class="info" purpose="info"><p id="GUID-70A76EC2-5C88-4C1A-BE19-2024D8CDA093">How many times you run the <span class="uicontrol">Data Store Configuration wizard</span> depends on your configuration.<ul purpose="ul" id="UL_3976D74369F2468A98C1B97916F93E16"><li purpose="li" id="LI_5776CFADA1C4436B8B9860BC1C6D6DB4">For relational and tile cache data stores, connect to either the primary or standby machine from the <span class="uicontrol">Data Store Configuration wizard</span>. Completing the steps in the wizard upgrades the data store on both machines.</li><li purpose="li" id="LI_02F5E27D2D09423EBB890D61C255B5A3">If your relational and tile cache data stores are on the same machine, you only have to run the <span class="uicontrol">Data Store Configuration wizard</span> once to upgrade both data stores.</li><li purpose="li" id="LI_89D4CE24C47246C08C8E6A49BA87F6A1">For spatiotemporal big data stores, connect to any of the spatiotemporal big data store machines from the <span class="uicontrol">Data Store Configuration wizard</span>. Complete the steps in the wizard to upgrade all machines in the spatiotemporal big data store.</li></ul></p></div></li><div class="stepinfo" purpose="stepinfo">The following steps take you through the <span class="uicontrol">Data Store Configuration wizard</span>.</div><li purpose="step" id="ESRI_STEP_0D6A5DBB6E9549BFB47B80DFA4A861FB"><span purpose="cmd" id="GUID-8E1590E3-ACFE-449A-9108-44554036E05D">In the <span class="uicontrol">Data Store Configuration wizard</span>, provide the URL for the hosting server and the user name and password of an <span class="ph">ArcGIS Server</span> administrator for the hosting server and click <span class="uicontrol">Next</span>.</span></li><div class="stepinfo" purpose="stepinfo"><span class="ph">ArcGIS Data Store</span> checks each machine for each data store registered with this hosting server to be sure it meets the following prerequisites: <ul purpose="ul" id="UL_FC9846E4A61B47A580E0E6A1AEFAD77F"><li purpose="li" id="LI_3729DFD5FA64436F81CEF4FA9426EFCF">All machines in the data stores associated with this hosting server have the same version of <span class="ph">ArcGIS Data Store</span> installed.</li><li purpose="li" id="LI_D52ACE8C243F4B958BE84F42D0EA91D9">All machines in the data stores associated with this hosting server are accessible.</li><li purpose="li" id="LI_7DB3CD545628425CAD3A41BFA375644A">The hosting server is accessible.</li></ul><p id="GUID-F481D181-6D23-4936-A586-BA82E1BFA4FF"> If any prerequisites are not met, they appear on the <span class="uicontrol">Prerequisite Check</span> page in the status for each data store type. You must correct any problems before you can proceed with upgrading.</p></div><li purpose="step" id="ESRI_STEP_9242A6B6F86849B190895B67376F978E"><span purpose="cmd">Once all prerequisites are met, the <span class="uicontrol">Prerequisite Check</span> page shows each data store to be upgraded. Click <span class="uicontrol">Next</span> to reconfigure these data stores with the hosting server and complete the upgrade.</span></li><li purpose="step" id="ESRI_STEP_41515C0AEBC748C1AEAA1C4448743C4C"><span purpose="cmd" id="GUID-B9704CA4-9534-4062-944E-D375F6442BC0">When configuration completes, the <span class="uicontrol">Upgrade Status</span> page appears.</span><ul purpose="choices" id="ESRI_CHOICES_5C1AAA5B633D489A8DCF03915C1A0025"><li purpose="choice" id="ESRI_CHOICE_48127197BC964F44A7FD08EFBC38674C">For each data store that was upgraded successfully,  <span class="uicontrol">success</span> appears in <span class="uicontrol">Status</span> field. For highly available relational or tile cache data stores, a status appears for both machines. If all data store machines upgraded successfully, click <span class="uicontrol">Next</span> to proceed to the <span class="uicontrol">Configuration Status</span> page. You can close the <span class="uicontrol">Data Store Configuration wizard</span> at this point.</li><li purpose="choice" id="ESRI_CHOICE_4F0DEA56B4384863A1324EC4FA0929F4">If any upgrades were not successful, that data store or machine shows a <span class="uicontrol">failed</span> status, and messages are displayed to help you troubleshoot the problem. Correct the problems and run the <span class="uicontrol">Data Store Configuration wizard</span> again to upgrade the machines that previously failed.</li></ul></li><li purpose="step" id="ESRI_STEP_A36A0C86766F41DBA3B01C7FAE4D5882"><span purpose="cmd">If you have a spatiotemporal big data store, confirm the spatiotemporal big data store shows a status of <span class="uicontrol">healthy</span>.</span><div class="info" purpose="info"><p id="GUID-E0B2BFD3-146C-4313-BE1D-CA775F3E89D9">To determine a data store's status, log in to the ArcGIS Server Administrator Directory for the hosting server and run the <span class="usertext">validate</span> <a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/portal/latest/administer" href="../../../../../zh-CN/portal/latest/administer/windows/data-store-function-reference.htm">REST command</a>.</p></div></li><li purpose="step" id="ESRI_STEP_7ED300FA95B74032A3EDF815A2101898"><span purpose="cmd">If your portal has  federated <span class="ph">ArcGIS GeoEvent Server</span> or <span class="ph">ArcGIS GeoAnalytics Server</span> sites, upgrade these sites. Once you upgrade successfully, make sure the feature services are running and functional.</span></li></ol></div></section></section><section class="section2 padded-anchor" id="ESRI_SECTION2_4762EBA664314478A794A4078CBF24A5" purpose="section2"><h3>Silently upgrade using commands</h3><p id="GUID-7FBB7AC2-FF09-4309-8849-4F20DC91B303">Rather than run the setup program, you can run the <span class="usertext">Setup.exe</span> file at a command prompt or in a batch script to update the <span class="ph">ArcGIS Data Store</span>. After you complete the steps outlined in <a class="xref xref" href="../../../../../zh-CN/data-store/latest/install/windows/upgrading-an-earlier-version-of-arcgis-data-store.htm#GUID-065243BE-CE85-4F15-990A-6B5486173FE0">Prepare to upgrade <span class="ph">ArcGIS Data Store</span></a> and have upgraded the <span class="ph">ArcGIS Enterprise</span> components that must be upgraded before <span class="ph">ArcGIS Data Store</span>, run the setup file on every machine in the data store to upgrade.</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_A9CA3945B1D840D3A6EF4B93962BB3F7"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_7886E189244D48D3BF5629149017DC90"><span purpose="cmd">If you are using a spatiotemporal big data store with <span class="ph">ArcGIS GeoEvent Server</span>, sign in to <span class="ph">ArcGIS GeoEvent Server</span> Manager and stop the feature services used to archive data.</span></li><li purpose="step" id="ESRI_STEP_8360AE1A1C49427DA2261E3CFBD54EB9"><span purpose="cmd">Optionally, if you want to prevent users from editing hosted feature layers while you are upgrading, connect to the hosting server (<span class="ph">GIS Server</span> site) from <span class="ph">ArcGIS Server Manager</span> and stop all hosted feature services. Similarly, if you have a federated  <span class="ph">ArcGIS GeoAnalytics Server</span> site, connect to it from <span class="ph">ArcGIS Server Manager</span> and stop all hosted feature services.</span></li><li purpose="step" id="ESRI_STEP_5E3C55F040654CDB9A5AF0A15054696B"><span purpose="cmd" id="GUID-AE44AD31-A3CA-457C-8CCC-F81A86340C3C">Update the <span class="ph">ArcGIS Data Store</span> installation on every data store machine.</span><div class="info" purpose="info"><p id="GUID-22B1920B-F367-4A3C-812A-1E7A83189E6A">Run the <span class="usertext">Setup.exe</span> file from a command prompt or in a script on every machine in your data store. For example, if you have a highly available relational data store (two machines) and a highly available spatiotemporal big data store that includes three machines, run the <span class="usertext">Setup.exe</span> file on all five machines before you proceed with configuration. <div class="panel trailer-1 note" id="GUID-BB0D0CF0-7491-4CD2-9FB7-C08B0DF7F078"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-D9197318-9B14-4C87-8A95-E28CB9A41E22">Do not uninstall the existing <span class="ph">ArcGIS Data Store</span> installation.</p></div></p><p id="GUID-FF1CAA1F-1B9E-4982-967B-BFAD7BBC727F">When silently
+upgrading using  <span class="usertext">Setup.exe</span>, you must
+specify the <span class="ph">ArcGIS Data Store</span> account. Typically,
+this is the account you defined when installing the software. If
+the account has changed since you installed, you need to provide
+the user name and password you designated when modifying the <span class="ph">ArcGIS Data Store</span>account.</p><p id="GUID-F6F15C0E-9D78-4B2E-BCB3-62B423583BA4">Earlier versions of <span class="ph">ArcGIS Data Store</span> used the Local System account to create the <span class="ph">ArcGIS Data Store</span>  service. At version 10.4 and later, you specify a local user or domain user account to start the <span class="ph">ArcGIS Data Store</span> service. If you are upgrading from <span class="ph">ArcGIS Data Store</span> 10.3 or 10.3.1, you must manually provide this account  full control to your <span class="ph">ArcGIS Data Store</span> content directory (the default location is <span class="usertext">C:\arcgisdatastore</span>).</p><p id="GUID-FEB1674D-3762-43A6-A72D-7BA6E8AC8E92">If you do not
+specify the <span class="ph">ArcGIS Data Store</span> account, or it does not match the account used by your current installation, the installation
+process displays a message indicating the credentials could not be
+validated. As a result, the installation will exit.</p></div><div class="stepexample" purpose="stepexample"><p id="GUID-4BC9FCFC-4A02-4D21-A0D0-8D4E1EE47789">In the following
+example, the account used by the software is  <span class="usertext">myaccount</span>:</p><p id="GUID-43C0A459-558E-46AE-9667-E6EF192CED40"> <span class="usertext">&lt;path to ArcGIS Data Store setup download
+folder&gt;\Setup.exe /qb USER_NAME=myaccount
+PASSWORD=mypassword</span></p><p id="GUID-421097AA-2FEF-4804-A6AD-175BEA9F04D0">For example, to run the command with a domain account, such as <span class="usertext">mydomain\myaccount</span>, with the password <span class="usertext">4myI.s0nly</span>, type the following:</p><p id="GUID-CBD9251E-4FD5-4049-9CD9-1B5576C2392D"><span class="usertext">\\machinename\mydownloadfolder\Setup.exe /qb USER_NAME=mydomain\myaccount PASSWORD=4myI.s0nly</span></p><p id="GUID-D3562576-5183-417E-8EB6-90558EBD2468"><div class="panel trailer-1" id="GUID-9F5E9B19-FD4F-4E53-9E11-15CF57EDD590"><h5 class="icon-ui-notice-triangle trailer-0">警告：</h5><p id="GUID-D3162CB9-61D7-4C1A-B3CB-C6980270ACD1">Command line parameters are case sensitive. If you are having
+trouble upgrading, confirm the
+case matches the properties as shown in the examples.</p></div></p></div></li><div class="stepinfo" purpose="stepinfo">After you install the new version of <span class="ph">ArcGIS Data Store</span> on every machine in the data store, reconfigure each type of data store to complete the upgrade.</div><li purpose="step" id="ESRI_STEP_D1D2C6CAE407450784661F5D7DCC6FEF"><span purpose="cmd" id="GUID-12648BDB-78D4-4F5E-B450-98CA4A352D70">Use the <a class="xref xref" href="../../../../../zh-CN/data-store/latest/install/windows/data-store-utility-reference.htm#ESRI_SECTION1_21824FB573434E5783C48F0D63C1F228">configuredatastore</a> command utility to reconfigure the data store with the same <span class="ph">GIS Server</span> site you were using before upgrading. You  must run the command prompt as an administrator on the machine where <span class="ph">ArcGIS Data Store</span> is installed.</span><div class="info" purpose="info"><p id="GUID-6F5357AC-928E-4E55-94E2-D761EEDFA1BC">How many times you run the configuredatastore utility depends on your configuration.<ul purpose="ul" id="UL_D54D131681A54E09B8C4415D928B39D2"><li purpose="li" id="LI_F10B99E12A5D4A26AA19FC26F4B093D6">For relational and tile cache data stores, log in to the primary or standby machine as a <span class="ph">Windows</span> administrator and run the configuredatastore utility. This upgrades the data store on both machines.</li><li purpose="li" id="LI_0D9C8B5E0EAA49A7A6611CB65714ECAB">If your relational and tile cache data stores are on the same machine, running the configuredatastore utility upgrades both.</li><li purpose="li" id="LI_03165928DE9C44EC93A0D04ED994A8FA">For spatiotemporal big data stores, log in to any of the spatiotemporal big data store machines as the user who installed <span class="ph">ArcGIS Data Store</span> and run the configuredatastore utility. This upgrades all machines in the spatiotemporal big data store.</li></ul></p></div><div class="stepexample" purpose="stepexample"><p id="GUID-404AE885-5209-4387-B845-62CA3145872F">In this example, the configuredatastore utility is run on a machine where both the relational and tile cache data stores are running. Both data stores are configured with the <span class="ph">GIS Server</span> site <span class="usertext">https://myserver.network.com:6443/arcgis</span>:</p><p id="GUID-06786E2C-3E2B-4783-BFC8-2F3D6DF66A2C"><span class="usertext">configuredatastore https://myserver.network.com:6443/arcgis serveradmin MyAdminPassword C:\arcgisdatastore --stores relational,tilecache</span></p><p id="GUID-21BD0DEF-D384-4347-B745-7E91C2362690">In this example, the configuredatastore utility is run on one of the machines in a spatiotemporal big data store that is configured with the <span class="ph">GIS Server</span> site <span class="usertext">https://gisserver.mynetwork.com:6443/arcgis</span>:</p><p id="GUID-090667F1-FEC6-42B7-BD1A-256EB0D1E100"><span class="usertext">configuredatastore https://gisserver.mynetwork.com:6443/arcgis serveradmin MyAdminPassword C:\arcgisdatastore --stores spatiotemporal</span></p></div><div class="info" purpose="info"><p id="GUID-F6C1D5A3-4380-4BBE-BB5A-314558AD4BC9">Running the configuredatastore utility restarts <span class="ph">ArcGIS Data Store</span> on all machines in the data store.</p></div><div class="stepresult" purpose="stepresult"><p id="GUID-1B5F21BA-7C72-4E15-B25F-D817EF61ADF4">Before upgrading, <span class="ph">ArcGIS Data Store</span> confirms that all machines in the data store have the same version of <span class="ph">ArcGIS Data Store</span> installed and all machines are accessible. If any machines are not updated or accessible,  <span class="ph">ArcGIS Data Store</span> cannot proceed with the upgrade. Correct the installation or network problems and run the configuredatastore utility again.</p></div></li><li purpose="step" id="ESRI_STEP_9D2EC018CEC047C89BEB26C287A80F95"><span purpose="cmd">If you have a spatiotemporal big data store, confirm the spatiotemporal big data store shows a status of <span class="usertext">healthy</span>.</span><div class="info" purpose="info"><p id="GUID-C99C29B6-2D04-4D75-BD33-D98C10A38522">To determine a data store's status, log in to the ArcGIS Server Administrator Directory for the hosting server and run the <span class="usertext">validate</span> <a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/portal/latest/administer" href="../../../../../zh-CN/portal/latest/administer/windows/data-store-function-reference.htm">REST command</a>.</p></div></li><li purpose="step" id="ESRI_STEP_B40740301FC74301B59E4A8578972DD2"><span purpose="cmd">If your portal has  federated <span class="ph">ArcGIS GeoEvent Server</span> or <span class="ph">ArcGIS GeoAnalytics Server</span> sites, upgrade these sites. Once you upgrade successfully, make sure the feature services are running and functional.</span></li></ol></div></section></section></section>
+
+<section class="section1 padded-anchor" id="GUID-B9D62B14-A2C5-4C1D-A5F0-87A545C2A7D3" purpose="section1"><h2>升级 <span class="ph">ArcGIS Data Store</span> 后的注意事项</h2><p id="GUID-2B49F32E-6C16-4A59-9A78-64B9D7FC7EB4">升级程序会将所有现有 10.5 和旧版关系数据存储备份文件以及 10.5 时空大数据存储备份文件移动到备份目录位置中新的子目录内。目录名称包含 <span class="ph">ArcGIS Data Store</span> 版本号。<span class="ph">ArcGIS Data Store</span> 移动这些文件可以防止您意外尝试使用它们来恢复升级后的关系数据存储，因为这种操作不受支持。</p><p id="GUID-40B7A115-14BE-43A0-AB49-FF97BF524101">因此，在升级 <span class="ph">ArcGIS Data Store</span> 后，应该为关系数据存储和时空大数据存储创建完整备份。这样，可以为您的托管要素和时空图层数据提供可使用的完整备份，以免在下一次计划备份之前发生意外。</p><p id="GUID-08E89BF1-4FBD-48B5-8A71-29F7C3D7A82B">升级后，您应确认您的数据存储可访问。您可通过 <span class="ph">ArcGIS Server Manager</span> 或 <span class="ph">ArcGIS Server</span> Administrator Directory 执行此操作。还要确认托管要素和场景图层仍然有效。</p><section class="section2 padded-anchor" id="ESRI_SECTION2_CE1C8F0D1078420AA6D3E7D7F93A9E84" purpose="section2"><h3>验证数据存储</h3><p id="GUID-2D83199F-2F8A-4950-95F1-585BEA399A2A">您可登录到 <span class="ph">ArcGIS Server Manager</span> 来验证您的 <span class="ph">GIS Server</span> 站点是否仍可与每个数据存储进行通信。</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><section class="context padded-anchor" id="ESRI_CONTEXT_2ABEE5A81B1C44F694B2938DB25403C4" purpose="context"><p id="GUID-5C0268B6-8F33-4CC7-813B-30D5B7F24160">按照以下步骤通过 <span class="ph">ArcGIS Server Manager</span> 验证数据存储：</p></section><div class="steps" id="ESRI_STEPS_5A2894ACD689445392E2876B8A7A7AAA"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_98AB100C0BAA4075A9D759642FFB99AE"><span purpose="cmd" id="GUID-1170AF61-93C3-4B33-9B81-AD805F0D3F84">登录到 <span class="ph">ArcGIS Server Manager</span>。</span></li><li purpose="step" id="ESRI_STEP_9EFA42C42DB44DA7AAE00AEEB92F1969"><span purpose="cmd" id="GUID-7321B3A6-B1CC-40B5-896E-6867D62E6C06">转至<span class="uicontrol">站点 <span class="greaterthan">&gt;</span> 数据存储</span>。</span></li><li purpose="step" id="ESRI_STEP_27E82C144F624091A0E4B591954C5DC9"><span purpose="cmd" id="GUID-5983681A-9881-410B-8911-8FF03986154A">选中欲验证数据存储旁的复选框。(<span class="uicontrol">ArcGIS_Data_Store</span>)。</span></li><li purpose="step" id="ESRI_STEP_B0485367192E4B148DB81F08703C74DE"><span purpose="cmd" id="GUID-B41D7669-EF0E-4208-AAA5-399299CEC005">单击<span class="uicontrol">验证</span>。</span></li></ol></div><section class="result padded-anchor" id="ESRI_RESULT_CE9A91A33AA140DFAAF9C5314122635C" purpose="result"><p id="GUID-096AD5DA-2728-44CD-AB95-D12C0A296341">如果数据存储正在运行并且 <span class="ph">GIS Server</span> 站点可以与其通信，则<span class="uicontrol">状态</span>列中将显示一个绿色复选框。</p></section></section></section><section class="section2 padded-anchor" id="ESRI_SECTION2_CB4A3B3015434DFAAE38B57B7588986E" purpose="section2"><h3>确认图层有效</h3><p id="GUID-A9AD046C-50CC-4DF4-8816-69290635C8C5">您还应该确保您的服务在升级后仍然工作。</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_35594ABD52DA4CF1BCD55536F3F6C0EB"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_A58B0359E1394717A1485917D5A5D3AD"><span purpose="cmd" id="GUID-1A05BF1D-895B-4E08-B989-13E5C35A6532">登录到 <span class="ph">ArcGIS Server Manager</span>。</span></li><li purpose="step" id="ESRI_STEP_3B460B4B825A4388B050A269D442C7D2"><span purpose="cmd" id="GUID-15E87EEE-7DBB-4239-BF8D-7A649A4CEEB1">转至<span class="uicontrol">服务 <span class="greaterthan">&gt;</span> 托管</span>。</span></li><li purpose="step" id="ESRI_STEP_BC5E68BB76424700907F7EFBC10518CB"><span purpose="cmd" id="GUID-6B5886F7-A43C-467A-A0B1-DF79ADA4E8FE">检查所有服务是否正在运行。</span></li></ol></div></section></section></section>
+			
+				<hr>
+				<!--googleoff: all-->
+				
+	
+        
+		    <p class="feedback right">
+		        <a id="afb" class="icon-ui-contact" href="/feedback/" data-langlabel="feedback-on-this-topic" >有关此主题的反馈?</a>
+		    </p>
+        
+	
+
+				<!--googleon: all-->
+			
+		</main>
+	</div>
+	
+	<!--googleoff: all-->
+	
+		
+			<div id="main-toc-large" class="column-5">
+			    <div class="panel font-size--2 tablet-hide trailer-1">
+			      <h5 class="trailer-half">在本主题中</h5>
+			      <ol class="list-plain pre-0 trailer-0"><li><a href="#GUID-C0EDA8EA-4309-4722-9A9E-DB27BCBE1CB1">准备升级 <ph translate="no" varid="datastore">ArcGIS Data Store</ph></a></li><li><a href="#GUID-FBB2127C-2793-4C21-9718-A64619A1BBD9">升级顺序</a></li><li><a href="#GUID-E4EF13D0-3DBC-42F7-B86F-C5BF88C2BF0F">Steps to upgrade
+<ph translate="no" varid="datastore">ArcGIS Data Store</ph></a></li><li><a href="#GUID-B9D62B14-A2C5-4C1D-A5F0-87A545C2A7D3">升级 <ph translate="no" varid="datastore">ArcGIS Data Store</ph> 后的注意事项</a></li></ol>
+			    </div>
+			    
+			    
+	  		</div>
+		
+    
+   <!--googleon: all-->
+
+
+
+
+          
+        </div>
+        <!-- ENDPAGECONTENT -->
+
+      </div>
+
+    </div>  <!-- End of wrapper -->
+
+  <footer class="footer leader-3 link-dark-gray" role="contentinfo">
+    <div class="grid-container">
+      <div class="row">
+        <nav class="column-6">
+          <h6 data-langlabel="arcgis-for-server">Arc<span>GIS Enterprise</span></h6>
+          <ul class="list-plain">
+            <li><a data-langlabel="home" href="../../../../../zh-CN/">主页</a></li>
+            <li><a data-langlabel="portal" href="../../../../../zh-CN/portal/">Portal</a></li>
+            <li><a data-langlabel="server" href="../../../../../zh-CN/server/">Server</a></li>
+            <li><a data-langlabel="data-store" href="../../../../../zh-CN/data-store/">Data Stores</a></li>
+            <li><a data-langlabel="cloud" href="../../../../../zh-CN/cloud/">云</a></li>
+            <li><a data-langlabel="apps" href="../../../../../zh-CN/apps/">应用程序</a></li>
+            <li><a data-langlabel="documentation" href="../../../../../zh-CN/documentation/">文档</a></li>
+          </ul>
+        </nav>
+
+        
+  <nav class="column-6">
+    <h6 data-langlabel="arcgis-platform">ArcGIS 平台</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="arcgis" href="//www.arcgis.com/">ArcGIS Online</a></li>
+      <li><a data-langlabel="arcgis-for-professionals" href="//pro.arcgis.com/">ArcGIS Pro</a></li>
+      <li><a data-langlabel="arcgis-for-server" href="//enterprise.arcgis.com/">ArcGIS Enterprise</a></li>
+      <li><a data-langlabel="arcgis-for-developers" href="https://developers.arcgis.com/">ArcGIS for Developers</a></li>
+      <li><a data-langlabel="arcgis-solutions" href="//solutions.arcgis.com/">ArcGIS Solutions</a></li>
+      <li><a data-langlabel="arcgis-marketplace" href="//marketplace.arcgis.com/">ArcGIS Marketplace</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <h6 data-langlabel="about-esri">关于 Esri</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="about-us" href="//www.esri.com/about-esri/">关于我们</a></li>
+      <li><a data-langlabel="careers" href="//www.esri.com/careers/">招贤纳士</a></li>
+      <li><a data-langlabel="insiders-blog" href="https://www.esri.com/about/newsroom/blog/">Esri 博客</a></li>
+      <li><a data-langlabel="user-conference" href="//www.esri.com/events/user-conference/index.html">用户大会</a></li>
+      <li><a data-langlabel="developer-summit" href="//www.esri.com/events/devsummit/index.html">开发者峰会</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <a class="esri-logo" href="//www.esri.com/" aria-label="Esri Home"></a>
+    <section class="footer-social-nav leader-1">
+            <a class="icon-social-twitter" aria-label="Esri on Twitter" href="https://twitter.com/Esri/"></a>
+            <a class="icon-social-facebook" aria-label="Esri on Facebook" href="https://www.facebook.com/esrigis/"></a>
+            <a class="icon-social-github" aria-label="Esri on GitHub" href="//esri.github.io/"></a>
+            <a class="icon-social-contact" aria-label="Contact Esri" href="//www.esri.com/about-esri/contact/"></a>
+    </section>
+	  
+  </nav>
+  
+  <div class="column-24 leader-1">
+    <p class="font-size--3"><a href="http://www.esri.com/legal/copyright-trademarks">Copyright &copy; 2019 Esri.</a> All rights reserved. | <a href="http://www.esri.com/legal/privacy/">隐私政策</a> | <a href="http://www.esri.com/legal/software-license">法律声明</a></p>
+  </div>
+  
+
+
+      </div>
+    </div>
+  </footer>
+  <!--googleoff: all-->
+
+  
+  
+	<script src="../../../../../zh-CN/assets/js/init.js" type="text/javascript"></script>
+	<!--<script src="../../../../../zh-CN/assets/js/drop-down.js" type="text/javascript"></script>-->
+	<script src="../../../../../zh-CN/assets/js/search/searchform.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/cdn/js/link-modifier.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/cdn/js/sitewide.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/cdn/js/libs/highlight.pack.js" type="text/javascript"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+
+
+  
+    
+
+  <script src="../../../../../zh-CN/cdn/js/affix.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    $(function () {
+          var appendFlg = true;
+
+          $("#bigmac")
+          .on("affixed.bs.affix", function (evt) {
+            if (appendFlg) {
+              $("<a class='crumb' href='#'>Upgrade ArcGIS Data Store</a>").insertAfter ($("#bigmac nav a").last());
+              appendFlg = false;
+            }
+          })
+          .on ("affix-top.bs.affix", function(evt) {
+            if (!appendFlg) {
+              $("#bigmac nav a").last().remove();
+            }
+            appendFlg = true;
+          })
+    })
+  </script>
+  
+        <script type="text/javascript">
+          window.doctoc = {
+            pubID: "1506",
+            tpcID: "21",
+            
+            hideToc : false
+          }
+        </script>
+
+        <script type="text/javascript" src="../../../../../zh-CN/documentation/install/more/latest/windows/1657.js" ></script>
+        <script type="text/javascript" src="../../../../../zh-CN/data-store/latest/install/windows/1506.js" ></script>
+        <script type="text/javascript" src="../../../../../zh-CN/cdn/calcite/js/protoc.js" ></script>
+
+        
+
+  <noscript>
+        <p>
+            <a href="flisting.htm">flist</a>
+        </p>
+    </noscript>
+    <script type="text/javascript"></script>
+  
+  
+    
+    
+
+  </body>
+</html>

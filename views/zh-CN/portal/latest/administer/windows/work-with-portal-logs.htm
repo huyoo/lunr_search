@@ -1,0 +1,550 @@
+
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>  <html class="ie lt-ie9 lt-ie8 lt-ie7 ie6" dir="ltr"> <![endif]-->
+<!--[if IE 7]>     <html class="ie lt-ie9 lt-ie8 ie7" dir="ltr"> <![endif]-->
+<!--[if IE 8]>     <html class="ie lt-ie9 ie8" dir="ltr"> <![endif]-->
+<!--[if IE 9]>     <html class="ie ie9" dir="ltr"> <![endif]-->
+<!--[if !IE]><!--> <html dir="ltr" lang="zh-CN"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>使用门户日志&mdash;Portal for ArcGIS 
+  (10.8) | ArcGIS Enterprise 文档</title>
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+    <script>
+      var docConfig = {
+        locale: 'zh-CN'
+        ,localedir: 'zh-cn'
+        ,langSelector: ''
+        
+        ,relativeUrl: false
+        
+
+        ,searchformUrl: '/search/'
+        ,tertiaryNavIndex: ''
+
+        
+      };
+    </script>
+	 
+
+
+    
+    <!--[if lt IE 9]>
+      <script src="../../../../../zh-CN/cdn/js/libs/html5shiv.js" type="text/javascript"></script>
+      <script src="../../../../../zh-CN/cdn/js/libs/selectivizr-min.js" type="text/javascript"></script>
+      <script src="../../../../../zh-CN/cdn/js/libs/json2.js" type="text/javascript"></script>
+      <script src="../../../../../zh-CN/cdn/js/libs/html5shiv-printshiv.js" type="text/javascript" >
+
+    <![endif]-->
+
+     <!--[if lt IE 11]>
+    <script>
+      $$(document).ready(function(){
+        $$(".hideOnIE").hide();
+      });
+    </script>
+    <![endif]-->
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<link href="../../../../../zh-CN/assets/img/favicon.ico" rel="shortcut icon" >
+	<link href="../../../../../zh-CN/assets/css/screen.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/cdn/calcite/css/documentation.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/assets/css/print.css" media="print" type="text/css" rel="stylesheet" />
+
+	<!--
+	<link href="../../../../../zh-CN/assets/css/screen_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/assets/css/documentation/base_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/assets/css/print_l10n.css" media="print" type="text/css" rel="stylesheet" />
+	-->
+	
+	
+		<script src="../../../../../zh-CN/cdn/js/libs/jquery.1.9.1.min.js" type="text/javascript"></script>
+	
+	<script src="../../../../../zh-CN/cdn/js/libs/jquery.cookie.js" type="text/javascript"></script>
+	<link href="../../../../../zh-CN/cdn/css/colorbox.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/cdn/css/colorbox_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<script src="../../../../../zh-CN/cdn/js/libs/jquery.colorbox-min.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/assets/js/video-init.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/assets/js/sitecfg.js" type="text/javascript"></script>
+	
+		<script src="../../../../../zh-CN/assets/js/signIn.js" type="text/javascript"></script>
+	
+
+	<!--- Language Picker -->
+	<script src="../../../../../zh-CN/assets/js/locale/l10NStrings.js" type="text/javascript"></script>
+	
+		 
+	
+
+	<script src="../../../../../zh-CN/assets/js/calcite-web.js" type="text/javascript"></script>
+
+
+
+  <!--- search MD -->
+    <META name="description" content="可通过 ArcGIS Portal 目录查询和查看门户日志。"><META name="last-modified" content="2019-12-6"><META name="product" content="arcgis-portal-windows,arcgis-enterprise-windows"><META name="sub_category" content="Portal for ArcGIS (Windows)"><META name="search-collection" content="help"><META name="content_type_label" content="帮助主题"><META name="sub_category_label" content="Portal for ArcGIS (Windows)"><META name="search-category" content="help-general"><META name="subject_label" content="PORTAL,服务,SERVER"><META name="version" content="10.8"><META name="content_type" content="Help Topic"><META name="subject" content="PORTAL,SERVICES,SERVER"><META name="content-language" content="zh-cn">
+    <!--- search MD -->
+
+  
+  <script src="../../../../../zh-CN/assets/js/switchers/portal-1.js" type="text/javascript"></script>
+  
+      
+
+</head>
+
+<!--
+      pub: GUID-86E3206A-3CAD-43C1-9F16-FFB7CA3AEC71=33
+      tpc: GUID-C7D7EBA8-CE4D-450F-9629-92E4A7CCEDAD=6
+      -->
+
+
+<!-- variable declaration, if any -->
+<!-- can change following macro to set variable once we are on Jinja 2.8 -->
+
+
+
+
+
+<body class="claro zh-CN server">
+  
+
+  <!-- Drawer location -->
+  <div class="drawer drawer-left js-drawer" data-drawer="top-nav">
+        <nav class="drawer-nav" role="navigation">
+          <aside class="side-nav">
+            <h2 class="side-nav-title">Arc<span>GIS</span> Enterprise</h2>
+            <form id="helpSearchForm" class="margin-left-half margin-right-half leader-half trailer-half drawer-search-form" method="GET">
+              <input type="search" name="q"  placeholder="搜索 ArcGIS Enterprise 帮助">
+              <input type="hidden" name="collection" value="help" />
+              <input type="hidden" name="product" value="arcgis-portal-windows" />
+              <input type="hidden" name="version" value="10.8" />
+              <input type="hidden" name="language" value="zh-CN" />
+            </form>    
+             <a id="nav-portal" data-langlabel="portal" href="../../../../../zh-CN/portal/" class="side-nav-link">Portal</a>
+             
+            <a id="all-servers" data-langlabel="all-servers" href="../../../../../zh-CN/server/" class="side-nav-link">所有服务器</a>
+            <a id="gis-server" data-langlabel="gis-server" href="../../../../../zh-CN/server/" class="side-nav-link">GIS Server</a>
+            <a id="image-server" data-langlabel="image-server" href="../../../../../zh-CN/image/" class="side-nav-link">Image Server</a>
+            <a id="geo-analytics-server" data-langlabel="geo-analytics-server" href="../../../../../zh-CN/geoanalytics/" class="side-nav-link">GeoAnalytics Server</a>
+            <a id="geoevent-server" data-langlabel="geoevent-server" href="../../../../../zh-CN/geoevent/" class="side-nav-link">GeoEvent Server</a>
+            <a id="notebook-server" data-langlabel="notebook-server" href="../../../../../zh-CN/notebook/" class="side-nav-link">Notebook Server</a>
+            <a id="nav-data-store" data-langlabel="data-store" href="../../../../../zh-CN/data-store/" class="side-nav-link">Data Stores</a>
+            <a id="nav-cloud" data-langlabel="cloud" href="../../../../../zh-CN/cloud/" class="side-nav-link">云</a>
+            <a id="nav-apps" data-langlabel="apps" href="../../../../../zh-CN/apps/" class="side-nav-link">应用程序</a>
+            <a id="nav-doc" data-langlabel="documentation" href="../../../../../zh-CN/documentation/" class="side-nav-link">文档</a>
+
+          </aside>
+        </nav>
+    </div>
+
+    <!-- user navigation collapses to drawer on mobile -->
+    
+    <div class="drawer drawer-right js-drawer hide-if-logged-out logged-in-navigation" data-drawer="user-nav">
+      <nav class="drawer-nav">
+        <aside class="side-nav">
+          <a class="side-nav-link agolProfile" href="#">我的个人资料</a>
+          <a class="side-nav-link icon-ui-sign-out js-log-out" href="#">登出</a>
+        </aside>
+      </nav>
+    </div>
+    
+<!-- End of drawer -->
+
+  
+  <div class="wrapper">
+      <!--googleoff: all-->
+
+      <header class="top-nav" data-skin="learn">
+        <a class="skip-to-content" href="#skip-to-content">Skip To Content</a>
+        <div class="grid-container">
+          <div class="column-24">
+
+
+            <!--<div class="top-nav-title-wrapper text-center ">-->
+              <a href='../../../../../zh-CN/' class="top-nav-title tablet-hide"><span>Arc</span>GIS  Enterprise</a>
+              <a href='../../../../../zh-CN/' class="icon-ui-menu top-nav-title js-drawer-toggle tablet-show" data-drawer="top-nav"><span>Arc</span>GIS Enterprise</a>
+            <!--</div> -->
+
+          
+            <nav role="navigation" class="top-nav-list left tablet-hide">
+              <a id="nav-portal" data-langlabel="portal" href="../../../../../zh-CN/portal/" class="top-nav-link">Portal</a>
+
+                <div class="dropdown js-dropdown ">
+                  <a class="top-nav-link js-dropdown-toggle" tabindex="0" aria-haspopup="true" aria-expanded="false" href="#">Servers</a>
+                  <nav class="dropdown-menu featured" role="menu">
+                    <ul class="dropdown-sublist-featured">
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/get-started/latest/windows/additional-server-deployment.htm" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path  d="M42.92 6.1H4.12v8.566l.833.832-.835.833-.018 7.332.845.847-.825.824V33.9h25v5.2h-2v1.075H8.02v.8h19.1v.925h4.8v-.925H40v-.8h-8.08V39.1h-2v-5.2h13v-8.566l-.834-.834.835-.834v-7.332l-.835-.834.835-.834zm-11.8 35h-3.2v-1.2h3.2zm11-8H4.92v-7.434l.767-.766h35.668l.765.766zm0-9.766l-.766.766H5.666l-.766-.767.017-6.669.766-.764h35.671l.766.766zm0-9l-.766.766H5.687l-.766-.766V6.9h37.2zM19 11.9h-2v-.8h2zm-4 0h-2v-.8h2zm-4 0H9v-.8h2zm6 8.2h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9zm8 9h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9z"/></svg></span>
+                          <span class="sublink-text">所有服务器</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/server/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M45.98 33.575a.616.616 0 0 0-.335-.51l-3.362-2.03 3.362-2.031a.556.556 0 0 0 0-1.02l-11.1-6.704a1.293 1.293 0 0 0-1.112 0L22.33 27.982a.556.556 0 0 0 0 1.02l3.36 2.03-3.358 2.03a.556.556 0 0 0-.002 1.021l3.322 2.006-3.324 2.008a.555.555 0 0 0 .002 1.017l11.102 6.703a1.25 1.25 0 0 0 1.11.002l11.104-6.706a.556.556 0 0 0 0-1.02l-3.32-2.006 3.318-2.004a.607.607 0 0 0 .335-.509zM33.837 21.97c.026-.01.286-.005.29-.005l10.814 6.53-10.8 6.523c-.028.01-.284.005-.294.006l-10.813-6.53zm11.105 16.636l-10.8 6.523a2.564 2.564 0 0 1-.295.006l-10.81-6.529 3.39-2.047 7.004 4.23a1.083 1.083 0 0 0 .557.131 1.101 1.101 0 0 0 .554-.13l7.01-4.233zM34.14 40.098a2.545 2.545 0 0 1-.294.006l-10.812-6.53 3.43-2.073 6.97 4.208a1.25 1.25 0 0 0 1.107-.001l6.966-4.206 3.431 2.073zM9 8H7V7h2zm8 8h-2v-1h2zm-4-8h-2V7h2zm4 0h-2V7h2zm-4 8h-2v-1h2zm7.316 11.1H3.9v-6.434l.766-.766h35.668l.766.766v2.12l.8.483v-2.935l-.826-.826.826-.845v-6.329l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9h16.88a2.632 2.632 0 0 1 .336-.8zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zm0 8v-5.668l.766-.766h35.668l.766.766v5.67l-.746.764H4.666zM15 24v-1h2v1zm-4 0v-1h2v1zm-2-8H7v-1h2zm-2 8v-1h2v1z"/></svg></span>
+                          <span class="sublink-text">GIS Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/image/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 8h-2V7h2zm-4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm8 8h-2v1h2zm-8 0H7v1h2zm4 9v-1h-2v1zm-4 0v-1H7v1zm8 0v-1h-2v1zm4 3.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V21h-.8v-.334l-.766-.766H4.666l-.766.766V27.1H21zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zm40.234 4v21.8H23.1V23.1zm-.8 16.366L39.466 44.1h2.868l1.766-1.766zm-20.2-9.932l5.634-5.634h-2.868L23.9 26.666zm6.2-5.068L24.466 30.1h2.868l2.766-2.766zM28.466 30.1H30.1v-1.634zm2.434 0h6.2v-6.2h-6.2zm-7 7h6.2v-6.2h-6.2zm7 0h6.2v-6.2h-6.2zm0 6.434l5.634-5.634h-2.868L30.9 40.666zm7-7l5.634-5.634h-2.868L37.9 33.666zm1.634-5.634H37.9v1.634zm-8.634 7v1.634l1.634-1.634zm.566 6.2h2.868l2.766-2.766v-2.868zm6.434-3.566l2.634-2.634H37.9zM35.466 44.1H37.1v-1.634zm2.434 0h.434l5.766-5.766V37.9h-2.434L37.9 41.666zm6.2-8.634L42.466 37.1H44.1zm0-4L38.466 37.1h2.868l2.766-2.766zm0-7.566h-6.2v6.2h6.2zm-20.2 0v1.634l1.634-1.634zm0 20.2h6.2v-6.2h-6.2zm20.2 0v-.634l-.634.634z"/></svg></span>
+                          <span class="sublink-text">Image Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/geoanalytics/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 16h-2v-1h2zm-8 8v-1H7v1zm8 0v-1h-2v1zM13 7h-2v1h2zm4 0h-2v1h2zM9 7H7v1h2zm21.45 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V27.9h-1.464l-.801-.8H41.1v-6.434l-.766-.766H4.666l-.766.766V27.1h27.15zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM13 24v-1h-2v1zm0-9h-2v1h2zm-4 0H7v1h2zm26.672 27.148A1.87 1.87 0 0 1 35.9 43a1.91 1.91 0 1 1-3.763-.222l-9.845-3.414A1.88 1.88 0 0 1 21 39.9a1.9 1.9 0 1 1 1.474-3.084l4.692-2.346A1.878 1.878 0 0 1 27.1 34a1.902 1.902 0 0 1 1.9-1.9 1.867 1.867 0 0 1 .781.191l3.788-5.05A1.88 1.88 0 0 1 33.1 26a1.9 1.9 0 1 1 3.491 1.026l4.889 4.888c-.069.056-.144.1-.21.162a3.986 3.986 0 0 0-.358.402l-4.883-4.883A1.889 1.889 0 0 1 35 27.9a1.867 1.867 0 0 1-.781-.191l-3.788 5.049a1.868 1.868 0 0 1 .437.965l9.204.614c-.018.11-.049.218-.058.33A3.93 3.93 0 0 0 40 35c0 .046.01.09.01.135l-9.185-.612A1.913 1.913 0 0 1 29 35.9a1.889 1.889 0 0 1-1.474-.716l-4.692 2.346a1.878 1.878 0 0 1 .066.47 1.9 1.9 0 0 1-.105.625c-.007.02-.022.036-.03.056l9.63 3.34a1.87 1.87 0 0 1 2.786-.505l5.415-4.437c.067.108.127.22.204.322a3.9 3.9 0 0 0 .292.306zM33.9 26a1.092 1.092 0 0 0 .43.872 1.12 1.12 0 0 0 1.42-.068A1.1 1.1 0 1 0 33.9 26zm-6 8a1.1 1.1 0 0 0 2.196.093 1.135 1.135 0 0 0-.426-.965A1.087 1.087 0 0 0 29 32.9a1.101 1.101 0 0 0-1.1 1.1zm-5.8 4a1.098 1.098 0 1 0-.06.362A1.101 1.101 0 0 0 22.1 38zm13 5a1.1 1.1 0 1 0-2.2 0 1.1 1.1 0 0 0 2.2 0zm10.8-8a1.9 1.9 0 1 1-3.8 0c0-.053.003-.105.007-.158A1.9 1.9 0 0 1 45.9 35zm-.8 0a1.1 1.1 0 0 0-2.196-.093 1.153 1.153 0 0 0 .216.752A1.1 1.1 0 0 0 45.1 35z"/></svg></span>
+                          <span class="sublink-text">GeoAnalytics Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/geoevent/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M13 8h-2V7h2zm4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm12.418 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826v2.117c-.259-.177-.53-.337-.8-.497v-1.288l-.766-.766H4.666l-.766.766V27.1h17.933c-.148.26-.283.53-.415.8zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM9 24v-1H7v1zm4-9h-2v1h2zm0 9v-1h-2v1zm-4-9H7v1h2zm8 9v-1h-2v1zm16.9 2h-.8v8.9H39v-.8h-5.1zm.1-3.901a11.9 11.9 0 1 0 11.9 11.9 11.914 11.914 0 0 0-11.9-11.9zm0 23a11.1 11.1 0 1 1 11.1-11.1 11.112 11.112 0 0 1-11.1 11.1z"/></svg></span>
+                          <span class="sublink-text">GeoEvent Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/notebook/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M22 27.1H3.9v-6.434l.766-.766h18.576a5.262 5.262 0 0 1 .83-.8H4.666l-.766-.766v-5.668l.766-.766h35.668l.766.766V18h.8v-5.666l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9H22zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zM9 8H7V7h2zm8 0h-2V7h2zm-4 0h-2V7h2zm2 16v-1h2v1zm-4 0v-1h2v1zm-4 0v-1h2v1zm0-8v-1h2v1zm8 0v-1h2v1zm-4 0v-1h2v1zm18.9 8.1h-1.8v1.8h1.8zm-.8 1h-.2v-.2h.2zm15.498-4.48a2.727 2.727 0 0 0-1.62-.5v-.02H27.25a3.154 3.154 0 0 0-3.15 3.15V38.1h-1.68a3.386 3.386 0 0 0-2.872 1.58 3.49 3.49 0 0 0-.157 3.419 3.241 3.241 0 0 0 2.954 1.801h15.161a3.404 3.404 0 0 0 3.394-3.4V26.9h5v-3.65a3.224 3.224 0 0 0-1.302-2.63zM22.345 44.1a2.44 2.44 0 0 1-2.23-1.341 2.706 2.706 0 0 1 .11-2.65A2.588 2.588 0 0 1 22.42 38.9h12.89a3.395 3.395 0 0 0 0 5.2zM40.1 23.192V41.5a2.6 2.6 0 1 1-2.6-2.6v-.8H24.9V23.25a2.352 2.352 0 0 1 2.35-2.35h13.795a3.183 3.183 0 0 0-.945 2.292zm5 2.908h-4.2v-2.908a2.274 2.274 0 0 1 1.44-2.18 1.944 1.944 0 0 1 1.791.259 2.423 2.423 0 0 1 .97 1.979zm-17.1 5h9v.8h-9zm0 3h7v.8h-7zm0-6h9v.8h-9zm4-3h5v.8h-5z"/></svg></span>
+                          <span class="sublink-text">Notebook Server</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+
+              <a id="nav-data-store" data-langlabel="data-store" href="../../../../../zh-CN/data-store/" class="top-nav-link">Data Stores</a>
+              <a id="nav-cloud" data-langlabel="cloud" href="../../../../../zh-CN/cloud/" class="top-nav-link">云</a>
+              <a id="nav-apps" data-langlabel="apps" href="../../../../../zh-CN/apps/" class="top-nav-link">应用程序</a>
+            </nav>
+
+
+            
+            
+            
+
+            <div class="margin-left-1 top-nav-list right hide-if-logged-in logged-out-navigation">
+               
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+              
+              <a data-langlabel="sign-in" id="login-link" class="icon-ui-user top-nav-link link-blue login-link" href="#">登录</a>
+              
+            </div>
+
+            
+            <nav class="margin-left-1 top-nav-list right hide-if-logged-out logged-in-navigation">
+              
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+             
+              <div class="dropdown js-dropdown right">
+
+                <div class="tablet-show top-nav-link">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a href="#" data-drawer="user-nav" class="user-nav-name js-drawer-toggle" data-first-name></a>
+                </div>
+
+                <div class="tablet-hide top-nav-link js-dropdown-toggle">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a class="user-nav-name top-nav-dropdown dropdown-btn" data-first-name>&nbsp;</a>
+                </div>
+
+                <nav class="dropdown-menu dropdown-right">
+                
+                  <a class="dropdown-link agolProfile" id="agolProfile" href="#">我的个人资料</a>
+                  <a class="dropdown-link js-log-out" id="agolLogout" href="#">登出</a>
+                </nav>
+              </div>
+            </nav>
+            
+
+            
+          </div>
+        </div>
+      </header>
+
+      <div class="js-search search-overlay">
+        <div class="search-content" role="dialog" aria-labelledby="search">
+          <form method="GET" id="helpSearchForm">
+            <label>
+              搜索 ArcGIS Enterprise 帮助
+              <div class="search-bar">
+                <input type="search" name="q"  placeholder="搜索 ArcGIS Enterprise 帮助" class="search-input js-search-input">
+                <input type="hidden" name="collection" value="help" />
+                <input type="hidden" name="product" value="arcgis-portal-windows" />
+                <input type="hidden" name="version" value="10.8" />
+                <input type="hidden" name="language" value="zh-CN" />
+              </div>
+            </label>
+            <input type="hidden" name="relativePath" value="../../../../../" /><button type="submit" class="btn btn-large right">搜索</button>
+          </form>
+        </div>
+      </div>
+
+      <!--googleon: all-->
+
+      <div id="skip-to-content">
+        <!--googleoff: all-->
+        <header class="sub-nav sub-nav-learn">
+          <div class="grid-container">
+            
+            <div class="column-24">
+              <div style="display:table;" class="sdk-home-banner">
+                <div class="sdk-home-banner-content">
+                  <h1 class="sub-nav-title link-white">Portal for ArcGIS</h1>
+                </div>
+              </div>
+            </div>
+
+            <div class="column-24">
+              <nav class='sub-nav-list tablet-hide'><a class="sub-nav-link" href="../../../../../zh-CN/portal/" target="_top" title="Portal for ArcGIS 主页">主页</a><a class="sub-nav-link" href="../../../../../zh-CN/portal/latest/use/" target="_top" title="使用 Portal for ArcGIS">使用</a><a class="sub-nav-link is-active" href="../../../../../zh-CN/portal/latest/administer/windows/" target="_top" title="安装、管理和保护 Portal for ArcGIS">管理</a></nav><select class='tablet-show select-full trailer-half js-select-nav'><option value="../../../../../zh-CN/portal/">主页</option><option value="../../../../../zh-CN/portal/latest/use/">使用</option><option selected="true" value="../../../../../zh-CN/portal/latest/administer/windows/">管理</option></select>
+            </div>
+
+          </div>
+        </header>
+        <!--googleon: all-->
+       
+        <!-- content goes here -->
+        <div class="grid-container ">
+          
+
+            
+              
+  <!--BREADCRUMB-BEG--><div id="bigmac" class="sticky-breadcrumbs trailer-2" data-spy="affix" data-offset-top="180"> </div><!--BREADCRUMB-END-->
+  <!--googleoff: all-->
+    <div class="column-5 tablet-column-12 trailer-2 ">
+      <aside class="js-accordion accordion reference-index" aria-live="polite" role="tablist">
+        <div></div>
+      </aside>
+
+      <div class="js-sticky scroll-show tablet-hide leader-1 back-to-top" data-top="0" style="top: 0px;">
+        <a href="#" class="btn btn-fill btn-clear">返回顶部</a>
+      </div>
+    </div>
+  <!--googleon: all-->
+  
+            
+            
+            
+	
+		<div class="column-13  pre-1 content-section">
+	
+		<header class="trailer-1"><h1>使用门户日志</h1></header>
+
+		 
+	<!--googleoff: all-->
+	
+		
+				<aside id="main-toc-small" class="js-accordion accordion tablet-show trailer-1">
+			      <div class="accordion-section">
+			        <h4 class="accordion-title">在本主题中</h4>
+			        <div class="accordion-content list-plain">
+			          <ol class="list-plain pre-0 trailer-0"><li><a href="#ESRI_SECTION1_6DE42864076E4BE19AB1D2C82D43F863">捕获、查询和查看事件</a></li><li><a href="#ESRI_SECTION1_CF46BEE3EE9047E7B5DBB4BF3799B1BF">了解日志</a></li><li><a href="#ESRI_SECTION1_B0397C97D27C4E27996ABE8AF2537111">在查询中使用事件过滤器缩小搜索结果范围</a></li><li><a href="#ESRI_SECTION1_BF233ED13A6049B794BD7057758DB64E">删除日志</a></li></ol>
+			        </div>
+			      </div>
+			     </aside>
+		
+    
+   <!--googleon: all-->
+
+
+		<main>
+			
+	
+    	
+    
+
+
+			
+<p id="GUID-B521A4ED-3E4E-4C9F-8A13-5481276AC352">监控门户日志可帮助您标识错误、排除故障并解决门户问题。使用 <a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/about-the-arcgis-portal-directory.htm">ArcGIS Portal 目录</a>可查看、查询、配置和删除门户日志。ArcGIS Portal Directory 将日志消息聚集到一张表格中，以便您进行阅读和处理。</p><p id="GUID-DB082BBA-8A99-412B-B7C1-0C9772B88CBD">本帮助主题中的各部分介绍门户日志以及如何使用门户日志解决问题。</p><ul purpose="ul" id="UL_EBD4D73AF1DD4D9DA92C54CB4ED04DEB"><li purpose="li" id="LI_B1B79815814D41439773DEA9575C0D5C"><a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/work-with-portal-logs.htm#ESRI_SECTION1_6DE42864076E4BE19AB1D2C82D43F863">捕获、查询和查看事件</a></li><li purpose="li" id="LI_24A558D561F5439AA5BB650E28CA0262"><a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/work-with-portal-logs.htm#ESRI_SECTION1_CF46BEE3EE9047E7B5DBB4BF3799B1BF">了解日志</a></li><li purpose="li" id="LI_9BD0BFE384A44C8A9354511CAE8ABF33"><a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/work-with-portal-logs.htm#ESRI_SECTION1_B0397C97D27C4E27996ABE8AF2537111">在查询中使用事件过滤器缩小搜索结果范围</a></li><li purpose="li" id="LI_0454445B5BC442C49F0B32740F5EF616"><a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/work-with-portal-logs.htm#ESRI_SECTION1_BF233ED13A6049B794BD7057758DB64E">删除日志</a></li></ul><section class="section1 padded-anchor" id="ESRI_SECTION1_6DE42864076E4BE19AB1D2C82D43F863" purpose="section1"><h2>捕获、查询和查看事件</h2><p id="GUID-C3090CE4-9456-4A21-907D-25E95785CFFD">门户中发生事件时，门户会捕获事件并将其记录到日志中。查询日志可查看与事件相关的消息。遵循以下步骤可查询和查看门户中的当前消息：</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_AAD70DAA2648491BA2D8CA5E2A19207A"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_3449D6AA585E4805BDAED4D8A80E3BED"><span purpose="cmd" id="GUID-C8712301-7316-44FC-8A10-91E69C753FC4">打开 ArcGIS Portal 目录，以管理员身份登录。URL 通常为 <span class="usertext">https://webadaptorhost.domain.com/webadaptorname/portaladmin</span>。</span></li><li purpose="step" id="ESRI_STEP_A2D04707F41B4CF8BCBAFDB3BEB0B723"><span purpose="cmd" id="GUID-C2D7ECBE-A7EC-42DA-A3DE-FB4A639AD5E2">单击<span class="uicontrol">日志 <span class="greaterthan">&gt;</span> 查询</span>。</span></li><li purpose="step" id="ESRI_STEP_109B1AB43A274F208BFC66F404C777EE"><span purpose="cmd" id="GUID-C6A3DAE4-0BEA-4216-B824-3432CB719857">保留所有默认设置，然后单击<span class="uicontrol">查询</span>。</span></li></ol></div><section class="result padded-anchor" id="ESRI_RESULT_5305D0B4F79F4C958C9A08CE5E1CC72E" purpose="result"><p id="GUID-01612D67-5C84-46EE-9CE7-FA609D25B13D">随即返回一些消息和详细信息。例如，如果某用户因多次输入错误密码而导致帐户锁定，您将看到以下消息：</p><p id="GUID-980A6C70-EF02-4DA9-AB17-78F855628F52"><figure class="fig" href="#"><img src="GUID-F5F31EB0-9A04-42A4-8ADD-C9DC7A51C947-web.png" alt="ArcGIS Portal Directory 中的日志消息页面" title="ArcGIS Portal Directory 中的日志消息页面"></figure></p><p id="GUID-8558921F-5BEA-492D-917F-59FE60AE3760">在上述场景中，用户 <span class="usertext">john_cho</span> 尝试登录，但输入的密码错误。尝试十次后，强制执行了帐户锁定策略，该用户的帐户被锁定。这种情况可能还表示有恶意的用户尝试访问门户。</p><p id="GUID-FE27F217-DB2A-412D-9154-D67B64DD0031">所有事件均会记录以上信息，例如日志级别类型、事件发生时间、记录信息的源组件、发生事件的计算机、与事件关联的用户、日志编码和进程 ID。所有这些信息都可以帮助您更有效地解决门户问题。有关此信息的详细说明，请参阅<a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/work-with-portal-logs.htm#ESRI_SECTION1_CF46BEE3EE9047E7B5DBB4BF3799B1BF">了解日志</a>。</p></section></section><section class="section2 padded-anchor" id="ESRI_SECTION2_5D5270B626B04C30B76C39319AE7F0CC" purpose="section2"><h3>安装和安装后日志记录行为</h3><p id="GUID-97862EEB-5D56-4B0D-AB83-CBDFD218059F">安装或升级门户时，门户的日志级别设置为<span class="uicontrol">详细</span>。这意味着安装或升级进程期间将记录非常详细的消息。</p><p id="GUID-21E18EA8-0FD9-40C0-B724-309F730687C8">如果在此过程中遇到故障并想要查看日志以便帮助您排除故障，请确定您是否可以访问 <a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/about-the-arcgis-portal-directory.htm">ArcGIS Portal 目录</a>。如果可以，查询日志并查看消息。如果不可以，则查看磁盘上的日志消息。<span class="ph">要访问磁盘上的日志，请浏览至日志目录并打开最近的日志文件（例如 <span class="usertext">C:\arcgisportal\logs\&lt;machine name&gt;\portal\portal-20150101.095803-8596-0.0.log</span>）。</span>  如有必要，可以将此信息共享给 <a target="_blank" class="xref xref" href="http://links.esri.com/arcgis-supportcenter">Esri 技术支持</a>。</p><p id="GUID-DA2C4442-BF9D-4F53-8521-8858DF44BCF9">安装或升级过程完成后，门户的日志级别默认设置为<span class="uicontrol">警告</span>。这意味着只记录程度从中等到严重的问题。如果门户用户报告了问题，您需要更改日志级别，以便捕获有关该特定问题的更加详细的消息。要了解如何修改日志记录级别，请参阅<a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/specify-portal-log-settings.htm">指定门户日志设置</a>。</p></section><section class="section2 padded-anchor" id="ESRI_SECTION2_2F6169FF8D064EA88D22EEA5D9FD075B" purpose="section2"><h3>怀疑出现问题时</h3><p id="GUID-FBB00FD5-EFA6-4BAC-A2A0-07E17EDCA029">  如果您怀疑门户存在问题，或者用户报告了问题，请重现事件，捕获包含日志的事件，查询日志以获取事件相关信息，然后使用日志中的信息解决事件引起的问题。</p><p id="GUID-405B6ADF-5CFB-44AA-91DD-E80D38A7DB43">如果您怀疑存在问题或用户报告了问题，可利用以下决策树帮助您捕获包含日志的事件：</p><ul purpose="ul" id="UL_27DCB4FE289C41CBAA42C0F557DD4AD9"><li purpose="li" id="LI_7BFAA86C17514F94B52EEDA2695731A9">尝试重现问题：<ul purpose="ul" id="UL_633FD5C7A1564803B7BF6CB8E4A6720F"><li purpose="li" id="LI_FB4A1F01B25A492CBC927D8F61232CF3">如果可以重现问题，则查询日志并查看消息以获取该问题相关信息：<ol class="list-numbered" purpose="ol" id="OL_A722B93EF08945BDB0D33B109DBF0FF5"><li purpose="li" id="LI_3CCC915623B94D368DC43D519C310012">如果没有信息，则<a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/specify-portal-log-settings.htm">提高日志记录级别</a>。再次重现问题，查询日志并查看消息。</li><li purpose="li" id="LI_BDEFCC60BB3846AD853A4C8C0B451239">如果日志消息中存在信息，则查看信息以帮助您解决问题。</li></ol></li><li purpose="li" id="LI_D65AEA01412B41D198D29B4750DB33E5">如果无法重现问题，则记下导致这一问题的场景，以防再次出现。</li></ul></li></ul><div class="panel trailer-1" id="GUID-DDC67603-1D76-4018-A1DE-64F632000A4E"><h5 class="icon-ui-description trailer-0">提示：</h5><p id="GUID-99543411-BB6F-407A-BD6F-0255B96E3CA5">如果问题与发布相关，还建议您<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/server/latest/administer" href="../../../../../zh-CN/server/latest/administer/windows/about-server-logs.htm">查看 ArcGIS Server 日志</a>。服务器日志可能会提供其他信息，以便帮助您解决发布问题。</p></div><p id="GUID-99DDF397-952E-4440-9C09-678EFE775DA6">以下示例介绍如何捕获事件、查询事件以及标识包含日志的事件。</p><ul purpose="ul" id="UL_03208B7F438C44A194D2E37B691B7F68"><li purpose="li" id="LI_9413A59EA3334DE5A15B47B778092BE9"><a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/work-with-portal-logs.htm#ESRI_SECTION3_71E0D9CB933845C5A859B3991FC66D5A">用户无法向要素服务添加附件</a></li><li purpose="li" id="LI_8899353815E1483687EEC6641DC2AE21"><a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/work-with-portal-logs.htm#ESRI_SECTION3_B4EFF7BA3D84404088088E35782ED564">用户指定的用户名或密码无效</a></li><li purpose="li" id="LI_87F5EA213D9E433E8F0B88BDC520C73D"><a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/work-with-portal-logs.htm#ESRI_SECTION3_0043AC13C37E4386A80FC17DB16BBF8F">项目从一个文件夹移动到另一个文件夹</a></li></ul><section class="section3 padded-anchor" id="ESRI_SECTION3_71E0D9CB933845C5A859B3991FC66D5A" purpose="section3"><h4>用户无法向要素服务添加附件</h4><p id="GUID-D6C93CC4-A25B-4D73-A8A9-9C7C38D524D2"> 例如，某个用户报告其无法向要素服务添加附件。用户进行了多次尝试，但是无法上传文件。</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_DF0825B3D80E47F1B4EBD6CF03D1EE72"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_FBC796E36F8B4D6EBCCF44C96BC19424"><span purpose="cmd" id="GUID-71F0E75E-08CA-4AA2-853C-86F06D4284DB">打开 ArcGIS Portal 目录，以管理员身份登录。URL 通常为 <span class="usertext">https://webadaptorhost.domain.com/webadaptorname/portaladmin</span>。</span></li><li purpose="step" id="ESRI_STEP_C604517469344D6DA5D245BC50255BC3"><span purpose="cmd" id="GUID-6C43D223-4903-4A98-B40F-F5E86658DA73">单击<span class="uicontrol">日志 <span class="greaterthan">&gt;</span> 设置 <span class="greaterthan">&gt;</span> 编辑</span>。</span></li><li purpose="step" id="ESRI_STEP_AA2E65A520DD4EEF9AE866BFD09FD104"><span purpose="cmd" id="GUID-1C325D27-8B94-4A96-8F37-74DD855DEBBA">将日志级别设置为<span class="uicontrol">信息</span>，然后单击<span class="uicontrol">更新</span>。门户现以<span class="uicontrol">信息</span>级别记录消息。</span></li><li purpose="step" id="ESRI_STEP_9CDE8A7561FC49C38C6354A2E1E1FAC6"><span purpose="cmd" id="GUID-8E325CE0-AF7B-43ED-A90F-2A06388597C6">要求用户重现问题。要求用户记录下重现问题的步骤和时间段。</span></li><li purpose="step" id="ESRI_STEP_3C13D40583F149B980D93BD7445B2A85"><span purpose="cmd" id="GUID-3EFEA29F-33EC-4A7B-B5CB-02BE57CB424F">在 ArcGIS Portal 目录中，单击<span class="uicontrol">日志 <span class="greaterthan">&gt;</span> 查询</span>。</span><div class="substeps" id="ESRI_SUBSTEPS_B8D5C34BDFFD46D9B68A3C986FDF7327" purpose="substeps"><ol class="list-numbered" purpose="ol"><li purpose="substep" id="ESRI_SUBSTEP_9822FDAD7B214DD0A948E5549FDCBEFA"><span purpose="cmd" id="GUID-9FA71075-DA24-4597-8E96-7A4C8A0846E5">指定用户获得的时间值。格式为 <span class="usertext">yyyy-mm-ddThh:mm:ss</span>。例如，开始时间为 <span class="usertext">2015-05-10T14:05:00</span>，结束时间为 <span class="usertext">2015-05-10T14:03:00</span>。</span></li><li purpose="substep" id="ESRI_SUBSTEP_B366E4C3831446FD807D96CCFAAD11EC"><span purpose="cmd" id="GUID-67735874-2C76-407C-8AA8-BCCC6728B0C4">指定查询以返回<span class="uicontrol">信息</span>日志级别的消息。</span></li><li purpose="substep" id="ESRI_SUBSTEP_80B8F8A37A094D1996694B56D7B3CABE"><span purpose="cmd" id="GUID-02BC223F-A309-42D8-A2B9-DB3749947FED">在<span class="uicontrol">用户</span>字段中，指定成员的用户名。例如，为 John Cho 指定 <span class="usertext">jcho</span>。</span></li><li purpose="substep" id="ESRI_SUBSTEP_BCCF777A22B0469D942A77246A0EF419"><span purpose="cmd" id="GUID-6CC2A3BA-CD76-4CF2-AC94-9BEE63FA95E5">单击<span class="uicontrol">查询</span>。</span></li></ol></div></li><li purpose="step" id="ESRI_STEP_39277B6D1CC442ECB321004BF3888101"><span purpose="cmd" id="GUID-C5F55643-4F5C-4AC6-A309-0143EB9F4429">查看<span class="uicontrol">消息</span>字段以了解与问题相关的消息。</span></li></ol></div><section class="result padded-anchor" id="ESRI_RESULT_53CFE2C5A4D242DE99F4E334B8452CD0" purpose="result"><p id="GUID-D304372D-5DF8-4BB8-8B4C-7EC540795AA4">您看到以下消息：</p><p id="GUID-168BA550-47AF-4AC3-A847-8557185658B8"><span class="usertext">Failed to add attachment. File size limit of 20 MB exceeded for feature service '/gis/rest/services/Hosted/parks3k_19/FeatureServer/0/1/addAttachment'.</span></p><p id="GUID-8E6F6178-8AC4-4BD1-8740-6FEB9F0600E8">现在，您了解到用户尝试上传的文件超出文件大小限制。通知用户将文件大小减小到 20 MB 以内。</p></section></section></section><section class="section3 padded-anchor" id="ESRI_SECTION3_B4EFF7BA3D84404088088E35782ED564" purpose="section3"><h4>用户指定的用户名或密码无效</h4><p id="GUID-EE74B7FC-893A-43E5-8360-3B422BDF7572">此类事件记录在默认的<span class="uicontrol">警告</span>级别。要捕获此类事件，需要将日志级别设置为警告或更低，例如：</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_CE93641523FF4834961FDE12B90B18B6"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_2997216A95074B259D2898926E950C91"><span purpose="cmd" id="GUID-9CA23B9E-28DB-4A12-A3C0-2B0DE4888E4B">打开 ArcGIS Portal 目录，以管理员身份登录。URL 通常为 <span class="usertext">https://webadaptorhost.domain.com/webadaptorname/portaladmin</span>。</span></li><li purpose="step" id="ESRI_STEP_8AE2AE40522F468DAFA796585BCC21F0"><span purpose="cmd" id="GUID-A836A572-7527-4CBD-9784-778D2CC2A16E">单击<span class="uicontrol">日志 <span class="greaterthan">&gt;</span> 设置 <span class="greaterthan">&gt;</span> 编辑</span>。</span></li><li purpose="step" id="ESRI_STEP_1DBDB0D672794781A78F2D95DFC0986A"><span purpose="cmd" id="GUID-0D029DCA-A3CB-42F7-B005-D4C1088CC29D">验证级别是否设置为<span class="uicontrol">警告</span>或更低。如果不是，将日志级别设置为<span class="uicontrol">警告</span>（或更低），然后单击<span class="uicontrol">更新</span>。</span></li><li purpose="step" id="ESRI_STEP_C44B5731000F43C38452C1386BA2D251"><span purpose="cmd" id="GUID-81301EE7-72F0-43C2-AA7F-72EB34522CEA">根据需要打开 ArcGIS Portal 目录，然后单击<span class="uicontrol">日志 <span class="greaterthan">&gt;</span> 查询</span>。</span></li><li purpose="step" id="ESRI_STEP_35DDD93E00AC41A391DF877123E2A5D5"><span purpose="cmd" id="GUID-1C095D83-6F2E-4951-AA2A-642376775F99">指定查询以返回<span class="uicontrol">警告</span>日志级别的消息。忽略其他所有字段，这将返回所有用户的警告级别消息。</span></li><li purpose="step" id="ESRI_STEP_6072557DBD6942A78EB633B198DCB49B"><span purpose="cmd" id="GUID-1C95864D-C9CC-4A6D-8D77-DA24D215535E">查看<span class="uicontrol">消息</span>字段以了解与问题相关的消息。</span></li></ol></div><section class="result padded-anchor" id="ESRI_RESULT_8057268E88DD4804914038DFFC4BAD70" purpose="result"><p id="GUID-0C4FD4EC-3BBC-4BBB-A85A-A8870E776721">您看到以下消息：</p><p id="GUID-048B48F2-A408-4E90-A78F-37A073DFDF70"><span class="usertext">Sign in error: Invalid username or password specified for 'asmith'.</span></p><p id="GUID-16DBCDDB-E155-4FF1-B4C4-1D27B9BA10F6">此消息提示用户 <span class="usertext">asmith</span> (Ashley Smith) 在尝试登录门户时指定的用户名或密码无效。监控这些事件以防止出现未经授权的访问尝试。</p></section></section></section><section class="section3 padded-anchor" id="ESRI_SECTION3_0043AC13C37E4386A80FC17DB16BBF8F" purpose="section3"><h4>项目从一个文件夹移动到另一个文件夹</h4><p id="GUID-97FD162B-990E-4352-B972-9119853D4299">要捕获此类事件，需将日志级别提高至<span class="uicontrol">信息</span>，例如：</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_1836C4FCE73A4B6B82F62673D4A8FE92"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_B58AB94039394939B267CA9EC3878830"><span purpose="cmd" id="GUID-C4E7730C-457A-479C-9B6A-8ED6432C3D36">打开 ArcGIS Portal 目录，以管理员身份登录。URL 通常为 <span class="usertext">https://webadaptorhost.domain.com/webadaptorname/portaladmin</span>。</span></li><li purpose="step" id="ESRI_STEP_1562A401DFA24D9E957EE6CE200DB3BD"><span purpose="cmd" id="GUID-77A910D1-023C-4766-8973-BAA49CFE139F">单击<span class="uicontrol">日志 <span class="greaterthan">&gt;</span> 设置 <span class="greaterthan">&gt;</span> 编辑</span>。</span></li><li purpose="step" id="ESRI_STEP_82C26E41E114457D86E85197F97F1A7B"><span purpose="cmd" id="GUID-078CDF41-ED66-4C46-9047-0EC7BD8BACAB">将日志级别设置为<span class="uicontrol">信息</span>，然后单击<span class="uicontrol">更新</span>。门户现以<span class="uicontrol">信息</span>级别记录消息，并针对从一个文件夹移动到另一文件夹的项目记录相关事件。</span></li><li purpose="step" id="ESRI_STEP_0D2EE4BB6DE24E06AE76D409A1B02508"><span purpose="cmd" id="GUID-E7AF7676-58D7-40F9-8F03-643FC01910B9">根据需要打开 ArcGIS Portal 目录，然后单击<span class="uicontrol">日志 <span class="greaterthan">&gt;</span> 查询</span>。</span></li><li purpose="step" id="ESRI_STEP_7973CC76BA444C228B99A6AA0DDCA5F0"><span purpose="cmd" id="GUID-62211CE3-5434-4A22-B75E-02D32F4E87E5">指定查询以返回<span class="uicontrol">信息</span>日志级别的消息。忽略其他所有字段，由于已经设置级别，这将返回所有用户的信息级别消息。</span></li><li purpose="step" id="ESRI_STEP_C4DB0B918DF14D69969A1021CBC4BCE6"><span purpose="cmd" id="GUID-889C6433-9971-462B-85EE-0A3114A87EE8">查看<span class="uicontrol">消息</span>字段以了解与问题相关的消息。</span></li></ol></div><section class="result padded-anchor" id="ESRI_RESULT_57BBC8CA5DD249CEBED3E1957B6D813F" purpose="result"><p id="GUID-F6854E6B-2917-477D-B034-113BF022B962">您看到以下消息：</p><p id="GUID-A5015238-3FE5-4B5F-AAD0-3086DCF34FB1"><span class="usertext">Item moved from folder 'jcho/(Home)' to folder
+'jcho/(Home)/Utilities'. Item ID is
+'b7557bd2691b4e74bc4ce3e373402cc6'.</span></p><p id="GUID-4A57C3C5-0C4E-4B1E-8ED3-B45EF4EB573C">此消息提示用户 <span class="usertext">jcho</span> (John Cho) 将一个项目（ID 为 <span class="usertext">b7557bd2691b4e74bc4ce3e373402cc6</span>）从其主目录文件夹 <span class="usertext">(Home)</span> 移动到了 <span class="usertext">Utilities</span> 文件夹的子目录中。</p></section></section></section></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_CF46BEE3EE9047E7B5DBB4BF3799B1BF" purpose="section1"><h2>了解日志</h2><p id="GUID-E254DFA4-743C-4D8C-9701-6F92772C4318">所有事件均会记录特定信息，例如日志级别类型、事件发生时间、记录信息的源组件、发生事件的计算机、与事件关联的用户、日志编码和进程 ID。所有这些信息都可以帮助您更有效地解决门户问题。以下几个部分将详细介绍此信息。</p><section class="section2 padded-anchor" id="ESRI_SECTION2_6613A874BF944E28BBF0979DD4327670" purpose="section2"><h3>日志类型</h3><p id="GUID-1122E306-876E-43E4-8ED4-2969E09D6C66">根据详细程度级别，可将记录的事件按照从<span class="uicontrol">严重</span>（表示需要立即对该问题加以注意）到<span class="uicontrol">详细</span>（正常使用门户时生成的详细的信息性消息）进行区分。</p><p id="GUID-30178A0C-BB71-465D-9C53-0D945D5ACCD4"> 日志级别类型如下：</p><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><colgroup width="*"></colgroup><thead><tr><th colspan="1">级别</th><th colspan="1">说明</th><th colspan="1">示例消息</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-30EDC42B-48E0-4646-959E-7C195B6C03F4"><span class="uicontrol">严重</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-A533578A-E5EB-4E23-B44A-264C56CE319B">需要立即加以注意的严重问题。此级别仅包括严重消息。</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-C667771C-2AB2-466C-AC25-1A240F6D44EF"><span class="usertext">The 'System/GPServer/PublishingTools' service is stopped or ArcGIS Server is not started. Verify these components are started and try again.</span></p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-1C1DF465-DD8B-4C36-9D6C-E04A3F94F530"><span class="uicontrol">警告</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-4EAAD31E-D4EE-4D57-AA85-518C8617D600">需要加以注意的中度问题。此级别也包括严重消息。</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-23B19515-2015-4DD4-8CA4-D6F1F5459DD2"><span class="usertext">Organization updated: HTTP access disabled. The portal can only be accessed through HTTPS.</span></p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-6A897BCA-70C9-40D1-A9EE-648F393CA63C"><span class="uicontrol">信息</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-D9A2EF39-382B-4CF6-A79D-B664EC02F770">门户的普通管理消息，包括正在更新的组织设置相关消息。此级别也包括严重消息和警告消息。</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-F7047EFF-184A-49D4-8337-017350C495A4"><span class="usertext">User 'asmith' signed in to the portal.</span></p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-4F2FBB39-08B7-4526-8248-FB64F731757B"><span class="uicontrol">精细</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-44CE7574-E60D-48FF-8D6A-2A5D6F8B25DB">由于使用门户而生成的普通消息，如操作名称和收到的请求。此类消息的级别包括严重消息、警告消息和信息消息。</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-37A6DE92-87EC-4551-95BB-BDDC7531E8B8"><span class="usertext">Account settings updated.</span></p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-CC6F85E0-F751-4E9F-BB0D-54D17B083642"><span class="uicontrol">详细</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-2953E10F-6288-4E3C-8231-FC9B7D466AFB">此消息提供有关门户如何完成操作和请求的更多详细信息。此类消息的级别包括严重消息、警告消息、信息消息和精细消息。</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-B0C5F3CE-48DF-4932-A09A-3FB175FADF51"><span class="usertext">Setting log level to VERBOSE before creating new site.</span></p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-13E592A6-5023-4AD2-8ADB-736A93E7FE17"><span class="uicontrol">调试</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-6D9E78BB-80D6-4CFB-9449-9D9B8F3EC390">非常详细的消息，旨在供想要在进行故障排除时更深入地了解门户状态的开发人员和支持技术人员使用。不要在生产环境中使用此级别，因为该级别可能会降低性能。如果您没有解决问题，请改用<span class="uicontrol">警告</span>级别。</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-F142245C-31BD-4BF7-B7B1-AFBF94514D72"><span class="usertext">Failed to update index for item '44b37137e1f64de2bec832ab82043b86'.</span></p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-F823248B-13BF-40D5-8430-05A0090B6CBA"><span class="uicontrol">关闭</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-86D38F5B-00D3-48D4-9496-E6EAD80DFAAC">关闭日志记录。门户不会记录事件。</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-2DAC16B1-765F-46E5-90B1-5345E0EEA0E1">N/A</p></td></tr></tbody><caption></caption></table></div></section><section class="section2 padded-anchor" id="ESRI_SECTION2_70C77D16EB76493E91D08653C3E4D02B" purpose="section2"><h3>消息</h3><p id="GUID-FC8F5E70-8E8D-441A-981E-98C20C16DB8B">此消息与所记录的事件相关。根据日志级别类型的不同，消息的详细程度也有所不同。</p></section><section class="section2 padded-anchor" id="ESRI_SECTION2_1170379D2B2744138E41B4CBD216CA56" purpose="section2"><h3>时间</h3><p id="GUID-FD9AE121-AF17-43E1-8CE6-DC5A87449697">所记录事件的发生时间。事件按时间顺序进行组织，最近发生的事件最先显示。时间格式为 <span class="usertext">yyyy-mm-ddThh:mm:ss</span>。查询日志时，您可以<a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/work-with-portal-logs.htm#ESRI_SECTION2_569A36BF3F124C61903ABAFABBD59E61">指定要显示的所需时间段</a>。</p></section><section class="section2 padded-anchor" id="ESRI_SECTION2_069A965909BC439396E58D61E10AA7E9" purpose="section2"><h3>源</h3><p id="GUID-7EA33098-29D3-400A-A0BD-8D22405F65E5"> 根据共享、管理和软件的门户组件生成记录事件源。与发布和用户相关的事件分类到<span class="uicontrol">共享</span>下。与安全性和索引相关的事件分类到<span class="uicontrol">门户管理</span>下。与软件安装相关的事件分类到<span class="uicontrol">门户</span>下。查询日志时，可根据需要<a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/work-with-portal-logs.htm#ESRI_SECTION2_F175AF27967F43ACA742F4F75B5538D5">指定要显示的所需源</a>。</p></section><section class="section2 padded-anchor" id="ESRI_SECTION2_007A5444B113417F8453F0C472D4186A" purpose="section2"><h3>计算机</h3><p id="GUID-675AEA40-FC83-4B4E-87B3-D1E28F86E4AE">发生事件的门户计算机。</p></section><section class="section2 padded-anchor" id="ESRI_SECTION2_EA318AF9697C4BAE9DA30341B93C3052" purpose="section2"><h3>用户</h3><p id="GUID-FCA9099B-E7C2-44BC-8EDE-2B497D376A57">所提交的请求导致生成日志消息的用户的名称。此属性对于在启用安全后帮助用户追踪各种用户活动非常有用。</p></section><section class="section2 padded-anchor" id="ESRI_SECTION2_F96B4BDF7FBD4EFC865E316C1DFB460C" purpose="section2"><h3>代码</h3><p id="GUID-26C9DB44-4583-4102-93E2-20BE324880A0">与消息相关联的日志编码。编码根据特定范围和内容归为若干类别。查询日志时，您可以<a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/work-with-portal-logs.htm#ESRI_SECTION2_B352A61686E147598020334AC13E89D9">指定要显示的特定遍码或编码范围</a>。</p><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><colgroup width="*"></colgroup><thead><tr><th colspan="1">类别</th><th colspan="1">范围</th><th colspan="1">消息内容</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-92145084-9C14-4C7C-B285-C540F74A845B">发布</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-468909D9-6783-45CF-9B4B-F2B4C055795E">200000-201999</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-09D478ED-D03B-45CA-9F5A-4C91D4649C92">发布和删除托管服务。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-F470E941-599C-44E8-B910-D2B3AB1EF4A7">内容管理</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-D1654B6B-1355-47B3-A8EE-C339D062D595">202000-203999</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-2988C210-542A-40D2-96E3-5CC718CB63F3">添加、移除、更新和移动项目。</p><p id="GUID-61686BF5-2E63-41BC-BF6D-DF161BE4112D">更改项目所有权。</p><p id="GUID-57F20C02-6835-44BA-BD0E-347F9FBDEB46">将项目共享给所有人、组织和群组。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-2677C541-6011-45E4-B17E-23E332F802D2">安全性</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-7AF80123-4664-4C63-8797-0D35BC23AB9D">204000-205999</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-2B5572AC-CEE2-41D2-96CD-754A4C8ACA93">内置或企业用户登录。</p><p id="GUID-EF460E11-3735-4BF3-B315-98631BC64C78">门户令牌生成和配置。</p><p id="GUID-C5CAAE79-2431-4144-A2F0-ABDA2CD35D90">禁用和启用帐户注册。</p><p id="GUID-C3A44E83-2776-4238-97E3-7EDEB5477F2A">禁用和启用 ArcGIS Portal 目录。</p><p id="GUID-C63BE4D8-E186-4CE7-A179-950FF22D7BB5">导入或导出安全证书。</p><p id="GUID-7B96602C-5274-43DF-800F-F4D7ADA5C795">创建、删除和禁用用户。</p><p id="GUID-BA18ACBA-3758-46B5-9911-F9BD9BFCBC3B">更改用户角色权限。</p><p id="GUID-5CE1D49A-E6FC-4CDA-BE1A-1FE49C839A19">创建和删除自定义角色。</p><p id="GUID-A4EECC4B-5AA1-45E2-88E7-938961AC5DC7">禁用和启用 HTTPS 和匿名访问。</p><p id="GUID-40FC38C2-398B-4227-9F9A-643217480A9A">更新标识存储。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-720859ED-49E9-4AD6-80F9-278255B1C351">组织管理</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-79E42118-3D24-4A8E-9FF9-18703EA344C9">206000-207999</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-A2E21B49-C9AC-462E-8A70-FF0BBA1D5B18">自定义组织主页。</p><p id="GUID-0A059B0B-06C0-412D-9FB1-5C90E0F219EA">配置图库、底图、显示单位、实用程序服务和联合服务器。</p><p id="GUID-1ABD23F3-3BC4-40C7-80FB-BBC3E24EDE62">创建和删除群组。</p><p id="GUID-C75A1974-BE5D-4F3B-A484-9FBB32DC81C5">向群组添加用户和移除群组中的用户。</p><p id="GUID-6EE83AD2-3720-42EF-A3AD-223068682B1D">邀请用户加入群组或接受加入群组的邀请。</p><p id="GUID-FDEA746F-3F81-43FA-88E3-C215073D892B">配置 ArcGIS Pro 许可。</p><p id="GUID-ABDDCD25-3B6C-46C7-9AF8-EC481BA2D92C">ArcGIS Web Adaptor 配置。</p><p id="GUID-D3AF4DB8-5C5C-42DC-943D-AC78824EFB02">修改门户内容目录位置。</p><p id="GUID-A76D7D10-2BB3-4CA2-9438-952487DB5CB9">配置转发代理服务器和反向代理服务器。</p><p id="GUID-380E68D7-9550-459B-BC96-53CCFBC8D588">超出为门户授权的指定用户数量。</p><p id="GUID-C943A0D8-BE84-4FDE-8647-0AD7DAD445B7">编辑日志设置和删除日志。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-45782FCD-3733-4C14-9E8E-A57F02160A47">安装和升级</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-8C517C77-2989-426C-8181-CA6BFBA7FF53">208000-209999</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-718472B3-F160-4798-89A7-3CB532572B27">安装和升级软件、创建门户网站以及授权软件。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-5A6350EA-E95A-4146-A514-7B31D4B58143">搜索索引</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-D7B4AE5D-8D16-4A9C-9B48-AA7F888933E1">210000-211999</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-4903B087-6EBC-4AC0-890C-1DA6DC89E8ED">生成门户项目搜索索引。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-75C5B205-315E-48F1-A555-179C4C35B017">常规</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-14AAF96D-ACF7-4A79-BCBC-187BC89B7DB8">212000-219999</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-C7B50C2A-17E4-4048-A9C6-BDFA0843CF84">重新启动门户。</p><p id="GUID-8A1D5CFB-7B9E-4E17-BF61-DF14733ED63C">配置高可用性门户。</p><p id="GUID-3013B263-B3CE-4A36-B128-F2B04EA7158C">其他常规消息通过正常使用门户生成。</p></td></tr></tbody><caption></caption></table></div></section><section class="section2 padded-anchor" id="ESRI_SECTION2_0F65243038E649518E3484550C56B0BF" purpose="section2"><h3>进程</h3><p id="GUID-121A9335-929D-4C61-88EA-50896ED0841B">记录事件的计算机进程 ID。</p></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_B0397C97D27C4E27996ABE8AF2537111" purpose="section1"><h2>在查询中使用事件过滤器缩小搜索结果范围</h2><p id="GUID-684231F6-95DD-4385-8F3C-7F6FA3626AAC">为缩小事件范围并显示关联度更高的消息，可根据时间、日志级别、特定日志编码或编码范围、特定用户或用户列表以及门户源组件来进行查询。查询时可组合使用上述任意过滤器。</p><p id="GUID-E82FEF74-9C8E-450A-83D5-29C7E1AFBCD6">要访问这些过滤器，请登录到 ArcGIS Portal 目录，然后单击<span class="uicontrol">主页 <span class="greaterthan">&gt;</span> 日志 <span class="greaterthan">&gt;</span> 查询</span>。</p><section class="section2 padded-anchor" id="ESRI_SECTION2_23D46BE4A016468F803C858F9DDA8AA5" purpose="section2"><h3>日志级别</h3><p id="GUID-8C10168A-EC04-42F7-BCF7-2AE314D1D63F">根据详细程度级别，可将事件按照从<span class="uicontrol">严重</span>（表示需要立即对该问题加以注意）到<span class="uicontrol">详细</span>（正常使用门户时生成的详细的信息性消息）进行区分。从<span class="uicontrol">日志级别</span>下拉列表中选择所需的级别。有关每个级别的详细摘要，请参阅上述<a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/work-with-portal-logs.htm#ESRI_SECTION2_6613A874BF944E28BBF0979DD4327670">日志级别</a>部分。</p></section><section class="section2 padded-anchor" id="ESRI_SECTION2_F175AF27967F43ACA742F4F75B5538D5" purpose="section2"><h3>源</h3><p id="GUID-EBB4FE75-C31F-47D4-B809-617B2CFAB49B">根据共享、管理和软件的门户组件生成记录事件源。例如：</p><ul purpose="ul" id="UL_B9DF8893A5DD4501B38DF80423AD803B"><li purpose="li" id="LI_9BA6D03B0B6C472E8E8C6A0B98DEA65E">与发布和用户相关的事件分类到<span class="uicontrol">共享</span>下。</li><li purpose="li" id="LI_827A968E152C4452A01380D6A59DBBD1"> 与安全性和索引相关的事件分类到<span class="uicontrol">门户管理</span>下。</li><li purpose="li" id="LI_5F78056B5E134029AF711F5E912114E6"> 与软件安装相关的事件分类到<span class="uicontrol">门户</span>下。</li></ul><p id="GUID-8ED310B4-4848-43CB-8DA7-4A6EC290747A">默认情况下查询所有源（下拉列表中的<span class="uicontrol">所有</span>选项）。要根据特定源过滤事件，可从<span class="uicontrol">源</span>下拉列表中选择所需的源。</p></section><section class="section2 padded-anchor" id="ESRI_SECTION2_569A36BF3F124C61903ABAFABBD59E61" purpose="section2"><h3>时间</h3><p id="GUID-62539A96-31F5-433B-9098-04F9A352EABC">要根据特定时间段过滤事件，可通过<span class="uicontrol">开始时间</span>和<span class="uicontrol">结束时间</span>字段指定所需的时间值（格式为 <span class="usertext">yyyy-mm-ddThh:mm:ss</span>）。开始时间为最近时间，结束事件为最早时间。例如：</p><ul purpose="ul" id="UL_953D2B3943A747DEB6EEE70A31F0F92C"><li purpose="li" id="LI_D5A117715978422FBEF358B2725B9B2C">要定义十五分钟的时间间隔，则开始时间为 <span class="usertext">2015-05-01T13:15:00</span>，结束时间为 <span class="usertext">2015-05-01T13:00:00</span>。</li><li purpose="li" id="LI_07C0B08EB0E144FF96D2D37B3DE42C80">要定义一小时的时间间隔，则开始时间为 <span class="usertext">2015-05-01T14:00:00</span>，结束时间为 <span class="usertext">2015-05-01T13:00:00</span>。</li><li purpose="li" id="LI_A07EFAC05D6E4D5C952C266BFB4B223F">要定义一天的时间间隔，则开始时间为 <span class="usertext">2015-05-02T12:00:00</span>，结束时间为 <span class="usertext">2015-05-01T12:00:00</span>。</li><li purpose="li" id="LI_18CB99A4580542B490050CB2995802C1">将时间字段留空可查询所有日志。</li></ul><p id="GUID-27472F64-92B3-4BAE-80B1-85E936A59BEF">如果指定了开始时间但未指定结束时间，则返回截至指定开始时间的所有最早日志。相反，如果指定了结束时间但未指定开始时间，则返回截至指定结束时间的所有最新日志。</p></section><section class="section2 padded-anchor" id="ESRI_SECTION2_B352A61686E147598020334AC13E89D9" purpose="section2"><h3>日志编码</h3><p id="GUID-8972C4E2-C06D-4D89-8D16-872850FE2470">每条消息都有日志编码。<a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/work-with-portal-logs.htm#ESRI_SECTION2_F96B4BDF7FBD4EFC865E316C1DFB460C">如上所述</a>，这些编码分为若干类别。您可以根据特定编码或编码范围进行过滤，例如：</p><ul purpose="ul" id="UL_750BE1916F4D4ED7B9B8A57A905AE324"><li purpose="li" id="LI_ABF8B3695F754330A9EF718781AFEA31">要过滤单个编码，则指定编码值（例如 <span class="usertext">204028</span>）。</li><li purpose="li" id="LI_F0B94D4A78714776B58FA74117F5B039">要过滤特定编码，则使用逗号 (<span class="usertext">,</span>) 分隔编码（例如 <span class="usertext">204028, 212015, 219114</span>）。</li><li purpose="li" id="LI_E2AB7AC227FF4296A7D628B9F34511A7">要根据编码范围过滤（例如，安全类别中的所有编码），则指定开始编码和结束编码，并用短划线 (<span class="usertext">-</span>) 分隔（例如 <span class="usertext">204000–205999</span>）。</li><li purpose="li" id="LI_69F8384CE2DA461580956D84C931FA03">要根据编码范围和单个编码过滤，则指定开始编码和结束编码（使用短划线分隔），然后使用逗号分隔单个编码（例如 <span class="usertext">204000–205999, 212015, 219114</span>）。</li></ul></section><section class="section2 padded-anchor" id="ESRI_SECTION2_CBF7673BDFBC45C6A6A3654762F8900A" purpose="section2"><h3>用户</h3><p id="GUID-C19FFF2B-64DF-410C-82AB-5108CA8317B2">要根据特定用户过滤事件，则在<span class="uicontrol">用户</span>字段中指定所需用户名，例如：</p><ul purpose="ul" id="UL_CBED3B2F09A14762BEB9908E169DFC1A"><li purpose="li" id="LI_14DB4D4F3FB849348BE3C01123CB6C00">要过滤某个特定用户，则指定用户名（例如，为 John Cho 指定 <span class="usertext">jcho</span>）。</li><li purpose="li" id="LI_64F2EF5EE0824119A3927F0756E1F7B1">要过滤多个用户，则使用逗号 (<span class="usertext">,</span>) 分隔用户名（例如，<span class="usertext">jcho, asmith</span> 表示 John Cho 和 Ashley Smith）。</li></ul><div class="panel trailer-1 note" id="GUID-D26023AF-F73C-4FE5-8817-AC7BBC26279D"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-0B0D201D-A5BB-4E08-BA0F-1E2036621C76">不支持使用通配符 (<span class="usertext">*</span>)。</p></div></section><section class="section2 padded-anchor" id="ESRI_SECTION2_253975786C944C209B2672EB07A8011C" purpose="section2"><h3>消息计数</h3><p id="GUID-2CA554E0-D46E-40E2-9893-0923557A67AE">执行查询时显示的消息数。消息显示在单个 Web 页面上。如有必要，可向下滚动页面查看所有消息。</p></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_BF233ED13A6049B794BD7057758DB64E" purpose="section1"><h2>删除日志</h2><p id="GUID-0BC1A431-4B45-4403-95EE-64D6DF9F2DD7"> 如果要删除日志，则单击<span class="uicontrol">主页 <span class="greaterthan">&gt;</span> 日志 <span class="greaterthan">&gt;</span> 清除 <span class="greaterthan">&gt;</span> 清除日志</span>。此操作将从门户计算机中删除所有日志消息。对导致门户问题的特定场景进行调试时，删除日志有助于隔离该问题。这样将从日志中清除任意其他事件，使您能够集中精力调试问题。</p></section>
+			
+				<hr>
+				<!--googleoff: all-->
+				
+	
+        
+		    <p class="feedback right">
+		        <a id="afb" class="icon-ui-contact" href="/feedback/" data-langlabel="feedback-on-this-topic" >有关此主题的反馈?</a>
+		    </p>
+        
+	
+
+				<!--googleon: all-->
+			
+		</main>
+	</div>
+	
+	<!--googleoff: all-->
+	
+		
+			<div id="main-toc-large" class="column-5">
+			    <div class="panel font-size--2 tablet-hide trailer-1">
+			      <h5 class="trailer-half">在本主题中</h5>
+			      <ol class="list-plain pre-0 trailer-0"><li><a href="#ESRI_SECTION1_6DE42864076E4BE19AB1D2C82D43F863">捕获、查询和查看事件</a></li><li><a href="#ESRI_SECTION1_CF46BEE3EE9047E7B5DBB4BF3799B1BF">了解日志</a></li><li><a href="#ESRI_SECTION1_B0397C97D27C4E27996ABE8AF2537111">在查询中使用事件过滤器缩小搜索结果范围</a></li><li><a href="#ESRI_SECTION1_BF233ED13A6049B794BD7057758DB64E">删除日志</a></li></ol>
+			    </div>
+			    
+			    
+	  		</div>
+		
+    
+   <!--googleon: all-->
+
+
+
+
+          
+        </div>
+        <!-- ENDPAGECONTENT -->
+
+      </div>
+
+    </div>  <!-- End of wrapper -->
+
+  <footer class="footer leader-3 link-dark-gray" role="contentinfo">
+    <div class="grid-container">
+      <div class="row">
+        <nav class="column-6">
+          <h6 data-langlabel="arcgis-for-server">Arc<span>GIS Enterprise</span></h6>
+          <ul class="list-plain">
+            <li><a data-langlabel="home" href="../../../../../zh-CN/">主页</a></li>
+            <li><a data-langlabel="portal" href="../../../../../zh-CN/portal/">Portal</a></li>
+            <li><a data-langlabel="server" href="../../../../../zh-CN/server/">Server</a></li>
+            <li><a data-langlabel="data-store" href="../../../../../zh-CN/data-store/">Data Stores</a></li>
+            <li><a data-langlabel="cloud" href="../../../../../zh-CN/cloud/">云</a></li>
+            <li><a data-langlabel="apps" href="../../../../../zh-CN/apps/">应用程序</a></li>
+            <li><a data-langlabel="documentation" href="../../../../../zh-CN/documentation/">文档</a></li>
+          </ul>
+        </nav>
+
+        
+  <nav class="column-6">
+    <h6 data-langlabel="arcgis-platform">ArcGIS 平台</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="arcgis" href="//www.arcgis.com/">ArcGIS Online</a></li>
+      <li><a data-langlabel="arcgis-for-professionals" href="//pro.arcgis.com/">ArcGIS Pro</a></li>
+      <li><a data-langlabel="arcgis-for-server" href="//enterprise.arcgis.com/">ArcGIS Enterprise</a></li>
+      <li><a data-langlabel="arcgis-for-developers" href="https://developers.arcgis.com/">ArcGIS for Developers</a></li>
+      <li><a data-langlabel="arcgis-solutions" href="//solutions.arcgis.com/">ArcGIS Solutions</a></li>
+      <li><a data-langlabel="arcgis-marketplace" href="//marketplace.arcgis.com/">ArcGIS Marketplace</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <h6 data-langlabel="about-esri">关于 Esri</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="about-us" href="//www.esri.com/about-esri/">关于我们</a></li>
+      <li><a data-langlabel="careers" href="//www.esri.com/careers/">招贤纳士</a></li>
+      <li><a data-langlabel="insiders-blog" href="https://www.esri.com/about/newsroom/blog/">Esri 博客</a></li>
+      <li><a data-langlabel="user-conference" href="//www.esri.com/events/user-conference/index.html">用户大会</a></li>
+      <li><a data-langlabel="developer-summit" href="//www.esri.com/events/devsummit/index.html">开发者峰会</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <a class="esri-logo" href="//www.esri.com/" aria-label="Esri Home"></a>
+    <section class="footer-social-nav leader-1">
+            <a class="icon-social-twitter" aria-label="Esri on Twitter" href="https://twitter.com/Esri/"></a>
+            <a class="icon-social-facebook" aria-label="Esri on Facebook" href="https://www.facebook.com/esrigis/"></a>
+            <a class="icon-social-github" aria-label="Esri on GitHub" href="//esri.github.io/"></a>
+            <a class="icon-social-contact" aria-label="Contact Esri" href="//www.esri.com/about-esri/contact/"></a>
+    </section>
+	  
+  </nav>
+  
+  <div class="column-24 leader-1">
+    <p class="font-size--3"><a href="http://www.esri.com/legal/copyright-trademarks">Copyright &copy; 2019 Esri.</a> All rights reserved. | <a href="http://www.esri.com/legal/privacy/">隐私政策</a> | <a href="http://www.esri.com/legal/software-license">法律声明</a></p>
+  </div>
+  
+
+
+      </div>
+    </div>
+  </footer>
+  <!--googleoff: all-->
+
+  
+  
+	<script src="../../../../../zh-CN/assets/js/init.js" type="text/javascript"></script>
+	<!--<script src="../../../../../zh-CN/assets/js/drop-down.js" type="text/javascript"></script>-->
+	<script src="../../../../../zh-CN/assets/js/search/searchform.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/cdn/js/link-modifier.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/cdn/js/sitewide.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/cdn/js/libs/highlight.pack.js" type="text/javascript"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+
+
+  
+    
+
+  <script src="../../../../../zh-CN/cdn/js/affix.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    $(function () {
+          var appendFlg = true;
+
+          $("#bigmac")
+          .on("affixed.bs.affix", function (evt) {
+            if (appendFlg) {
+              $("<a class='crumb' href='#'>使用门户日志</a>").insertAfter ($("#bigmac nav a").last());
+              appendFlg = false;
+            }
+          })
+          .on ("affix-top.bs.affix", function(evt) {
+            if (!appendFlg) {
+              $("#bigmac nav a").last().remove();
+            }
+            appendFlg = true;
+          })
+    })
+  </script>
+  
+        <script type="text/javascript">
+          window.doctoc = {
+            pubID: "555",
+            tpcID: "232",
+            
+              prefix: "管理",
+              prefixUrl: "/zh-cn/portal/latest/administer/windows/",
+          
+            hideToc: false
+          }
+        </script>
+
+        <script type="text/javascript" src="../../../../../zh-CN/portal/latest/administer/windows/555.js" ></script>
+        <script type="text/javascript" src="../../../../../zh-CN/cdn/calcite/js/protoc.js" ></script>
+        
+        
+
+  <noscript>
+        <p>
+            <a href="flisting.htm">flist</a>
+        </p>
+    </noscript>
+    <script type="text/javascript"></script>
+  
+  
+    
+    
+
+  </body>
+</html>

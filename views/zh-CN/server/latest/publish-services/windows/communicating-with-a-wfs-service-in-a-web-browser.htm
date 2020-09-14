@@ -1,0 +1,907 @@
+
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>  <html class="ie lt-ie9 lt-ie8 lt-ie7 ie6" dir="ltr"> <![endif]-->
+<!--[if IE 7]>     <html class="ie lt-ie9 lt-ie8 ie7" dir="ltr"> <![endif]-->
+<!--[if IE 8]>     <html class="ie lt-ie9 ie8" dir="ltr"> <![endif]-->
+<!--[if IE 9]>     <html class="ie ie9" dir="ltr"> <![endif]-->
+<!--[if !IE]><!--> <html dir="ltr" lang="zh-CN"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>在 Web 浏览器中与 WFS 服务进行通信&mdash;文档 | ArcGIS Enterprise 文档</title>
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+    <script>
+      var docConfig = {
+        locale: 'zh-CN'
+        ,localedir: 'zh-cn'
+        ,langSelector: ''
+        
+        ,relativeUrl: false
+        
+
+        ,searchformUrl: '/search/'
+        ,tertiaryNavIndex: ''
+
+        
+      };
+    </script>
+	 
+
+
+    
+    <!--[if lt IE 9]>
+      <script src="../../../../../zh-CN/cdn/js/libs/html5shiv.js" type="text/javascript"></script>
+      <script src="../../../../../zh-CN/cdn/js/libs/selectivizr-min.js" type="text/javascript"></script>
+      <script src="../../../../../zh-CN/cdn/js/libs/json2.js" type="text/javascript"></script>
+      <script src="../../../../../zh-CN/cdn/js/libs/html5shiv-printshiv.js" type="text/javascript" >
+
+    <![endif]-->
+
+     <!--[if lt IE 11]>
+    <script>
+      $$(document).ready(function(){
+        $$(".hideOnIE").hide();
+      });
+    </script>
+    <![endif]-->
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<link href="../../../../../zh-CN/assets/img/favicon.ico" rel="shortcut icon" >
+	<link href="../../../../../zh-CN/assets/css/screen.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/cdn/calcite/css/documentation.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/assets/css/print.css" media="print" type="text/css" rel="stylesheet" />
+
+	<!--
+	<link href="../../../../../zh-CN/assets/css/screen_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/assets/css/documentation/base_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/assets/css/print_l10n.css" media="print" type="text/css" rel="stylesheet" />
+	-->
+	
+	
+		<script src="../../../../../zh-CN/cdn/js/libs/jquery.1.9.1.min.js" type="text/javascript"></script>
+	
+	<script src="../../../../../zh-CN/cdn/js/libs/jquery.cookie.js" type="text/javascript"></script>
+	<link href="../../../../../zh-CN/cdn/css/colorbox.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/cdn/css/colorbox_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<script src="../../../../../zh-CN/cdn/js/libs/jquery.colorbox-min.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/assets/js/video-init.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/assets/js/sitecfg.js" type="text/javascript"></script>
+	
+		<script src="../../../../../zh-CN/assets/js/signIn.js" type="text/javascript"></script>
+	
+
+	<!--- Language Picker -->
+	<script src="../../../../../zh-CN/assets/js/locale/l10NStrings.js" type="text/javascript"></script>
+	
+		 
+	
+
+	<script src="../../../../../zh-CN/assets/js/calcite-web.js" type="text/javascript"></script>
+
+
+
+  <!--- search MD -->
+    <META name="description" content="WFS 服务发布之后，即可用于支持 WFS 1.0.0、1.1.0、2.0.0 以及 GML 的简单要素专用标准的任何客户端中。Web 浏览器是 WFS 服务最基本的客户端之一。您可以通过 HTTP 请求信息，响应或者异常会通过浏览器返回。"><META name="last-modified" content="2019-12-6"><META name="product" content="arcgis-server-windows,arcgis-enterprise-windows"><META name="sub_category" content="ArcGIS Server (Windows)"><META name="search-collection" content="help"><META name="content_type_label" content="帮助主题"><META name="sub_category_label" content="ArcGIS Server (Windows)"><META name="search-category" content="help-general"><META name="subject_label" content="服务"><META name="version" content="10.8"><META name="content_type" content="Help Topic"><META name="subject" content="SERVICES"><META name="content-language" content="zh-cn">
+    <!--- search MD -->
+
+  
+  <script src="../../../../../zh-CN/assets/js/switchers/server-1.js" type="text/javascript"></script>
+  
+      
+
+</head>
+
+<!--
+      pub: GUID-F157DF68-7F60-4427-A561-AD2F0FA30861=22
+      tpc: GUID-0D23C639-B97D-4E1C-A22B-96B26C35C54A=7
+      -->
+
+
+<!-- variable declaration, if any -->
+<!-- can change following macro to set variable once we are on Jinja 2.8 -->
+
+
+
+
+
+<body class="claro zh-CN server">
+  
+
+  <!-- Drawer location -->
+  <div class="drawer drawer-left js-drawer" data-drawer="top-nav">
+        <nav class="drawer-nav" role="navigation">
+          <aside class="side-nav">
+            <h2 class="side-nav-title">Arc<span>GIS</span> Enterprise</h2>
+            <form id="helpSearchForm" class="margin-left-half margin-right-half leader-half trailer-half drawer-search-form" method="GET">
+              <input type="search" name="q"  placeholder="搜索 ArcGIS Server 10.8 帮助">
+              <input type="hidden" name="collection" value="help" />
+              <input type="hidden" name="product" value="arcgis-server-windows" />
+              <input type="hidden" name="version" value="10.8" />
+              <input type="hidden" name="language" value="zh-CN" />
+            </form>    
+             <a id="nav-portal" data-langlabel="portal" href="../../../../../zh-CN/portal/" class="side-nav-link">Portal</a>
+             
+            <a id="all-servers" data-langlabel="all-servers" href="../../../../../zh-CN/server/" class="side-nav-link">所有服务器</a>
+            <a id="gis-server" data-langlabel="gis-server" href="../../../../../zh-CN/server/" class="side-nav-link">GIS Server</a>
+            <a id="image-server" data-langlabel="image-server" href="../../../../../zh-CN/image/" class="side-nav-link">Image Server</a>
+            <a id="geo-analytics-server" data-langlabel="geo-analytics-server" href="../../../../../zh-CN/geoanalytics/" class="side-nav-link">GeoAnalytics Server</a>
+            <a id="geoevent-server" data-langlabel="geoevent-server" href="../../../../../zh-CN/geoevent/" class="side-nav-link">GeoEvent Server</a>
+            <a id="notebook-server" data-langlabel="notebook-server" href="../../../../../zh-CN/notebook/" class="side-nav-link">Notebook Server</a>
+            <a id="nav-data-store" data-langlabel="data-store" href="../../../../../zh-CN/data-store/" class="side-nav-link">Data Stores</a>
+            <a id="nav-cloud" data-langlabel="cloud" href="../../../../../zh-CN/cloud/" class="side-nav-link">云</a>
+            <a id="nav-apps" data-langlabel="apps" href="../../../../../zh-CN/apps/" class="side-nav-link">应用程序</a>
+            <a id="nav-doc" data-langlabel="documentation" href="../../../../../zh-CN/documentation/" class="side-nav-link">文档</a>
+
+          </aside>
+        </nav>
+    </div>
+
+    <!-- user navigation collapses to drawer on mobile -->
+    
+    <div class="drawer drawer-right js-drawer hide-if-logged-out logged-in-navigation" data-drawer="user-nav">
+      <nav class="drawer-nav">
+        <aside class="side-nav">
+          <a class="side-nav-link agolProfile" href="#">我的个人资料</a>
+          <a class="side-nav-link icon-ui-sign-out js-log-out" href="#">登出</a>
+        </aside>
+      </nav>
+    </div>
+    
+<!-- End of drawer -->
+
+  
+  <div class="wrapper">
+      <!--googleoff: all-->
+
+      <header class="top-nav" data-skin="learn">
+        <a class="skip-to-content" href="#skip-to-content">Skip To Content</a>
+        <div class="grid-container">
+          <div class="column-24">
+
+
+            <!--<div class="top-nav-title-wrapper text-center ">-->
+              <a href='../../../../../zh-CN/' class="top-nav-title tablet-hide"><span>Arc</span>GIS  Enterprise</a>
+              <a href='../../../../../zh-CN/' class="icon-ui-menu top-nav-title js-drawer-toggle tablet-show" data-drawer="top-nav"><span>Arc</span>GIS Enterprise</a>
+            <!--</div> -->
+
+          
+            <nav role="navigation" class="top-nav-list left tablet-hide">
+              <a id="nav-portal" data-langlabel="portal" href="../../../../../zh-CN/portal/" class="top-nav-link">Portal</a>
+
+                <div class="dropdown js-dropdown ">
+                  <a class="top-nav-link js-dropdown-toggle" tabindex="0" aria-haspopup="true" aria-expanded="false" href="#">Servers</a>
+                  <nav class="dropdown-menu featured" role="menu">
+                    <ul class="dropdown-sublist-featured">
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/get-started/latest/windows/additional-server-deployment.htm" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path  d="M42.92 6.1H4.12v8.566l.833.832-.835.833-.018 7.332.845.847-.825.824V33.9h25v5.2h-2v1.075H8.02v.8h19.1v.925h4.8v-.925H40v-.8h-8.08V39.1h-2v-5.2h13v-8.566l-.834-.834.835-.834v-7.332l-.835-.834.835-.834zm-11.8 35h-3.2v-1.2h3.2zm11-8H4.92v-7.434l.767-.766h35.668l.765.766zm0-9.766l-.766.766H5.666l-.766-.767.017-6.669.766-.764h35.671l.766.766zm0-9l-.766.766H5.687l-.766-.766V6.9h37.2zM19 11.9h-2v-.8h2zm-4 0h-2v-.8h2zm-4 0H9v-.8h2zm6 8.2h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9zm8 9h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9z"/></svg></span>
+                          <span class="sublink-text">所有服务器</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/server/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M45.98 33.575a.616.616 0 0 0-.335-.51l-3.362-2.03 3.362-2.031a.556.556 0 0 0 0-1.02l-11.1-6.704a1.293 1.293 0 0 0-1.112 0L22.33 27.982a.556.556 0 0 0 0 1.02l3.36 2.03-3.358 2.03a.556.556 0 0 0-.002 1.021l3.322 2.006-3.324 2.008a.555.555 0 0 0 .002 1.017l11.102 6.703a1.25 1.25 0 0 0 1.11.002l11.104-6.706a.556.556 0 0 0 0-1.02l-3.32-2.006 3.318-2.004a.607.607 0 0 0 .335-.509zM33.837 21.97c.026-.01.286-.005.29-.005l10.814 6.53-10.8 6.523c-.028.01-.284.005-.294.006l-10.813-6.53zm11.105 16.636l-10.8 6.523a2.564 2.564 0 0 1-.295.006l-10.81-6.529 3.39-2.047 7.004 4.23a1.083 1.083 0 0 0 .557.131 1.101 1.101 0 0 0 .554-.13l7.01-4.233zM34.14 40.098a2.545 2.545 0 0 1-.294.006l-10.812-6.53 3.43-2.073 6.97 4.208a1.25 1.25 0 0 0 1.107-.001l6.966-4.206 3.431 2.073zM9 8H7V7h2zm8 8h-2v-1h2zm-4-8h-2V7h2zm4 0h-2V7h2zm-4 8h-2v-1h2zm7.316 11.1H3.9v-6.434l.766-.766h35.668l.766.766v2.12l.8.483v-2.935l-.826-.826.826-.845v-6.329l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9h16.88a2.632 2.632 0 0 1 .336-.8zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zm0 8v-5.668l.766-.766h35.668l.766.766v5.67l-.746.764H4.666zM15 24v-1h2v1zm-4 0v-1h2v1zm-2-8H7v-1h2zm-2 8v-1h2v1z"/></svg></span>
+                          <span class="sublink-text">GIS Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/image/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 8h-2V7h2zm-4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm8 8h-2v1h2zm-8 0H7v1h2zm4 9v-1h-2v1zm-4 0v-1H7v1zm8 0v-1h-2v1zm4 3.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V21h-.8v-.334l-.766-.766H4.666l-.766.766V27.1H21zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zm40.234 4v21.8H23.1V23.1zm-.8 16.366L39.466 44.1h2.868l1.766-1.766zm-20.2-9.932l5.634-5.634h-2.868L23.9 26.666zm6.2-5.068L24.466 30.1h2.868l2.766-2.766zM28.466 30.1H30.1v-1.634zm2.434 0h6.2v-6.2h-6.2zm-7 7h6.2v-6.2h-6.2zm7 0h6.2v-6.2h-6.2zm0 6.434l5.634-5.634h-2.868L30.9 40.666zm7-7l5.634-5.634h-2.868L37.9 33.666zm1.634-5.634H37.9v1.634zm-8.634 7v1.634l1.634-1.634zm.566 6.2h2.868l2.766-2.766v-2.868zm6.434-3.566l2.634-2.634H37.9zM35.466 44.1H37.1v-1.634zm2.434 0h.434l5.766-5.766V37.9h-2.434L37.9 41.666zm6.2-8.634L42.466 37.1H44.1zm0-4L38.466 37.1h2.868l2.766-2.766zm0-7.566h-6.2v6.2h6.2zm-20.2 0v1.634l1.634-1.634zm0 20.2h6.2v-6.2h-6.2zm20.2 0v-.634l-.634.634z"/></svg></span>
+                          <span class="sublink-text">Image Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/geoanalytics/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 16h-2v-1h2zm-8 8v-1H7v1zm8 0v-1h-2v1zM13 7h-2v1h2zm4 0h-2v1h2zM9 7H7v1h2zm21.45 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V27.9h-1.464l-.801-.8H41.1v-6.434l-.766-.766H4.666l-.766.766V27.1h27.15zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM13 24v-1h-2v1zm0-9h-2v1h2zm-4 0H7v1h2zm26.672 27.148A1.87 1.87 0 0 1 35.9 43a1.91 1.91 0 1 1-3.763-.222l-9.845-3.414A1.88 1.88 0 0 1 21 39.9a1.9 1.9 0 1 1 1.474-3.084l4.692-2.346A1.878 1.878 0 0 1 27.1 34a1.902 1.902 0 0 1 1.9-1.9 1.867 1.867 0 0 1 .781.191l3.788-5.05A1.88 1.88 0 0 1 33.1 26a1.9 1.9 0 1 1 3.491 1.026l4.889 4.888c-.069.056-.144.1-.21.162a3.986 3.986 0 0 0-.358.402l-4.883-4.883A1.889 1.889 0 0 1 35 27.9a1.867 1.867 0 0 1-.781-.191l-3.788 5.049a1.868 1.868 0 0 1 .437.965l9.204.614c-.018.11-.049.218-.058.33A3.93 3.93 0 0 0 40 35c0 .046.01.09.01.135l-9.185-.612A1.913 1.913 0 0 1 29 35.9a1.889 1.889 0 0 1-1.474-.716l-4.692 2.346a1.878 1.878 0 0 1 .066.47 1.9 1.9 0 0 1-.105.625c-.007.02-.022.036-.03.056l9.63 3.34a1.87 1.87 0 0 1 2.786-.505l5.415-4.437c.067.108.127.22.204.322a3.9 3.9 0 0 0 .292.306zM33.9 26a1.092 1.092 0 0 0 .43.872 1.12 1.12 0 0 0 1.42-.068A1.1 1.1 0 1 0 33.9 26zm-6 8a1.1 1.1 0 0 0 2.196.093 1.135 1.135 0 0 0-.426-.965A1.087 1.087 0 0 0 29 32.9a1.101 1.101 0 0 0-1.1 1.1zm-5.8 4a1.098 1.098 0 1 0-.06.362A1.101 1.101 0 0 0 22.1 38zm13 5a1.1 1.1 0 1 0-2.2 0 1.1 1.1 0 0 0 2.2 0zm10.8-8a1.9 1.9 0 1 1-3.8 0c0-.053.003-.105.007-.158A1.9 1.9 0 0 1 45.9 35zm-.8 0a1.1 1.1 0 0 0-2.196-.093 1.153 1.153 0 0 0 .216.752A1.1 1.1 0 0 0 45.1 35z"/></svg></span>
+                          <span class="sublink-text">GeoAnalytics Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/geoevent/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M13 8h-2V7h2zm4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm12.418 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826v2.117c-.259-.177-.53-.337-.8-.497v-1.288l-.766-.766H4.666l-.766.766V27.1h17.933c-.148.26-.283.53-.415.8zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM9 24v-1H7v1zm4-9h-2v1h2zm0 9v-1h-2v1zm-4-9H7v1h2zm8 9v-1h-2v1zm16.9 2h-.8v8.9H39v-.8h-5.1zm.1-3.901a11.9 11.9 0 1 0 11.9 11.9 11.914 11.914 0 0 0-11.9-11.9zm0 23a11.1 11.1 0 1 1 11.1-11.1 11.112 11.112 0 0 1-11.1 11.1z"/></svg></span>
+                          <span class="sublink-text">GeoEvent Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/notebook/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M22 27.1H3.9v-6.434l.766-.766h18.576a5.262 5.262 0 0 1 .83-.8H4.666l-.766-.766v-5.668l.766-.766h35.668l.766.766V18h.8v-5.666l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9H22zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zM9 8H7V7h2zm8 0h-2V7h2zm-4 0h-2V7h2zm2 16v-1h2v1zm-4 0v-1h2v1zm-4 0v-1h2v1zm0-8v-1h2v1zm8 0v-1h2v1zm-4 0v-1h2v1zm18.9 8.1h-1.8v1.8h1.8zm-.8 1h-.2v-.2h.2zm15.498-4.48a2.727 2.727 0 0 0-1.62-.5v-.02H27.25a3.154 3.154 0 0 0-3.15 3.15V38.1h-1.68a3.386 3.386 0 0 0-2.872 1.58 3.49 3.49 0 0 0-.157 3.419 3.241 3.241 0 0 0 2.954 1.801h15.161a3.404 3.404 0 0 0 3.394-3.4V26.9h5v-3.65a3.224 3.224 0 0 0-1.302-2.63zM22.345 44.1a2.44 2.44 0 0 1-2.23-1.341 2.706 2.706 0 0 1 .11-2.65A2.588 2.588 0 0 1 22.42 38.9h12.89a3.395 3.395 0 0 0 0 5.2zM40.1 23.192V41.5a2.6 2.6 0 1 1-2.6-2.6v-.8H24.9V23.25a2.352 2.352 0 0 1 2.35-2.35h13.795a3.183 3.183 0 0 0-.945 2.292zm5 2.908h-4.2v-2.908a2.274 2.274 0 0 1 1.44-2.18 1.944 1.944 0 0 1 1.791.259 2.423 2.423 0 0 1 .97 1.979zm-17.1 5h9v.8h-9zm0 3h7v.8h-7zm0-6h9v.8h-9zm4-3h5v.8h-5z"/></svg></span>
+                          <span class="sublink-text">Notebook Server</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+
+              <a id="nav-data-store" data-langlabel="data-store" href="../../../../../zh-CN/data-store/" class="top-nav-link">Data Stores</a>
+              <a id="nav-cloud" data-langlabel="cloud" href="../../../../../zh-CN/cloud/" class="top-nav-link">云</a>
+              <a id="nav-apps" data-langlabel="apps" href="../../../../../zh-CN/apps/" class="top-nav-link">应用程序</a>
+            </nav>
+
+
+            
+            
+            
+
+            <div class="margin-left-1 top-nav-list right hide-if-logged-in logged-out-navigation">
+               
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+              
+              <a data-langlabel="sign-in" id="login-link" class="icon-ui-user top-nav-link link-blue login-link" href="#">登录</a>
+              
+            </div>
+
+            
+            <nav class="margin-left-1 top-nav-list right hide-if-logged-out logged-in-navigation">
+              
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+             
+              <div class="dropdown js-dropdown right">
+
+                <div class="tablet-show top-nav-link">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a href="#" data-drawer="user-nav" class="user-nav-name js-drawer-toggle" data-first-name></a>
+                </div>
+
+                <div class="tablet-hide top-nav-link js-dropdown-toggle">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a class="user-nav-name top-nav-dropdown dropdown-btn" data-first-name>&nbsp;</a>
+                </div>
+
+                <nav class="dropdown-menu dropdown-right">
+                
+                  <a class="dropdown-link agolProfile" id="agolProfile" href="#">我的个人资料</a>
+                  <a class="dropdown-link js-log-out" id="agolLogout" href="#">登出</a>
+                </nav>
+              </div>
+            </nav>
+            
+
+            
+          </div>
+        </div>
+      </header>
+
+      <div class="js-search search-overlay">
+        <div class="search-content" role="dialog" aria-labelledby="search">
+          <form method="GET" id="helpSearchForm">
+            <label>
+              搜索 ArcGIS Server 10.8 帮助
+              <div class="search-bar">
+                <input type="search" name="q"  placeholder="搜索 ArcGIS Server 10.8 帮助" class="search-input js-search-input">
+                <input type="hidden" name="collection" value="help" />
+                <input type="hidden" name="product" value="arcgis-server-windows" />
+                <input type="hidden" name="version" value="10.8" />
+                <input type="hidden" name="language" value="zh-CN" />
+              </div>
+            </label>
+            <input type="hidden" name="relativePath" value="../../../../../" /><button type="submit" class="btn btn-large right">搜索</button>
+          </form>
+        </div>
+      </div>
+
+      <!--googleon: all-->
+
+      <div id="skip-to-content">
+        <!--googleoff: all-->
+        <header class="sub-nav sub-nav-learn">
+          <div class="grid-container">
+            
+            <div class="column-24">
+              <div style="display:table;" class="sdk-home-banner">
+                <div class="sdk-home-banner-content">
+                  <h1 class="sub-nav-title link-white">ArcGIS Server</h1>
+                </div>
+              </div>
+            </div>
+
+            <div class="column-24">
+              <nav class='sub-nav-list tablet-hide'><a class="sub-nav-link" href="../../../../../zh-CN/server/" target="_top" title="ArcGIS Server 的概述和文档">主页</a><a class="sub-nav-link" href="../../../../../zh-CN/server/latest/get-started/windows/" target="_top" title="了解有关 ArcGIS Server 和服务器角色的信息">简介</a><a class="sub-nav-link" href="../../../../../zh-CN/server/latest/deploy/windows/" target="_top" title="构建、配置和升级部署">部署</a><a class="sub-nav-link" href="../../../../../zh-CN/server/latest/manage-data/windows/" target="_top" title="管理企业的空间数据">管理数据</a><a class="sub-nav-link is-active" href="../../../../../zh-CN/server/latest/publish-services/windows/" target="_top" title="使用 GIS 服务">管理服务</a><a class="sub-nav-link" href="../../../../../zh-CN/server/latest/create-web-apps/windows/" target="_top" title="创建 Web 应用程序和可打印地图">共享</a><a class="sub-nav-link" href="../../../../../zh-CN/server/latest/administer/windows/" target="_top" title="管理和保护 ArcGIS Server">管理</a><a class="sub-nav-link" href="../../../../../zh-CN/server/latest/develop/windows/" target="_top" title="构建扩展模块并自动执行常见任务">开发</a></nav><select class='tablet-show select-full trailer-half js-select-nav'><option value="../../../../../zh-CN/server/">主页</option><option value="../../../../../zh-CN/server/latest/get-started/windows/">简介</option><option value="../../../../../zh-CN/server/latest/deploy/windows/">部署</option><option value="../../../../../zh-CN/server/latest/manage-data/windows/">管理数据</option><option selected="true" value="../../../../../zh-CN/server/latest/publish-services/windows/">管理服务</option><option value="../../../../../zh-CN/server/latest/create-web-apps/windows/">共享</option><option value="../../../../../zh-CN/server/latest/administer/windows/">管理</option><option value="../../../../../zh-CN/server/latest/develop/windows/">开发</option></select>
+            </div>
+
+          </div>
+        </header>
+        <!--googleon: all-->
+       
+        <!-- content goes here -->
+        <div class="grid-container ">
+          
+
+            
+              
+  <!--BREADCRUMB-BEG--><div id="bigmac" class="sticky-breadcrumbs trailer-2" data-spy="affix" data-offset-top="180"> </div><!--BREADCRUMB-END-->
+  <!--googleoff: all-->
+    <div class="column-5 tablet-column-12 trailer-2 ">
+      <aside class="js-accordion accordion reference-index" aria-live="polite" role="tablist">
+        <div></div>
+      </aside>
+
+      <div class="js-sticky scroll-show tablet-hide leader-1 back-to-top" data-top="0" style="top: 0px;">
+        <a href="#" class="btn btn-fill btn-clear">返回顶部</a>
+      </div>
+    </div>
+  <!--googleon: all-->
+  
+            
+            
+            
+	
+		<div class="column-13  pre-1 content-section">
+	
+		<header class="trailer-1"><h1>在 Web 浏览器中与 WFS 服务进行通信</h1></header>
+
+		 
+	<!--googleoff: all-->
+	
+		
+				<aside id="main-toc-small" class="js-accordion accordion tablet-show trailer-1">
+			      <div class="accordion-section">
+			        <h4 class="accordion-title">在本主题中</h4>
+			        <div class="accordion-content list-plain">
+			          <ol class="list-plain pre-0 trailer-0"><li><a href="#GUID-3BEE60BF-F0A8-42FC-938D-8B7850CEE400">客户端的类型</a></li><li><a href="#ESRI_SECTION1_691BC90DE81E4C469E19392A140A3395">WFS URL 结构</a></li><li><a href="#ESRI_SECTION1_ACCAFEFDC733487AA2BD9547A768AA08">使用过滤器</a></li><li><a href="#ESRI_SECTION1_78D9D1213F1449B382CAD88E7E6259FE">在 Web 浏览器中使用 WFS 1.0.0 或 1.1.0 服务</a></li><li><a href="#ESRI_SECTION1_3166CF681CE545E089B0DD1863E687B9">在 Web 浏览器中使用 WFS 2.0 服务</a></li></ol>
+			        </div>
+			      </div>
+			     </aside>
+		
+    
+   <!--googleon: all-->
+
+
+		<main>
+			
+	
+    	
+    
+
+
+			
+<p id="GUID-F855075D-3F54-42CC-83BC-178BB94B1C5A">兼容 WFS 服务器所支持的每种操作的在线资源都是一个 HTTP 统一资源定位器 (URL)，所以 WFS 服务可被视为一项表述性状态转移 (REST) 服务。通过 URL 参数，您可以使用这些操作来获取 WFS 服务的服务元数据、要素类型信息和 GML 编码的要素。在 <a target="_blank" class="xref xref" href="http://www.opengeospatial.org/standards/wfs">OGC WFS 规范</a>中有这些操作与参数的详细介绍。</p><section class="section1 padded-anchor" id="GUID-3BEE60BF-F0A8-42FC-938D-8B7850CEE400" purpose="section1"><h2>客户端的类型</h2><p id="GUID-9C480EEA-F191-4643-A892-55048DF0B4D0">WFS 服务可用于任何支持 WFS 的客户端。通常，Web 浏览器是 WFS 服务最基本的客户端。您可通过 HTTP 发出 WFS 请求，之后，响应或异常将会通过浏览器返回。所有 WFS 服务都支持以下三种主要操作：GetCapabilities、DescribeFeatureType 和 GetFeature。WFS 2.0.0 的 ArcGIS Server 实施将定义其他操作：GetFeatureByID、ListStoredQueries 和 DescribeStoredQueries。</p><p id="GUID-608240AB-9F2E-43BC-BD97-686E26615737">许多第三方客户端都可以使用 WFS 服务： 要使用 WFS 服务，客户端必须支持 WFS 1.0.0、1.1.0 或 2.0.0 以及 GML 简单要素专用标准。此外，<span class="ph">ArcGIS Desktop</span> 也支持 WFS 服务。有关在 ArcMap 中使用 WFS 服务的帮助，请参阅<a class="xref xref" esrisubtype="extrel" hrefpfx="https://desktop.arcgis.com/zh-cn/arcmap/latest/map" href="https://desktop.arcgis.com/zh-cn/arcmap/latest/map/web-maps-and-services/adding-a-wfs-service-to-arcmap.htm">向 ArcMap 中添加 WFS 服务</a>。</p></section><section class="section1 padded-anchor" id="ESRI_SECTION1_691BC90DE81E4C469E19392A140A3395" purpose="section1"><h2>WFS URL 结构</h2><p id="GUID-639DB5EA-F5F3-4013-A5F1-27AB4552CBE8">要连接到服务，您需要了解 URL，其格式如下：</p><p id="GUID-8A6331B4-186B-47A0-89B7-0469EC47239A"><span class="usertext">http://gisserver.domain.com:6080/arcgis/services/&lt;文件夹名称（如果适用）&gt;/&lt;服务名称&gt;/&lt;服务类型/WFSServer?</span></p><ul purpose="ul" id="UL_26F1C6671FF34F168FC5AD1731FC147B"><li purpose="li" id="GUID-0D4DB280-9B6D-42A4-9FFF-0F0DB8DD2426">服务器名称是您的 Web 服务器计算机的名称。</li><li purpose="li" id="GUID-A1A493B4-D643-47AB-BD18-99203A9246E8">端口号是您的 web 服务器计算机用于与其他计算机通信的端口。</li><li purpose="li" id="GUID-6BB4E4A3-051E-4A41-96B6-A273A74EE2EE">服务类型可以是 MapServer 或 GeoDataServer，这取决于您是从地图还是从地理数据库创建 WFS 服务。</li></ul><p id="GUID-66EF1B7F-0F26-4723-918F-E20597277622">例如，如果您对地图服务 <span class="usertext">WFSDemoService</span>（服务器名 <span class="usertext">gisserver.domain.com</span>，端口号 <span class="usertext">6080</span>，文件夹 <span class="usertext">DemoFolder</span>）上启用了 WFS 服务功能，URL 将如下所示：</p><p id="GUID-D83B181D-CF6F-4157-9E98-85C2BD2B341F"><span class="usertext">http://gisserver.domain.com:6080/arcgis/services/DemoFolder/WFSDemoService/MapServer/WFSServer?service=WFS&amp;request=GetCapabilities</span></p><p id="GUID-C4AE8B8C-9230-4852-A34D-BD61F43DA502">同样，如果您对地理数据服务上启用了 WFS 服务功能，URL 将如下所示： </p><p id="GUID-00F78174-0414-4CE1-9F1A-48940E446623"><span class="usertext">http://gisserver.domain.com:6080/arcgis/services/DemoFolder/WFSDemoService/GeoDataServer/WFSServer?service=WFS&amp;request=GetCapabilities</span></p></section><section class="section1 padded-anchor" id="ESRI_SECTION1_ACCAFEFDC733487AA2BD9547A768AA08" purpose="section1"><h2>使用过滤器</h2><p id="GUID-12BA71E7-1705-4176-AF26-A5AB63B3F978">在 WFS 请求中可使用 Filter 参数来获取 WFS 服务中的指定要素。Filter 参数的优势在于，它是 <a target="_blank" class="xref xref" href="http://www.opengeospatial.org/standards/wfs">WFS 1.1 执行规范</a>第 9.5 节中所定义的标准关键字-值对编码的一部分，并且可追加到 HTTP 请求的末尾。WFS 1.0.0 和 1.1.0 服务使用 OGC OpenGIS 过滤器编码执行规范 (FE) 版本 1.1.0。WFS 2.0.0 使用过滤器规范的版本 2.0.0。</p><p id="GUID-FB1024DC-6D25-49F3-9640-B2C8F8BF7936">下表中列出了您可以应用的过滤器：</p><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><colgroup width="*"></colgroup><colgroup width="*"></colgroup><colgroup width="*"></colgroup><thead><tr><th colspan="1">几何</th><th colspan="1">空间</th><th colspan="1">逻辑</th><th colspan="1">比较</th><th colspan="1">排序</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-A4F64413-CA18-497D-A97E-EBACEF843AE0">Envelope</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-E535BEBF-37AE-4832-9ED5-8FBC2A30C3B4">BBOX</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-2495C8E1-9E91-4473-875F-64F4703ECD81">And</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-96B4C2EB-2C7C-4EC2-B18D-7AEF5AF41B46">EqualTo</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-B35D2E4A-8DE8-4FEE-A204-A9F95F2EA99C">SortBy*</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-03F2306F-92E0-4BDE-8126-23AEBD20F61D">Point</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-19ADD0BB-B6E0-4863-8DDA-9754D8E6C698">Equals</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-A2552199-D5FC-4016-8CAD-5825BE001E74">Or</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-7E304EDB-82AA-4B7D-881F-7C24D5D2168D">NotEqualTo</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-915BFFB3-7D52-4D5F-A634-FA64DFA3772E">MultiPoint</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-F0220017-5DF2-421D-B57F-DF67831DFC31">Disjoint</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-A5AAF79D-5A3F-4199-8830-4D1CC11F9188">Not</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-966AEF93-6547-4D92-8E52-9F8193778C56">LessThan</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-394589E1-A73C-45F8-B4A6-714E27A11F96">LineString</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-34D0651F-A08F-4420-8E86-B195CBDFB099">Intersects</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-9336414C-5FBF-46A5-BD80-CD0F9FF580F4">GreaterThan</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-1A9965EC-711E-45C6-BE9F-9A5EC22FE120">Polygon</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-38960890-98C5-4C9E-936D-D1CC0E5BB530">Crosses</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-BF6A2309-0D34-4A1E-9ECC-73527CE3A144">LessThanOrEqualTo</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-01916F9F-0E48-4063-A946-703DE5789077">Touches</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-EF90BF55-0B40-4278-A0A9-C0B5931D1388">GreaterThanOrEqualTo</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-929D3FCC-153C-47C5-9640-E8A0AE520473">Within</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-634B1DB1-934C-47F2-8892-49813316366A">Like</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-6EC6F71C-0560-4E2A-A55B-5DCFC0CC93A0">Contains</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-44CCD3C5-A5DB-4D46-BF07-7476417EB369">Between</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-82D2FC8D-D220-4A31-AA1A-AB0B2B44B2FC">Overlaps</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-50CC1194-491C-484F-B774-86A6BBA47116">NullCheck</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"></td></tr></tbody><caption></caption></table></div><div class="panel trailer-1 note" id="GUID-F0B18652-825C-4ECC-AFC4-CB429487FE3B"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-0B3FCC20-A6C3-4A00-BAC4-65D5A27CFD64">*SortBy 过滤器仅可应用于由存储在企业级地理数据库中数据发布而获取的 WFS 服务。</p></div><p id="GUID-C56BC0E2-E95C-4610-B5FF-C19AAE0A02E0"> 例如，如果在 WFS 服务中创建了一个名为 blockgroups 的要素类型，则可通过发送以下 GetFeature 请求来获取 <span class="usertext">-122.423192682619, 37.7877919206256, -122.421377806544, 37.7893634225143</span> 范围内的 blockgroup 要素：</p><p id="GUID-3093813D-98D9-4FDD-BA10-8D66D83F1A8B"><span class="usertext">http://gisserver.domain.com:6080/arcgis/services/playground/sanfrancisco_wfs/MapServer/WFSServer?service=WFS&amp;request=GetFeature&amp;version=1.1.0&amp;typename=esri:blockgroups&amp;Filter=&lt;ogc:Filter&gt;&lt;ogc:BBOX&gt;&lt;ogc:PropertyName&gt;Shape&lt;/ogc:PropertyName&gt;&lt;gml:Box srsName="urn:x-ogc:def:crs:EPSG:4326"&gt;&lt;gml:coordinates&gt;37.7877919206256,-122.423192682619 37.7893634225143,-122.421377806544&lt;/gml:coordinates&gt;&lt;/gml:Box&gt;&lt;/ogc:BBOX&gt;&lt;/ogc:Filter&gt;</span></p><p id="GUID-E320E6E2-25F2-4D4B-89E8-0519C1D09EEF">如果要请求一个包含特定点要素（如 <span class="usertext">122.431577, 37.749936</span>）的 blockgroups 要素，可发送以下 GetFeature 请求：</p><p id="GUID-BB1EB741-F834-44A7-94CD-3279D54FBB91"><span class="usertext">http://gisserver.domain.com:6080/arcgis/services/playground/sanfrancisco_wfs/MapServer/WFSServer?service=WFS&amp;request=GetFeature&amp;version=1.1.0&amp;typename=esri:blockgroups&amp;Filter=&lt;ogc:Filter&gt;&lt;ogc:Contains&gt;&lt;ogc:PropertyName&gt;Shape&lt;/ogc:PropertyName&gt;&lt;gml:Point srsName="urn:x-ogc:def:crs:EPSG:4326"&gt;&lt;gml:pos srsName="urn:x-ogc:def:crs:EPSG:4326"&gt;37.749936 -122.431577&lt;/gml:pos&gt;&lt;/gml:Point&gt;&lt;/ogc:Contains&gt;&lt;/ogc:Filter&gt;</span></p><div class="panel trailer-1 note" id="GUID-78D25AE4-7516-4918-8354-392C18BCFE08"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-FD063EAD-84A7-4E6F-9179-413CDA7B239F">WFS 要求过滤器 XML 字符串中包含相关的命名空间前缀。此外，为避免 Web 浏览器或 Web 服务器完成不正确的转换，应先对过滤器 XML 字符串进行 URL 编码，然后再将其发送到服务器。</p></div></section><section class="section1 padded-anchor" id="ESRI_SECTION1_78D9D1213F1449B382CAD88E7E6259FE" purpose="section1"><h2>在 Web 浏览器中使用 WFS 1.0.0 或 1.1.0 服务</h2><p id="GUID-ECB33722-BFB5-41F8-B90F-2C811474DFA5">以下示例使用 URL 参数在 Web 浏览器中与 WFS、WFS-T 1.0.0 和 1.1.0 服务进行通信。要了解如何在 Web 浏览器中使用 WFS 2.0.0 操作，请参阅下文的<a class="xref xref" href="../../../../../zh-CN/server/latest/publish-services/windows/communicating-with-a-wfs-service-in-a-web-browser.htm#ESRI_SECTION1_3166CF681CE545E089B0DD1863E687B9">在 Web 浏览器中使用 WFS 2.0 服务</a>。</p><section class="section2 padded-anchor" id="GUID-9E51F875-1D9E-457D-8BB8-85F0A273C79F" purpose="section2"><h3>GetCapabilities</h3><p id="GUID-9DB7A5C6-0807-46BC-BDEB-58093416EC3E">此请求将通过服务以 GML 格式返回所有可用的要素类型与功能。要使用 GetCapabilities 操作，请复制 WFS 服务 URL 并将其粘贴到地址栏中，然后在 URL 末尾添加 <span class="usertext">?service=WFS&amp;request=getcapabilities</span>。</p><p id="GUID-11C3F553-608A-416D-8943-6C236E14FC7A">URL 示例：<span class="usertext">http://gisserver.domain.com:6080/arcgis/services/wfs_services/enterprise_wfs/MapServer/WFSServer?service=WFS&amp;request=GetCapabilities</span></p><p id="GUID-C8722C08-D04B-4A5A-9791-95195DC1F93C">下图是由 GetCapabilities 操作返回的功能示例：</p><figure class="fig" href="#"><img src="GUID-45FDEF8F-2CA7-4C62-890E-1BB12D53952E-web.png" alt="GetCapabilities 操作返回的功能" title="GetCapabilities 操作返回的功能"></figure><p id="GUID-61416D77-7282-4537-AD8A-7C435046DCB0">GetCapabilities 操作也可返回所有可用要素类和表的列表：</p><figure class="fig" href="#"><img src="GUID-9766EAC4-E00A-4F4C-AF4E-36D00424EBAF-web.png" alt="GetCapabilities 操作返回的可用要素类和表" title="GetCapabilities 操作返回的可用要素类和表"></figure></section><section class="section2 padded-anchor" id="GUID-CDEBE4F0-6C06-4F08-A42E-433CBD6F053D" purpose="section2"><h3>DescribeFeatureType</h3><p id="GUID-91DCB459-DCFD-46B6-B211-DE56A814A2BE">该请求描述了有关 WFS 服务中一个或多个要素的字段信息。这包括字段名称、字段类型、允许的最小与最大字段值以及在要素类或者表的字段上所设置的任何其他限制。</p><p id="GUID-89D946CD-2E64-47A0-8006-256964FB2E56">要使用 DescribeFeatureType 操作，请复制 WFS URL 并将其粘贴到地址栏中，然后在 URL 末尾添加<span class="usertext">?SERVICE=WFS&amp;VERSION=1.1.0&amp;REQUEST=DescribeFeatureType&amp;VERSION=1.1.0</span>。这将返回有关要素服务中各可用要素类型和表的所有字段信息。</p><p id="GUID-AFF3CF29-A3C2-49A8-AA11-1F531954D417">URL 示例：<span class="usertext">http://gisserver.domain.com:6080/arcgis/services/wfs_services/enterprise_wfs/MapServer/WFSServer?SERVICE=WFS&amp;VERSION=1.1.0&amp;REQUEST=DescribeFeatureType&amp;VERSION=1.1.0</span></p><figure class="fig" href="#"><img src="GUID-AC5CF1F1-301F-4170-8A7A-9988E9BBEE35-web.png" alt="DescribeFeatureType 操作返回的要素类、表和字段信息" title="DescribeFeatureType 操作返回的要素类、表和字段信息"></figure><p id="GUID-EA57BFD2-0756-4D07-8E5A-563898566998"><b>添加过滤器</b></p><p id="GUID-CAF95331-1E5D-4125-8F7F-F95B60A53413">通过将下列带有要素类型名称或表名称的请求添加到 URL 的末尾，您也可以指定您需要其字段信息的单个要素类或表：</p><p id="GUID-98670589-79F1-4B98-AD3E-519FBE1C21B4"><span class="usertext">?SERVICE=WFS&amp;VERSION=1.1.0&amp;REQUEST=DescribeFeatureType&amp;TypeName=&lt;在此输入要素类型&gt;&amp;VERSION=1.1.0</span></p><p id="GUID-70CA6B9B-5F06-4E01-A1F8-0D4DBF8DC5C3">在下例中，DescribeFeatureType 请求用于识别名为 continent 的要素类型的字段信息。</p><p id="GUID-AF0A7D94-5F22-4D93-82B5-5DEAE965792A">URL 示例：<span class="usertext">http://gisserver.domain.com:6080/arcgis/services/wfs_services/enterprise_wfs/MapServer/WFSServer?SERVICE=WFS&amp;VERSION=1.1.0&amp;REQUEST=DescribeFeatureType&amp;TypeName=continent&amp;VERSION=1.1.0</span></p><figure class="fig" href="#"><img src="GUID-DDE9174F-6F3C-4D86-AAA2-68FC996E5071-web.png" alt="过滤的 DescribeFeatureType 操作返回的 Continent 要素类及其字段信息" title="过滤的 DescribeFeatureType 操作返回的 Continent 要素类及其字段信息"></figure></section><section class="section2 padded-anchor" id="GUID-A69DC80F-9744-4007-8AF5-59BFF55ADC12" purpose="section2"><h3>GetFeature</h3><p id="GUID-81FB0EC0-3E8A-4DC0-93BE-18656575BDAE">该请求通过 WFS 服务返回有关可用的指定要素类型的信息。</p><p id="GUID-F3B4371B-956F-4B43-9101-A15C86ABF186">要在 Web 浏览器中使用 GetFeature 操作，请复制 WFS URL 并将其粘贴到地址栏中，然后在 URL 末尾添加<span class="usertext">?request=getFeature&amp;typename=&lt;在此输入要素类型&gt;</span>。这将返回有关此要素类型中各个要素和行的所有属性和几何信息。</p><p id="GUID-1F4DD170-947B-4C30-81C6-7A0F96923823">URL 示例：<span class="usertext">http://gisserver.domain.com:6080/arcgis/services/wfs_services/enterprise_wfs/MapServer/WFSServer?request=getfeature&amp;typename=cities</span></p><figure class="fig" href="#"><img src="GUID-382446A7-834B-4787-9E7C-FD62D47745C6-web.png" alt="GetFeature 操作返回的城市要素类的属性和几何信息" title="GetFeature 操作返回的城市要素类的属性和几何信息"></figure><p id="GUID-0E1E9152-58E8-4C08-A159-BD9BEC82EFE0"><b>添加过滤器</b></p><p id="GUID-981AB45F-F6A2-4082-A884-CAC6D5C56C83">您也可以在请求中添加过滤器来优化返回的结果。例如，可以请求返回指定坐标范围内的所有城市。在下例中，三个城市位于指定的坐标范围内：</p><p id="GUID-7BBE8562-EB0D-42D4-A04F-60470B3D688C">URL 示例：<span class="usertext">http://gisserver.domain.com:6080/arcgis/services/wfs_services/enterprise_wfs/MapServer/WFSServer?request=getfeature&amp;typename=cities&amp;BBOX=46.90,-76.21,42.12,-72.88</span></p><figure class="fig" href="#"><img src="GUID-A0328591-C2B9-4138-BD8D-BBC2BAB8148B-web.png" alt="过滤的 GetFeature 操作返回的指定坐标范围内的城市" title="过滤的 GetFeature 操作返回的指定坐标范围内的城市"></figure></section><section class="section2 padded-anchor" id="ESRI_SECTION2_43B73F911AC04BD589A3DDA0DE6D8CEA" purpose="section2"><h3>插入</h3><p id="GUID-26B18C4F-1903-44B6-A26F-F3D65D72D90D">插入用于在单个事务请求中创建新要素。默认情况下，待创建要素的初始状态使用 GML3 来表示，并且必须相对于由 DescribeFeatureType 操作生成的 GML3 应用程序方案进行验证。</p><p id="GUID-44251BBE-B869-45F8-916D-181DD1FAD189">例如，以下示例插入了一个表示城市的点要素：</p><section class="codeblock padded-anchor" purpose="codeblock"><div class="codeblockbody"><pre><code class="xml">&lt;wfs:Transaction xmlns:gml=&quot;http://www.opengis.net/gml&quot; xmlns:wfs=&quot;http://www.opengis.net/wfs&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:esri=&quot;http://www.esri.com&quot; version = &quot;1.1.0&quot; service=&quot;WFS&quot;&gt;&gt;
+  &lt;wfs:Insert&gt;
+    &lt;esri:Cities&gt;
+      &lt;esri:NAME&gt;Tofino&lt;/esri:NAME&gt;
+      &lt;esri:CAPITAL&gt;N&lt;/esri:CAPITAL&gt;
+      &lt;esri:PROV_NAME&gt;British Columbia&lt;/esri:PROV_NAME&gt;
+      &lt;esri:POPULATION&gt;12345&lt;/esri:POPULATION&gt;
+      &lt;esri:RepRowID&gt;1000&lt;/esri:RepRowID&gt;
+      &lt;esri:Shape&gt;
+        &lt;gml:Point&gt;
+          &lt;gml:coordinates&gt;59.163182034 -133.844892907&lt;/gml:coordinates&gt;
+        &lt;/gml:Point&gt;
+      &lt;/esri:Shape&gt;
+    &lt;/esri:Cities&gt;
+  &lt;/wfs:Insert&gt;
+&lt;/wfs:Transaction&gt;</code></pre></div></section></section><section class="section2 padded-anchor" id="ESRI_SECTION2_996D184948A64AF5A777D4166903C2DB" purpose="section2"><h3>更新</h3><p id="GUID-E46252CD-1B84-4785-B376-C4DD890A8905">更新用于更新单个事务请求中的一个要素或一种类型的多个要素。</p><p id="GUID-C33EEB3B-4CB3-4676-A1FD-923AFAAA34CA">&lt;更新&gt; 元素包含一个或多个 &lt;属性&gt; 元素，这些属性元素可使用强制的 typeName 属性指定属于特定要素类型的属性的名称和替换值。&lt;属性&gt; 元素中包括含有待修改要素属性名称的 &lt;名称&gt; 元素和含有命名要素属性替换值的 &lt;值&gt; 元素（可选）。遗漏 &lt;值&gt; 元素意味着属性应指定为 NULL 值。在属性不可为空的情况下，WFS 必须引发异常，表示不允许存在 NULL 值。</p><p id="GUID-9036FB3E-83F4-4224-B344-FC4A2C8368FA">例如，以下示例在名为 cities 的数据集中更新了一个点要素：</p><section class="codeblock padded-anchor" purpose="codeblock"><div class="codeblockbody"><pre><code class="xml">&lt;wfs:Transaction xmlns:gml=&quot;http://www.opengis.net/gml&quot; xmlns:wfs=&quot;http://www.opengis.net/wfs&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:ogc=&quot;http://www.opengis.net/ogc&quot; xmlns:esri=&quot;http://www.esri.com&quot; version = &quot;1.1.0&quot; service=&quot;WFS&quot;&gt;
+  &lt;wfs:Update typeName=&quot;esri:cities&quot;&gt;
+    &lt;wfs:Property&gt;
+    &lt;wfs:Name&gt;POPULATION&lt;/wfs:Name&gt;
+    &lt;wfs:Value&gt;300000&lt;/wfs:Value&gt;
+  &lt;/wfs:Property&gt;
+  &lt;ogc:Filter&gt;
+    &lt;ogc:PropertyIsEqualTo&gt;
+      &lt;ogc:PropertyName&gt;NAME&lt;/ogc:PropertyName&gt;
+      &lt;ogc:Literal&gt;Halifax&lt;/ogc:Literal&gt;
+    &lt;/ogc:PropertyIsEqualTo&gt;
+  &lt;/ogc:Filter&gt;
+  &lt;/wfs:Update&gt;
+&lt;/wfs:Transaction&gt;</code></pre></div></section></section><section class="section2 padded-anchor" id="ESRI_SECTION2_8BD2E5938BE643AF85EB803D371CF80F" purpose="section2"><h3>删除</h3><p id="GUID-AE444003-E3FE-41B7-88BD-1F4DE2732917">删除用于删除单个事务请求中的一个要素或一种类型的多个要素。使用 &lt;过滤器&gt; 元素定义“删除”。在 &lt;过滤器&gt; 元素不识别任何要删除的要素实例的情况下，删除请求将被忽略。</p><p id="GUID-D0A0F343-FEDE-4BE3-9ABA-3A6FD96C4B17">例如，以下示例在名为 cities 的数据集中删除了两个要素：</p><section class="codeblock padded-anchor" purpose="codeblock"><div class="codeblockbody"><pre><code class="xml">&lt;wfs:Transaction xmlns:gml=&quot;http://www.opengis.net/gml&quot; xmlns:wfs=&quot;http://www.opengis.net/wfs&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:ogc=&quot;http://www.opengis.net/ogc&quot; xmlns:esri=&quot;http://www.esri.com&quot; version = &quot;2.0.0&quot; service=&quot;WFS&quot;&gt;
+  &lt;wfs:Delete typeName=&quot;esri:cities&quot;&gt;
+    &lt;ogc:Filter xmlns:ogc='http://www.opengis.net/ogc'&gt;
+        &lt;ogc:PropertyIsEqualTo&gt;
+          &lt;ogc:PropertyName&gt;NAME&lt;/ogc:PropertyName&gt;
+          &lt;ogc:Literal&gt;Churchill&lt;/ogc:Literal&gt;
+        &lt;/ogc:PropertyIsEqualTo&gt;
+    &lt;/ogc:Filter&gt;
+  &lt;/wfs:Delete&gt;
+  &lt;wfs:Delete typeName=&quot;esri:cities&quot;&gt;
+    &lt;ogc:Filter xmlns:ogc='http://www.opengis.net/ogc'&gt;
+        &lt;ogc:PropertyIsEqualTo&gt;
+          &lt;ogc:PropertyName&gt;NAME&lt;/ogc:PropertyName&gt;
+          &lt;ogc:Literal&gt;Montreal&lt;/ogc:Literal&gt;
+        &lt;/ogc:PropertyIsEqualTo&gt;
+    &lt;/ogc:Filter&gt;
+  &lt;/wfs:Delete&gt;
+&lt;/wfs:Transaction&gt;</code></pre></div></section></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_3166CF681CE545E089B0DD1863E687B9" purpose="section1"><h2>在 Web 浏览器中使用 WFS 2.0 服务</h2><p id="GUID-78496A49-95F8-4512-9BCF-912D568C3159">WFS 2.0 规范的 ArcGIS Server 实施可提供包括基本 WFS 配置文件在内的所需功能，正如 <a target="_blank" class="xref xref" href="http://www.opengeospatial.org/standards/wfs">WFS 2.0 规范</a>中所述。其中包括 GetCapabilities、DescribeFeatureType 和 GetFeature 操作（<a class="xref xref" href="../../../../../zh-CN/server/latest/publish-services/windows/communicating-with-a-wfs-service-in-a-web-browser.htm#ESRI_SECTION1_78D9D1213F1449B382CAD88E7E6259FE">如上所述</a>）。WFS 2.0 实施还支持事务、已存储的查询和响应页面，这些并不属于基本 WFS 配置文件。</p><section class="section2 padded-anchor" id="ESRI_SECTION2_EAB5BCB385744CAFB22AD30B4120A1D8" purpose="section2"><h3>事务</h3><p id="GUID-D477CF03-7EA7-4A9F-B79E-09B8A3C891B1">事务操作用于描述应用于 WFS 服务中要素实例的数据变换操作。使用事务操作和客户端可以在 WFS 中创建、修改、替换和删除要素。完成事务后，WFS 将生成一个指明操作完成状态的 XML 响应文档。</p></section><section class="section2 padded-anchor" id="ESRI_SECTION2_9011F021DAC64516B828BF2969F62CC9" purpose="section2"><h3>存储的查询</h3><p id="GUID-DCB4E791-92C7-42A8-957D-68918ECC80F4">存储的查询允许 WFS 2.0 存储复杂过滤器查询并使用基本请求来执行。要使用 WFS 1.0.0 或 1.1.0 获得相同的结果，您需要使用过滤器编码规范编写一个过滤器，并将其追加到 WFS URL。配置存储的查询可给您带来以下好处。例如，可使 WFS 2.0 在应用程序中得到更广泛地应用：</p><ul purpose="ul" id="UL_AF9F19D748614D0387DD2F72A40AB80A"><li purpose="li" id="LI_D57504759820403F89502497630B05E4">可简化复杂查询以便将其作为 HTTP GET 请求来执行。</li><li purpose="li" id="LI_3853FD99229F4C96A94BF8DFD68E38D9">可实施 WFS 来仅支持存储的查询，以便管理员控制用户如何访问数据。</li><li purpose="li" id="LI_4C639A6DA9E1464F85D252A97D0533B6">由于存储的查询可配置为支持特定查询，但不支持复杂即时查询和 XPath 表达式，因此它可减少应用程序开发的成本。</li><li purpose="li" id="LI_0F47C2A9132B45E6910C7CC33584549D">可以将 RESTful 接口与 HTTP GET/POST 和 SOAP 一起建立在 WFS 之上，从而使 WFS 能够在轻量级客户端应用程序中使用。</li></ul><p id="GUID-67954C46-05AF-4E6B-9FFF-9C5B8FB45A2A">以下操作可用于支持存储的查询：GetFeatureByID、ListStoredQueries 和 DescribeStoredQueries（如下文所述）。</p><section class="section3 padded-anchor" id="ESRI_SECTION3_A4ABDC1401AB4BA48523F705549D13D6" purpose="section3"><h4>创建存储的查询文件</h4><p id="GUID-4EAC6F25-23CB-4C10-95C1-6D26C90D8FF1">存储的查询文件为 XML 文件，该文件包含与特定服务相关的由发布者创建的存储的查询。要通过 WFS 2.0 使用存储查询，需要创建一个存储查询文件并<a class="xref xref" href="../../../../../zh-CN/server/latest/publish-services/windows/configuring-a-wfs-service-to-use-stored-queries.htm">配置服务以便引用存储查询文件的 URL</a>。</p><p id="GUID-76953A28-A888-4ABE-BB8E-01B3E83BF6FF">以下存储查询文件示例与包含在 ArcGIS Server 中的 SampleWorldCities 地图服务一起使用。可以创建文件并配置服务以便根据<a class="xref xref" href="../../../../../zh-CN/server/latest/publish-services/windows/configuring-a-wfs-service-to-use-stored-queries.htm">配置 WFS 服务以使用存储查询</a>中的说明加以使用。还可修改文件以与不同的 WFS 服务一起使用。</p><section class="codeblock padded-anchor" purpose="codeblock"><div class="codeblockbody"><pre><code class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt;
+&lt;wfs:StoredQueryList
+  xmlns:ogc=&quot;http://www.opengis.net/ogc&quot;
+  xmlns:wfs=&quot;http://www.opengis.net/wfs&quot;
+  xmlns:fes=&quot;http://www.opengis.net/fes/2.0&quot;
+  xmlns:gml=&quot;http://www.opengis.net/gml&quot;
+  xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+  xmlns:myns=&quot;http://www.someserver.com/myns&quot;
+  xsi:schemaLocation=&quot;http://www.opengis.net/wfs/2.0 http://schemas.opengis.net/wfs/2.0/wfs.xsd&quot;
+  service=&quot;WFS&quot;
+  version=&quot;2.0.0&quot;&gt;
+  &lt;wfs:StoredQueryDefinition id=&quot;urn:StoredQueries:AttributeDemo&quot;&gt;
+    &lt;wfs:Title&gt;Attribute request&lt;/wfs:Title&gt;
+    &lt;wfs:Abstract&gt;test Attribute request&lt;/wfs:Abstract&gt;
+    &lt;wfs:Parameter name=&quot;myrank&quot; type=&quot;xsd:double&quot;/&gt;
+    &lt;wfs:QueryExpressionText
+    returnFeatureTypes=&quot;myns:Cities&quot;
+    language=&quot;urn:ogc:def:queryLanguage:OGC-WFS::WFS_QueryExpression&quot;
+    isPrivate=&quot;false&quot;&gt;
+      &lt;wfs:Query typeName=&quot;myns:cities&quot;&gt;
+        &lt;fes:Filter&gt;
+          &lt;fes:PropertyIsEqualTo&gt;
+            &lt;fes:Literal&gt;POP_RANK&lt;/fes:Literal&gt;
+            &lt;fes:Literal&gt;${myrank}&lt;/fes:Literal&gt;
+          &lt;/fes:PropertyIsEqualTo&gt;
+        &lt;/fes:Filter&gt;
+      &lt;/wfs:Query&gt;
+    &lt;/wfs:QueryExpressionText&gt;
+  &lt;/wfs:StoredQueryDefinition&gt;
+  &lt;wfs:StoredQueryDefinition id=&quot;urn:StoredQueries:SpatialDemo&quot;&gt;
+      &lt;wfs:Title&gt;Spatial request&lt;/wfs:Title&gt;
+      &lt;wfs:Abstract&gt;test Spatial Request&lt;/wfs:Abstract&gt;
+      &lt;wfs:Parameter name=&quot;coordinates&quot; type=&quot;xsd:string&quot;/&gt;
+      &lt;wfs:QueryExpressionText
+      returnFeatureTypes=&quot;myns:Cities&quot;
+      language=&quot;urn:ogc:def:queryLanguage:OGC-WFS::WFS_QueryExpression&quot;
+      isPrivate=&quot;false&quot;&gt;
+      &lt;wfs:Query typeName='myns:Cities'&gt;
+        &lt;ogc:Filter&gt;
+          &lt;ogc:BBOX&gt;
+            &lt;ogc:PropertyName&gt;Shape&lt;/ogc:PropertyName&gt;
+            &lt;gml:Box srsName=&quot;urn:x-ogc:def:crs:EPSG:4326&quot;&gt;
+              &lt;gml:coordinates&gt;${coordinates}&lt;/gml:coordinates&gt;
+            &lt;/gml:Box&gt;
+          &lt;/ogc:BBOX&gt;
+        &lt;/ogc:Filter&gt;
+      &lt;/wfs:Query&gt;
+      &lt;/wfs:QueryExpressionText&gt;
+    &lt;/wfs:StoredQueryDefinition&gt;    
+  &lt;wfs:StoredQueryDefinition id=&quot;urn:StoredQueries:SpatialAndAttributeDemo&quot;&gt;
+      &lt;wfs:Title&gt;Spatial and Attribute Request&lt;/wfs:Title&gt;
+      &lt;wfs:Abstract&gt;Select all cities with POP &gt; 12000000 and BBOX (0,0,180,90)&lt;/wfs:Abstract&gt;
+      &lt;wfs:QueryExpressionText
+      returnFeatureTypes=&quot;myns:Cities&quot;
+      language=&quot;urn:ogc:def:queryLanguage:OGC-WFS::WFS_QueryExpression&quot;
+      isPrivate=&quot;false&quot;&gt;
+      &lt;wfs:Query typeName='myns:Cities'&gt;
+        &lt;ogc:Filter&gt;
+          &lt;fes:And&gt;
+            &lt;ogc:BBOX&gt;
+              &lt;ogc:PropertyName&gt;Shape&lt;/ogc:PropertyName&gt;
+              &lt;gml:Box srsName=&quot;urn:x-ogc:def:crs:EPSG:4326&quot;&gt;
+                &lt;gml:coordinates&gt;0,0 90,180&lt;/gml:coordinates&gt;
+              &lt;/gml:Box&gt;
+            &lt;/ogc:BBOX&gt;
+            &lt;fes:PropertyIsGreaterThan&gt;
+              &lt;fes:Literal&gt;POP&lt;/fes:Literal&gt;
+              &lt;fes:Literal&gt;12000000&lt;/fes:Literal&gt;
+            &lt;/fes:PropertyIsGreaterThan&gt;
+          &lt;/fes:And&gt;
+        &lt;/ogc:Filter&gt;
+      &lt;/wfs:Query&gt;
+      &lt;/wfs:QueryExpressionText&gt;
+    &lt;/wfs:StoredQueryDefinition&gt;    
+  &lt;wfs:StoredQueryDefinition id=&quot;urn:StoredQueries:QueryCitiesByID&quot;&gt;
+    &lt;wfs:Title&gt;Select feature by ID&lt;/wfs:Title&gt;
+    &lt;wfs:Abstract&gt;test selecting feature by ID&lt;/wfs:Abstract&gt;
+    &lt;wfs:QueryExpressionText
+    returnFeatureTypes=&quot;myns:Cities&quot;
+    language=&quot;urn:ogc:def:queryLanguage:OGC-WFS::WFS_QueryExpression&quot;
+    isPrivate=&quot;false&quot;&gt;
+      &lt;wfs:Query typeName=&quot;myns:cities&quot;&gt;
+        &lt;ogc:Filter&gt;
+          &lt;ogc:PropertyIsEqualTo&gt;
+            &lt;ogc:Literal&gt;OBJECTID&lt;/ogc:Literal&gt;
+            &lt;ogc:Literal&gt;${ID}&lt;/ogc:Literal&gt;
+          &lt;/ogc:PropertyIsEqualTo&gt;
+        &lt;/ogc:Filter&gt;
+      &lt;/wfs:Query&gt;
+    &lt;/wfs:QueryExpressionText&gt;
+  &lt;/wfs:StoredQueryDefinition&gt;
+  &lt;wfs:StoredQueryDefinition id=&quot;urn:ogc:def:query:OGC-WFS::GetFeatureById&quot;&gt;
+    &lt;wfs:Title&gt;urn:ogc:def:query:OGC-WFS::GetFeatureById predefined stored query&lt;/wfs:Title&gt;
+    &lt;wfs:Abstract&gt;This query support all layers in the map&lt;/wfs:Abstract&gt;
+    &lt;wfs:QueryExpressionText
+    returnFeatureTypes=&quot;myns:Cities,myns:Continent,myns:World&quot;
+    language=&quot;urn:ogc:def:queryLanguage:OGC-WFS::WFS_QueryExpression&quot;
+    isPrivate=&quot;false&quot;&gt;
+      &lt;!-- Cities --&gt;
+      &lt;wfs:Query typeName=&quot;myns:Cities&quot;&gt;
+        &lt;ogc:Filter&gt;
+          &lt;ogc:PropertyIsEqualTo&gt;
+            &lt;ogc:Literal&gt;OBJECTID&lt;/ogc:Literal&gt;
+            &lt;ogc:Literal&gt;${ID}&lt;/ogc:Literal&gt;
+          &lt;/ogc:PropertyIsEqualTo&gt;
+        &lt;/ogc:Filter&gt;
+      &lt;/wfs:Query&gt;
+      &lt;!-- Continent --&gt;
+      &lt;wfs:Query typeName=&quot;myns:Continent&quot;&gt;
+        &lt;ogc:Filter&gt;
+          &lt;ogc:PropertyIsEqualTo&gt;
+            &lt;ogc:Literal&gt;OBJECTID&lt;/ogc:Literal&gt;
+            &lt;ogc:Literal&gt;${ID}&lt;/ogc:Literal&gt;
+          &lt;/ogc:PropertyIsEqualTo&gt;
+        &lt;/ogc:Filter&gt;
+      &lt;/wfs:Query&gt;
+      &lt;!-- World --&gt;
+      &lt;wfs:Query typeName=&quot;myns:World&quot;&gt;
+        &lt;ogc:Filter&gt;
+          &lt;ogc:PropertyIsEqualTo&gt;
+            &lt;ogc:Literal&gt;OBJECTID&lt;/ogc:Literal&gt;
+            &lt;ogc:Literal&gt;${ID}&lt;/ogc:Literal&gt;
+          &lt;/ogc:PropertyIsEqualTo&gt;
+        &lt;/ogc:Filter&gt;
+      &lt;/wfs:Query&gt;
+      &lt;!-- --&gt;
+    &lt;/wfs:QueryExpressionText&gt;
+  &lt;/wfs:StoredQueryDefinition&gt;
+  &lt;wfs:StoredQueryDefinition id=&quot;urn:StoredQueries:FunctionCHAR_LENGTH&quot;&gt;
+    &lt;wfs:Title&gt;Function CHAR_LENGTH&lt;/wfs:Title&gt;
+    &lt;wfs:Abstract&gt;test Function CHAR_LENGTH&lt;/wfs:Abstract&gt;
+    &lt;wfs:QueryExpressionText
+    returnFeatureTypes=&quot;myns:Cities&quot;
+    language=&quot;urn:ogc:def:queryLanguage:OGC-WFS::WFS_QueryExpression&quot;
+    isPrivate=&quot;false&quot;&gt;
+      &lt;wfs:Query typeName=&quot;myns:cities&quot;&gt;
+        &lt;fes:Filter&gt;
+          &lt;fes:PropertyIsEqualTo&gt;
+            &lt;fes:Function name=&quot;CHAR_LENGTH&quot;&gt;
+              &lt;fes:Literal&gt;CITY_NAME&lt;/fes:Literal&gt;
+            &lt;/fes:Function&gt;
+            &lt;fes:Literal&gt;2&lt;/fes:Literal&gt;
+          &lt;/fes:PropertyIsEqualTo&gt;
+        &lt;/fes:Filter&gt;
+      &lt;/wfs:Query&gt;
+    &lt;/wfs:QueryExpressionText&gt;
+  &lt;/wfs:StoredQueryDefinition&gt;
+  &lt;wfs:StoredQueryDefinition id=&quot;urn:StoredQueries:FunctionSUBSTRING&quot;&gt;
+    &lt;wfs:Title&gt;Function CHAR_LENGTH&lt;/wfs:Title&gt;
+    &lt;wfs:Abstract&gt;test Function CHAR_LENGTH&lt;/wfs:Abstract&gt;
+    &lt;wfs:QueryExpressionText&gt;
+      &lt;wfs:Query typeName=&quot;myns:cities&quot;&gt;
+        &lt;fes:Filter&gt;
+          &lt;fes:PropertyIsEqualTo&gt;
+            &lt;fes:Function name=&quot;SUBSTRING&quot;&gt;
+              &lt;fes:Literal&gt;CITY_NAME&lt;/fes:Literal&gt;
+              &lt;fes:Literal&gt;2&lt;/fes:Literal&gt;
+              &lt;fes:Literal&gt;3&lt;/fes:Literal&gt;
+            &lt;/fes:Function&gt;
+            &lt;fes:Literal&gt;os&lt;/fes:Literal&gt;
+          &lt;/fes:PropertyIsEqualTo&gt;
+        &lt;/fes:Filter&gt;
+      &lt;/wfs:Query&gt;
+    &lt;/wfs:QueryExpressionText&gt;
+  &lt;/wfs:StoredQueryDefinition&gt;
+  &lt;wfs:StoredQueryDefinition id=&quot;urn:StoredQueries:MyStoredQuery&quot;&gt;
+    &lt;wfs:Title&gt;MyStoredQuery&lt;/wfs:Title&gt;
+    &lt;wfs:Abstract&gt;some tested MyStoredQuery&lt;/wfs:Abstract&gt;
+    &lt;wfs:Parameter name=&quot;AreaOfInterest&quot; type=&quot;gml:PolygonPropertyType&quot;/&gt;
+    &lt;wfs:QueryExpressionText
+    returnFeatureTypes=&quot;myns:Parks myns:Lakes myns:Rivers&quot;
+    language=&quot;urn:ogc:def:queryLanguage:OGC-WFS::WFS_QueryExpression&quot;
+    isPrivate=&quot;false&quot;&gt;
+      &lt;wfs:Query typeName=&quot;myns:cities&quot;&gt;
+        &lt;ogc:Filter&gt;
+          &lt;ogc:Within&gt;
+            &lt;ogc:ValueReference&gt;Shape&lt;/ogc:ValueReference&gt;
+            ${AreaOfInterest}
+          &lt;/ogc:Within&gt;
+        &lt;/ogc:Filter&gt;
+      &lt;/wfs:Query&gt;
+      &lt;wfs:Query typeName=&quot;myns:cities&quot;&gt;
+        &lt;ogc:Filter&gt;
+          &lt;ogc:PropertyIsEqualTo&gt;
+            &lt;ogc:Literal&gt;POP_RANK&lt;/ogc:Literal&gt;
+            &lt;ogc:Literal&gt;3&lt;/ogc:Literal&gt;
+          &lt;/ogc:PropertyIsEqualTo&gt;
+        &lt;/ogc:Filter&gt;
+      &lt;/wfs:Query&gt;
+      &lt;wfs:Query typeNames=&quot;myns:Parks&quot;&gt;
+        &lt;fes:Filter&gt;
+          &lt;fes:Within&gt;
+            &lt;fes:ValueReference&gt;geometry&lt;/fes:ValueReference&gt;
+            ${AreaOfInterest}
+          &lt;/fes:Within&gt;
+        &lt;/fes:Filter&gt;
+      &lt;/wfs:Query&gt;
+      &lt;wfs:Query typeNames=&quot;myns:Lakes&quot;&gt;
+        &lt;fes:Filter&gt;
+          &lt;fes:Within&gt;
+            &lt;fes:ValueReference&gt;region&lt;/fes:ValueReference&gt;
+            ${AreaOfInterest}
+          &lt;/fes:Within&gt;
+        &lt;/fes:Filter&gt;
+      &lt;/wfs:Query&gt;
+      &lt;wfs:Query typeNames=&quot;myns:Rivers&quot;&gt;
+        &lt;fes:Filter&gt;
+          &lt;fes:Within&gt;
+            &lt;fes:ValueReference&gt;region&lt;/fes:ValueReference&gt;
+            ${AreaOfInterest}
+          &lt;/fes:Within&gt;
+        &lt;/fes:Filter&gt;
+      &lt;/wfs:Query&gt;
+    &lt;/wfs:QueryExpressionText&gt;
+  &lt;/wfs:StoredQueryDefinition&gt;
+  &lt;wfs:StoredQueryDefinition id=&quot;urn:StoredQueries:FeaturesInPolygon&quot;&gt;
+      &lt;wfs:Title&gt;Features In Polygon&lt;/wfs:Title&gt;
+      &lt;wfs:Abstract&gt;Find all the features in a Polygon.&lt;/wfs:Abstract&gt;
+      &lt;wfs:Parameter name=&quot;AreaOfInterest&quot; type=&quot;gml:PolygonPropertyType&quot;/&gt;
+      &lt;wfs:QueryExpressionText
+      returnFeatureTypes=&quot;myns:Parks myns:Lakes myns:Rivers&quot;
+      language=&quot;urn:ogc:def:queryLanguage:OGC-WFS::WFS_QueryExpression&quot;
+      isPrivate=&quot;false&quot;&gt;
+        &lt;wfs:Query typeNames=&quot;myns:Parks&quot;&gt;
+          &lt;fes:Filter&gt;
+            &lt;fes:Within&gt;
+              &lt;fes:ValueReference&gt;geometry&lt;/fes:ValueReference&gt;
+              ${AreaOfInterest}
+            &lt;/fes:Within&gt;
+          &lt;/fes:Filter&gt;
+        &lt;/wfs:Query&gt;
+        &lt;wfs:Query typeNames=&quot;myns:Lakes&quot;&gt;
+          &lt;fes:Filter&gt;
+            &lt;fes:Within&gt;
+              &lt;fes:ValueReference&gt;region&lt;/fes:ValueReference&gt;
+              ${AreaOfInterest}
+            &lt;/fes:Within&gt;
+          &lt;/fes:Filter&gt;
+        &lt;/wfs:Query&gt;
+        &lt;wfs:Query typeNames=&quot;myns:Rivers&quot;&gt;
+          &lt;fes:Filter&gt;
+            &lt;fes:Within&gt;
+              &lt;fes:ValueReference&gt;region&lt;/fes:ValueReference&gt;
+              ${AreaOfInterest}
+            &lt;/fes:Within&gt;
+          &lt;/fes:Filter&gt;
+        &lt;/wfs:Query&gt;
+      &lt;/wfs:QueryExpressionText&gt;
+    &lt;/wfs:StoredQueryDefinition&gt;    
+  &lt;/wfs:StoredQueryList&gt;</code></pre></div></section></section><section class="section3 padded-anchor" id="ESRI_SECTION3_023FC9A9CF5E4DFF9254742DBC9231A2" purpose="section3"><h4>GetFeatureByID</h4><p id="GUID-41339E39-123D-4CB0-B17E-C18AE387C801">GetFeatureByID 操作采用名为 <span class="usertext">id</span> 的单个参数或类型 <span class="usertext">xsd:string</span>，并返回具有与指定的 <span class="usertext">id</span> 参数值等同标识符的单个要素。</p><p id="GUID-32109706-EF72-4F6E-A5CE-0373B6D477A2">以下 URL 示例会调用 GetFeatureByID 存储的查询来检索并显示单个要素：</p><p id="GUID-52F2280B-D029-45E7-B794-516C5D994D26"><span class="usertext"> http://gisserver.domain.com/arcgis/services/SampleWorldCities/MapServer/WFSServer?SERVICE=WFS&amp;VERSION=2.0.0&amp;REQUEST=GetFeature&amp;STOREDQUERY_ID=urn:ogc:def:query:OGC-WFS::GetFeatureById&amp;ID=Cities.1</span></p></section><section class="section3 padded-anchor" id="ESRI_SECTION3_68EB5DB18EB340BCB7056840545E540A" purpose="section3"><h4>ListStoredQueries</h4><p id="GUID-F16D1B9B-F8A8-4007-BAC5-9F2E6D0201F6">ListStoredQueries 操作会列出 ArcGIS Server 中可用的存储查询。客户端可以一次执行一个存储查询，例如：</p><p id="GUID-C1BA22BB-A820-466F-B1DB-23B962345B9B"><span class="usertext"> http://gisserver.domain.com:6080/arcgis/services/SampleWorldCities/MapServer/WFSServer?request=ListStoredQueries&amp;service=WFS&amp;version=2.0.0</span></p><p id="GUID-E58027D5-5220-4B63-A98A-EBF5ED33E799"><section class="codeblock padded-anchor" purpose="codeblock"><div class="codeblockbody"><pre><code class="xml">&lt;wfs:ListStoredQueriesResponse version=&quot;2.0.0&quot; xsi:schemaLocation=&quot;http://www.opengis.net/gml http://schemas.opengis.net/gml/3.2.1/gml.xsd http://www.opengis.net/ogc http://schemas.opengis.net/filter/2.0/filter.xsd http://www.opengis.net/ows/1.1 http://schemas.opengis.net/ows/1.1.0/owsAll.xsd http://www.opengis.net/wfs/2.0 http://schemas.opengis.net/wfs/2.0/wfs.xsd http://www.opengis.net/fes/2.0 http://schemas.opengis.net/filter/2.0/filterAll.xsd&quot;&gt;
+  &lt;wfs:StoredQuery id=&quot;urn:StoredQueries:AttributeDemo&quot;&gt;
+    &lt;ows:Title&gt;Attribute request&lt;/ows:Title&gt;
+    &lt;ows:Abstract&gt;test Attribute request&lt;/ows:Abstract&gt;
+  &lt;/wfs:StoredQuery&gt;
+  &lt;wfs:StoredQuery id=&quot;urn:StoredQueries:SpatialDemo&quot;&gt;
+    &lt;ows:Title&gt;Spatial request&lt;/ows:Title&gt;
+    &lt;ows:Abstract&gt;test Spatial Request&lt;/ows:Abstract&gt;
+  &lt;/wfs:StoredQuery&gt;
+  &lt;wfs:StoredQuery id=&quot;urn:StoredQueries:SpatialAndAttributeDemo&quot;&gt;
+    &lt;ows:Title&gt;Spatial and Attribute Request&lt;/ows:Title&gt;
+    &lt;ows:Abstract&gt;Select all cities with POP &gt; 12000000 and BBOX (0,0,180,90)&lt;/ows:Abstract&gt;
+  &lt;/wfs:StoredQuery&gt;&lt;wfs:StoredQuery id=&quot;urn:StoredQueries:QueryCitiesByID&quot;&gt;
+    &lt;ows:Title&gt;Select feature by ID&lt;/ows:Title&gt;
+    &lt;ows:Abstract&gt;test selecting feature by ID&lt;/ows:Abstract&gt;
+  &lt;/wfs:StoredQuery&gt;
+  &lt;wfs:StoredQuery id=&quot;urn:ogc:def:query:OGC-WFS::GetFeatureById&quot;&gt;
+    &lt;ows:Title&gt;urn:ogc:def:query:OGC-WFS::GetFeatureById predefined stored query&lt;/ows:Title&gt;
+    &lt;ows:Abstract&gt;This query support all layers in the map&lt;/ows:Abstract&gt;
+  &lt;/wfs:StoredQuery&gt;&lt;wfs:StoredQuery id=&quot;urn:StoredQueries:FunctionCHAR_LENGTH&quot;&gt;
+    &lt;ows:Title&gt;Function CHAR_LENGTH&lt;/ows:Title&gt;
+    &lt;ows:Abstract&gt;test Function CHAR_LENGTH&lt;/ows:Abstract&gt;
+  &lt;/wfs:StoredQuery&gt;
+  &lt;wfs:StoredQuery id=&quot;urn:StoredQueries:FunctionSUBSTRING&quot;&gt;
+    &lt;ows:Title&gt;Function CHAR_LENGTH&lt;/ows:Title&gt;
+    &lt;ows:Abstract&gt;test Function CHAR_LENGTH&lt;/ows:Abstract&gt;
+  &lt;/wfs:StoredQuery&gt;
+  &lt;wfs:StoredQuery id=&quot;urn:StoredQueries:MyStoredQuery&quot;&gt;
+    &lt;ows:Title&gt;MyStoredQuery&lt;/ows:Title&gt;
+    &lt;ows:Abstract&gt;some tested MyStoredQuery&lt;/ows:Abstract&gt;
+  &lt;/wfs:StoredQuery&gt;
+  &lt;wfs:StoredQuery id=&quot;urn:StoredQueries:FeaturesInPolygon&quot;&gt;
+    &lt;ows:Title&gt;Features In Polygon&lt;/ows:Title&gt;
+    &lt;ows:Abstract&gt;Find all the features in a Polygon.&lt;/ows:Abstract&gt;
+  &lt;/wfs:StoredQuery&gt;
+&lt;/wfs:ListStoredQueriesResponse&gt;</code></pre></div></section></p></section><section class="section3 padded-anchor" id="ESRI_SECTION3_D97F3B392DA942B9AC6BFBFD55DB4F5B" purpose="section3"><h4>DescribeStoredQueries</h4><p id="GUID-A9F4EA81-5BC5-4887-86E3-406785C652E8">DescribeStoredQueries 操作用于描述 ArcGIS Server 中可用的存储查询。此操作对于 WFS 客户端询问服务器、了解存储查询的特性以及需要发送以便执行存储查询的参数来说非常有用。</p><p id="GUID-427D347A-59D0-4977-B91C-740EDCC7A610"><span class="usertext"> http://gisserver.domain.com:6080/arcgis/services/SampleWorldCities/MapServer/WFSServer?request=DescribeStoredQueries&amp;service=WFS&amp;version=2.0.0</span></p><p id="GUID-DDEC2187-E3B7-4FEF-927B-77BACFB621D8"><section class="codeblock padded-anchor" purpose="codeblock"><div class="codeblockbody"><pre><code class="xml">&lt;wfs:DescribeStoredQueriesResponse version=&quot;2.0.0&quot; xsi:schemaLocation=&quot;http://www.opengis.net/gml http://schemas.opengis.net/gml/3.2.1/gml.xsd http://www.opengis.net/ogc http://schemas.opengis.net/filter/2.0/filter.xsd http://www.opengis.net/ows/1.1 http://schemas.opengis.net/ows/1.1.0/owsAll.xsd http://www.opengis.net/wfs/2.0 http://schemas.opengis.net/wfs/2.0/wfs.xsd http://www.opengis.net/fes/2.0 http://schemas.opengis.net/filter/2.0/filterAll.xsd&quot;&gt;
+  &lt;wfs:StoredQueryDefinition id=&quot;urn:StoredQueries:AttributeDemo&quot;&gt;
+    &lt;wfs:Title&gt;Attribute request&lt;/wfs:Title&gt;
+    &lt;wfs:Abstract&gt;test Attribute request&lt;/wfs:Abstract&gt;
+    &lt;wfs:Parameter name=&quot;myrank&quot; type=&quot;xsd:double&quot;/&gt;
+    &lt;wfs:QueryExpressionText returnFeatureTypes=&quot;myns:Cities&quot; language=&quot;urn:ogc:def:queryLanguage:OGC-WFS::WFS_QueryExpression&quot; isPrivate=&quot;false&quot;&gt;
+      &lt;wfs:Query typeName=&quot;myns:cities&quot;&gt;
+        &lt;fes:Filter&gt;
+          &lt;fes:PropertyIsEqualTo&gt;
+            &lt;fes:Literal&gt;POP_RANK&lt;/fes:Literal&gt;
+            &lt;fes:Literal&gt;${myrank}&lt;/fes:Literal&gt;
+          &lt;/fes:PropertyIsEqualTo&gt;
+        &lt;/fes:Filter&gt;
+      &lt;/wfs:Query&gt;
+    &lt;/wfs:QueryExpressionText&gt;
+  &lt;/wfs:StoredQueryDefinition&gt;
+  &lt;wfs:StoredQueryDefinition id=&quot;urn:StoredQueries:SpatialDemo&quot;&gt;
+    &lt;wfs:Title&gt;Spatial request&lt;/wfs:Title&gt;
+    &lt;wfs:Abstract&gt;test Spatial Request&lt;/wfs:Abstract&gt;
+    &lt;wfs:Parameter name=&quot;coordinates&quot; type=&quot;xsd:string&quot;/&gt;
+    &lt;wfs:QueryExpressionText returnFeatureTypes=&quot;myns:Cities&quot; language=&quot;urn:ogc:def:queryLanguage:OGC-WFS::WFS_QueryExpression&quot; isPrivate=&quot;false&quot;&gt;
+      &lt;wfs:Query typeName=&quot;myns:Cities&quot;&gt;
+        &lt;ogc:Filter&gt;
+          &lt;ogc:BBOX&gt;
+            &lt;ogc:PropertyName&gt;Shape&lt;/ogc:PropertyName&gt;
+            &lt;gml:Box srsName=&quot;urn:x-ogc:def:crs:EPSG:4326&quot;&gt;
+              &lt;gml:coordinates&gt;${coordinates}&lt;/gml:coordinates&gt;
+            &lt;/gml:Box&gt;
+          &lt;/ogc:BBOX&gt;
+        &lt;/ogc:Filter&gt;
+      &lt;/wfs:Query&gt;
+    &lt;/wfs:QueryExpressionText&gt;
+  &lt;/wfs:StoredQueryDefinition&gt;
+&lt;/wfs:DescribeStoredQueriesResponse&gt;</code></pre></div></section></p></section><section class="section3 padded-anchor" id="ESRI_SECTION3_1B0112C804234CB4AC1A9B9FED832E8B" purpose="section3"><h4>作为 GetFeature 请求的一部分执行存储的查询</h4><p id="GUID-416821E1-6207-404B-B291-D4D46E2A5157"> 以下是某个属性请求的示例，其中某一存储查询 (AttributeDemo) 是通过 <span class="usertext">myrank=3</span> 参数来调用的：</p><p id="GUID-05BE82B8-6A3E-47A0-84AE-779B9F0B1C34"><span class="usertext">http://gisserver.domain.com:6080/arcgis/services/SampleWorldCities/MapServer/WFSServer?service=WFS&amp;version=2.0.0&amp;REQUEST=GetFeature&amp;typeName=cities&amp;startIndex=0&amp;count=5&amp;STOREDQUERY_ID=urn:StoredQueries:AttributeDemo&amp;myrank=3</span></p><p id="GUID-19DB08C1-7DD4-4177-B5EC-C61D2F85C422"> 以下示例为通过<span class="usertext">坐标</span>参数调用的存储查询 (SpatialDemo)，该存储查询可检索落入边界框内的美国城市的列表。仅返回该列表中的前两个城市（请注意开始索引和计数的使用）：</p><p id="GUID-74497800-2B43-4848-B0EF-BBC96545CA27"><span class="usertext">http://gisserver.domain.com:6080/arcgis/services/SampleWorldCities/MapServer/WFSServer?service=WFS&amp;version=2.0.0&amp;REQUEST=GetFeature&amp;typeName=cities&amp;startIndex=0&amp;count=2&amp;STOREDQUERY_ID=urn:StoredQueries:SpatialDemo&amp;coordinates=0,-180%2090,0</span></p><p id="GUID-AB60C62A-0377-4ADE-A800-8717A0A9D72C">以下为调用存储查询 (FunctionChat_Length) 的示例。将写入服务器上的存储查询来过滤出名称长度大于两个字符的城市：</p><p id="GUID-459E8509-0F45-4E50-8588-C19C41F77CCF"><span class="usertext">http://gisserver.domain.com:6080/arcgis/services/SampleWorldCities/MapServer/WFSServer?service=WFS&amp;version=2.0.0&amp;REQUEST=GetFeature&amp;typeName=Cities&amp;STOREDQUERY_ID=urn:StoredQueries:FunctionCHAR_LENGTH</span></p></section></section><section class="section2 padded-anchor" id="ESRI_SECTION2_B6F6287662E947DE87F14323847A0049" purpose="section2"><h3>响应页面</h3><p id="GUID-3F055B8C-B475-4302-B5BD-D10C86545AF9">响应页面允许请求指定用于检索的要素的开始索引。此外，还可指定用于检索的要素的计数。</p><p id="GUID-E61961F9-C264-407B-B3FB-53DEB96EF583">使用与 ArcGIS Server 一同安装的 SampleWorldCities 地图服务，以下查询将返回两个城市（计数为 2）：Brasilia 和 Goiania。</p><p id="GUID-9FA9421E-317C-4E56-81C0-92FEA1DF9D76"><span class="usertext">http://gisserver.domain.com:6080/arcgis/services/SampleWorldCities/MapServer/WFSServer?service=WFS&amp;version=2.0.0&amp;REQUEST=GetFeature&amp;typeName=cities&amp;startIndex=1&amp;count=2</span></p><p id="GUID-8919A16F-CAD7-4F31-866F-6CFB620DE6CC">如果您更改了请求并将开始索引设置为以 2 开始，则首先返回的城市为 Goiania。由于计数为 2，现在将与请求一起返回两个城市：Goiania 和 Campo Grande。</p><p id="GUID-B399D97C-8E71-4CC2-8884-7DD88E92B41A"><span class="usertext">http://gisserver.domain.com:6080/arcgis/services/SampleWorldCities/MapServer/WFSServer?service=WFS&amp;version=2.0.0&amp;REQUEST=GetFeature&amp;typeName=cities&amp;startIndex=2&amp;count=2</span></p></section></section>
+			
+				<hr>
+				<!--googleoff: all-->
+				
+	
+        
+		    <p class="feedback right">
+		        <a id="afb" class="icon-ui-contact" href="/feedback/" data-langlabel="feedback-on-this-topic" >有关此主题的反馈?</a>
+		    </p>
+        
+	
+
+				<!--googleon: all-->
+			
+		</main>
+	</div>
+	
+	<!--googleoff: all-->
+	
+		
+			<div id="main-toc-large" class="column-5">
+			    <div class="panel font-size--2 tablet-hide trailer-1">
+			      <h5 class="trailer-half">在本主题中</h5>
+			      <ol class="list-plain pre-0 trailer-0"><li><a href="#GUID-3BEE60BF-F0A8-42FC-938D-8B7850CEE400">客户端的类型</a></li><li><a href="#ESRI_SECTION1_691BC90DE81E4C469E19392A140A3395">WFS URL 结构</a></li><li><a href="#ESRI_SECTION1_ACCAFEFDC733487AA2BD9547A768AA08">使用过滤器</a></li><li><a href="#ESRI_SECTION1_78D9D1213F1449B382CAD88E7E6259FE">在 Web 浏览器中使用 WFS 1.0.0 或 1.1.0 服务</a></li><li><a href="#ESRI_SECTION1_3166CF681CE545E089B0DD1863E687B9">在 Web 浏览器中使用 WFS 2.0 服务</a></li></ol>
+			    </div>
+			    
+			    
+	  		</div>
+		
+    
+   <!--googleon: all-->
+
+
+
+
+          
+        </div>
+        <!-- ENDPAGECONTENT -->
+
+      </div>
+
+    </div>  <!-- End of wrapper -->
+
+  <footer class="footer leader-3 link-dark-gray" role="contentinfo">
+    <div class="grid-container">
+      <div class="row">
+        <nav class="column-6">
+          <h6 data-langlabel="arcgis-for-server">Arc<span>GIS Enterprise</span></h6>
+          <ul class="list-plain">
+            <li><a data-langlabel="home" href="../../../../../zh-CN/">主页</a></li>
+            <li><a data-langlabel="portal" href="../../../../../zh-CN/portal/">Portal</a></li>
+            <li><a data-langlabel="server" href="../../../../../zh-CN/server/">Server</a></li>
+            <li><a data-langlabel="data-store" href="../../../../../zh-CN/data-store/">Data Stores</a></li>
+            <li><a data-langlabel="cloud" href="../../../../../zh-CN/cloud/">云</a></li>
+            <li><a data-langlabel="apps" href="../../../../../zh-CN/apps/">应用程序</a></li>
+            <li><a data-langlabel="documentation" href="../../../../../zh-CN/documentation/">文档</a></li>
+          </ul>
+        </nav>
+
+        
+  <nav class="column-6">
+    <h6 data-langlabel="arcgis-platform">ArcGIS 平台</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="arcgis" href="//www.arcgis.com/">ArcGIS Online</a></li>
+      <li><a data-langlabel="arcgis-for-professionals" href="//pro.arcgis.com/">ArcGIS Pro</a></li>
+      <li><a data-langlabel="arcgis-for-server" href="//enterprise.arcgis.com/">ArcGIS Enterprise</a></li>
+      <li><a data-langlabel="arcgis-for-developers" href="https://developers.arcgis.com/">ArcGIS for Developers</a></li>
+      <li><a data-langlabel="arcgis-solutions" href="//solutions.arcgis.com/">ArcGIS Solutions</a></li>
+      <li><a data-langlabel="arcgis-marketplace" href="//marketplace.arcgis.com/">ArcGIS Marketplace</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <h6 data-langlabel="about-esri">关于 Esri</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="about-us" href="//www.esri.com/about-esri/">关于我们</a></li>
+      <li><a data-langlabel="careers" href="//www.esri.com/careers/">招贤纳士</a></li>
+      <li><a data-langlabel="insiders-blog" href="https://www.esri.com/about/newsroom/blog/">Esri 博客</a></li>
+      <li><a data-langlabel="user-conference" href="//www.esri.com/events/user-conference/index.html">用户大会</a></li>
+      <li><a data-langlabel="developer-summit" href="//www.esri.com/events/devsummit/index.html">开发者峰会</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <a class="esri-logo" href="//www.esri.com/" aria-label="Esri Home"></a>
+    <section class="footer-social-nav leader-1">
+            <a class="icon-social-twitter" aria-label="Esri on Twitter" href="https://twitter.com/Esri/"></a>
+            <a class="icon-social-facebook" aria-label="Esri on Facebook" href="https://www.facebook.com/esrigis/"></a>
+            <a class="icon-social-github" aria-label="Esri on GitHub" href="//esri.github.io/"></a>
+            <a class="icon-social-contact" aria-label="Contact Esri" href="//www.esri.com/about-esri/contact/"></a>
+    </section>
+	  
+  </nav>
+  
+  <div class="column-24 leader-1">
+    <p class="font-size--3"><a href="http://www.esri.com/legal/copyright-trademarks">Copyright &copy; 2019 Esri.</a> All rights reserved. | <a href="http://www.esri.com/legal/privacy/">隐私政策</a> | <a href="http://www.esri.com/legal/software-license">法律声明</a></p>
+  </div>
+  
+
+
+      </div>
+    </div>
+  </footer>
+  <!--googleoff: all-->
+
+  
+  
+	<script src="../../../../../zh-CN/assets/js/init.js" type="text/javascript"></script>
+	<!--<script src="../../../../../zh-CN/assets/js/drop-down.js" type="text/javascript"></script>-->
+	<script src="../../../../../zh-CN/assets/js/search/searchform.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/cdn/js/link-modifier.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/cdn/js/sitewide.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/cdn/js/libs/highlight.pack.js" type="text/javascript"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+
+
+  
+    
+
+  <script src="../../../../../zh-CN/cdn/js/affix.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    $(function () {
+          var appendFlg = true;
+
+          $("#bigmac")
+          .on("affixed.bs.affix", function (evt) {
+            if (appendFlg) {
+              $("<a class='crumb' href='#'>在 Web 浏览器中与 WFS 服务进行通信</a>").insertAfter ($("#bigmac nav a").last());
+              appendFlg = false;
+            }
+          })
+          .on ("affix-top.bs.affix", function(evt) {
+            if (!appendFlg) {
+              $("#bigmac nav a").last().remove();
+            }
+            appendFlg = true;
+          })
+    })
+  </script>
+  
+        <script type="text/javascript">
+          window.doctoc = {
+            pubID: "1634",
+            tpcID: "462",
+            
+              prefix: "管理服务",
+              prefixUrl: "/zh-cn/server/latest/publish-services/windows/",
+          
+            hideToc: false
+          }
+        </script>
+
+        <script type="text/javascript" src="../../../../../zh-CN/server/latest/publish-services/windows/1634.js" ></script>
+        <script type="text/javascript" src="../../../../../zh-CN/cdn/calcite/js/protoc.js" ></script>
+        
+        
+
+  <noscript>
+        <p>
+            <a href="flisting.htm">flist</a>
+        </p>
+    </noscript>
+    <script type="text/javascript"></script>
+  
+  
+    
+    
+
+  </body>
+</html>

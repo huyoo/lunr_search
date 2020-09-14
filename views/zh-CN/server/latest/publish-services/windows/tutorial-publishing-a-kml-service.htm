@@ -1,0 +1,542 @@
+
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>  <html class="ie lt-ie9 lt-ie8 lt-ie7 ie6" dir="ltr"> <![endif]-->
+<!--[if IE 7]>     <html class="ie lt-ie9 lt-ie8 ie7" dir="ltr"> <![endif]-->
+<!--[if IE 8]>     <html class="ie lt-ie9 ie8" dir="ltr"> <![endif]-->
+<!--[if IE 9]>     <html class="ie ie9" dir="ltr"> <![endif]-->
+<!--[if !IE]><!--> <html dir="ltr" lang="zh-CN"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>教程：发布 KML 服务&mdash;文档 | ArcGIS Enterprise 文档</title>
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+    <script>
+      var docConfig = {
+        locale: 'zh-CN'
+        ,localedir: 'zh-cn'
+        ,langSelector: ''
+        
+        ,relativeUrl: false
+        
+
+        ,searchformUrl: '/search/'
+        ,tertiaryNavIndex: ''
+
+        
+      };
+    </script>
+	 
+
+
+    
+    <!--[if lt IE 9]>
+      <script src="../../../../../zh-CN/cdn/js/libs/html5shiv.js" type="text/javascript"></script>
+      <script src="../../../../../zh-CN/cdn/js/libs/selectivizr-min.js" type="text/javascript"></script>
+      <script src="../../../../../zh-CN/cdn/js/libs/json2.js" type="text/javascript"></script>
+      <script src="../../../../../zh-CN/cdn/js/libs/html5shiv-printshiv.js" type="text/javascript" >
+
+    <![endif]-->
+
+     <!--[if lt IE 11]>
+    <script>
+      $$(document).ready(function(){
+        $$(".hideOnIE").hide();
+      });
+    </script>
+    <![endif]-->
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<link href="../../../../../zh-CN/assets/img/favicon.ico" rel="shortcut icon" >
+	<link href="../../../../../zh-CN/assets/css/screen.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/cdn/calcite/css/documentation.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/assets/css/print.css" media="print" type="text/css" rel="stylesheet" />
+
+	<!--
+	<link href="../../../../../zh-CN/assets/css/screen_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/assets/css/documentation/base_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/assets/css/print_l10n.css" media="print" type="text/css" rel="stylesheet" />
+	-->
+	
+	
+		<script src="../../../../../zh-CN/cdn/js/libs/jquery.1.9.1.min.js" type="text/javascript"></script>
+	
+	<script src="../../../../../zh-CN/cdn/js/libs/jquery.cookie.js" type="text/javascript"></script>
+	<link href="../../../../../zh-CN/cdn/css/colorbox.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/cdn/css/colorbox_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<script src="../../../../../zh-CN/cdn/js/libs/jquery.colorbox-min.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/assets/js/video-init.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/assets/js/sitecfg.js" type="text/javascript"></script>
+	
+		<script src="../../../../../zh-CN/assets/js/signIn.js" type="text/javascript"></script>
+	
+
+	<!--- Language Picker -->
+	<script src="../../../../../zh-CN/assets/js/locale/l10NStrings.js" type="text/javascript"></script>
+	
+		 
+	
+
+	<script src="../../../../../zh-CN/assets/js/calcite-web.js" type="text/javascript"></script>
+
+
+
+  <!--- search MD -->
+    <META name="description" content="本教程可引导您完成使用 3D 拉伸要素创建 KML 服务的过程。"><META name="last-modified" content="2019-12-6"><META name="product" content="arcgis-server-windows,arcgis-enterprise-windows"><META name="sub_category" content="ArcGIS Server (Windows)"><META name="search-collection" content="help"><META name="content_type_label" content="帮助主题"><META name="sub_category_label" content="ArcGIS Server (Windows)"><META name="search-category" content="help-general"><META name="subject_label" content="服务"><META name="version" content="10.8"><META name="content_type" content="Help Topic"><META name="subject" content="SERVICES"><META name="content-language" content="zh-cn">
+    <!--- search MD -->
+
+  
+  <script src="../../../../../zh-CN/assets/js/switchers/server-1.js" type="text/javascript"></script>
+  
+      
+
+</head>
+
+<!--
+      pub: GUID-F157DF68-7F60-4427-A561-AD2F0FA30861=22
+      tpc: GUID-9A7C2979-855F-49B9-9C81-04C657FE841A=7
+      -->
+
+
+<!-- variable declaration, if any -->
+<!-- can change following macro to set variable once we are on Jinja 2.8 -->
+
+
+
+
+
+<body class="claro zh-CN server">
+  
+
+  <!-- Drawer location -->
+  <div class="drawer drawer-left js-drawer" data-drawer="top-nav">
+        <nav class="drawer-nav" role="navigation">
+          <aside class="side-nav">
+            <h2 class="side-nav-title">Arc<span>GIS</span> Enterprise</h2>
+            <form id="helpSearchForm" class="margin-left-half margin-right-half leader-half trailer-half drawer-search-form" method="GET">
+              <input type="search" name="q"  placeholder="搜索 ArcGIS Server 10.8 帮助">
+              <input type="hidden" name="collection" value="help" />
+              <input type="hidden" name="product" value="arcgis-server-windows" />
+              <input type="hidden" name="version" value="10.8" />
+              <input type="hidden" name="language" value="zh-CN" />
+            </form>    
+             <a id="nav-portal" data-langlabel="portal" href="../../../../../zh-CN/portal/" class="side-nav-link">Portal</a>
+             
+            <a id="all-servers" data-langlabel="all-servers" href="../../../../../zh-CN/server/" class="side-nav-link">所有服务器</a>
+            <a id="gis-server" data-langlabel="gis-server" href="../../../../../zh-CN/server/" class="side-nav-link">GIS Server</a>
+            <a id="image-server" data-langlabel="image-server" href="../../../../../zh-CN/image/" class="side-nav-link">Image Server</a>
+            <a id="geo-analytics-server" data-langlabel="geo-analytics-server" href="../../../../../zh-CN/geoanalytics/" class="side-nav-link">GeoAnalytics Server</a>
+            <a id="geoevent-server" data-langlabel="geoevent-server" href="../../../../../zh-CN/geoevent/" class="side-nav-link">GeoEvent Server</a>
+            <a id="notebook-server" data-langlabel="notebook-server" href="../../../../../zh-CN/notebook/" class="side-nav-link">Notebook Server</a>
+            <a id="nav-data-store" data-langlabel="data-store" href="../../../../../zh-CN/data-store/" class="side-nav-link">Data Stores</a>
+            <a id="nav-cloud" data-langlabel="cloud" href="../../../../../zh-CN/cloud/" class="side-nav-link">云</a>
+            <a id="nav-apps" data-langlabel="apps" href="../../../../../zh-CN/apps/" class="side-nav-link">应用程序</a>
+            <a id="nav-doc" data-langlabel="documentation" href="../../../../../zh-CN/documentation/" class="side-nav-link">文档</a>
+
+          </aside>
+        </nav>
+    </div>
+
+    <!-- user navigation collapses to drawer on mobile -->
+    
+    <div class="drawer drawer-right js-drawer hide-if-logged-out logged-in-navigation" data-drawer="user-nav">
+      <nav class="drawer-nav">
+        <aside class="side-nav">
+          <a class="side-nav-link agolProfile" href="#">我的个人资料</a>
+          <a class="side-nav-link icon-ui-sign-out js-log-out" href="#">登出</a>
+        </aside>
+      </nav>
+    </div>
+    
+<!-- End of drawer -->
+
+  
+  <div class="wrapper">
+      <!--googleoff: all-->
+
+      <header class="top-nav" data-skin="learn">
+        <a class="skip-to-content" href="#skip-to-content">Skip To Content</a>
+        <div class="grid-container">
+          <div class="column-24">
+
+
+            <!--<div class="top-nav-title-wrapper text-center ">-->
+              <a href='../../../../../zh-CN/' class="top-nav-title tablet-hide"><span>Arc</span>GIS  Enterprise</a>
+              <a href='../../../../../zh-CN/' class="icon-ui-menu top-nav-title js-drawer-toggle tablet-show" data-drawer="top-nav"><span>Arc</span>GIS Enterprise</a>
+            <!--</div> -->
+
+          
+            <nav role="navigation" class="top-nav-list left tablet-hide">
+              <a id="nav-portal" data-langlabel="portal" href="../../../../../zh-CN/portal/" class="top-nav-link">Portal</a>
+
+                <div class="dropdown js-dropdown ">
+                  <a class="top-nav-link js-dropdown-toggle" tabindex="0" aria-haspopup="true" aria-expanded="false" href="#">Servers</a>
+                  <nav class="dropdown-menu featured" role="menu">
+                    <ul class="dropdown-sublist-featured">
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/get-started/latest/windows/additional-server-deployment.htm" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path  d="M42.92 6.1H4.12v8.566l.833.832-.835.833-.018 7.332.845.847-.825.824V33.9h25v5.2h-2v1.075H8.02v.8h19.1v.925h4.8v-.925H40v-.8h-8.08V39.1h-2v-5.2h13v-8.566l-.834-.834.835-.834v-7.332l-.835-.834.835-.834zm-11.8 35h-3.2v-1.2h3.2zm11-8H4.92v-7.434l.767-.766h35.668l.765.766zm0-9.766l-.766.766H5.666l-.766-.767.017-6.669.766-.764h35.671l.766.766zm0-9l-.766.766H5.687l-.766-.766V6.9h37.2zM19 11.9h-2v-.8h2zm-4 0h-2v-.8h2zm-4 0H9v-.8h2zm6 8.2h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9zm8 9h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9z"/></svg></span>
+                          <span class="sublink-text">所有服务器</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/server/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M45.98 33.575a.616.616 0 0 0-.335-.51l-3.362-2.03 3.362-2.031a.556.556 0 0 0 0-1.02l-11.1-6.704a1.293 1.293 0 0 0-1.112 0L22.33 27.982a.556.556 0 0 0 0 1.02l3.36 2.03-3.358 2.03a.556.556 0 0 0-.002 1.021l3.322 2.006-3.324 2.008a.555.555 0 0 0 .002 1.017l11.102 6.703a1.25 1.25 0 0 0 1.11.002l11.104-6.706a.556.556 0 0 0 0-1.02l-3.32-2.006 3.318-2.004a.607.607 0 0 0 .335-.509zM33.837 21.97c.026-.01.286-.005.29-.005l10.814 6.53-10.8 6.523c-.028.01-.284.005-.294.006l-10.813-6.53zm11.105 16.636l-10.8 6.523a2.564 2.564 0 0 1-.295.006l-10.81-6.529 3.39-2.047 7.004 4.23a1.083 1.083 0 0 0 .557.131 1.101 1.101 0 0 0 .554-.13l7.01-4.233zM34.14 40.098a2.545 2.545 0 0 1-.294.006l-10.812-6.53 3.43-2.073 6.97 4.208a1.25 1.25 0 0 0 1.107-.001l6.966-4.206 3.431 2.073zM9 8H7V7h2zm8 8h-2v-1h2zm-4-8h-2V7h2zm4 0h-2V7h2zm-4 8h-2v-1h2zm7.316 11.1H3.9v-6.434l.766-.766h35.668l.766.766v2.12l.8.483v-2.935l-.826-.826.826-.845v-6.329l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9h16.88a2.632 2.632 0 0 1 .336-.8zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zm0 8v-5.668l.766-.766h35.668l.766.766v5.67l-.746.764H4.666zM15 24v-1h2v1zm-4 0v-1h2v1zm-2-8H7v-1h2zm-2 8v-1h2v1z"/></svg></span>
+                          <span class="sublink-text">GIS Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/image/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 8h-2V7h2zm-4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm8 8h-2v1h2zm-8 0H7v1h2zm4 9v-1h-2v1zm-4 0v-1H7v1zm8 0v-1h-2v1zm4 3.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V21h-.8v-.334l-.766-.766H4.666l-.766.766V27.1H21zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zm40.234 4v21.8H23.1V23.1zm-.8 16.366L39.466 44.1h2.868l1.766-1.766zm-20.2-9.932l5.634-5.634h-2.868L23.9 26.666zm6.2-5.068L24.466 30.1h2.868l2.766-2.766zM28.466 30.1H30.1v-1.634zm2.434 0h6.2v-6.2h-6.2zm-7 7h6.2v-6.2h-6.2zm7 0h6.2v-6.2h-6.2zm0 6.434l5.634-5.634h-2.868L30.9 40.666zm7-7l5.634-5.634h-2.868L37.9 33.666zm1.634-5.634H37.9v1.634zm-8.634 7v1.634l1.634-1.634zm.566 6.2h2.868l2.766-2.766v-2.868zm6.434-3.566l2.634-2.634H37.9zM35.466 44.1H37.1v-1.634zm2.434 0h.434l5.766-5.766V37.9h-2.434L37.9 41.666zm6.2-8.634L42.466 37.1H44.1zm0-4L38.466 37.1h2.868l2.766-2.766zm0-7.566h-6.2v6.2h6.2zm-20.2 0v1.634l1.634-1.634zm0 20.2h6.2v-6.2h-6.2zm20.2 0v-.634l-.634.634z"/></svg></span>
+                          <span class="sublink-text">Image Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/geoanalytics/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 16h-2v-1h2zm-8 8v-1H7v1zm8 0v-1h-2v1zM13 7h-2v1h2zm4 0h-2v1h2zM9 7H7v1h2zm21.45 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V27.9h-1.464l-.801-.8H41.1v-6.434l-.766-.766H4.666l-.766.766V27.1h27.15zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM13 24v-1h-2v1zm0-9h-2v1h2zm-4 0H7v1h2zm26.672 27.148A1.87 1.87 0 0 1 35.9 43a1.91 1.91 0 1 1-3.763-.222l-9.845-3.414A1.88 1.88 0 0 1 21 39.9a1.9 1.9 0 1 1 1.474-3.084l4.692-2.346A1.878 1.878 0 0 1 27.1 34a1.902 1.902 0 0 1 1.9-1.9 1.867 1.867 0 0 1 .781.191l3.788-5.05A1.88 1.88 0 0 1 33.1 26a1.9 1.9 0 1 1 3.491 1.026l4.889 4.888c-.069.056-.144.1-.21.162a3.986 3.986 0 0 0-.358.402l-4.883-4.883A1.889 1.889 0 0 1 35 27.9a1.867 1.867 0 0 1-.781-.191l-3.788 5.049a1.868 1.868 0 0 1 .437.965l9.204.614c-.018.11-.049.218-.058.33A3.93 3.93 0 0 0 40 35c0 .046.01.09.01.135l-9.185-.612A1.913 1.913 0 0 1 29 35.9a1.889 1.889 0 0 1-1.474-.716l-4.692 2.346a1.878 1.878 0 0 1 .066.47 1.9 1.9 0 0 1-.105.625c-.007.02-.022.036-.03.056l9.63 3.34a1.87 1.87 0 0 1 2.786-.505l5.415-4.437c.067.108.127.22.204.322a3.9 3.9 0 0 0 .292.306zM33.9 26a1.092 1.092 0 0 0 .43.872 1.12 1.12 0 0 0 1.42-.068A1.1 1.1 0 1 0 33.9 26zm-6 8a1.1 1.1 0 0 0 2.196.093 1.135 1.135 0 0 0-.426-.965A1.087 1.087 0 0 0 29 32.9a1.101 1.101 0 0 0-1.1 1.1zm-5.8 4a1.098 1.098 0 1 0-.06.362A1.101 1.101 0 0 0 22.1 38zm13 5a1.1 1.1 0 1 0-2.2 0 1.1 1.1 0 0 0 2.2 0zm10.8-8a1.9 1.9 0 1 1-3.8 0c0-.053.003-.105.007-.158A1.9 1.9 0 0 1 45.9 35zm-.8 0a1.1 1.1 0 0 0-2.196-.093 1.153 1.153 0 0 0 .216.752A1.1 1.1 0 0 0 45.1 35z"/></svg></span>
+                          <span class="sublink-text">GeoAnalytics Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/geoevent/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M13 8h-2V7h2zm4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm12.418 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826v2.117c-.259-.177-.53-.337-.8-.497v-1.288l-.766-.766H4.666l-.766.766V27.1h17.933c-.148.26-.283.53-.415.8zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM9 24v-1H7v1zm4-9h-2v1h2zm0 9v-1h-2v1zm-4-9H7v1h2zm8 9v-1h-2v1zm16.9 2h-.8v8.9H39v-.8h-5.1zm.1-3.901a11.9 11.9 0 1 0 11.9 11.9 11.914 11.914 0 0 0-11.9-11.9zm0 23a11.1 11.1 0 1 1 11.1-11.1 11.112 11.112 0 0 1-11.1 11.1z"/></svg></span>
+                          <span class="sublink-text">GeoEvent Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/notebook/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M22 27.1H3.9v-6.434l.766-.766h18.576a5.262 5.262 0 0 1 .83-.8H4.666l-.766-.766v-5.668l.766-.766h35.668l.766.766V18h.8v-5.666l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9H22zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zM9 8H7V7h2zm8 0h-2V7h2zm-4 0h-2V7h2zm2 16v-1h2v1zm-4 0v-1h2v1zm-4 0v-1h2v1zm0-8v-1h2v1zm8 0v-1h2v1zm-4 0v-1h2v1zm18.9 8.1h-1.8v1.8h1.8zm-.8 1h-.2v-.2h.2zm15.498-4.48a2.727 2.727 0 0 0-1.62-.5v-.02H27.25a3.154 3.154 0 0 0-3.15 3.15V38.1h-1.68a3.386 3.386 0 0 0-2.872 1.58 3.49 3.49 0 0 0-.157 3.419 3.241 3.241 0 0 0 2.954 1.801h15.161a3.404 3.404 0 0 0 3.394-3.4V26.9h5v-3.65a3.224 3.224 0 0 0-1.302-2.63zM22.345 44.1a2.44 2.44 0 0 1-2.23-1.341 2.706 2.706 0 0 1 .11-2.65A2.588 2.588 0 0 1 22.42 38.9h12.89a3.395 3.395 0 0 0 0 5.2zM40.1 23.192V41.5a2.6 2.6 0 1 1-2.6-2.6v-.8H24.9V23.25a2.352 2.352 0 0 1 2.35-2.35h13.795a3.183 3.183 0 0 0-.945 2.292zm5 2.908h-4.2v-2.908a2.274 2.274 0 0 1 1.44-2.18 1.944 1.944 0 0 1 1.791.259 2.423 2.423 0 0 1 .97 1.979zm-17.1 5h9v.8h-9zm0 3h7v.8h-7zm0-6h9v.8h-9zm4-3h5v.8h-5z"/></svg></span>
+                          <span class="sublink-text">Notebook Server</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+
+              <a id="nav-data-store" data-langlabel="data-store" href="../../../../../zh-CN/data-store/" class="top-nav-link">Data Stores</a>
+              <a id="nav-cloud" data-langlabel="cloud" href="../../../../../zh-CN/cloud/" class="top-nav-link">云</a>
+              <a id="nav-apps" data-langlabel="apps" href="../../../../../zh-CN/apps/" class="top-nav-link">应用程序</a>
+            </nav>
+
+
+            
+            
+            
+
+            <div class="margin-left-1 top-nav-list right hide-if-logged-in logged-out-navigation">
+               
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+              
+              <a data-langlabel="sign-in" id="login-link" class="icon-ui-user top-nav-link link-blue login-link" href="#">登录</a>
+              
+            </div>
+
+            
+            <nav class="margin-left-1 top-nav-list right hide-if-logged-out logged-in-navigation">
+              
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+             
+              <div class="dropdown js-dropdown right">
+
+                <div class="tablet-show top-nav-link">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a href="#" data-drawer="user-nav" class="user-nav-name js-drawer-toggle" data-first-name></a>
+                </div>
+
+                <div class="tablet-hide top-nav-link js-dropdown-toggle">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a class="user-nav-name top-nav-dropdown dropdown-btn" data-first-name>&nbsp;</a>
+                </div>
+
+                <nav class="dropdown-menu dropdown-right">
+                
+                  <a class="dropdown-link agolProfile" id="agolProfile" href="#">我的个人资料</a>
+                  <a class="dropdown-link js-log-out" id="agolLogout" href="#">登出</a>
+                </nav>
+              </div>
+            </nav>
+            
+
+            
+          </div>
+        </div>
+      </header>
+
+      <div class="js-search search-overlay">
+        <div class="search-content" role="dialog" aria-labelledby="search">
+          <form method="GET" id="helpSearchForm">
+            <label>
+              搜索 ArcGIS Server 10.8 帮助
+              <div class="search-bar">
+                <input type="search" name="q"  placeholder="搜索 ArcGIS Server 10.8 帮助" class="search-input js-search-input">
+                <input type="hidden" name="collection" value="help" />
+                <input type="hidden" name="product" value="arcgis-server-windows" />
+                <input type="hidden" name="version" value="10.8" />
+                <input type="hidden" name="language" value="zh-CN" />
+              </div>
+            </label>
+            <input type="hidden" name="relativePath" value="../../../../../" /><button type="submit" class="btn btn-large right">搜索</button>
+          </form>
+        </div>
+      </div>
+
+      <!--googleon: all-->
+
+      <div id="skip-to-content">
+        <!--googleoff: all-->
+        <header class="sub-nav sub-nav-learn">
+          <div class="grid-container">
+            
+            <div class="column-24">
+              <div style="display:table;" class="sdk-home-banner">
+                <div class="sdk-home-banner-content">
+                  <h1 class="sub-nav-title link-white">ArcGIS Server</h1>
+                </div>
+              </div>
+            </div>
+
+            <div class="column-24">
+              <nav class='sub-nav-list tablet-hide'><a class="sub-nav-link" href="../../../../../zh-CN/server/" target="_top" title="ArcGIS Server 的概述和文档">主页</a><a class="sub-nav-link" href="../../../../../zh-CN/server/latest/get-started/windows/" target="_top" title="了解有关 ArcGIS Server 和服务器角色的信息">简介</a><a class="sub-nav-link" href="../../../../../zh-CN/server/latest/deploy/windows/" target="_top" title="构建、配置和升级部署">部署</a><a class="sub-nav-link" href="../../../../../zh-CN/server/latest/manage-data/windows/" target="_top" title="管理企业的空间数据">管理数据</a><a class="sub-nav-link is-active" href="../../../../../zh-CN/server/latest/publish-services/windows/" target="_top" title="使用 GIS 服务">管理服务</a><a class="sub-nav-link" href="../../../../../zh-CN/server/latest/create-web-apps/windows/" target="_top" title="创建 Web 应用程序和可打印地图">共享</a><a class="sub-nav-link" href="../../../../../zh-CN/server/latest/administer/windows/" target="_top" title="管理和保护 ArcGIS Server">管理</a><a class="sub-nav-link" href="../../../../../zh-CN/server/latest/develop/windows/" target="_top" title="构建扩展模块并自动执行常见任务">开发</a></nav><select class='tablet-show select-full trailer-half js-select-nav'><option value="../../../../../zh-CN/server/">主页</option><option value="../../../../../zh-CN/server/latest/get-started/windows/">简介</option><option value="../../../../../zh-CN/server/latest/deploy/windows/">部署</option><option value="../../../../../zh-CN/server/latest/manage-data/windows/">管理数据</option><option selected="true" value="../../../../../zh-CN/server/latest/publish-services/windows/">管理服务</option><option value="../../../../../zh-CN/server/latest/create-web-apps/windows/">共享</option><option value="../../../../../zh-CN/server/latest/administer/windows/">管理</option><option value="../../../../../zh-CN/server/latest/develop/windows/">开发</option></select>
+            </div>
+
+          </div>
+        </header>
+        <!--googleon: all-->
+       
+        <!-- content goes here -->
+        <div class="grid-container ">
+          
+
+            
+              
+  <!--BREADCRUMB-BEG--><div id="bigmac" class="sticky-breadcrumbs trailer-2" data-spy="affix" data-offset-top="180"> </div><!--BREADCRUMB-END-->
+  <!--googleoff: all-->
+    <div class="column-5 tablet-column-12 trailer-2 ">
+      <aside class="js-accordion accordion reference-index" aria-live="polite" role="tablist">
+        <div></div>
+      </aside>
+
+      <div class="js-sticky scroll-show tablet-hide leader-1 back-to-top" data-top="0" style="top: 0px;">
+        <a href="#" class="btn btn-fill btn-clear">返回顶部</a>
+      </div>
+    </div>
+  <!--googleon: all-->
+  
+            
+            
+            
+	
+		<div class="column-13  pre-1 content-section">
+	
+		<header class="trailer-1"><h1>教程：发布 KML 服务</h1></header>
+
+		 
+	<!--googleoff: all-->
+	
+		
+				<aside id="main-toc-small" class="js-accordion accordion tablet-show trailer-1">
+			      <div class="accordion-section">
+			        <h4 class="accordion-title">在本主题中</h4>
+			        <div class="accordion-content list-plain">
+			          <ol class="list-plain pre-0 trailer-0"><li><a href="#ESRI_SECTION1_1B569C4708384A2CBF56C02A64F0C0FE">开始学习本教程前</a></li><li><a href="#ESRI_SECTION1_EFBACBD1E2454FED95340DE2B19FC28B">在 ArcGlobe 和 ArcMap 中准备数据</a></li><li><a href="#ESRI_SECTION1_1BC9EB3775254E1CBAF38EA743C19904">发布 KML 服务</a></li><li><a href="#ESRI_SECTION1_C2D7FF721EEE4EDDBAD67B27382C3985">浏览显示在“ArcGIS Server 服务目录”中的 REST KML 操作</a></li><li><a href="#ESRI_SECTION1_13A49F7335BA4178AB89FA7D0EBFD207">通过地图服务创建网络链接</a></li></ol>
+			        </div>
+			      </div>
+			     </aside>
+		
+    
+   <!--googleon: all-->
+
+
+		<main>
+			
+	
+    	
+    
+
+
+			<div class="wfheader"><span class="wfmetahead">复杂程度： </span><span class="wfmetacontent">中级</span><span class="wfmetahead">数据要求： </span><span class="wfmetacontent">使用自备的数据</span><span purpose="wfdatapath"></span><span class="wfmetahead">目标： </span><span class="wfmetacontent">创建地图并将其作为 KML 服务发布到 ArcGIS Server。</span></div><p id="GUID-A60D5ADB-3F3E-4712-BDE4-179154EE98A2">通过发布启用了 KML 功能的 ArcGIS Server 地图服务，您可以在 Web 上动态提供 KML。这样，客户就可以连接到地图服务并请求某特定地理区域的 KML 数据。该 KML 可以通过 REST 的“生成地图”、“生成 KML”和“查询”操作来显示；或者通过 ArcGIS 服务目录中<span class="uicontrol">在 ArcGIS Earth 中查看</span>链接来显示；也可以通过将正确配置的 URL 嵌入到服务的 KML 网络链接文档来显示。</p><p id="GUID-733C68FB-7FDE-48AA-815D-E86534BA5F50">本教程可引导您完成使用 3D 拉伸要素创建 KML 服务的过程。首先，您将在 ArcGlobe 中创建一个含有 3D 拉伸属性的图层文件。然后，将该图层添加到 <span class="ph">ArcMap</span> 中，设置图层的符号系统，并在您的 KML 中配置与要素关联的描述性文本。接下来，要将该地图发布为一个启用了 KML 功能的服务。最后，在您的服务器上创建一个 KML 网络链接，以便其他用户可轻松访问该 KML。</p><section class="section1 padded-anchor" id="ESRI_SECTION1_1B569C4708384A2CBF56C02A64F0C0FE" purpose="section1"><h2>开始学习本教程前</h2><p id="GUID-F35C8362-19EC-48A9-A51B-F821E969A68A">如果您刚刚安装 ArcGIS Server，则在连接到服务器和发布服务之前，需要完成一些准备工作：</p><ul purpose="ul" id="UL_7FB343F919EF44D182C6099DC52A93C8"><li purpose="li" id="LI_EABAD74B161B402F9DF4743EA62F61AF">有关如何配置 ArcGIS Server 站点的详细信息，请参阅本帮助系统中的<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/server/latest/deploy" href="../../../../../zh-CN/server/latest/deploy/windows/configuring-a-one-machine-deployment.htm">安装完毕后了解入门知识</a>部分。</li><li purpose="li" id="LI_CEDD11C2EC484300A7F9457917A69AFE">要了解如何使 GIS 资源所引用的数据对于服务器可用，请参阅<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/server/latest/administer" href="../../../../../zh-CN/server/latest/administer/windows/making-your-data-accessible-to-arcgis-server.htm">使数据可供 ArcGIS Server 访问</a>。</li></ul></section><section class="section1 padded-anchor" id="ESRI_SECTION1_EFBACBD1E2454FED95340DE2B19FC28B" purpose="section1"><h2>在 ArcGlobe 和 ArcMap 中准备数据</h2><p id="GUID-555C74E4-D48D-4C3A-8985-D2730646E3A5">要发布包含 3D 属性（例如 z 偏移或基于属性的拉伸）的要素类，首先，必须编辑 ArcGlobe 中的要素类图层属性，并将其保存为图层文件；然后，将该图层文件添加到 <span class="ph">ArcMap</span> 文档中。以下步骤显示了如何应用 ArcGlobe 中的拉伸以及如何保存相应的图层文件并在 ArcMap 中使用。</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="GUID-D77B3D84-811E-4B62-BE6B-E7D5E70CC1A5"><ol class="list-numbered" purpose="ol"><li purpose="step" id="GUID-A5065593-F859-4868-B406-C95EF7CEA857"><span purpose="cmd" id="GUID-F456CA72-F993-4E5F-BD79-3F9D8A533BE1">启动 ArcGlobe 并添加一个要素类。</span></li><li purpose="step" id="GUID-3FCC786D-3DBB-4B5F-AC32-9A228B74DA34"><span purpose="cmd" id="GUID-72BE64FE-79EB-4ED6-8180-8C16A7EE3300">在<span class="uicontrol">内容列表</span>中，右键单击相应的图层，然后单击<span class="uicontrol">属性</span>。</span></li><li purpose="step" id="GUID-3B651C93-D923-47D1-9B6F-CBBB17377B54"><span purpose="cmd" id="GUID-B519FEF6-F1E6-40D4-A9A0-3D30D005A3AC">单击 <span class="uicontrol">Globe 拉伸</span>选项卡。</span></li><li purpose="step" id="GUID-A4DA3C54-0DE0-438A-8EFD-601CF40D4493"><span purpose="cmd" id="GUID-97D35946-53B6-4E75-8B73-E39703AABE2C">选中<span class="uicontrol">拉伸图层中的要素</span>和<span class="uicontrol">不绘制拉伸面的底面</span>。也可选择通过<span class="uicontrol">将其添加到各要素的基本高度</span>的方式应用拉伸。</span></li><li purpose="step" id="ESRI_STEP_EA964BCAE2DB4CDFA3D50EE4FD44666A"><span purpose="cmd" id="GUID-AEC4CD98-229A-4B0F-B8D0-87D19B034B1F">在 ArcGlobe 中单击 <span class="uicontrol">Globe 拉伸</span>选项卡。</span></li><li purpose="step" id="GUID-0CF2DF75-AE24-4EE7-A3C6-075AC27C2DF8"><span purpose="cmd" id="GUID-C1E8416F-6BC4-4BA7-93FF-4561657CFB3B">设置<span class="uicontrol">拉伸值或表达式</span>。这可确定要素从地图中凸出的距离。如果需要通过其他方式帮助构建表达式，则可打开<span class="wintitle">表达式构建器</span> <img purpose="img" placement="inline" alt="计算器" title="计算器" src="GUID-A507DDAA-B3BE-4F1E-8C9B-4097F65E66B7-web.png">。在本例中，面要素的拉伸方式是将 POP10_SQMI 属性值乘以 250 (POP10_SQMI *250)，再将该值添加到该要素的基本高度。这仅是为外观选择的一个任意值。您可能需要尝试多种表达式，而后才能得到所需要的外观。</span><div class="info" purpose="info"><p id="GUID-0495681E-2FC4-4439-A0D8-0544EB8BF3B5"><img purpose="img" placement="inline" alt="ArcGlobe 中拉伸的要素" title="ArcGlobe 中拉伸的要素" src="GUID-B898EDE6-2DA9-4AEC-8D2E-B08A2D72D701-web.png"></p></div></li><li purpose="step" id="GUID-D3393197-9C48-4EAE-BC87-2AB28529A805"><span purpose="cmd" id="GUID-4D7BD672-519A-4198-8060-F62B0F799F03">设置该图层的拉伸属性并且当它看起来是一个三维图层之后，右键单击该图层并选择<span class="uicontrol">另存为图层文件</span>。</span></li><li purpose="step" id="GUID-9A2FCD0B-E597-4B5B-90C1-FB994E8A7C54"><span purpose="cmd" id="GUID-32863D59-21E3-4E1F-B254-4A5353F281BA">由于已确定了数据的 3D 属性，因此接下来就可以设置其 2D 图层属性。打开 <span class="ph">ArcMap</span> 并单击<span class="uicontrol">添加数据</span>。</span></li><li purpose="step" id="GUID-C3342CC2-7274-4D24-96D9-F4C4349F8AC1"><span purpose="cmd" id="GUID-94B83AC3-8C99-484F-830A-D011A0037AD0">浏览至刚从 ArcGlobe 中保存的图层文件 (<span class="usertext">.lyr</span>)，并单击<span class="uicontrol">添加</span>。该图层在 ArcMap 中不会以 3D 模式显示，但当您在 <span class="ph">ArcGIS Earth</span> 中查看地图时，该图层则会以 3D 模式进行显示。</span></li><li purpose="step" id="GUID-CA1D49AC-67EB-43C8-A017-B3FA4B276E79"><span purpose="cmd" id="GUID-9E75BF1D-C08D-49C0-8B75-5CF7C5607E9B">右键单击该图层并从快捷菜单中选择<span class="uicontrol">属性</span>来设置图层的属性信息。</span></li><li purpose="step" id="GUID-8A785128-6D78-4DB8-A4E0-5586A12A91BF"><span purpose="cmd" id="GUID-68709FDD-AB53-4422-AD4E-D71B2FE9BE47">单击<span class="uicontrol">常规</span>选项卡，设置图层的<span class="uicontrol">比例范围</span>，然后输入描述信息。该描述将用于在 KML 客户端处显示的 KML 图层描述，而且，其中也可以包含任意有效的 HTML 要素。</span></li><li purpose="step" id="GUID-53441B82-D042-4944-89ED-3BFCAF88A8CB"><span purpose="cmd" id="GUID-54A4B9ED-91C8-4DAB-887A-03A010A5A8BF">或者单击<span class="uicontrol">显示</span>选项卡，然后更改图层的透明度。较高的透明度有助于用户查看底图下面的其他内容。</span></li><li purpose="step" id="GUID-FE0CACAE-B88F-4827-8549-7D474E8E6401"><span purpose="cmd" id="GUID-89496264-C04C-4625-BB2C-ED1994A0EB68">或者单击<span class="uicontrol">符号系统</span>选项卡并更改渲染属性。细微的渐变填充有助于您区分相邻的 3D 要素。</span></li><li purpose="step" id="GUID-7B5C9FFA-8B7C-4C3E-93C8-B7FF90A4C913"><span purpose="cmd" id="GUID-444DEAF9-F287-4C41-BF8F-5EAAAC887B73">单击<span class="uicontrol">字段</span>选项卡，并设置通过地图服务要访问的字段。您也可更改要素类中的任何字段使其使用 <span class="uicontrol">KMLSnippet</span> 别名。在 KML 客户端的内容列表中，您改为使用 KMLSnippet 别名的字段值将显示在各要素图标的下方。</span></li><li purpose="step" id="ESRI_STEP_754959357E264EBFA3CF17DD3DBAF2E7"><span purpose="cmd" id="GUID-8B0E92ED-FA47-4A5A-BFB2-B655AC47818C">另外，也可设置您要应用于数据中的任意定义查询或连接和关联。分别使用<span class="uicontrol">定义查询</span>及<span class="uicontrol">连接和关联</span>选项卡进行此操作。</span></li><li purpose="step" id="ESRI_STEP_A33B8B079CA54FA6BE4A40B55228BCF8"><span purpose="cmd" id="GUID-B1EA24A6-3768-46D4-AC83-DCEAF48E750D">另外，也可单击<span class="uicontrol">标注</span>选项卡，指定您要应用的标注。KML 将使用点要素的颜色、大小和标注表达式。KML 不支持线或面的标注。</span></li><li purpose="step" id="ESRI_STEP_5ECF9B713221451F94ABE43F55F7919B"><span purpose="cmd" id="GUID-509FCDAC-1392-496C-B44A-8171ACD1FD82">单击 <span class="uicontrol">HTML 弹出窗口</span>选项卡，并选中<span class="uicontrol">使用 HTML 弹出窗口工具显示此图层的内容</span>。然后选择一个格式选项。这确定了各要素的 KML 描述，即当您单击某要素时在信息气球中出现的内容。您可使用 HTML、JavaScript 和样式表使该描述看起来更有吸引力，或者，如果您仅仅要做一个尝试，则可选择默认的选项来将 HTML 格式<span class="uicontrol">作为可视字段的表格</span>显示。</span></li><li purpose="step" id="ESRI_STEP_5CC8BF25D361489B86B8FDE79D7CD778"><span purpose="cmd" id="GUID-FD813C6B-8D0B-412B-8102-08B65ACFDBB2">单击<span class="uicontrol">确定</span>，退出图层的属性设置，然后单击<span class="uicontrol">文件 <span class="greaterthan">&gt;</span> 保存</span>，保存您的地图文档。</span></li></ol></div></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_1BC9EB3775254E1CBAF38EA743C19904" purpose="section1"><h2>发布 KML 服务</h2><p id="GUID-CF550044-6F87-45E7-89EA-9BFEA61155A3">既然已完成地图文档，所以需要将其发布为地图服务。只要启用了地图服务的 KML 功能，它就可生成 KML。默认情况下，KML 功能为启用状态。</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="GUID-9E324A7A-A948-4D17-A95D-E60189381575"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_150595994DA24E85A3187A236B793D8A"><span purpose="cmd" id="GUID-91BCAA79-A1AF-4034-B249-9A181BC95528">在 ArcMap 中，从主菜单中选择<span class="uicontrol">文件 <span class="greaterthan">&gt;</span> 共享为 <span class="greaterthan">&gt;</span> 服务</span>。</span></li><li purpose="step" id="ESRI_STEP_C7BAE32A83644B549F0000303E39A4EA"><span purpose="cmd" id="GUID-424BC7C4-29E0-467E-9DAF-9CD7DF74DD91">在<span class="wintitle">共享为服务</span>窗口中，选择<span class="uicontrol">发布服务</span>。单击<span class="uicontrol">下一步</span>。</span></li><li purpose="step" id="ESRI_STEP_493110DF9A7542E5A20C9D6F0D89E114"><span purpose="cmd" id="GUID-D6B89E65-2F63-4442-980B-F3BBB6FAC085">在<span class="uicontrol">发布服务</span>对话框中，单击<span class="uicontrol">连接到 ArcGIS Server</span> <img purpose="img" placement="inline" alt="添加 ArcGIS Server" title="添加 ArcGIS Server" src="GUID-CC71CFE3-6666-4996-B19B-ACC815C2A082-web.png"> 以创建一个到 ArcGIS Server 的新连接。</span></li><li purpose="step" id="ESRI_STEP_2009C7E7EFD745F49051220785EF1E48"><span purpose="cmd" id="GUID-F00E485C-064B-454F-A602-0460570617F5">在<span class="wintitle">添加 ArcGIS Server</span> 窗口中，选择<span class="uicontrol">发布 GIS 服务</span>。单击<span class="uicontrol">下一步</span>。</span></li><li purpose="step" id="ESRI_STEP_23E9EB7BA25E486C9A616A9A68625A4D"><span purpose="cmd" id="GUID-FF33C899-8B8E-454D-AEDF-A64D77E13811">对于<span class="uicontrol">服务器 URL</span>，输入要连接的 ArcGIS Server 站点的 URL，例如 <span class="usertext">https://gisserver.domain.com:6443/arcgis</span>。</span></li><li purpose="step" id="ESRI_STEP_85843BC2CBCD468D97E7D306B5CD2358"><span purpose="cmd" id="GUID-8E0AFC59-4596-407B-8E08-954E6D5E3020">在<span class="uicontrol">服务器类型</span>下拉列表中选择 <span class="uicontrol">ArcGIS Server</span>。</span></li><li purpose="step" id="ESRI_STEP_A8E139935B9C43DA876CC570CA312C9A"><span purpose="cmd" id="GUID-B6FDD9E2-3204-4526-808F-A6E9FA7E55AC">在发布过程中，将创建服务定义文件并将其临时存储到本地磁盘上。发布过程完成后，服务定义将上传到服务器并删除本地文件。考虑到本教程的目的，接受默认的过渡文件夹并继续。</span></li><li purpose="step" id="ESRI_STEP_4FBA851C12B84FB6ADF4875FB484A742"><span purpose="cmd" id="GUID-FF57E711-EF97-4216-9297-B95D2156BA0B">如果服务器管理员已为 ArcGIS Server 启用安全功能，请输入<span class="uicontrol">用户名</span>和<span class="uicontrol">密码</span>。单击<span class="uicontrol">完成</span>。</span></li><li purpose="step" id="ESRI_STEP_0B69D252792743B3B8053233E101627C"><span purpose="cmd" id="GUID-9428E374-F876-44B3-B4DE-CF8B2627C6DC">还可以在<span class="wintitle">发布服务</span>窗口中，输入新的服务名称。名称长度不能超过 120 个字符，并且只能包含字母数字字符和下划线。单击<span class="uicontrol">下一步</span>。</span></li><li purpose="step" id="ESRI_STEP_45AB2CB43ADF412D8E3BA227BB8E2E9B"><span purpose="cmd" id="GUID-909FBC6F-C7AB-4A9D-BCD1-E2C963D22304">默认情况下，服务会发布到 ArcGIS Server 的根文件夹下。也可将服务组织到根文件夹下的子文件夹中。选择要将服务发布到其中的文件夹，或创建一个包含服务的新文件夹。单击<span class="uicontrol">继续</span>。</span></li><li purpose="step" id="ESRI_STEP_8A5B5B75B5354EFE88BCAC7A1D6AFCD0"><span purpose="cmd" id="GUID-B96F974C-C035-4B60-81A0-A8CF993E5CEB"><span class="wintitle">服务编辑器</span>随即显示。您将使用<span class="wintitle">服务编辑器</span> 选择用户可对 KML 服务执行的操作，还可对服务器显示 KML 服务的方式进行精细的控制。单击<span class="uicontrol">功能</span>选项卡。</span></li><li purpose="step" id="ESRI_STEP_A98D0E6509894F4EBD7FFE8FDA8074D2"><span purpose="cmd" id="GUID-710D62A2-5731-44D5-B8FE-7A8BE8FA7866">默认情况下，地图和 KML 两项功能自动启用。在<span class="wintitle">服务编辑器</span> 的左侧窗格中，单击 <span class="uicontrol">KML</span>，然后编辑以下属性：</span><ul purpose="choices" id="ESRI_CHOICES_37CB553A1A8A421FA5BCD8454E11D242"><li purpose="choice" id="ESRI_CHOICE_33666BB7A46F495FB946AC64D28F4AF3">选择允许对 KML 服务进行的操作。有关各操作的说明，请参阅 <a class="xref xref" href="../../../../../zh-CN/server/latest/publish-services/windows/kml-support-in-arcgis-server.htm#ESRI_SECTION1_E0793A1BF19D47028E094911F001F01A">ArcGIS Server 中的 KML 支持</a>。</li><li purpose="choice" id="ESRI_CHOICE_89962134B5EE49C2938C814380E9BFC7">选择由 KML 服务所返回 KML 的限制方式。如果该服务主要用于 Google Earth、Google 地图或 Google 移动，则 <span class="uicontrol">KML 兼容模式</span>选项允许您选择仅包含其中的功能子集。这样可以提高性能。</li><li purpose="choice" id="ESRI_CHOICE_ADCE1EAE92B54A17991FD7553AF06247">选择由 KML 服务所返回要素的限制方式、输出图像大小和输出客户端 DPI。</li><li purpose="choice" id="ESRI_CHOICE_E8EF343B58B541D7BD9AF99AEFBA829B">使用<span class="uicontrol">使用 NetworkLinkControl 标签</span>选项可限制客户端请求服务的时间间隔。</li></ul><div class="stepresult" purpose="stepresult"><div class="panel trailer-1" id="GUID-7C92FC6B-BFDD-4905-825B-72B50B9063EB"><h5 class="icon-ui-description trailer-0">提示：</h5><p id="GUID-1D6864AC-6049-4D22-AC27-D11E2A370BAC">  有关如何最好地配置 KML 服务以进行部署的信息，请参阅<a class="xref xref" href="../../../../../zh-CN/server/latest/publish-services/windows/tuning-and-configuring-services.htm">调整和配置服务</a>。</p></div></div></li><li purpose="step" id="ESRI_STEP_338D813E4E2B4D25B148FF9C8AC99035"><span purpose="cmd" id="GUID-FF26B4E4-8DB7-4ACF-BC44-278E86F3481A">单击<span class="uicontrol">分析</span> <img purpose="img" placement="inline" alt="分析" title="分析" src="GUID-98E22D54-9700-4516-9382-BC63CF8DD4E7-web.png">。该操作可用于对地图文档进行检查，看其是否能够发布到服务器。</span><div class="stepresult" purpose="stepresult"><div class="panel trailer-1" id="GUID-9558E8A0-77F6-4131-B9FE-C32304EC1B27"><h5 class="icon-ui-description trailer-0">提示：</h5><p id="GUID-D32ED863-C51F-4B3E-86C2-098CF0633D75">配置 KML 服务时为获得更多视图区域，请单击<span class="wintitle">服务编辑器</span>顶部的<span class="uicontrol">折叠</span> <img purpose="img" placement="inline" alt="折叠" title="折叠" src="GUID-C526712F-3A5F-4EB9-A0D7-C7F0790C8E39-web.png"> 按钮。</p></div></div></li><li purpose="step" id="ESRI_STEP_54B8E0C872D3418FACCC0775B7E1980E"><span purpose="cmd" id="GUID-C924A432-B8E1-4942-832F-4B0785669628">在<span class="wintitle">准备</span>窗口中修复任何<span class="uicontrol">错误</span> <img purpose="img" placement="inline" alt="错误" title="错误" src="GUID-8D5ED5A4-D38D-4453-AEB7-5E8E5E84C727-web.png">；必须在发布前完成此操作。另外，您还可以修复警告和通知消息，以进一步完善 KML 服务的性能和外观。有关解决这些问题的详细信息，请参阅<a class="xref xref" esrisubtype="extrel" hrefpfx="https://desktop.arcgis.com/zh-cn/arcmap/latest/map" href="https://desktop.arcgis.com/zh-cn/arcmap/latest/map/publish-map-services/analyzing-your-gis-resource.htm">分析 GIS 资源</a>。</span><div class="stepresult" purpose="stepresult"><div class="panel trailer-1 note" id="GUID-C2643891-4F03-4E40-850E-B5DE36DA4D3D"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-E9C093E1-DD02-4119-BF9C-97EF99F92FF8">可将文件夹和地理数据库注册到 ArcGIS Server 站点，从而确保服务器可识别并使用数据。如果继续以下步骤，那么地图文档中所引用的来自<i>取消注册</i> 的文件夹或地理数据库的任何数据都将在发布时复制到服务器。这是一种预防性措施，可确保服务器能够访问服务所使用的所有数据。有关将文件夹或地理数据库注册到 ArcGIS Server 站点的完整说明，请参阅<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/server/latest/manage-data" href="../../../../../zh-CN/server/latest/manage-data/windows/registering-your-data-with-arcgis-server-using-arcgis-for-desktop.htm">使用 <span class="ph">ArcGIS Desktop</span> 将数据注册到 ArcGIS Server</a>。</p></div></div></li><li purpose="step" id="ESRI_STEP_3C45707A80344E8180246803E07ABF57"><span purpose="cmd" id="GUID-2ACEE12A-FDBC-4368-BEBB-E4A3A4210A69">还可以在<span class="wintitle">服务编辑器</span>中，单击<span class="uicontrol">预览</span> <img purpose="img" placement="inline" alt="预览" title="预览" src="GUID-5478C01F-ABE5-43E5-9A85-F7CED31A67F8-web.png">。这样您便可以了解在 Web 上查看地图时地图的外观。有关详细信息，请参阅<a class="xref xref" esrisubtype="extrel" hrefpfx="https://desktop.arcgis.com/zh-cn/arcmap/latest/map" href="https://desktop.arcgis.com/zh-cn/arcmap/latest/map/publish-map-services/previewing-your-map.htm">预览地图</a>。</span></li><li purpose="step" id="ESRI_STEP_73A0C509D41548FDB98395863A0E2523"><span purpose="cmd" id="GUID-9CE13125-B3B2-4A7F-96D7-212DAE934061">修复了地图文档中的错误后，请单击<span class="uicontrol">发布</span> <img purpose="img" placement="inline" alt="发布" title="发布" src="GUID-6A9846D8-6F36-436A-85D4-B9D055A4760C-web.png">。</span></li><li purpose="step" id="GUID-880267A3-C223-4252-A977-DA65ECCD0AA2"><span purpose="cmd" id="GUID-917E9178-9842-477F-B149-6275EFB768FA">您的服务现已发布，您可以通过展开<span class="wintitle">目录</span> 窗口的 <span class="uicontrol">GIS 服务器</span>结点并将该服务拖动到 <span class="ph">ArcMap</span> <span class="uicontrol">内容列表</span>中进行预览。</span></li></ol></div></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_C2D7FF721EEE4EDDBAD67B27382C3985" purpose="section1"><h2>浏览显示在“ArcGIS Server 服务目录”中的 REST KML 操作</h2><p id="GUID-0BBC7004-89D0-4289-B608-057AD54CF45D">默认情况下，每个 ArcGIS Server 显示一个“服务目录”，它允许您使用 REST 来浏览服务并与服务进行交互。您可使用“服务目录”来练习与您 KML 服务进行交互。</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_1165CDC994CA480F89BE74E8BF4F4B69"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_31A2C4E22A974000B0E77ADB189D9CC4"><span purpose="cmd" id="GUID-C391CCFB-5797-468D-9D83-606ED8CEC294">打开 Web 浏览器并导航到服务目录，其 URL 通常为 <span class="usertext">https://gisserver.domain.com:6443/arcgis/rest/services</span>。</span></li><li purpose="step" id="ESRI_STEP_82F7896D0F884F519FA450F99151FF6A"><span purpose="cmd" id="GUID-118682F2-D4B4-4621-BD25-49277CE1F9B2">在服务列表中，单击 KML 服务的名称。如果看不到服务，则服务可能位于文件夹中。</span></li><li purpose="step" id="ESRI_STEP_B125B1D8B55E4CA995C96D8678971CD0"><span purpose="cmd" id="GUID-9B68A543-933B-499E-86BE-8B3AAC08B34C">单击<span class="uicontrol">在以下位置查看排放量：ArcGIS Earth</span> 链接，打开一个显示您的服务的地面叠加层的 KMZ 文档。或者，如果您的服务已进行缓存，则将看到启用 KML 区域的超级叠加层。请注意，该链接不返回矢量。</span></li><li purpose="step" id="ESRI_STEP_CB54CFF4F445471F821D89312FAC0E12"><span purpose="cmd" id="GUID-D373D2D3-19B9-4A0E-9360-F66FB647477B">返回到<span class="wintitle">服务目录</span>，单击服务中的任意图层。</span></li><li purpose="step" id="ESRI_STEP_1F2ABB51D6A2477D9D0E8641C7172467"><span purpose="cmd" id="GUID-13A2056F-D703-43A5-98F6-62086672B28B">在您的页面底部，单击<span class="uicontrol">查询</span>链接。这可打开一个表单，您可在其中指定多个参数来查询一个图层。最后一个选项是您想要的响应格式。选择 <span class="uicontrol">KML</span> 作为格式将显示一个包含查询结果的 KMZ 文档。</span></li><li purpose="step" id="ESRI_STEP_4A6DAE5593C14C56A3071F8EE9F157DA"><span purpose="cmd" id="GUID-7E7CE53F-F029-488D-AD50-E2DF151BC648">导航回到<span class="wintitle">服务目录</span>中的服务页面。</span></li><li purpose="step" id="ESRI_STEP_58E1277668064FD386B3D17BFDE704BF"><span purpose="cmd" id="GUID-2D15D01F-72C4-40AF-BE27-87E6DDD4DA2D">在页面底部，单击<span class="uicontrol">生成 KML</span>。该链接会显示一个 Web 表单，您可在其中选择在 KML 中返回的图层。您也可通过选择选项<span class="uicontrol">矢量图层作为矢量数据，栅格图层作为图像</span>，从您的服务中动态选择返回矢量。</span></li></ol></div></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_13A49F7335BA4178AB89FA7D0EBFD207" purpose="section1"><h2>通过地图服务创建网络链接</h2><p id="GUID-4E898AB8-92F9-470B-9198-F92B2C0548D7">通过在 <span class="ph">ArcGIS Server Manager</span> 中创建 KML 网络链接，您可以以一种易用的格式在您的服务器上使用 KML。然后，您就能在 <span class="ph">ArcGIS Earth</span>、ArcGlobe、Google Earth 或 Google Maps 中添加网络链接。</p><div class="panel trailer-1 note" id="GUID-543804B7-4B6F-4123-8A46-17321FF175C0"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-527112DF-B92B-4714-B383-642C8E735C13">在 Google Earth 或 Google Maps 中添加网络链接之前，请确保您的服务未受保护。如果该服务需要使用 ArcGIS 令牌进行身份验证，则这些平台无法使用它。</p></div><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="GUID-6D8CFD53-0991-4967-A49F-A9BD2CD296C6"><ol class="list-numbered" purpose="ol"><li purpose="step" id="GUID-098883BF-22F8-4B39-907A-750A62DCE041"><span purpose="cmd" id="GUID-1870AB56-A817-4E61-8BAF-29EFEE9C451B">打开 Manager 并登录。有关此步骤的更多帮助，请参阅<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/server/latest/administer" href="../../../../../zh-CN/server/latest/administer/windows/log-in-to-manager.htm">登录管理器</a>。</span></li><li purpose="step" id="GUID-53EFCC3F-3044-4207-BB94-8B361755D6DE"><span purpose="cmd" id="GUID-12D97561-2843-4E90-B333-FA944276C17E">单击<span class="uicontrol">服务 <span class="greaterthan">&gt;</span> KML 网络链接 <span class="greaterthan">&gt;</span> 创建网络链接</span>。</span></li><li purpose="step" id="ESRI_STEP_ABDE824C5EA94F5394D9CC09B7880F84"><span purpose="cmd" id="GUID-F26A04D3-4FB7-44CE-990B-AB78388FAE76">指定链接的名称。指定的名称用作文件名并嵌入到网络链接文件的 Name 标签中。</span></li><li purpose="step" id="ESRI_STEP_6E385AE1FD564435BFA8B6FEF7259852"><span purpose="cmd" id="GUID-BB0A2E6F-4578-49DE-B00E-A3665204472F">或者，指定<span class="uicontrol">外部主机名</span>。</span></li><li purpose="step" id="ESRI_STEP_76B90229130246ACBC313F68256C9A39"><span purpose="cmd" id="GUID-158610B4-CB79-4D2A-A5F6-2B6421B6D3C6">或者，提供简要描述和详细描述。详细描述中可以包含嵌入的 HTML 标记和 URL。</span></li><li purpose="step" id="ESRI_STEP_1AC0BE89DB9A4428845AE2FA977972A9"><span purpose="cmd" id="GUID-A6CB590D-9FBC-451E-9A93-D560E3234F35"> 或者，指定代码片段行为。默认情况下，摘要配置为不显示。单击<span class="uicontrol">下一步</span>。</span></li><li purpose="step" id="ESRI_STEP_CC2D7FC0ABBC4BC8A8A29C7D26B8F5F8"><span purpose="cmd" id="GUID-BB0A7845-1D54-4B70-89A9-337093567B27">在<span class="uicontrol">地图服务</span>下拉列表中，选择刚发布的地图服务。也选择您要通过 KML 网络链接显示的图层。</span></li><li purpose="step" id="ESRI_STEP_12C5BC7104864FAE8A231576893F3012"><span purpose="cmd" id="GUID-F4FE5A53-3AC6-4841-B3B8-F79B6D046B97">选择绘制<span class="uicontrol">矢量图层作为矢量数据，栅格图层作为图像</span>的选项。因为拉伸的要素为矢量，所以您需要选择该选项。否则，您将看到一个平面的栅格化图像。</span></li><li purpose="step" id="ESRI_STEP_0598CEC3EA13496F83B6B1C7315513B2"><span purpose="cmd" id="GUID-4F6829B3-FBF0-4D23-A462-B1DE13B10DAC">或者，将默认兼容模式设置为特定的 Google 客户端。</span></li><li purpose="step" id="GUID-FC519D4B-D8A7-41CF-89D5-280B24BC3338"><span purpose="cmd" id="GUID-35D2AFB3-3608-429B-B882-F11A97D7082D">如果需要，调整<span class="uicontrol">基于视图的刷新</span>、<span class="uicontrol">视图边界比例</span>和<span class="uicontrol">基于时间的刷新</span>参数。此外，还可选择让浏览器在刷新后立即转到视图。对于本教程，默认选项已经足够。单击<span class="uicontrol">下一步</span>。</span></li><li purpose="step" id="ESRI_STEP_E2C3C663601E459DAD61D5ECC3709567"><span purpose="cmd" id="GUID-4B93CE53-4472-4D89-946A-67E4A4E0D542">或者，根据期望的网络链接显示方式设置<span class="uicontrol">纬度</span>、<span class="uicontrol">经度</span>、<span class="uicontrol">范围</span>、<span class="uicontrol">标题</span>和<span class="uicontrol">倾斜度</span>参数。对于本教程，默认选项已经足够。</span></li><li purpose="step" id="GUID-0060A1FD-6069-43F9-9BE5-07F9F9C6792B"><span purpose="cmd" id="GUID-689186CC-6A26-4498-9A24-6F8BB2D9936F">单击<span class="uicontrol">创建</span>创建 KML 网络链接。</span></li></ol></div><section class="result padded-anchor" id="ESRI_RESULT_7F35FFEC4A2B409CB6406654A3DDA4F8" purpose="result"><p id="GUID-946FF853-5F89-4C7E-B134-1E29586A5172">当您返回到管理器中的 <span class="uicontrol">KML 网络链接</span>模块时，您将看到指向新网络链接的 URL（例如，<span class="usertext">https://gisserver.domain.com:6443/arcgis/kml/networklink01.kmz</span>）。单击或复制并粘贴该 URL，将 KML 网络链接添加到 <span class="ph">ArcGIS Earth</span>、ArcGlobe、Google Earth 或 Google Maps。</p></section></section></section>
+			
+				<hr>
+				<!--googleoff: all-->
+				
+	
+        
+		    <p class="feedback right">
+		        <a id="afb" class="icon-ui-contact" href="/feedback/" data-langlabel="feedback-on-this-topic" >有关此主题的反馈?</a>
+		    </p>
+        
+	
+
+				<!--googleon: all-->
+			
+		</main>
+	</div>
+	
+	<!--googleoff: all-->
+	
+		
+			<div id="main-toc-large" class="column-5">
+			    <div class="panel font-size--2 tablet-hide trailer-1">
+			      <h5 class="trailer-half">在本主题中</h5>
+			      <ol class="list-plain pre-0 trailer-0"><li><a href="#ESRI_SECTION1_1B569C4708384A2CBF56C02A64F0C0FE">开始学习本教程前</a></li><li><a href="#ESRI_SECTION1_EFBACBD1E2454FED95340DE2B19FC28B">在 ArcGlobe 和 ArcMap 中准备数据</a></li><li><a href="#ESRI_SECTION1_1BC9EB3775254E1CBAF38EA743C19904">发布 KML 服务</a></li><li><a href="#ESRI_SECTION1_C2D7FF721EEE4EDDBAD67B27382C3985">浏览显示在“ArcGIS Server 服务目录”中的 REST KML 操作</a></li><li><a href="#ESRI_SECTION1_13A49F7335BA4178AB89FA7D0EBFD207">通过地图服务创建网络链接</a></li></ol>
+			    </div>
+			    
+			    
+	  		</div>
+		
+    
+   <!--googleon: all-->
+
+
+
+
+          
+        </div>
+        <!-- ENDPAGECONTENT -->
+
+      </div>
+
+    </div>  <!-- End of wrapper -->
+
+  <footer class="footer leader-3 link-dark-gray" role="contentinfo">
+    <div class="grid-container">
+      <div class="row">
+        <nav class="column-6">
+          <h6 data-langlabel="arcgis-for-server">Arc<span>GIS Enterprise</span></h6>
+          <ul class="list-plain">
+            <li><a data-langlabel="home" href="../../../../../zh-CN/">主页</a></li>
+            <li><a data-langlabel="portal" href="../../../../../zh-CN/portal/">Portal</a></li>
+            <li><a data-langlabel="server" href="../../../../../zh-CN/server/">Server</a></li>
+            <li><a data-langlabel="data-store" href="../../../../../zh-CN/data-store/">Data Stores</a></li>
+            <li><a data-langlabel="cloud" href="../../../../../zh-CN/cloud/">云</a></li>
+            <li><a data-langlabel="apps" href="../../../../../zh-CN/apps/">应用程序</a></li>
+            <li><a data-langlabel="documentation" href="../../../../../zh-CN/documentation/">文档</a></li>
+          </ul>
+        </nav>
+
+        
+  <nav class="column-6">
+    <h6 data-langlabel="arcgis-platform">ArcGIS 平台</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="arcgis" href="//www.arcgis.com/">ArcGIS Online</a></li>
+      <li><a data-langlabel="arcgis-for-professionals" href="//pro.arcgis.com/">ArcGIS Pro</a></li>
+      <li><a data-langlabel="arcgis-for-server" href="//enterprise.arcgis.com/">ArcGIS Enterprise</a></li>
+      <li><a data-langlabel="arcgis-for-developers" href="https://developers.arcgis.com/">ArcGIS for Developers</a></li>
+      <li><a data-langlabel="arcgis-solutions" href="//solutions.arcgis.com/">ArcGIS Solutions</a></li>
+      <li><a data-langlabel="arcgis-marketplace" href="//marketplace.arcgis.com/">ArcGIS Marketplace</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <h6 data-langlabel="about-esri">关于 Esri</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="about-us" href="//www.esri.com/about-esri/">关于我们</a></li>
+      <li><a data-langlabel="careers" href="//www.esri.com/careers/">招贤纳士</a></li>
+      <li><a data-langlabel="insiders-blog" href="https://www.esri.com/about/newsroom/blog/">Esri 博客</a></li>
+      <li><a data-langlabel="user-conference" href="//www.esri.com/events/user-conference/index.html">用户大会</a></li>
+      <li><a data-langlabel="developer-summit" href="//www.esri.com/events/devsummit/index.html">开发者峰会</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <a class="esri-logo" href="//www.esri.com/" aria-label="Esri Home"></a>
+    <section class="footer-social-nav leader-1">
+            <a class="icon-social-twitter" aria-label="Esri on Twitter" href="https://twitter.com/Esri/"></a>
+            <a class="icon-social-facebook" aria-label="Esri on Facebook" href="https://www.facebook.com/esrigis/"></a>
+            <a class="icon-social-github" aria-label="Esri on GitHub" href="//esri.github.io/"></a>
+            <a class="icon-social-contact" aria-label="Contact Esri" href="//www.esri.com/about-esri/contact/"></a>
+    </section>
+	  
+  </nav>
+  
+  <div class="column-24 leader-1">
+    <p class="font-size--3"><a href="http://www.esri.com/legal/copyright-trademarks">Copyright &copy; 2019 Esri.</a> All rights reserved. | <a href="http://www.esri.com/legal/privacy/">隐私政策</a> | <a href="http://www.esri.com/legal/software-license">法律声明</a></p>
+  </div>
+  
+
+
+      </div>
+    </div>
+  </footer>
+  <!--googleoff: all-->
+
+  
+  
+	<script src="../../../../../zh-CN/assets/js/init.js" type="text/javascript"></script>
+	<!--<script src="../../../../../zh-CN/assets/js/drop-down.js" type="text/javascript"></script>-->
+	<script src="../../../../../zh-CN/assets/js/search/searchform.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/cdn/js/link-modifier.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/cdn/js/sitewide.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/cdn/js/libs/highlight.pack.js" type="text/javascript"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+
+
+  
+    
+
+  <script src="../../../../../zh-CN/cdn/js/affix.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    $(function () {
+          var appendFlg = true;
+
+          $("#bigmac")
+          .on("affixed.bs.affix", function (evt) {
+            if (appendFlg) {
+              $("<a class='crumb' href='#'>教程：发布 KML 服务</a>").insertAfter ($("#bigmac nav a").last());
+              appendFlg = false;
+            }
+          })
+          .on ("affix-top.bs.affix", function(evt) {
+            if (!appendFlg) {
+              $("#bigmac nav a").last().remove();
+            }
+            appendFlg = true;
+          })
+    })
+  </script>
+  
+        <script type="text/javascript">
+          window.doctoc = {
+            pubID: "1634",
+            tpcID: "612",
+            
+              prefix: "管理服务",
+              prefixUrl: "/zh-cn/server/latest/publish-services/windows/",
+          
+            hideToc: false
+          }
+        </script>
+
+        <script type="text/javascript" src="../../../../../zh-CN/server/latest/publish-services/windows/1634.js" ></script>
+        <script type="text/javascript" src="../../../../../zh-CN/cdn/calcite/js/protoc.js" ></script>
+        
+        
+
+  <noscript>
+        <p>
+            <a href="flisting.htm">flist</a>
+        </p>
+    </noscript>
+    <script type="text/javascript"></script>
+  
+  
+    
+    
+
+  </body>
+</html>

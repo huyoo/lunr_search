@@ -1,0 +1,545 @@
+
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>  <html class="ie lt-ie9 lt-ie8 lt-ie7 ie6" dir="ltr"> <![endif]-->
+<!--[if IE 7]>     <html class="ie lt-ie9 lt-ie8 ie7" dir="ltr"> <![endif]-->
+<!--[if IE 8]>     <html class="ie lt-ie9 ie8" dir="ltr"> <![endif]-->
+<!--[if IE 9]>     <html class="ie ie9" dir="ltr"> <![endif]-->
+<!--[if !IE]><!--> <html dir="ltr" lang="zh-CN"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>成本分析微件&mdash;Portal for ArcGIS | ArcGIS Enterprise 文档</title>
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+    <script>
+      var docConfig = {
+        locale: 'zh-CN'
+        ,localedir: 'zh-cn'
+        ,langSelector: ''
+        
+        ,relativeUrl: false
+        
+
+        ,searchformUrl: '/search/'
+        ,tertiaryNavIndex: ''
+
+        
+      };
+    </script>
+	 
+
+
+    
+    <!--[if lt IE 9]>
+      <script src="../../../../zh-CN/cdn/js/libs/html5shiv.js" type="text/javascript"></script>
+      <script src="../../../../zh-CN/cdn/js/libs/selectivizr-min.js" type="text/javascript"></script>
+      <script src="../../../../zh-CN/cdn/js/libs/json2.js" type="text/javascript"></script>
+      <script src="../../../../zh-CN/cdn/js/libs/html5shiv-printshiv.js" type="text/javascript" >
+
+    <![endif]-->
+
+     <!--[if lt IE 11]>
+    <script>
+      $$(document).ready(function(){
+        $$(".hideOnIE").hide();
+      });
+    </script>
+    <![endif]-->
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<link href="../../../../zh-CN/assets/img/favicon.ico" rel="shortcut icon" >
+	<link href="../../../../zh-CN/assets/css/screen.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/cdn/calcite/css/documentation.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/assets/css/print.css" media="print" type="text/css" rel="stylesheet" />
+
+	<!--
+	<link href="../../../../zh-CN/assets/css/screen_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/assets/css/documentation/base_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/assets/css/print_l10n.css" media="print" type="text/css" rel="stylesheet" />
+	-->
+	
+	
+		<script src="../../../../zh-CN/cdn/js/libs/jquery.1.9.1.min.js" type="text/javascript"></script>
+	
+	<script src="../../../../zh-CN/cdn/js/libs/jquery.cookie.js" type="text/javascript"></script>
+	<link href="../../../../zh-CN/cdn/css/colorbox.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/cdn/css/colorbox_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<script src="../../../../zh-CN/cdn/js/libs/jquery.colorbox-min.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/assets/js/video-init.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/assets/js/sitecfg.js" type="text/javascript"></script>
+	
+		<script src="../../../../zh-CN/assets/js/signIn.js" type="text/javascript"></script>
+	
+
+	<!--- Language Picker -->
+	<script src="../../../../zh-CN/assets/js/locale/l10NStrings.js" type="text/javascript"></script>
+	
+		 
+	
+
+	<script src="../../../../zh-CN/assets/js/calcite-web.js" type="text/javascript"></script>
+
+
+
+  <!--- search MD -->
+    <META name="description" content="“成本分析”微件用于为创建的每个要素分配成本因素。"><META name="last-modified" content="2019-12-6"><META name="product" content="arcgis-portal-windows,arcgis-portal-linux,arcgis-enterprise-windows,arcgis-enterprise-linux"><META name="sub_category" content="Portal for ArcGIS"><META name="search-collection" content="help"><META name="content_type_label" content="帮助主题"><META name="sub_category_label" content="Portal for ArcGIS"><META name="search-category" content="help-general"><META name="subject_label" content="PORTAL,服务,SERVER"><META name="version" content="10.8"><META name="content_type" content="Help Topic"><META name="subject" content="PORTAL,SERVICES,SERVER"><META name="content-language" content="zh-cn">
+    <!--- search MD -->
+
+  
+  <script src="../../../../zh-CN/assets/js/switchers/portal-1.js" type="text/javascript"></script>
+  
+      
+
+</head>
+
+<!--
+      pub: GUID-7B47163B-CE1B-465F-BEEE-4DADDB8DFF09=37
+      tpc: GUID-D08627FD-58DA-47FD-B07A-CD3A1623DADF=6
+      -->
+
+
+<!-- variable declaration, if any -->
+<!-- can change following macro to set variable once we are on Jinja 2.8 -->
+
+
+
+
+
+<body class="claro zh-CN server">
+  
+
+  <!-- Drawer location -->
+  <div class="drawer drawer-left js-drawer" data-drawer="top-nav">
+        <nav class="drawer-nav" role="navigation">
+          <aside class="side-nav">
+            <h2 class="side-nav-title">Arc<span>GIS</span> Enterprise</h2>
+            <form id="helpSearchForm" class="margin-left-half margin-right-half leader-half trailer-half drawer-search-form" method="GET">
+              <input type="search" name="q"  placeholder="搜索 ArcGIS Enterprise 帮助">
+              <input type="hidden" name="collection" value="help" />
+              <input type="hidden" name="product" value="arcgis-portal-windows" />
+              <input type="hidden" name="version" value="10.8" />
+              <input type="hidden" name="language" value="zh-CN" />
+            </form>    
+             <a id="nav-portal" data-langlabel="portal" href="../../../../zh-CN/portal/" class="side-nav-link">Portal</a>
+             
+            <a id="all-servers" data-langlabel="all-servers" href="../../../../zh-CN/server/" class="side-nav-link">所有服务器</a>
+            <a id="gis-server" data-langlabel="gis-server" href="../../../../zh-CN/server/" class="side-nav-link">GIS Server</a>
+            <a id="image-server" data-langlabel="image-server" href="../../../../zh-CN/image/" class="side-nav-link">Image Server</a>
+            <a id="geo-analytics-server" data-langlabel="geo-analytics-server" href="../../../../zh-CN/geoanalytics/" class="side-nav-link">GeoAnalytics Server</a>
+            <a id="geoevent-server" data-langlabel="geoevent-server" href="../../../../zh-CN/geoevent/" class="side-nav-link">GeoEvent Server</a>
+            <a id="notebook-server" data-langlabel="notebook-server" href="../../../../zh-CN/notebook/" class="side-nav-link">Notebook Server</a>
+            <a id="nav-data-store" data-langlabel="data-store" href="../../../../zh-CN/data-store/" class="side-nav-link">Data Stores</a>
+            <a id="nav-cloud" data-langlabel="cloud" href="../../../../zh-CN/cloud/" class="side-nav-link">云</a>
+            <a id="nav-apps" data-langlabel="apps" href="../../../../zh-CN/apps/" class="side-nav-link">应用程序</a>
+            <a id="nav-doc" data-langlabel="documentation" href="../../../../zh-CN/documentation/" class="side-nav-link">文档</a>
+
+          </aside>
+        </nav>
+    </div>
+
+    <!-- user navigation collapses to drawer on mobile -->
+    
+    <div class="drawer drawer-right js-drawer hide-if-logged-out logged-in-navigation" data-drawer="user-nav">
+      <nav class="drawer-nav">
+        <aside class="side-nav">
+          <a class="side-nav-link agolProfile" href="#">我的个人资料</a>
+          <a class="side-nav-link icon-ui-sign-out js-log-out" href="#">登出</a>
+        </aside>
+      </nav>
+    </div>
+    
+<!-- End of drawer -->
+
+  
+  <div class="wrapper">
+      <!--googleoff: all-->
+
+      <header class="top-nav" data-skin="learn">
+        <a class="skip-to-content" href="#skip-to-content">Skip To Content</a>
+        <div class="grid-container">
+          <div class="column-24">
+
+
+            <!--<div class="top-nav-title-wrapper text-center ">-->
+              <a href='../../../../zh-CN/' class="top-nav-title tablet-hide"><span>Arc</span>GIS  Enterprise</a>
+              <a href='../../../../zh-CN/' class="icon-ui-menu top-nav-title js-drawer-toggle tablet-show" data-drawer="top-nav"><span>Arc</span>GIS Enterprise</a>
+            <!--</div> -->
+
+          
+            <nav role="navigation" class="top-nav-list left tablet-hide">
+              <a id="nav-portal" data-langlabel="portal" href="../../../../zh-CN/portal/" class="top-nav-link">Portal</a>
+
+                <div class="dropdown js-dropdown ">
+                  <a class="top-nav-link js-dropdown-toggle" tabindex="0" aria-haspopup="true" aria-expanded="false" href="#">Servers</a>
+                  <nav class="dropdown-menu featured" role="menu">
+                    <ul class="dropdown-sublist-featured">
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/get-started/latest/windows/additional-server-deployment.htm" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path  d="M42.92 6.1H4.12v8.566l.833.832-.835.833-.018 7.332.845.847-.825.824V33.9h25v5.2h-2v1.075H8.02v.8h19.1v.925h4.8v-.925H40v-.8h-8.08V39.1h-2v-5.2h13v-8.566l-.834-.834.835-.834v-7.332l-.835-.834.835-.834zm-11.8 35h-3.2v-1.2h3.2zm11-8H4.92v-7.434l.767-.766h35.668l.765.766zm0-9.766l-.766.766H5.666l-.766-.767.017-6.669.766-.764h35.671l.766.766zm0-9l-.766.766H5.687l-.766-.766V6.9h37.2zM19 11.9h-2v-.8h2zm-4 0h-2v-.8h2zm-4 0H9v-.8h2zm6 8.2h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9zm8 9h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9z"/></svg></span>
+                          <span class="sublink-text">所有服务器</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/server/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M45.98 33.575a.616.616 0 0 0-.335-.51l-3.362-2.03 3.362-2.031a.556.556 0 0 0 0-1.02l-11.1-6.704a1.293 1.293 0 0 0-1.112 0L22.33 27.982a.556.556 0 0 0 0 1.02l3.36 2.03-3.358 2.03a.556.556 0 0 0-.002 1.021l3.322 2.006-3.324 2.008a.555.555 0 0 0 .002 1.017l11.102 6.703a1.25 1.25 0 0 0 1.11.002l11.104-6.706a.556.556 0 0 0 0-1.02l-3.32-2.006 3.318-2.004a.607.607 0 0 0 .335-.509zM33.837 21.97c.026-.01.286-.005.29-.005l10.814 6.53-10.8 6.523c-.028.01-.284.005-.294.006l-10.813-6.53zm11.105 16.636l-10.8 6.523a2.564 2.564 0 0 1-.295.006l-10.81-6.529 3.39-2.047 7.004 4.23a1.083 1.083 0 0 0 .557.131 1.101 1.101 0 0 0 .554-.13l7.01-4.233zM34.14 40.098a2.545 2.545 0 0 1-.294.006l-10.812-6.53 3.43-2.073 6.97 4.208a1.25 1.25 0 0 0 1.107-.001l6.966-4.206 3.431 2.073zM9 8H7V7h2zm8 8h-2v-1h2zm-4-8h-2V7h2zm4 0h-2V7h2zm-4 8h-2v-1h2zm7.316 11.1H3.9v-6.434l.766-.766h35.668l.766.766v2.12l.8.483v-2.935l-.826-.826.826-.845v-6.329l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9h16.88a2.632 2.632 0 0 1 .336-.8zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zm0 8v-5.668l.766-.766h35.668l.766.766v5.67l-.746.764H4.666zM15 24v-1h2v1zm-4 0v-1h2v1zm-2-8H7v-1h2zm-2 8v-1h2v1z"/></svg></span>
+                          <span class="sublink-text">GIS Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/image/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 8h-2V7h2zm-4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm8 8h-2v1h2zm-8 0H7v1h2zm4 9v-1h-2v1zm-4 0v-1H7v1zm8 0v-1h-2v1zm4 3.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V21h-.8v-.334l-.766-.766H4.666l-.766.766V27.1H21zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zm40.234 4v21.8H23.1V23.1zm-.8 16.366L39.466 44.1h2.868l1.766-1.766zm-20.2-9.932l5.634-5.634h-2.868L23.9 26.666zm6.2-5.068L24.466 30.1h2.868l2.766-2.766zM28.466 30.1H30.1v-1.634zm2.434 0h6.2v-6.2h-6.2zm-7 7h6.2v-6.2h-6.2zm7 0h6.2v-6.2h-6.2zm0 6.434l5.634-5.634h-2.868L30.9 40.666zm7-7l5.634-5.634h-2.868L37.9 33.666zm1.634-5.634H37.9v1.634zm-8.634 7v1.634l1.634-1.634zm.566 6.2h2.868l2.766-2.766v-2.868zm6.434-3.566l2.634-2.634H37.9zM35.466 44.1H37.1v-1.634zm2.434 0h.434l5.766-5.766V37.9h-2.434L37.9 41.666zm6.2-8.634L42.466 37.1H44.1zm0-4L38.466 37.1h2.868l2.766-2.766zm0-7.566h-6.2v6.2h6.2zm-20.2 0v1.634l1.634-1.634zm0 20.2h6.2v-6.2h-6.2zm20.2 0v-.634l-.634.634z"/></svg></span>
+                          <span class="sublink-text">Image Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/geoanalytics/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 16h-2v-1h2zm-8 8v-1H7v1zm8 0v-1h-2v1zM13 7h-2v1h2zm4 0h-2v1h2zM9 7H7v1h2zm21.45 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V27.9h-1.464l-.801-.8H41.1v-6.434l-.766-.766H4.666l-.766.766V27.1h27.15zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM13 24v-1h-2v1zm0-9h-2v1h2zm-4 0H7v1h2zm26.672 27.148A1.87 1.87 0 0 1 35.9 43a1.91 1.91 0 1 1-3.763-.222l-9.845-3.414A1.88 1.88 0 0 1 21 39.9a1.9 1.9 0 1 1 1.474-3.084l4.692-2.346A1.878 1.878 0 0 1 27.1 34a1.902 1.902 0 0 1 1.9-1.9 1.867 1.867 0 0 1 .781.191l3.788-5.05A1.88 1.88 0 0 1 33.1 26a1.9 1.9 0 1 1 3.491 1.026l4.889 4.888c-.069.056-.144.1-.21.162a3.986 3.986 0 0 0-.358.402l-4.883-4.883A1.889 1.889 0 0 1 35 27.9a1.867 1.867 0 0 1-.781-.191l-3.788 5.049a1.868 1.868 0 0 1 .437.965l9.204.614c-.018.11-.049.218-.058.33A3.93 3.93 0 0 0 40 35c0 .046.01.09.01.135l-9.185-.612A1.913 1.913 0 0 1 29 35.9a1.889 1.889 0 0 1-1.474-.716l-4.692 2.346a1.878 1.878 0 0 1 .066.47 1.9 1.9 0 0 1-.105.625c-.007.02-.022.036-.03.056l9.63 3.34a1.87 1.87 0 0 1 2.786-.505l5.415-4.437c.067.108.127.22.204.322a3.9 3.9 0 0 0 .292.306zM33.9 26a1.092 1.092 0 0 0 .43.872 1.12 1.12 0 0 0 1.42-.068A1.1 1.1 0 1 0 33.9 26zm-6 8a1.1 1.1 0 0 0 2.196.093 1.135 1.135 0 0 0-.426-.965A1.087 1.087 0 0 0 29 32.9a1.101 1.101 0 0 0-1.1 1.1zm-5.8 4a1.098 1.098 0 1 0-.06.362A1.101 1.101 0 0 0 22.1 38zm13 5a1.1 1.1 0 1 0-2.2 0 1.1 1.1 0 0 0 2.2 0zm10.8-8a1.9 1.9 0 1 1-3.8 0c0-.053.003-.105.007-.158A1.9 1.9 0 0 1 45.9 35zm-.8 0a1.1 1.1 0 0 0-2.196-.093 1.153 1.153 0 0 0 .216.752A1.1 1.1 0 0 0 45.1 35z"/></svg></span>
+                          <span class="sublink-text">GeoAnalytics Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/geoevent/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M13 8h-2V7h2zm4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm12.418 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826v2.117c-.259-.177-.53-.337-.8-.497v-1.288l-.766-.766H4.666l-.766.766V27.1h17.933c-.148.26-.283.53-.415.8zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM9 24v-1H7v1zm4-9h-2v1h2zm0 9v-1h-2v1zm-4-9H7v1h2zm8 9v-1h-2v1zm16.9 2h-.8v8.9H39v-.8h-5.1zm.1-3.901a11.9 11.9 0 1 0 11.9 11.9 11.914 11.914 0 0 0-11.9-11.9zm0 23a11.1 11.1 0 1 1 11.1-11.1 11.112 11.112 0 0 1-11.1 11.1z"/></svg></span>
+                          <span class="sublink-text">GeoEvent Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/notebook/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M22 27.1H3.9v-6.434l.766-.766h18.576a5.262 5.262 0 0 1 .83-.8H4.666l-.766-.766v-5.668l.766-.766h35.668l.766.766V18h.8v-5.666l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9H22zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zM9 8H7V7h2zm8 0h-2V7h2zm-4 0h-2V7h2zm2 16v-1h2v1zm-4 0v-1h2v1zm-4 0v-1h2v1zm0-8v-1h2v1zm8 0v-1h2v1zm-4 0v-1h2v1zm18.9 8.1h-1.8v1.8h1.8zm-.8 1h-.2v-.2h.2zm15.498-4.48a2.727 2.727 0 0 0-1.62-.5v-.02H27.25a3.154 3.154 0 0 0-3.15 3.15V38.1h-1.68a3.386 3.386 0 0 0-2.872 1.58 3.49 3.49 0 0 0-.157 3.419 3.241 3.241 0 0 0 2.954 1.801h15.161a3.404 3.404 0 0 0 3.394-3.4V26.9h5v-3.65a3.224 3.224 0 0 0-1.302-2.63zM22.345 44.1a2.44 2.44 0 0 1-2.23-1.341 2.706 2.706 0 0 1 .11-2.65A2.588 2.588 0 0 1 22.42 38.9h12.89a3.395 3.395 0 0 0 0 5.2zM40.1 23.192V41.5a2.6 2.6 0 1 1-2.6-2.6v-.8H24.9V23.25a2.352 2.352 0 0 1 2.35-2.35h13.795a3.183 3.183 0 0 0-.945 2.292zm5 2.908h-4.2v-2.908a2.274 2.274 0 0 1 1.44-2.18 1.944 1.944 0 0 1 1.791.259 2.423 2.423 0 0 1 .97 1.979zm-17.1 5h9v.8h-9zm0 3h7v.8h-7zm0-6h9v.8h-9zm4-3h5v.8h-5z"/></svg></span>
+                          <span class="sublink-text">Notebook Server</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+
+              <a id="nav-data-store" data-langlabel="data-store" href="../../../../zh-CN/data-store/" class="top-nav-link">Data Stores</a>
+              <a id="nav-cloud" data-langlabel="cloud" href="../../../../zh-CN/cloud/" class="top-nav-link">云</a>
+              <a id="nav-apps" data-langlabel="apps" href="../../../../zh-CN/apps/" class="top-nav-link">应用程序</a>
+            </nav>
+
+
+            
+            
+            
+
+            <div class="margin-left-1 top-nav-list right hide-if-logged-in logged-out-navigation">
+               
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+              
+              <a data-langlabel="sign-in" id="login-link" class="icon-ui-user top-nav-link link-blue login-link" href="#">登录</a>
+              
+            </div>
+
+            
+            <nav class="margin-left-1 top-nav-list right hide-if-logged-out logged-in-navigation">
+              
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+             
+              <div class="dropdown js-dropdown right">
+
+                <div class="tablet-show top-nav-link">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a href="#" data-drawer="user-nav" class="user-nav-name js-drawer-toggle" data-first-name></a>
+                </div>
+
+                <div class="tablet-hide top-nav-link js-dropdown-toggle">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a class="user-nav-name top-nav-dropdown dropdown-btn" data-first-name>&nbsp;</a>
+                </div>
+
+                <nav class="dropdown-menu dropdown-right">
+                
+                  <a class="dropdown-link agolProfile" id="agolProfile" href="#">我的个人资料</a>
+                  <a class="dropdown-link js-log-out" id="agolLogout" href="#">登出</a>
+                </nav>
+              </div>
+            </nav>
+            
+
+            
+          </div>
+        </div>
+      </header>
+
+      <div class="js-search search-overlay">
+        <div class="search-content" role="dialog" aria-labelledby="search">
+          <form method="GET" id="helpSearchForm">
+            <label>
+              搜索 ArcGIS Enterprise 帮助
+              <div class="search-bar">
+                <input type="search" name="q"  placeholder="搜索 ArcGIS Enterprise 帮助" class="search-input js-search-input">
+                <input type="hidden" name="collection" value="help" />
+                <input type="hidden" name="product" value="arcgis-portal-windows" />
+                <input type="hidden" name="version" value="10.8" />
+                <input type="hidden" name="language" value="zh-CN" />
+              </div>
+            </label>
+            <input type="hidden" name="relativePath" value="../../../../" /><button type="submit" class="btn btn-large right">搜索</button>
+          </form>
+        </div>
+      </div>
+
+      <!--googleon: all-->
+
+      <div id="skip-to-content">
+        <!--googleoff: all-->
+        <header class="sub-nav sub-nav-learn">
+          <div class="grid-container">
+            
+            <div class="column-24">
+              <div style="display:table;" class="sdk-home-banner">
+                <div class="sdk-home-banner-content">
+                  <h1 class="sub-nav-title link-white">Portal for ArcGIS</h1>
+                </div>
+              </div>
+            </div>
+
+            <div class="column-24">
+              <nav class='sub-nav-list tablet-hide'><a class="sub-nav-link" href="../../../../zh-CN/portal/" target="_top" title="Portal for ArcGIS 主页">主页</a><a class="sub-nav-link is-active" href="../../../../zh-CN/portal/latest/use/" target="_top" title="使用 Portal for ArcGIS">使用</a><a class="sub-nav-link" href="../../../../zh-CN/portal/latest/administer/windows/" target="_top" title="安装、管理和保护 Portal for ArcGIS">管理</a></nav><select class='tablet-show select-full trailer-half js-select-nav'><option value="../../../../zh-CN/portal/">主页</option><option selected="true" value="../../../../zh-CN/portal/latest/use/">使用</option><option value="../../../../zh-CN/portal/latest/administer/windows/">管理</option></select>
+            </div>
+
+          </div>
+        </header>
+        <!--googleon: all-->
+       
+        <!-- content goes here -->
+        <div class="grid-container ">
+          
+
+            
+              
+  <!--BREADCRUMB-BEG--><div id="bigmac" class="sticky-breadcrumbs trailer-2" data-spy="affix" data-offset-top="180"> </div><!--BREADCRUMB-END-->
+  <!--googleoff: all-->
+    <div class="column-5 tablet-column-12 trailer-2 ">
+      <aside class="js-accordion accordion reference-index" aria-live="polite" role="tablist">
+        <div></div>
+      </aside>
+
+      <div class="js-sticky scroll-show tablet-hide leader-1 back-to-top" data-top="0" style="top: 0px;">
+        <a href="#" class="btn btn-fill btn-clear">返回顶部</a>
+      </div>
+    </div>
+  <!--googleon: all-->
+  
+            
+            
+            
+	
+		<div class="column-13  pre-1 content-section">
+	
+		<header class="trailer-1"><h1>成本分析微件</h1></header>
+
+		 
+	<!--googleoff: all-->
+	
+		
+				<aside id="main-toc-small" class="js-accordion accordion tablet-show trailer-1">
+			      <div class="accordion-section">
+			        <h4 class="accordion-title">在本主题中</h4>
+			        <div class="accordion-content list-plain">
+			          <ol class="list-plain pre-0 trailer-0"><li><a href="#ESRI_SECTION1_B88F00B78ABD42859B84A4278A9B06B2">配置设置</a></li><li><a href="#ESRI_SECTION1_C8183281364543C9AA2CE97D8764BFA9">使用“成本分析”微件</a></li></ol>
+			        </div>
+			      </div>
+			     </aside>
+		
+    
+   <!--googleon: all-->
+
+
+		<main>
+			
+	
+    	
+    
+
+
+			
+<p id="GUID-C3AA5050-1B14-498C-9C11-719ED291DA69">“成本分析”微件用于为创建的每个要素分配成本因素。将自动计算这些成本，并提供整体工程或事件成本。可以应用附加成本因素，或者根据数据中未捕获的因素来调整整体成本。可以为每个图层的编辑模板分配成本，并且成本会有所不同，具体取决于创建要素所在的区域。</p><section class="section1 padded-anchor" id="ESRI_SECTION1_B88F00B78ABD42859B84A4278A9B06B2" purpose="section1"><h2>配置设置</h2><p id="GUID-4F82A547-07F0-40E8-B7E3-4EDDAD043878">可将此微件设置为应用程序启动时自动打开。要启用该功能，请在微件上单击<span class="uicontrol">在应用程序启动时自动打开此微件</span>按钮 <img purpose="img" placement="inline" alt="在应用程序启动时自动打开此微件" title="在应用程序启动时自动打开此微件" src="GUID-FE658549-5B6E-4BA5-89FA-A0A0C72810FC-web.png">，微件随即变成深绿色。</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_0CB20B7B9EF74C22AEAD9CFA433DD958"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_9429B58F8C414A5D9F7BDBDCAFDC2E09"><span purpose="cmd">将鼠标悬停在微件上方，然后单击<span class="uicontrol">配置此微件</span>按钮 <img purpose="img" placement="inline" alt="配置此微件" title="配置此微件" src="GUID-3600D9F6-693B-4060-9B74-32E4275F0C31-web.png"> 以打开配置属性对话框。</span></li><li purpose="step" id="ESRI_STEP_71DF3629EB2B47658EA5C308A2CA9507"><span purpose="cmd">检查自定义微件的选项。下面列出了各个设置的描述。</span></li><li purpose="step" id="ESRI_STEP_623FD2813FC34919849AFA65B30EE659"><span purpose="cmd">配置好设置后，单击<span class="uicontrol">确定</span>关闭对话框并应用更改。</span></li></ol></div></section><p id="GUID-8D882B79-E9DE-4E84-8A2F-49D56A890410">配置“成本分析”微件时，需要考虑以下 5 个部分：<a class="xref xref" href="../../../../zh-CN/portal/latest/use/widget-cost-analysis.htm#ESRI_SECTION2_EF394E1400BE4216A618945E468A29A3">常规设置</a>、<a class="xref xref" href="../../../../zh-CN/portal/latest/use/widget-cost-analysis.htm#ESRI_SECTION2_B44536DE36954F5E8BE3E0BBB95BFA21">工程设置</a>、<a class="xref xref" href="../../../../zh-CN/portal/latest/use/widget-cost-analysis.htm#ESRI_SECTION2_B5C2181610EC4CCD84B6A135732494A7">图层设置</a>、<a class="xref xref" href="../../../../zh-CN/portal/latest/use/widget-cost-analysis.htm#ESRI_SECTION2_5BF15CE48CD74D8696DA62F51C2BA25B">成本计算信息</a>和<a class="xref xref" href="../../../../zh-CN/portal/latest/use/widget-cost-analysis.htm#ESRI_SECTION2_5E84B897821442DA89FECA78508B89AC">其他设置</a>。</p><section class="section2 padded-anchor" id="ESRI_SECTION2_EF394E1400BE4216A618945E468A29A3" purpose="section2"><h3>常规设置</h3><p id="GUID-DC362A3D-EF1F-4E9F-8C33-B4670A9D4FA3">常规设置选项如下：</p><ul purpose="ul" id="UL_00C190FABAA9475FB0180F7BC8AC8E5C"><li purpose="li" id="LI_475641A970E441888D9E3EFF87B28E45"><span class="uicontrol">测量单位</span> - 对于要计算成本的要素，用于显示其长度和面积的测量标准。</li><li purpose="li" id="LI_737986D6845F4EF39EC3A1C7ABF52BE2"><span class="uicontrol">测量符号</span> - 显示成本。</li><li purpose="li" id="LI_2B986E5667FC46EF9E1770BCFE4EF6C1"><span class="uicontrol">舍入成本</span> - 舍入的工程最终成本。<div class="panel trailer-1 note" id="GUID-44279084-E05D-4DB9-ADEF-23DE12CC591B"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-61ED7190-7336-4377-99E6-87217492EED2">单行项目不进行舍入，仅舍入最终结果。</p></div></li><li purpose="li" id="LI_67ADDE4C84A74954BE26319047DA4237"><span class="uicontrol">工程区域的类型</span> - 在要素中进行草绘时，将创建工程中所有要素的边界。使用该设置来确定您需要的区域类型。</li><li purpose="li" id="LI_C65FB2EC2BA04879BC618AFDA98EC2B4"><span class="uicontrol">允许用户导出工程报表</span> - 用户可以导出所有资产以及与工程关联的任何其他成本的报表。要更改报表格式，单击“编辑”按钮。在<span class="uicontrol">报表设置</span>窗口中，指定报表名称、要包含的信息以及顺序。</li></ul></section><section class="section2 padded-anchor" id="ESRI_SECTION2_B44536DE36954F5E8BE3E0BBB95BFA21" purpose="section2"><h3>工程设置</h3><p id="GUID-FCBA02BB-DF7E-40EE-BA78-A09993D04112">工程设置选项如下：</p><ul purpose="ul" id="UL_289AB426AB3545179B2A236464268D0F"><li purpose="li" id="LI_8CE361F9E34B4BDC99A3034BD7E4AA19"><span class="uicontrol">定义成本计算的地理</span> - 该选项允许基于地理来设置要素模板的成本公式。<ul purpose="ul" id="UL_10456B60DA1248AAB7705A2F975F3A56"><li purpose="li" id="LI_27D503AAB5424E13A29B9F6BA79A60F9"><span class="uicontrol">成本计算几何图层</span> - 如果您的工程包含各种感兴趣区域，并且这些区域相关联的成本不同，请在此处进行指定。该图层必须为一个面。</li><li purpose="li" id="LI_D5AB9223D54F40B8BFDF85F0F4114723"><span class="uicontrol">标注地理的字段</span> - 要显示的成本计算几何的描述性字段。</li></ul></li><li purpose="li" id="LI_E007FDD95EAD4771BF9B104ED9CACF7A"><span class="uicontrol">保存功能</span>和<span class="uicontrol">加载工程设置</span> - 配置这些表格和图层允许您保存或加载工程。<div class="panel trailer-1 note" id="GUID-64708668-B574-4D97-8EC3-529E987AC1A4"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-7A283FD0-6690-4CBA-9ADC-7CBFD2DE214A">这些选项卡上的设置是可选的。如果您决定不指定任何参数，则您仍可以计算在地图上草绘的要素的成本。微件仍可提供草绘的所有要素的最终成本。该微件将不会保存工程，因此如果重新启动应用程序，则将移除所有成本信息。</p></div><ul purpose="ul" id="UL_2FB4CC302BEC43B3BCEBC70E4C79BA16"><li purpose="li" id="LI_4ACBBD1BE48C47AB8FDDFF04F1502F84"><span class="uicontrol">工程资产表</span> - 此表用于对所有绘制的要素与工程及所有成本计算地理进行关联，以便随时重新加载工程。</li><li purpose="li" id="LI_FCA9F50A971F45F9A22E746B33193759"><span class="uicontrol">工程乘数附加成本表</span> - 此表可以存储与任何要素均无关的成本，例如退税、信贷、赞助和租金。</li><li purpose="li" id="LI_62734294C48F48518902D4DCBB307F8C"><span class="uicontrol">工程图层</span> - 面要素图层，用于存储工程及其净成本和毛成本的详细信息。</li><li purpose="li" id="LI_8EDA6DE2662048EC8FA77AE90EEECB92"><span class="uicontrol">点图层质心</span> - 将基于工程图层的质心自动生成该点要素图层。</li></ul></li></ul></section><section class="section2 padded-anchor" id="ESRI_SECTION2_B5C2181610EC4CCD84B6A135732494A7" purpose="section2"><h3>图层设置</h3><p id="GUID-8559FC6A-EC67-4C0A-8153-8098B0CF23CF">此选项卡可显示地图中的所有图层。可以选择要进行编辑并用于计算工程成本的图层。如果存在不可编辑的图层，则<span class="uicontrol">可编辑</span>复选框将不可用。或者，可以配置属性设置以将工程字段映射至相应的图层字段。</p></section><section class="section2 padded-anchor" id="ESRI_SECTION2_5BF15CE48CD74D8696DA62F51C2BA25B" purpose="section2"><h3>成本计算信息</h3><ul purpose="ul" id="UL_D6B03B66720E40A5850648ACA11A57DF"><li purpose="li" id="LI_AB0E140054BD4CDE95E63DDB2B38271B"><span class="uicontrol">要素模板</span> - 在<span class="uicontrol">图层设置</span>选项卡上启用了编辑功能的图层将在此处作为单个表列出。其相应图层的每个要素模板都有一行。以便独立计算每个要素模板的成本。如果针对每个要素模板具有不同的<span class="uicontrol">地理</span>或<span class="uicontrol">方案</span>设置，则可以具有多个相同的要素模板。</li><li purpose="li" id="LI_9936FC6FDCF64D12B8E3595B75B12FC0"><span class="uicontrol">成本公式</span> - 用于定义每个要素模板的成本。<p id="GUID-4AB5272D-7247-455E-A3A1-53EA90CEE6D7">可以具有固定数值，例如 100。每次通过此要素的模板在要素中草绘时，线项目中将显示 100。该文本字段也支持数学表达式。此外，可以使用一些内置变量来构建复杂的表达式。这些内置变量包括：<span class="usertext">{MEASURE}</span>（用于要素的长度或面积）、<span class="usertext">{TOTALMEASURE}</span>（用于所有相同绘制要素的长度或面积）以及 <span class="usertext">{TOTALCOUNT}</span>（用于所有相同要素的计数）。可以构建一个表达式，例如 <span class="usertext">{MEASURE} * 100</span>。如果绘制一条线，则微件会将该线的长度乘以 100 以计算该要素的成本。</p></li><li purpose="li" id="LI_7538929A2D6B474E8446CF5EC0AFEDF4"><span class="uicontrol">地理</span> - 如果在<span class="uicontrol">工程设置</span>选项卡上指定了成本地理，则此下拉列表将显示不同的记录。<p id="GUID-239B5E8B-C88E-47F0-899F-02CC63D83A39"><span class="uicontrol">地理</span>选项允许您根据地理区域来定义成本。例如，您具有一个由高火险区域和低火险区域组成的成本计算地理，并且具有电线杆要素图层。电线杆的要素模板基于材料，并且其中一个值为木材。对于低火险区域，可以将成本设置为 x，其中 x 是杆的基本成本。对于高火险区域，可以将木杆的值设置为 2x，因为必须对其进行处理以使其耐火。如果选择按地理来划分成本计算，则需要确保对于每个要素模板，均无任何用例。这样可防止您的草绘落入任何成本计算地理以外的区域，但仍需要与其相关联的成本。</p></li><li purpose="li" id="LI_3BCB263B40364CB699DAFA5FAC63D535"><span class="uicontrol">方案</span> - 方案与地理的功能类似，但是没有任何空间组件。如果具有不同的用例且其需要不同的成本，则方案非常有用。可以通过单击<span class="uicontrol">管理方案</span>按钮来管理方案。<p id="GUID-64F2FE40-5C32-40DE-907B-77C8779C774D">例如，如果具有树木修剪路径，则可以将不同的承包商定义为方案，以使承包商 1 修剪树木的成本为 x，承包商 2 修剪树木的成本为 y。承包商将作为方案添加。可以在不同的成本计算地理中具有相同的方案。在此示例中，承包商 1 可以在高火险和低火险区域中进行修剪。</p></li><li purpose="li" id="LI_9F7C034236B54639BE9AEEB767A51CE3"><span class="uicontrol">操作</span> - 用于删除或复制行。</li></ul></section><section class="section2 padded-anchor" id="ESRI_SECTION2_5E84B897821442DA89FECA78508B89AC" purpose="section2"><h3>其他设置</h3><p id="GUID-B8CB7D5A-5DF8-4E9B-9EC4-3ABA4674C500">如果需要了解工程中的统计信息，请使用此类设置来配置有关计算。</p><ul purpose="ul" id="UL_B505D8BE85C44EDCB5E7BA7C9D1103B0"><li purpose="li" id="LI_1B295D953B9B481EAE362DC7CFB2B1A3"><span class="uicontrol">统计数据</span> - 用于定义持久保存到所有新工程的统计数据。您还可以在使用微件时构建新统计数据；这些统计数据不会保存，并且在重新加载应用程序时将丢失。</li><li purpose="li" id="LI_167A25971C7649E7B7D92D74E3E350C2"><span class="uicontrol">附加工程成本</span> - 用于定义持久保存到所有新工程的附加工程成本。</li></ul></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_C8183281364543C9AA2CE97D8764BFA9" purpose="section1"><h2>使用“成本分析”微件</h2><p id="GUID-B75CA940-B049-43EB-9C32-316A60280404">请完成下列步骤以配置“成本分析”微件：</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_585D06CABDEF42A69648347B0DFD3C19"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_C4CE3B31CEBA45F3B90027C6766937A9"><span purpose="cmd">单击<span class="uicontrol">成本分析</span>微件按钮 <img purpose="img" placement="inline" alt="成本分析按钮" title="成本分析按钮" src="GUID-015D6698-1A8F-4039-B9F6-E66162D0A172-web.png">。</span><div class="info" purpose="info"><p id="GUID-59860139-7B77-4332-A6C7-17D4C2C62DAD">随即出现<span class="uicontrol">成本分析</span>窗口。</p><p id="GUID-55F1428C-26E1-4885-BB87-4454B0A848F3"><figure class="fig" href="#"><img src="GUID-5C7C8757-3327-451D-84E2-EE02B288F25E-web.png" alt="“成本分析”窗口" title="“成本分析”窗口"></figure></p><p id="GUID-1A56E4EB-AAB3-4F86-A9F7-467F2AD5FDBB">微件的顶部显示了您可以使用<span class="uicontrol">要素模式</span>进行草绘或复制到地图上的要素。微件的中间部分将显示在地图上绘制的要素列表，以及每个项目的成本。该部分还将显示设计工作的总成本和毛成本。还可以在此部分定义设计的统计数据。底部包含<span class="uicontrol">后退</span>和<span class="uicontrol">刷新</span>按钮。单击<span class="uicontrol">后退</span>可转至上一窗格；单击<span class="uicontrol">刷新</span>可刷新微件。</p><div class="panel trailer-1 note" id="GUID-439EC820-4C3F-41CF-8EDF-ED2FCAD6E928"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-51A0F7CE-2DC9-4FD7-9468-181E5AB456A9">如果您在未单击<span class="uicontrol">刷新</span>的情况下重新加载应用程序，则要素仍保留在基础要素图层中。您将需要使用其他微件（例如“编辑”微件）来移除剩余要素。</p> </div></div></li><li purpose="step" id="ESRI_STEP_F5CCF061B2C04696841494A1C5551C9D"><span purpose="cmd">假设您是天然气公司的规划师，您想了解将天然气服务扩展到位于伊利诺伊州内珀维尔市科特斯小街（邮编 60563）的新社区的评估成本。可使用要素模板选择器并选择 <span class="uicontrol">Plastic PVC</span> 主管道，然后以黄色路径进行草绘。结果显示安装天然气主管道的成本超过 200 万美元。</span><div class="info" purpose="info"><p id="GUID-4D258F40-59DC-4054-B2D0-885140D2ADA7"><figure class="fig" href="#"><img src="GUID-7ADE4A06-653E-4C6A-84DC-188D2E966AF4-web.png" alt="选择塑料 PVC" title="选择塑料 PVC"></figure></p></div></li><li purpose="step" id="ESRI_STEP_ECED951972D647BCA1DF37ACDCF5E77E"><span purpose="cmd">由于您要将新服务扩展到该区域，因此需要提高为此新扩展提供服务的能力。选择 <span class="uicontrol">Plastic PVC</span> 管道并单击<span class="uicontrol">要素模式</span>按钮 <img purpose="img" placement="inline" alt="要素模式" title="要素模式" src="GUID-8F0EEB1F-A270-4AA0-B48A-DAED9F0D865D-web.png">。选择位于新扩展东北部的主线。</span><div class="info" purpose="info"><p id="GUID-E9C3E07F-A1C9-4E4C-BFE7-744F886D05B1"><img purpose="img" placement="inline" alt="所选东北部主线" title="所选东北部主线" src="GUID-EFD6F4D5-B819-48A4-81E6-D49D5DBF6F87-web.png"></p></div></li><li purpose="step" id="ESRI_STEP_7BCFA33012E24A1BA8C8251DA4B2819B"><span purpose="cmd">复制全部所选要素或取消选中您不希望复制的要素。选择创建各个要素或单个多几何要素，以确定要如何复制要素。结果将被复制到当前成本工程中的 Plastic PVC 要素。</span><div class="stepresult" purpose="stepresult"><p id="GUID-9D9A6A9B-9675-4D2B-8CE1-D5448C01F69C"><figure class="fig" href="#"><img src="GUID-FF5622CD-4023-47CF-A201-98C4AB1EC1ED-web.png" alt="复制到塑料 PVC 要素的结果。" title="复制到塑料 PVC 要素的结果。"></figure></p><p id="GUID-050693B2-7D71-4C97-9F69-827C34E51CDB">新复制的要素现已包含在您的成本计算工程中，且工程的总成本已增加到 320 万美元。</p></div></li><li purpose="step" id="ESRI_STEP_C5AC2FC284D74B618D9D4EBD36E27537"><span purpose="cmd">此设计符合折扣条件。要确定该设计将为工程节省下的具体金额，请单击<span class="uicontrol">资产项目</span>箭头。</span><div class="info" purpose="info"><p id="GUID-FCFC9D6F-3769-4D22-8CB4-659D3391AFBC"><figure class="fig" href="#"><img src="GUID-71DB6554-BB44-4278-B74E-F2043A07D714-web.png" alt="资产项目箭头" title="资产项目箭头"></figure></p><p id="GUID-79AF1A35-FEBC-4CC3-BB71-567C7DA2473A"> 随即显示成本项目的详细视图，以供您编辑成本公式。</p></div></li><li purpose="step" id="ESRI_STEP_244C2A5001BA497AA3CC64BC523ED71E"><span purpose="cmd">展开 <span class="uicontrol">Pipe</span>。</span></li><li purpose="step" id="ESRI_STEP_12D50930C6EB4DD1947D7B87A11A2DBC"><span purpose="cmd">单击右侧的 <span class="uicontrol">Summation</span> 按钮。</span><div class="info" purpose="info"><p id="GUID-3E32FA66-0CF7-402E-BC03-05AEC133130B"><figure class="fig" href="#"><img src="GUID-46D56E01-2A57-42A8-BDFB-92CB315AA92A-web.png" alt="展开管道并单击 Summation 按钮。" title="展开管道并单击 Summation 按钮。"></figure></p><p id="GUID-ED2069F5-BA31-49A7-9773-88E7EA212AB5">随即显示一个窗口，以供您在其中覆盖最初为该图层设置的成本公式。</p></div></li><li purpose="step" id="ESRI_STEP_45CE8E6A45944F9B8068B65546976DBA"><span purpose="cmd">将值从 <span class="usertext">{MEASURE} * 100</span> 更改为 <span class="usertext">{MEASURE} * 900</span>，以反映 100 美元折扣，然后单击<span class="uicontrol">确定</span>。</span><div class="info" purpose="info"><p id="GUID-DA448097-8D5A-40E1-84DE-2B207686BE38"><figure class="fig" href="#"><img src="GUID-86BE90B2-0C59-48F0-8187-6740513E2C98-web.png" alt="新成本公式" title="新成本公式"></figure></p><p id="GUID-8A497506-05D0-4B40-9A01-23721307697A">现在可以查看主线管道的新成本，以及整个设计的新成本。</p><p id="GUID-5065F155-8E59-4FFC-9BE5-67691E4F2695"><figure class="fig" href="#"><img src="GUID-249307DC-D319-4DA9-89A2-A01B513D55FA-web.png" alt="主线管道的总成本" title="主线管道的总成本"></figure></p><p id="GUID-AFF865A0-73B3-4E8A-9D76-2DC8E88CE266">总成本从 320 万美元下降到现在的 290 万美元。您已完成此项估算，现在可以与项目经理共享结果以讨论接下来的步骤。</p></div></li>  
+</ol></div></section></section> 
+
+			
+				<hr>
+				<!--googleoff: all-->
+				
+	
+        
+		    <p class="feedback right">
+		        <a id="afb" class="icon-ui-contact" href="/feedback/" data-langlabel="feedback-on-this-topic" >有关此主题的反馈?</a>
+		    </p>
+        
+	
+
+				<!--googleon: all-->
+			
+		</main>
+	</div>
+	
+	<!--googleoff: all-->
+	
+		
+			<div id="main-toc-large" class="column-5">
+			    <div class="panel font-size--2 tablet-hide trailer-1">
+			      <h5 class="trailer-half">在本主题中</h5>
+			      <ol class="list-plain pre-0 trailer-0"><li><a href="#ESRI_SECTION1_B88F00B78ABD42859B84A4278A9B06B2">配置设置</a></li><li><a href="#ESRI_SECTION1_C8183281364543C9AA2CE97D8764BFA9">使用“成本分析”微件</a></li></ol>
+			    </div>
+			    
+			    
+	  		</div>
+		
+    
+   <!--googleon: all-->
+
+
+
+
+          
+        </div>
+        <!-- ENDPAGECONTENT -->
+
+      </div>
+
+    </div>  <!-- End of wrapper -->
+
+  <footer class="footer leader-3 link-dark-gray" role="contentinfo">
+    <div class="grid-container">
+      <div class="row">
+        <nav class="column-6">
+          <h6 data-langlabel="arcgis-for-server">Arc<span>GIS Enterprise</span></h6>
+          <ul class="list-plain">
+            <li><a data-langlabel="home" href="../../../../zh-CN/">主页</a></li>
+            <li><a data-langlabel="portal" href="../../../../zh-CN/portal/">Portal</a></li>
+            <li><a data-langlabel="server" href="../../../../zh-CN/server/">Server</a></li>
+            <li><a data-langlabel="data-store" href="../../../../zh-CN/data-store/">Data Stores</a></li>
+            <li><a data-langlabel="cloud" href="../../../../zh-CN/cloud/">云</a></li>
+            <li><a data-langlabel="apps" href="../../../../zh-CN/apps/">应用程序</a></li>
+            <li><a data-langlabel="documentation" href="../../../../zh-CN/documentation/">文档</a></li>
+          </ul>
+        </nav>
+
+        
+  <nav class="column-6">
+    <h6 data-langlabel="arcgis-platform">ArcGIS 平台</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="arcgis" href="//www.arcgis.com/">ArcGIS Online</a></li>
+      <li><a data-langlabel="arcgis-for-professionals" href="//pro.arcgis.com/">ArcGIS Pro</a></li>
+      <li><a data-langlabel="arcgis-for-server" href="//enterprise.arcgis.com/">ArcGIS Enterprise</a></li>
+      <li><a data-langlabel="arcgis-for-developers" href="https://developers.arcgis.com/">ArcGIS for Developers</a></li>
+      <li><a data-langlabel="arcgis-solutions" href="//solutions.arcgis.com/">ArcGIS Solutions</a></li>
+      <li><a data-langlabel="arcgis-marketplace" href="//marketplace.arcgis.com/">ArcGIS Marketplace</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <h6 data-langlabel="about-esri">关于 Esri</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="about-us" href="//www.esri.com/about-esri/">关于我们</a></li>
+      <li><a data-langlabel="careers" href="//www.esri.com/careers/">招贤纳士</a></li>
+      <li><a data-langlabel="insiders-blog" href="https://www.esri.com/about/newsroom/blog/">Esri 博客</a></li>
+      <li><a data-langlabel="user-conference" href="//www.esri.com/events/user-conference/index.html">用户大会</a></li>
+      <li><a data-langlabel="developer-summit" href="//www.esri.com/events/devsummit/index.html">开发者峰会</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <a class="esri-logo" href="//www.esri.com/" aria-label="Esri Home"></a>
+    <section class="footer-social-nav leader-1">
+            <a class="icon-social-twitter" aria-label="Esri on Twitter" href="https://twitter.com/Esri/"></a>
+            <a class="icon-social-facebook" aria-label="Esri on Facebook" href="https://www.facebook.com/esrigis/"></a>
+            <a class="icon-social-github" aria-label="Esri on GitHub" href="//esri.github.io/"></a>
+            <a class="icon-social-contact" aria-label="Contact Esri" href="//www.esri.com/about-esri/contact/"></a>
+    </section>
+	  
+  </nav>
+  
+  <div class="column-24 leader-1">
+    <p class="font-size--3"><a href="http://www.esri.com/legal/copyright-trademarks">Copyright &copy; 2019 Esri.</a> All rights reserved. | <a href="http://www.esri.com/legal/privacy/">隐私政策</a> | <a href="http://www.esri.com/legal/software-license">法律声明</a></p>
+  </div>
+  
+
+
+      </div>
+    </div>
+  </footer>
+  <!--googleoff: all-->
+
+  
+  
+	<script src="../../../../zh-CN/assets/js/init.js" type="text/javascript"></script>
+	<!--<script src="../../../../zh-CN/assets/js/drop-down.js" type="text/javascript"></script>-->
+	<script src="../../../../zh-CN/assets/js/search/searchform.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/cdn/js/link-modifier.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/cdn/js/sitewide.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/cdn/js/libs/highlight.pack.js" type="text/javascript"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+
+
+  
+    
+
+  <script src="../../../../zh-CN/cdn/js/affix.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    $(function () {
+          var appendFlg = true;
+
+          $("#bigmac")
+          .on("affixed.bs.affix", function (evt) {
+            if (appendFlg) {
+              $("<a class='crumb' href='#'>成本分析微件</a>").insertAfter ($("#bigmac nav a").last());
+              appendFlg = false;
+            }
+          })
+          .on ("affix-top.bs.affix", function(evt) {
+            if (!appendFlg) {
+              $("#bigmac nav a").last().remove();
+            }
+            appendFlg = true;
+          })
+    })
+  </script>
+  
+        <script type="text/javascript">
+          window.doctoc = {
+            pubID: "583",
+            tpcID: "776",
+            
+              prefix: "使用",
+              prefixUrl: "/zh-cn/portal/latest/use/",
+          
+            hideToc: false
+          }
+        </script>
+
+        <script type="text/javascript" src="../../../../zh-CN/portal/latest/use/583.js" ></script>
+        <script type="text/javascript" src="../../../../zh-CN/cdn/calcite/js/protoc.js" ></script>
+        
+        
+
+  <noscript>
+        <p>
+            <a href="flisting.htm">flist</a>
+        </p>
+    </noscript>
+    <script type="text/javascript"></script>
+  
+  
+    
+    
+
+  </body>
+</html>

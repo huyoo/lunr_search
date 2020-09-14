@@ -1,0 +1,579 @@
+
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>  <html class="ie lt-ie9 lt-ie8 lt-ie7 ie6" dir="ltr"> <![endif]-->
+<!--[if IE 7]>     <html class="ie lt-ie9 lt-ie8 ie7" dir="ltr"> <![endif]-->
+<!--[if IE 8]>     <html class="ie lt-ie9 ie8" dir="ltr"> <![endif]-->
+<!--[if IE 9]>     <html class="ie ie9" dir="ltr"> <![endif]-->
+<!--[if !IE]><!--> <html dir="ltr" lang="zh-CN"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>构建多变量格网&mdash;Portal for ArcGIS | ArcGIS Enterprise 文档</title>
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+    <script>
+      var docConfig = {
+        locale: 'zh-CN'
+        ,localedir: 'zh-cn'
+        ,langSelector: ''
+        
+        ,relativeUrl: false
+        
+
+        ,searchformUrl: '/search/'
+        ,tertiaryNavIndex: ''
+
+        
+      };
+    </script>
+	 
+
+
+    
+    <!--[if lt IE 9]>
+      <script src="../../../../zh-CN/cdn/js/libs/html5shiv.js" type="text/javascript"></script>
+      <script src="../../../../zh-CN/cdn/js/libs/selectivizr-min.js" type="text/javascript"></script>
+      <script src="../../../../zh-CN/cdn/js/libs/json2.js" type="text/javascript"></script>
+      <script src="../../../../zh-CN/cdn/js/libs/html5shiv-printshiv.js" type="text/javascript" >
+
+    <![endif]-->
+
+     <!--[if lt IE 11]>
+    <script>
+      $$(document).ready(function(){
+        $$(".hideOnIE").hide();
+      });
+    </script>
+    <![endif]-->
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<link href="../../../../zh-CN/assets/img/favicon.ico" rel="shortcut icon" >
+	<link href="../../../../zh-CN/assets/css/screen.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/cdn/calcite/css/documentation.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/assets/css/print.css" media="print" type="text/css" rel="stylesheet" />
+
+	<!--
+	<link href="../../../../zh-CN/assets/css/screen_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/assets/css/documentation/base_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/assets/css/print_l10n.css" media="print" type="text/css" rel="stylesheet" />
+	-->
+	
+	
+		<script src="../../../../zh-CN/cdn/js/libs/jquery.1.9.1.min.js" type="text/javascript"></script>
+	
+	<script src="../../../../zh-CN/cdn/js/libs/jquery.cookie.js" type="text/javascript"></script>
+	<link href="../../../../zh-CN/cdn/css/colorbox.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/cdn/css/colorbox_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<script src="../../../../zh-CN/cdn/js/libs/jquery.colorbox-min.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/assets/js/video-init.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/assets/js/sitecfg.js" type="text/javascript"></script>
+	
+		<script src="../../../../zh-CN/assets/js/signIn.js" type="text/javascript"></script>
+	
+
+	<!--- Language Picker -->
+	<script src="../../../../zh-CN/assets/js/locale/l10NStrings.js" type="text/javascript"></script>
+	
+		 
+	
+
+	<script src="../../../../zh-CN/assets/js/calcite-web.js" type="text/javascript"></script>
+
+
+
+  <!--- search MD -->
+    <META name="description" content="构建多变量格网为 GeoAnalytics 工具，可生成正方形或六边形图格格网，并根据一个或多个输入图层的邻近性计算每个图格的值。"><META name="last-modified" content="2019-12-6"><META name="product" content="arcgis-portal-windows,arcgis-portal-linux,arcgis-enterprise-windows,arcgis-enterprise-linux"><META name="sub_category" content="Portal for ArcGIS"><META name="search-collection" content="help"><META name="content_type_label" content="帮助主题"><META name="sub_category_label" content="Portal for ArcGIS"><META name="search-category" content="help-general"><META name="subject_label" content="PORTAL,服务,SERVER"><META name="version" content="10.8"><META name="content_type" content="Help Topic"><META name="subject" content="PORTAL,SERVICES,SERVER"><META name="content-language" content="zh-cn">
+    <!--- search MD -->
+
+  
+  <script src="../../../../zh-CN/assets/js/switchers/portal-1.js" type="text/javascript"></script>
+  
+      
+
+</head>
+
+<!--
+      pub: GUID-7B47163B-CE1B-465F-BEEE-4DADDB8DFF09=37
+      tpc: GUID-A7FE2740-1680-4F10-AA14-7B0B1A97BC39=3
+      -->
+
+
+<!-- variable declaration, if any -->
+<!-- can change following macro to set variable once we are on Jinja 2.8 -->
+
+
+
+
+
+<body class="claro zh-CN server">
+  
+
+  <!-- Drawer location -->
+  <div class="drawer drawer-left js-drawer" data-drawer="top-nav">
+        <nav class="drawer-nav" role="navigation">
+          <aside class="side-nav">
+            <h2 class="side-nav-title">Arc<span>GIS</span> Enterprise</h2>
+            <form id="helpSearchForm" class="margin-left-half margin-right-half leader-half trailer-half drawer-search-form" method="GET">
+              <input type="search" name="q"  placeholder="搜索 ArcGIS Enterprise 帮助">
+              <input type="hidden" name="collection" value="help" />
+              <input type="hidden" name="product" value="arcgis-portal-windows" />
+              <input type="hidden" name="version" value="10.8" />
+              <input type="hidden" name="language" value="zh-CN" />
+            </form>    
+             <a id="nav-portal" data-langlabel="portal" href="../../../../zh-CN/portal/" class="side-nav-link">Portal</a>
+             
+            <a id="all-servers" data-langlabel="all-servers" href="../../../../zh-CN/server/" class="side-nav-link">所有服务器</a>
+            <a id="gis-server" data-langlabel="gis-server" href="../../../../zh-CN/server/" class="side-nav-link">GIS Server</a>
+            <a id="image-server" data-langlabel="image-server" href="../../../../zh-CN/image/" class="side-nav-link">Image Server</a>
+            <a id="geo-analytics-server" data-langlabel="geo-analytics-server" href="../../../../zh-CN/geoanalytics/" class="side-nav-link">GeoAnalytics Server</a>
+            <a id="geoevent-server" data-langlabel="geoevent-server" href="../../../../zh-CN/geoevent/" class="side-nav-link">GeoEvent Server</a>
+            <a id="notebook-server" data-langlabel="notebook-server" href="../../../../zh-CN/notebook/" class="side-nav-link">Notebook Server</a>
+            <a id="nav-data-store" data-langlabel="data-store" href="../../../../zh-CN/data-store/" class="side-nav-link">Data Stores</a>
+            <a id="nav-cloud" data-langlabel="cloud" href="../../../../zh-CN/cloud/" class="side-nav-link">云</a>
+            <a id="nav-apps" data-langlabel="apps" href="../../../../zh-CN/apps/" class="side-nav-link">应用程序</a>
+            <a id="nav-doc" data-langlabel="documentation" href="../../../../zh-CN/documentation/" class="side-nav-link">文档</a>
+
+          </aside>
+        </nav>
+    </div>
+
+    <!-- user navigation collapses to drawer on mobile -->
+    
+    <div class="drawer drawer-right js-drawer hide-if-logged-out logged-in-navigation" data-drawer="user-nav">
+      <nav class="drawer-nav">
+        <aside class="side-nav">
+          <a class="side-nav-link agolProfile" href="#">我的个人资料</a>
+          <a class="side-nav-link icon-ui-sign-out js-log-out" href="#">登出</a>
+        </aside>
+      </nav>
+    </div>
+    
+<!-- End of drawer -->
+
+  
+  <div class="wrapper">
+      <!--googleoff: all-->
+
+      <header class="top-nav" data-skin="learn">
+        <a class="skip-to-content" href="#skip-to-content">Skip To Content</a>
+        <div class="grid-container">
+          <div class="column-24">
+
+
+            <!--<div class="top-nav-title-wrapper text-center ">-->
+              <a href='../../../../zh-CN/' class="top-nav-title tablet-hide"><span>Arc</span>GIS  Enterprise</a>
+              <a href='../../../../zh-CN/' class="icon-ui-menu top-nav-title js-drawer-toggle tablet-show" data-drawer="top-nav"><span>Arc</span>GIS Enterprise</a>
+            <!--</div> -->
+
+          
+            <nav role="navigation" class="top-nav-list left tablet-hide">
+              <a id="nav-portal" data-langlabel="portal" href="../../../../zh-CN/portal/" class="top-nav-link">Portal</a>
+
+                <div class="dropdown js-dropdown ">
+                  <a class="top-nav-link js-dropdown-toggle" tabindex="0" aria-haspopup="true" aria-expanded="false" href="#">Servers</a>
+                  <nav class="dropdown-menu featured" role="menu">
+                    <ul class="dropdown-sublist-featured">
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/get-started/latest/windows/additional-server-deployment.htm" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path  d="M42.92 6.1H4.12v8.566l.833.832-.835.833-.018 7.332.845.847-.825.824V33.9h25v5.2h-2v1.075H8.02v.8h19.1v.925h4.8v-.925H40v-.8h-8.08V39.1h-2v-5.2h13v-8.566l-.834-.834.835-.834v-7.332l-.835-.834.835-.834zm-11.8 35h-3.2v-1.2h3.2zm11-8H4.92v-7.434l.767-.766h35.668l.765.766zm0-9.766l-.766.766H5.666l-.766-.767.017-6.669.766-.764h35.671l.766.766zm0-9l-.766.766H5.687l-.766-.766V6.9h37.2zM19 11.9h-2v-.8h2zm-4 0h-2v-.8h2zm-4 0H9v-.8h2zm6 8.2h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9zm8 9h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9z"/></svg></span>
+                          <span class="sublink-text">所有服务器</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/server/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M45.98 33.575a.616.616 0 0 0-.335-.51l-3.362-2.03 3.362-2.031a.556.556 0 0 0 0-1.02l-11.1-6.704a1.293 1.293 0 0 0-1.112 0L22.33 27.982a.556.556 0 0 0 0 1.02l3.36 2.03-3.358 2.03a.556.556 0 0 0-.002 1.021l3.322 2.006-3.324 2.008a.555.555 0 0 0 .002 1.017l11.102 6.703a1.25 1.25 0 0 0 1.11.002l11.104-6.706a.556.556 0 0 0 0-1.02l-3.32-2.006 3.318-2.004a.607.607 0 0 0 .335-.509zM33.837 21.97c.026-.01.286-.005.29-.005l10.814 6.53-10.8 6.523c-.028.01-.284.005-.294.006l-10.813-6.53zm11.105 16.636l-10.8 6.523a2.564 2.564 0 0 1-.295.006l-10.81-6.529 3.39-2.047 7.004 4.23a1.083 1.083 0 0 0 .557.131 1.101 1.101 0 0 0 .554-.13l7.01-4.233zM34.14 40.098a2.545 2.545 0 0 1-.294.006l-10.812-6.53 3.43-2.073 6.97 4.208a1.25 1.25 0 0 0 1.107-.001l6.966-4.206 3.431 2.073zM9 8H7V7h2zm8 8h-2v-1h2zm-4-8h-2V7h2zm4 0h-2V7h2zm-4 8h-2v-1h2zm7.316 11.1H3.9v-6.434l.766-.766h35.668l.766.766v2.12l.8.483v-2.935l-.826-.826.826-.845v-6.329l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9h16.88a2.632 2.632 0 0 1 .336-.8zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zm0 8v-5.668l.766-.766h35.668l.766.766v5.67l-.746.764H4.666zM15 24v-1h2v1zm-4 0v-1h2v1zm-2-8H7v-1h2zm-2 8v-1h2v1z"/></svg></span>
+                          <span class="sublink-text">GIS Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/image/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 8h-2V7h2zm-4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm8 8h-2v1h2zm-8 0H7v1h2zm4 9v-1h-2v1zm-4 0v-1H7v1zm8 0v-1h-2v1zm4 3.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V21h-.8v-.334l-.766-.766H4.666l-.766.766V27.1H21zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zm40.234 4v21.8H23.1V23.1zm-.8 16.366L39.466 44.1h2.868l1.766-1.766zm-20.2-9.932l5.634-5.634h-2.868L23.9 26.666zm6.2-5.068L24.466 30.1h2.868l2.766-2.766zM28.466 30.1H30.1v-1.634zm2.434 0h6.2v-6.2h-6.2zm-7 7h6.2v-6.2h-6.2zm7 0h6.2v-6.2h-6.2zm0 6.434l5.634-5.634h-2.868L30.9 40.666zm7-7l5.634-5.634h-2.868L37.9 33.666zm1.634-5.634H37.9v1.634zm-8.634 7v1.634l1.634-1.634zm.566 6.2h2.868l2.766-2.766v-2.868zm6.434-3.566l2.634-2.634H37.9zM35.466 44.1H37.1v-1.634zm2.434 0h.434l5.766-5.766V37.9h-2.434L37.9 41.666zm6.2-8.634L42.466 37.1H44.1zm0-4L38.466 37.1h2.868l2.766-2.766zm0-7.566h-6.2v6.2h6.2zm-20.2 0v1.634l1.634-1.634zm0 20.2h6.2v-6.2h-6.2zm20.2 0v-.634l-.634.634z"/></svg></span>
+                          <span class="sublink-text">Image Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/geoanalytics/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 16h-2v-1h2zm-8 8v-1H7v1zm8 0v-1h-2v1zM13 7h-2v1h2zm4 0h-2v1h2zM9 7H7v1h2zm21.45 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V27.9h-1.464l-.801-.8H41.1v-6.434l-.766-.766H4.666l-.766.766V27.1h27.15zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM13 24v-1h-2v1zm0-9h-2v1h2zm-4 0H7v1h2zm26.672 27.148A1.87 1.87 0 0 1 35.9 43a1.91 1.91 0 1 1-3.763-.222l-9.845-3.414A1.88 1.88 0 0 1 21 39.9a1.9 1.9 0 1 1 1.474-3.084l4.692-2.346A1.878 1.878 0 0 1 27.1 34a1.902 1.902 0 0 1 1.9-1.9 1.867 1.867 0 0 1 .781.191l3.788-5.05A1.88 1.88 0 0 1 33.1 26a1.9 1.9 0 1 1 3.491 1.026l4.889 4.888c-.069.056-.144.1-.21.162a3.986 3.986 0 0 0-.358.402l-4.883-4.883A1.889 1.889 0 0 1 35 27.9a1.867 1.867 0 0 1-.781-.191l-3.788 5.049a1.868 1.868 0 0 1 .437.965l9.204.614c-.018.11-.049.218-.058.33A3.93 3.93 0 0 0 40 35c0 .046.01.09.01.135l-9.185-.612A1.913 1.913 0 0 1 29 35.9a1.889 1.889 0 0 1-1.474-.716l-4.692 2.346a1.878 1.878 0 0 1 .066.47 1.9 1.9 0 0 1-.105.625c-.007.02-.022.036-.03.056l9.63 3.34a1.87 1.87 0 0 1 2.786-.505l5.415-4.437c.067.108.127.22.204.322a3.9 3.9 0 0 0 .292.306zM33.9 26a1.092 1.092 0 0 0 .43.872 1.12 1.12 0 0 0 1.42-.068A1.1 1.1 0 1 0 33.9 26zm-6 8a1.1 1.1 0 0 0 2.196.093 1.135 1.135 0 0 0-.426-.965A1.087 1.087 0 0 0 29 32.9a1.101 1.101 0 0 0-1.1 1.1zm-5.8 4a1.098 1.098 0 1 0-.06.362A1.101 1.101 0 0 0 22.1 38zm13 5a1.1 1.1 0 1 0-2.2 0 1.1 1.1 0 0 0 2.2 0zm10.8-8a1.9 1.9 0 1 1-3.8 0c0-.053.003-.105.007-.158A1.9 1.9 0 0 1 45.9 35zm-.8 0a1.1 1.1 0 0 0-2.196-.093 1.153 1.153 0 0 0 .216.752A1.1 1.1 0 0 0 45.1 35z"/></svg></span>
+                          <span class="sublink-text">GeoAnalytics Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/geoevent/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M13 8h-2V7h2zm4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm12.418 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826v2.117c-.259-.177-.53-.337-.8-.497v-1.288l-.766-.766H4.666l-.766.766V27.1h17.933c-.148.26-.283.53-.415.8zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM9 24v-1H7v1zm4-9h-2v1h2zm0 9v-1h-2v1zm-4-9H7v1h2zm8 9v-1h-2v1zm16.9 2h-.8v8.9H39v-.8h-5.1zm.1-3.901a11.9 11.9 0 1 0 11.9 11.9 11.914 11.914 0 0 0-11.9-11.9zm0 23a11.1 11.1 0 1 1 11.1-11.1 11.112 11.112 0 0 1-11.1 11.1z"/></svg></span>
+                          <span class="sublink-text">GeoEvent Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/notebook/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M22 27.1H3.9v-6.434l.766-.766h18.576a5.262 5.262 0 0 1 .83-.8H4.666l-.766-.766v-5.668l.766-.766h35.668l.766.766V18h.8v-5.666l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9H22zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zM9 8H7V7h2zm8 0h-2V7h2zm-4 0h-2V7h2zm2 16v-1h2v1zm-4 0v-1h2v1zm-4 0v-1h2v1zm0-8v-1h2v1zm8 0v-1h2v1zm-4 0v-1h2v1zm18.9 8.1h-1.8v1.8h1.8zm-.8 1h-.2v-.2h.2zm15.498-4.48a2.727 2.727 0 0 0-1.62-.5v-.02H27.25a3.154 3.154 0 0 0-3.15 3.15V38.1h-1.68a3.386 3.386 0 0 0-2.872 1.58 3.49 3.49 0 0 0-.157 3.419 3.241 3.241 0 0 0 2.954 1.801h15.161a3.404 3.404 0 0 0 3.394-3.4V26.9h5v-3.65a3.224 3.224 0 0 0-1.302-2.63zM22.345 44.1a2.44 2.44 0 0 1-2.23-1.341 2.706 2.706 0 0 1 .11-2.65A2.588 2.588 0 0 1 22.42 38.9h12.89a3.395 3.395 0 0 0 0 5.2zM40.1 23.192V41.5a2.6 2.6 0 1 1-2.6-2.6v-.8H24.9V23.25a2.352 2.352 0 0 1 2.35-2.35h13.795a3.183 3.183 0 0 0-.945 2.292zm5 2.908h-4.2v-2.908a2.274 2.274 0 0 1 1.44-2.18 1.944 1.944 0 0 1 1.791.259 2.423 2.423 0 0 1 .97 1.979zm-17.1 5h9v.8h-9zm0 3h7v.8h-7zm0-6h9v.8h-9zm4-3h5v.8h-5z"/></svg></span>
+                          <span class="sublink-text">Notebook Server</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+
+              <a id="nav-data-store" data-langlabel="data-store" href="../../../../zh-CN/data-store/" class="top-nav-link">Data Stores</a>
+              <a id="nav-cloud" data-langlabel="cloud" href="../../../../zh-CN/cloud/" class="top-nav-link">云</a>
+              <a id="nav-apps" data-langlabel="apps" href="../../../../zh-CN/apps/" class="top-nav-link">应用程序</a>
+            </nav>
+
+
+            
+            
+            
+
+            <div class="margin-left-1 top-nav-list right hide-if-logged-in logged-out-navigation">
+               
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+              
+              <a data-langlabel="sign-in" id="login-link" class="icon-ui-user top-nav-link link-blue login-link" href="#">登录</a>
+              
+            </div>
+
+            
+            <nav class="margin-left-1 top-nav-list right hide-if-logged-out logged-in-navigation">
+              
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+             
+              <div class="dropdown js-dropdown right">
+
+                <div class="tablet-show top-nav-link">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a href="#" data-drawer="user-nav" class="user-nav-name js-drawer-toggle" data-first-name></a>
+                </div>
+
+                <div class="tablet-hide top-nav-link js-dropdown-toggle">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a class="user-nav-name top-nav-dropdown dropdown-btn" data-first-name>&nbsp;</a>
+                </div>
+
+                <nav class="dropdown-menu dropdown-right">
+                
+                  <a class="dropdown-link agolProfile" id="agolProfile" href="#">我的个人资料</a>
+                  <a class="dropdown-link js-log-out" id="agolLogout" href="#">登出</a>
+                </nav>
+              </div>
+            </nav>
+            
+
+            
+          </div>
+        </div>
+      </header>
+
+      <div class="js-search search-overlay">
+        <div class="search-content" role="dialog" aria-labelledby="search">
+          <form method="GET" id="helpSearchForm">
+            <label>
+              搜索 ArcGIS Enterprise 帮助
+              <div class="search-bar">
+                <input type="search" name="q"  placeholder="搜索 ArcGIS Enterprise 帮助" class="search-input js-search-input">
+                <input type="hidden" name="collection" value="help" />
+                <input type="hidden" name="product" value="arcgis-portal-windows" />
+                <input type="hidden" name="version" value="10.8" />
+                <input type="hidden" name="language" value="zh-CN" />
+              </div>
+            </label>
+            <input type="hidden" name="relativePath" value="../../../../" /><button type="submit" class="btn btn-large right">搜索</button>
+          </form>
+        </div>
+      </div>
+
+      <!--googleon: all-->
+
+      <div id="skip-to-content">
+        <!--googleoff: all-->
+        <header class="sub-nav sub-nav-learn">
+          <div class="grid-container">
+            
+            <div class="column-24">
+              <div style="display:table;" class="sdk-home-banner">
+                <div class="sdk-home-banner-content">
+                  <h1 class="sub-nav-title link-white">Portal for ArcGIS</h1>
+                </div>
+              </div>
+            </div>
+
+            <div class="column-24">
+              <nav class='sub-nav-list tablet-hide'><a class="sub-nav-link" href="../../../../zh-CN/portal/" target="_top" title="Portal for ArcGIS 主页">主页</a><a class="sub-nav-link is-active" href="../../../../zh-CN/portal/latest/use/" target="_top" title="使用 Portal for ArcGIS">使用</a><a class="sub-nav-link" href="../../../../zh-CN/portal/latest/administer/windows/" target="_top" title="安装、管理和保护 Portal for ArcGIS">管理</a></nav><select class='tablet-show select-full trailer-half js-select-nav'><option value="../../../../zh-CN/portal/">主页</option><option selected="true" value="../../../../zh-CN/portal/latest/use/">使用</option><option value="../../../../zh-CN/portal/latest/administer/windows/">管理</option></select>
+            </div>
+
+          </div>
+        </header>
+        <!--googleon: all-->
+       
+        <!-- content goes here -->
+        <div class="grid-container ">
+          
+
+            
+              
+  <!--BREADCRUMB-BEG--><div id="bigmac" class="sticky-breadcrumbs trailer-2" data-spy="affix" data-offset-top="180"> </div><!--BREADCRUMB-END-->
+  <!--googleoff: all-->
+    <div class="column-5 tablet-column-12 trailer-2 ">
+      <aside class="js-accordion accordion reference-index" aria-live="polite" role="tablist">
+        <div></div>
+      </aside>
+
+      <div class="js-sticky scroll-show tablet-hide leader-1 back-to-top" data-top="0" style="top: 0px;">
+        <a href="#" class="btn btn-fill btn-clear">返回顶部</a>
+      </div>
+    </div>
+  <!--googleon: all-->
+  
+            
+            
+            
+	
+		<div class="column-13  pre-1 content-section">
+	
+		<header class="trailer-1"><h1>构建多变量格网</h1></header>
+
+		 
+	<!--googleoff: all-->
+	
+		
+				<aside id="main-toc-small" class="js-accordion accordion tablet-show trailer-1">
+			      <div class="accordion-section">
+			        <h4 class="accordion-title">在本主题中</h4>
+			        <div class="accordion-content list-plain">
+			          <ol class="list-plain pre-0 trailer-0"><li><a href="#GUID-D415A3E4-0890-40E6-89A0-772017DB8471">使用
+<ph translate="yes" varid="geoanalyticsserver_tools">GeoAnalytics 工具</ph> 进行的分析</a></li><li><a href="#GUID-BA38EC1C-53EC-40F5-A2A8-5C1CEF69623C">示例
+</a></li><li><a href="#ESRI_SECTION1_C3B04B840EC3482CA15C6FD4CEA9BF7C">用法说明</a></li><li><a href="#ESRI_SECTION1_748111881C664FD9B343EF0E23BCD1BB">限制</a></li><li><a href="#ESRI_SECTION1_9FE0BE5964EA4B81ABB208F92502DDB9">构建多变量格网的工作原理</a></li><li><a href="#GUID-85C04449-C1E7-49A5-9925-D6084A9B3C0E"><ph translate="no" varid="ArcGISAPIforPython">ArcGIS API for Python</ph> 示例</a></li><li><a href="#ESRI_SECTION1_6FC2604791A54867BB212A9B5B70D1FD">类似工具</a></li></ol>
+			        </div>
+			      </div>
+			     </aside>
+		
+    
+   <!--googleon: all-->
+
+
+		<main>
+			
+	
+    	
+    
+
+
+			
+<p id="GUID-475402B5-C614-47D4-B000-FDCBEBB07E48"><img purpose="img" placement="inline" alt="构建多变量格网" title="构建多变量格网" src="GUID-82FD155B-EED7-4E0A-936B-9AE55AB35F09-web.png">   “构建多变量格网”工具会生成正方形和六边形条柱格网，并根据一个或多个输入图层的邻近性计算每个条柱的变量。这些变量包括如下内容： 
+</p><p id="GUID-681595CD-FA10-4341-97F4-35526CF301B4"><ul purpose="ul" id="UL_65198F21886D4C5BBAE4A2033D3ADEA8"><li purpose="li" id="LI_B96FF0407C184A608F93DF6B99551D78"><span class="uicontrol">与最近要素的距离</span> - 每个条柱与最近要素的距离</li><li purpose="li" id="LI_44655B96E7C74173BF7AEAC45D0B579A"><span class="uicontrol">最近要素属性</span> - 距离每个条柱最近的要素的字段值</li><li purpose="li" id="LI_55603BE3D8DE43358B5FA072277EAFE3"><span class="uicontrol">邻近要素汇总</span> - 距离每个条柱的某一范围内所有要素的指定统计数据</li><li purpose="li" id="LI_9594ED15C64A453EB928EFA63F7B6E66"><span class="uicontrol">相交要素汇总</span> - 与每个条柱相交的所有要素的指定统计数据</li></ul></p><section class="section1 padded-anchor" id="GUID-D415A3E4-0890-40E6-89A0-772017DB8471" purpose="section1"><h2>使用
+<span class="ph">GeoAnalytics 工具</span> 进行的分析</h2><p id="GUID-EE171BDD-827E-40E7-B68C-20BA42ABAB6A"><a class="xref xref" href="../../../../zh-CN/portal/latest/use/perform-big-data-analysis.htm">通过跨多个 <span class="ph">ArcGIS GeoAnalytics Server</span> 计算机和核心组件的分布式处理来运行使用 <span class="ph">GeoAnalytics 工具</span></a> 进行的分析。<span class="ph">GeoAnalytics 工具</span> 和 <span class="ph">ArcGIS Enterprise</span> 中标准要素分析工具的参数和功能不同。要了解有关这些差别的详细信息，请参阅<a class="xref xref" href="../../../../zh-CN/portal/latest/use/feature-analysis-tool-differences.htm">要素分析工具差别</a>。</p></section><section class="section1 padded-anchor" id="GUID-BA38EC1C-53EC-40F5-A2A8-5C1CEF69623C" purpose="section1"><h2>示例
+</h2><p id="GUID-A9775FBD-591B-4C09-ADB5-758E72E2982C">投资新公共交通基础设施的选址是一个复杂的问题，需要可视化许多类型的数据。您可以访问多个表示美国各地现有基础设施的数据集，以及多个人口普查数据图层。您可以使用“构建多变量格网”将所有这些数据汇总到单个数据集中，通过该数据集，您可以直观地查看距最近的现有基础设施的距离，周边平均人口数以及美国各个地点周边的收入差异。</p></section><section class="section1 padded-anchor" id="ESRI_SECTION1_C3B04B840EC3482CA15C6FD4CEA9BF7C" purpose="section1"><h2>用法说明</h2><p id="GUID-745CC962-09CF-4FD9-AAA7-5D59749ECF70">可以计算点、线或面要素的变量。</p><p id="GUID-7B8F4446-8A8B-4C3D-9EF6-611826E804CD">对于每个变量，您必须指定其类型并提供标题。该标题将是结果图层中包含每个条柱值的字段名称。每个可以使用构建多变量格网计算的变量类型都必须配置有一组唯一参数。这些参数如下所示。<h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="1.00*"></colgroup><colgroup width="1.35*"></colgroup><colgroup width="1.47*"></colgroup><thead><tr><th colspan="1">变量</th><th colspan="1">说明</th><th colspan="1">参数</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-F41261E3-475D-4046-A4C2-17E0BD68764B"><span class="uicontrol">与最近要素的距离</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-82BE1D26-E9B7-4E2E-8348-9439A7B115B4">从每个条柱中心到输入图层中最近要素的距离。该结果将采用处理空间参考的单位（请参阅<a class="xref xref" href="../../../../zh-CN/portal/latest/use/geoanalyticstool-useenvironmentsettings.htm#ESRI_SECTION1_D37F958E528D46448D2C832D4714061C">设置处理空间参考</a>）。</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-5C105CC0-4B29-4AB5-9C60-320DA4A4759C"><span class="uicontrol">距条柱中心的最大距离</span>为距各个条柱中心的最远距离，工具将使用此距离在输入图层中搜索要素。该值必须大于条柱大小。如果在此搜索半径内未找到任何要素，则会为该条柱的此变量分配 <span class="usertext">null</span> 值。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-54AE0624-76D4-4671-8723-1AF22CEC2D14"><span class="uicontrol">最近要素属性</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-2B47E656-865C-4A7B-8FF2-CDFD877FC358">距离每个条柱中心最近的要素的字段值。该字段可以为任何类型。如果两个或两个以上的要素离条柱中心等距并且距离最近，则系统将随机选择其中一个要素，并将该要素的字段值包含在结果图层内。</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-81B7FF80-5F0A-4384-AECC-77BE3F2127F6"><span class="uicontrol">要包括的字段</span>是输入图层中字段的名称。最接近条柱中心的要素中的此字段值将作为条柱属性包含在结果图层内。</p><p id="GUID-8362847B-A0CA-4165-AB05-91C4AF45CC2F"><span class="uicontrol">距条柱中心的最大距离</span>为距各个条柱中心的最远距离，工具将使用此距离在输入图层中搜索要素。该值必须大于条柱大小。如果在此搜索半径内未找到任何要素，则会为该条柱的此变量分配 <span class="usertext">null</span> 值。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-C0750F27-6146-4F4D-84BE-485E41D179CB"><span class="uicontrol">邻近要素汇总</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-85646890-D2CB-4B4E-AF54-3B8664794AB8">此统计数据根据指定字段计算，计算中会使用位于距每个条柱中心给定距离范围内的所有要素。如果要素的任一部分位于此距离内，则该要素将包含在计算内。</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-1004739F-723D-4EB2-BC14-F48BA3CF4043"><span class="uicontrol">要计算的统计数据</span>为输入图层中字段的名称以及要在该字段上计算的统计数据。</p><p id="GUID-3469A3CE-161F-4A61-870C-0357E43BBC56"><span class="uicontrol">汇总范围内的要素</span>为工具将针对输入图层中的要素搜索的各个条柱距离中心的最远距离。使用指定的统计数据对在此搜索半径内找到的所有要素进行汇总。该值必须大于条柱大小。如果在此搜索半径内未找到任何要素，则会为该条柱的此变量分配 <span class="usertext">null</span> 值。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-A2EA40ED-5D96-420A-AA6E-797724115F01"> <span class="uicontrol">相交要素汇总</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-4CDE0A98-E162-482B-8EF6-7CB87435EBDF">此统计数据根据指定字段计算，计算中会使用与条柱相交的所有要素。如果要素的任一部分位于条柱区域内，则该要素将包含在计算内。</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-FFAA91F4-B3E7-49CE-8E12-14C0B1EF47DD"><span class="uicontrol">要计算的统计数据</span>为输入图层中字段的名称以及要在该字段上计算的统计数据。系统将为每个条柱汇总与其相交的要素。如果没有要素与条柱相交，则会为该条柱的此变量分配 <span class="usertext">null</span> 值。</p></td></tr></tbody><caption></caption></table></div></p><p id="GUID-26A44EB8-485A-427A-AAD5-1B543534E124">对于<span class="uicontrol">邻近要素汇总</span>和<span class="uicontrol">相交要素汇总</span>选项，您可以在数值字段上计算以下统计数据：<ul purpose="ul" id="GUID-77966208-7C63-49BB-8E61-2ECEF91EEA44"><li purpose="li" id="LI_F592EC56423645288F307BA19BC8C16D">计数 - 计算非空值的数目。可用于数值字段或字符串。[null, 0, 2] 的计数为 2。</li><li purpose="li" id="LI_2C6A84A792684583B830FF6C6B8CDC18">总和 - 字段内数值的总和。[null, null, 3] 的总和为 3。</li><li purpose="li" id="LI_F89B42ADFFC643138DF4D7C8A7C5825D">平均值 - 数值的平均值。[0, 2, null] 的平均值为 1。</li><li purpose="li" id="LI_F4E0137ED1934BEBBA2F815918269AE1">最小值 - 数值字段的最小值。[0, 2, null] 的最小值为 0。</li><li purpose="li" id="LI_34062E37C2234F5CAB0ED4334E765E5B">最大值 - 数值字段的最大值。[0, 2, null] 的最大值为 2。</li><li purpose="li" id="LI_5DF8768B3E9440C0A68C20FA5280ABF2">范围 - 数值字段的范围。其计算方法为最大值减去最小值。[0, null, 1] 的范围为 1。[null, 4] 的范围为 0。</li><li purpose="li" id="LI_A05F9F8ED4664FD0A5DB2D15A0B9C415">方差 - 轨迹中数值字段内数值的方差。[1] 的方差为空。[null, 1,0,1,1] 的方差为 0.25。</li><li purpose="li" id="LI_41A98AF463FB4E14B03CB2168D4A1A2B">标准差 - 数值字段的标准差。[1] 的标准差为空。[null, 1,0,1,1] 的标准差为 0.5。</li></ul>可以根据字符串字段计算以下内容：<ul purpose="ul" id="GUID-0EC19947-5FCC-48B1-BA2F-17A46EBE8CB2"><li purpose="li" id="LI_8A39F0732ED64CA9AC62E2F8961B6CC3">计数 - 非空字符串的数目。</li><li purpose="li" id="LI_A42097E03D4D408CBBAB793CC2A73F9E">任意 - 该统计数据是指定字段中字符串值的随机样本。</li></ul>所有统计数据均根据非空值计算而得。</p><p id="GUID-FE1E9B5B-C093-4FF8-AED5-90B7CDED11F7"> 条柱大小可指定多变量格网的条柱大小。如果选择生成六边形条柱，则其大小为每个六边形的高度，而所生成六边形的宽度为高度除以根号 3 再乘以 2。如果选择生成正方形条柱，则条柱大小为正方形的高度（等于宽度）。</p><img purpose="img" placement="inline" alt="正方形和六边形条柱" title="正方形和六边形条柱" src="GUID-9DC1281D-6E1B-48F9-9BDD-67D3B337CD30-web.png"><p id="GUID-FDFE21AD-2B74-4BC5-974D-8769C0310E90">使用带有指定地理坐标系的图格（六边形或正方形）的 <span class="ph">GeoAnalytics 工具</span> 分析会自动使用基于数据范围的投影坐标系。要了解有关设置坐标系进行分析的详细信息，请参阅<a class="xref xref" href="../../../../zh-CN/portal/latest/use/geoanalyticstool-useenvironmentsettings.htm">在 Map Viewer 中使用 GeoAnalytics 工具的分析环境</a>。</p><p id="GUID-585FC61A-6515-49E1-9D7C-51B7C6B55820">如果选中<span class="uicontrol">使用当前地图范围</span>，则仅对当前地图范围中可见的要素进行分析。如果未选中，则将分析输入图层中的所有输入要素，包括超出当前地图范围的要素。</p></section><section class="section1 padded-anchor" id="ESRI_SECTION1_748111881C664FD9B343EF0E23BCD1BB" purpose="section1"><h2>限制</h2><p id="GUID-4135810B-174C-4340-B9F4-29332FCC3149">构建多变量格网不适用于表格。输入图层必须为点、线或面。</p></section><section class="section1 padded-anchor" id="ESRI_SECTION1_9FE0BE5964EA4B81ABB208F92502DDB9" purpose="section1"><h2>构建多变量格网的工作原理</h2><section class="section2 padded-anchor" id="ESRI_SECTION2_72DD9EA50B4D4A62B156D53DCC3D16D7" purpose="section2"><h3>距离计算</h3><p id="GUID-CE202169-06C6-4428-B404-E31547162A54">构建多变量格网工具中的所有距离都是从条柱中心开始测量的。对于正方形和六边形条柱来说，该中心位于条柱高度的一半和宽度一半处，如下所示。</p><img purpose="img" placement="inline" alt="正方形和六边形条柱中心" title="正方形和六边形条柱中心" src="GUID-CE7D4205-1D1E-41CB-B7F1-D7A7A295C05A-web.png"><p id="GUID-3BB2654A-0BB6-49C2-A6BD-C2053647D8D7">对于<span class="uicontrol">与最近要素的距离</span>和<span class="uicontrol">最近要素属性</span>，距面或线要素的距离是使用要素中距感兴趣条柱最近的点进行测量的。到点要素的距离是使用点位置测量的。</p><img purpose="img" placement="inline" alt="使用正方形条柱测量距离的示例" title="使用正方形条柱测量距离的示例" src="GUID-30904C18-460B-47A0-8637-C01C4F71C4CD-web.png"><figcaption class="fig-caption">测得的从某条柱（用红色突出显示）到面图层中要素的距离。在此例中，区域 B 最靠近条柱中心，因此该条柱的与最近要素的距离值为 1050。</figcaption></section><section class="section2 padded-anchor" id="ESRI_SECTION2_D12D460DDDBA4DF1A02162D5D21181B7" purpose="section2"><h3>汇总计算</h3><p id="GUID-32B118EC-8457-4486-9C1B-DE51EB4DB42F">对于<span class="uicontrol">邻近要素汇总</span>，如果要素的任一部分位于条柱中心周围的半径范围内（该半径由<span class="uicontrol">汇总范围内的要素</span>参数决定），则该要素将包含在汇总统计数据计算内。对于<span class="uicontrol">相交要素汇总</span>，只要要素的任一部分位于条柱区域的边界内（不使用圆的半径），该要素即包含在计算内。</p><img purpose="img" placement="inline" alt="使用正方形条柱汇总半径的示例" title="使用正方形条柱汇总半径的示例" src="GUID-57E1D5EA-4A08-412C-94D1-8A37FFB94341-web.png"><figcaption class="fig-caption">围绕条柱（用红色突出显示）的搜索半径（黄色显示）可用于为“邻近要素汇总”汇总要素。在此例中，已生成 500 米正方形条柱，且将“汇总范围内的要素”设置为 1500 米。要素 C 和 B 将包含在此条柱的统计数据计算中。</figcaption></section><section class="section2 padded-anchor" id="ESRI_SECTION2_99CD9C591E094204BD7D9F9BF9C88406" purpose="section2"><h3>了解结果</h3><p id="GUID-1300E07E-7327-4E59-AD88-5A8BEB0E4F1C"> 任何具有全部 <span class="usertext">null</span> 属性的条柱将不会包含在结果中。这意味着该结果图层将跨越输入要素的最大范围加上指定变量的最大搜索距离（在处理空间参考的范围内）。</p><p id="GUID-ED9E9A41-416A-4428-85D7-A402E9D836D2">您配置的每个变量都将成为结果图层属性表中的字段。输入图层中的字段将不会自动包含在结果中，您必须通过配置变量来指定要包含的信息。</p></section></section><section class="section1 padded-anchor" id="GUID-85C04449-C1E7-49A5-9925-D6084A9B3C0E" purpose="section1"><h2><span class="ph">ArcGIS API for Python</span> 示例</h2><p id="GUID-63AEEF0E-A5F4-4D68-980F-FB4BB62A7A6C">可通过 <span class="ph">ArcGIS API for Python</span> 获取构建多变量格网工具。</p><p id="GUID-221E06FB-5308-4555-A7E2-394411AC6000"><section class="codeblock padded-anchor" purpose="codeblock"><div class="codeblockdesc" purpose="codeblockdesc"><p id="GUID-37AC8F7F-3F19-4A7B-985E-F27F4798739E">本示例可通过汇总诸如与最近道路或交叉点的距离、周边人口的平均年龄以及周边人口的收入差异等信息来创建多变量格网。</p></div><div class="codeblockbody"><pre><code class="python"># Import the required ArcGIS API for Python modules import arcgis from arcgis.gis import GIS from arcgis.geoanalytics import summarize_data from arcgis.features import FeatureLayer
+# Connect to your ArcGIS Enterprise portal and check that GeoAnalytics is supported portal = GIS(&quot;https://myportal.domain.com/portal&quot;, &quot;gis_publisher&quot;, &quot;my_password&quot;, verify_cert=False) if not portal.geoanalytics.is_supported():
+    print(&quot;Quitting, GeoAnalytics is not supported&quot;)    exit(1)   
+# Find the big data file share dataset you're interested in using for analysis search_result = portal.content.search(&quot;&quot;, &quot;Big Data File Share&quot;)
+# Look through search results for a big data file share with the matching name bd_file = next(x for x in search_result if x.title == &quot;bigDataFileShares_CityData&quot;)
+# Look through the big data file share for roads roads = next(x for x in bd_file.layers if x.properties.name == &quot;roads&quot;)
+# Look through the big data file share for intersections intersections = next(x for x in bd_file.layers if x.properties.name == &quot;intersections&quot;)
+# Find a feature layer named &quot;Demographics&quot; in your ArcGIS Enterprise portal demographics = portal.content.search(&quot;Demographics&quot;, &quot;Feature Layer&quot;) demographics_layer = layer_result[0].layers[0]
+inputs = [road, intersections, demographics_layer] variables = [    {
+        &quot;layer&quot;:0,        &quot;variables&quot;:[            {
+                &quot;type&quot;:&quot;DistanceToNearest&quot;,                &quot;outFieldName&quot;:&quot;DistToRoad&quot;,                &quot;searchDistance&quot;:20,                &quot;searchDistanceUnit&quot;:&quot;Kilometers&quot;,                &quot;filter&quot;:&quot;Rural = 'false'&quot;
+            }
+        ]    }, {
+        &quot;layer&quot;:1,        &quot;variables&quot;:[            {
+                &quot;type&quot;:&quot;AttributeOfNearest&quot;,                &quot;outFieldName&quot;:&quot;intersection&quot;,                &quot;attributeField&quot;:&quot;intersection_name&quot;,                &quot;searchDistance&quot;:50,                &quot;searchDistanceUnit&quot;:&quot;Kilometers&quot;
+            }
+        ]    }, {
+        &quot;layer&quot;:2,        &quot;variables&quot;:[            {
+                &quot;type&quot;:&quot;AttributeSummaryOfRelated,                &quot;outFieldName&quot;:&quot;MeanPopAge&quot;,                &quot;statisticType&quot;:&quot;Mean&quot;,                &quot;statisticField&quot;:&quot;Age&quot;,                &quot;searchDistance&quot;:50,                &quot;searchDistanceUnit&quot;:&quot;Kilometers&quot;
+            },           {
+                &quot;type&quot;:&quot;AttributeSummaryOfRelated,                &quot;outFieldName&quot;:&quot;VarIncome&quot;,                &quot;statisticType&quot;:&quot;Variance&quot;,                &quot;statisticField&quot;:&quot;Income&quot;,                &quot;searchDistance&quot;:50,                &quot;searchDistanceUnit&quot;:&quot;Kilometers&quot;
+            }
+        ]    }
+]
+# Set the tool environments arcgis.env.verbose = True arcgis.env.defaultAggregations = True
+# Run the Build Multi-Variable Grid tool output = summarize_data.build_multivariable_grid(input_layers = inputs,        																																										variable_calculations = variables,
+                                                 bin_size = 10,                                                 bin_unit = &quot;Kilometers&quot;,                                                 bin_type = &quot;Hexagon&quot;,																																																	output_name = &quot;CityPlanningGrid&quot;)
+# Visualize the tool results if you are running Python in a Jupyter Notebook processed_map = portal.map('City, State', 10) processed_map.add_layer(output) processed_map</code></pre></div></section></p></section><section class="section1 padded-anchor" id="ESRI_SECTION1_6FC2604791A54867BB212A9B5B70D1FD" purpose="section1"><h2>类似工具</h2><p id="GUID-6D4637DB-63C8-442B-9FF0-E868FBF90056">使用构建多变量格网将多个图层汇总为单个面格网，以供可视化或稍后用于预测训练或分类模型。其他工具或许在解决略有差异的类似问题时十分有用。</p><section class="section2 padded-anchor" id="ESRI_SECTION2_F56DE73399F84393AE614E1920F5F6F8" purpose="section2"><h3><span class="ph">Map Viewer</span>分析工具</h3><p id="GUID-506817E0-BE4A-4A2A-86DF-8ADDDC936C92">如果您只想将单个输入图层汇总到多个条柱或者一个面图层中，请使用<a class="xref xref" href="../../../../zh-CN/portal/latest/use/geoanalytics-summarize-within.htm">范围内汇总</a> <span class="ph">GeoAnalytics 工具</span>。</p><p id="GUID-D60DC92D-0BC1-4060-8DCF-673E6B9F5FD2">如果您想将单点图层聚合到面中，请使用<a class="xref xref" href="../../../../zh-CN/portal/latest/use/geoanalyticstool-aggregatepoints.htm">聚合点</a> <span class="ph">GeoAnalytics 工具</span>。</p><p id="GUID-1E9B6F93-1B16-4C73-8FD7-D9F23C79CAA7">如果您正在尝试使用不同的空间关系对点、线或面进行汇总，请使用<a class="xref xref" href="../../../../zh-CN/portal/latest/use/geoanalytics-join-features.htm">连接要素</a> <span class="ph">GeoAnalytics 工具</span>。</p><p id="GUID-2412AAB3-6B5C-40A7-AFF5-DD93B8D019BC">如果您正在尝试使用标准分析工具对线或面进行汇总，请参阅<a class="xref xref" href="../../../../zh-CN/portal/latest/use/summarize-within.htm">范围内汇总</a>。</p><p id="GUID-691FDCB1-E8EE-48CB-929D-9F69CA62E702">如果要使用标准分析工具将点聚合到面中，请参阅<a class="xref xref" href="../../../../zh-CN/portal/latest/use/aggregate-points.htm">聚合点</a>。</p></section><section class="section2 padded-anchor" id="ESRI_SECTION2_D949A4C3FA5D41E0BD3DDD749075F4D1" purpose="section2"><h3><span class="ph">ArcGIS Desktop</span> 分析工具</h3><p id="GUID-3B37379F-8F2F-4A38-9468-ADBF06FD35A7">构建多变量格网的功能与<a class="xref xref" href="../../../../zh-CN/portal/latest/use/summarize-nearby.htm">邻近汇总</a>和<span purpose="gptoolref"><a class="xref xref" esrisubtype="extrel" hrefpfx="https://desktop.arcgis.com/zh-cn/arcmap/latest/tools" href="https://desktop.arcgis.com/zh-cn/arcmap/latest/tools/coverage-toolbox/near.htm">近邻分析</a></span>工具类似。</p></section></section>
+			
+				<hr>
+				<!--googleoff: all-->
+				
+	
+        
+		    <p class="feedback right">
+		        <a id="afb" class="icon-ui-contact" href="/feedback/" data-langlabel="feedback-on-this-topic" >有关此主题的反馈?</a>
+		    </p>
+        
+	
+
+				<!--googleon: all-->
+			
+		</main>
+	</div>
+	
+	<!--googleoff: all-->
+	
+		
+			<div id="main-toc-large" class="column-5">
+			    <div class="panel font-size--2 tablet-hide trailer-1">
+			      <h5 class="trailer-half">在本主题中</h5>
+			      <ol class="list-plain pre-0 trailer-0"><li><a href="#GUID-D415A3E4-0890-40E6-89A0-772017DB8471">使用
+<ph translate="yes" varid="geoanalyticsserver_tools">GeoAnalytics 工具</ph> 进行的分析</a></li><li><a href="#GUID-BA38EC1C-53EC-40F5-A2A8-5C1CEF69623C">示例
+</a></li><li><a href="#ESRI_SECTION1_C3B04B840EC3482CA15C6FD4CEA9BF7C">用法说明</a></li><li><a href="#ESRI_SECTION1_748111881C664FD9B343EF0E23BCD1BB">限制</a></li><li><a href="#ESRI_SECTION1_9FE0BE5964EA4B81ABB208F92502DDB9">构建多变量格网的工作原理</a></li><li><a href="#GUID-85C04449-C1E7-49A5-9925-D6084A9B3C0E"><ph translate="no" varid="ArcGISAPIforPython">ArcGIS API for Python</ph> 示例</a></li><li><a href="#ESRI_SECTION1_6FC2604791A54867BB212A9B5B70D1FD">类似工具</a></li></ol>
+			    </div>
+			    
+			    
+	  		</div>
+		
+    
+   <!--googleon: all-->
+
+
+
+
+          
+        </div>
+        <!-- ENDPAGECONTENT -->
+
+      </div>
+
+    </div>  <!-- End of wrapper -->
+
+  <footer class="footer leader-3 link-dark-gray" role="contentinfo">
+    <div class="grid-container">
+      <div class="row">
+        <nav class="column-6">
+          <h6 data-langlabel="arcgis-for-server">Arc<span>GIS Enterprise</span></h6>
+          <ul class="list-plain">
+            <li><a data-langlabel="home" href="../../../../zh-CN/">主页</a></li>
+            <li><a data-langlabel="portal" href="../../../../zh-CN/portal/">Portal</a></li>
+            <li><a data-langlabel="server" href="../../../../zh-CN/server/">Server</a></li>
+            <li><a data-langlabel="data-store" href="../../../../zh-CN/data-store/">Data Stores</a></li>
+            <li><a data-langlabel="cloud" href="../../../../zh-CN/cloud/">云</a></li>
+            <li><a data-langlabel="apps" href="../../../../zh-CN/apps/">应用程序</a></li>
+            <li><a data-langlabel="documentation" href="../../../../zh-CN/documentation/">文档</a></li>
+          </ul>
+        </nav>
+
+        
+  <nav class="column-6">
+    <h6 data-langlabel="arcgis-platform">ArcGIS 平台</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="arcgis" href="//www.arcgis.com/">ArcGIS Online</a></li>
+      <li><a data-langlabel="arcgis-for-professionals" href="//pro.arcgis.com/">ArcGIS Pro</a></li>
+      <li><a data-langlabel="arcgis-for-server" href="//enterprise.arcgis.com/">ArcGIS Enterprise</a></li>
+      <li><a data-langlabel="arcgis-for-developers" href="https://developers.arcgis.com/">ArcGIS for Developers</a></li>
+      <li><a data-langlabel="arcgis-solutions" href="//solutions.arcgis.com/">ArcGIS Solutions</a></li>
+      <li><a data-langlabel="arcgis-marketplace" href="//marketplace.arcgis.com/">ArcGIS Marketplace</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <h6 data-langlabel="about-esri">关于 Esri</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="about-us" href="//www.esri.com/about-esri/">关于我们</a></li>
+      <li><a data-langlabel="careers" href="//www.esri.com/careers/">招贤纳士</a></li>
+      <li><a data-langlabel="insiders-blog" href="https://www.esri.com/about/newsroom/blog/">Esri 博客</a></li>
+      <li><a data-langlabel="user-conference" href="//www.esri.com/events/user-conference/index.html">用户大会</a></li>
+      <li><a data-langlabel="developer-summit" href="//www.esri.com/events/devsummit/index.html">开发者峰会</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <a class="esri-logo" href="//www.esri.com/" aria-label="Esri Home"></a>
+    <section class="footer-social-nav leader-1">
+            <a class="icon-social-twitter" aria-label="Esri on Twitter" href="https://twitter.com/Esri/"></a>
+            <a class="icon-social-facebook" aria-label="Esri on Facebook" href="https://www.facebook.com/esrigis/"></a>
+            <a class="icon-social-github" aria-label="Esri on GitHub" href="//esri.github.io/"></a>
+            <a class="icon-social-contact" aria-label="Contact Esri" href="//www.esri.com/about-esri/contact/"></a>
+    </section>
+	  
+  </nav>
+  
+  <div class="column-24 leader-1">
+    <p class="font-size--3"><a href="http://www.esri.com/legal/copyright-trademarks">Copyright &copy; 2019 Esri.</a> All rights reserved. | <a href="http://www.esri.com/legal/privacy/">隐私政策</a> | <a href="http://www.esri.com/legal/software-license">法律声明</a></p>
+  </div>
+  
+
+
+      </div>
+    </div>
+  </footer>
+  <!--googleoff: all-->
+
+  
+  
+	<script src="../../../../zh-CN/assets/js/init.js" type="text/javascript"></script>
+	<!--<script src="../../../../zh-CN/assets/js/drop-down.js" type="text/javascript"></script>-->
+	<script src="../../../../zh-CN/assets/js/search/searchform.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/cdn/js/link-modifier.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/cdn/js/sitewide.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/cdn/js/libs/highlight.pack.js" type="text/javascript"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+
+
+  
+    
+
+  <script src="../../../../zh-CN/cdn/js/affix.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    $(function () {
+          var appendFlg = true;
+
+          $("#bigmac")
+          .on("affixed.bs.affix", function (evt) {
+            if (appendFlg) {
+              $("<a class='crumb' href='#'>构建多变量格网</a>").insertAfter ($("#bigmac nav a").last());
+              appendFlg = false;
+            }
+          })
+          .on ("affix-top.bs.affix", function(evt) {
+            if (!appendFlg) {
+              $("#bigmac nav a").last().remove();
+            }
+            appendFlg = true;
+          })
+    })
+  </script>
+  
+        <script type="text/javascript">
+          window.doctoc = {
+            pubID: "583",
+            tpcID: "728",
+            
+              prefix: "使用",
+              prefixUrl: "/zh-cn/portal/latest/use/",
+          
+            hideToc: false
+          }
+        </script>
+
+        <script type="text/javascript" src="../../../../zh-CN/portal/latest/use/583.js" ></script>
+        <script type="text/javascript" src="../../../../zh-CN/cdn/calcite/js/protoc.js" ></script>
+        
+        
+
+  <noscript>
+        <p>
+            <a href="flisting.htm">flist</a>
+        </p>
+    </noscript>
+    <script type="text/javascript"></script>
+  
+  
+    
+    
+
+  </body>
+</html>

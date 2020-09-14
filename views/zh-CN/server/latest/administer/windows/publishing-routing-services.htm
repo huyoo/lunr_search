@@ -1,0 +1,559 @@
+
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>  <html class="ie lt-ie9 lt-ie8 lt-ie7 ie6" dir="ltr"> <![endif]-->
+<!--[if IE 7]>     <html class="ie lt-ie9 lt-ie8 ie7" dir="ltr"> <![endif]-->
+<!--[if IE 8]>     <html class="ie lt-ie9 ie8" dir="ltr"> <![endif]-->
+<!--[if IE 9]>     <html class="ie ie9" dir="ltr"> <![endif]-->
+<!--[if !IE]><!--> <html dir="ltr" lang="zh-CN"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>发布路径服务实用程序&mdash;ArcGIS Server 管理 (Windows) | ArcGIS Enterprise 文档</title>
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+    <script>
+      var docConfig = {
+        locale: 'zh-CN'
+        ,localedir: 'zh-cn'
+        ,langSelector: ''
+        
+        ,relativeUrl: false
+        
+
+        ,searchformUrl: '/search/'
+        ,tertiaryNavIndex: ''
+
+        
+      };
+    </script>
+	 
+
+
+    
+    <!--[if lt IE 9]>
+      <script src="../../../../../zh-CN/cdn/js/libs/html5shiv.js" type="text/javascript"></script>
+      <script src="../../../../../zh-CN/cdn/js/libs/selectivizr-min.js" type="text/javascript"></script>
+      <script src="../../../../../zh-CN/cdn/js/libs/json2.js" type="text/javascript"></script>
+      <script src="../../../../../zh-CN/cdn/js/libs/html5shiv-printshiv.js" type="text/javascript" >
+
+    <![endif]-->
+
+     <!--[if lt IE 11]>
+    <script>
+      $$(document).ready(function(){
+        $$(".hideOnIE").hide();
+      });
+    </script>
+    <![endif]-->
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<link href="../../../../../zh-CN/assets/img/favicon.ico" rel="shortcut icon" >
+	<link href="../../../../../zh-CN/assets/css/screen.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/cdn/calcite/css/documentation.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/assets/css/print.css" media="print" type="text/css" rel="stylesheet" />
+
+	<!--
+	<link href="../../../../../zh-CN/assets/css/screen_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/assets/css/documentation/base_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/assets/css/print_l10n.css" media="print" type="text/css" rel="stylesheet" />
+	-->
+	
+	
+		<script src="../../../../../zh-CN/cdn/js/libs/jquery.1.9.1.min.js" type="text/javascript"></script>
+	
+	<script src="../../../../../zh-CN/cdn/js/libs/jquery.cookie.js" type="text/javascript"></script>
+	<link href="../../../../../zh-CN/cdn/css/colorbox.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/cdn/css/colorbox_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<script src="../../../../../zh-CN/cdn/js/libs/jquery.colorbox-min.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/assets/js/video-init.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/assets/js/sitecfg.js" type="text/javascript"></script>
+	
+		<script src="../../../../../zh-CN/assets/js/signIn.js" type="text/javascript"></script>
+	
+
+	<!--- Language Picker -->
+	<script src="../../../../../zh-CN/assets/js/locale/l10NStrings.js" type="text/javascript"></script>
+	
+		 
+	
+
+	<script src="../../../../../zh-CN/assets/js/calcite-web.js" type="text/javascript"></script>
+
+
+
+  <!--- search MD -->
+    <META name="description" content="发布路径服务实用程序能够发布方向、路径和基于网络数据集的物流服务至您的 ArcGIS Server 站点。"><META name="last-modified" content="2019-12-6"><META name="product" content="arcgis-server-windows,arcgis-enterprise-windows"><META name="sub_category" content="ArcGIS Server (Windows)"><META name="search-collection" content="help"><META name="content_type_label" content="帮助主题"><META name="sub_category_label" content="ArcGIS Server (Windows)"><META name="search-category" content="help-general"><META name="subject_label" content="服务"><META name="version" content="10.8"><META name="content_type" content="Help Topic"><META name="subject" content="SERVICES"><META name="content-language" content="zh-cn">
+    <!--- search MD -->
+
+  
+  <script src="../../../../../zh-CN/assets/js/switchers/server-1.js" type="text/javascript"></script>
+  
+      
+
+</head>
+
+<!--
+      pub: GUID-7EF2A884-9DD0-4341-BA8B-FEB95EBECC37=19
+      tpc: GUID-DD818FF7-E07D-478D-8F8B-79608EAD8058=3
+      -->
+
+
+<!-- variable declaration, if any -->
+<!-- can change following macro to set variable once we are on Jinja 2.8 -->
+
+
+
+
+
+<body class="claro zh-CN server">
+  
+
+  <!-- Drawer location -->
+  <div class="drawer drawer-left js-drawer" data-drawer="top-nav">
+        <nav class="drawer-nav" role="navigation">
+          <aside class="side-nav">
+            <h2 class="side-nav-title">Arc<span>GIS</span> Enterprise</h2>
+            <form id="helpSearchForm" class="margin-left-half margin-right-half leader-half trailer-half drawer-search-form" method="GET">
+              <input type="search" name="q"  placeholder="搜索 ArcGIS Server 10.8 帮助">
+              <input type="hidden" name="collection" value="help" />
+              <input type="hidden" name="product" value="arcgis-server-windows" />
+              <input type="hidden" name="version" value="10.8" />
+              <input type="hidden" name="language" value="zh-CN" />
+            </form>    
+             <a id="nav-portal" data-langlabel="portal" href="../../../../../zh-CN/portal/" class="side-nav-link">Portal</a>
+             
+            <a id="all-servers" data-langlabel="all-servers" href="../../../../../zh-CN/server/" class="side-nav-link">所有服务器</a>
+            <a id="gis-server" data-langlabel="gis-server" href="../../../../../zh-CN/server/" class="side-nav-link">GIS Server</a>
+            <a id="image-server" data-langlabel="image-server" href="../../../../../zh-CN/image/" class="side-nav-link">Image Server</a>
+            <a id="geo-analytics-server" data-langlabel="geo-analytics-server" href="../../../../../zh-CN/geoanalytics/" class="side-nav-link">GeoAnalytics Server</a>
+            <a id="geoevent-server" data-langlabel="geoevent-server" href="../../../../../zh-CN/geoevent/" class="side-nav-link">GeoEvent Server</a>
+            <a id="notebook-server" data-langlabel="notebook-server" href="../../../../../zh-CN/notebook/" class="side-nav-link">Notebook Server</a>
+            <a id="nav-data-store" data-langlabel="data-store" href="../../../../../zh-CN/data-store/" class="side-nav-link">Data Stores</a>
+            <a id="nav-cloud" data-langlabel="cloud" href="../../../../../zh-CN/cloud/" class="side-nav-link">云</a>
+            <a id="nav-apps" data-langlabel="apps" href="../../../../../zh-CN/apps/" class="side-nav-link">应用程序</a>
+            <a id="nav-doc" data-langlabel="documentation" href="../../../../../zh-CN/documentation/" class="side-nav-link">文档</a>
+
+          </aside>
+        </nav>
+    </div>
+
+    <!-- user navigation collapses to drawer on mobile -->
+    
+    <div class="drawer drawer-right js-drawer hide-if-logged-out logged-in-navigation" data-drawer="user-nav">
+      <nav class="drawer-nav">
+        <aside class="side-nav">
+          <a class="side-nav-link agolProfile" href="#">我的个人资料</a>
+          <a class="side-nav-link icon-ui-sign-out js-log-out" href="#">登出</a>
+        </aside>
+      </nav>
+    </div>
+    
+<!-- End of drawer -->
+
+  
+  <div class="wrapper">
+      <!--googleoff: all-->
+
+      <header class="top-nav" data-skin="learn">
+        <a class="skip-to-content" href="#skip-to-content">Skip To Content</a>
+        <div class="grid-container">
+          <div class="column-24">
+
+
+            <!--<div class="top-nav-title-wrapper text-center ">-->
+              <a href='../../../../../zh-CN/' class="top-nav-title tablet-hide"><span>Arc</span>GIS  Enterprise</a>
+              <a href='../../../../../zh-CN/' class="icon-ui-menu top-nav-title js-drawer-toggle tablet-show" data-drawer="top-nav"><span>Arc</span>GIS Enterprise</a>
+            <!--</div> -->
+
+          
+            <nav role="navigation" class="top-nav-list left tablet-hide">
+              <a id="nav-portal" data-langlabel="portal" href="../../../../../zh-CN/portal/" class="top-nav-link">Portal</a>
+
+                <div class="dropdown js-dropdown ">
+                  <a class="top-nav-link js-dropdown-toggle" tabindex="0" aria-haspopup="true" aria-expanded="false" href="#">Servers</a>
+                  <nav class="dropdown-menu featured" role="menu">
+                    <ul class="dropdown-sublist-featured">
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/get-started/latest/windows/additional-server-deployment.htm" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path  d="M42.92 6.1H4.12v8.566l.833.832-.835.833-.018 7.332.845.847-.825.824V33.9h25v5.2h-2v1.075H8.02v.8h19.1v.925h4.8v-.925H40v-.8h-8.08V39.1h-2v-5.2h13v-8.566l-.834-.834.835-.834v-7.332l-.835-.834.835-.834zm-11.8 35h-3.2v-1.2h3.2zm11-8H4.92v-7.434l.767-.766h35.668l.765.766zm0-9.766l-.766.766H5.666l-.766-.767.017-6.669.766-.764h35.671l.766.766zm0-9l-.766.766H5.687l-.766-.766V6.9h37.2zM19 11.9h-2v-.8h2zm-4 0h-2v-.8h2zm-4 0H9v-.8h2zm6 8.2h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9zm8 9h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9z"/></svg></span>
+                          <span class="sublink-text">所有服务器</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/server/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M45.98 33.575a.616.616 0 0 0-.335-.51l-3.362-2.03 3.362-2.031a.556.556 0 0 0 0-1.02l-11.1-6.704a1.293 1.293 0 0 0-1.112 0L22.33 27.982a.556.556 0 0 0 0 1.02l3.36 2.03-3.358 2.03a.556.556 0 0 0-.002 1.021l3.322 2.006-3.324 2.008a.555.555 0 0 0 .002 1.017l11.102 6.703a1.25 1.25 0 0 0 1.11.002l11.104-6.706a.556.556 0 0 0 0-1.02l-3.32-2.006 3.318-2.004a.607.607 0 0 0 .335-.509zM33.837 21.97c.026-.01.286-.005.29-.005l10.814 6.53-10.8 6.523c-.028.01-.284.005-.294.006l-10.813-6.53zm11.105 16.636l-10.8 6.523a2.564 2.564 0 0 1-.295.006l-10.81-6.529 3.39-2.047 7.004 4.23a1.083 1.083 0 0 0 .557.131 1.101 1.101 0 0 0 .554-.13l7.01-4.233zM34.14 40.098a2.545 2.545 0 0 1-.294.006l-10.812-6.53 3.43-2.073 6.97 4.208a1.25 1.25 0 0 0 1.107-.001l6.966-4.206 3.431 2.073zM9 8H7V7h2zm8 8h-2v-1h2zm-4-8h-2V7h2zm4 0h-2V7h2zm-4 8h-2v-1h2zm7.316 11.1H3.9v-6.434l.766-.766h35.668l.766.766v2.12l.8.483v-2.935l-.826-.826.826-.845v-6.329l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9h16.88a2.632 2.632 0 0 1 .336-.8zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zm0 8v-5.668l.766-.766h35.668l.766.766v5.67l-.746.764H4.666zM15 24v-1h2v1zm-4 0v-1h2v1zm-2-8H7v-1h2zm-2 8v-1h2v1z"/></svg></span>
+                          <span class="sublink-text">GIS Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/image/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 8h-2V7h2zm-4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm8 8h-2v1h2zm-8 0H7v1h2zm4 9v-1h-2v1zm-4 0v-1H7v1zm8 0v-1h-2v1zm4 3.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V21h-.8v-.334l-.766-.766H4.666l-.766.766V27.1H21zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zm40.234 4v21.8H23.1V23.1zm-.8 16.366L39.466 44.1h2.868l1.766-1.766zm-20.2-9.932l5.634-5.634h-2.868L23.9 26.666zm6.2-5.068L24.466 30.1h2.868l2.766-2.766zM28.466 30.1H30.1v-1.634zm2.434 0h6.2v-6.2h-6.2zm-7 7h6.2v-6.2h-6.2zm7 0h6.2v-6.2h-6.2zm0 6.434l5.634-5.634h-2.868L30.9 40.666zm7-7l5.634-5.634h-2.868L37.9 33.666zm1.634-5.634H37.9v1.634zm-8.634 7v1.634l1.634-1.634zm.566 6.2h2.868l2.766-2.766v-2.868zm6.434-3.566l2.634-2.634H37.9zM35.466 44.1H37.1v-1.634zm2.434 0h.434l5.766-5.766V37.9h-2.434L37.9 41.666zm6.2-8.634L42.466 37.1H44.1zm0-4L38.466 37.1h2.868l2.766-2.766zm0-7.566h-6.2v6.2h6.2zm-20.2 0v1.634l1.634-1.634zm0 20.2h6.2v-6.2h-6.2zm20.2 0v-.634l-.634.634z"/></svg></span>
+                          <span class="sublink-text">Image Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/geoanalytics/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 16h-2v-1h2zm-8 8v-1H7v1zm8 0v-1h-2v1zM13 7h-2v1h2zm4 0h-2v1h2zM9 7H7v1h2zm21.45 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V27.9h-1.464l-.801-.8H41.1v-6.434l-.766-.766H4.666l-.766.766V27.1h27.15zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM13 24v-1h-2v1zm0-9h-2v1h2zm-4 0H7v1h2zm26.672 27.148A1.87 1.87 0 0 1 35.9 43a1.91 1.91 0 1 1-3.763-.222l-9.845-3.414A1.88 1.88 0 0 1 21 39.9a1.9 1.9 0 1 1 1.474-3.084l4.692-2.346A1.878 1.878 0 0 1 27.1 34a1.902 1.902 0 0 1 1.9-1.9 1.867 1.867 0 0 1 .781.191l3.788-5.05A1.88 1.88 0 0 1 33.1 26a1.9 1.9 0 1 1 3.491 1.026l4.889 4.888c-.069.056-.144.1-.21.162a3.986 3.986 0 0 0-.358.402l-4.883-4.883A1.889 1.889 0 0 1 35 27.9a1.867 1.867 0 0 1-.781-.191l-3.788 5.049a1.868 1.868 0 0 1 .437.965l9.204.614c-.018.11-.049.218-.058.33A3.93 3.93 0 0 0 40 35c0 .046.01.09.01.135l-9.185-.612A1.913 1.913 0 0 1 29 35.9a1.889 1.889 0 0 1-1.474-.716l-4.692 2.346a1.878 1.878 0 0 1 .066.47 1.9 1.9 0 0 1-.105.625c-.007.02-.022.036-.03.056l9.63 3.34a1.87 1.87 0 0 1 2.786-.505l5.415-4.437c.067.108.127.22.204.322a3.9 3.9 0 0 0 .292.306zM33.9 26a1.092 1.092 0 0 0 .43.872 1.12 1.12 0 0 0 1.42-.068A1.1 1.1 0 1 0 33.9 26zm-6 8a1.1 1.1 0 0 0 2.196.093 1.135 1.135 0 0 0-.426-.965A1.087 1.087 0 0 0 29 32.9a1.101 1.101 0 0 0-1.1 1.1zm-5.8 4a1.098 1.098 0 1 0-.06.362A1.101 1.101 0 0 0 22.1 38zm13 5a1.1 1.1 0 1 0-2.2 0 1.1 1.1 0 0 0 2.2 0zm10.8-8a1.9 1.9 0 1 1-3.8 0c0-.053.003-.105.007-.158A1.9 1.9 0 0 1 45.9 35zm-.8 0a1.1 1.1 0 0 0-2.196-.093 1.153 1.153 0 0 0 .216.752A1.1 1.1 0 0 0 45.1 35z"/></svg></span>
+                          <span class="sublink-text">GeoAnalytics Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/geoevent/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M13 8h-2V7h2zm4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm12.418 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826v2.117c-.259-.177-.53-.337-.8-.497v-1.288l-.766-.766H4.666l-.766.766V27.1h17.933c-.148.26-.283.53-.415.8zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM9 24v-1H7v1zm4-9h-2v1h2zm0 9v-1h-2v1zm-4-9H7v1h2zm8 9v-1h-2v1zm16.9 2h-.8v8.9H39v-.8h-5.1zm.1-3.901a11.9 11.9 0 1 0 11.9 11.9 11.914 11.914 0 0 0-11.9-11.9zm0 23a11.1 11.1 0 1 1 11.1-11.1 11.112 11.112 0 0 1-11.1 11.1z"/></svg></span>
+                          <span class="sublink-text">GeoEvent Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/notebook/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M22 27.1H3.9v-6.434l.766-.766h18.576a5.262 5.262 0 0 1 .83-.8H4.666l-.766-.766v-5.668l.766-.766h35.668l.766.766V18h.8v-5.666l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9H22zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zM9 8H7V7h2zm8 0h-2V7h2zm-4 0h-2V7h2zm2 16v-1h2v1zm-4 0v-1h2v1zm-4 0v-1h2v1zm0-8v-1h2v1zm8 0v-1h2v1zm-4 0v-1h2v1zm18.9 8.1h-1.8v1.8h1.8zm-.8 1h-.2v-.2h.2zm15.498-4.48a2.727 2.727 0 0 0-1.62-.5v-.02H27.25a3.154 3.154 0 0 0-3.15 3.15V38.1h-1.68a3.386 3.386 0 0 0-2.872 1.58 3.49 3.49 0 0 0-.157 3.419 3.241 3.241 0 0 0 2.954 1.801h15.161a3.404 3.404 0 0 0 3.394-3.4V26.9h5v-3.65a3.224 3.224 0 0 0-1.302-2.63zM22.345 44.1a2.44 2.44 0 0 1-2.23-1.341 2.706 2.706 0 0 1 .11-2.65A2.588 2.588 0 0 1 22.42 38.9h12.89a3.395 3.395 0 0 0 0 5.2zM40.1 23.192V41.5a2.6 2.6 0 1 1-2.6-2.6v-.8H24.9V23.25a2.352 2.352 0 0 1 2.35-2.35h13.795a3.183 3.183 0 0 0-.945 2.292zm5 2.908h-4.2v-2.908a2.274 2.274 0 0 1 1.44-2.18 1.944 1.944 0 0 1 1.791.259 2.423 2.423 0 0 1 .97 1.979zm-17.1 5h9v.8h-9zm0 3h7v.8h-7zm0-6h9v.8h-9zm4-3h5v.8h-5z"/></svg></span>
+                          <span class="sublink-text">Notebook Server</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+
+              <a id="nav-data-store" data-langlabel="data-store" href="../../../../../zh-CN/data-store/" class="top-nav-link">Data Stores</a>
+              <a id="nav-cloud" data-langlabel="cloud" href="../../../../../zh-CN/cloud/" class="top-nav-link">云</a>
+              <a id="nav-apps" data-langlabel="apps" href="../../../../../zh-CN/apps/" class="top-nav-link">应用程序</a>
+            </nav>
+
+
+            
+            
+            
+
+            <div class="margin-left-1 top-nav-list right hide-if-logged-in logged-out-navigation">
+               
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+              
+              <a data-langlabel="sign-in" id="login-link" class="icon-ui-user top-nav-link link-blue login-link" href="#">登录</a>
+              
+            </div>
+
+            
+            <nav class="margin-left-1 top-nav-list right hide-if-logged-out logged-in-navigation">
+              
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+             
+              <div class="dropdown js-dropdown right">
+
+                <div class="tablet-show top-nav-link">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a href="#" data-drawer="user-nav" class="user-nav-name js-drawer-toggle" data-first-name></a>
+                </div>
+
+                <div class="tablet-hide top-nav-link js-dropdown-toggle">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a class="user-nav-name top-nav-dropdown dropdown-btn" data-first-name>&nbsp;</a>
+                </div>
+
+                <nav class="dropdown-menu dropdown-right">
+                
+                  <a class="dropdown-link agolProfile" id="agolProfile" href="#">我的个人资料</a>
+                  <a class="dropdown-link js-log-out" id="agolLogout" href="#">登出</a>
+                </nav>
+              </div>
+            </nav>
+            
+
+            
+          </div>
+        </div>
+      </header>
+
+      <div class="js-search search-overlay">
+        <div class="search-content" role="dialog" aria-labelledby="search">
+          <form method="GET" id="helpSearchForm">
+            <label>
+              搜索 ArcGIS Server 10.8 帮助
+              <div class="search-bar">
+                <input type="search" name="q"  placeholder="搜索 ArcGIS Server 10.8 帮助" class="search-input js-search-input">
+                <input type="hidden" name="collection" value="help" />
+                <input type="hidden" name="product" value="arcgis-server-windows" />
+                <input type="hidden" name="version" value="10.8" />
+                <input type="hidden" name="language" value="zh-CN" />
+              </div>
+            </label>
+            <input type="hidden" name="relativePath" value="../../../../../" /><button type="submit" class="btn btn-large right">搜索</button>
+          </form>
+        </div>
+      </div>
+
+      <!--googleon: all-->
+
+      <div id="skip-to-content">
+        <!--googleoff: all-->
+        <header class="sub-nav sub-nav-learn">
+          <div class="grid-container">
+            
+            <div class="column-24">
+              <div style="display:table;" class="sdk-home-banner">
+                <div class="sdk-home-banner-content">
+                  <h1 class="sub-nav-title link-white">ArcGIS Server</h1>
+                </div>
+              </div>
+            </div>
+
+            <div class="column-24">
+              <nav class='sub-nav-list tablet-hide'><a class="sub-nav-link" href="../../../../../zh-CN/server/" target="_top" title="ArcGIS Server 的概述和文档">主页</a><a class="sub-nav-link" href="../../../../../zh-CN/server/latest/get-started/windows/" target="_top" title="了解有关 ArcGIS Server 和服务器角色的信息">简介</a><a class="sub-nav-link" href="../../../../../zh-CN/server/latest/deploy/windows/" target="_top" title="构建、配置和升级部署">部署</a><a class="sub-nav-link" href="../../../../../zh-CN/server/latest/manage-data/windows/" target="_top" title="管理企业的空间数据">管理数据</a><a class="sub-nav-link" href="../../../../../zh-CN/server/latest/publish-services/windows/" target="_top" title="使用 GIS 服务">管理服务</a><a class="sub-nav-link" href="../../../../../zh-CN/server/latest/create-web-apps/windows/" target="_top" title="创建 Web 应用程序和可打印地图">共享</a><a class="sub-nav-link is-active" href="../../../../../zh-CN/server/latest/administer/windows/" target="_top" title="管理和保护 ArcGIS Server">管理</a><a class="sub-nav-link" href="../../../../../zh-CN/server/latest/develop/windows/" target="_top" title="构建扩展模块并自动执行常见任务">开发</a></nav><select class='tablet-show select-full trailer-half js-select-nav'><option value="../../../../../zh-CN/server/">主页</option><option value="../../../../../zh-CN/server/latest/get-started/windows/">简介</option><option value="../../../../../zh-CN/server/latest/deploy/windows/">部署</option><option value="../../../../../zh-CN/server/latest/manage-data/windows/">管理数据</option><option value="../../../../../zh-CN/server/latest/publish-services/windows/">管理服务</option><option value="../../../../../zh-CN/server/latest/create-web-apps/windows/">共享</option><option selected="true" value="../../../../../zh-CN/server/latest/administer/windows/">管理</option><option value="../../../../../zh-CN/server/latest/develop/windows/">开发</option></select>
+            </div>
+
+          </div>
+        </header>
+        <!--googleon: all-->
+       
+        <!-- content goes here -->
+        <div class="grid-container ">
+          
+
+            
+              
+  <!--BREADCRUMB-BEG--><div id="bigmac" class="sticky-breadcrumbs trailer-2" data-spy="affix" data-offset-top="180"> </div><!--BREADCRUMB-END-->
+  <!--googleoff: all-->
+    <div class="column-5 tablet-column-12 trailer-2 ">
+      <aside class="js-accordion accordion reference-index" aria-live="polite" role="tablist">
+        <div></div>
+      </aside>
+
+      <div class="js-sticky scroll-show tablet-hide leader-1 back-to-top" data-top="0" style="top: 0px;">
+        <a href="#" class="btn btn-fill btn-clear">返回顶部</a>
+      </div>
+    </div>
+  <!--googleon: all-->
+  
+            
+            
+            
+	
+		<div class="column-13  pre-1 content-section">
+	
+		<header class="trailer-1"><h1>发布路径服务实用程序</h1></header>
+
+		 
+	<!--googleoff: all-->
+	
+		
+				<aside id="main-toc-small" class="js-accordion accordion tablet-show trailer-1">
+			      <div class="accordion-section">
+			        <h4 class="accordion-title">在本主题中</h4>
+			        <div class="accordion-content list-plain">
+			          <ol class="list-plain pre-0 trailer-0"><li><a href="#ESRI_SECTION1_2595B80B5E584E81ACE11891AC77636D">数据要求</a></li><li><a href="#GUID-88DCE05A-B40B-4A63-93CD-EC4740AB7FF1">参数
+</a></li><li><a href="#GUID-5187A119-108F-477B-902E-45F4EE2B8814">示例
+</a></li></ol>
+			        </div>
+			      </div>
+			     </aside>
+		
+    
+   <!--googleon: all-->
+
+
+		<main>
+			
+	
+    	
+    
+
+
+			
+<p id="GUID-30A64787-0CD2-4317-930A-0DB2FCF94DB0">发布路径服务实用程序能够发布方向、路径和基于网络数据集的物流服务至您的 <span class="ph">ArcGIS Server</span> 站点。这些服务可在交通网下执行以下分析：路径、最近设施点、服务区、位置分配、起点-目的地成本矩阵或车辆配送问题。</p><p id="GUID-D66539FB-47B0-40D5-859A-3593F9AE8A8E">如果 <span class="ph">ArcGIS Server</span> 站点与门户联合，则可通过门户将服务配置为实用程序服务。发布后，这些服务可以通过 <span class="ph">ArcGIS Desktop</span> 应用程序（比如：<span class="ph">ArcGIS Pro</span>、ArcMap）或在 <span class="ph">ArcGIS Enterprise</span> 门户的 <span class="ph">Map Viewer</span> 中来<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/portal/latest" href="../../../../../zh-CN/portal/latest/use/get-directions.htm">获取方向</a>和<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/portal/latest" href="../../../../../zh-CN/portal/latest/use/perform-analysis.htm">执行分析</a>。</p><p id="GUID-F20553D4-A483-4117-8D9D-658C532CBF50">这些服务与 <span class="ph">ArcGIS Online</span> 上的方向和路径服务相似，但这些服务基于您自己的网络数据集并在 <span class="ph">ArcGIS Enterprise</span> 下运行。
+</p><div class="panel trailer-1" id="GUID-2D07F4C8-A57D-4D14-85DF-BC6B1A34558C"><h5 class="icon-ui-key trailer-0">许可：</h5><p id="GUID-FD12F6C5-47E3-44DD-BAAC-2991CAD83BB1">要使用该实用程序，您的 <span class="ph">ArcGIS Server</span> 站点需要 <span class="ph">ArcGIS Network Analyst 扩展模块</span> <a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/server/latest/get-started" href="../../../../../zh-CN/server/latest/get-started/windows/server-extensions.htm">许可</a>。</p></div><div class="panel trailer-1" id="GUID-AD0FCB1C-2373-4C39-B0D3-A85E349786A4"><h5 class="icon-ui-description trailer-0">提示：</h5><p id="GUID-E5E20B71-070E-4A30-A6AE-76AFDDAC7C56">在 <span class="ph">ArcGIS Server</span> 10.8 中，此实用程序创建的服务得到了显著改善。如果您要从之前的版本升级现有的 <span class="ph">ArcGIS Server</span> 站点，建议您删除该工具在之前版本的服务器站点中创建的所有现有路径服务，并使用该工具的最新版本重新发布这些路径服务。</p></div><section class="section1 padded-anchor" id="ESRI_SECTION1_2595B80B5E584E81ACE11891AC77636D" purpose="section1"><h2>数据要求</h2><p id="GUID-9B07B058-443A-405B-B21D-4CE7F6872D2E">您可以将此实用程序与可用作 <span class="ph">StreetMap Premium for ArcGIS</span> 的网络数据集一起使用，也可以将其与存储在文件地理数据库、企业级地理数据库或移动地图包中的您自己的网络数据集一起使用。在运行实用程序之前，网络数据集应复制到所有参与 <span class="ph">ArcGIS Server</span> 站点的计算机中（应复制到相同目录路径下）。如果您的网络数据集存储在企业级地理数据库中，则服务器站点中的所有计算机都必须可以访问企业级地理数据库。<div class="panel trailer-1" id="GUID-05F00758-4940-452E-B7C1-8CBFCB18D6E9"><h5 class="icon-ui-description trailer-0">提示：</h5><p id="GUID-A1F6B5A4-5A91-4DA7-9918-3C4A2112534C">虽然可以在访问服务器站点上所有计算机的共享位置中保留基于文件地理数据库或移动地图包的网络数据集，但仍建议在运行服务时将这些网络数据集复制到每个本地的计算机上，以便能够达到最佳运行效果。</p></div></p><p id="GUID-5B2E224D-C8B0-441B-9E46-7322E541B866">如果 <span class="ph">StreetMap Premium for ArcGIS</span> 数据已进行了许可，则运行本实用程序前，需要在每个计算机上安装适当的数据许可。请按照要求在  或 <span class="ph"><a target="_blank" class="xref xref" href="http://support.esri.com/en/technical-article/000012654">Windows</a></span> 上安装数据许可。</p><p id="GUID-510EAD47-7340-494F-ABEA-34B14AFAD3E7">实用程序支持 <span class="ph">StreetMap Premium for ArcGIS</span> 2015 年第 1 版或之后版本的网络数据集。</p><div class="panel trailer-1" id="GUID-737AA8DA-1E17-48EC-B4EB-726641CB90E6"><h5 class="icon-ui-time-clock trailer-0">旧版本：</h5><p id="GUID-9ECCB974-49AC-46F2-BF74-1B0581C7B9BF"> 不支持 <span class="ph">StreetMap Premium for ArcGIS</span> 网络数据集的早期版本（包括 SDC 格式的网络数据集）。</p></div><p id="GUID-59003D7B-9CB8-453F-ADDF-30C9289B92CF">假如您使用的是自己的网络数据集，则需要符合以下条件： <ul purpose="ul" id="UL_B0D22FB28F324373836C69B18336EF82"> <li purpose="li" id="LI_AA60DD0C807A428B8B26F910D783979B">至少具备一项基于时间和一个基于距离的成本属性</li> <li purpose="li" id="LI_56F2B8308F7A4993851C8919BB5AF6E5">至少定义一个出行模式</li><li purpose="li" id="LI_0DDE7D9CF1C8414B95B94674812DA561">支持方向</li></ul> </p><p id="GUID-59AECC39-A2B1-456F-A317-16F2EAEFF82B">如果您使用的是移动地图包中的网络数据集（例如 <a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/streetmap-premium/latest" href="../../../../../zh-CN/streetmap-premium/latest/get-started/smp-mmpks.htm">StreetMap Premium for ArcGIS 移动地图包</a>），则应首先运行<a class="xref xref" esrisubtype="extrel" hrefpfx="https://pro.arcgis.com/zh-cn/pro-app/tool-reference" href="https://pro.arcgis.com/zh-cn/pro-app/tool-reference/data-management/extract-package.htm">提取包</a>地理处理工具，以在运行发布路径服务实用程序之前将移动地图包的内容提取到本地文件夹。</p></section><section class="section1 padded-anchor" id="GUID-88DCE05A-B40B-4A63-93CD-EC4740AB7FF1" purpose="section1"><h2>参数
+</h2><p id="GUID-AD5C0AF4-5398-4D07-A612-CFF715A025C9">在 <span class="ph">ArcGIS Server</span> 站点正确设置网络数据集之后，
+可以通过以下参数运行发布路径服务实用程序：</p><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><thead><tr><th colspan="1">参数</th><th colspan="1">详细信息</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-DE5002A1-584F-4A77-925F-641854DE21B3">-u</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-49D31858-BC4B-49C9-80CF-3DFC4B4356D1"><span class="ph">ArcGIS Server</span> 站点中具有发布者或管理权限的用户的用户名称。如果站点与门户联合，用户必须是门户用户并且拥有发布 web 工具及发布基于服务器的图层的管理权限或发布者权限。如果站点没有进行联合，用户则需要拥有管理权限。如果站点配置了 Web 层身份验证，则需指定内置用户，例如主站点管理员帐户或门户中的初始管理员帐户。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-11EEFADC-491C-420F-AAC2-F8AFBF7F1EDC">-p</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-D0AF0F18-CCCC-42BE-8C09-6028D55E110F">指定使用 -u 参数的用户的密码。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-57A05EAC-3E9C-46AA-889F-3BB5E769E466">-s</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-5C078FCC-EE06-4B85-88B2-5473EAA9ECAC">运行 <span class="ph">ArcGIS Server</span> 的计算机的完全限制域名如下：<span class="usertext">gisserver.domain.com</span> 或 <span class="usertext">https://gisserver.domain.com:6443/arcgis</span> 格式下 <span class="ph">ArcGIS Server</span> 站点的本地 URL。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-ECB54114-8C44-4823-8905-864C176BD405">-P</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-3FBFFB4D-BEA7-4219-AB77-C207DF759857">已安装了与 <span class="ph">ArcGIS Server</span> 站点联合的门户的计算机完全限制域名，例如：<span class="usertext">gisportal.domain.com</span>。另外，该值可以是 <span class="usertext">https://gisportal.domain.com:7443/arcgis</span> 格式中的门户的本地 URL。仅托管路径服务的 <span class="ph">ArcGIS Server</span> 站点与该门户联合时需要该选项的值。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-4AFBBD3C-9256-422C-AC0C-807CB65FC18F">-n</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-33457FFA-3FA4-4EBC-96E2-4197350E78F8">网络数据集的完整路径。</p><p id="GUID-EE4A2653-8265-4CD4-BA3D-0289B700E938">如果网络数据集位于文件地理数据库中，则 <span class="usertext">-n</span> 选项应包括文件地理数据库的路径、网络数据集的名称以及包含网络数据集的要素数据集的名称。例如：该选项的值可以是：Windows 下的 <span class="usertext">c:\data\Streets.gdb\Routing\Routing_ND</span> 以及 Linux 下的 <span class="usertext">/data/Streets.gdb/Routing/Routing_ND</span>，<span class="usertext">Streets.gdb</span> 是文件地理数据库，该数据库具有要素数据集（名为<span class="usertext">路径</span>）中名为 <span class="usertext">Routing_ND</span> 的网络数据集。</p><p id="GUID-1168A8C4-1577-487C-9FC8-A5B3BD4962AE">如果网络数据集位于移动地图包中，则 <span class="usertext">-n</span> 选项应包括从提取移动地图包的文件夹到 SQLite 数据库的路径、网络数据集的名称以及包含网络数据集的要素数据集的名称。例如：该选项的值可以是：Windows 下的 <span class="usertext">c:\street_data\p14\northamerica.geodatabase\Routing\Routing_ND</span> 以及 Linux 下的 <span class="usertext">/data/street_data/p14/northamerica.geodatabase/Routing/Routing_ND</span>，<span class="usertext">northamerica.geodatabase</span> 是 SQLite 地理数据库，该数据库具有要素数据集（名为<span class="usertext">路径</span>）中名为 <span class="usertext">Routing_ND</span> 的网络数据集。</p><p id="GUID-5FF76DAA-8734-4989-B41A-555D4905E480">如果网络数据集位于企业级地理数据库中，则 <span class="usertext">-n</span> 选项应包括数据库连接文件的路径、网络数据集的名称以及包含网络数据集的要素数据集的名称。例如：该选项的值可以是：Windows 下的 <span class="usertext">c:\street_data\egdb.sde\Routing\Routing_ND</span> 以及 Linux 下的 <span class="usertext">/street_data/egdb.sde/Routing/Routing_ND</span>，<span class="usertext">egdb.sde</span> 是企业级地理数据库的连接文件，该数据库具有要素数据集（名为<span class="usertext">路径</span>）中的 <span class="usertext">Routing_ND</span> 网络数据集。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-E7AA9F7C-24FA-417B-93D9-01F8917F5BB5">-o</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-281B93B2-0D38-4920-9D7B-10A891C89B69">文件夹路径，路径下的实用程序会为服务创建服务定义文件和一个名为 <span class="usertext">publishroutingservices.log</span> 的日志文件，该日志文件包含有关执行的详细信息以及任何可能遇到的错误。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-CE48B048-93AE-4499-930E-7A1F4A4F759F">-f</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-4C0BF441-8BDF-4EE3-AD25-472CF4CEF3C0">用于在 <span class="ph">ArcGIS Server</span> 站点上创建所有路径服务的文件夹名称。默认值为 <span class="usertext">Routing</span>。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-588CE6CE-B7A2-4DA4-BD36-FDC3271BF9AF">-e</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-1E90C7BE-C14D-4EDD-8931-6A83BE3A3791">包含多个网络数据集范围的范围要素类的完整路径。仅当发布需要使用多个网络数据集的服务时，才应指定此选项。请联系 Esri 专业服务以获取有关如何使用此选项来设置路径服务的更多详细信息。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-8ADDDD86-1754-405E-8C0C-E72DC7378C2A">-S</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-C49C11B1-04F1-4347-B7AE-CB3641620645">要在服务中包含的求解器列表。有效的选择包含 <span class="usertext">Route</span>、<span class="usertext">ClosestFacility</span>、<span class="usertext">ServiceArea</span>、<span class="usertext">OriginDestinationCostMatrix</span>、<span class="usertext">Location-Allocation</span> 和 <span class="usertext">VehicleRoutingProblem</span>。此选项的值指定为使用逗号分隔的有效选项列表。以上选项值区分大小写。默认值是为所有求解器创建服务。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-99EA7CEE-78F8-4DCF-9E23-9C4F52A55FC7">-c</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-7E30C8EF-8215-452A-B103-0CEDA05B9906">完整路径包含具有服务其他配置的文件名。</p><p id="GUID-AC6EB383-FD90-48E1-82B9-EF8CB3DD3264">您可以使用此配置文件为路径服务指定某些属性（例如最小和最大实例数）。包含此实用程序的文件夹包括两个示例配置文件（<span class="usertext">publishroutingservices.json</span> 和 <span class="usertext">publishroutingservices_dedicated.json</span>），可以显示所有受支持的设置。默认情况下，该工具使用 <span class="usertext">publishroutingservices.json</span> 文件。</p><p id="GUID-D1C1F661-076A-4940-B7B0-4064853D08FB"></p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-D579A7D2-DFCF-43CC-94D0-0AFDBC565C21">-d</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-99CD9773-C598-4E27-A3C8-C08632517599">指定此选项将为每个求解器创建专用服务。此为高级选项。指定此选项后，您的 <span class="ph">ArcGIS Server</span> 站点将使用更多的计算和内存资源。建议仅在专用 <span class="ph">ArcGIS Server</span> 网站上使用此选项。</p><p id="GUID-C394B854-A205-4A86-8284-6CEB4DD68B14">使用此选项时，<span class="usertext">-c</span> 选项将指定与 <span class="usertext">publishroutingservices_dedicated.json</span> 文件相似的配置文件。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-D5F9B140-4F9C-449E-BC25-C1C8ABCFFBAC">-h</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-688A8871-09A0-4E7C-BE8C-1D15E379DFFE">打印实用程序的帮助。</p></td></tr></tbody><caption></caption></table></div></section><section class="section1 padded-anchor" id="GUID-5187A119-108F-477B-902E-45F4EE2B8814" purpose="section1"><h2>示例
+</h2><p id="GUID-5C98A996-89BC-4145-B7AA-2CFD4AE04408">以下示例显示了在与门户联合的 <span class="ph">ArcGIS Server</span> 站点上调用发布路径服务实用程序的方法。
+</p><section class="codeblock padded-anchor" purpose="codeblock"><div class="codeblockdesc" purpose="codeblockdesc"><p id="GUID-13A619FD-0190-437D-9E71-E405D9D82D6E">在 ArcGIS Server 上发布路径服务。示例假设 ArcGIS Server 安装位置为 <span class="usertext">C:\Program Files\ArcGIS\Server</span>。</p> </div><div class="codeblockbody"><pre><code class="other no-highlight">&quot;C:\Program Files\ArcGIS\Server\tools\PublishRoutingServices\publishroutingservices.bat&quot; -s gisserver.domain.com -P gisportal.domain.com -u admin -p site.admin -o D:\RoutingServices\ServiceDefinitions -n D:\data\Streets.gdb\Routing\Routing_ND</code></pre></div></section><section class="codeblock padded-anchor" purpose="codeblock">从文件中传递参数<div class="codeblockdesc" purpose="codeblockdesc"><p id="GUID-92D3E3DA-CF3B-4762-AB7D-C3FD84734B76">可以通过从文件中传递参数来调用实用程序。如果运行实用程序作为自动化进程的一部分，或者不希望在命令行中键入所有选项，则此参数非常有用。要从文件中指定参数，请创建一个文本文件，然后在新行中指定每个选项。应使用 <span class="usertext">=</span> 符号分隔参数名称和值。具有各种选项的示例文件如下所示。</p></div><div class="codeblockbody"><pre><code class="other no-highlight">-u=admin
+-p=secret
+-s=gisserver.domain.com
+-P=gisportal.domain.com
+-o=D:\RoutingServices\ServiceDefinitions
+-n=D:\data\Streets.gdb\Routing\Routing_ND</code></pre></div></section><section class="codeblock padded-anchor" purpose="codeblock"><div class="codeblockdesc" purpose="codeblockdesc"><p id="GUID-3732CFF6-4E7B-4B99-98CE-9CCEDC6D5558">要使用以上 <span class="usertext">tool-params.txt</span> 文件调用工具，请调用工具并使用 <span class="usertext">@</span> 符号指定文件路径。</p><div class="panel trailer-1" id="GUID-17555106-94F0-437A-84C0-E5BA377274C5"><h5 class="icon-ui-notice-triangle trailer-0">警告：</h5><p id="GUID-3A1C3A60-2476-44F0-A951-45EAB16C32F5">确保带参数的文件没有任何额外的新行或空格。</p></div></div><div class="codeblockbody"><pre><code class="other no-highlight">&quot;C:\Program Files\ArcGIS\Server\tools\PublishRoutingServices\publishroutingservices.bat&quot; @D:\RoutingServices\tool-params.txt</code></pre></div></section></section>
+			
+				<hr>
+				<!--googleoff: all-->
+				
+	
+        
+		    <p class="feedback right">
+		        <a id="afb" class="icon-ui-contact" href="/feedback/" data-langlabel="feedback-on-this-topic" >有关此主题的反馈?</a>
+		    </p>
+        
+	
+
+				<!--googleon: all-->
+			
+		</main>
+	</div>
+	
+	<!--googleoff: all-->
+	
+		
+			<div id="main-toc-large" class="column-5">
+			    <div class="panel font-size--2 tablet-hide trailer-1">
+			      <h5 class="trailer-half">在本主题中</h5>
+			      <ol class="list-plain pre-0 trailer-0"><li><a href="#ESRI_SECTION1_2595B80B5E584E81ACE11891AC77636D">数据要求</a></li><li><a href="#GUID-88DCE05A-B40B-4A63-93CD-EC4740AB7FF1">参数
+</a></li><li><a href="#GUID-5187A119-108F-477B-902E-45F4EE2B8814">示例
+</a></li></ol>
+			    </div>
+			    
+			    
+	  		</div>
+		
+    
+   <!--googleon: all-->
+
+
+
+
+          
+        </div>
+        <!-- ENDPAGECONTENT -->
+
+      </div>
+
+    </div>  <!-- End of wrapper -->
+
+  <footer class="footer leader-3 link-dark-gray" role="contentinfo">
+    <div class="grid-container">
+      <div class="row">
+        <nav class="column-6">
+          <h6 data-langlabel="arcgis-for-server">Arc<span>GIS Enterprise</span></h6>
+          <ul class="list-plain">
+            <li><a data-langlabel="home" href="../../../../../zh-CN/">主页</a></li>
+            <li><a data-langlabel="portal" href="../../../../../zh-CN/portal/">Portal</a></li>
+            <li><a data-langlabel="server" href="../../../../../zh-CN/server/">Server</a></li>
+            <li><a data-langlabel="data-store" href="../../../../../zh-CN/data-store/">Data Stores</a></li>
+            <li><a data-langlabel="cloud" href="../../../../../zh-CN/cloud/">云</a></li>
+            <li><a data-langlabel="apps" href="../../../../../zh-CN/apps/">应用程序</a></li>
+            <li><a data-langlabel="documentation" href="../../../../../zh-CN/documentation/">文档</a></li>
+          </ul>
+        </nav>
+
+        
+  <nav class="column-6">
+    <h6 data-langlabel="arcgis-platform">ArcGIS 平台</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="arcgis" href="//www.arcgis.com/">ArcGIS Online</a></li>
+      <li><a data-langlabel="arcgis-for-professionals" href="//pro.arcgis.com/">ArcGIS Pro</a></li>
+      <li><a data-langlabel="arcgis-for-server" href="//enterprise.arcgis.com/">ArcGIS Enterprise</a></li>
+      <li><a data-langlabel="arcgis-for-developers" href="https://developers.arcgis.com/">ArcGIS for Developers</a></li>
+      <li><a data-langlabel="arcgis-solutions" href="//solutions.arcgis.com/">ArcGIS Solutions</a></li>
+      <li><a data-langlabel="arcgis-marketplace" href="//marketplace.arcgis.com/">ArcGIS Marketplace</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <h6 data-langlabel="about-esri">关于 Esri</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="about-us" href="//www.esri.com/about-esri/">关于我们</a></li>
+      <li><a data-langlabel="careers" href="//www.esri.com/careers/">招贤纳士</a></li>
+      <li><a data-langlabel="insiders-blog" href="https://www.esri.com/about/newsroom/blog/">Esri 博客</a></li>
+      <li><a data-langlabel="user-conference" href="//www.esri.com/events/user-conference/index.html">用户大会</a></li>
+      <li><a data-langlabel="developer-summit" href="//www.esri.com/events/devsummit/index.html">开发者峰会</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <a class="esri-logo" href="//www.esri.com/" aria-label="Esri Home"></a>
+    <section class="footer-social-nav leader-1">
+            <a class="icon-social-twitter" aria-label="Esri on Twitter" href="https://twitter.com/Esri/"></a>
+            <a class="icon-social-facebook" aria-label="Esri on Facebook" href="https://www.facebook.com/esrigis/"></a>
+            <a class="icon-social-github" aria-label="Esri on GitHub" href="//esri.github.io/"></a>
+            <a class="icon-social-contact" aria-label="Contact Esri" href="//www.esri.com/about-esri/contact/"></a>
+    </section>
+	  
+  </nav>
+  
+  <div class="column-24 leader-1">
+    <p class="font-size--3"><a href="http://www.esri.com/legal/copyright-trademarks">Copyright &copy; 2019 Esri.</a> All rights reserved. | <a href="http://www.esri.com/legal/privacy/">隐私政策</a> | <a href="http://www.esri.com/legal/software-license">法律声明</a></p>
+  </div>
+  
+
+
+      </div>
+    </div>
+  </footer>
+  <!--googleoff: all-->
+
+  
+  
+	<script src="../../../../../zh-CN/assets/js/init.js" type="text/javascript"></script>
+	<!--<script src="../../../../../zh-CN/assets/js/drop-down.js" type="text/javascript"></script>-->
+	<script src="../../../../../zh-CN/assets/js/search/searchform.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/cdn/js/link-modifier.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/cdn/js/sitewide.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/cdn/js/libs/highlight.pack.js" type="text/javascript"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+
+
+  
+    
+
+  <script src="../../../../../zh-CN/cdn/js/affix.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    $(function () {
+          var appendFlg = true;
+
+          $("#bigmac")
+          .on("affixed.bs.affix", function (evt) {
+            if (appendFlg) {
+              $("<a class='crumb' href='#'>发布路径服务实用程序</a>").insertAfter ($("#bigmac nav a").last());
+              appendFlg = false;
+            }
+          })
+          .on ("affix-top.bs.affix", function(evt) {
+            if (!appendFlg) {
+              $("#bigmac nav a").last().remove();
+            }
+            appendFlg = true;
+          })
+    })
+  </script>
+  
+        <script type="text/javascript">
+          window.doctoc = {
+            pubID: "1640",
+            tpcID: "227",
+            
+              prefix: "管理",
+              prefixUrl: "/zh-cn/server/latest/administer/windows/",
+          
+            hideToc: false
+          }
+        </script>
+
+        <script type="text/javascript" src="../../../../../zh-CN/server/latest/administer/windows/1640.js" ></script>
+        <script type="text/javascript" src="../../../../../zh-CN/cdn/calcite/js/protoc.js" ></script>
+        
+        
+
+  <noscript>
+        <p>
+            <a href="flisting.htm">flist</a>
+        </p>
+    </noscript>
+    <script type="text/javascript"></script>
+  
+  
+    
+    
+
+  </body>
+</html>

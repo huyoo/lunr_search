@@ -1,0 +1,571 @@
+
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>  <html class="ie lt-ie9 lt-ie8 lt-ie7 ie6" dir="ltr"> <![endif]-->
+<!--[if IE 7]>     <html class="ie lt-ie9 lt-ie8 ie7" dir="ltr"> <![endif]-->
+<!--[if IE 8]>     <html class="ie lt-ie9 ie8" dir="ltr"> <![endif]-->
+<!--[if IE 9]>     <html class="ie ie9" dir="ltr"> <![endif]-->
+<!--[if !IE]><!--> <html dir="ltr" lang="zh-CN"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>URL 参数&mdash;Portal for ArcGIS | ArcGIS Enterprise 文档</title>
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+    <script>
+      var docConfig = {
+        locale: 'zh-CN'
+        ,localedir: 'zh-cn'
+        ,langSelector: ''
+        
+        ,relativeUrl: false
+        
+
+        ,searchformUrl: '/search/'
+        ,tertiaryNavIndex: ''
+
+        
+      };
+    </script>
+	 
+
+
+    
+    <!--[if lt IE 9]>
+      <script src="../../../../zh-CN/cdn/js/libs/html5shiv.js" type="text/javascript"></script>
+      <script src="../../../../zh-CN/cdn/js/libs/selectivizr-min.js" type="text/javascript"></script>
+      <script src="../../../../zh-CN/cdn/js/libs/json2.js" type="text/javascript"></script>
+      <script src="../../../../zh-CN/cdn/js/libs/html5shiv-printshiv.js" type="text/javascript" >
+
+    <![endif]-->
+
+     <!--[if lt IE 11]>
+    <script>
+      $$(document).ready(function(){
+        $$(".hideOnIE").hide();
+      });
+    </script>
+    <![endif]-->
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<link href="../../../../zh-CN/assets/img/favicon.ico" rel="shortcut icon" >
+	<link href="../../../../zh-CN/assets/css/screen.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/cdn/calcite/css/documentation.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/assets/css/print.css" media="print" type="text/css" rel="stylesheet" />
+
+	<!--
+	<link href="../../../../zh-CN/assets/css/screen_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/assets/css/documentation/base_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/assets/css/print_l10n.css" media="print" type="text/css" rel="stylesheet" />
+	-->
+	
+	
+		<script src="../../../../zh-CN/cdn/js/libs/jquery.1.9.1.min.js" type="text/javascript"></script>
+	
+	<script src="../../../../zh-CN/cdn/js/libs/jquery.cookie.js" type="text/javascript"></script>
+	<link href="../../../../zh-CN/cdn/css/colorbox.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/cdn/css/colorbox_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<script src="../../../../zh-CN/cdn/js/libs/jquery.colorbox-min.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/assets/js/video-init.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/assets/js/sitecfg.js" type="text/javascript"></script>
+	
+		<script src="../../../../zh-CN/assets/js/signIn.js" type="text/javascript"></script>
+	
+
+	<!--- Language Picker -->
+	<script src="../../../../zh-CN/assets/js/locale/l10NStrings.js" type="text/javascript"></script>
+	
+		 
+	
+
+	<script src="../../../../zh-CN/assets/js/calcite-web.js" type="text/javascript"></script>
+
+
+
+  <!--- search MD -->
+    <META name="description" content="了解 URL 参数的类型和配置选项。"><META name="last-modified" content="2019-12-6"><META name="product" content="arcgis-portal-windows,arcgis-portal-linux,arcgis-enterprise-windows,arcgis-enterprise-linux"><META name="sub_category" content="Portal for ArcGIS"><META name="search-collection" content="help"><META name="content_type_label" content="帮助主题"><META name="sub_category_label" content="Portal for ArcGIS"><META name="search-category" content="help-general"><META name="subject_label" content="PORTAL,服务,SERVER"><META name="version" content="10.8"><META name="content_type" content="Help Topic"><META name="subject" content="PORTAL,SERVICES,SERVER"><META name="content-language" content="zh-cn">
+    <!--- search MD -->
+
+  
+  <script src="../../../../zh-CN/assets/js/switchers/portal-1.js" type="text/javascript"></script>
+  
+      
+
+</head>
+
+<!--
+      pub: GUID-7B47163B-CE1B-465F-BEEE-4DADDB8DFF09=37
+      tpc: GUID-BA6EEC42-5A90-4951-8DBB-0A34ABAA3350=3
+      -->
+
+
+<!-- variable declaration, if any -->
+<!-- can change following macro to set variable once we are on Jinja 2.8 -->
+
+
+
+
+
+<body class="claro zh-CN server">
+  
+
+  <!-- Drawer location -->
+  <div class="drawer drawer-left js-drawer" data-drawer="top-nav">
+        <nav class="drawer-nav" role="navigation">
+          <aside class="side-nav">
+            <h2 class="side-nav-title">Arc<span>GIS</span> Enterprise</h2>
+            <form id="helpSearchForm" class="margin-left-half margin-right-half leader-half trailer-half drawer-search-form" method="GET">
+              <input type="search" name="q"  placeholder="搜索 ArcGIS Enterprise 帮助">
+              <input type="hidden" name="collection" value="help" />
+              <input type="hidden" name="product" value="arcgis-portal-windows" />
+              <input type="hidden" name="version" value="10.8" />
+              <input type="hidden" name="language" value="zh-CN" />
+            </form>    
+             <a id="nav-portal" data-langlabel="portal" href="../../../../zh-CN/portal/" class="side-nav-link">Portal</a>
+             
+            <a id="all-servers" data-langlabel="all-servers" href="../../../../zh-CN/server/" class="side-nav-link">所有服务器</a>
+            <a id="gis-server" data-langlabel="gis-server" href="../../../../zh-CN/server/" class="side-nav-link">GIS Server</a>
+            <a id="image-server" data-langlabel="image-server" href="../../../../zh-CN/image/" class="side-nav-link">Image Server</a>
+            <a id="geo-analytics-server" data-langlabel="geo-analytics-server" href="../../../../zh-CN/geoanalytics/" class="side-nav-link">GeoAnalytics Server</a>
+            <a id="geoevent-server" data-langlabel="geoevent-server" href="../../../../zh-CN/geoevent/" class="side-nav-link">GeoEvent Server</a>
+            <a id="notebook-server" data-langlabel="notebook-server" href="../../../../zh-CN/notebook/" class="side-nav-link">Notebook Server</a>
+            <a id="nav-data-store" data-langlabel="data-store" href="../../../../zh-CN/data-store/" class="side-nav-link">Data Stores</a>
+            <a id="nav-cloud" data-langlabel="cloud" href="../../../../zh-CN/cloud/" class="side-nav-link">云</a>
+            <a id="nav-apps" data-langlabel="apps" href="../../../../zh-CN/apps/" class="side-nav-link">应用程序</a>
+            <a id="nav-doc" data-langlabel="documentation" href="../../../../zh-CN/documentation/" class="side-nav-link">文档</a>
+
+          </aside>
+        </nav>
+    </div>
+
+    <!-- user navigation collapses to drawer on mobile -->
+    
+    <div class="drawer drawer-right js-drawer hide-if-logged-out logged-in-navigation" data-drawer="user-nav">
+      <nav class="drawer-nav">
+        <aside class="side-nav">
+          <a class="side-nav-link agolProfile" href="#">我的个人资料</a>
+          <a class="side-nav-link icon-ui-sign-out js-log-out" href="#">登出</a>
+        </aside>
+      </nav>
+    </div>
+    
+<!-- End of drawer -->
+
+  
+  <div class="wrapper">
+      <!--googleoff: all-->
+
+      <header class="top-nav" data-skin="learn">
+        <a class="skip-to-content" href="#skip-to-content">Skip To Content</a>
+        <div class="grid-container">
+          <div class="column-24">
+
+
+            <!--<div class="top-nav-title-wrapper text-center ">-->
+              <a href='../../../../zh-CN/' class="top-nav-title tablet-hide"><span>Arc</span>GIS  Enterprise</a>
+              <a href='../../../../zh-CN/' class="icon-ui-menu top-nav-title js-drawer-toggle tablet-show" data-drawer="top-nav"><span>Arc</span>GIS Enterprise</a>
+            <!--</div> -->
+
+          
+            <nav role="navigation" class="top-nav-list left tablet-hide">
+              <a id="nav-portal" data-langlabel="portal" href="../../../../zh-CN/portal/" class="top-nav-link">Portal</a>
+
+                <div class="dropdown js-dropdown ">
+                  <a class="top-nav-link js-dropdown-toggle" tabindex="0" aria-haspopup="true" aria-expanded="false" href="#">Servers</a>
+                  <nav class="dropdown-menu featured" role="menu">
+                    <ul class="dropdown-sublist-featured">
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/get-started/latest/windows/additional-server-deployment.htm" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path  d="M42.92 6.1H4.12v8.566l.833.832-.835.833-.018 7.332.845.847-.825.824V33.9h25v5.2h-2v1.075H8.02v.8h19.1v.925h4.8v-.925H40v-.8h-8.08V39.1h-2v-5.2h13v-8.566l-.834-.834.835-.834v-7.332l-.835-.834.835-.834zm-11.8 35h-3.2v-1.2h3.2zm11-8H4.92v-7.434l.767-.766h35.668l.765.766zm0-9.766l-.766.766H5.666l-.766-.767.017-6.669.766-.764h35.671l.766.766zm0-9l-.766.766H5.687l-.766-.766V6.9h37.2zM19 11.9h-2v-.8h2zm-4 0h-2v-.8h2zm-4 0H9v-.8h2zm6 8.2h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9zm8 9h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9z"/></svg></span>
+                          <span class="sublink-text">所有服务器</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/server/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M45.98 33.575a.616.616 0 0 0-.335-.51l-3.362-2.03 3.362-2.031a.556.556 0 0 0 0-1.02l-11.1-6.704a1.293 1.293 0 0 0-1.112 0L22.33 27.982a.556.556 0 0 0 0 1.02l3.36 2.03-3.358 2.03a.556.556 0 0 0-.002 1.021l3.322 2.006-3.324 2.008a.555.555 0 0 0 .002 1.017l11.102 6.703a1.25 1.25 0 0 0 1.11.002l11.104-6.706a.556.556 0 0 0 0-1.02l-3.32-2.006 3.318-2.004a.607.607 0 0 0 .335-.509zM33.837 21.97c.026-.01.286-.005.29-.005l10.814 6.53-10.8 6.523c-.028.01-.284.005-.294.006l-10.813-6.53zm11.105 16.636l-10.8 6.523a2.564 2.564 0 0 1-.295.006l-10.81-6.529 3.39-2.047 7.004 4.23a1.083 1.083 0 0 0 .557.131 1.101 1.101 0 0 0 .554-.13l7.01-4.233zM34.14 40.098a2.545 2.545 0 0 1-.294.006l-10.812-6.53 3.43-2.073 6.97 4.208a1.25 1.25 0 0 0 1.107-.001l6.966-4.206 3.431 2.073zM9 8H7V7h2zm8 8h-2v-1h2zm-4-8h-2V7h2zm4 0h-2V7h2zm-4 8h-2v-1h2zm7.316 11.1H3.9v-6.434l.766-.766h35.668l.766.766v2.12l.8.483v-2.935l-.826-.826.826-.845v-6.329l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9h16.88a2.632 2.632 0 0 1 .336-.8zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zm0 8v-5.668l.766-.766h35.668l.766.766v5.67l-.746.764H4.666zM15 24v-1h2v1zm-4 0v-1h2v1zm-2-8H7v-1h2zm-2 8v-1h2v1z"/></svg></span>
+                          <span class="sublink-text">GIS Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/image/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 8h-2V7h2zm-4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm8 8h-2v1h2zm-8 0H7v1h2zm4 9v-1h-2v1zm-4 0v-1H7v1zm8 0v-1h-2v1zm4 3.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V21h-.8v-.334l-.766-.766H4.666l-.766.766V27.1H21zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zm40.234 4v21.8H23.1V23.1zm-.8 16.366L39.466 44.1h2.868l1.766-1.766zm-20.2-9.932l5.634-5.634h-2.868L23.9 26.666zm6.2-5.068L24.466 30.1h2.868l2.766-2.766zM28.466 30.1H30.1v-1.634zm2.434 0h6.2v-6.2h-6.2zm-7 7h6.2v-6.2h-6.2zm7 0h6.2v-6.2h-6.2zm0 6.434l5.634-5.634h-2.868L30.9 40.666zm7-7l5.634-5.634h-2.868L37.9 33.666zm1.634-5.634H37.9v1.634zm-8.634 7v1.634l1.634-1.634zm.566 6.2h2.868l2.766-2.766v-2.868zm6.434-3.566l2.634-2.634H37.9zM35.466 44.1H37.1v-1.634zm2.434 0h.434l5.766-5.766V37.9h-2.434L37.9 41.666zm6.2-8.634L42.466 37.1H44.1zm0-4L38.466 37.1h2.868l2.766-2.766zm0-7.566h-6.2v6.2h6.2zm-20.2 0v1.634l1.634-1.634zm0 20.2h6.2v-6.2h-6.2zm20.2 0v-.634l-.634.634z"/></svg></span>
+                          <span class="sublink-text">Image Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/geoanalytics/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 16h-2v-1h2zm-8 8v-1H7v1zm8 0v-1h-2v1zM13 7h-2v1h2zm4 0h-2v1h2zM9 7H7v1h2zm21.45 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V27.9h-1.464l-.801-.8H41.1v-6.434l-.766-.766H4.666l-.766.766V27.1h27.15zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM13 24v-1h-2v1zm0-9h-2v1h2zm-4 0H7v1h2zm26.672 27.148A1.87 1.87 0 0 1 35.9 43a1.91 1.91 0 1 1-3.763-.222l-9.845-3.414A1.88 1.88 0 0 1 21 39.9a1.9 1.9 0 1 1 1.474-3.084l4.692-2.346A1.878 1.878 0 0 1 27.1 34a1.902 1.902 0 0 1 1.9-1.9 1.867 1.867 0 0 1 .781.191l3.788-5.05A1.88 1.88 0 0 1 33.1 26a1.9 1.9 0 1 1 3.491 1.026l4.889 4.888c-.069.056-.144.1-.21.162a3.986 3.986 0 0 0-.358.402l-4.883-4.883A1.889 1.889 0 0 1 35 27.9a1.867 1.867 0 0 1-.781-.191l-3.788 5.049a1.868 1.868 0 0 1 .437.965l9.204.614c-.018.11-.049.218-.058.33A3.93 3.93 0 0 0 40 35c0 .046.01.09.01.135l-9.185-.612A1.913 1.913 0 0 1 29 35.9a1.889 1.889 0 0 1-1.474-.716l-4.692 2.346a1.878 1.878 0 0 1 .066.47 1.9 1.9 0 0 1-.105.625c-.007.02-.022.036-.03.056l9.63 3.34a1.87 1.87 0 0 1 2.786-.505l5.415-4.437c.067.108.127.22.204.322a3.9 3.9 0 0 0 .292.306zM33.9 26a1.092 1.092 0 0 0 .43.872 1.12 1.12 0 0 0 1.42-.068A1.1 1.1 0 1 0 33.9 26zm-6 8a1.1 1.1 0 0 0 2.196.093 1.135 1.135 0 0 0-.426-.965A1.087 1.087 0 0 0 29 32.9a1.101 1.101 0 0 0-1.1 1.1zm-5.8 4a1.098 1.098 0 1 0-.06.362A1.101 1.101 0 0 0 22.1 38zm13 5a1.1 1.1 0 1 0-2.2 0 1.1 1.1 0 0 0 2.2 0zm10.8-8a1.9 1.9 0 1 1-3.8 0c0-.053.003-.105.007-.158A1.9 1.9 0 0 1 45.9 35zm-.8 0a1.1 1.1 0 0 0-2.196-.093 1.153 1.153 0 0 0 .216.752A1.1 1.1 0 0 0 45.1 35z"/></svg></span>
+                          <span class="sublink-text">GeoAnalytics Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/geoevent/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M13 8h-2V7h2zm4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm12.418 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826v2.117c-.259-.177-.53-.337-.8-.497v-1.288l-.766-.766H4.666l-.766.766V27.1h17.933c-.148.26-.283.53-.415.8zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM9 24v-1H7v1zm4-9h-2v1h2zm0 9v-1h-2v1zm-4-9H7v1h2zm8 9v-1h-2v1zm16.9 2h-.8v8.9H39v-.8h-5.1zm.1-3.901a11.9 11.9 0 1 0 11.9 11.9 11.914 11.914 0 0 0-11.9-11.9zm0 23a11.1 11.1 0 1 1 11.1-11.1 11.112 11.112 0 0 1-11.1 11.1z"/></svg></span>
+                          <span class="sublink-text">GeoEvent Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/notebook/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M22 27.1H3.9v-6.434l.766-.766h18.576a5.262 5.262 0 0 1 .83-.8H4.666l-.766-.766v-5.668l.766-.766h35.668l.766.766V18h.8v-5.666l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9H22zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zM9 8H7V7h2zm8 0h-2V7h2zm-4 0h-2V7h2zm2 16v-1h2v1zm-4 0v-1h2v1zm-4 0v-1h2v1zm0-8v-1h2v1zm8 0v-1h2v1zm-4 0v-1h2v1zm18.9 8.1h-1.8v1.8h1.8zm-.8 1h-.2v-.2h.2zm15.498-4.48a2.727 2.727 0 0 0-1.62-.5v-.02H27.25a3.154 3.154 0 0 0-3.15 3.15V38.1h-1.68a3.386 3.386 0 0 0-2.872 1.58 3.49 3.49 0 0 0-.157 3.419 3.241 3.241 0 0 0 2.954 1.801h15.161a3.404 3.404 0 0 0 3.394-3.4V26.9h5v-3.65a3.224 3.224 0 0 0-1.302-2.63zM22.345 44.1a2.44 2.44 0 0 1-2.23-1.341 2.706 2.706 0 0 1 .11-2.65A2.588 2.588 0 0 1 22.42 38.9h12.89a3.395 3.395 0 0 0 0 5.2zM40.1 23.192V41.5a2.6 2.6 0 1 1-2.6-2.6v-.8H24.9V23.25a2.352 2.352 0 0 1 2.35-2.35h13.795a3.183 3.183 0 0 0-.945 2.292zm5 2.908h-4.2v-2.908a2.274 2.274 0 0 1 1.44-2.18 1.944 1.944 0 0 1 1.791.259 2.423 2.423 0 0 1 .97 1.979zm-17.1 5h9v.8h-9zm0 3h7v.8h-7zm0-6h9v.8h-9zm4-3h5v.8h-5z"/></svg></span>
+                          <span class="sublink-text">Notebook Server</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+
+              <a id="nav-data-store" data-langlabel="data-store" href="../../../../zh-CN/data-store/" class="top-nav-link">Data Stores</a>
+              <a id="nav-cloud" data-langlabel="cloud" href="../../../../zh-CN/cloud/" class="top-nav-link">云</a>
+              <a id="nav-apps" data-langlabel="apps" href="../../../../zh-CN/apps/" class="top-nav-link">应用程序</a>
+            </nav>
+
+
+            
+            
+            
+
+            <div class="margin-left-1 top-nav-list right hide-if-logged-in logged-out-navigation">
+               
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+              
+              <a data-langlabel="sign-in" id="login-link" class="icon-ui-user top-nav-link link-blue login-link" href="#">登录</a>
+              
+            </div>
+
+            
+            <nav class="margin-left-1 top-nav-list right hide-if-logged-out logged-in-navigation">
+              
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+             
+              <div class="dropdown js-dropdown right">
+
+                <div class="tablet-show top-nav-link">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a href="#" data-drawer="user-nav" class="user-nav-name js-drawer-toggle" data-first-name></a>
+                </div>
+
+                <div class="tablet-hide top-nav-link js-dropdown-toggle">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a class="user-nav-name top-nav-dropdown dropdown-btn" data-first-name>&nbsp;</a>
+                </div>
+
+                <nav class="dropdown-menu dropdown-right">
+                
+                  <a class="dropdown-link agolProfile" id="agolProfile" href="#">我的个人资料</a>
+                  <a class="dropdown-link js-log-out" id="agolLogout" href="#">登出</a>
+                </nav>
+              </div>
+            </nav>
+            
+
+            
+          </div>
+        </div>
+      </header>
+
+      <div class="js-search search-overlay">
+        <div class="search-content" role="dialog" aria-labelledby="search">
+          <form method="GET" id="helpSearchForm">
+            <label>
+              搜索 ArcGIS Enterprise 帮助
+              <div class="search-bar">
+                <input type="search" name="q"  placeholder="搜索 ArcGIS Enterprise 帮助" class="search-input js-search-input">
+                <input type="hidden" name="collection" value="help" />
+                <input type="hidden" name="product" value="arcgis-portal-windows" />
+                <input type="hidden" name="version" value="10.8" />
+                <input type="hidden" name="language" value="zh-CN" />
+              </div>
+            </label>
+            <input type="hidden" name="relativePath" value="../../../../" /><button type="submit" class="btn btn-large right">搜索</button>
+          </form>
+        </div>
+      </div>
+
+      <!--googleon: all-->
+
+      <div id="skip-to-content">
+        <!--googleoff: all-->
+        <header class="sub-nav sub-nav-learn">
+          <div class="grid-container">
+            
+            <div class="column-24">
+              <div style="display:table;" class="sdk-home-banner">
+                <div class="sdk-home-banner-content">
+                  <h1 class="sub-nav-title link-white">Portal for ArcGIS</h1>
+                </div>
+              </div>
+            </div>
+
+            <div class="column-24">
+              <nav class='sub-nav-list tablet-hide'><a class="sub-nav-link" href="../../../../zh-CN/portal/" target="_top" title="Portal for ArcGIS 主页">主页</a><a class="sub-nav-link is-active" href="../../../../zh-CN/portal/latest/use/" target="_top" title="使用 Portal for ArcGIS">使用</a><a class="sub-nav-link" href="../../../../zh-CN/portal/latest/administer/windows/" target="_top" title="安装、管理和保护 Portal for ArcGIS">管理</a></nav><select class='tablet-show select-full trailer-half js-select-nav'><option value="../../../../zh-CN/portal/">主页</option><option selected="true" value="../../../../zh-CN/portal/latest/use/">使用</option><option value="../../../../zh-CN/portal/latest/administer/windows/">管理</option></select>
+            </div>
+
+          </div>
+        </header>
+        <!--googleon: all-->
+       
+        <!-- content goes here -->
+        <div class="grid-container ">
+          
+
+            
+              
+  <!--BREADCRUMB-BEG--><div id="bigmac" class="sticky-breadcrumbs trailer-2" data-spy="affix" data-offset-top="180"> </div><!--BREADCRUMB-END-->
+  <!--googleoff: all-->
+    <div class="column-5 tablet-column-12 trailer-2 ">
+      <aside class="js-accordion accordion reference-index" aria-live="polite" role="tablist">
+        <div></div>
+      </aside>
+
+      <div class="js-sticky scroll-show tablet-hide leader-1 back-to-top" data-top="0" style="top: 0px;">
+        <a href="#" class="btn btn-fill btn-clear">返回顶部</a>
+      </div>
+    </div>
+  <!--googleon: all-->
+  
+            
+            
+            
+	
+		<div class="column-13  pre-1 content-section">
+	
+		<header class="trailer-1"><h1>URL 参数</h1></header>
+
+		 
+	<!--googleoff: all-->
+	
+		
+				<aside id="main-toc-small" class="js-accordion accordion tablet-show trailer-1">
+			      <div class="accordion-section">
+			        <h4 class="accordion-title">在本主题中</h4>
+			        <div class="accordion-content list-plain">
+			          <ol class="list-plain pre-0 trailer-0"><li><a href="#ESRI_SECTION1_574810E57A564B10A3F7FD6A0234438A">URL 编码</a></li><li><a href="#ESRI_SECTION1_6AB0094599564FF8A18FA85E3F65DD35">URL 参数类型</a></li><li><a href="#ESRI_SECTION1_81FB36460B844E13A8BA0D51654E2511">类别参数</a></li><li><a href="#ESRI_SECTION1_39353D3036524504BC0219F6E17B08C3">数字参数</a></li><li><a href="#ESRI_SECTION1_1443895BA0AD46588B81CDC44F330626">日期参数</a></li><li><a href="#ESRI_SECTION1_CED624F11D9B4F2195D022D7B67DE2EE">要素参数</a></li><li><a href="#ESRI_SECTION1_F7398A9121324BB7B9E28AC12165F15F">几何参数</a></li><li><a href="#ESRI_SECTION1_C7F74C7FAB124063A3B893E3D25C5093">切换区域设置</a></li></ol>
+			        </div>
+			      </div>
+			     </aside>
+		
+    
+   <!--googleon: all-->
+
+
+		<main>
+			
+	
+    	
+    
+
+
+			
+<p id="GUID-DECBE6D7-EEF8-494F-881E-A0D4C1E76A23">可以通过有效使用 URL 参数来增强仪表盘。URL 参数是由其作者添加到仪表盘配置的属性，可用于触发操作。URL 参数可以通过这种方法以规定的方式显示仪表盘。如果仪表盘已嵌入到另一个应用程序，URL 参数也大有作用。在这种情况下，托管应用程序可用于更改仪表盘的当前视图。<div class="panel trailer-1 note" id="GUID-09317BE6-5688-4027-B5E3-660C7B9A1A5C"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-924A8152-6B80-4601-834A-2EF02287253E">除内置 locale 参数外，在运行时更改仪表盘的参数不会导致在大多数现代浏览器中重新加载仪表盘。</p></div></p><p id="GUID-BA8311CA-B2F0-4550-8620-595696025F6A">URL 参数是名称-值对。在每个参数中，名称和值由等号 (=) 分隔。在运行时，参数会追加到仪表盘 URL 的结尾处，具体形式是问号 (?) 后加参数。</p><p id="GUID-47F21CC8-255B-4C70-849E-80B824B7D0D8">例如，包含参数的仪表盘 URL 可以是 <span class="usertext">&lt;scheme&gt;://&lt;yourPortalUrl&gt;/apps/opsdashboard/index.html#/&lt;id&gt;?param=value</span>。</p><p id="GUID-C1680999-6141-4E2E-991D-DF3A25FA73DE">对于多个参数，会在每个参数之间添加与号 (&amp;)：<span class="usertext">&lt;scheme&gt;://&lt;yourPortalUrl&gt;/apps/opsdashboard/index.html#/&lt;id&gt;?param=value&amp;param2=value2</span></p><p id="GUID-4079ED8C-569F-4FA4-BAA8-2D10027D611F"><div class="panel trailer-1" id="GUID-1E6A9F4C-095F-4F95-8F37-A41A26514262"><h5 class="icon-ui-description trailer-0">提示：</h5>参数的顺序无关紧要。例如，<span class="usertext">param=value&amp;param2=value2</span> 和 <span class="usertext">param2=value2&amp;param=value</span> 的结果相同。</div></p><p id="GUID-715E8EDE-BAD8-4D96-9171-97AEDDEED74A">参数名称由 ASCII 字母数字字符组成。可以在除第一个位置之外的任意位置使用短划线 (-) 和下划线( _ )。如果字符无效，则会在设计时阻止该字符，并显示验证警告。最佳做法是避免使用长参数名称。</p><div class="panel trailer-1" id="GUID-427672CA-0B4E-473E-98F4-24340AF47652"><h5 class="icon-ui-description trailer-0">提示：</h5><p id="GUID-6EF7BBE8-1A8B-4531-8A41-CF61BB5640CC">某些参数名称已保留供内部使用，例如 <span class="usertext">mode</span> 和 <span class="usertext">edit</span>。创建新参数时，如果使用的名称已被保留，则会显示<span class="uicontrol">已使用</span>验证警告。</p></div><p id="GUID-C92DF2DE-2352-4785-A6B8-44EAD3ABADDA"><div class="panel trailer-1" id="GUID-78A54F65-60A8-48CD-9EE0-78A2875BF36D"><h5 class="icon-ui-notice-triangle trailer-0">警告：</h5>URL 参数和选择器均用于提供仪表盘元素之间的交互。但是，如果目标是同一元素，则它们会互相矛盾，并产生意外结果。在设计仪表盘的交互时需要注意这一点。</div></p><section class="section1 padded-anchor" id="ESRI_SECTION1_574810E57A564B10A3F7FD6A0234438A" purpose="section1"><h2>URL 编码</h2><p id="GUID-6414BE69-0F97-44C4-A4E5-FC4AB30DB44F">在运行时向仪表盘传递参数时，需要对其值进行编码。编码可确保将无效字符替换为 %，并后跟其十六进制等效项。<section class="codeblock padded-anchor" purpose="codeblock"><div class="codeblockdesc" purpose="codeblockdesc"><p id="GUID-B1EE61D3-1552-408C-9E9F-A526923209DC">例如，通过 URL 参数传递值 Main Street 将如下所示：</p></div><div class="codeblockbody"><pre><code class="other no-highlight">&lt;scheme&gt;://&lt;yourPortalUrl&gt;/apps/opsdashboard/index.html#/&lt;id&gt;?param=Main%20Street</code></pre></div></section></p><p id="GUID-529E5B48-F650-48CB-9878-B30BCA5C4222">将 URL 参数作为逗号分隔的值列表传递时，请记住以下几点：<ul purpose="ul" id="UL_9D59648D7668496690C963A6A28BFA1F"><li purpose="li" id="LI_1C6A206AB3954EB19CA0303D74463197">每个值都应单独编码。<section class="codeblock padded-anchor" purpose="codeblock"><div class="codeblockdesc" purpose="codeblockdesc"><p id="GUID-007E35EB-4CDD-4A7B-8674-1CEE2ACE5F11">正确</p></div><div class="codeblockbody"><pre><code class="other no-highlight">?param=Main%20Street,Broadway%20Avenue</code></pre></div></section> <p id="GUID-9C223FE6-630C-43BB-A4FF-A7DD5D36AC32"><section class="codeblock padded-anchor" purpose="codeblock"><div class="codeblockdesc" purpose="codeblockdesc"><p id="GUID-89D17D5F-011A-4152-B7F9-92F68F460F86">不正确。请勿对用于分隔值的逗号进行编码。</p></div><div class="codeblockbody"><pre><code class="other no-highlight">?param=Main%20Street%2CBroadway%20Avenue</code></pre></div> </section></p></li><li purpose="li" id="LI_0D94092C7876405E8A0C5F5C2253F9FA">值之间不应有空格。<p id="GUID-2A448847-3A4F-45FB-8284-CB91E1D0D5A9"><section class="codeblock padded-anchor" purpose="codeblock"><div class="codeblockdesc" purpose="codeblockdesc"><p id="GUID-DBFA24DB-ED37-4AD6-9B24-A854F232F47B">正确</p></div><div class="codeblockbody"><pre><code class="other no-highlight">?param=Main%20Street,Broadway%20Avenue</code></pre></div></section></p><p id="GUID-CCFEEC1B-E28E-45C4-83AD-628AA879F489"><section class="codeblock padded-anchor" purpose="codeblock"><div class="codeblockdesc" purpose="codeblockdesc"><p id="GUID-F4C0D906-726D-4352-BDB9-AD447E128F02">不正确</p></div><div class="codeblockbody"><pre><code class="other no-highlight">?param=Main%20Street, Broadway%20Avenue</code></pre></div></section></p></li></ul></p></section><section class="section1 padded-anchor" id="ESRI_SECTION1_6AB0094599564FF8A18FA85E3F65DD35" purpose="section1"><h2>URL 参数类型</h2><p id="GUID-C240626D-F94C-4370-8B6F-F528E6436041">URL 参数有五种类型：类别、数字、日期、要素和几何。有关各种参数类型可触发的操作类型的更多信息，请参阅<a class="xref xref" href="../../../../zh-CN/portal/latest/use/configuring-actions-on-url-parameters.htm">配置 URL 参数的操作</a></p></section><section class="section1 padded-anchor" id="ESRI_SECTION1_81FB36460B844E13A8BA0D51654E2511" purpose="section1"><h2>类别参数</h2><p id="GUID-A81D5BA9-CD6D-4798-9EB0-B10C330B97DA">类别参数用于将过滤操作应用于一个或多个元素。在设计时，仪表盘作者指定参数的名称，输入是否为字符串或数字类型，以及过滤器查询是包含还是排除传入的值。</p><p id="GUID-399FDBF2-483D-456E-B689-1371BB71C90B">在运行时，类别参数接受单个值或由逗号分隔的多个值。逗号后不应有空格。</p><p id="GUID-BF892E31-495F-4E56-88BF-F66F6AB2EF59">传入单个值时，执行的后台查询使用比较运算符等于或不等于来过滤目标元素。传入多个值时，将使用逻辑运算符 IN 或 NOT IN。</p><section class="section2 padded-anchor" id="ESRI_SECTION2_37FA5290AC6B40A284104C06A48D9F7A" purpose="section2"><h3>示例</h3><p id="GUID-BCE4D19C-F4DB-4656-8D1F-CEE242FD94E5">下表中提供的注释表示类别参数被配置为预期接受字符串还是数字： <h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><thead><tr><th colspan="1">参数</th><th colspan="1">注</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext">?status=DAMAGED</span></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-91A497E3-E504-4FB7-BB16-26276130F9D5">字符串</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext">?status=DAMAGED,DESTROYED</span></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-1A63FB72-D496-4C37-999B-8E50148C2963">具有多个值的字符串</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext">?category=1</span></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-42792441-989B-4296-B05C-D331E1BBE70E">数字</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext">?category=1,2</span></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-F673AD13-A5E0-4D17-873A-16774BCC5C62">具有多个值的数字</p></td></tr></tbody><caption></caption></table></div></p></section><section class="section2 padded-anchor" id="ESRI_SECTION2_89DF2E1DFCD741BE9777C6D74E61C889" purpose="section2"><h3>特例</h3><p id="GUID-946FB208-9A35-4389-BA87-88CA4441011E">不会始终设置数据类别，在某些情况下，字符串可能为空。因此，类别参数支持以下四种特殊情况： <ul purpose="ul" id="UL_1FD985A6A984449D803161AEDCF77705"><li purpose="li" id="LI_5C8CD5B9181B4A3BBE7D95DA449660ED"><span class="usertext">((null))</span></li><li purpose="li" id="LI_E156EEE1788F48D4B10A13FE521AC3F2"><span class="usertext">((notnull))</span></li><li purpose="li" id="LI_7670EC53FB7B41EB8C9B0CDF450C536F"><span class="usertext"> ((empty))</span></li><li purpose="li" id="LI_A335421D7D834C48BBE9A33AD27E35BE"><span class="usertext">((notempty))</span></li></ul></p><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><thead><tr><th colspan="1">参数</th><th colspan="1">注</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext">?status=((null))      </span></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-F89AE781-C253-4359-B528-2FE8F20A72EA">过滤 NULL 值</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext">?status=((notnull)</span></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-586E5252-BDC1-447C-97D7-83943EC09DC9">过滤 NOT NULL 值</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext">?status=((empty))</span></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-EB01A8E4-B7D9-431B-BE50-48AF48F41A8E">过滤空值</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext">?status=((notempty))</span></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-1C002A3A-162E-4C07-9402-5F0DD02A621D">  过滤非空值</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext">?status=DAMAGED,((null))</span></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-0478BA2D-59E5-45D6-8BEA-D0F2C55DC7D2">过滤单个传入值或 NULL 值</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext">?status=DAMAGED,DESTROYED,((null))</span></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-E2FC8BA3-E9DD-49C5-A63F-CA3591974D48">过滤多个传入值或 NULL 值</p></td></tr></tbody><caption></caption></table></div></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_39353D3036524504BC0219F6E17B08C3" purpose="section1"><h2>数字参数</h2><p id="GUID-E67876AC-CE69-48FB-B9D2-4C15FAE26770">数字参数用于对一个或多个目标元素应用过滤器操作。在设计时，仪表盘作者指定参数的名称以及预期的输入值是单个值，还是表示一个范围的两个值。使用单个值时，参数配置为应用以下比较运算符之一：<ul purpose="ul" id="UL_C2310A97A5BC47ADA07DDA8E9D279003"><li purpose="li" id="LI_8E3AEC98CC7B41208DF8FECA61001CCC">相等</li><li purpose="li" id="LI_8B07C273E27E490D8D9010C4006F477B">不等于</li><li purpose="li" id="LI_E6B9E148449F4FFE95D3E7B6CD7279C4">小于</li><li purpose="li" id="LI_F57788A756214989871ABB216D3A4277">小于或等于</li><li purpose="li" id="LI_9F917332300C4E73A0545BCF420C3CE3">大于</li><li purpose="li" id="LI_CAD072086270439CB2EFE3F7A9D4160E">大于或等于</li></ul></p><div class="panel trailer-1" id="GUID-D26B8065-C012-4EA3-991B-C4FABD576A3E"><h5 class="icon-ui-description trailer-0">提示：</h5><p id="GUID-3BF5CA77-E168-44B1-8940-71092699E461">相比于范围值类型提供的内容，如果想要获得更加精细的控制，可创建两个单个的数值参数，然后应用满足您需求的过滤条件（运算符）。在运行的过程中，将过滤器应用于目标元素时，单个参数将与逻辑运算符 AND 组合。</p></div><p id="GUID-341CE037-9232-4A5E-AF09-DD9D91DE6968">在运行时，数字参数作为单个值或由逗号分隔的两个值传入。</p><section class="section2 padded-anchor" id="ESRI_SECTION2_2F80FF7B019B420B8B191F872B84B943" purpose="section2"><h3>示例</h3><p id="GUID-C397A529-6516-490D-B7E4-529A53F9E19E">下表中提供的注释表示数字参数被配置为预期接受单个值还是范围。</p><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><thead><tr><th colspan="1">参数</th><th colspan="1">注</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext">?meas=10</span></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-E7C83DAC-D28A-4E67-898A-E2599A8B045F">单个值</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext">?meas=10,15</span></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-8B39D5EF-8BD8-4165-A583-DA1177E1ED6C">范围</p></td></tr></tbody><caption></caption></table></div></section><section class="section2 padded-anchor" id="ESRI_SECTION2_8FACED5B5A9C4B4D9D5C695C3387433A" purpose="section2"><h3>特例</h3><p id="GUID-C0FC1AD4-69EE-439F-A8F6-0BF0514233D9">不会始终设置数据中的数值。因此，数字参数支持两种特殊情况：<span class="usertext">((null))</span> 和 <span class="usertext">((notnull))</span>。这两种特殊情况标签既可以用于单个值工作流，又可以用于数值范围工作流。</p><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><thead><tr><th colspan="1">参数</th><th colspan="1">注</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext">?meas=((null))</span></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"> <p id="GUID-3BE52E80-FBAB-4C57-A441-A59DED759A89">   单日期值或数值范围 过滤 NULL 值</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext">?meas=((notnull))</span></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-D21CCF7B-7EFD-463A-A6C1-848F46A95FCA">单日期值或数值范围 过滤 NOT NULL 值</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext">?meas=10,((null))</span></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-91A1DD6A-400E-4E73-B4D2-E8C96847A88F">        单个值。过滤值或 NULL 值</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext">?meas=10,15,((null))</span></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-2DDADC20-79B9-422C-AE8D-7DFA62F3B4BC">    数值范围。过滤范围内的数字或 NULL 值</p></td></tr></tbody><caption></caption></table></div><p id="GUID-18D3B42A-AFB9-49A8-BAD8-76E11C1194B2">另一种特殊情况是数字参数需要一个范围，但在运行时只提供一个值。<h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><thead><tr><th colspan="1">参数</th><th colspan="1">注</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext">?meas=,10</span></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-C2EF3EA9-0D54-4968-B40B-BFB7FC96F37E">左侧开放。将过滤小于或等于此值的值 </p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext">?meas=10,</span></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-A6FCC9B9-586E-4961-AD11-C9104A536B7D">    右侧开放。将过滤大于或等于此值的值</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext">?meas=10</span></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-707C4DE8-DE4B-4DA4-B920-5EFC8368A7D2">    右侧开放。将过滤大于或等于此值的值</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext">?meas=10,((null))</span></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-F3382422-E75C-44BD-8C60-0202BB8AA645">右侧开放。过滤大于或等于此值的值或 NULL 值</p></td></tr></tbody><caption></caption></table></div></p></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_1443895BA0AD46588B81CDC44F330626" purpose="section1"><h2>日期参数</h2><p id="GUID-18A3BED4-B00E-4FD0-97FF-3D9BD3A33090">日期参数用于对一个或多个目标元素应用过滤操作。在设计时，仪表盘作者指定参数的名称以及预期的输入值是 <a target="_blank" class="xref xref" href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> 日期字符串还是 <a target="_blank" class="xref xref" href="https://en.wikipedia.org/wiki/Unix_time">UNIX 时间</a>。</p><p id="GUID-CBA8D14C-A509-405D-99C5-9EBC8B9E318D">可以将日期参数配置为处理表示日期范围的单个值或两个值。使用单个值时，参数配置为应用以下比较运算符之一：<ul purpose="ul" id="UL_17291812E7E04D9DB1D28A473663A67C"><li purpose="li" id="LI_44EA1D2E974E4988B0C46C42125BA9EE">等于</li><li purpose="li" id="LI_3E06231BB1E4475497271A8AB9CE786A">不等于</li><li purpose="li" id="LI_FD76595C305448488DD28A9C9B9A25BD">早于</li><li purpose="li" id="LI_6A9D5751FEA24E459D9C03A73F315300">等于或早于</li><li purpose="li" id="LI_E9E255BA41F445A8A88D78AA85458854">晚于</li><li purpose="li" id="LI_7C6F0D87EB7146FC8A368724A5EED3DE">等于或晚于</li></ul></p><p id="GUID-2EE5AA70-D22E-42CB-8B06-F217527308D5"><div class="panel trailer-1" id="GUID-22099666-E472-488D-BCC3-D6C3BE897621"><h5 class="icon-ui-description trailer-0">提示：</h5>相比于范围值类型提供的内容，如果想要获得更加精细的控制，可创建两个单个的日期参数，然后应用满足您需求的过滤条件（运算符）。在运行的过程中，将过滤器应用于目标元素时，单个日期参数将与逻辑运算符 AND 组合。</div></p><p id="GUID-5BEC3625-C7B4-4C14-BCAA-7481D1B78D5B">在运行时，日期参数作为单个值或由逗号分隔的两个值传入。日期参数为 UNIX 时间时，需要 32 位有符号整数。如果为字符串，则日期格式应为 YYYY-MM-DD 或 YYYYMMDD。日期使用公历输入，由年、月和日组成。</p><p id="GUID-00F3BBC7-30BA-415B-9C37-352EC6BD465B"><ul purpose="ul" id="UL_6AFAB184AF394CDEB05EA7C0049F27DC"><li purpose="li" id="LI_789711348E504C898B297FD0419586E1">YYYY - 四位年份 (YYYY)</li><li purpose="li" id="LI_C62BC2F4C5144CFE9855729E71FE3F39">MM - 两位月份（01 到 12）</li><li purpose="li" id="LI_18EF80ED5079404BB435FCC9AF058C3C">DD - 两位日（01 到 31）</li></ul><div class="panel trailer-1" id="GUID-A3691727-5552-4A9F-A1F1-3760D9E81D97"><h5 class="icon-ui-description trailer-0">提示：</h5><p id="GUID-8BDE51FB-82F0-42FC-9BF2-2C3730E41628">日期参数支持的日期格式列表与<a class="xref xref" href="../../../../zh-CN/portal/latest/use/parse-dates.htm">解析日期</a>的序列图表支持的日期格式列表不同。</p></div></p><p id="GUID-95C2FFB6-7D84-47FF-BC7A-CAB1DD678E36">时间部分也可以包含在日期中。时间使用 24 小时制输入，由小时、分钟和秒组成。格式可以为 <span class="usertext">hh:mm:ss</span> 或 <span class="usertext">hhmmss</span>。如果日期中不包含时间部分，则表示在 00:00:00 到 23:59:59 之间的整天。</p><p id="GUID-2BC13F22-3854-438E-9073-8C3AEE293EDB"><ul purpose="ul" id="UL_D304052B6C294746991FFF7165A5C1D5"><li purpose="li" id="LI_FD3214C75D524BECAB717A772AF96F6F">hh - 00 到 24 之间的零填充小时</li><li purpose="li" id="LI_827885EBB26141C1BB0127F2C48BDB09">mm - 00 到 59 之间的零填充分钟</li><li purpose="li" id="LI_5E44D3B8861B4236BD5E2FC45D6C910B">ss - 00 到 59 之间的零填充秒</li></ul></p><p id="GUID-D130B537-62BF-4A1D-9DC5-ACBCC2978FB8">如果指定，则时间部分与日期部分之间使用空格或大写 <span class="usertext">T</span> 分隔。以下是作为字符串传递的有效日期：</p><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><thead><tr><th colspan="1">日期</th><th colspan="1">注</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-BEEE4E8E-CB53-454D-9ADD-6F547E9A302D">2018-10-31</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-AD914EA3-F7CF-458F-B41A-BE9640AC11EE">仅日期</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-F99CA15E-10BB-4526-AE9C-26FFCD3CA0CC">20181031</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-9D13D056-1725-41B1-BA4E-240EF6C2A24D">仅日期（备用格式）</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-D437554C-7499-4C80-BAB8-779421EE65BF">2018-10-31T23:14:42</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-E5D0176A-0061-44D8-B1B1-E50BA3D366DD">由 T 分隔的日期和时间</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-4834B8BE-B249-4C4D-B89B-2093A6918F9D">20181031T231442</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-767EE716-0469-445B-9A13-C8BE0C0B9484">由 T 分隔的日期和时间（备用格式）</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-AE60D872-84E8-401D-9C40-9CD7D0EA6DC9">2018-10-31 23:14:42 </p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-5D91DACB-F269-441C-B1BF-FFB7D54EF263">由空格分隔的日期和时间</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-77D89D20-049F-4CAE-8659-B98626CF7E68">20181031 231442</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-7915D78B-C857-40BC-A5A5-E3BFA098C9ED">由空格分隔的日期和时间（备用格式）</p></td></tr></tbody><caption></caption></table></div><div class="panel trailer-1" id="GUID-4798CFAE-7936-4692-BEFE-04DAF475ECCC"><h5 class="icon-ui-description trailer-0">提示：</h5><p id="GUID-BCD12392-6EAA-41B6-BE17-2F0579C0D026">建议使用大写 <span class="usertext">T</span> 分隔日期和时间。如果使用空格，请对其进行编码。</p></div><p id="GUID-498978BF-E40D-44D6-B71F-A8A9C8867AF7">在运行时将日期传递到仪表盘时，假定其时间组件在本地时区中指定。也就是说，运行浏览器的计算机或设备的时区。为控制更多内容，可将时间指定为协调世界时间 (UTC) 或 UTC 偏移。要以 UTC 指定时间，可在时间后直接添加 <span class="usertext">Z</span>，无需添加空格。<span class="usertext">Z</span> 是对零 UTC 偏移指定的区域。UTC 偏移会以 ±hh:mm、±hhmm 或 ±hh 的格式追加到时间中。<h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><thead><tr><th colspan="1">日期</th><th colspan="1">注</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-50A13B6F-E41A-43F3-A466-5D12DFD62FE8">2018-10-31T23:14:42Z</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-685E5C62-A564-4285-8BA6-2A47905CEF27">UTC</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-AB13F04E-9894-468C-90AA-47AF7FA6123E">2018-10-31T23:14:42+01:00</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-6D9C1E0D-678C-4D7F-8E4B-BAB887A5414F">比 UTC 早一个小时</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-2DF0DC3B-FDEB-43B9-9F55-B1690D8A319A">2018-10-31T23:14:42+0100</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-1138B190-648B-4045-A4F2-6EE9169F9560">比 UTC 早一个小时</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-2A61CF79-7A8C-4FF6-A82F-76ADFC55AF63">2018-10-31T23:14:42+01</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-FD883197-C9DC-41F5-98F2-15032396F125">比 UTC 早一个小时</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-812BE124-E5D0-41FD-840F-712E0EDA5860">2018-10-31T23:14:42-05:00</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-FAAC067D-7ED4-4B24-BAE1-DC713A9218E8">比 UTC 晚五个小时</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-93826ACF-0994-485D-A5C7-79DF6BCF07AF">2018-10-31T23:14:42-0500</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-F941BFD0-6AF4-4489-8DA0-E441D9546486">比 UTC 晚五个小时</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-916E81E0-D5F2-4EB3-9CCC-49CA0D220369">2018-10-31T23:14:42-05</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-834CE743-628D-438F-BE5F-295400686FA9">比 UTC 晚五个小时</p></td></tr></tbody><caption></caption></table></div> </p><p id="GUID-CA623D0D-7E1F-4310-9969-EE7E8DD86D63">从日期参数构造过滤器时，仪表盘会检查目标元素的<a class="xref xref" href="../../../../zh-CN/portal/latest/use/understand-data-sources.htm">数据源</a>，以获取时区信息。如果找到时区信息，将以该时区发送查询。如果未找到时区信息，则假定目标数据源为 UTC。在任何一种情况下，仪表盘可能都需要转换输入时间以匹配目标的输入时间。</p><p id="GUID-D42A2FE1-DCF6-4378-95F1-063C5EE49573"><div class="panel trailer-1" id="GUID-477B52E6-A875-4FD6-9E5B-F1A4F0F998A1"><h5 class="icon-ui-description trailer-0">提示：</h5>如果仪表盘收到的时间参数采用不可识别的格式，则会在运行时忽略该参数。</div></p><section class="section2 padded-anchor" id="ESRI_SECTION2_8293074297F64D06A8CB630398988447" purpose="section2"><h3>示例</h3><p id="GUID-C5BA7EF3-822C-4F8C-A9EF-DE34651C4003">下表中提供的注释表示时间参数被配置为预期接受单个日期还是日期范围。提供 UNIX 时间和日期字符串示例。</p><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><thead><tr><th colspan="1">参数</th><th colspan="1">注</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext">?created=1541027682</span></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-5BFAB197-175E-48AA-B1DF-1930DAF74060"> 单个值。UNIX 时间</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext">?created=2018-10-31</span></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-B00A2FA9-C996-474F-B22B-FE6A8F8DE1BD"> 单个值。日期字符串。表示全天</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext">?created=2018-10-31T23:14:42</span></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-921FD095-A18D-47B0-8232-AAD2D50B6DFA"> 单个值。带时间的日期字符串。表示本地时区。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext">?created=2018-10-31T23:14:42Z</span></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-AE7A1E2C-F9CD-4D9F-846E-496370780C3C"> 单个值。带时间的日期字符串。UTC</p></td></tr></tbody><caption></caption></table></div></section><section class="section2 padded-anchor" id="ESRI_SECTION2_E877102F06BC426AB84AC0064F7E6D26" purpose="section2"><h3>特例</h3><p id="GUID-57AC9F4D-60A1-42CC-9952-2701D945E347">不会始终设置日期值。因此，日期参数支持两种特殊情况：<span class="usertext">((null))</span> 和 <span class="usertext">((notnull))</span>。这两种特殊情况标签既可以用于单个值工作流，又可以用于日期范围工作流。<h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><thead><tr><th colspan="1">参数</th><th colspan="1">注</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext">?created=((null))</span></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-37A9E7B7-F8D6-4E81-AF9B-99B6B53C68AF"> 单日期值或日期范围 过滤 NULL 日期</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext">?created=((notnull))</span></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-F8B44C21-F93C-4FFE-AA43-C311164A342D">  单日期值或日期范围 过滤 NOT NULL 日期</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext">?created=2018-10-31,((null))</span></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-A6CCCE21-DCC7-4B0D-AF13-86EF05D2DADF"> 单个日期值。过滤 10 月 31 日或 NULL 日期</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext">?created=2018-10-31,2018-11-05,((null))</span></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-7E5EF268-E120-4068-81B9-3AF74BB16139"> 日期范围。过滤范围中的日期或 NULL 日期</p></td></tr></tbody><caption></caption></table></div></p><p id="GUID-8329F945-C1AF-44EF-B486-C969CC9D132B">另一种特殊情况是日期参数需要一个范围，但在运行时只提供一个值。</p><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><thead><tr><th colspan="1">参数</th><th colspan="1">注</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext">?created=,2018-10-31</span></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-44F8FD2C-7C4E-4381-A99B-75B8CF236D0E">左侧开放。过滤早于或等于该日期的日期</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext">?created=2018-10-31,</span></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-5B68DEC1-91A6-4806-B73F-59C4ED4D3805"> 右侧开放。过滤晚于或等于该日期的日期</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext">?created=2018-10-31,((null))</span></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-224E91A7-9623-477B-A16C-8D3F1E359B61"> 右侧开放。过滤晚于或等于该日期的日期或 NULL 日期</p></td></tr></tbody><caption></caption></table></div></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_CED624F11D9B4F2195D022D7B67DE2EE" purpose="section1"><h2>要素参数</h2><p id="GUID-24C4D4BE-E8D3-4FB9-A8E3-CF23FF519879">要素参数用于将一个或多个要素 ID 传递到仪表盘。要素参数可用于过滤仪表盘的元素，也可用于向仪表盘的地图应用位置操作 - <span class="uicontrol">缩放</span>、<span class="uicontrol">平移</span>、<span class="uicontrol">显示弹出窗口</span>、<span class="uicontrol">随沿要素</span>和<span class="uicontrol">闪烁</span>。</p><p id="GUID-35602CDF-92E9-4382-9F8D-65813442E3BB">在设计时，仪表盘作者指定参数的名称并选择数据源。必须标识数据源的唯一 ID 字段。如果未能选择包含非唯一值的字段，则会在运行时出现异常行为。</p><p id="GUID-03DBD3EF-7795-4240-9A08-64EBE988C903"><div class="panel trailer-1" id="GUID-672354BE-085A-4A11-A8F9-3EB2CBFE4365"><h5 class="icon-ui-description trailer-0">提示：</h5>如果所选数据源包含面，则该数据源可用于向目标元素应用空间过滤器。</div></p><p id="GUID-87892DB5-6C6D-4144-B596-65EC5660D6BB">在运行时，如果目标图层中的值是字符串，请确保使用 URL 对要素 ID 进行编码。可以使用逗号分隔多个要素 ID，从而传入这些内容，例如 <span class="usertext">?asset=1240,1241,1242</span>。请勿在各个逗号后添加空格。</p><p id="GUID-4BED5499-AB57-4D1D-BE7E-5627B032F0ED"><div class="panel trailer-1" id="GUID-577AAB1B-3B59-429F-8C14-412F0BCE5D7B"><h5 class="icon-ui-description trailer-0">提示：</h5>如果要素参数配置为执行随沿要素操作，则仅接受一个 ID。如果传入多个值，则只有其中一个要素将被随沿。被随沿的要素不一定反映传入 ID 的顺序。</div></p><section class="section2 padded-anchor" id="ESRI_SECTION2_55F99347AF7047149384BA8F884E90B0" purpose="section2"><h3>示例</h3><p id="GUID-2DA72DEB-9829-49D0-AC8A-FC7EF2DD015C"><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="1.00*"></colgroup><colgroup width="1.02*"></colgroup><thead><tr><th colspan="1">参数</th><th colspan="1">注</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext">?id=11033</span></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-6536C4F7-A349-42D6-8726-F84B0450660D">单个值</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext">?id=11033,23034,34035</span></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-841F2B86-9C25-4216-93C4-6E3AC790E53B">多个值</p></td></tr></tbody><caption></caption></table></div></p></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_F7398A9121324BB7B9E28AC12165F15F" purpose="section1"><h2>几何参数</h2><p id="GUID-C428741C-FBFE-4089-8759-669C4BE7C4E1">几何参数有两种类型：点和范围。当类型为点时，几何参数用于缩放、平移或闪烁一个或多个仪表盘地图上的位置。当类型为范围时，几何参数可用于设置仪表盘的地图范围或过滤其他元素。在设计时，仪表盘作者需要指定参数的名称，并在配置任意操作前选择几何类型。</p><p id="GUID-FEA5B739-348C-4581-9168-BA87DF66BC75">在运行时，所有几何坐标均以逗号分隔的 World Geodetic System 1984 (WGS84) 值传入。对于点参数，格式为 <span class="usertext">x,y</span>。对于范围参数，格式为 <span class="usertext">leftX,leftY,rightX,rightY</span>。在所有情况下，逗号后面都没有空格。</p><section class="section2 padded-anchor" id="ESRI_SECTION2_1C0830C8CA9846DA930616B11F5C5A69" purpose="section2"><h3>示例</h3><p id="GUID-778FC3A3-C9DA-408C-8056-E90B9FA0883C"><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><thead><tr><th colspan="1">参数</th><th colspan="1">注</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext">?pt=-75.6971931,45.4215296</span></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-176A2E49-41A5-4ADE-83B9-362817D7EE69">几何参数需要一个点</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><span class="usertext">?ext=-80.6,40.6,-70.7,47.7</span></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-3032B4F5-F00F-40F6-B61B-BD4E210AA1C3">几何参数需要一个范围</p></td></tr></tbody><caption></caption></table></div></p></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_C7F74C7FAB124063A3B893E3D25C5093" purpose="section1"><h2>切换区域设置</h2><p id="GUID-65CA639B-796D-45A9-94EC-3473B43AF87A">仪表盘具有一个名为区域设置的内置 URL 参数，用于在显示内容时切换语言、数字和日期格式。将 <span class="usertext">?locale=&lt;language code&gt;</span> 参数添加到仪表盘 URL 末尾。使用与号 (&amp;) 分隔多个 URL 参数，此内置参数可与任意作者配置的 URL 参数一起使用。</p><p id="GUID-994E3E90-5520-4A3C-A0B7-597A8A0D3DD2">下表列出了支持的语言代码： </p><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="1.00*"></colgroup><colgroup width="2.08*"></colgroup><thead><tr><th colspan="1">语言代码</th><th colspan="1">语言</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-AE94A7DE-DB85-4CCE-B7B5-862ED4AD4CD5">ar</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-AFF0817B-044E-454D-B17D-B5578CC770EB">阿拉伯语</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-E5D0E76B-A992-42A9-89E7-BFC935512B2D">bs</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-7D3C4AA4-DE11-463A-9041-7852D90DD65B">波斯尼亚语</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-99686B92-1416-46EA-9D3E-491CA5D7FFDE">ca</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-2EB27D39-1B5F-47E5-8AB6-531017FA1BBF">加泰罗尼亚语</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-9A60A428-5C3A-4248-9ACD-8756C777DD34">cs</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-3DC206AC-19B9-4746-81E5-200032BB10E4">捷克语</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-88533222-27E7-4683-A80F-866BB052F6C6">da</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-80F39F5C-CB62-4FA7-8EC7-525F4CA30AA5">丹麦语</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-82BF7DA4-F70E-40B1-8519-1CA40A519A2E">de</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-4A3D112B-F062-496A-A3A4-16FDFC0B0FDF">德语</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-AF0D2BAF-BD14-4B2E-8469-459DB179EE15">el</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-EEE201C5-8D45-4C51-92F2-0E71B2430056">希腊语</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-F67D090D-A031-465C-BBC0-47E4E7973D49">en</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-711CEECF-D419-4A2C-A3F1-D9F7A22D394A">英语</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-D352DDC5-E092-4FAA-A034-5E28162799C9">es</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-953E1BC2-930B-4BB0-8E7E-6E4D68223FA3">西班牙语</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-B617C56B-FFD0-4C39-A86F-986EA5613A35">et</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-A2F6BB6D-0FF7-4F7C-9587-F92817B6B5BF">爱沙尼亚语</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-30110A12-A415-49E7-9863-1FB056B17E29">fi</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-1553DADF-E0D3-4489-97CB-0DC0EC41753A">芬兰语</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-0BD0BF42-75CD-4A7A-9975-D4CA90F67A26">fr</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-915AE778-2630-4743-AF9D-C8715DFD4375">法语</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-CCD81C49-BAD0-4083-9B67-9DE3351307B7">he</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-86A99CAB-9961-436C-A8BC-25B6F66C4225">希伯来语</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-2BD2D5D5-89BA-4FB1-889C-7E0FFE37821C">hi</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-ABAA4295-ABB5-4C3F-85CE-9F311C3048D9">印地语</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-9AC7DE44-2AFA-417B-8BA0-A0B5639637CA">hr</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-055BE083-53F4-4275-96E4-40A899CC3A8A">克罗地亚语</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-C430FFAC-EC18-4EC9-90C9-AA662547823F">hu</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-9B3C6E36-4418-4E77-A325-7CC20911043E">匈牙利语</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-54218918-EBF1-4788-9BD9-2CE77E2A67F2">id</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-781F47BF-E1AC-4947-B5CF-D0AE2F335299">印度尼西亚语</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-BD04EEE0-A1FE-41C4-AE2C-CEFBB8392D42">it</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-D5DE947C-5B74-4991-8376-A8CD25938DE8">意大利语</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-93F476B1-D369-4226-A15D-00EF553367DB">ja</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-54381D77-F2BB-4626-89C8-8C39ED5322B2">日语</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-724B60B4-45FD-4C81-93CA-9D4E9D575C30">ko</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-CE2229C7-6865-428C-AB79-E198EE7A7282">韩语</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-EEF519FB-EF28-4C72-8DAC-1C45D78817E1">lt</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-45390520-2D33-416E-8804-785B6126F427">立陶宛语</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-6F493AF9-0586-4322-A7E4-49F035438FDD">lv</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-323E13A9-7018-49B5-9DD2-E08324FA6D35">拉脱维亚语</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-035B9A84-2D60-4D3C-990B-4BD227635069">nb</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-C5F47386-9CCF-4448-9D15-40689BDD6563">挪威克默尔语</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-4E08C48D-9153-4C3C-9E4C-8D924E687A8B">nl</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-8A4926A6-317D-459A-A7A9-210422AE33DE">荷兰语</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-43B5014F-F40C-4586-80F4-7CA7D9AF6C86">pl</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-770CAB0B-DAE7-49F3-9DF0-1CDBF483D563">波兰语</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-79508DBA-B264-4C2A-92EA-4BE3487EA641">pt-br</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-8426B207-92FB-4799-B90A-3EA3AE7BC18A">葡萄牙语(巴西)</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-3CFC4CCB-61A7-4927-8114-A9F472F2F4B1">pt-pt</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-E3406AFB-A203-4D2F-A7CB-D83A3EDEDC42">葡萄牙语(葡萄牙)</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-BDC41A7A-829B-4F84-86A8-C8DF960DE293">ro</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-365DAE02-DA35-455E-9E1C-74CEBFBDF3BC">罗马尼亚语</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-3E3EC01D-7955-4E8B-A946-097DE7668FF6">ru</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-F9151C3B-A64E-40AC-8AE2-3211AA08D016">俄语</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-5494300A-D312-4C6B-9F39-E74C10A073FD">sl</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-013613FA-D6C8-48DC-97E1-1CCF135988F3">斯洛文尼亚语</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-3A59A215-D787-4650-A126-777AA7887D52">sr</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-5F1188E3-F831-436A-BD7B-7DF92C370125">塞尔维亚语</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-68F9E986-0B67-4B89-9F1B-E6E6353F182E">sv</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-2F38A28C-5382-4781-9E1C-E1BC233E05C4">瑞典语</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-48E584C9-634E-4311-8320-2B9B2052E41C">th</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-4A4E595C-18E8-4786-9A4D-07CA7BBAABFA">泰语</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-E834A3AA-71E8-4F81-BBC5-DD6483AF0EB4">tr</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-3DABF039-99B8-490A-8DBB-2506442BD434">土耳其语</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-D5525CA8-2D20-4EDA-AE95-92258A374FEB">uk</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-C898F3B2-29E9-42C3-BB8E-6791F1EEFA2A">乌克兰语</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-D99A7310-5391-4265-A0D0-116E75BD8A56">vi</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-7EEE22E2-6D25-4850-99F7-B5A8AAFE485F">越南语</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-46B5AF87-B223-4931-A34A-94E2E4EC3067">zh-cn</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-99F24CA9-078F-4DE2-8983-ECB6C611BBB4">简体中文</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-7C016C0F-B55D-481C-9172-71C38BB3CD98">zh-hk</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-5F81152B-F87B-48BA-937C-6A85CB8E7AFD">中文（香港繁体）</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-6D9FFD5E-AE46-427F-80A7-3DE783A21E66">zh-tw</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-A512F5F1-BDE6-4336-B877-73C2FEF8A69E">中文（台湾繁体）</p></td></tr></tbody><caption></caption></table></div><p id="GUID-1DABDC2C-7BE6-4816-A4FC-B05354A7A82B">当使用英语和西班牙语语言代码时，以下区域设置也可以用于设置数字和日期格式。<h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="1.00*"></colgroup><colgroup width="2.08*"></colgroup><thead><tr><th colspan="1">区域设置</th><th colspan="1">数字和日期格式</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-474DC492-1938-497C-ACCE-771D76DB6B4C">en-au</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-92C5B71C-D11F-4532-A8EC-5E23EEEF8B29">英语（澳大利亚）</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-51F2ACEE-3831-44D9-8FF8-87E998746BE2">en-ca</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-CA95F77B-A117-45EC-9DD0-F79218E37DE2">英语（加拿大）</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-70FF436E-927B-4794-B377-FA9555195FB3">en-gb</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-D9F23E06-2378-486E-A8BF-F83D94419192">英语（英国）</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-B92CDA0B-F26A-46BD-8DB0-85390DA5B16F">es-es</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-01CFC20F-3B43-469B-93C4-AEE0A12BCA86">西班牙语(西班牙)</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-0ABDA960-611F-40BE-97F5-AB5F05302D73">es-mx</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-4BF42C4C-34A0-4315-AFA1-182ECFF7403B">西班牙语（墨西哥）</p></td></tr></tbody><caption></caption></table></div></p><p id="GUID-ABD4AA40-87FA-4A57-8B84-2639485E725B"></p><p id="GUID-E3A086DB-5CED-4774-B1CD-5E9CDD8E9184">以下 URL 显示了指定法语区域的一个示例：</p><p id="GUID-31A93689-6FF4-47C3-A18D-FF2C062C19B1" ishcondition="agol_plat=portal"><span class="usertext">https://&lt;yourPortalUrl&gt;/apps/opsdashboard/index.html#/4f539791b2f1418cb5403891f1a7be50?locale=fr</span></p></section>
+			
+				<hr>
+				<!--googleoff: all-->
+				
+	
+        
+		    <p class="feedback right">
+		        <a id="afb" class="icon-ui-contact" href="/feedback/" data-langlabel="feedback-on-this-topic" >有关此主题的反馈?</a>
+		    </p>
+        
+	
+
+				<!--googleon: all-->
+			
+		</main>
+	</div>
+	
+	<!--googleoff: all-->
+	
+		
+			<div id="main-toc-large" class="column-5">
+			    <div class="panel font-size--2 tablet-hide trailer-1">
+			      <h5 class="trailer-half">在本主题中</h5>
+			      <ol class="list-plain pre-0 trailer-0"><li><a href="#ESRI_SECTION1_574810E57A564B10A3F7FD6A0234438A">URL 编码</a></li><li><a href="#ESRI_SECTION1_6AB0094599564FF8A18FA85E3F65DD35">URL 参数类型</a></li><li><a href="#ESRI_SECTION1_81FB36460B844E13A8BA0D51654E2511">类别参数</a></li><li><a href="#ESRI_SECTION1_39353D3036524504BC0219F6E17B08C3">数字参数</a></li><li><a href="#ESRI_SECTION1_1443895BA0AD46588B81CDC44F330626">日期参数</a></li><li><a href="#ESRI_SECTION1_CED624F11D9B4F2195D022D7B67DE2EE">要素参数</a></li><li><a href="#ESRI_SECTION1_F7398A9121324BB7B9E28AC12165F15F">几何参数</a></li><li><a href="#ESRI_SECTION1_C7F74C7FAB124063A3B893E3D25C5093">切换区域设置</a></li></ol>
+			    </div>
+			    
+			    
+	  		</div>
+		
+    
+   <!--googleon: all-->
+
+
+
+
+          
+        </div>
+        <!-- ENDPAGECONTENT -->
+
+      </div>
+
+    </div>  <!-- End of wrapper -->
+
+  <footer class="footer leader-3 link-dark-gray" role="contentinfo">
+    <div class="grid-container">
+      <div class="row">
+        <nav class="column-6">
+          <h6 data-langlabel="arcgis-for-server">Arc<span>GIS Enterprise</span></h6>
+          <ul class="list-plain">
+            <li><a data-langlabel="home" href="../../../../zh-CN/">主页</a></li>
+            <li><a data-langlabel="portal" href="../../../../zh-CN/portal/">Portal</a></li>
+            <li><a data-langlabel="server" href="../../../../zh-CN/server/">Server</a></li>
+            <li><a data-langlabel="data-store" href="../../../../zh-CN/data-store/">Data Stores</a></li>
+            <li><a data-langlabel="cloud" href="../../../../zh-CN/cloud/">云</a></li>
+            <li><a data-langlabel="apps" href="../../../../zh-CN/apps/">应用程序</a></li>
+            <li><a data-langlabel="documentation" href="../../../../zh-CN/documentation/">文档</a></li>
+          </ul>
+        </nav>
+
+        
+  <nav class="column-6">
+    <h6 data-langlabel="arcgis-platform">ArcGIS 平台</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="arcgis" href="//www.arcgis.com/">ArcGIS Online</a></li>
+      <li><a data-langlabel="arcgis-for-professionals" href="//pro.arcgis.com/">ArcGIS Pro</a></li>
+      <li><a data-langlabel="arcgis-for-server" href="//enterprise.arcgis.com/">ArcGIS Enterprise</a></li>
+      <li><a data-langlabel="arcgis-for-developers" href="https://developers.arcgis.com/">ArcGIS for Developers</a></li>
+      <li><a data-langlabel="arcgis-solutions" href="//solutions.arcgis.com/">ArcGIS Solutions</a></li>
+      <li><a data-langlabel="arcgis-marketplace" href="//marketplace.arcgis.com/">ArcGIS Marketplace</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <h6 data-langlabel="about-esri">关于 Esri</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="about-us" href="//www.esri.com/about-esri/">关于我们</a></li>
+      <li><a data-langlabel="careers" href="//www.esri.com/careers/">招贤纳士</a></li>
+      <li><a data-langlabel="insiders-blog" href="https://www.esri.com/about/newsroom/blog/">Esri 博客</a></li>
+      <li><a data-langlabel="user-conference" href="//www.esri.com/events/user-conference/index.html">用户大会</a></li>
+      <li><a data-langlabel="developer-summit" href="//www.esri.com/events/devsummit/index.html">开发者峰会</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <a class="esri-logo" href="//www.esri.com/" aria-label="Esri Home"></a>
+    <section class="footer-social-nav leader-1">
+            <a class="icon-social-twitter" aria-label="Esri on Twitter" href="https://twitter.com/Esri/"></a>
+            <a class="icon-social-facebook" aria-label="Esri on Facebook" href="https://www.facebook.com/esrigis/"></a>
+            <a class="icon-social-github" aria-label="Esri on GitHub" href="//esri.github.io/"></a>
+            <a class="icon-social-contact" aria-label="Contact Esri" href="//www.esri.com/about-esri/contact/"></a>
+    </section>
+	  
+  </nav>
+  
+  <div class="column-24 leader-1">
+    <p class="font-size--3"><a href="http://www.esri.com/legal/copyright-trademarks">Copyright &copy; 2019 Esri.</a> All rights reserved. | <a href="http://www.esri.com/legal/privacy/">隐私政策</a> | <a href="http://www.esri.com/legal/software-license">法律声明</a></p>
+  </div>
+  
+
+
+      </div>
+    </div>
+  </footer>
+  <!--googleoff: all-->
+
+  
+  
+	<script src="../../../../zh-CN/assets/js/init.js" type="text/javascript"></script>
+	<!--<script src="../../../../zh-CN/assets/js/drop-down.js" type="text/javascript"></script>-->
+	<script src="../../../../zh-CN/assets/js/search/searchform.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/cdn/js/link-modifier.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/cdn/js/sitewide.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/cdn/js/libs/highlight.pack.js" type="text/javascript"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+
+
+  
+    
+
+  <script src="../../../../zh-CN/cdn/js/affix.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    $(function () {
+          var appendFlg = true;
+
+          $("#bigmac")
+          .on("affixed.bs.affix", function (evt) {
+            if (appendFlg) {
+              $("<a class='crumb' href='#'>URL 参数</a>").insertAfter ($("#bigmac nav a").last());
+              appendFlg = false;
+            }
+          })
+          .on ("affix-top.bs.affix", function(evt) {
+            if (!appendFlg) {
+              $("#bigmac nav a").last().remove();
+            }
+            appendFlg = true;
+          })
+    })
+  </script>
+  
+        <script type="text/javascript">
+          window.doctoc = {
+            pubID: "583",
+            tpcID: "782",
+            
+              prefix: "使用",
+              prefixUrl: "/zh-cn/portal/latest/use/",
+          
+            hideToc: false
+          }
+        </script>
+
+        <script type="text/javascript" src="../../../../zh-CN/portal/latest/use/583.js" ></script>
+        <script type="text/javascript" src="../../../../zh-CN/cdn/calcite/js/protoc.js" ></script>
+        
+        
+
+  <noscript>
+        <p>
+            <a href="flisting.htm">flist</a>
+        </p>
+    </noscript>
+    <script type="text/javascript"></script>
+  
+  
+    
+    
+
+  </body>
+</html>

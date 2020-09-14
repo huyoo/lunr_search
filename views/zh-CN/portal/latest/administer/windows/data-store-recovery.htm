@@ -1,0 +1,547 @@
+
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>  <html class="ie lt-ie9 lt-ie8 lt-ie7 ie6" dir="ltr"> <![endif]-->
+<!--[if IE 7]>     <html class="ie lt-ie9 lt-ie8 ie7" dir="ltr"> <![endif]-->
+<!--[if IE 8]>     <html class="ie lt-ie9 ie8" dir="ltr"> <![endif]-->
+<!--[if IE 9]>     <html class="ie ie9" dir="ltr"> <![endif]-->
+<!--[if !IE]><!--> <html dir="ltr" lang="zh-CN"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>恢复数据存储&mdash;Portal for ArcGIS 
+  (10.8) | ArcGIS Enterprise 文档</title>
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+    <script>
+      var docConfig = {
+        locale: 'zh-CN'
+        ,localedir: 'zh-cn'
+        ,langSelector: ''
+        
+        ,relativeUrl: false
+        
+
+        ,searchformUrl: '/search/'
+        ,tertiaryNavIndex: ''
+
+        
+      };
+    </script>
+	 
+
+
+    
+    <!--[if lt IE 9]>
+      <script src="../../../../../zh-CN/cdn/js/libs/html5shiv.js" type="text/javascript"></script>
+      <script src="../../../../../zh-CN/cdn/js/libs/selectivizr-min.js" type="text/javascript"></script>
+      <script src="../../../../../zh-CN/cdn/js/libs/json2.js" type="text/javascript"></script>
+      <script src="../../../../../zh-CN/cdn/js/libs/html5shiv-printshiv.js" type="text/javascript" >
+
+    <![endif]-->
+
+     <!--[if lt IE 11]>
+    <script>
+      $$(document).ready(function(){
+        $$(".hideOnIE").hide();
+      });
+    </script>
+    <![endif]-->
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<link href="../../../../../zh-CN/assets/img/favicon.ico" rel="shortcut icon" >
+	<link href="../../../../../zh-CN/assets/css/screen.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/cdn/calcite/css/documentation.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/assets/css/print.css" media="print" type="text/css" rel="stylesheet" />
+
+	<!--
+	<link href="../../../../../zh-CN/assets/css/screen_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/assets/css/documentation/base_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/assets/css/print_l10n.css" media="print" type="text/css" rel="stylesheet" />
+	-->
+	
+	
+		<script src="../../../../../zh-CN/cdn/js/libs/jquery.1.9.1.min.js" type="text/javascript"></script>
+	
+	<script src="../../../../../zh-CN/cdn/js/libs/jquery.cookie.js" type="text/javascript"></script>
+	<link href="../../../../../zh-CN/cdn/css/colorbox.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/cdn/css/colorbox_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<script src="../../../../../zh-CN/cdn/js/libs/jquery.colorbox-min.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/assets/js/video-init.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/assets/js/sitecfg.js" type="text/javascript"></script>
+	
+		<script src="../../../../../zh-CN/assets/js/signIn.js" type="text/javascript"></script>
+	
+
+	<!--- Language Picker -->
+	<script src="../../../../../zh-CN/assets/js/locale/l10NStrings.js" type="text/javascript"></script>
+	
+		 
+	
+
+	<script src="../../../../../zh-CN/assets/js/calcite-web.js" type="text/javascript"></script>
+
+
+
+  <!--- search MD -->
+    <META name="description" content="您可以使用备份文件恢复丢失的数据。"><META name="last-modified" content="2019-12-6"><META name="product" content="arcgis-portal-windows,arcgis-enterprise-windows"><META name="sub_category" content="Portal for ArcGIS (Windows)"><META name="search-collection" content="help"><META name="content_type_label" content="帮助主题"><META name="sub_category_label" content="Portal for ArcGIS (Windows)"><META name="search-category" content="help-general"><META name="subject_label" content="PORTAL,服务,SERVER"><META name="version" content="10.8"><META name="content_type" content="Help Topic"><META name="subject" content="PORTAL,SERVICES,SERVER"><META name="content-language" content="zh-cn">
+    <!--- search MD -->
+
+  
+  <script src="../../../../../zh-CN/assets/js/switchers/portal-1.js" type="text/javascript"></script>
+  
+      
+
+</head>
+
+<!--
+      pub: GUID-86E3206A-3CAD-43C1-9F16-FFB7CA3AEC71=33
+      tpc: GUID-C6FB7616-EBEA-47C4-8382-08AF6CD91BA0=14
+      -->
+
+
+<!-- variable declaration, if any -->
+<!-- can change following macro to set variable once we are on Jinja 2.8 -->
+
+
+
+
+
+<body class="claro zh-CN server">
+  
+
+  <!-- Drawer location -->
+  <div class="drawer drawer-left js-drawer" data-drawer="top-nav">
+        <nav class="drawer-nav" role="navigation">
+          <aside class="side-nav">
+            <h2 class="side-nav-title">Arc<span>GIS</span> Enterprise</h2>
+            <form id="helpSearchForm" class="margin-left-half margin-right-half leader-half trailer-half drawer-search-form" method="GET">
+              <input type="search" name="q"  placeholder="搜索 ArcGIS Enterprise 帮助">
+              <input type="hidden" name="collection" value="help" />
+              <input type="hidden" name="product" value="arcgis-portal-windows" />
+              <input type="hidden" name="version" value="10.8" />
+              <input type="hidden" name="language" value="zh-CN" />
+            </form>    
+             <a id="nav-portal" data-langlabel="portal" href="../../../../../zh-CN/portal/" class="side-nav-link">Portal</a>
+             
+            <a id="all-servers" data-langlabel="all-servers" href="../../../../../zh-CN/server/" class="side-nav-link">所有服务器</a>
+            <a id="gis-server" data-langlabel="gis-server" href="../../../../../zh-CN/server/" class="side-nav-link">GIS Server</a>
+            <a id="image-server" data-langlabel="image-server" href="../../../../../zh-CN/image/" class="side-nav-link">Image Server</a>
+            <a id="geo-analytics-server" data-langlabel="geo-analytics-server" href="../../../../../zh-CN/geoanalytics/" class="side-nav-link">GeoAnalytics Server</a>
+            <a id="geoevent-server" data-langlabel="geoevent-server" href="../../../../../zh-CN/geoevent/" class="side-nav-link">GeoEvent Server</a>
+            <a id="notebook-server" data-langlabel="notebook-server" href="../../../../../zh-CN/notebook/" class="side-nav-link">Notebook Server</a>
+            <a id="nav-data-store" data-langlabel="data-store" href="../../../../../zh-CN/data-store/" class="side-nav-link">Data Stores</a>
+            <a id="nav-cloud" data-langlabel="cloud" href="../../../../../zh-CN/cloud/" class="side-nav-link">云</a>
+            <a id="nav-apps" data-langlabel="apps" href="../../../../../zh-CN/apps/" class="side-nav-link">应用程序</a>
+            <a id="nav-doc" data-langlabel="documentation" href="../../../../../zh-CN/documentation/" class="side-nav-link">文档</a>
+
+          </aside>
+        </nav>
+    </div>
+
+    <!-- user navigation collapses to drawer on mobile -->
+    
+    <div class="drawer drawer-right js-drawer hide-if-logged-out logged-in-navigation" data-drawer="user-nav">
+      <nav class="drawer-nav">
+        <aside class="side-nav">
+          <a class="side-nav-link agolProfile" href="#">我的个人资料</a>
+          <a class="side-nav-link icon-ui-sign-out js-log-out" href="#">登出</a>
+        </aside>
+      </nav>
+    </div>
+    
+<!-- End of drawer -->
+
+  
+  <div class="wrapper">
+      <!--googleoff: all-->
+
+      <header class="top-nav" data-skin="learn">
+        <a class="skip-to-content" href="#skip-to-content">Skip To Content</a>
+        <div class="grid-container">
+          <div class="column-24">
+
+
+            <!--<div class="top-nav-title-wrapper text-center ">-->
+              <a href='../../../../../zh-CN/' class="top-nav-title tablet-hide"><span>Arc</span>GIS  Enterprise</a>
+              <a href='../../../../../zh-CN/' class="icon-ui-menu top-nav-title js-drawer-toggle tablet-show" data-drawer="top-nav"><span>Arc</span>GIS Enterprise</a>
+            <!--</div> -->
+
+          
+            <nav role="navigation" class="top-nav-list left tablet-hide">
+              <a id="nav-portal" data-langlabel="portal" href="../../../../../zh-CN/portal/" class="top-nav-link">Portal</a>
+
+                <div class="dropdown js-dropdown ">
+                  <a class="top-nav-link js-dropdown-toggle" tabindex="0" aria-haspopup="true" aria-expanded="false" href="#">Servers</a>
+                  <nav class="dropdown-menu featured" role="menu">
+                    <ul class="dropdown-sublist-featured">
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/get-started/latest/windows/additional-server-deployment.htm" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path  d="M42.92 6.1H4.12v8.566l.833.832-.835.833-.018 7.332.845.847-.825.824V33.9h25v5.2h-2v1.075H8.02v.8h19.1v.925h4.8v-.925H40v-.8h-8.08V39.1h-2v-5.2h13v-8.566l-.834-.834.835-.834v-7.332l-.835-.834.835-.834zm-11.8 35h-3.2v-1.2h3.2zm11-8H4.92v-7.434l.767-.766h35.668l.765.766zm0-9.766l-.766.766H5.666l-.766-.767.017-6.669.766-.764h35.671l.766.766zm0-9l-.766.766H5.687l-.766-.766V6.9h37.2zM19 11.9h-2v-.8h2zm-4 0h-2v-.8h2zm-4 0H9v-.8h2zm6 8.2h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9zm8 9h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9z"/></svg></span>
+                          <span class="sublink-text">所有服务器</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/server/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M45.98 33.575a.616.616 0 0 0-.335-.51l-3.362-2.03 3.362-2.031a.556.556 0 0 0 0-1.02l-11.1-6.704a1.293 1.293 0 0 0-1.112 0L22.33 27.982a.556.556 0 0 0 0 1.02l3.36 2.03-3.358 2.03a.556.556 0 0 0-.002 1.021l3.322 2.006-3.324 2.008a.555.555 0 0 0 .002 1.017l11.102 6.703a1.25 1.25 0 0 0 1.11.002l11.104-6.706a.556.556 0 0 0 0-1.02l-3.32-2.006 3.318-2.004a.607.607 0 0 0 .335-.509zM33.837 21.97c.026-.01.286-.005.29-.005l10.814 6.53-10.8 6.523c-.028.01-.284.005-.294.006l-10.813-6.53zm11.105 16.636l-10.8 6.523a2.564 2.564 0 0 1-.295.006l-10.81-6.529 3.39-2.047 7.004 4.23a1.083 1.083 0 0 0 .557.131 1.101 1.101 0 0 0 .554-.13l7.01-4.233zM34.14 40.098a2.545 2.545 0 0 1-.294.006l-10.812-6.53 3.43-2.073 6.97 4.208a1.25 1.25 0 0 0 1.107-.001l6.966-4.206 3.431 2.073zM9 8H7V7h2zm8 8h-2v-1h2zm-4-8h-2V7h2zm4 0h-2V7h2zm-4 8h-2v-1h2zm7.316 11.1H3.9v-6.434l.766-.766h35.668l.766.766v2.12l.8.483v-2.935l-.826-.826.826-.845v-6.329l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9h16.88a2.632 2.632 0 0 1 .336-.8zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zm0 8v-5.668l.766-.766h35.668l.766.766v5.67l-.746.764H4.666zM15 24v-1h2v1zm-4 0v-1h2v1zm-2-8H7v-1h2zm-2 8v-1h2v1z"/></svg></span>
+                          <span class="sublink-text">GIS Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/image/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 8h-2V7h2zm-4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm8 8h-2v1h2zm-8 0H7v1h2zm4 9v-1h-2v1zm-4 0v-1H7v1zm8 0v-1h-2v1zm4 3.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V21h-.8v-.334l-.766-.766H4.666l-.766.766V27.1H21zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zm40.234 4v21.8H23.1V23.1zm-.8 16.366L39.466 44.1h2.868l1.766-1.766zm-20.2-9.932l5.634-5.634h-2.868L23.9 26.666zm6.2-5.068L24.466 30.1h2.868l2.766-2.766zM28.466 30.1H30.1v-1.634zm2.434 0h6.2v-6.2h-6.2zm-7 7h6.2v-6.2h-6.2zm7 0h6.2v-6.2h-6.2zm0 6.434l5.634-5.634h-2.868L30.9 40.666zm7-7l5.634-5.634h-2.868L37.9 33.666zm1.634-5.634H37.9v1.634zm-8.634 7v1.634l1.634-1.634zm.566 6.2h2.868l2.766-2.766v-2.868zm6.434-3.566l2.634-2.634H37.9zM35.466 44.1H37.1v-1.634zm2.434 0h.434l5.766-5.766V37.9h-2.434L37.9 41.666zm6.2-8.634L42.466 37.1H44.1zm0-4L38.466 37.1h2.868l2.766-2.766zm0-7.566h-6.2v6.2h6.2zm-20.2 0v1.634l1.634-1.634zm0 20.2h6.2v-6.2h-6.2zm20.2 0v-.634l-.634.634z"/></svg></span>
+                          <span class="sublink-text">Image Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/geoanalytics/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 16h-2v-1h2zm-8 8v-1H7v1zm8 0v-1h-2v1zM13 7h-2v1h2zm4 0h-2v1h2zM9 7H7v1h2zm21.45 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V27.9h-1.464l-.801-.8H41.1v-6.434l-.766-.766H4.666l-.766.766V27.1h27.15zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM13 24v-1h-2v1zm0-9h-2v1h2zm-4 0H7v1h2zm26.672 27.148A1.87 1.87 0 0 1 35.9 43a1.91 1.91 0 1 1-3.763-.222l-9.845-3.414A1.88 1.88 0 0 1 21 39.9a1.9 1.9 0 1 1 1.474-3.084l4.692-2.346A1.878 1.878 0 0 1 27.1 34a1.902 1.902 0 0 1 1.9-1.9 1.867 1.867 0 0 1 .781.191l3.788-5.05A1.88 1.88 0 0 1 33.1 26a1.9 1.9 0 1 1 3.491 1.026l4.889 4.888c-.069.056-.144.1-.21.162a3.986 3.986 0 0 0-.358.402l-4.883-4.883A1.889 1.889 0 0 1 35 27.9a1.867 1.867 0 0 1-.781-.191l-3.788 5.049a1.868 1.868 0 0 1 .437.965l9.204.614c-.018.11-.049.218-.058.33A3.93 3.93 0 0 0 40 35c0 .046.01.09.01.135l-9.185-.612A1.913 1.913 0 0 1 29 35.9a1.889 1.889 0 0 1-1.474-.716l-4.692 2.346a1.878 1.878 0 0 1 .066.47 1.9 1.9 0 0 1-.105.625c-.007.02-.022.036-.03.056l9.63 3.34a1.87 1.87 0 0 1 2.786-.505l5.415-4.437c.067.108.127.22.204.322a3.9 3.9 0 0 0 .292.306zM33.9 26a1.092 1.092 0 0 0 .43.872 1.12 1.12 0 0 0 1.42-.068A1.1 1.1 0 1 0 33.9 26zm-6 8a1.1 1.1 0 0 0 2.196.093 1.135 1.135 0 0 0-.426-.965A1.087 1.087 0 0 0 29 32.9a1.101 1.101 0 0 0-1.1 1.1zm-5.8 4a1.098 1.098 0 1 0-.06.362A1.101 1.101 0 0 0 22.1 38zm13 5a1.1 1.1 0 1 0-2.2 0 1.1 1.1 0 0 0 2.2 0zm10.8-8a1.9 1.9 0 1 1-3.8 0c0-.053.003-.105.007-.158A1.9 1.9 0 0 1 45.9 35zm-.8 0a1.1 1.1 0 0 0-2.196-.093 1.153 1.153 0 0 0 .216.752A1.1 1.1 0 0 0 45.1 35z"/></svg></span>
+                          <span class="sublink-text">GeoAnalytics Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/geoevent/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M13 8h-2V7h2zm4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm12.418 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826v2.117c-.259-.177-.53-.337-.8-.497v-1.288l-.766-.766H4.666l-.766.766V27.1h17.933c-.148.26-.283.53-.415.8zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM9 24v-1H7v1zm4-9h-2v1h2zm0 9v-1h-2v1zm-4-9H7v1h2zm8 9v-1h-2v1zm16.9 2h-.8v8.9H39v-.8h-5.1zm.1-3.901a11.9 11.9 0 1 0 11.9 11.9 11.914 11.914 0 0 0-11.9-11.9zm0 23a11.1 11.1 0 1 1 11.1-11.1 11.112 11.112 0 0 1-11.1 11.1z"/></svg></span>
+                          <span class="sublink-text">GeoEvent Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/notebook/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M22 27.1H3.9v-6.434l.766-.766h18.576a5.262 5.262 0 0 1 .83-.8H4.666l-.766-.766v-5.668l.766-.766h35.668l.766.766V18h.8v-5.666l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9H22zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zM9 8H7V7h2zm8 0h-2V7h2zm-4 0h-2V7h2zm2 16v-1h2v1zm-4 0v-1h2v1zm-4 0v-1h2v1zm0-8v-1h2v1zm8 0v-1h2v1zm-4 0v-1h2v1zm18.9 8.1h-1.8v1.8h1.8zm-.8 1h-.2v-.2h.2zm15.498-4.48a2.727 2.727 0 0 0-1.62-.5v-.02H27.25a3.154 3.154 0 0 0-3.15 3.15V38.1h-1.68a3.386 3.386 0 0 0-2.872 1.58 3.49 3.49 0 0 0-.157 3.419 3.241 3.241 0 0 0 2.954 1.801h15.161a3.404 3.404 0 0 0 3.394-3.4V26.9h5v-3.65a3.224 3.224 0 0 0-1.302-2.63zM22.345 44.1a2.44 2.44 0 0 1-2.23-1.341 2.706 2.706 0 0 1 .11-2.65A2.588 2.588 0 0 1 22.42 38.9h12.89a3.395 3.395 0 0 0 0 5.2zM40.1 23.192V41.5a2.6 2.6 0 1 1-2.6-2.6v-.8H24.9V23.25a2.352 2.352 0 0 1 2.35-2.35h13.795a3.183 3.183 0 0 0-.945 2.292zm5 2.908h-4.2v-2.908a2.274 2.274 0 0 1 1.44-2.18 1.944 1.944 0 0 1 1.791.259 2.423 2.423 0 0 1 .97 1.979zm-17.1 5h9v.8h-9zm0 3h7v.8h-7zm0-6h9v.8h-9zm4-3h5v.8h-5z"/></svg></span>
+                          <span class="sublink-text">Notebook Server</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+
+              <a id="nav-data-store" data-langlabel="data-store" href="../../../../../zh-CN/data-store/" class="top-nav-link">Data Stores</a>
+              <a id="nav-cloud" data-langlabel="cloud" href="../../../../../zh-CN/cloud/" class="top-nav-link">云</a>
+              <a id="nav-apps" data-langlabel="apps" href="../../../../../zh-CN/apps/" class="top-nav-link">应用程序</a>
+            </nav>
+
+
+            
+            
+            
+
+            <div class="margin-left-1 top-nav-list right hide-if-logged-in logged-out-navigation">
+               
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+              
+              <a data-langlabel="sign-in" id="login-link" class="icon-ui-user top-nav-link link-blue login-link" href="#">登录</a>
+              
+            </div>
+
+            
+            <nav class="margin-left-1 top-nav-list right hide-if-logged-out logged-in-navigation">
+              
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+             
+              <div class="dropdown js-dropdown right">
+
+                <div class="tablet-show top-nav-link">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a href="#" data-drawer="user-nav" class="user-nav-name js-drawer-toggle" data-first-name></a>
+                </div>
+
+                <div class="tablet-hide top-nav-link js-dropdown-toggle">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a class="user-nav-name top-nav-dropdown dropdown-btn" data-first-name>&nbsp;</a>
+                </div>
+
+                <nav class="dropdown-menu dropdown-right">
+                
+                  <a class="dropdown-link agolProfile" id="agolProfile" href="#">我的个人资料</a>
+                  <a class="dropdown-link js-log-out" id="agolLogout" href="#">登出</a>
+                </nav>
+              </div>
+            </nav>
+            
+
+            
+          </div>
+        </div>
+      </header>
+
+      <div class="js-search search-overlay">
+        <div class="search-content" role="dialog" aria-labelledby="search">
+          <form method="GET" id="helpSearchForm">
+            <label>
+              搜索 ArcGIS Enterprise 帮助
+              <div class="search-bar">
+                <input type="search" name="q"  placeholder="搜索 ArcGIS Enterprise 帮助" class="search-input js-search-input">
+                <input type="hidden" name="collection" value="help" />
+                <input type="hidden" name="product" value="arcgis-portal-windows" />
+                <input type="hidden" name="version" value="10.8" />
+                <input type="hidden" name="language" value="zh-CN" />
+              </div>
+            </label>
+            <input type="hidden" name="relativePath" value="../../../../../" /><button type="submit" class="btn btn-large right">搜索</button>
+          </form>
+        </div>
+      </div>
+
+      <!--googleon: all-->
+
+      <div id="skip-to-content">
+        <!--googleoff: all-->
+        <header class="sub-nav sub-nav-learn">
+          <div class="grid-container">
+            
+            <div class="column-24">
+              <div style="display:table;" class="sdk-home-banner">
+                <div class="sdk-home-banner-content">
+                  <h1 class="sub-nav-title link-white">Portal for ArcGIS</h1>
+                </div>
+              </div>
+            </div>
+
+            <div class="column-24">
+              <nav class='sub-nav-list tablet-hide'><a class="sub-nav-link" href="../../../../../zh-CN/portal/" target="_top" title="Portal for ArcGIS 主页">主页</a><a class="sub-nav-link" href="../../../../../zh-CN/portal/latest/use/" target="_top" title="使用 Portal for ArcGIS">使用</a><a class="sub-nav-link is-active" href="../../../../../zh-CN/portal/latest/administer/windows/" target="_top" title="安装、管理和保护 Portal for ArcGIS">管理</a></nav><select class='tablet-show select-full trailer-half js-select-nav'><option value="../../../../../zh-CN/portal/">主页</option><option value="../../../../../zh-CN/portal/latest/use/">使用</option><option selected="true" value="../../../../../zh-CN/portal/latest/administer/windows/">管理</option></select>
+            </div>
+
+          </div>
+        </header>
+        <!--googleon: all-->
+       
+        <!-- content goes here -->
+        <div class="grid-container ">
+          
+
+            
+              
+  <!--BREADCRUMB-BEG--><div id="bigmac" class="sticky-breadcrumbs trailer-2" data-spy="affix" data-offset-top="180"> </div><!--BREADCRUMB-END-->
+  <!--googleoff: all-->
+    <div class="column-5 tablet-column-12 trailer-2 ">
+      <aside class="js-accordion accordion reference-index" aria-live="polite" role="tablist">
+        <div></div>
+      </aside>
+
+      <div class="js-sticky scroll-show tablet-hide leader-1 back-to-top" data-top="0" style="top: 0px;">
+        <a href="#" class="btn btn-fill btn-clear">返回顶部</a>
+      </div>
+    </div>
+  <!--googleon: all-->
+  
+            
+            
+            
+	
+		<div class="column-13  pre-1 content-section">
+	
+		<header class="trailer-1"><h1>恢复数据存储</h1></header>
+
+		 
+	<!--googleoff: all-->
+	
+		
+				<aside id="main-toc-small" class="js-accordion accordion tablet-show trailer-1">
+			      <div class="accordion-section">
+			        <h4 class="accordion-title">在本主题中</h4>
+			        <div class="accordion-content list-plain">
+			          <ol class="list-plain pre-0 trailer-0"><li><a href="#ESRI_SECTION1_74E36342097C4AF4934B6BC66C492511">关于恢复数据存储的重要信息</a></li><li><a href="#ESRI_SECTION1_81C70C67F3FF45F9B701EF94B3CFDB30">在发生故障后恢复关系数据存储</a></li><li><a href="#ESRI_SECTION1_7AD6E4E6A28A48FC816FCF46A6048D68">将现有关系数据存储恢复至特定时间点</a></li><li><a href="#ESRI_SECTION1_6CC7DC28D04B4D019EB2CBA1C4ADC38D">发生故障后恢复切片缓存数据存储以重新分配场景缓存数据</a></li><li><a href="#ESRI_SECTION1_6D59EE92518F45D1BAC51B76FFD837B8">在所有计算机丢失后恢复时空大数据存储或切片缓存数据存储</a></li><li><a href="#ESRI_SECTION1_BDB412C158064FC09F07CB746DCAA39A">若目标计算机可以容纳备份文件内的所有数据，则可恢复时空大数据存储</a></li><li><a href="#ESRI_SECTION1_53D4EFBB87434FAD91ED52E297568A23">将关系或切片缓存数据存储恢复至不同的操作系统或版本</a></li></ol>
+			        </div>
+			      </div>
+			     </aside>
+		
+    
+   <!--googleon: all-->
+
+
+		<main>
+			
+	
+    	
+    
+
+
+			
+<p id="GUID-E0619D26-0D93-4BDD-8F51-3AE1A9F2523A">如果您无法访问数据存储中的数据（例如，数据存储发生故障或编辑者从托管要素图层中删除了错误数据），则您可以使用备份文件恢复数据。您也可以在替换计算机以重新分配场景缓存数据后恢复切片缓存数据存储。</p><p id="GUID-6A62DBE8-3409-44B8-A311-1C364CF3EE06">如果数据存储中的一台或多台计算机发生故障，请在新计算机上安装 <span class="ph">ArcGIS Data Store</span> 并使用 <a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/data-store-utility-reference.htm#ESRI_SECTION1_BAF681033AB248C2BF4718A917380C8D">restoredatastore</a> 实用程序恢复最近可用的完整备份。</p><p id="GUID-68BA1F11-F618-45B0-A584-FBB725DA4753">您执行此操作的方式会根据数据存储类型和替换的计算机台数而有所不同。例如，如果您<a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/data-store-recovery.htm#ESRI_SECTION1_6D59EE92518F45D1BAC51B76FFD837B8">替换了切片缓存或时空大数据存储中的所有计算机</a>，您需要运行两次 restoredatastore 实用程序以容纳所有数据。</p><p id="GUID-AEF6BADF-C93B-44C4-B3D2-D44CC49ADB50">如果关系数据存储<a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/data-store-utility-reference.htm#LI_36B1C533A840477C8B8EF280640B2361">配置为时间点恢复</a>，若要<a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/data-store-recovery.htm#ESRI_SECTION1_7AD6E4E6A28A48FC816FCF46A6048D68">将托管要素图层数据恢复至指定的时间点</a>，则需在现有关系数据存储顶部进行恢复并指定要恢复到的日期和时间。</p><section class="section1 padded-anchor" id="ESRI_SECTION1_74E36342097C4AF4934B6BC66C492511" purpose="section1"><h2>关于恢复数据存储的重要信息</h2><p id="GUID-542E69F4-3780-452B-86E9-B341BCC44DA4">请记住以下有关 <span class="ph">ArcGIS Data Store</span> 恢复的信息：<ul purpose="ul" id="UL_AC76313D4B114BCEB6A35D29510E9F03"><li purpose="li" id="LI_5DCEA4AB9C15479B89C699CC85F8E736">您必须通过在开发或测试部署上测试备份和恢复过程来确保它们正常工作。当需要恢复生产部署时，您不希望发现工作流中的缺陷。</li><li purpose="li" id="LI_535F3131825042A8AC2290665DB52A18">已压缩用于恢复的备份文件。恢复数据后，必须将这些文件解压到过渡位置。这表示您需要具有可兼容此数据的过渡位置。默认情况下，在数据目录中过渡文件。因此，如果数据存储中包含了大量数据，则您可能需要设置单独的过渡位置并指定用于数据存储恢复的过渡位置。您可以使用 <a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/data-store-utility-reference.htm#ESRI_SECTION1_B23981C540B74B7AAC3F6E6FF51A2C81">changestaginglocation</a> 实用程序指定单独过渡位置。</li><li purpose="li" id="LI_B7FA933E035E4EF4B621B33B15C378CF">在运行 restoredatastore 实用程序之前，请确保没有用户在进行图层的发布或编辑操作。这些新服务和编辑内容将会丢失，因为它们没有包括在您准备恢复的备份文件中。</li><li purpose="li" id="LI_02434611EA6446CEAF9B82BAECAB1591">当您恢复数据时，客户端和服务无法访问数据存储中的现有数据。</li><li purpose="li" id="LI_C8BCE93D6B2C411C9AB07B9F4138B3D8">如果在本地部署 <span class="ph">ArcGIS Enterprise</span>，但数据存储备份文件位于云存储中，则与备份文件存储在本地文件共享中相比，创建备份以及从这些备份中进行恢复所需的时间更长。</li></ul></p></section><section class="section1 padded-anchor" id="ESRI_SECTION1_81C70C67F3FF45F9B701EF94B3CFDB30" purpose="section1"><h2>在发生故障后恢复关系数据存储</h2><p id="GUID-9844CA4B-A3E2-4A48-954F-BA736605619D">如果硬件停止运行，或者关系数据存储不可用且无法返回到在线状态，则需要在新计算机上安装 <span class="ph">ArcGIS Data Store</span>，然后使用 restoredatastore 实用程序对新安装应用备份文件。这将在新计算机上重新创建数据存储，并会保留注册到现有 <span class="ph">GIS Server</span> 站点的数据存储。</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_AA465054F01047F282C231AED8F09F82"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_A8959D589FE84FC8903ACBEFC52B9BEB"><span purpose="cmd" id="GUID-2D20A964-0433-4707-9091-77147EEB41F8"><a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/install-data-store.htm#ESRI_SECTION2_3339FCDA934D4B669334C49B9998667D">在新计算机上安装 <span class="ph">ArcGIS Data Store</span></a>。</span><div class="info" purpose="info"><p id="GUID-37E3370D-1400-47A6-BF03-0D0EADE9E328">请勿继续进行配置。关闭在安装结束时打开的数据存储配置向导。</p></div></li><li purpose="step" id="ESRI_STEP_E30EBBE10ED543E795FB7B4A584D61F7" ishcondition="srv_os=windows"><span purpose="cmd" id="GUID-C54FFF67-4246-4C30-99B7-F6622853CC63">使用<span class="uicontrol">以管理员身份运行</span>选项打开命令提示符。</span></li><li purpose="step" id="ESRI_STEP_F831C2E640304BE9A05CB9AA5C0CFC03" ishcondition="srv_os=windows"><span purpose="cmd" id="GUID-32013AC1-FA63-4BD0-8101-C4F37565DF30">运行 <span class="usertext">&lt;ArcGIS Data Store installation directory&gt;\datastore\tools</span> 中的 restoredatastore 实用程序以恢复关系数据存储的最近备份。</span><div class="stepexample" purpose="stepexample">请参阅<a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/data-store-utility-reference.htm#ESRI_SECTION1_BAF681033AB248C2BF4718A917380C8D">实用程序参考</a>或在语法的命令行中输入 <span class="usertext">--help</span>。<p id="GUID-E962C714-392C-4EF1-BA9F-5AE377006E72">本示例会将最近关系数据备份存储从 <span class="usertext">\\fortknox\backups\datastore\relational</span> 恢复到 <span class="usertext">C:\arcgisdatastore</span>。由于在默认情况下该数据存储仍会受到将其注册到的 <span class="ph">GIS Server</span> 站点的限制，因此您无需指定 <span class="usertext">--bound true</span>，但是需要指定 <span class="ph">GIS Server</span> 站点 URL 和管理员凭据。<section class="codeblock padded-anchor" purpose="codeblock"><div class="codeblockbody"><pre><code class="text">restoredatastore --store relational --target most-recent --source-loc \\fortknox\backups\datastore\relational --data-dir C:\arcgisdatastore --server-url https://gisserver.domain.com:6443 --server-admin siteadmin --server-password MySApw</code></pre></div></section></p></div><div class="info" purpose="info"><p id="GUID-7A68C1BD-ECBE-4CE0-8E8C-9B9CAFD1225B"> 如果您使用 <span class="usertext">--data-dir</span> 选项指定的目录不存在，则该目录将会被创建。如果存在，您必须对其具有写入访问权限，且该目录必须为空。否则，恢复操作将失败。</p></div></li><li purpose="step" id="ESRI_STEP_C0F47653E404415BAA4A9AF856084D38"><span purpose="cmd" id="GUID-7EBE967D-7BEE-46BE-8387-03C36A26EAEB">输入 <span class="usertext">yes</span> 确认希望恢复数据存储。</span></li></ol></div></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_7AD6E4E6A28A48FC816FCF46A6048D68" purpose="section1"><h2>将现有关系数据存储恢复至特定时间点</h2><p id="GUID-DA0D0C84-7E99-4853-BCFD-AE0AEC7D582A">如果关系数据存储<a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/data-store-utility-reference.htm#LI_36B1C533A840477C8B8EF280640B2361">配置为时间点恢复</a>，可以使用备份文件将关系数据存储恢复至指定的时间点。例如，如果编辑者对托管要素图层中的数据进行了大量编辑，但是在第二天发现这些编辑是错误的，则您可以将关系数据存储恢复至进行编辑前的状态。</p><p id="GUID-742FA688-3B16-4B75-990E-6B0EAE3292E1">指定的时间必须是协调世界时间 (UTC)。</p><div class="panel trailer-1 note" id="GUID-9D4BD6B0-5790-4694-B009-CCA43BC2EBA8"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-413BE5A9-7875-411C-97B3-0FCD8F1882F2">在将关系数据存储恢复至的时间点之后发布到门户的所有要素图层将不再有效，因为这些图层所使用的数据将不再存在于数据存储中。</p><p id="GUID-A231F40A-F8AB-463B-B536-DC6BEE8E710F">还需注意的是如果您禁用了自动备份，则无法恢复至指定时间点。</p></div><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_41AFF7661A554152BBB3935CF8FCA0E1"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_7511E69B2D564EE6A0ACE896957C1368" ishcondition="srv_os=windows"><span purpose="cmd" id="GUID-CC7F6195-A921-416B-9BEC-77237C5928A8">使用<span class="uicontrol">以管理员身份运行</span>选项打开命令提示符。</span></li><li purpose="step" id="ESRI_STEP_FB9F5E1901344BA49F295CB10CF2578B" ishcondition="srv_os=windows"><span purpose="cmd" id="GUID-F2A89138-D3B3-4F27-BB03-6BDB8E7ED892">运行 <span class="usertext">&lt;ArcGIS Data Store installation directory&gt;/datastore/tools</span> 中的 restoredatastore 实用程序将数据恢复至特定时间点。</span><div class="stepexample" purpose="stepexample"><p id="GUID-35EE6350-585D-4E92-B84F-9E996374582D">将关系数据存储恢复到特定时间点的语法如下：<section class="codeblock padded-anchor" purpose="codeblock"><div class="codeblockbody"><pre><code class="other no-highlight">restoredatastore --store relational --target &lt;date and time&gt; restoredatastore --store relational --target &lt;date and time&gt; --server-url &lt;ArcGIS Server URL&gt; --server-admin &lt;ArcGIS Server admin user&gt; --server-password &lt;ArcGIS Server admin password&gt;</code></pre></div></section></p><p id="GUID-A70A23DF-E1DB-4C99-B420-37FD428FA4D3">例如，键入以下内容将文件中的关系数据存储恢复至其在 2014 年 3 月 20 日下午 5:00 UTC 的 状态：<section class="codeblock padded-anchor" purpose="codeblock"><div class="codeblockbody"><pre><code class="other no-highlight">restoredatastore --store relational --target 2014-03-20-17:00:00 --server-url https://gisserver.domain.com:6443 --server-admin siteadmin --server-password MySApw
+You are going to restore the data store from a data store backup. This process could take a long time, depending on the size of your data. Please do not interrupt the process once it has started.
+Do you want to continue (Yes or No)? Yes</code></pre></div></section></p></div></li><li purpose="step" id="ESRI_STEP_385AC480498D460186D8B8057DEA24CF"><span purpose="cmd" id="GUID-F32738CC-8543-44A7-B7F4-E2111C2C4029">输入 <span class="usertext">yes</span> 确认希望恢复数据存储。</span><div class="info" purpose="info"><div class="panel trailer-1" id="GUID-BA55C82D-A87D-464D-A597-3EAD4F0772FF"><h5 class="icon-ui-description trailer-0">提示：</h5><p id="GUID-ED79FCDF-0D62-4774-B54A-5B8CB8FACDA9">如果希望编写 restoredatastore 命令（包括禁止确认提示符的标记）的脚本，则请按以下示例操作：</p><section class="codeblock padded-anchor" purpose="codeblock"><div class="codeblockbody"><pre><code class="other no-highlight">restoredatastore --store relational --target 2014-03-20-17:00:00 --prompt no</code></pre></div></section></div></div><div class="stepresult" purpose="stepresult"><p id="GUID-BB4BAD84-39D0-4C84-846B-A9776214B01B">您的托管要素图层数据已恢复至您指定的时间点。</p></div></li></ol></div></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_6CC7DC28D04B4D019EB2CBA1C4ADC38D" purpose="section1"><h2>发生故障后恢复切片缓存数据存储以重新分配场景缓存数据</h2><p id="GUID-734AEC9E-ADAF-4AFF-B681-37CE602A0431">如果切片缓存数据存储计算机发生故障，且无法恢复在线状态，请在替换丢失的计算机后，恢复切片缓存数据存储。恢复数据时，<span class="ph">ArcGIS Data Store</span> 会将场景缓存数据的副本重新分配给数据存储中的所有计算机，包括新的计算机。</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><section class="context padded-anchor" id="ESRI_CONTEXT_41998951CE7E48ECB634C3602F56EEFA" purpose="context"><p id="GUID-02BDF201-4251-4F2B-8085-73B5C3A76829">按照以下说明检测并替换故障的切片缓存数据存储计算机，恢复并重新分配场景缓存数据以实现高度可用性：</p></section><div class="steps" id="ESRI_STEPS_B596263AA63A49D298633E28494BD00E"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_AE6F6921CBEE494BA7E828B1627CCC0A"><span purpose="cmd">如果您怀疑其中一台切片缓存数据存储计算机存在故障，请运行 <a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/data-store-utility-reference.htm#ESRI_SECTION1_5ECEA8B5F835454CB7D0DBC942BB4FDB">describedatastore</a> 命令行实用程序来确认是否有计算机无法访问。</span></li><li purpose="step" id="ESRI_STEP_0D46212153B1416E9DE3DAF0A8835909"><span purpose="cmd"> 如果实用程序表明存在故障计算机，请尝试恢复此计算机。</span><div class="stepexample" purpose="stepexample"><p id="GUID-F3D52027-2AD1-4FCB-AC36-9A06BA92F7F1">例如，如果网线或电源线断开，请将其插上并启动计算机。</p></div></li><li purpose="step" id="ESRI_STEP_B07D4BA4B19845D5ABA4BC671D994D7E"><span purpose="cmd">如果您能够恢复计算机，请恢复其在线状态，并再次运行 <a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/data-store-utility-reference.htm#ESRI_SECTION1_5ECEA8B5F835454CB7D0DBC942BB4FDB">describedatastore</a> 实用程序以确认计算机已恢复在线状态并加入切片缓存数据存储。对场景图层进行一些测试，以确保其可访问。如果一切正常，则可以结束测试。但是，如果无法恢复计算机，请继续执行下一步。</span></li><li purpose="step" id="ESRI_STEP_CC7ABC124D2A4C0AA0E0004BFB43089B"><span purpose="cmd">使用 <span class="usertext">--force</span> 选项运行 <a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/data-store-utility-reference.htm#ESRI_SECTION1_DDFCC759CF934289BDCB795C844BF1FD">removemachine</a> 实用程序，以从切片缓存数据存储移除故障的计算机。</span><div class="stepexample" purpose="stepexample"><p id="GUID-BDF4E238-1302-4BE2-ADB7-3057F77DC0F2">在本示例中，计算机 tilecache3 无法访问且无法恢复。由于 <span class="ph">ArcGIS Data Store</span> 无法访问计算机，您必须指定 <span class="usertext">--force true</span> 以从切片缓存数据存储中移除计算机。<section class="codeblock padded-anchor" purpose="codeblock"><div class="codeblockbody"><pre><code class="text">removemachine tilecache3 --store tilecache --force true</code></pre></div></section></p></div></li><li purpose="step" id="ESRI_STEP_B4EC577FFD3749D697BAEB2C293768D3"><span purpose="cmd">获取与旧计算机相同操作系统的新计算机。在该计算机上安装 <a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/install-data-store.htm"><span class="ph">ArcGIS Data Store</span></a>，然后使用相同的托管 <span class="ph">ArcGIS Server</span> 站点对其进行配置，以<a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/add-standby-machine.htm#ESRI_SECTION1_91C0037FB8454EAFBB298CD4A0A07356">将其添加到现有切片缓存数据存储</a>。</span></li><li purpose="step" id="ESRI_STEP_DC883B17DD174065AFD228ABA6B167E8"><span purpose="cmd">运行 <span class="ph">ArcGIS Server</span> <a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/data-store-function-reference.htm#ESRI_SECTION1_A68CDC84BE404735AEE3143159EDB943">验证</a> REST 命令，以确保您的现有场景缓存数据高度可用。如果您收到消息提示您一个或多个场景图层缓存只有一个副本，请继续执行其他步骤。</span></li><li purpose="step" id="ESRI_STEP_DE2CDD9C951341E9A99326AE58A8479B"><span purpose="cmd">请确认您是否已为切片缓存数据存储配置共享备份位置。如果没有，请<a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/data-store-backups.htm#GUID-ADC50D62-2A28-4414-BC8C-63C2ACF527D0">立即配置</a>。</span></li><li purpose="step" id="ESRI_STEP_17F82687E89942818C29207D11824968"><span purpose="cmd"> 确保没有用户发布或更新任何场景图层或正在构建任何场景缓存。</span><div class="info" purpose="info"><p id="GUID-F926E47D-6D46-4845-AE4F-ADCCD3BC397D">要检测是否正在构建或重建场景缓存，请登录到托管服务器的 <span class="ph">ArcGIS Server Manager</span>，打开<span class="uicontrol">站点 <span class="greaterthan">&gt;</span> 作业</span>，在<span class="uicontrol">服务</span>下拉列表中选择 <span class="uicontrol">System/SceneCachingControllers</span>，然后单击<span class="uicontrol">查询</span>。如果服务器正在构建场景缓存，则查询时会显示作业状态。请等到缓存作业完成后再继续。如果没有列出场景缓存作业，则可以继续。</p><p id="GUID-C9B3F30B-E4FF-4562-BFAC-6C3889A966C9">为确保没有用户发布新图层或编辑内容，您可以将 <span class="ph">ArcGIS Enterprise</span> 设置为<a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/read-only-mode-in-arcgis-enterprise.htm">只读模式</a>。但请注意，这会影响到所有使用门户的用户。</p></div></li><li purpose="step" id="ESRI_STEP_04CD834098C448A2A62037D4017DA527"><span purpose="cmd">为切片缓存数据存储<a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/data-store-utility-reference.htm#ESRI_SECTION1_3F745CDA9DCD4B38A8F928CF25B49E78">创建备份</a>。</span><div class="stepexample" purpose="stepexample"><p id="GUID-E31E6234-DC9F-4FFB-925D-72E2C7781AE5">在本示例中，将创建名为 myscenecachebu 的备份文件，并将其存储在您注册为切片缓存数据存储备份位置的 <span class="ph">Amazon Simple Storage Service (S3)</span> 存储段中的备份位置。<section class="codeblock padded-anchor" purpose="codeblock"><div class="codeblockbody"><pre><code class="text">backupdatastore myscenecachebu --store tilecache --location type=s3;location=mys3bucket</code></pre></div></section></p></div></li><li purpose="step" id="ESRI_STEP_37CBC44C8FA4455FAF1CC50DDBC34245"><span purpose="cmd">将 <a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/data-store-utility-reference.htm#ESRI_SECTION1_BAF681033AB248C2BF4718A917380C8D">restoredatastore</a> 实用程序的 <span class="usertext">replicatedata</span> 选项设置为 <span class="usertext">true</span>，并使用该实用程序覆盖切片缓存数据存储的内容，然后将内容重新分配到所有计算机。</span><div class="stepexample" purpose="stepexample"><p id="GUID-3BBB9592-7FE3-4DAD-872E-A41E66816E65">在以下示例中，myscenecachebu 文件用于恢复切片缓存数据存储，<span class="usertext">replicatedata</span> 选项设置为 <span class="usertext">true</span>，用于指示 <span class="ph">ArcGIS Data Store</span> 切片缓存数据存储中的所有计算机都应分配每个场景缓存的两个副本。<section class="codeblock padded-anchor" purpose="codeblock"><div class="codeblockbody"><pre><code class="text">restoredatastore --store tilecache --target myscenecachebu --serverurl https://gisserver.domain.com:6443 --server-admin myadmin --server-password myAdminPWd! --replicatedata true</code></pre></div></section></p></div></li><li purpose="step" id="ESRI_STEP_2B395304D80C4E5B9985D8F73BBB37AE"><span purpose="cmd">如果您已将 <span class="ph">ArcGIS Enterprise</span> 设置为只读模式，请将其恢复为读写模式。</span></li><li purpose="step" id="ESRI_STEP_25E74092865843689B75246FB8917E29"><span purpose="cmd">再次运行<a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/data-store-function-reference.htm#ESRI_SECTION1_A68CDC84BE404735AEE3143159EDB943">验证</a>，确保所有场景缓存有两个副本。</span></li></ol></div></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_6D59EE92518F45D1BAC51B76FFD837B8" purpose="section1"><h2>在所有计算机丢失后恢复时空大数据存储或切片缓存数据存储</h2><p id="GUID-CA045834-BF45-4014-AD26-E75C678CA83F">如果您必须替换切片缓存或时空大数据存储中的所有计算机（例如，洪水破坏了您的数据中心，或者您必须恢复到旧版本的 <span class="ph">ArcGIS Enterprise</span>），请按照以下步骤恢复您的切片缓存或时空大数据存储：</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_5974FAC8ECD14E2496EEA04458F9D550"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_08EDAC26B3B942D79F4C1644B29B012D"><span purpose="cmd"><a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/install-data-store.htm#ESRI_SECTION2_3339FCDA934D4B669334C49B9998667D">在新计算机上安装 <span class="ph">ArcGIS Data Store</span></a>。</span><div class="info" purpose="info"><p id="GUID-99CABB90-0840-4C96-8840-A4344F7DB4FA">请勿继续进行配置。关闭在安装结束时打开的数据存储配置向导。</p></div></li><li purpose="step" id="ESRI_STEP_F7BEF6EB329B4A858844FE26126D3E8C" ishcondition="srv_os=windows"><span purpose="cmd">使用<span class="uicontrol">以管理员身份运行</span>选项打开命令提示符。</span></li><li purpose="step" id="ESRI_STEP_A65C964280A24C13B911059AA3006637" ishcondition="srv_os=windows"><span purpose="cmd">从 <span class="usertext">&lt;ArcGIS Data Store installation directory&gt;\datastore\tools</span> 中运行 restoredatastore 实用程序且将 <span class="usertext">--loaddata</span> 操作设置为 <span class="usertext">false</span> 以准备恢复切片缓存或时空大数据存储的第一台计算机。</span><div class="stepexample" purpose="stepexample">请参阅<a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/data-store-utility-reference.htm#ESRI_SECTION1_BAF681033AB248C2BF4718A917380C8D">实用程序参考</a>或在语法的命令行中输入 <span class="usertext">--help</span>。<p id="GUID-15707D50-54DC-4E0A-B44F-4D9FDC26F817">本示例会准备新计算机以将最近的时空大数据备份存储从 <span class="usertext">\\myserver\backups\spatiotemporal</span> 恢复至 <span class="usertext">C:\arcgisdatastore</span>。<span class="usertext">--loaddata</span> 操作已设置为 <span class="usertext">false</span>，因此数据还未加载。<section class="codeblock padded-anchor" purpose="codeblock"><div class="codeblockbody"><pre><code class="text">restoredatastore --store spatiotemporal --target most-recent --source-loc \\myserver\backups\spatiotemporal --data-dir C:\arcgisdatastore --loaddata false --server-url https://gisserver.domain.com:6443 --server-admin siteadmin --server-password MySApw</code></pre></div></section></p></div><div class="info" purpose="info"><p id="GUID-90B13125-C291-4A05-AA46-7DFD4097AA48"> 如果您使用 <span class="usertext">--data-dir</span> 选项指定的目录不存在，则该目录将会被创建。如果存在，您必须对其具有写入访问权限，且该目录必须为空。否则，恢复操作将失败。</p><p id="GUID-BBC8DDDC-3715-4EAE-934E-3E2C6F16A16F">要加载切片缓存数据存储的数据，您需要使用前一个示例中的 <span class="usertext">--source-loc</span> 操作来指定 <span class="usertext">--store tilecache</span> 和切片缓存备份位置。</p></div></li><li purpose="step" id="ESRI_STEP_C1CE1CF3F9B04E1CBF26345E798AC4B3"><span purpose="cmd">在其他计算机上安装 <span class="ph">ArcGIS Data Store</span> 并在每台计算机上运行数据存储配置向导或者 <a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/data-store-utility-reference.htm#ESRI_SECTION1_21824FB573434E5783C48F0D63C1F228">configuredatastore</a> 实用工具，以将计算机添加至托管服务器。</span></li><li purpose="step" id="ESRI_STEP_6373196303A549CB870BE52D1AF13D8F"><span purpose="cmd">再次运行 restoredatastore 实用工具且不进行 <span class="usertext">--loaddata</span> 选项或将 <span class="usertext">--loaddata</span> 设置为 <span class="usertext">true</span> 以恢复所有数据。</span><div class="info" purpose="info"><p id="GUID-F23F19E6-76DF-4690-A4F3-8CAFA202614F">数据将分布在所有切片缓存或时空大数据存储计算机上。</p></div><div class="stepexample" purpose="stepexample"><p id="GUID-BBAA6CA2-871A-4F2E-8AAB-39B70FC0B40F">本示例使用相同的备份文件（位于 <span class="usertext">\\myserver\backups\spatiotemporal</span> 中），将数据恢复到最新配置的时空大数据存储。<span class="usertext">--loaddata</span> 选项已默认设置为 <span class="usertext">true</span>，因此载入数据时无需另行指定。<section class="codeblock padded-anchor" purpose="codeblock"><div class="codeblockbody"><pre><code class="text">restoredatastore --store spatiotemporal --target most-recent --source-loc \\myserver\backups\spatiotemporal --data-dir C:\arcgisdatastore --server-url https://gisserver.domain.com:6443 --server-admin siteadmin --server-password MySApw</code></pre></div></section></p></div></li></ol></div></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_BDB412C158064FC09F07CB746DCAA39A" purpose="section1"><h2>若目标计算机可以容纳备份文件内的所有数据，则可恢复时空大数据存储</h2><p id="GUID-D6A17809-B129-4E73-BF23-D2A989901A89">如果用于创建替换时空大数据存储的第一台计算机包含的硬盘空间和内存足以容纳备份文件内的所有数据，或者您希望恢复现有的时空大数据存储计算机，则您仅需运行一次 restoredatastore 实用工具。恢复后，您可以将其他新计算机添加到时空大数据存储中，而 <span class="ph">ArcGIS Data Store</span> 会将数据复制到其他计算机上。</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_15CDF7763DA14090AF3E9EFDABB4E02E"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_2C59F9858DF84DE1A59B2A5E9C5AC080"><span purpose="cmd"><a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/install-data-store.htm#ESRI_SECTION2_3339FCDA934D4B669334C49B9998667D">在新计算机上安装 <span class="ph">ArcGIS Data Store</span></a>。</span><div class="info" purpose="info"><p id="GUID-D2824D92-BA99-4B87-AB8C-67CB2B4E1DD3">请勿继续进行配置。关闭在安装结束时打开的数据存储配置向导。</p></div></li><li purpose="step" id="ESRI_STEP_4C70C43B176F49238BFE829E3DFEB6E7" ishcondition="srv_os=windows"><span purpose="cmd">使用<span class="uicontrol">以管理员身份运行</span>选项打开命令提示符。</span></li><li purpose="step" id="ESRI_STEP_31B36C27BC7C4987A9854C0E82542248" ishcondition="srv_os=windows"><span purpose="cmd">从 <span class="usertext">&lt;ArcGIS Data Store installation directory&gt;\datastore\tools</span> 运行 restoredatastore 实用程序。</span><div class="stepexample" purpose="stepexample">请参阅<a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/data-store-utility-reference.htm#ESRI_SECTION1_BAF681033AB248C2BF4718A917380C8D">实用程序参考</a>或在语法的命令行中输入 <span class="usertext">--help</span>。<p id="GUID-DE186491-50DE-4F76-AF52-38C25D28D9AA">本示例将把最近的时空大数据备份存储从 <span class="usertext">\\myserver\backups\spatiotemporal</span> 恢复到新计算机的 <span class="usertext">C:\arcgisdatastore</span>。<span class="usertext">--loaddata</span> 操作设置为 <span class="usertext">true</span>，因为新计算机可以容纳备份文件的所有信息。<section class="codeblock padded-anchor" purpose="codeblock"><div class="codeblockbody"><pre><code class="text">restoredatastore --store spatiotemporal --target most-recent --source-loc \\myserver\backups\spatiotemporal --data-dir C:\arcgisdatastore --loaddata true --server-url https://gisserver.domain.com:6443 --server-admin siteadmin --server-password MySApw</code></pre></div></section></p></div><div class="info" purpose="info"><p id="GUID-4E276353-722E-4CCE-94E0-8E8ABD4C8490"> 如果您使用 <span class="usertext">--data-dir</span> 选项指定的目录不存在，则该目录将会被创建。如果存在，您必须对其具有写入访问权限，且该目录必须为空。否则，恢复操作将失败。</p><p id="GUID-A54E27DB-5C4E-48A3-95DD-73152E634D7B">请注意，在这种情况下由于数据为默认载入，您可以忽略 <span class="usertext">--loaddata</span> 操作。</p><p id="GUID-FFC478C0-D93E-4739-80F7-B74CD9660E17">如果计算机无法容纳备份文件中的所有数据，恢复操作将失败。</p></div></li><li purpose="step" id="ESRI_STEP_D316209F3BA44FF8A8DD1893429031F2"><span purpose="cmd">在其他计算机上安装 <span class="ph">ArcGIS Data Store</span> 并在每台计算机上运行数据存储配置向导或者 <a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/data-store-utility-reference.htm#ESRI_SECTION1_21824FB573434E5783C48F0D63C1F228">configuredatastore</a> 实用工具，以将时空大数据存储计算机添加至托管服务器。</span><div class="stepresult" purpose="stepresult"><p id="GUID-799E5352-9E54-458E-AEB0-72C54483870D"><span class="ph">ArcGIS Data Store</span> 将数据分发并复制到其他计算机。</p></div></li></ol></div></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_53D4EFBB87434FAD91ED52E297568A23" purpose="section1"><h2>将关系或切片缓存数据存储恢复至不同的操作系统或版本</h2><p id="GUID-5109FBFA-F988-4EB5-9AB2-81909B5DC18E">您可以使用备份文件将关系或切片缓存数据存储恢复至运行不同操作系统或不同版本 <span class="ph">ArcGIS Data Store</span> 的计算机上。</p><p id="GUID-57E4A914-1456-444F-A4BF-D0DBA206BFDD">例如，如果切片缓存数据存储正在 <span class="ph">Microsoft Windows</span> 服务器上运行，但您的信息技术部门将切换到 <span class="ph">Linux</span> 服务器，
+则可使用 <span class="ph">Windows</span> 服务器上的 <span class="ph">ArcGIS Data Store</span> 10.5.1 或更高版本安装创建的备份文件，在 <span class="ph">Linux</span> 服务器上恢复切片缓存数据存储。</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_B03F4703BB2141D3939AC4CDA9127B1D"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_AD57BE7DCF2547EF8A79783009042D85"><span purpose="cmd" id="GUID-5F90B0B3-D4D3-4F62-8A47-24D5E0CE0AE3">在新服务器上安装 <span class="ph">ArcGIS Data Store</span>。请勿继续进行配置。</span><div class="info" purpose="info"><p id="GUID-7C5B716B-8863-4D43-A66F-3CD965A41AE3">您在新计算机上安装的 <span class="ph">ArcGIS Data Store</span> 可与您希望恢复的 <span class="ph">ArcGIS Data Store</span> 版本相同，也可以是较新版本。</p></div></li><li purpose="step" id="ESRI_STEP_E8D22296C0164E0FAB72C8193067436A"><span purpose="cmd" id="GUID-122E2E5E-D99C-4DAC-B4C2-AEC10DD379F6">如果还没有现有关系或切片缓存数据存储的完整备份，请使用 <a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/data-store-utility-reference.htm#ESRI_SECTION1_3F745CDA9DCD4B38A8F928CF25B49E78">backupdatastore</a> 实用工具进行创建。</span></li><li purpose="step" id="ESRI_STEP_C2852354F107481E9435CF5C954DF405"><span purpose="cmd" id="GUID-0A032B70-BB98-4674-8854-96B146803C90">将备份文件放在可由新 <span class="ph">ArcGIS Data Store</span> 安装访问的共享位置。</span></li><li purpose="step" id="ESRI_STEP_58998B09BAD0490689D7B7603F719E9C"><span purpose="cmd" id="GUID-164E3F1A-C016-49F2-96F4-19825F4142CB">运行 <a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/data-store-utility-reference.htm#ESRI_SECTION1_BAF681033AB248C2BF4718A917380C8D">restoredatastore</a> 实用工具以将数据恢复至新计算机。恢复数据时需指定 <span class="usertext">--bound true</span> 和门户现有托管服务器的 URL（<span class="ph">GIS Server</span> 站点）。这样，现有托管要素和场景图层将继续工作。</span><div class="stepexample" purpose="stepexample"><p id="GUID-18266B68-F602-4603-A7C0-5F16C34A6510">在此例中，将恢复切片缓存数据存储并将其注册到 <span class="ph">GIS Server</span> 站点<span class="usertext">https://mygisserver.domain.com:6443</span>。备份文件位于共享目录 <span class="usertext">\\backups\tilecache</span> 中，新计算机上的 <span class="ph">ArcGIS Data Store</span> 目录是 <span class="usertext">C:\arcgisdatastore</span>。<section class="codeblock padded-anchor" purpose="codeblock"><div class="codeblockbody"><pre><code class="text">restoredatastore --store tileCache --source-loc \\backups\tilecache --data-dir C:\arcgisdatastore --server-url https://gisserver.domain.com:6443 --server-admin siteadmin --server-password MySApw</code></pre></div></section></p></div></li></ol></div></section></section>
+			
+				<hr>
+				<!--googleoff: all-->
+				
+	
+        
+		    <p class="feedback right">
+		        <a id="afb" class="icon-ui-contact" href="/feedback/" data-langlabel="feedback-on-this-topic" >有关此主题的反馈?</a>
+		    </p>
+        
+	
+
+				<!--googleon: all-->
+			
+		</main>
+	</div>
+	
+	<!--googleoff: all-->
+	
+		
+			<div id="main-toc-large" class="column-5">
+			    <div class="panel font-size--2 tablet-hide trailer-1">
+			      <h5 class="trailer-half">在本主题中</h5>
+			      <ol class="list-plain pre-0 trailer-0"><li><a href="#ESRI_SECTION1_74E36342097C4AF4934B6BC66C492511">关于恢复数据存储的重要信息</a></li><li><a href="#ESRI_SECTION1_81C70C67F3FF45F9B701EF94B3CFDB30">在发生故障后恢复关系数据存储</a></li><li><a href="#ESRI_SECTION1_7AD6E4E6A28A48FC816FCF46A6048D68">将现有关系数据存储恢复至特定时间点</a></li><li><a href="#ESRI_SECTION1_6CC7DC28D04B4D019EB2CBA1C4ADC38D">发生故障后恢复切片缓存数据存储以重新分配场景缓存数据</a></li><li><a href="#ESRI_SECTION1_6D59EE92518F45D1BAC51B76FFD837B8">在所有计算机丢失后恢复时空大数据存储或切片缓存数据存储</a></li><li><a href="#ESRI_SECTION1_BDB412C158064FC09F07CB746DCAA39A">若目标计算机可以容纳备份文件内的所有数据，则可恢复时空大数据存储</a></li><li><a href="#ESRI_SECTION1_53D4EFBB87434FAD91ED52E297568A23">将关系或切片缓存数据存储恢复至不同的操作系统或版本</a></li></ol>
+			    </div>
+			    
+			    
+	  		</div>
+		
+    
+   <!--googleon: all-->
+
+
+
+
+          
+        </div>
+        <!-- ENDPAGECONTENT -->
+
+      </div>
+
+    </div>  <!-- End of wrapper -->
+
+  <footer class="footer leader-3 link-dark-gray" role="contentinfo">
+    <div class="grid-container">
+      <div class="row">
+        <nav class="column-6">
+          <h6 data-langlabel="arcgis-for-server">Arc<span>GIS Enterprise</span></h6>
+          <ul class="list-plain">
+            <li><a data-langlabel="home" href="../../../../../zh-CN/">主页</a></li>
+            <li><a data-langlabel="portal" href="../../../../../zh-CN/portal/">Portal</a></li>
+            <li><a data-langlabel="server" href="../../../../../zh-CN/server/">Server</a></li>
+            <li><a data-langlabel="data-store" href="../../../../../zh-CN/data-store/">Data Stores</a></li>
+            <li><a data-langlabel="cloud" href="../../../../../zh-CN/cloud/">云</a></li>
+            <li><a data-langlabel="apps" href="../../../../../zh-CN/apps/">应用程序</a></li>
+            <li><a data-langlabel="documentation" href="../../../../../zh-CN/documentation/">文档</a></li>
+          </ul>
+        </nav>
+
+        
+  <nav class="column-6">
+    <h6 data-langlabel="arcgis-platform">ArcGIS 平台</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="arcgis" href="//www.arcgis.com/">ArcGIS Online</a></li>
+      <li><a data-langlabel="arcgis-for-professionals" href="//pro.arcgis.com/">ArcGIS Pro</a></li>
+      <li><a data-langlabel="arcgis-for-server" href="//enterprise.arcgis.com/">ArcGIS Enterprise</a></li>
+      <li><a data-langlabel="arcgis-for-developers" href="https://developers.arcgis.com/">ArcGIS for Developers</a></li>
+      <li><a data-langlabel="arcgis-solutions" href="//solutions.arcgis.com/">ArcGIS Solutions</a></li>
+      <li><a data-langlabel="arcgis-marketplace" href="//marketplace.arcgis.com/">ArcGIS Marketplace</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <h6 data-langlabel="about-esri">关于 Esri</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="about-us" href="//www.esri.com/about-esri/">关于我们</a></li>
+      <li><a data-langlabel="careers" href="//www.esri.com/careers/">招贤纳士</a></li>
+      <li><a data-langlabel="insiders-blog" href="https://www.esri.com/about/newsroom/blog/">Esri 博客</a></li>
+      <li><a data-langlabel="user-conference" href="//www.esri.com/events/user-conference/index.html">用户大会</a></li>
+      <li><a data-langlabel="developer-summit" href="//www.esri.com/events/devsummit/index.html">开发者峰会</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <a class="esri-logo" href="//www.esri.com/" aria-label="Esri Home"></a>
+    <section class="footer-social-nav leader-1">
+            <a class="icon-social-twitter" aria-label="Esri on Twitter" href="https://twitter.com/Esri/"></a>
+            <a class="icon-social-facebook" aria-label="Esri on Facebook" href="https://www.facebook.com/esrigis/"></a>
+            <a class="icon-social-github" aria-label="Esri on GitHub" href="//esri.github.io/"></a>
+            <a class="icon-social-contact" aria-label="Contact Esri" href="//www.esri.com/about-esri/contact/"></a>
+    </section>
+	  
+  </nav>
+  
+  <div class="column-24 leader-1">
+    <p class="font-size--3"><a href="http://www.esri.com/legal/copyright-trademarks">Copyright &copy; 2019 Esri.</a> All rights reserved. | <a href="http://www.esri.com/legal/privacy/">隐私政策</a> | <a href="http://www.esri.com/legal/software-license">法律声明</a></p>
+  </div>
+  
+
+
+      </div>
+    </div>
+  </footer>
+  <!--googleoff: all-->
+
+  
+  
+	<script src="../../../../../zh-CN/assets/js/init.js" type="text/javascript"></script>
+	<!--<script src="../../../../../zh-CN/assets/js/drop-down.js" type="text/javascript"></script>-->
+	<script src="../../../../../zh-CN/assets/js/search/searchform.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/cdn/js/link-modifier.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/cdn/js/sitewide.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/cdn/js/libs/highlight.pack.js" type="text/javascript"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+
+
+  
+    
+
+  <script src="../../../../../zh-CN/cdn/js/affix.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    $(function () {
+          var appendFlg = true;
+
+          $("#bigmac")
+          .on("affixed.bs.affix", function (evt) {
+            if (appendFlg) {
+              $("<a class='crumb' href='#'>恢复数据存储</a>").insertAfter ($("#bigmac nav a").last());
+              appendFlg = false;
+            }
+          })
+          .on ("affix-top.bs.affix", function(evt) {
+            if (!appendFlg) {
+              $("#bigmac nav a").last().remove();
+            }
+            appendFlg = true;
+          })
+    })
+  </script>
+  
+        <script type="text/javascript">
+          window.doctoc = {
+            pubID: "555",
+            tpcID: "197",
+            
+              prefix: "管理",
+              prefixUrl: "/zh-cn/portal/latest/administer/windows/",
+          
+            hideToc: false
+          }
+        </script>
+
+        <script type="text/javascript" src="../../../../../zh-CN/portal/latest/administer/windows/555.js" ></script>
+        <script type="text/javascript" src="../../../../../zh-CN/cdn/calcite/js/protoc.js" ></script>
+        
+        
+
+  <noscript>
+        <p>
+            <a href="flisting.htm">flist</a>
+        </p>
+    </noscript>
+    <script type="text/javascript"></script>
+  
+  
+    
+    
+
+  </body>
+</html>

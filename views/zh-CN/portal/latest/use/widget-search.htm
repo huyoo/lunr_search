@@ -1,0 +1,543 @@
+
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>  <html class="ie lt-ie9 lt-ie8 lt-ie7 ie6" dir="ltr"> <![endif]-->
+<!--[if IE 7]>     <html class="ie lt-ie9 lt-ie8 ie7" dir="ltr"> <![endif]-->
+<!--[if IE 8]>     <html class="ie lt-ie9 ie8" dir="ltr"> <![endif]-->
+<!--[if IE 9]>     <html class="ie ie9" dir="ltr"> <![endif]-->
+<!--[if !IE]><!--> <html dir="ltr" lang="zh-CN"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>“搜索”微件&mdash;Portal for ArcGIS | ArcGIS Enterprise 文档</title>
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+    <script>
+      var docConfig = {
+        locale: 'zh-CN'
+        ,localedir: 'zh-cn'
+        ,langSelector: ''
+        
+        ,relativeUrl: false
+        
+
+        ,searchformUrl: '/search/'
+        ,tertiaryNavIndex: ''
+
+        
+      };
+    </script>
+	 
+
+
+    
+    <!--[if lt IE 9]>
+      <script src="../../../../zh-CN/cdn/js/libs/html5shiv.js" type="text/javascript"></script>
+      <script src="../../../../zh-CN/cdn/js/libs/selectivizr-min.js" type="text/javascript"></script>
+      <script src="../../../../zh-CN/cdn/js/libs/json2.js" type="text/javascript"></script>
+      <script src="../../../../zh-CN/cdn/js/libs/html5shiv-printshiv.js" type="text/javascript" >
+
+    <![endif]-->
+
+     <!--[if lt IE 11]>
+    <script>
+      $$(document).ready(function(){
+        $$(".hideOnIE").hide();
+      });
+    </script>
+    <![endif]-->
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<link href="../../../../zh-CN/assets/img/favicon.ico" rel="shortcut icon" >
+	<link href="../../../../zh-CN/assets/css/screen.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/cdn/calcite/css/documentation.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/assets/css/print.css" media="print" type="text/css" rel="stylesheet" />
+
+	<!--
+	<link href="../../../../zh-CN/assets/css/screen_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/assets/css/documentation/base_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/assets/css/print_l10n.css" media="print" type="text/css" rel="stylesheet" />
+	-->
+	
+	
+		<script src="../../../../zh-CN/cdn/js/libs/jquery.1.9.1.min.js" type="text/javascript"></script>
+	
+	<script src="../../../../zh-CN/cdn/js/libs/jquery.cookie.js" type="text/javascript"></script>
+	<link href="../../../../zh-CN/cdn/css/colorbox.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/cdn/css/colorbox_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<script src="../../../../zh-CN/cdn/js/libs/jquery.colorbox-min.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/assets/js/video-init.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/assets/js/sitecfg.js" type="text/javascript"></script>
+	
+		<script src="../../../../zh-CN/assets/js/signIn.js" type="text/javascript"></script>
+	
+
+	<!--- Language Picker -->
+	<script src="../../../../zh-CN/assets/js/locale/l10NStrings.js" type="text/javascript"></script>
+	
+		 
+	
+
+	<script src="../../../../zh-CN/assets/js/calcite-web.js" type="text/javascript"></script>
+
+
+
+  <!--- search MD -->
+    <META name="description" content="该微件用其他的配置要素搜索功能代替了现有的“地理编码器”微件。"><META name="last-modified" content="2019-12-6"><META name="product" content="arcgis-portal-windows,arcgis-portal-linux,arcgis-enterprise-windows,arcgis-enterprise-linux"><META name="sub_category" content="Portal for ArcGIS"><META name="search-collection" content="help"><META name="content_type_label" content="帮助主题"><META name="sub_category_label" content="Portal for ArcGIS"><META name="search-category" content="help-general"><META name="subject_label" content="PORTAL,服务,SERVER"><META name="version" content="10.8"><META name="content_type" content="Help Topic"><META name="subject" content="PORTAL,SERVICES,SERVER"><META name="keywords" content="“搜索”微件"><META name="content-language" content="zh-cn">
+    <!--- search MD -->
+
+  
+  <script src="../../../../zh-CN/assets/js/switchers/portal-1.js" type="text/javascript"></script>
+  
+      
+
+</head>
+
+<!--
+      pub: GUID-7B47163B-CE1B-465F-BEEE-4DADDB8DFF09=37
+      tpc: GUID-22B84161-192B-4573-B8D5-F52B37FB03CE=11
+      -->
+
+
+<!-- variable declaration, if any -->
+<!-- can change following macro to set variable once we are on Jinja 2.8 -->
+
+
+
+
+
+<body class="claro zh-CN server">
+  
+
+  <!-- Drawer location -->
+  <div class="drawer drawer-left js-drawer" data-drawer="top-nav">
+        <nav class="drawer-nav" role="navigation">
+          <aside class="side-nav">
+            <h2 class="side-nav-title">Arc<span>GIS</span> Enterprise</h2>
+            <form id="helpSearchForm" class="margin-left-half margin-right-half leader-half trailer-half drawer-search-form" method="GET">
+              <input type="search" name="q"  placeholder="搜索 ArcGIS Enterprise 帮助">
+              <input type="hidden" name="collection" value="help" />
+              <input type="hidden" name="product" value="arcgis-portal-windows" />
+              <input type="hidden" name="version" value="10.8" />
+              <input type="hidden" name="language" value="zh-CN" />
+            </form>    
+             <a id="nav-portal" data-langlabel="portal" href="../../../../zh-CN/portal/" class="side-nav-link">Portal</a>
+             
+            <a id="all-servers" data-langlabel="all-servers" href="../../../../zh-CN/server/" class="side-nav-link">所有服务器</a>
+            <a id="gis-server" data-langlabel="gis-server" href="../../../../zh-CN/server/" class="side-nav-link">GIS Server</a>
+            <a id="image-server" data-langlabel="image-server" href="../../../../zh-CN/image/" class="side-nav-link">Image Server</a>
+            <a id="geo-analytics-server" data-langlabel="geo-analytics-server" href="../../../../zh-CN/geoanalytics/" class="side-nav-link">GeoAnalytics Server</a>
+            <a id="geoevent-server" data-langlabel="geoevent-server" href="../../../../zh-CN/geoevent/" class="side-nav-link">GeoEvent Server</a>
+            <a id="notebook-server" data-langlabel="notebook-server" href="../../../../zh-CN/notebook/" class="side-nav-link">Notebook Server</a>
+            <a id="nav-data-store" data-langlabel="data-store" href="../../../../zh-CN/data-store/" class="side-nav-link">Data Stores</a>
+            <a id="nav-cloud" data-langlabel="cloud" href="../../../../zh-CN/cloud/" class="side-nav-link">云</a>
+            <a id="nav-apps" data-langlabel="apps" href="../../../../zh-CN/apps/" class="side-nav-link">应用程序</a>
+            <a id="nav-doc" data-langlabel="documentation" href="../../../../zh-CN/documentation/" class="side-nav-link">文档</a>
+
+          </aside>
+        </nav>
+    </div>
+
+    <!-- user navigation collapses to drawer on mobile -->
+    
+    <div class="drawer drawer-right js-drawer hide-if-logged-out logged-in-navigation" data-drawer="user-nav">
+      <nav class="drawer-nav">
+        <aside class="side-nav">
+          <a class="side-nav-link agolProfile" href="#">我的个人资料</a>
+          <a class="side-nav-link icon-ui-sign-out js-log-out" href="#">登出</a>
+        </aside>
+      </nav>
+    </div>
+    
+<!-- End of drawer -->
+
+  
+  <div class="wrapper">
+      <!--googleoff: all-->
+
+      <header class="top-nav" data-skin="learn">
+        <a class="skip-to-content" href="#skip-to-content">Skip To Content</a>
+        <div class="grid-container">
+          <div class="column-24">
+
+
+            <!--<div class="top-nav-title-wrapper text-center ">-->
+              <a href='../../../../zh-CN/' class="top-nav-title tablet-hide"><span>Arc</span>GIS  Enterprise</a>
+              <a href='../../../../zh-CN/' class="icon-ui-menu top-nav-title js-drawer-toggle tablet-show" data-drawer="top-nav"><span>Arc</span>GIS Enterprise</a>
+            <!--</div> -->
+
+          
+            <nav role="navigation" class="top-nav-list left tablet-hide">
+              <a id="nav-portal" data-langlabel="portal" href="../../../../zh-CN/portal/" class="top-nav-link">Portal</a>
+
+                <div class="dropdown js-dropdown ">
+                  <a class="top-nav-link js-dropdown-toggle" tabindex="0" aria-haspopup="true" aria-expanded="false" href="#">Servers</a>
+                  <nav class="dropdown-menu featured" role="menu">
+                    <ul class="dropdown-sublist-featured">
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/get-started/latest/windows/additional-server-deployment.htm" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path  d="M42.92 6.1H4.12v8.566l.833.832-.835.833-.018 7.332.845.847-.825.824V33.9h25v5.2h-2v1.075H8.02v.8h19.1v.925h4.8v-.925H40v-.8h-8.08V39.1h-2v-5.2h13v-8.566l-.834-.834.835-.834v-7.332l-.835-.834.835-.834zm-11.8 35h-3.2v-1.2h3.2zm11-8H4.92v-7.434l.767-.766h35.668l.765.766zm0-9.766l-.766.766H5.666l-.766-.767.017-6.669.766-.764h35.671l.766.766zm0-9l-.766.766H5.687l-.766-.766V6.9h37.2zM19 11.9h-2v-.8h2zm-4 0h-2v-.8h2zm-4 0H9v-.8h2zm6 8.2h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9zm8 9h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9z"/></svg></span>
+                          <span class="sublink-text">所有服务器</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/server/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M45.98 33.575a.616.616 0 0 0-.335-.51l-3.362-2.03 3.362-2.031a.556.556 0 0 0 0-1.02l-11.1-6.704a1.293 1.293 0 0 0-1.112 0L22.33 27.982a.556.556 0 0 0 0 1.02l3.36 2.03-3.358 2.03a.556.556 0 0 0-.002 1.021l3.322 2.006-3.324 2.008a.555.555 0 0 0 .002 1.017l11.102 6.703a1.25 1.25 0 0 0 1.11.002l11.104-6.706a.556.556 0 0 0 0-1.02l-3.32-2.006 3.318-2.004a.607.607 0 0 0 .335-.509zM33.837 21.97c.026-.01.286-.005.29-.005l10.814 6.53-10.8 6.523c-.028.01-.284.005-.294.006l-10.813-6.53zm11.105 16.636l-10.8 6.523a2.564 2.564 0 0 1-.295.006l-10.81-6.529 3.39-2.047 7.004 4.23a1.083 1.083 0 0 0 .557.131 1.101 1.101 0 0 0 .554-.13l7.01-4.233zM34.14 40.098a2.545 2.545 0 0 1-.294.006l-10.812-6.53 3.43-2.073 6.97 4.208a1.25 1.25 0 0 0 1.107-.001l6.966-4.206 3.431 2.073zM9 8H7V7h2zm8 8h-2v-1h2zm-4-8h-2V7h2zm4 0h-2V7h2zm-4 8h-2v-1h2zm7.316 11.1H3.9v-6.434l.766-.766h35.668l.766.766v2.12l.8.483v-2.935l-.826-.826.826-.845v-6.329l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9h16.88a2.632 2.632 0 0 1 .336-.8zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zm0 8v-5.668l.766-.766h35.668l.766.766v5.67l-.746.764H4.666zM15 24v-1h2v1zm-4 0v-1h2v1zm-2-8H7v-1h2zm-2 8v-1h2v1z"/></svg></span>
+                          <span class="sublink-text">GIS Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/image/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 8h-2V7h2zm-4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm8 8h-2v1h2zm-8 0H7v1h2zm4 9v-1h-2v1zm-4 0v-1H7v1zm8 0v-1h-2v1zm4 3.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V21h-.8v-.334l-.766-.766H4.666l-.766.766V27.1H21zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zm40.234 4v21.8H23.1V23.1zm-.8 16.366L39.466 44.1h2.868l1.766-1.766zm-20.2-9.932l5.634-5.634h-2.868L23.9 26.666zm6.2-5.068L24.466 30.1h2.868l2.766-2.766zM28.466 30.1H30.1v-1.634zm2.434 0h6.2v-6.2h-6.2zm-7 7h6.2v-6.2h-6.2zm7 0h6.2v-6.2h-6.2zm0 6.434l5.634-5.634h-2.868L30.9 40.666zm7-7l5.634-5.634h-2.868L37.9 33.666zm1.634-5.634H37.9v1.634zm-8.634 7v1.634l1.634-1.634zm.566 6.2h2.868l2.766-2.766v-2.868zm6.434-3.566l2.634-2.634H37.9zM35.466 44.1H37.1v-1.634zm2.434 0h.434l5.766-5.766V37.9h-2.434L37.9 41.666zm6.2-8.634L42.466 37.1H44.1zm0-4L38.466 37.1h2.868l2.766-2.766zm0-7.566h-6.2v6.2h6.2zm-20.2 0v1.634l1.634-1.634zm0 20.2h6.2v-6.2h-6.2zm20.2 0v-.634l-.634.634z"/></svg></span>
+                          <span class="sublink-text">Image Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/geoanalytics/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 16h-2v-1h2zm-8 8v-1H7v1zm8 0v-1h-2v1zM13 7h-2v1h2zm4 0h-2v1h2zM9 7H7v1h2zm21.45 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V27.9h-1.464l-.801-.8H41.1v-6.434l-.766-.766H4.666l-.766.766V27.1h27.15zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM13 24v-1h-2v1zm0-9h-2v1h2zm-4 0H7v1h2zm26.672 27.148A1.87 1.87 0 0 1 35.9 43a1.91 1.91 0 1 1-3.763-.222l-9.845-3.414A1.88 1.88 0 0 1 21 39.9a1.9 1.9 0 1 1 1.474-3.084l4.692-2.346A1.878 1.878 0 0 1 27.1 34a1.902 1.902 0 0 1 1.9-1.9 1.867 1.867 0 0 1 .781.191l3.788-5.05A1.88 1.88 0 0 1 33.1 26a1.9 1.9 0 1 1 3.491 1.026l4.889 4.888c-.069.056-.144.1-.21.162a3.986 3.986 0 0 0-.358.402l-4.883-4.883A1.889 1.889 0 0 1 35 27.9a1.867 1.867 0 0 1-.781-.191l-3.788 5.049a1.868 1.868 0 0 1 .437.965l9.204.614c-.018.11-.049.218-.058.33A3.93 3.93 0 0 0 40 35c0 .046.01.09.01.135l-9.185-.612A1.913 1.913 0 0 1 29 35.9a1.889 1.889 0 0 1-1.474-.716l-4.692 2.346a1.878 1.878 0 0 1 .066.47 1.9 1.9 0 0 1-.105.625c-.007.02-.022.036-.03.056l9.63 3.34a1.87 1.87 0 0 1 2.786-.505l5.415-4.437c.067.108.127.22.204.322a3.9 3.9 0 0 0 .292.306zM33.9 26a1.092 1.092 0 0 0 .43.872 1.12 1.12 0 0 0 1.42-.068A1.1 1.1 0 1 0 33.9 26zm-6 8a1.1 1.1 0 0 0 2.196.093 1.135 1.135 0 0 0-.426-.965A1.087 1.087 0 0 0 29 32.9a1.101 1.101 0 0 0-1.1 1.1zm-5.8 4a1.098 1.098 0 1 0-.06.362A1.101 1.101 0 0 0 22.1 38zm13 5a1.1 1.1 0 1 0-2.2 0 1.1 1.1 0 0 0 2.2 0zm10.8-8a1.9 1.9 0 1 1-3.8 0c0-.053.003-.105.007-.158A1.9 1.9 0 0 1 45.9 35zm-.8 0a1.1 1.1 0 0 0-2.196-.093 1.153 1.153 0 0 0 .216.752A1.1 1.1 0 0 0 45.1 35z"/></svg></span>
+                          <span class="sublink-text">GeoAnalytics Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/geoevent/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M13 8h-2V7h2zm4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm12.418 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826v2.117c-.259-.177-.53-.337-.8-.497v-1.288l-.766-.766H4.666l-.766.766V27.1h17.933c-.148.26-.283.53-.415.8zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM9 24v-1H7v1zm4-9h-2v1h2zm0 9v-1h-2v1zm-4-9H7v1h2zm8 9v-1h-2v1zm16.9 2h-.8v8.9H39v-.8h-5.1zm.1-3.901a11.9 11.9 0 1 0 11.9 11.9 11.914 11.914 0 0 0-11.9-11.9zm0 23a11.1 11.1 0 1 1 11.1-11.1 11.112 11.112 0 0 1-11.1 11.1z"/></svg></span>
+                          <span class="sublink-text">GeoEvent Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/notebook/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M22 27.1H3.9v-6.434l.766-.766h18.576a5.262 5.262 0 0 1 .83-.8H4.666l-.766-.766v-5.668l.766-.766h35.668l.766.766V18h.8v-5.666l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9H22zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zM9 8H7V7h2zm8 0h-2V7h2zm-4 0h-2V7h2zm2 16v-1h2v1zm-4 0v-1h2v1zm-4 0v-1h2v1zm0-8v-1h2v1zm8 0v-1h2v1zm-4 0v-1h2v1zm18.9 8.1h-1.8v1.8h1.8zm-.8 1h-.2v-.2h.2zm15.498-4.48a2.727 2.727 0 0 0-1.62-.5v-.02H27.25a3.154 3.154 0 0 0-3.15 3.15V38.1h-1.68a3.386 3.386 0 0 0-2.872 1.58 3.49 3.49 0 0 0-.157 3.419 3.241 3.241 0 0 0 2.954 1.801h15.161a3.404 3.404 0 0 0 3.394-3.4V26.9h5v-3.65a3.224 3.224 0 0 0-1.302-2.63zM22.345 44.1a2.44 2.44 0 0 1-2.23-1.341 2.706 2.706 0 0 1 .11-2.65A2.588 2.588 0 0 1 22.42 38.9h12.89a3.395 3.395 0 0 0 0 5.2zM40.1 23.192V41.5a2.6 2.6 0 1 1-2.6-2.6v-.8H24.9V23.25a2.352 2.352 0 0 1 2.35-2.35h13.795a3.183 3.183 0 0 0-.945 2.292zm5 2.908h-4.2v-2.908a2.274 2.274 0 0 1 1.44-2.18 1.944 1.944 0 0 1 1.791.259 2.423 2.423 0 0 1 .97 1.979zm-17.1 5h9v.8h-9zm0 3h7v.8h-7zm0-6h9v.8h-9zm4-3h5v.8h-5z"/></svg></span>
+                          <span class="sublink-text">Notebook Server</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+
+              <a id="nav-data-store" data-langlabel="data-store" href="../../../../zh-CN/data-store/" class="top-nav-link">Data Stores</a>
+              <a id="nav-cloud" data-langlabel="cloud" href="../../../../zh-CN/cloud/" class="top-nav-link">云</a>
+              <a id="nav-apps" data-langlabel="apps" href="../../../../zh-CN/apps/" class="top-nav-link">应用程序</a>
+            </nav>
+
+
+            
+            
+            
+
+            <div class="margin-left-1 top-nav-list right hide-if-logged-in logged-out-navigation">
+               
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+              
+              <a data-langlabel="sign-in" id="login-link" class="icon-ui-user top-nav-link link-blue login-link" href="#">登录</a>
+              
+            </div>
+
+            
+            <nav class="margin-left-1 top-nav-list right hide-if-logged-out logged-in-navigation">
+              
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+             
+              <div class="dropdown js-dropdown right">
+
+                <div class="tablet-show top-nav-link">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a href="#" data-drawer="user-nav" class="user-nav-name js-drawer-toggle" data-first-name></a>
+                </div>
+
+                <div class="tablet-hide top-nav-link js-dropdown-toggle">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a class="user-nav-name top-nav-dropdown dropdown-btn" data-first-name>&nbsp;</a>
+                </div>
+
+                <nav class="dropdown-menu dropdown-right">
+                
+                  <a class="dropdown-link agolProfile" id="agolProfile" href="#">我的个人资料</a>
+                  <a class="dropdown-link js-log-out" id="agolLogout" href="#">登出</a>
+                </nav>
+              </div>
+            </nav>
+            
+
+            
+          </div>
+        </div>
+      </header>
+
+      <div class="js-search search-overlay">
+        <div class="search-content" role="dialog" aria-labelledby="search">
+          <form method="GET" id="helpSearchForm">
+            <label>
+              搜索 ArcGIS Enterprise 帮助
+              <div class="search-bar">
+                <input type="search" name="q"  placeholder="搜索 ArcGIS Enterprise 帮助" class="search-input js-search-input">
+                <input type="hidden" name="collection" value="help" />
+                <input type="hidden" name="product" value="arcgis-portal-windows" />
+                <input type="hidden" name="version" value="10.8" />
+                <input type="hidden" name="language" value="zh-CN" />
+              </div>
+            </label>
+            <input type="hidden" name="relativePath" value="../../../../" /><button type="submit" class="btn btn-large right">搜索</button>
+          </form>
+        </div>
+      </div>
+
+      <!--googleon: all-->
+
+      <div id="skip-to-content">
+        <!--googleoff: all-->
+        <header class="sub-nav sub-nav-learn">
+          <div class="grid-container">
+            
+            <div class="column-24">
+              <div style="display:table;" class="sdk-home-banner">
+                <div class="sdk-home-banner-content">
+                  <h1 class="sub-nav-title link-white">Portal for ArcGIS</h1>
+                </div>
+              </div>
+            </div>
+
+            <div class="column-24">
+              <nav class='sub-nav-list tablet-hide'><a class="sub-nav-link" href="../../../../zh-CN/portal/" target="_top" title="Portal for ArcGIS 主页">主页</a><a class="sub-nav-link is-active" href="../../../../zh-CN/portal/latest/use/" target="_top" title="使用 Portal for ArcGIS">使用</a><a class="sub-nav-link" href="../../../../zh-CN/portal/latest/administer/windows/" target="_top" title="安装、管理和保护 Portal for ArcGIS">管理</a></nav><select class='tablet-show select-full trailer-half js-select-nav'><option value="../../../../zh-CN/portal/">主页</option><option selected="true" value="../../../../zh-CN/portal/latest/use/">使用</option><option value="../../../../zh-CN/portal/latest/administer/windows/">管理</option></select>
+            </div>
+
+          </div>
+        </header>
+        <!--googleon: all-->
+       
+        <!-- content goes here -->
+        <div class="grid-container ">
+          
+
+            
+              
+  <!--BREADCRUMB-BEG--><div id="bigmac" class="sticky-breadcrumbs trailer-2" data-spy="affix" data-offset-top="180"> </div><!--BREADCRUMB-END-->
+  <!--googleoff: all-->
+    <div class="column-5 tablet-column-12 trailer-2 ">
+      <aside class="js-accordion accordion reference-index" aria-live="polite" role="tablist">
+        <div></div>
+      </aside>
+
+      <div class="js-sticky scroll-show tablet-hide leader-1 back-to-top" data-top="0" style="top: 0px;">
+        <a href="#" class="btn btn-fill btn-clear">返回顶部</a>
+      </div>
+    </div>
+  <!--googleon: all-->
+  
+            
+            
+            
+	
+		<div class="column-13  pre-1 content-section">
+	
+		<header class="trailer-1"><h1>“搜索”微件</h1></header>
+
+		 
+	<!--googleoff: all-->
+	
+		
+				<aside id="main-toc-small" class="js-accordion accordion tablet-show trailer-1">
+			      <div class="accordion-section">
+			        <h4 class="accordion-title">在本主题中</h4>
+			        <div class="accordion-content list-plain">
+			          <ol class="list-plain pre-0 trailer-0"><li><a href="#GUID-C88275B6-E366-45E3-B505-B7FAE535F71D">配置“搜索”微件</a></li><li><a href="#ESRI_SECTION1_A5706BF472D643F28B19B51A5CC6BDA9">使用“搜索”微件</a></li></ol>
+			        </div>
+			      </div>
+			     </aside>
+		
+    
+   <!--googleon: all-->
+
+
+		<main>
+			
+	
+    	
+    
+
+
+			
+    <p id="GUID-7324F8FB-8FA0-4694-871D-01411FF1DC40"> 此“搜索”微件能够使最终用户查找位置或搜索地图上的要素。默认情况下，该微件会使用您组织或门户中的地理编码服务，并在可能的情况下显示地图中配置的可搜索图层。有关详细信息，请参阅<a class="xref xref" href="../../../../zh-CN/portal/latest/use/configure-feature-search.htm">配置要素搜索</a>。此外，您可以使用该微件的配置窗口在您可搜索的地图内添加更多的地理编码服务或配置指定图层。</p>    <p id="GUID-CF295166-EB53-4EA4-8F62-1849CA78A2EA">支持采用以下方法查找位置（假设地理编码服务支持这些方法）：</p>    <ul purpose="ul" id="UL_4DF6CA2116E1451382C647BCBDF65228">      <li purpose="li" id="LI_8B5E2CA5989A4B8DB4D31FADC422F21F"> 地名</li>      <li purpose="li" id="LI_40F9333E6C0C44C687D42808ED941F57">感兴趣点</li>      <li purpose="li" id="LI_AF96309512004865B7E872A30BA77BA2">地址</li><li purpose="li" id="LI_79A28C381A9841D88B0E75532F889106">UTM 坐标</li><li purpose="li" id="LI_C6EF7632E3F540FA9E0F6C34D61F055F">空间参考中由熟知 ID (<a target="_blank" class="xref xref" href="https://developers.arcgis.com/javascript/3/jshelp/ref_coordsystems.html">WKID</a>) 指定的坐标<p id="GUID-C4605F7A-853A-4EE1-AC5C-12B5476A90BB"> 所支持的格式为：<span class="usertext">X, Y: WKID</span>。例如：<span class="usertext">-13046165.572, 4036389.847 : 102100</span>。</p></li>    </ul>    <p id="GUID-B03B0062-C415-4E50-800B-866478E11457">如果将 <a class="xref xref" esrisubtype="extrel" hrefpfx="https://developers.arcgis.com/rest/geocode" href="https://developers.arcgis.com/rest/geocode/api-reference/overview-world-geocoding-service.htm">Esri World Geocoding Service</a> 用作搜索源，“搜索”微件还允许用户直接输入坐标以定位地图上的点。受支持的坐标包括<a class="xref xref" esrisubtype="extrel" hrefpfx="https://developers.arcgis.com/rest/geocode" href="https://developers.arcgis.com/rest/geocode/api-reference/geocoding-find-address-candidates.htm#ESRI_SECTION1_CF39B0C8FC2547C3A52156F509C555FC">搜索坐标</a>主题中列出的坐标。</p><p id="GUID-DA002EBB-1358-40F8-8C7D-4DF20D6D68B2">启用“查询”功能后即可搜索以下图层：</p>    <ul purpose="ul" id="UL_917134AAE4BB4EECA973F79D71C30730">      <li purpose="li" id="LI_7CF52D2ACA0C4C8F9CAA59F395D2E244">托管要素图层</li>      <li purpose="li" id="LI_055057EE01294A50A45910424B9C9882">        <span class="ph">ArcGIS Server</span> 要素服务图层</li>      <li purpose="li" id="LI_984B04FF207C41A8BE4C9FF5A4676AC8">        <span class="ph">ArcGIS Server</span> 地图服务图层</li>    </ul>    <section class="section1 padded-anchor" id="GUID-C88275B6-E366-45E3-B505-B7FAE535F71D" purpose="section1"><h2>配置“搜索”微件</h2><p id="GUID-55D9919F-592D-41E7-9BAC-AA13906A3DA3">可在微件配置窗口中指定希望微件使用的地理编码服务和可搜索图层。</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="GUID-F0ABBE7C-BEAE-4491-B34F-219F714676EA"><ol class="list-numbered" purpose="ol">        <li purpose="step" id="GUID-B25C843B-7E76-4463-9C82-DA485CED02CC">          <span purpose="cmd" id="GUID-7BD1896E-5199-46A6-BEAA-667D9937AF37">将鼠标悬停在“搜索”微件上方，然后单击小眼睛图标 <img purpose="img" placement="inline" alt="显示或隐藏" title="显示或隐藏" src="GUID-19F26705-0506-4405-801F-B7897D824705-web.png"> 以在应用程序中显示或隐藏此微件。</span>        </li>        <li purpose="step" id="ESRI_STEP_699671E5AAF6434EA6BEF7783F40EF41"><span purpose="cmd">将鼠标悬停在微件上方，然后单击<span class="uicontrol">配置此微件</span>按钮 <img purpose="img" placement="inline" alt="配置此微件" title="配置此微件" src="GUID-3600D9F6-693B-4060-9B74-32E4275F0C31-web.png"> 以打开配置属性对话框。</span></li>        <li purpose="step" id="ESRI_STEP_17225FE0374B47CDA4CAB8280AF88074">          <span purpose="cmd" id="GUID-3BA5A5F5-42F3-4CCC-B942-EE410FCB126E">默认情况下，该微件会使用您组织或门户中的地理编码服务，并在可能的情况下显示地图中配置的可搜索图层。表格中将列出现有的全部搜索源。您可以添加新的搜索源或修改现有搜索源。首先，添加新的搜索源。</span>        </li>        <li purpose="step" id="ESRI_STEP_0EB2E9D3AB5D43178F4BF25C9B576FE2">          <span purpose="cmd" id="GUID-11DDE090-7097-4102-BE02-66B68D0F4AE9">单击<span class="uicontrol">添加搜索来源</span>。共有两个选项：地理编码器和要素图层。</span>          <div class="info" purpose="info"><p id="GUID-64ADC63A-E4A4-4E60-8E3A-C49070652E57"></p></div><ul purpose="choices" id="ESRI_CHOICES_D0B9B74BEE22401783B18BCBBBBBD462">            <li purpose="choice" id="ESRI_CHOICE_099E113272664B0B944658CB20025BB5">选择<span class="uicontrol">要素图层</span>。</li>          </ul>          <div class="substeps" id="ESRI_SUBSTEPS_E8338F5EFAE84D56A5D17887C15F3717" purpose="substeps"><ol class="list-numbered" purpose="ol">            <li purpose="substep" id="ESRI_SUBSTEP_F3B90095E0BB46209C7B195A3C789BD8">              <span purpose="cmd" id="GUID-74CB68A4-8CC4-4B40-ABA6-7CABB51F57A9">                可从以下三个选项中选择：地图、<span class="ph">ArcGIS Online</span> 或服务 URL，然后单击<span class="uicontrol">确定</span>关闭窗口。</span>            <div class="info" purpose="info"><p id="GUID-92FC8707-5250-47D6-9E01-391131F3EAD6"><div class="panel trailer-1" id="GUID-0D06ADF0-2EC0-413C-9B66-EE4E4FEB539F"><h5 class="icon-ui-notice-triangle trailer-0">警告：</h5>如果您提供的网址并非来自当前地图，则<span class="uicontrol">服务 URL</span>选项会具有一定限制。例如，如果结果为图形，则弹出窗口中的部分要素操作（例如编辑、显示属性表）将不可用。</div></p></div></li>            <li purpose="substep" id="ESRI_SUBSTEP_1A882996010E44C9B17DF458E2DC7C82">              <span purpose="cmd" id="GUID-815FC6FA-978C-4FC8-AC2E-E11455302B43">新的图层来源将自动出现在表格中。您可以在<span class="uicontrol">名称</span>文本框中更改可搜索图层的名称。</span>            </li>            <li purpose="substep" id="ESRI_SUBSTEP_96823E5431704CE6ADFE3A6B2B423B86">              <span purpose="cmd" id="GUID-7E332F71-299C-4602-8C36-23965D0EE6AC">也可以选择在<span class="uicontrol">占位符文本</span>文本框中输入文本。</span>            </li>            <li purpose="substep" id="ESRI_SUBSTEP_1E6280C5A1C44266B0DAAA067385335D">              <span purpose="cmd" id="GUID-E24A4ED7-4467-483F-A423-BD3804883C9B">单击铅笔图标以添加搜索字段。这将打开<span class="uicontrol">设置搜索字段</span>窗口。选择一个或多个字段。可以搜索包括编码属性域在内的数值字段和字符串字段。单击<span class="uicontrol">确定</span>关闭此窗口。您应该看到<span class="uicontrol">搜索字段</span>文本框中列出的所有选定字段。</span>            </li>            <li purpose="substep" id="ESRI_SUBSTEP_E6961E9CE9C0400DA7D3A3933A5928BF">              <span purpose="cmd" id="GUID-6E286C33-14FF-4B32-B387-A2319CE53B9F">单击下拉列表，在搜索建议中选择显示字段。</span>            <div class="info" purpose="info"><div class="panel trailer-1" id="GUID-130CB2D3-060A-4197-B34E-33256B6BAA1C"><h5 class="icon-ui-notice-triangle trailer-0">警告：</h5><p id="GUID-D8E4D6B2-47D3-40E3-AFFD-870DB1195FF8">地理编码服务必须满足以下需求以支持建议操作：</p><ul purpose="ul" id="UL_A98B0419FE5C49BFAFA03C7D2263CF61"><li purpose="li" id="LI_59FB72C70457423C8BB120A892EA8BB1">发布地理编码服务的地址定位器必须支持建议功能。仅使用 ArcGIS 10.3 for Desktop 及更高版本创建的地址定位器支持建议功能。有关详细信息，请参阅<a class="xref xref" esrisubtype="extrel" hrefpfx="https://desktop.arcgis.com/zh-cn/arcmap/latest/tools" href="https://desktop.arcgis.com/zh-cn/arcmap/latest/tools/geocoding-toolbox/create-address-locator.htm">创建地址定位器</a>地理处理工具的帮助。</li><li purpose="li" id="LI_809473CA68CE46BC9D5DE1CDE48D2DC1">地理编码服务必须已启用建议功能。仅使用 ArcGIS 10.3 for Server 或更高版本发布的地理编码服务支持建议功能。</li></ul><p id="GUID-24FF0EE7-A25B-4F17-8D35-40520BB578AA"></p></div></div></li><li purpose="substep" id="ESRI_SUBSTEP_639A6BE333F54928A74D085601ED3883"><span purpose="cmd" id="GUID-0AA0424F-558A-4AE0-B4A6-53689ED9344D">默认情况下，可搜索图层中返回的最大建议值是 6。可在必要时对其进行更改。</span></li>            <li purpose="substep" id="ESRI_SUBSTEP_7A79180C04D146BDBBED9D403477D182">              <span purpose="cmd" id="GUID-D2D7DA56-585D-4C59-AE51-AC5133BE1D01">默认情况下，可搜索图层中返回的最大结果是 6。可在必要时对其进行更改。</span>            </li><li purpose="substep" id="ESRI_SUBSTEP_D9C7B2A5E1E247AC98905DC61AB9E43A"><span purpose="cmd" id="GUID-18FC4B22-9B3F-4519-9798-E622F9364B72">默认情况下，缩放比例定义为 1:50,000。可在必要时对其进行更改。</span></li><li purpose="substep" id="ESRI_SUBSTEP_33480CD1C626416B96922D6D01535E9D">              <span purpose="cmd" id="GUID-5C404211-4301-4318-A6D2-AD340EC56F33">如果需要，也可以选中<span class="uicontrol">精确匹配</span>框。</span>            </li><li purpose="substep" id="ESRI_SUBSTEP_C465D2BDB91B4CCB8B91182A3D41C3F0"><span purpose="cmd" id="GUID-606DC4A1-EF14-4701-8142-BF0EB978EBFE">如有需要，还可以选中<span class="uicontrol">仅在当前地图范围内搜索</span>复选框。</span></li>                      </ol></div>          <ul purpose="choices" id="ESRI_CHOICES_BF1B1DECBA7A4C9DBA0896943E294884">            <li purpose="choice" id="ESRI_CHOICE_34DB6B0F0C3E4507BCCF09C8D5B5241D">选择<span class="uicontrol">地理编码器</span>。</li>          </ul>          <div class="substeps" id="ESRI_SUBSTEPS_F0D34706B60C41BF987D6CD1BAAE6B6D" purpose="substeps"><ol class="list-numbered" purpose="ol">            <li purpose="substep" id="ESRI_SUBSTEP_938AA00F45DF4BFCBC5EEDDBA9EABE9B">              <span purpose="cmd" id="GUID-C5A6B270-5937-4155-8F87-8740BED25835">新的地理编码器来源将自动出现在表格中。</span>            </li>            <li purpose="substep" id="ESRI_SUBSTEP_C990F1DFF17D4B0F97F039D3C32F1B58">              <span purpose="cmd" id="GUID-7CB52368-9DF2-482E-AF50-ED3FCA95AD12">单击<span class="uicontrol">设置</span>按钮，打开<span class="uicontrol">设置地理编码器 URL</span> 窗口。</span>            </li>            <li purpose="substep" id="ESRI_SUBSTEP_86CFF00E94DD44A6BF553007B05F813E">              <span purpose="cmd" id="GUID-FFE68873-3ADB-406D-9D78-1FFC28C704F9">为您要使用的地理编码服务提供有效的 URL，单击<span class="uicontrol">验证</span>加载该服务，选择该服务并单击<span class="uicontrol">确定</span>。</span>            <div class="stepresult" purpose="stepresult"><p id="GUID-28D08E31-2BD7-4D8C-B8C3-13AE98FDB621">地理编码器 URL 会自动添加到<span class="uicontrol">地理编码器 URL</span> 文本框中。您可以在<span class="uicontrol">地理编码名称</span>文本框中更改地理编码器的名称。</p></div></li>            <li purpose="substep" id="ESRI_SUBSTEP_DC10ABBE490E4CC7852DFBC70EEFD093">              <span purpose="cmd" id="GUID-D7298C2A-ACB5-4092-AB0C-6044C528AB01">也可以选择在<span class="uicontrol">占位符文本</span>文本框中输入文本。</span>            </li>            <li purpose="substep" id="ESRI_SUBSTEP_0BA0F02090EC496388D3F9096C8F6918">              <span purpose="cmd" id="GUID-6547E487-9D55-4BC1-9AF7-A01D62B79E7B">如果可行，也可以选择输入国家代码以限制搜索区域。有关国家代码列表的信息，请参阅<a target="_blank" class="xref xref" href="https://developers.arcgis.com/rest/geocode/api-reference/geocode-coverage.htm">地理编码覆盖区域</a>。</span>            </li>            <li purpose="substep" id="ESRI_SUBSTEP_50E94205B65144F29882B475B96EDE21">              <span purpose="cmd" id="GUID-4C027027-7EFE-4B8A-B461-09905C700291">默认情况下，返回的最大建议值和结果是 6。可在必要时对其进行更改。</span>            </li><li purpose="substep" id="ESRI_SUBSTEP_BF3B750D64864D5283E4EFFA20A1EA66"><span purpose="cmd" id="GUID-4C456A95-6D72-4B79-8B23-0410142E6896">定义地理编码器未返回范围时将缩放至的比例。</span><div class="info" purpose="info"><div class="panel trailer-1" id="GUID-CD2F263A-D8E8-4D04-AD1E-6EC67D844856"><h5 class="icon-ui-notice-triangle trailer-0">警告：</h5> 微件中设置的缩放比例仅在结果不包含关联范围时生效。如果结果返回范围，它将被忽略。</div><p id="GUID-7D0E7286-DC1C-4A61-9112-2EAF071D8154"></p></div></li><li purpose="substep" id="ESRI_SUBSTEP_F199DA58A28249B8BEB717294FD2FE67"><span purpose="cmd" id="GUID-4462B373-A2CE-476B-A9B7-79534425F2B1">如果需要，选中<span class="uicontrol">启用本地搜索</span>框。通过设置地图比例来定义何时启用本地搜索，并指定当前地图中心的搜索半径，以先返回最接近该位置的候选位置。</span></li><li purpose="substep" id="ESRI_SUBSTEP_78EB277B9394470090FB486855341488"><span purpose="cmd" id="GUID-C4BB6236-87CA-4F5C-A0E9-6EA5BEE9E787">如有需要，还可以选中<span class="uicontrol">仅在当前地图范围内搜索</span>复选框。</span></li>          </ol></div>        </li>        <li purpose="step" id="ESRI_STEP_40ECD88B88D1423484B9CCABF2720D28">          <span purpose="cmd" id="GUID-6ECB76FD-D81B-472B-8F96-BDD1832CBFFC">重复步骤 4，添加更多的要素图层和地理编码器搜索资源。</span>        </li>        <li purpose="step" id="ESRI_STEP_FAC45D17FF4B40AF95BA74CDD8F6446A">          <span purpose="cmd" id="GUID-D97DD620-B5B8-4D6C-913B-7B9A8095446C">如需修改现有的搜索来源，请单击表格中的来源。</span>        </li><li purpose="step" id="ESRI_STEP_3B18EC3A9AB54FF99A4E0880208F86BA"><span purpose="cmd" id="GUID-B767F460-996D-40DA-9CEC-046407B65ACD">在<span class="uicontrol">常规设置</span>中，将占位符文本设置为搜索所有图层和地理编码器。</span></li><li purpose="step" id="ESRI_STEP_9F3DC6F137894289AB800A5598611BB2"><span purpose="cmd" id="GUID-510EC279-221A-4B08-842C-B9DF5B92A4F0">默认情况下，在地图上找到要素或位置时将显示弹出窗口。取消选中此复选框可禁用弹出窗口。</span></li>        <li purpose="step" id="ESRI_STEP_D282ADEBF9964234867D51EF4C6D788E">          <span purpose="cmd" id="GUID-D0370B9A-149B-46CF-968C-2F07FD5272DF">单击<span class="uicontrol">确定</span>关闭配置窗口。</span>        </li>      </ol></div></section></section>        <section class="section1 padded-anchor" id="ESRI_SECTION1_A5706BF472D643F28B19B51A5CC6BDA9" purpose="section1"><h2>使用“搜索”微件</h2><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_D114D1268EF749F4B62F519F23BED09D"><ol class="list-numbered" purpose="ol">        <li purpose="step" id="ESRI_STEP_650165B942EB49D2AEE57C317218FE40">          <span purpose="cmd" id="GUID-2BE892F0-0154-4EF0-A751-39EEE8F22AE9"> 当您在搜索框中输入地名或关键字时，您将在输入过程中看到建议。如果您在搜索框中看到箭头，您就可以搜索全部来源，或单击箭头并从下拉列表中选择定位器或图层。<figure class="fig" href="#"><img src="GUID-69F0BA51-54AC-4617-AEF0-381D1CD7D755-web.png" alt="地理编码服务和可搜索图层的列表" title="地理编码服务和可搜索图层的列表"></figure></span>        <div class="stepresult" purpose="stepresult"><p id="GUID-1688175B-0AC0-4C73-A073-AC9DB24F073A">地名或要素的位置处随即显示弹出窗口，显示所有可用的属性信息。</p></div></li>        <li purpose="step" id="ESRI_STEP_0171AB97674A48DBAFB9C33D515B0F44">          <span purpose="cmd" id="GUID-4187C913-5AC3-4949-9775-EFA490CE6F44">单击弹出窗口右下方的省略号 <span class="uicontrol">…</span> 按钮，将显示一个操作列表，包括在地图中添加或从中移除标记。如果应用程序中存在“方向”微件，则可以设置<span class="uicontrol">自此处的行驶方向</span>或<span class="uicontrol">到此处的行驶方向</span>以自动打开“方向”微件。</span>        </li>      </ol></div></section></section>      
+			
+				<hr>
+				<!--googleoff: all-->
+				
+	
+        
+		    <p class="feedback right">
+		        <a id="afb" class="icon-ui-contact" href="/feedback/" data-langlabel="feedback-on-this-topic" >有关此主题的反馈?</a>
+		    </p>
+        
+	
+
+				<!--googleon: all-->
+			
+		</main>
+	</div>
+	
+	<!--googleoff: all-->
+	
+		
+			<div id="main-toc-large" class="column-5">
+			    <div class="panel font-size--2 tablet-hide trailer-1">
+			      <h5 class="trailer-half">在本主题中</h5>
+			      <ol class="list-plain pre-0 trailer-0"><li><a href="#GUID-C88275B6-E366-45E3-B505-B7FAE535F71D">配置“搜索”微件</a></li><li><a href="#ESRI_SECTION1_A5706BF472D643F28B19B51A5CC6BDA9">使用“搜索”微件</a></li></ol>
+			    </div>
+			    
+			    
+	  		</div>
+		
+    
+   <!--googleon: all-->
+
+
+
+
+          
+        </div>
+        <!-- ENDPAGECONTENT -->
+
+      </div>
+
+    </div>  <!-- End of wrapper -->
+
+  <footer class="footer leader-3 link-dark-gray" role="contentinfo">
+    <div class="grid-container">
+      <div class="row">
+        <nav class="column-6">
+          <h6 data-langlabel="arcgis-for-server">Arc<span>GIS Enterprise</span></h6>
+          <ul class="list-plain">
+            <li><a data-langlabel="home" href="../../../../zh-CN/">主页</a></li>
+            <li><a data-langlabel="portal" href="../../../../zh-CN/portal/">Portal</a></li>
+            <li><a data-langlabel="server" href="../../../../zh-CN/server/">Server</a></li>
+            <li><a data-langlabel="data-store" href="../../../../zh-CN/data-store/">Data Stores</a></li>
+            <li><a data-langlabel="cloud" href="../../../../zh-CN/cloud/">云</a></li>
+            <li><a data-langlabel="apps" href="../../../../zh-CN/apps/">应用程序</a></li>
+            <li><a data-langlabel="documentation" href="../../../../zh-CN/documentation/">文档</a></li>
+          </ul>
+        </nav>
+
+        
+  <nav class="column-6">
+    <h6 data-langlabel="arcgis-platform">ArcGIS 平台</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="arcgis" href="//www.arcgis.com/">ArcGIS Online</a></li>
+      <li><a data-langlabel="arcgis-for-professionals" href="//pro.arcgis.com/">ArcGIS Pro</a></li>
+      <li><a data-langlabel="arcgis-for-server" href="//enterprise.arcgis.com/">ArcGIS Enterprise</a></li>
+      <li><a data-langlabel="arcgis-for-developers" href="https://developers.arcgis.com/">ArcGIS for Developers</a></li>
+      <li><a data-langlabel="arcgis-solutions" href="//solutions.arcgis.com/">ArcGIS Solutions</a></li>
+      <li><a data-langlabel="arcgis-marketplace" href="//marketplace.arcgis.com/">ArcGIS Marketplace</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <h6 data-langlabel="about-esri">关于 Esri</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="about-us" href="//www.esri.com/about-esri/">关于我们</a></li>
+      <li><a data-langlabel="careers" href="//www.esri.com/careers/">招贤纳士</a></li>
+      <li><a data-langlabel="insiders-blog" href="https://www.esri.com/about/newsroom/blog/">Esri 博客</a></li>
+      <li><a data-langlabel="user-conference" href="//www.esri.com/events/user-conference/index.html">用户大会</a></li>
+      <li><a data-langlabel="developer-summit" href="//www.esri.com/events/devsummit/index.html">开发者峰会</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <a class="esri-logo" href="//www.esri.com/" aria-label="Esri Home"></a>
+    <section class="footer-social-nav leader-1">
+            <a class="icon-social-twitter" aria-label="Esri on Twitter" href="https://twitter.com/Esri/"></a>
+            <a class="icon-social-facebook" aria-label="Esri on Facebook" href="https://www.facebook.com/esrigis/"></a>
+            <a class="icon-social-github" aria-label="Esri on GitHub" href="//esri.github.io/"></a>
+            <a class="icon-social-contact" aria-label="Contact Esri" href="//www.esri.com/about-esri/contact/"></a>
+    </section>
+	  
+  </nav>
+  
+  <div class="column-24 leader-1">
+    <p class="font-size--3"><a href="http://www.esri.com/legal/copyright-trademarks">Copyright &copy; 2019 Esri.</a> All rights reserved. | <a href="http://www.esri.com/legal/privacy/">隐私政策</a> | <a href="http://www.esri.com/legal/software-license">法律声明</a></p>
+  </div>
+  
+
+
+      </div>
+    </div>
+  </footer>
+  <!--googleoff: all-->
+
+  
+  
+	<script src="../../../../zh-CN/assets/js/init.js" type="text/javascript"></script>
+	<!--<script src="../../../../zh-CN/assets/js/drop-down.js" type="text/javascript"></script>-->
+	<script src="../../../../zh-CN/assets/js/search/searchform.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/cdn/js/link-modifier.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/cdn/js/sitewide.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/cdn/js/libs/highlight.pack.js" type="text/javascript"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+
+
+  
+    
+
+  <script src="../../../../zh-CN/cdn/js/affix.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    $(function () {
+          var appendFlg = true;
+
+          $("#bigmac")
+          .on("affixed.bs.affix", function (evt) {
+            if (appendFlg) {
+              $("<a class='crumb' href='#'>“搜索”微件</a>").insertAfter ($("#bigmac nav a").last());
+              appendFlg = false;
+            }
+          })
+          .on ("affix-top.bs.affix", function(evt) {
+            if (!appendFlg) {
+              $("#bigmac nav a").last().remove();
+            }
+            appendFlg = true;
+          })
+    })
+  </script>
+  
+        <script type="text/javascript">
+          window.doctoc = {
+            pubID: "583",
+            tpcID: "384",
+            
+              prefix: "使用",
+              prefixUrl: "/zh-cn/portal/latest/use/",
+          
+            hideToc: false
+          }
+        </script>
+
+        <script type="text/javascript" src="../../../../zh-CN/portal/latest/use/583.js" ></script>
+        <script type="text/javascript" src="../../../../zh-CN/cdn/calcite/js/protoc.js" ></script>
+        
+        
+
+  <noscript>
+        <p>
+            <a href="flisting.htm">flist</a>
+        </p>
+    </noscript>
+    <script type="text/javascript"></script>
+  
+  
+    
+    
+
+  </body>
+</html>

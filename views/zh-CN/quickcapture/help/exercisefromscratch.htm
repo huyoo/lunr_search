@@ -1,0 +1,560 @@
+
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>  <html class="ie lt-ie9 lt-ie8 lt-ie7 ie6" dir="ltr"> <![endif]-->
+<!--[if IE 7]>     <html class="ie lt-ie9 lt-ie8 ie7" dir="ltr"> <![endif]-->
+<!--[if IE 8]>     <html class="ie lt-ie9 ie8" dir="ltr"> <![endif]-->
+<!--[if IE 9]>     <html class="ie ie9" dir="ltr"> <![endif]-->
+<!--[if !IE]><!--> <html dir="ltr" lang="zh-CN"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>Create a project from scratch&mdash;QuickCapture | ArcGIS Enterprise 文档</title>
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+    <script>
+      var docConfig = {
+        locale: 'zh-CN'
+        ,localedir: 'zh-cn'
+        ,langSelector: ''
+        
+        ,relativeUrl: false
+        
+
+        ,searchformUrl: '/search/'
+        ,tertiaryNavIndex: ''
+
+        
+      };
+    </script>
+	 
+
+
+    
+    <!--[if lt IE 9]>
+      <script src="../../../zh-CN/cdn/js/libs/html5shiv.js" type="text/javascript"></script>
+      <script src="../../../zh-CN/cdn/js/libs/selectivizr-min.js" type="text/javascript"></script>
+      <script src="../../../zh-CN/cdn/js/libs/json2.js" type="text/javascript"></script>
+      <script src="../../../zh-CN/cdn/js/libs/html5shiv-printshiv.js" type="text/javascript" >
+
+    <![endif]-->
+
+     <!--[if lt IE 11]>
+    <script>
+      $$(document).ready(function(){
+        $$(".hideOnIE").hide();
+      });
+    </script>
+    <![endif]-->
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<link href="../../../zh-CN/assets/img/favicon.ico" rel="shortcut icon" >
+	<link href="../../../zh-CN/assets/css/screen.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../zh-CN/cdn/calcite/css/documentation.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../zh-CN/assets/css/print.css" media="print" type="text/css" rel="stylesheet" />
+
+	<!--
+	<link href="../../../zh-CN/assets/css/screen_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../zh-CN/assets/css/documentation/base_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../zh-CN/assets/css/print_l10n.css" media="print" type="text/css" rel="stylesheet" />
+	-->
+	
+	
+		<script src="../../../zh-CN/cdn/js/libs/jquery.1.9.1.min.js" type="text/javascript"></script>
+	
+	<script src="../../../zh-CN/cdn/js/libs/jquery.cookie.js" type="text/javascript"></script>
+	<link href="../../../zh-CN/cdn/css/colorbox.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../zh-CN/cdn/css/colorbox_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<script src="../../../zh-CN/cdn/js/libs/jquery.colorbox-min.js" type="text/javascript"></script>
+	<script src="../../../zh-CN/assets/js/video-init.js" type="text/javascript"></script>
+	<script src="../../../zh-CN/assets/js/sitecfg.js" type="text/javascript"></script>
+	
+		<script src="../../../zh-CN/assets/js/signIn.js" type="text/javascript"></script>
+	
+
+	<!--- Language Picker -->
+	<script src="../../../zh-CN/assets/js/locale/l10NStrings.js" type="text/javascript"></script>
+	
+		 
+	
+
+	<script src="../../../zh-CN/assets/js/calcite-web.js" type="text/javascript"></script>
+
+
+
+  <!--- search MD -->
+    <META name="description" content="Learn you how to create an  ArcGIS QuickCapture project from scratch using ArcGIS Pro."><META name="last-modified" content="2019-12-6"><META name="product" content="quickcapture"><META name="sub_category" content="QuickCapture"><META name="search-collection" content="help"><META name="content_type_label" content="帮助主题"><META name="sub_category_label" content="QuickCapture"><META name="search-category" content="help-general"><META name="subject_label" content="APPS"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="APPS"><META name="content-language" content="zh-cn">
+    <!--- search MD -->
+
+  
+      
+
+</head>
+
+<!--
+      pub: GUID-79060464-A083-40AB-AAC5-6216D090A0D1=1
+      tpc: GUID-EF858145-F5CC-4C31-B7AE-DE50AC65BB09=1
+      -->
+
+
+<!-- variable declaration, if any -->
+<!-- can change following macro to set variable once we are on Jinja 2.8 -->
+
+
+
+
+
+<body class="claro zh-CN server">
+  
+
+  <!-- Drawer location -->
+  <div class="drawer drawer-left js-drawer" data-drawer="top-nav">
+        <nav class="drawer-nav" role="navigation">
+          <aside class="side-nav">
+            <h2 class="side-nav-title">Arc<span>GIS</span> Enterprise</h2>
+            <form id="helpSearchForm" class="margin-left-half margin-right-half leader-half trailer-half drawer-search-form" method="GET">
+              <input type="search" name="q"  placeholder="Search ArcGIS QuickCapture">
+              <input type="hidden" name="collection" value="help" />
+              <input type="hidden" name="product" value="quickcapture" />
+              <input type="hidden" name="version" value="" />
+              <input type="hidden" name="language" value="zh-CN" />
+            </form>    
+             <a id="nav-portal" data-langlabel="portal" href="../../../zh-CN/portal/" class="side-nav-link">Portal</a>
+             
+            <a id="all-servers" data-langlabel="all-servers" href="../../../zh-CN/server/" class="side-nav-link">所有服务器</a>
+            <a id="gis-server" data-langlabel="gis-server" href="../../../zh-CN/server/" class="side-nav-link">GIS Server</a>
+            <a id="image-server" data-langlabel="image-server" href="../../../zh-CN/image/" class="side-nav-link">Image Server</a>
+            <a id="geo-analytics-server" data-langlabel="geo-analytics-server" href="../../../zh-CN/geoanalytics/" class="side-nav-link">GeoAnalytics Server</a>
+            <a id="geoevent-server" data-langlabel="geoevent-server" href="../../../zh-CN/geoevent/" class="side-nav-link">GeoEvent Server</a>
+            <a id="notebook-server" data-langlabel="notebook-server" href="../../../zh-CN/notebook/" class="side-nav-link">Notebook Server</a>
+            <a id="nav-data-store" data-langlabel="data-store" href="../../../zh-CN/data-store/" class="side-nav-link">Data Stores</a>
+            <a id="nav-cloud" data-langlabel="cloud" href="../../../zh-CN/cloud/" class="side-nav-link">云</a>
+            <a id="nav-apps" data-langlabel="apps" href="../../../zh-CN/apps/" class="side-nav-link">应用程序</a>
+            <a id="nav-doc" data-langlabel="documentation" href="../../../zh-CN/documentation/" class="side-nav-link">文档</a>
+
+          </aside>
+        </nav>
+    </div>
+
+    <!-- user navigation collapses to drawer on mobile -->
+    
+    <div class="drawer drawer-right js-drawer hide-if-logged-out logged-in-navigation" data-drawer="user-nav">
+      <nav class="drawer-nav">
+        <aside class="side-nav">
+          <a class="side-nav-link agolProfile" href="#">我的个人资料</a>
+          <a class="side-nav-link icon-ui-sign-out js-log-out" href="#">登出</a>
+        </aside>
+      </nav>
+    </div>
+    
+<!-- End of drawer -->
+
+  
+  <div class="wrapper">
+      <!--googleoff: all-->
+
+      <header class="top-nav" data-skin="learn">
+        <a class="skip-to-content" href="#skip-to-content">Skip To Content</a>
+        <div class="grid-container">
+          <div class="column-24">
+
+
+            <!--<div class="top-nav-title-wrapper text-center ">-->
+              <a href='../../../zh-CN/' class="top-nav-title tablet-hide"><span>Arc</span>GIS  Enterprise</a>
+              <a href='../../../zh-CN/' class="icon-ui-menu top-nav-title js-drawer-toggle tablet-show" data-drawer="top-nav"><span>Arc</span>GIS Enterprise</a>
+            <!--</div> -->
+
+          
+            <nav role="navigation" class="top-nav-list left tablet-hide">
+              <a id="nav-portal" data-langlabel="portal" href="../../../zh-CN/portal/" class="top-nav-link">Portal</a>
+
+                <div class="dropdown js-dropdown ">
+                  <a class="top-nav-link js-dropdown-toggle" tabindex="0" aria-haspopup="true" aria-expanded="false" href="#">Servers</a>
+                  <nav class="dropdown-menu featured" role="menu">
+                    <ul class="dropdown-sublist-featured">
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../zh-CN/get-started/latest/windows/additional-server-deployment.htm" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path  d="M42.92 6.1H4.12v8.566l.833.832-.835.833-.018 7.332.845.847-.825.824V33.9h25v5.2h-2v1.075H8.02v.8h19.1v.925h4.8v-.925H40v-.8h-8.08V39.1h-2v-5.2h13v-8.566l-.834-.834.835-.834v-7.332l-.835-.834.835-.834zm-11.8 35h-3.2v-1.2h3.2zm11-8H4.92v-7.434l.767-.766h35.668l.765.766zm0-9.766l-.766.766H5.666l-.766-.767.017-6.669.766-.764h35.671l.766.766zm0-9l-.766.766H5.687l-.766-.766V6.9h37.2zM19 11.9h-2v-.8h2zm-4 0h-2v-.8h2zm-4 0H9v-.8h2zm6 8.2h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9zm8 9h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9z"/></svg></span>
+                          <span class="sublink-text">所有服务器</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../zh-CN/server/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M45.98 33.575a.616.616 0 0 0-.335-.51l-3.362-2.03 3.362-2.031a.556.556 0 0 0 0-1.02l-11.1-6.704a1.293 1.293 0 0 0-1.112 0L22.33 27.982a.556.556 0 0 0 0 1.02l3.36 2.03-3.358 2.03a.556.556 0 0 0-.002 1.021l3.322 2.006-3.324 2.008a.555.555 0 0 0 .002 1.017l11.102 6.703a1.25 1.25 0 0 0 1.11.002l11.104-6.706a.556.556 0 0 0 0-1.02l-3.32-2.006 3.318-2.004a.607.607 0 0 0 .335-.509zM33.837 21.97c.026-.01.286-.005.29-.005l10.814 6.53-10.8 6.523c-.028.01-.284.005-.294.006l-10.813-6.53zm11.105 16.636l-10.8 6.523a2.564 2.564 0 0 1-.295.006l-10.81-6.529 3.39-2.047 7.004 4.23a1.083 1.083 0 0 0 .557.131 1.101 1.101 0 0 0 .554-.13l7.01-4.233zM34.14 40.098a2.545 2.545 0 0 1-.294.006l-10.812-6.53 3.43-2.073 6.97 4.208a1.25 1.25 0 0 0 1.107-.001l6.966-4.206 3.431 2.073zM9 8H7V7h2zm8 8h-2v-1h2zm-4-8h-2V7h2zm4 0h-2V7h2zm-4 8h-2v-1h2zm7.316 11.1H3.9v-6.434l.766-.766h35.668l.766.766v2.12l.8.483v-2.935l-.826-.826.826-.845v-6.329l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9h16.88a2.632 2.632 0 0 1 .336-.8zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zm0 8v-5.668l.766-.766h35.668l.766.766v5.67l-.746.764H4.666zM15 24v-1h2v1zm-4 0v-1h2v1zm-2-8H7v-1h2zm-2 8v-1h2v1z"/></svg></span>
+                          <span class="sublink-text">GIS Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../zh-CN/image/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 8h-2V7h2zm-4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm8 8h-2v1h2zm-8 0H7v1h2zm4 9v-1h-2v1zm-4 0v-1H7v1zm8 0v-1h-2v1zm4 3.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V21h-.8v-.334l-.766-.766H4.666l-.766.766V27.1H21zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zm40.234 4v21.8H23.1V23.1zm-.8 16.366L39.466 44.1h2.868l1.766-1.766zm-20.2-9.932l5.634-5.634h-2.868L23.9 26.666zm6.2-5.068L24.466 30.1h2.868l2.766-2.766zM28.466 30.1H30.1v-1.634zm2.434 0h6.2v-6.2h-6.2zm-7 7h6.2v-6.2h-6.2zm7 0h6.2v-6.2h-6.2zm0 6.434l5.634-5.634h-2.868L30.9 40.666zm7-7l5.634-5.634h-2.868L37.9 33.666zm1.634-5.634H37.9v1.634zm-8.634 7v1.634l1.634-1.634zm.566 6.2h2.868l2.766-2.766v-2.868zm6.434-3.566l2.634-2.634H37.9zM35.466 44.1H37.1v-1.634zm2.434 0h.434l5.766-5.766V37.9h-2.434L37.9 41.666zm6.2-8.634L42.466 37.1H44.1zm0-4L38.466 37.1h2.868l2.766-2.766zm0-7.566h-6.2v6.2h6.2zm-20.2 0v1.634l1.634-1.634zm0 20.2h6.2v-6.2h-6.2zm20.2 0v-.634l-.634.634z"/></svg></span>
+                          <span class="sublink-text">Image Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../zh-CN/geoanalytics/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 16h-2v-1h2zm-8 8v-1H7v1zm8 0v-1h-2v1zM13 7h-2v1h2zm4 0h-2v1h2zM9 7H7v1h2zm21.45 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V27.9h-1.464l-.801-.8H41.1v-6.434l-.766-.766H4.666l-.766.766V27.1h27.15zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM13 24v-1h-2v1zm0-9h-2v1h2zm-4 0H7v1h2zm26.672 27.148A1.87 1.87 0 0 1 35.9 43a1.91 1.91 0 1 1-3.763-.222l-9.845-3.414A1.88 1.88 0 0 1 21 39.9a1.9 1.9 0 1 1 1.474-3.084l4.692-2.346A1.878 1.878 0 0 1 27.1 34a1.902 1.902 0 0 1 1.9-1.9 1.867 1.867 0 0 1 .781.191l3.788-5.05A1.88 1.88 0 0 1 33.1 26a1.9 1.9 0 1 1 3.491 1.026l4.889 4.888c-.069.056-.144.1-.21.162a3.986 3.986 0 0 0-.358.402l-4.883-4.883A1.889 1.889 0 0 1 35 27.9a1.867 1.867 0 0 1-.781-.191l-3.788 5.049a1.868 1.868 0 0 1 .437.965l9.204.614c-.018.11-.049.218-.058.33A3.93 3.93 0 0 0 40 35c0 .046.01.09.01.135l-9.185-.612A1.913 1.913 0 0 1 29 35.9a1.889 1.889 0 0 1-1.474-.716l-4.692 2.346a1.878 1.878 0 0 1 .066.47 1.9 1.9 0 0 1-.105.625c-.007.02-.022.036-.03.056l9.63 3.34a1.87 1.87 0 0 1 2.786-.505l5.415-4.437c.067.108.127.22.204.322a3.9 3.9 0 0 0 .292.306zM33.9 26a1.092 1.092 0 0 0 .43.872 1.12 1.12 0 0 0 1.42-.068A1.1 1.1 0 1 0 33.9 26zm-6 8a1.1 1.1 0 0 0 2.196.093 1.135 1.135 0 0 0-.426-.965A1.087 1.087 0 0 0 29 32.9a1.101 1.101 0 0 0-1.1 1.1zm-5.8 4a1.098 1.098 0 1 0-.06.362A1.101 1.101 0 0 0 22.1 38zm13 5a1.1 1.1 0 1 0-2.2 0 1.1 1.1 0 0 0 2.2 0zm10.8-8a1.9 1.9 0 1 1-3.8 0c0-.053.003-.105.007-.158A1.9 1.9 0 0 1 45.9 35zm-.8 0a1.1 1.1 0 0 0-2.196-.093 1.153 1.153 0 0 0 .216.752A1.1 1.1 0 0 0 45.1 35z"/></svg></span>
+                          <span class="sublink-text">GeoAnalytics Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../zh-CN/geoevent/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M13 8h-2V7h2zm4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm12.418 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826v2.117c-.259-.177-.53-.337-.8-.497v-1.288l-.766-.766H4.666l-.766.766V27.1h17.933c-.148.26-.283.53-.415.8zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM9 24v-1H7v1zm4-9h-2v1h2zm0 9v-1h-2v1zm-4-9H7v1h2zm8 9v-1h-2v1zm16.9 2h-.8v8.9H39v-.8h-5.1zm.1-3.901a11.9 11.9 0 1 0 11.9 11.9 11.914 11.914 0 0 0-11.9-11.9zm0 23a11.1 11.1 0 1 1 11.1-11.1 11.112 11.112 0 0 1-11.1 11.1z"/></svg></span>
+                          <span class="sublink-text">GeoEvent Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../zh-CN/notebook/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M22 27.1H3.9v-6.434l.766-.766h18.576a5.262 5.262 0 0 1 .83-.8H4.666l-.766-.766v-5.668l.766-.766h35.668l.766.766V18h.8v-5.666l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9H22zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zM9 8H7V7h2zm8 0h-2V7h2zm-4 0h-2V7h2zm2 16v-1h2v1zm-4 0v-1h2v1zm-4 0v-1h2v1zm0-8v-1h2v1zm8 0v-1h2v1zm-4 0v-1h2v1zm18.9 8.1h-1.8v1.8h1.8zm-.8 1h-.2v-.2h.2zm15.498-4.48a2.727 2.727 0 0 0-1.62-.5v-.02H27.25a3.154 3.154 0 0 0-3.15 3.15V38.1h-1.68a3.386 3.386 0 0 0-2.872 1.58 3.49 3.49 0 0 0-.157 3.419 3.241 3.241 0 0 0 2.954 1.801h15.161a3.404 3.404 0 0 0 3.394-3.4V26.9h5v-3.65a3.224 3.224 0 0 0-1.302-2.63zM22.345 44.1a2.44 2.44 0 0 1-2.23-1.341 2.706 2.706 0 0 1 .11-2.65A2.588 2.588 0 0 1 22.42 38.9h12.89a3.395 3.395 0 0 0 0 5.2zM40.1 23.192V41.5a2.6 2.6 0 1 1-2.6-2.6v-.8H24.9V23.25a2.352 2.352 0 0 1 2.35-2.35h13.795a3.183 3.183 0 0 0-.945 2.292zm5 2.908h-4.2v-2.908a2.274 2.274 0 0 1 1.44-2.18 1.944 1.944 0 0 1 1.791.259 2.423 2.423 0 0 1 .97 1.979zm-17.1 5h9v.8h-9zm0 3h7v.8h-7zm0-6h9v.8h-9zm4-3h5v.8h-5z"/></svg></span>
+                          <span class="sublink-text">Notebook Server</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+
+              <a id="nav-data-store" data-langlabel="data-store" href="../../../zh-CN/data-store/" class="top-nav-link">Data Stores</a>
+              <a id="nav-cloud" data-langlabel="cloud" href="../../../zh-CN/cloud/" class="top-nav-link">云</a>
+              <a id="nav-apps" data-langlabel="apps" href="../../../zh-CN/apps/" class="top-nav-link">应用程序</a>
+            </nav>
+
+
+            
+            
+            
+
+            <div class="margin-left-1 top-nav-list right hide-if-logged-in logged-out-navigation">
+               
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+              
+              <a data-langlabel="sign-in" id="login-link" class="icon-ui-user top-nav-link link-blue login-link" href="#">登录</a>
+              
+            </div>
+
+            
+            <nav class="margin-left-1 top-nav-list right hide-if-logged-out logged-in-navigation">
+              
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+             
+              <div class="dropdown js-dropdown right">
+
+                <div class="tablet-show top-nav-link">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a href="#" data-drawer="user-nav" class="user-nav-name js-drawer-toggle" data-first-name></a>
+                </div>
+
+                <div class="tablet-hide top-nav-link js-dropdown-toggle">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a class="user-nav-name top-nav-dropdown dropdown-btn" data-first-name>&nbsp;</a>
+                </div>
+
+                <nav class="dropdown-menu dropdown-right">
+                
+                  <a class="dropdown-link agolProfile" id="agolProfile" href="#">我的个人资料</a>
+                  <a class="dropdown-link js-log-out" id="agolLogout" href="#">登出</a>
+                </nav>
+              </div>
+            </nav>
+            
+
+            
+          </div>
+        </div>
+      </header>
+
+      <div class="js-search search-overlay">
+        <div class="search-content" role="dialog" aria-labelledby="search">
+          <form method="GET" id="helpSearchForm">
+            <label>
+              Search ArcGIS QuickCapture
+              <div class="search-bar">
+                <input type="search" name="q"  placeholder="Search ArcGIS QuickCapture" class="search-input js-search-input">
+                <input type="hidden" name="collection" value="help" />
+                <input type="hidden" name="product" value="quickcapture" />
+                <input type="hidden" name="version" value="" />
+                <input type="hidden" name="language" value="zh-CN" />
+              </div>
+            </label>
+            <input type="hidden" name="relativePath" value="../../../" /><button type="submit" class="btn btn-large right">搜索</button>
+          </form>
+        </div>
+      </div>
+
+      <!--googleon: all-->
+
+      <div id="skip-to-content">
+        <!--googleoff: all-->
+        <header class="sub-nav sub-nav-learn">
+          <div class="grid-container">
+            
+            <div class="column-24">
+              <div style="display:table;" class="sdk-home-banner">
+                <div class="sdk-home-banner-content">
+                  <h1 class="sub-nav-title link-white">QuickCapture</h1>
+                </div>
+              </div>
+            </div>
+
+            <div class="column-24">
+              <nav class='sub-nav-list tablet-hide'><a class="sub-nav-link" href="../../../zh-CN/quickcapture/" target="_top" title="Survey123 Help">Home</a><a class="sub-nav-link is-active" href="../../../zh-CN/quickcapture/help/" target="_top" title="Help">Help</a><a class="sub-nav-link" href="../../../zh-CN/quickcapture/faq/" target="_top" title="FAQ">FAQ</a></nav><select class='tablet-show select-full trailer-half js-select-nav'><option value="../../../zh-CN/quickcapture/">Home</option><option selected="true" value="../../../zh-CN/quickcapture/help/">Help</option><option value="../../../zh-CN/quickcapture/faq/">FAQ</option></select>
+            </div>
+
+          </div>
+        </header>
+        <!--googleon: all-->
+       
+        <!-- content goes here -->
+        <div class="grid-container ">
+          
+
+            
+              
+  <!--BREADCRUMB-BEG--><div id="bigmac" class="sticky-breadcrumbs trailer-2" data-spy="affix" data-offset-top="180"> </div><!--BREADCRUMB-END-->
+  <!--googleoff: all-->
+    <div class="column-5 tablet-column-12 trailer-2 ">
+      <aside class="js-accordion accordion reference-index" aria-live="polite" role="tablist">
+        <div></div>
+      </aside>
+
+      <div class="js-sticky scroll-show tablet-hide leader-1 back-to-top" data-top="0" style="top: 0px;">
+        <a href="#" class="btn btn-fill btn-clear">返回顶部</a>
+      </div>
+    </div>
+  <!--googleon: all-->
+  
+            
+            
+            
+	
+		<div class="column-13  pre-1 content-section">
+	
+		<header class="trailer-1"><h1>Create a project from scratch</h1></header>
+
+		 
+	<!--googleoff: all-->
+	
+		
+				<aside id="main-toc-small" class="js-accordion accordion tablet-show trailer-1">
+			      <div class="accordion-section">
+			        <h4 class="accordion-title">在本主题中</h4>
+			        <div class="accordion-content list-plain">
+			          <ol class="list-plain pre-0 trailer-0"><li><a href="#ESRI_SECTION1_131F70FF1C234625B09FE1DB74DA669D">Create a feature service</a></li><li><a href="#ESRI_SECTION1_1B7754473F97455FA71B7B72C2159735">Create a layer view in ArcGIS</a></li><li><a href="#ESRI_SECTION1_352B95C7985549D49BBDA9C54C9B98CA">Create a <ph translate="no" varid="QuickCapture_short">QuickCapture</ph> project</a></li></ol>
+			        </div>
+			      </div>
+			     </aside>
+		
+    
+   <!--googleon: all-->
+
+
+		<main>
+			
+	
+    	
+    
+
+
+			
+
+    
+
+ 
+
+ 
+    
+
+
+
+
+<p id="GUID-62F368DC-FBA1-4385-9A4A-36F5866E7880">This exercise explains how to create an <span class="ph">ArcGIS QuickCapture</span> project from scratch using <span class="ph">ArcGIS Pro</span>. You will create a pothole assessment project that will allow users to capture potholes of two sizes on different road surface types. As the user travels, they can capture the surface type of the road as a line feature, and when they come to a pothole, they can capture its location, distinguished by its size.</p> <section class="section1 padded-anchor" id="ESRI_SECTION1_131F70FF1C234625B09FE1DB74DA669D" purpose="section1"><h2>Create a feature service</h2><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><section class="context padded-anchor" id="ESRI_CONTEXT_72E77A6628C64C1BB4E235F218F93BD5" purpose="context"><p id="GUID-E2F7B725-38AF-43FF-80CF-1C4379F22481">To create a feature service in <span class="ph">ArcGIS Pro</span>, complete the following steps:</p></section><div class="steps" id="ESRI_STEPS_D9AB755E43D14F048D618BC2A4942756"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_0411AA744C734061B8A63EFDC760DF57"><span purpose="cmd">Sign in to <span class="ph">ArcGIS Pro</span> and choose to create a new project using the <span class="uicontrol">Catalog</span> template.</span> </li><li purpose="step" id="ESRI_STEP_FCEA856CB257433C9BA1878F6716A251"><span purpose="cmd">Name the project <span class="usertext">Pothole Assessment</span> and click <span class="uicontrol">OK</span>.</span> </li><li purpose="step" id="ESRI_STEP_D8F2861EF14A44288FE095A9E16EAF9B"><span purpose="cmd">On the <span class="uicontrol">Catalog</span> tab, select <span class="uicontrol">Databases</span>. </span> </li><li purpose="step" id="ESRI_STEP_D4C6D07C8D784A928A953BBE285A89AB"><span purpose="cmd">Right-click the <span class="uicontrol">Pothole Assessment.gdb</span> file, hover over <span class="uicontrol">New</span> and select <span class="uicontrol">Create new feature class</span>.</span> <div class="stepresult" purpose="stepresult"><p id="GUID-4A9AE92A-00AB-4CD1-A6C8-FC0A058B22BE">The <span class="uicontrol">Create feature class</span> wizard opens.</p></div></li><li purpose="step" id="ESRI_STEP_479C8BE9185241C8A053B6053586CE9B"><span purpose="cmd">Do the following in the wizard:</span><div class="substeps" id="ESRI_SUBSTEPS_86B60A2331814DDF8F924F0EFEEAC234" purpose="substeps"><ol class="list-numbered" purpose="ol"><li purpose="substep" id="ESRI_SUBSTEP_B41CBA8554E84D7FAA9D72595BA3DD9F"><span purpose="cmd">Name the feature class <span class="usertext">Pothole</span>.</span></li><li purpose="substep" id="ESRI_SUBSTEP_87D053C91A8042EAAD9882DEEC0ED8E0"><span purpose="cmd">For the feature class type, choose <span class="uicontrol">Point</span>.</span><div class="info" purpose="info"><p id="GUID-6AAA9113-E11A-438D-B7E2-80BF61A12BD2"><figure class="fig" href="#"><img src="GUID-5227B5F4-689B-4851-8FB7-06B7250801AB-web.png" alt="Create Pothole feature class of type Point" title="Create Pothole feature class of type Point"></figure></p></div> </li><li purpose="substep" id="ESRI_SUBSTEP_DA09F375637B41C8886A38B36B8F6814"><span purpose="cmd">Click <span class="uicontrol">Next</span>.</span></li><li purpose="substep" id="ESRI_SUBSTEP_E63B9E579CD04CFDB789A30B3E4079D1"><span purpose="cmd">Add a new field called <span class="usertext">Size</span> and leave it as the default <span class="uicontrol">Text</span> data type.</span><div class="info" purpose="info"><p id="GUID-5914A9A1-363F-4513-A3D4-EA0CABCE619F"><figure class="fig" href="#"><img src="GUID-537C1A17-A590-45AD-B8EE-37A060D37745-web.png" alt="Add field called Size" title="Add field called Size"></figure></p></div> </li><li purpose="substep" id="ESRI_SUBSTEP_DE60653C6FF24FA0B00169873C7A4F52"><span purpose="cmd">Add the following fields: <span class="usertext">UserName</span> (data type <span class="uicontrol">Text</span>), <span class="usertext">Time</span> (data type <span class="uicontrol">Date</span>), <span class="usertext">Direction</span> (data type <span class="uicontrol">Double</span>), <span class="usertext">Speed</span> (data type <span class="uicontrol">Double</span>), <span class="usertext">Latitude</span> (data type <span class="uicontrol">Double</span>), and <span class="usertext">Longitude</span> (data type <span class="uicontrol">Double</span>). </span><div class="info" purpose="info"><p id="GUID-EA74ABD1-322D-4FA8-AA92-506DFC43167C">Later, you will configure these fields to automatically populate when a record is captured.</p></div></li><li purpose="substep" id="ESRI_SUBSTEP_5C909D03A60F48FC9464853B80F6F1E4"><span purpose="cmd">Accept the defaults for the remaining parameters.</span></li> </ol></div> </li><li purpose="step" id="ESRI_STEP_FBF76D75A3AE4620BC22028A7FD2898E"><span purpose="cmd">Create another feature class for the road assessment, and name it <span class="usertext">Surface</span>, and assign the <span class="uicontrol">Line</span> feature class type.</span> </li><li purpose="step" id="ESRI_STEP_CAA2835623B64DB68F86CE0457C6A3A3"><span purpose="cmd">Add a field called <span class="usertext">SurfaceType</span> and leave the data type as <span class="uicontrol">Text</span>.</span> </li><li purpose="step" id="ESRI_STEP_5F7735F63AC04293BFD88277D0D93865"><span purpose="cmd">Add <span class="usertext">StartTime</span> and <span class="usertext">EndTime</span> fields and use the data type <span class="uicontrol">Date</span>.</span> </li><li purpose="step" id="ESRI_STEP_F8C224E9506A4F3F9B6040B35C30482C"><span purpose="cmd">Accept the defaults for the remaining parameters.</span> </li>
+<li purpose="step" id="ESRI_STEP_A105AD2191CD45A3B496582B5228B0BF"><span purpose="cmd">Right-click the database and select <span class="uicontrol">Domains</span>. </span></li><li purpose="step" id="ESRI_STEP_8E4F8693272D437B84EB57578951260F"><span purpose="cmd">On the <span class="uicontrol">Domains</span> tab, create two new domains.</span><div class="substeps" id="ESRI_SUBSTEPS_0AE7077B95A147399E99A4EA269F0227" purpose="substeps"><ol class="list-numbered" purpose="ol"><li purpose="substep" id="ESRI_SUBSTEP_6028E649148B473A85C4F9D1286F155C"><span purpose="cmd">Create a domain named <span class="usertext">PotholeSize</span> with two coded values: <span class="usertext">Large (Large &gt;25cm)</span> and <span class="usertext">Small (Small &lt;25cm}</span>.</span><div class="info" purpose="info"><p id="GUID-B16A9F70-BA42-4E12-A26D-A7BAA236B7E4"><figure class="fig" href="#"><img src="GUID-BFEF1534-7A3E-42B9-A523-B9BC37B89AF8-web.png" alt="Large and small coded values" title="Large and small coded values"></figure></p></div> </li><li purpose="substep" id="ESRI_SUBSTEP_0D877AF1DD6F4099932997E918638769"><span purpose="cmd">Click <span class="uicontrol">Save</span>.</span></li><li purpose="substep" id="ESRI_SUBSTEP_3C1089C61D524DDF86A16F36F30545CB"><span purpose="cmd">Create another domain named <span class="usertext">SurfaceType</span> with four coded values: <span class="usertext">Bike Path</span>, <span class="usertext">Footpath</span>, <span class="usertext">Freeway</span>, and <span class="usertext">Main Road</span>.</span><div class="info" purpose="info"><p id="GUID-E194B7C2-FFD0-4E98-AF7C-FA65E065B3C7"><figure class="fig" href="#"><img src="GUID-BD87601A-D1DF-49FB-807E-2E38954D8B23-web.png" alt="Surface type coded values" title="Surface type coded values"></figure></p></div> </li><li purpose="substep" id="ESRI_SUBSTEP_D1BB20AF96D5496EA93FA86C31C5C23E"><span purpose="cmd">Click <span class="uicontrol">Save</span>.</span></li> </ol></div> <div class="stepresult" purpose="stepresult"><p id="GUID-6293CC24-355C-4AC5-8261-456691E26237">Two domains are created.</p><p id="GUID-BC7D8847-90D6-4D60-AAD2-D69308559946"><figure class="fig" href="#"><img src="GUID-71EA3413-FD34-4925-A6FB-B07F42D9C63C-web.png" alt="Two domains are created." title="Two domains are created."></figure></p></div></li><li purpose="step" id="ESRI_STEP_C99457B29C604667BB6807BD58E57D65"><span purpose="cmd">Add these domains to the appropriate feature class fields.</span><div class="substeps" id="ESRI_SUBSTEPS_2B9D09BBB9004307A374CFACED7559CF" purpose="substeps"><ol class="list-numbered" purpose="ol"><li purpose="substep" id="ESRI_SUBSTEP_9F6859BFFE794B818DB68E00E0F957B1"><span purpose="cmd">In Catalog, browse to the <span class="uicontrol">Pothole Assessment.gdb</span> file.</span></li><li purpose="substep" id="ESRI_SUBSTEP_8932D1D1DFAF445983189EB61A9AFB04"><span purpose="cmd">Right-click the <span class="uicontrol">Pothole</span> feature class, hover over <span class="uicontrol">Design</span>, and select <span class="uicontrol">Fields</span> to open the <span class="uicontrol">Fields</span> tab.</span><div class="info" purpose="info"><p id="GUID-05ADA20A-64B7-4718-B65D-67CC75DAE200">This tab shows the fields for the <span class="uicontrol">Pothole</span> feature class.</p></div></li><li purpose="substep" id="ESRI_SUBSTEP_875D4697E0F94B898B0AB9EDA96B2F12"><span purpose="cmd">In the <span class="uicontrol">Domain</span> column of the <span class="uicontrol">Size</span> field, click in the intersecting box.</span><div class="stepresult" purpose="stepresult"><p id="GUID-52287731-BAAE-4A4C-B60A-C2D4A18DE336">A drop-down menu appears with the domains you created.</p></div></li><li purpose="substep" id="ESRI_SUBSTEP_B2E7269DA3474ED3AB545BB5850746A2"><span purpose="cmd">Choose the <span class="uicontrol">Pothole Size</span> domain.</span><div class="info" purpose="info"><p id="GUID-FF00C22E-6E2F-4DEB-AD0D-FDDAF9CAB4AB"><figure class="fig" href="#"><img src="GUID-CE5F5EAD-2F51-4539-B4F8-9549F54C4B8A-web.png" alt="Select a domain" title="Select a domain"></figure></p></div> </li><li purpose="substep" id="ESRI_SUBSTEP_CAC28AEEC2DA47F0AD77B34040AAD84A"><span purpose="cmd">Click <span class="uicontrol">Save</span>.</span></li> </ol></div> </li><li purpose="step" id="ESRI_STEP_DAD5AEE6EA5846169ED33EA5AE17DA16"><span purpose="cmd">Return to the feature class menu in the catalog and repeat step 13 for the <span class="uicontrol">SurfaceType</span> feature class, but this time choose the <span class="uicontrol">Surface Type</span> domain.</span> </li><li purpose="step" id="ESRI_STEP_5BC22DFDD3254D73ADA1E2C9C11209D0"><span purpose="cmd">Click <span class="uicontrol">Save</span>.</span> </li><li purpose="step" id="ESRI_STEP_5C46DE5A7BF8455F9EC9CB48A1BA0C3F"><span purpose="cmd">Select the two layers, right-click the selected layers, and choose <span class="uicontrol">Add to new map</span>.</span> </li><li purpose="step" id="ESRI_STEP_A52F201AD96C44DEB48D57C90C515C61"><span purpose="cmd">In the <span class="uicontrol">Contents</span> pane, right-click the <span class="uicontrol">Pothole</span> layer and click <span class="uicontrol">Symbology</span>.</span> </li><li purpose="step" id="ESRI_STEP_D7932CC838B247659E772ADE4E2B402F"><span purpose="cmd">Click the drop-down menu and symbolize your layer by category using the <span class="uicontrol">Unique Values</span> option.</span><div class="info" purpose="info"><p id="GUID-D20B4EB5-EE1D-42B7-A924-0C2CC2664971"><figure class="fig" href="#"><img src="GUID-ED80CCD0-0569-4E32-B705-03F8FE963B58-web.png" alt="Choose symbolize by unique values" title="Choose symbolize by unique values"></figure></p></div></li><li purpose="step" id="ESRI_STEP_5C01A76AA22846AA842E600D931CD2AA"><span purpose="cmd">If <span class="uicontrol">Size</span> does not automatically appear in the <span class="uicontrol">field 1</span> option, choose <span class="uicontrol">Size</span> from the drop-down menu.</span> </li><li purpose="step" id="ESRI_STEP_6584C56ECB5A4DAB95AFFD9F73398C58"><span purpose="cmd">Click the add all values button <img purpose="img" placement="inline" alt="Add all values" title="Add all values" src="GUID-B890A280-2A3B-4A94-A26F-0760CC23ED42-web.png">.</span> <div class="stepresult" purpose="stepresult"><p id="GUID-0FEA7B6B-961C-4ADA-B7C1-69BDE393881F">The <span class="uicontrol">Pothole</span> layer has unique symbology for small and large potholes.</p></div></li><li purpose="step" id="ESRI_STEP_8682324D25174BA2926F57BA117E8AD6"><span purpose="cmd">Repeat steps 17–20 for the <span class="uicontrol">SurfaceType</span> layer, creating unique symbology for the different surface types.</span> </li><li purpose="step" id="ESRI_STEP_39A7CD44D8A84D229F629F95FCC5229B"><span purpose="cmd">Click <span class="uicontrol">Save</span>.</span> </li><li purpose="step" id="ESRI_STEP_508B8F6CD70C46F6BECC332BDE714F6D"><span purpose="cmd">Click the <span class="uicontrol">Share</span> tab in <span class="ph">ArcGIS Pro</span>.</span> </li><li purpose="step" id="ESRI_STEP_1E24F7EFCE7445E29E19C69BA0EFCB02"><span purpose="cmd">Select <span class="uicontrol">Web Layer <span class="greaterthan">&gt;</span> Publish Web Layer</span>.</span><div class="info" purpose="info"><p id="GUID-BD235AA8-50E9-4272-BCC5-ECFE503D80F7"><figure class="fig" href="#"><img src="GUID-06B92D72-A74A-4C1A-A037-BAD0BBE51C7F-web.png" alt="Publish as web layer" title="Publish as web layer"></figure></p></div></li><li purpose="step" id="ESRI_STEP_7E950DCC6AE740EEAE9B62982C45DBDB"><span purpose="cmd">Type <span class="usertext">Potholes</span> for the map name, summary, and tags.</span> </li><li purpose="step" id="ESRI_STEP_634BB17CDC1B4A469E8A0CD980FE23DD"><span purpose="cmd">Select <span class="uicontrol">Feature</span> for the layer type.</span> </li><li purpose="step" id="ESRI_STEP_1D3DA6B5B1AB4BB48B050218CF222D8B"><span purpose="cmd">Select an ArcGIS folder in which to save the layer.</span> </li><li purpose="step" id="ESRI_STEP_AE28317BD5694519903FD0B46B82937D"><span purpose="cmd">On the <span class="uicontrol">Configuration</span> tab, click the edit tool next to <span class="uicontrol">Feature</span>.</span> </li><li purpose="step" id="ESRI_STEP_3D6BC239C8C143149F021145936D50AE"><span purpose="cmd">Select the <span class="uicontrol">Enable editing and allow editors to</span> box.</span><div class="info" purpose="info"><p id="GUID-D164C8C3-F538-4261-9C07-86EC14F2ADC2"><figure class="fig" href="#"><img src="GUID-09D03C7A-8E84-4DB5-9CBC-450D10ABBF94-web.png" alt="Enable editing" title="Enable editing"></figure></p></div></li><li purpose="step" id="ESRI_STEP_BFA5B9CE28884A27B7DCE13CA8F20FA0"><span purpose="cmd">Click <span class="uicontrol">Publish</span>.</span> </li></ol></div><section class="result padded-anchor" id="ESRI_RESULT_6824611112924814AEF088C9FDF49441" purpose="result"><p id="GUID-DF7DE61A-CB37-48DB-B3B3-9A68F3FEE651"><figure class="fig" href="#"><img src="GUID-7FFAAD5A-068B-4680-B858-A4122E9453E9-web.png" alt="Publish confirmation" title="Publish confirmation"></figure></p></section></section><p id="GUID-100E08EB-2688-47F3-89A6-20D391B1C592">You now have a Pothole feature layer ready for use.</p></section> <section class="section1 padded-anchor" id="ESRI_SECTION1_1B7754473F97455FA71B7B72C2159735" purpose="section1"><h2>Create a layer view in ArcGIS</h2><p id="GUID-F716AB5E-D6BE-4997-99A0-3578EF0E0F1E">Creating a layer view from your hosted feature layer is recommended but optional. It is best suited for layers that you'll use in different applications. Using a layer view for your <span class="ph">QuickCapture</span> project means you can define symbology, or other properties, specifically suited to the project. In other applications, you may decide to use the original hosted feature layer or another layer view.</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_B35BC2B96B2A4573A868ADBB6251ADD7"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_AF34FE63EAB74F6797DE2D0C30BA671B"><span purpose="cmd">Sign in to your ArcGIS organization.</span> </li> 
+ <li purpose="step" id="ESRI_STEP_44EA970756F54B71B34B668511027BCA"><span purpose="cmd">Browse to the folder where you saved your Pothole Assessment and click the hosted feature layer.</span> </li><li purpose="step" id="ESRI_STEP_7711D06ACEE64DB0BEC28BF7F0E9AC1A"><span purpose="cmd">Click <span class="uicontrol">Enable Attachments</span> on the <span class="uicontrol">Pothole</span> layer. </span> <div class="info" purpose="info"><p id="GUID-595259A3-961F-4B11-BE19-9640029E02B9">This allows you to capture points with a photo attachment.</p></div></li><li purpose="step" id="ESRI_STEP_FB13D19CA5BD45CA970F756C37C2319F"><span purpose="cmd">Click <span class="uicontrol">Create View Layer</span>.</span> </li><li purpose="step" id="ESRI_STEP_AC18197122B44E8084B751914C6DC8BF"><span purpose="cmd">Name your layer <span class="usertext">Pothole Assessment Project</span>.</span><div class="info" purpose="info"><p id="GUID-A31FF067-1A46-4810-86C9-6AAA8E293823">This will ensure that you build your <span class="ph">QuickCapture</span> project from the view that is designed for its use. You can modify the symbology for this view layer for use in the project, and the original symbology can still be viewed in other apps.</p></div></li></ol></div></section></section> <section class="section1 padded-anchor" id="ESRI_SECTION1_352B95C7985549D49BBDA9C54C9B98CA" purpose="section1"><h2>Create a <span class="ph">QuickCapture</span> project</h2><p id="GUID-24143715-AD10-41E1-8401-FE68F316BC32">The following steps describe how to create a <span class="ph">QuickCapture</span> project from your feature service. This section covers the creation and design process, as well as downloading and capturing points on your device.</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_F37D47956F0A4E02AF7B92B38C54FF37"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_BCCEFB929F4E49CCB320610DDCD99763"><span purpose="cmd">Open the <span class="ph">QuickCapture</span> website. Sign in to your ArcGIS organizational account.</span><table purpose="choicetbl" id="ESRI_CHOICETABLE_9E87243808374FB88038A6DDAF3AA8E6"><tr purpose="chrow" cid="QKm3h"><td purpose="choption"><p id="GUID-40C0662F-BB81-4477-A1A2-46A6C5161EE4"><span class="ph">ArcGIS Online</span></p></td><td purpose="chdesc"><p id="GUID-406F66FD-FDD6-4D98-B4CD-3B15F8A6C5A9"><a class="xref xref" href="https://quickcapture.arcgis.com/">https://quickcapture.arcgis.com</a></p></td></tr><tr purpose="chrow" cid="6IWB4"><td purpose="choption"><p id="GUID-BA1E992A-5C8D-40FE-BBB0-436B14F963EB"><span class="ph">ArcGIS Enterprise</span></p></td><td purpose="chdesc"><p id="GUID-D8904D4B-C302-4D9B-B678-A19C7255CF6E"><span class="usertext">https://www.arcgis.com/apps/quickcapture?portalUrl=https://host.domain.com/webadaptor/</span> (where host, domain, and webadaptor are replaced by your portal information)</p></td></tr></table></li> 
+ 
+<li purpose="step" id="ESRI_STEP_D051B0B668C64E44AC5B274FCFC95C0E"><span purpose="cmd">Click <span class="uicontrol">New Project</span>.</span> </li><li purpose="step" id="ESRI_STEP_E6586F38FE3642ABBB02F6C8ED8F3876"><span purpose="cmd">Scroll down to <span class="uicontrol">Pothole Assessment Project</span> and select it.</span> </li><li purpose="step" id="ESRI_STEP_C93C2DF70E054046A392E835B170AC76"><span purpose="cmd">Select <span class="uicontrol">Next</span>.</span> <div class="stepresult" purpose="stepresult"><p id="GUID-3C9A109D-65A0-4E7A-9DDB-420D7C439EE6">A dialog box appears where you can confirm the thumbnail, title and data recovery email. </p></div></li><li purpose="step" id="ESRI_STEP_B837CCCFA73D4842B3A045E1C1EEA0C8"><span purpose="cmd">Accept the default settings for the thumbnail and title. The data recovery email is there so that if something happens to the feature layer (for example, it gets deleted), the data collected can be recovered and sent to you. Enter your email address for this setting.</span>
+</li><li purpose="step" id="ESRI_STEP_353552ED12F74C6188191773E806F466"><span purpose="cmd">Click <span class="uicontrol">Create</span>.</span> <div class="stepresult" purpose="stepresult"><p id="GUID-51473224-CB87-47D0-B1F4-CD6B9A43B5D7">Your <span class="ph">QuickCapture</span> project appears with the automatically generated capture buttons.</p></div></li><li purpose="step" id="ESRI_STEP_635BF67E5A7E44BCA8021C5AF15AD758"><span purpose="cmd">Click the <span class="uicontrol">Pothole</span> group label and configure the appearance of the group.</span><div class="substeps" id="ESRI_SUBSTEPS_0242BF5B02CC431C8F2A311A80F7ACD9" purpose="substeps"><ol class="list-numbered" purpose="ol"><li purpose="substep" id="ESRI_SUBSTEP_E4504C2B40DC4A4F880DDC25D319EA1F"><span purpose="cmd">Change the label of the group to <span class="usertext">Pothole Size</span>.</span></li><li purpose="substep" id="ESRI_SUBSTEP_020DB1A4CD844913858D13BF8721FD5A"><span purpose="cmd">Change the number of columns to <span class="uicontrol">2</span>.</span></li><li purpose="substep" id="ESRI_SUBSTEP_00E61D16A0724ADA9FEAC5DF42ABAE99"><span purpose="cmd">Keep the default state and colors.</span></li><li purpose="substep" id="ESRI_SUBSTEP_C0C3C0DA61314786B85BA8F4DC3A5CD6"><span purpose="cmd">Click <span class="uicontrol">Save</span>.</span></li> </ol></div> </li><li purpose="step" id="ESRI_STEP_C22F953FBB9C479FBE952EDF3FC2F4E2"><span purpose="cmd">Click the button labelled <span class="uicontrol">Large</span> in the <span class="uicontrol">Pothole</span> group and change the Label to <span class="uicontrol">Large &gt;25cm</span>.</span><div class="info" purpose="info"><figure class="fig" href="#"><img src="GUID-4D1D0DF5-0B03-4E4C-A8B2-1779810D0BDD-web.png" alt="Change button label" title="Change button label"></figure></div></li><li purpose="step" id="ESRI_STEP_84B844F583B04ED7BFDB55AEECFD1FFC"><span purpose="cmd">Hold down <span class="uicontrol">Shift</span> and click the button labelled <span class="uicontrol">Small</span> to add it to the selection. This will ensure that subsequent changes to the appearance and data will be applied to both pothole buttons. </span><div class="substeps" id="ESRI_SUBSTEPS_08F658E66A0B4821BAAC79738DFCCDAA" purpose="substeps"><ol class="list-numbered" purpose="ol">
+<li purpose="substep" id="ESRI_SUBSTEP_06DAD41435904EC895FB40B11AE44070"><span purpose="cmd">Change the size of the button to the smallest size.</span></li><li purpose="substep" id="ESRI_SUBSTEP_7A9ADB3A1C164ED5B42934897BE34FE2"><span purpose="cmd">Keep the default shape and colors.</span> </li>
+<li purpose="substep" id="ESRI_SUBSTEP_1A41245EC4FE40F9B2113E4EECE74A6D"><span purpose="cmd">Click the <span class="uicontrol">Data</span> tab (next to the <span class="uicontrol">Appearance</span> tab).</span></li><li purpose="substep" id="ESRI_SUBSTEP_A5113714F03F4F639018F2C05B24036F"><span purpose="cmd">For each capture field (other than <span class="uicontrol">Size</span>), click the drop-down arrow and choose <span class="uicontrol">Device Variable</span>. Select the appropriate variables from the drop-down menu.</span><div class="info" purpose="info"><p id="GUID-F426F32E-CC01-4468-B161-EBF52BFAD76C">For example, the <span class="uicontrol">Latitude</span> field should have the <span class="uicontrol">Latitude</span> variable selected.<figure class="fig" href="#"><img src="GUID-C2B54ECD-4A1A-41D6-BDC4-5A6778A362FD-web.png" alt="Select variable" title="Select variable"></figure></p></div> </li><li purpose="substep" id="ESRI_SUBSTEP_DCA2CAB1E9A34E5981059EF4BBE1A9D3"><span purpose="cmd">Leave the data values for the <span class="uicontrol">Size</span> field as they are coded values that are different for each button.</span></li><li purpose="substep" id="ESRI_SUBSTEP_AB0D4501B3A6455EBB686BC201EF059C"><span purpose="cmd">Click <span class="uicontrol">Save</span>.</span></li> </ol></div> </li><li purpose="step" id="ESRI_STEP_39531202FC604FFA8279F53D2087D635"><span purpose="cmd">Deselect the <span class="uicontrol">Large &gt;25cm</span> button so that only the <span class="uicontrol">Small</span> button is highlighted, Change the label to be <span class="usertext">Small &lt;25cm</span>.</span></li><li purpose="step" id="ESRI_STEP_2E02A4FFD9FA484F849FC5A3B2D21631"><span purpose="cmd">Optionally change the order of the buttons by dragging them to the desired order. </span> <div class="info" purpose="info"><p id="GUID-E1B62FC5-2542-4AC3-8296-E18CDC9B6B07">You cannot drop them into a different group.</p></div></li><li purpose="step" id="ESRI_STEP_F0B1179BB8E44334B0F872022369DC65"><span purpose="cmd">Change the order of the Surface buttons to <span class="uicontrol">Main Road</span>, <span class="uicontrol">Freeway</span>, <span class="uicontrol">Footpath</span>, and <span class="uicontrol">Bike Path</span>.</span> </li><li purpose="step" id="ESRI_STEP_F8E4C6978C7D493B867D96D12AA6350F"><span purpose="cmd">Select each button in the <span class="uicontrol">Surface Type</span> group by holding down  <span class="uicontrol">Shift</span>  while clicking on each button and on the <span class="uicontrol">Data</span> tab, add variables to each of the fields (similar to how you added variables for the pothole buttons).</span> <div class="stepresult" purpose="stepresult"><figure class="fig" href="#"><img src="GUID-C5B0B2B6-A58B-42F2-9414-EAA834F23A9C-web.png" alt="Capture time variables" title="Capture time variables"></figure><div class="panel trailer-1 note" id="GUID-0DB51EE6-F7BB-41D2-AD1A-FCC9088DA47D"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-238B60F5-7592-4E70-A36F-3952FD4A092B">You must fill in the capture fields with the variables or they will not automatically populate when the point is captured. This will leave blank spaces in your attribute table.</p></div></div></li><li purpose="step" id="ESRI_STEP_F9535DCF0D004F95B7A64AC6005DE075"><span purpose="cmd">Click the group border and change <span class="uicontrol">Number of columns</span> to <span class="uicontrol">2</span>.</span> </li><li purpose="step" id="ESRI_STEP_3BC8B771A1EA4E3FBFFB23737EDAD880"><span purpose="cmd">Click <span class="uicontrol">Save</span>. </span> <div class="stepresult" purpose="stepresult"><p id="GUID-EB121C12-7D18-4BC7-8C02-47B71BF99124">Your project preview looks similar to the following:</p><p id="GUID-F53DC7DE-D14F-45CC-971B-786FF12F77F4"><figure class="fig" href="#"><img src="GUID-CECDADA6-F058-4585-BD9D-FF7E93FD0C81-web.png" alt="Project buttons" title="Project buttons"></figure></p></div></li><li purpose="step" id="ESRI_STEP_8AFF2F6AC55348298F55A98899382D9A"><span purpose="cmd">Select both pothole buttons and click the <span class="uicontrol">Data</span> tab (next to the <span class="uicontrol">Appearance</span> tab).</span> </li><li purpose="step" id="ESRI_STEP_475F26D1C1FA4221A1EAFC7E23E45F17"><span purpose="cmd">Enable the <span class="uicontrol">Take Photo</span> toggle button.</span> <div class="info" purpose="info"><p id="GUID-DF3F0F1B-BF3D-4DC3-A611-321855509D62">Two icons appear.</p></div></li><li purpose="step" id="ESRI_STEP_F01F3B6154544E0684400B321B64E990"><span purpose="cmd">Select the eye with the line through it.</span><div class="info" purpose="info"><figure class="fig" href="#"><img src="GUID-F91FF74E-2454-4012-BEB8-A3DDE2629F7E-web.png" alt="Take photo" title="Take photo"></figure><p id="GUID-8715D0D2-C070-4E28-AD1F-98FB4041AF07">This changes the camera mode to automatic, which allows you to capture the point and a photo without manually taking a picture. This option doesn’t allow a preview of the photo, so make sure when capturing your point, that your device’s camera is pointing at the pothole. This setting is best used when you need to capture the point quickly, for example, if you are driving a car and the camera position is  already pointing to the road. If the <span class="uicontrol">Take Photo</span> toggle button does not appear, confirm that you enabled attachments on your feature service.</p></div><div class="stepresult" purpose="stepresult"><p id="GUID-7EC0543B-9BEC-4485-A803-3AF982FDCDFD">Your project preview looks similar to the following:<figure class="fig" href="#"><img src="GUID-087B14EA-3169-42FF-9153-5123D45CCECE-web.png" alt="Project buttons with photo icon" title="Project buttons with photo icon"></figure></p></div></li><li purpose="step" id="ESRI_STEP_FA9BB1189CD24181955E80263F9F43C9"><span purpose="cmd">Click <span class="uicontrol">Save</span>. </span> <div class="info" purpose="info"><p id="GUID-E266EC9C-C848-4ABD-89F8-988A37BACE1D">Next you will use the exclusivity groups options in the <span class="uicontrol">Settings</span> menu to modify the surface type buttons. Exclusive groups prevent multiple line or polygon buttons from capturing data at the same time. In this example we will create an exclusivity group so you can't capture multiple surface types simultaneously.</p></div></li><li purpose="step" id="ESRI_STEP_ED9E89E9B13C4443AC0F661E0D66D11C"><span purpose="cmd">Click the <span class="uicontrol">Settings</span> button and select <span class="uicontrol">Exclusive groups</span>.</span> </li><li purpose="step" id="ESRI_STEP_FB621BDC62BB4F8E9D4F2C14BEC73CB2"><span purpose="cmd">Click <span class="uicontrol">New Group</span> and name it <span class="usertext">Surface Type</span>. </span> </li><li purpose="step" id="ESRI_STEP_F9FCBD559CAC4FB0934337D207D986D5"><span purpose="cmd">Select all the buttons in the <span class="uicontrol">Surface Type</span> group on the project preview, and then click <span class="uicontrol">Done</span>.</span></li><li purpose="step" id="ESRI_STEP_AFAE9A6718F948889EB3D92A6D572EC1"><span purpose="cmd">Click <span class="uicontrol">Save</span>.</span>
+</li></ol></div><section class="result padded-anchor" id="ESRI_RESULT_E2ACB8D81CCB466997E4F186EEB12C3F" purpose="result"><p id="GUID-81622F7A-CEAC-47B7-B3D3-1CA91DEEB5F9">You can now download your project in the mobile app and test it. For others to be able to use your project, share it in your ArcGIS organization.</p></section></section></section> 
+			
+				<hr>
+				<!--googleoff: all-->
+				
+	
+        
+		    <p class="feedback right">
+		        <a id="afb" class="icon-ui-contact" href="/feedback/" data-langlabel="feedback-on-this-topic" >有关此主题的反馈?</a>
+		    </p>
+        
+	
+
+				<!--googleon: all-->
+			
+		</main>
+	</div>
+	
+	<!--googleoff: all-->
+	
+		
+			<div id="main-toc-large" class="column-5">
+			    <div class="panel font-size--2 tablet-hide trailer-1">
+			      <h5 class="trailer-half">在本主题中</h5>
+			      <ol class="list-plain pre-0 trailer-0"><li><a href="#ESRI_SECTION1_131F70FF1C234625B09FE1DB74DA669D">Create a feature service</a></li><li><a href="#ESRI_SECTION1_1B7754473F97455FA71B7B72C2159735">Create a layer view in ArcGIS</a></li><li><a href="#ESRI_SECTION1_352B95C7985549D49BBDA9C54C9B98CA">Create a <ph translate="no" varid="QuickCapture_short">QuickCapture</ph> project</a></li></ol>
+			    </div>
+			    
+			    
+	  		</div>
+		
+    
+   <!--googleon: all-->
+
+
+
+
+          
+        </div>
+        <!-- ENDPAGECONTENT -->
+
+      </div>
+
+    </div>  <!-- End of wrapper -->
+
+  <footer class="footer leader-3 link-dark-gray" role="contentinfo">
+    <div class="grid-container">
+      <div class="row">
+        <nav class="column-6">
+          <h6 data-langlabel="arcgis-for-server">Arc<span>GIS Enterprise</span></h6>
+          <ul class="list-plain">
+            <li><a data-langlabel="home" href="../../../zh-CN/">主页</a></li>
+            <li><a data-langlabel="portal" href="../../../zh-CN/portal/">Portal</a></li>
+            <li><a data-langlabel="server" href="../../../zh-CN/server/">Server</a></li>
+            <li><a data-langlabel="data-store" href="../../../zh-CN/data-store/">Data Stores</a></li>
+            <li><a data-langlabel="cloud" href="../../../zh-CN/cloud/">云</a></li>
+            <li><a data-langlabel="apps" href="../../../zh-CN/apps/">应用程序</a></li>
+            <li><a data-langlabel="documentation" href="../../../zh-CN/documentation/">文档</a></li>
+          </ul>
+        </nav>
+
+        
+  <nav class="column-6">
+    <h6 data-langlabel="arcgis-platform">ArcGIS 平台</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="arcgis" href="//www.arcgis.com/">ArcGIS Online</a></li>
+      <li><a data-langlabel="arcgis-for-professionals" href="//pro.arcgis.com/">ArcGIS Pro</a></li>
+      <li><a data-langlabel="arcgis-for-server" href="//enterprise.arcgis.com/">ArcGIS Enterprise</a></li>
+      <li><a data-langlabel="arcgis-for-developers" href="https://developers.arcgis.com/">ArcGIS for Developers</a></li>
+      <li><a data-langlabel="arcgis-solutions" href="//solutions.arcgis.com/">ArcGIS Solutions</a></li>
+      <li><a data-langlabel="arcgis-marketplace" href="//marketplace.arcgis.com/">ArcGIS Marketplace</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <h6 data-langlabel="about-esri">关于 Esri</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="about-us" href="//www.esri.com/about-esri/">关于我们</a></li>
+      <li><a data-langlabel="careers" href="//www.esri.com/careers/">招贤纳士</a></li>
+      <li><a data-langlabel="insiders-blog" href="https://www.esri.com/about/newsroom/blog/">Esri 博客</a></li>
+      <li><a data-langlabel="user-conference" href="//www.esri.com/events/user-conference/index.html">用户大会</a></li>
+      <li><a data-langlabel="developer-summit" href="//www.esri.com/events/devsummit/index.html">开发者峰会</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <a class="esri-logo" href="//www.esri.com/" aria-label="Esri Home"></a>
+    <section class="footer-social-nav leader-1">
+            <a class="icon-social-twitter" aria-label="Esri on Twitter" href="https://twitter.com/Esri/"></a>
+            <a class="icon-social-facebook" aria-label="Esri on Facebook" href="https://www.facebook.com/esrigis/"></a>
+            <a class="icon-social-github" aria-label="Esri on GitHub" href="//esri.github.io/"></a>
+            <a class="icon-social-contact" aria-label="Contact Esri" href="//www.esri.com/about-esri/contact/"></a>
+    </section>
+	  
+  </nav>
+  
+  <div class="column-24 leader-1">
+    <p class="font-size--3"><a href="http://www.esri.com/legal/copyright-trademarks">Copyright &copy; 2019 Esri.</a> All rights reserved. | <a href="http://www.esri.com/legal/privacy/">隐私政策</a> | <a href="http://www.esri.com/legal/software-license">法律声明</a></p>
+  </div>
+  
+
+
+      </div>
+    </div>
+  </footer>
+  <!--googleoff: all-->
+
+  
+  
+	<script src="../../../zh-CN/assets/js/init.js" type="text/javascript"></script>
+	<!--<script src="../../../zh-CN/assets/js/drop-down.js" type="text/javascript"></script>-->
+	<script src="../../../zh-CN/assets/js/search/searchform.js" type="text/javascript"></script>
+	<script src="../../../zh-CN/cdn/js/link-modifier.js" type="text/javascript"></script>
+	<script src="../../../zh-CN/cdn/js/sitewide.js" type="text/javascript"></script>
+	<script src="../../../zh-CN/cdn/js/libs/highlight.pack.js" type="text/javascript"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+
+
+  
+    
+
+  <script src="../../../zh-CN/cdn/js/affix.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    $(function () {
+          var appendFlg = true;
+
+          $("#bigmac")
+          .on("affixed.bs.affix", function (evt) {
+            if (appendFlg) {
+              $("<a class='crumb' href='#'>Create a project from scratch</a>").insertAfter ($("#bigmac nav a").last());
+              appendFlg = false;
+            }
+          })
+          .on ("affix-top.bs.affix", function(evt) {
+            if (!appendFlg) {
+              $("#bigmac nav a").last().remove();
+            }
+            appendFlg = true;
+          })
+    })
+  </script>
+  
+        <script type="text/javascript">
+          window.doctoc = {
+            pubID: "2517",
+            tpcID: "6",
+            
+              prefix: "Help",
+              prefixUrl: "/zh-cn/quickcapture/help/",
+          
+            hideToc: false
+          }
+        </script>
+
+        <script type="text/javascript" src="../../../zh-CN/quickcapture/help/2517.js" ></script>
+        <script type="text/javascript" src="../../../zh-CN/cdn/calcite/js/protoc.js" ></script>
+        
+        
+
+  <noscript>
+        <p>
+            <a href="flisting.htm">flist</a>
+        </p>
+    </noscript>
+    <script type="text/javascript"></script>
+  
+  
+    
+    
+
+  </body>
+</html>

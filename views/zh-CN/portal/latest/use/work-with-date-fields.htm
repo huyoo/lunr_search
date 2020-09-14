@@ -1,0 +1,551 @@
+
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>  <html class="ie lt-ie9 lt-ie8 lt-ie7 ie6" dir="ltr"> <![endif]-->
+<!--[if IE 7]>     <html class="ie lt-ie9 lt-ie8 ie7" dir="ltr"> <![endif]-->
+<!--[if IE 8]>     <html class="ie lt-ie9 ie8" dir="ltr"> <![endif]-->
+<!--[if IE 9]>     <html class="ie ie9" dir="ltr"> <![endif]-->
+<!--[if !IE]><!--> <html dir="ltr" lang="zh-CN"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>使用日期字段&mdash;Portal for ArcGIS | ArcGIS Enterprise 文档</title>
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+    <script>
+      var docConfig = {
+        locale: 'zh-CN'
+        ,localedir: 'zh-cn'
+        ,langSelector: ''
+        
+        ,relativeUrl: false
+        
+
+        ,searchformUrl: '/search/'
+        ,tertiaryNavIndex: ''
+
+        
+      };
+    </script>
+	 
+
+
+    
+    <!--[if lt IE 9]>
+      <script src="../../../../zh-CN/cdn/js/libs/html5shiv.js" type="text/javascript"></script>
+      <script src="../../../../zh-CN/cdn/js/libs/selectivizr-min.js" type="text/javascript"></script>
+      <script src="../../../../zh-CN/cdn/js/libs/json2.js" type="text/javascript"></script>
+      <script src="../../../../zh-CN/cdn/js/libs/html5shiv-printshiv.js" type="text/javascript" >
+
+    <![endif]-->
+
+     <!--[if lt IE 11]>
+    <script>
+      $$(document).ready(function(){
+        $$(".hideOnIE").hide();
+      });
+    </script>
+    <![endif]-->
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<link href="../../../../zh-CN/assets/img/favicon.ico" rel="shortcut icon" >
+	<link href="../../../../zh-CN/assets/css/screen.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/cdn/calcite/css/documentation.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/assets/css/print.css" media="print" type="text/css" rel="stylesheet" />
+
+	<!--
+	<link href="../../../../zh-CN/assets/css/screen_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/assets/css/documentation/base_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/assets/css/print_l10n.css" media="print" type="text/css" rel="stylesheet" />
+	-->
+	
+	
+		<script src="../../../../zh-CN/cdn/js/libs/jquery.1.9.1.min.js" type="text/javascript"></script>
+	
+	<script src="../../../../zh-CN/cdn/js/libs/jquery.cookie.js" type="text/javascript"></script>
+	<link href="../../../../zh-CN/cdn/css/colorbox.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/cdn/css/colorbox_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<script src="../../../../zh-CN/cdn/js/libs/jquery.colorbox-min.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/assets/js/video-init.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/assets/js/sitecfg.js" type="text/javascript"></script>
+	
+		<script src="../../../../zh-CN/assets/js/signIn.js" type="text/javascript"></script>
+	
+
+	<!--- Language Picker -->
+	<script src="../../../../zh-CN/assets/js/locale/l10NStrings.js" type="text/javascript"></script>
+	
+		 
+	
+
+	<script src="../../../../zh-CN/assets/js/calcite-web.js" type="text/javascript"></script>
+
+
+
+  <!--- search MD -->
+    <META name="description" content="日期字段具有多种格式，但仅支持特定输入。日期始终以 UTC 格式存储，但以本地日期和时间格式显示。"><META name="last-modified" content="2019-12-6"><META name="product" content="arcgis-portal-windows,arcgis-portal-linux,arcgis-enterprise-windows,arcgis-enterprise-linux"><META name="sub_category" content="Portal for ArcGIS"><META name="search-collection" content="help"><META name="content_type_label" content="帮助主题"><META name="sub_category_label" content="Portal for ArcGIS"><META name="search-category" content="help-general"><META name="subject_label" content="PORTAL,服务,SERVER"><META name="version" content="10.8"><META name="content_type" content="Help Topic"><META name="subject" content="PORTAL,SERVICES,SERVER"><META name="content-language" content="zh-cn">
+    <!--- search MD -->
+
+  
+  <script src="../../../../zh-CN/assets/js/switchers/portal-1.js" type="text/javascript"></script>
+  
+      
+
+</head>
+
+<!--
+      pub: GUID-7B47163B-CE1B-465F-BEEE-4DADDB8DFF09=37
+      tpc: GUID-44E45F76-15DA-44D1-BBA7-94499BAD2F79=5
+      -->
+
+
+<!-- variable declaration, if any -->
+<!-- can change following macro to set variable once we are on Jinja 2.8 -->
+
+
+
+
+
+<body class="claro zh-CN server">
+  
+
+  <!-- Drawer location -->
+  <div class="drawer drawer-left js-drawer" data-drawer="top-nav">
+        <nav class="drawer-nav" role="navigation">
+          <aside class="side-nav">
+            <h2 class="side-nav-title">Arc<span>GIS</span> Enterprise</h2>
+            <form id="helpSearchForm" class="margin-left-half margin-right-half leader-half trailer-half drawer-search-form" method="GET">
+              <input type="search" name="q"  placeholder="搜索 ArcGIS Enterprise 帮助">
+              <input type="hidden" name="collection" value="help" />
+              <input type="hidden" name="product" value="arcgis-portal-windows" />
+              <input type="hidden" name="version" value="10.8" />
+              <input type="hidden" name="language" value="zh-CN" />
+            </form>    
+             <a id="nav-portal" data-langlabel="portal" href="../../../../zh-CN/portal/" class="side-nav-link">Portal</a>
+             
+            <a id="all-servers" data-langlabel="all-servers" href="../../../../zh-CN/server/" class="side-nav-link">所有服务器</a>
+            <a id="gis-server" data-langlabel="gis-server" href="../../../../zh-CN/server/" class="side-nav-link">GIS Server</a>
+            <a id="image-server" data-langlabel="image-server" href="../../../../zh-CN/image/" class="side-nav-link">Image Server</a>
+            <a id="geo-analytics-server" data-langlabel="geo-analytics-server" href="../../../../zh-CN/geoanalytics/" class="side-nav-link">GeoAnalytics Server</a>
+            <a id="geoevent-server" data-langlabel="geoevent-server" href="../../../../zh-CN/geoevent/" class="side-nav-link">GeoEvent Server</a>
+            <a id="notebook-server" data-langlabel="notebook-server" href="../../../../zh-CN/notebook/" class="side-nav-link">Notebook Server</a>
+            <a id="nav-data-store" data-langlabel="data-store" href="../../../../zh-CN/data-store/" class="side-nav-link">Data Stores</a>
+            <a id="nav-cloud" data-langlabel="cloud" href="../../../../zh-CN/cloud/" class="side-nav-link">云</a>
+            <a id="nav-apps" data-langlabel="apps" href="../../../../zh-CN/apps/" class="side-nav-link">应用程序</a>
+            <a id="nav-doc" data-langlabel="documentation" href="../../../../zh-CN/documentation/" class="side-nav-link">文档</a>
+
+          </aside>
+        </nav>
+    </div>
+
+    <!-- user navigation collapses to drawer on mobile -->
+    
+    <div class="drawer drawer-right js-drawer hide-if-logged-out logged-in-navigation" data-drawer="user-nav">
+      <nav class="drawer-nav">
+        <aside class="side-nav">
+          <a class="side-nav-link agolProfile" href="#">我的个人资料</a>
+          <a class="side-nav-link icon-ui-sign-out js-log-out" href="#">登出</a>
+        </aside>
+      </nav>
+    </div>
+    
+<!-- End of drawer -->
+
+  
+  <div class="wrapper">
+      <!--googleoff: all-->
+
+      <header class="top-nav" data-skin="learn">
+        <a class="skip-to-content" href="#skip-to-content">Skip To Content</a>
+        <div class="grid-container">
+          <div class="column-24">
+
+
+            <!--<div class="top-nav-title-wrapper text-center ">-->
+              <a href='../../../../zh-CN/' class="top-nav-title tablet-hide"><span>Arc</span>GIS  Enterprise</a>
+              <a href='../../../../zh-CN/' class="icon-ui-menu top-nav-title js-drawer-toggle tablet-show" data-drawer="top-nav"><span>Arc</span>GIS Enterprise</a>
+            <!--</div> -->
+
+          
+            <nav role="navigation" class="top-nav-list left tablet-hide">
+              <a id="nav-portal" data-langlabel="portal" href="../../../../zh-CN/portal/" class="top-nav-link">Portal</a>
+
+                <div class="dropdown js-dropdown ">
+                  <a class="top-nav-link js-dropdown-toggle" tabindex="0" aria-haspopup="true" aria-expanded="false" href="#">Servers</a>
+                  <nav class="dropdown-menu featured" role="menu">
+                    <ul class="dropdown-sublist-featured">
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/get-started/latest/windows/additional-server-deployment.htm" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path  d="M42.92 6.1H4.12v8.566l.833.832-.835.833-.018 7.332.845.847-.825.824V33.9h25v5.2h-2v1.075H8.02v.8h19.1v.925h4.8v-.925H40v-.8h-8.08V39.1h-2v-5.2h13v-8.566l-.834-.834.835-.834v-7.332l-.835-.834.835-.834zm-11.8 35h-3.2v-1.2h3.2zm11-8H4.92v-7.434l.767-.766h35.668l.765.766zm0-9.766l-.766.766H5.666l-.766-.767.017-6.669.766-.764h35.671l.766.766zm0-9l-.766.766H5.687l-.766-.766V6.9h37.2zM19 11.9h-2v-.8h2zm-4 0h-2v-.8h2zm-4 0H9v-.8h2zm6 8.2h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9zm8 9h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9z"/></svg></span>
+                          <span class="sublink-text">所有服务器</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/server/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M45.98 33.575a.616.616 0 0 0-.335-.51l-3.362-2.03 3.362-2.031a.556.556 0 0 0 0-1.02l-11.1-6.704a1.293 1.293 0 0 0-1.112 0L22.33 27.982a.556.556 0 0 0 0 1.02l3.36 2.03-3.358 2.03a.556.556 0 0 0-.002 1.021l3.322 2.006-3.324 2.008a.555.555 0 0 0 .002 1.017l11.102 6.703a1.25 1.25 0 0 0 1.11.002l11.104-6.706a.556.556 0 0 0 0-1.02l-3.32-2.006 3.318-2.004a.607.607 0 0 0 .335-.509zM33.837 21.97c.026-.01.286-.005.29-.005l10.814 6.53-10.8 6.523c-.028.01-.284.005-.294.006l-10.813-6.53zm11.105 16.636l-10.8 6.523a2.564 2.564 0 0 1-.295.006l-10.81-6.529 3.39-2.047 7.004 4.23a1.083 1.083 0 0 0 .557.131 1.101 1.101 0 0 0 .554-.13l7.01-4.233zM34.14 40.098a2.545 2.545 0 0 1-.294.006l-10.812-6.53 3.43-2.073 6.97 4.208a1.25 1.25 0 0 0 1.107-.001l6.966-4.206 3.431 2.073zM9 8H7V7h2zm8 8h-2v-1h2zm-4-8h-2V7h2zm4 0h-2V7h2zm-4 8h-2v-1h2zm7.316 11.1H3.9v-6.434l.766-.766h35.668l.766.766v2.12l.8.483v-2.935l-.826-.826.826-.845v-6.329l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9h16.88a2.632 2.632 0 0 1 .336-.8zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zm0 8v-5.668l.766-.766h35.668l.766.766v5.67l-.746.764H4.666zM15 24v-1h2v1zm-4 0v-1h2v1zm-2-8H7v-1h2zm-2 8v-1h2v1z"/></svg></span>
+                          <span class="sublink-text">GIS Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/image/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 8h-2V7h2zm-4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm8 8h-2v1h2zm-8 0H7v1h2zm4 9v-1h-2v1zm-4 0v-1H7v1zm8 0v-1h-2v1zm4 3.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V21h-.8v-.334l-.766-.766H4.666l-.766.766V27.1H21zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zm40.234 4v21.8H23.1V23.1zm-.8 16.366L39.466 44.1h2.868l1.766-1.766zm-20.2-9.932l5.634-5.634h-2.868L23.9 26.666zm6.2-5.068L24.466 30.1h2.868l2.766-2.766zM28.466 30.1H30.1v-1.634zm2.434 0h6.2v-6.2h-6.2zm-7 7h6.2v-6.2h-6.2zm7 0h6.2v-6.2h-6.2zm0 6.434l5.634-5.634h-2.868L30.9 40.666zm7-7l5.634-5.634h-2.868L37.9 33.666zm1.634-5.634H37.9v1.634zm-8.634 7v1.634l1.634-1.634zm.566 6.2h2.868l2.766-2.766v-2.868zm6.434-3.566l2.634-2.634H37.9zM35.466 44.1H37.1v-1.634zm2.434 0h.434l5.766-5.766V37.9h-2.434L37.9 41.666zm6.2-8.634L42.466 37.1H44.1zm0-4L38.466 37.1h2.868l2.766-2.766zm0-7.566h-6.2v6.2h6.2zm-20.2 0v1.634l1.634-1.634zm0 20.2h6.2v-6.2h-6.2zm20.2 0v-.634l-.634.634z"/></svg></span>
+                          <span class="sublink-text">Image Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/geoanalytics/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 16h-2v-1h2zm-8 8v-1H7v1zm8 0v-1h-2v1zM13 7h-2v1h2zm4 0h-2v1h2zM9 7H7v1h2zm21.45 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V27.9h-1.464l-.801-.8H41.1v-6.434l-.766-.766H4.666l-.766.766V27.1h27.15zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM13 24v-1h-2v1zm0-9h-2v1h2zm-4 0H7v1h2zm26.672 27.148A1.87 1.87 0 0 1 35.9 43a1.91 1.91 0 1 1-3.763-.222l-9.845-3.414A1.88 1.88 0 0 1 21 39.9a1.9 1.9 0 1 1 1.474-3.084l4.692-2.346A1.878 1.878 0 0 1 27.1 34a1.902 1.902 0 0 1 1.9-1.9 1.867 1.867 0 0 1 .781.191l3.788-5.05A1.88 1.88 0 0 1 33.1 26a1.9 1.9 0 1 1 3.491 1.026l4.889 4.888c-.069.056-.144.1-.21.162a3.986 3.986 0 0 0-.358.402l-4.883-4.883A1.889 1.889 0 0 1 35 27.9a1.867 1.867 0 0 1-.781-.191l-3.788 5.049a1.868 1.868 0 0 1 .437.965l9.204.614c-.018.11-.049.218-.058.33A3.93 3.93 0 0 0 40 35c0 .046.01.09.01.135l-9.185-.612A1.913 1.913 0 0 1 29 35.9a1.889 1.889 0 0 1-1.474-.716l-4.692 2.346a1.878 1.878 0 0 1 .066.47 1.9 1.9 0 0 1-.105.625c-.007.02-.022.036-.03.056l9.63 3.34a1.87 1.87 0 0 1 2.786-.505l5.415-4.437c.067.108.127.22.204.322a3.9 3.9 0 0 0 .292.306zM33.9 26a1.092 1.092 0 0 0 .43.872 1.12 1.12 0 0 0 1.42-.068A1.1 1.1 0 1 0 33.9 26zm-6 8a1.1 1.1 0 0 0 2.196.093 1.135 1.135 0 0 0-.426-.965A1.087 1.087 0 0 0 29 32.9a1.101 1.101 0 0 0-1.1 1.1zm-5.8 4a1.098 1.098 0 1 0-.06.362A1.101 1.101 0 0 0 22.1 38zm13 5a1.1 1.1 0 1 0-2.2 0 1.1 1.1 0 0 0 2.2 0zm10.8-8a1.9 1.9 0 1 1-3.8 0c0-.053.003-.105.007-.158A1.9 1.9 0 0 1 45.9 35zm-.8 0a1.1 1.1 0 0 0-2.196-.093 1.153 1.153 0 0 0 .216.752A1.1 1.1 0 0 0 45.1 35z"/></svg></span>
+                          <span class="sublink-text">GeoAnalytics Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/geoevent/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M13 8h-2V7h2zm4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm12.418 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826v2.117c-.259-.177-.53-.337-.8-.497v-1.288l-.766-.766H4.666l-.766.766V27.1h17.933c-.148.26-.283.53-.415.8zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM9 24v-1H7v1zm4-9h-2v1h2zm0 9v-1h-2v1zm-4-9H7v1h2zm8 9v-1h-2v1zm16.9 2h-.8v8.9H39v-.8h-5.1zm.1-3.901a11.9 11.9 0 1 0 11.9 11.9 11.914 11.914 0 0 0-11.9-11.9zm0 23a11.1 11.1 0 1 1 11.1-11.1 11.112 11.112 0 0 1-11.1 11.1z"/></svg></span>
+                          <span class="sublink-text">GeoEvent Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/notebook/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M22 27.1H3.9v-6.434l.766-.766h18.576a5.262 5.262 0 0 1 .83-.8H4.666l-.766-.766v-5.668l.766-.766h35.668l.766.766V18h.8v-5.666l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9H22zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zM9 8H7V7h2zm8 0h-2V7h2zm-4 0h-2V7h2zm2 16v-1h2v1zm-4 0v-1h2v1zm-4 0v-1h2v1zm0-8v-1h2v1zm8 0v-1h2v1zm-4 0v-1h2v1zm18.9 8.1h-1.8v1.8h1.8zm-.8 1h-.2v-.2h.2zm15.498-4.48a2.727 2.727 0 0 0-1.62-.5v-.02H27.25a3.154 3.154 0 0 0-3.15 3.15V38.1h-1.68a3.386 3.386 0 0 0-2.872 1.58 3.49 3.49 0 0 0-.157 3.419 3.241 3.241 0 0 0 2.954 1.801h15.161a3.404 3.404 0 0 0 3.394-3.4V26.9h5v-3.65a3.224 3.224 0 0 0-1.302-2.63zM22.345 44.1a2.44 2.44 0 0 1-2.23-1.341 2.706 2.706 0 0 1 .11-2.65A2.588 2.588 0 0 1 22.42 38.9h12.89a3.395 3.395 0 0 0 0 5.2zM40.1 23.192V41.5a2.6 2.6 0 1 1-2.6-2.6v-.8H24.9V23.25a2.352 2.352 0 0 1 2.35-2.35h13.795a3.183 3.183 0 0 0-.945 2.292zm5 2.908h-4.2v-2.908a2.274 2.274 0 0 1 1.44-2.18 1.944 1.944 0 0 1 1.791.259 2.423 2.423 0 0 1 .97 1.979zm-17.1 5h9v.8h-9zm0 3h7v.8h-7zm0-6h9v.8h-9zm4-3h5v.8h-5z"/></svg></span>
+                          <span class="sublink-text">Notebook Server</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+
+              <a id="nav-data-store" data-langlabel="data-store" href="../../../../zh-CN/data-store/" class="top-nav-link">Data Stores</a>
+              <a id="nav-cloud" data-langlabel="cloud" href="../../../../zh-CN/cloud/" class="top-nav-link">云</a>
+              <a id="nav-apps" data-langlabel="apps" href="../../../../zh-CN/apps/" class="top-nav-link">应用程序</a>
+            </nav>
+
+
+            
+            
+            
+
+            <div class="margin-left-1 top-nav-list right hide-if-logged-in logged-out-navigation">
+               
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+              
+              <a data-langlabel="sign-in" id="login-link" class="icon-ui-user top-nav-link link-blue login-link" href="#">登录</a>
+              
+            </div>
+
+            
+            <nav class="margin-left-1 top-nav-list right hide-if-logged-out logged-in-navigation">
+              
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+             
+              <div class="dropdown js-dropdown right">
+
+                <div class="tablet-show top-nav-link">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a href="#" data-drawer="user-nav" class="user-nav-name js-drawer-toggle" data-first-name></a>
+                </div>
+
+                <div class="tablet-hide top-nav-link js-dropdown-toggle">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a class="user-nav-name top-nav-dropdown dropdown-btn" data-first-name>&nbsp;</a>
+                </div>
+
+                <nav class="dropdown-menu dropdown-right">
+                
+                  <a class="dropdown-link agolProfile" id="agolProfile" href="#">我的个人资料</a>
+                  <a class="dropdown-link js-log-out" id="agolLogout" href="#">登出</a>
+                </nav>
+              </div>
+            </nav>
+            
+
+            
+          </div>
+        </div>
+      </header>
+
+      <div class="js-search search-overlay">
+        <div class="search-content" role="dialog" aria-labelledby="search">
+          <form method="GET" id="helpSearchForm">
+            <label>
+              搜索 ArcGIS Enterprise 帮助
+              <div class="search-bar">
+                <input type="search" name="q"  placeholder="搜索 ArcGIS Enterprise 帮助" class="search-input js-search-input">
+                <input type="hidden" name="collection" value="help" />
+                <input type="hidden" name="product" value="arcgis-portal-windows" />
+                <input type="hidden" name="version" value="10.8" />
+                <input type="hidden" name="language" value="zh-CN" />
+              </div>
+            </label>
+            <input type="hidden" name="relativePath" value="../../../../" /><button type="submit" class="btn btn-large right">搜索</button>
+          </form>
+        </div>
+      </div>
+
+      <!--googleon: all-->
+
+      <div id="skip-to-content">
+        <!--googleoff: all-->
+        <header class="sub-nav sub-nav-learn">
+          <div class="grid-container">
+            
+            <div class="column-24">
+              <div style="display:table;" class="sdk-home-banner">
+                <div class="sdk-home-banner-content">
+                  <h1 class="sub-nav-title link-white">Portal for ArcGIS</h1>
+                </div>
+              </div>
+            </div>
+
+            <div class="column-24">
+              <nav class='sub-nav-list tablet-hide'><a class="sub-nav-link" href="../../../../zh-CN/portal/" target="_top" title="Portal for ArcGIS 主页">主页</a><a class="sub-nav-link is-active" href="../../../../zh-CN/portal/latest/use/" target="_top" title="使用 Portal for ArcGIS">使用</a><a class="sub-nav-link" href="../../../../zh-CN/portal/latest/administer/windows/" target="_top" title="安装、管理和保护 Portal for ArcGIS">管理</a></nav><select class='tablet-show select-full trailer-half js-select-nav'><option value="../../../../zh-CN/portal/">主页</option><option selected="true" value="../../../../zh-CN/portal/latest/use/">使用</option><option value="../../../../zh-CN/portal/latest/administer/windows/">管理</option></select>
+            </div>
+
+          </div>
+        </header>
+        <!--googleon: all-->
+       
+        <!-- content goes here -->
+        <div class="grid-container ">
+          
+
+            
+              
+  <!--BREADCRUMB-BEG--><div id="bigmac" class="sticky-breadcrumbs trailer-2" data-spy="affix" data-offset-top="180"> </div><!--BREADCRUMB-END-->
+  <!--googleoff: all-->
+    <div class="column-5 tablet-column-12 trailer-2 ">
+      <aside class="js-accordion accordion reference-index" aria-live="polite" role="tablist">
+        <div></div>
+      </aside>
+
+      <div class="js-sticky scroll-show tablet-hide leader-1 back-to-top" data-top="0" style="top: 0px;">
+        <a href="#" class="btn btn-fill btn-clear">返回顶部</a>
+      </div>
+    </div>
+  <!--googleon: all-->
+  
+            
+            
+            
+	
+		<div class="column-13  pre-1 content-section">
+	
+		<header class="trailer-1"><h1>使用日期字段</h1></header>
+
+		 
+	<!--googleoff: all-->
+	
+		
+				<aside id="main-toc-small" class="js-accordion accordion tablet-show trailer-1">
+			      <div class="accordion-section">
+			        <h4 class="accordion-title">在本主题中</h4>
+			        <div class="accordion-content list-plain">
+			          <ol class="list-plain pre-0 trailer-0"><li><a href="#ESRI_SECTION1_2B129AB823134B9C8DDB25093B9AF0EA">以 MM/DD/YYYY hh:mm:ss 格式输入日期</a></li><li><a href="#ESRI_SECTION1_BCC2E215ABAE4997983D065D5CF66FA1">发布日期字段以 UTC 存储时间</a></li><li><a href="#ESRI_SECTION1_5AFD51BEB6174217868FC020E998436C">文件中支持的日期格式</a></li><li><a href="#ESRI_SECTION1_43AB703E1D7A4C3A82BE40E55F8240E5">更改日期字段的显示格式</a></li></ol>
+			        </div>
+			      </div>
+			     </aside>
+		
+    
+   <!--googleon: all-->
+
+
+		<main>
+			
+	
+    	
+    
+
+
+			
+<p id="GUID-F310E874-AA03-41B5-9655-E5140460F34D">许多要素图层会存储日期和时间（时态）信息。日期和时间可能表示要素在特定位置的时间或在现实世界中首次观察到要素的时间。日期和时间也可能与图层中的其他非空间属性相关，例如，财产出售的时间、最后一次从特定水体抽取样本的时间、或者从特定消防站派遣消防车的日期和时间。</p><p id="GUID-B3EBDDEA-8B32-43EF-ABDA-ACBAF65BB9D7" ishcondition="agol_plat=portal">在 <span class="ph">ArcGIS Enterprise</span> 中，您可以在地图中<a class="xref xref" href="../../../../zh-CN/portal/latest/use/configure-time.htm">启用时间动画</a>，以便使用地图的人可以<a class="xref xref" href="../../../../zh-CN/portal/latest/use/view-time-maps.htm">看到随着时间发生的变化</a>。您还可以<a class="xref xref" href="../../../../zh-CN/portal/latest/use/configure-pop-ups.htm#ESRI_SECTION1_0505720B006E43C5B14837A353FFF9EC">将日期或日期和时间信息列入您为图层配置的弹出窗口中</a>。</p><p id="GUID-171A1114-F645-4A06-84C2-CA32CBD7720C">时态数据存储在托管要素图层中的日期字段中。<span class="ph">要在托管要素图层中正确添加、编辑或解释日期值，了解日期在 <span class="ph">ArcGIS Enterprise</span> 门户中的存储和显示方式十分重要。</span> 使用日期字段时，请谨记以下信息：</p><section class="section1 padded-anchor" id="ESRI_SECTION1_2B129AB823134B9C8DDB25093B9AF0EA" purpose="section1"><h2>以 MM/DD/YYYY hh:mm:ss 格式输入日期</h2><p id="GUID-80819461-3658-443C-9352-0634CA05BE7B">您可以使用 <span class="ph">Map Viewer</span> 中的日期和时间下拉菜单、图层项目页面的“数据”选项卡或应用程序向要素图层添加日期值。如果计算日期字段的值以填充或查询该字段，则日期必须以 MM/DD/YYYY hh:mm:ss 的格式输入，并用单引号括起来。例如，要将日期字段设置为 2014 年 5 月 27 日 5:00 PM，需输入 <span class="usertext">'05/27/2014 05:00:00PM'</span>、<span class="usertext">'05/27/2014 5:00PM'</span> 或 <span class="usertext">'05/27/2014 17:00:00'</span>（24 小时制）。不支持单独存储时间 - 时间必须始终是日期的一部分。如果不提供时间，时间默认为上午 12 : 00</p></section><section class="section1 padded-anchor" id="ESRI_SECTION1_BCC2E215ABAE4997983D065D5CF66FA1" purpose="section1"><h2>发布日期字段以 UTC 存储时间</h2><p id="GUID-ABDDCCEB-8140-45A3-A1EC-C1EB7C242BF7">协调世界时间（缩写为 UTC）与位于英国格林尼治附近的地球本初子午线（零度经线）的当前时间几乎相同。UTC 是 GMT（格林尼治时间）更为精确的版本。如果从文件、<span class="ph">ArcGIS Pro</span> 或 <span class="ph">ArcGIS Desktop</span> 应用程序中发布包含日期字段的要素图层，则需要指定是以本地时区存储日期值还是以 UTC 时间存储日期值。如果日期字段包含本地时区信息，则必须在发布图层时指定。<span class="ph">这使发布过程能够将本地时间数据转换为 UTC 以存储在数据库中。在门户中查看这些时间值时，这些时间值将采用本地时间正确显示。</span> 但是，数据将转换为 UTC 时间并以 UTC 时间的形式存储在数据库中。日期之所以转换为 UTC，是因为托管数据的服务器的物理位置和查看包含数据的地图的人员可能位于世界中的任何位置。<span class="ph">以 UTC 存储时间允许门户将数据转换为正确的本地时区，而不会受到服务器位置或应用程序查看者位置的影响。</span></p><section class="section2 padded-anchor" id="ESRI_SECTION2_8D691CA5DE5245468EA9FC1DDD3448EA" purpose="section2"><h3>日期的显示方式</h3><p id="GUID-CD538944-4444-4BF7-92EE-AD88F570F290">您用于查看数据的客户端决定了日期和时间值的显示方式。<span class="ph">在您的门户中显示日期字段时，会将日期从 UTC 时间转换成您的当地时间。</span>  此操作可通过查询计算机并请求其时区设置来实现。例如，假设您的计算机设置为太平洋标准时间 (PST)。PST 比 UTC 晚八小时 - 当 UTC 时间为 9:00 a.m 时，PST 时间为 1:00 a.m。（如果采用夏令时，则该时间为 2:00 a.m）。</p></section><section class="section2 padded-anchor" id="ESRI_SECTION2_56F3ECC37BE54EEFA27EC6068CF3AF16" purpose="section2"><h3>插入日期和时间值</h3><p id="GUID-9F22ED7B-356D-45FA-8013-2999853CF82E"><a class="xref xref" href="../../../../zh-CN/portal/latest/use/calculate-fields.htm#ESRI_SECTION3_745CE29982284900A565D607C4CAE94B">使用 SQL 标准日期函数</a>计算托管要素图层中的日期和时间值时，必须以 UTC 格式提供时间。在表中显示计算的值时，将以本地时间显示。例如，如果您的本地时间是 PST，并且在计算时输入 <span class="usertext">'05/27/2014 12:23:00 PM'</span> 作为值，则计算字段中的值将根据您的计算机时间进行时间转换，而后显示。在此示例中，计算值将显示为 <span class="usertext">'05/27/20140 5:23:00 AM'</span>。</p></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_5AFD51BEB6174217868FC020E998436C" purpose="section1"><h2>文件中支持的日期格式</h2><p id="GUID-B1C7679D-96BA-439B-8AA5-CE2DBE2783D3" ishcondition="agol_plat=portal">添加文件（例如 <span class="ph">Microsoft Excel</span>、逗号分隔值 (CSV) 或其他带分隔符的文本文件）时，门户仅识别以下日期格式：</p><p id="GUID-C5B60537-4A68-4697-B589-4C5995096664">从 CSV 文件发布托管要素图层时，支持以下日期格式：<h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><thead><tr><th colspan="1">格式</th><th colspan="1">示例</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-3F9CD21B-3766-4945-95F5-A4F6F72F8869">M/DD/YYYY</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-0626FD07-DA3D-4065-8E06-6E87860CA171">7/28/2009</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-A743747A-4C43-4567-A82B-D750FDF2FFFF">MM/DD/YYYY</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-40D95B42-32DC-4CF2-887E-7D95B0FB1451">07/28/2009</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-6628C47E-2D78-4DE3-83B2-704588E1B013">M/DD/YY</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-68648BC1-988E-432A-96D0-DBC0A6156CD9">7/28/09</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-33ACFF72-E0B7-4C17-85C5-AA8A774243FB">MM/DD/YY</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-942C5F86-B569-4376-87ED-0E08B656BDEC">07/28/09</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-070FF82D-AE49-44D1-B861-03728C3E673B">YYYY/MM/DD</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-27608882-8C8F-4653-B9D2-C1116DFE5873">2009/07/28</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-F4ECFD3C-C28A-48A8-B04E-91F7F5EF83E6">YYYY-MM-DD</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-49522363-7D0D-4D7D-8D12-00904D90820E">2009-07-28</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-BBD5630A-5DB3-42AC-A526-3AC7041F680B">YYYY/MM/DD hh:mm:ss</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-70C9BE4D-41E7-4054-9364-E94196CEA1FD">2009/07/28 17:23:00</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-C5E41D1B-B331-4D15-92DC-7A41BC603217">YYYY/M/DD hh:mm:ss</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-4B50BBB7-E5E1-436A-B646-10A9B7064A42">2009/7/28 17:23:00</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-CE7216A6-32E4-48D4-9D22-CCBEA6FB6F0D">YYYY-MM-DD hh:mm:ss</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-29B82558-8F4E-4CE3-A9ED-A7A22B83E8D2">2009-07-28 17:23:00</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-18EBF7DF-0645-4F1A-AD3F-EEC0A4497BDF">YYYY-M-DD hh:mm:ss</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-1A9D2AEB-8397-47BD-9BF0-0256C331A3C9">2009-7-28 17:23:00</p></td></tr></tbody><caption></caption></table></div></p><p id="GUID-0B147C5A-5487-4282-B45D-B7DA011A517E"><div class="panel trailer-1 note" id="GUID-5FA03B13-5113-4D70-A75C-01EDFD6F5B9C"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-FEC31442-DA56-4A15-AC90-340BE397BDB9"> 如果某字段配置为日期字段，其中包含不支持的或无效的格式，则尽管您在发布之前更改字段类型，该字段在生成的托管要素图层中仍将创建为字符串数据类型。</p></div></p><p id="GUID-8350EFD4-CA84-48AB-B19B-0431DD75E0BF">如果您将 CSV 文件直接添加至 <span class="ph">Map Viewer</span>，以下日期格式将加载为日期，但是时间不会显示在 <span class="ph">Map Viewer</span> 的表中：<h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><colgroup width="1.50*"></colgroup><thead><tr><th colspan="1">格式</th><th colspan="1">示例输入</th><th colspan="1">表值</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-C22FB4C9-31E1-4FD8-9AD6-01AC61A5D081">M/DD/YYYY 12 小时制</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-261391D1-E248-48AE-BCEE-E4BB12E3827A">7/28/2009 5:23 PM</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-E57752FB-3AF9-4B8E-8751-C8571C4F2572">2009 年 7 月 28 日</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-313AA07A-FDC5-43DD-9A5A-000F2893EC66">MM/DD/YYYY 12 小时制</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-A7D79F75-D372-476F-8A28-6C4ECB369EBF">07/28/2009 5:23 PM</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-61B64C1E-BEE1-418C-933C-5E2EA5E440C3">2009 年 7 月 28 日</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-BF092BFE-6493-49FC-A0EA-E52C293D3ACB">M/DD/YY 12 小时制</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-8EC7C921-C69B-4943-A9C1-90610BA36AF0">7/28/09 5:23 PM</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-7A3E6511-B5D4-4402-B5CF-F63567318B3C">2009 年 7 月 28 日</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-EBB69E0B-0A9E-46F3-ACB9-A71C15A5B0BF">MM/DD/YY 12 小时制</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-1EB72161-EE52-4D2A-A2C9-06AE49AE0C55">07/28/09 5:23 PM</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-D583C99D-2FD0-4835-BFB3-A062EB27866C">2009 年 7 月 28 日</p></td></tr></tbody><caption></caption></table></div></p><p id="GUID-746BF682-D927-489A-AF8D-9C28750A3E94">如果您将 CSV 文件直接添加至 <span class="ph">Map Viewer</span>，以下日期格式将加载为字符串字段，且与其在 CSV 文件中的显示完全相同：<h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><thead><tr><th colspan="1">格式</th><th colspan="1">示例输入</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-0C64CB75-33C8-4520-8BCB-360C47130AEE">M/DD/YYYY</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-C8249313-EE95-48D0-A68D-2B04551898E3">7/28/2009</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-D950ACD9-E15C-4E6C-9485-157D1C326D33">MM/DD/YYYY</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-956294C5-3AC5-4D29-BEC8-8189CFE8723B">07/28/2009</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-04A339F2-E95F-4E7E-83D6-1FDC84364319">M/DD/YYYY 24 小时制</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-BBBD1717-AE3F-4E41-9654-D38E0E63BBA4">7/28/2009 17:23</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-4C2BD116-A5A1-4E7B-B922-F97DE9083090">MM/DD/YYYY 24 小时制</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-750D0EF7-F1A1-478C-8205-956B056A9B8A">07/28/2009 17:23</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-77B40602-F155-4422-A791-BB23562AC254">M/DD/YY</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-E619EDE9-FE47-4B2E-B824-EF2C6375BC38">7/28/09</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-8489DA96-0440-4265-ACAB-CFC1B84A2132">MM/DD/YY</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-CB7B6AF9-2F74-411D-98BB-E7BEBFBE6B72"> 07/28/09</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-4F738167-1BA0-4E74-BA62-EE8E7A9D4D10">M/DD/YY 24 小时制</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-D6CC300E-2842-4E81-9861-966AD7436E50">7/28/09 17:23</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-A4CB04BE-4009-4397-9366-3357255AB80C">MM/DD/YY 24 小时制</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-3777D655-595A-40BC-9C52-7B03FC02870D">07/28/09 17:23</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-E759347B-A9FD-4575-96CC-F6273940C03E">M 月 DD 日</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-13612403-86A6-48C4-8E63-002BC132B104">7 月 28 日</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-EAC6F2EB-65A0-480E-95CE-025D5E424D06">YYYY/MM</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-53E8423F-FBC2-44C9-ADD8-6E3DD420FB90">2009/07</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-CEF167AB-05BE-49C0-81FB-6AEE0E508091">YYYY-MM</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-E9396131-450B-409D-9FA0-BC34059E1C45">2009-07</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-CD4E7A04-E9E3-40B4-8C7B-DCE68805D8A5">YYYY/MM/DD</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-52EC7A59-C405-4B5E-94D1-D79CD72A2BB2">2009/07/28</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-25095713-9994-49F6-928E-663AC99CF60D">YYYY-MM-DD</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-909E79C0-0E7C-4A2A-9AEA-868B1F503B5F">2009-07-28</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-4852E030-A74A-44B9-8009-0EBD6198286C">YYYY/MM/DD hh:mm:ss</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-E78C3DC0-8B08-425B-9386-6B7ADE6ED6D4">2009/07/28 17:23:00</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-A38436A6-9AA4-48F8-88AF-29A722C422E6">YYYY-MM-DD hh:mm:ss</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-9851C6AB-F96F-417B-BBD8-52FB3E2CB218">2009-07-28 17:23:00</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-25CA9999-A004-42EF-9E06-61A1EDC33F5E">YYYY/MM/DD hh:mm:ss.s</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-BA88328F-E0D0-4662-B7CB-7DA54EF0B1C2">2009/07/28 17:23:00.0</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-3DC59F65-A3D0-432E-84E7-27A591584D6C">YYYY-MM-DD hh:mm:ss.s</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-38676C9C-F1B1-4A38-9555-9FC003B4E1CD">2009-07-28 17:23:00.0</p></td></tr></tbody><caption></caption></table></div></p><p id="GUID-AF3F597D-0327-41E4-8AF5-FB1989FCF06F">当您将 TXT 文件添加到 <span class="ph">Map Viewer</span> 时，以下日期格式将被识别为日期字段：</p><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><colgroup width="1.50*"></colgroup><thead><tr><th colspan="1">格式</th><th colspan="1">示例输入</th><th colspan="1">表值</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-FBFB6356-FC19-4794-A6EA-1BBD542C1D00">M/DD/YYYY 12 小时制</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-4E72EBEE-EB80-4CE4-B9FD-060B0E205D36">7/28/2009 5:23 PM</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-FAE30118-F57C-4416-8D9C-D25549D0607D">2009 年 7 月 28 日</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-5ED14A72-A507-40A3-A7EC-C636A68412A4">MM/DD/YYYY 12 小时制</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-E3999CF1-57B5-4F0F-AD50-4D9C641DEC96">07/28/2009 5:23 PM</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-7FD4ACD7-F19B-47F8-8748-9B5B631E00EB">2009 年 7 月 28 日</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-E5C0673A-6AC9-465D-B26D-7990D1FF180C">MM/DD/YY 12 小时制</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-BF2732CA-FAC0-43EE-AAD8-C3053484BBFB">07/28/09 5:23 PM</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-D3ADFDCF-1599-44F7-8855-989D2A3D1F1A">2009 年 7 月 28 日</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-A7DFF670-83A3-406A-BA23-EC9434AE4E78">星期，M 月 DD 日，YYYY 年 12 小时制</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-7C8603D1-FC46-4698-AC97-27B9F2B8A044">星期二，6 月 28 日，2009 5:23 PM</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-230E46B6-BBF4-4D38-91F1-181B64E45771">2009 年 7 月 28 日</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-AF0F7AAB-429D-4B77-8C30-89D4B67881DB">M 月 DD 日，YYYY 年 12 小时制</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-D5F263ED-83E1-43AA-812B-9777E48DBC86">7 月 28 日，2009 年 5:23 PM</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-AB944E1D-B775-46E3-A6A7-0C65BC714A88">2009 年 7 月 28 日</p></td></tr></tbody><caption></caption></table></div><p id="GUID-A0E18FE1-96B5-4620-B5A3-A47057E2350C">*仅当您使用分号或制表符分隔字段时，才支持这些日期格式。</p></section><section class="section1 padded-anchor" id="ESRI_SECTION1_43AB703E1D7A4C3A82BE40E55F8240E5" purpose="section1"><h2>更改日期字段的显示格式</h2><p id="GUID-5BEFE9FB-A9B0-4AF5-A916-1AD88D93B23C"><span class="ph">您可以在门户中更改日期在表中的显示方式。</span>  表采用您在<a class="xref xref" href="../../../../zh-CN/portal/latest/use/configure-pop-ups.htm">弹出窗口中配置</a>的格式进行显示。可通过在<span class="uicontrol">弹出窗口属性</span>的<span class="uicontrol">配置属性</span>窗口中选择字段别名来更改日期字段的显示格式。</p></section>
+			
+				<hr>
+				<!--googleoff: all-->
+				
+	
+        
+		    <p class="feedback right">
+		        <a id="afb" class="icon-ui-contact" href="/feedback/" data-langlabel="feedback-on-this-topic" >有关此主题的反馈?</a>
+		    </p>
+        
+	
+
+				<!--googleon: all-->
+			
+		</main>
+	</div>
+	
+	<!--googleoff: all-->
+	
+		
+			<div id="main-toc-large" class="column-5">
+			    <div class="panel font-size--2 tablet-hide trailer-1">
+			      <h5 class="trailer-half">在本主题中</h5>
+			      <ol class="list-plain pre-0 trailer-0"><li><a href="#ESRI_SECTION1_2B129AB823134B9C8DDB25093B9AF0EA">以 MM/DD/YYYY hh:mm:ss 格式输入日期</a></li><li><a href="#ESRI_SECTION1_BCC2E215ABAE4997983D065D5CF66FA1">发布日期字段以 UTC 存储时间</a></li><li><a href="#ESRI_SECTION1_5AFD51BEB6174217868FC020E998436C">文件中支持的日期格式</a></li><li><a href="#ESRI_SECTION1_43AB703E1D7A4C3A82BE40E55F8240E5">更改日期字段的显示格式</a></li></ol>
+			    </div>
+			    
+			    
+	  		</div>
+		
+    
+   <!--googleon: all-->
+
+
+
+
+          
+        </div>
+        <!-- ENDPAGECONTENT -->
+
+      </div>
+
+    </div>  <!-- End of wrapper -->
+
+  <footer class="footer leader-3 link-dark-gray" role="contentinfo">
+    <div class="grid-container">
+      <div class="row">
+        <nav class="column-6">
+          <h6 data-langlabel="arcgis-for-server">Arc<span>GIS Enterprise</span></h6>
+          <ul class="list-plain">
+            <li><a data-langlabel="home" href="../../../../zh-CN/">主页</a></li>
+            <li><a data-langlabel="portal" href="../../../../zh-CN/portal/">Portal</a></li>
+            <li><a data-langlabel="server" href="../../../../zh-CN/server/">Server</a></li>
+            <li><a data-langlabel="data-store" href="../../../../zh-CN/data-store/">Data Stores</a></li>
+            <li><a data-langlabel="cloud" href="../../../../zh-CN/cloud/">云</a></li>
+            <li><a data-langlabel="apps" href="../../../../zh-CN/apps/">应用程序</a></li>
+            <li><a data-langlabel="documentation" href="../../../../zh-CN/documentation/">文档</a></li>
+          </ul>
+        </nav>
+
+        
+  <nav class="column-6">
+    <h6 data-langlabel="arcgis-platform">ArcGIS 平台</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="arcgis" href="//www.arcgis.com/">ArcGIS Online</a></li>
+      <li><a data-langlabel="arcgis-for-professionals" href="//pro.arcgis.com/">ArcGIS Pro</a></li>
+      <li><a data-langlabel="arcgis-for-server" href="//enterprise.arcgis.com/">ArcGIS Enterprise</a></li>
+      <li><a data-langlabel="arcgis-for-developers" href="https://developers.arcgis.com/">ArcGIS for Developers</a></li>
+      <li><a data-langlabel="arcgis-solutions" href="//solutions.arcgis.com/">ArcGIS Solutions</a></li>
+      <li><a data-langlabel="arcgis-marketplace" href="//marketplace.arcgis.com/">ArcGIS Marketplace</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <h6 data-langlabel="about-esri">关于 Esri</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="about-us" href="//www.esri.com/about-esri/">关于我们</a></li>
+      <li><a data-langlabel="careers" href="//www.esri.com/careers/">招贤纳士</a></li>
+      <li><a data-langlabel="insiders-blog" href="https://www.esri.com/about/newsroom/blog/">Esri 博客</a></li>
+      <li><a data-langlabel="user-conference" href="//www.esri.com/events/user-conference/index.html">用户大会</a></li>
+      <li><a data-langlabel="developer-summit" href="//www.esri.com/events/devsummit/index.html">开发者峰会</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <a class="esri-logo" href="//www.esri.com/" aria-label="Esri Home"></a>
+    <section class="footer-social-nav leader-1">
+            <a class="icon-social-twitter" aria-label="Esri on Twitter" href="https://twitter.com/Esri/"></a>
+            <a class="icon-social-facebook" aria-label="Esri on Facebook" href="https://www.facebook.com/esrigis/"></a>
+            <a class="icon-social-github" aria-label="Esri on GitHub" href="//esri.github.io/"></a>
+            <a class="icon-social-contact" aria-label="Contact Esri" href="//www.esri.com/about-esri/contact/"></a>
+    </section>
+	  
+  </nav>
+  
+  <div class="column-24 leader-1">
+    <p class="font-size--3"><a href="http://www.esri.com/legal/copyright-trademarks">Copyright &copy; 2019 Esri.</a> All rights reserved. | <a href="http://www.esri.com/legal/privacy/">隐私政策</a> | <a href="http://www.esri.com/legal/software-license">法律声明</a></p>
+  </div>
+  
+
+
+      </div>
+    </div>
+  </footer>
+  <!--googleoff: all-->
+
+  
+  
+	<script src="../../../../zh-CN/assets/js/init.js" type="text/javascript"></script>
+	<!--<script src="../../../../zh-CN/assets/js/drop-down.js" type="text/javascript"></script>-->
+	<script src="../../../../zh-CN/assets/js/search/searchform.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/cdn/js/link-modifier.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/cdn/js/sitewide.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/cdn/js/libs/highlight.pack.js" type="text/javascript"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+
+
+  
+    
+
+  <script src="../../../../zh-CN/cdn/js/affix.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    $(function () {
+          var appendFlg = true;
+
+          $("#bigmac")
+          .on("affixed.bs.affix", function (evt) {
+            if (appendFlg) {
+              $("<a class='crumb' href='#'>使用日期字段</a>").insertAfter ($("#bigmac nav a").last());
+              appendFlg = false;
+            }
+          })
+          .on ("affix-top.bs.affix", function(evt) {
+            if (!appendFlg) {
+              $("#bigmac nav a").last().remove();
+            }
+            appendFlg = true;
+          })
+    })
+  </script>
+  
+        <script type="text/javascript">
+          window.doctoc = {
+            pubID: "583",
+            tpcID: "758",
+            
+              prefix: "使用",
+              prefixUrl: "/zh-cn/portal/latest/use/",
+          
+            hideToc: false
+          }
+        </script>
+
+        <script type="text/javascript" src="../../../../zh-CN/portal/latest/use/583.js" ></script>
+        <script type="text/javascript" src="../../../../zh-CN/cdn/calcite/js/protoc.js" ></script>
+        
+        
+
+  <noscript>
+        <p>
+            <a href="flisting.htm">flist</a>
+        </p>
+    </noscript>
+    <script type="text/javascript"></script>
+  
+  
+    
+    
+
+  </body>
+</html>

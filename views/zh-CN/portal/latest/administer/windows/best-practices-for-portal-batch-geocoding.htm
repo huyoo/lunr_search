@@ -1,0 +1,563 @@
+
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>  <html class="ie lt-ie9 lt-ie8 lt-ie7 ie6" dir="ltr"> <![endif]-->
+<!--[if IE 7]>     <html class="ie lt-ie9 lt-ie8 ie7" dir="ltr"> <![endif]-->
+<!--[if IE 8]>     <html class="ie lt-ie9 ie8" dir="ltr"> <![endif]-->
+<!--[if IE 9]>     <html class="ie ie9" dir="ltr"> <![endif]-->
+<!--[if !IE]><!--> <html dir="ltr" lang="zh-CN"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>在门户中批量地理编码的最佳做法&mdash;Portal for ArcGIS 
+  (10.8) | ArcGIS Enterprise 文档</title>
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+    <script>
+      var docConfig = {
+        locale: 'zh-CN'
+        ,localedir: 'zh-cn'
+        ,langSelector: ''
+        
+        ,relativeUrl: false
+        
+
+        ,searchformUrl: '/search/'
+        ,tertiaryNavIndex: ''
+
+        
+      };
+    </script>
+	 
+
+
+    
+    <!--[if lt IE 9]>
+      <script src="../../../../../zh-CN/cdn/js/libs/html5shiv.js" type="text/javascript"></script>
+      <script src="../../../../../zh-CN/cdn/js/libs/selectivizr-min.js" type="text/javascript"></script>
+      <script src="../../../../../zh-CN/cdn/js/libs/json2.js" type="text/javascript"></script>
+      <script src="../../../../../zh-CN/cdn/js/libs/html5shiv-printshiv.js" type="text/javascript" >
+
+    <![endif]-->
+
+     <!--[if lt IE 11]>
+    <script>
+      $$(document).ready(function(){
+        $$(".hideOnIE").hide();
+      });
+    </script>
+    <![endif]-->
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<link href="../../../../../zh-CN/assets/img/favicon.ico" rel="shortcut icon" >
+	<link href="../../../../../zh-CN/assets/css/screen.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/cdn/calcite/css/documentation.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/assets/css/print.css" media="print" type="text/css" rel="stylesheet" />
+
+	<!--
+	<link href="../../../../../zh-CN/assets/css/screen_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/assets/css/documentation/base_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/assets/css/print_l10n.css" media="print" type="text/css" rel="stylesheet" />
+	-->
+	
+	
+		<script src="../../../../../zh-CN/cdn/js/libs/jquery.1.9.1.min.js" type="text/javascript"></script>
+	
+	<script src="../../../../../zh-CN/cdn/js/libs/jquery.cookie.js" type="text/javascript"></script>
+	<link href="../../../../../zh-CN/cdn/css/colorbox.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/cdn/css/colorbox_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<script src="../../../../../zh-CN/cdn/js/libs/jquery.colorbox-min.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/assets/js/video-init.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/assets/js/sitecfg.js" type="text/javascript"></script>
+	
+		<script src="../../../../../zh-CN/assets/js/signIn.js" type="text/javascript"></script>
+	
+
+	<!--- Language Picker -->
+	<script src="../../../../../zh-CN/assets/js/locale/l10NStrings.js" type="text/javascript"></script>
+	
+		 
+	
+
+	<script src="../../../../../zh-CN/assets/js/calcite-web.js" type="text/javascript"></script>
+
+
+
+  <!--- search MD -->
+    <META name="description" content="了解如何在已发布的定位器服务中获得批量地理编码的最佳性能。"><META name="last-modified" content="2019-12-6"><META name="product" content="arcgis-portal-windows,arcgis-enterprise-windows"><META name="sub_category" content="Portal for ArcGIS (Windows)"><META name="search-collection" content="help"><META name="content_type_label" content="帮助主题"><META name="sub_category_label" content="Portal for ArcGIS (Windows)"><META name="search-category" content="help-general"><META name="subject_label" content="PORTAL,服务,SERVER"><META name="version" content="10.8"><META name="content_type" content="Help Topic"><META name="subject" content="PORTAL,SERVICES,SERVER"><META name="content-language" content="zh-cn">
+    <!--- search MD -->
+
+  
+  <script src="../../../../../zh-CN/assets/js/switchers/portal-1.js" type="text/javascript"></script>
+  
+      
+
+</head>
+
+<!--
+      pub: GUID-86E3206A-3CAD-43C1-9F16-FFB7CA3AEC71=33
+      tpc: GUID-366FC7EB-C55B-4310-8683-001BB0285AA0=3
+      -->
+
+
+<!-- variable declaration, if any -->
+<!-- can change following macro to set variable once we are on Jinja 2.8 -->
+
+
+
+
+
+<body class="claro zh-CN server">
+  
+
+  <!-- Drawer location -->
+  <div class="drawer drawer-left js-drawer" data-drawer="top-nav">
+        <nav class="drawer-nav" role="navigation">
+          <aside class="side-nav">
+            <h2 class="side-nav-title">Arc<span>GIS</span> Enterprise</h2>
+            <form id="helpSearchForm" class="margin-left-half margin-right-half leader-half trailer-half drawer-search-form" method="GET">
+              <input type="search" name="q"  placeholder="搜索 ArcGIS Enterprise 帮助">
+              <input type="hidden" name="collection" value="help" />
+              <input type="hidden" name="product" value="arcgis-portal-windows" />
+              <input type="hidden" name="version" value="10.8" />
+              <input type="hidden" name="language" value="zh-CN" />
+            </form>    
+             <a id="nav-portal" data-langlabel="portal" href="../../../../../zh-CN/portal/" class="side-nav-link">Portal</a>
+             
+            <a id="all-servers" data-langlabel="all-servers" href="../../../../../zh-CN/server/" class="side-nav-link">所有服务器</a>
+            <a id="gis-server" data-langlabel="gis-server" href="../../../../../zh-CN/server/" class="side-nav-link">GIS Server</a>
+            <a id="image-server" data-langlabel="image-server" href="../../../../../zh-CN/image/" class="side-nav-link">Image Server</a>
+            <a id="geo-analytics-server" data-langlabel="geo-analytics-server" href="../../../../../zh-CN/geoanalytics/" class="side-nav-link">GeoAnalytics Server</a>
+            <a id="geoevent-server" data-langlabel="geoevent-server" href="../../../../../zh-CN/geoevent/" class="side-nav-link">GeoEvent Server</a>
+            <a id="notebook-server" data-langlabel="notebook-server" href="../../../../../zh-CN/notebook/" class="side-nav-link">Notebook Server</a>
+            <a id="nav-data-store" data-langlabel="data-store" href="../../../../../zh-CN/data-store/" class="side-nav-link">Data Stores</a>
+            <a id="nav-cloud" data-langlabel="cloud" href="../../../../../zh-CN/cloud/" class="side-nav-link">云</a>
+            <a id="nav-apps" data-langlabel="apps" href="../../../../../zh-CN/apps/" class="side-nav-link">应用程序</a>
+            <a id="nav-doc" data-langlabel="documentation" href="../../../../../zh-CN/documentation/" class="side-nav-link">文档</a>
+
+          </aside>
+        </nav>
+    </div>
+
+    <!-- user navigation collapses to drawer on mobile -->
+    
+    <div class="drawer drawer-right js-drawer hide-if-logged-out logged-in-navigation" data-drawer="user-nav">
+      <nav class="drawer-nav">
+        <aside class="side-nav">
+          <a class="side-nav-link agolProfile" href="#">我的个人资料</a>
+          <a class="side-nav-link icon-ui-sign-out js-log-out" href="#">登出</a>
+        </aside>
+      </nav>
+    </div>
+    
+<!-- End of drawer -->
+
+  
+  <div class="wrapper">
+      <!--googleoff: all-->
+
+      <header class="top-nav" data-skin="learn">
+        <a class="skip-to-content" href="#skip-to-content">Skip To Content</a>
+        <div class="grid-container">
+          <div class="column-24">
+
+
+            <!--<div class="top-nav-title-wrapper text-center ">-->
+              <a href='../../../../../zh-CN/' class="top-nav-title tablet-hide"><span>Arc</span>GIS  Enterprise</a>
+              <a href='../../../../../zh-CN/' class="icon-ui-menu top-nav-title js-drawer-toggle tablet-show" data-drawer="top-nav"><span>Arc</span>GIS Enterprise</a>
+            <!--</div> -->
+
+          
+            <nav role="navigation" class="top-nav-list left tablet-hide">
+              <a id="nav-portal" data-langlabel="portal" href="../../../../../zh-CN/portal/" class="top-nav-link">Portal</a>
+
+                <div class="dropdown js-dropdown ">
+                  <a class="top-nav-link js-dropdown-toggle" tabindex="0" aria-haspopup="true" aria-expanded="false" href="#">Servers</a>
+                  <nav class="dropdown-menu featured" role="menu">
+                    <ul class="dropdown-sublist-featured">
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/get-started/latest/windows/additional-server-deployment.htm" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path  d="M42.92 6.1H4.12v8.566l.833.832-.835.833-.018 7.332.845.847-.825.824V33.9h25v5.2h-2v1.075H8.02v.8h19.1v.925h4.8v-.925H40v-.8h-8.08V39.1h-2v-5.2h13v-8.566l-.834-.834.835-.834v-7.332l-.835-.834.835-.834zm-11.8 35h-3.2v-1.2h3.2zm11-8H4.92v-7.434l.767-.766h35.668l.765.766zm0-9.766l-.766.766H5.666l-.766-.767.017-6.669.766-.764h35.671l.766.766zm0-9l-.766.766H5.687l-.766-.766V6.9h37.2zM19 11.9h-2v-.8h2zm-4 0h-2v-.8h2zm-4 0H9v-.8h2zm6 8.2h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9zm8 9h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9z"/></svg></span>
+                          <span class="sublink-text">所有服务器</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/server/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M45.98 33.575a.616.616 0 0 0-.335-.51l-3.362-2.03 3.362-2.031a.556.556 0 0 0 0-1.02l-11.1-6.704a1.293 1.293 0 0 0-1.112 0L22.33 27.982a.556.556 0 0 0 0 1.02l3.36 2.03-3.358 2.03a.556.556 0 0 0-.002 1.021l3.322 2.006-3.324 2.008a.555.555 0 0 0 .002 1.017l11.102 6.703a1.25 1.25 0 0 0 1.11.002l11.104-6.706a.556.556 0 0 0 0-1.02l-3.32-2.006 3.318-2.004a.607.607 0 0 0 .335-.509zM33.837 21.97c.026-.01.286-.005.29-.005l10.814 6.53-10.8 6.523c-.028.01-.284.005-.294.006l-10.813-6.53zm11.105 16.636l-10.8 6.523a2.564 2.564 0 0 1-.295.006l-10.81-6.529 3.39-2.047 7.004 4.23a1.083 1.083 0 0 0 .557.131 1.101 1.101 0 0 0 .554-.13l7.01-4.233zM34.14 40.098a2.545 2.545 0 0 1-.294.006l-10.812-6.53 3.43-2.073 6.97 4.208a1.25 1.25 0 0 0 1.107-.001l6.966-4.206 3.431 2.073zM9 8H7V7h2zm8 8h-2v-1h2zm-4-8h-2V7h2zm4 0h-2V7h2zm-4 8h-2v-1h2zm7.316 11.1H3.9v-6.434l.766-.766h35.668l.766.766v2.12l.8.483v-2.935l-.826-.826.826-.845v-6.329l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9h16.88a2.632 2.632 0 0 1 .336-.8zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zm0 8v-5.668l.766-.766h35.668l.766.766v5.67l-.746.764H4.666zM15 24v-1h2v1zm-4 0v-1h2v1zm-2-8H7v-1h2zm-2 8v-1h2v1z"/></svg></span>
+                          <span class="sublink-text">GIS Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/image/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 8h-2V7h2zm-4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm8 8h-2v1h2zm-8 0H7v1h2zm4 9v-1h-2v1zm-4 0v-1H7v1zm8 0v-1h-2v1zm4 3.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V21h-.8v-.334l-.766-.766H4.666l-.766.766V27.1H21zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zm40.234 4v21.8H23.1V23.1zm-.8 16.366L39.466 44.1h2.868l1.766-1.766zm-20.2-9.932l5.634-5.634h-2.868L23.9 26.666zm6.2-5.068L24.466 30.1h2.868l2.766-2.766zM28.466 30.1H30.1v-1.634zm2.434 0h6.2v-6.2h-6.2zm-7 7h6.2v-6.2h-6.2zm7 0h6.2v-6.2h-6.2zm0 6.434l5.634-5.634h-2.868L30.9 40.666zm7-7l5.634-5.634h-2.868L37.9 33.666zm1.634-5.634H37.9v1.634zm-8.634 7v1.634l1.634-1.634zm.566 6.2h2.868l2.766-2.766v-2.868zm6.434-3.566l2.634-2.634H37.9zM35.466 44.1H37.1v-1.634zm2.434 0h.434l5.766-5.766V37.9h-2.434L37.9 41.666zm6.2-8.634L42.466 37.1H44.1zm0-4L38.466 37.1h2.868l2.766-2.766zm0-7.566h-6.2v6.2h6.2zm-20.2 0v1.634l1.634-1.634zm0 20.2h6.2v-6.2h-6.2zm20.2 0v-.634l-.634.634z"/></svg></span>
+                          <span class="sublink-text">Image Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/geoanalytics/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 16h-2v-1h2zm-8 8v-1H7v1zm8 0v-1h-2v1zM13 7h-2v1h2zm4 0h-2v1h2zM9 7H7v1h2zm21.45 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V27.9h-1.464l-.801-.8H41.1v-6.434l-.766-.766H4.666l-.766.766V27.1h27.15zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM13 24v-1h-2v1zm0-9h-2v1h2zm-4 0H7v1h2zm26.672 27.148A1.87 1.87 0 0 1 35.9 43a1.91 1.91 0 1 1-3.763-.222l-9.845-3.414A1.88 1.88 0 0 1 21 39.9a1.9 1.9 0 1 1 1.474-3.084l4.692-2.346A1.878 1.878 0 0 1 27.1 34a1.902 1.902 0 0 1 1.9-1.9 1.867 1.867 0 0 1 .781.191l3.788-5.05A1.88 1.88 0 0 1 33.1 26a1.9 1.9 0 1 1 3.491 1.026l4.889 4.888c-.069.056-.144.1-.21.162a3.986 3.986 0 0 0-.358.402l-4.883-4.883A1.889 1.889 0 0 1 35 27.9a1.867 1.867 0 0 1-.781-.191l-3.788 5.049a1.868 1.868 0 0 1 .437.965l9.204.614c-.018.11-.049.218-.058.33A3.93 3.93 0 0 0 40 35c0 .046.01.09.01.135l-9.185-.612A1.913 1.913 0 0 1 29 35.9a1.889 1.889 0 0 1-1.474-.716l-4.692 2.346a1.878 1.878 0 0 1 .066.47 1.9 1.9 0 0 1-.105.625c-.007.02-.022.036-.03.056l9.63 3.34a1.87 1.87 0 0 1 2.786-.505l5.415-4.437c.067.108.127.22.204.322a3.9 3.9 0 0 0 .292.306zM33.9 26a1.092 1.092 0 0 0 .43.872 1.12 1.12 0 0 0 1.42-.068A1.1 1.1 0 1 0 33.9 26zm-6 8a1.1 1.1 0 0 0 2.196.093 1.135 1.135 0 0 0-.426-.965A1.087 1.087 0 0 0 29 32.9a1.101 1.101 0 0 0-1.1 1.1zm-5.8 4a1.098 1.098 0 1 0-.06.362A1.101 1.101 0 0 0 22.1 38zm13 5a1.1 1.1 0 1 0-2.2 0 1.1 1.1 0 0 0 2.2 0zm10.8-8a1.9 1.9 0 1 1-3.8 0c0-.053.003-.105.007-.158A1.9 1.9 0 0 1 45.9 35zm-.8 0a1.1 1.1 0 0 0-2.196-.093 1.153 1.153 0 0 0 .216.752A1.1 1.1 0 0 0 45.1 35z"/></svg></span>
+                          <span class="sublink-text">GeoAnalytics Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/geoevent/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M13 8h-2V7h2zm4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm12.418 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826v2.117c-.259-.177-.53-.337-.8-.497v-1.288l-.766-.766H4.666l-.766.766V27.1h17.933c-.148.26-.283.53-.415.8zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM9 24v-1H7v1zm4-9h-2v1h2zm0 9v-1h-2v1zm-4-9H7v1h2zm8 9v-1h-2v1zm16.9 2h-.8v8.9H39v-.8h-5.1zm.1-3.901a11.9 11.9 0 1 0 11.9 11.9 11.914 11.914 0 0 0-11.9-11.9zm0 23a11.1 11.1 0 1 1 11.1-11.1 11.112 11.112 0 0 1-11.1 11.1z"/></svg></span>
+                          <span class="sublink-text">GeoEvent Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/notebook/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M22 27.1H3.9v-6.434l.766-.766h18.576a5.262 5.262 0 0 1 .83-.8H4.666l-.766-.766v-5.668l.766-.766h35.668l.766.766V18h.8v-5.666l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9H22zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zM9 8H7V7h2zm8 0h-2V7h2zm-4 0h-2V7h2zm2 16v-1h2v1zm-4 0v-1h2v1zm-4 0v-1h2v1zm0-8v-1h2v1zm8 0v-1h2v1zm-4 0v-1h2v1zm18.9 8.1h-1.8v1.8h1.8zm-.8 1h-.2v-.2h.2zm15.498-4.48a2.727 2.727 0 0 0-1.62-.5v-.02H27.25a3.154 3.154 0 0 0-3.15 3.15V38.1h-1.68a3.386 3.386 0 0 0-2.872 1.58 3.49 3.49 0 0 0-.157 3.419 3.241 3.241 0 0 0 2.954 1.801h15.161a3.404 3.404 0 0 0 3.394-3.4V26.9h5v-3.65a3.224 3.224 0 0 0-1.302-2.63zM22.345 44.1a2.44 2.44 0 0 1-2.23-1.341 2.706 2.706 0 0 1 .11-2.65A2.588 2.588 0 0 1 22.42 38.9h12.89a3.395 3.395 0 0 0 0 5.2zM40.1 23.192V41.5a2.6 2.6 0 1 1-2.6-2.6v-.8H24.9V23.25a2.352 2.352 0 0 1 2.35-2.35h13.795a3.183 3.183 0 0 0-.945 2.292zm5 2.908h-4.2v-2.908a2.274 2.274 0 0 1 1.44-2.18 1.944 1.944 0 0 1 1.791.259 2.423 2.423 0 0 1 .97 1.979zm-17.1 5h9v.8h-9zm0 3h7v.8h-7zm0-6h9v.8h-9zm4-3h5v.8h-5z"/></svg></span>
+                          <span class="sublink-text">Notebook Server</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+
+              <a id="nav-data-store" data-langlabel="data-store" href="../../../../../zh-CN/data-store/" class="top-nav-link">Data Stores</a>
+              <a id="nav-cloud" data-langlabel="cloud" href="../../../../../zh-CN/cloud/" class="top-nav-link">云</a>
+              <a id="nav-apps" data-langlabel="apps" href="../../../../../zh-CN/apps/" class="top-nav-link">应用程序</a>
+            </nav>
+
+
+            
+            
+            
+
+            <div class="margin-left-1 top-nav-list right hide-if-logged-in logged-out-navigation">
+               
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+              
+              <a data-langlabel="sign-in" id="login-link" class="icon-ui-user top-nav-link link-blue login-link" href="#">登录</a>
+              
+            </div>
+
+            
+            <nav class="margin-left-1 top-nav-list right hide-if-logged-out logged-in-navigation">
+              
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+             
+              <div class="dropdown js-dropdown right">
+
+                <div class="tablet-show top-nav-link">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a href="#" data-drawer="user-nav" class="user-nav-name js-drawer-toggle" data-first-name></a>
+                </div>
+
+                <div class="tablet-hide top-nav-link js-dropdown-toggle">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a class="user-nav-name top-nav-dropdown dropdown-btn" data-first-name>&nbsp;</a>
+                </div>
+
+                <nav class="dropdown-menu dropdown-right">
+                
+                  <a class="dropdown-link agolProfile" id="agolProfile" href="#">我的个人资料</a>
+                  <a class="dropdown-link js-log-out" id="agolLogout" href="#">登出</a>
+                </nav>
+              </div>
+            </nav>
+            
+
+            
+          </div>
+        </div>
+      </header>
+
+      <div class="js-search search-overlay">
+        <div class="search-content" role="dialog" aria-labelledby="search">
+          <form method="GET" id="helpSearchForm">
+            <label>
+              搜索 ArcGIS Enterprise 帮助
+              <div class="search-bar">
+                <input type="search" name="q"  placeholder="搜索 ArcGIS Enterprise 帮助" class="search-input js-search-input">
+                <input type="hidden" name="collection" value="help" />
+                <input type="hidden" name="product" value="arcgis-portal-windows" />
+                <input type="hidden" name="version" value="10.8" />
+                <input type="hidden" name="language" value="zh-CN" />
+              </div>
+            </label>
+            <input type="hidden" name="relativePath" value="../../../../../" /><button type="submit" class="btn btn-large right">搜索</button>
+          </form>
+        </div>
+      </div>
+
+      <!--googleon: all-->
+
+      <div id="skip-to-content">
+        <!--googleoff: all-->
+        <header class="sub-nav sub-nav-learn">
+          <div class="grid-container">
+            
+            <div class="column-24">
+              <div style="display:table;" class="sdk-home-banner">
+                <div class="sdk-home-banner-content">
+                  <h1 class="sub-nav-title link-white">Portal for ArcGIS</h1>
+                </div>
+              </div>
+            </div>
+
+            <div class="column-24">
+              <nav class='sub-nav-list tablet-hide'><a class="sub-nav-link" href="../../../../../zh-CN/portal/" target="_top" title="Portal for ArcGIS 主页">主页</a><a class="sub-nav-link" href="../../../../../zh-CN/portal/latest/use/" target="_top" title="使用 Portal for ArcGIS">使用</a><a class="sub-nav-link is-active" href="../../../../../zh-CN/portal/latest/administer/windows/" target="_top" title="安装、管理和保护 Portal for ArcGIS">管理</a></nav><select class='tablet-show select-full trailer-half js-select-nav'><option value="../../../../../zh-CN/portal/">主页</option><option value="../../../../../zh-CN/portal/latest/use/">使用</option><option selected="true" value="../../../../../zh-CN/portal/latest/administer/windows/">管理</option></select>
+            </div>
+
+          </div>
+        </header>
+        <!--googleon: all-->
+       
+        <!-- content goes here -->
+        <div class="grid-container ">
+          
+
+            
+              
+  <!--BREADCRUMB-BEG--><div id="bigmac" class="sticky-breadcrumbs trailer-2" data-spy="affix" data-offset-top="180"> </div><!--BREADCRUMB-END-->
+  <!--googleoff: all-->
+    <div class="column-5 tablet-column-12 trailer-2 ">
+      <aside class="js-accordion accordion reference-index" aria-live="polite" role="tablist">
+        <div></div>
+      </aside>
+
+      <div class="js-sticky scroll-show tablet-hide leader-1 back-to-top" data-top="0" style="top: 0px;">
+        <a href="#" class="btn btn-fill btn-clear">返回顶部</a>
+      </div>
+    </div>
+  <!--googleon: all-->
+  
+            
+            
+            
+	
+		<div class="column-13  pre-1 content-section">
+	
+		<header class="trailer-1"><h1>在门户中批量地理编码的最佳做法</h1></header>
+
+		 
+	<!--googleoff: all-->
+	
+		
+				<aside id="main-toc-small" class="js-accordion accordion tablet-show trailer-1">
+			      <div class="accordion-section">
+			        <h4 class="accordion-title">在本主题中</h4>
+			        <div class="accordion-content list-plain">
+			          <ol class="list-plain pre-0 trailer-0"><li><a href="#ESRI_SECTION1_9FF9489173C741DD95472F21B5AD8374">要求
+</a></li><li><a href="#ESRI_SECTION1_E9C5D72603954C32823181D122FF8EC7">优点
+</a></li><li><a href="#ESRI_SECTION1_9785564347F942D5B08446E5387518FE">架构
+</a></li><li><a href="#ESRI_SECTION1_1F141AFC7EC847FCB9F5697B345F22DA">硬件建议
+</a></li><li><a href="#ESRI_SECTION1_961B48A13F4B42EBB0E451DB79348A5A">配置
+</a></li><li><a href="#ESRI_SECTION1_1E603F292E4949B69600454D0D00E841">为批量地理编码启用的工具
+</a></li></ol>
+			        </div>
+			      </div>
+			     </aside>
+		
+    
+   <!--googleon: all-->
+
+
+		<main>
+			
+	
+    	
+    
+
+
+			
+<section class="section1 padded-anchor" id="ESRI_SECTION1_9FF9489173C741DD95472F21B5AD8374" purpose="section1"><h2>要求
+</h2><p id="GUID-BFF8766F-237D-4FFC-8161-EF50D9DD1D00">如果您具有 <span class="ph">ArcGIS Enterprise</span> 部署，则可以利用服务器端异步批量理编码模式，该模式将帮助您在定位器服务中获得最佳性能。此方法使用您已在门户上发布的定位器。有关创建定位器并将其共享至门户的详细信息，请参阅<a class="xref xref" esrisubtype="extrel" hrefpfx="https://pro.arcgis.com/zh-cn/pro-app/help/data" href="https://pro.arcgis.com/zh-cn/pro-app/help/data/geocoding/create-a-locator.htm">创建定位器</a>和<a class="xref xref" esrisubtype="extrel" hrefpfx="https://pro.arcgis.com/zh-cn/pro-app/help/data" href="https://pro.arcgis.com/zh-cn/pro-app/help/data/geocoding/share-a-locator.htm">将定位器共享至门户</a>。</p></section><section class="section1 padded-anchor" id="ESRI_SECTION1_E9C5D72603954C32823181D122FF8EC7" purpose="section1"><h2>优点
+</h2><p id="GUID-708D90DE-462F-481C-BFD0-408B58CCAD45">您可以借助 <span class="ph">ArcGIS Enterprise</span> 的强大功能充分利用已发布的地理编码服务。将定位器共享到门户后，可以将其用于批量地理编码。使用门户进行批量地理编码的部分优势如下： </p><p id="GUID-C113A97D-E225-4D69-92AB-83094AED20CA"><ul purpose="ul" id="UL_BE8994B13A1341A2AA453584254AF3B9"><li purpose="li" id="LI_D63BE67AC7124753A40A28429BDFEC37">最大化服务器资源以尽快完成批量地理编码作业。</li><li purpose="li" id="LI_27DA83CAB4404148AC98425910E44D2D">允许 ArcGIS 管理员管理后端资源，而不是使服务超载。</li><li purpose="li" id="LI_86BA7BA13CAA435F9B48CC9BF509329D">使用您的数据和您自己的已发布定位器在组织的防火墙之后执行大批量地理编码。</li><li purpose="li" id="LI_2FDEAE0775B34B70993558C589E10C1A">内置分段和重试逻辑以确保大批量地理编码作业不会失败。</li></ul></p></section><section class="section1 padded-anchor" id="ESRI_SECTION1_9785564347F942D5B08446E5387518FE" purpose="section1"><h2>架构
+</h2><p id="GUID-5E53972C-A14E-411B-8091-DF5A05743F4F">要最大化利用已发布的定位器服务，可以扩展地理编码服务器的实例数。您可以在 ArcGIS Server Manager 中执行此操作。</p><p id="GUID-064419CE-83F6-470B-B73E-0C1A4DD78FC0"><img purpose="img" placement="inline" alt="添加 numBatchThreads" title="添加 numBatchThreads" src="GUID-0BFE7D31-45EC-43F5-A469-FDBFBE24A17B-web.png"></p><p id="GUID-5F040AB4-3969-4B29-A7D2-8D673D3A257A">在上图中，ArcGIS 管理员已将定位器服务扩展为四个实例。然后，组织的 ArcGIS 管理员可以将定位器的批量地理编码线程数设置为 4，从而使批量地理编码的性能提高四倍。管理员可以在门户的主页上设置批量地理编码线程数属性，方法为：转至<span class="uicontrol">组织</span>选项卡，单击<span class="uicontrol">设置 <span class="greaterthan">&gt;</span> 实用程序服务</span>，然后向下滚动至<span class="uicontrol">地理编码</span>。如果存在 4 个可用的地理编码实例，且两位用户希望同时执行批量地理编码，则 ArcGIS 管理员应将批量地理编码线程数属性设置为 2，否则作业将排队进行并可能会在等待另一个作业完成时超时。这样设置后，每个批量地理编码作业将针对两个可用的定位器实例运行，而后端定位器服务将能够处理同时提交多个作业的负载。</p></section><section class="section1 padded-anchor" id="ESRI_SECTION1_1F141AFC7EC847FCB9F5697B345F22DA" purpose="section1"><h2>硬件建议
+</h2><p id="GUID-A7B55E4E-84D8-4850-A95A-1F748A6CBEB5">要使您的地理编码服务获得最佳性能，针对将托管地理编码服务的服务器计算机，提供以下建议：</p><p id="GUID-6C556598-F269-4B14-BDB9-F104C748639B"><ul purpose="ul" id="UL_B4C81B2B68CE46E99E25EF620DB1ABD8"><li purpose="li" id="LI_A50F60BEBA9F41ABA3587D0C7611A212">计算机应为物理计算机（而非虚拟机）。</li><li purpose="li" id="LI_E45B66DB116645D98CCD8763D57DEE50">计算机应通过以太网（而非 Wi-Fi）连接到网络。</li><li purpose="li" id="LI_54CB9769FCE744768C37EC83B343890B">计算机应在 SSD 硬盘上安装 ArcGIS Server。</li><li purpose="li" id="LI_E4D634FAE02F4688A9605E4046F6BE03">对于多机站点，请将定位器发布到每台计算机，而非使用网络共享。</li></ul></p></section><section class="section1 padded-anchor" id="ESRI_SECTION1_961B48A13F4B42EBB0E451DB79348A5A" purpose="section1"><h2>配置
+</h2><p id="GUID-A6AC6170-02F6-4B40-8242-7304606B41E5"> 将定位器共享到 <span class="ph">ArcGIS Enterprise</span> 后，以下步骤介绍了 ArcGIS 管理员可以如何配置其门户以利用上述异步批量地理编码模式。</p><section class="section2 padded-anchor" id="ESRI_SECTION2_9CD94E5179B849598C06C0B4EC98A0B8" purpose="section2"><h3>批量地理编码时添加日志记录以获得更多反馈</h3><p id="GUID-7DCB89AF-362B-4C2C-9DCA-10BCC49D4615">默认情况下，将 GeocodingTools 地理处理服务消息级别设置为<span class="uicontrol">警告</span>。若要了解更详细的错误消息，以及更好地更新批量地理编码作业的状态（如完成百分比），可将 GeocodingTools 地理处理服务的日志记录级别设置为<span class="uicontrol">信息</span>。</p><div class="panel trailer-1 note" id="GUID-FC6DDF19-551D-4E8E-AB88-C1392B181919"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-912A73EC-401A-44A2-A377-BAD1E7798890"> 将日志级别更改为<span class="uicontrol">信息</span>可能导致性能严重下降，尤其在多机 ArcGIS Server 站点中更是如此。要获得最佳性能，请将日志级别设置为<span class="uicontrol">警告</span>。</p></div><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_29119A4195584BBBB5A2AF1B623A188D"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_6E7D8106A96744DDA7F4EB34BCECF650"><span purpose="cmd">浏览至您的托管服务器的 ArcGIS Server Manager。</span></li><li purpose="step" id="ESRI_STEP_B9E843EF94AA4344B15B286ADC3E1D96"><span purpose="cmd">单击 Server Manager 目录中的<span class="uicontrol">实用程序</span>文件夹。</span></li><li purpose="step" id="ESRI_STEP_BF95F7CD80E74B0EB9A3D5D83C8BF632"><span purpose="cmd">单击 <span class="uicontrol">GeocodingTools</span> 地理处理服务。</span></li><li purpose="step" id="ESRI_STEP_90C8A93AFB1D43218A9BDF906E359AED"><span purpose="cmd">单击左侧的<span class="uicontrol">参数</span>通栏，将<span class="uicontrol">消息级别</span>更改为<span class="uicontrol">信息</span>。</span></li><li purpose="step" id="ESRI_STEP_1E6AB1DB35BD49CE9659E7DB109EEBC6"><span purpose="cmd">单击右上角的<span class="uicontrol">保存并重新启动</span>按钮。</span></li></ol></div></section><p id="GUID-FA0AF5B5-FE2F-481C-A50D-31300790E386">将日志记录级别更改为<span class="uicontrol">信息</span>将提供更好的作业进度反馈和更多可能出现的错误的相关信息。这些优势在 <span class="ph">ArcGIS Pro</span> 的<a class="xref xref" esrisubtype="extrel" hrefpfx="https://pro.arcgis.com/zh-cn/pro-app/help/data" href="https://pro.arcgis.com/zh-cn/pro-app/help/data/geocoding/convert-a-table-to-locations-on-the-map.htm">地理编码表</a>、<a class="xref xref" esrisubtype="extrel" hrefpfx="https://pro.arcgis.com/zh-cn/pro-app/tool-reference" href="https://pro.arcgis.com/zh-cn/pro-app/tool-reference/geocoding/geocode-locations-from-table.htm#GUID-0CB3F8FE-6D02-46B6-8C36-F9D2EB963734">对表格中的位置进行地理编码</a>和<a class="xref xref" esrisubtype="extrel" hrefpfx="https://pro.arcgis.com/zh-cn/pro-app/tool-reference" href="https://pro.arcgis.com/zh-cn/pro-app/tool-reference/geocoding/geocode-file.htm#GUID-1B75929D-9A38-4158-AF95-464451F6F40E">地理编码文件</a>工具中均有所显现。</p></section><section class="section2 padded-anchor" id="ESRI_SECTION2_8087711C8DB1452DBCA564114CAE4F5D" purpose="section2"><h3>增加批量地理编码超时</h3><p id="GUID-8EF5F230-E0E3-4C6C-99A6-FA09B0BBB38E">默认情况下，GeocodingTools 地理处理服务作业的超时超过 200 分钟。如果您预计批量地理编码作业可能需要 3 小时 20 分钟以上才能完成，您将需要增加客户端可以使用该服务的最长时间。</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_853445DEFDDE49A1BCBA86E068996EB4"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_AB149D8ACE124A618BD4CE9C1E23515A"><span purpose="cmd">浏览至您的托管服务器的 ArcGIS Server Manager。</span></li><li purpose="step" id="ESRI_STEP_FA605FB8D6744BF8BBFC642C18EDDD38"><span purpose="cmd">单击 Server Manager 目录中的<span class="uicontrol">实用程序</span>文件夹。</span></li><li purpose="step" id="ESRI_STEP_61AF8192F73A4BA8AF2674920E1BDFF7"><span purpose="cmd">单击 <span class="uicontrol">GeocodingTools</span> 地理处理服务。</span></li><li purpose="step" id="ESRI_STEP_88BA25356467421A8757FE564FA2FECE"><span purpose="cmd">单击左侧的<span class="uicontrol">池化</span>通栏并更改客户端可以使用该服务的最长时间。将此值增加到一个非常大的数字，可确保大批量地理编码作业永远不会超时。</span></li><li purpose="step" id="ESRI_STEP_44F9E8E6546044FC9BE3EA83ED9DB346"><span purpose="cmd">单击右上角的<span class="uicontrol">保存并重新启动</span>按钮。</span></li></ol></div></section></section><section class="section2 padded-anchor" id="ESRI_SECTION2_CBB478749790413E85C519AB2FFD0205" purpose="section2"><h3>扩展地理编码服务</h3><p id="GUID-29E7DCAE-15D5-4046-851E-27EB3E11FA6B">根据 ArcGIS Server 计算机的内核数，您将需要扩展您的地理编码服务部署。如果您的 ArcGIS Server 计算机具有 8 个物理内核，并且您计划仅将计算机用于批量地理编码，则可以将<span class="uicontrol">每台计算机的最小实例数</span>和<span class="uicontrol">每台计算机的最大实例数</span>参数设置为 8，从而使您的批量地理编码处理速度提高 8 倍。但是，如果托管地理编码服务的 ArcGIS Server 计算机为虚拟机 (VM)，则建议您扩展为计算机上虚拟内核数的一半。例如，如果您的 VM 具有 8 个虚拟内核，则建议您将地理编码服务扩展为 4 个实例。</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_96178EB8C76144779172FC9CF9C8D600"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_CC971CA9AF3046D79ADD444FAE0A1DD6"><span purpose="cmd">浏览至您的托管服务器的 ArcGIS Server Manager。</span></li><li purpose="step" id="ESRI_STEP_4CE781E108864B20983D2E7B6C1F1E12"><span purpose="cmd">如果您在 Server Manager 目录的文件夹中发布了地理编码服务，请单击该文件夹名称。默认设置为发布到站点（根）。</span></li><li purpose="step" id="ESRI_STEP_EB898D35C55D43A3B96B8883AA811074"><span purpose="cmd">单击要扩展的地理编码服务。</span></li><li purpose="step" id="ESRI_STEP_C4D1AC1ACF504BE29CF026594F98AFED"><span purpose="cmd">单击左侧<span class="uicontrol">池化</span>通栏，然后将<span class="uicontrol">每台计算机的最小实例数</span>和<span class="uicontrol">每台计算机的最大实例数</span>参数更改为相同的所需实例数。对于地理编码服务，这两个值应始终保持相同，以确保可用于地理编码的实例数始终正确。</span></li><li purpose="step" id="ESRI_STEP_26B50240FB3C4DB6BA317DE7C911CCD2"><span purpose="cmd">单击右上角的<span class="uicontrol">保存并重新启动</span>按钮。</span></li></ol></div></section></section><section class="section2 padded-anchor" id="ESRI_SECTION2_0DA95768E9B3482B936934CF77B3D879" purpose="section2"><h3> 为您的定位器配置建议数目的批量地理编码线程</h3><p id="GUID-4E82AFB5-07CB-4458-9399-D5306512E5FA"> 运行在联合 <span class="ph">GIS Server</span> 站点的 GeocodingTools 地理处理服务也可使用任何发布到门户的定位器。地理处理服务可向地理编码实用程序服务发送多个并发请求，从而加快批量地理编码的整体执行速度。地理处理服务发出的并发请求数目（批量地理编码线程数）可由门户管理员配置。必须将批量地理编码线程数设置为正确的值；否则，将导致批量地理编码故障增加。</p><p id="GUID-D4690C97-3AC2-4A19-A7AE-0398B60C7DB9"> 最佳做法是，应将批量地理编码线程数设置为与可用于地理编码服务的实例数成正比。例如，如果可用于地理编码服务的实例数为 8，且 ArcGIS Server 计算机仅用于批量地理编码，则应将批量地理编码线程数设置为 8。执行地理处理服务后，会向定位器服务发送 8 个并发批量地理编码请求。如果有更多实例可供定位器服务使用，则应相应调整批量地理编码线程数目，以充分利用可供定位器服务使用的实例。但是，如果两位用户希望针对同一服务同时执行批量地理编码，则管理员应将批量地理编码线程数设置为 4，由此每位用户可以使用一半的可用地理编码服务实例，并且后端地理编码服务也不会被请求所淹没。</p><p id="GUID-52043C2F-0092-4C7B-BBCC-A9F582EBAC0F">请注意，Esri World Batch Geocoder 无法配置批量地理编码线程。以下配置适用于配置为实用程序服务的其他所有已发布定位器服务。</p><p id="GUID-2E288425-0192-4F1C-B8E8-C833C94789A6">要为您的定位器服务设置建议数目的批量地理编码线程，请执行以下步骤：</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_D915F0EE31474205AC90ECB4912ECE0B"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_A6DD153DB63444FF823ED0A413B11794"><span purpose="cmd" id="GUID-25D9937B-99BF-4199-B2F2-ABEBA5B69584">使用 <span class="ph">ArcGIS Pro</span> 将所需地理编码服务发布到门户。</span></li><li purpose="step" id="ESRI_STEP_8310CBF3B2174A5D9D9D342590CB04E8"><span purpose="cmd" id="GUID-E2BA0447-4A62-471C-94BC-AA4EC26AD739">以管理员身份登录到门户。</span></li><li purpose="step" id="ESRI_STEP_533BF9E6EF9F48E7838FC8C84E816ECE"><span purpose="cmd" id="GUID-0B3A8D91-3858-4BFD-806E-5B720D376068">单击<span class="uicontrol">内容</span>，并确保与组织共享地理编码服务。</span></li><li purpose="step" id="ESRI_STEP_3B183A94F415440CAA2BB1DD59C17402"><span purpose="cmd">单击<span class="uicontrol">组织</span>，然后浏览至<span class="uicontrol">设置</span>下的<span class="uicontrol">实用程序服务</span>。</span></li><li purpose="step" id="ESRI_STEP_A3A7CFD600074B43B7733AD675A410D7"><span purpose="cmd">向下滚动到<span class="uicontrol">地理编码</span>部分，然后单击<span class="uicontrol">添加定位器</span>。选择要配置用于批量地理编码的定位器，然后调整<span class="uicontrol">批量地理编码线程数</span>值。</span></li><li purpose="step" id="ESRI_STEP_186742A737A54576BC98E4767DCA6E25"><span purpose="cmd">单击<span class="uicontrol">确定</span>并单击页面底部的<span class="uicontrol">保存</span>。</span></li></ol></div></section><div class="panel trailer-1 note" id="GUID-315BEF0F-7599-464C-86FE-258029029F84"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-3D0496F2-2EEB-4DF8-AB36-091BDFE848EF">  批量地理编码线程数必须小于或等于可用于地理编码服务的实例数。如果选择较大的值，则批量地理编码作业可能会失败。</p></div><img purpose="img" placement="inline" alt="批量地理编码线程数" title="批量地理编码线程数" src="GUID-2020C584-EDF8-45D3-A3B6-5B077B213D11-web.png"></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_1E603F292E4949B69600454D0D00E841" purpose="section1"><h2>为批量地理编码启用的工具
+</h2><p id="GUID-D32F99A1-D366-4B2A-B65F-C7BD358F201E">ArcGIS 管理员配置了每个定位器的批量地理编码线程数之后，用户即可在其批量地理编码作业中利用提升的性能。利用这种性能提升的工具包括 <span class="ph">ArcGIS Pro</span> 中的<a class="xref xref" esrisubtype="extrel" hrefpfx="https://pro.arcgis.com/zh-cn/pro-app/help/data" href="https://pro.arcgis.com/zh-cn/pro-app/help/data/geocoding/convert-a-table-to-locations-on-the-map.htm">地理编码表</a>、<a class="xref xref" esrisubtype="extrel" hrefpfx="https://pro.arcgis.com/zh-cn/pro-app/tool-reference" href="https://pro.arcgis.com/zh-cn/pro-app/tool-reference/geocoding/geocode-locations-from-table.htm#GUID-0CB3F8FE-6D02-46B6-8C36-F9D2EB963734">对表格中的位置进行地理编码</a>和<a class="xref xref" esrisubtype="extrel" hrefpfx="https://pro.arcgis.com/zh-cn/pro-app/tool-reference" href="https://pro.arcgis.com/zh-cn/pro-app/tool-reference/geocoding/geocode-file.htm#GUID-1B75929D-9A38-4158-AF95-464451F6F40E">地理编码文件</a>，以及 <span class="ph">Map Viewer</span> 中的<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/portal/latest" href="../../../../../zh-CN/portal/latest/use/geocode-locations-from-table.htm#GUID-89C82B81-FEB5-43FA-BC71-5878CA379EE9">对表格中的位置进行地理编码</a>。</p></section><section class="wfsummary padded-anchor" id="ESRI_WORKFLOWSUMMARY_9E2EBB687C9E4101B631BA4BEA924BAD" purpose="wfsummary"><p id="GUID-D2FC59A7-E2B0-485C-9906-A90DE3010590">
+</p></section>
+			
+				<hr>
+				<!--googleoff: all-->
+				
+	
+        
+		    <p class="feedback right">
+		        <a id="afb" class="icon-ui-contact" href="/feedback/" data-langlabel="feedback-on-this-topic" >有关此主题的反馈?</a>
+		    </p>
+        
+	
+
+				<!--googleon: all-->
+			
+		</main>
+	</div>
+	
+	<!--googleoff: all-->
+	
+		
+			<div id="main-toc-large" class="column-5">
+			    <div class="panel font-size--2 tablet-hide trailer-1">
+			      <h5 class="trailer-half">在本主题中</h5>
+			      <ol class="list-plain pre-0 trailer-0"><li><a href="#ESRI_SECTION1_9FF9489173C741DD95472F21B5AD8374">要求
+</a></li><li><a href="#ESRI_SECTION1_E9C5D72603954C32823181D122FF8EC7">优点
+</a></li><li><a href="#ESRI_SECTION1_9785564347F942D5B08446E5387518FE">架构
+</a></li><li><a href="#ESRI_SECTION1_1F141AFC7EC847FCB9F5697B345F22DA">硬件建议
+</a></li><li><a href="#ESRI_SECTION1_961B48A13F4B42EBB0E451DB79348A5A">配置
+</a></li><li><a href="#ESRI_SECTION1_1E603F292E4949B69600454D0D00E841">为批量地理编码启用的工具
+</a></li></ol>
+			    </div>
+			    
+			    
+	  		</div>
+		
+    
+   <!--googleon: all-->
+
+
+
+
+          
+        </div>
+        <!-- ENDPAGECONTENT -->
+
+      </div>
+
+    </div>  <!-- End of wrapper -->
+
+  <footer class="footer leader-3 link-dark-gray" role="contentinfo">
+    <div class="grid-container">
+      <div class="row">
+        <nav class="column-6">
+          <h6 data-langlabel="arcgis-for-server">Arc<span>GIS Enterprise</span></h6>
+          <ul class="list-plain">
+            <li><a data-langlabel="home" href="../../../../../zh-CN/">主页</a></li>
+            <li><a data-langlabel="portal" href="../../../../../zh-CN/portal/">Portal</a></li>
+            <li><a data-langlabel="server" href="../../../../../zh-CN/server/">Server</a></li>
+            <li><a data-langlabel="data-store" href="../../../../../zh-CN/data-store/">Data Stores</a></li>
+            <li><a data-langlabel="cloud" href="../../../../../zh-CN/cloud/">云</a></li>
+            <li><a data-langlabel="apps" href="../../../../../zh-CN/apps/">应用程序</a></li>
+            <li><a data-langlabel="documentation" href="../../../../../zh-CN/documentation/">文档</a></li>
+          </ul>
+        </nav>
+
+        
+  <nav class="column-6">
+    <h6 data-langlabel="arcgis-platform">ArcGIS 平台</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="arcgis" href="//www.arcgis.com/">ArcGIS Online</a></li>
+      <li><a data-langlabel="arcgis-for-professionals" href="//pro.arcgis.com/">ArcGIS Pro</a></li>
+      <li><a data-langlabel="arcgis-for-server" href="//enterprise.arcgis.com/">ArcGIS Enterprise</a></li>
+      <li><a data-langlabel="arcgis-for-developers" href="https://developers.arcgis.com/">ArcGIS for Developers</a></li>
+      <li><a data-langlabel="arcgis-solutions" href="//solutions.arcgis.com/">ArcGIS Solutions</a></li>
+      <li><a data-langlabel="arcgis-marketplace" href="//marketplace.arcgis.com/">ArcGIS Marketplace</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <h6 data-langlabel="about-esri">关于 Esri</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="about-us" href="//www.esri.com/about-esri/">关于我们</a></li>
+      <li><a data-langlabel="careers" href="//www.esri.com/careers/">招贤纳士</a></li>
+      <li><a data-langlabel="insiders-blog" href="https://www.esri.com/about/newsroom/blog/">Esri 博客</a></li>
+      <li><a data-langlabel="user-conference" href="//www.esri.com/events/user-conference/index.html">用户大会</a></li>
+      <li><a data-langlabel="developer-summit" href="//www.esri.com/events/devsummit/index.html">开发者峰会</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <a class="esri-logo" href="//www.esri.com/" aria-label="Esri Home"></a>
+    <section class="footer-social-nav leader-1">
+            <a class="icon-social-twitter" aria-label="Esri on Twitter" href="https://twitter.com/Esri/"></a>
+            <a class="icon-social-facebook" aria-label="Esri on Facebook" href="https://www.facebook.com/esrigis/"></a>
+            <a class="icon-social-github" aria-label="Esri on GitHub" href="//esri.github.io/"></a>
+            <a class="icon-social-contact" aria-label="Contact Esri" href="//www.esri.com/about-esri/contact/"></a>
+    </section>
+	  
+  </nav>
+  
+  <div class="column-24 leader-1">
+    <p class="font-size--3"><a href="http://www.esri.com/legal/copyright-trademarks">Copyright &copy; 2019 Esri.</a> All rights reserved. | <a href="http://www.esri.com/legal/privacy/">隐私政策</a> | <a href="http://www.esri.com/legal/software-license">法律声明</a></p>
+  </div>
+  
+
+
+      </div>
+    </div>
+  </footer>
+  <!--googleoff: all-->
+
+  
+  
+	<script src="../../../../../zh-CN/assets/js/init.js" type="text/javascript"></script>
+	<!--<script src="../../../../../zh-CN/assets/js/drop-down.js" type="text/javascript"></script>-->
+	<script src="../../../../../zh-CN/assets/js/search/searchform.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/cdn/js/link-modifier.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/cdn/js/sitewide.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/cdn/js/libs/highlight.pack.js" type="text/javascript"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+
+
+  
+    
+
+  <script src="../../../../../zh-CN/cdn/js/affix.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    $(function () {
+          var appendFlg = true;
+
+          $("#bigmac")
+          .on("affixed.bs.affix", function (evt) {
+            if (appendFlg) {
+              $("<a class='crumb' href='#'>在门户中批量地理编码的最佳做法</a>").insertAfter ($("#bigmac nav a").last());
+              appendFlg = false;
+            }
+          })
+          .on ("affix-top.bs.affix", function(evt) {
+            if (!appendFlg) {
+              $("#bigmac nav a").last().remove();
+            }
+            appendFlg = true;
+          })
+    })
+  </script>
+  
+        <script type="text/javascript">
+          window.doctoc = {
+            pubID: "555",
+            tpcID: "401",
+            
+              prefix: "管理",
+              prefixUrl: "/zh-cn/portal/latest/administer/windows/",
+          
+            hideToc: false
+          }
+        </script>
+
+        <script type="text/javascript" src="../../../../../zh-CN/portal/latest/administer/windows/555.js" ></script>
+        <script type="text/javascript" src="../../../../../zh-CN/cdn/calcite/js/protoc.js" ></script>
+        
+        
+
+  <noscript>
+        <p>
+            <a href="flisting.htm">flist</a>
+        </p>
+    </noscript>
+    <script type="text/javascript"></script>
+  
+  
+    
+    
+
+  </body>
+</html>

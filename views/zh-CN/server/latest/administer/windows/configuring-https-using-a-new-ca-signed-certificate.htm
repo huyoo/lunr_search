@@ -1,0 +1,548 @@
+
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>  <html class="ie lt-ie9 lt-ie8 lt-ie7 ie6" dir="ltr"> <![endif]-->
+<!--[if IE 7]>     <html class="ie lt-ie9 lt-ie8 ie7" dir="ltr"> <![endif]-->
+<!--[if IE 8]>     <html class="ie lt-ie9 ie8" dir="ltr"> <![endif]-->
+<!--[if IE 9]>     <html class="ie ie9" dir="ltr"> <![endif]-->
+<!--[if !IE]><!--> <html dir="ltr" lang="zh-CN"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>使用新 CA 签名证书配置 ArcGIS Server&mdash;ArcGIS Server 管理 (Windows) | ArcGIS Enterprise 文档</title>
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+    <script>
+      var docConfig = {
+        locale: 'zh-CN'
+        ,localedir: 'zh-cn'
+        ,langSelector: ''
+        
+        ,relativeUrl: false
+        
+
+        ,searchformUrl: '/search/'
+        ,tertiaryNavIndex: ''
+
+        
+      };
+    </script>
+	 
+
+
+    
+    <!--[if lt IE 9]>
+      <script src="../../../../../zh-CN/cdn/js/libs/html5shiv.js" type="text/javascript"></script>
+      <script src="../../../../../zh-CN/cdn/js/libs/selectivizr-min.js" type="text/javascript"></script>
+      <script src="../../../../../zh-CN/cdn/js/libs/json2.js" type="text/javascript"></script>
+      <script src="../../../../../zh-CN/cdn/js/libs/html5shiv-printshiv.js" type="text/javascript" >
+
+    <![endif]-->
+
+     <!--[if lt IE 11]>
+    <script>
+      $$(document).ready(function(){
+        $$(".hideOnIE").hide();
+      });
+    </script>
+    <![endif]-->
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<link href="../../../../../zh-CN/assets/img/favicon.ico" rel="shortcut icon" >
+	<link href="../../../../../zh-CN/assets/css/screen.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/cdn/calcite/css/documentation.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/assets/css/print.css" media="print" type="text/css" rel="stylesheet" />
+
+	<!--
+	<link href="../../../../../zh-CN/assets/css/screen_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/assets/css/documentation/base_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/assets/css/print_l10n.css" media="print" type="text/css" rel="stylesheet" />
+	-->
+	
+	
+		<script src="../../../../../zh-CN/cdn/js/libs/jquery.1.9.1.min.js" type="text/javascript"></script>
+	
+	<script src="../../../../../zh-CN/cdn/js/libs/jquery.cookie.js" type="text/javascript"></script>
+	<link href="../../../../../zh-CN/cdn/css/colorbox.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/cdn/css/colorbox_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<script src="../../../../../zh-CN/cdn/js/libs/jquery.colorbox-min.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/assets/js/video-init.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/assets/js/sitecfg.js" type="text/javascript"></script>
+	
+		<script src="../../../../../zh-CN/assets/js/signIn.js" type="text/javascript"></script>
+	
+
+	<!--- Language Picker -->
+	<script src="../../../../../zh-CN/assets/js/locale/l10NStrings.js" type="text/javascript"></script>
+	
+		 
+	
+
+	<script src="../../../../../zh-CN/assets/js/calcite-web.js" type="text/javascript"></script>
+
+
+
+  <!--- search MD -->
+    <META name="description" content="可以使用 CA 签名证书为 ArcGIS Server 配置 HTTPS。"><META name="last-modified" content="2019-12-6"><META name="product" content="arcgis-server-windows,arcgis-enterprise-windows"><META name="sub_category" content="ArcGIS Server (Windows)"><META name="search-collection" content="help"><META name="content_type_label" content="帮助主题"><META name="sub_category_label" content="ArcGIS Server (Windows)"><META name="search-category" content="help-general"><META name="subject_label" content="服务"><META name="version" content="10.8"><META name="content_type" content="Help Topic"><META name="subject" content="SERVICES"><META name="content-language" content="zh-cn">
+    <!--- search MD -->
+
+  
+  <script src="../../../../../zh-CN/assets/js/switchers/server-1.js" type="text/javascript"></script>
+  
+      
+
+</head>
+
+<!--
+      pub: GUID-7EF2A884-9DD0-4341-BA8B-FEB95EBECC37=19
+      tpc: GUID-12E5DC28-8176-4607-919C-3A8A88162837=15
+      -->
+
+
+<!-- variable declaration, if any -->
+<!-- can change following macro to set variable once we are on Jinja 2.8 -->
+
+
+
+
+
+<body class="claro zh-CN server">
+  
+
+  <!-- Drawer location -->
+  <div class="drawer drawer-left js-drawer" data-drawer="top-nav">
+        <nav class="drawer-nav" role="navigation">
+          <aside class="side-nav">
+            <h2 class="side-nav-title">Arc<span>GIS</span> Enterprise</h2>
+            <form id="helpSearchForm" class="margin-left-half margin-right-half leader-half trailer-half drawer-search-form" method="GET">
+              <input type="search" name="q"  placeholder="搜索 ArcGIS Server 10.8 帮助">
+              <input type="hidden" name="collection" value="help" />
+              <input type="hidden" name="product" value="arcgis-server-windows" />
+              <input type="hidden" name="version" value="10.8" />
+              <input type="hidden" name="language" value="zh-CN" />
+            </form>    
+             <a id="nav-portal" data-langlabel="portal" href="../../../../../zh-CN/portal/" class="side-nav-link">Portal</a>
+             
+            <a id="all-servers" data-langlabel="all-servers" href="../../../../../zh-CN/server/" class="side-nav-link">所有服务器</a>
+            <a id="gis-server" data-langlabel="gis-server" href="../../../../../zh-CN/server/" class="side-nav-link">GIS Server</a>
+            <a id="image-server" data-langlabel="image-server" href="../../../../../zh-CN/image/" class="side-nav-link">Image Server</a>
+            <a id="geo-analytics-server" data-langlabel="geo-analytics-server" href="../../../../../zh-CN/geoanalytics/" class="side-nav-link">GeoAnalytics Server</a>
+            <a id="geoevent-server" data-langlabel="geoevent-server" href="../../../../../zh-CN/geoevent/" class="side-nav-link">GeoEvent Server</a>
+            <a id="notebook-server" data-langlabel="notebook-server" href="../../../../../zh-CN/notebook/" class="side-nav-link">Notebook Server</a>
+            <a id="nav-data-store" data-langlabel="data-store" href="../../../../../zh-CN/data-store/" class="side-nav-link">Data Stores</a>
+            <a id="nav-cloud" data-langlabel="cloud" href="../../../../../zh-CN/cloud/" class="side-nav-link">云</a>
+            <a id="nav-apps" data-langlabel="apps" href="../../../../../zh-CN/apps/" class="side-nav-link">应用程序</a>
+            <a id="nav-doc" data-langlabel="documentation" href="../../../../../zh-CN/documentation/" class="side-nav-link">文档</a>
+
+          </aside>
+        </nav>
+    </div>
+
+    <!-- user navigation collapses to drawer on mobile -->
+    
+    <div class="drawer drawer-right js-drawer hide-if-logged-out logged-in-navigation" data-drawer="user-nav">
+      <nav class="drawer-nav">
+        <aside class="side-nav">
+          <a class="side-nav-link agolProfile" href="#">我的个人资料</a>
+          <a class="side-nav-link icon-ui-sign-out js-log-out" href="#">登出</a>
+        </aside>
+      </nav>
+    </div>
+    
+<!-- End of drawer -->
+
+  
+  <div class="wrapper">
+      <!--googleoff: all-->
+
+      <header class="top-nav" data-skin="learn">
+        <a class="skip-to-content" href="#skip-to-content">Skip To Content</a>
+        <div class="grid-container">
+          <div class="column-24">
+
+
+            <!--<div class="top-nav-title-wrapper text-center ">-->
+              <a href='../../../../../zh-CN/' class="top-nav-title tablet-hide"><span>Arc</span>GIS  Enterprise</a>
+              <a href='../../../../../zh-CN/' class="icon-ui-menu top-nav-title js-drawer-toggle tablet-show" data-drawer="top-nav"><span>Arc</span>GIS Enterprise</a>
+            <!--</div> -->
+
+          
+            <nav role="navigation" class="top-nav-list left tablet-hide">
+              <a id="nav-portal" data-langlabel="portal" href="../../../../../zh-CN/portal/" class="top-nav-link">Portal</a>
+
+                <div class="dropdown js-dropdown ">
+                  <a class="top-nav-link js-dropdown-toggle" tabindex="0" aria-haspopup="true" aria-expanded="false" href="#">Servers</a>
+                  <nav class="dropdown-menu featured" role="menu">
+                    <ul class="dropdown-sublist-featured">
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/get-started/latest/windows/additional-server-deployment.htm" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path  d="M42.92 6.1H4.12v8.566l.833.832-.835.833-.018 7.332.845.847-.825.824V33.9h25v5.2h-2v1.075H8.02v.8h19.1v.925h4.8v-.925H40v-.8h-8.08V39.1h-2v-5.2h13v-8.566l-.834-.834.835-.834v-7.332l-.835-.834.835-.834zm-11.8 35h-3.2v-1.2h3.2zm11-8H4.92v-7.434l.767-.766h35.668l.765.766zm0-9.766l-.766.766H5.666l-.766-.767.017-6.669.766-.764h35.671l.766.766zm0-9l-.766.766H5.687l-.766-.766V6.9h37.2zM19 11.9h-2v-.8h2zm-4 0h-2v-.8h2zm-4 0H9v-.8h2zm6 8.2h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9zm8 9h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9z"/></svg></span>
+                          <span class="sublink-text">所有服务器</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/server/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M45.98 33.575a.616.616 0 0 0-.335-.51l-3.362-2.03 3.362-2.031a.556.556 0 0 0 0-1.02l-11.1-6.704a1.293 1.293 0 0 0-1.112 0L22.33 27.982a.556.556 0 0 0 0 1.02l3.36 2.03-3.358 2.03a.556.556 0 0 0-.002 1.021l3.322 2.006-3.324 2.008a.555.555 0 0 0 .002 1.017l11.102 6.703a1.25 1.25 0 0 0 1.11.002l11.104-6.706a.556.556 0 0 0 0-1.02l-3.32-2.006 3.318-2.004a.607.607 0 0 0 .335-.509zM33.837 21.97c.026-.01.286-.005.29-.005l10.814 6.53-10.8 6.523c-.028.01-.284.005-.294.006l-10.813-6.53zm11.105 16.636l-10.8 6.523a2.564 2.564 0 0 1-.295.006l-10.81-6.529 3.39-2.047 7.004 4.23a1.083 1.083 0 0 0 .557.131 1.101 1.101 0 0 0 .554-.13l7.01-4.233zM34.14 40.098a2.545 2.545 0 0 1-.294.006l-10.812-6.53 3.43-2.073 6.97 4.208a1.25 1.25 0 0 0 1.107-.001l6.966-4.206 3.431 2.073zM9 8H7V7h2zm8 8h-2v-1h2zm-4-8h-2V7h2zm4 0h-2V7h2zm-4 8h-2v-1h2zm7.316 11.1H3.9v-6.434l.766-.766h35.668l.766.766v2.12l.8.483v-2.935l-.826-.826.826-.845v-6.329l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9h16.88a2.632 2.632 0 0 1 .336-.8zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zm0 8v-5.668l.766-.766h35.668l.766.766v5.67l-.746.764H4.666zM15 24v-1h2v1zm-4 0v-1h2v1zm-2-8H7v-1h2zm-2 8v-1h2v1z"/></svg></span>
+                          <span class="sublink-text">GIS Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/image/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 8h-2V7h2zm-4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm8 8h-2v1h2zm-8 0H7v1h2zm4 9v-1h-2v1zm-4 0v-1H7v1zm8 0v-1h-2v1zm4 3.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V21h-.8v-.334l-.766-.766H4.666l-.766.766V27.1H21zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zm40.234 4v21.8H23.1V23.1zm-.8 16.366L39.466 44.1h2.868l1.766-1.766zm-20.2-9.932l5.634-5.634h-2.868L23.9 26.666zm6.2-5.068L24.466 30.1h2.868l2.766-2.766zM28.466 30.1H30.1v-1.634zm2.434 0h6.2v-6.2h-6.2zm-7 7h6.2v-6.2h-6.2zm7 0h6.2v-6.2h-6.2zm0 6.434l5.634-5.634h-2.868L30.9 40.666zm7-7l5.634-5.634h-2.868L37.9 33.666zm1.634-5.634H37.9v1.634zm-8.634 7v1.634l1.634-1.634zm.566 6.2h2.868l2.766-2.766v-2.868zm6.434-3.566l2.634-2.634H37.9zM35.466 44.1H37.1v-1.634zm2.434 0h.434l5.766-5.766V37.9h-2.434L37.9 41.666zm6.2-8.634L42.466 37.1H44.1zm0-4L38.466 37.1h2.868l2.766-2.766zm0-7.566h-6.2v6.2h6.2zm-20.2 0v1.634l1.634-1.634zm0 20.2h6.2v-6.2h-6.2zm20.2 0v-.634l-.634.634z"/></svg></span>
+                          <span class="sublink-text">Image Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/geoanalytics/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 16h-2v-1h2zm-8 8v-1H7v1zm8 0v-1h-2v1zM13 7h-2v1h2zm4 0h-2v1h2zM9 7H7v1h2zm21.45 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V27.9h-1.464l-.801-.8H41.1v-6.434l-.766-.766H4.666l-.766.766V27.1h27.15zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM13 24v-1h-2v1zm0-9h-2v1h2zm-4 0H7v1h2zm26.672 27.148A1.87 1.87 0 0 1 35.9 43a1.91 1.91 0 1 1-3.763-.222l-9.845-3.414A1.88 1.88 0 0 1 21 39.9a1.9 1.9 0 1 1 1.474-3.084l4.692-2.346A1.878 1.878 0 0 1 27.1 34a1.902 1.902 0 0 1 1.9-1.9 1.867 1.867 0 0 1 .781.191l3.788-5.05A1.88 1.88 0 0 1 33.1 26a1.9 1.9 0 1 1 3.491 1.026l4.889 4.888c-.069.056-.144.1-.21.162a3.986 3.986 0 0 0-.358.402l-4.883-4.883A1.889 1.889 0 0 1 35 27.9a1.867 1.867 0 0 1-.781-.191l-3.788 5.049a1.868 1.868 0 0 1 .437.965l9.204.614c-.018.11-.049.218-.058.33A3.93 3.93 0 0 0 40 35c0 .046.01.09.01.135l-9.185-.612A1.913 1.913 0 0 1 29 35.9a1.889 1.889 0 0 1-1.474-.716l-4.692 2.346a1.878 1.878 0 0 1 .066.47 1.9 1.9 0 0 1-.105.625c-.007.02-.022.036-.03.056l9.63 3.34a1.87 1.87 0 0 1 2.786-.505l5.415-4.437c.067.108.127.22.204.322a3.9 3.9 0 0 0 .292.306zM33.9 26a1.092 1.092 0 0 0 .43.872 1.12 1.12 0 0 0 1.42-.068A1.1 1.1 0 1 0 33.9 26zm-6 8a1.1 1.1 0 0 0 2.196.093 1.135 1.135 0 0 0-.426-.965A1.087 1.087 0 0 0 29 32.9a1.101 1.101 0 0 0-1.1 1.1zm-5.8 4a1.098 1.098 0 1 0-.06.362A1.101 1.101 0 0 0 22.1 38zm13 5a1.1 1.1 0 1 0-2.2 0 1.1 1.1 0 0 0 2.2 0zm10.8-8a1.9 1.9 0 1 1-3.8 0c0-.053.003-.105.007-.158A1.9 1.9 0 0 1 45.9 35zm-.8 0a1.1 1.1 0 0 0-2.196-.093 1.153 1.153 0 0 0 .216.752A1.1 1.1 0 0 0 45.1 35z"/></svg></span>
+                          <span class="sublink-text">GeoAnalytics Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/geoevent/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M13 8h-2V7h2zm4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm12.418 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826v2.117c-.259-.177-.53-.337-.8-.497v-1.288l-.766-.766H4.666l-.766.766V27.1h17.933c-.148.26-.283.53-.415.8zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM9 24v-1H7v1zm4-9h-2v1h2zm0 9v-1h-2v1zm-4-9H7v1h2zm8 9v-1h-2v1zm16.9 2h-.8v8.9H39v-.8h-5.1zm.1-3.901a11.9 11.9 0 1 0 11.9 11.9 11.914 11.914 0 0 0-11.9-11.9zm0 23a11.1 11.1 0 1 1 11.1-11.1 11.112 11.112 0 0 1-11.1 11.1z"/></svg></span>
+                          <span class="sublink-text">GeoEvent Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/notebook/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M22 27.1H3.9v-6.434l.766-.766h18.576a5.262 5.262 0 0 1 .83-.8H4.666l-.766-.766v-5.668l.766-.766h35.668l.766.766V18h.8v-5.666l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9H22zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zM9 8H7V7h2zm8 0h-2V7h2zm-4 0h-2V7h2zm2 16v-1h2v1zm-4 0v-1h2v1zm-4 0v-1h2v1zm0-8v-1h2v1zm8 0v-1h2v1zm-4 0v-1h2v1zm18.9 8.1h-1.8v1.8h1.8zm-.8 1h-.2v-.2h.2zm15.498-4.48a2.727 2.727 0 0 0-1.62-.5v-.02H27.25a3.154 3.154 0 0 0-3.15 3.15V38.1h-1.68a3.386 3.386 0 0 0-2.872 1.58 3.49 3.49 0 0 0-.157 3.419 3.241 3.241 0 0 0 2.954 1.801h15.161a3.404 3.404 0 0 0 3.394-3.4V26.9h5v-3.65a3.224 3.224 0 0 0-1.302-2.63zM22.345 44.1a2.44 2.44 0 0 1-2.23-1.341 2.706 2.706 0 0 1 .11-2.65A2.588 2.588 0 0 1 22.42 38.9h12.89a3.395 3.395 0 0 0 0 5.2zM40.1 23.192V41.5a2.6 2.6 0 1 1-2.6-2.6v-.8H24.9V23.25a2.352 2.352 0 0 1 2.35-2.35h13.795a3.183 3.183 0 0 0-.945 2.292zm5 2.908h-4.2v-2.908a2.274 2.274 0 0 1 1.44-2.18 1.944 1.944 0 0 1 1.791.259 2.423 2.423 0 0 1 .97 1.979zm-17.1 5h9v.8h-9zm0 3h7v.8h-7zm0-6h9v.8h-9zm4-3h5v.8h-5z"/></svg></span>
+                          <span class="sublink-text">Notebook Server</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+
+              <a id="nav-data-store" data-langlabel="data-store" href="../../../../../zh-CN/data-store/" class="top-nav-link">Data Stores</a>
+              <a id="nav-cloud" data-langlabel="cloud" href="../../../../../zh-CN/cloud/" class="top-nav-link">云</a>
+              <a id="nav-apps" data-langlabel="apps" href="../../../../../zh-CN/apps/" class="top-nav-link">应用程序</a>
+            </nav>
+
+
+            
+            
+            
+
+            <div class="margin-left-1 top-nav-list right hide-if-logged-in logged-out-navigation">
+               
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+              
+              <a data-langlabel="sign-in" id="login-link" class="icon-ui-user top-nav-link link-blue login-link" href="#">登录</a>
+              
+            </div>
+
+            
+            <nav class="margin-left-1 top-nav-list right hide-if-logged-out logged-in-navigation">
+              
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+             
+              <div class="dropdown js-dropdown right">
+
+                <div class="tablet-show top-nav-link">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a href="#" data-drawer="user-nav" class="user-nav-name js-drawer-toggle" data-first-name></a>
+                </div>
+
+                <div class="tablet-hide top-nav-link js-dropdown-toggle">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a class="user-nav-name top-nav-dropdown dropdown-btn" data-first-name>&nbsp;</a>
+                </div>
+
+                <nav class="dropdown-menu dropdown-right">
+                
+                  <a class="dropdown-link agolProfile" id="agolProfile" href="#">我的个人资料</a>
+                  <a class="dropdown-link js-log-out" id="agolLogout" href="#">登出</a>
+                </nav>
+              </div>
+            </nav>
+            
+
+            
+          </div>
+        </div>
+      </header>
+
+      <div class="js-search search-overlay">
+        <div class="search-content" role="dialog" aria-labelledby="search">
+          <form method="GET" id="helpSearchForm">
+            <label>
+              搜索 ArcGIS Server 10.8 帮助
+              <div class="search-bar">
+                <input type="search" name="q"  placeholder="搜索 ArcGIS Server 10.8 帮助" class="search-input js-search-input">
+                <input type="hidden" name="collection" value="help" />
+                <input type="hidden" name="product" value="arcgis-server-windows" />
+                <input type="hidden" name="version" value="10.8" />
+                <input type="hidden" name="language" value="zh-CN" />
+              </div>
+            </label>
+            <input type="hidden" name="relativePath" value="../../../../../" /><button type="submit" class="btn btn-large right">搜索</button>
+          </form>
+        </div>
+      </div>
+
+      <!--googleon: all-->
+
+      <div id="skip-to-content">
+        <!--googleoff: all-->
+        <header class="sub-nav sub-nav-learn">
+          <div class="grid-container">
+            
+            <div class="column-24">
+              <div style="display:table;" class="sdk-home-banner">
+                <div class="sdk-home-banner-content">
+                  <h1 class="sub-nav-title link-white">ArcGIS Server</h1>
+                </div>
+              </div>
+            </div>
+
+            <div class="column-24">
+              <nav class='sub-nav-list tablet-hide'><a class="sub-nav-link" href="../../../../../zh-CN/server/" target="_top" title="ArcGIS Server 的概述和文档">主页</a><a class="sub-nav-link" href="../../../../../zh-CN/server/latest/get-started/windows/" target="_top" title="了解有关 ArcGIS Server 和服务器角色的信息">简介</a><a class="sub-nav-link" href="../../../../../zh-CN/server/latest/deploy/windows/" target="_top" title="构建、配置和升级部署">部署</a><a class="sub-nav-link" href="../../../../../zh-CN/server/latest/manage-data/windows/" target="_top" title="管理企业的空间数据">管理数据</a><a class="sub-nav-link" href="../../../../../zh-CN/server/latest/publish-services/windows/" target="_top" title="使用 GIS 服务">管理服务</a><a class="sub-nav-link" href="../../../../../zh-CN/server/latest/create-web-apps/windows/" target="_top" title="创建 Web 应用程序和可打印地图">共享</a><a class="sub-nav-link is-active" href="../../../../../zh-CN/server/latest/administer/windows/" target="_top" title="管理和保护 ArcGIS Server">管理</a><a class="sub-nav-link" href="../../../../../zh-CN/server/latest/develop/windows/" target="_top" title="构建扩展模块并自动执行常见任务">开发</a></nav><select class='tablet-show select-full trailer-half js-select-nav'><option value="../../../../../zh-CN/server/">主页</option><option value="../../../../../zh-CN/server/latest/get-started/windows/">简介</option><option value="../../../../../zh-CN/server/latest/deploy/windows/">部署</option><option value="../../../../../zh-CN/server/latest/manage-data/windows/">管理数据</option><option value="../../../../../zh-CN/server/latest/publish-services/windows/">管理服务</option><option value="../../../../../zh-CN/server/latest/create-web-apps/windows/">共享</option><option selected="true" value="../../../../../zh-CN/server/latest/administer/windows/">管理</option><option value="../../../../../zh-CN/server/latest/develop/windows/">开发</option></select>
+            </div>
+
+          </div>
+        </header>
+        <!--googleon: all-->
+       
+        <!-- content goes here -->
+        <div class="grid-container ">
+          
+
+            
+              
+  <!--BREADCRUMB-BEG--><div id="bigmac" class="sticky-breadcrumbs trailer-2" data-spy="affix" data-offset-top="180"> </div><!--BREADCRUMB-END-->
+  <!--googleoff: all-->
+    <div class="column-5 tablet-column-12 trailer-2 ">
+      <aside class="js-accordion accordion reference-index" aria-live="polite" role="tablist">
+        <div></div>
+      </aside>
+
+      <div class="js-sticky scroll-show tablet-hide leader-1 back-to-top" data-top="0" style="top: 0px;">
+        <a href="#" class="btn btn-fill btn-clear">返回顶部</a>
+      </div>
+    </div>
+  <!--googleon: all-->
+  
+            
+            
+            
+	
+		<div class="column-13  pre-1 content-section">
+	
+		<header class="trailer-1"><h1>使用新 CA 签名证书配置 ArcGIS Server</h1></header>
+
+		 
+	<!--googleoff: all-->
+	
+		
+				<aside id="main-toc-small" class="js-accordion accordion tablet-show trailer-1">
+			      <div class="accordion-section">
+			        <h4 class="accordion-title">在本主题中</h4>
+			        <div class="accordion-content list-plain">
+			          <ol class="list-plain pre-0 trailer-0"><li><a href="#GUID-C9C2C3F8-9376-4433-8952-5C389FF74152">创建自签名证书</a></li><li><a href="#ESRI_SECTION1_D6A65ADC60134B16B0CB93A7E52CA4AA">请求 CA 为证书签名</a></li><li><a href="#ESRI_SECTION1_96040AD6BEE04C1BA8D781D2CB2A8557">将 <ph translate="no" varid="ArcGISforServer">ArcGIS Server</ph> 配置为使用 CA 签名证书</a></li><li><a href="#ESRI_SECTION1_151BCC1640574719A82F2358CB994384">配置部署中的每台 <ph translate="no" varid="ArcGISforServer">ArcGIS Server</ph> 计算机</a></li><li><a href="#ESRI_SECTION1_E0A984AB1249430A862B2AA6A8263FCD">将 CA 根证书导入到 Windows 证书存储中</a></li><li><a href="#GUID-3C6577DE-53A3-434D-BDFC-57CF4A4E2A8E">访问您的站点</a></li></ol>
+			        </div>
+			      </div>
+			     </aside>
+		
+    
+   <!--googleon: all-->
+
+
+		<main>
+			
+	
+    	
+    
+
+
+			
+<p id="GUID-243302F2-8840-42E3-B8E1-54E96F6B78F1">本主题将介绍创建证书、由证书颁发机构 (CA) 进行签名并使用 <span class="ph">ArcGIS Server</span> 对其进行配置的相关步骤。要执行的步骤如下：</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_DB5945A7F1E14C04A711744079BBA5EF"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_3A830783AE224D1F8C5EF760A7DDAEFA"><span purpose="cmd" id="GUID-C86E6765-6D6C-4456-B2BE-A886B134D60A"><a class="xref xref" href="../../../../../zh-CN/server/latest/administer/windows/configuring-https-using-a-new-ca-signed-certificate.htm#GUID-C9C2C3F8-9376-4433-8952-5C389FF74152">创建自签名证书</a>。</span></li><li purpose="step" id="ESRI_STEP_9E3E991C1A6C482E8587BB7514A14AFC"><span purpose="cmd" id="GUID-833B8F0E-9D2F-4C26-9BC8-CA40C25700A8"><a class="xref xref" href="../../../../../zh-CN/server/latest/administer/windows/configuring-https-using-a-new-ca-signed-certificate.htm#ESRI_SECTION1_D6A65ADC60134B16B0CB93A7E52CA4AA">请求 CA 为证书签名</a>。</span></li><li purpose="step" id="ESRI_STEP_D22306F304AE485198E1B2CD59F2B64D"><span purpose="cmd" id="GUID-02B2BE43-C965-4953-A118-175648E69E72"><a class="xref xref" href="../../../../../zh-CN/server/latest/administer/windows/configuring-https-using-a-new-ca-signed-certificate.htm#ESRI_SECTION1_96040AD6BEE04C1BA8D781D2CB2A8557">将 <span class="ph">ArcGIS Server</span> 站点配置为使用 CA 签名证书</a>。</span></li><li purpose="step" id="ESRI_STEP_914979536D0C41859111EF2313B70A56"><span purpose="cmd" id="GUID-52E23702-BFE0-46A4-8868-7638FF300335"><a class="xref xref" href="../../../../../zh-CN/server/latest/administer/windows/configuring-https-using-a-new-ca-signed-certificate.htm#ESRI_SECTION1_151BCC1640574719A82F2358CB994384">配置部署中的每台 <span class="ph">ArcGIS Server</span></a>。</span></li><li purpose="step" id="ESRI_STEP_8FB993A32E6943B2A731D0E43A9555FF" ishcondition="srv_os=windows"><span purpose="cmd" id="GUID-F76CF31C-95E7-4F65-8AC4-3DD2425AAFAB"><a class="xref xref" href="../../../../../zh-CN/server/latest/administer/windows/configuring-https-using-a-new-ca-signed-certificate.htm#ESRI_SECTION1_E0A984AB1249430A862B2AA6A8263FCD">将 CA 根证书导入到 Windows 证书存储中</a>。</span></li><li purpose="step" id="ESRI_STEP_354B081AB20F46E4BF372CB55C4107F1"><span purpose="cmd" id="GUID-F3D647BC-9A53-4651-9CC3-4B06FB18AA93"><a class="xref xref" href="../../../../../zh-CN/server/latest/administer/windows/configuring-https-using-a-new-ca-signed-certificate.htm#GUID-3C6577DE-53A3-434D-BDFC-57CF4A4E2A8E">访问您的站点</a>。</span></li></ol></div></section><section class="section1 padded-anchor" id="GUID-C9C2C3F8-9376-4433-8952-5C389FF74152" purpose="section1"><h2>创建自签名证书</h2><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_719B605B33EC4970AD7907E906FD7E7B"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_55B37C6144D043419FCA823FB75C0663"><span purpose="cmd" id="GUID-6A53E62C-BAE9-4BA5-9125-C236F0F9016F">登录到 <span class="ph">ArcGIS Server</span> 管理员目录，路径为 <span class="usertext">https://gisserver.domain.com:6443/arcgis/admin</span>。</span></li><li purpose="step" id="ESRI_STEP_B1F0A3DC661D41298C009D0017C9E3D0"><span purpose="cmd" id="GUID-1861A409-4AF4-4140-867D-0FC13B9BF38E">浏览至<span class="uicontrol">计算机 <span class="greaterthan">&gt;</span> [计算机名称] <span class="greaterthan">&gt;</span> sslcertificates</span>。</span></li><li purpose="step" id="ESRI_STEP_6089D529FC6B43199028B8333F30980A"><span purpose="cmd" id="GUID-751048C9-FAD3-41CB-ABAC-D0C107181667">单击<span class="uicontrol">生成</span>。</span></li><li purpose="step" id="ESRI_STEP_30162030AF7F46BDA6FACD72145F9278"><span purpose="cmd" id="GUID-D258632E-D4DF-4643-8EB7-6E2F98306DD2">在此页面中提供参数值：</span><div class="info" purpose="info"><p id="GUID-06404E2A-0BE3-41BE-967E-99B2520F9114"><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><thead><tr><th colspan="1">选项</th><th colspan="1">描述</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-45B39BF1-7E40-4F29-967B-540B8C8AACB2"><span class="uicontrol">别名</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-E268B85A-141A-4145-9F14-E74E709B0276">用于轻松识别证书的唯一名称。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-2701E8C6-1235-47E6-91CB-9BF7116CE3E4"><span class="uicontrol">密钥算法</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-3E0320B8-84B4-4625-8EE1-A841F6F97A96">使用 RSA (默认) 或 DSA。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-C033777F-34E9-4326-B0C3-9243AA5F97B6"><span class="uicontrol">密钥大小</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-88E98DC8-1C38-4730-9EBC-0ACE63F01295">指定生成的用于创建证书的密钥大小 (单位为位)。密钥越大，就越难解密；但是，解密数据的时间也会随着密钥的增大而增加。对于 DSA，密钥大小位于 512 和 1,024 之间。对于 RSA，推荐的密钥大小为 2,048 或更大。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-3D9AC870-874C-4E54-A15E-24F492817542"><span class="uicontrol">签名算法</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-D9F4F6A4-6FB6-4F55-8C3A-3CD85C2B85A7">使用默认值 (<span class="usertext">SHA256withRSA</span>)。如果组织有特定的安全性限制，则可以针对 DSA 使用以下算法之一：
+<span class="usertext">SHA384withRSA</span>、<span class="usertext">SHA512withRSA</span>、<span class="usertext">SHA1withRSA</span>、<span class="usertext">SHA1withDSA</span>。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-76114579-21D3-4608-969E-91580D4F313B"><span class="uicontrol">常用名称</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-041B5FE3-B795-4605-A225-F57E8F466041">该字段为可选字段，用于向后兼容旧版的 web 浏览器和软件。建议将服务器名称的完全限制域名用作常用名称。</p><p id="GUID-B71F021C-4C01-4141-8AA8-72947E7B3D2B">  如果要通过 URL <span class="usertext">https://www.gisserver.com:6443/arcgis/</span> 在 Internet 上访问服务器，则将 <span class="usertext">www.gisserver.com</span> 作为常用名称。</p><p id="GUID-7A197D96-41BF-4F7B-A018-4EEFD5831EB2"> 如果只能在局域网 (LAN) 上通过 URL <span class="usertext">https://gisserver.domain.com:6443/arcgis</span> 访问服务器，则请将 <span class="usertext">gisserver.domain.com</span> 作为常用名称。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-C94F2DD9-66DA-4120-AE5A-F70F89480487"><span class="uicontrol">组织单位</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-0FB88DB0-79C5-47AA-89D0-049EA4D3C360">组织单位的名称，例如 GIS 部门。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-E6A32922-33E6-414F-8AB0-8C5F6663CC4D"><span class="uicontrol">组织</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-7E5B7C46-C3CE-401D-8945-FDF00F1C820F">组织的名称，例如 Esri。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-AB0C1B8E-22CB-4556-8FAE-03F06CDAAB31"><span class="uicontrol">城市或所在地</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-556D6F23-5A1C-4F2C-8B68-437B723DEB6D">城市或所在地的名称，例如雷德兰兹。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-3BE8BC51-916E-40DC-A375-C5DA6A548FA5"><span class="uicontrol">州或省</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-E1831CC7-0D5B-4EF4-9E92-CC036EECF431">州或省的全称，例如加利福尼亚。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-CE3E3F63-76F8-4ECD-80E8-36DFFB95C512"><span class="uicontrol">国家代码</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-25404FFA-145A-496F-89D8-8F4E5F7519A6">国家代码的缩写，例如 US。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-B9238334-3E7A-42CA-93F2-A96089DC737C"><span class="uicontrol">有效期</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-2C9A0E63-D435-4278-89AE-7CB902FCAA19">此证书有效的总天数，例如 365 天。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-3382EFEC-CD61-4E77-9072-6A980AD54A40"><span class="uicontrol">主题备选名称</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-544178EB-7A8F-4467-BB04-8F328D8EB8B0">主题备选名称 (SAN) 用于验证所访问网站所提供的 SSL 证书是否针对该网站颁发。</p><p id="GUID-ED289D5B-3278-4818-8807-DBFDE8224605">如果此参数留空，则将本地计算机的完全限制域名用作默认值。SAN 字段支持多值；但是，该字段必须包含网站的完全限制域名。SAN 参数值不能包含空格。</p><p id="GUID-0C1E8823-781B-49B2-AAF7-376CEF4850E5">例如，如果服务器主要通过 URL <span class="usertext">https://www.esri.com</span> 进行访问，则 SAN 参数应设置为 <span class="usertext">DNS:www.esri.com</span>。如果将在公共网络中使用 URL <span class="usertext">https://www.esri.com</span> 并在组织的 LAN（局域网）中使用 URL <span class="usertext">https://gisserver.esri.com</span> 访问服务器，则 SAN 参数应设置为 <span class="usertext">DNS:www.esri.com,DNS:gisserver.esri.com</span>。</p><p id="GUID-5ACCBC16-784B-43D0-81B0-A1609708686D">虽然支持在 SAN 参数中使用通配符 <span class="usertext">(*.esri.com)</span>，但不建议使用。如果同一证书用于多个网站或子域，请在 SAN 参数中列出各个网站或子域，如以下示例所示：</p><p id="GUID-F239980A-25CA-4A27-9B2A-BAC43BC945BA">示例：<span class="usertext">DNS:www.esri.com,DNS:esri.com,DNS:www.esri.ch,DNS:www.esri.rw,DNS:www.esri.de,DNS:maps.esri.com,DNS:support.esri.com,DNS:pro.arcgis.com</span>。</p></td></tr></tbody><caption></caption></table></div></p></div></li><li purpose="step" id="ESRI_STEP_2A3740F6F7DD484792B22F03DD4A0EA5"><span purpose="cmd" id="GUID-F9B164EB-EB89-453A-BD76-183912F0E3D5">单击<span class="uicontrol">生成</span>以生成证书。</span></li></ol></div></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_D6A65ADC60134B16B0CB93A7E52CA4AA" purpose="section1"><h2>请求 CA 为证书签名</h2><p id="GUID-96AA2088-42F1-4C93-86DD-4D61C19ABD06">为使 Web 浏览器将证书视为受信任证书，必须由 Verisign 或 Thawte 等知名证书颁发机构对证书进行验证和会签。</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_70EB70C10F6849179A06D52289870B3C"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_9D8347EF96724988AEF711B6D6D93D10"><span purpose="cmd" id="GUID-B88A6082-28CB-480F-824A-E04720297845">打开在上一部分中创建的自签名证书，然后单击 <span class="uicontrol">generateCSR</span>。将内容复制到扩展名通常为 <span class="usertext">.csr</span> 的文件中。</span></li><li purpose="step" id="ESRI_STEP_E29CACC299EF40749D5E35334FDF6F5F"><span purpose="cmd" id="GUID-B1EB839C-EF43-4D9B-8BD7-1F5B7026FCEF">向所选 CA 提交 CSR。您可能会获得可分辨编码规则 (DER) 或 Base64 编码的证书。如果 CA 要求提供证书所针对的 Web 服务器类型，请指定<span class="uicontrol">其他\未知</span>或 <span class="uicontrol">Java 应用程序服务器</span>。在验证身份后，CA 会向您发送 <span class="usertext">.crt</span> 或 <span class="usertext">.cer</span> 文件。</span></li><li purpose="step" id="ESRI_STEP_8143537CDDAB4A0B92881F18B4CF5C7E"><span purpose="cmd" id="GUID-CC3411EC-CB1C-4AF8-B494-1FDB9CF6CD05">将从 CA 接收的签名证书保存到可从 <span class="ph">ArcGIS Server</span> 管理员目录访问的计算机位置。除了签名证书以外，CA 还会颁发根证书。将 CA 根证书保存到计算机上。</span></li><li purpose="step" id="ESRI_STEP_3E38A324D8E74422B40C60A064B02571"><span purpose="cmd" id="GUID-1EF902A6-8A1F-4433-A34D-9EC10D2E38D5">登录到 <span class="ph">ArcGIS Server</span> 管理员目录：<span class="usertext">https://gisserver.domain.com:6443/arcgis/admin</span>。</span></li><li purpose="step" id="ESRI_STEP_86E0772761294B5DA8B25CEF3F710629"><span purpose="cmd" id="GUID-E19F9DBB-A3BB-4026-8755-D4835E9C80C6">单击<span class="uicontrol">计算机 &gt; [计算机名称] &gt; sslcertificates <span class="greaterthan">&gt;</span> importRootOrIntermediate</span> 以导入 CA 提供的根证书。如果 CA 颁发了其他中间证书，则将这些证书一起导入。</span></li><li purpose="step" id="ESRI_STEP_4CE73114D0E344B3A30C31E06071A157"><span purpose="cmd" id="GUID-7046E4CA-7131-4190-877B-5CA9291AB786">浏览至<span class="uicontrol">计算机 <span class="greaterthan">&gt;</span> [计算机名称] <span class="greaterthan">&gt;</span> sslcertificates</span>。</span></li><li purpose="step" id="ESRI_STEP_BFA8AFBD120D4DA196AD09E2DA6383F2"><span purpose="cmd" id="GUID-C8D4D2AE-35FD-4D47-AF46-A16CEB2EB72D">单击向 CA 提交的自签名证书的名称。</span></li><li purpose="step" id="ESRI_STEP_68717E5C9DE44526B1151C80784FC32F"><span purpose="cmd" id="GUID-666040F2-A588-42E3-A9B6-21788F7C0295">单击<span class="uicontrol">导入已签名证书</span>，然后浏览到用于保存从 CA 接收的签名证书的位置。</span></li><li purpose="step" id="ESRI_STEP_EA6060772D594DDB93FDFE424E118C9B"><span purpose="cmd" id="GUID-FA6A99F7-912B-4D7B-8C3B-3C6BF4198C08"> 单击<span class="uicontrol">提交</span>。此时已在之前部分中创建的自签名证书将替换为 CA 签名证书。</span></li></ol></div></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_96040AD6BEE04C1BA8D781D2CB2A8557" purpose="section1"><h2>将 <span class="ph">ArcGIS Server</span> 配置为使用 CA 签名证书</h2><div class="panel trailer-1 note" id="GUID-191FE911-7320-4D43-BA68-C6D44E1E72DA"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-AEE3F72B-BBCD-45D5-858A-D42964FBF6E6">CA 签名证书中定义的 CRL 分布点 (CDP) 必须有效，且可通过托管 <span class="ph">ArcGIS Server</span> 的一台或多台计算机进行访问。如果证书中定义的 CDP 无效或者因不具备 Internet 访问权限、网络或防火墙设置而无法访问，则 <span class="ph">ArcGIS Desktop</span> 中的发布将失败。要解决此问题，请遵循“常见问题和解决方案”主题中<a class="xref xref" href="../../../../../zh-CN/server/latest/administer/windows/common-problems-and-solutions.htm#ESRI_QUESTIONANSWER_B8AE31A729224138B543C5F06042104F">无法将服务发布到使用 CA 颁发的证书的 <span class="ph">ArcGIS Server</span> 站点</a>中介绍的步骤。</p></div><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_1DE445E076274E6D97D3BEB54E7B4F4F"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_433B7DC4E98B4049BFF3887529DEE789"><span purpose="cmd" id="GUID-6BBD91FD-05E0-4436-9EC1-6B59F430CB7F">登录到 <span class="ph">ArcGIS Server</span> 管理员目录，路径为 <span class="usertext">https://gisserver.domain.com:6443/arcgis/admin</span>。将 <span class="usertext">gisserver.domain.com</span> 替换为安装了 <span class="ph">ArcGIS Server</span> 的计算机的完全限定名称。</span></li><li purpose="step" id="ESRI_STEP_C45581D3F05E4D0C8E5021AE530ECC81"><span purpose="cmd" id="GUID-068905D0-78B9-4DC2-9703-95F6125AD44D">浏览至<span class="uicontrol">计算机 <span class="greaterthan">&gt;</span> [计算机名称]</span>。</span></li><li purpose="step" id="ESRI_STEP_1609257DAC564489B47918F592D78910"><span purpose="cmd" id="GUID-B61D19F7-2622-4F37-84D2-382C87D3DCA8">单击<span class="uicontrol">编辑</span>。</span></li><li purpose="step" id="ESRI_STEP_5DAFF18442DD4FBCB09D3A29FCAA140E"><span purpose="cmd" id="GUID-8A6F2633-28E9-4586-B643-3D34D17B4D67">在 <span class="uicontrol">Web 服务器 SSL 证书</span>字段中键入签名证书的名称。所指定的名称应与之前部分中 CA 签名证书所替换掉的自签名证书的别名相匹配。</span></li><li purpose="step" id="ESRI_STEP_A201F880196D4B47A695C8364A82B4DE"><span purpose="cmd" id="GUID-7FF90C92-93C3-4563-BAB2-A31FE4953C86">单击<span class="uicontrol">保存编辑内容</span>应用所做更改。这将自动重新启动 <span class="ph">ArcGIS Server</span> 站点。</span></li><li purpose="step" id="ESRI_STEP_A64E270654D04A15A4EE07F02A18F20A"><span purpose="cmd" id="GUID-89EB3DB9-1FA2-4989-BC4E-4FF623BF2A00">站点重新启动后，请验证是否可访问 URL <span class="usertext">https://gisserver.domain.com:6443/arcgis/admin</span>。如果此 URL 没有响应，则 <span class="ph">ArcGIS Server</span> 无法使用指定的 SSL 证书。登录到 <span class="ph">ArcGIS Server</span> 管理员目录（路径为 <span class="usertext">http://gisserver.domain.com:6080/arcgis/admin</span>），检查 SSL 证书并将 <span class="ph">ArcGIS Server</span> 配置为使用新的或其他证书。</span></li><li purpose="step" id="ESRI_STEP_9C2B2523577E4C0397A2491EFB7BA2DD"><span purpose="cmd" id="GUID-3AEAD638-B70D-45C2-869F-1340C8E2FE41">在当前页面上，查看属性 <span class="uicontrol">Web 服务器 SSL 证书</span>以验证所需证书是否将用于 HTTPS。</span></li></ol></div></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_151BCC1640574719A82F2358CB994384" purpose="section1"><h2>配置部署中的每台 <span class="ph">ArcGIS Server</span> 计算机</h2><p id="GUID-1FF2A748-4B76-4A14-A2A4-428FAADBB195">如果 <span class="ph">ArcGIS Server</span> 采用多机部署，则必须为参与站点的每台 <span class="ph">ArcGIS Server</span> 计算机获取和配置 CA 签名证书。导入所有证书后，需要重新启动 <span class="ph">ArcGIS Server</span> 站点中的所有计算机。</p></section><section class="section1 padded-anchor" id="ESRI_SECTION1_E0A984AB1249430A862B2AA6A8263FCD" purpose="section1"><h2>将 CA 根证书导入到 Windows 证书存储中</h2><p id="GUID-B4C61410-B64B-46EA-9CF7-3EAA77B05509">如果 Windows 证书存储中不存在证书颁发机构的根证书，则必须将其导入。</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_9718C401C94E4BA3A8DA025E245E3EF1"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_1E6A5E15D52E4C279C25B6970A1EB6F9"><span purpose="cmd" id="GUID-3E79FF19-E67F-4CC8-9FEC-70AB81E60F52">登录到托管 <span class="ph">ArcGIS Server</span> 的计算机。</span></li><li purpose="step" id="ESRI_STEP_3D438D996AD643A6833B6FEE41AAB339"><span purpose="cmd" id="GUID-7B2E4C0D-2FDD-4182-A40B-DB00E047C9DA">将从 CA 接收的签名证书复制到计算机的某个位置。</span></li><li purpose="step" id="ESRI_STEP_1773397C7EEA47EFADF0BA7ECECBF504"><span purpose="cmd" id="GUID-8E6821A0-3691-4678-9409-D68C34E702DD">打开此证书，然后单击<span class="uicontrol">证书路径</span>选项卡。如果<span class="uicontrol">证书状态：</span>为<span class="uicontrol">证书正常</span>，则 CA 根证书将出现在 Windows 证书存储中，并不再需要导入。前进至步骤 12。</span> </li><li purpose="step" id="GUID-99F270D4-CAA6-4BCD-BC60-BC008A842041"><span purpose="cmd">将 CA 根证书复制到本计算机中的一个位置。</span></li><li purpose="step" id="ESRI_STEP_79D7CDA954934CAFA1854E943B0E1BF0"><span purpose="cmd">打开此证书，然后单击<span class="uicontrol">常规</span>选项卡。单击此按钮以<span class="uicontrol">安装证书</span>。</span></li><li purpose="step" id="ESRI_STEP_C0BFE682DCF44252823ECCB048D2126F"><span purpose="cmd" id="GUID-849FB538-8098-43B1-96FE-9E31234CF6AD"><span class="uicontrol">证书导入向导</span>出现并显示<span class="uicontrol">欢迎</span>窗格后，单击<span class="uicontrol">下一步</span>。</span></li><li purpose="step" id="ESRI_STEP_E5172BEF2C524FA79E60F3A46AD81008"><span purpose="cmd" id="GUID-9666AFE0-09AD-4818-BB65-71941C0F5446">在<span class="uicontrol">证书存储</span>窗格中，选择<span class="uicontrol">将所有证书放入下列存储</span>选项。</span></li><li purpose="step" id="ESRI_STEP_F44C7658F77F4096ABDDFFACEB37D24A"><span purpose="cmd">单击<span class="uicontrol">浏览</span>按钮。在<span class="uicontrol">选择证书存储</span>对话框中，启用<span class="uicontrol">显示物理存储</span>选项。</span></li><li purpose="step" id="ESRI_STEP_DBBCC8B88BD4405AA2553255C414699D"><span purpose="cmd">展开<span class="uicontrol">受信任根证书颁发机构</span>文件夹以显示其内容。选择<span class="uicontrol">本地计算机</span>作为要使用的证书存储。单击<span class="uicontrol">确定</span>。</span></li><li purpose="step" id="ESRI_STEP_915DADC73AB946D6AF203B7BE0055A73"><span purpose="cmd">在<span class="uicontrol">证书存储</span>面板中，单击<span class="uicontrol">下一步</span>。</span></li><li purpose="step" id="ESRI_STEP_27C559B12AE24FF5B2310D700A9A7635"><span purpose="cmd">单击<span class="uicontrol">完成</span>。</span></li><li purpose="step" id="ESRI_STEP_2B4663016845449FB4F2DA517EC0E192"><span purpose="cmd" id="GUID-CE284331-0B8B-4389-B8BA-F5AD723DAE3F">针对站点中的每台 <span class="ph">ArcGIS Server</span> 计算机重复步骤 1-11。</span></li><li purpose="step" id="ESRI_STEP_D577B6FCD2E140C6BFC0CCD0F0D4D16F"><span purpose="cmd" id="GUID-CB026D8B-21DD-4943-A949-B2713FAE89F4">重新启动每台计算机上的 <span class="ph">ArcGIS Server</span>。</span></li></ol></div></section></section><section class="section1 padded-anchor" id="GUID-3C6577DE-53A3-434D-BDFC-57CF4A4E2A8E" purpose="section1"><h2>访问您的站点</h2><p id="GUID-B7E51617-59DC-4766-ACF8-4F5E44E1EE75">在已根据默认设置启用 HTTPS 的情况下，<span class="ph">ArcGIS Server</span> 监听端口 6443 是否具有请求。使用以下 URL 安全访问 <span class="ph">ArcGIS Server</span>：</p><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-533BCF9C-471E-4120-871E-138752F5B9B0"><span class="ph">ArcGIS Server</span> Manager</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-BE1D3369-9F28-4EA2-9530-074F6A379DFD"><span class="usertext">https://gisserver.domain.com:6443/arcgis/manager</span></p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-573443C0-7E5A-4402-B730-E9EB80A4818D"><span class="ph">ArcGIS Server</span> 服务目录</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-304D8B3B-5B10-4D87-A953-6F271347FB40"><span class="usertext">https://gisserver.domain.com:6443/arcgis/rest/services</span></p></td></tr></tbody><caption></caption></table></div><div class="panel trailer-1 note" id="GUID-7D50F32B-E7B2-4642-88BB-6D7CD16F6972"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-4C353E16-626A-4C93-A1F8-26B88FF711D3">如果您重命名了 <span class="ph">ArcGIS Server</span>，则可以使用 HTTPS 继续访问 <span class="ph">ArcGIS Server</span>；但是，必须生成一个新的证书并配置 <span class="ph">ArcGIS Server</span> 以使用该证书。</p></div></section>
+			
+				<hr>
+				<!--googleoff: all-->
+				
+	
+        
+		    <p class="feedback right">
+		        <a id="afb" class="icon-ui-contact" href="/feedback/" data-langlabel="feedback-on-this-topic" >有关此主题的反馈?</a>
+		    </p>
+        
+	
+
+				<!--googleon: all-->
+			
+		</main>
+	</div>
+	
+	<!--googleoff: all-->
+	
+		
+			<div id="main-toc-large" class="column-5">
+			    <div class="panel font-size--2 tablet-hide trailer-1">
+			      <h5 class="trailer-half">在本主题中</h5>
+			      <ol class="list-plain pre-0 trailer-0"><li><a href="#GUID-C9C2C3F8-9376-4433-8952-5C389FF74152">创建自签名证书</a></li><li><a href="#ESRI_SECTION1_D6A65ADC60134B16B0CB93A7E52CA4AA">请求 CA 为证书签名</a></li><li><a href="#ESRI_SECTION1_96040AD6BEE04C1BA8D781D2CB2A8557">将 <ph translate="no" varid="ArcGISforServer">ArcGIS Server</ph> 配置为使用 CA 签名证书</a></li><li><a href="#ESRI_SECTION1_151BCC1640574719A82F2358CB994384">配置部署中的每台 <ph translate="no" varid="ArcGISforServer">ArcGIS Server</ph> 计算机</a></li><li><a href="#ESRI_SECTION1_E0A984AB1249430A862B2AA6A8263FCD">将 CA 根证书导入到 Windows 证书存储中</a></li><li><a href="#GUID-3C6577DE-53A3-434D-BDFC-57CF4A4E2A8E">访问您的站点</a></li></ol>
+			    </div>
+			    
+			    
+	  		</div>
+		
+    
+   <!--googleon: all-->
+
+
+
+
+          
+        </div>
+        <!-- ENDPAGECONTENT -->
+
+      </div>
+
+    </div>  <!-- End of wrapper -->
+
+  <footer class="footer leader-3 link-dark-gray" role="contentinfo">
+    <div class="grid-container">
+      <div class="row">
+        <nav class="column-6">
+          <h6 data-langlabel="arcgis-for-server">Arc<span>GIS Enterprise</span></h6>
+          <ul class="list-plain">
+            <li><a data-langlabel="home" href="../../../../../zh-CN/">主页</a></li>
+            <li><a data-langlabel="portal" href="../../../../../zh-CN/portal/">Portal</a></li>
+            <li><a data-langlabel="server" href="../../../../../zh-CN/server/">Server</a></li>
+            <li><a data-langlabel="data-store" href="../../../../../zh-CN/data-store/">Data Stores</a></li>
+            <li><a data-langlabel="cloud" href="../../../../../zh-CN/cloud/">云</a></li>
+            <li><a data-langlabel="apps" href="../../../../../zh-CN/apps/">应用程序</a></li>
+            <li><a data-langlabel="documentation" href="../../../../../zh-CN/documentation/">文档</a></li>
+          </ul>
+        </nav>
+
+        
+  <nav class="column-6">
+    <h6 data-langlabel="arcgis-platform">ArcGIS 平台</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="arcgis" href="//www.arcgis.com/">ArcGIS Online</a></li>
+      <li><a data-langlabel="arcgis-for-professionals" href="//pro.arcgis.com/">ArcGIS Pro</a></li>
+      <li><a data-langlabel="arcgis-for-server" href="//enterprise.arcgis.com/">ArcGIS Enterprise</a></li>
+      <li><a data-langlabel="arcgis-for-developers" href="https://developers.arcgis.com/">ArcGIS for Developers</a></li>
+      <li><a data-langlabel="arcgis-solutions" href="//solutions.arcgis.com/">ArcGIS Solutions</a></li>
+      <li><a data-langlabel="arcgis-marketplace" href="//marketplace.arcgis.com/">ArcGIS Marketplace</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <h6 data-langlabel="about-esri">关于 Esri</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="about-us" href="//www.esri.com/about-esri/">关于我们</a></li>
+      <li><a data-langlabel="careers" href="//www.esri.com/careers/">招贤纳士</a></li>
+      <li><a data-langlabel="insiders-blog" href="https://www.esri.com/about/newsroom/blog/">Esri 博客</a></li>
+      <li><a data-langlabel="user-conference" href="//www.esri.com/events/user-conference/index.html">用户大会</a></li>
+      <li><a data-langlabel="developer-summit" href="//www.esri.com/events/devsummit/index.html">开发者峰会</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <a class="esri-logo" href="//www.esri.com/" aria-label="Esri Home"></a>
+    <section class="footer-social-nav leader-1">
+            <a class="icon-social-twitter" aria-label="Esri on Twitter" href="https://twitter.com/Esri/"></a>
+            <a class="icon-social-facebook" aria-label="Esri on Facebook" href="https://www.facebook.com/esrigis/"></a>
+            <a class="icon-social-github" aria-label="Esri on GitHub" href="//esri.github.io/"></a>
+            <a class="icon-social-contact" aria-label="Contact Esri" href="//www.esri.com/about-esri/contact/"></a>
+    </section>
+	  
+  </nav>
+  
+  <div class="column-24 leader-1">
+    <p class="font-size--3"><a href="http://www.esri.com/legal/copyright-trademarks">Copyright &copy; 2019 Esri.</a> All rights reserved. | <a href="http://www.esri.com/legal/privacy/">隐私政策</a> | <a href="http://www.esri.com/legal/software-license">法律声明</a></p>
+  </div>
+  
+
+
+      </div>
+    </div>
+  </footer>
+  <!--googleoff: all-->
+
+  
+  
+	<script src="../../../../../zh-CN/assets/js/init.js" type="text/javascript"></script>
+	<!--<script src="../../../../../zh-CN/assets/js/drop-down.js" type="text/javascript"></script>-->
+	<script src="../../../../../zh-CN/assets/js/search/searchform.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/cdn/js/link-modifier.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/cdn/js/sitewide.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/cdn/js/libs/highlight.pack.js" type="text/javascript"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+
+
+  
+    
+
+  <script src="../../../../../zh-CN/cdn/js/affix.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    $(function () {
+          var appendFlg = true;
+
+          $("#bigmac")
+          .on("affixed.bs.affix", function (evt) {
+            if (appendFlg) {
+              $("<a class='crumb' href='#'>使用新 CA 签名证书配置 ArcGIS Server</a>").insertAfter ($("#bigmac nav a").last());
+              appendFlg = false;
+            }
+          })
+          .on ("affix-top.bs.affix", function(evt) {
+            if (!appendFlg) {
+              $("#bigmac nav a").last().remove();
+            }
+            appendFlg = true;
+          })
+    })
+  </script>
+  
+        <script type="text/javascript">
+          window.doctoc = {
+            pubID: "1640",
+            tpcID: "181",
+            
+              prefix: "管理",
+              prefixUrl: "/zh-cn/server/latest/administer/windows/",
+          
+            hideToc: false
+          }
+        </script>
+
+        <script type="text/javascript" src="../../../../../zh-CN/server/latest/administer/windows/1640.js" ></script>
+        <script type="text/javascript" src="../../../../../zh-CN/cdn/calcite/js/protoc.js" ></script>
+        
+        
+
+  <noscript>
+        <p>
+            <a href="flisting.htm">flist</a>
+        </p>
+    </noscript>
+    <script type="text/javascript"></script>
+  
+  
+    
+    
+
+  </body>
+</html>

@@ -1,0 +1,593 @@
+
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>  <html class="ie lt-ie9 lt-ie8 lt-ie7 ie6" dir="ltr"> <![endif]-->
+<!--[if IE 7]>     <html class="ie lt-ie9 lt-ie8 ie7" dir="ltr"> <![endif]-->
+<!--[if IE 8]>     <html class="ie lt-ie9 ie8" dir="ltr"> <![endif]-->
+<!--[if IE 9]>     <html class="ie ie9" dir="ltr"> <![endif]-->
+<!--[if !IE]><!--> <html dir="ltr" lang="zh-CN"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>Customizing configuration files&mdash;文档 | ArcGIS Enterprise 文档</title>
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+    <script>
+      var docConfig = {
+        locale: 'zh-CN'
+        ,localedir: 'zh-cn'
+        ,langSelector: ''
+        
+        ,relativeUrl: false
+        
+
+        ,searchformUrl: '/search/'
+        ,tertiaryNavIndex: ''
+
+        
+      };
+    </script>
+	 
+
+
+    
+    <!--[if lt IE 9]>
+      <script src="../../../../../zh-CN/cdn/js/libs/html5shiv.js" type="text/javascript"></script>
+      <script src="../../../../../zh-CN/cdn/js/libs/selectivizr-min.js" type="text/javascript"></script>
+      <script src="../../../../../zh-CN/cdn/js/libs/json2.js" type="text/javascript"></script>
+      <script src="../../../../../zh-CN/cdn/js/libs/html5shiv-printshiv.js" type="text/javascript" >
+
+    <![endif]-->
+
+     <!--[if lt IE 11]>
+    <script>
+      $$(document).ready(function(){
+        $$(".hideOnIE").hide();
+      });
+    </script>
+    <![endif]-->
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<link href="../../../../../zh-CN/assets/img/favicon.ico" rel="shortcut icon" >
+	<link href="../../../../../zh-CN/assets/css/screen.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/cdn/calcite/css/documentation.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/assets/css/print.css" media="print" type="text/css" rel="stylesheet" />
+
+	<!--
+	<link href="../../../../../zh-CN/assets/css/screen_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/assets/css/documentation/base_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/assets/css/print_l10n.css" media="print" type="text/css" rel="stylesheet" />
+	-->
+	
+	
+		<script src="../../../../../zh-CN/cdn/js/libs/jquery.1.9.1.min.js" type="text/javascript"></script>
+	
+	<script src="../../../../../zh-CN/cdn/js/libs/jquery.cookie.js" type="text/javascript"></script>
+	<link href="../../../../../zh-CN/cdn/css/colorbox.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/cdn/css/colorbox_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<script src="../../../../../zh-CN/cdn/js/libs/jquery.colorbox-min.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/assets/js/video-init.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/assets/js/sitecfg.js" type="text/javascript"></script>
+	
+		<script src="../../../../../zh-CN/assets/js/signIn.js" type="text/javascript"></script>
+	
+
+	<!--- Language Picker -->
+	<script src="../../../../../zh-CN/assets/js/locale/l10NStrings.js" type="text/javascript"></script>
+	
+		 
+	
+
+	<script src="../../../../../zh-CN/assets/js/calcite-web.js" type="text/javascript"></script>
+
+
+
+  <!--- search MD -->
+    <META name="description" content="The Maritime Chart Service has various control files that can be configured to meet your specific needs."><META name="last-modified" content="2019-12-6"><META name="product" content="arcgis-server-windows,arcgis-enterprise-windows"><META name="sub_category" content="ArcGIS Server (Windows)"><META name="search-collection" content="help"><META name="content_type_label" content="帮助主题"><META name="sub_category_label" content="ArcGIS Server (Windows)"><META name="search-category" content="help-general"><META name="subject_label" content="服务"><META name="version" content="10.8"><META name="content_type" content="Help Topic"><META name="subject" content="SERVICES"><META name="content-language" content="zh-cn">
+    <!--- search MD -->
+
+  
+  <script src="../../../../../zh-CN/assets/js/switchers/server-1.js" type="text/javascript"></script>
+  
+      
+
+</head>
+
+<!--
+      pub: GUID-F157DF68-7F60-4427-A561-AD2F0FA30861=22
+      tpc: GUID-51DA5918-B26D-4267-8241-7AE5DDD7ADE7=12
+      -->
+
+
+<!-- variable declaration, if any -->
+<!-- can change following macro to set variable once we are on Jinja 2.8 -->
+
+
+
+
+
+<body class="claro zh-CN server">
+  
+
+  <!-- Drawer location -->
+  <div class="drawer drawer-left js-drawer" data-drawer="top-nav">
+        <nav class="drawer-nav" role="navigation">
+          <aside class="side-nav">
+            <h2 class="side-nav-title">Arc<span>GIS</span> Enterprise</h2>
+            <form id="helpSearchForm" class="margin-left-half margin-right-half leader-half trailer-half drawer-search-form" method="GET">
+              <input type="search" name="q"  placeholder="搜索 ArcGIS Server 10.8 帮助">
+              <input type="hidden" name="collection" value="help" />
+              <input type="hidden" name="product" value="arcgis-server-windows" />
+              <input type="hidden" name="version" value="10.8" />
+              <input type="hidden" name="language" value="zh-CN" />
+            </form>    
+             <a id="nav-portal" data-langlabel="portal" href="../../../../../zh-CN/portal/" class="side-nav-link">Portal</a>
+             
+            <a id="all-servers" data-langlabel="all-servers" href="../../../../../zh-CN/server/" class="side-nav-link">所有服务器</a>
+            <a id="gis-server" data-langlabel="gis-server" href="../../../../../zh-CN/server/" class="side-nav-link">GIS Server</a>
+            <a id="image-server" data-langlabel="image-server" href="../../../../../zh-CN/image/" class="side-nav-link">Image Server</a>
+            <a id="geo-analytics-server" data-langlabel="geo-analytics-server" href="../../../../../zh-CN/geoanalytics/" class="side-nav-link">GeoAnalytics Server</a>
+            <a id="geoevent-server" data-langlabel="geoevent-server" href="../../../../../zh-CN/geoevent/" class="side-nav-link">GeoEvent Server</a>
+            <a id="notebook-server" data-langlabel="notebook-server" href="../../../../../zh-CN/notebook/" class="side-nav-link">Notebook Server</a>
+            <a id="nav-data-store" data-langlabel="data-store" href="../../../../../zh-CN/data-store/" class="side-nav-link">Data Stores</a>
+            <a id="nav-cloud" data-langlabel="cloud" href="../../../../../zh-CN/cloud/" class="side-nav-link">云</a>
+            <a id="nav-apps" data-langlabel="apps" href="../../../../../zh-CN/apps/" class="side-nav-link">应用程序</a>
+            <a id="nav-doc" data-langlabel="documentation" href="../../../../../zh-CN/documentation/" class="side-nav-link">文档</a>
+
+          </aside>
+        </nav>
+    </div>
+
+    <!-- user navigation collapses to drawer on mobile -->
+    
+    <div class="drawer drawer-right js-drawer hide-if-logged-out logged-in-navigation" data-drawer="user-nav">
+      <nav class="drawer-nav">
+        <aside class="side-nav">
+          <a class="side-nav-link agolProfile" href="#">我的个人资料</a>
+          <a class="side-nav-link icon-ui-sign-out js-log-out" href="#">登出</a>
+        </aside>
+      </nav>
+    </div>
+    
+<!-- End of drawer -->
+
+  
+  <div class="wrapper">
+      <!--googleoff: all-->
+
+      <header class="top-nav" data-skin="learn">
+        <a class="skip-to-content" href="#skip-to-content">Skip To Content</a>
+        <div class="grid-container">
+          <div class="column-24">
+
+
+            <!--<div class="top-nav-title-wrapper text-center ">-->
+              <a href='../../../../../zh-CN/' class="top-nav-title tablet-hide"><span>Arc</span>GIS  Enterprise</a>
+              <a href='../../../../../zh-CN/' class="icon-ui-menu top-nav-title js-drawer-toggle tablet-show" data-drawer="top-nav"><span>Arc</span>GIS Enterprise</a>
+            <!--</div> -->
+
+          
+            <nav role="navigation" class="top-nav-list left tablet-hide">
+              <a id="nav-portal" data-langlabel="portal" href="../../../../../zh-CN/portal/" class="top-nav-link">Portal</a>
+
+                <div class="dropdown js-dropdown ">
+                  <a class="top-nav-link js-dropdown-toggle" tabindex="0" aria-haspopup="true" aria-expanded="false" href="#">Servers</a>
+                  <nav class="dropdown-menu featured" role="menu">
+                    <ul class="dropdown-sublist-featured">
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/get-started/latest/windows/additional-server-deployment.htm" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path  d="M42.92 6.1H4.12v8.566l.833.832-.835.833-.018 7.332.845.847-.825.824V33.9h25v5.2h-2v1.075H8.02v.8h19.1v.925h4.8v-.925H40v-.8h-8.08V39.1h-2v-5.2h13v-8.566l-.834-.834.835-.834v-7.332l-.835-.834.835-.834zm-11.8 35h-3.2v-1.2h3.2zm11-8H4.92v-7.434l.767-.766h35.668l.765.766zm0-9.766l-.766.766H5.666l-.766-.767.017-6.669.766-.764h35.671l.766.766zm0-9l-.766.766H5.687l-.766-.766V6.9h37.2zM19 11.9h-2v-.8h2zm-4 0h-2v-.8h2zm-4 0H9v-.8h2zm6 8.2h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9zm8 9h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9z"/></svg></span>
+                          <span class="sublink-text">所有服务器</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/server/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M45.98 33.575a.616.616 0 0 0-.335-.51l-3.362-2.03 3.362-2.031a.556.556 0 0 0 0-1.02l-11.1-6.704a1.293 1.293 0 0 0-1.112 0L22.33 27.982a.556.556 0 0 0 0 1.02l3.36 2.03-3.358 2.03a.556.556 0 0 0-.002 1.021l3.322 2.006-3.324 2.008a.555.555 0 0 0 .002 1.017l11.102 6.703a1.25 1.25 0 0 0 1.11.002l11.104-6.706a.556.556 0 0 0 0-1.02l-3.32-2.006 3.318-2.004a.607.607 0 0 0 .335-.509zM33.837 21.97c.026-.01.286-.005.29-.005l10.814 6.53-10.8 6.523c-.028.01-.284.005-.294.006l-10.813-6.53zm11.105 16.636l-10.8 6.523a2.564 2.564 0 0 1-.295.006l-10.81-6.529 3.39-2.047 7.004 4.23a1.083 1.083 0 0 0 .557.131 1.101 1.101 0 0 0 .554-.13l7.01-4.233zM34.14 40.098a2.545 2.545 0 0 1-.294.006l-10.812-6.53 3.43-2.073 6.97 4.208a1.25 1.25 0 0 0 1.107-.001l6.966-4.206 3.431 2.073zM9 8H7V7h2zm8 8h-2v-1h2zm-4-8h-2V7h2zm4 0h-2V7h2zm-4 8h-2v-1h2zm7.316 11.1H3.9v-6.434l.766-.766h35.668l.766.766v2.12l.8.483v-2.935l-.826-.826.826-.845v-6.329l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9h16.88a2.632 2.632 0 0 1 .336-.8zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zm0 8v-5.668l.766-.766h35.668l.766.766v5.67l-.746.764H4.666zM15 24v-1h2v1zm-4 0v-1h2v1zm-2-8H7v-1h2zm-2 8v-1h2v1z"/></svg></span>
+                          <span class="sublink-text">GIS Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/image/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 8h-2V7h2zm-4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm8 8h-2v1h2zm-8 0H7v1h2zm4 9v-1h-2v1zm-4 0v-1H7v1zm8 0v-1h-2v1zm4 3.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V21h-.8v-.334l-.766-.766H4.666l-.766.766V27.1H21zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zm40.234 4v21.8H23.1V23.1zm-.8 16.366L39.466 44.1h2.868l1.766-1.766zm-20.2-9.932l5.634-5.634h-2.868L23.9 26.666zm6.2-5.068L24.466 30.1h2.868l2.766-2.766zM28.466 30.1H30.1v-1.634zm2.434 0h6.2v-6.2h-6.2zm-7 7h6.2v-6.2h-6.2zm7 0h6.2v-6.2h-6.2zm0 6.434l5.634-5.634h-2.868L30.9 40.666zm7-7l5.634-5.634h-2.868L37.9 33.666zm1.634-5.634H37.9v1.634zm-8.634 7v1.634l1.634-1.634zm.566 6.2h2.868l2.766-2.766v-2.868zm6.434-3.566l2.634-2.634H37.9zM35.466 44.1H37.1v-1.634zm2.434 0h.434l5.766-5.766V37.9h-2.434L37.9 41.666zm6.2-8.634L42.466 37.1H44.1zm0-4L38.466 37.1h2.868l2.766-2.766zm0-7.566h-6.2v6.2h6.2zm-20.2 0v1.634l1.634-1.634zm0 20.2h6.2v-6.2h-6.2zm20.2 0v-.634l-.634.634z"/></svg></span>
+                          <span class="sublink-text">Image Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/geoanalytics/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 16h-2v-1h2zm-8 8v-1H7v1zm8 0v-1h-2v1zM13 7h-2v1h2zm4 0h-2v1h2zM9 7H7v1h2zm21.45 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V27.9h-1.464l-.801-.8H41.1v-6.434l-.766-.766H4.666l-.766.766V27.1h27.15zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM13 24v-1h-2v1zm0-9h-2v1h2zm-4 0H7v1h2zm26.672 27.148A1.87 1.87 0 0 1 35.9 43a1.91 1.91 0 1 1-3.763-.222l-9.845-3.414A1.88 1.88 0 0 1 21 39.9a1.9 1.9 0 1 1 1.474-3.084l4.692-2.346A1.878 1.878 0 0 1 27.1 34a1.902 1.902 0 0 1 1.9-1.9 1.867 1.867 0 0 1 .781.191l3.788-5.05A1.88 1.88 0 0 1 33.1 26a1.9 1.9 0 1 1 3.491 1.026l4.889 4.888c-.069.056-.144.1-.21.162a3.986 3.986 0 0 0-.358.402l-4.883-4.883A1.889 1.889 0 0 1 35 27.9a1.867 1.867 0 0 1-.781-.191l-3.788 5.049a1.868 1.868 0 0 1 .437.965l9.204.614c-.018.11-.049.218-.058.33A3.93 3.93 0 0 0 40 35c0 .046.01.09.01.135l-9.185-.612A1.913 1.913 0 0 1 29 35.9a1.889 1.889 0 0 1-1.474-.716l-4.692 2.346a1.878 1.878 0 0 1 .066.47 1.9 1.9 0 0 1-.105.625c-.007.02-.022.036-.03.056l9.63 3.34a1.87 1.87 0 0 1 2.786-.505l5.415-4.437c.067.108.127.22.204.322a3.9 3.9 0 0 0 .292.306zM33.9 26a1.092 1.092 0 0 0 .43.872 1.12 1.12 0 0 0 1.42-.068A1.1 1.1 0 1 0 33.9 26zm-6 8a1.1 1.1 0 0 0 2.196.093 1.135 1.135 0 0 0-.426-.965A1.087 1.087 0 0 0 29 32.9a1.101 1.101 0 0 0-1.1 1.1zm-5.8 4a1.098 1.098 0 1 0-.06.362A1.101 1.101 0 0 0 22.1 38zm13 5a1.1 1.1 0 1 0-2.2 0 1.1 1.1 0 0 0 2.2 0zm10.8-8a1.9 1.9 0 1 1-3.8 0c0-.053.003-.105.007-.158A1.9 1.9 0 0 1 45.9 35zm-.8 0a1.1 1.1 0 0 0-2.196-.093 1.153 1.153 0 0 0 .216.752A1.1 1.1 0 0 0 45.1 35z"/></svg></span>
+                          <span class="sublink-text">GeoAnalytics Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/geoevent/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M13 8h-2V7h2zm4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm12.418 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826v2.117c-.259-.177-.53-.337-.8-.497v-1.288l-.766-.766H4.666l-.766.766V27.1h17.933c-.148.26-.283.53-.415.8zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM9 24v-1H7v1zm4-9h-2v1h2zm0 9v-1h-2v1zm-4-9H7v1h2zm8 9v-1h-2v1zm16.9 2h-.8v8.9H39v-.8h-5.1zm.1-3.901a11.9 11.9 0 1 0 11.9 11.9 11.914 11.914 0 0 0-11.9-11.9zm0 23a11.1 11.1 0 1 1 11.1-11.1 11.112 11.112 0 0 1-11.1 11.1z"/></svg></span>
+                          <span class="sublink-text">GeoEvent Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/notebook/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M22 27.1H3.9v-6.434l.766-.766h18.576a5.262 5.262 0 0 1 .83-.8H4.666l-.766-.766v-5.668l.766-.766h35.668l.766.766V18h.8v-5.666l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9H22zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zM9 8H7V7h2zm8 0h-2V7h2zm-4 0h-2V7h2zm2 16v-1h2v1zm-4 0v-1h2v1zm-4 0v-1h2v1zm0-8v-1h2v1zm8 0v-1h2v1zm-4 0v-1h2v1zm18.9 8.1h-1.8v1.8h1.8zm-.8 1h-.2v-.2h.2zm15.498-4.48a2.727 2.727 0 0 0-1.62-.5v-.02H27.25a3.154 3.154 0 0 0-3.15 3.15V38.1h-1.68a3.386 3.386 0 0 0-2.872 1.58 3.49 3.49 0 0 0-.157 3.419 3.241 3.241 0 0 0 2.954 1.801h15.161a3.404 3.404 0 0 0 3.394-3.4V26.9h5v-3.65a3.224 3.224 0 0 0-1.302-2.63zM22.345 44.1a2.44 2.44 0 0 1-2.23-1.341 2.706 2.706 0 0 1 .11-2.65A2.588 2.588 0 0 1 22.42 38.9h12.89a3.395 3.395 0 0 0 0 5.2zM40.1 23.192V41.5a2.6 2.6 0 1 1-2.6-2.6v-.8H24.9V23.25a2.352 2.352 0 0 1 2.35-2.35h13.795a3.183 3.183 0 0 0-.945 2.292zm5 2.908h-4.2v-2.908a2.274 2.274 0 0 1 1.44-2.18 1.944 1.944 0 0 1 1.791.259 2.423 2.423 0 0 1 .97 1.979zm-17.1 5h9v.8h-9zm0 3h7v.8h-7zm0-6h9v.8h-9zm4-3h5v.8h-5z"/></svg></span>
+                          <span class="sublink-text">Notebook Server</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+
+              <a id="nav-data-store" data-langlabel="data-store" href="../../../../../zh-CN/data-store/" class="top-nav-link">Data Stores</a>
+              <a id="nav-cloud" data-langlabel="cloud" href="../../../../../zh-CN/cloud/" class="top-nav-link">云</a>
+              <a id="nav-apps" data-langlabel="apps" href="../../../../../zh-CN/apps/" class="top-nav-link">应用程序</a>
+            </nav>
+
+
+            
+            
+            
+
+            <div class="margin-left-1 top-nav-list right hide-if-logged-in logged-out-navigation">
+               
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+              
+              <a data-langlabel="sign-in" id="login-link" class="icon-ui-user top-nav-link link-blue login-link" href="#">登录</a>
+              
+            </div>
+
+            
+            <nav class="margin-left-1 top-nav-list right hide-if-logged-out logged-in-navigation">
+              
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+             
+              <div class="dropdown js-dropdown right">
+
+                <div class="tablet-show top-nav-link">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a href="#" data-drawer="user-nav" class="user-nav-name js-drawer-toggle" data-first-name></a>
+                </div>
+
+                <div class="tablet-hide top-nav-link js-dropdown-toggle">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a class="user-nav-name top-nav-dropdown dropdown-btn" data-first-name>&nbsp;</a>
+                </div>
+
+                <nav class="dropdown-menu dropdown-right">
+                
+                  <a class="dropdown-link agolProfile" id="agolProfile" href="#">我的个人资料</a>
+                  <a class="dropdown-link js-log-out" id="agolLogout" href="#">登出</a>
+                </nav>
+              </div>
+            </nav>
+            
+
+            
+          </div>
+        </div>
+      </header>
+
+      <div class="js-search search-overlay">
+        <div class="search-content" role="dialog" aria-labelledby="search">
+          <form method="GET" id="helpSearchForm">
+            <label>
+              搜索 ArcGIS Server 10.8 帮助
+              <div class="search-bar">
+                <input type="search" name="q"  placeholder="搜索 ArcGIS Server 10.8 帮助" class="search-input js-search-input">
+                <input type="hidden" name="collection" value="help" />
+                <input type="hidden" name="product" value="arcgis-server-windows" />
+                <input type="hidden" name="version" value="10.8" />
+                <input type="hidden" name="language" value="zh-CN" />
+              </div>
+            </label>
+            <input type="hidden" name="relativePath" value="../../../../../" /><button type="submit" class="btn btn-large right">搜索</button>
+          </form>
+        </div>
+      </div>
+
+      <!--googleon: all-->
+
+      <div id="skip-to-content">
+        <!--googleoff: all-->
+        <header class="sub-nav sub-nav-learn">
+          <div class="grid-container">
+            
+            <div class="column-24">
+              <div style="display:table;" class="sdk-home-banner">
+                <div class="sdk-home-banner-content">
+                  <h1 class="sub-nav-title link-white">ArcGIS Server</h1>
+                </div>
+              </div>
+            </div>
+
+            <div class="column-24">
+              <nav class='sub-nav-list tablet-hide'><a class="sub-nav-link" href="../../../../../zh-CN/server/" target="_top" title="ArcGIS Server 的概述和文档">主页</a><a class="sub-nav-link" href="../../../../../zh-CN/server/latest/get-started/windows/" target="_top" title="了解有关 ArcGIS Server 和服务器角色的信息">简介</a><a class="sub-nav-link" href="../../../../../zh-CN/server/latest/deploy/windows/" target="_top" title="构建、配置和升级部署">部署</a><a class="sub-nav-link" href="../../../../../zh-CN/server/latest/manage-data/windows/" target="_top" title="管理企业的空间数据">管理数据</a><a class="sub-nav-link is-active" href="../../../../../zh-CN/server/latest/publish-services/windows/" target="_top" title="使用 GIS 服务">管理服务</a><a class="sub-nav-link" href="../../../../../zh-CN/server/latest/create-web-apps/windows/" target="_top" title="创建 Web 应用程序和可打印地图">共享</a><a class="sub-nav-link" href="../../../../../zh-CN/server/latest/administer/windows/" target="_top" title="管理和保护 ArcGIS Server">管理</a><a class="sub-nav-link" href="../../../../../zh-CN/server/latest/develop/windows/" target="_top" title="构建扩展模块并自动执行常见任务">开发</a></nav><select class='tablet-show select-full trailer-half js-select-nav'><option value="../../../../../zh-CN/server/">主页</option><option value="../../../../../zh-CN/server/latest/get-started/windows/">简介</option><option value="../../../../../zh-CN/server/latest/deploy/windows/">部署</option><option value="../../../../../zh-CN/server/latest/manage-data/windows/">管理数据</option><option selected="true" value="../../../../../zh-CN/server/latest/publish-services/windows/">管理服务</option><option value="../../../../../zh-CN/server/latest/create-web-apps/windows/">共享</option><option value="../../../../../zh-CN/server/latest/administer/windows/">管理</option><option value="../../../../../zh-CN/server/latest/develop/windows/">开发</option></select>
+            </div>
+
+          </div>
+        </header>
+        <!--googleon: all-->
+       
+        <!-- content goes here -->
+        <div class="grid-container ">
+          
+
+            
+              
+  <!--BREADCRUMB-BEG--><div id="bigmac" class="sticky-breadcrumbs trailer-2" data-spy="affix" data-offset-top="180"> </div><!--BREADCRUMB-END-->
+  <!--googleoff: all-->
+    <div class="column-5 tablet-column-12 trailer-2 ">
+      <aside class="js-accordion accordion reference-index" aria-live="polite" role="tablist">
+        <div></div>
+      </aside>
+
+      <div class="js-sticky scroll-show tablet-hide leader-1 back-to-top" data-top="0" style="top: 0px;">
+        <a href="#" class="btn btn-fill btn-clear">返回顶部</a>
+      </div>
+    </div>
+  <!--googleon: all-->
+  
+            
+            
+            
+	
+		<div class="column-13  pre-1 content-section">
+	
+		<header class="trailer-1"><h1>Customizing configuration files</h1></header>
+
+		 
+	<!--googleoff: all-->
+	
+		
+				<aside id="main-toc-small" class="js-accordion accordion tablet-show trailer-1">
+			      <div class="accordion-section">
+			        <h4 class="accordion-title">在本主题中</h4>
+			        <div class="accordion-content list-plain">
+			          <ol class="list-plain pre-0 trailer-0"><li><a href="#GUID-41F108D2-4093-4654-93FF-9B3FD3E661DB">S-57 data dictionary
+</a></li><li><a href="#ESRI_SECTION1_7E967D0B4A19486BB2BC81CE956DA80F">Server configuration</a></li><li><a href="#ESRI_SECTION1_736F31CEEE2C4EE8AFA0DE42DCEC4886">S-52 display properties</a></li></ol>
+			        </div>
+			      </div>
+			     </aside>
+		
+    
+   <!--googleon: all-->
+
+
+		<main>
+			
+	
+    	
+    
+
+
+			
+<p id="GUID-D98FEBA5-FCD3-4BB1-805E-459C114E2498">The <span class="ph">Maritime Chart Service</span> has various control files that can be configured to meet your specific needs.  Configuration options include the ability to expand the type of S-57 objects and attributes that the system will recognize if you've created a custom specification, S-52 presentation library customization to change default symbol colors, and the ability to alter the text format used to portray your data.  There are also configuration options for the <span class="ph">Maritime Chart Service</span> that control how updates are applied, what coordinate system is used, and what size you want your symbols and text to be displayed. </p><p id="GUID-064D1052-C236-49ED-B444-07A904BB1F4B">Configuration settings related to IHO standards such as S-57, ENC, S-52, and S-63 are all configured to those specifications by default.</p><p id="GUID-AFC95DB2-B85C-4405-B5FC-782D807D72CD">All configuration files are located in the <span class="usertext">&lt;Installation path&gt;:\arcgisserver\directories\maritimeserver\maritimechartservice\controlFilesDirectory</span> path. </p><div class="panel trailer-1 note" id="GUID-F8AB824D-FD92-419B-B414-B2AA258E1CDA"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-C34296F5-2999-4397-9CA3-4FA3A59D4279">This location is in your controlFilesDirectory property. Back up this location if you make any changes.  Future installations will overwrite this location.</p><p id="GUID-D211A6B7-D436-4FDE-BE20-A03585711B10"><a class="xref xref" href="../../../../../zh-CN/server/latest/publish-services/windows/setting-maritime-chart-service-properties.htm#ESRI_SECTION1_F1556C1B34FE495FAC29876DCB0BB4E3"> Learn more about modifying <span class="ph">Maritime Chart Service</span> properties</a></p></div><section class="section1 padded-anchor" id="GUID-41F108D2-4093-4654-93FF-9B3FD3E661DB" purpose="section1"><h2>S-57 data dictionary
+</h2><p id="GUID-8C36058E-6BD3-4910-AB31-04804B99B08B">The <span class="usertext">S57DataDictionary.xml</span> file contains all the S-57 objects and attribute IDs as well as acronyms and descriptive values.  It also contains a list of agency codes.
+</p><p id="GUID-F4A3967E-B3A8-4A20-AFAA-44FD20788EC1">Localization changes can be made to this file to display object and attribute names in the local language. You can extend this file to include new objects, attributes, and enumerations if you support unpublished product specifications.</p><div class="panel trailer-1 note" id="GUID-815ED2F6-79E4-4544-9420-75504EA39778"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-E18C184B-4A05-4266-BFD8-E2993008B96A">The map service must be stopped and restarted for changes to the <span class="usertext">S57DataDictionary.xml</span> file to be recognized by the service.</p></div></section><section class="section1 padded-anchor" id="ESRI_SECTION1_7E967D0B4A19486BB2BC81CE956DA80F" purpose="section1"><h2>Server configuration</h2><p id="GUID-B2EB63CB-CD9E-417E-AF53-056A32BF8E39">The <span class="usertext">ServerConfiguration.xml</span> file provides support for various coordinate systems, display parameters, Web Map Server (WMS)  service layer name, and automatic update support.</p><section class="section2 padded-anchor" id="ESRI_SECTION2_D95CAB3732824FC7A3CA8A6B63FB6309" purpose="section2"><h3>WMS layer name</h3><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><section class="context padded-anchor" id="ESRI_CONTEXT_305186126E884A0A9BFEFC1BF95480DC" purpose="context"><p id="GUID-DD703014-2AF7-4730-87C3-EBA94A66063F">The WMS layer name will be S57 by default.  This value can be changed by updating the <span class="usertext">WMSServiceLayerName</span> value in the <span class="usertext">ServerConfiguration.xml</span> file.</p></section><div class="steps" id="ESRI_STEPS_9CFC6A271E6943AB882A063065A12E2D"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_0F7118CE3E0A4EEE970D4115F7514080"><span purpose="cmd">Open the <span class="usertext">ServerConfiguration.xml</span> file and modify the <span class="usertext">WMSServiceLayerName</span> value.</span></li><li purpose="step" id="ESRI_STEP_243779B5EF1C472C9B240B4613BDDA4F"><span purpose="cmd" id="GUID-7F047968-216D-4EEF-8E1A-0165CA80D408">单击<span class="uicontrol">保存</span>。</span></li><div class="stepinfo" purpose="stepinfo"><div class="panel trailer-1 note" id="GUID-749FB667-C6E6-47B7-9330-78025887A998"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-14FC25A7-DB39-44A4-9AC1-A513E264CCB8">The map service must be stopped and restarted for changes to the <span class="usertext">ServerConfiguration.xml</span> file to be recognized by the service.</p></div></div><li purpose="step" id="ESRI_STEP_2E34C44C47CE4C608CC4B08345830B37"><span purpose="cmd">Stop your map service.</span></li><li purpose="step" id="ESRI_STEP_3E3B5EF1394144C7BE87E20B5BB9C5F1"><span purpose="cmd">Start your map service.</span></li></ol></div></section></section><section class="section2 padded-anchor" id="ESRI_SECTION2_8AFB9474F3574BC284CED42D4353EC6C" purpose="section2"><h3>Coordinate system users</h3><p id="GUID-C2BA885C-ECC7-4211-8EC4-7260DE004381"><span class="ph">ArcGIS for Maritime: Server</span> supports projection in real time with more than 5,000 EPSG
+codes. The coordinate system is set to 102100 (Web
+Mercator Auxiliary Sphere) by default.</p><p id="GUID-39F29F7D-ED09-4C1B-B5FA-B0485E84E775"> The <span class="usertext">crs.xml</span> file in the <span class="usertext">controlFilesDirectory</span>contains all the supported EPSG codes.</p><div class="panel trailer-1" id="GUID-97DE134D-72B1-4861-9520-18FE6EE3F85D"><h5 class="icon-ui-description trailer-0">提示：</h5><p id="GUID-B7783ECB-9DEE-4DD5-AC11-6F696A801F96"> If you do not expect your clients to request different projections, it's recommended that you set your EPSG value to the required coordinate system. If you expect to support multiple projections such as several UTM zones, it's recommended that you use EPSG = 4326 (WGS 84) to optimize performance.</p></div><p id="GUID-93E4980B-93D0-4B9C-BEDC-AB9768C2A9F2">Consider the following:<ul purpose="ul" id="UL_4923D20CA3DE47D3A8724023CB9B91D4"><li purpose="li" id="LI_E9D4EC05882F4159864EF4E7089BA1E8">The newly created <span class="usertext">.senc</span> file will contain the set <span class="usertext">CoordinateSystem</span> value in the name.</li><li purpose="li" id="LI_DDACDC56F83540A19F9709F59FFB649F">To change projections, you must modify the <span class="usertext">CoordinateSystem</span> value, which is set to 102100 (Web Mercator Auxiliary Sphere) by default.</li><li purpose="li" id="LI_BB23C80DC6A8455E80D7A265F89F68E9">S-57 datasets that fall outside the coordinate system boundary will not be generated, and a warning message will be written to the log file.</li></ul></p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_B08D43BD725644E1942B26C6770E7FBC"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_BAF0D1CC68C74DFCBCC00F9945AA6F92"><span purpose="cmd">Open the <span class="usertext">ServerConfiguration.xml</span> file and modify the <span class="usertext">CoordinateSystem</span> value.</span></li><li purpose="step" id="ESRI_STEP_6FD459120AE04A109D334E4B7913C09A"><span purpose="cmd">Save the changes.</span><div class="info" purpose="info"><div class="panel trailer-1 note" id="GUID-D1149483-94AA-493D-A535-094FC4C3A222"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-AF0792DF-0C57-4A89-954F-AA4B792FAFAB">The map service must be stopped and restarted for changes to the <span class="usertext">ServerConfiguration.xml</span> file to be recognized by the service.</p></div></div></li><li purpose="step" id="ESRI_STEP_CFF1791EA0AA453A95DB35D971B1E3D6"><span purpose="cmd">Stop your map service.</span><div class="info" purpose="info"><p id="GUID-30CE7B0E-AA50-4DA5-A71C-4F57A1836D3E">You don't have to delete your existing <span class="usertext">.senc</span> files.  They'll be deleted and re-created automatically by the service.</p></div></li><li purpose="step" id="ESRI_STEP_5FDF04AE6BEE4EDDB72BB7B4E10B939D"><span purpose="cmd">Start your map service.</span></li></ol></div><section class="result padded-anchor" id="ESRI_RESULT_FFDCCD88A1B74341B6CCD3373D6370E6" purpose="result"><p id="GUID-B01DA3EA-CFF5-4651-B348-3EE5D2F2B1A6">Your <span class="usertext">.senc</span> files are re-created with the new coordinate system.  The <span class="usertext">CoordinateSystem</span> value will be in the name of the <span class="usertext">.senc</span> file for reference.</p></section></section></section><section class="section2 padded-anchor" id="ESRI_SECTION2_79CB7A291862466EAA82CF302D5B1469" purpose="section2"><h3>DisplayParameters</h3><p id="GUID-8D60AA9D-175B-4686-BFE7-C2EA2A36E019">These settings allow an administrator to optimize their display based on the S-57 datasets they are required to host.  These settings allow for fine-tuning, but they typically do not need to be modified.
+</p><section class="codeblock padded-anchor" purpose="codeblock"><div class="codeblockbody"><pre><code class="xml">&lt;DisplayParameters&gt;
+&lt;Chart minZoom=&quot;.05&quot; maxZoom=&quot;1.2&quot;/&gt;
+&lt;Symbol scaleFactor=&quot;1.0&quot; minZoom=&quot;.05&quot; maxZoom=&quot;1.2&quot;/&gt;
+&lt;Line scaleFactor=&quot;1.0&quot; minZoom=&quot;.05&quot; maxZoom=&quot;1.2&quot;/&gt;
+&lt;Area scaleFactor=&quot;1.0&quot; minZoom=&quot;.05&quot; maxZoom=&quot;1.2&quot;/&gt;
+&lt;Text scaleFactor=&quot;1.0&quot; minZoom=&quot;.05&quot; maxZoom=&quot;1.2&quot; removeDuplicateText=&quot;true&quot; halo=&quot;on&quot;/&gt;
+&lt;/DisplayParameters&gt;</code></pre></div></section><section class="section3 padded-anchor" id="ESRI_SECTION3_FF83CA14299646C3B3B558E00217FB6F" purpose="section3"><h4>Chart</h4><p id="GUID-949827FF-20EC-4464-8AB5-BF9DA3D1DCC1">This setting controls when your dataset will be displayed based on the S-57 dataset's scale and the view scale.  The display of the S-57 datasets can be determined using the following formula where X is your reference scale: <pre><code class="equation" purpose="equation">X = Dataset Scale / View Scale</code></pre> </p><ul purpose="ul" id="UL_D69ED98C62F74A84BDE529859CA13A30"><li purpose="li" id="LI_243C717EB2FC4C44B0E9D17EBA2EB260">If X is &lt; (less than) the minZoom, the dataset will not be displayed.</li><li purpose="li" id="LI_F589A0D352704488BA13C2099DB56198">If X is &gt; (greater than) the maxZoom, the dataset will be displayed as long as another dataset doesn’t have a better reference scale value.</li><li purpose="li" id="LI_4535826AC2C54FE18AA02903A691D2F1">If X is within the range of the minZoom or maxZoom, the dataset will be displayed.</li></ul><p id="GUID-2D571078-5C79-4C38-B0BB-7B918D146806">By increasing the minZoom to a larger number (for example, 0.28), you'll need to zoom in closer before the dataset displays. </p><p id="GUID-5771F7A4-22AA-4284-BD22-7D9002D66D9C">If two S-57 datasets fall within the minZoom and maxZoom range, the dataset with the smaller reference scale will be displayed. For example, you have two S-57 datasets (A at 1:1,500,000 and B at 1:90,000) and your view scale is 1:587,862.<ul purpose="ul" id="UL_8E330B20BEB84CA6A8921AF1C73E8502"><li purpose="li" id="LI_2B52F1550DCE4ED188D7115E66A2EA50">Reference scale for A = 1500000/587862, which is  2.55</li><li purpose="li" id="LI_A198D1FCE034430FA67A62A431B82D5F">Reference scale for B = 90000/587862, which is 0.153</li></ul>Since 0.153 is less than 1, divide 1 by the reference scale (1/0.153) to get the new reference scale value of 6.5 for Dataset B. The Dataset A reference scale is 2.55 and the Dataset B reference scale is now 6.5.  Because 2.55 is closer to the 1:1 view scale of the dataset, Dataset A will be displayed.</p></section><section class="section3 padded-anchor" id="ESRI_SECTION3_EC6590F7F2D440D1B199592F8E6DFF77" purpose="section3"><h4>Symbol, Line, and Area</h4><p id="GUID-49095CC1-B2D2-48A8-AF56-6FEEFCA13119">These properties all contain a scaleFactor as well as minZoom and maxZoom settings.  Changing these values will either increase or decrease the size at which your symbols will draw. Once X (reference scale) is calculated, that value is multiplied by the scaleFactor.  The new value is compared to the minZoom and maxZoom settings as follows:</p><ul purpose="ul" id="UL_06C7C4CEFA3E4EFDB754857425D21510"><li purpose="li" id="LI_07A39BE56CD7409B9FE5562811C217FB">If X is &lt; (less than) the minZoom, set it to minZoom</li><li purpose="li" id="LI_5B35639690CB424690781DC96A018FCF">If X is &gt; (greater than) the maxZoom, set it to maxZoom</li></ul></section><section class="section3 padded-anchor" id="ESRI_SECTION3_A13A2E6CFC364199BF6A4EE8B4599D74" purpose="section3"><h4>Text</h4><p id="GUID-7B64C45F-3A7D-4C9E-A4EB-6425830C1AF3">The Text property’s scaleFactor as well as minZoom and maxZoom settings behave the same way as Symbol, Line, and Area.  Changing these values will either increase or decrease the size at which your text will draw. The Text property also contains two additional settings for removing duplicate text (removeDuplicateText) and removing the halo from around text features in all color schemes.  When removeDuplicateText is turned on (the default setting), it will remove duplicate text for features from S-52 text group 21 Names for position reporting, with the same S-57 object class name.  If S-57 object class names are different, the duplicate text is not removed.  </p></section><section class="section3 padded-anchor" id="ESRI_SECTION3_3BBF387BD295452B83B51D5506CA67DB" purpose="section3"><h4>Modifying display parameters</h4><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_0CDC28654F9D447195152C45C74AD391"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_6CA2A549A04146A8B9F07AD3A775EEDD"><span purpose="cmd" id="GUID-3D034A11-8B62-410B-BD33-F00599F624CB">Open the <span class="usertext">ServerConfiguration.xml</span> file and modify the <span class="usertext">DisplayParameters</span> settings.</span></li><li purpose="step" id="ESRI_STEP_BDD78742B889492B9569B7429AAAC4D1"><span purpose="cmd" id="GUID-839835DD-CE71-4030-9B4E-93CF5F0990FF">Save the changes.</span><div class="info" purpose="info"><p id="GUID-0FB23C87-137F-47B4-A5D7-0E7BBB151F2F">The map service must be stopped and restarted for changes to the <span class="usertext">ServerConfiguration.xml</span> file to be recognized by the service.</p></div></li><li purpose="step" id="ESRI_STEP_A4167CD348E14DBE9FFF963B0BE5B5A1"><span purpose="cmd" id="GUID-8CF6B1D1-125E-42F7-B5E9-B05492DCFDED">Stop your map service.</span></li><li purpose="step" id="ESRI_STEP_7A100119C44745A8B10092C41E695FBE"><span purpose="cmd" id="GUID-9EA4FC10-0956-4A01-B191-A8EB4E90AFB1">Start your map service.</span></li></ol></div><section class="result padded-anchor" id="ESRI_RESULT_DE6E9814E66446B8855371C2CCC043B8" purpose="result"><p id="GUID-47828A35-7133-4209-98AE-69C9CB9263A7">The display parameters of your existing S-57 datasets have not been modified. Any new S-57 datasets that are added to the datasets folder will display with the updated parameters.  DisplayParameters settings are used at draw time.</p></section></section><p id="GUID-737EF0DE-6049-4B2A-81E4-F5C82760F662"> If you want your display to be 1:1 like an ECDIS, you must set your symbol, line, area, and text values for minZoom and maxZoom to 1.<section class="codeblock padded-anchor" purpose="codeblock"><div class="codeblockbody"><pre><code class="xml">&lt;DisplayParameters&gt;
+&lt;Chart minZoom=&quot;.05&quot; maxZoom=&quot;1.2&quot;/&gt;
+&lt;Symbol scaleFactor=&quot;1.0&quot; minZoom=&quot;1&quot; maxZoom=&quot;1&quot;/&gt;
+&lt;Line scaleFactor=&quot;1.0&quot; minZoom=&quot;1&quot; maxZoom=&quot;1&quot;/&gt;
+&lt;Area scaleFactor=&quot;1.0&quot; minZoom=&quot;1&quot; maxZoom=&quot;1&quot;/&gt;
+&lt;Text scaleFactor=&quot;1.0&quot; minZoom=&quot;1&quot; maxZoom=&quot;1&quot; removeDuplicateText=&quot;true&quot; halo=&quot;on&quot;/&gt;
+&lt;/DisplayParameters&gt;</code></pre></div></section></p></section></section><section class="section2 padded-anchor" id="ESRI_SECTION2_FC99E52923DA46A58778A5C547C6416C" purpose="section2"><h3>AutoCellUpdate</h3><p id="GUID-461D9A9D-73B6-4783-9183-B7EC635EFAB5">AutoCellUpdate allows you to automatically apply dataset changes without having to stop and restart the service.  This feature allows you to configure 24/7 support. The <span class="ph">Maritime Chart Service</span> is installed with this setting turned off by default.  Before turning this setting on, you need to understand your dataset update strategy and determine how long it takes to copy a 5 MB file across your network</p><p id="GUID-A43F27F5-C1DC-4AEE-8C29-F51EE48E436D">Once the <span class="usertext">AutoCellUpdate</span> property is enabled by setting <span class="usertext">use="true"</span>, the <span class="ph">Maritime Chart Service</span> will detect if there are any changes to your datasets folder.  Once a modification is detected, the same logic that's used when the service is started is run against the datasets folder.  This will detect what dataset changes have occurred and update the service’s <span class="usertext">.senc</span> and <span class="usertext">find.dat</span> files, accordingly, while the service is still running.  Users will only notice the change when the display is refreshed or when search or identify is used on the dataset that is actively being processed.    </p><p id="GUID-D9B36980-974A-4A6D-8455-D0B470BCC2A6">The <span class="usertext">delaySeconds</span> setting sets how long the <span class="ph">Maritime Chart Service</span> will wait before running its logic.  For example, if set to 10 seconds, the <span class="ph">Maritime Chart Service</span>, once it detects a change to the datasets folder, will wait 10 seconds before running its logic.  If another change is detected before the 10 second delay, the delay will start  over.  Once it reaches the <span class="usertext">delaySeconds</span> count value, it will process the changes.  Each file that is copied to the datasets folder counts as a change.  For example, if you copy 10 files at once, each file restarts the count as it's copied.</p><p id="GUID-AF28EDAB-17B8-4536-B6E3-11CB59A8DC0D">If you don't set a large enough <span class="usertext">delaySeconds</span> value and your dataset file takes longer than the setting to copy, <span class="ph">Maritime Chart Service</span> will not be able to process that dataset.  This is no different than if you tried to manually start the map service before you finished copying data into the datasets folder. It's recommended that you set your <span class="usertext">delaySeconds</span> value by at least a factor of 3 based on how long it takes to copy a single 5 MB <span class="usertext">.000</span> file into the datasets folder from your staging location.</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_71774BBA4D1140CAB96B0B9DDCD79E29"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_14D32E9A88114731AF3AE22999ABDE60"><span purpose="cmd" id="GUID-B2A2081C-1EB3-452E-A245-0A1BAE8DE1DE">Open the <span class="usertext">ServerConfiguration.xml</span> file and modify the <span class="usertext">AutoCellUpdate</span> settings.</span><div class="info" purpose="info"><section class="codeblock padded-anchor" purpose="codeblock"><div class="codeblockdesc" purpose="codeblockdesc"><p id="GUID-7FD1FD2A-739A-48B4-99EF-58699515D534">It should look similar to the following:</p></div><div class="codeblockbody"><pre><code class="xml">&lt;AutoCellUpdate use=&quot;true&quot; delaySeconds=&quot;10&quot;/&gt;</code></pre></div></section></div></li><li purpose="step" id="ESRI_STEP_F245491A758A4E42AA8A4AB9EBD7D281"><span purpose="cmd" id="GUID-219ACBB8-3233-4135-8A39-E90636B74095">Save the changes.</span><div class="info" purpose="info"></div></li><li purpose="step" id="ESRI_STEP_11FF3430024F4078A4C263FCEF06ABDE"><span purpose="cmd" id="GUID-6CFF37C9-773D-437C-B7AE-9DF316962CEA">Stop your map service.</span></li><li purpose="step" id="ESRI_STEP_5C1D0132F30A463A94263F12B46B6C9E"><span purpose="cmd" id="GUID-73CC698F-8221-4B57-B69E-2FE0EBD446FD">Start your map service.</span></li></ol></div><section class="result padded-anchor" id="ESRI_RESULT_E3EFD3E9C9714E888B54CCD0656F7EEB" purpose="result"><p id="GUID-9350EBD5-6CBE-4FDA-8178-2CD90A1554F6">The <span class="usertext">.senc</span> files will not be re-created for this change unless new S-57 datasets were added to the datasets folder while the service was shut down.</p></section></section></section><section class="section2 padded-anchor" id="ESRI_SECTION2_43162BF18EFF420591B831FF5CE3E101" purpose="section2"><h3>Display frames and S-52 color tokens</h3><p id="GUID-67C226FA-3AEE-4244-B080-C63E5375B942">The color for <span class="ph">Maritime Chart Service</span> dataset frames is red and the color for Products on Demand dataset frames is magenta by default.  In the <span class="usertext">ServerConfiguration.xml</span> file, there are two settings:  one for <span class="ph">Maritime Chart Service</span> named <span class="usertext">DisplayFramesMCS</span> and another for Products on Demand named <span class="usertext">DisplayFramesPOD</span>.</p><p id="GUID-DDC51243-5CF1-4C63-BF58-D8DD376FA74B">The color token values added to these properties are set using standardized S-52 color tokens.  You can modify any color token value and restart your map service to see the changes.  The <span class="uicontrol">Display Frames</span> property found in your <span class="usertext">S52DisplayProperties.xml</span> file is the setting that allows you to turn your dataset frames on or off.</p><p id="GUID-9BEE0CCD-3AA4-4AC6-8E4B-BBC1A36C8513">All S-52 color token values can be found in the <span class="usertext">DAY.clr</span> file under your colcalib folder located in the controlFilesDirectory location, which is <span class="usertext">&lt;Installation path&gt;:\arcgisserver\directories\maritimeserver\maritimechartservice</span>. This location is in your controlFilesDirectory property. Back up this location if you make any changes. Future installations may require you to overwrite this location.</p><div class="panel trailer-1 note" id="GUID-398B7749-7C64-4520-A0E2-2AF5CD1AF460"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-1331EF32-3DEF-4C03-B8F1-DF8FD0FED84D">To use the override values, you must set <span class="usertext">IntendedUsageOverrideCodes</span> <span class="usertext">use = true</span> and restart your map service. </p><p id="GUID-27112438-CB92-4500-AD35-3F35AAE2F318"><a class="xref xref" href="../../../../../zh-CN/server/latest/publish-services/windows/setting-maritime-chart-service-properties.htm#ESRI_SECTION1_F1556C1B34FE495FAC29876DCB0BB4E3"> Learn more about modifying <span class="ph">Maritime Chart Service</span> properties</a></p></div></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_736F31CEEE2C4EE8AFA0DE42DCEC4886" purpose="section1"><h2>S-52 display properties</h2><p id="GUID-813224B7-A3B6-4A72-BD93-9207A30431D7">The <span class="usertext">S52DisplayProperties.xml</span> control file allows the system administrator to configure how the service will behave based on the S-52 standard. </p><div class="panel trailer-1 note" id="GUID-C97DFBED-95F4-4ED7-B853-D7A803F2A9BB"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-F2CCBF64-B2FA-4A9E-9DB8-8B33BE6E2540">The map service must be stopped and restarted for changes to the <span class="usertext">S52DisplayProperties.xml</span> file to be recognized by the service.</p></div><section class="section2 padded-anchor" id="ESRI_SECTION2_86F6E3A4BB3441C3B36E66893DB2F432" purpose="section2"><h3>Display parameters</h3><p id="GUID-313EC009-A47C-41BB-ADDF-D219745EF052">There are many S-52-based mariner settings and other parameters that the client applications can pass to the service, which allows the display to be modified independently by each client request.  You can download sample <span class="ph">Maritime Chart Service</span> <span class="ph">Web AppBuilder for ArcGIS</span> widgets from <span class="ph">GitHub</span> that show how to take advantage of these parameters. When the service is started, the settings in <span class="usertext">S52DisplayProperties.xml</span> will be used by default.  The sample application will display those values to the user and provide additional values to be set that can also be found in the <span class="usertext">S52DisplayProperties.xml</span> file.<div class="panel trailer-1 note" id="GUID-948A64C5-A71F-48F0-BEEB-C0117B4FCC57"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-8FB19AF4-F010-4B95-A166-446E56E54CAC">Not all parameters found in <span class="usertext">S52DisplayProperties.xml</span> may be supported by the sample widget.</p></div></p><p id="GUID-FD1F3971-6365-41BA-BBAB-16769326E869">All parameters are defined in the <span class="usertext">S52DisplayProperties.xml</span> along with additional comments. <section class="codeblock padded-anchor" purpose="codeblock"><div class="codeblockdesc" purpose="codeblockdesc"><p id="GUID-BD4C84C1-B7BC-426C-8344-126368708A15">Following is an example of Display Light Sectors:</p></div><div class="codeblockbody"><pre><code class="python">&lt;Parameter name=&quot;DisplayLightSectors&quot; type=&quot;E&quot; default=&quot;2&quot; value=&quot;2&quot;&gt;
+	&lt;Description&gt;Display light sectors&lt;/Description&gt;
+	&lt;Comments&gt;New at 10.6.1 Patch 2 &lt;/Comments&gt;
+        &lt;ExpectedInput code=&quot;1&quot; value=&quot;False&quot;/&gt;
+        &lt;ExpectedInput code=&quot;2&quot; value=&quot;True&quot;/&gt;
+&lt;/Parameter&gt;</code></pre></div></section></p><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><thead><tr><th colspan="1">Parameter</th><th colspan="1">Description</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-88556AB8-ACA2-4499-A7B3-A732F206DCA9">Parameter name</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-E1EA21C7-27F7-4D5F-AEFD-406BA10EEA6E">Name of the parameter that is passed to the service.</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-6F00F1E8-FD0E-4D71-9602-E7FBD8350474">type</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-FEA2B728-79C0-447C-BF77-958B84614680">E: Enumerated list</p><p id="GUID-AB4AC9DE-36F6-4A91-8F13-2CAE96DF6CAD">F: Floating point value can be used</p><p id="GUID-6CE6557A-88CC-443D-BE35-3703E5325580">L: List value when more than one value can be passed to the service</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-762B9DCC-DD4D-4EDD-8D04-C9DBF345F8F8">default</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-D27A136B-EAED-4757-B3B6-6A2E6B08F5DF">Default value that S-52 recommends if the parameter is referenced in the S-52 standards.</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-8C866E1C-13B8-43F6-B54C-35CE540FE247">Value</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-622952D2-981A-4882-B6BC-C3543FEDDB30">Value that is used by the service when it starts. This value can be overwritten by the client.</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-0C09D31B-CCC7-49C1-B2DC-BDF449FB64C5">ExpectedInput</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-F39E2370-9161-43D7-89A2-5B690F360A8F">Used when type is E or L</p><p id="GUID-567326DC-ADC1-4D6B-9772-2F94030A3236">Code: Value that is used by the service</p><p id="GUID-AEC97E5B-5B29-44DB-AC1E-640EB63BC6B9">Value: Description of the code that is passed to the service</p></td></tr></tbody><caption></caption></table></div><p id="GUID-831C049D-B4DE-455A-B3B1-FC20823E97A9">Additional parameters:</p><ul purpose="ul" id="UL_AB3CD398CD3F4D74956937D2A00207D6"><li purpose="li" id="LI_EEC2A274E21B46F0A3C37F6680685F90">Area Symbol Size</li><li purpose="li" id="LI_46F5E514A0444D3BA73E7C7733C92D8C">Area Symbolization</li><li purpose="li" id="LI_3E8F5D7C453C45EA81E975B16A34B5F3">Attribute Description</li><li purpose="li" id="LI_F5F3D20743C64926827F2D32DFDE37E5">Color Scheme</li><li purpose="li" id="LI_68CFA6299FB840F5826020EF1CA8A550">Compass Rose</li><li purpose="li" id="LI_2A51953B705D48F899CFBCA1F9F14FAE">Dataset Display Range</li><li purpose="li" id="LI_165E08AAD45447AD8432D0F0E2B4916A">Date Dependency Range</li><li purpose="li" id="LI_DB17F217B2C74D608B44FB7C53E6E262">Date Dependency Symbol</li><li purpose="li" id="LI_7AF41CB1125846899E992FE9EC9E435E">Deep Contour</li> <li purpose="li" id="LI_9CCD23850DE24074980F481C947403CC">Display AIO Features</li><li purpose="li" id="LI_E46F7A4182D446DAA3D13479980C287D">Display Category</li><li purpose="li" id="LI_4016DAEAB56B4E4693A418084C742166">Display Depth Units</li><li purpose="li" id="LI_1E3F06EDBF464965976B9D2A4BD83F7F">Display Frames</li><li purpose="li" id="LI_7D66CB9F77C84CC987EE7E87E2C8C7DC">Display Frames Text</li><li purpose="li" id="LI_6CC2E3403B0A46CCBB03825D35C05D8B">Display Frames Text Placement</li><li purpose="li" id="LI_A899145B28B2454B93F3C079079B9CBB">Display Light Sectors</li><li purpose="li" id="LI_6E709C35123A4DCB9FD1F29A1C06FF67">Display NOBJNM</li><li purpose="li" id="LI_9887AD83FEFE4BF2A783F1F00A34E420">Display Safe Soundings</li><li purpose="li" id="LI_DAD561216C0B4A50A89E30D0A19C3A56">Honor SCAMIN</li><li purpose="li" id="LI_6DC26A11352046D3B3477C3DC8D1180C">Intended Usage</li><li purpose="li" id="LI_7912987AC94149BB9BD5400751386313">Isolated Dangers</li><li purpose="li" id="LI_832C50C70FA2475CA63966F73B85C8D9">Isolated Dangers Off</li><li purpose="li" id="LI_BB6F449CB1B14AE5860FE982F0178732">Label Contours</li><li purpose="li" id="LI_5880B8757FC94E4CA912FA824F46593A">Label Safety Contours</li><li purpose="li" id="LI_B28435C5829E48F8BFB73F7401A664AA">Line Symbol Size</li><li purpose="li" id="LI_7CAF4DD5C29B47E9BAAD311F79CCF82A">Optional Deep Soundings</li><li purpose="li" id="LI_CF85AE9F773248B6AD398D71E730EA7A">Point Symbolization</li><li purpose="li" id="LI_36EB3D756BA640179B9CE4A71996F8E8">Remove Duplicate Text</li><li purpose="li" id="LI_2D70197B2CA14C5992BBF3A27BCF8666">Safety Contour</li><li purpose="li" id="LI_82DB22D66A274E09A55F2F47D73F42B2">Safety Depth</li><li purpose="li" id="LI_C4526C2AF4CB418FAA125B0DDE2AFA60">Shallow Contour</li><li purpose="li" id="LI_9019FDF56A534D71ACAC342F0D7B2182">Text Groups</li><li purpose="li" id="LI_2231F9845F8145F88562D5F1AAE6AB6A">Text Halo</li><li purpose="li" id="LI_9E488B8C30D64301A51E7AA4A9319A45">Text Size</li><li purpose="li" id="LI_9104726CD22848F58DA064EC40A9C6F8">Two Depth Shades</li></ul><div class="panel trailer-1 note" id="GUID-80DA3F34-BF2E-428C-8F4A-C86E2AD1B58F"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-7BD6F5CE-1DE2-43DE-A40D-E5948DCE29A7"><span class="usertext">Data Frames</span> is set to <span class="usertext">automatic</span> by default.  When set to automatic, the intelligent zoom chooses the best charts for the area based on the current reference scale and displays them.  If a chart is the best one for the area but has a reference scale lower than the chart minZoom, the cell extent is drawn instead of the chart. The client can override this and turn all cell extents on or off using the client side parameters.  When turned on, all dataset extents are visible regardless of your reference scale.</p></div><div class="panel trailer-1 note" id="GUID-C95909E6-BCA1-4557-A17F-FB82B18DDD60"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-E8A6C761-4D80-40BC-910A-27EC36B30B02">The compass rose is set to <span class="usertext">False</span> by default. This will not display any compass rose points for MAGVAR point features. S-52 symbology will also be used by default. If you want to see MAGVAR point features as INT1 compass rose symbols, the value for compass rose in the <span class="usertext">S52DisplayProperties.xml</span> file must be set to <span class="usertext">True</span>, then the service can be restarted. When a compass rose is displayed, the deviation from true north will be calculated based on the current date.</p></div><div class="panel trailer-1" id="GUID-30DC818F-CE57-4F36-9A95-CAEC86B9B69D"><h5 class="icon-ui-description trailer-0">提示：</h5><p id="GUID-E9B2D573-01AE-4DE7-88FB-C8B12C4A0999">It's recommended that you remove IntendedUsage and ExpectedInput values from your <span class="usertext">S52DisplayProperties.xml</span> that won't be loaded into your service.  For example, if you're only going to publish ENC datasets, remove those values for AML and IENC that are not used by ENC products. </p></div><p id="GUID-12F62CF7-5D4C-449E-8E77-1222F17C2310">Here is an example of what gets passed to the service by the client. You can also access this information by using the <span class="ph">Maritime Chart Service</span> parameter operation.  For example, <span class="usertext">http://&lt;machine.domain.com&gt;/arcgis/rest/services/SampleWorldCities/MapServer/exts/MaritimeChartService/MapServer/parameters?f=json&amp;full=true</span>.</p></section><section class="section2 padded-anchor" id="ESRI_SECTION2_E6ADE3A7587A4256A1C63E9A61662CAB" purpose="section2"><h3>View over groups</h3><p id="GUID-475ACAEC-ECE3-4119-8309-3A524EC4A9AF">The <span class="usertext">S52DisplayProperties.xml</span> file comes with various samples of how to configure feature layers within your service layer.  The ParameterGroup name  <span class="usertext">ViewOverGroups</span> will be used by default.  You must make sure all other samples have a different name.</p><p id="GUID-803B10B9-870C-4CD3-B1E0-101A2929979E">The concept of view over groups comes directly from S-52 and can be configured and extended in the same way as S-52.<div class="panel trailer-1 note" id="GUID-4C3A5CC5-7219-4766-8981-84CDDBF0F3F7"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-C2619659-A35D-4468-BF86-671232814817">With the release of AML 1.1.3 Portrayal Specification, a new set of
+view groups has been defined. To use these groups for your S-57
+AML datasets, you must change your <span class="usertext">ViewOverGroups</span> <span class="uicontrol">Parameter Group
+</span> setting to use <span class="usertext">ViewOverGroups_AML_Sample</span>. Make sure to change the name of
+<span class="usertext">ViewOverGroups_AML_Sample</span> to <span class="usertext">ViewOverGroups</span> and rename your
+existing <span class="uicontrol">Parameter Group</span> something other than <span class="usertext">ViewOverGroups</span>.
+The AML view groups contain 23 layers, while the default view group
+contains 8 layers.</p></div><div class="panel trailer-1 note" id="GUID-34CDBE1B-704D-4A2E-ABF2-482F25B5C56A"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-7830CD9E-1195-45F0-9A64-39AA6589E905">You must restart your map service after making changes to the
+<span class="usertext">S52DisplayProperties.xml</span> file.</p></div></p><section class="codeblock padded-anchor" purpose="codeblock"><div class="codeblockdesc" purpose="codeblockdesc"></div><div class="codeblockbody"><pre><code class="xml">&lt;ParameterGroup name=&quot;ViewOverGroups&quot; defaultVisibility=&quot;false&quot;&gt;
+	&lt;ViewoverGroupsDescription&gt;This example includes all view groups into 8 feature layers&lt;/ViewoverGroupsDescription&gt;
+	&lt;Parameter name=&quot;0&quot; type=&quot;E&quot; default=&quot;2&quot; range=&quot;11000-11060,21010-21060,31000-31080&quot;&gt;
+		&lt;Description&gt;Information about the chart display&lt;/Description&gt;
+		&lt;ExpectedInput code=&quot;1&quot; value=&quot;False&quot;/&gt;
+		&lt;ExpectedInput code=&quot;2&quot; value=&quot;True&quot;/&gt;
+	&lt;Parameter&gt;</code></pre></div></section><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><thead><tr><th colspan="1">Parameter</th><th colspan="1">Description</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-65609F3A-A886-47D0-AEC9-A532ACBA3AA3">ParameterGroup name</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-72125FCF-7A63-49E9-8EAB-017761F821BD">Must be set to <span class="usertext">ViewOverGroups</span> for the system to recognize it;  otherwise, rename it if used as a sample reference.</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-F33BCF50-7157-4AC9-AE7A-A58493D115FB">ParameterGroup defaultVisibility</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-FB9B985E-AEDA-4872-912C-42CED5B60AC9"><span class="usertext">True</span> or <span class="usertext">False</span></p><div class="panel trailer-1 note" id="GUID-9F3D1BC7-8576-48A7-8968-F1ACE586D54A"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-BA3C3905-FBD3-4B1F-9BA1-90F3F40DA6A6">See Default Visibility Options for View Over Groups.</p></div></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-D091089C-A909-4B93-B316-DBF1421C96FF">ViewOverGroupDescription</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-162033D5-AF37-415B-A553-117DE8D42B53">Internal documentation describing the feature layer.</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-4F80A4AB-C290-424F-878F-311142CADAFC">Parameter name</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-933A6B9C-2A16-40CC-9B85-669FAC00DE27">This attribute no longer has to be unique.  The service automatically assigns a value starting with 0 when the service starts.</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-FA32DA59-457A-41F0-904E-7418A7D6420F">Parameter default</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-898EA518-D46C-4C4A-BF5F-A7E779D1CA21">The system default value.  This field is for documentation only. The options are as follows:<ul purpose="ul" id="UL_3338F5BB60564DEA9392E8FC2B59F95C"><li purpose="li" id="LI_52E2C09AEC414518AD7CA34260DCE14C">1—The feature layer will be turned off by default when brought into an application.</li><li purpose="li" id="LI_81DB431AA3A54CABAECAF0F256F084C2">2—The feature layer will be turned on by default when brought into an application.</li></ul></p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-9D6F1CA0-7004-4DB9-B8A5-1F2E13E32994">Parameter range</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-6AD62A70-F372-4926-82F9-5C7BABE45A37">S-57 objects that are included in this feature layer.  Values come from View Groups located at the bottom of the <span class="usertext">S52DisplayProperties.xml</span> file.</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-ED07357D-AEB9-4631-9373-BA4241762AE8">Description</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-6FCA1A38-9E86-4555-8C00-BDC69DA4E512">This text is displayed on your contents tab or in the table of contents.</p></td></tr></tbody><caption></caption></table></div><section class="section3 padded-anchor" id="ESRI_SECTION3_A4226C4742CB4EB990509CADAB888DB3" purpose="section3"><h4>Default visibility options for view over groups</h4><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><thead><tr><th colspan="1">Option</th><th colspan="1"></th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-87632849-26E8-47A8-95F5-3A88EC47DDAB">Default setting: Set to <span class="usertext">True</span> for an OverViewGroup group containing only one feature layer.</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-F5B29487-6704-4A8F-AD8B-7C933843F29A">For example, soundings.  It's expected that feature layers can be turned on or off only.  All other S-57 service layer information will be displayed unless you turn the parent layer off.  For this example, if you turn off soundings, all other information in the service layer will be displayed.  This option is a way to quickly create a single feature layer that can be turned on and off without the need to define other feature layers.</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-6F3E22EF-3A9A-4FFA-9086-D99D7F500D20">Set to <span class="usertext">True</span> for an OverViewGroup containing more than one feature layer.</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-6FDDA05C-47F7-4AEA-8E3D-8A8DB16D6C40">You get the same behavior as in the default setting. The exception is when you have all view groups represented in the OverViewGroup, whether that's one or more feature layers.  When you turn the last feature layer off, that feature layer will still be displayed unless you turn off the parent layer.  To avoid this, make sure you set defaultVisibility to <span class="usertext">False</span> when you include all view groups in your OverViewGroup.</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-D1AA4F04-A316-412A-A5AE-F6485C789F01">Set to <span class="usertext">False</span> and it is a single layer.</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-83031468-4F09-44D0-A4CC-F79E414870AA">When the feature layer is turned off, the parent layer is also turned off since nothing should be displayed.  This option should be used when only one feature layer, for example, navaids, is to be displayed from the data.  Only the data from the feature layer will be displayed.  No other data from the service will be displayed.</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-161FD35A-A39D-4852-A96A-8BC7FF1FF0AA">Set to <span class="usertext">False</span> and there is more than one feature layer.</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-C55A3301-6058-4B3F-8CCF-51F26E8BA02C">When all the feature layers are turned off, the parent layer is also turned off.  This option should be used when one or more feature layers are required.  Another example of this is to have a feature layer for soundings and a feature layer for navaids.  Those will be the only two feature layers displayed.  All other S-57 service layer information is suppressed.</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-7E3E2A65-5ACE-4B88-ACC3-A34FBDE524F1">An OverViewGroup is defined with no feature layer information.</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-79FFAD6F-DAF1-4695-ADFD-D49D6B3488A9">You should set the defaultVisibility setting to <span class="usertext">False</span>.   Otherwise, the feature layer node will not work to turn off the layer.</p><div class="panel trailer-1 note" id="GUID-8D830B41-078A-4226-A999-8082AED38F8A"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-7446C210-1CA6-496A-BD27-631D61B0D880">If the setting is not included, it will default to <span class="usertext">True</span>.</p></div></td></tr></tbody><caption></caption></table></div></section></section><section class="section2 padded-anchor" id="ESRI_SECTION2_6EAEE53BB1194877ADF8AABD4034CA74" purpose="section2"><h3>Viewing group descriptions (View Group)</h3><p id="GUID-CAF900EF-CE6F-41CA-915B-5F9B7EDAEA78">According to S-52, S-57 objects are grouped into View Groups.  The View Group IDs are what your ViewOverGroups range values are set to.  These View Group IDs are related to entries in your <span class="usertext">.dic</span> files.</p><p id="GUID-E7B6E14A-4EF2-4580-A6AB-29F2D62CC4FB">The <span class="usertext">.dic</span> files, which are located with the rest of your control files, are part of the S-52 Standard and control how features are displayed.  These view groups can be configured as necessary to create OverViewGroup feature layers for your service. </p><p id="GUID-D395B9A6-C426-498F-B29C-66D81308A927">For example, the ViewGroup for beacon contains five individual S-57 objects, but they are all controlled by one ViewGroup.<section class="codeblock padded-anchor" purpose="codeblock"><div class="codeblockdesc" purpose="codeblockdesc"></div><div class="codeblockbody"><pre><code class="xml">&lt;ViewGroup id=&quot;17020&quot; Description=&quot;beacon&quot;/&gt;
+	&lt;ViewGroupS57Objects Code=&quot;&quot; Acronym=&quot;BCNCAR&quot; Description=&quot;&quot; Dictionary=&quot;psymrefs&quot; Comments=&quot;&quot;/&gt;
+	&lt;ViewGroupS57Objects Code=&quot;&quot; Acronym=&quot;BCNISD&quot; Description=&quot;&quot; Dictionary=&quot;psymrefs&quot; Comments=&quot;&quot;/&gt;
+	&lt;ViewGroupS57Objects Code=&quot;&quot; Acronym=&quot;BCNLAT&quot; Description=&quot;&quot; Dictionary=&quot;psymrefs&quot; Comments=&quot;&quot;/&gt;
+	&lt;ViewGroupS57Objects Code=&quot;&quot; Acronym=&quot;BCNSAW&quot; Description=&quot;&quot; Dictionary=&quot;psymrefs&quot; Comments=&quot;&quot;/&gt;
+	&lt;ViewGroupS57Objects Code=&quot;&quot; Acronym=&quot;BCNSSP&quot; Description=&quot;&quot; Dictionary=&quot;psymrefs&quot; Comments=&quot;&quot;/&gt;</code></pre></div></section></p><p id="GUID-D4259FF1-25C7-44BE-8EF6-9BCB22F523AE">If you want to turn on or off each beacon type individually, you have to create new ViewGroups for each beacon type and modify your associated <span class="usertext">.dic</span> files.
+</p></section></section>
+			
+				<hr>
+				<!--googleoff: all-->
+				
+	
+        
+		    <p class="feedback right">
+		        <a id="afb" class="icon-ui-contact" href="/feedback/" data-langlabel="feedback-on-this-topic" >有关此主题的反馈?</a>
+		    </p>
+        
+	
+
+				<!--googleon: all-->
+			
+		</main>
+	</div>
+	
+	<!--googleoff: all-->
+	
+		
+			<div id="main-toc-large" class="column-5">
+			    <div class="panel font-size--2 tablet-hide trailer-1">
+			      <h5 class="trailer-half">在本主题中</h5>
+			      <ol class="list-plain pre-0 trailer-0"><li><a href="#GUID-41F108D2-4093-4654-93FF-9B3FD3E661DB">S-57 data dictionary
+</a></li><li><a href="#ESRI_SECTION1_7E967D0B4A19486BB2BC81CE956DA80F">Server configuration</a></li><li><a href="#ESRI_SECTION1_736F31CEEE2C4EE8AFA0DE42DCEC4886">S-52 display properties</a></li></ol>
+			    </div>
+			    
+			    
+	  		</div>
+		
+    
+   <!--googleon: all-->
+
+
+
+
+          
+        </div>
+        <!-- ENDPAGECONTENT -->
+
+      </div>
+
+    </div>  <!-- End of wrapper -->
+
+  <footer class="footer leader-3 link-dark-gray" role="contentinfo">
+    <div class="grid-container">
+      <div class="row">
+        <nav class="column-6">
+          <h6 data-langlabel="arcgis-for-server">Arc<span>GIS Enterprise</span></h6>
+          <ul class="list-plain">
+            <li><a data-langlabel="home" href="../../../../../zh-CN/">主页</a></li>
+            <li><a data-langlabel="portal" href="../../../../../zh-CN/portal/">Portal</a></li>
+            <li><a data-langlabel="server" href="../../../../../zh-CN/server/">Server</a></li>
+            <li><a data-langlabel="data-store" href="../../../../../zh-CN/data-store/">Data Stores</a></li>
+            <li><a data-langlabel="cloud" href="../../../../../zh-CN/cloud/">云</a></li>
+            <li><a data-langlabel="apps" href="../../../../../zh-CN/apps/">应用程序</a></li>
+            <li><a data-langlabel="documentation" href="../../../../../zh-CN/documentation/">文档</a></li>
+          </ul>
+        </nav>
+
+        
+  <nav class="column-6">
+    <h6 data-langlabel="arcgis-platform">ArcGIS 平台</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="arcgis" href="//www.arcgis.com/">ArcGIS Online</a></li>
+      <li><a data-langlabel="arcgis-for-professionals" href="//pro.arcgis.com/">ArcGIS Pro</a></li>
+      <li><a data-langlabel="arcgis-for-server" href="//enterprise.arcgis.com/">ArcGIS Enterprise</a></li>
+      <li><a data-langlabel="arcgis-for-developers" href="https://developers.arcgis.com/">ArcGIS for Developers</a></li>
+      <li><a data-langlabel="arcgis-solutions" href="//solutions.arcgis.com/">ArcGIS Solutions</a></li>
+      <li><a data-langlabel="arcgis-marketplace" href="//marketplace.arcgis.com/">ArcGIS Marketplace</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <h6 data-langlabel="about-esri">关于 Esri</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="about-us" href="//www.esri.com/about-esri/">关于我们</a></li>
+      <li><a data-langlabel="careers" href="//www.esri.com/careers/">招贤纳士</a></li>
+      <li><a data-langlabel="insiders-blog" href="https://www.esri.com/about/newsroom/blog/">Esri 博客</a></li>
+      <li><a data-langlabel="user-conference" href="//www.esri.com/events/user-conference/index.html">用户大会</a></li>
+      <li><a data-langlabel="developer-summit" href="//www.esri.com/events/devsummit/index.html">开发者峰会</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <a class="esri-logo" href="//www.esri.com/" aria-label="Esri Home"></a>
+    <section class="footer-social-nav leader-1">
+            <a class="icon-social-twitter" aria-label="Esri on Twitter" href="https://twitter.com/Esri/"></a>
+            <a class="icon-social-facebook" aria-label="Esri on Facebook" href="https://www.facebook.com/esrigis/"></a>
+            <a class="icon-social-github" aria-label="Esri on GitHub" href="//esri.github.io/"></a>
+            <a class="icon-social-contact" aria-label="Contact Esri" href="//www.esri.com/about-esri/contact/"></a>
+    </section>
+	  
+  </nav>
+  
+  <div class="column-24 leader-1">
+    <p class="font-size--3"><a href="http://www.esri.com/legal/copyright-trademarks">Copyright &copy; 2019 Esri.</a> All rights reserved. | <a href="http://www.esri.com/legal/privacy/">隐私政策</a> | <a href="http://www.esri.com/legal/software-license">法律声明</a></p>
+  </div>
+  
+
+
+      </div>
+    </div>
+  </footer>
+  <!--googleoff: all-->
+
+  
+  
+	<script src="../../../../../zh-CN/assets/js/init.js" type="text/javascript"></script>
+	<!--<script src="../../../../../zh-CN/assets/js/drop-down.js" type="text/javascript"></script>-->
+	<script src="../../../../../zh-CN/assets/js/search/searchform.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/cdn/js/link-modifier.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/cdn/js/sitewide.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/cdn/js/libs/highlight.pack.js" type="text/javascript"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+
+
+  
+    
+
+  <script src="../../../../../zh-CN/cdn/js/affix.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    $(function () {
+          var appendFlg = true;
+
+          $("#bigmac")
+          .on("affixed.bs.affix", function (evt) {
+            if (appendFlg) {
+              $("<a class='crumb' href='#'>Customizing configuration files</a>").insertAfter ($("#bigmac nav a").last());
+              appendFlg = false;
+            }
+          })
+          .on ("affix-top.bs.affix", function(evt) {
+            if (!appendFlg) {
+              $("#bigmac nav a").last().remove();
+            }
+            appendFlg = true;
+          })
+    })
+  </script>
+  
+        <script type="text/javascript">
+          window.doctoc = {
+            pubID: "1634",
+            tpcID: "583",
+            
+              prefix: "管理服务",
+              prefixUrl: "/zh-cn/server/latest/publish-services/windows/",
+          
+            hideToc: false
+          }
+        </script>
+
+        <script type="text/javascript" src="../../../../../zh-CN/server/latest/publish-services/windows/1634.js" ></script>
+        <script type="text/javascript" src="../../../../../zh-CN/cdn/calcite/js/protoc.js" ></script>
+        
+        
+
+  <noscript>
+        <p>
+            <a href="flisting.htm">flist</a>
+        </p>
+    </noscript>
+    <script type="text/javascript"></script>
+  
+  
+    
+    
+
+  </body>
+</html>

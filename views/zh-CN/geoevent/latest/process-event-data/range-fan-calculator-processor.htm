@@ -1,0 +1,543 @@
+
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>  <html class="ie lt-ie9 lt-ie8 lt-ie7 ie6" dir="ltr"> <![endif]-->
+<!--[if IE 7]>     <html class="ie lt-ie9 lt-ie8 ie7" dir="ltr"> <![endif]-->
+<!--[if IE 8]>     <html class="ie lt-ie9 ie8" dir="ltr"> <![endif]-->
+<!--[if IE 9]>     <html class="ie ie9" dir="ltr"> <![endif]-->
+<!--[if !IE]><!--> <html dir="ltr" lang="zh-CN"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>扇形视域计算器处理器&mdash;处理事件数据(10.8) | ArcGIS Enterprise 文档</title>
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+    <script>
+      var docConfig = {
+        locale: 'zh-CN'
+        ,localedir: 'zh-cn'
+        ,langSelector: ''
+        
+        ,relativeUrl: false
+        
+
+        ,searchformUrl: '/search/'
+        ,tertiaryNavIndex: ''
+
+        
+      };
+    </script>
+	 
+
+
+    
+    <!--[if lt IE 9]>
+      <script src="../../../../zh-CN/cdn/js/libs/html5shiv.js" type="text/javascript"></script>
+      <script src="../../../../zh-CN/cdn/js/libs/selectivizr-min.js" type="text/javascript"></script>
+      <script src="../../../../zh-CN/cdn/js/libs/json2.js" type="text/javascript"></script>
+      <script src="../../../../zh-CN/cdn/js/libs/html5shiv-printshiv.js" type="text/javascript" >
+
+    <![endif]-->
+
+     <!--[if lt IE 11]>
+    <script>
+      $$(document).ready(function(){
+        $$(".hideOnIE").hide();
+      });
+    </script>
+    <![endif]-->
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<link href="../../../../zh-CN/assets/img/favicon.ico" rel="shortcut icon" >
+	<link href="../../../../zh-CN/assets/css/screen.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/cdn/calcite/css/documentation.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/assets/css/print.css" media="print" type="text/css" rel="stylesheet" />
+
+	<!--
+	<link href="../../../../zh-CN/assets/css/screen_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/assets/css/documentation/base_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/assets/css/print_l10n.css" media="print" type="text/css" rel="stylesheet" />
+	-->
+	
+	
+		<script src="../../../../zh-CN/cdn/js/libs/jquery.1.9.1.min.js" type="text/javascript"></script>
+	
+	<script src="../../../../zh-CN/cdn/js/libs/jquery.cookie.js" type="text/javascript"></script>
+	<link href="../../../../zh-CN/cdn/css/colorbox.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/cdn/css/colorbox_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<script src="../../../../zh-CN/cdn/js/libs/jquery.colorbox-min.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/assets/js/video-init.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/assets/js/sitecfg.js" type="text/javascript"></script>
+	
+		<script src="../../../../zh-CN/assets/js/signIn.js" type="text/javascript"></script>
+	
+
+	<!--- Language Picker -->
+	<script src="../../../../zh-CN/assets/js/locale/l10NStrings.js" type="text/javascript"></script>
+	
+		 
+	
+
+	<script src="../../../../zh-CN/assets/js/calcite-web.js" type="text/javascript"></script>
+
+
+
+  <!--- search MD -->
+    <META name="description" content="扇形视域计算器处理器可用于在事件记录点几何前动态生成扇形视域。"><META name="last-modified" content="2019-12-6"><META name="product" content="arcgis-server-windows,arcgis-server-linux,ext-server-geoevent,arcgis-enterprise-windows,arcgis-enterprise-linux"><META name="sub_category" content="GeoEvent"><META name="search-collection" content="help"><META name="content_type_label" content="帮助主题"><META name="sub_category_label" content="GeoEvent"><META name="search-category" content="help-general"><META name="subject_label" content="REAL-TIME FEEDS,服务,SERVER"><META name="version" content="10.8"><META name="content_type" content="Help Topic"><META name="subject" content="REAL-TIME FEEDS,SERVICES,SERVER"><META name="content-language" content="zh-cn">
+    <!--- search MD -->
+
+  
+      
+
+</head>
+
+<!--
+      pub: GUID-5D524593-D8D3-4B10-896F-B21A7B6A7B11=16
+      tpc: GUID-FDBA833E-CB67-444E-BCAE-126CB7C23D54=2
+      -->
+
+
+<!-- variable declaration, if any -->
+<!-- can change following macro to set variable once we are on Jinja 2.8 -->
+
+
+
+
+
+<body class="claro zh-CN server">
+  
+
+  <!-- Drawer location -->
+  <div class="drawer drawer-left js-drawer" data-drawer="top-nav">
+        <nav class="drawer-nav" role="navigation">
+          <aside class="side-nav">
+            <h2 class="side-nav-title">Arc<span>GIS</span> Enterprise</h2>
+            <form id="helpSearchForm" class="margin-left-half margin-right-half leader-half trailer-half drawer-search-form" method="GET">
+              <input type="search" name="q"  placeholder="搜索 GeoEvent Server 10.7 帮助">
+              <input type="hidden" name="collection" value="help" />
+              <input type="hidden" name="product" value="ext-server-geoevent" />
+              <input type="hidden" name="version" value="10.8" />
+              <input type="hidden" name="language" value="zh-CN" />
+            </form>    
+             <a id="nav-portal" data-langlabel="portal" href="../../../../zh-CN/portal/" class="side-nav-link">Portal</a>
+             
+            <a id="all-servers" data-langlabel="all-servers" href="../../../../zh-CN/server/" class="side-nav-link">所有服务器</a>
+            <a id="gis-server" data-langlabel="gis-server" href="../../../../zh-CN/server/" class="side-nav-link">GIS Server</a>
+            <a id="image-server" data-langlabel="image-server" href="../../../../zh-CN/image/" class="side-nav-link">Image Server</a>
+            <a id="geo-analytics-server" data-langlabel="geo-analytics-server" href="../../../../zh-CN/geoanalytics/" class="side-nav-link">GeoAnalytics Server</a>
+            <a id="geoevent-server" data-langlabel="geoevent-server" href="../../../../zh-CN/geoevent/" class="side-nav-link">GeoEvent Server</a>
+            <a id="notebook-server" data-langlabel="notebook-server" href="../../../../zh-CN/notebook/" class="side-nav-link">Notebook Server</a>
+            <a id="nav-data-store" data-langlabel="data-store" href="../../../../zh-CN/data-store/" class="side-nav-link">Data Stores</a>
+            <a id="nav-cloud" data-langlabel="cloud" href="../../../../zh-CN/cloud/" class="side-nav-link">云</a>
+            <a id="nav-apps" data-langlabel="apps" href="../../../../zh-CN/apps/" class="side-nav-link">应用程序</a>
+            <a id="nav-doc" data-langlabel="documentation" href="../../../../zh-CN/documentation/" class="side-nav-link">文档</a>
+
+          </aside>
+        </nav>
+    </div>
+
+    <!-- user navigation collapses to drawer on mobile -->
+    
+    <div class="drawer drawer-right js-drawer hide-if-logged-out logged-in-navigation" data-drawer="user-nav">
+      <nav class="drawer-nav">
+        <aside class="side-nav">
+          <a class="side-nav-link agolProfile" href="#">我的个人资料</a>
+          <a class="side-nav-link icon-ui-sign-out js-log-out" href="#">登出</a>
+        </aside>
+      </nav>
+    </div>
+    
+<!-- End of drawer -->
+
+  
+  <div class="wrapper">
+      <!--googleoff: all-->
+
+      <header class="top-nav" data-skin="learn">
+        <a class="skip-to-content" href="#skip-to-content">Skip To Content</a>
+        <div class="grid-container">
+          <div class="column-24">
+
+
+            <!--<div class="top-nav-title-wrapper text-center ">-->
+              <a href='../../../../zh-CN/' class="top-nav-title tablet-hide"><span>Arc</span>GIS  Enterprise</a>
+              <a href='../../../../zh-CN/' class="icon-ui-menu top-nav-title js-drawer-toggle tablet-show" data-drawer="top-nav"><span>Arc</span>GIS Enterprise</a>
+            <!--</div> -->
+
+          
+            <nav role="navigation" class="top-nav-list left tablet-hide">
+              <a id="nav-portal" data-langlabel="portal" href="../../../../zh-CN/portal/" class="top-nav-link">Portal</a>
+
+                <div class="dropdown js-dropdown ">
+                  <a class="top-nav-link js-dropdown-toggle" tabindex="0" aria-haspopup="true" aria-expanded="false" href="#">Servers</a>
+                  <nav class="dropdown-menu featured" role="menu">
+                    <ul class="dropdown-sublist-featured">
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/get-started/latest/windows/additional-server-deployment.htm" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path  d="M42.92 6.1H4.12v8.566l.833.832-.835.833-.018 7.332.845.847-.825.824V33.9h25v5.2h-2v1.075H8.02v.8h19.1v.925h4.8v-.925H40v-.8h-8.08V39.1h-2v-5.2h13v-8.566l-.834-.834.835-.834v-7.332l-.835-.834.835-.834zm-11.8 35h-3.2v-1.2h3.2zm11-8H4.92v-7.434l.767-.766h35.668l.765.766zm0-9.766l-.766.766H5.666l-.766-.767.017-6.669.766-.764h35.671l.766.766zm0-9l-.766.766H5.687l-.766-.766V6.9h37.2zM19 11.9h-2v-.8h2zm-4 0h-2v-.8h2zm-4 0H9v-.8h2zm6 8.2h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9zm8 9h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9z"/></svg></span>
+                          <span class="sublink-text">所有服务器</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/server/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M45.98 33.575a.616.616 0 0 0-.335-.51l-3.362-2.03 3.362-2.031a.556.556 0 0 0 0-1.02l-11.1-6.704a1.293 1.293 0 0 0-1.112 0L22.33 27.982a.556.556 0 0 0 0 1.02l3.36 2.03-3.358 2.03a.556.556 0 0 0-.002 1.021l3.322 2.006-3.324 2.008a.555.555 0 0 0 .002 1.017l11.102 6.703a1.25 1.25 0 0 0 1.11.002l11.104-6.706a.556.556 0 0 0 0-1.02l-3.32-2.006 3.318-2.004a.607.607 0 0 0 .335-.509zM33.837 21.97c.026-.01.286-.005.29-.005l10.814 6.53-10.8 6.523c-.028.01-.284.005-.294.006l-10.813-6.53zm11.105 16.636l-10.8 6.523a2.564 2.564 0 0 1-.295.006l-10.81-6.529 3.39-2.047 7.004 4.23a1.083 1.083 0 0 0 .557.131 1.101 1.101 0 0 0 .554-.13l7.01-4.233zM34.14 40.098a2.545 2.545 0 0 1-.294.006l-10.812-6.53 3.43-2.073 6.97 4.208a1.25 1.25 0 0 0 1.107-.001l6.966-4.206 3.431 2.073zM9 8H7V7h2zm8 8h-2v-1h2zm-4-8h-2V7h2zm4 0h-2V7h2zm-4 8h-2v-1h2zm7.316 11.1H3.9v-6.434l.766-.766h35.668l.766.766v2.12l.8.483v-2.935l-.826-.826.826-.845v-6.329l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9h16.88a2.632 2.632 0 0 1 .336-.8zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zm0 8v-5.668l.766-.766h35.668l.766.766v5.67l-.746.764H4.666zM15 24v-1h2v1zm-4 0v-1h2v1zm-2-8H7v-1h2zm-2 8v-1h2v1z"/></svg></span>
+                          <span class="sublink-text">GIS Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/image/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 8h-2V7h2zm-4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm8 8h-2v1h2zm-8 0H7v1h2zm4 9v-1h-2v1zm-4 0v-1H7v1zm8 0v-1h-2v1zm4 3.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V21h-.8v-.334l-.766-.766H4.666l-.766.766V27.1H21zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zm40.234 4v21.8H23.1V23.1zm-.8 16.366L39.466 44.1h2.868l1.766-1.766zm-20.2-9.932l5.634-5.634h-2.868L23.9 26.666zm6.2-5.068L24.466 30.1h2.868l2.766-2.766zM28.466 30.1H30.1v-1.634zm2.434 0h6.2v-6.2h-6.2zm-7 7h6.2v-6.2h-6.2zm7 0h6.2v-6.2h-6.2zm0 6.434l5.634-5.634h-2.868L30.9 40.666zm7-7l5.634-5.634h-2.868L37.9 33.666zm1.634-5.634H37.9v1.634zm-8.634 7v1.634l1.634-1.634zm.566 6.2h2.868l2.766-2.766v-2.868zm6.434-3.566l2.634-2.634H37.9zM35.466 44.1H37.1v-1.634zm2.434 0h.434l5.766-5.766V37.9h-2.434L37.9 41.666zm6.2-8.634L42.466 37.1H44.1zm0-4L38.466 37.1h2.868l2.766-2.766zm0-7.566h-6.2v6.2h6.2zm-20.2 0v1.634l1.634-1.634zm0 20.2h6.2v-6.2h-6.2zm20.2 0v-.634l-.634.634z"/></svg></span>
+                          <span class="sublink-text">Image Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/geoanalytics/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 16h-2v-1h2zm-8 8v-1H7v1zm8 0v-1h-2v1zM13 7h-2v1h2zm4 0h-2v1h2zM9 7H7v1h2zm21.45 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V27.9h-1.464l-.801-.8H41.1v-6.434l-.766-.766H4.666l-.766.766V27.1h27.15zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM13 24v-1h-2v1zm0-9h-2v1h2zm-4 0H7v1h2zm26.672 27.148A1.87 1.87 0 0 1 35.9 43a1.91 1.91 0 1 1-3.763-.222l-9.845-3.414A1.88 1.88 0 0 1 21 39.9a1.9 1.9 0 1 1 1.474-3.084l4.692-2.346A1.878 1.878 0 0 1 27.1 34a1.902 1.902 0 0 1 1.9-1.9 1.867 1.867 0 0 1 .781.191l3.788-5.05A1.88 1.88 0 0 1 33.1 26a1.9 1.9 0 1 1 3.491 1.026l4.889 4.888c-.069.056-.144.1-.21.162a3.986 3.986 0 0 0-.358.402l-4.883-4.883A1.889 1.889 0 0 1 35 27.9a1.867 1.867 0 0 1-.781-.191l-3.788 5.049a1.868 1.868 0 0 1 .437.965l9.204.614c-.018.11-.049.218-.058.33A3.93 3.93 0 0 0 40 35c0 .046.01.09.01.135l-9.185-.612A1.913 1.913 0 0 1 29 35.9a1.889 1.889 0 0 1-1.474-.716l-4.692 2.346a1.878 1.878 0 0 1 .066.47 1.9 1.9 0 0 1-.105.625c-.007.02-.022.036-.03.056l9.63 3.34a1.87 1.87 0 0 1 2.786-.505l5.415-4.437c.067.108.127.22.204.322a3.9 3.9 0 0 0 .292.306zM33.9 26a1.092 1.092 0 0 0 .43.872 1.12 1.12 0 0 0 1.42-.068A1.1 1.1 0 1 0 33.9 26zm-6 8a1.1 1.1 0 0 0 2.196.093 1.135 1.135 0 0 0-.426-.965A1.087 1.087 0 0 0 29 32.9a1.101 1.101 0 0 0-1.1 1.1zm-5.8 4a1.098 1.098 0 1 0-.06.362A1.101 1.101 0 0 0 22.1 38zm13 5a1.1 1.1 0 1 0-2.2 0 1.1 1.1 0 0 0 2.2 0zm10.8-8a1.9 1.9 0 1 1-3.8 0c0-.053.003-.105.007-.158A1.9 1.9 0 0 1 45.9 35zm-.8 0a1.1 1.1 0 0 0-2.196-.093 1.153 1.153 0 0 0 .216.752A1.1 1.1 0 0 0 45.1 35z"/></svg></span>
+                          <span class="sublink-text">GeoAnalytics Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/geoevent/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M13 8h-2V7h2zm4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm12.418 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826v2.117c-.259-.177-.53-.337-.8-.497v-1.288l-.766-.766H4.666l-.766.766V27.1h17.933c-.148.26-.283.53-.415.8zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM9 24v-1H7v1zm4-9h-2v1h2zm0 9v-1h-2v1zm-4-9H7v1h2zm8 9v-1h-2v1zm16.9 2h-.8v8.9H39v-.8h-5.1zm.1-3.901a11.9 11.9 0 1 0 11.9 11.9 11.914 11.914 0 0 0-11.9-11.9zm0 23a11.1 11.1 0 1 1 11.1-11.1 11.112 11.112 0 0 1-11.1 11.1z"/></svg></span>
+                          <span class="sublink-text">GeoEvent Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/notebook/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M22 27.1H3.9v-6.434l.766-.766h18.576a5.262 5.262 0 0 1 .83-.8H4.666l-.766-.766v-5.668l.766-.766h35.668l.766.766V18h.8v-5.666l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9H22zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zM9 8H7V7h2zm8 0h-2V7h2zm-4 0h-2V7h2zm2 16v-1h2v1zm-4 0v-1h2v1zm-4 0v-1h2v1zm0-8v-1h2v1zm8 0v-1h2v1zm-4 0v-1h2v1zm18.9 8.1h-1.8v1.8h1.8zm-.8 1h-.2v-.2h.2zm15.498-4.48a2.727 2.727 0 0 0-1.62-.5v-.02H27.25a3.154 3.154 0 0 0-3.15 3.15V38.1h-1.68a3.386 3.386 0 0 0-2.872 1.58 3.49 3.49 0 0 0-.157 3.419 3.241 3.241 0 0 0 2.954 1.801h15.161a3.404 3.404 0 0 0 3.394-3.4V26.9h5v-3.65a3.224 3.224 0 0 0-1.302-2.63zM22.345 44.1a2.44 2.44 0 0 1-2.23-1.341 2.706 2.706 0 0 1 .11-2.65A2.588 2.588 0 0 1 22.42 38.9h12.89a3.395 3.395 0 0 0 0 5.2zM40.1 23.192V41.5a2.6 2.6 0 1 1-2.6-2.6v-.8H24.9V23.25a2.352 2.352 0 0 1 2.35-2.35h13.795a3.183 3.183 0 0 0-.945 2.292zm5 2.908h-4.2v-2.908a2.274 2.274 0 0 1 1.44-2.18 1.944 1.944 0 0 1 1.791.259 2.423 2.423 0 0 1 .97 1.979zm-17.1 5h9v.8h-9zm0 3h7v.8h-7zm0-6h9v.8h-9zm4-3h5v.8h-5z"/></svg></span>
+                          <span class="sublink-text">Notebook Server</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+
+              <a id="nav-data-store" data-langlabel="data-store" href="../../../../zh-CN/data-store/" class="top-nav-link">Data Stores</a>
+              <a id="nav-cloud" data-langlabel="cloud" href="../../../../zh-CN/cloud/" class="top-nav-link">云</a>
+              <a id="nav-apps" data-langlabel="apps" href="../../../../zh-CN/apps/" class="top-nav-link">应用程序</a>
+            </nav>
+
+
+            
+            
+            
+
+            <div class="margin-left-1 top-nav-list right hide-if-logged-in logged-out-navigation">
+               
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+              
+              <a data-langlabel="sign-in" id="login-link" class="icon-ui-user top-nav-link link-blue login-link" href="#">登录</a>
+              
+            </div>
+
+            
+            <nav class="margin-left-1 top-nav-list right hide-if-logged-out logged-in-navigation">
+              
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+             
+              <div class="dropdown js-dropdown right">
+
+                <div class="tablet-show top-nav-link">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a href="#" data-drawer="user-nav" class="user-nav-name js-drawer-toggle" data-first-name></a>
+                </div>
+
+                <div class="tablet-hide top-nav-link js-dropdown-toggle">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a class="user-nav-name top-nav-dropdown dropdown-btn" data-first-name>&nbsp;</a>
+                </div>
+
+                <nav class="dropdown-menu dropdown-right">
+                
+                  <a class="dropdown-link agolProfile" id="agolProfile" href="#">我的个人资料</a>
+                  <a class="dropdown-link js-log-out" id="agolLogout" href="#">登出</a>
+                </nav>
+              </div>
+            </nav>
+            
+
+            
+          </div>
+        </div>
+      </header>
+
+      <div class="js-search search-overlay">
+        <div class="search-content" role="dialog" aria-labelledby="search">
+          <form method="GET" id="helpSearchForm">
+            <label>
+              搜索 GeoEvent Server 10.7 帮助
+              <div class="search-bar">
+                <input type="search" name="q"  placeholder="搜索 GeoEvent Server 10.7 帮助" class="search-input js-search-input">
+                <input type="hidden" name="collection" value="help" />
+                <input type="hidden" name="product" value="ext-server-geoevent" />
+                <input type="hidden" name="version" value="10.8" />
+                <input type="hidden" name="language" value="zh-CN" />
+              </div>
+            </label>
+            <input type="hidden" name="relativePath" value="../../../../" /><button type="submit" class="btn btn-large right">搜索</button>
+          </form>
+        </div>
+      </div>
+
+      <!--googleon: all-->
+
+      <div id="skip-to-content">
+        <!--googleoff: all-->
+        <header class="sub-nav sub-nav-learn">
+          <div class="grid-container">
+            
+            <div class="column-24">
+              <div style="display:table;" class="sdk-home-banner">
+                <div class="sdk-home-banner-content">
+                  <h1 class="sub-nav-title link-white">GeoEvent Server</h1>
+                </div>
+              </div>
+            </div>
+
+            <div class="column-24">
+              <nav class='sub-nav-list tablet-hide'><a class="sub-nav-link" href="../../../../zh-CN/geoevent/" target="_top" title="GeoEvent Server 概述和文档">主页</a><a class="sub-nav-link" href="../../../../zh-CN/geoevent/latest/get-started/" target="_top" title="GeoEvent Server 入门">入门</a><a class="sub-nav-link is-active" href="../../../../zh-CN/geoevent/latest/process-event-data/" target="_top" title="过滤和处理事件数据流，以关注最感兴趣的要素">处理事件数据</a><a class="sub-nav-link" href="../../../../zh-CN/geoevent/latest/administer/" target="_top" title="管理 GeoEvent Server">管理</a></nav><select class='tablet-show select-full trailer-half js-select-nav'><option value="../../../../zh-CN/geoevent/">主页</option><option value="../../../../zh-CN/geoevent/latest/get-started/">入门</option><option selected="true" value="../../../../zh-CN/geoevent/latest/process-event-data/">处理事件数据</option><option value="../../../../zh-CN/geoevent/latest/administer/">管理</option></select>
+            </div>
+
+          </div>
+        </header>
+        <!--googleon: all-->
+       
+        <!-- content goes here -->
+        <div class="grid-container ">
+          
+
+            
+              
+  <!--BREADCRUMB-BEG--><div id="bigmac" class="sticky-breadcrumbs trailer-2" data-spy="affix" data-offset-top="180"> </div><!--BREADCRUMB-END-->
+  <!--googleoff: all-->
+    <div class="column-5 tablet-column-12 trailer-2 ">
+      <aside class="js-accordion accordion reference-index" aria-live="polite" role="tablist">
+        <div></div>
+      </aside>
+
+      <div class="js-sticky scroll-show tablet-hide leader-1 back-to-top" data-top="0" style="top: 0px;">
+        <a href="#" class="btn btn-fill btn-clear">返回顶部</a>
+      </div>
+    </div>
+  <!--googleon: all-->
+  
+            
+            
+            
+	
+		<div class="column-13  pre-1 content-section">
+	
+		<header class="trailer-1"><h1>扇形视域计算器处理器</h1></header>
+
+		 
+	<!--googleoff: all-->
+	
+		
+				<aside id="main-toc-small" class="js-accordion accordion tablet-show trailer-1">
+			      <div class="accordion-section">
+			        <h4 class="accordion-title">在本主题中</h4>
+			        <div class="accordion-content list-plain">
+			          <ol class="list-plain pre-0 trailer-0"><li><a href="#ESRI_SECTION1_7B9CDD438A934E62B2C89E8270EF71C1">汇总</a></li><li><a href="#ESRI_SECTION1_1DBEA101AE1C4737982D1D27F3F4A32E">示例</a></li><li><a href="#ESRI_SECTION1_A00E8E9AF1C84AEDA98F1E82DC22C666">用法说明</a></li><li><a href="#ESRI_SECTION1_45564959BBFE4DB684C9664A9F52FE91">参数</a></li><li><a href="#ESRI_SECTION1_F5FDCDBA3A6745FA9B5B8175FEAEAB64">注意事项和限制</a></li></ol>
+			        </div>
+			      </div>
+			     </aside>
+		
+    
+   <!--googleon: all-->
+
+
+		<main>
+			
+	
+    	
+    
+
+
+			
+<section class="section1 padded-anchor" id="ESRI_SECTION1_7B9CDD438A934E62B2C89E8270EF71C1" purpose="section1"><h2>汇总</h2><p id="GUID-61904D3F-4972-4474-A799-E5DDFAC02443">扇形视域计算器处理器可用于在事件记录点几何前动态生成扇形视域。扇形视域实际上是一种呈楔形的二维要素，可用于表示事件记录的可视范围或上下文范围。该处理器可通过事件记录点几何、范围、方位角和弧度值计算扇形视域。</p></section>	<section class="section1 padded-anchor" id="ESRI_SECTION1_1DBEA101AE1C4737982D1D27F3F4A32E" purpose="section1"><h2>示例</h2><ul purpose="ul" id="UL_2315FE2BD2F541128FD15740A2141E44">			<li purpose="li" id="LI_4F93985091AB482B955215B47DE59B50">扇形视域计算器处理器可用于计算和显示移动车辆的大致可视范围。当车辆在运输过程中时，可以使用车辆的扇形视域（视角）与地面资产之间的交集来触发通知。</li>			<li purpose="li" id="LI_B24110D730914889885AAE20D40B16B9">该处理器可用于显示诸如暴风雨或火灾烟雾等事件的潜在影响区域。</li>		</ul></section>	<section class="section1 padded-anchor" id="ESRI_SECTION1_A00E8E9AF1C84AEDA98F1E82DC22C666" purpose="section1"><h2>用法说明</h2><ul purpose="ul" id="UL_7E0E1405EFD44451BFD92356E4660B0D">			<li purpose="li" id="LI_89F4E0251F144EDB940110597753003B">扇形视域计算器处理器需要指定包含事件记录点几何的字段。应用于 GeoEvent 定义中字段的字段名称或标签可用来标识几何字段。或者，可以使用单独的 X 和 Y 字段（或经度和纬度）中包含的坐标值来识别点几何。</li>			<li purpose="li" id="LI_46F943AF04204A13987E04381F9789A5">创建扇形视域时，必须指定扇形视域的范围、方位角和弧度值。可以使用常量值或通过引用包含源 GeoEvent 定义中的值的字段名称来指定这些属性。范围、方位和弧度值必须指定为正整数或双精度值。</li>			<li purpose="li" id="LI_218E0211F24A4735A4BB77F641D48993">当值固定或不变时，对范围、方位角和弧度使用常量将很有用。例如，如果字段中的传感器始终以 160 度的视角监视向前 100 英尺（正东），则可以将处理器配置为在该区域创建固定的扇形视域形状。范围将定义为 100 英尺，方位角定义为 90（东），且弧度定义为 160。</li>			<li purpose="li" id="LI_62A63AAFA3AB44AA9C00D7F47F8D07E9">如果值不断变化，则将字段指定为范围、方位角和弧度的输入。例如，当汽车的行驶方向改变时，其方位角也会改变。配置处理器以从具有动态方位角值的字段中获取方位角，从而确保扇形视域更新其方向。</li>			<li purpose="li" id="LI_B79A1621D6324EAF950D6F45C2F240E9">与<a class="xref xref" href="../../../../zh-CN/geoevent/latest/process-event-data/buffer-creator-processor.htm">缓冲区创建器处理器</a>类似，扇形视域计算器处理器还需要空间参考的熟知 ID (WKID)，以计算几何（或扇形视域）的距离。但是，生成的扇形视域不会像使用缓冲区创建器处理器那样立即投影回源事件记录的空间参考中。相反，可以将处理器配置为将扇形视域重新投影到与源事件记录完全不同的空间参考。</li>			<li purpose="li" id="LI_86258A381B00483E942B3F8C42632F5C">该处理器会将源事件记录几何（点）替换为扇形视域几何（面）。</li>		</ul></section>	<section class="section1 padded-anchor" id="ESRI_SECTION1_45564959BBFE4DB684C9664A9F52FE91" purpose="section1"><h2>参数</h2><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><thead><tr><th colspan="1" width="25%">参数</th><th colspan="1">描述</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1">							<p id="GUID-E15E74D6-31A6-43D7-99E1-FDD676EC3D26">名称</p>						</td><td outputclass="" purpose="entry" rowspan="1" colspan="1">							<p id="GUID-C1950071-2C20-4A85-A885-88D97B828C64">用于在 GeoEvent Manager 中引用的处理器的描述性名称。</p>						</td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1">							<p id="GUID-86F8D054-5133-410A-A863-2498CF97EBF7">处理器</p>						</td><td outputclass="" purpose="entry" rowspan="1" colspan="1">							<p id="GUID-260DEBA9-B87D-47E4-9472-B67BC2A3F86D">所选处理器的名称。</p>						</td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1">							<p id="GUID-DE4DE68B-12D1-4828-972E-DE91E12A8FC2">源 GeoEvent 定义</p>						</td><td outputclass="" purpose="entry" rowspan="1" colspan="1">							<p id="GUID-9A2A78DA-2015-4652-B3FB-3FE52CADB912">入站事件记录的 GeoEvent 定义的名称。处理器将使用源 GeoEvent 定义来标识入站事件记录中的字段。</p>						</td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1">							<p id="GUID-34A783D7-1324-4375-9267-FDE7830CB324">几何源</p>						</td><td outputclass="" purpose="entry" rowspan="1" colspan="1">							<p id="GUID-2A4DB92D-6BB5-4CA8-B1E1-59EE6D5592A3">事件记录的点几何的源。处理器将在该点前构造扇形视域。默认设置为<span class="uicontrol">几何字段</span>。</p>							<ul purpose="ul" id="UL_A75E606D69A14E8296C7F6CCE5E53EA5">								<li purpose="li" id="LI_5BCEE74ECEAA4362B2BB00FCF929B7DB"><span class="uicontrol">几何字段</span> - 事件记录点几何的源为几何字段或标记为 <span class="uicontrol">GEOMETRY</span> 的字段。</li>								<li purpose="li" id="LI_D60EB337995E47E9BD2AC1F0F69B52E9"><span class="uicontrol">坐标字段</span> - 事件记录点几何的源为包含 X 坐标（经度）的字段，以及另一个包含 Y 坐标（纬度）的字段。</li>							</ul>						</td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1">							<p id="GUID-78292CA0-751A-4339-AB2E-BDC4D8240260">几何字段</p>						</td><td outputclass="" purpose="entry" rowspan="1" colspan="1">							<p id="GUID-7ED57FBB-AF0B-4D6E-BBAC-CCE058ED4D5D">几何字段的名称或用于识别点几何的入站事件记录中标记为 <span class="uicontrol">GEOMETRY</span> 的字段。处理器将几何用作扇形视域的起点。</p>						</td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1">							<p id="GUID-CD90E9B0-E5C8-4439-AC7E-3E9438DF0CD7">X 字段</p>							<p id="GUID-7259104E-8D4B-4B67-9D7D-F3F9CCA3408D">（条件分析）</p>						</td><td outputclass="" purpose="entry" rowspan="1" colspan="1">							<p id="GUID-287B8D91-957D-41A0-81BC-04E749556027">包含事件记录的 X 坐标（或经度）的字段名称。X 和 Y 坐标用于构造点。</p>							<p id="GUID-5A46B073-56DD-4471-8F41-EB171FCE83B7">此属性在<span class="uicontrol">几何源</span>设置为<span class="uicontrol">坐标字段</span>时显示，设置为<span class="uicontrol">几何字段</span>时隐藏。</p>						</td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1">							<p id="GUID-D83645F2-7411-44C7-BFD7-0A8C504AD422">Y 字段</p>							<p id="GUID-3F5D7266-2CE2-412E-9BF5-0251150EA042">（条件分析）</p>						</td><td outputclass="" purpose="entry" rowspan="1" colspan="1">							<p id="GUID-DCF47965-67D9-4624-A78E-42966C1B988D">包含事件记录的 Y 坐标（或纬度）的字段名称。X 和 Y 坐标用于构造点。</p>							<p id="GUID-7AE3BEA7-5A22-4E91-9CDB-8A297503281C">此属性在<span class="uicontrol">几何源</span>设置为<span class="uicontrol">坐标字段</span>时显示，设置为<span class="uicontrol">几何字段</span>时隐藏。</p>						</td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1">							<p id="GUID-210443E9-9E71-40DD-8680-47259212F5BF">范围源</p>						</td><td outputclass="" purpose="entry" rowspan="1" colspan="1">							<p id="GUID-65C95A74-F394-4A14-962E-3C54CD279EE7">范围值的源。计算扇形视域需要一个范围值。范围是指扇形视域将位于源点几何前方的长度或距离。可以使用常量值或通过动态更新字段中的值来定义范围。默认设置为<span class="uicontrol">常量</span>。</p>							<ul purpose="ul" id="UL_B2263203A4074FE2BCC85D42FA2CB02B">								<li purpose="li" id="LI_5E62AF20509A440D9700B6829EDBF3FB"><span class="uicontrol">常量</span> - 范围将由常量（固定）值进行定义。</li>								<li purpose="li" id="LI_D7AC9998B94A46DFAB02DB18CF0E99E3"><span class="uicontrol">字段</span> - 范围将使用从源事件记录中的字段获得的值进行定义。</li>							</ul>						</td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1">							<p id="GUID-0E191C78-CEAE-4390-85DC-9A0376A78EEE">范围</p>						</td><td outputclass="" purpose="entry" rowspan="1" colspan="1">							<p id="GUID-5F101D4B-39A4-4C29-AE22-50A0243FCA0C">使用正整数或双精度值作为常量值的范围。默认值为 <span class="uicontrol">1000.0</span>。例如：</p>							<ul purpose="ul" id="UL_4796F7A1F94C4AFD8047274B6B89E056">								<li purpose="li" id="LI_920234C19FAD4E5AB9AE75B7D0A548EC"><span class="usertext">1000</span></li>								<li purpose="li" id="LI_D5DBA4C6E5CB496E9D77475459F700CA"><span class="usertext">1000.00</span></li>							</ul>							<div class="panel trailer-1 note" id="GUID-B9FEDA8D-40CF-4489-88F7-03AE8E65734B"><h5 class="icon-ui-comment trailer-0">注：</h5>								<p id="GUID-FD8FA3CD-B79E-4AF4-9278-924768DA5756"><span class="uicontrol">范围</span>参数的单位将在<span class="uicontrol">范围单位</span>参数中定义。</p>							</div>						</td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1">							<p id="GUID-8B2D123A-91C2-45BD-BACC-F4C09287F9EC">范围字段</p>							<p id="GUID-2DAF2E71-B831-4B86-93E3-ED4808B5ED73">（条件分析）</p>						</td><td outputclass="" purpose="entry" rowspan="1" colspan="1">							<p id="GUID-549E4211-C137-49F9-A315-8654AF90437C">用于识别范围值的字段的名称。所显示的字段列表将特定于<span class="uicontrol">源 GeoEvent 定义</span>。字段中的范围值必须为正整数或双精度值。例如：</p>							<ul purpose="ul" id="UL_D4DE5BD9467C42C597CE41FE9F0BCE54">								<li purpose="li" id="LI_CADD0CB494BE49A7BE474B92EC1E6646"><span class="usertext">范围</span></li>								<li purpose="li" id="LI_56D3EDA9F7CF4FF7B7FAA894C0B577F9"><span class="usertext">View_Dist</span></li>							</ul>						</td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1">							<p id="GUID-278AB5CB-CA69-4413-874C-9E1F1E374AC4">范围单位</p>						</td><td outputclass="" purpose="entry" rowspan="1" colspan="1">							<p id="GUID-E9C342B4-BB8C-415B-A10B-B04DC5AA555B">范围值的测量单位。默认设置为<span class="uicontrol">米</span>。可用的测量单位包括：</p>							<ul purpose="ul" id="UL_E1E2C1021E1B4B9A9F1A1AC9EB07764E">								<li purpose="li" id="LI_478A64A703204962A310D76A2678801B"><span class="uicontrol">米</span></li>								<li purpose="li" id="LI_B3034E33CDA040E2A248A99B40E0176F"><span class="uicontrol">千米</span></li>								<li purpose="li" id="LI_65993175C7CC4F88A755EC664B8D3426"><span class="uicontrol">英尺</span></li>								<li purpose="li" id="LI_B7ED96CFFF034037B7A5E363DDAC3026"><span class="uicontrol">英里</span></li>								<li purpose="li" id="LI_06BB3C2681CD4B3D841DF6F828F7B6A6"><span class="uicontrol">海里</span></li>							</ul>						</td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1">							<p id="GUID-285B3D4F-F2D7-44C6-B870-48CA7D548EA9">方位角源</p>						</td><td outputclass="" purpose="entry" rowspan="1" colspan="1">							<p id="GUID-056B8D87-A4B2-4D61-ADED-81B1985EA29E">方位角值的源。计算扇形视域需要一个方位角值。方位角是事件记录的方向或朝向，且也用于生成的扇形视域。可以使用常量值或通过动态更新字段中的值来定义方位角。默认设置为<span class="uicontrol">常量</span>。</p>							<ul purpose="ul" id="UL_529BE2BF8B854AC39D0FCE0A2BC8856E">								<li purpose="li" id="LI_D7E0697589774209B2DB4A1A1286C4DC"><span class="uicontrol">常量</span> - 方位角将由常量（固定）值进行定义。</li>								<li purpose="li" id="LI_854104D9AFB24BD99CEA6CEDFCBB480B"><span class="uicontrol">字段</span> - 方位角将使用从源事件记录中的字段获得的值进行定义。</li>							</ul>						</td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1">							<p id="GUID-21987782-60BC-46C0-8B3E-B5798A3902BF">方位角</p>						</td><td outputclass="" purpose="entry" rowspan="1" colspan="1">							<p id="GUID-E8C3CE6A-ADAF-4B26-A8E0-41FADA18225C">使用 0-360 度之间的正整数或双精度值（度数从北开始顺时针测量）作为常量值的方位角。默认值为 <span class="uicontrol">0.0</span>（北）。例如：</p>							<ul purpose="ul" id="UL_EA815C6D80AC4C8CBAC3B5948D087222">								<li purpose="li" id="LI_3460E1F5C82B43A4A76B97ED0A879A8E"><span class="usertext">90</span></li>								<li purpose="li" id="LI_99B20A349A9C42B29776FD25C1C7BE5B"><span class="usertext">90.0</span></li>							</ul>						</td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1">							<p id="GUID-CD739CB4-33FD-4A80-806D-AA156765A12D">方位角字段</p>							<p id="GUID-E043A85A-2E10-40A7-85CE-70D0988E8134">（条件分析）</p>						</td><td outputclass="" purpose="entry" rowspan="1" colspan="1">							<p id="GUID-3A84CD1B-D879-44B8-B4FB-2E4B80862A59">包含方位角值的字段的名称。所显示的字段列表将特定于<span class="uicontrol">源 GeoEvent 定义</span>。字段中的方位角值必须为正整数或双精度。例如：</p>							<ul purpose="ul" id="UL_8634FF9EA0FD461EB06B2A3AD64126CC">								<li purpose="li" id="LI_7786FD4CFC2644FE8D6473BA6C1BC1E4"><span class="usertext">方位角</span></li>								<li purpose="li" id="LI_D20D3B00C93A4369BE07CD34FAB541F2"><span class="usertext">方向</span></li>							</ul>						</td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1">							<p id="GUID-B428796B-EE1D-4748-BD81-E13A3FA72CF1">弧度源</p>						</td><td outputclass="" purpose="entry" rowspan="1" colspan="1">							<p id="GUID-CB4765B1-6ED1-4232-92A1-B510BDAF38B5">弧度值的源。计算扇形视域需要一个弧度值。弧度为圆心角的量度，用于确定扇形视域的楔形。可以使用常量值或通过动态更改字段中的值来定义弧度。默认设置为<span class="uicontrol">常量</span>。</p>							<ul purpose="ul" id="UL_3311826DD40A4C348AA11DB8A22BEDB0">								<li purpose="li" id="LI_451A8BA48F904748A7855BA31E2BAA85"><span class="uicontrol">常量</span> - 弧度将由常量（固定）值进行定义。</li>								<li purpose="li" id="LI_DE3B2C36EBD749F1B2F9B371D838A998"><span class="uicontrol">字段</span> - 弧度将使用从源事件记录中的字段获得的值进行定义。</li>							</ul>						</td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1">							<p id="GUID-BD50B1B1-A7DD-4582-BAEA-8E0F3ACBBFA6">弧度</p>						</td><td outputclass="" purpose="entry" rowspan="1" colspan="1">							<p id="GUID-E707BA28-DA6D-486B-BC97-D35170564B89">使用大于 0 且小于 360 度的正整数或双精度值（度数从北开始顺时针测量）作为常量值的弧度。默认值为 <span class="uicontrol">30.0</span>。例如：</p>							<ul purpose="ul" id="UL_503FB514D98C44538BBA8E2269F30A93">								<li purpose="li" id="LI_082FB0B133F04EB79B906E664ED1EE0D"><span class="usertext">30</span></li>								<li purpose="li" id="LI_12B3C44EA26F4493891D32FD0AB4640B"><span class="usertext">30.0</span></li>							</ul>						</td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1">							<p id="GUID-BA4CEB6F-6A8C-44BA-AF3D-25094D75ED88">弧度字段</p>							<p id="GUID-30A08F6D-37CF-4A4D-818F-A7B65FC20FA2">（条件分析）</p>						</td><td outputclass="" purpose="entry" rowspan="1" colspan="1">							<p id="GUID-3B282A7E-9598-4229-B887-AD7541265B0A">用于识别弧度值的字段的名称。所显示的字段列表将特定于<span class="uicontrol">源 GeoEvent 定义</span>。字段中的弧度值必须为正整数或双精度。例如：</p>							<ul purpose="ul" id="UL_B85CEBC72FC74E17BC174F1E1DF23DDD">								<li purpose="li" id="LI_22A7C5C152A84C56A6D94407AB8EAE58"><span class="usertext">角度</span></li>								<li purpose="li" id="LI_44149A0C8C434715823BD019FAAED237"><span class="usertext">FieldView</span></li>							</ul>						</td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1">							<p id="GUID-3822C42E-483B-49D6-B53C-80BC82DF661F">正在处理坐标系 WKID</p>						</td><td outputclass="" purpose="entry" rowspan="1" colspan="1">							<p id="GUID-A26A86AB-17FA-41CF-8A83-138A8BBEB189">空间参考的熟知 ID (WKID)，用于计算扇形视域的范围（距离）。默认值为 <span class="uicontrol">3857</span>。</p>							<div class="panel trailer-1 note" id="GUID-DC180D83-AB0E-425A-B707-4EF1BB3E6EA4"><h5 class="icon-ui-comment trailer-0">注：</h5>								<p id="GUID-B122583A-97D6-4B24-AA00-EF12F0E863BA">必须选择适用于已处理事件记录的区域或范围的 WKID。这样可确保扇形视域的距离在计算过程中不会发生失真。例如，如果传入事件记录位于南卡罗来纳州，则建议的 WKID 为 32133，以减少该区域的距离计算失真。</p>							</div>						</td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1">							<p id="GUID-43C74F81-D6C1-4E93-9209-F203007AAEF3">输出 WKID</p>						</td><td outputclass="" purpose="entry" rowspan="1" colspan="1">							<p id="GUID-4D2AC344-BDF1-430A-8E70-42EC5EAD7F8F">空间参考的熟知 ID (WKID)，用于投影生成的扇形视域。默认值为 <span class="uicontrol">4326</span>。</p>							<div class="panel trailer-1 note" id="GUID-1E110E8C-F597-4A3F-B21C-B88CA1484801"><h5 class="icon-ui-comment trailer-0">注：</h5>								<p id="GUID-A3EA13C4-BE8B-44DA-8C8D-C76BBDC99984">输出 WKID 可以不同于源事件记录 WKID。</p>							</div>						</td></tr></tbody><caption></caption></table></div></section>	<section class="section1 padded-anchor" id="ESRI_SECTION1_F5FDCDBA3A6745FA9B5B8175FEAEAB64" purpose="section1"><h2>注意事项和限制</h2><ul purpose="ul" id="UL_952EE3DD42174FB9991DBAA98FE8749C">			<li purpose="li" id="LI_93F0139202A3489F81EF7509C0E3DBBB">扇形视域只能在某点前进行构造。不支持其他几何类型，例如多点、折线、面和包络。</li>			<li purpose="li" id="LI_ED7BE134454645BD8A27AE94557A5668"><span class="uicontrol">范围</span>、<span class="uicontrol">方位角</span>和<span class="uicontrol">弧度</span>参数值必须全部以数值的形式提供。不支持将<span class="usertext">北</span>用作方位角值。</li>			<li purpose="li" id="LI_3ADDE67C51D7486D9C0EAE93CCBC1F51"><span class="uicontrol">弧度</span>参数值必须大于 0 且小于 360。指定 <span class="usertext">0</span> 时不会为扇形视域提供一个供其创建楔形的角度。相反，指定 <span class="usertext">360</span> 时将创建一个圆形。如果需要一个圆形，请考虑使用<a class="xref xref" href="../../../../zh-CN/geoevent/latest/process-event-data/buffer-creator-processor.htm">缓冲区创建器处理器</a>来代替。</li>		</ul></section>
+			
+				<hr>
+				<!--googleoff: all-->
+				
+	
+        
+		    <p class="feedback right">
+		        <a id="afb" class="icon-ui-contact" href="/feedback/" data-langlabel="feedback-on-this-topic" >有关此主题的反馈?</a>
+		    </p>
+        
+	
+
+				<!--googleon: all-->
+			
+		</main>
+	</div>
+	
+	<!--googleoff: all-->
+	
+		
+			<div id="main-toc-large" class="column-5">
+			    <div class="panel font-size--2 tablet-hide trailer-1">
+			      <h5 class="trailer-half">在本主题中</h5>
+			      <ol class="list-plain pre-0 trailer-0"><li><a href="#ESRI_SECTION1_7B9CDD438A934E62B2C89E8270EF71C1">汇总</a></li><li><a href="#ESRI_SECTION1_1DBEA101AE1C4737982D1D27F3F4A32E">示例</a></li><li><a href="#ESRI_SECTION1_A00E8E9AF1C84AEDA98F1E82DC22C666">用法说明</a></li><li><a href="#ESRI_SECTION1_45564959BBFE4DB684C9664A9F52FE91">参数</a></li><li><a href="#ESRI_SECTION1_F5FDCDBA3A6745FA9B5B8175FEAEAB64">注意事项和限制</a></li></ol>
+			    </div>
+			    
+			    
+	  		</div>
+		
+    
+   <!--googleon: all-->
+
+
+
+
+          
+        </div>
+        <!-- ENDPAGECONTENT -->
+
+      </div>
+
+    </div>  <!-- End of wrapper -->
+
+  <footer class="footer leader-3 link-dark-gray" role="contentinfo">
+    <div class="grid-container">
+      <div class="row">
+        <nav class="column-6">
+          <h6 data-langlabel="arcgis-for-server">Arc<span>GIS Enterprise</span></h6>
+          <ul class="list-plain">
+            <li><a data-langlabel="home" href="../../../../zh-CN/">主页</a></li>
+            <li><a data-langlabel="portal" href="../../../../zh-CN/portal/">Portal</a></li>
+            <li><a data-langlabel="server" href="../../../../zh-CN/server/">Server</a></li>
+            <li><a data-langlabel="data-store" href="../../../../zh-CN/data-store/">Data Stores</a></li>
+            <li><a data-langlabel="cloud" href="../../../../zh-CN/cloud/">云</a></li>
+            <li><a data-langlabel="apps" href="../../../../zh-CN/apps/">应用程序</a></li>
+            <li><a data-langlabel="documentation" href="../../../../zh-CN/documentation/">文档</a></li>
+          </ul>
+        </nav>
+
+        
+  <nav class="column-6">
+    <h6 data-langlabel="arcgis-platform">ArcGIS 平台</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="arcgis" href="//www.arcgis.com/">ArcGIS Online</a></li>
+      <li><a data-langlabel="arcgis-for-professionals" href="//pro.arcgis.com/">ArcGIS Pro</a></li>
+      <li><a data-langlabel="arcgis-for-server" href="//enterprise.arcgis.com/">ArcGIS Enterprise</a></li>
+      <li><a data-langlabel="arcgis-for-developers" href="https://developers.arcgis.com/">ArcGIS for Developers</a></li>
+      <li><a data-langlabel="arcgis-solutions" href="//solutions.arcgis.com/">ArcGIS Solutions</a></li>
+      <li><a data-langlabel="arcgis-marketplace" href="//marketplace.arcgis.com/">ArcGIS Marketplace</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <h6 data-langlabel="about-esri">关于 Esri</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="about-us" href="//www.esri.com/about-esri/">关于我们</a></li>
+      <li><a data-langlabel="careers" href="//www.esri.com/careers/">招贤纳士</a></li>
+      <li><a data-langlabel="insiders-blog" href="https://www.esri.com/about/newsroom/blog/">Esri 博客</a></li>
+      <li><a data-langlabel="user-conference" href="//www.esri.com/events/user-conference/index.html">用户大会</a></li>
+      <li><a data-langlabel="developer-summit" href="//www.esri.com/events/devsummit/index.html">开发者峰会</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <a class="esri-logo" href="//www.esri.com/" aria-label="Esri Home"></a>
+    <section class="footer-social-nav leader-1">
+            <a class="icon-social-twitter" aria-label="Esri on Twitter" href="https://twitter.com/Esri/"></a>
+            <a class="icon-social-facebook" aria-label="Esri on Facebook" href="https://www.facebook.com/esrigis/"></a>
+            <a class="icon-social-github" aria-label="Esri on GitHub" href="//esri.github.io/"></a>
+            <a class="icon-social-contact" aria-label="Contact Esri" href="//www.esri.com/about-esri/contact/"></a>
+    </section>
+	  
+  </nav>
+  
+  <div class="column-24 leader-1">
+    <p class="font-size--3"><a href="http://www.esri.com/legal/copyright-trademarks">Copyright &copy; 2019 Esri.</a> All rights reserved. | <a href="http://www.esri.com/legal/privacy/">隐私政策</a> | <a href="http://www.esri.com/legal/software-license">法律声明</a></p>
+  </div>
+  
+
+
+      </div>
+    </div>
+  </footer>
+  <!--googleoff: all-->
+
+  
+  
+	<script src="../../../../zh-CN/assets/js/init.js" type="text/javascript"></script>
+	<!--<script src="../../../../zh-CN/assets/js/drop-down.js" type="text/javascript"></script>-->
+	<script src="../../../../zh-CN/assets/js/search/searchform.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/cdn/js/link-modifier.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/cdn/js/sitewide.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/cdn/js/libs/highlight.pack.js" type="text/javascript"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+
+
+  
+    
+
+  <script src="../../../../zh-CN/cdn/js/affix.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    $(function () {
+          var appendFlg = true;
+
+          $("#bigmac")
+          .on("affixed.bs.affix", function (evt) {
+            if (appendFlg) {
+              $("<a class='crumb' href='#'>扇形视域计算器处理器</a>").insertAfter ($("#bigmac nav a").last());
+              appendFlg = false;
+            }
+          })
+          .on ("affix-top.bs.affix", function(evt) {
+            if (!appendFlg) {
+              $("#bigmac nav a").last().remove();
+            }
+            appendFlg = true;
+          })
+    })
+  </script>
+  
+        <script type="text/javascript">
+          window.doctoc = {
+            pubID: "1336",
+            tpcID: "66",
+            
+              prefix: "处理事件数据",
+              prefixUrl: "/zh-cn/geoevent/latest/process-event-data/",
+          
+            hideToc: false
+          }
+        </script>
+
+        <script type="text/javascript" src="../../../../zh-CN/geoevent/latest/process-event-data/1336.js" ></script>
+        <script type="text/javascript" src="../../../../zh-CN/cdn/calcite/js/protoc.js" ></script>
+        
+        
+
+  <noscript>
+        <p>
+            <a href="flisting.htm">flist</a>
+        </p>
+    </noscript>
+    <script type="text/javascript"></script>
+  
+  
+    
+    
+
+  </body>
+</html>

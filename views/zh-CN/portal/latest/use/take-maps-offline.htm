@@ -1,0 +1,543 @@
+
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>  <html class="ie lt-ie9 lt-ie8 lt-ie7 ie6" dir="ltr"> <![endif]-->
+<!--[if IE 7]>     <html class="ie lt-ie9 lt-ie8 ie7" dir="ltr"> <![endif]-->
+<!--[if IE 8]>     <html class="ie lt-ie9 ie8" dir="ltr"> <![endif]-->
+<!--[if IE 9]>     <html class="ie ie9" dir="ltr"> <![endif]-->
+<!--[if !IE]><!--> <html dir="ltr" lang="zh-CN"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>离线使用 web 地图&mdash;Portal for ArcGIS | ArcGIS Enterprise 文档</title>
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+    <script>
+      var docConfig = {
+        locale: 'zh-CN'
+        ,localedir: 'zh-cn'
+        ,langSelector: ''
+        
+        ,relativeUrl: false
+        
+
+        ,searchformUrl: '/search/'
+        ,tertiaryNavIndex: ''
+
+        
+      };
+    </script>
+	 
+
+
+    
+    <!--[if lt IE 9]>
+      <script src="../../../../zh-CN/cdn/js/libs/html5shiv.js" type="text/javascript"></script>
+      <script src="../../../../zh-CN/cdn/js/libs/selectivizr-min.js" type="text/javascript"></script>
+      <script src="../../../../zh-CN/cdn/js/libs/json2.js" type="text/javascript"></script>
+      <script src="../../../../zh-CN/cdn/js/libs/html5shiv-printshiv.js" type="text/javascript" >
+
+    <![endif]-->
+
+     <!--[if lt IE 11]>
+    <script>
+      $$(document).ready(function(){
+        $$(".hideOnIE").hide();
+      });
+    </script>
+    <![endif]-->
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<link href="../../../../zh-CN/assets/img/favicon.ico" rel="shortcut icon" >
+	<link href="../../../../zh-CN/assets/css/screen.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/cdn/calcite/css/documentation.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/assets/css/print.css" media="print" type="text/css" rel="stylesheet" />
+
+	<!--
+	<link href="../../../../zh-CN/assets/css/screen_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/assets/css/documentation/base_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/assets/css/print_l10n.css" media="print" type="text/css" rel="stylesheet" />
+	-->
+	
+	
+		<script src="../../../../zh-CN/cdn/js/libs/jquery.1.9.1.min.js" type="text/javascript"></script>
+	
+	<script src="../../../../zh-CN/cdn/js/libs/jquery.cookie.js" type="text/javascript"></script>
+	<link href="../../../../zh-CN/cdn/css/colorbox.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/cdn/css/colorbox_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<script src="../../../../zh-CN/cdn/js/libs/jquery.colorbox-min.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/assets/js/video-init.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/assets/js/sitecfg.js" type="text/javascript"></script>
+	
+		<script src="../../../../zh-CN/assets/js/signIn.js" type="text/javascript"></script>
+	
+
+	<!--- Language Picker -->
+	<script src="../../../../zh-CN/assets/js/locale/l10NStrings.js" type="text/javascript"></script>
+	
+		 
+	
+
+	<script src="../../../../zh-CN/assets/js/calcite-web.js" type="text/javascript"></script>
+
+
+
+  <!--- search MD -->
+    <META name="description" content="离线地图支持在断开 Internet 连接的情况下收集和更新要素。"><META name="last-modified" content="2019-12-6"><META name="product" content="arcgis-portal-windows,arcgis-portal-linux,arcgis-enterprise-windows,arcgis-enterprise-linux"><META name="sub_category" content="Portal for ArcGIS"><META name="search-collection" content="help"><META name="content_type_label" content="帮助主题"><META name="sub_category_label" content="Portal for ArcGIS"><META name="search-category" content="help-general"><META name="subject_label" content="PORTAL,服务,SERVER"><META name="version" content="10.8"><META name="content_type" content="Help Topic"><META name="subject" content="PORTAL,SERVICES,SERVER"><META name="content-language" content="zh-cn">
+    <!--- search MD -->
+
+  
+  <script src="../../../../zh-CN/assets/js/switchers/portal-1.js" type="text/javascript"></script>
+  
+      
+
+</head>
+
+<!--
+      pub: GUID-7B47163B-CE1B-465F-BEEE-4DADDB8DFF09=37
+      tpc: GUID-7E003907-4184-4598-8C33-BDAE4DD4776D=26
+      -->
+
+
+<!-- variable declaration, if any -->
+<!-- can change following macro to set variable once we are on Jinja 2.8 -->
+
+
+
+
+
+<body class="claro zh-CN server">
+  
+
+  <!-- Drawer location -->
+  <div class="drawer drawer-left js-drawer" data-drawer="top-nav">
+        <nav class="drawer-nav" role="navigation">
+          <aside class="side-nav">
+            <h2 class="side-nav-title">Arc<span>GIS</span> Enterprise</h2>
+            <form id="helpSearchForm" class="margin-left-half margin-right-half leader-half trailer-half drawer-search-form" method="GET">
+              <input type="search" name="q"  placeholder="搜索 ArcGIS Enterprise 帮助">
+              <input type="hidden" name="collection" value="help" />
+              <input type="hidden" name="product" value="arcgis-portal-windows" />
+              <input type="hidden" name="version" value="10.8" />
+              <input type="hidden" name="language" value="zh-CN" />
+            </form>    
+             <a id="nav-portal" data-langlabel="portal" href="../../../../zh-CN/portal/" class="side-nav-link">Portal</a>
+             
+            <a id="all-servers" data-langlabel="all-servers" href="../../../../zh-CN/server/" class="side-nav-link">所有服务器</a>
+            <a id="gis-server" data-langlabel="gis-server" href="../../../../zh-CN/server/" class="side-nav-link">GIS Server</a>
+            <a id="image-server" data-langlabel="image-server" href="../../../../zh-CN/image/" class="side-nav-link">Image Server</a>
+            <a id="geo-analytics-server" data-langlabel="geo-analytics-server" href="../../../../zh-CN/geoanalytics/" class="side-nav-link">GeoAnalytics Server</a>
+            <a id="geoevent-server" data-langlabel="geoevent-server" href="../../../../zh-CN/geoevent/" class="side-nav-link">GeoEvent Server</a>
+            <a id="notebook-server" data-langlabel="notebook-server" href="../../../../zh-CN/notebook/" class="side-nav-link">Notebook Server</a>
+            <a id="nav-data-store" data-langlabel="data-store" href="../../../../zh-CN/data-store/" class="side-nav-link">Data Stores</a>
+            <a id="nav-cloud" data-langlabel="cloud" href="../../../../zh-CN/cloud/" class="side-nav-link">云</a>
+            <a id="nav-apps" data-langlabel="apps" href="../../../../zh-CN/apps/" class="side-nav-link">应用程序</a>
+            <a id="nav-doc" data-langlabel="documentation" href="../../../../zh-CN/documentation/" class="side-nav-link">文档</a>
+
+          </aside>
+        </nav>
+    </div>
+
+    <!-- user navigation collapses to drawer on mobile -->
+    
+    <div class="drawer drawer-right js-drawer hide-if-logged-out logged-in-navigation" data-drawer="user-nav">
+      <nav class="drawer-nav">
+        <aside class="side-nav">
+          <a class="side-nav-link agolProfile" href="#">我的个人资料</a>
+          <a class="side-nav-link icon-ui-sign-out js-log-out" href="#">登出</a>
+        </aside>
+      </nav>
+    </div>
+    
+<!-- End of drawer -->
+
+  
+  <div class="wrapper">
+      <!--googleoff: all-->
+
+      <header class="top-nav" data-skin="learn">
+        <a class="skip-to-content" href="#skip-to-content">Skip To Content</a>
+        <div class="grid-container">
+          <div class="column-24">
+
+
+            <!--<div class="top-nav-title-wrapper text-center ">-->
+              <a href='../../../../zh-CN/' class="top-nav-title tablet-hide"><span>Arc</span>GIS  Enterprise</a>
+              <a href='../../../../zh-CN/' class="icon-ui-menu top-nav-title js-drawer-toggle tablet-show" data-drawer="top-nav"><span>Arc</span>GIS Enterprise</a>
+            <!--</div> -->
+
+          
+            <nav role="navigation" class="top-nav-list left tablet-hide">
+              <a id="nav-portal" data-langlabel="portal" href="../../../../zh-CN/portal/" class="top-nav-link">Portal</a>
+
+                <div class="dropdown js-dropdown ">
+                  <a class="top-nav-link js-dropdown-toggle" tabindex="0" aria-haspopup="true" aria-expanded="false" href="#">Servers</a>
+                  <nav class="dropdown-menu featured" role="menu">
+                    <ul class="dropdown-sublist-featured">
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/get-started/latest/windows/additional-server-deployment.htm" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path  d="M42.92 6.1H4.12v8.566l.833.832-.835.833-.018 7.332.845.847-.825.824V33.9h25v5.2h-2v1.075H8.02v.8h19.1v.925h4.8v-.925H40v-.8h-8.08V39.1h-2v-5.2h13v-8.566l-.834-.834.835-.834v-7.332l-.835-.834.835-.834zm-11.8 35h-3.2v-1.2h3.2zm11-8H4.92v-7.434l.767-.766h35.668l.765.766zm0-9.766l-.766.766H5.666l-.766-.767.017-6.669.766-.764h35.671l.766.766zm0-9l-.766.766H5.687l-.766-.766V6.9h37.2zM19 11.9h-2v-.8h2zm-4 0h-2v-.8h2zm-4 0H9v-.8h2zm6 8.2h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9zm8 9h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9z"/></svg></span>
+                          <span class="sublink-text">所有服务器</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/server/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M45.98 33.575a.616.616 0 0 0-.335-.51l-3.362-2.03 3.362-2.031a.556.556 0 0 0 0-1.02l-11.1-6.704a1.293 1.293 0 0 0-1.112 0L22.33 27.982a.556.556 0 0 0 0 1.02l3.36 2.03-3.358 2.03a.556.556 0 0 0-.002 1.021l3.322 2.006-3.324 2.008a.555.555 0 0 0 .002 1.017l11.102 6.703a1.25 1.25 0 0 0 1.11.002l11.104-6.706a.556.556 0 0 0 0-1.02l-3.32-2.006 3.318-2.004a.607.607 0 0 0 .335-.509zM33.837 21.97c.026-.01.286-.005.29-.005l10.814 6.53-10.8 6.523c-.028.01-.284.005-.294.006l-10.813-6.53zm11.105 16.636l-10.8 6.523a2.564 2.564 0 0 1-.295.006l-10.81-6.529 3.39-2.047 7.004 4.23a1.083 1.083 0 0 0 .557.131 1.101 1.101 0 0 0 .554-.13l7.01-4.233zM34.14 40.098a2.545 2.545 0 0 1-.294.006l-10.812-6.53 3.43-2.073 6.97 4.208a1.25 1.25 0 0 0 1.107-.001l6.966-4.206 3.431 2.073zM9 8H7V7h2zm8 8h-2v-1h2zm-4-8h-2V7h2zm4 0h-2V7h2zm-4 8h-2v-1h2zm7.316 11.1H3.9v-6.434l.766-.766h35.668l.766.766v2.12l.8.483v-2.935l-.826-.826.826-.845v-6.329l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9h16.88a2.632 2.632 0 0 1 .336-.8zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zm0 8v-5.668l.766-.766h35.668l.766.766v5.67l-.746.764H4.666zM15 24v-1h2v1zm-4 0v-1h2v1zm-2-8H7v-1h2zm-2 8v-1h2v1z"/></svg></span>
+                          <span class="sublink-text">GIS Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/image/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 8h-2V7h2zm-4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm8 8h-2v1h2zm-8 0H7v1h2zm4 9v-1h-2v1zm-4 0v-1H7v1zm8 0v-1h-2v1zm4 3.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V21h-.8v-.334l-.766-.766H4.666l-.766.766V27.1H21zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zm40.234 4v21.8H23.1V23.1zm-.8 16.366L39.466 44.1h2.868l1.766-1.766zm-20.2-9.932l5.634-5.634h-2.868L23.9 26.666zm6.2-5.068L24.466 30.1h2.868l2.766-2.766zM28.466 30.1H30.1v-1.634zm2.434 0h6.2v-6.2h-6.2zm-7 7h6.2v-6.2h-6.2zm7 0h6.2v-6.2h-6.2zm0 6.434l5.634-5.634h-2.868L30.9 40.666zm7-7l5.634-5.634h-2.868L37.9 33.666zm1.634-5.634H37.9v1.634zm-8.634 7v1.634l1.634-1.634zm.566 6.2h2.868l2.766-2.766v-2.868zm6.434-3.566l2.634-2.634H37.9zM35.466 44.1H37.1v-1.634zm2.434 0h.434l5.766-5.766V37.9h-2.434L37.9 41.666zm6.2-8.634L42.466 37.1H44.1zm0-4L38.466 37.1h2.868l2.766-2.766zm0-7.566h-6.2v6.2h6.2zm-20.2 0v1.634l1.634-1.634zm0 20.2h6.2v-6.2h-6.2zm20.2 0v-.634l-.634.634z"/></svg></span>
+                          <span class="sublink-text">Image Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/geoanalytics/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 16h-2v-1h2zm-8 8v-1H7v1zm8 0v-1h-2v1zM13 7h-2v1h2zm4 0h-2v1h2zM9 7H7v1h2zm21.45 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V27.9h-1.464l-.801-.8H41.1v-6.434l-.766-.766H4.666l-.766.766V27.1h27.15zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM13 24v-1h-2v1zm0-9h-2v1h2zm-4 0H7v1h2zm26.672 27.148A1.87 1.87 0 0 1 35.9 43a1.91 1.91 0 1 1-3.763-.222l-9.845-3.414A1.88 1.88 0 0 1 21 39.9a1.9 1.9 0 1 1 1.474-3.084l4.692-2.346A1.878 1.878 0 0 1 27.1 34a1.902 1.902 0 0 1 1.9-1.9 1.867 1.867 0 0 1 .781.191l3.788-5.05A1.88 1.88 0 0 1 33.1 26a1.9 1.9 0 1 1 3.491 1.026l4.889 4.888c-.069.056-.144.1-.21.162a3.986 3.986 0 0 0-.358.402l-4.883-4.883A1.889 1.889 0 0 1 35 27.9a1.867 1.867 0 0 1-.781-.191l-3.788 5.049a1.868 1.868 0 0 1 .437.965l9.204.614c-.018.11-.049.218-.058.33A3.93 3.93 0 0 0 40 35c0 .046.01.09.01.135l-9.185-.612A1.913 1.913 0 0 1 29 35.9a1.889 1.889 0 0 1-1.474-.716l-4.692 2.346a1.878 1.878 0 0 1 .066.47 1.9 1.9 0 0 1-.105.625c-.007.02-.022.036-.03.056l9.63 3.34a1.87 1.87 0 0 1 2.786-.505l5.415-4.437c.067.108.127.22.204.322a3.9 3.9 0 0 0 .292.306zM33.9 26a1.092 1.092 0 0 0 .43.872 1.12 1.12 0 0 0 1.42-.068A1.1 1.1 0 1 0 33.9 26zm-6 8a1.1 1.1 0 0 0 2.196.093 1.135 1.135 0 0 0-.426-.965A1.087 1.087 0 0 0 29 32.9a1.101 1.101 0 0 0-1.1 1.1zm-5.8 4a1.098 1.098 0 1 0-.06.362A1.101 1.101 0 0 0 22.1 38zm13 5a1.1 1.1 0 1 0-2.2 0 1.1 1.1 0 0 0 2.2 0zm10.8-8a1.9 1.9 0 1 1-3.8 0c0-.053.003-.105.007-.158A1.9 1.9 0 0 1 45.9 35zm-.8 0a1.1 1.1 0 0 0-2.196-.093 1.153 1.153 0 0 0 .216.752A1.1 1.1 0 0 0 45.1 35z"/></svg></span>
+                          <span class="sublink-text">GeoAnalytics Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/geoevent/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M13 8h-2V7h2zm4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm12.418 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826v2.117c-.259-.177-.53-.337-.8-.497v-1.288l-.766-.766H4.666l-.766.766V27.1h17.933c-.148.26-.283.53-.415.8zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM9 24v-1H7v1zm4-9h-2v1h2zm0 9v-1h-2v1zm-4-9H7v1h2zm8 9v-1h-2v1zm16.9 2h-.8v8.9H39v-.8h-5.1zm.1-3.901a11.9 11.9 0 1 0 11.9 11.9 11.914 11.914 0 0 0-11.9-11.9zm0 23a11.1 11.1 0 1 1 11.1-11.1 11.112 11.112 0 0 1-11.1 11.1z"/></svg></span>
+                          <span class="sublink-text">GeoEvent Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/notebook/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M22 27.1H3.9v-6.434l.766-.766h18.576a5.262 5.262 0 0 1 .83-.8H4.666l-.766-.766v-5.668l.766-.766h35.668l.766.766V18h.8v-5.666l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9H22zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zM9 8H7V7h2zm8 0h-2V7h2zm-4 0h-2V7h2zm2 16v-1h2v1zm-4 0v-1h2v1zm-4 0v-1h2v1zm0-8v-1h2v1zm8 0v-1h2v1zm-4 0v-1h2v1zm18.9 8.1h-1.8v1.8h1.8zm-.8 1h-.2v-.2h.2zm15.498-4.48a2.727 2.727 0 0 0-1.62-.5v-.02H27.25a3.154 3.154 0 0 0-3.15 3.15V38.1h-1.68a3.386 3.386 0 0 0-2.872 1.58 3.49 3.49 0 0 0-.157 3.419 3.241 3.241 0 0 0 2.954 1.801h15.161a3.404 3.404 0 0 0 3.394-3.4V26.9h5v-3.65a3.224 3.224 0 0 0-1.302-2.63zM22.345 44.1a2.44 2.44 0 0 1-2.23-1.341 2.706 2.706 0 0 1 .11-2.65A2.588 2.588 0 0 1 22.42 38.9h12.89a3.395 3.395 0 0 0 0 5.2zM40.1 23.192V41.5a2.6 2.6 0 1 1-2.6-2.6v-.8H24.9V23.25a2.352 2.352 0 0 1 2.35-2.35h13.795a3.183 3.183 0 0 0-.945 2.292zm5 2.908h-4.2v-2.908a2.274 2.274 0 0 1 1.44-2.18 1.944 1.944 0 0 1 1.791.259 2.423 2.423 0 0 1 .97 1.979zm-17.1 5h9v.8h-9zm0 3h7v.8h-7zm0-6h9v.8h-9zm4-3h5v.8h-5z"/></svg></span>
+                          <span class="sublink-text">Notebook Server</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+
+              <a id="nav-data-store" data-langlabel="data-store" href="../../../../zh-CN/data-store/" class="top-nav-link">Data Stores</a>
+              <a id="nav-cloud" data-langlabel="cloud" href="../../../../zh-CN/cloud/" class="top-nav-link">云</a>
+              <a id="nav-apps" data-langlabel="apps" href="../../../../zh-CN/apps/" class="top-nav-link">应用程序</a>
+            </nav>
+
+
+            
+            
+            
+
+            <div class="margin-left-1 top-nav-list right hide-if-logged-in logged-out-navigation">
+               
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+              
+              <a data-langlabel="sign-in" id="login-link" class="icon-ui-user top-nav-link link-blue login-link" href="#">登录</a>
+              
+            </div>
+
+            
+            <nav class="margin-left-1 top-nav-list right hide-if-logged-out logged-in-navigation">
+              
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+             
+              <div class="dropdown js-dropdown right">
+
+                <div class="tablet-show top-nav-link">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a href="#" data-drawer="user-nav" class="user-nav-name js-drawer-toggle" data-first-name></a>
+                </div>
+
+                <div class="tablet-hide top-nav-link js-dropdown-toggle">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a class="user-nav-name top-nav-dropdown dropdown-btn" data-first-name>&nbsp;</a>
+                </div>
+
+                <nav class="dropdown-menu dropdown-right">
+                
+                  <a class="dropdown-link agolProfile" id="agolProfile" href="#">我的个人资料</a>
+                  <a class="dropdown-link js-log-out" id="agolLogout" href="#">登出</a>
+                </nav>
+              </div>
+            </nav>
+            
+
+            
+          </div>
+        </div>
+      </header>
+
+      <div class="js-search search-overlay">
+        <div class="search-content" role="dialog" aria-labelledby="search">
+          <form method="GET" id="helpSearchForm">
+            <label>
+              搜索 ArcGIS Enterprise 帮助
+              <div class="search-bar">
+                <input type="search" name="q"  placeholder="搜索 ArcGIS Enterprise 帮助" class="search-input js-search-input">
+                <input type="hidden" name="collection" value="help" />
+                <input type="hidden" name="product" value="arcgis-portal-windows" />
+                <input type="hidden" name="version" value="10.8" />
+                <input type="hidden" name="language" value="zh-CN" />
+              </div>
+            </label>
+            <input type="hidden" name="relativePath" value="../../../../" /><button type="submit" class="btn btn-large right">搜索</button>
+          </form>
+        </div>
+      </div>
+
+      <!--googleon: all-->
+
+      <div id="skip-to-content">
+        <!--googleoff: all-->
+        <header class="sub-nav sub-nav-learn">
+          <div class="grid-container">
+            
+            <div class="column-24">
+              <div style="display:table;" class="sdk-home-banner">
+                <div class="sdk-home-banner-content">
+                  <h1 class="sub-nav-title link-white">Portal for ArcGIS</h1>
+                </div>
+              </div>
+            </div>
+
+            <div class="column-24">
+              <nav class='sub-nav-list tablet-hide'><a class="sub-nav-link" href="../../../../zh-CN/portal/" target="_top" title="Portal for ArcGIS 主页">主页</a><a class="sub-nav-link is-active" href="../../../../zh-CN/portal/latest/use/" target="_top" title="使用 Portal for ArcGIS">使用</a><a class="sub-nav-link" href="../../../../zh-CN/portal/latest/administer/windows/" target="_top" title="安装、管理和保护 Portal for ArcGIS">管理</a></nav><select class='tablet-show select-full trailer-half js-select-nav'><option value="../../../../zh-CN/portal/">主页</option><option selected="true" value="../../../../zh-CN/portal/latest/use/">使用</option><option value="../../../../zh-CN/portal/latest/administer/windows/">管理</option></select>
+            </div>
+
+          </div>
+        </header>
+        <!--googleon: all-->
+       
+        <!-- content goes here -->
+        <div class="grid-container ">
+          
+
+            
+              
+  <!--BREADCRUMB-BEG--><div id="bigmac" class="sticky-breadcrumbs trailer-2" data-spy="affix" data-offset-top="180"> </div><!--BREADCRUMB-END-->
+  <!--googleoff: all-->
+    <div class="column-5 tablet-column-12 trailer-2 ">
+      <aside class="js-accordion accordion reference-index" aria-live="polite" role="tablist">
+        <div></div>
+      </aside>
+
+      <div class="js-sticky scroll-show tablet-hide leader-1 back-to-top" data-top="0" style="top: 0px;">
+        <a href="#" class="btn btn-fill btn-clear">返回顶部</a>
+      </div>
+    </div>
+  <!--googleon: all-->
+  
+            
+            
+            
+	
+		<div class="column-13  pre-1 content-section">
+	
+		<header class="trailer-1"><h1>离线使用 web 地图</h1></header>
+
+		 
+	<!--googleoff: all-->
+	
+		
+				<aside id="main-toc-small" class="js-accordion accordion tablet-show trailer-1">
+			      <div class="accordion-section">
+			        <h4 class="accordion-title">在本主题中</h4>
+			        <div class="accordion-content list-plain">
+			          <ol class="list-plain pre-0 trailer-0"><li><a href="#ESRI_SECTION1_C0331D55CAE14D4FAB1B54354A9246F2">启用图层和地图的离线使用功能</a></li><li><a href="#ESRI_SECTION1_8C6055E984D34AF4A25B989DDCAACF87">创建、编辑和管理地图区域</a></li><li><a href="#ESRI_SECTION1_6CE94B6639C44D5AB860FD74256387CA">选择项目右侧的高级离线选项</a></li></ol>
+			        </div>
+			      </div>
+			     </aside>
+		
+    
+   <!--googleon: all-->
+
+
+		<main>
+			
+	
+    	
+    
+
+
+			
+    <p id="GUID-90C74BAE-95E9-447E-A521-D5789FEF87E0">离线使用 web 地图支持在断开 Internet 连接的情况下查看、收集和更新要素。重新连接后，您可以同步您的地图、发送您所作出的更新，以及从其他用户处获取地图更新。</p>    <p id="GUID-FC7FBDFC-F06B-49FD-BD96-D4FB90E6C389" ishcondition="agol_plat=portal">您可以在 <span class="ph">ArcGIS Enterprise</span> 门户中创建 web 地图，以供在 ArcGIS 应用程序（例如 <span class="ph">Collector for ArcGIS</span>）、<span class="ph">ArcGIS Pro</span> 和通过 <span class="ph">ArcGIS Runtime SDK</span> 构建的自定义应用程序中离线使用。</p><p id="GUID-74C48679-F153-4DE8-B8DC-440F993CE3E1">可以通过以下两个选项来离线使用地图。有些应用程序可能支持其中一个或另一个，或者两者都支持。<ul purpose="ul" id="UL_CFB0E87714FB416384D397ABDDFF7940"><li purpose="li" id="LI_DD5FDAC1EB8F47BF8B1134CF036C0537">按需 - 外业用户可根据需要随时下载地图的任何部分。外业用户可以指定他们想要离线使用的区域以及所需底图的详细信息。</li><li purpose="li" id="LI_52ABEDB7DC8C4B4783D9782C6D344BEE"><a class="xref xref" href="../../../../zh-CN/portal/latest/use/take-maps-offline.htm#ESRI_SECTION1_8C6055E984D34AF4A25B989DDCAACF87">创建地图图区域</a> - 地图作者可以提前创建地图区域以打包特定区域的数据。地图区域创建加快并简化外业工作人员的地图下载过程。</li></ul></p><section class="section1 padded-anchor" id="ESRI_SECTION1_C0331D55CAE14D4FAB1B54354A9246F2" purpose="section1"><h2>启用图层和地图的离线使用功能</h2><p id="GUID-592E1DF8-8478-4C30-9BED-36D8F88D27C1">要离线使用 web 地图，必须对所有图层（包括底图和参考图层）启用离线使用功能。您可以为以下类型的地图图层启用离线使用功能：</p><p id="GUID-25ED7902-3911-4C61-B57E-AE665C9DAB59"><ul purpose="ul" id="UL_E76E41EB2CB041F8A8C51BE14E0A7EE7"><li purpose="li" id="LI_89E08EE0309D47189F5F58C5BE3B7F47"><a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/server/latest/publish-services" href="../../../../zh-CN/server/latest/publish-services/windows/available-map-and-image-cache-properties.htm#ESRI_SECTION1_7CB7C4969828445F93FFED84F01E141D">缓存 <span class="ph">ArcGIS Server</span> 地图服务</a>（来自 <span class="ph">ArcGIS Server</span> 10.3 或更高版本）及缓存 <span class="ph">ArcGIS Server</span> 影像服务（来自 <span class="ph">ArcGIS Server</span> 10.5.1 或更高版本）- 请在<span class="uicontrol">高级设置</span>中选中<span class="uicontrol">允许客户端导出缓存切片</span>复选框。</li><li purpose="li" id="LI_FE1251B2669945FC9A6ED29A29F9832E"><a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/server/latest/publish-services" href="../../../../zh-CN/server/latest/publish-services/windows/prepare-data-for-offline-use.htm#ESRI_SECTION1_9A1E0E2AC0284C92A9F1758915C9EB30"><span class="ph">ArcGIS Server</span> 要素服务</a>（来自 <span class="ph">ArcGIS Server</span> 10.3 或更高版本，或者如果使用<a class="xref xref" href="../../../../zh-CN/portal/latest/use/take-maps-offline.htm#ESRI_SECTION1_8C6055E984D34AF4A25B989DDCAACF87">地图区域</a>，则来自 10.6.1 或更高版本）- 选择<span class="uicontrol">查询</span>和<span class="uicontrol">同步</span>选项以启用离线使用功能。如果您希望数据可以编辑，还需选择<span class="uicontrol">创建</span>、<span class="uicontrol">删除</span>和<span class="uicontrol">更新</span>的任意组合。</li><li purpose="li" id="LI_71DC5B7ACCE94C0798BF7D8EEF723028"><a class="xref xref" href="../../../../zh-CN/portal/latest/use/manage-hosted-feature-layers.htm#ESRI_SECTION2_C1D5C1A8F6084949B8C5BB444F0F44EC">托管要素图层</a> - 选中项目页面的<span class="uicontrol">设置</span>选项卡上的<span class="uicontrol">启用同步</span>复选框。</li><li purpose="li" id="LI_B4F3EEFCED644AF18A54BB14E20A4621"><a class="xref xref" href="../../../../zh-CN/portal/latest/use/layers.htm#LI_A5B5F7933B8941B3B065CE79D4678E01">托管切片图层</a> - 选中项目页面上<span class="uicontrol">设置</span>选项卡中的<span class="uicontrol">允许下载此图层并在离线地图中使用</span>复选框。<p id="GUID-81BEB011-4ADB-4D36-97E0-2C181CC8DFBB">要确定矢量托管切片图层在特定的 ArcGIS 应用程序中是否可以离线使用，请参阅应用程序文档。</p></li></ul></p><p id="GUID-B16B6EDA-B586-40D7-9E60-3C8FBB7BDFB7" ishcondition="agol_plat=portal">门户中包含的默认 <span class="ph">Esri</span> 底图未启用离线使用。您可以通过<a class="xref xref" href="../../../../zh-CN/portal/latest/use/take-maps-offline.htm#ESRI_SECTION2_384E9B7E99EC4460810B947DE70FB2DA">将 <span class="ph">ArcGIS Online</span> 中的 <span class="ph">Esri</span> 底图添加到 web 地图</a>来离线使用类似的底图。</p><div class="panel trailer-1 note" id="GUID-8877F687-9E2D-473F-B415-F5A2345D3EBD"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-9AE34B57-24B7-4017-B3C1-B812C46C7E46">您必须对地图和地图中所有缓存服务使用相同的空间参考，包括底图和托管切片图层。</p><p id="GUID-156661F8-AE68-41E5-8C72-C4CD6750C75E">若要<a class="xref xref" href="../../../../zh-CN/portal/latest/use/take-maps-offline.htm#ESRI_SECTION1_8C6055E984D34AF4A25B989DDCAACF87">创建地图区域</a>以便离线使用地图，如果仅允许编辑者编辑要素图层中自己的要素，请确保同时允许编辑者查看图层中的所有要素。对于托管要素图层，这表示如果选择了<span class="uicontrol">编辑者只能编辑自己的要素（需要追踪）</span>选项，则需要选择<span class="uicontrol">编辑者可查看所有要素</span>选项。</p><p id="GUID-7003C32F-4B2F-493A-AD23-41776674720F">多次包含相同的托管或 <span class="ph">ArcGIS Server</span> 要素图层的地图将不支持离线使用。例如，您可以添加两次相同的图层，并为每个图层应用过滤器或不同样式。要在 web 地图中引用相同的数据，您可以执行以下操作： <ul purpose="ul" id="UL_F5C27F56A88A466982D51F996395FF43"><li purpose="li" id="LI_02AD67FB9B004168877E5154AE196B82">对于托管要素图层，<a class="xref xref" href="../../../../zh-CN/portal/latest/use/create-hosted-views.htm">创建托管要素图层视图</a>。这提供了可以添加到地图的不同图层。<a class="xref xref" href="../../../../zh-CN/portal/latest/use/set-view-definition.htm">设置视图定义</a>并根据需要应用不同的样式。</li><li purpose="li" id="LI_2335FED869B849C6B1A73445CDEC37FC">对于 <span class="ph">ArcGIS Server</span> 要素图层，发布具有唯一名称的单独要素服务。然后，您可以将要素图层添加到同一 web 地图以应用过滤器和样式。</li></ul></p></div><p id="GUID-4D69B9DC-ABD2-488E-8031-277639670317">对图层启用离线使用功能后，<span class="uicontrol">离线</span>部分会显示在地图<a class="xref xref" href="../../../../zh-CN/portal/latest/use/item-details.htm#ESRI_SECTION2_C83A7D304DA04D3AB2657DDAB34797D7">项目页面</a>的<span class="uicontrol">设置</span>选项卡中，并且<span class="uicontrol">启用离线模式</span>切换键处于启用状态。如果您不想离线使用地图，请单击<span class="uicontrol">启用离线模式</span>切换键将其关闭，然后单击<span class="uicontrol">保存</span>。</p><p id="GUID-390C53C8-1B27-4F60-95B5-97D0B0D40736" ishcondition="agol_plat=portal">如果您希望离线使用的地图中包含切片图层，则该切片图层的源服务定义文件、切片包或矢量切片包必须存在于您的门户中。</p><section class="section2 padded-anchor" id="ESRI_SECTION2_384E9B7E99EC4460810B947DE70FB2DA" purpose="section2"><h3>离线使用 <span class="ph">Esri</span> 底图</h3><p id="GUID-4686E722-FFDC-489C-B497-69E3563C3FD5">您可以使用 <span class="ph">ArcGIS Enterprise</span> web 地图从 <span class="ph">ArcGIS Online</span> 离线使用 <span class="ph">Esri</span> 底图。为此，您必须具有 <span class="ph">ArcGIS Online</span> 中的组织成员帐户，并完成以下步骤：</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_CFB07CF1245A4BCFB632CB3E1B653CBD"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_C7E2A33AF468419FA9B9C9F558842EE3"><span purpose="cmd">在 <span class="ph">ArcGIS Online</span> 中的<a target="_blank" class="xref xref" href="https://www.arcgis.com/home/group.html?owner=esri&amp;title=Tiled Basemaps">切片底图</a>或<a target="_blank" class="xref xref" href="https://www.arcgis.com/home/group.html?id=c61ab1493fff4b84b53705184876c9b0#overview">矢量底图</a>组内找到要使用的底图，然后打开其项目页面。</span></li><li purpose="step" id="ESRI_STEP_9E3721C18B744253851E76B0438707F2"><span purpose="cmd">在项目页面上的 <span class="uicontrol">URL</span> 部分，单击包含图层 URL 的文本框旁的<span class="uicontrol">复制</span>。</span></li><li purpose="step" id="ESRI_STEP_B9BB321160794A4C975E65511CABADBD"><span purpose="cmd">登录至 <span class="ph">ArcGIS Enterprise</span> 门户。</span></li><li purpose="step" id="ESRI_STEP_C412D3FD408740D196AF2A05EE77E303"><span purpose="cmd">单击<span class="uicontrol">内容</span>，转到<span class="uicontrol">我的内容</span>选项卡。</span></li><li purpose="step" id="ESRI_STEP_9536DA07ADCC43E0A7F4BD93597EF2AD"><span purpose="cmd">单击<span class="uicontrol">添加项目</span>，然后选择<span class="uicontrol">来自 web</span>。</span></li><li purpose="step" id="ESRI_STEP_363085D6112840E5B53CD2AE91802446"><span purpose="cmd">选择 <span class="uicontrol">ArcGIS Server Web 服务</span>。</span></li><li purpose="step" id="ESRI_STEP_B27EEC6156B241CC937131113A80D4D0"><span purpose="cmd">在 <span class="uicontrol">URL</span> 文本框中粘贴步骤 2 中复制的底图链接。单击<span class="uicontrol">标题</span>文本框以便不再选择 <span class="uicontrol">URL</span> 文本框。</span><div class="stepresult" purpose="stepresult"><p id="GUID-1A7CF596-B8C3-41A2-8D41-C29BC288E832">此服务信息将从 <span class="ph">ArcGIS Online</span> 中检索出来。检测到此信息安全，然后在 <span class="uicontrol">URL</span> 文本框下显示<span class="uicontrol">用户名</span>和<span class="uicontrol">密码</span>文本框。</p></div></li><li purpose="step" id="ESRI_STEP_C65862D532CA4256B88C83DC99748C8C"><span purpose="cmd">提供您帐户（此帐户为 <span class="ph">ArcGIS Online</span> 的组织成员）的用户名和密码，然后选择<span class="uicontrol">将凭据与服务项目一同存储</span>。</span></li><li purpose="step" id="ESRI_STEP_8C449A99AB4E4E91874188A65D77FDC5"><span purpose="cmd">单击<span class="uicontrol">添加项目</span>。</span><div class="stepresult" purpose="stepresult"><p id="GUID-7FA6F948-C2FA-4B55-BFD9-B5560EBA253F">随即将出现新项目的项目页面。</p></div></li><li purpose="step" id="ESRI_STEP_0523F9B75EEF463FA43DDFAA857C1266"><span purpose="cmd">要使底图可跨地图使用，可以创建使用新图层作为底图的地图，并与组织的底图库进行共享。有关创建地图的详细信息，请参阅<a class="xref xref" href="../../../../zh-CN/portal/latest/use/choose-basemap.htm#ESRI_SECTION1_5EA1869127A74F19A6FA105A9441766E">使用您自己的底图</a>。有关与底图库共享的详细信息，请参阅<a class="xref xref" href="../../../../zh-CN/portal/latest/use/faq.htm#GUID-ECB02DEA-3709-4CF2-A066-85914F0F999E">如何在组织的底图库中使图层作为底图？</a></span><div class="info" purpose="info"><div class="panel trailer-1 note" id="GUID-3D9EC644-FB26-4DBC-809E-AD1FEB703963"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-6C0883C3-893E-4B7E-8A85-0C41587A364D">与组织的底图库共享的地图应仅限于离线使用，而不能用于常规地图查看。</p></div></div></li><li purpose="step" id="ESRI_STEP_B3F71CFE4687410B99205FB2D67A5408"><span purpose="cmd">使用 <span class="ph">Map Viewer</span> 打开您希望离线使用的地图，并通过以下方式之一对其进行更新以便使用底图：</span><ul purpose="choices" id="ESRI_CHOICES_5F7855140C694017A97D6079CF5E7884"><li purpose="choice" id="ESRI_CHOICE_F6083B45FDAB4274A1A8BEE3530E6808">如果已将其添加到底图库，请单击<span class="uicontrol">底图</span>，然后在底图库中单击新创建的底图。</li><li purpose="choice" id="ESRI_CHOICE_E19B07D4942449EBBF82D32CB95FABF5">要仅针对此地图添加图层作为底图，请参阅<a class="xref xref" href="../../../../zh-CN/portal/latest/use/choose-basemap.htm#ESRI_SECTION1_5EA1869127A74F19A6FA105A9441766E">使用您自己的底图</a>。</li></ul></li><li purpose="step" id="ESRI_STEP_9B8F13619FC24B5191BE80066BEA2C06"><span purpose="cmd">将更改保存到地图中。</span></li></ol></div></section></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_8C6055E984D34AF4A25B989DDCAACF87" purpose="section1"><h2>创建、编辑和管理地图区域</h2><p id="GUID-3CE84117-7F96-4422-AE9B-D1CF9595C547"><a class="xref xref" href="../../../../zh-CN/portal/latest/use/take-maps-offline.htm#ESRI_SECTION1_C0331D55CAE14D4FAB1B54354A9246F2">启用 web 地图离线使用功能</a>后，建议您为将要离线使用的 web 地图创建地图区域，以简化离线外业工作人员的体验。地图区域允许您打包 Web 地图特定区域的数据，以便更轻松、快速地下载地图供离线使用。<span class="ph">地图区域可用于 <span class="ph">Collector for ArcGIS</span> 和 <span class="ph">ArcGIS Runtime SDK</span> 自定义应用程序。</span></p><p id="GUID-4612B85C-F967-41B1-8CF2-7EC9A87FE59C">创建地图区域时，指定区域中的数据会被绑定到一个或多个可下载包中。要素图层被绑定到 <span class="ph">SQLite</span> 数据库文件 (<span class="usertext">.geodatabase</span>)，切片图层被绑定到切片包 (<span class="usertext">.tpk</span>)，矢量切片图层被绑定到矢量切片包 (<span class="usertext">.vtpk</span>)。包名称反映了其包含图层的名称。</p><p id="GUID-CFC467AB-475E-48F2-A0AC-F343F792724D">更新地图中的图层时，必须刷新相应的地图区域包。您可以设置刷新计划，以指定的间隔和时间（例如每周一上午 9:00）来刷新要素图层包。也可以手动刷新单个或所有图层包。如果从 Web 地图添加或删除图层，则必须刷新整个地图区域才能更新数据。在某些情况下，您可能还需要重新创建或删除地图区域。</p><p id="GUID-E52D6ED3-CC3D-4D35-AAA1-C08A228D9080"><div class="panel trailer-1 note" id="GUID-2635EDF9-42C8-4F4B-AE8E-42C9348F0A35"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-0895B6A4-4392-4621-A1E2-C6EA0A7CB9B2" ishcondition="agol_plat=portal">您无法与<a class="xref xref" href="../../../../zh-CN/portal/latest/use/create-groups.htm#ESRI_STEP_D1DD1E6C1D8947CDB26CEE2EE30CDE63">可供成员更新群组中所有项目的群组</a>共享包含地图区域的 web 地图，且门户管理员不可以对包含地图区域的 web 地图进行<a class="xref xref" esrisubtype="extrel" hrefpfx="https://doc.arcgis.com/zh-cn/arcgis-online" href="https://doc.arcgis.com/zh-cn/arcgis-online/administer/manage-items.htm#ESRI_CHOICE_22B3CD935283474A91B349AF2BAD57B5">所有权更改</a>。</p></div></p><p id="GUID-1BE0D791-C7AD-4256-8306-EF3BAB827C6F">要<a class="xref xref" href="../../../../zh-CN/portal/latest/use/take-maps-offline.htm#ESRI_SECTION2_D017AAE3FB234A19BAE673979BC310A2">创建</a>、<a class="xref xref" href="../../../../zh-CN/portal/latest/use/take-maps-offline.htm#ESRI_SECTION2_4AE76253C4094939B51FFFC38CD7B1B7">编辑</a>和<a class="xref xref" href="../../../../zh-CN/portal/latest/use/take-maps-offline.htm#ESRI_SECTION2_DF901B7FFD33426C8EF37E4A7D6A9DC9">管理</a> web 地图的地图区域，您必须是该地图的所有者并具有发布内容的权限。</p><section class="section2 padded-anchor" id="ESRI_SECTION2_D017AAE3FB234A19BAE673979BC310A2" purpose="section2"><h3>创建地图区域</h3><p id="GUID-9F9397FA-3CFE-44B4-A9F1-7686CB358018">您最多可以为 web 地图创建 16 个地图区域。您创建的地图区域数量取决于您的组织及其外业工作人员的需要。在创建地图区域前，请确保为您的地图<a class="xref xref" href="../../../../zh-CN/portal/latest/use/take-maps-offline.htm#ESRI_SECTION1_6CE94B6639C44D5AB860FD74256387CA">配置高级离线设置</a>。如果在创建地图区域后修改这些设置，则需要<a class="xref xref" href="../../../../zh-CN/portal/latest/use/take-maps-offline.htm#ESRI_SECTION2_DF901B7FFD33426C8EF37E4A7D6A9DC9">重新创建</a>地图区域才能使用更新的设置。</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><section class="context padded-anchor" id="ESRI_CONTEXT_16774FC7DCA24D2DA8FB43092FBBFB45" purpose="context"><p id="GUID-2049FF8E-1425-47BF-A849-09BA0A6315A1">请执行以下操作以创建地图区域：</p></section><div class="steps" id="ESRI_STEPS_99C0953D42A54ADC9F211805DC372BB5"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_3AF67E8CC9D742539FFD21AA1A19221D"><span purpose="cmd">确保<a class="xref xref" href="../../../../zh-CN/portal/latest/use/take-maps-offline.htm#ESRI_SECTION1_C0331D55CAE14D4FAB1B54354A9246F2">地图中的所有图层均已启用离线使用功能</a>。</span></li><li purpose="step" id="ESRI_STEP_46DE5440C4DA48C6985A02EC72C6CA30"><span purpose="cmd">在 web 地图的项目页面中，单击<span class="uicontrol">设置</span>选项卡，然后单击选项卡顶部的<span class="uicontrol">离线</span>。</span></li><li purpose="step" id="ESRI_STEP_78468724745A47928F509F1D091BC893"><span purpose="cmd">在<span class="uicontrol">离线</span>部分中，确保<span class="uicontrol">启用离线模式</span>切换键处于启用状态。</span></li><li purpose="step" id="ESRI_STEP_4D43813F30464B628235BD1CFBAC432B"><span purpose="cmd">在<span class="uicontrol">地图区域</span>下，单击<span class="uicontrol">管理区域</span>。</span></li><li purpose="step" id="ESRI_STEP_7CD1951A1E964317AA12C0F4C6C5D6B3"><span purpose="cmd">在<span class="uicontrol">管理区域</span>窗口中，单击<span class="uicontrol">创建区域</span>。</span></li><li purpose="step" id="ESRI_STEP_06E8F4ED9A8F4D96881D477E81BBAC6C"><span purpose="cmd">执行以下任意操作以导航至要创建地图区域的地图部分。</span><ul purpose="choices" id="ESRI_CHOICES_50B2AE798CDD4D2E9D5593CBC8F6FC0D"><li purpose="choice" id="ESRI_CHOICE_08E89CFC04A242DAA494C6098C5A3D07">使用缩放按钮进行缩放。</li><li purpose="choice" id="ESRI_CHOICE_42A4C6C7009C4EB7997037FBDFF9E4DB">如果地图中包含书签，请单击<span class="uicontrol">显示书签</span>按钮，然后单击书签以导航至地图区域。</li><li purpose="choice" id="ESRI_CHOICE_8DB3DEED135449E4842752AAF8702F9F">要导航至特定地点或地址，请在搜索框中输入关键字。关键字可包括地址、街道交叉口、地点、感兴趣点、经纬度坐标和要素 ID。</li></ul></li><li purpose="step" id="ESRI_STEP_9936AEBC4BD74BCB84D5DABA5A8DC67B"><span purpose="cmd">要绘制一个表示地图区域的形状，单击<span class="uicontrol">草图</span>工具条中的一个按钮。</span><ul purpose="choices" id="ESRI_CHOICES_499EA437398A4098ACD2B1E1F3245F91"><li purpose="choice" id="ESRI_CHOICE_D84A697030E948BC89F89EE075B187F2">要在区域周围绘制一个框以供离线使用，单击<span class="uicontrol">草绘矩形地图区域</span>按钮 <img purpose="img" placement="inline" alt="绘制矩形" title="绘制矩形" src="GUID-5A729CBA-601D-4418-846C-6A8CB35FD121-web.png"> 并在地图上绘制一个框。</li><li purpose="choice" id="ESRI_CHOICE_80D4D2D087C84CB981C9EF7D349C84CB">要绘制一个多边形以定义需要离线使用的区域，单击<span class="uicontrol">草绘多边形地图区域</span>按钮 <img purpose="img" placement="inline" alt="绘制多边形" title="绘制多边形" src="GUID-8BC49F94-430D-40E5-9733-F230A8EAE12F-web.png">并在地图上绘制多边形。</li></ul></li><li purpose="step" id="ESRI_STEP_9DA8717B1EB9499B9CF6258D319CA391"><span purpose="cmd">要移动地图区域形状，请将其选中并拖动到地图上的新位置。</span></li><li purpose="step" id="ESRI_STEP_48C5B815383D4A958C4F6B53DE078BFF"><span purpose="cmd">要更改矩形地图区域的形状，请单击矩形将其选中，将鼠标悬停在折点上直到鼠标指针发生变化，然后将折点拖动到所需位置。对任意顶点重复此操作，直至对矩形区域满意。</span></li><li purpose="step" id="ESRI_STEP_23884908ED4046408F1EDDC66D2A838B"><span purpose="cmd">要更改多边形区域的形状，请执行以下步骤：</span><div class="substeps" id="ESRI_SUBSTEPS_8766A604F9634087BB69ADD754DA3678" purpose="substeps"><ol class="list-numbered" purpose="ol"><li purpose="substep" id="ESRI_SUBSTEP_5B04C9CA1604495094C051E5B72B7162"><span purpose="cmd">单击多边形以将其选中，然后单击<span class="uicontrol">草图</span>工具条上的<span class="uicontrol">修整地图区域</span>按钮。</span><div class="stepresult" purpose="stepresult"><p id="GUID-33060CCC-7BB5-4DFD-B05D-37F9E3F76737">多边形顶点随即显示。</p></div></li><li purpose="substep" id="ESRI_SUBSTEP_F5320D49A1384542AE7B9ECC4F8E1B13"><span purpose="cmd">单击折点以将其选中。</span></li><li purpose="substep" id="ESRI_SUBSTEP_A4615B1341E740FFA4FECF5296A3CDE4"><span purpose="cmd">要移动所选折点，将其拖动至新位置。</span></li><li purpose="substep" id="ESRI_SUBSTEP_EA84B689DAB546A3A38885C16645B33C"><span purpose="cmd"> 要删除所选折点，按键盘上的 <span class="shortcut">Backspace</span>。</span></li><li purpose="substep" id="ESRI_SUBSTEP_98C06700EB194241ADAB8889C5DEEC83"><span purpose="cmd">对任意折点重复步骤 b 至 d，直到对区域的形状满意。</span></li></ol></div></li><li purpose="step" id="ESRI_STEP_D97B52795B82471EAC2E3E20E9C52BE5"><span purpose="cmd">在<span class="uicontrol">名称</span>框中，输入地图区域的描述性名称。</span></li><li purpose="step" id="ESRI_STEP_0942EFD98EF94096898DC780A96141A3"><span purpose="cmd">要更改下载的栅格或矢量切片图层的质量和分辨率，请将<span class="uicontrol">细节层次</span>滑块向右移动（更多详细信息）或向左移动（更少详细信息）。</span><div class="info" purpose="info"><p id="GUID-02D20203-55BE-4FFD-B41C-303019841ADF">设置适合您创建的地图区域的细节层次。如果细节层次过大（例如，您将细节级别设置为<span class="uicontrol">街道</span>但是您的地图区域为西班牙大小），您将收到一个警告，表明必须减少地图区域或降低细节层次。</p></div></li><li purpose="step" id="ESRI_STEP_AC4C5A91DE8141E7869D84F41E5A98C4"><span purpose="cmd">在<span class="uicontrol">更新下载包</span>下方，设置要刷新地图区域包的间隔和时间，从而捕获对要素图层数据所作的任何更改。如果您不想设置自动刷新计划，请从下拉菜单中选择<span class="uicontrol">从不</span>。</span><div class="info" purpose="info"><div class="panel trailer-1 note" id="GUID-73138AA8-6588-40B9-814C-F46E4A28B91F"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-9CE055C2-2619-4C81-922F-B7FE4F64A104">计划刷新不适用于切片图层。您必须根据需要手动刷新切片图层包。</p></div></div></li><li purpose="step" id="ESRI_STEP_509BF2EBE2DF4C9D9ED9F8E5DC1CF838"><span purpose="cmd">单击<span class="uicontrol">保存</span>。</span><div class="stepresult" purpose="stepresult"><p id="GUID-DDCA06DA-52CA-414A-A13C-39C174D961DB">您的新地图区域随即显示在<span class="uicontrol">地图区域</span>列表中，并具有一个标记，表示区域正在打包中。打包可能需要几秒钟或几分钟，具体取决于要打包数据的大小。打包成功完成后，单击地图区域的箭头即可查看创建的包列表。</p></div></li><li purpose="step" id="ESRI_STEP_F4127E4E840843159F4856C585E5A6FD"><span purpose="cmd"><span class="ph">要为此地图创建更多区域，单击<span class="uicontrol">创建新区域</span>并重复步骤 6 到 13。</span> 您最多可以为每个 web 地图创建 16 个地图区域。</span></li></ol></div></section></section><section class="section2 padded-anchor" id="ESRI_SECTION2_4AE76253C4094939B51FFFC38CD7B1B7" purpose="section2"><h3>编辑地图区域</h3><p id="GUID-D97E2885-75D5-459C-8B5A-48BEBEA2EBB8">创建地图区域后，您可能想要更改其名称、形状、细节层次或刷新要素图层包的计划（如果已设置）。</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><section class="context padded-anchor" id="ESRI_CONTEXT_BE0FEC4928BD47388E5DE188C2E0CC00" purpose="context"><p id="GUID-037FD87A-6483-44A2-9B46-9420767477B6">请执行以下操作以编辑地图区域：</p></section><div class="steps" id="ESRI_STEPS_6693E283596B44A0AA530A4A91162824"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_7194514B2AD04C1B9D35E056389F9F28"><span purpose="cmd">在 web 地图的项目页面中，单击<span class="uicontrol">设置</span>选项卡，然后单击选项卡顶部的<span class="uicontrol">离线</span>。</span></li><li purpose="step" id="ESRI_STEP_74F508BBD48A47199D44F3E219E86D2F"><span purpose="cmd">在<span class="uicontrol">离线</span>部分中，确保<span class="uicontrol">启用离线模式</span>切换键处于启用状态。</span></li><li purpose="step" id="ESRI_STEP_15777177C7CD4C3A951F5DB5D52F6F76"><span purpose="cmd">在<span class="uicontrol">地图区域</span>下，单击<span class="uicontrol">管理区域</span>。</span></li><li purpose="step" id="ESRI_STEP_D027F498AF044D02B73D48757E839230"><span purpose="cmd">如有必要，可在<span class="uicontrol">过滤地图区域</span>字段中输入部分地图区域名称，以帮助您找到要编辑的地图区域。</span></li><li purpose="step" id="ESRI_STEP_6E38A4EC112C470799FD0F1500A96590"><span purpose="cmd">单击要编辑的地图区域的箭头，然后在地图区域窗格顶部，单击<span class="uicontrol">选项</span>按钮 <img purpose="img" placement="inline" alt="选项" title="选项" src="GUID-B83D51AE-9436-4CFF-BE84-2F15E05071E6-web.png">，并单击<span class="uicontrol">编辑</span>。</span></li><li purpose="step" id="ESRI_STEP_C4BE2FBCCCF247B29C4CF4FABF3D6F18"><span purpose="cmd">在<span class="uicontrol">编辑地图区域</span>窗格中，更改任意设置，或根据需要更改地图区域的形状。</span></li><li purpose="step" id="ESRI_STEP_FED0E84431DF4E0EB7B6BBD7A52299D5"><span purpose="cmd">完成后，单击<span class="uicontrol">保存</span>。</span></li></ol></div></section></section><section class="section2 padded-anchor" id="ESRI_SECTION2_DF901B7FFD33426C8EF37E4A7D6A9DC9" purpose="section2"><h3>管理地图区域</h3><p id="GUID-8F625502-A83A-46A7-8FCD-DC242ADFC924">您可以随时刷新、重新创建或删除地图区域包。</p><p id="GUID-D03CD7F4-1986-4936-93B1-FC80A1E55BA2" ishcondition="agol_plat=portal"> 如果您的数据经常更改，请为地图区域设置刷新计划，然后 <span class="ph">ArcGIS Enterprise</span> 将根据您指定的时间和时间间隔自动刷新地图区域的要素图层包。应用程序将在任何建立连接且需要更新时与门户同步以获取这些更新。应用程序同步时，也可将其编辑内容推送到离线地图的可编辑要素图层中。</p><p id="GUID-ABAD2B2C-810D-4D36-BCD8-9585B928BFB7"> 您还可以启用定时更新，此功能将控制应用程序获取离线地图区域以供只读使用的频率。在这种情况下，您需定义何时可以下载更新包。这是单向更新；客户端仅可以下载更新包（不会同步做出的任何编辑），且仅在您为包指定的更新日期和时间之后才可以进行下载。定时更新提供了多种性能以及优于同步的扩展性，同时使更新高效地推送至数以千计的用户。</p><p id="GUID-788F8E4B-BB4A-4559-8825-A4ADC8A13BB0" ishcondition="agol_plat=portal"><div class="panel trailer-1 note" id="GUID-1FDFAB28-7D6E-42C6-94F4-7B67D37E826F"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-8629F031-DB4E-462C-BDF6-A3559A7095A5">如果您的离线 web 地图包含引用版本化数据的可编辑 <span class="ph">ArcGIS Server</span> 要素服务，您将无法启用生成只读更新包的定时更新。如果需要在这些更新程序包中包含此数据，请发布第二个要素服务，不要启用编辑功能，并在离线 web 地图中使用该服务。</p></div></p><p id="GUID-B47B84B6-C321-46B9-BD37-2868534EECC7" ishcondition="agol_plat=portal"> 刷新包将更新其包含的数据，以反映自上次创建或刷新程序包以来对地图数据所做的任何更改。决定刷新地图区域包的方式及时间时，请考虑以下因素：<ul purpose="ul" id="UL_49439DF6BCFB420EB3B23661E0546806"><li purpose="li" id="LI_BED6418604A74F51B8148B9E867EA97E"> 如果您向地图添加或从地图中移除图层，则需要刷新地图区域。在这种情况下，必须刷新整个地图区域才能相应地更新数据。</li><li purpose="li" id="LI_F94B962987AA48658A8B8DB9E5230FC0"> 如果自上次打包以来，对一个或多个要素图层中的数据进行了大量更改，则您应刷新包。</li><li purpose="li" id="LI_D1AE49A755F9453F9519B26785FF7A59"> 如果您有多个同时连接的客户端需要下载地图更新（仅用于参考），您可以计划生成更新包的时间。这是一种向不需要编辑数据的客户端提供更新的更有效的方法。当门户使用率较低时，将生成包（理想情况下）。客户端可以连接和下载更新包，而无需在客户端和门户之间进行同步所需的额外资源。</li></ul></p><p id="GUID-8FBA324F-280E-4731-9A0F-AC55A1778DCB">在某些情况下，必须重新创建地图区域。重新创建地图区域时，将删除所有现有包，并为地图中的所有图层创建新包。在以下情况下，必须重新创建地图区域：<ul purpose="ul" id="UL_4195B33703D9496799A0710220E6724E"><li purpose="li" id="LI_C580D520FDED45A1BE9173C7F7F41FB6">向地图中的图层添加了字段或从中移除了字段。</li><li purpose="li" id="LI_0592E31BD29B4825A55FCAD7E682F66C">已修改地图中的域或要素模板。</li></ul> </p><p id="GUID-1C014754-54DA-47D7-920B-D7F62601908C" ishcondition="agol_plat=portal">重新创建地图区域始终是手动过程。</p><p id="GUID-45AEA483-A63A-439A-BEE1-CA8C5B73EAF6">如果不再需要地图区域，可将其删除。删除地图区域将删除地图区域的所有现有包。即使您为地图区域设置了定时更新，一旦您从 web 地图中删除地图区域，则不会创建新的地图区域包。但是，只要要素图层存在，已下载地图区域的应用程序就可以继续同步数据。</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><section class="context padded-anchor" id="ESRI_CONTEXT_926C54AAF2114AD59D31191D9DADA8CD" purpose="context"><p id="GUID-C5CF93C0-F75C-4F3C-9A6F-25099399FE7C">要管理现有地图区域，请执行以下操作：</p></section><div class="steps" id="ESRI_STEPS_30DA76467F154A4FADF1000C14A3B10A"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_45B8AB82EAFC45A28AE8DCEDCAB60F50"><span purpose="cmd">在 web 地图的项目页面中，单击<span class="uicontrol">设置</span>选项卡，然后单击选项卡顶部的<span class="uicontrol">离线</span>。</span></li><li purpose="step" id="ESRI_STEP_BB116F9CAA1441DEB27EA8C027378408"><span purpose="cmd">在<span class="uicontrol">离线</span>部分中，确保<span class="uicontrol">启用离线模式</span>切换键处于启用状态。</span></li><li purpose="step" id="ESRI_STEP_A2BE39D983AF4D709DAC9EA36912089E"><span purpose="cmd">在<span class="uicontrol">地图区域</span>下，单击<span class="uicontrol">管理区域</span>。</span></li><li purpose="step" id="ESRI_STEP_C7CBA68711364F97BB9ED387F7D0E406"><span purpose="cmd">要刷新一个或多个地图区域，请选中要刷新的一个或多个地图区域旁边的框，然后在快捷菜单中单击<span class="uicontrol">刷新</span>。</span></li><li purpose="step" id="ESRI_STEP_7BB105B1E01D4046A16B522588C82474"><span purpose="cmd">要重新创建一个或多个地图区域，请执行以下操作：</span><div class="substeps" id="ESRI_SUBSTEPS_065410E2506F4745AF4581F573789B72" purpose="substeps"><ol class="list-numbered" purpose="ol"><li purpose="substep" id="ESRI_SUBSTEP_73663BF2328247B1947E1FE4CFBF8B03"><span purpose="cmd">选中要重新创建的一个或多个地图区域旁边的框，然后在快捷菜单中单击<span class="uicontrol">重新创建</span>。</span></li><li purpose="substep" id="ESRI_SUBSTEP_4E6FFFFDEF774E54AD63BDE35877117A"><span purpose="cmd">单击<span class="uicontrol">重新创建</span>以确认您选择要重新创建的一个或多个地图区域。</span></li></ol></div></li><li purpose="step" id="ESRI_STEP_03F12EF4BC394DD294AB06628965782A"><span purpose="cmd">要计划创建以只读方式离线使用的地图区域更新包，打开<span class="uicontrol">启用定时更新</span>切换按钮。您也可以设置希望地图区域包进行更新的时间和间隔。请注意此间隔应该与<a class="xref xref" href="../../../../zh-CN/portal/latest/use/take-maps-offline.htm#ESRI_STEP_AC4C5A91DE8141E7869D84F41E5A98C4">包的刷新间隔</a>一致，以捕获对要素图层数据的更改。</span> </li><li purpose="step" id="ESRI_STEP_8DA0E4F5061743C3B4C1DDC5CF064B7F"><span purpose="cmd">要删除一个或多个地图区域，请选中要删除的一个或多个地图区域旁边的框，然后在快捷菜单中单击<span class="uicontrol">删除</span>。</span><div class="info" purpose="info"><p id="GUID-268CCE21-DFEF-4145-A655-7FFB3747FB66"><div class="panel trailer-1 note" id="GUID-3DC3544B-9E7F-40AF-B958-FE15FA1A92B1"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-FAD06BB0-B1E6-4B82-AFE9-9F4FCA2CB4E8">将立即删除区域且无法恢复。</p></div></p></div></li></ol></div></section></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_6CE94B6639C44D5AB860FD74256387CA" purpose="section1"><h2>选择项目右侧的高级离线选项</h2><p id="GUID-13162B07-66AE-4C90-BDCB-E3E0CAFC5ECC"> 创作地图以供离线使用时，您可以通过调整高级离线选项来控制数据的初始下载方式，以及随后同步到离线设备的方式。这些设置不会影响用户在移动设备上进行的编辑；编辑内容始终同步回原始数据。</p><div class="panel trailer-1 note" id="GUID-C45505AC-8277-484B-BBE6-AE71DE2F94AC"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-3557FC07-D2DE-440E-AD05-90561C53D709">如果地图符合<a class="xref xref" href="../../../../zh-CN/portal/latest/use/take-maps-offline.htm#ESRI_SECTION1_C0331D55CAE14D4FAB1B54354A9246F2">离线使用要求</a>以及以下要求，则可以配置高级离线选项： <ul purpose="ul" id="UL_EAC2FC68A72047828D0837AC2611BD7F"><li purpose="li" id="LI_8508FF9FCA1E4FF18E29A391F20B1D5A">地图中至少有一个可编辑要素图层。</li><li purpose="li" id="LI_D9267DC1D83A4645975425C7C1F753F6">地图中的所有可编辑要素图层为托管要素图层或 <span class="ph">ArcGIS Server</span> 10.4 或更高版本的要素服务。</li></ul>  </p></div><p id="GUID-E2FA0D5F-B90B-420B-903D-AE8BC4910C9E"> 这些高级离线选项在 <span class="ph">Collector for ArcGIS</span> 中为既定配置。使用 <span class="ph">ArcGIS Runtime SDK</span> 构建自己的应用程序的开发人员可使用不受支持的 JSON 来利用这些高级选项。例如，如果要使用 <span class="ph">ArcGIS Runtime SDK for .NET</span> 构建一个应用程序，则可以使用 <a target="_blank" class="xref xref" href="https://links.esri.com/agol-help/runtime-app-adv-offline-options"><span class="usertext">UnsupportedJson</span> 属性</a>。</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><section class="context padded-anchor" id="ESRI_CONTEXT_50C526F2AF0E4B4D9048D41EB2C63550" purpose="context"><p id="GUID-53A13B8D-76F3-484D-8C51-26DE14E20A74">要调整高级离线设置，请完成以下步骤：</p></section><div class="steps" id="ESRI_STEPS_BD9A712F30C84185A51D9FE1844B2FA2"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_7C75633D292A4FDD8E4A2906D2B5174C"><span purpose="cmd">确保<a class="xref xref" href="../../../../zh-CN/portal/latest/use/take-maps-offline.htm#ESRI_SECTION1_C0331D55CAE14D4FAB1B54354A9246F2">地图中的所有图层均已启用离线使用功能</a>。</span></li><li purpose="step" id="ESRI_STEP_C8A7327C29E042B1AA68E37C66E06A29"><span purpose="cmd">在 web 地图的项目页面中，单击<span class="uicontrol">设置</span>选项卡，然后单击选项卡顶部的<span class="uicontrol">离线</span>。</span></li><li purpose="step" id="ESRI_STEP_F611DA234C794E1AA39DE47618FA1602"><span purpose="cmd">在<span class="uicontrol">离线</span>部分中，确保<span class="uicontrol">启用离线模式</span>切换键处于启用状态。</span></li><li purpose="step" id="ESRI_STEP_AB9E07B335D94F568D58B30A5229083A"><span purpose="cmd">单击<span class="uicontrol">高级选项</span>。</span></li><li purpose="step" id="ESRI_STEP_927B197B8A5C4E49B592A335B5CD7C39"><span purpose="cmd">在<span class="uicontrol">控制要素和附件传送</span>下，指定首次下载地图时以及每次将数据更新从地图同步到设备时，如何向离线设备传送附件和要素。默认情况下，设备将下载并获取可编辑图层和只读图层的要素和附件的更新。</span><ul purpose="choices" id="ESRI_CHOICES_E7CDA9A5F1A8485FB568D3FDFFA641B0"><li purpose="choice" id="ESRI_CHOICE_E7B39EE127AA4D20831CCC53199DBBAF">在<span class="uicontrol">可编辑要素</span>下，选择用于在可编辑图层中传送要素和附件的选项。您可以传送要素和附件，也可以仅传送要素，或者二者都不传送。</li><li purpose="choice" id="ESRI_CHOICE_79ACBE070BE44D679DA33CEA5D6FE4CC">在<span class="uicontrol">只读要素</span>下，选择用于在只读图层中传送要素和附件的选项。您可以传送要素和附件，或仅传送要素。</li></ul><div class="info" purpose="info"><div class="panel trailer-1" id="GUID-8C91A4D0-EC9B-4DDC-899E-47B8CFD2CCC4"><h5 class="icon-ui-description trailer-0">提示：</h5><p id="GUID-36063D5D-5D5A-49DF-8412-7CF6F09E6235">根据用户需要离线查看的内容，以及与设备存储、移动数据使用以及下载和同步速度相关的任何问题或限制，选择有意义的选项，尤其是在连接质量较差的区域。例如，如果离线用户不需要查看附件，您可以选择仅传送要素更新，或者您可以传送可编辑图层的附件和要素，但不传送只读图层的附件和要素。</p></div></div></li><li purpose="step" id="ESRI_STEP_BE6227C2E8FD480E9671539A8F23BFF6"><span purpose="cmd">在<span class="uicontrol">使用切片包作为离线底图</span>下，选择以下选项之一，以指定在离线设备上应该用作底图的内容：</span><ul purpose="choices" id="ESRI_CHOICES_EBDFEDBFD8C24E79B4640F95B239A372"><li purpose="choice" id="ESRI_CHOICE_324EBA8073B1469E89EF56DD8ED3F0E9"><span class="uicontrol">设备将使用 Web 地图定义的底图</span> - 如果选择此选项，则将离线使用当前地图中的底图</li><li purpose="choice" id="ESRI_CHOICE_D1F78302AC494059996767C3E36E58D8"><span class="uicontrol">设备将使用已有的切片包</span> - 如果选择此选项，离线地图将使用设备上已有的切片包。使用切片包作为底图，您可以在需要时下载更大、更详细的底图以供离线使用。在选择此选项之前，请确保切片包已经覆盖了您计划离线使用的区域。</li></ul></li><li purpose="step" id="ESRI_STEP_21C424A32AC844A49445B4B7F996BA36"><span purpose="cmd">单击<span class="uicontrol">保存</span>保存更改。</span></li></ol></div></section></section>
+			
+				<hr>
+				<!--googleoff: all-->
+				
+	
+        
+		    <p class="feedback right">
+		        <a id="afb" class="icon-ui-contact" href="/feedback/" data-langlabel="feedback-on-this-topic" >有关此主题的反馈?</a>
+		    </p>
+        
+	
+
+				<!--googleon: all-->
+			
+		</main>
+	</div>
+	
+	<!--googleoff: all-->
+	
+		
+			<div id="main-toc-large" class="column-5">
+			    <div class="panel font-size--2 tablet-hide trailer-1">
+			      <h5 class="trailer-half">在本主题中</h5>
+			      <ol class="list-plain pre-0 trailer-0"><li><a href="#ESRI_SECTION1_C0331D55CAE14D4FAB1B54354A9246F2">启用图层和地图的离线使用功能</a></li><li><a href="#ESRI_SECTION1_8C6055E984D34AF4A25B989DDCAACF87">创建、编辑和管理地图区域</a></li><li><a href="#ESRI_SECTION1_6CE94B6639C44D5AB860FD74256387CA">选择项目右侧的高级离线选项</a></li></ol>
+			    </div>
+			    
+			    
+	  		</div>
+		
+    
+   <!--googleon: all-->
+
+
+
+
+          
+        </div>
+        <!-- ENDPAGECONTENT -->
+
+      </div>
+
+    </div>  <!-- End of wrapper -->
+
+  <footer class="footer leader-3 link-dark-gray" role="contentinfo">
+    <div class="grid-container">
+      <div class="row">
+        <nav class="column-6">
+          <h6 data-langlabel="arcgis-for-server">Arc<span>GIS Enterprise</span></h6>
+          <ul class="list-plain">
+            <li><a data-langlabel="home" href="../../../../zh-CN/">主页</a></li>
+            <li><a data-langlabel="portal" href="../../../../zh-CN/portal/">Portal</a></li>
+            <li><a data-langlabel="server" href="../../../../zh-CN/server/">Server</a></li>
+            <li><a data-langlabel="data-store" href="../../../../zh-CN/data-store/">Data Stores</a></li>
+            <li><a data-langlabel="cloud" href="../../../../zh-CN/cloud/">云</a></li>
+            <li><a data-langlabel="apps" href="../../../../zh-CN/apps/">应用程序</a></li>
+            <li><a data-langlabel="documentation" href="../../../../zh-CN/documentation/">文档</a></li>
+          </ul>
+        </nav>
+
+        
+  <nav class="column-6">
+    <h6 data-langlabel="arcgis-platform">ArcGIS 平台</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="arcgis" href="//www.arcgis.com/">ArcGIS Online</a></li>
+      <li><a data-langlabel="arcgis-for-professionals" href="//pro.arcgis.com/">ArcGIS Pro</a></li>
+      <li><a data-langlabel="arcgis-for-server" href="//enterprise.arcgis.com/">ArcGIS Enterprise</a></li>
+      <li><a data-langlabel="arcgis-for-developers" href="https://developers.arcgis.com/">ArcGIS for Developers</a></li>
+      <li><a data-langlabel="arcgis-solutions" href="//solutions.arcgis.com/">ArcGIS Solutions</a></li>
+      <li><a data-langlabel="arcgis-marketplace" href="//marketplace.arcgis.com/">ArcGIS Marketplace</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <h6 data-langlabel="about-esri">关于 Esri</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="about-us" href="//www.esri.com/about-esri/">关于我们</a></li>
+      <li><a data-langlabel="careers" href="//www.esri.com/careers/">招贤纳士</a></li>
+      <li><a data-langlabel="insiders-blog" href="https://www.esri.com/about/newsroom/blog/">Esri 博客</a></li>
+      <li><a data-langlabel="user-conference" href="//www.esri.com/events/user-conference/index.html">用户大会</a></li>
+      <li><a data-langlabel="developer-summit" href="//www.esri.com/events/devsummit/index.html">开发者峰会</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <a class="esri-logo" href="//www.esri.com/" aria-label="Esri Home"></a>
+    <section class="footer-social-nav leader-1">
+            <a class="icon-social-twitter" aria-label="Esri on Twitter" href="https://twitter.com/Esri/"></a>
+            <a class="icon-social-facebook" aria-label="Esri on Facebook" href="https://www.facebook.com/esrigis/"></a>
+            <a class="icon-social-github" aria-label="Esri on GitHub" href="//esri.github.io/"></a>
+            <a class="icon-social-contact" aria-label="Contact Esri" href="//www.esri.com/about-esri/contact/"></a>
+    </section>
+	  
+  </nav>
+  
+  <div class="column-24 leader-1">
+    <p class="font-size--3"><a href="http://www.esri.com/legal/copyright-trademarks">Copyright &copy; 2019 Esri.</a> All rights reserved. | <a href="http://www.esri.com/legal/privacy/">隐私政策</a> | <a href="http://www.esri.com/legal/software-license">法律声明</a></p>
+  </div>
+  
+
+
+      </div>
+    </div>
+  </footer>
+  <!--googleoff: all-->
+
+  
+  
+	<script src="../../../../zh-CN/assets/js/init.js" type="text/javascript"></script>
+	<!--<script src="../../../../zh-CN/assets/js/drop-down.js" type="text/javascript"></script>-->
+	<script src="../../../../zh-CN/assets/js/search/searchform.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/cdn/js/link-modifier.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/cdn/js/sitewide.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/cdn/js/libs/highlight.pack.js" type="text/javascript"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+
+
+  
+    
+
+  <script src="../../../../zh-CN/cdn/js/affix.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    $(function () {
+          var appendFlg = true;
+
+          $("#bigmac")
+          .on("affixed.bs.affix", function (evt) {
+            if (appendFlg) {
+              $("<a class='crumb' href='#'>离线使用 web 地图</a>").insertAfter ($("#bigmac nav a").last());
+              appendFlg = false;
+            }
+          })
+          .on ("affix-top.bs.affix", function(evt) {
+            if (!appendFlg) {
+              $("#bigmac nav a").last().remove();
+            }
+            appendFlg = true;
+          })
+    })
+  </script>
+  
+        <script type="text/javascript">
+          window.doctoc = {
+            pubID: "583",
+            tpcID: "208",
+            
+              prefix: "使用",
+              prefixUrl: "/zh-cn/portal/latest/use/",
+          
+            hideToc: false
+          }
+        </script>
+
+        <script type="text/javascript" src="../../../../zh-CN/portal/latest/use/583.js" ></script>
+        <script type="text/javascript" src="../../../../zh-CN/cdn/calcite/js/protoc.js" ></script>
+        
+        
+
+  <noscript>
+        <p>
+            <a href="flisting.htm">flist</a>
+        </p>
+    </noscript>
+    <script type="text/javascript"></script>
+  
+  
+    
+    
+
+  </body>
+</html>

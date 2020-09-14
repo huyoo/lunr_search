@@ -1,0 +1,594 @@
+
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>  <html class="ie lt-ie9 lt-ie8 lt-ie7 ie6" dir="ltr"> <![endif]-->
+<!--[if IE 7]>     <html class="ie lt-ie9 lt-ie8 ie7" dir="ltr"> <![endif]-->
+<!--[if IE 8]>     <html class="ie lt-ie9 ie8" dir="ltr"> <![endif]-->
+<!--[if IE 9]>     <html class="ie ie9" dir="ltr"> <![endif]-->
+<!--[if !IE]><!--> <html dir="ltr" lang="zh-CN"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>大数据文件共享入门&mdash;执行分析 | ArcGIS Enterprise 文档</title>
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+    <script>
+      var docConfig = {
+        locale: 'zh-CN'
+        ,localedir: 'zh-cn'
+        ,langSelector: ''
+        
+        ,relativeUrl: false
+        
+
+        ,searchformUrl: '/search/'
+        ,tertiaryNavIndex: ''
+
+        
+      };
+    </script>
+	 
+
+
+    
+    <!--[if lt IE 9]>
+      <script src="../../../../zh-CN/cdn/js/libs/html5shiv.js" type="text/javascript"></script>
+      <script src="../../../../zh-CN/cdn/js/libs/selectivizr-min.js" type="text/javascript"></script>
+      <script src="../../../../zh-CN/cdn/js/libs/json2.js" type="text/javascript"></script>
+      <script src="../../../../zh-CN/cdn/js/libs/html5shiv-printshiv.js" type="text/javascript" >
+
+    <![endif]-->
+
+     <!--[if lt IE 11]>
+    <script>
+      $$(document).ready(function(){
+        $$(".hideOnIE").hide();
+      });
+    </script>
+    <![endif]-->
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<link href="../../../../zh-CN/assets/img/favicon.ico" rel="shortcut icon" >
+	<link href="../../../../zh-CN/assets/css/screen.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/cdn/calcite/css/documentation.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/assets/css/print.css" media="print" type="text/css" rel="stylesheet" />
+
+	<!--
+	<link href="../../../../zh-CN/assets/css/screen_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/assets/css/documentation/base_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/assets/css/print_l10n.css" media="print" type="text/css" rel="stylesheet" />
+	-->
+	
+	
+		<script src="../../../../zh-CN/cdn/js/libs/jquery.1.9.1.min.js" type="text/javascript"></script>
+	
+	<script src="../../../../zh-CN/cdn/js/libs/jquery.cookie.js" type="text/javascript"></script>
+	<link href="../../../../zh-CN/cdn/css/colorbox.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/cdn/css/colorbox_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<script src="../../../../zh-CN/cdn/js/libs/jquery.colorbox-min.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/assets/js/video-init.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/assets/js/sitecfg.js" type="text/javascript"></script>
+	
+		<script src="../../../../zh-CN/assets/js/signIn.js" type="text/javascript"></script>
+	
+
+	<!--- Language Picker -->
+	<script src="../../../../zh-CN/assets/js/locale/l10NStrings.js" type="text/javascript"></script>
+	
+		 
+	
+
+	<script src="../../../../zh-CN/assets/js/calcite-web.js" type="text/javascript"></script>
+
+
+
+  <!--- search MD -->
+    <META name="description" content="大数据文件共享允许您访问数据，并使用注册到 GeoAnalytics Tools 的数据通过 ArcGIS GeoAnalytics Server 执行分析。"><META name="last-modified" content="2019-12-6"><META name="product" content="arcgis-server-linux,arcgis-server-windows,arcgis-enterprise-linux,arcgis-enterprise-windows,geoanalytics-server"><META name="sub_category" content="GeoAnalytics Server"><META name="search-collection" content="help"><META name="content_type_label" content="安装指南主题"><META name="sub_category_label" content="GeoAnalytics Server"><META name="search-category" content="help-install"><META name="subject_label" content="ANALYSIS,服务"><META name="version" content="10.8"><META name="content_type" content="Install Guide Topic"><META name="subject" content="ANALYSIS,SERVICES"><META name="content-language" content="zh-cn">
+    <!--- search MD -->
+
+  
+  <script src="../../../../zh-CN/assets/js/switchers/server-1.js" type="text/javascript"></script>
+  
+      
+
+</head>
+
+<!--
+      pub: GUID-836D862D-F834-4D37-890C-FC05DB51EFBE=1
+      tpc: GUID-984B223C-4E8D-4478-BE15-DB17CB4A49B7=10
+      -->
+
+
+<!-- variable declaration, if any -->
+<!-- can change following macro to set variable once we are on Jinja 2.8 -->
+
+
+
+
+
+<body class="claro zh-CN server">
+  
+
+  <!-- Drawer location -->
+  <div class="drawer drawer-left js-drawer" data-drawer="top-nav">
+        <nav class="drawer-nav" role="navigation">
+          <aside class="side-nav">
+            <h2 class="side-nav-title">Arc<span>GIS</span> Enterprise</h2>
+            <form id="helpSearchForm" class="margin-left-half margin-right-half leader-half trailer-half drawer-search-form" method="GET">
+              <input type="search" name="q"  placeholder="搜索 ArcGIS Enterprise 帮助">
+              <input type="hidden" name="collection" value="help" />
+              <input type="hidden" name="product" value="geoanalytics-server" />
+              <input type="hidden" name="version" value="10.8" />
+              <input type="hidden" name="language" value="zh-CN" />
+            </form>    
+             <a id="nav-portal" data-langlabel="portal" href="../../../../zh-CN/portal/" class="side-nav-link">Portal</a>
+             
+            <a id="all-servers" data-langlabel="all-servers" href="../../../../zh-CN/server/" class="side-nav-link">所有服务器</a>
+            <a id="gis-server" data-langlabel="gis-server" href="../../../../zh-CN/server/" class="side-nav-link">GIS Server</a>
+            <a id="image-server" data-langlabel="image-server" href="../../../../zh-CN/image/" class="side-nav-link">Image Server</a>
+            <a id="geo-analytics-server" data-langlabel="geo-analytics-server" href="../../../../zh-CN/geoanalytics/" class="side-nav-link">GeoAnalytics Server</a>
+            <a id="geoevent-server" data-langlabel="geoevent-server" href="../../../../zh-CN/geoevent/" class="side-nav-link">GeoEvent Server</a>
+            <a id="notebook-server" data-langlabel="notebook-server" href="../../../../zh-CN/notebook/" class="side-nav-link">Notebook Server</a>
+            <a id="nav-data-store" data-langlabel="data-store" href="../../../../zh-CN/data-store/" class="side-nav-link">Data Stores</a>
+            <a id="nav-cloud" data-langlabel="cloud" href="../../../../zh-CN/cloud/" class="side-nav-link">云</a>
+            <a id="nav-apps" data-langlabel="apps" href="../../../../zh-CN/apps/" class="side-nav-link">应用程序</a>
+            <a id="nav-doc" data-langlabel="documentation" href="../../../../zh-CN/documentation/" class="side-nav-link">文档</a>
+
+          </aside>
+        </nav>
+    </div>
+
+    <!-- user navigation collapses to drawer on mobile -->
+    
+    <div class="drawer drawer-right js-drawer hide-if-logged-out logged-in-navigation" data-drawer="user-nav">
+      <nav class="drawer-nav">
+        <aside class="side-nav">
+          <a class="side-nav-link agolProfile" href="#">我的个人资料</a>
+          <a class="side-nav-link icon-ui-sign-out js-log-out" href="#">登出</a>
+        </aside>
+      </nav>
+    </div>
+    
+<!-- End of drawer -->
+
+  
+  <div class="wrapper">
+      <!--googleoff: all-->
+
+      <header class="top-nav" data-skin="learn">
+        <a class="skip-to-content" href="#skip-to-content">Skip To Content</a>
+        <div class="grid-container">
+          <div class="column-24">
+
+
+            <!--<div class="top-nav-title-wrapper text-center ">-->
+              <a href='../../../../zh-CN/' class="top-nav-title tablet-hide"><span>Arc</span>GIS  Enterprise</a>
+              <a href='../../../../zh-CN/' class="icon-ui-menu top-nav-title js-drawer-toggle tablet-show" data-drawer="top-nav"><span>Arc</span>GIS Enterprise</a>
+            <!--</div> -->
+
+          
+            <nav role="navigation" class="top-nav-list left tablet-hide">
+              <a id="nav-portal" data-langlabel="portal" href="../../../../zh-CN/portal/" class="top-nav-link">Portal</a>
+
+                <div class="dropdown js-dropdown ">
+                  <a class="top-nav-link js-dropdown-toggle" tabindex="0" aria-haspopup="true" aria-expanded="false" href="#">Servers</a>
+                  <nav class="dropdown-menu featured" role="menu">
+                    <ul class="dropdown-sublist-featured">
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/get-started/latest/windows/additional-server-deployment.htm" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path  d="M42.92 6.1H4.12v8.566l.833.832-.835.833-.018 7.332.845.847-.825.824V33.9h25v5.2h-2v1.075H8.02v.8h19.1v.925h4.8v-.925H40v-.8h-8.08V39.1h-2v-5.2h13v-8.566l-.834-.834.835-.834v-7.332l-.835-.834.835-.834zm-11.8 35h-3.2v-1.2h3.2zm11-8H4.92v-7.434l.767-.766h35.668l.765.766zm0-9.766l-.766.766H5.666l-.766-.767.017-6.669.766-.764h35.671l.766.766zm0-9l-.766.766H5.687l-.766-.766V6.9h37.2zM19 11.9h-2v-.8h2zm-4 0h-2v-.8h2zm-4 0H9v-.8h2zm6 8.2h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9zm8 9h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9z"/></svg></span>
+                          <span class="sublink-text">所有服务器</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/server/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M45.98 33.575a.616.616 0 0 0-.335-.51l-3.362-2.03 3.362-2.031a.556.556 0 0 0 0-1.02l-11.1-6.704a1.293 1.293 0 0 0-1.112 0L22.33 27.982a.556.556 0 0 0 0 1.02l3.36 2.03-3.358 2.03a.556.556 0 0 0-.002 1.021l3.322 2.006-3.324 2.008a.555.555 0 0 0 .002 1.017l11.102 6.703a1.25 1.25 0 0 0 1.11.002l11.104-6.706a.556.556 0 0 0 0-1.02l-3.32-2.006 3.318-2.004a.607.607 0 0 0 .335-.509zM33.837 21.97c.026-.01.286-.005.29-.005l10.814 6.53-10.8 6.523c-.028.01-.284.005-.294.006l-10.813-6.53zm11.105 16.636l-10.8 6.523a2.564 2.564 0 0 1-.295.006l-10.81-6.529 3.39-2.047 7.004 4.23a1.083 1.083 0 0 0 .557.131 1.101 1.101 0 0 0 .554-.13l7.01-4.233zM34.14 40.098a2.545 2.545 0 0 1-.294.006l-10.812-6.53 3.43-2.073 6.97 4.208a1.25 1.25 0 0 0 1.107-.001l6.966-4.206 3.431 2.073zM9 8H7V7h2zm8 8h-2v-1h2zm-4-8h-2V7h2zm4 0h-2V7h2zm-4 8h-2v-1h2zm7.316 11.1H3.9v-6.434l.766-.766h35.668l.766.766v2.12l.8.483v-2.935l-.826-.826.826-.845v-6.329l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9h16.88a2.632 2.632 0 0 1 .336-.8zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zm0 8v-5.668l.766-.766h35.668l.766.766v5.67l-.746.764H4.666zM15 24v-1h2v1zm-4 0v-1h2v1zm-2-8H7v-1h2zm-2 8v-1h2v1z"/></svg></span>
+                          <span class="sublink-text">GIS Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/image/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 8h-2V7h2zm-4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm8 8h-2v1h2zm-8 0H7v1h2zm4 9v-1h-2v1zm-4 0v-1H7v1zm8 0v-1h-2v1zm4 3.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V21h-.8v-.334l-.766-.766H4.666l-.766.766V27.1H21zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zm40.234 4v21.8H23.1V23.1zm-.8 16.366L39.466 44.1h2.868l1.766-1.766zm-20.2-9.932l5.634-5.634h-2.868L23.9 26.666zm6.2-5.068L24.466 30.1h2.868l2.766-2.766zM28.466 30.1H30.1v-1.634zm2.434 0h6.2v-6.2h-6.2zm-7 7h6.2v-6.2h-6.2zm7 0h6.2v-6.2h-6.2zm0 6.434l5.634-5.634h-2.868L30.9 40.666zm7-7l5.634-5.634h-2.868L37.9 33.666zm1.634-5.634H37.9v1.634zm-8.634 7v1.634l1.634-1.634zm.566 6.2h2.868l2.766-2.766v-2.868zm6.434-3.566l2.634-2.634H37.9zM35.466 44.1H37.1v-1.634zm2.434 0h.434l5.766-5.766V37.9h-2.434L37.9 41.666zm6.2-8.634L42.466 37.1H44.1zm0-4L38.466 37.1h2.868l2.766-2.766zm0-7.566h-6.2v6.2h6.2zm-20.2 0v1.634l1.634-1.634zm0 20.2h6.2v-6.2h-6.2zm20.2 0v-.634l-.634.634z"/></svg></span>
+                          <span class="sublink-text">Image Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/geoanalytics/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 16h-2v-1h2zm-8 8v-1H7v1zm8 0v-1h-2v1zM13 7h-2v1h2zm4 0h-2v1h2zM9 7H7v1h2zm21.45 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V27.9h-1.464l-.801-.8H41.1v-6.434l-.766-.766H4.666l-.766.766V27.1h27.15zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM13 24v-1h-2v1zm0-9h-2v1h2zm-4 0H7v1h2zm26.672 27.148A1.87 1.87 0 0 1 35.9 43a1.91 1.91 0 1 1-3.763-.222l-9.845-3.414A1.88 1.88 0 0 1 21 39.9a1.9 1.9 0 1 1 1.474-3.084l4.692-2.346A1.878 1.878 0 0 1 27.1 34a1.902 1.902 0 0 1 1.9-1.9 1.867 1.867 0 0 1 .781.191l3.788-5.05A1.88 1.88 0 0 1 33.1 26a1.9 1.9 0 1 1 3.491 1.026l4.889 4.888c-.069.056-.144.1-.21.162a3.986 3.986 0 0 0-.358.402l-4.883-4.883A1.889 1.889 0 0 1 35 27.9a1.867 1.867 0 0 1-.781-.191l-3.788 5.049a1.868 1.868 0 0 1 .437.965l9.204.614c-.018.11-.049.218-.058.33A3.93 3.93 0 0 0 40 35c0 .046.01.09.01.135l-9.185-.612A1.913 1.913 0 0 1 29 35.9a1.889 1.889 0 0 1-1.474-.716l-4.692 2.346a1.878 1.878 0 0 1 .066.47 1.9 1.9 0 0 1-.105.625c-.007.02-.022.036-.03.056l9.63 3.34a1.87 1.87 0 0 1 2.786-.505l5.415-4.437c.067.108.127.22.204.322a3.9 3.9 0 0 0 .292.306zM33.9 26a1.092 1.092 0 0 0 .43.872 1.12 1.12 0 0 0 1.42-.068A1.1 1.1 0 1 0 33.9 26zm-6 8a1.1 1.1 0 0 0 2.196.093 1.135 1.135 0 0 0-.426-.965A1.087 1.087 0 0 0 29 32.9a1.101 1.101 0 0 0-1.1 1.1zm-5.8 4a1.098 1.098 0 1 0-.06.362A1.101 1.101 0 0 0 22.1 38zm13 5a1.1 1.1 0 1 0-2.2 0 1.1 1.1 0 0 0 2.2 0zm10.8-8a1.9 1.9 0 1 1-3.8 0c0-.053.003-.105.007-.158A1.9 1.9 0 0 1 45.9 35zm-.8 0a1.1 1.1 0 0 0-2.196-.093 1.153 1.153 0 0 0 .216.752A1.1 1.1 0 0 0 45.1 35z"/></svg></span>
+                          <span class="sublink-text">GeoAnalytics Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/geoevent/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M13 8h-2V7h2zm4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm12.418 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826v2.117c-.259-.177-.53-.337-.8-.497v-1.288l-.766-.766H4.666l-.766.766V27.1h17.933c-.148.26-.283.53-.415.8zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM9 24v-1H7v1zm4-9h-2v1h2zm0 9v-1h-2v1zm-4-9H7v1h2zm8 9v-1h-2v1zm16.9 2h-.8v8.9H39v-.8h-5.1zm.1-3.901a11.9 11.9 0 1 0 11.9 11.9 11.914 11.914 0 0 0-11.9-11.9zm0 23a11.1 11.1 0 1 1 11.1-11.1 11.112 11.112 0 0 1-11.1 11.1z"/></svg></span>
+                          <span class="sublink-text">GeoEvent Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/notebook/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M22 27.1H3.9v-6.434l.766-.766h18.576a5.262 5.262 0 0 1 .83-.8H4.666l-.766-.766v-5.668l.766-.766h35.668l.766.766V18h.8v-5.666l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9H22zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zM9 8H7V7h2zm8 0h-2V7h2zm-4 0h-2V7h2zm2 16v-1h2v1zm-4 0v-1h2v1zm-4 0v-1h2v1zm0-8v-1h2v1zm8 0v-1h2v1zm-4 0v-1h2v1zm18.9 8.1h-1.8v1.8h1.8zm-.8 1h-.2v-.2h.2zm15.498-4.48a2.727 2.727 0 0 0-1.62-.5v-.02H27.25a3.154 3.154 0 0 0-3.15 3.15V38.1h-1.68a3.386 3.386 0 0 0-2.872 1.58 3.49 3.49 0 0 0-.157 3.419 3.241 3.241 0 0 0 2.954 1.801h15.161a3.404 3.404 0 0 0 3.394-3.4V26.9h5v-3.65a3.224 3.224 0 0 0-1.302-2.63zM22.345 44.1a2.44 2.44 0 0 1-2.23-1.341 2.706 2.706 0 0 1 .11-2.65A2.588 2.588 0 0 1 22.42 38.9h12.89a3.395 3.395 0 0 0 0 5.2zM40.1 23.192V41.5a2.6 2.6 0 1 1-2.6-2.6v-.8H24.9V23.25a2.352 2.352 0 0 1 2.35-2.35h13.795a3.183 3.183 0 0 0-.945 2.292zm5 2.908h-4.2v-2.908a2.274 2.274 0 0 1 1.44-2.18 1.944 1.944 0 0 1 1.791.259 2.423 2.423 0 0 1 .97 1.979zm-17.1 5h9v.8h-9zm0 3h7v.8h-7zm0-6h9v.8h-9zm4-3h5v.8h-5z"/></svg></span>
+                          <span class="sublink-text">Notebook Server</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+
+              <a id="nav-data-store" data-langlabel="data-store" href="../../../../zh-CN/data-store/" class="top-nav-link">Data Stores</a>
+              <a id="nav-cloud" data-langlabel="cloud" href="../../../../zh-CN/cloud/" class="top-nav-link">云</a>
+              <a id="nav-apps" data-langlabel="apps" href="../../../../zh-CN/apps/" class="top-nav-link">应用程序</a>
+            </nav>
+
+
+            
+            
+            
+
+            <div class="margin-left-1 top-nav-list right hide-if-logged-in logged-out-navigation">
+               
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+              
+              <a data-langlabel="sign-in" id="login-link" class="icon-ui-user top-nav-link link-blue login-link" href="#">登录</a>
+              
+            </div>
+
+            
+            <nav class="margin-left-1 top-nav-list right hide-if-logged-out logged-in-navigation">
+              
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+             
+              <div class="dropdown js-dropdown right">
+
+                <div class="tablet-show top-nav-link">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a href="#" data-drawer="user-nav" class="user-nav-name js-drawer-toggle" data-first-name></a>
+                </div>
+
+                <div class="tablet-hide top-nav-link js-dropdown-toggle">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a class="user-nav-name top-nav-dropdown dropdown-btn" data-first-name>&nbsp;</a>
+                </div>
+
+                <nav class="dropdown-menu dropdown-right">
+                
+                  <a class="dropdown-link agolProfile" id="agolProfile" href="#">我的个人资料</a>
+                  <a class="dropdown-link js-log-out" id="agolLogout" href="#">登出</a>
+                </nav>
+              </div>
+            </nav>
+            
+
+            
+          </div>
+        </div>
+      </header>
+
+      <div class="js-search search-overlay">
+        <div class="search-content" role="dialog" aria-labelledby="search">
+          <form method="GET" id="helpSearchForm">
+            <label>
+              搜索 ArcGIS Enterprise 帮助
+              <div class="search-bar">
+                <input type="search" name="q"  placeholder="搜索 ArcGIS Enterprise 帮助" class="search-input js-search-input">
+                <input type="hidden" name="collection" value="help" />
+                <input type="hidden" name="product" value="geoanalytics-server" />
+                <input type="hidden" name="version" value="10.8" />
+                <input type="hidden" name="language" value="zh-CN" />
+              </div>
+            </label>
+            <input type="hidden" name="relativePath" value="../../../../" /><button type="submit" class="btn btn-large right">搜索</button>
+          </form>
+        </div>
+      </div>
+
+      <!--googleon: all-->
+
+      <div id="skip-to-content">
+        <!--googleoff: all-->
+        <header class="sub-nav sub-nav-learn">
+          <div class="grid-container">
+            
+            <div class="column-24">
+              <div style="display:table;" class="sdk-home-banner">
+                <div class="sdk-home-banner-content">
+                  <h1 class="sub-nav-title link-white">ArcGIS GeoAnalytics Server</h1>
+                </div>
+              </div>
+            </div>
+
+            <div class="column-24">
+              <nav class='sub-nav-list tablet-hide'><a class="sub-nav-link" href="../../../../zh-CN/geoanalytics/" target="_top" title="ArcGIS GeoAnalytics Server 概览和文档">主页</a><a class="sub-nav-link" href="../../../../zh-CN/geoanalytics/latest/install/windows/" target="_top" title="什么是 ArcGIS GeoAnalytics Server？">简介</a><a class="sub-nav-link is-active" href="../../../../zh-CN/geoanalytics/latest/perform-analysis/" target="_top" title="准备数据并执行分析">执行分析</a></nav><select class='tablet-show select-full trailer-half js-select-nav'><option value="../../../../zh-CN/geoanalytics/">主页</option><option value="../../../../zh-CN/geoanalytics/latest/install/windows/">简介</option><option selected="true" value="../../../../zh-CN/geoanalytics/latest/perform-analysis/">执行分析</option></select>
+            </div>
+
+          </div>
+        </header>
+        <!--googleon: all-->
+       
+        <!-- content goes here -->
+        <div class="grid-container ">
+          
+
+            
+              
+  <!--BREADCRUMB-BEG--><div id="bigmac" class="sticky-breadcrumbs trailer-2" data-spy="affix" data-offset-top="180"> </div><!--BREADCRUMB-END-->
+  <!--googleoff: all-->
+    <div class="column-5 tablet-column-12 trailer-2 ">
+      <aside class="js-accordion accordion reference-index" aria-live="polite" role="tablist">
+        <div></div>
+      </aside>
+
+      <div class="js-sticky scroll-show tablet-hide leader-1 back-to-top" data-top="0" style="top: 0px;">
+        <a href="#" class="btn btn-fill btn-clear">返回顶部</a>
+      </div>
+    </div>
+  <!--googleon: all-->
+  
+            
+            
+            
+	
+		<div class="column-13  pre-1 content-section">
+	
+		<header class="trailer-1"><h1>大数据文件共享入门</h1></header>
+
+		 
+	<!--googleoff: all-->
+	
+		
+				<aside id="main-toc-small" class="js-accordion accordion tablet-show trailer-1">
+			      <div class="accordion-section">
+			        <h4 class="accordion-title">在本主题中</h4>
+			        <div class="accordion-content list-plain">
+			          <ol class="list-plain pre-0 trailer-0"><li><a href="#GUID-9FFFDAF5-3ECE-4E8A-8F0C-4F7732B9896C">关于大数据文件共享</a></li><li><a href="#ESRI_SECTION1_CC7720EEC36F47149C7F82E1FCEDF2F7">准备要注册为大数据文件共享的数据</a></li><li><a href="#ESRI_SECTION1_ED41FFBD9159418C9621D5F3EB128106">注册大数据文件共享</a></li><li><a href="#ESRI_SECTION1_B5813F52FD444398AF4F122F38D9FD46">修改大数据文件共享</a></li><li><a href="#ESRI_SECTION1_5ADB329736BA4CCDB2154F7430230E00">修改大数据文件共享的输出模板</a></li><li><a href="#ESRI_SECTION1_927B8F795A6D4CA0925427D45AB90A05">在大数据文件共享中运行分析</a></li><li><a href="#ESRI_SECTION1_C7FC2F84668D4D508AC2747CDAA5578C">将结果保存到大数据文件共享</a></li></ol>
+			        </div>
+			      </div>
+			     </aside>
+		
+    
+   <!--googleon: all-->
+
+
+		<main>
+			
+	
+    	
+    
+
+
+			
+<section class="section1 padded-anchor" id="GUID-9FFFDAF5-3ECE-4E8A-8F0C-4F7732B9896C" purpose="section1"><h2>关于大数据文件共享</h2><p id="GUID-980D7F35-9460-4204-B883-ADBB2C855ACC">大数据文件共享是在门户中创建的项目，可以将可用位置引用到 <span class="ph">ArcGIS GeoAnalytics Server</span>。大数据文件共享位置可用作 GeoAnalytics 工具中要素数据（点、线、面和表格数据）的输入和输出。创建大数据文件共享时，将在门户中创建项目。该项目指向大数据目录服务，该服务概述了大数据文件共享中的数据集及其方案，包括几何和时间信息，以及已注册的输出格式（称为模板）。将大数据文件共享用于 <span class="ph">ArcGIS GeoAnalytics Server</span> 工具的输入时，您可以浏览项目以运行数据集分析。</p><p id="GUID-9354839E-2CB1-4945-9AC7-974624F96A00">使用大数据文件共享存在诸多益处。在可以开始执行分析前，您可以将数据保存在您可访问的位置。大数据文件共享可用于在运行分析时访问数据，以便您可以继续将数据添加到大数据文件共享的现有数据集，而无需重新注册或发布数据。您还可以<a class="xref xref" href="../../../../zh-CN/geoanalytics/latest/perform-analysis/what-is-a-big-data-file-share.htm#ESRI_SECTION1_B5813F52FD444398AF4F122F38D9FD46">修改清单</a>以删除、添加或更新大数据文件共享中的数据集。大数据文件共享在时间和几何的定义方式上极其灵活，允许在单个数据集上使用多种时间格式。大数据文件共享还可用于对数据集进行分区，同时仍将多个分区视为一个数据集。针对输出数据使用大数据文件共享，允许您将结果存储为可用于其他工作流的格式，例如可用于进一步分析或存储的 Parquet 文件。</p><div class="panel trailer-1 note" id="GUID-6526A31F-57F3-4CC7-BBA0-2291C7A7E678"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-31913024-5650-470D-AB64-A2BE38B52A2A">只有当您运行 <span class="ph">GeoAnalytics Tools</span> 时，才能访问大数据文件共享。这意味着您只能浏览大数据文件和将其添加到您的分析中；无法在地图上显示该数据。</p></div><p id="GUID-5D0782A4-455E-47B7-A856-F1CFE73A7F43">大数据文件共享可以引用以下输入数据源：<ul purpose="ul" id="UL_14365CB88074409FB671749635553221"><li purpose="li" id="LI_7CBDC077423A43539396CBC61965D39D">文件共享 - 本地磁盘或网络共享上的数据集目录。</li><li purpose="li" id="LI_DF8F5EE09CA745B4A1C1FE07D65A79AC"><span class="ph">Apache Hadoop Distributed File System (HDFS)</span> - 数据集的 <span class="ph">HDFS</span> 目录。</li><li purpose="li" id="LI_FF7C2EDBD5944D37B3F13006AA34F36F"><span class="ph">Apache Hive</span> - <span class="ph">Hive</span> 元数据存储数据库。</li><li purpose="li" id="LI_025D1D919FF64822B851DA15382E6615">云存储 - 包含数据集目录的 <span class="ph">Amazon Simple Storage Service (S3)</span> 存储段、<span class="ph">Microsoft Azure</span> Blob 容器或 <span class="ph">Microsoft Azure Data Lake</span> 存储。</li></ul></p><p id="GUID-7AEF9FB4-18C0-4C7F-A678-AADADB833341">将结果写入大数据文件共享时，您可以使用以下输出 <span class="ph">GeoAnalytics Tools</span>：<ul purpose="ul" id="UL_1FA819A233994DDE95FF30F7CB5762D9"><li purpose="li" id="LI_0F5719E5BAAF4467BD6FA0912A5E6EEC">文件共享</li><li purpose="li" id="LI_9D9861C1FBA84BD7A5B78E16EDE1FE0C"><span class="ph">HDFS</span></li><li purpose="li" id="LI_C8C9601F77C5417BAC4695BD1086A205">云存储</li></ul></p><p id="GUID-F4D8AD75-DC63-48AE-812A-C67354569949">在大数据文件共享中支持将以下文件类型作为输入和输出数据集：<ul purpose="ul" id="UL_C1295FC3EA9E4798BFF23ACB0A99649D"><li purpose="li" id="LI_598AC21BD40848AF82D71FEBC6798536">分隔文件（例如 <span class="usertext">.csv</span>、<span class="usertext">.tsv</span> 和 <span class="usertext">.txt</span>）</li><li purpose="li" id="LI_A9D60DD53DDA4A4090EAFE71F9D1445E">Shapefile (<span class="usertext">.shp</span>)</li><li purpose="li" id="LI_4A87485B2D1C452E9929A2298500D5C5">Parquet 文件 (<span class="usertext">.gz.parquet</span>)</li><li purpose="li" id="LI_B9166E45C1C644DB9DD579BDD5EE3D7E">ORC 文件 (<span class="usertext">orc.crc</span>)</li></ul></p><div class="panel trailer-1 note" id="GUID-CAD67C46-0361-42DB-9A97-6F0646D74D4D"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-8C1AF15A-C212-4F27-9437-95C572EACA24">仅在门户管理员启用 <span class="ph">GeoAnalytics Server</span> 后才能使用大数据文件共享。有关启用 <span class="ph">GeoAnalytics Server</span> 的详细信息，请参阅<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/geoanalytics/latest/install" href="../../../../zh-CN/geoanalytics/latest/install/windows/configure-the-portal-with-arcgis-geoanalytics-server.htm">设置 <span class="ph">ArcGIS GeoAnalytics Server</span></a>。</p></div><p id="GUID-761D4CA5-85C4-48D3-94D3-BD6E1CDFE43C">大数据文件共享是 <span class="ph">GeoAnalytics Tools</span> 访问数据的多种方式之一，<span class="ph">GeoAnalytics Tools</span> 没有此项要求。有关可能使用的 <span class="ph">GeoAnalytics Tools</span> 数据输入和输出的列表，请参阅<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/portal/latest" href="../../../../zh-CN/portal/latest/use/geoanalytics-use-the-analysis-tools.htm">在 <span class="ph">Map Viewer</span> 中使用 <span class="ph">GeoAnalytics Tools</span></a>。</p><p id="GUID-B67FFAB7-C32B-4445-8552-B6774DCEDFEA">您可以根据需要注册多个大数据文件共享。每个大数据文件共享可以包含任意数量的数据集。</p><p id="GUID-FB462756-1FD8-4E3A-A172-8510909079FF">下表概述了讨论大数据文件共享时的一些重要术语。<h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><thead><tr><th colspan="1">术语</th><th colspan="1">描述</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-9CDC9216-03E5-4038-9A41-22DCE3842213">大数据文件共享</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-3541FA4A-5ECA-456C-B2E3-19C5C4EB8E76">注册到 <span class="ph">GeoAnalytics Server</span> 的位置可用作 GeoAnalytics 工具的数据集输入或输出，也可以同时用作输入和输出。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-76210D06-3A15-46E8-8BA0-C940357774CE">大数据目录服务</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-EAEC3D82-5E22-48B9-8DE9-FE2A45D56F6D">该服务概述了大数据文件共享的输入数据集和方案以及输出模板名称。该服务是在注册大数据文件共享及创建清单时创建的。</p><p id="GUID-13D9729F-6534-4851-9B13-79B572D1C90F">有关大数据目录服务的详细信息，请参阅 ArcGIS Services REST API 帮助中的<a class="xref xref" esrisubtype="extrel" hrefpfx="https://developers.arcgis.com/rest" href="https://developers.arcgis.com/rest/services-reference/big-data-catalog-service.htm">大数据目录服务</a>文档。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-0FF153B2-112A-4105-B056-FC263241A2F6">大数据文件共享项目</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-BEF4C96E-DDC8-42A1-A85B-898656B5C9DC">门户中引用大数据目录服务的项目。您可以通过在门户中共享此项目来控制哪些用户有权将您的大数据文件共享用作 GeoAnalytics 的输入。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-7738815F-C38E-4ECC-83BC-510CBF2A7F06">清单</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-72A59F1D-C618-4497-A867-290BF9C27ED3">JSON 文件概述了大数据文件共享中的可用数据集和输入方案。注册大数据文件共享时会自动生成清单，您可以通过编辑或使用提示文件对该清单进行修改。单个大数据文件共享具有一个清单。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-20A113ED-BEE4-4A1C-B687-FD7F0164DC96">输出模板</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-EED91631-9F87-48E6-8A46-1650B1316F5E">将结果写入大数据文件共享时，可概述文件类型和可选格式的一个或多个模板。例如，模板可以指定将结果写入 shapefile。大数据文件共享可以不包含输出模板，也可以包含一个或多个输出模板。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-9F53C209-9DB5-4559-AAF7-E9000D30CE60">大数据文件共享类型</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-A870ED2F-4BEC-4A5E-8C07-F4E1B4996EE9">您正在注册的位置类型。例如，您可能拥有大数据文件共享或类型 HDFS。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-70FD6CBB-7FC9-4527-81EC-55E8E588ED48">大数据文件共享数据集格式</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-CC748BEC-C746-407C-AA14-8FE758E0B4A6">您正在读取或写入的数据格式。例如，文件类型可以是 shapefile。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-A310BE11-5D88-4663-B4DC-06743A7CC9A6">提示文件</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-37D81CB7-B84F-4B06-804E-8B83502790AB">该文件为可选文件，可用于帮助生成用作输入的分隔文件的清单。</p></td></tr></tbody><caption></caption></table></div></p><p id="GUID-E6F8CB54-1D57-48FA-9C13-3A715BCDBAE6"></p></section><section class="section1 padded-anchor" id="ESRI_SECTION1_CC7720EEC36F47149C7F82E1FCEDF2F7" purpose="section1"><h2>准备要注册为大数据文件共享的数据</h2><p id="GUID-07A48503-98D1-40DE-A8EC-1BE8C6568AAD">要将数据集用作大数据文件共享的输入，您需要先确保数据格式正确。有关基于大数据文件共享类型的格式，请参阅以下内容。</p><section class="section2 padded-anchor" id="ESRI_SECTION2_E5F1B6CF7A954252BD03972F0F9DF1BB" purpose="section2"><h3>文件共享和 <span class="ph">HDFS</span></h3><p id="GUID-AA6966FC-ED7F-4656-BC0C-3B985EEE92CF">要准备进行大数据文件共享的数据，需要将数据集格式化为将注册的单个父文件夹下的子文件夹。在要注册的该父文件夹中，子文件夹的名称表示数据集名称。如果子文件夹包含多个文件夹或文件，则所有顶级子文件夹的内容将读取为一个数据集，且必须共享同一个方案。下面的示例演示了如何注册包含三个数据集（即 <span class="usertext">Earthquakes</span>、<span class="usertext">Hurricanes</span> 和 <span class="usertext">GlobalOceans</span>）的文件夹 <span class="usertext">FileShareFolder</span> 。注册父文件夹时，您指定的文件夹下的所有子目录也将注册到 <span class="ph">GeoAnalytics Server</span>。始终注册包含一个或多个单个数据集文件夹的父文件夹（例如 <span class="usertext">\\machinename\FileShareFolder</span>）。
+<section class="codeblock padded-anchor" purpose="codeblock"><div class="codeblockdesc" purpose="codeblockdesc"><p id="GUID-F5956B6A-BD69-49CF-A936-946083482969">包含三个数据集的大数据文件共享示例：Earthquakes、Hurricanes 和 GlobalOceans。</p></div><div class="codeblockbody"><pre><code class="other no-highlight">|---FileShareFolder                 &lt; -- The top-level folder is what is registered as a big data file share
+   |---Earthquakes                  &lt; -- A dataset &quot;Earthquakes&quot;, composed of 4 csvs with the same schema
+      |---1960
+         |---01_1960.csv
+         |---02_1960.csv
+      |---1961
+         |---01_1961.csv
+         |---02_1961.csv
+   |---Hurricanes                   &lt; -- The dataset &quot;Hurricanes&quot;, composed of 3 shapefiles with the same schema
+      |---atlantic_hur.shp
+      |---pacific_hur.shp
+      |---otherhurricanes.shp
+   |---GlobalOceans                 &lt; -- The dataset &quot;GlobalOceans&quot;, composed of a single shapefile
+      |---oceans.shp</code></pre></div></section>   </p><p id="GUID-1B15305B-A238-4AB5-890B-916C2EAF83CD">尽管术语不同，但文件共享和 <span class="ph">HDFS</span> 均采用该相同结构。在文件共享中，存在一个顶级文件夹或目录，数据集通过子目录表示。在 <span class="ph">HDFS</span> 中，文件共享位置已注册并包含数据集。下表概述了区别：</p><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><colgroup width="*"></colgroup><thead><tr><th colspan="1"></th><th colspan="1">文件共享</th><th colspan="1"><span class="ph">HDFS</span></th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-E4866E89-A987-4BF4-B964-1040FB2B280D">大数据文件共享位置</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-CC101AAA-D935-4C6E-BEE5-1B45A322EEAA">文件夹或目录</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-58F178FB-0808-47E2-8A04-20A7556FBB93"><span class="ph">HDFS</span> 路径</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-3348BE66-377C-419C-8705-FFF34124A2BF">数据集</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-F417E6BE-CEC6-4597-AA0A-EB5D2F813F06">顶级子文件夹</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-52A252CC-DED3-403B-8FE8-701498AE5962"><span class="ph">HDFS</span> 路径内的数据集</p></td></tr></tbody><caption></caption></table></div><p id="GUID-EE3BFFBA-D216-466C-9AB5-477C9F713728">在将数据按照包含数据集子文件夹的文件夹进行组织后，需要按照<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/server/latest/administer" href="../../../../zh-CN/server/latest/administer/windows/making-your-data-accessible-to-arcgis-server.htm">使数据可供 <span class="ph">GeoAnalytics Server</span> 访问</a>中的步骤进行操作以使数据可供 <span class="ph">ArcGIS Server</span> 访问，并注册数据集文件夹。</p><section class="section3 padded-anchor" id="ESRI_SECTION3_9D461CB5C1B74692AF91CE8D9BA2473E" purpose="section3"><h4>使用 Kerberos 访问 <span class="ph">HDFS</span></h4><p id="GUID-E1F48E7A-CE2D-475E-A32C-8E84C2E2C9CA"><span class="ph">GeoAnalytics Server</span> 可以使用 Kerberos 身份验证访问 <span class="ph">HDFS</span>。</p><div class="panel trailer-1 note" id="GUID-CCCF4102-EB5C-41E6-B850-F68AAD5BBC0E"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-A46948B0-331A-4EFD-94D6-3F8130E80947"><span class="ph">GeoAnalytics Server</span> 支持将 RCP 保护设置为身份验证 (<span class="usertext">hadoop.rpc.protection</span>  =<span class="usertext">authentication</span>). <span class="ph">GeoAnalytics Server</span> 当前不支持
+集成 (<span class="usertext">integrity</span>) 或隐私 (<span class="usertext">privacy</span>) 模式。</p></div><p id="GUID-2FF3A04D-2B4E-495B-99FB-7ABC421F051B">请按照以下步骤使用 Kerberos 身份验证注册 <span class="ph">HDFS</span> 文件共享：</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_E9F7BCDF037D44BAA6495F47A02FB592"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_1E2E28D8C06041D1BF20ABB8D588DDB7"><span purpose="cmd">在 Windows 下，将 <span class="usertext"> krb.ini</span> 文件复制到 <span class="ph">GeoAnalytics Server</span> 站点中所有计算机的 <span class="usertext">C:/windows/krb.ini</span> 路径中。在 Windows 下，将 <span class="usertext">krb.conf</span> 文件复制到 <span class="ph">GeoAnalytics Server</span> 站点中所有计算机的 <span class="usertext">/etc/krb.conf</span> 路径中。</span></li><li purpose="step" id="ESRI_STEP_6867D2FF8B5D455CAFB824B925F21C6A"><span purpose="cmd">从 <a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/server/latest/deploy" href="../../../../zh-CN/server/latest/deploy/windows/components-of-arcgis-urls.htm#ESRI_SECTION2_E260C7E968D043B7960F2E534403573E"><span class="ph">ArcGIS Server</span> Administrator Directory</a> 登录到您的 <span class="ph">GeoAnalytics Server</span> 站点。</span><div class="info" purpose="info"><p id="GUID-FA76BAD0-7BA7-4491-AAB8-FBFBCB2AA5D1"><span class="ph">ArcGIS Server</span> Administrator Directory 要求您作为管理员进行登录。要连接您的联合 <span class="ph">GeoAnalytics Server</span> 站点，必须使用门户令牌（需要门户管理员凭据）或作为 <span class="ph">GeoAnalytics Server</span> 站点的主站点管理员进行登录。如果您不是门户管理员或者没有主站点管理员帐户信息权限，请联系您的门户管理员为您完成这些步骤。</p></div></li><li purpose="step" id="ESRI_STEP_9FB2F82861534686B3FE070AC00DC825"><span purpose="cmd">转至<span class="uicontrol">数据 <span class="greaterthan">&gt;</span> registerItem</span>。</span></li><li purpose="step" id="ESRI_STEP_6FBBB8B03B2A4A36989DEE276D9CAC0E"><span purpose="cmd">复制下列文本并将其粘贴到<span class="uicontrol">项目</span>文本框中。更新以下值：</span><div class="info" purpose="info"><p id="GUID-7F0886BF-0C39-4D67-901D-EF2E7DCEA89E"><ul purpose="ul" id="UL_BF5848AA4690428C950787B10A40E9A8"><li purpose="li" id="LI_91817EA5E87948A281C72DFF6CCDED45"><span class="usertext">&lt;bigDataFileShareName&gt;</span>：根据需要替换为大数据文件共享的名称。</li><li purpose="li" id="LI_45848FA9527040B98BAA4C01528AEFE5"><span class="usertext">&lt;hdfs path&gt;</span>：将大数据文件共享的路径更换为完全限定的文件系统路径，例如，<span class="usertext">hdfs://domainname:port/folder</span>。</li><li purpose="li" id="LI_204CC3209CD04C6C9D438E842B7D7B94"><span class="usertext">&lt;user@realm&gt;</span>：替换为用户和主体的范围。</li><li purpose="li" id="LI_0A6A6D8EF366487E9A25CDA3E28B5C10"><span class="usertext">&lt;keytab location&gt;</span>：替换为密钥表文件的位置。密钥表文件必须可供 <span class="ph">GeoAnalytics Server</span> 站点中的所有计算机访问（例如，<span class="usertext">//shared/keytab/hadoop.keytab</span>）。</li></ul></p></div><div class="stepexample" purpose="stepexample"><p id="GUID-B83C5B7F-4019-411E-BE52-FA40454A22AB"><pre purpose="pre" cid="xqlih">{
+   "path": "/bigDataFileShares/&lt;bigDataFileShareName&gt;",
+   "type": "bigDataFileShare",
+   "info": 
+         {
+          "connectionString": "{\"path\":\"&lt;hdfs path&gt;",\"accessMode\":\"Kerberos\",\"principal\":\"user@realm\",\"keytab\":\"&lt;keytab location&gt;\"}",
+          "connectionType": "hdfs"
+         }
+}
+  
+</pre></p></div></li><li purpose="step" id="ESRI_STEP_8733F02BBDEA4871B5408D98A47C1C92"><span purpose="cmd">单击<span class="uicontrol">注册项目</span>。</span><div class="stepresult" purpose="stepresult"><p id="GUID-34569FDD-B283-4061-945A-88C454D79336">注册项目后，大数据文件共享将附带填充清单，作为数据存储显示在 <span class="ph">ArcGIS Server</span> Manager 中。如果清单尚未填充，请继续执行步骤 5。</p></div></li><li purpose="step" id="ESRI_STEP_0592B1DCB0C8455E968E0DEFCA3DDF08"><span purpose="cmd">登录到您的 <span class="ph">GeoAnalytics Server</span> 站点 <span class="ph">ArcGIS Server</span> Manager。</span><div class="info" purpose="info"><p id="GUID-46904500-BD73-4DA2-838A-8D4BA4EC3DB6">您可以作为发布者或管理员进行登录。</p></div></li><li purpose="step" id="ESRI_STEP_965A31CF4CC54F978A07A0C2594ACBF0"><span purpose="cmd">转至<span class="uicontrol">站点 <span class="greaterthan">&gt;</span> 数据存储</span>，然后单击新的大数据文件共享旁边的<span class="uicontrol">重新生成清单</span>按钮。</span></li></ol></div><section class="result padded-anchor" id="ESRI_RESULT_588AD5436A5D4999BFF4F2A26A62C8A1" purpose="result"><p id="GUID-107AD7BF-7ECB-4E75-90E0-1F368AD539A6">现在您已拥有 <span class="ph">HDFS</span> 的大数据文件共享和清单，其中可通过 Kerberos 身份验证访问 HDFS。您的门户中的大数据文件共享项目将指向 <span class="ph">GeoAnalytics Server</span> 中的大数据目录服务。</p></section></section></section></section><section class="section2 padded-anchor" id="ESRI_SECTION2_9C940215B2864855BD52DF64056E1332" purpose="section2"><h3><span class="ph">Hive</span></h3><p id="GUID-B1B10B13-F996-47BB-9C19-AD614AC79029">在 <span class="ph">Hive</span> 中，数据库中的所有表格将识别为大数据文件共享中的数据集。在下面的示例中，存在包含两个数据库（<span class="usertext">default</span> 和 <span class="usertext">CityData</span>）的元数据存储。当通过 <span class="ph">ArcGIS Server</span> 将 <span class="ph">Hive</span> 大数据文件共享注册到 <span class="ph">GeoAnalytics Server</span> 时，只能选择一个数据库。在此示例中，如果选择了 <span class="usertext">CityData</span> 数据库，则大数据文件共享中将存在两个数据集，即 <span class="usertext">FireData</span> 和 <span class="usertext">LandParcels</span>。<section class="codeblock padded-anchor" purpose="codeblock"><div class="codeblockdesc" purpose="codeblockdesc"><p id="GUID-EC98EFAB-572A-4259-A6FB-137C581FA404"></p></div><div class="codeblockbody"><pre><code class="other no-highlight">|---HiveMetastore                 &lt; -- The top-level folder is what is registered as a big data file share
+   |---default                    &lt; -- A database
+      |---Earthquakes
+      |---Hurricanes
+      |---GlobalOceans
+   |---CityData				               &lt; -- A database that is registered (specified in Server Manager)
+      |---FireData
+      |---LandParcels</code></pre></div></section></p></section><section class="section2 padded-anchor" id="ESRI_SECTION2_C29DD9E6785F453B8A4FD76E4B9B50C1" purpose="section2"><h3>云存储</h3><p id="GUID-CE553004-6697-476E-B796-F44FE1E159EA">可以通过以下三个步骤来注册云存储类型的大数据文件共享：</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_06462D2146CD4F8E922F99741CE59C46"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_FE6098A5BC9F4CF98F623411A03E4921"><span purpose="cmd"><a class="xref xref" href="../../../../zh-CN/geoanalytics/latest/perform-analysis/what-is-a-big-data-file-share.htm#ESRI_SECTION3_8C79752A8CFB4BC49E42DE0BE43C13B4">在您的云存储中以正确的形式准备您的数据</a>。</span></li><li purpose="step" id="ESRI_STEP_474947CAA7B44808BF2EF5E2941F67A2"><span purpose="cmd"><a class="xref xref" href="../../../../zh-CN/geoanalytics/latest/perform-analysis/what-is-a-big-data-file-share.htm#ESRI_SECTION3_48C193F0F07D4126A6ACBCFA74ABEC56">将云存储注册到您的 <span class="ph">GeoAnalytics Server</span></a>。</span></li><li purpose="step" id="ESRI_STEP_BE834D4B377A4FED9FF0E4596D143F62"><span purpose="cmd"><a class="xref xref" href="../../../../zh-CN/geoanalytics/latest/perform-analysis/what-is-a-big-data-file-share.htm#ESRI_SECTION3_06A965A580564BBD91ABDA28F9A1510D">将云存储注册为 <span class="ph">GeoAnalytics Server</span> 上的大数据文件共享</a>。</span></li></ol></div></section><section class="section3 padded-anchor" id="ESRI_SECTION3_8C79752A8CFB4BC49E42DE0BE43C13B4" purpose="section3"><h4>准备数据</h4><p id="GUID-3A67F34C-BF3E-45F0-B45D-82922A5CCC00">要在云存储中准备大数据文件共享的数据，需要将数据集格式化为单个父文件夹下的子文件夹。</p><p id="GUID-AED714E5-5CA7-4C71-B600-410C55DA30A7">以下是如何构建数据的示例： 本示例将注册父文件夹 <span class="usertext">FileShareFolder</span>，其中包含三个数据集：<span class="usertext">Earthquakes</span>、<span class="usertext">Hurricanes</span> 和 <span class="usertext">GlobalOceans</span>。注册父文件夹时，您指定的文件夹下的所有子目录也将注册到 <span class="ph">GeoAnalytics Server</span>。<section class="codeblock padded-anchor" purpose="codeblock"><div class="codeblockdesc" purpose="codeblockdesc"><p id="GUID-7AE34187-6EA6-47B0-8A55-8AF2C9439F47">以下是如何在云存储中构建将用作大数据文件共享的数据的示例： 此大数据文件包含三个数据集：Earthquakes、Hurricanes 和 GlobalOceans。</p></div><div class="codeblockbody"><pre><code class="other no-highlight">|---Cloud Store                          &lt; -- The cloud store being registered
+   |---Container or S3 Bucket Name       &lt; -- The container (Azure) or bucket (Amazon) being registered as part of the cloud store
+      |---FileShareFolder                &lt; -- The parent folder that is registered as the 'folder' during cloud store registration
+         |---Earthquakes                 &lt; -- The dataset &quot;Earthquakes&quot;, composed of 4 csvs with the same schema
+            |---1960
+               |---01_1960.csv
+               |---02_1960.csv
+            |---1961
+               |---01_1961.csv
+               |---02_1961.csv
+         |---Hurricanes                  &lt; -- The dataset &quot;Hurricanes&quot;, composed of 3 shapefiles with the same schema
+            |---atlantic_hur.shp
+            |---pacific_hur.shp
+            |---otherhurricanes.shp
+         |---GlobalOceans                &lt; -- The dataset &quot;GlobalOceans&quot;, composed of 1 shapefile
+            |---oceans.shp</code></pre></div></section>   </p></section><section class="section3 padded-anchor" id="ESRI_SECTION3_48C193F0F07D4126A6ACBCFA74ABEC56" purpose="section3"><h4>将云存储注册到您的 <span class="ph">GeoAnalytics Server</span></h4><p id="GUID-C8A2DA72-8D1E-4E7A-8CBF-D233377F9CC2">从 <span class="ph">ArcGIS Server</span> Manager 连接到 <span class="ph">GeoAnalytics Server</span> 站点以<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/server/latest/manage-data" href="../../../../zh-CN/server/latest/manage-data/windows/registering-your-data-with-arcgis-server-using-manager.htm#ESRI_SECTION1_0D55682C9D6E48E7857852A9E2D5D189">注册云存储</a>。注册云存储时，您必须包含 <span class="ph">Azure</span> 容器名称、<span class="ph">Amazon S3</span> 存储段名称或 <span class="ph">Azure Data Lake</span> Store 帐户名。建议您在容器或存储段中另外指定文件夹。指定文件夹由子文件夹组成，且每个子文件夹都代表单独的数据集。每个数据集由子文件夹的全部内容组成。</p></section><section class="section3 padded-anchor" id="ESRI_SECTION3_06A965A580564BBD91ABDA28F9A1510D" purpose="section3"><h4>将云存储注册为大数据文件共享</h4><p id="GUID-F605CB35-3191-44CF-B95A-CB60C8D8CE63">请按照以上步骤将您在之前部分中创建的云存储注册为大数据文件共享。</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_B98E673491D24F7D943049162D3AB169"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_3FC96B8AE01045CB8765F6A1DC5AF805"><span purpose="cmd">从 <span class="ph">ArcGIS Server</span> Manager 登录到您的 <span class="ph">GeoAnalytics Server</span> 站点。</span><div class="info" purpose="info"><p id="GUID-7DC422CB-37D5-43C1-A07E-30CEE079E635">您可以作为发布者或管理员进行登录。</p></div></li><li purpose="step" id="ESRI_STEP_9F68F9D9E7FC4E329C3700EDE23EC05B"><span purpose="cmd">转至<span class="uicontrol">站点 <span class="greaterthan">&gt;</span> 数据存储</span>，然后从<span class="uicontrol">注册</span>下拉列表中选择<span class="uicontrol">大数据文件共享</span>。</span></li><li purpose="step" id="ESRI_STEP_C9491B3467834B10921CBBE74D8A55D6"><span purpose="cmd">请在<span class="uicontrol">注册大数据文件共享</span>对话框中提供以下信息： </span><div class="substeps" id="ESRI_SUBSTEPS_D748F6BDC0D04C1F97C087DF2AE9AF1A" purpose="substeps"><ol class="list-numbered" purpose="ol"><li purpose="substep" id="ESRI_SUBSTEP_1284C90610FE48979FC44306AA8E72CC"><span purpose="cmd">输入大数据文件共享的名称。</span></li><li purpose="substep" id="ESRI_SUBSTEP_F7BDCC6CF825428087F41ACC94069ADB"><span purpose="cmd">从<span class="uicontrol">类型</span>下拉列表中选择<span class="uicontrol">云存储</span>。</span></li><li purpose="substep" id="ESRI_SUBSTEP_50CAFE0B0F9044ACB6783E0E75935390"><span purpose="cmd">从<span class="uicontrol">云存储</span>下拉列表中选择云存储的名称。</span></li><li purpose="substep" id="ESRI_SUBSTEP_873B18D8EC79478DA8F8396189A79FDF"><span purpose="cmd">单击<span class="uicontrol">创建</span>，将您的云存储注册为大数据文件共享。</span></li></ol></div></li></ol></div><section class="result padded-anchor" id="ESRI_RESULT_95C1526FB1D443BC8274DE5D1AFD0EBE" purpose="result"><p id="GUID-BF7AD5B5-DFE0-49DC-8145-5302C866712D">现在，您拥有云存储的大数据文件共享和清单。您的门户中的大数据文件共享项目将指向 <span class="ph">GeoAnalytics Server</span> 中的大数据目录服务。</p></section></section></section></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_ED41FFBD9159418C9621D5F3EB128106" purpose="section1"><h2>注册大数据文件共享</h2><p id="GUID-4B76731B-DA95-447B-AB4F-D221BF474569">要将文件共享、<span class="ph">HDFS</span> 或 <span class="ph">Hive</span> 云存储注册为大数据文件共享，请通过 <span class="ph">ArcGIS Server</span> Manager 连接到您的 <span class="ph">GeoAnalytics Server</span> 站点。有关所需步骤的详细信息，请参阅 <span class="ph">ArcGIS Server</span> 帮助中的<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/server/latest/manage-data" href="../../../../zh-CN/server/latest/manage-data/windows/registering-your-data-with-arcgis-server-using-manager.htm#ESRI_SECTION1_0D55682C9D6E48E7857852A9E2D5D189">使用 Manager 将数据注册到 <span class="ph">ArcGIS Server</span></a>。<div class="panel trailer-1" id="GUID-B09997CB-8404-4767-98AB-B047762EC352"><h5 class="icon-ui-description trailer-0">提示：</h5><p id="GUID-DD4E179D-99C6-4D7E-9FB3-4A66F3744F64"><a class="xref xref" href="../../../../zh-CN/geoanalytics/latest/perform-analysis/what-is-a-big-data-file-share.htm#ESRI_SECTION3_06A965A580564BBD91ABDA28F9A1510D">上一部分</a>中介绍了将云存储注册为大数据文件共享的步骤。</p></div></p><p id="GUID-44861F59-E102-4ACC-8F38-4CF8D1F13BE7">注册大数据文件共享后，将生成一个清单，其中介绍共享位置中的数据集格式，包括表示几何和时间的字段。如果您选择将大数据文件共享注册为输出位置，则将另外生成一个输出模板清单。将在门户中创建一个大数据文件共享项目，该项目指向注册数据的 <span class="ph">GeoAnalytics Server</span> 中的大数据目录服务。有关大数据目录服务的详细信息，请参阅 ArcGIS Services REST API 帮助中的<a class="xref xref" esrisubtype="extrel" hrefpfx="https://developers.arcgis.com/rest" href="https://developers.arcgis.com/rest/services-reference/big-data-catalog-service.htm">大数据目录服务</a>文档。</p></section><section class="section1 padded-anchor" id="ESRI_SECTION1_B5813F52FD444398AF4F122F38D9FD46" purpose="section1"><h2>修改大数据文件共享</h2><p id="GUID-1E71C5BD-33EC-4240-8E31-D0655046B750">创建大数据目录服务后，系统将自动生成一个输入数据清单并将其上传到注册数据的 <span class="ph">GeoAnalytics Server</span> 站点。在生成清单的过程中，可能无法始终正确估算表示几何和时间的字段，您可能需要应用编辑。要编辑清单，请遵循<a class="xref xref" href="../../../../zh-CN/geoanalytics/latest/perform-analysis/edit-big-data-file-share-manifests-in-manager.htm">使用 Manager 编辑大数据文件共享清单</a>中的步骤。有关大数据文件共享清单的详细信息，请参阅 <span class="ph">ArcGIS Server</span> 帮助中的<a class="xref xref" href="../../../../zh-CN/geoanalytics/latest/perform-analysis/understanding-the-big-data-file-share-manifest.htm">了解大数据文件共享清单</a>。</p></section><section class="section1 padded-anchor" id="ESRI_SECTION1_5ADB329736BA4CCDB2154F7430230E00" purpose="section1"><h2>修改大数据文件共享的输出模板</h2><p id="GUID-4A4B94E8-6267-457C-9A78-5D74D0541826">当您选择将大数据文件共享用作输出位置时，将自动生成输出模板。这些模板概述了输出分析结果的格式，例如文件类型以及时间和几何的注册方式。要修改几何或时间格式，或添加、删除模板，可通过修改模板来实现。要编辑输出模板，请遵循<a class="xref xref" href="../../../../zh-CN/geoanalytics/latest/perform-analysis/edit-big-data-file-share-manifests-in-manager.htm">使用 Manager 编辑大数据文件共享清单</a>中的步骤。关于输出模板的详细信息，请参阅<a class="xref xref" href="../../../../zh-CN/geoanalytics/latest/perform-analysis/output-templates-in-a-big-data-file-share.htm">大数据文件共享中的输出模板</a>。</p></section><section class="section1 padded-anchor" id="ESRI_SECTION1_927B8F795A6D4CA0925427D45AB90A05" purpose="section1"><h2>在大数据文件共享中运行分析</h2><p id="GUID-CEFAFF89-7B40-47C0-A7A3-BCFC74B98BCB">可通过支持 <span class="ph">GeoAnalytics Server</span> 的任何客户端在大数据文件共享的数据集上运行分析，具体包括：<ul purpose="ul" id="UL_01EB79FCDC6A46C48EAA7CA4DB7EDE64"><li purpose="li" id="LI_AFC55EEF82E649FDBD14B67447109AF5"><span class="ph">ArcGIS Pro</span></li><li purpose="li" id="LI_F28D2F15BEB34061B8E6F5CD54862D1B"><span class="ph">Map Viewer</span></li><li purpose="li" id="LI_7CB3FA8F900644CABDC0ADED3290FA88">ArcGIS REST API</li><li purpose="li" id="LI_707E3BE67ADD4B66AC3D568ACF5527DA"><span class="ph">ArcGIS API for Python</span></li></ul></p><p id="GUID-3AB59AA8-A348-46F8-9446-70DD123553E5">要通过 <span class="ph">ArcGIS Pro</span> 或 <span class="ph">Map Viewer</span> 在大数据文件共享上运行分析，请选择要使用的 <span class="ph">GeoAnalytics Tools</span>。对于工具的输入，请浏览到 <span class="ph">ArcGIS Pro</span> 的<span class="uicontrol">门户</span>下或 <span class="ph">Map Viewer</span> 的<span class="uicontrol">浏览图层</span>对话框中数据所在位置。如果您之前注册了数据，则该数据将位于<span class="uicontrol">我的内容</span>中。否则，请在<span class="uicontrol">群组</span>或<span class="uicontrol">所有门户</span>中查找。请注意，为分析选择的大数据文件共享图层不会显示在地图中。<div class="panel trailer-1 note" id="GUID-7AA0EE3C-4A70-431F-984B-9F838DAC46FE"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-501651DF-0EB9-4795-93EC-D07F3785987D">请确保您登录到具有已注册大数据文件共享的访问权限的门户帐户。可使用项 <span class="usertext">bigDataFileShare*</span> 搜索门户以快速查找您可以访问的所有大数据文件共享。</p></div></p><p id="GUID-AC07C462-DA58-4120-91C0-DE988A85B22A">要通过 ArcGIS REST API 在大数据文件共享上运行分析，需要使用大数据目录服务 URL 作为输入。该 URL 格式将为 <span class="usertext">{"url":" https://webadaptorhost.domain.com/webadaptorname/rest/DataStoreCatalogs/bigDataFileShares_filesharename/BigDataCatalogServer/dataset"}</span>。例如，如果计算机名为 <span class="usertext">example</span>、域名为 <span class="usertext">esri</span>、Web Adaptor 名为 <span class="usertext">server</span>、大数据文件共享名为 <span class="usertext">MyData</span> 且数据集名为 <span class="usertext">Earthquakes</span>，则 URL 将为：<span class="usertext">{"url":" https://example.esri.com/server/rest/DataStoreCatalogs/bigDataFileShares_MyData/BigDataCatalogServer/Earthquakes"}</span>。有关通过 REST 的大数据分析输入的详细信息，请参阅 ArcGIS Services REST API 文档中的<a class="xref xref" esrisubtype="extrel" hrefpfx="https://developers.arcgis.com/rest" href="https://developers.arcgis.com/rest/services-reference/geoanalytics-feature-input.htm">要素输入</a>主题。</p></section><section class="section1 padded-anchor" id="ESRI_SECTION1_C7FC2F84668D4D508AC2747CDAA5578C" purpose="section1"><h2>将结果保存到大数据文件共享</h2><p id="GUID-421DBB08-B829-438F-982F-29E1C86A8BB4">您可以针对数据集（大数据文件共享或其他输入）运行分析，并将结果保存到大数据文件共享。将结果保存到大数据文件共享时，您无法将其可视化。可以通过以下客户端执行此操作：<ul purpose="ul" id="UL_D0F513B8938C4182AA62721098D16ADB"><li purpose="li" id="LI_EEACF0BA0A274400ACC9E1BF6E066205"><span class="ph">Map Viewer</span></li><li purpose="li" id="LI_4E452378842145EC8DEB58E78E25787A">ArcGIS REST API</li><li purpose="li" id="LI_43CECA00994A4A078377A397A124780F"><span class="ph">ArcGIS API for Python</span></li></ul></p><p id="GUID-1DF4EA75-56E3-4598-A9AE-73CDF50CE883">将结果写入大数据文件共享时，输入清单将更新，以包含刚刚保存的数据集。现在，已写入大数据文件共享的结果可在下次运行工具时作为输入。</p></section>
+			
+				<hr>
+				<!--googleoff: all-->
+				
+	
+        
+		    <p class="feedback right">
+		        <a id="afb" class="icon-ui-contact" href="/feedback/" data-langlabel="feedback-on-this-topic" >有关此主题的反馈?</a>
+		    </p>
+        
+	
+
+				<!--googleon: all-->
+			
+		</main>
+	</div>
+	
+	<!--googleoff: all-->
+	
+		
+			<div id="main-toc-large" class="column-5">
+			    <div class="panel font-size--2 tablet-hide trailer-1">
+			      <h5 class="trailer-half">在本主题中</h5>
+			      <ol class="list-plain pre-0 trailer-0"><li><a href="#GUID-9FFFDAF5-3ECE-4E8A-8F0C-4F7732B9896C">关于大数据文件共享</a></li><li><a href="#ESRI_SECTION1_CC7720EEC36F47149C7F82E1FCEDF2F7">准备要注册为大数据文件共享的数据</a></li><li><a href="#ESRI_SECTION1_ED41FFBD9159418C9621D5F3EB128106">注册大数据文件共享</a></li><li><a href="#ESRI_SECTION1_B5813F52FD444398AF4F122F38D9FD46">修改大数据文件共享</a></li><li><a href="#ESRI_SECTION1_5ADB329736BA4CCDB2154F7430230E00">修改大数据文件共享的输出模板</a></li><li><a href="#ESRI_SECTION1_927B8F795A6D4CA0925427D45AB90A05">在大数据文件共享中运行分析</a></li><li><a href="#ESRI_SECTION1_C7FC2F84668D4D508AC2747CDAA5578C">将结果保存到大数据文件共享</a></li></ol>
+			    </div>
+			    
+			    
+	  		</div>
+		
+    
+   <!--googleon: all-->
+
+
+
+
+          
+        </div>
+        <!-- ENDPAGECONTENT -->
+
+      </div>
+
+    </div>  <!-- End of wrapper -->
+
+  <footer class="footer leader-3 link-dark-gray" role="contentinfo">
+    <div class="grid-container">
+      <div class="row">
+        <nav class="column-6">
+          <h6 data-langlabel="arcgis-for-server">Arc<span>GIS Enterprise</span></h6>
+          <ul class="list-plain">
+            <li><a data-langlabel="home" href="../../../../zh-CN/">主页</a></li>
+            <li><a data-langlabel="portal" href="../../../../zh-CN/portal/">Portal</a></li>
+            <li><a data-langlabel="server" href="../../../../zh-CN/server/">Server</a></li>
+            <li><a data-langlabel="data-store" href="../../../../zh-CN/data-store/">Data Stores</a></li>
+            <li><a data-langlabel="cloud" href="../../../../zh-CN/cloud/">云</a></li>
+            <li><a data-langlabel="apps" href="../../../../zh-CN/apps/">应用程序</a></li>
+            <li><a data-langlabel="documentation" href="../../../../zh-CN/documentation/">文档</a></li>
+          </ul>
+        </nav>
+
+        
+  <nav class="column-6">
+    <h6 data-langlabel="arcgis-platform">ArcGIS 平台</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="arcgis" href="//www.arcgis.com/">ArcGIS Online</a></li>
+      <li><a data-langlabel="arcgis-for-professionals" href="//pro.arcgis.com/">ArcGIS Pro</a></li>
+      <li><a data-langlabel="arcgis-for-server" href="//enterprise.arcgis.com/">ArcGIS Enterprise</a></li>
+      <li><a data-langlabel="arcgis-for-developers" href="https://developers.arcgis.com/">ArcGIS for Developers</a></li>
+      <li><a data-langlabel="arcgis-solutions" href="//solutions.arcgis.com/">ArcGIS Solutions</a></li>
+      <li><a data-langlabel="arcgis-marketplace" href="//marketplace.arcgis.com/">ArcGIS Marketplace</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <h6 data-langlabel="about-esri">关于 Esri</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="about-us" href="//www.esri.com/about-esri/">关于我们</a></li>
+      <li><a data-langlabel="careers" href="//www.esri.com/careers/">招贤纳士</a></li>
+      <li><a data-langlabel="insiders-blog" href="https://www.esri.com/about/newsroom/blog/">Esri 博客</a></li>
+      <li><a data-langlabel="user-conference" href="//www.esri.com/events/user-conference/index.html">用户大会</a></li>
+      <li><a data-langlabel="developer-summit" href="//www.esri.com/events/devsummit/index.html">开发者峰会</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <a class="esri-logo" href="//www.esri.com/" aria-label="Esri Home"></a>
+    <section class="footer-social-nav leader-1">
+            <a class="icon-social-twitter" aria-label="Esri on Twitter" href="https://twitter.com/Esri/"></a>
+            <a class="icon-social-facebook" aria-label="Esri on Facebook" href="https://www.facebook.com/esrigis/"></a>
+            <a class="icon-social-github" aria-label="Esri on GitHub" href="//esri.github.io/"></a>
+            <a class="icon-social-contact" aria-label="Contact Esri" href="//www.esri.com/about-esri/contact/"></a>
+    </section>
+	  
+  </nav>
+  
+  <div class="column-24 leader-1">
+    <p class="font-size--3"><a href="http://www.esri.com/legal/copyright-trademarks">Copyright &copy; 2019 Esri.</a> All rights reserved. | <a href="http://www.esri.com/legal/privacy/">隐私政策</a> | <a href="http://www.esri.com/legal/software-license">法律声明</a></p>
+  </div>
+  
+
+
+      </div>
+    </div>
+  </footer>
+  <!--googleoff: all-->
+
+  
+  
+	<script src="../../../../zh-CN/assets/js/init.js" type="text/javascript"></script>
+	<!--<script src="../../../../zh-CN/assets/js/drop-down.js" type="text/javascript"></script>-->
+	<script src="../../../../zh-CN/assets/js/search/searchform.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/cdn/js/link-modifier.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/cdn/js/sitewide.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/cdn/js/libs/highlight.pack.js" type="text/javascript"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+
+
+  
+    
+
+  <script src="../../../../zh-CN/cdn/js/affix.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    $(function () {
+          var appendFlg = true;
+
+          $("#bigmac")
+          .on("affixed.bs.affix", function (evt) {
+            if (appendFlg) {
+              $("<a class='crumb' href='#'>大数据文件共享入门</a>").insertAfter ($("#bigmac nav a").last());
+              appendFlg = false;
+            }
+          })
+          .on ("affix-top.bs.affix", function(evt) {
+            if (!appendFlg) {
+              $("#bigmac nav a").last().remove();
+            }
+            appendFlg = true;
+          })
+    })
+  </script>
+  
+        <script type="text/javascript">
+          window.doctoc = {
+            pubID: "2505",
+            tpcID: "5",
+            
+              prefix: "执行分析",
+              prefixUrl: "/zh-cn/geoanalytics/latest/perform-analysis/",
+          
+            hideToc: false
+          }
+        </script>
+
+        <script type="text/javascript" src="../../../../zh-CN/geoanalytics/latest/perform-analysis/2505.js" ></script>
+        <script type="text/javascript" src="../../../../zh-CN/cdn/calcite/js/protoc.js" ></script>
+        
+        
+
+  <noscript>
+        <p>
+            <a href="flisting.htm">flist</a>
+        </p>
+    </noscript>
+    <script type="text/javascript"></script>
+  
+  
+    
+    
+
+  </body>
+</html>

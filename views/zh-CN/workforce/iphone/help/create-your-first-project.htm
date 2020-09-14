@@ -1,0 +1,544 @@
+
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>  <html class="ie lt-ie9 lt-ie8 lt-ie7 ie6" dir="ltr"> <![endif]-->
+<!--[if IE 7]>     <html class="ie lt-ie9 lt-ie8 ie7" dir="ltr"> <![endif]-->
+<!--[if IE 8]>     <html class="ie lt-ie9 ie8" dir="ltr"> <![endif]-->
+<!--[if IE 9]>     <html class="ie ie9" dir="ltr"> <![endif]-->
+<!--[if !IE]><!--> <html dir="ltr" lang="zh-CN"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>创建您的第一个工程&mdash;Workforce for ArcGIS | ArcGIS Enterprise 文档</title>
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+    <script>
+      var docConfig = {
+        locale: 'zh-CN'
+        ,localedir: 'zh-cn'
+        ,langSelector: ''
+        
+        ,relativeUrl: false
+        
+
+        ,searchformUrl: '/search/'
+        ,tertiaryNavIndex: ''
+
+        
+      };
+    </script>
+	 
+
+
+    
+    <!--[if lt IE 9]>
+      <script src="../../../../zh-CN/cdn/js/libs/html5shiv.js" type="text/javascript"></script>
+      <script src="../../../../zh-CN/cdn/js/libs/selectivizr-min.js" type="text/javascript"></script>
+      <script src="../../../../zh-CN/cdn/js/libs/json2.js" type="text/javascript"></script>
+      <script src="../../../../zh-CN/cdn/js/libs/html5shiv-printshiv.js" type="text/javascript" >
+
+    <![endif]-->
+
+     <!--[if lt IE 11]>
+    <script>
+      $$(document).ready(function(){
+        $$(".hideOnIE").hide();
+      });
+    </script>
+    <![endif]-->
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<link href="../../../../zh-CN/assets/img/favicon.ico" rel="shortcut icon" >
+	<link href="../../../../zh-CN/assets/css/screen.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/cdn/calcite/css/documentation.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/assets/css/print.css" media="print" type="text/css" rel="stylesheet" />
+
+	<!--
+	<link href="../../../../zh-CN/assets/css/screen_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/assets/css/documentation/base_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/assets/css/print_l10n.css" media="print" type="text/css" rel="stylesheet" />
+	-->
+	
+	
+		<script src="../../../../zh-CN/cdn/js/libs/jquery.1.9.1.min.js" type="text/javascript"></script>
+	
+	<script src="../../../../zh-CN/cdn/js/libs/jquery.cookie.js" type="text/javascript"></script>
+	<link href="../../../../zh-CN/cdn/css/colorbox.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/cdn/css/colorbox_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<script src="../../../../zh-CN/cdn/js/libs/jquery.colorbox-min.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/assets/js/video-init.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/assets/js/sitecfg.js" type="text/javascript"></script>
+	
+		<script src="../../../../zh-CN/assets/js/signIn.js" type="text/javascript"></script>
+	
+
+	<!--- Language Picker -->
+	<script src="../../../../zh-CN/assets/js/locale/l10NStrings.js" type="text/javascript"></script>
+	
+		 
+	
+
+	<script src="../../../../zh-CN/assets/js/calcite-web.js" type="text/javascript"></script>
+
+
+
+  <!--- search MD -->
+    <META name="description" content="创建您的第一个 
+Workforce 工程 - 定义任务类型、分配工作人员、自定义地图并配置应用程序集成。"><META name="last-modified" content="2019-12-6"><META name="product" content="workforce-iphone"><META name="sub_category" content="Workforce (iPhone)"><META name="search-collection" content="help"><META name="content_type_label" content="帮助主题"><META name="sub_category_label" content="Workforce (iPhone)"><META name="search-category" content="help-general"><META name="subject_label" content="移动,移动应用程序"><META name="version" content=""><META name="content_type" content="Help Topic"><META name="subject" content="MOBILE,MOBILE APPS"><META name="content-language" content="zh-cn">
+    <!--- search MD -->
+
+  
+  <script src="../../../../zh-CN/assets/js/switchers/workforce-1.js" type="text/javascript"></script>
+  
+      
+
+</head>
+
+<!--
+      pub: GUID-3217299E-10A1-4C15-AFA1-F1CD10685993=1
+      tpc: GUID-1A2349C0-9135-4713-A612-E00E4EBE609A=12
+      -->
+
+
+<!-- variable declaration, if any -->
+<!-- can change following macro to set variable once we are on Jinja 2.8 -->
+
+
+
+
+
+<body class="claro zh-CN server">
+  
+
+  <!-- Drawer location -->
+  <div class="drawer drawer-left js-drawer" data-drawer="top-nav">
+        <nav class="drawer-nav" role="navigation">
+          <aside class="side-nav">
+            <h2 class="side-nav-title">Arc<span>GIS</span> Enterprise</h2>
+            <form id="helpSearchForm" class="margin-left-half margin-right-half leader-half trailer-half drawer-search-form" method="GET">
+              <input type="search" name="q"  placeholder="搜索 Workforce">
+              <input type="hidden" name="collection" value="help" />
+              <input type="hidden" name="product" value="workforce-iphone" />
+              <input type="hidden" name="version" value="" />
+              <input type="hidden" name="language" value="zh-CN" />
+            </form>    
+             <a id="nav-portal" data-langlabel="portal" href="../../../../zh-CN/portal/" class="side-nav-link">Portal</a>
+             
+            <a id="all-servers" data-langlabel="all-servers" href="../../../../zh-CN/server/" class="side-nav-link">所有服务器</a>
+            <a id="gis-server" data-langlabel="gis-server" href="../../../../zh-CN/server/" class="side-nav-link">GIS Server</a>
+            <a id="image-server" data-langlabel="image-server" href="../../../../zh-CN/image/" class="side-nav-link">Image Server</a>
+            <a id="geo-analytics-server" data-langlabel="geo-analytics-server" href="../../../../zh-CN/geoanalytics/" class="side-nav-link">GeoAnalytics Server</a>
+            <a id="geoevent-server" data-langlabel="geoevent-server" href="../../../../zh-CN/geoevent/" class="side-nav-link">GeoEvent Server</a>
+            <a id="notebook-server" data-langlabel="notebook-server" href="../../../../zh-CN/notebook/" class="side-nav-link">Notebook Server</a>
+            <a id="nav-data-store" data-langlabel="data-store" href="../../../../zh-CN/data-store/" class="side-nav-link">Data Stores</a>
+            <a id="nav-cloud" data-langlabel="cloud" href="../../../../zh-CN/cloud/" class="side-nav-link">云</a>
+            <a id="nav-apps" data-langlabel="apps" href="../../../../zh-CN/apps/" class="side-nav-link">应用程序</a>
+            <a id="nav-doc" data-langlabel="documentation" href="../../../../zh-CN/documentation/" class="side-nav-link">文档</a>
+
+          </aside>
+        </nav>
+    </div>
+
+    <!-- user navigation collapses to drawer on mobile -->
+    
+    <div class="drawer drawer-right js-drawer hide-if-logged-out logged-in-navigation" data-drawer="user-nav">
+      <nav class="drawer-nav">
+        <aside class="side-nav">
+          <a class="side-nav-link agolProfile" href="#">我的个人资料</a>
+          <a class="side-nav-link icon-ui-sign-out js-log-out" href="#">登出</a>
+        </aside>
+      </nav>
+    </div>
+    
+<!-- End of drawer -->
+
+  
+  <div class="wrapper">
+      <!--googleoff: all-->
+
+      <header class="top-nav" data-skin="learn">
+        <a class="skip-to-content" href="#skip-to-content">Skip To Content</a>
+        <div class="grid-container">
+          <div class="column-24">
+
+
+            <!--<div class="top-nav-title-wrapper text-center ">-->
+              <a href='../../../../zh-CN/' class="top-nav-title tablet-hide"><span>Arc</span>GIS  Enterprise</a>
+              <a href='../../../../zh-CN/' class="icon-ui-menu top-nav-title js-drawer-toggle tablet-show" data-drawer="top-nav"><span>Arc</span>GIS Enterprise</a>
+            <!--</div> -->
+
+          
+            <nav role="navigation" class="top-nav-list left tablet-hide">
+              <a id="nav-portal" data-langlabel="portal" href="../../../../zh-CN/portal/" class="top-nav-link">Portal</a>
+
+                <div class="dropdown js-dropdown ">
+                  <a class="top-nav-link js-dropdown-toggle" tabindex="0" aria-haspopup="true" aria-expanded="false" href="#">Servers</a>
+                  <nav class="dropdown-menu featured" role="menu">
+                    <ul class="dropdown-sublist-featured">
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/get-started/latest/windows/additional-server-deployment.htm" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path  d="M42.92 6.1H4.12v8.566l.833.832-.835.833-.018 7.332.845.847-.825.824V33.9h25v5.2h-2v1.075H8.02v.8h19.1v.925h4.8v-.925H40v-.8h-8.08V39.1h-2v-5.2h13v-8.566l-.834-.834.835-.834v-7.332l-.835-.834.835-.834zm-11.8 35h-3.2v-1.2h3.2zm11-8H4.92v-7.434l.767-.766h35.668l.765.766zm0-9.766l-.766.766H5.666l-.766-.767.017-6.669.766-.764h35.671l.766.766zm0-9l-.766.766H5.687l-.766-.766V6.9h37.2zM19 11.9h-2v-.8h2zm-4 0h-2v-.8h2zm-4 0H9v-.8h2zm6 8.2h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9zm8 9h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9z"/></svg></span>
+                          <span class="sublink-text">所有服务器</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/server/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M45.98 33.575a.616.616 0 0 0-.335-.51l-3.362-2.03 3.362-2.031a.556.556 0 0 0 0-1.02l-11.1-6.704a1.293 1.293 0 0 0-1.112 0L22.33 27.982a.556.556 0 0 0 0 1.02l3.36 2.03-3.358 2.03a.556.556 0 0 0-.002 1.021l3.322 2.006-3.324 2.008a.555.555 0 0 0 .002 1.017l11.102 6.703a1.25 1.25 0 0 0 1.11.002l11.104-6.706a.556.556 0 0 0 0-1.02l-3.32-2.006 3.318-2.004a.607.607 0 0 0 .335-.509zM33.837 21.97c.026-.01.286-.005.29-.005l10.814 6.53-10.8 6.523c-.028.01-.284.005-.294.006l-10.813-6.53zm11.105 16.636l-10.8 6.523a2.564 2.564 0 0 1-.295.006l-10.81-6.529 3.39-2.047 7.004 4.23a1.083 1.083 0 0 0 .557.131 1.101 1.101 0 0 0 .554-.13l7.01-4.233zM34.14 40.098a2.545 2.545 0 0 1-.294.006l-10.812-6.53 3.43-2.073 6.97 4.208a1.25 1.25 0 0 0 1.107-.001l6.966-4.206 3.431 2.073zM9 8H7V7h2zm8 8h-2v-1h2zm-4-8h-2V7h2zm4 0h-2V7h2zm-4 8h-2v-1h2zm7.316 11.1H3.9v-6.434l.766-.766h35.668l.766.766v2.12l.8.483v-2.935l-.826-.826.826-.845v-6.329l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9h16.88a2.632 2.632 0 0 1 .336-.8zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zm0 8v-5.668l.766-.766h35.668l.766.766v5.67l-.746.764H4.666zM15 24v-1h2v1zm-4 0v-1h2v1zm-2-8H7v-1h2zm-2 8v-1h2v1z"/></svg></span>
+                          <span class="sublink-text">GIS Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/image/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 8h-2V7h2zm-4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm8 8h-2v1h2zm-8 0H7v1h2zm4 9v-1h-2v1zm-4 0v-1H7v1zm8 0v-1h-2v1zm4 3.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V21h-.8v-.334l-.766-.766H4.666l-.766.766V27.1H21zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zm40.234 4v21.8H23.1V23.1zm-.8 16.366L39.466 44.1h2.868l1.766-1.766zm-20.2-9.932l5.634-5.634h-2.868L23.9 26.666zm6.2-5.068L24.466 30.1h2.868l2.766-2.766zM28.466 30.1H30.1v-1.634zm2.434 0h6.2v-6.2h-6.2zm-7 7h6.2v-6.2h-6.2zm7 0h6.2v-6.2h-6.2zm0 6.434l5.634-5.634h-2.868L30.9 40.666zm7-7l5.634-5.634h-2.868L37.9 33.666zm1.634-5.634H37.9v1.634zm-8.634 7v1.634l1.634-1.634zm.566 6.2h2.868l2.766-2.766v-2.868zm6.434-3.566l2.634-2.634H37.9zM35.466 44.1H37.1v-1.634zm2.434 0h.434l5.766-5.766V37.9h-2.434L37.9 41.666zm6.2-8.634L42.466 37.1H44.1zm0-4L38.466 37.1h2.868l2.766-2.766zm0-7.566h-6.2v6.2h6.2zm-20.2 0v1.634l1.634-1.634zm0 20.2h6.2v-6.2h-6.2zm20.2 0v-.634l-.634.634z"/></svg></span>
+                          <span class="sublink-text">Image Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/geoanalytics/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 16h-2v-1h2zm-8 8v-1H7v1zm8 0v-1h-2v1zM13 7h-2v1h2zm4 0h-2v1h2zM9 7H7v1h2zm21.45 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V27.9h-1.464l-.801-.8H41.1v-6.434l-.766-.766H4.666l-.766.766V27.1h27.15zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM13 24v-1h-2v1zm0-9h-2v1h2zm-4 0H7v1h2zm26.672 27.148A1.87 1.87 0 0 1 35.9 43a1.91 1.91 0 1 1-3.763-.222l-9.845-3.414A1.88 1.88 0 0 1 21 39.9a1.9 1.9 0 1 1 1.474-3.084l4.692-2.346A1.878 1.878 0 0 1 27.1 34a1.902 1.902 0 0 1 1.9-1.9 1.867 1.867 0 0 1 .781.191l3.788-5.05A1.88 1.88 0 0 1 33.1 26a1.9 1.9 0 1 1 3.491 1.026l4.889 4.888c-.069.056-.144.1-.21.162a3.986 3.986 0 0 0-.358.402l-4.883-4.883A1.889 1.889 0 0 1 35 27.9a1.867 1.867 0 0 1-.781-.191l-3.788 5.049a1.868 1.868 0 0 1 .437.965l9.204.614c-.018.11-.049.218-.058.33A3.93 3.93 0 0 0 40 35c0 .046.01.09.01.135l-9.185-.612A1.913 1.913 0 0 1 29 35.9a1.889 1.889 0 0 1-1.474-.716l-4.692 2.346a1.878 1.878 0 0 1 .066.47 1.9 1.9 0 0 1-.105.625c-.007.02-.022.036-.03.056l9.63 3.34a1.87 1.87 0 0 1 2.786-.505l5.415-4.437c.067.108.127.22.204.322a3.9 3.9 0 0 0 .292.306zM33.9 26a1.092 1.092 0 0 0 .43.872 1.12 1.12 0 0 0 1.42-.068A1.1 1.1 0 1 0 33.9 26zm-6 8a1.1 1.1 0 0 0 2.196.093 1.135 1.135 0 0 0-.426-.965A1.087 1.087 0 0 0 29 32.9a1.101 1.101 0 0 0-1.1 1.1zm-5.8 4a1.098 1.098 0 1 0-.06.362A1.101 1.101 0 0 0 22.1 38zm13 5a1.1 1.1 0 1 0-2.2 0 1.1 1.1 0 0 0 2.2 0zm10.8-8a1.9 1.9 0 1 1-3.8 0c0-.053.003-.105.007-.158A1.9 1.9 0 0 1 45.9 35zm-.8 0a1.1 1.1 0 0 0-2.196-.093 1.153 1.153 0 0 0 .216.752A1.1 1.1 0 0 0 45.1 35z"/></svg></span>
+                          <span class="sublink-text">GeoAnalytics Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/geoevent/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M13 8h-2V7h2zm4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm12.418 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826v2.117c-.259-.177-.53-.337-.8-.497v-1.288l-.766-.766H4.666l-.766.766V27.1h17.933c-.148.26-.283.53-.415.8zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM9 24v-1H7v1zm4-9h-2v1h2zm0 9v-1h-2v1zm-4-9H7v1h2zm8 9v-1h-2v1zm16.9 2h-.8v8.9H39v-.8h-5.1zm.1-3.901a11.9 11.9 0 1 0 11.9 11.9 11.914 11.914 0 0 0-11.9-11.9zm0 23a11.1 11.1 0 1 1 11.1-11.1 11.112 11.112 0 0 1-11.1 11.1z"/></svg></span>
+                          <span class="sublink-text">GeoEvent Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/notebook/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M22 27.1H3.9v-6.434l.766-.766h18.576a5.262 5.262 0 0 1 .83-.8H4.666l-.766-.766v-5.668l.766-.766h35.668l.766.766V18h.8v-5.666l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9H22zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zM9 8H7V7h2zm8 0h-2V7h2zm-4 0h-2V7h2zm2 16v-1h2v1zm-4 0v-1h2v1zm-4 0v-1h2v1zm0-8v-1h2v1zm8 0v-1h2v1zm-4 0v-1h2v1zm18.9 8.1h-1.8v1.8h1.8zm-.8 1h-.2v-.2h.2zm15.498-4.48a2.727 2.727 0 0 0-1.62-.5v-.02H27.25a3.154 3.154 0 0 0-3.15 3.15V38.1h-1.68a3.386 3.386 0 0 0-2.872 1.58 3.49 3.49 0 0 0-.157 3.419 3.241 3.241 0 0 0 2.954 1.801h15.161a3.404 3.404 0 0 0 3.394-3.4V26.9h5v-3.65a3.224 3.224 0 0 0-1.302-2.63zM22.345 44.1a2.44 2.44 0 0 1-2.23-1.341 2.706 2.706 0 0 1 .11-2.65A2.588 2.588 0 0 1 22.42 38.9h12.89a3.395 3.395 0 0 0 0 5.2zM40.1 23.192V41.5a2.6 2.6 0 1 1-2.6-2.6v-.8H24.9V23.25a2.352 2.352 0 0 1 2.35-2.35h13.795a3.183 3.183 0 0 0-.945 2.292zm5 2.908h-4.2v-2.908a2.274 2.274 0 0 1 1.44-2.18 1.944 1.944 0 0 1 1.791.259 2.423 2.423 0 0 1 .97 1.979zm-17.1 5h9v.8h-9zm0 3h7v.8h-7zm0-6h9v.8h-9zm4-3h5v.8h-5z"/></svg></span>
+                          <span class="sublink-text">Notebook Server</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+
+              <a id="nav-data-store" data-langlabel="data-store" href="../../../../zh-CN/data-store/" class="top-nav-link">Data Stores</a>
+              <a id="nav-cloud" data-langlabel="cloud" href="../../../../zh-CN/cloud/" class="top-nav-link">云</a>
+              <a id="nav-apps" data-langlabel="apps" href="../../../../zh-CN/apps/" class="top-nav-link">应用程序</a>
+            </nav>
+
+
+            
+            
+            
+
+            <div class="margin-left-1 top-nav-list right hide-if-logged-in logged-out-navigation">
+               
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+              
+              <a data-langlabel="sign-in" id="login-link" class="icon-ui-user top-nav-link link-blue login-link" href="#">登录</a>
+              
+            </div>
+
+            
+            <nav class="margin-left-1 top-nav-list right hide-if-logged-out logged-in-navigation">
+              
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+             
+              <div class="dropdown js-dropdown right">
+
+                <div class="tablet-show top-nav-link">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a href="#" data-drawer="user-nav" class="user-nav-name js-drawer-toggle" data-first-name></a>
+                </div>
+
+                <div class="tablet-hide top-nav-link js-dropdown-toggle">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a class="user-nav-name top-nav-dropdown dropdown-btn" data-first-name>&nbsp;</a>
+                </div>
+
+                <nav class="dropdown-menu dropdown-right">
+                
+                  <a class="dropdown-link agolProfile" id="agolProfile" href="#">我的个人资料</a>
+                  <a class="dropdown-link js-log-out" id="agolLogout" href="#">登出</a>
+                </nav>
+              </div>
+            </nav>
+            
+
+            
+          </div>
+        </div>
+      </header>
+
+      <div class="js-search search-overlay">
+        <div class="search-content" role="dialog" aria-labelledby="search">
+          <form method="GET" id="helpSearchForm">
+            <label>
+              搜索 Workforce
+              <div class="search-bar">
+                <input type="search" name="q"  placeholder="搜索 Workforce" class="search-input js-search-input">
+                <input type="hidden" name="collection" value="help" />
+                <input type="hidden" name="product" value="workforce-iphone" />
+                <input type="hidden" name="version" value="" />
+                <input type="hidden" name="language" value="zh-CN" />
+              </div>
+            </label>
+            <input type="hidden" name="relativePath" value="../../../../" /><button type="submit" class="btn btn-large right">搜索</button>
+          </form>
+        </div>
+      </div>
+
+      <!--googleon: all-->
+
+      <div id="skip-to-content">
+        <!--googleoff: all-->
+        <header class="sub-nav sub-nav-learn">
+          <div class="grid-container">
+            
+            <div class="column-24">
+              <div style="display:table;" class="sdk-home-banner">
+                <div class="sdk-home-banner-content">
+                  <h1 class="sub-nav-title link-white">Workforce for ArcGIS</h1>
+                </div>
+              </div>
+            </div>
+
+            <div class="column-24">
+              <nav class='sub-nav-list tablet-hide'><a class="sub-nav-link" href="../../../../zh-CN/workforce/" target="_top" title="Workforce 主页">主页</a><a class="sub-nav-link is-active" href="../../../../zh-CN/workforce/iphone/help/create-your-first-project.htm" target="_top" title="帮助">帮助</a><a class="sub-nav-link" href="../../../../zh-CN/workforce/faqs/faqs-general.htm" target="_top" title="常见问题解答">常见问题解答</a></nav><select class='tablet-show select-full trailer-half js-select-nav'><option value="../../../../zh-CN/workforce/">主页</option><option selected="true" value="../../../../zh-CN/workforce/iphone/help/create-your-first-project.htm">帮助</option><option value="../../../../zh-CN/workforce/faqs/faqs-general.htm">常见问题解答</option></select>
+            </div>
+
+          </div>
+        </header>
+        <!--googleon: all-->
+       
+        <!-- content goes here -->
+        <div class="grid-container ">
+          
+
+            
+              
+  <!--BREADCRUMB-BEG--><div id="bigmac" class="sticky-breadcrumbs trailer-2" data-spy="affix" data-offset-top="180"> </div><!--BREADCRUMB-END-->
+  <!--googleoff: all-->
+    <div class="column-5 tablet-column-12 trailer-2 ">
+      <aside class="js-accordion accordion reference-index" aria-live="polite" role="tablist">
+        <div></div>
+      </aside>
+
+      <div class="js-sticky scroll-show tablet-hide leader-1 back-to-top" data-top="0" style="top: 0px;">
+        <a href="#" class="btn btn-fill btn-clear">返回顶部</a>
+      </div>
+    </div>
+  <!--googleon: all-->
+  
+            
+            
+            
+	
+		<div class="column-13  pre-1 content-section">
+	
+		<header class="trailer-1"><h1>创建您的第一个工程</h1></header>
+
+		 
+	<!--googleoff: all-->
+	
+		
+				<aside id="main-toc-small" class="js-accordion accordion tablet-show trailer-1">
+			      <div class="accordion-section">
+			        <h4 class="accordion-title">在本主题中</h4>
+			        <div class="accordion-content list-plain">
+			          <ol class="list-plain pre-0 trailer-0"><li><a href="#ESRI_SECTION1_F13556C530524048ADEFCA60FDD0A2EF">创建 <ph translate="no" varid="workforce_app_name">Workforce</ph> 工程</a></li><li><a href="#ESRI_SECTION1_64F8DA09E713477FADA36F2CAF8B4CB6">提供工作类型</a></li><li><a href="#ESRI_SECTION1_78CAD30511D8467EAEF3FEE482269971">提供角色</a></li><li><a href="#ESRI_SECTION1_34E0DA8779D24E94950BA988A7EA3E1F">自定义地图</a></li><li><a href="#ESRI_SECTION1_B765953F61B048B797ACFC43C4625FA6">配置其他设置</a></li><li><a href="#ESRI_SECTION1_6841F38E5052416CA27514DA47927D6C">测试您的工程</a></li><li><a href="#ESRI_SECTION1_E0F8E105D3DE4F97B476507F9B8D51CE">接下来的步骤</a></li></ol>
+			        </div>
+			      </div>
+			     </aside>
+		
+    
+   <!--googleon: all-->
+
+
+		<main>
+			
+	
+    	
+    
+
+
+			
+<p id="GUID-756556C3-0292-4BC7-80DD-A9E7E782F5D2" ishcondition="help_type=userhelp">欢迎使用 <span class="ph">Workforce</span>！ 在本练习中，假设您是圣地亚哥市的 GIS 管理员。您的工作内容之一是通过提供地理数据来推动其工程的开展，以支持消防部门的工作，且其即将到来的工程是检查消火栓。您拥有成功完成工作所需的消火栓数据，但您尚未使用 <span class="ph">Workforce</span> 创建工程来管理外业所完成的工作。您将创建您的第一个 <span class="ph">Workforce</span> 工程，且消防部门将使用该工程来协调检查。您将定义工程中完成的工作类型，并为调度员和移动工作人员分配其角色。每个消防站的消防队长会派遣其消防站的消防员（移动工作人员）。消防员检查消火栓并汇报其相关信息。</p><div class="panel trailer-1 note" id="GUID-9A70D808-19F5-46FF-9A89-32284A1AE937"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-004E26DC-31B4-4491-AC56-021F1272F1D6">对于这个特定的城市及其角色和团队结构，消防队长作为调度员和消防员作为移动工作人员这种联合很有意义：他们是充当圣地亚哥市消火栓检查中相应角色的人。在其他城市可能不是这样。例如，在其他城市，消火栓检查由水利部管理并完成，并由不同的人充当这些角色。此处的关键是要了解调度员与移动工作人员之间的关系，以及反映这种关系的 <span class="ph">Workforce</span> 工程：您可以对这种关系进行配置，因为这种关系在您创建自己的工程时对您的组织有意义。</p><p id="GUID-A9BE2637-F4F0-4BC8-B131-A91FCED22322">如果这是您为您的公司创建的真实工程，请从定义工程开始。虽然本练习将指导您了解有关待管理工作的明确回答，但了解如何定义您自己的工程很重要。请参阅<a class="xref xref" href="../../../../zh-CN/workforce/iphone/help/tips-project-owner.htm#ESRI_CONTEXT_26D88CACC4864B0ABB7A5A6CE9F1D4F2">定义工程</a>。</p><p id="GUID-733EE9DA-F7F0-4CF5-BF8B-FF1F157DF62A">完成本练习需要 ArcGIS 组织中的发布者或管理员角色。调度员和移动工作人员只需获得编辑要素服务的权限，即可使用 <span class="ph">Workforce</span>。</p><p id="GUID-FB28FCE6-D221-43A7-A1EB-CB4DF25B20B7">如果您已经完成了<a target="_blank" class="xref xref" href="https://links.esri.com/learn-manage-and-complete-hydrant-inspections">管理消火栓检查</a>这一课程的学习，那么您就已经了解了本练习中涉及的大多数材料。但是，此处未涉及<a class="xref xref" href="../../../../zh-CN/workforce/iphone/help/create-your-first-project.htm#ESRI_SECTION1_6841F38E5052416CA27514DA47927D6C">测试您的工程</a>和<a class="xref xref" href="../../../../zh-CN/workforce/iphone/help/create-your-first-project.htm#ESRI_SECTION1_E0F8E105D3DE4F97B476507F9B8D51CE">接下来的步骤</a>部分。</p></div><section class="section1 padded-anchor" id="ESRI_SECTION1_F13556C530524048ADEFCA60FDD0A2EF" purpose="section1"><h2>创建 <span class="ph">Workforce</span> 工程</h2><p id="GUID-302A6055-6CBE-451E-B823-6D802860772A">当工程所有者设置 <span class="ph">Workforce</span> 工程时，您将在 <span class="ph">Workforce</span> web 应用程序中工作。</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_9DD29DC6D1634FBFA347DB2FAE07AAB1"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_0FC09CB130AE4D6DADB0A93DD12ED39E"><span purpose="cmd" id="GUID-3A50C386-F5B8-401C-AAE3-5B29ED308CC6">打开 <span class="ph">Workforce for ArcGIS</span> Web 应用程序。登录到 ArcGIS 组织帐户。</span><table purpose="choicetbl" id="ESRI_CHOICETABLE_0A55C0DF355D45A98441D841696EE226"><tr purpose="chrow" cid="QKm3h"><td purpose="choption"><p id="GUID-28C80F34-F980-4C24-A6E7-0C9B6844D129">使用 <span class="ph">ArcGIS Online</span></p></td><td purpose="chdesc"><p id="GUID-90E84DD6-1DE2-4DEF-BABC-A2EFB3ACB488">转至 <a target="_blank" class="xref xref" href="https://workforce.arcgis.com/">https://workforce.arcgis.com</a>。</p></td></tr><tr purpose="chrow" cid="6IWB4"><td purpose="choption"><p id="GUID-2E9D3C13-3FD0-4BB7-8F57-86D33540E055">使用 <span class="ph">ArcGIS Enterprise</span></p></td><td purpose="chdesc"><p id="GUID-2156775D-75EC-40EC-B5AF-A7546201C830">转至 <span class="usertext">https://host.domain.com/webadaptor/apps/workforce/</span>（其中 host、domain 和 webadaptor 将替换为门户相关信息）。</p></td></tr></table><div class="stepresult" purpose="stepresult"><p id="GUID-8DBBBDD6-1C8A-4BA9-B64D-209E645CB9D6">随即出现<span class="uicontrol">工程</span>页面，其中显示您创建或作为调度员或移动工作人员参与的所有工程。</p></div></li><li purpose="step" id="ESRI_STEP_7EEECD51BC874455BE1B13A4F3D5C141"><span purpose="cmd" id="GUID-C4EE0751-9989-438F-B8D6-C372CE6723B2">单击<span class="uicontrol">创建工程</span>。</span><div class="info" purpose="info"><p id="GUID-9BA7C8D7-1EA0-4636-8635-6A19FCEA0688">您将成为工程所有者。只有工程所有者才能配置工程，其中包括添加任务类型和分配角色。在工程中提供角色后，指定用户可作为调度员和移动工作人员参与。</p></div><div class="info" purpose="info"><div class="panel trailer-1 note" id="GUID-55DC9564-4747-4BC3-9FBA-4232DB1F843D"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-F9473F52-D298-4073-A3D0-AF3798FE2F0F">如果您在组织中没有<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/workforce" href="../../../../zh-CN/workforce/faqs/faqs-general.htm#ESRI_QUESTIONANSWER_27F7B775615C49F98A9D7D706372C34A">足够的权限</a>，您将不会看到<span class="uicontrol">创建工程</span>。</p></div></div></li><li purpose="step" id="ESRI_STEP_2553FF3878BE4A2CB8F450E1929050CB"><span purpose="cmd" id="GUID-33D3E298-7271-420C-A623-72E9928C7FE9">对于工程名称，输入 <span class="usertext">Hydrant Inspections</span>。</span><div class="info" purpose="info"><p id="GUID-EBEAA4BA-5E20-4C73-86A5-333B9925E059">该名称描述了此工程的目的以及调度员和移动工作人员找到工程的方法。名称不得多于 250 个字符。</p></div></li><li purpose="step" id="ESRI_STEP_1ACA5C1F763440F2B051C0517416E508"><span purpose="cmd" id="GUID-3E9D73F9-409A-4AED-BD42-5E88BB13DE18">键入摘要以提醒参与者工程的目的：<span class="usertext">Assign and monitor hydrant inspections in San Diego</span>。</span><div class="info" purpose="info"><p id="GUID-45310629-F3B0-4281-8B89-66F8A3778AAC">此信息是工程详细信息的一部分，并对所有在 ArcGIS 网站中查看工程详细信息的用户可见。</p></div></li><li purpose="step" id="ESRI_STEP_C1B964E947CC4B998C243BC77E43E663"><span purpose="cmd" id="GUID-4B7E7160-C601-469C-92F1-4AC48166852C">单击<span class="uicontrol">创建工程</span>。</span><div class="stepresult" purpose="stepresult"><p id="GUID-EC2875EB-32D6-4037-B4F3-C13E34CC8652"> 在工程创建期间，将为您创建工程及其使用的地图和图层。此外，还将在 ArcGIS 组织中为此工程创建文件夹和群组。作为工程所有者，您也会被作为调度员添加到工程中，以便您可以测试此工程。<span class="ph">请参阅<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/workforce" href="../../../../zh-CN/workforce/faqs/faqs-project-owner.htm#ESRI_QUESTIONANSWER_0716F198F15A452DAA1B5F125A22360E">什么是 <span class="ph">Workforce</span> 工程？</a> 获取详细信息。</span></p><p id="GUID-39B1A898-530E-4EFC-A8F8-37B2D4DBA08A" ishcondition="help_type=userhelp"><div class="panel trailer-1" id="GUID-8F696DC8-82AD-4575-8211-BCB79990E68B"><h5 class="icon-ui-notice-triangle trailer-0">警告：</h5><p id="GUID-9B7A36F4-7F38-4C2F-957D-607F2DE610C1">虽然在浏览器中登录到 ArcGIS 后，工程、地图、图层和群组都在您的门户中且可进行编辑，但您还是需要注意在 <span class="ph">Workforce</span> 应用程序之外所做的更改。如果您决定在 <span class="ph">Workforce</span> 之外操作这些项目，您应该避免以下操作：<ul purpose="ul" id="UL_6A7E7418F2774867B87CB49E82E23525"><li purpose="li" id="LI_6AFE72A731914A1C8B1C8E9EB7A0D92A">取消与工程群组共享任意项目</li><li purpose="li" id="LI_01B10DA99E9A4E95968644D61C43DFAA">删除工程的群组</li><li purpose="li" id="LI_F704386FDA0D431D88BD946F25F2AF14">删除或修改图层中的预定义字段。</li><li purpose="li" id="LI_1913F2B16E4A463BAF2B8E47643D9AB1">删除或修改预定义图层。</li></ul></p><p id="GUID-1145269A-629D-4B3C-A4C3-A007F277BEE8">虽然可以更改项目的所有权，但请谨慎执行该操作，确保遵照<a class="xref xref" href="../../../../zh-CN/workforce/iphone/help/troubleshooting-project-owner.htm#ESRI_QUESTIONANSWER_98290A7F7D36437CB46848DC37CCBA14">疑难解答：如何将工程所有权移至其他成员？</a>中的指导原则。</p></div></p><p id="GUID-26C3FC5E-04D3-4CA6-AF6B-876B9EF08F90"><span class="ph">Workforce</span> 提供了所有这些组件，因此在创建 <span class="ph">Workforce</span> 工程后，只需少量配置即可立即使用此工程。</p><p id="GUID-92230B76-6C3B-481F-8DE3-134D2D283307">创建工程后，您会看到<span class="uicontrol">任务类型</span>选项卡。</p><div class="panel trailer-1" id="GUID-D9B26D04-FFE7-4204-8D02-21D82BADA170"><h5 class="icon-ui-description trailer-0">提示：</h5><p id="GUID-F48B15D2-B5BC-43AE-9814-ACFAE64D9557"><span class="uicontrol">工程设置</span>任务列表显示在页面顶部，可指导您完成工程配置。该任务列表指示您所在的步骤、接下来要执行的步骤以及工程在准备开始使用之前应保留的步骤。</p></div></div></li></ol></div></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_64F8DA09E713477FADA36F2CAF8B4CB6" purpose="section1"><h2>提供工作类型</h2><p id="GUID-119359BF-50BC-422C-8628-3107A6E18D80" ishcondition="help_type=userhelp">在<span class="uicontrol">任务类型</span>选项卡中，您将定义工程中正在进行的工作。这些类型应反映调度员与移动工作人员之间的交流方式。一般情况下，工程中的类型可以分配给该工程中的所有或大多数移动工作人员。在本练习中，消防队长和消防员将其工作称为消火栓检查，因此您会将该术语用于任务的单一类型。</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_FF31136F92224664A087214FEB40C7A2"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_26D8D6EA6BEF439EB68A14C26903EE70"><span purpose="cmd" id="GUID-A81B6697-61BD-44A8-B11D-0727494D0932">在<span class="uicontrol">添加任务类型</span>框中，输入 <span class="usertext">hydrant inspection</span>，然后单击 <span class="uicontrol">+ 类型</span>。</span><div class="info" purpose="info"><div class="panel trailer-1" id="GUID-CC085F78-CDF1-48B8-970C-75D30FCFCCF1"><h5 class="icon-ui-description trailer-0">提示：</h5><p id="GUID-EBBE4BCB-2E27-4D3D-8303-C0DD391C40F6">一个工程必须至少有一个任务类型。<span class="ph">您可以在配置工程之后添加这些类型，在不使用时可以将其移除。</span></p></div></div><div class="stepresult" purpose="stepresult"><p id="GUID-327199F4-AF30-4484-9EC6-2C9CB45CE31F">类型添加至您的工程中后会显示在任务列表中选项卡的底部。如果添加多个类型，那么当您返回到选项卡并将其显示给调度员时，它们会按字母表顺序排序。</p></div></li></ol></div></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_78CAD30511D8467EAEF3FEE482269971" purpose="section1"><h2>提供角色</h2><p id="GUID-02469F64-B0D4-49CE-8161-796C1FC1DEF0" ishcondition="help_type=userhelp">添加将参与此工程的用户。角色定义可使用工程的位置：调度员使用 web 应用程序，而移动工作人员使用移动应用程序。在本练习中，消防队长是调度员，而消防员是移动工作人员。</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_1B67F5E7B0F24F23BEB7DCAE9AE0A6E2"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_57FAAE28B8CF4A50AE389EEE69081608"><span purpose="cmd" id="GUID-429091B8-A82B-4C9B-B871-25878216B369">单击<span class="uicontrol">工程设置</span>任务列表中的第三步：<span class="uicontrol">添加移动工作人员</span>。</span><div class="stepresult" purpose="stepresult"><p id="GUID-FFD99A82-488E-4D39-BA9C-7E58199F1C68">随即显示<span class="uicontrol">用户</span>选项卡。作为工程所有者，您已被作为调度员添加到工程中。这样您便可测试工程。要使用 <span class="ph">Workforce</span> 移动应用程序，您需要在工程中充当移动工作人员。</p></div></li><li purpose="step" id="ESRI_STEP_6C0750EC89DA4BEC91D4BC0431E2DD52"><span purpose="cmd" id="GUID-2761968A-950F-438D-A772-1052B50C4C35">对于<span class="uicontrol">组织用户</span>，输入您的姓名以显示一个包含组织中用户的过滤列表。</span><div class="info" purpose="info"><p id="GUID-6878113A-901E-480C-9D63-517F5746DC0F">用户列表中包含组织中所有具有公共配置文件的成员。如果您是组织的管理员，您还可以看到具有个人配置文件的用户。</p></div></li><li purpose="step" id="ESRI_STEP_4AC669BFC79B4CDEB1643A9AC6ABD8AC"><span purpose="cmd">单击您的姓名。</span><div class="stepresult" purpose="stepresult"><p id="GUID-B155C122-F363-4851-8F31-99F3085B4F95">由于您不能再次将您自己添加为调度员，因此<span class="uicontrol">工程角色</span>将自动设置为<span class="uicontrol">移动工作人员</span>。</p></div></li><li purpose="step" id="ESRI_STEP_5D83F5437F594DE4B189B6D5B2E6563F"><span purpose="cmd" id="GUID-889ADD6B-B154-4800-BE64-6012C6DE4E99">单击 <span class="uicontrol">+ 用户</span>。</span><div class="info" purpose="info"><p id="GUID-6A61D606-4540-4B74-AD74-DB1543CD9260">将在工程的用户列表中显示另一条目。这一条目将您列为移动工作人员。</p><figure class="fig" href="#"><img src="GUID-5A62E4A7-7219-4142-9A70-63591AF2A677-web.png" alt="将您列为移动工作人员的用户选项卡" title="将您列为移动工作人员的用户选项卡"></figure><p id="GUID-22B149FB-BCF5-4DAE-90C7-C4BABCF9B94E"><span class="uicontrol">工程设置</span>任务列表中的第三步现已完成，随后将选中第四步<span class="uicontrol">添加更多调度员</span>。一个工程至少需要一个调度员（包括您默认为调度员的角色）以及一个移动工作人员。由于您已拥有各个角色，因此可单击<span class="uicontrol">跳过此步骤</span>以完成工程设置。但是，您还将进一步配置工程。</p></div></li><li purpose="step" id="ESRI_STEP_7085360EE50C45EB861F7CD1B13FB41D"><span purpose="cmd" id="GUID-28A1EA7A-1C84-47B3-AA67-D11E79EBA8C6">在<span class="uicontrol">用户</span>列表中，指向您表示调度员角色的姓名，然后单击<span class="uicontrol">添加详细信息</span>。</span><div class="info" purpose="info"><figure class="fig" href="#"><img src="GUID-C04A7244-153A-4AD1-BB0B-0780E66F2D7D-web.png" alt="添加详细信息" title="添加详细信息"></figure></div></li><li purpose="step" id="ESRI_STEP_300769A89463471D80C56875834AA731"><span purpose="cmd" id="GUID-1B125ED0-0C30-44A8-B7E1-12FE780465FF">提供联系人电话，然后单击<span class="uicontrol">保存</span>。</span></li><li purpose="step" id="ESRI_STEP_A781AA7ECE764EA59E8B99796269FE77"><span purpose="cmd">对于您的移动工作人员角色，添加以下详细信息：</span><div class="info" purpose="info"><p id="GUID-BA39AEAE-FC5D-4D68-9259-981DEB006076"><ul purpose="ul" id="UL_497F9F32F4124190B5AF6ADB823DA2BF"><li purpose="li" id="LI_1B5F0F2A1277416C9EEFFBBB67C78AD2"><span class="uicontrol">联系人电话</span></li><li purpose="li" id="LI_C9AF6BCBF66A493FA4967F0D02B49BAB"><span class="uicontrol">职位</span>：<span class="uicontrol">消防员</span></li></ul></p><p id="GUID-FC7C8496-1F6C-4564-A53A-79BD669AC591">新的详细信息将显示在用户列表中。</p></div></li><li purpose="step" id="ESRI_STEP_F43891E7A10743FD86837BD7DAD6588E" ishcondition="help_type=userhelp"><span purpose="cmd" id="GUID-47EEB231-08A9-4EB2-8D49-B126E6077509">如果您需要更新详细信息，请将鼠标悬停在您添加的详细信息上并单击<span class="uicontrol">编辑</span> <img purpose="img" placement="inline" alt="编辑" title="编辑" src="GUID-4A7435BF-7069-4F5D-8FC0-B13727E23E43-web.png">。更新信息，然后单击<span class="uicontrol">保存</span>。</span></li><li purpose="step" id="ESRI_STEP_B4385D161E6D4FE2A0A61045CDF25F28"><span purpose="cmd" id="GUID-E7D8F444-8B46-452E-B2DC-1F3D8C0AD781">如果您计划让其他用户参与工程，则将这些用户作为调度员和移动工作人员添加到工程。</span><div class="info" purpose="info"><div class="panel trailer-1" id="GUID-65749380-0442-4AA2-81EC-339175809E30"><h5 class="icon-ui-description trailer-0">提示：</h5><p id="GUID-A6DEDAA8-72FF-4D3E-8D57-F490CB71177A">您可以添加任何具有编辑权限的组织成员。要从其他组织添加用户，请参阅<a class="xref xref" href="../../../../zh-CN/workforce/iphone/help/tips-project-owner.htm#ESRI_CONTEXT_93FEC1AED53E4BED97C1AB7A811A8252">从其他组织添加用户</a>。</p></div></div></li></ol></div></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_34E0DA8779D24E94950BA988A7EA3E1F" purpose="section1"><h2>自定义地图</h2><p id="GUID-23E28922-30FA-4A32-BB98-616E3B6D800E">虽然您的工程现在可以使用，但您仍要通过自定义地图来继续配置工程。当使用 <span class="ph">Workforce</span> 时，消防队长和消防员想要查看和搜索需要检查的消火栓。要向地图添加消火栓，您需要更新工作人员和调度员的地图以包括其他图层。</p><div class="panel trailer-1" id="GUID-086FE25A-E95D-4B50-AB75-6921AB7790F7"><h5 class="icon-ui-description trailer-0">提示：</h5><p id="GUID-6A1D4830-9594-44D9-AD99-6CCBD9868904">在本练习中，您向两个地图添加了相同的图层，但您可以基于调度员和移动工作人员的需求向两个地图添加不同的信息。</p></div><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_A888177E06CD44748FB95AFD0D9D8A3B"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_B4FD644D01404D80B4A29D196B0B0406"><span purpose="cmd" id="GUID-00873C8B-5E7B-40F8-AD03-A8A8F0CE180C">单击您工程的<span class="uicontrol">概述</span>选项卡。</span></li><li purpose="step" id="ESRI_STEP_B2F5BD6FAFB64950AE74877848803A78"><span purpose="cmd" id="GUID-4F61D4F7-4B9C-4C7E-B38E-BF01EEDDEB5A">在<span class="uicontrol">地图</span>列表中，单击<span class="uicontrol">调度人员地图</span>以对其进行配置。</span><div class="info" purpose="info"><p id="GUID-83769D0E-0E2D-456F-AC79-78AA8933F955">该地图将打开，允许您在操作组织内的其他地图时对其进行修改。如果您是首次编辑调度员地图，您将收到通知，表示更改将对调度员可见，并且您不应移除 Assignments 和 Workers 图层。</p></div></li><li purpose="step" id="ESRI_STEP_F4717471FFDE482AA6E301292831D8BB"><span purpose="cmd">在通知中，单击<span class="uicontrol">我知道了</span>以继续编辑地图。</span></li><li purpose="step" id="ESRI_STEP_4BE019732420430283BEB55D6872A619"><span purpose="cmd" id="GUID-E9242CE0-ABC1-48A7-9C84-E17FF68DB61B">单击<span class="uicontrol">添加</span>，然后单击<span class="uicontrol">搜索图层</span>。</span></li><li purpose="step" id="ESRI_STEP_92D1EA31F99E4060B7022F9ACE06729B"><span purpose="cmd" id="GUID-A884A299-3191-451D-BA80-DA6A1DE39F7F">在<span class="uicontrol">查找</span>框中，输入 <span class="usertext">hydrants owner:esri_workforce</span>。</span></li><li purpose="step" id="ESRI_STEP_5ED2954AA71B4FE2BD5307EC2D7948D4"><span purpose="cmd" id="GUID-99794505-DB61-4CAD-97B6-38A021EC9DEC">通过执行以下任一操作在 <span class="ph">ArcGIS Online</span> 中进行搜索：</span><ul purpose="choices" id="ESRI_CHOICES_C5E2B64DBF334EBC9816D4D14EEEC8C5"><li purpose="choice" id="ESRI_CHOICE_A4A69000D033458399089AF678930FA3">如果使用 <span class="ph">ArcGIS Online</span> 或 <span class="ph">ArcGIS Enterprise</span> 10.6.1 及更高版本，请单击<span class="uicontrol">我的内容</span>并选择 <span class="uicontrol">ArcGIS Online</span>，将搜索从<span class="uicontrol">我的内容</span>更改为 <span class="uicontrol">ArcGIS Online</span>。<figure class="fig" href="#"><img src="GUID-A213A039-FB7B-4D44-9AB6-27BD01B828C5-web.png" alt="在 ArcGIS Online 中搜索" title="在 ArcGIS Online 中搜索"></figure></li><li purpose="choice" id="ESRI_CHOICE_CE992DA5852C48998F349AE303734567">如果使用 <span class="ph">ArcGIS Enterprise</span> 10.6 或更早版本，请将<span class="uicontrol">搜索范围</span>设置为 <span class="uicontrol">ArcGIS Online</span> 并取消选中<span class="uicontrol">在地图区域内</span>。</li></ul></li><li purpose="step" id="ESRI_STEP_84F338F1B3B544E89106D7F66D216F70"><span purpose="cmd" id="GUID-9AC68DB0-4267-4A28-A41B-86707658316C">单击 <span class="uicontrol">Fire_Hydrants</span> 图层旁边的<span class="uicontrol">添加</span>。</span><div class="info" purpose="info"><figure class="fig" href="#"><img src="GUID-20CB1052-ED1E-4055-9F44-589A8C04672D-web.png" alt="Fire_Hydrants 图层" title="Fire_Hydrants 图层"></figure><p id="GUID-B8AC444B-507A-4374-97C1-982470D7FE01">地图范围将发生更改以显示您刚添加的图层。由于在该图层上启用了标注，因此将在地图上对消火栓设置标注。<span class="ph">有关详细信息，请参阅<a class="xref xref" href="../../../../zh-CN/workforce/iphone/help/tips-project-owner.htm#ESRI_CONTEXT_B4B7DFB7D2F544A19B53279127D93CF5">提示：添加标注</a>。</span></p></div></li><li purpose="step" id="ESRI_STEP_F2A65B8370714469A9CE0335C1188DEE"><span purpose="cmd" id="GUID-21911176-D58B-4E71-B802-566E41AC5462">返回至地图的内容。</span><table purpose="choicetbl" id="ESRI_CHOICETABLE_056F6328183049CAA72E12F2294743A0"><tr purpose="chrow" cid="QKm3h"><td purpose="choption"><p id="GUID-B4934489-4E8F-47AD-96D2-05F9853D734D">使用 <span class="ph">ArcGIS Online</span> 或者 <span class="ph">ArcGIS Enterprise</span> 10.6.1 或更高版本</p></td><td purpose="chdesc"><p id="GUID-158790EA-D5C0-4660-884F-CCC880D3CB2A">单击返回箭头。</p></td></tr><tr purpose="chrow" cid="6IWB4"><td purpose="choption"><p id="GUID-BCBC891E-86BC-4447-9253-A28D6F9A60FD">使用 <span class="ph">ArcGIS Enterprise</span> 10.5.1 或 10.6</p></td><td purpose="chdesc"><p id="GUID-C2FDB234-A975-412E-8BAE-720C57249568">单击<span class="uicontrol">完成添加图层</span>。</p></td></tr></table><div class="info" purpose="info"><p id="GUID-2956CE5E-B4D9-491A-986C-2FE906AB017A">消火栓图层将添加至您地图的<span class="uicontrol">内容</span>窗格的顶部。</p></div></li><li purpose="step" id="ESRI_STEP_ADFA1CAB160D4B6B8ECA9602DED93F18"><span purpose="cmd" id="GUID-C50972BE-74E7-404C-80DF-060D615C807A">在<span class="uicontrol">内容</span>窗格中，指向 <span class="uicontrol">Fire Hydrants</span> 图层，单击垂直省略号，并将图层拖动到 <span class="uicontrol">Assignments</span> 图层的下方以更改图层顺序。</span><div class="info" purpose="info"><figure class="fig" href="#"><img src="GUID-1E80A51A-7D38-4E14-8CF1-7AC88E0DD3E2-web.png" alt="图层顺序" title="图层顺序"></figure><p id="GUID-D930E8E1-718A-44F5-B12B-3A858ABC3BD4">将 Workers 和 Assignments 保持为地图中的第一个图层和第二个图层，资产图层位于它们下方，这将创建一个更美观、更易于使用的地图。在地图中，Workers 将显示在其他图层上方，Assignments 将显示在资产上方。</p></div></li><li purpose="step" id="ESRI_STEP_8D9C71C4493349FCBBDD056822E3FF51"><span purpose="cmd" id="GUID-6FC49575-6D41-411C-A710-D3DD78C397EB">在<span class="uicontrol">内容</span>窗格中，单击 <span class="uicontrol">Fire Hydrants</span> 图层以显示其工具条，单击<span class="uicontrol">更多选项</span> <img purpose="img" placement="inline" alt="更多选项" title="更多选项" src="GUID-54E2A3B6-4830-42A9-8077-680C2C3B2D54-web.png">，然后单击<span class="uicontrol">配置弹出窗口</span>。</span><div class="info" purpose="info"><p id="GUID-80903575-D256-4F07-8882-37C8957C0EE2">如果从资产创建任务，<span class="ph">Workforce</span> 将使用弹出窗口标题作为资产说明和位置。您将提供弹出标题，以便该位置对移动工作人员而言有用。</p></div></li><li purpose="step" id="ESRI_STEP_7EF55ADDC77A44B9B69C9C2C92637215"><span purpose="cmd" id="GUID-5B3F2BF7-678F-42ED-8E8C-A45E8AA449CE">对于<span class="uicontrol">弹出窗口标题</span>，删除文本，单击<span class="uicontrol">添加字段名称</span> <span class="uicontrol">[+]</span>，然后选择 <span class="uicontrol">HYD_ID {HYD_ID}</span>。</span><div class="info" purpose="info"><figure class="fig" href="#"><img src="GUID-8956128A-CBA9-46F1-98A2-C9F7C795F997-web.png" alt="添加字段名称" title="添加字段名称"></figure><p id="GUID-888D71AC-7380-4599-8813-6D6FB97F4126">为特定消火栓创建的任务会将消火栓 ID 作为其位置。</p></div></li><li purpose="step" id="ESRI_STEP_171CEE9D003D43699B03E2FA2BDA7867"><span purpose="cmd" id="GUID-73122D0F-F113-4E48-9F26-5AD256B3129E">单击<span class="uicontrol">确定</span>以保存对弹出窗口的更改。</span></li><li purpose="step" id="ESRI_STEP_77A14888E94B413E824A0C3F1BE53EA9"><span purpose="cmd" id="GUID-F95687AD-26A6-4BBB-AED2-9EDF294194B1">单击工具条上的<span class="uicontrol">保存</span>，然后单击<span class="uicontrol">保存</span>以保存对地图的更改。</span><div class="stepresult" purpose="stepresult"><p id="GUID-B181823F-A7F7-4314-9F07-090332F9190C">更新现已对调度员可见。</p></div></li><li purpose="step" id="ESRI_STEP_F99A7F7CA437453D994989E667D843BF"><span purpose="cmd" id="GUID-D21A8759-D44B-4D75-BAF5-46ABAE534CB1">在<span class="uicontrol">内容</span>窗格中，单击<span class="uicontrol">关于</span>，然后单击<span class="uicontrol">更多详细信息</span>以打开地图的项目页面。</span></li><li purpose="step" id="ESRI_STEP_1D4D4450A389472EA5D2E32AF20AE033"><span purpose="cmd" id="GUID-36362CCC-31E8-43D6-A5AC-5CD42955BE2E">单击<span class="uicontrol">设置</span>选项卡，然后滚动至 <span class="uicontrol">Web 地图设置</span>部分。对于<span class="uicontrol">查找位置</span>，选中<span class="uicontrol">按图层</span>框。</span><div class="info" purpose="info"><p id="GUID-6F6AFBE0-B2EE-431D-AB14-C1BA298BC5B2">您希望调度员能够通过按消火栓名称搜索来在地图上查找消火栓。消火栓名称存储在 Fire Hydrants 图层的 <span class="usertext">HYD_ID</span> 字段中。</p></div></li><li purpose="step" id="ESRI_STEP_1496C37473EC4069A18FFF19E34751DC"><span purpose="cmd" id="GUID-963A6C04-4F9A-453D-B805-B42EE9D81F07">单击<span class="uicontrol">添加图层</span>。</span></li><li purpose="step" id="ESRI_STEP_C473E7D61EDF482696DEBED28745C7E5"><span purpose="cmd">在三个列表中，选择以下图层搜索设置：</span><ul purpose="choices" id="ESRI_CHOICES_3E3FC4280D2149B8867A91EAD4B7B788"><li purpose="choice" id="ESRI_CHOICE_371CA426F92341CC9FE0D03A2689897A"><span class="uicontrol">Fire_Hydrants</span>（待搜索图层）</li><li purpose="choice" id="ESRI_CHOICE_B23F235D3D234050B8196AB7D29335C7"><span class="uicontrol">HYD_ID</span>（待查询字段）</li><li purpose="choice" id="ESRI_CHOICE_04046440B7574E789393A1157534CA5C"><span class="uicontrol">Contains</span>（搜索条件）</li></ul><div class="info" purpose="info"><figure class="fig" href="#"><img src="GUID-64369469-5A87-4F1F-BF1C-ECDC07523E39-web.png" alt="图层搜索设置" title="图层搜索设置"></figure><p id="GUID-C0C285B0-9A8E-469F-97C9-A3F992E729C9">使用<span class="uicontrol">包含</span>作为搜索条件，调度员可以搜索部分消火栓名称。</p></div></li><li purpose="step" id="ESRI_STEP_083920122B184DCAB0EB2C11AA29B4D3"><span purpose="cmd" id="GUID-9AB3EAE8-5679-4BB0-9272-E1DB84B2F539">单击<span class="uicontrol">保存</span>。</span></li><li purpose="step" id="ESRI_STEP_430124D05FA44A958CF90FBE6E6DF043"><span purpose="cmd" id="GUID-A19730A7-4ED0-4EB2-A9F8-FB2BA84CDB18">关闭地图的项目详细信息，并在 <span class="ph">Workforce</span> 中关闭地图。</span></li><li purpose="step" id="ESRI_STEP_DC86FB6725E14BEE80186C8A586B01DF"><span purpose="cmd" id="GUID-3EF30700-0866-48D9-8876-3A0C3DEE558E">采用相同的方法修改 Worker 地图，以便移动工作人员可以查看和搜索消火栓。</span><div class="info" purpose="info"><figure class="fig" href="#"><img src="GUID-3AFD8138-61E5-4DAB-82CF-DB66D49243D1-web.png" alt="Worker 地图" title="Worker 地图"></figure><div class="panel trailer-1 note" id="GUID-F4A5A9E6-8586-4CF1-97A4-FDA12D9AE615"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-D3919D95-F1C8-4B34-80A4-3ED90DF7697F">您无需启用<span class="uicontrol">按图层</span>。它已启用，因为在创建 <span class="ph">Workforce</span> 工程时已设置了按姓名搜索工作人员。</p></div><img purpose="img" placement="inline" alt="Worker 地图图层搜索设置" title="Worker 地图图层搜索设置" src="GUID-E7DF92D4-3E92-4F2F-993C-8B28A01265CD-web.png"></div></li></ol></div></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_B765953F61B048B797ACFC43C4625FA6" purpose="section1"><h2>配置其他设置</h2><p id="GUID-0C4E42D1-E176-4BAD-8EA2-108640E9E89C">接下来，您将为您的工程提供缩略图，以便调度员和工作人员能够轻松识别工程。您希望看到移动工作人员位置一分钟更新一次，因此您也会配置追踪位置。您的移动工作人员可以使用 <span class="ph">Navigator for ArcGIS</span> 找到他们要检查的消火栓。默认情况下，会启用与 <span class="ph">Navigator for ArcGIS</span> 的集成，因此您只需验证集成是否已启用。</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_B1C17138CB7B4B01824E672F39EAC687"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_BE158E664F3246B29F41275E501D359C"><span purpose="cmd" id="GUID-1F40AF44-EF75-46C5-8701-4F3D7BEB63ED">在<span class="uicontrol">概述</span>选项卡，单击<span class="uicontrol">关于此工程</span>旁边的占位符缩略图。</span></li><li purpose="step" id="ESRI_STEP_1E55DC33480D433698D21F41C09B1119" ishcondition="help_type=userhelp"><span purpose="cmd" id="GUID-4F428674-224B-472F-A5B1-207003640BCB">浏览至要使用的缩略图，将其选中，然后单击<span class="uicontrol">打开</span>。</span><div class="info" purpose="info"><p id="GUID-562BC8BF-3E20-4952-8332-53998FF88C1D">您选择的缩略图应基于工程中的任务，并对调度员和移动工作人员均有意义。调度员和移动工作人员在浏览至工程并将其打开时都会看到缩略图。移动工作人员在打开工程时也会看到该缩略图。</p></div></li><li purpose="step" id="ESRI_STEP_B64EFA495C7E4A37993A83EA323B7A88"><span purpose="cmd">单击工程的<span class="uicontrol">高级</span>选项卡。</span></li><li purpose="step" id="GUID-9491231E-1CAF-4A35-9ECF-1CCF2BC24F81"><span purpose="cmd" id="GUID-CEDE1CEB-F690-4C32-AC40-A01FBAF60069">在<span class="uicontrol">应用程序集成</span>旁，单击<span class="uicontrol">展开</span>以查看移动工作人员可将其与 <span class="ph">Workforce</span> 一起使用的应用程序。</span><div class="stepresult" purpose="stepresult"><p id="GUID-25100AB0-A4BD-4D45-A643-FC0B33B0D09E"><a target="_blank" class="xref xref" href="https://doc.arcgis.com/en/navigator"><span class="ph">Navigator</span></a> 集成默认处于启用状态，而 <a target="_blank" class="xref xref" href="https://doc.arcgis.com/en/collector"><span class="ph">Collector</span></a>、<a target="_blank" class="xref xref" href="https://doc.arcgis.com/en/explorer"><span class="ph">Explorer</span></a> 和 <a target="_blank" class="xref xref" href="https://doc.arcgis.com/en/survey123"><span class="ph">Survey123</span></a> 集成则不会默认启用，而是需要配置。<span class="ph">Navigator</span> 无需配置，这是因为它使用当前在 <span class="ph">Navigator</span> 中打开的地图获取方向。 <span class="ph">Collector</span> 和 <span class="ph">Explorer</span> 会打开地图，而 <span class="ph">Survey123</span> 会打开 <span class="ph">Workforce</span> 工程或任务类型被配置使用的调查。</p></div></li><li purpose="step" id="ESRI_STEP_BA273A429BBA4C9B91662616A535E589"><span purpose="cmd" id="GUID-7BA71242-9196-482C-A516-434DC1FCB2BF">在<span class="uicontrol">位置追踪</span>旁，单击<span class="uicontrol">展开</span>。</span><div class="info" purpose="info"><p id="GUID-B38B1C5B-AECD-48EA-B504-FB3FB6C1B858">您希望看到移动工作人员的位置一分钟更新一次。</p></div></li><li purpose="step" id="ESRI_STEP_D470002075C940CB8AF48C87651A61CD"><span purpose="cmd" id="GUID-15D8AE5E-2D3D-456F-97FA-5C1FD5B3CCB6">单击<span class="uicontrol">启用</span>来追踪移动工作人员。</span><div class="info" purpose="info"><div class="panel trailer-1 note" id="GUID-FB227F1C-FE8A-4C56-94F9-FC648F9808B7"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-48089A04-8B92-4DCD-9EB0-441B372C52A6">位置追踪和当前位置或在地图上看到的移动工作人员的位置是不同的 - 位置追踪记录的是移动工作人员过去的位置。即使您禁用了位置追踪，您也可以在地图上看到移动工作人员的当前位置。</p></div></div></li><li purpose="step" id="ESRI_STEP_DA215E912C8C4D3AB600A2A5F88B6CEE"><span purpose="cmd" id="GUID-E81B0EE8-45E3-40E9-BB65-C63495826A7F">使用滑块更改位置追踪间隔，将默认的 30 秒更改为 1 分钟。</span><div class="info" purpose="info"><p id="GUID-4D320A4B-7FCB-42B5-99F1-F4832D4B15F6">移动工作人员处于工作状态时，将每隔一分钟记录移动工作人员的位置。</p></div></li><li purpose="step" id="ESRI_STEP_28E45DA4621C46C0AC247A5E8083E238"><span purpose="cmd" id="GUID-C80BE947-FDCB-4069-A05A-26C705E6D6C3">单击<span class="uicontrol">更新</span>保存新间隔。</span><div class="info" purpose="info"><figure class="fig" href="#"><img src="GUID-0E116F6A-5481-4C94-9BCA-32D48E4D7EC1-web.png" alt="高级选项卡中的更新" title="高级选项卡中的更新"></figure></div><div class="stepresult" purpose="stepresult"><p id="GUID-7423064D-8E02-4310-9C48-2F07349F8172">工程现在可以使用了。</p></div></li><li purpose="step" id="ESRI_STEP_783E00F43C8A41BD852DDFADFB1566D7" ishcondition="help_type=userhelp"><span purpose="cmd" id="GUID-6E03A0EE-CD5B-4F0D-B740-F274F26713EC">要打开工程进行调度，可单击<span class="uicontrol">概览</span>选项卡，然后单击<span class="uicontrol">打开工程</span>。</span><div class="info" purpose="info"><p id="GUID-1859F422-61EB-4748-8595-A284E0FDBE3A">如果要创建或使用其他工程，请单击 <span class="ph">Workforce</span> 徽标来返回至<span class="uicontrol">工程</span>列表。</p></div></li></ol></div></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_6841F38E5052416CA27514DA47927D6C" purpose="section1"><h2>测试您的工程</h2><p id="GUID-E8BF941E-33BA-423C-8638-E2524ABEAEB7">您的工程现已配置了任务、调度员和移动工作人员、应用程序以及其他能够丰富您工作团队的数据。通过本练习，您能够了解如何使用 <span class="ph">Workforce</span> 以及如何设置工程。如果这是您为组织定义的工程，那么下一步便是对其进行测试并验证其是否能够帮助您的调度员和移动工作人员成功。您应检查以下几项来测试您的工程：</p><ul purpose="ul" id="UL_66C678F013DE4FD2924BA00B250943C0"><li purpose="li" id="LI_C6F6739176574652821098DE2BAECEAE">创建示例任务。确保创建的任务数量能够很好地表示您在使用工程时预期有效的任务数量。</li><li purpose="li" id="LI_3B87734867F64B10A106D203A45D33F2">由选中的一些调度员和移动工作人员完成整个过程。您将需要进行一次完整测试，以便所有参与者都会像在工程使用过程中所做的那样执行工作。这将让您确认您的工程结构是否正确并回答以下问题：任务类型是否能引起调度员和移动工作人员的共鸣？ 是否定义了正确的移动工作人员和调度员？</li><li purpose="li" id="LI_E089E3852642450B968CA17BDDFD91AD">如果您的工程具有仅由一个移动工作人员或几个移动工作人员完成的工作类型，请确保这些类型的工作适用于您的工作流。虽然在某些情况下，它们可能会适用，但在其他情况下，工程中有这些类型的工作可能会造成困惑。</li><li purpose="li" id="LI_918994A4C5244F13BA640225CD63C8C6">请验证您的应用程序集成是否按预期运行。</li></ul><div class="panel trailer-1" id="GUID-BD2D93E2-A9E1-4CD0-ABAC-9F1750F79CA0"><h5 class="icon-ui-description trailer-0">提示：</h5><p id="GUID-1E97D881-711E-44A8-B933-213D37D96036">如果您发现问题，请编辑您的工程并对其进行重新测试。要编辑工程，请转至<span class="uicontrol">我的工程</span>，将鼠标悬停在工程上，然后单击<span class="uicontrol">配置</span> <img purpose="img" placement="inline" alt="配置" title="配置" src="GUID-B3F1BD91-972E-4800-AEA3-81092DCF2160-web.png">。您将只看到配置和删除您拥有的工程的选项。</p></div><p id="GUID-EED04417-D53B-4EDE-84D1-860562A24BCC">使用 <span class="ph">Workforce</span>，您的调度员和移动工作人员在后勤办公室和外业中具有共同的视图，并且他们在组织中工作以及在外业报告工作进度会更加轻松。当您将更多工程移至 <span class="ph">Workforce</span> 中时，您会发现开销降低了但生产效率提高了。</p></section><section class="section1 padded-anchor" id="ESRI_SECTION1_E0F8E105D3DE4F97B476507F9B8D51CE" purpose="section1"><h2>接下来的步骤</h2><p id="GUID-3CC798A3-3588-49F7-9EE5-615D5D7FFB2D">现在您已经创建了第一个 <span class="ph">Workforce</span> 工程，可以开始考虑自己的工程以及如何将 <span class="ph">Workforce</span> 整合到您的组织中。也许您会管理与本练习类似的工作，其中每个任务对应单个要素。也许相反，您可能会为需要完成工作的每个区域创建任务，例如为每个公园分配一个任务，在此，您的移动工作人员需要收集每棵树的数据，然后从已完成的工作中获得多个要素。再或者，您需要管理的任务独立于任何关联要素。无论您将管理什么样的工作，都可以按照以下提示将 <span class="ph">Workforce</span> 用于您的组织： </p><ul purpose="ul" id="UL_5E7CF155DF184CECB7BEC4EDDF62241B"><li purpose="li" id="LI_4C18DF06B0C84AAD9CB4D3400C55A0FC">从小处着手 - 选择一个工程，该工程不是重要任务、拥有可管理的任务类型且跨越一段有限时间。</li><li purpose="li" id="LI_FD0C94AD70124FCDA1B782775938819C">明智地选择您的团队 - 一些成员比其他人更能接受改变。对于 <span class="ph">Workforce</span> 的测试运行，选择一个能够接受新过程和技术的团队，以便他们在尝试之后，能够倡导与您一起采纳意见。</li><li purpose="li" id="LI_5B72CA9C842746C78EE9E12CCF35C5ED">协同运行 - 对于您的第一个工程，使用您的现有工作流运行应用程序。这样，如有必要，您便可停止使用 <span class="ph">Workforce</span> 并切换回现有工作流。</li></ul><p id="GUID-3B7B6C90-368A-4887-AACC-1E1FBC330765">如果您尚未准备好开始自己的新工程，请继续<a class="xref xref" href="../../../../zh-CN/workforce/iphone/help/create-your-first-assignment.htm">创建您的第一个任务</a>，以查看调度员如何使用 <span class="ph">Workforce</span> 创建任务。</p></section>
+			
+				<hr>
+				<!--googleoff: all-->
+				
+	
+        
+		    <p class="feedback right">
+		        <a id="afb" class="icon-ui-contact" href="/feedback/" data-langlabel="feedback-on-this-topic" >有关此主题的反馈?</a>
+		    </p>
+        
+	
+
+				<!--googleon: all-->
+			
+		</main>
+	</div>
+	
+	<!--googleoff: all-->
+	
+		
+			<div id="main-toc-large" class="column-5">
+			    <div class="panel font-size--2 tablet-hide trailer-1">
+			      <h5 class="trailer-half">在本主题中</h5>
+			      <ol class="list-plain pre-0 trailer-0"><li><a href="#ESRI_SECTION1_F13556C530524048ADEFCA60FDD0A2EF">创建 <ph translate="no" varid="workforce_app_name">Workforce</ph> 工程</a></li><li><a href="#ESRI_SECTION1_64F8DA09E713477FADA36F2CAF8B4CB6">提供工作类型</a></li><li><a href="#ESRI_SECTION1_78CAD30511D8467EAEF3FEE482269971">提供角色</a></li><li><a href="#ESRI_SECTION1_34E0DA8779D24E94950BA988A7EA3E1F">自定义地图</a></li><li><a href="#ESRI_SECTION1_B765953F61B048B797ACFC43C4625FA6">配置其他设置</a></li><li><a href="#ESRI_SECTION1_6841F38E5052416CA27514DA47927D6C">测试您的工程</a></li><li><a href="#ESRI_SECTION1_E0F8E105D3DE4F97B476507F9B8D51CE">接下来的步骤</a></li></ol>
+			    </div>
+			    
+			    
+	  		</div>
+		
+    
+   <!--googleon: all-->
+
+
+
+
+          
+        </div>
+        <!-- ENDPAGECONTENT -->
+
+      </div>
+
+    </div>  <!-- End of wrapper -->
+
+  <footer class="footer leader-3 link-dark-gray" role="contentinfo">
+    <div class="grid-container">
+      <div class="row">
+        <nav class="column-6">
+          <h6 data-langlabel="arcgis-for-server">Arc<span>GIS Enterprise</span></h6>
+          <ul class="list-plain">
+            <li><a data-langlabel="home" href="../../../../zh-CN/">主页</a></li>
+            <li><a data-langlabel="portal" href="../../../../zh-CN/portal/">Portal</a></li>
+            <li><a data-langlabel="server" href="../../../../zh-CN/server/">Server</a></li>
+            <li><a data-langlabel="data-store" href="../../../../zh-CN/data-store/">Data Stores</a></li>
+            <li><a data-langlabel="cloud" href="../../../../zh-CN/cloud/">云</a></li>
+            <li><a data-langlabel="apps" href="../../../../zh-CN/apps/">应用程序</a></li>
+            <li><a data-langlabel="documentation" href="../../../../zh-CN/documentation/">文档</a></li>
+          </ul>
+        </nav>
+
+        
+  <nav class="column-6">
+    <h6 data-langlabel="arcgis-platform">ArcGIS 平台</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="arcgis" href="//www.arcgis.com/">ArcGIS Online</a></li>
+      <li><a data-langlabel="arcgis-for-professionals" href="//pro.arcgis.com/">ArcGIS Pro</a></li>
+      <li><a data-langlabel="arcgis-for-server" href="//enterprise.arcgis.com/">ArcGIS Enterprise</a></li>
+      <li><a data-langlabel="arcgis-for-developers" href="https://developers.arcgis.com/">ArcGIS for Developers</a></li>
+      <li><a data-langlabel="arcgis-solutions" href="//solutions.arcgis.com/">ArcGIS Solutions</a></li>
+      <li><a data-langlabel="arcgis-marketplace" href="//marketplace.arcgis.com/">ArcGIS Marketplace</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <h6 data-langlabel="about-esri">关于 Esri</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="about-us" href="//www.esri.com/about-esri/">关于我们</a></li>
+      <li><a data-langlabel="careers" href="//www.esri.com/careers/">招贤纳士</a></li>
+      <li><a data-langlabel="insiders-blog" href="https://www.esri.com/about/newsroom/blog/">Esri 博客</a></li>
+      <li><a data-langlabel="user-conference" href="//www.esri.com/events/user-conference/index.html">用户大会</a></li>
+      <li><a data-langlabel="developer-summit" href="//www.esri.com/events/devsummit/index.html">开发者峰会</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <a class="esri-logo" href="//www.esri.com/" aria-label="Esri Home"></a>
+    <section class="footer-social-nav leader-1">
+            <a class="icon-social-twitter" aria-label="Esri on Twitter" href="https://twitter.com/Esri/"></a>
+            <a class="icon-social-facebook" aria-label="Esri on Facebook" href="https://www.facebook.com/esrigis/"></a>
+            <a class="icon-social-github" aria-label="Esri on GitHub" href="//esri.github.io/"></a>
+            <a class="icon-social-contact" aria-label="Contact Esri" href="//www.esri.com/about-esri/contact/"></a>
+    </section>
+	  
+  </nav>
+  
+  <div class="column-24 leader-1">
+    <p class="font-size--3"><a href="http://www.esri.com/legal/copyright-trademarks">Copyright &copy; 2019 Esri.</a> All rights reserved. | <a href="http://www.esri.com/legal/privacy/">隐私政策</a> | <a href="http://www.esri.com/legal/software-license">法律声明</a></p>
+  </div>
+  
+
+
+      </div>
+    </div>
+  </footer>
+  <!--googleoff: all-->
+
+  
+  
+	<script src="../../../../zh-CN/assets/js/init.js" type="text/javascript"></script>
+	<!--<script src="../../../../zh-CN/assets/js/drop-down.js" type="text/javascript"></script>-->
+	<script src="../../../../zh-CN/assets/js/search/searchform.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/cdn/js/link-modifier.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/cdn/js/sitewide.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/cdn/js/libs/highlight.pack.js" type="text/javascript"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+
+
+  
+    
+
+  <script src="../../../../zh-CN/cdn/js/affix.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    $(function () {
+          var appendFlg = true;
+
+          $("#bigmac")
+          .on("affixed.bs.affix", function (evt) {
+            if (appendFlg) {
+              $("<a class='crumb' href='#'>创建您的第一个工程</a>").insertAfter ($("#bigmac nav a").last());
+              appendFlg = false;
+            }
+          })
+          .on ("affix-top.bs.affix", function(evt) {
+            if (!appendFlg) {
+              $("#bigmac nav a").last().remove();
+            }
+            appendFlg = true;
+          })
+    })
+  </script>
+  
+        <script type="text/javascript">
+          window.doctoc = {
+            pubID: "2524",
+            tpcID: "12",
+            
+              prefix: "帮助",
+              prefixUrl: "/zh-cn/workforce/iphone/help/create-your-first-project.htm",
+          
+            hideToc: false
+          }
+        </script>
+
+        <script type="text/javascript" src="../../../../zh-CN/workforce/iphone/help/2524.js" ></script>
+        <script type="text/javascript" src="../../../../zh-CN/cdn/calcite/js/protoc.js" ></script>
+        
+        
+
+  <noscript>
+        <p>
+            <a href="flisting.htm">flist</a>
+        </p>
+    </noscript>
+    <script type="text/javascript"></script>
+  
+  
+    
+    
+
+  </body>
+</html>

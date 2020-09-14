@@ -1,0 +1,559 @@
+
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>  <html class="ie lt-ie9 lt-ie8 lt-ie7 ie6" dir="ltr"> <![endif]-->
+<!--[if IE 7]>     <html class="ie lt-ie9 lt-ie8 ie7" dir="ltr"> <![endif]-->
+<!--[if IE 8]>     <html class="ie lt-ie9 ie8" dir="ltr"> <![endif]-->
+<!--[if IE 9]>     <html class="ie ie9" dir="ltr"> <![endif]-->
+<!--[if !IE]><!--> <html dir="ltr" lang="zh-CN"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>字段计算器处理器&mdash;处理事件数据(10.8) | ArcGIS Enterprise 文档</title>
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+    <script>
+      var docConfig = {
+        locale: 'zh-CN'
+        ,localedir: 'zh-cn'
+        ,langSelector: ''
+        
+        ,relativeUrl: false
+        
+
+        ,searchformUrl: '/search/'
+        ,tertiaryNavIndex: ''
+
+        
+      };
+    </script>
+	 
+
+
+    
+    <!--[if lt IE 9]>
+      <script src="../../../../zh-CN/cdn/js/libs/html5shiv.js" type="text/javascript"></script>
+      <script src="../../../../zh-CN/cdn/js/libs/selectivizr-min.js" type="text/javascript"></script>
+      <script src="../../../../zh-CN/cdn/js/libs/json2.js" type="text/javascript"></script>
+      <script src="../../../../zh-CN/cdn/js/libs/html5shiv-printshiv.js" type="text/javascript" >
+
+    <![endif]-->
+
+     <!--[if lt IE 11]>
+    <script>
+      $$(document).ready(function(){
+        $$(".hideOnIE").hide();
+      });
+    </script>
+    <![endif]-->
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<link href="../../../../zh-CN/assets/img/favicon.ico" rel="shortcut icon" >
+	<link href="../../../../zh-CN/assets/css/screen.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/cdn/calcite/css/documentation.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/assets/css/print.css" media="print" type="text/css" rel="stylesheet" />
+
+	<!--
+	<link href="../../../../zh-CN/assets/css/screen_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/assets/css/documentation/base_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/assets/css/print_l10n.css" media="print" type="text/css" rel="stylesheet" />
+	-->
+	
+	
+		<script src="../../../../zh-CN/cdn/js/libs/jquery.1.9.1.min.js" type="text/javascript"></script>
+	
+	<script src="../../../../zh-CN/cdn/js/libs/jquery.cookie.js" type="text/javascript"></script>
+	<link href="../../../../zh-CN/cdn/css/colorbox.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/cdn/css/colorbox_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<script src="../../../../zh-CN/cdn/js/libs/jquery.colorbox-min.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/assets/js/video-init.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/assets/js/sitecfg.js" type="text/javascript"></script>
+	
+		<script src="../../../../zh-CN/assets/js/signIn.js" type="text/javascript"></script>
+	
+
+	<!--- Language Picker -->
+	<script src="../../../../zh-CN/assets/js/locale/l10NStrings.js" type="text/javascript"></script>
+	
+		 
+	
+
+	<script src="../../../../zh-CN/assets/js/calcite-web.js" type="text/javascript"></script>
+
+
+
+  <!--- search MD -->
+    <META name="description" content="字段计算器处理器可用来计算值。"><META name="last-modified" content="2019-12-6"><META name="product" content="arcgis-server-windows,arcgis-server-linux,ext-server-geoevent,arcgis-enterprise-windows,arcgis-enterprise-linux"><META name="sub_category" content="GeoEvent"><META name="search-collection" content="help"><META name="content_type_label" content="帮助主题"><META name="sub_category_label" content="GeoEvent"><META name="search-category" content="help-general"><META name="subject_label" content="REAL-TIME FEEDS,服务,SERVER"><META name="version" content="10.8"><META name="content_type" content="Help Topic"><META name="subject" content="REAL-TIME FEEDS,SERVICES,SERVER"><META name="content-language" content="zh-cn">
+    <!--- search MD -->
+
+  
+      
+
+</head>
+
+<!--
+      pub: GUID-5D524593-D8D3-4B10-896F-B21A7B6A7B11=16
+      tpc: GUID-2603D621-84ED-4957-8151-06FCC9F2BEAA=3
+      -->
+
+
+<!-- variable declaration, if any -->
+<!-- can change following macro to set variable once we are on Jinja 2.8 -->
+
+
+
+
+
+<body class="claro zh-CN server">
+  
+
+  <!-- Drawer location -->
+  <div class="drawer drawer-left js-drawer" data-drawer="top-nav">
+        <nav class="drawer-nav" role="navigation">
+          <aside class="side-nav">
+            <h2 class="side-nav-title">Arc<span>GIS</span> Enterprise</h2>
+            <form id="helpSearchForm" class="margin-left-half margin-right-half leader-half trailer-half drawer-search-form" method="GET">
+              <input type="search" name="q"  placeholder="搜索 GeoEvent Server 10.7 帮助">
+              <input type="hidden" name="collection" value="help" />
+              <input type="hidden" name="product" value="ext-server-geoevent" />
+              <input type="hidden" name="version" value="10.8" />
+              <input type="hidden" name="language" value="zh-CN" />
+            </form>    
+             <a id="nav-portal" data-langlabel="portal" href="../../../../zh-CN/portal/" class="side-nav-link">Portal</a>
+             
+            <a id="all-servers" data-langlabel="all-servers" href="../../../../zh-CN/server/" class="side-nav-link">所有服务器</a>
+            <a id="gis-server" data-langlabel="gis-server" href="../../../../zh-CN/server/" class="side-nav-link">GIS Server</a>
+            <a id="image-server" data-langlabel="image-server" href="../../../../zh-CN/image/" class="side-nav-link">Image Server</a>
+            <a id="geo-analytics-server" data-langlabel="geo-analytics-server" href="../../../../zh-CN/geoanalytics/" class="side-nav-link">GeoAnalytics Server</a>
+            <a id="geoevent-server" data-langlabel="geoevent-server" href="../../../../zh-CN/geoevent/" class="side-nav-link">GeoEvent Server</a>
+            <a id="notebook-server" data-langlabel="notebook-server" href="../../../../zh-CN/notebook/" class="side-nav-link">Notebook Server</a>
+            <a id="nav-data-store" data-langlabel="data-store" href="../../../../zh-CN/data-store/" class="side-nav-link">Data Stores</a>
+            <a id="nav-cloud" data-langlabel="cloud" href="../../../../zh-CN/cloud/" class="side-nav-link">云</a>
+            <a id="nav-apps" data-langlabel="apps" href="../../../../zh-CN/apps/" class="side-nav-link">应用程序</a>
+            <a id="nav-doc" data-langlabel="documentation" href="../../../../zh-CN/documentation/" class="side-nav-link">文档</a>
+
+          </aside>
+        </nav>
+    </div>
+
+    <!-- user navigation collapses to drawer on mobile -->
+    
+    <div class="drawer drawer-right js-drawer hide-if-logged-out logged-in-navigation" data-drawer="user-nav">
+      <nav class="drawer-nav">
+        <aside class="side-nav">
+          <a class="side-nav-link agolProfile" href="#">我的个人资料</a>
+          <a class="side-nav-link icon-ui-sign-out js-log-out" href="#">登出</a>
+        </aside>
+      </nav>
+    </div>
+    
+<!-- End of drawer -->
+
+  
+  <div class="wrapper">
+      <!--googleoff: all-->
+
+      <header class="top-nav" data-skin="learn">
+        <a class="skip-to-content" href="#skip-to-content">Skip To Content</a>
+        <div class="grid-container">
+          <div class="column-24">
+
+
+            <!--<div class="top-nav-title-wrapper text-center ">-->
+              <a href='../../../../zh-CN/' class="top-nav-title tablet-hide"><span>Arc</span>GIS  Enterprise</a>
+              <a href='../../../../zh-CN/' class="icon-ui-menu top-nav-title js-drawer-toggle tablet-show" data-drawer="top-nav"><span>Arc</span>GIS Enterprise</a>
+            <!--</div> -->
+
+          
+            <nav role="navigation" class="top-nav-list left tablet-hide">
+              <a id="nav-portal" data-langlabel="portal" href="../../../../zh-CN/portal/" class="top-nav-link">Portal</a>
+
+                <div class="dropdown js-dropdown ">
+                  <a class="top-nav-link js-dropdown-toggle" tabindex="0" aria-haspopup="true" aria-expanded="false" href="#">Servers</a>
+                  <nav class="dropdown-menu featured" role="menu">
+                    <ul class="dropdown-sublist-featured">
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/get-started/latest/windows/additional-server-deployment.htm" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path  d="M42.92 6.1H4.12v8.566l.833.832-.835.833-.018 7.332.845.847-.825.824V33.9h25v5.2h-2v1.075H8.02v.8h19.1v.925h4.8v-.925H40v-.8h-8.08V39.1h-2v-5.2h13v-8.566l-.834-.834.835-.834v-7.332l-.835-.834.835-.834zm-11.8 35h-3.2v-1.2h3.2zm11-8H4.92v-7.434l.767-.766h35.668l.765.766zm0-9.766l-.766.766H5.666l-.766-.767.017-6.669.766-.764h35.671l.766.766zm0-9l-.766.766H5.687l-.766-.766V6.9h37.2zM19 11.9h-2v-.8h2zm-4 0h-2v-.8h2zm-4 0H9v-.8h2zm6 8.2h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9zm8 9h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9z"/></svg></span>
+                          <span class="sublink-text">所有服务器</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/server/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M45.98 33.575a.616.616 0 0 0-.335-.51l-3.362-2.03 3.362-2.031a.556.556 0 0 0 0-1.02l-11.1-6.704a1.293 1.293 0 0 0-1.112 0L22.33 27.982a.556.556 0 0 0 0 1.02l3.36 2.03-3.358 2.03a.556.556 0 0 0-.002 1.021l3.322 2.006-3.324 2.008a.555.555 0 0 0 .002 1.017l11.102 6.703a1.25 1.25 0 0 0 1.11.002l11.104-6.706a.556.556 0 0 0 0-1.02l-3.32-2.006 3.318-2.004a.607.607 0 0 0 .335-.509zM33.837 21.97c.026-.01.286-.005.29-.005l10.814 6.53-10.8 6.523c-.028.01-.284.005-.294.006l-10.813-6.53zm11.105 16.636l-10.8 6.523a2.564 2.564 0 0 1-.295.006l-10.81-6.529 3.39-2.047 7.004 4.23a1.083 1.083 0 0 0 .557.131 1.101 1.101 0 0 0 .554-.13l7.01-4.233zM34.14 40.098a2.545 2.545 0 0 1-.294.006l-10.812-6.53 3.43-2.073 6.97 4.208a1.25 1.25 0 0 0 1.107-.001l6.966-4.206 3.431 2.073zM9 8H7V7h2zm8 8h-2v-1h2zm-4-8h-2V7h2zm4 0h-2V7h2zm-4 8h-2v-1h2zm7.316 11.1H3.9v-6.434l.766-.766h35.668l.766.766v2.12l.8.483v-2.935l-.826-.826.826-.845v-6.329l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9h16.88a2.632 2.632 0 0 1 .336-.8zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zm0 8v-5.668l.766-.766h35.668l.766.766v5.67l-.746.764H4.666zM15 24v-1h2v1zm-4 0v-1h2v1zm-2-8H7v-1h2zm-2 8v-1h2v1z"/></svg></span>
+                          <span class="sublink-text">GIS Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/image/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 8h-2V7h2zm-4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm8 8h-2v1h2zm-8 0H7v1h2zm4 9v-1h-2v1zm-4 0v-1H7v1zm8 0v-1h-2v1zm4 3.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V21h-.8v-.334l-.766-.766H4.666l-.766.766V27.1H21zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zm40.234 4v21.8H23.1V23.1zm-.8 16.366L39.466 44.1h2.868l1.766-1.766zm-20.2-9.932l5.634-5.634h-2.868L23.9 26.666zm6.2-5.068L24.466 30.1h2.868l2.766-2.766zM28.466 30.1H30.1v-1.634zm2.434 0h6.2v-6.2h-6.2zm-7 7h6.2v-6.2h-6.2zm7 0h6.2v-6.2h-6.2zm0 6.434l5.634-5.634h-2.868L30.9 40.666zm7-7l5.634-5.634h-2.868L37.9 33.666zm1.634-5.634H37.9v1.634zm-8.634 7v1.634l1.634-1.634zm.566 6.2h2.868l2.766-2.766v-2.868zm6.434-3.566l2.634-2.634H37.9zM35.466 44.1H37.1v-1.634zm2.434 0h.434l5.766-5.766V37.9h-2.434L37.9 41.666zm6.2-8.634L42.466 37.1H44.1zm0-4L38.466 37.1h2.868l2.766-2.766zm0-7.566h-6.2v6.2h6.2zm-20.2 0v1.634l1.634-1.634zm0 20.2h6.2v-6.2h-6.2zm20.2 0v-.634l-.634.634z"/></svg></span>
+                          <span class="sublink-text">Image Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/geoanalytics/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 16h-2v-1h2zm-8 8v-1H7v1zm8 0v-1h-2v1zM13 7h-2v1h2zm4 0h-2v1h2zM9 7H7v1h2zm21.45 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V27.9h-1.464l-.801-.8H41.1v-6.434l-.766-.766H4.666l-.766.766V27.1h27.15zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM13 24v-1h-2v1zm0-9h-2v1h2zm-4 0H7v1h2zm26.672 27.148A1.87 1.87 0 0 1 35.9 43a1.91 1.91 0 1 1-3.763-.222l-9.845-3.414A1.88 1.88 0 0 1 21 39.9a1.9 1.9 0 1 1 1.474-3.084l4.692-2.346A1.878 1.878 0 0 1 27.1 34a1.902 1.902 0 0 1 1.9-1.9 1.867 1.867 0 0 1 .781.191l3.788-5.05A1.88 1.88 0 0 1 33.1 26a1.9 1.9 0 1 1 3.491 1.026l4.889 4.888c-.069.056-.144.1-.21.162a3.986 3.986 0 0 0-.358.402l-4.883-4.883A1.889 1.889 0 0 1 35 27.9a1.867 1.867 0 0 1-.781-.191l-3.788 5.049a1.868 1.868 0 0 1 .437.965l9.204.614c-.018.11-.049.218-.058.33A3.93 3.93 0 0 0 40 35c0 .046.01.09.01.135l-9.185-.612A1.913 1.913 0 0 1 29 35.9a1.889 1.889 0 0 1-1.474-.716l-4.692 2.346a1.878 1.878 0 0 1 .066.47 1.9 1.9 0 0 1-.105.625c-.007.02-.022.036-.03.056l9.63 3.34a1.87 1.87 0 0 1 2.786-.505l5.415-4.437c.067.108.127.22.204.322a3.9 3.9 0 0 0 .292.306zM33.9 26a1.092 1.092 0 0 0 .43.872 1.12 1.12 0 0 0 1.42-.068A1.1 1.1 0 1 0 33.9 26zm-6 8a1.1 1.1 0 0 0 2.196.093 1.135 1.135 0 0 0-.426-.965A1.087 1.087 0 0 0 29 32.9a1.101 1.101 0 0 0-1.1 1.1zm-5.8 4a1.098 1.098 0 1 0-.06.362A1.101 1.101 0 0 0 22.1 38zm13 5a1.1 1.1 0 1 0-2.2 0 1.1 1.1 0 0 0 2.2 0zm10.8-8a1.9 1.9 0 1 1-3.8 0c0-.053.003-.105.007-.158A1.9 1.9 0 0 1 45.9 35zm-.8 0a1.1 1.1 0 0 0-2.196-.093 1.153 1.153 0 0 0 .216.752A1.1 1.1 0 0 0 45.1 35z"/></svg></span>
+                          <span class="sublink-text">GeoAnalytics Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/geoevent/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M13 8h-2V7h2zm4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm12.418 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826v2.117c-.259-.177-.53-.337-.8-.497v-1.288l-.766-.766H4.666l-.766.766V27.1h17.933c-.148.26-.283.53-.415.8zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM9 24v-1H7v1zm4-9h-2v1h2zm0 9v-1h-2v1zm-4-9H7v1h2zm8 9v-1h-2v1zm16.9 2h-.8v8.9H39v-.8h-5.1zm.1-3.901a11.9 11.9 0 1 0 11.9 11.9 11.914 11.914 0 0 0-11.9-11.9zm0 23a11.1 11.1 0 1 1 11.1-11.1 11.112 11.112 0 0 1-11.1 11.1z"/></svg></span>
+                          <span class="sublink-text">GeoEvent Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/notebook/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M22 27.1H3.9v-6.434l.766-.766h18.576a5.262 5.262 0 0 1 .83-.8H4.666l-.766-.766v-5.668l.766-.766h35.668l.766.766V18h.8v-5.666l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9H22zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zM9 8H7V7h2zm8 0h-2V7h2zm-4 0h-2V7h2zm2 16v-1h2v1zm-4 0v-1h2v1zm-4 0v-1h2v1zm0-8v-1h2v1zm8 0v-1h2v1zm-4 0v-1h2v1zm18.9 8.1h-1.8v1.8h1.8zm-.8 1h-.2v-.2h.2zm15.498-4.48a2.727 2.727 0 0 0-1.62-.5v-.02H27.25a3.154 3.154 0 0 0-3.15 3.15V38.1h-1.68a3.386 3.386 0 0 0-2.872 1.58 3.49 3.49 0 0 0-.157 3.419 3.241 3.241 0 0 0 2.954 1.801h15.161a3.404 3.404 0 0 0 3.394-3.4V26.9h5v-3.65a3.224 3.224 0 0 0-1.302-2.63zM22.345 44.1a2.44 2.44 0 0 1-2.23-1.341 2.706 2.706 0 0 1 .11-2.65A2.588 2.588 0 0 1 22.42 38.9h12.89a3.395 3.395 0 0 0 0 5.2zM40.1 23.192V41.5a2.6 2.6 0 1 1-2.6-2.6v-.8H24.9V23.25a2.352 2.352 0 0 1 2.35-2.35h13.795a3.183 3.183 0 0 0-.945 2.292zm5 2.908h-4.2v-2.908a2.274 2.274 0 0 1 1.44-2.18 1.944 1.944 0 0 1 1.791.259 2.423 2.423 0 0 1 .97 1.979zm-17.1 5h9v.8h-9zm0 3h7v.8h-7zm0-6h9v.8h-9zm4-3h5v.8h-5z"/></svg></span>
+                          <span class="sublink-text">Notebook Server</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+
+              <a id="nav-data-store" data-langlabel="data-store" href="../../../../zh-CN/data-store/" class="top-nav-link">Data Stores</a>
+              <a id="nav-cloud" data-langlabel="cloud" href="../../../../zh-CN/cloud/" class="top-nav-link">云</a>
+              <a id="nav-apps" data-langlabel="apps" href="../../../../zh-CN/apps/" class="top-nav-link">应用程序</a>
+            </nav>
+
+
+            
+            
+            
+
+            <div class="margin-left-1 top-nav-list right hide-if-logged-in logged-out-navigation">
+               
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+              
+              <a data-langlabel="sign-in" id="login-link" class="icon-ui-user top-nav-link link-blue login-link" href="#">登录</a>
+              
+            </div>
+
+            
+            <nav class="margin-left-1 top-nav-list right hide-if-logged-out logged-in-navigation">
+              
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+             
+              <div class="dropdown js-dropdown right">
+
+                <div class="tablet-show top-nav-link">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a href="#" data-drawer="user-nav" class="user-nav-name js-drawer-toggle" data-first-name></a>
+                </div>
+
+                <div class="tablet-hide top-nav-link js-dropdown-toggle">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a class="user-nav-name top-nav-dropdown dropdown-btn" data-first-name>&nbsp;</a>
+                </div>
+
+                <nav class="dropdown-menu dropdown-right">
+                
+                  <a class="dropdown-link agolProfile" id="agolProfile" href="#">我的个人资料</a>
+                  <a class="dropdown-link js-log-out" id="agolLogout" href="#">登出</a>
+                </nav>
+              </div>
+            </nav>
+            
+
+            
+          </div>
+        </div>
+      </header>
+
+      <div class="js-search search-overlay">
+        <div class="search-content" role="dialog" aria-labelledby="search">
+          <form method="GET" id="helpSearchForm">
+            <label>
+              搜索 GeoEvent Server 10.7 帮助
+              <div class="search-bar">
+                <input type="search" name="q"  placeholder="搜索 GeoEvent Server 10.7 帮助" class="search-input js-search-input">
+                <input type="hidden" name="collection" value="help" />
+                <input type="hidden" name="product" value="ext-server-geoevent" />
+                <input type="hidden" name="version" value="10.8" />
+                <input type="hidden" name="language" value="zh-CN" />
+              </div>
+            </label>
+            <input type="hidden" name="relativePath" value="../../../../" /><button type="submit" class="btn btn-large right">搜索</button>
+          </form>
+        </div>
+      </div>
+
+      <!--googleon: all-->
+
+      <div id="skip-to-content">
+        <!--googleoff: all-->
+        <header class="sub-nav sub-nav-learn">
+          <div class="grid-container">
+            
+            <div class="column-24">
+              <div style="display:table;" class="sdk-home-banner">
+                <div class="sdk-home-banner-content">
+                  <h1 class="sub-nav-title link-white">GeoEvent Server</h1>
+                </div>
+              </div>
+            </div>
+
+            <div class="column-24">
+              <nav class='sub-nav-list tablet-hide'><a class="sub-nav-link" href="../../../../zh-CN/geoevent/" target="_top" title="GeoEvent Server 概述和文档">主页</a><a class="sub-nav-link" href="../../../../zh-CN/geoevent/latest/get-started/" target="_top" title="GeoEvent Server 入门">入门</a><a class="sub-nav-link is-active" href="../../../../zh-CN/geoevent/latest/process-event-data/" target="_top" title="过滤和处理事件数据流，以关注最感兴趣的要素">处理事件数据</a><a class="sub-nav-link" href="../../../../zh-CN/geoevent/latest/administer/" target="_top" title="管理 GeoEvent Server">管理</a></nav><select class='tablet-show select-full trailer-half js-select-nav'><option value="../../../../zh-CN/geoevent/">主页</option><option value="../../../../zh-CN/geoevent/latest/get-started/">入门</option><option selected="true" value="../../../../zh-CN/geoevent/latest/process-event-data/">处理事件数据</option><option value="../../../../zh-CN/geoevent/latest/administer/">管理</option></select>
+            </div>
+
+          </div>
+        </header>
+        <!--googleon: all-->
+       
+        <!-- content goes here -->
+        <div class="grid-container ">
+          
+
+            
+              
+  <!--BREADCRUMB-BEG--><div id="bigmac" class="sticky-breadcrumbs trailer-2" data-spy="affix" data-offset-top="180"> </div><!--BREADCRUMB-END-->
+  <!--googleoff: all-->
+    <div class="column-5 tablet-column-12 trailer-2 ">
+      <aside class="js-accordion accordion reference-index" aria-live="polite" role="tablist">
+        <div></div>
+      </aside>
+
+      <div class="js-sticky scroll-show tablet-hide leader-1 back-to-top" data-top="0" style="top: 0px;">
+        <a href="#" class="btn btn-fill btn-clear">返回顶部</a>
+      </div>
+    </div>
+  <!--googleon: all-->
+  
+            
+            
+            
+	
+		<div class="column-13  pre-1 content-section">
+	
+		<header class="trailer-1"><h1>字段计算器处理器</h1></header>
+
+		 
+	<!--googleoff: all-->
+	
+		
+				<aside id="main-toc-small" class="js-accordion accordion tablet-show trailer-1">
+			      <div class="accordion-section">
+			        <h4 class="accordion-title">在本主题中</h4>
+			        <div class="accordion-content list-plain">
+			          <ol class="list-plain pre-0 trailer-0"><li><a href="#ESRI_SECTION1_FA1BF1C7E8804C0C827065BEBB2C68BE">摘要</a></li><li><a href="#ESRI_SECTION1_853122E7F9ED4595BBEDB0FBE8DA8C50">示例</a></li><li><a href="#ESRI_SECTION1_7AE80D4CC2C24613BA1F50D3691A46AC">用法说明</a></li><li><a href="#ESRI_SECTION1_E6850F1C58F643DE9D941131EEB17C82">参数</a></li><li><a href="#ESRI_SECTION1_D08325A46F18445593F877B1ACD21251">注意事项和限制</a></li></ol>
+			        </div>
+			      </div>
+			     </aside>
+		
+    
+   <!--googleon: all-->
+
+
+		<main>
+			
+	
+    	
+    
+
+
+			
+<section class="section1 padded-anchor" id="ESRI_SECTION1_FA1BF1C7E8804C0C827065BEBB2C68BE" purpose="section1"><h2>摘要</h2><p id="GUID-09D9EE84-A720-42AD-B560-A6561D2DA7B5">字段计算器处理器可用来计算值。该处理器可评估一个表达式以生成所需的值。表达式可包括文本字符串和数值常量，以及从正在处理的 GeoEvent 的命名字段中获取的事件数据。可将计算所得值写入现有字段，同时覆盖该字段中的现有数据，或者将该值写入由处理器创建的新字段中。</p></section><section class="section1 padded-anchor" id="ESRI_SECTION1_853122E7F9ED4595BBEDB0FBE8DA8C50" purpose="section1"><h2>示例</h2><ul purpose="ul" id="UL_4B457E8A568D49BD98B7F13A3CA6AE27">			<li purpose="li" id="LI_D24014E7739A420EA6C54D2A156C3733">字段计算器处理器可用于在日期/时间值中加上或减去时间，以使时间戳与本地时区对齐。可以通过在表示为新纪元毫秒（长整数）的事件记录时间戳中加上或减去以毫秒为单位的新纪元值（同样为长整数）来完成上述操作。然后，可以在新日期类型字段中填充经过修改的新纪元时间戳值。</li>			<li purpose="li" id="LI_86D36463363D4460B04FA1A4504AF3C9">处理器可以转换许多单位，例如距离、速度、时间、温度、高度、重量等。</li>			<li purpose="li" id="LI_BFFD1F43F0564F1E8408DA7434C9E363">该处理器适用于外业工作人员的实时数据校正。字符串函数（例如 <span class="usertext">replace()</span>、<span class="usertext">toLowerCase()</span> <span class="usertext">toUpperCase()</span> 和 <span class="usertext">concat()</span>）可用于确保外业数据能够实时满足特定条件或规范。例如，<span class="usertext">concat()</span> 可用于从采集的数据中移除空格。同样，<span class="usertext">toLowerCase()</span> 可用于对所有采集的数据强制使用小写字母。然后，可以将这些字符串函数的输出实时写回要素服务层。</li>			<li purpose="li" id="LI_25F4DB7B933C488C8D3492D3E4C2E54F">处理器可用于从 <a target="_blank" class="xref xref" href="https://www.esri.com/en-us/arcgis/products/survey123/resources">Survey123 for ArcGIS</a> 要素图层的注释字段（字符串）中递归搜索关键字或短语。通过使用字符串函数 <span class="usertext">contains()</span>，可以对用户提交的评论进行审核，以了解路况内容，例如坑洼、碎石、水浸、开裂或阻塞。如果存在上述类型的内容，则字段计算将返回布尔型 <span class="usertext">true</span> 值。然后，可以对真实事件记录进行过滤和实时处理，以立即通知公共事业部门或其他一些机构进行响应。</li>		</ul></section><section class="section1 padded-anchor" id="ESRI_SECTION1_7AE80D4CC2C24613BA1F50D3691A46AC" purpose="section1"><h2>用法说明</h2><ul purpose="ul" id="UL_9EC5F8311F854DF0AAFAA4011DBAC30E">			<li purpose="li" id="LI_2FE48E82956D4E029E6B7BC735C26EE3">字段计算器处理器是一款通用处理器。给定一段用英尺表示的距离后，可使用 <span class="usertext">Distance * 0.3048</span> 等相对常量表达式计算以米为单位的等效距离。该处理器还支持多种 Java 字符串函数，例如，表达式 <span class="usertext">replaceAll(Description, 'foo', 'bar')</span> 可用于在每个事件记录的描述字段中用子字符串 <span class="usertext">bar</span> 来代替子字符串 <span class="usertext">foo</span>。处理器还支持多个数学函数。例如，可以使用 <span class="usertext">max(Time1, Time2)</span> 识别两个 GeoEvent 字段中哪一字段包含更大值，或者使用 <span class="usertext">random()</span> 生成随机数。</li>			<li purpose="li" id="LI_FFC2AB75743F488E8DB88FFC6566D366">可以使用<span class="uicontrol">目标字段</span>参数将处理器配置为在现有字段或新字段中存储输出计算： 通过添加新字段来更改事件记录的方案将需要 <span class="ph">GeoEvent Server</span> 创建一个新的 GeoEvent 定义。新的 GeoEvent 定义将由 <span class="ph">GeoEvent Server</span> 管理，并且如果处理器或者使用该处理器的 GeoEvent 服务发生改变，则该定义将被删除。</li>			<li purpose="li" id="LI_C911995A6AF54358A4DD6A802A783CE6">指定要写入计算值的现有字段时，无需首先指定 GeoEvent 定义。从<span class="uicontrol">定义</span>菜单中选择 GeoEvent 定义仅用于缩小要从<span class="uicontrol">字段</span>菜单中选择的可用字段列表的范围。</li>		</ul><p id="GUID-3D46842B-3112-4989-914C-FF1D9BDA5960">字段计算器处理器支持的运算符和函数如下所示。</p><h4 class="table title">字段计算器支持的运算符和函数</h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="126.75pt"></colgroup><colgroup width="154.50pt"></colgroup><colgroup width="534.00pt"></colgroup><thead><tr><th colspan="1">操作</th><th colspan="1">运算符</th><th colspan="1">示例</th></tr></thead><tbody class="align-middle"> <tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-8BAD6AE4-DB88-49CB-A71F-FAA62E240C86">加</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><pre><code class="equation" purpose="equation">+</code></pre></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><pre><code class="equation" purpose="equation">Odom1 + Odom2</code></pre><p id="GUID-18620CD4-40C0-44C3-999A-31A041A909E4"> 表达式会将字段 <span class="usertext">Odom1</span> 和 <span class="usertext">Odom2</span> 中的数值相加，以获得简单总和。同时，支持字符串串联（例如，<span class="usertext">'Hello' + 'World'</span>）。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-B4B384EA-3C36-45C4-B7F6-42DB0DAC16D3">减</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><pre><code class="equation" purpose="equation">-</code></pre></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><pre><code class="equation" purpose="equation">VALUEA - VALUEB</code></pre><p id="GUID-F6D721C6-074E-4404-8101-2A33A7D12565"> 表达式会将标记为 <span class="usertext">VALUEA</span> 和 <span class="usertext">VALUEB</span> 的字段中的数值相减，以获得简单差值。</p><p id="GUID-784E9EAD-EA14-4F55-AC2C-C2AD12EF6F63"> 与支持字符串串联的加法不同，您不能使用减法计算两个字符串间的差值。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-FD3A09C4-E1E7-4AA0-A8B4-1AFA9494E78F">乘</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><pre><code class="equation" purpose="equation">*</code></pre></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><pre><code class="equation" purpose="equation">Altitude * 0.3048</code></pre><p id="GUID-E59CCEA6-66FE-49B7-82BC-A86D68A38515"> 表达式会将名为 <span class="usertext">Altitude</span> 字段中的数值和常数 <span class="usertext">0.3048</span> 相乘，以获得简单乘积（此案例是将以英尺计的值转换为以米计的等效值）。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-1CE57272-6787-436A-ADAC-F6D5412EBFE3">除</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><pre><code class="equation" purpose="equation">/</code></pre></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><pre><code class="equation" purpose="equation">Distance / 1.609344</code></pre><p id="GUID-11417063-1043-458D-904D-A2D9A07627E1"> 表达式会用名为 <span class="usertext">Distance</span> 的字段中的数值除以常数 <span class="usertext">1.609344</span>，以获得简单的商（将以千米计的值转换为以英里计的等效值）。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-6A6F37BF-A115-480E-8974-25C791BF7487">模</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><pre><code class="equation" purpose="equation">%</code></pre></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><pre><code class="equation" purpose="equation">VALUEA % VALUEB</code></pre><p id="GUID-B6FCC004-A8D1-401C-B647-77C06BDDC020"> 表达式用标记为 <span class="usertext">VALUEA</span> 的字段中的数值除以标记为 <span class="usertext">VALUEB</span> 的字段中的数值，并以双精度值形式返回余数。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-5F645772-FFFD-47EA-AEA0-186895680D95">逻辑与 (AND)</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><pre><code class="equation" purpose="equation">&amp;&amp;</code></pre></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><pre><code class="equation" purpose="equation">Flag1 &amp;&amp; Flag2</code></pre><p id="GUID-4467C4CD-3EDB-4FFC-81BF-50C855397818"> 表达式对名为 <span class="usertext">Flag1</span> 和 <span class="usertext">Flag2</span> 的字段中的布尔值执行逻辑与 (AND) 运算，以获得布尔型结果。输入字段必须为布尔型。表达式中的文本字符串（如 <span class="usertext">TRUE</span>）和常量值（如 <span class="usertext">1</span>）不会转换为属于评估一部分的等效布尔值。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-ECCCD6C5-27F6-4E0A-8FD3-061D7FDD7097">逻辑或 (OR)</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><pre><code class="equation" purpose="equation">||</code></pre></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><pre><code class="equation" purpose="equation">Flag1 || Flag2</code></pre><p id="GUID-A5F2E805-D474-44BF-B74A-C4C424D2DD96"> 表达式对名为 <span class="usertext">Flag1</span> 和 <span class="usertext">Flag2</span> 的字段中的布尔值执行逻辑或 (OR) 运算，以获得布尔型结果。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-0B7B9FC8-D0C4-4F3C-8B50-FB7CBD0DEF12">逻辑非 (NOT)</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><pre><code class="equation" purpose="equation">!</code></pre></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><pre><code class="equation" purpose="equation">!(Flag1)</code></pre><p id="GUID-81A8D4BB-3477-4121-A170-AABF6CB9B467"> 表达式对字段 <span class="usertext">Flag1</span> 中的布尔值执行逻辑非运算，以获得布尔型结果。支持嵌套表达式，如 <span class="usertext">!(Flag1 &amp;&amp; Flag2)</span>。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-869F3CA0-2A6D-4ED8-956F-814C4AD719A4">大于</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><pre><code class="equation" purpose="equation">&gt;</code></pre></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><pre><code class="equation" purpose="equation">Altitude &gt; 12500</code></pre><p id="GUID-6F00734D-8C1A-42A2-A052-F6AAC5B0E627"> 表达式会执行逻辑评估，以确定字段 <span class="usertext">Altitude</span> 中的值是否大于指定的常数（结果为布尔值）。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-5B2BD793-CF07-4BF6-9DE3-F91D45C454EA">大于等于</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><pre><code class="equation" purpose="equation">&gt;=</code></pre></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><pre><code class="equation" purpose="equation">Altitude &gt;= 12500</code></pre><p id="GUID-F387DA32-B14B-4C70-B90D-761D0B64D952"> 表达式会执行逻辑评估，以确定字段 <span class="usertext">Altitude</span> 中的值是否大于或等于指定的常数（结果为布尔值）。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-93E5201C-3082-4207-B832-1682C4E38421">小于</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><pre><code class="equation" purpose="equation">&lt;</code></pre></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><pre><code class="equation" purpose="equation">Altitude &lt; 1500</code></pre><p id="GUID-DDC8E3D4-7D06-4F84-93E7-962B533902C8"> 表达式会执行逻辑评估，以确定字段 <span class="usertext">Altitude</span> 中的值是否小于指定的常数（结果为布尔值）。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-39AB504E-6694-4260-914B-296B91960E96">小于等于</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><pre><code class="equation" purpose="equation">&lt;=</code></pre></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><pre><code class="equation" purpose="equation">Altitude &lt;= 1500</code></pre><p id="GUID-ED77EAC9-2B51-4D4C-9DCE-377F212FDED0"> 表达式会执行逻辑评估，以确定字段 <span class="usertext">Altitude</span> 中的值是否小于或等于指定的常数（结果为布尔值）。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-ABC475AE-50C4-432F-A53D-DCEC9D8DA79F">等于</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><pre><code class="equation" purpose="equation">==</code></pre></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><pre><code class="equation" purpose="equation">VALUEA == VALUEB</code></pre><p id="GUID-796BCA97-51A1-4E03-8E96-7E04C49D0233"> 表达式会执行逻辑评估，以确定标记为 <span class="usertext">VALUEA</span> 和 <span class="usertext">VALUEB</span> 的字段中的值是否相等（结果为布尔值）。只有初始产品版本 (10.2.0) 中的数字类型支持相等运算。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-A1D4E6C6-14AF-47C5-8F39-76EE4AD0A3D4">不等于</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><pre><code class="equation" purpose="equation">!=</code></pre></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><pre><code class="equation" purpose="equation">VALUEA != VALUEB</code></pre><p id="GUID-B06AB64C-81B4-4865-900C-A6798D609238"> 表达式会执行逻辑评估，以确定标记为 <span class="usertext">VALUEA</span> 和 <span class="usertext">VALUEB</span> 的字段中的值是否不相等（结果为布尔值）。只有初始产品版本 (10.2.0) 中的数字类型支持不等于运算。</p></td></tr> </tbody><caption></caption></table></div><div class="panel trailer-1 note" id="GUID-180B483E-FED9-4BB9-B68E-758FE1BD7D27"><h5 class="icon-ui-comment trailer-0">注：</h5>显示混合类型时，字段计算器处理器会试图自动转换值。例如，表达式 <span class="usertext">10.0 + 5</span> 会自动转换为将总和处理为两个浮点值相加的结果。将数值和字符串值混合（例如 <span class="usertext">codeValue + 'SomeString'</span>，其中 <span class="usertext">codeValue</span> 是数值）会生成未指定的结果。正确的方法为使用字符串函数（例如下述的 <span class="usertext">valueOf(object)</span>）将 <span class="usertext">codeValue</span> 明确转换为字符串。</div><div class="panel trailer-1 note" id="GUID-655FE564-25A5-4C13-AA06-90D0F178AE7C"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-CABA14AB-B8CE-43F6-B6C1-AB2807A00D85">字段计算器处理器等于和不等于运算符不应该直接应用于浮点值。为正确比较两个十进制值是否相等，必须首先对数值进行进位运算，将数值取整为长整数，然后比较这些长整数值。</p></div><ul purpose="ul" id="UL_A1EA797C0C224DACAD67529877FF2E59"><li purpose="li" id="LI_A4E919240C304CE3AC2CA9EDCF05DC4E"> 不比较 <span class="usertext">MyFloat1 == MyFloat2</span>。</li><li purpose="li" id="LI_D5A8E1F92B8340F3878283977B825657"> 而比较 <span class="usertext">round(MyFloat1*1000) == round(MyFloat2*1000)</span>。</li></ul><p id="GUID-4270DC17-9C1C-47C7-844A-6E05819F37C2"> 字段计算器处理器包括可对 java.lang.Math 中所得结果进行镜像处理的函数。有关完整的技术规范和函数列表，请参考 Java 开发者文档。最常用函数的汇总如下。</p><h4 class="table title">字段计算器处理器中的常数</h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="162.00pt"></colgroup><colgroup width="454.50pt"></colgroup><thead><tr><th colspan="1">函数</th><th colspan="1">描述</th></tr></thead><tbody class="align-middle"> <tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-8D21F0BE-D3A0-427C-8D6D-A01DB55015FF">E()</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-278D13D0-0725-4A2D-9B01-4564FF5AE6C7"> 返回以欧拉数 (e) 为底并以指定双精度值为指数的幂</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-96600649-5CE6-4636-82D5-052060264855">PI()</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-CE345B29-9377-4EDB-821B-15A09593BDE9"> 返回以双精度表示的 pi（圆的周长与直径之比）</p></td></tr> </tbody><caption></caption></table></div><h4 class="table title">字段计算器处理器的时间函数</h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="162.00pt"></colgroup><colgroup width="456.00pt"></colgroup><thead><tr><th colspan="1">函数</th><th colspan="1">描述</th></tr></thead><tbody class="align-middle"> <tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-D6B579E7-CA43-47A6-8095-B7AD8113A3F7">currentTime()</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-8F118BAC-639E-4675-A7A8-970A4A0C6B75">以毫秒为单位返回本地服务器的当前系统时间作为某一点的时长</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-D0A794AE-B355-44F2-A7F7-B505FAD82F4B">receivedTime()</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-DC6C3CD0-AA69-4396-83AC-6C5CAB09DD4B">返回输入连接器创建事件时的时间戳</p></td></tr> </tbody><caption></caption></table></div><h4 class="table title">字段计算器处理器的常用函数</h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="160pt"></colgroup><colgroup width="460pt"></colgroup><thead><tr><th colspan="1">函数</th><th colspan="1">描述</th></tr></thead><tbody class="align-middle"> <tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-0AB3FE58-AAFD-4905-BFFA-E86F976B570E">abs(value)</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-694F0567-B6A2-4FF6-B52B-629A32C06050"> 返回参数的绝对值</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-E4274F82-4C52-4D90-AC13-F38098087223">ceil(double)</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-8A7E1183-38E2-44E5-96AD-5A3EA5568E1E"> 返回指定双精度值的上限（接近的最大整数）</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-68836467-4372-4765-9837-AD8776D2AEB1">currentTime()</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-D72D48FE-6324-4BFE-B78E-332E687D8D1A"> 以长整型返回系统的当前日期/时间（以新纪元毫秒为单位）</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-32922105-DFBA-4861-8D51-7891E6E0CBF2">floor(double)</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-2347DC67-FF40-44B5-A344-9B3E06D54D29"> 返回指定双精度值的下限（接近的最小整数）</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-811745B8-F462-4B58-BF7D-278FA311608D">hypot(double x, double y)</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-44D3159D-2322-4CD3-B6E7-4040E4204EAD"> 返回不含中间溢出或下溢的 sqrt((x*x) + (y*y))</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-5D99F758-0A15-443C-AB57-C290B5B1CC2B">max(value a, value b)</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-11FCDE11-72D0-41F0-B952-24D2C33E3B77"> 返回 2 个指定参数值中较大的值</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-38468B7F-1C5A-4B44-8C36-FFE76963E87A">min(value a, value b)</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-433211B8-3757-4469-88A6-8C6B1D1F4C93"> 返回 2 个指定参数值中较小的值</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-8E3283B1-B168-4E02-AE18-5402C262D919">random()</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-A0E832E7-2E35-4ED8-B3BC-892675002CD0"> 返回大于等于 0.0 并小于 1.0 的双精度值</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-A471C8E8-FBB1-46B4-92A6-C6BB97B518DB">receivedTime()</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-C3BB84BD-BE1E-40DB-BAFB-88F330379007"> 以长整型检索由输入连接器收到的事件记录的日期/时间（以新纪元毫秒为单位）</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-EA18B4E5-CB0F-42CE-ACC1-9EC4F24711A6">round(value)</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-DF25208C-5A39-415C-8A9F-2966F19403B9"> 返回最接近参数的长整数（假设参数为双精度值）</p></td></tr> </tbody><caption></caption></table></div><div class="panel trailer-1 note" id="GUID-52A191D5-1DA4-4506-A995-8880201C5F4D"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-0DF851EC-CA03-41CA-B7B8-195F2D17680A"> 字段计算器处理器会在可能的情况下处理数值类型转换。例如，当为函数（例如 <span class="usertext">max(3.14159,25)</span>）提供的数值类型不同时，为执行比较，会将这些值转换为可比类型（整型、浮点型或双精度型）。将计算值写入事件的属性字段时，处理器会对这些值进行转换（例如，在事件字段的类型为双精度时，<span class="usertext">6 + 7</span> 将作为 <span class="usertext">13.0</span> 写入）。</p></div><h4 class="table title">字段计算器处理器的指数</h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="160pt"></colgroup><colgroup width="460pt"></colgroup><thead><tr><th colspan="1">函数</th><th colspan="1">描述</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-A5D29BAC-D474-46A9-93E1-0E4057D4DF20">sqrt(double)</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-B1A595B8-089F-4F1B-AFE1-171148126AB8">返回指定双精度值的平方根</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-0C9B3D4F-CA05-43C8-8C7A-FE026525208D">cbrt(value)</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-7AA53DE0-C3D8-4858-9FC7-A9921D254EA2">返回指定双精度值的立方根</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-0BA10287-9908-4883-B979-E3E7FA78D081">exp(double)</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-D49C4218-CB50-47AA-BF48-7675D485B2EE">返回以欧拉数 (e) 为底并以指定双精度值为指数的幂</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-718DE405-6DE6-4998-B60F-E4D9E49A2A41">pow(double, double)</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-C427963E-3133-4858-BC26-F099D23DAE08">返回以第一个参数为底并以第二个参数为指数的幂</p></td></tr></tbody><caption></caption></table></div><h4 class="table title">字段计算器处理器的对数</h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="160pt"></colgroup><colgroup width="460pt"></colgroup><thead><tr><th colspan="1">函数</th><th colspan="1">描述</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-48BFD339-94F9-4164-AE80-73C7E673D056">log(double)</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-0872BF68-6DF5-40D9-8222-1AD84B6C4F7E">返回双精度值的自然对数（以 e 为底）</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-6F49B90E-80B0-4158-97A9-CF54F004FD57">log10(double)</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-810BFA86-A42E-4A67-9CDD-854899F59C7C">返回双精度值的以 10 为底的对数</p></td></tr></tbody><caption></caption></table></div><h4 class="table title">字段计算器处理器的字符串函数</h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="483.00pt"></colgroup><colgroup width="460.50pt"></colgroup><thead><tr><th colspan="1">函数</th><th colspan="1">描述</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="2"><p id="GUID-2CB0EF59-2373-489E-AF95-F5DDF1112C77">对于参考，下面的语法示例使用以下示例输入数据：</p><p id="GUID-E59C7630-53F3-4E23-869E-C7FDFBD683C7"><img purpose="img" placement="inline" alt="字段计算器处理器输入数据用作以下语法示例的参考" title="字段计算器处理器输入数据用作以下语法示例的参考" src="GUID-7B037AB8-ACA2-4629-8671-F3448DF0378D-web.png"></p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-7AC6DA56-4E4A-4502-828C-18C8A59ECACA">length(string)</p><p id="GUID-E7F90BE2-FA18-4241-AE12-6AFADF029AD7"><i>返回：</i><span class="usertext">integer</span></p><p id="GUID-9E1AB8C6-63ED-4C81-939C-193BEAD2ECFD"><i>示例：</i><span class="usertext">'TrackID length: ' + length(TrackID)</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-9F019474-9EDF-4D98-9C00-EB1925F4D7D3">返回字符串的长度。</p><p id="GUID-4A00C31C-56C5-4127-8D9E-3EA93B71E064"><i>结果：</i><span class="usertext">"TrackID length: 7"</span></p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-3F10193F-1D18-40C7-9151-EDF82794877C">isEmpty(string)</p><p id="GUID-77D7907A-CA0F-4489-8E4D-D8EB1E4E3A32"><i>返回：</i><span class="usertext">boolean</span></p><p id="GUID-C0315056-D3FB-4784-BB08-2D314B3A5082"><i>示例：</i><span class="usertext">isEmpty(EmptyStr)</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-FEC55279-593D-4555-AF44-2DAD7E11A96A"> 如果源的长度为 0，则返回 true。</p><p id="GUID-A74BC41B-EE21-4C29-BDA9-C10FDB93261D"><i>结果：</i><span class="usertext">true</span></p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-DF37777C-7744-4AB3-9CBE-6E701A72939D">isNull(string)</p><p id="GUID-98FB60BA-761F-4F13-83AA-A68B57801D51"><i>返回：</i><span class="usertext">boolean</span></p><p id="GUID-CD183CC7-718D-46E6-B6A6-74AE918AE13B"><i>示例：</i><span class="usertext">isNull(NullValue)</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-0B5BDB3A-BD1A-49B4-8241-FDEE8C86C150">如果源值为空，则返回 true。</p><p id="GUID-BEE68FF2-C263-4EE9-8733-144348C084E5"><i>结果：</i><span class="usertext">true</span></p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-EF9A7936-2902-4564-B9EE-14D26A114608"> equals(string, string)</p><p id="GUID-0E87FA7F-859C-4E4E-B2CB-BA18861174EA"><i>返回：</i><span class="usertext">boolean</span></p><p id="GUID-20D0714E-7EE6-4065-A83C-B9B4A10FF43B"><i>示例：</i><span class="usertext">equals(TrackID, EmptyStr)</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-1C945D12-ED15-4C62-96ED-C590C2AC4948"> 如果给定的字符串属性值相等，则返回 true。如果字符串不相等，则返回 false；如果提供值而非字符串作为输入，则返回空值。</p><p id="GUID-3BEB816E-AE2E-4E7B-A416-D3A4FB9BC2B4"><i>结果：</i><span class="usertext">false</span></p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-1B087424-503E-4BEB-BB4C-09B40FF2BBAA"> equalsIgnoreCase(string, string)</p><p id="GUID-6D9EEA56-E3D1-4E71-94BF-73A41E460C4B"><i>返回：</i><span class="usertext">boolean</span></p><p id="GUID-7B8A933C-AC44-4568-9D6D-5923AFA6E6DC"><i>示例：</i><span class="usertext">equalsIgnoreCase(TrackID, toString(TrackNum))</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-23BD7782-21E2-416C-9782-3DDD8C37E10A"> 不考虑大小写的情况下，将源字符串与另一字符串进行比较。不考虑大小写的情况下，如果给定的字符串属性值相等，则返回 true。如果字符串不相等，则返回 false；如果提供值而非字符串作为输入，则返回空值。</p><p id="GUID-B2258767-1395-40DC-819D-8F8461CC4C09"><i>结果：</i><span class="usertext">false</span></p><p id="GUID-CDF88F88-5497-4BE3-9A2B-6E00100D4503"><i>说明：</i> "AA-1234" 不等于 "1234"</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-4877D47A-D220-4F89-906D-851A70AD8B29">compareTo(string, string)</p><p id="GUID-FB63687A-16A7-4661-B77B-D097EA7A3E3D"><i>返回：</i><span class="usertext">integer</span></p><p id="GUID-6D39D07C-2039-44A9-84A4-165D43F62011"><i>示例：</i><span class="usertext">compareTo('ABCXD', 'ABCZD')</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-BB507834-3153-4981-B306-BA633FAB3719"> 按字母顺序将两个字符串进行比较。如果两个字符串相等，则返回值 0；如果按字母顺序第一个字符串小于第二个字符串，则返回负值；如果按字母顺序第一个字符串大于第二个字符串，则返回正值。</p><p id="GUID-DEDAB5D2-CE20-4CA2-9D61-22693BB33D2F"><i>结果：</i><span class="usertext">-2</span></p><p id="GUID-18BC4AEC-A1E3-4F13-BAEC-CDD6860DDEC1"><i>说明：</i> int('X') - int('Z') 将返回 -2，因为 'X' 在字母表中比 'Z' 小两个位置。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-90886AA1-BFA0-4A41-AF2E-38C0EB7E00F9"> compareToIgnoreCase(string, string)</p><p id="GUID-1A9B640B-38B4-4835-AA4C-80C45BAEC640"><i>返回：</i><span class="usertext">integer</span></p><p id="GUID-121E2C2E-258B-401F-BE4A-206BDC57508E"><i>示例：</i><span class="usertext">compareToIgnoreCase('abcde', 'ABCDE')</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-94CD9BEA-D012-47FF-9DB0-CADBF1DC49D3"> 按字母顺序对两个字符串进行比较，不区分大小写。</p><p id="GUID-5192112E-515E-4674-8BD6-E411581628F7"><i>结果：</i><span class="usertext">0</span></p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-D25B4CDC-4002-45A0-88F4-7AC15D90A9CF"> startsWith(string, value)</p><p id="GUID-B697BAA0-5D2C-456C-9536-0DFD1F07B047"><i>返回：</i><span class="usertext">boolean</span></p><p id="GUID-CF84532B-BF35-4961-9275-85F1B1E29874"><i>示例：</i><span class="usertext">startsWith('Programming', 'Program')</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-67DC9109-E012-450E-9FE2-D824D43531C7"> 如果字符串以指定前缀开头，则返回 true；否则返回 false。第二个参数 value 可以是字符串或者可以隐式转换为字符串的整数值。</p><p id="GUID-A725F525-46F0-421A-851E-502A4B35333C"><i>结果：</i><span class="usertext">true</span></p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-28112A96-3C79-4184-BFF0-51BA56899E31">endsWith(string, value)</p><p id="GUID-D7D50A9B-FF8F-4977-A0D6-28593D055216"><i>返回：</i><span class="usertext">boolean</span></p><p id="GUID-766F3F56-3B25-422B-90BA-DAD053F60928"><i>示例：</i><span class="usertext">endsWith(TrackID, TrackNum)</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-102BB463-54ED-4DA0-BA82-E1EB7B9E38FD"> 如果字符串以指定后缀结尾，则返回 true；否则返回 false。第二个参数 value 可以是字符串或者可以隐式转换为字符串的整数值。</p><p id="GUID-9CE64973-A8DC-49AE-9DF4-AE74C3344A5C"><i>结果：</i><span class="usertext">true</span></p><p id="GUID-82E792B1-4761-48CF-9A59-84F57EFB06C4"><i>说明：</i>"AA-1234" 以 "1234" 结尾</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-0946941C-D9EC-4544-9390-43006DCA80B6"> indexOf(string, string, startIndex)</p><p id="GUID-3D64696D-509D-4783-9221-C3B565DF441B"><i>返回：</i><span class="usertext">integer</span></p><p id="GUID-BC6915E0-0A33-4663-8678-D0F504E89BF0"><i>示例：</i><span class="usertext">indexOf('ABCDABCBCA','BC',3)</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-7B4018DD-1906-4677-85D4-EE3D66FB2E61"> 从指定索引开始，返回在搜索字符串内找到指定子字符串的第一个索引。对于从字符串开头开始搜索的索引，请指定搜索从索引 0 开始。</p><p id="GUID-6B9C6EB1-0121-4D7E-B75B-E18EB0C9CD82"><i>结果：</i><span class="usertext">5</span></p><p id="GUID-F7934D39-8B4B-4E7D-AD74-01D895F97C41"><i>说明：</i>从位置 3 处的字符开始，在位置 5 处第一次出现子字符串 "BC"。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-9CDEB306-122A-4AFC-ADA6-53F44604CB23"> lastIndexOf(string, string, startIndex)</p><p id="GUID-FA496DF2-658A-4299-86D9-FAB094379CA0"><i>返回：</i><span class="usertext">integer</span></p><p id="GUID-7BED1554-81E1-4300-9BBD-4227392C0A00"><i>示例：</i><span class="usertext">lastIndexOf(TrackID,'-',length(TrackID))</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-8DAA4ECB-4C76-4643-B9C2-7E326B3C9D5F"> 从指定索引向后搜索，返回在搜索字符串内找到指定子字符串的最后一个索引。对于从字符串结尾开始搜索的索引，请指定搜索从 length(source) 开始。</p><p id="GUID-D6492210-C34A-4E20-888A-816AF35F11E0"><i>结果：</i><span class="usertext">2</span></p><p id="GUID-AED3E3C1-8252-4B39-964F-8D2D8927D9F7"><i>说明：</i>从字符串结尾开始向后搜索，在位置 2 处找到子字符串 '-'。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-E2178E7D-A378-4E87-A250-2E57282AC5E6"> substring(string, intIndexBegin, intIndexEnd)</p><p id="GUID-F799287F-91BC-40C3-8ECB-D29533F557BE"><i>返回：</i><span class="usertext">string</span></p><p id="GUID-85CD209A-B246-4E35-8287-694C79BBF69A"><i>示例：</i><span class="usertext">substring('ABCDABCXYZABCDABC',7,10)</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-553C83AE-2B98-480C-B09B-4364FE3E541B"> 将从源字符串中提取的子字符串作为新字符串返回。该子字符串在指定的 intIndexBegin 处开始，并扩展到索引 (intIndexEnd - 1) 处的字符。第三个参数可以表示为嵌套函数 length(source) 或者 -1（指字符串结尾）。</p><p id="GUID-66945C5C-65A9-4568-AF6E-278230F143DE"><i>结果：</i><span class="usertext">"XYZ"</span></p><p id="GUID-E6932CC4-FBF1-414C-9F9C-8744E9B92416"><i>说明：</i>从字符索引 7 ('X') 处开始，返回位置 7、8 和 9 处的三个字符。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-47851AF2-F73D-4167-80FC-F9F3573CE715">concat(string, string)</p><p id="GUID-25571434-AFC2-4BB6-8096-BBC413C440D6"><i>返回：</i><span class="usertext">string</span></p><p id="GUID-8DEBE4E9-3491-488B-8104-D32E9B8054B8"><i>示例：</i><span class="usertext">concat('Hello', 'World')</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-DAA4F825-D8CF-4A9B-94E6-B2A13DB124FC">将指定的字符串连接在源字符串的末尾。</p><p id="GUID-3A16A481-2267-48A0-A57D-89F194FB3E5F"><i>结果：</i><span class="usertext">"HelloWorld"</span></p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-AEC22E77-781B-4D19-8AEF-C6C50B0BB2FD"> matches(string, regex)</p><p id="GUID-BED6216A-2655-4CF5-AA5B-DEEFA779B926"><i>返回：</i><span class="usertext">boolean</span></p><p id="GUID-50EC416F-1E94-4BF2-87F5-791F86698C48"><i>示例：</i><span class="usertext">matches(TrackID, '[A-Z]+[-][0-9]+')</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-534837B0-0761-4D31-B51E-5323ADBF3520"> 如果指定的正则表达式模式与指定的字符串相匹配，则返回 true；否则，返回 false。指定正则表达式模式 regex 作为第二个字符串。</p><p id="GUID-EC6FA8E9-533E-4B6A-9FC0-F8BDC23C7615"><i>结果：</i><span class="usertext">true</span></p><p id="GUID-66382686-402B-4E0C-BAE2-D9B67D63D343"><i>说明：</i>整个 TrackID 与模式“一个或多个字母，后跟一个破折号，后跟一个或多个数字”相匹配。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-B8A1D6F8-9A0F-47D0-80B7-7A2E1353326C"> contains(string, substring)</p><p id="GUID-BA4BE0E7-1092-4B38-95CB-B70BF529A9FA"><i>返回：</i><span class="usertext">boolean</span></p><p id="GUID-056EE616-ED90-469E-B8D0-E3C69B7CC7CA"><i>示例：</i><span class="usertext">contains(TrackID,'-')</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-F6BC14F1-865E-4801-9079-5D1863894B1D"> 如果源字符串包含指定子字符串，则返回 true。</p><p id="GUID-E76CBAD1-F4DA-44FD-8ABB-B459A2B4CA21"><i>结果：</i><span class="usertext">true</span></p><p id="GUID-871A5D1E-72C3-41D7-B618-BC96771B7B54"><i>说明：</i>TrackID 字符串值内某处包含文本 "-"。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-7DC2B0B5-8699-4944-BECE-598931C829CF"> replaceFirst(string,  regex, replacement)</p><p id="GUID-4C8640B9-8EFC-4081-BF02-890B4CB57F26"><i>返回：</i><span class="usertext">string</span></p><p id="GUID-8E9C2EF7-79D3-4FA6-A25A-3A1B59E9EF86"><i>示例：</i><span class="usertext">replaceFirst(TrackID,'[0-9]+','nnnnn')</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-6A727376-82DC-4A03-8485-E14BB1F5EADC"> 用指定的替换字符串替换与指定正则表达式模式相匹配的第一个子字符串，并将结果作为新字符串返回。</p><p id="GUID-7FC26609-4773-4AF3-B408-A473D91E9944"><i>结果：</i><span class="usertext">"AA-nnnnn"</span></p><p id="GUID-5DE826DE-1E4B-4BB5-BA40-37C5628C1FB8"><i>说明</i>：使用文本字符串 "nnnnn" 替换与模式“一个或多个数字”相匹配的第一个子字符串。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-CD3CE853-A2E6-486F-A222-BAF1A6BC626C"> replaceAll(string, regex, replacement)</p><p id="GUID-5C3F2C34-0145-4C40-A665-4F71023E3B11"><i>返回：</i><span class="usertext">string</span></p><p id="GUID-96F2515E-45BA-4DDD-B2B7-8D0CFD060118"><i>示例：</i><span class="usertext">replaceAll('ABABCABABABD','AB','X')</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-499BE5FB-74AC-4E72-A487-7820E504CC4C"> 用给定的替代替换与给定的正则表达式相匹配的源字符串的每个子字符串。将结果字符串作为新字符串返回。</p><p id="GUID-36F728F4-3D25-4A5B-90E4-98596C8F84EE"><i>结果：</i><span class="usertext">"XXCXXXD"</span></p><p id="GUID-95896774-1F2E-4261-809F-ED8ED807F751"><i>说明：</i>每次出现正则表达式模式 "AB" 时，使用文本字符串 "X" 进行替换。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-77ECCF04-D2B1-40A5-8119-75F30DFF6A60"> replace(source, target, replacement)</p><p id="GUID-2B52DE83-DF57-4579-BFB0-102A34CB1C9C"><i>返回：</i><span class="usertext">string</span></p><p id="GUID-98478CC3-EA4C-431C-B3BE-4D823D4F83C6"><i>示例：</i><span class="usertext">replace('2017-12-31','-','/')</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-8DDFE9E2-9130-4F8A-BD2B-A59B40763420"> 每次出现的子字符串（指定为文本字符串）将替换为指定的替换子字符串（也指定为文本字符串）。将结果字符串作为新字符串返回。</p><p id="GUID-595BAD4E-E983-459A-A781-D992BD105C7B"><i>结果：</i><span class="usertext">" 2017/12/31"</span></p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-9B0B59A0-BBDB-4157-86B4-89900C0B99E0"> toLowerCase(string)</p><p id="GUID-ECC3E12B-2012-45DC-B300-4EB771FBC794"><i>返回：</i><span class="usertext">string</span></p><p id="GUID-5713EB89-6881-40A0-BA92-6B194D8E2952"><i>示例：</i><span class="usertext">TrackID + ' to lower: ' + toLowerCase(TrackID)</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-E9A2A8ED-15A6-4C65-A8F8-AB2C35F4AE44"> 使用默认区域规则将源字符串中的所有字符转换成小写形式。将该字符串转换为小写形式后，将其作为新字符串返回。</p><p id="GUID-A94C458D-3EF6-4D25-8F1C-DB5B6110F5DE"><i>结果：</i><span class="usertext">"AA-1234 to lower: aa-1234"</span></p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-EFFE5DE5-06B5-45CF-8EDE-8BE10F6618FB"> toUpperCase(string)</p><p id="GUID-1BD679C5-B19B-47A8-B2EB-177B191090CC"><i>返回：</i><span class="usertext">string</span></p><p id="GUID-994EE428-FAAF-410D-8626-025187BC5826"><i>示例：</i><span class="usertext">TrackID + ' to upper: ' + toUpperCase(TrackID)</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-D24ADD1C-43C4-4C17-B3A5-4BBFF50CEFC7"> 使用默认区域规则将源字符串中的所有字符转换成大写形式。返回该字符串，将其转换为大写形式。</p><p id="GUID-80ADFC37-380D-4859-ABE2-930499AEB629"><i>结果：</i><span class="usertext">"AA-1234 to upper: AA-1234"</span></p><p id="GUID-8C80A029-1EB2-409D-BEFA-70952B7A4AB1"><i>说明：</i>在本示例中，TrackID 的字母部分已经为大写形式。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-BA68D100-C068-47DD-AE5A-5C96CD487368"> trim(string)</p><p id="GUID-390A568C-F457-4745-B185-FA84957D63ED"><i>返回：</i><span class="usertext">string</span></p><p id="GUID-EA323386-22D4-456C-9744-00D5B79E68E7"><i>示例：</i><img purpose="img" placement="inline" alt="trim (string) 函数的示例语法" title="trim (string) 函数的示例语法" src="GUID-1E3E813B-D0AF-45A7-AFB0-1A5369B4A70D-web.png"></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-5F278CC3-7B51-43EF-84D0-434C22E0825C"> 返回源字符串的副本，忽略前导或尾随空白区。</p><p id="GUID-32584B4A-7970-4F1B-9ADF-F5DE822B39A2"><i>结果：</i><span class="usertext">"GeoEvent Server"</span></p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-A7688A1B-D243-4B7C-8730-26E5EBB9474F">toString(fieldName)</p><p id="GUID-69D7F3D5-025D-4263-AD14-8F5FBFCD162C"><i>返回：</i><span class="usertext">string</span></p><p id="GUID-D31FC091-5C7B-4B9E-BA72-114E152AE110"><i>示例：</i><span class="usertext">toString(Geometry)</span></p><p id="GUID-107E2C9D-CDBB-4A4E-8665-F4D67C6DBA13"><i>示例：</i><span class="usertext">toString(Epoch)</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-90BDD973-3D35-46D7-B679-5197B36A03E5">  返回指定事件属性字段中的值的字符串表示。这些函数旨在允许将日期和几何属性的字符串表示嵌套在其他函数（例如子字符串）内，以便实时分析能够从较高阶数据类型中提取信息。</p><p id="GUID-673819E5-0692-42D5-A463-59A465369A78"><i>结果：</i><span class="usertext">"{""x"":32.125,""y"":-117.125,""spatialReference"":{""wkid"":4326}}"</span></p><p id="GUID-3B23299A-6B92-4BFD-9CE3-5ADC9B9E362D"><i>结果：</i><span class="usertext">"Fri Nov 03 17:07:56 PDT 2017"</span></p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-79162BE6-8F29-4E29-99D0-F2011D592FF8"> valueOf(fieldName)</p><p id="GUID-CE59DA64-27D3-4C47-81D2-ACA08B55AC6F"><i>返回：</i><span class="usertext">string</span></p><p id="GUID-1A10EEAF-750D-443B-B703-D8FCF48F56B6"><i>示例：</i><span class="usertext">valueOf(Geometry)</span></p><p id="GUID-D5274D70-DAC9-4939-B569-F03D1186E148"><i>示例：</i><span class="usertext">valueOf(Epoch)</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-6271A0FF-30CB-4DBD-B3C9-5717DC9E0067"> 返回指定事件属性字段中的值的字符串表示。toString( ) 和 valueOf( ) 函数可包装相同的实现。</p></td></tr></tbody><caption></caption></table></div><h4 class="table title">字段计算器处理器的三角函数</h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="160pt"></colgroup><colgroup width="460pt"></colgroup><thead><tr><th colspan="1">函数</th><th colspan="1">描述</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-E569445A-F155-4841-B144-24F40A820CB3">acos(double)</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-64F746D8-3860-4445-B069-6F4874B07A41"> 返回值的反余弦值（返回角度范围为从 0.0 到 pi）</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-8F5AFEF2-47EC-4796-ABD4-19584D27253B">asin(double)</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-9A639980-BE20-4E91-8D12-A88A925CAABD"> 返回值的反正弦值（返回角度范围为从 -pi/2 到 pi/2）</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-CCC58EBF-063C-4E6F-8045-2EEEDE185C58">atan(double)</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-5CBB8679-608D-48FB-8345-28D6D71715A1"> 返回值的反正切值（返回角度范围为从 -pi/2 到 pi/2）</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-10BA446A-F259-4ABE-A689-AE0913E8B369">atan2(double y, double x)</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-34C2570A-DA16-4380-B085-C9A2919E032A"> 返回由直角坐标 (x, y) 转换为极坐标 (r, theta) 而得到的角 theta</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-F2AFD129-89BC-4E47-B570-45B96D359F73">cos(double)</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-0CC4D425-23D1-4407-80E7-F958FEF7AF01"> 返回角的三角余弦值</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-FBDC8745-5DB2-408B-BA1A-182E49D2962F">cosh(double)</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-ACCE9C99-A6A2-4765-BEC9-C0B9A3EAFF08"> 返回双精度值的双曲余弦值</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-16939F27-E928-4AF6-A096-22932BECB93F">sin(double)</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-FA3B08F5-4F38-4935-A208-05B87533CBB0"> 返回角的三角正弦值</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-578710B3-D988-4166-A34B-95C5C8D3E74A">sinh(double)</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-168B9DFC-07AA-444E-95A0-23E51BD2A2F1"> 返回双精度值的双曲正弦值</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-708BB890-B227-463D-840F-08515C014CDE">tan(double)</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-7B0AD5FD-91C8-4968-AE15-EA43613D041B">  返回角的三角正切值</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-3118D946-301D-4D6A-89C9-99C014691182">tanh(double)</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-7E4004BC-D662-4726-B6E4-BC11EE18C28D"> 返回双精度值的双曲正切值</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-2D2E1469-3380-4E6E-A6B7-FB91AB25E821">toDegrees(double)</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-FEEC1CD7-7EAD-4FDA-B499-A2F1A6651210"> 将以弧度为单位的角转换为以度为单位的近似角</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-1C8474E8-7C33-4FC0-B7C2-A0DC4FB084B9">toRadians(double)</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-F5F9C52B-714B-4BC3-83BB-3B2DCCC52FF1"> 将以度为单位的角转换为以弧度为单位的近似角</p></td></tr></tbody><caption></caption></table></div></section><section class="section1 padded-anchor" id="ESRI_SECTION1_E6850F1C58F643DE9D941131EEB17C82" purpose="section1"><h2>参数</h2><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><thead><tr><th colspan="1" width="25%">参数</th><th colspan="1">描述</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1">							<p id="GUID-74516AA1-5132-47A2-A083-04D96ADD2C87">名称</p>						</td><td outputclass="" purpose="entry" rowspan="1" colspan="1">							<p id="GUID-946ACE96-36BE-425D-8CF2-5228D525DF2C">用于在 GeoEvent Manager 中引用的处理器的描述性名称。</p>						</td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1">							<p id="GUID-36644191-D646-407B-B331-E4FFCE56CE93">处理器</p>						</td><td outputclass="" purpose="entry" rowspan="1" colspan="1">							<p id="GUID-17A76664-5EF5-499C-97BB-8B081C140632">所选处理器的名称。</p>						</td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1">							<p id="GUID-86BD695B-8A69-4F95-A0AC-39311FCFFB8B">表达式</p>						</td><td outputclass="" purpose="entry" rowspan="1" colspan="1">							<p id="GUID-73B04DFA-AFE8-4A40-94B2-7B4BCBABD507">处理器要针对每个传入事件记录进行评估的表达式。表达式可以为数学表达式或词汇表达式。此参数的可能输入包括：</p>							<ul purpose="ul" id="UL_6AED1CC36AB44620854A6D6CD5D9D91E">								<li purpose="li" id="LI_67AFBD5B0ECB4AA5AFA52D1B5E4057C5"><span class="uicontrol">字符串</span> - 可以使用单引号来标识文本字符串。<ul purpose="ul" id="UL_ACE14A4B3D9244948E13698F2BF0912D">										<li purpose="li" id="LI_FCAFCE26650241FDB47AE5D445736D38"><span class="usertext">‘Hello’</span></li>										<li purpose="li" id="LI_DC2DFDB9250C44B7A85F148336BC62FF"><span class="usertext">‘World’</span></li>									</ul>								</li>								<li purpose="li" id="LI_9362D643249B4128B5F04940CADF20A6"><span class="uicontrol">整型</span> - 可以使用整数来标识数值。<ul purpose="ul" id="UL_DBAB6DAF25A14B83B72EAA8826E608CE">										<li purpose="li" id="LI_E48FC29848144106A2AFF4110AC4AD98"><span class="usertext">123.456</span></li>										<li purpose="li" id="LI_622F95F688FE4E8BB3FFF69E8F55D879"><span class="usertext">100</span></li>									</ul>								</li>								<li purpose="li" id="LI_E572E0EE017348D091B593AD630FE17F"><span class="uicontrol">字段</span> - 可以使用传入 GeoEvent 定义中的字段名称来标识字段及其相应的值。调用字段用于字段计算时，请考虑其数据类型。<ul purpose="ul" id="UL_2E955AD0D899471C9C1B7ED31DAEA761">										<li purpose="li" id="LI_AD052E34BBDC41868EBBDDFF0D37BC88"><span class="usertext">Speed</span></li>										<li purpose="li" id="LI_F93CD7DC5CAC43C4BC221852B15CA360"><span class="usertext">Altitude</span></li>									</ul>								</li>								<li purpose="li" id="LI_A5D19C9D5AED4E9E88359D40B57A8F34"><span class="uicontrol">标签</span> - 可以使用 <span class="ph">GeoEvent Server</span> 标签来标识字段。调用已标记字段用于字段计算时，请考虑其数据类型。<ul purpose="ul" id="UL_D183452F7A304586BF6573DCFBA9B4C7">										<li purpose="li" id="LI_166F4D68A3D04953B1133177C4FC6EB1"><span class="usertext">TRACK_ID</span></li>										<li purpose="li" id="LI_CC4B53325EAD465DB9A91A78FD9C1D49"><span class="usertext">GEOMETRY</span></li>									</ul>								</li>								<li purpose="li" id="LI_7A21AAD0632D49578FD144AF58DBF774"><span class="uicontrol">运算符</span> - 可以使用运算符来执行逻辑评估。<ul purpose="ul" id="UL_19842D49076B490EB44715FA2D9D34F6">										<li purpose="li" id="LI_9A1FF2132C0C4949AC3C546D9D5E389C"><span class="usertext">+</span></li>										<li purpose="li" id="LI_4636CB2EDE82453D9CFFD770CD25F67D"><span class="usertext">&gt;=</span></li>									</ul>								</li>								<li purpose="li" id="LI_93A13ADF25414D4C98610CB9B80F4D97"><span class="uicontrol">函数</span> - 可以使用函数来返回、标识或更改值。有些函数为字符串保留，而其他函数则为整数保留。使用处理器时，请考虑由函数调用的字段的数据类型。<ul purpose="ul" id="UL_8E562A8B9D8F4C3EA04AEBC51E1539F5">										<li purpose="li" id="LI_C70405A866F84D8EBDC040AE7427CD53"><span class="usertext">currentTime()</span></li>										<li purpose="li" id="LI_E75E2F711B7B40AEA90877197CE9786C"><span class="usertext">replace()</span></li>									</ul>								</li>							</ul>							<p id="GUID-CA5B5685-E89B-42A0-89B0-87EC916863DE">有关可用作处理器表达式一部分的受支持运算符和函数的完整列表，请参阅以上<a class="xref xref" href="../../../../zh-CN/geoevent/latest/process-event-data/field-calculator-processor.htm#GUID-3D46842B-3112-4989-914C-FF1D9BDA5960">受支持的运算符和函数</a>。</p>							<div class="panel trailer-1 note" id="GUID-377B64E9-C20D-4156-A8C1-ADF0619A4CF1"><h5 class="icon-ui-comment trailer-0">注：</h5>								<p id="GUID-843CE9EF-FFB8-400A-88DD-A5FA4111DB2F">下面是一个简单的表达式示例：<span class="usertext">Altitude + 100</span>。将写入表达式以评估名为 <span class="usertext">Altitude</span> 的字段的值，然后将其加上 <span class="usertext">100</span>。如果事件记录中的 <span class="usertext">Altitude</span> 字段具有存储值 12500，则表达式将得出新值 <span class="usertext">12600</span> (12500 + 100 = 12600)。可以将其存储在字符串或整型字段中。</p>								<p id="GUID-548ABF10-4DEB-48E7-9D8B-7B9D1FDFBA06">如果将类似表达式指定为 <span class="usertext">‘Altitude’ + 100</span>，则将写入该表达式以获取文本字符串 <span class="usertext">Altitude</span>，然后将其加上 <span class="usertext">100</span>。由于支持字符串串联，因此如果用于存储表达式结果的新字段为字符串，则输出将为 <span class="usertext">Altitude100</span>。但是，如果用于存储表达式输出的新字段为整型数据类型，则该表达式在逻辑上无效，并且将不会得出值。</p>								<p id="GUID-E9D39A83-B752-4788-83A4-85B58923E1F6">如果表达式使用字符串函数，例如 <span class="usertext">length(Altitude)</span>，则将写入该表达式以计算 <span class="usertext">Altitude</span> 字段中字符串的总字符数。如果将高度表示为整型数据类型（例如 12500），则上述表达式在逻辑上无效，并且不会得出值。原因为：<span class="usertext">length()</span> 是一个应在括号中包含字符串值的字符串表达式，而非整数。但是，如果将高度表示为字符串，则以上表达式将返回值 <span class="usertext">5</span>，因为字符串 <span class="usertext">12500</span> 包含 <span class="usertext">5</span> 个字符）。</p>							</div>						</td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1">							<p id="GUID-765ABFB9-100C-4319-AFEF-662DDC0DBC5B">目标字段</p>						</td><td outputclass="" purpose="entry" rowspan="1" colspan="1">							<p id="GUID-F020771C-349E-4958-93C9-67A479489684">用于指定由处理器计算的值的目标字段。目标字段是将写入表达式结果的位置。默认为<span class="uicontrol">现有字段</span>。</p>							<ul purpose="ul" id="UL_02E4B29BCB6F44959A29A50CAF2488EC">								<li purpose="li" id="LI_2B32322A904C4B9FA01AB1AD3400C13F"><span class="uicontrol">现有字段</span> - 目标字段为现有字段。由处理器计算的值将存储在事件记录的现有字段中。</li>								<li purpose="li" id="LI_1084BD3D159B4F5E92E1308C50553A0C"><span class="uicontrol">新字段</span> - 目标字段为新字段。由处理器计算的值将存储在新字段中。通过添加新字段来更改事件记录的方案将需要新的 GeoEvent 定义。</li>							</ul>						</td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1">							<p id="GUID-141C4FC1-DFAC-4642-AF65-69CD6453D638">新字段名称</p>							<p id="GUID-2602C8CC-E35B-4F25-96CC-F1132727CDF0">（条件分析）</p>						</td><td outputclass="" purpose="entry" rowspan="1" colspan="1">							<p id="GUID-C54E8A9A-9015-4123-94CA-600F7E79113C">将写入由处理器计算的值的新字段名称。</p>							<p id="GUID-6219FB50-F139-4DF0-9D5A-E068758FC299">此属性在<span class="uicontrol">目标字段</span>设置为<span class="uicontrol">新字段</span>时显示，设置为<span class="uicontrol">现有字段</span>时隐藏。</p>						</td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1">							<p id="GUID-AC113824-CF7A-4098-970B-E72AF2AAE3F1">新字段类型</p>							<p id="GUID-5DB7C662-5F39-4113-99AF-7FA0E06585CE">（条件分析）</p>						</td><td outputclass="" purpose="entry" rowspan="1" colspan="1">							<p id="GUID-FDB147A7-FB31-4CC1-9A85-F9CA80112330">用于指定由处理器创建的新字段的数据类型。默认为<span class="uicontrol">布尔型</span>。可用数据类型包括：</p>							<ul purpose="ul" id="UL_052E8A412CD14B40BC45B73F51FD4674">								<li purpose="li" id="LI_E48958E6125D40E78127027DD3266D8E"><span class="uicontrol">布尔型</span></li>								<li purpose="li" id="LI_F8D5DB124AAB4D9BBA906E43DC1ABC2E"><span class="uicontrol">日期型</span></li>								<li purpose="li" id="LI_0401FF3D130B41C48F7B11AFCB3FE501"><span class="uicontrol">双精度型</span></li>								<li purpose="li" id="LI_49E14893FCD34EE0AE9276E7099FE1E9"><span class="uicontrol">浮点型</span></li>								<li purpose="li" id="LI_45ED3A3549A04A38B20DC28EE4057DB4"><span class="uicontrol">几何</span></li>								<li purpose="li" id="LI_1DB0F74760974BF2AB362B5FF2C68DAD"><span class="uicontrol">整型</span></li>								<li purpose="li" id="LI_5497E7A9497A44B2BCA9188F9D0BF462"><span class="uicontrol">长整型</span></li>								<li purpose="li" id="LI_2B6C2F993F144031874D9427609E5DEE"><span class="uicontrol">短整型</span></li>								<li purpose="li" id="LI_848659032AE5494DBA73FF50892AD841"><span class="uicontrol">字符串</span></li>							</ul>							<p id="GUID-44E35E73-F68B-47CC-A50D-808278973B62">此属性在<span class="uicontrol">目标字段</span>设置为<span class="uicontrol">新字段</span>时显示，设置为<span class="uicontrol">现有字段</span>时隐藏。</p>						</td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1">							<p id="GUID-6684375A-F8D2-4BD5-9FC3-CA40F3FE0C29">新字段标签</p>							<p id="GUID-28FFE8EC-94E2-4DFB-B132-6B093AA6B660">（条件分析）</p>						</td><td outputclass="" purpose="entry" rowspan="1" colspan="1">							<p id="GUID-83D8342B-D21D-4A12-8227-4317C39837BE">将应用于新字段的现有字段标签的名称。此参数没有默认值。</p>							<div class="panel trailer-1 note" id="GUID-A7814138-F9A9-4E57-BEB3-BC4ADC69A49D"><h5 class="icon-ui-comment trailer-0">注：</h5>								<p id="GUID-34CC9F57-9C39-45D5-BD92-05DC6A366BDB">标签必须已存在，才能为新字段添加标签。处理器将不会动态创建标签。有关管理和创建标签的详细信息，请参阅<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/geoevent/latest" href="../../../../zh-CN/geoevent/latest/administer/managing-tags.htm">管理标签</a>。</p>							</div>							<p id="GUID-F13B01DF-13CC-4E1A-902C-2C8A05A59F62">此属性在<span class="uicontrol">目标字段</span>设置为<span class="uicontrol">新字段</span>时显示，设置为<span class="uicontrol">现有字段</span>时隐藏。</p>						</td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1">							<p id="GUID-DF7EBE9D-BF63-4447-B63B-96A63AD1B857">新建 GeoEvent 定义名称</p>							<p id="GUID-6D5166A7-2129-40FD-815D-45F0D0DF177D">（条件分析）</p>						</td><td outputclass="" purpose="entry" rowspan="1" colspan="1">							<p id="GUID-56DF55C7-BB60-435A-A453-06FB54C6F27C">分配给新 GeoEvent 定义的名称。新 GeoEvent 定义将组合入站事件记录的方案和用于存储计算值的新字段。</p>							<p id="GUID-463E6541-19FD-4B45-B7C3-69338D22A07B">此属性在<span class="uicontrol">目标字段</span>设置为<span class="uicontrol">新字段</span>时显示，设置为<span class="uicontrol">现有字段</span>时隐藏。</p>						</td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1">							<p id="GUID-4FC007BC-0A5A-46C9-ABBF-B04D3DFAC0F4">现有字段名称</p>						</td><td outputclass="" purpose="entry" rowspan="1" colspan="1">							<p id="GUID-BD0133B2-5EFC-4573-A6C3-6D7BFF316F7A">将写入由处理器计算的值的现有字段名称。此参数没有默认值。</p>							<div class="panel trailer-1 note" id="GUID-DEAF2E3A-C669-4F97-B8C3-AB0D9448B834"><h5 class="icon-ui-comment trailer-0">注：</h5>								<p id="GUID-E670670B-9770-43F9-BB1E-2EA55B44D040">可以使用<span class="uicontrol">定义</span>菜单来标识入站事件记录的 GeoEvent 定义。选择 GeoEvent 定义将缩小可用字段的范围以供选择。可以使用<span class="uicontrol">字段</span>菜单来标识将写入由处理器计算的值的现有字段的特定名称。</p>							</div>						</td></tr></tbody><caption></caption></table></div></section><section class="section1 padded-anchor" id="ESRI_SECTION1_D08325A46F18445593F877B1ACD21251" purpose="section1"><h2>注意事项和限制</h2><ul purpose="ul" id="UL_488D24C522BC41FAB5AB15F89BD9759C">			<li purpose="li" id="LI_E789C8890A5143A2A24033FE2FB8F99E">以下是使用字段计算器处理器时的一些注意事项：<ul purpose="ul" id="UL_A2ABAD6DDF3D493FA677B82A43178791">					<li purpose="li" id="LI_46B7B272178A4572898772AFC848077D">表达式可以是数学性的或词汇性的（基于字符串，而非数值）。</li>					<li purpose="li" id="LI_75BD49F41DCE4362A53AE39AF5237A6A">使用文本字符串时，确保使用单引号将这些字符串引起来：<span class="usertext">'Cat' + ' ' + 'Dog'</span>。</li>					<li purpose="li" id="LI_2F1E5991CD104D258E2404F04032007D">如果类型转换失败或无法评估表达式，则处理器将输出空值。</li>					<li purpose="li" id="LI_ADC1D84227BD43AEA283BF2B20386A55">表达式中的操作数可以是 GeoEvent 定义中的文字字段名称或者是应用到字段中的标签。例如，表达式 <span class="usertext">Odom1 + Odom2</span> 可用于将 <span class="usertext">Odom1</span> 和 <span class="usertext">Odom2</span> 字段中的值相加，以获得简单总和。如果 <span class="usertext">Odom1</span> 字段标记为 <span class="usertext">MILEAGEA</span> 且 <span class="usertext">Odom2</span> 字段标记为 <span class="usertext">MILEAGEB</span>，则可以使用表达式 <span class="usertext">MILEAGEA + MILEAGEB</span>。</li>					<li purpose="li" id="LI_B0DD6A51B0BF446C977B5F448CDEAE96">可以很好地处理表达式中不同类型的数据。例如，<span class="usertext">325 + 0.125</span> 将转换为等效的 <span class="usertext">325.0 + 0.125</span>。如果指定输出字段预计为一个长整型值，则计算出的双精度值将被截断。</li>					<li purpose="li" id="LI_9D5B27EEE4A34D2ABDADB6B7C887D2F5">创建表达式时应小心溢出。例如，表达式 <span class="usertext">60 * 60 * 80 * 10000</span> 中的每一项均为短整型，但结果超出常规整型的 32 位范围。如果以诸如 <span class="usertext">60.0 * 60.0 * 80.0 * 10000.0</span> 等双精度值表示每一项，则将避免上述问题。</li>					<li purpose="li" id="LI_5396E33E33C4485FBE6528B54B95433E">将计算值写入新字段会更改事件记录的方案，这需要 <span class="ph">GeoEvent Server</span> 创建新的 GeoEvent 定义。在使用处理器创建新字段时，必须指定字段名称和数据类型。可以为 GeoEvent 定义指定名称以及可选标签，如果指定了名称，则应将此名称应用于所得 GeoEvent 定义中的新字段。</li>				</ul>			</li>			<li purpose="li" id="LI_D0CA9F6322B24CDCBC5C88ACE2DB9D3A">如果包含处理或过滤作为任何 GeoEvent 服务的一部分，则事件记录的总吞吐量由于计算开销将下降。在设计实现字段计算器处理器或与此相关的任何其他处理器的 GeoEvent 服务时，请考虑上述情况。要提高 GeoEvent 服务或整个 <span class="ph">GeoEvent Server</span> 站点的性能，在可能的情况下，请考虑事先对实时数据进行预处理或过滤。</li>			<li purpose="li" id="LI_A9F1BC6CB1E44E5AA7D79B33BC48726B">在字段计算器处理器中构造表达式时，请考虑字段或已标记字段的数据类型。由于字段的数据类型，有时表达式在逻辑上无效，并且将不会返回值。而其他时候，表达式在逻辑上有效，但由于涉及的数据类型，可能会产生意外结果。例如，对于两个表示为字符串的数值，尝试计算其数学和以存储在双精度数据类型的新字段中将无效。但是，如果接收该值的新字段为字符串，则相同表达式将有效，但是可能不会得到期望的结果值。每个数值将串联在一起，而非在数学上相加在一起。</li>		</ul></section>
+			
+				<hr>
+				<!--googleoff: all-->
+				
+	
+        
+		    <p class="feedback right">
+		        <a id="afb" class="icon-ui-contact" href="/feedback/" data-langlabel="feedback-on-this-topic" >有关此主题的反馈?</a>
+		    </p>
+        
+	
+
+				<!--googleon: all-->
+			
+		</main>
+	</div>
+	
+	<!--googleoff: all-->
+	
+		
+			<div id="main-toc-large" class="column-5">
+			    <div class="panel font-size--2 tablet-hide trailer-1">
+			      <h5 class="trailer-half">在本主题中</h5>
+			      <ol class="list-plain pre-0 trailer-0"><li><a href="#ESRI_SECTION1_FA1BF1C7E8804C0C827065BEBB2C68BE">摘要</a></li><li><a href="#ESRI_SECTION1_853122E7F9ED4595BBEDB0FBE8DA8C50">示例</a></li><li><a href="#ESRI_SECTION1_7AE80D4CC2C24613BA1F50D3691A46AC">用法说明</a></li><li><a href="#ESRI_SECTION1_E6850F1C58F643DE9D941131EEB17C82">参数</a></li><li><a href="#ESRI_SECTION1_D08325A46F18445593F877B1ACD21251">注意事项和限制</a></li></ol>
+			    </div>
+			    
+			    
+	  		</div>
+		
+    
+   <!--googleon: all-->
+
+
+
+
+          
+        </div>
+        <!-- ENDPAGECONTENT -->
+
+      </div>
+
+    </div>  <!-- End of wrapper -->
+
+  <footer class="footer leader-3 link-dark-gray" role="contentinfo">
+    <div class="grid-container">
+      <div class="row">
+        <nav class="column-6">
+          <h6 data-langlabel="arcgis-for-server">Arc<span>GIS Enterprise</span></h6>
+          <ul class="list-plain">
+            <li><a data-langlabel="home" href="../../../../zh-CN/">主页</a></li>
+            <li><a data-langlabel="portal" href="../../../../zh-CN/portal/">Portal</a></li>
+            <li><a data-langlabel="server" href="../../../../zh-CN/server/">Server</a></li>
+            <li><a data-langlabel="data-store" href="../../../../zh-CN/data-store/">Data Stores</a></li>
+            <li><a data-langlabel="cloud" href="../../../../zh-CN/cloud/">云</a></li>
+            <li><a data-langlabel="apps" href="../../../../zh-CN/apps/">应用程序</a></li>
+            <li><a data-langlabel="documentation" href="../../../../zh-CN/documentation/">文档</a></li>
+          </ul>
+        </nav>
+
+        
+  <nav class="column-6">
+    <h6 data-langlabel="arcgis-platform">ArcGIS 平台</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="arcgis" href="//www.arcgis.com/">ArcGIS Online</a></li>
+      <li><a data-langlabel="arcgis-for-professionals" href="//pro.arcgis.com/">ArcGIS Pro</a></li>
+      <li><a data-langlabel="arcgis-for-server" href="//enterprise.arcgis.com/">ArcGIS Enterprise</a></li>
+      <li><a data-langlabel="arcgis-for-developers" href="https://developers.arcgis.com/">ArcGIS for Developers</a></li>
+      <li><a data-langlabel="arcgis-solutions" href="//solutions.arcgis.com/">ArcGIS Solutions</a></li>
+      <li><a data-langlabel="arcgis-marketplace" href="//marketplace.arcgis.com/">ArcGIS Marketplace</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <h6 data-langlabel="about-esri">关于 Esri</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="about-us" href="//www.esri.com/about-esri/">关于我们</a></li>
+      <li><a data-langlabel="careers" href="//www.esri.com/careers/">招贤纳士</a></li>
+      <li><a data-langlabel="insiders-blog" href="https://www.esri.com/about/newsroom/blog/">Esri 博客</a></li>
+      <li><a data-langlabel="user-conference" href="//www.esri.com/events/user-conference/index.html">用户大会</a></li>
+      <li><a data-langlabel="developer-summit" href="//www.esri.com/events/devsummit/index.html">开发者峰会</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <a class="esri-logo" href="//www.esri.com/" aria-label="Esri Home"></a>
+    <section class="footer-social-nav leader-1">
+            <a class="icon-social-twitter" aria-label="Esri on Twitter" href="https://twitter.com/Esri/"></a>
+            <a class="icon-social-facebook" aria-label="Esri on Facebook" href="https://www.facebook.com/esrigis/"></a>
+            <a class="icon-social-github" aria-label="Esri on GitHub" href="//esri.github.io/"></a>
+            <a class="icon-social-contact" aria-label="Contact Esri" href="//www.esri.com/about-esri/contact/"></a>
+    </section>
+	  
+  </nav>
+  
+  <div class="column-24 leader-1">
+    <p class="font-size--3"><a href="http://www.esri.com/legal/copyright-trademarks">Copyright &copy; 2019 Esri.</a> All rights reserved. | <a href="http://www.esri.com/legal/privacy/">隐私政策</a> | <a href="http://www.esri.com/legal/software-license">法律声明</a></p>
+  </div>
+  
+
+
+      </div>
+    </div>
+  </footer>
+  <!--googleoff: all-->
+
+  
+  
+	<script src="../../../../zh-CN/assets/js/init.js" type="text/javascript"></script>
+	<!--<script src="../../../../zh-CN/assets/js/drop-down.js" type="text/javascript"></script>-->
+	<script src="../../../../zh-CN/assets/js/search/searchform.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/cdn/js/link-modifier.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/cdn/js/sitewide.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/cdn/js/libs/highlight.pack.js" type="text/javascript"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+
+
+  
+    
+
+  <script src="../../../../zh-CN/cdn/js/affix.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    $(function () {
+          var appendFlg = true;
+
+          $("#bigmac")
+          .on("affixed.bs.affix", function (evt) {
+            if (appendFlg) {
+              $("<a class='crumb' href='#'>字段计算器处理器</a>").insertAfter ($("#bigmac nav a").last());
+              appendFlg = false;
+            }
+          })
+          .on ("affix-top.bs.affix", function(evt) {
+            if (!appendFlg) {
+              $("#bigmac nav a").last().remove();
+            }
+            appendFlg = true;
+          })
+    })
+  </script>
+  
+        <script type="text/javascript">
+          window.doctoc = {
+            pubID: "1336",
+            tpcID: "41",
+            
+              prefix: "处理事件数据",
+              prefixUrl: "/zh-cn/geoevent/latest/process-event-data/",
+          
+            hideToc: false
+          }
+        </script>
+
+        <script type="text/javascript" src="../../../../zh-CN/geoevent/latest/process-event-data/1336.js" ></script>
+        <script type="text/javascript" src="../../../../zh-CN/cdn/calcite/js/protoc.js" ></script>
+        
+        
+
+  <noscript>
+        <p>
+            <a href="flisting.htm">flist</a>
+        </p>
+    </noscript>
+    <script type="text/javascript"></script>
+  
+  
+    
+    
+
+  </body>
+</html>

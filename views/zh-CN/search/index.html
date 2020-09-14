@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+
+<!--[if lt IE 7]>      <html class="ie lt-ie9 lt-ie8 lt-ie7 ie6"> <![endif]-->
+<!--[if IE 7]>         <html class="ie lt-ie9 lt-ie8 ie7"> <![endif]-->
+<!--[if IE 8]>         <html class="ie lt-ie9 ie8"> <![endif]-->
+<!--[if IE 9]>         <html class="ie ie9"> <![endif]-->
+<!--[if gt IE 9]>      <html class="ie"> <![endif]-->
+<!--[if !IE]><!--> <html dir="ltr" lang="search"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    
+    <meta name="content-language" content="search">
+    <title>Search Result | ArcGIS Enterprise</title>
+
+
+	 <!-- Some interim redirect sol -->
+	 
+    <!--[if lt IE 9]>
+      <script src="../../zh-CN/cdn/js/libs/html5shiv.js" type="text/javascript"></script>
+      <script src="../../zh-CN/cdn/js/libs/selectivizr-min.js" type="text/javascript"></script>
+      <script src="../../zh-CN/cdn/js/libs/html5shiv-printshiv.js" type="text/javascript"></script>
+      <style>
+        #wrapper {
+          min-width: 960px;
+        }
+      </style>
+    <![endif]-->
+    <link rel="shortcut icon" href="../../zh-CN/assets/images/favicon.ico">
+    <link href="../../zh-CN/assets/images/apple-touch-icon.png" rel="apple-touch-icon" />
+
+    <link href="../../zh-CN/assets/css/screen.css?1533662365" media="screen" rel="stylesheet" type="text/css" />
+    
+      
+        <link href="../../zh-CN/cdn/calcite/css/documentation.css" media="all" rel="stylesheet" type="text/css" />
+      
+        <link href="../../zh-CN/assets/css/searchResult.css?1533075598" media="all" rel="stylesheet" type="text/css" />
+      
+    
+
+    
+  		<link type="text/css" rel="stylesheet" href="../../zh-CN/assets/css/screen_l10n.css"/>
+  		<link type="text/css" rel="stylesheet" href="../../zh-CN/assets/css/print_l10n.css"/>
+  	
+    <script src="../../zh-CN/assets/js/libs/jquery-1.9.1.min.js?1533075596" type="text/javascript"></script>
+	<!-- Language Picker-->
+    <link type="text/css" rel="stylesheet" href="../../zh-CN/assets/css/langSelector.css"/>
+    <script src="../../zh-CN/assets/js/locale/l10NStrings.js?1533075596" type="text/javascript"></script>
+    
+    
+      
+        <script src="../../zh-CN/assets/js/sitecfg.js?1533075596" type="text/javascript"></script>
+      
+       <script src="../../zh-CN/assets/js/search/lunr-chinese.js"></script> 
+		 <script name="stemmer" src="../../zh-CN/assets/js/search/lunr.stemmer.support.js"></script>
+		 <script name="lunrLang" src="../../zh-CN/assets/js/search/tinyseg.js"></script>
+		 <script name="lunrLang" src="../../zh-CN/assets/js/search/lunr.lang.js"></script>
+		 <script src="../../zh-CN/assets/js/search/lunr_index.js"></script>
+		<script src="../../zh-CN/assets/js/search/lunrclient.js"></script> 
+      
+    
+    <script src="../../zh-CN/cdn/js/libs/jquery.cookie.js" type="text/javascript"></script>
+    <script src="../../zh-CN/assets/js/sitecfg.js" type="text/javascript"></script>
+    <script src="../../zh-CN/assets/js/signIn.js" type="text/javascript"></script>
+    <script src="../../zh-CN/assets/js/search/searchform.js" type="text/javascript"></script>
+    <link type="text/css" rel="stylesheet" media="print" href="../../zh-CN/assets/css/print.css" />
+	 <!--- search MD -->
+	
+      
+        <META name="robot" content="NOINDEX,NOFOLLOW">
+      
+    
+
+    <script src="../../zh-CN/assets/js/calcite-web.js?1533075596" type="text/javascript"></script>
+    <script>
+      // On document ready
+      window.onload = function () {
+        // Initialize all calcite.js patterns
+        calcite.init();
+		  
+		  /*function insertRelevantIndex (jsUrl) {
+				var js = document.createElement('script');
+				js.src = jsUrl;
+				var s = document.getElementsByTagName('script')[3];
+				s.parentNode.insertBefore(js, s);
+				//document.head.appendChild(js);
+			}
+		  insertRelevantIndex ("/assets/js/search/lunrclient.js")*/
+		  
+				  
+		  //$("#spinner1").css("display","block");
+		   var query = getParameterByName("q");
+			if (query != "" && query != null) {
+				  //document.forms.gsaSearchForm.q.value = query;
+				  $("#gsaSearchForm input[name='q']").val(query);
+				  searchLunr(query);
+				  $("#spinner1").css("display","none");
+			 }
+			 
+			 $("#gsaSearchForm").submit(function (evt) {
+				resetSearch ()
+				 evt.preventDefault();
+
+			});
+			$("#gsaSearchForm input[name='q']" ).change(function() {
+			  // Check input( $( this ).val() ) for validity here
+			  if($("#gsaSearchForm input[name='q']").val().length <= 0){
+				 resetSearch ()
+			  }
+			});
+			
+			 /* Localize search interface words */
+		  var lg = $("#helpSearchForm").find("input[name='language']").val() || "en"
+		  changeLabel (lg)
+		  function changeLabel (lg) {
+					var dict = (window.localeJsonObj || {})[lg];
+
+					if (dict) {
+						 $("*[data-langlabel]").each(function (i) {
+							  var o = $(this),
+									txt = dict[o.attr("data-langlabel")];
+
+							  if (this.tagName === "INPUT" || this.tagName === "input") {
+									o.val(txt);
+							  } else if (this.tagName === "TEXTAREA" || this.tagName === "textarea") {
+									o.attr("placeholder", txt);
+							  } else if (txt) {
+									o.html(txt);
+							  }
+						 });
+						 $("#searchResults .no-result").text(dict["results_zero"])
+					}
+			}
+			/* End of Localize search interface words */
+      };
+		
+		function resetSearch (){
+			$("#searchResults").html("");
+					$("#spinner1").css("display","block");
+					 searchLunr($("#gsaSearchForm input[name='q']").val());
+					 $("#spinner1").css("display","none");
+					 return false;
+		}
+		
+    </script>
+
+  </head>
+  <body class="search">
+
+    
+    
+      
+    
+
+
+    <div class="drawer drawer-left js-drawer" data-drawer="top-nav" tabindex="0">
+      <!-- Mobile Nav Drawer -->
+<nav class="drawer-nav" role="navigation">
+  <aside class="side-nav">
+    <h2 class="side-nav-title">ArcGIS Enterprise</h2>
+    <form id="helpSearchForm" class="site-search-form" method="GET" action="">
+      <input class="drawer-search" type="search" name="q" data-langlabel="search-arcgis-server" placeholder="Search ArcGIS Enterprise site">
+      <input type="hidden" name="collection" value="help">
+      <input type="hidden" name="product" value="">
+      <input type="hidden" name="language" value="zh-CN">
+    </form>
+    <a class="side-nav-link" href="../../zh-CN/portal/">Portal</a>
+    <a class="side-nav-link" href="../../zh-CN/server/">Server</a>
+    <a class="side-nav-link" href="../../zh-CN/data-store/">Data Store</a>
+    <a class="side-nav-link" href="../../zh-CN/cloud/">Cloud</a>
+    <a class="side-nav-link" href="../../zh-CN/documentation/">Documentation</a>
+  </aside>
+</nav>
+
+    </div>
+    <div class="wrapper">
+      <div class="page">
+        <header class="top-nav">
+  <div class="grid-container">
+      <div class="column-24">
+        <div class="tablet-hide">
+          <a class="top-nav-title" href='../../zh-CN/'>ArcGIS Enterprise</a>
+          <nav class="top-nav-list" role="navigation" aria-labelledby="topnav">
+            <a class="top-nav-link" href="../../zh-CN/portal/">Portal</a>
+            <a class="top-nav-link" href="../../zh-CN/server/">Server</a>
+    			  <a class="top-nav-link" href="../../zh-CN/data-store/">Data Stores</a>
+            <a class="top-nav-link" href="../../zh-CN/cloud/">Cloud</a>
+          </nav>
+          
+
+        </div>
+        <a href='../../zh-CN/' class="icon-ui-menu top-nav-title js-drawer-toggle tablet-show" data-drawer="top-nav">ArcGIS Enterprise</a>
+        <div class="margin-left-1 top-nav-list right hide-if-logged-in logged-out-navigation">
+          <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+              <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+              <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+            </svg>
+          </button>
+          <a data-langlabel="sign-in" id="login-link" class="icon-ui-user top-nav-link link-blue login-link" href="#">Sign In</a>
+        </div>
+        <nav class="margin-left-1 top-nav-list right hide-if-logged-out logged-in-navigation">
+          <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+              <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+              <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+            </svg>
+          </button>
+          <div class="dropdown js-dropdown right">
+            <div class="tablet-show top-nav-link">
+              <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+              <a href="#" data-drawer="user-nav" class="user-nav-name js-drawer-toggle" data-first-name></a>
+            </div>
+            <div class="tablet-hide top-nav-link js-dropdown-toggle">
+              <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+              <a class="user-nav-name top-nav-dropdown dropdown-btn" data-first-name>&nbsp;</a>
+            </div>
+            <nav class="dropdown-menu dropdown-right">
+              <a class="dropdown-link agolProfile" id="agolProfile" href="#">My Profile</a>
+              <a class="dropdown-link js-log-out" id="agolLogout" href="#">Sign Out</a>
+            </nav>
+          </div>
+        </nav>
+
+      </div>
+    </div>
+  </header>
+  <div class="js-search search-overlay">
+    <div class="search-content" role="dialog" aria-labelledby="search">
+      <form method="GET" id="helpSearchForm">
+        <label>
+          Search ArcGIS Enterprise help
+          <div class="search-bar">
+            <input type="search" name="q"  placeholder="Search ArcGIS Enterprise help" class="search-input js-search-input">
+            <input type="hidden" name="collection" value="help" />
+            <input type="hidden" name="product" value="arcgis-enterprise-windows" />
+            <input type="hidden" name="version" value="10.6" />
+            <input type="hidden" name="language" value="zh-CN" />
+          </div>
+        </label>
+        <input type="hidden" name="relativePath" value="../../" /><button type="submit" class="btn btn-large right">Search</button>
+      </form>
+    </div>
+  </div>
+
+        <div class="sub-nav" role="banner">
+  <div class="grid-container">
+    <div class="column-24">
+      <h1 class="text-white sub-nav-title" data-langlabel="search-results">Search Results</h1>
+    </div>
+  </div>
+</div>
+
+<div class="grid-container leader-2 trailer-1 inithide">
+  <div class="column-1 trailer-2">
+    <aside id="searchFilter" role="tablist" aria-live="polite" class="column-4"></aside>
+
+  </div>
+  <main class="column-19 pre-1">
+    <div class="panel search-box wf-nav">
+      <div id="searchBox" class="wf-nav search-bar column-19 trailer-0 leader-0 padding-right-4 padding-left-0" style="height:55px">
+        <form id="gsaSearchForm" class="input-group">
+          <input type="search" placeholder="Search ArcGIS Enterprise content" data-langlabel="search-arcgis-server-content" name="q" id="query" class="input-group-input">
+          <span class="input-group-button">
+            <button class="icon-ui-search btn" type="submit"></button>
+          </span>
+        </form>
+
+      </div>
+    </div>
+
+    <div class="row search-nav">
+      <div id="resultCount" class="column-9"></div>
+    </div>
+    <hr />
+
+    <div id="results">
+      
+			<div id="spinner1" style="display: block;">
+				 <img alt="loading" src="../../zh-CN/assets/images/ajax-loader.gif">
+			</div>
+			
+      <!-- Result area -->
+		<div id="searchResults" class="display3">
+		
+        <div class="clear"></div>
+      </div>
+      <!-- End of Result -->
+    </div>
+
+    <div id="searchPager">
+    </div>
+  </main>
+
+</div>
+
+<script>
+/*$(document).ready(function() {
+
+  dbg ("doc.ready");
+
+  app.util.changeL10NLabel ();
+
+  app.router = new app.SearchRouter();
+
+  app.qStmt = new app.QueryStatement;
+  app.qResult = new app.QueryResult;
+
+  app.searchBox = new app.SearchBoxView ({model:app.qStmt, el: $("#searchBox")});
+  app.searchFilter = new app.SearchFilterView ({model:app.qStmt, el: $("#searchFilter")});
+  app.searchLang = new app.SearchLangView ({model:app.qStmt, el: $("#searchLang")});
+
+  app.srPager = new app.SRPagerView ({model: app.qResult, el: $("#searchPager")});
+  app.srStat = new app.SRStatView ({model: app.qResult, el: $("#searchStat")});
+  app.srList = new app.SRListView ({model: app.qResult, el: $("#searchResult")});
+
+  Backbone.history.start({pushState: true, root: "/search/"});
+  $(".search-top-nav").hide();
+
+});*/
+</script>
+
+
+      </div>
+    </div>
+
+    <footer class="footer leader-0">
+  <div class="grid-container">
+    <nav class="column-6">
+      <h6 data-langlabel="arcgis-for-server">ArcGIS Enterprise</h6>
+      <ul class="list-plain">
+        <li><a href="../../zh-CN/" data-langlabel="nav_home">Home</a></li>
+        <li><a href="../../zh-CN/portal/" data-langlabel="nav_portal">Portal</a></li>
+        <li><a href="../../zh-CN/server/" data-langlabel="nav_server">Server</a></li>
+        <li><a href="../../zh-CN/data-store/" data-langlabel="nav_data-store">Data Stores</a></li>
+        <li><a href="../../zh-CN/cloud/" data-langlabel="nav_cloud">Cloud</a></li>
+        <li><a href="../../zh-CN/documentation/" data-langlabel="nav_documentation">Documentation</a></li>
+      </ul>
+    </nav>
+    <nav class="column-6">
+      <h6 data-langlabel="nav_arcgis_platform">ArcGIS Platform</h6>
+      <ul class="list-plain">
+        <li><a href="//www.arcgis.com">ArcGIS Online</a></li>
+        <li><a href="//desktop.arcgis.com/" data-langlabel="arcgis-for-desktop">ArcGIS Desktop</a></li>
+        <li><a href="//enterprise.arcgis.com/" data-langlabel="arcgis-for-server">ArcGIS Enterprise</a></li>
+        <li><a href="https://developers.arcgis.com" data-langlabel="arcgis-for-developers">ArcGIS for Developers</a></li>
+        <li><a href="//solutions.arcgis.com" data-langlabel="arcgis-solutions">ArcGIS Solutions</a></li>
+        <li><a href="//marketplace.arcgis.com" data-langlabel="arcgis-marketplace">ArcGIS Marketplace</a></li>
+      </ul>
+    </nav>
+    <nav class="column-6">
+      <h6 data-langlabel="about-esri">About Esri</h6>
+      <ul class="list-plain">
+        <li><a data-langlabel="about-us" href="//www.esri.com/about-esri/">About Us</a></li>
+        <li><a data-langlabel="careers" href="//www.esri.com/careers/">Careers</a></li>
+        <li><a data-langlabel="insiders-blog" href="//blogs.esri.com/esri/esri-insider/">Insiders Blog</a></li>
+        <li><a data-langlabel="user-conference" href="//www.esri.com/events/user-conference/index.html">User Conference</a></li>
+        <li><a data-langlabel="developer-summit" href="//www.esri.com/events/devsummit/index.html">Developer Summit</a></li>
+      </ul>
+    </nav>
+    <nav class="column-6">
+      <a class="esri-logo" href="//www.esri.com/"></a>
+      <section class="footer-social-nav leader-1">
+        <a class="icon-social-twitter" href="https://twitter.com/Esri/"></a>
+        <a class="icon-social-facebook" href="https://www.facebook.com/esrigis/"></a>
+        <a class="icon-social-github" href="//esri.github.com/"></a>
+        <a class="icon-social-contact" href="//www.esri.com/about-esri/contact/"></a>
+      </section>
+      <section class="feedback-footer center-text">
+         
+
+      </section>
+    </nav>
+    <div class="column-24 leader-1">
+      <p class="font-size--3">
+        <a href="//www.esri.com/legal/copyright-trademarks">Copyright &copy; 2018 Esri.</a> All rights reserved. |
+        <a href="//www.esri.com/legal/privacy/" data-langlabel="footer_privacy">Privacy</a> |
+        <a href="//www.esri.com/legal/software-license/" data-langlabel="footer_legal">Legal</a>
+      </p>
+    </div>
+  </div>
+</footer>
+<a href="#" class="back-2-top icon-ui-up-arrow" data-langlabel="top">Top</a>
+
+
+    <script src="../../zh-CN/assets/js/back-to-top.js?1533075596" type="text/javascript"></script>
+
+  </body>
+  <script type="text/javascript"></script>
+</html>

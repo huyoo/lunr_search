@@ -1,0 +1,543 @@
+
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>  <html class="ie lt-ie9 lt-ie8 lt-ie7 ie6" dir="ltr"> <![endif]-->
+<!--[if IE 7]>     <html class="ie lt-ie9 lt-ie8 ie7" dir="ltr"> <![endif]-->
+<!--[if IE 8]>     <html class="ie lt-ie9 ie8" dir="ltr"> <![endif]-->
+<!--[if IE 9]>     <html class="ie ie9" dir="ltr"> <![endif]-->
+<!--[if !IE]><!--> <html dir="ltr" lang="zh-CN"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>使用集成的 Windows 身份验证来配置 Web 层身份验证&mdash;ArcGIS Server 管理 (Windows) | ArcGIS Enterprise 文档</title>
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+    <script>
+      var docConfig = {
+        locale: 'zh-CN'
+        ,localedir: 'zh-cn'
+        ,langSelector: ''
+        
+        ,relativeUrl: false
+        
+
+        ,searchformUrl: '/search/'
+        ,tertiaryNavIndex: ''
+
+        
+      };
+    </script>
+	 
+
+
+    
+    <!--[if lt IE 9]>
+      <script src="../../../../../zh-CN/cdn/js/libs/html5shiv.js" type="text/javascript"></script>
+      <script src="../../../../../zh-CN/cdn/js/libs/selectivizr-min.js" type="text/javascript"></script>
+      <script src="../../../../../zh-CN/cdn/js/libs/json2.js" type="text/javascript"></script>
+      <script src="../../../../../zh-CN/cdn/js/libs/html5shiv-printshiv.js" type="text/javascript" >
+
+    <![endif]-->
+
+     <!--[if lt IE 11]>
+    <script>
+      $$(document).ready(function(){
+        $$(".hideOnIE").hide();
+      });
+    </script>
+    <![endif]-->
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<link href="../../../../../zh-CN/assets/img/favicon.ico" rel="shortcut icon" >
+	<link href="../../../../../zh-CN/assets/css/screen.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/cdn/calcite/css/documentation.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/assets/css/print.css" media="print" type="text/css" rel="stylesheet" />
+
+	<!--
+	<link href="../../../../../zh-CN/assets/css/screen_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/assets/css/documentation/base_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/assets/css/print_l10n.css" media="print" type="text/css" rel="stylesheet" />
+	-->
+	
+	
+		<script src="../../../../../zh-CN/cdn/js/libs/jquery.1.9.1.min.js" type="text/javascript"></script>
+	
+	<script src="../../../../../zh-CN/cdn/js/libs/jquery.cookie.js" type="text/javascript"></script>
+	<link href="../../../../../zh-CN/cdn/css/colorbox.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/cdn/css/colorbox_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<script src="../../../../../zh-CN/cdn/js/libs/jquery.colorbox-min.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/assets/js/video-init.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/assets/js/sitecfg.js" type="text/javascript"></script>
+	
+		<script src="../../../../../zh-CN/assets/js/signIn.js" type="text/javascript"></script>
+	
+
+	<!--- Language Picker -->
+	<script src="../../../../../zh-CN/assets/js/locale/l10NStrings.js" type="text/javascript"></script>
+	
+		 
+	
+
+	<script src="../../../../../zh-CN/assets/js/calcite-web.js" type="text/javascript"></script>
+
+
+
+  <!--- search MD -->
+    <META name="description" content="可使用集成的 Windows 身份验证确保服务的安全性。"><META name="last-modified" content="2019-12-6"><META name="product" content="arcgis-server-windows,arcgis-enterprise-windows"><META name="sub_category" content="ArcGIS Server (Windows)"><META name="search-collection" content="help"><META name="content_type_label" content="帮助主题"><META name="sub_category_label" content="ArcGIS Server (Windows)"><META name="search-category" content="help-general"><META name="subject_label" content="服务"><META name="version" content="10.8"><META name="content_type" content="Help Topic"><META name="subject" content="SERVICES"><META name="content-language" content="zh-cn">
+    <!--- search MD -->
+
+  
+  <script src="../../../../../zh-CN/assets/js/switchers/server-1.js" type="text/javascript"></script>
+  
+      
+
+</head>
+
+<!--
+      pub: GUID-7EF2A884-9DD0-4341-BA8B-FEB95EBECC37=19
+      tpc: GUID-025915A8-1293-4EE4-91C0-8210BAE1406B=14
+      -->
+
+
+<!-- variable declaration, if any -->
+<!-- can change following macro to set variable once we are on Jinja 2.8 -->
+
+
+
+
+
+<body class="claro zh-CN server">
+  
+
+  <!-- Drawer location -->
+  <div class="drawer drawer-left js-drawer" data-drawer="top-nav">
+        <nav class="drawer-nav" role="navigation">
+          <aside class="side-nav">
+            <h2 class="side-nav-title">Arc<span>GIS</span> Enterprise</h2>
+            <form id="helpSearchForm" class="margin-left-half margin-right-half leader-half trailer-half drawer-search-form" method="GET">
+              <input type="search" name="q"  placeholder="搜索 ArcGIS Server 10.8 帮助">
+              <input type="hidden" name="collection" value="help" />
+              <input type="hidden" name="product" value="arcgis-server-windows" />
+              <input type="hidden" name="version" value="10.8" />
+              <input type="hidden" name="language" value="zh-CN" />
+            </form>    
+             <a id="nav-portal" data-langlabel="portal" href="../../../../../zh-CN/portal/" class="side-nav-link">Portal</a>
+             
+            <a id="all-servers" data-langlabel="all-servers" href="../../../../../zh-CN/server/" class="side-nav-link">所有服务器</a>
+            <a id="gis-server" data-langlabel="gis-server" href="../../../../../zh-CN/server/" class="side-nav-link">GIS Server</a>
+            <a id="image-server" data-langlabel="image-server" href="../../../../../zh-CN/image/" class="side-nav-link">Image Server</a>
+            <a id="geo-analytics-server" data-langlabel="geo-analytics-server" href="../../../../../zh-CN/geoanalytics/" class="side-nav-link">GeoAnalytics Server</a>
+            <a id="geoevent-server" data-langlabel="geoevent-server" href="../../../../../zh-CN/geoevent/" class="side-nav-link">GeoEvent Server</a>
+            <a id="notebook-server" data-langlabel="notebook-server" href="../../../../../zh-CN/notebook/" class="side-nav-link">Notebook Server</a>
+            <a id="nav-data-store" data-langlabel="data-store" href="../../../../../zh-CN/data-store/" class="side-nav-link">Data Stores</a>
+            <a id="nav-cloud" data-langlabel="cloud" href="../../../../../zh-CN/cloud/" class="side-nav-link">云</a>
+            <a id="nav-apps" data-langlabel="apps" href="../../../../../zh-CN/apps/" class="side-nav-link">应用程序</a>
+            <a id="nav-doc" data-langlabel="documentation" href="../../../../../zh-CN/documentation/" class="side-nav-link">文档</a>
+
+          </aside>
+        </nav>
+    </div>
+
+    <!-- user navigation collapses to drawer on mobile -->
+    
+    <div class="drawer drawer-right js-drawer hide-if-logged-out logged-in-navigation" data-drawer="user-nav">
+      <nav class="drawer-nav">
+        <aside class="side-nav">
+          <a class="side-nav-link agolProfile" href="#">我的个人资料</a>
+          <a class="side-nav-link icon-ui-sign-out js-log-out" href="#">登出</a>
+        </aside>
+      </nav>
+    </div>
+    
+<!-- End of drawer -->
+
+  
+  <div class="wrapper">
+      <!--googleoff: all-->
+
+      <header class="top-nav" data-skin="learn">
+        <a class="skip-to-content" href="#skip-to-content">Skip To Content</a>
+        <div class="grid-container">
+          <div class="column-24">
+
+
+            <!--<div class="top-nav-title-wrapper text-center ">-->
+              <a href='../../../../../zh-CN/' class="top-nav-title tablet-hide"><span>Arc</span>GIS  Enterprise</a>
+              <a href='../../../../../zh-CN/' class="icon-ui-menu top-nav-title js-drawer-toggle tablet-show" data-drawer="top-nav"><span>Arc</span>GIS Enterprise</a>
+            <!--</div> -->
+
+          
+            <nav role="navigation" class="top-nav-list left tablet-hide">
+              <a id="nav-portal" data-langlabel="portal" href="../../../../../zh-CN/portal/" class="top-nav-link">Portal</a>
+
+                <div class="dropdown js-dropdown ">
+                  <a class="top-nav-link js-dropdown-toggle" tabindex="0" aria-haspopup="true" aria-expanded="false" href="#">Servers</a>
+                  <nav class="dropdown-menu featured" role="menu">
+                    <ul class="dropdown-sublist-featured">
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/get-started/latest/windows/additional-server-deployment.htm" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path  d="M42.92 6.1H4.12v8.566l.833.832-.835.833-.018 7.332.845.847-.825.824V33.9h25v5.2h-2v1.075H8.02v.8h19.1v.925h4.8v-.925H40v-.8h-8.08V39.1h-2v-5.2h13v-8.566l-.834-.834.835-.834v-7.332l-.835-.834.835-.834zm-11.8 35h-3.2v-1.2h3.2zm11-8H4.92v-7.434l.767-.766h35.668l.765.766zm0-9.766l-.766.766H5.666l-.766-.767.017-6.669.766-.764h35.671l.766.766zm0-9l-.766.766H5.687l-.766-.766V6.9h37.2zM19 11.9h-2v-.8h2zm-4 0h-2v-.8h2zm-4 0H9v-.8h2zm6 8.2h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9zm8 9h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9z"/></svg></span>
+                          <span class="sublink-text">所有服务器</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/server/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M45.98 33.575a.616.616 0 0 0-.335-.51l-3.362-2.03 3.362-2.031a.556.556 0 0 0 0-1.02l-11.1-6.704a1.293 1.293 0 0 0-1.112 0L22.33 27.982a.556.556 0 0 0 0 1.02l3.36 2.03-3.358 2.03a.556.556 0 0 0-.002 1.021l3.322 2.006-3.324 2.008a.555.555 0 0 0 .002 1.017l11.102 6.703a1.25 1.25 0 0 0 1.11.002l11.104-6.706a.556.556 0 0 0 0-1.02l-3.32-2.006 3.318-2.004a.607.607 0 0 0 .335-.509zM33.837 21.97c.026-.01.286-.005.29-.005l10.814 6.53-10.8 6.523c-.028.01-.284.005-.294.006l-10.813-6.53zm11.105 16.636l-10.8 6.523a2.564 2.564 0 0 1-.295.006l-10.81-6.529 3.39-2.047 7.004 4.23a1.083 1.083 0 0 0 .557.131 1.101 1.101 0 0 0 .554-.13l7.01-4.233zM34.14 40.098a2.545 2.545 0 0 1-.294.006l-10.812-6.53 3.43-2.073 6.97 4.208a1.25 1.25 0 0 0 1.107-.001l6.966-4.206 3.431 2.073zM9 8H7V7h2zm8 8h-2v-1h2zm-4-8h-2V7h2zm4 0h-2V7h2zm-4 8h-2v-1h2zm7.316 11.1H3.9v-6.434l.766-.766h35.668l.766.766v2.12l.8.483v-2.935l-.826-.826.826-.845v-6.329l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9h16.88a2.632 2.632 0 0 1 .336-.8zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zm0 8v-5.668l.766-.766h35.668l.766.766v5.67l-.746.764H4.666zM15 24v-1h2v1zm-4 0v-1h2v1zm-2-8H7v-1h2zm-2 8v-1h2v1z"/></svg></span>
+                          <span class="sublink-text">GIS Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/image/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 8h-2V7h2zm-4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm8 8h-2v1h2zm-8 0H7v1h2zm4 9v-1h-2v1zm-4 0v-1H7v1zm8 0v-1h-2v1zm4 3.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V21h-.8v-.334l-.766-.766H4.666l-.766.766V27.1H21zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zm40.234 4v21.8H23.1V23.1zm-.8 16.366L39.466 44.1h2.868l1.766-1.766zm-20.2-9.932l5.634-5.634h-2.868L23.9 26.666zm6.2-5.068L24.466 30.1h2.868l2.766-2.766zM28.466 30.1H30.1v-1.634zm2.434 0h6.2v-6.2h-6.2zm-7 7h6.2v-6.2h-6.2zm7 0h6.2v-6.2h-6.2zm0 6.434l5.634-5.634h-2.868L30.9 40.666zm7-7l5.634-5.634h-2.868L37.9 33.666zm1.634-5.634H37.9v1.634zm-8.634 7v1.634l1.634-1.634zm.566 6.2h2.868l2.766-2.766v-2.868zm6.434-3.566l2.634-2.634H37.9zM35.466 44.1H37.1v-1.634zm2.434 0h.434l5.766-5.766V37.9h-2.434L37.9 41.666zm6.2-8.634L42.466 37.1H44.1zm0-4L38.466 37.1h2.868l2.766-2.766zm0-7.566h-6.2v6.2h6.2zm-20.2 0v1.634l1.634-1.634zm0 20.2h6.2v-6.2h-6.2zm20.2 0v-.634l-.634.634z"/></svg></span>
+                          <span class="sublink-text">Image Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/geoanalytics/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 16h-2v-1h2zm-8 8v-1H7v1zm8 0v-1h-2v1zM13 7h-2v1h2zm4 0h-2v1h2zM9 7H7v1h2zm21.45 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V27.9h-1.464l-.801-.8H41.1v-6.434l-.766-.766H4.666l-.766.766V27.1h27.15zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM13 24v-1h-2v1zm0-9h-2v1h2zm-4 0H7v1h2zm26.672 27.148A1.87 1.87 0 0 1 35.9 43a1.91 1.91 0 1 1-3.763-.222l-9.845-3.414A1.88 1.88 0 0 1 21 39.9a1.9 1.9 0 1 1 1.474-3.084l4.692-2.346A1.878 1.878 0 0 1 27.1 34a1.902 1.902 0 0 1 1.9-1.9 1.867 1.867 0 0 1 .781.191l3.788-5.05A1.88 1.88 0 0 1 33.1 26a1.9 1.9 0 1 1 3.491 1.026l4.889 4.888c-.069.056-.144.1-.21.162a3.986 3.986 0 0 0-.358.402l-4.883-4.883A1.889 1.889 0 0 1 35 27.9a1.867 1.867 0 0 1-.781-.191l-3.788 5.049a1.868 1.868 0 0 1 .437.965l9.204.614c-.018.11-.049.218-.058.33A3.93 3.93 0 0 0 40 35c0 .046.01.09.01.135l-9.185-.612A1.913 1.913 0 0 1 29 35.9a1.889 1.889 0 0 1-1.474-.716l-4.692 2.346a1.878 1.878 0 0 1 .066.47 1.9 1.9 0 0 1-.105.625c-.007.02-.022.036-.03.056l9.63 3.34a1.87 1.87 0 0 1 2.786-.505l5.415-4.437c.067.108.127.22.204.322a3.9 3.9 0 0 0 .292.306zM33.9 26a1.092 1.092 0 0 0 .43.872 1.12 1.12 0 0 0 1.42-.068A1.1 1.1 0 1 0 33.9 26zm-6 8a1.1 1.1 0 0 0 2.196.093 1.135 1.135 0 0 0-.426-.965A1.087 1.087 0 0 0 29 32.9a1.101 1.101 0 0 0-1.1 1.1zm-5.8 4a1.098 1.098 0 1 0-.06.362A1.101 1.101 0 0 0 22.1 38zm13 5a1.1 1.1 0 1 0-2.2 0 1.1 1.1 0 0 0 2.2 0zm10.8-8a1.9 1.9 0 1 1-3.8 0c0-.053.003-.105.007-.158A1.9 1.9 0 0 1 45.9 35zm-.8 0a1.1 1.1 0 0 0-2.196-.093 1.153 1.153 0 0 0 .216.752A1.1 1.1 0 0 0 45.1 35z"/></svg></span>
+                          <span class="sublink-text">GeoAnalytics Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/geoevent/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M13 8h-2V7h2zm4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm12.418 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826v2.117c-.259-.177-.53-.337-.8-.497v-1.288l-.766-.766H4.666l-.766.766V27.1h17.933c-.148.26-.283.53-.415.8zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM9 24v-1H7v1zm4-9h-2v1h2zm0 9v-1h-2v1zm-4-9H7v1h2zm8 9v-1h-2v1zm16.9 2h-.8v8.9H39v-.8h-5.1zm.1-3.901a11.9 11.9 0 1 0 11.9 11.9 11.914 11.914 0 0 0-11.9-11.9zm0 23a11.1 11.1 0 1 1 11.1-11.1 11.112 11.112 0 0 1-11.1 11.1z"/></svg></span>
+                          <span class="sublink-text">GeoEvent Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/notebook/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M22 27.1H3.9v-6.434l.766-.766h18.576a5.262 5.262 0 0 1 .83-.8H4.666l-.766-.766v-5.668l.766-.766h35.668l.766.766V18h.8v-5.666l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9H22zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zM9 8H7V7h2zm8 0h-2V7h2zm-4 0h-2V7h2zm2 16v-1h2v1zm-4 0v-1h2v1zm-4 0v-1h2v1zm0-8v-1h2v1zm8 0v-1h2v1zm-4 0v-1h2v1zm18.9 8.1h-1.8v1.8h1.8zm-.8 1h-.2v-.2h.2zm15.498-4.48a2.727 2.727 0 0 0-1.62-.5v-.02H27.25a3.154 3.154 0 0 0-3.15 3.15V38.1h-1.68a3.386 3.386 0 0 0-2.872 1.58 3.49 3.49 0 0 0-.157 3.419 3.241 3.241 0 0 0 2.954 1.801h15.161a3.404 3.404 0 0 0 3.394-3.4V26.9h5v-3.65a3.224 3.224 0 0 0-1.302-2.63zM22.345 44.1a2.44 2.44 0 0 1-2.23-1.341 2.706 2.706 0 0 1 .11-2.65A2.588 2.588 0 0 1 22.42 38.9h12.89a3.395 3.395 0 0 0 0 5.2zM40.1 23.192V41.5a2.6 2.6 0 1 1-2.6-2.6v-.8H24.9V23.25a2.352 2.352 0 0 1 2.35-2.35h13.795a3.183 3.183 0 0 0-.945 2.292zm5 2.908h-4.2v-2.908a2.274 2.274 0 0 1 1.44-2.18 1.944 1.944 0 0 1 1.791.259 2.423 2.423 0 0 1 .97 1.979zm-17.1 5h9v.8h-9zm0 3h7v.8h-7zm0-6h9v.8h-9zm4-3h5v.8h-5z"/></svg></span>
+                          <span class="sublink-text">Notebook Server</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+
+              <a id="nav-data-store" data-langlabel="data-store" href="../../../../../zh-CN/data-store/" class="top-nav-link">Data Stores</a>
+              <a id="nav-cloud" data-langlabel="cloud" href="../../../../../zh-CN/cloud/" class="top-nav-link">云</a>
+              <a id="nav-apps" data-langlabel="apps" href="../../../../../zh-CN/apps/" class="top-nav-link">应用程序</a>
+            </nav>
+
+
+            
+            
+            
+
+            <div class="margin-left-1 top-nav-list right hide-if-logged-in logged-out-navigation">
+               
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+              
+              <a data-langlabel="sign-in" id="login-link" class="icon-ui-user top-nav-link link-blue login-link" href="#">登录</a>
+              
+            </div>
+
+            
+            <nav class="margin-left-1 top-nav-list right hide-if-logged-out logged-in-navigation">
+              
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+             
+              <div class="dropdown js-dropdown right">
+
+                <div class="tablet-show top-nav-link">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a href="#" data-drawer="user-nav" class="user-nav-name js-drawer-toggle" data-first-name></a>
+                </div>
+
+                <div class="tablet-hide top-nav-link js-dropdown-toggle">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a class="user-nav-name top-nav-dropdown dropdown-btn" data-first-name>&nbsp;</a>
+                </div>
+
+                <nav class="dropdown-menu dropdown-right">
+                
+                  <a class="dropdown-link agolProfile" id="agolProfile" href="#">我的个人资料</a>
+                  <a class="dropdown-link js-log-out" id="agolLogout" href="#">登出</a>
+                </nav>
+              </div>
+            </nav>
+            
+
+            
+          </div>
+        </div>
+      </header>
+
+      <div class="js-search search-overlay">
+        <div class="search-content" role="dialog" aria-labelledby="search">
+          <form method="GET" id="helpSearchForm">
+            <label>
+              搜索 ArcGIS Server 10.8 帮助
+              <div class="search-bar">
+                <input type="search" name="q"  placeholder="搜索 ArcGIS Server 10.8 帮助" class="search-input js-search-input">
+                <input type="hidden" name="collection" value="help" />
+                <input type="hidden" name="product" value="arcgis-server-windows" />
+                <input type="hidden" name="version" value="10.8" />
+                <input type="hidden" name="language" value="zh-CN" />
+              </div>
+            </label>
+            <input type="hidden" name="relativePath" value="../../../../../" /><button type="submit" class="btn btn-large right">搜索</button>
+          </form>
+        </div>
+      </div>
+
+      <!--googleon: all-->
+
+      <div id="skip-to-content">
+        <!--googleoff: all-->
+        <header class="sub-nav sub-nav-learn">
+          <div class="grid-container">
+            
+            <div class="column-24">
+              <div style="display:table;" class="sdk-home-banner">
+                <div class="sdk-home-banner-content">
+                  <h1 class="sub-nav-title link-white">ArcGIS Server</h1>
+                </div>
+              </div>
+            </div>
+
+            <div class="column-24">
+              <nav class='sub-nav-list tablet-hide'><a class="sub-nav-link" href="../../../../../zh-CN/server/" target="_top" title="ArcGIS Server 的概述和文档">主页</a><a class="sub-nav-link" href="../../../../../zh-CN/server/latest/get-started/windows/" target="_top" title="了解有关 ArcGIS Server 和服务器角色的信息">简介</a><a class="sub-nav-link" href="../../../../../zh-CN/server/latest/deploy/windows/" target="_top" title="构建、配置和升级部署">部署</a><a class="sub-nav-link" href="../../../../../zh-CN/server/latest/manage-data/windows/" target="_top" title="管理企业的空间数据">管理数据</a><a class="sub-nav-link" href="../../../../../zh-CN/server/latest/publish-services/windows/" target="_top" title="使用 GIS 服务">管理服务</a><a class="sub-nav-link" href="../../../../../zh-CN/server/latest/create-web-apps/windows/" target="_top" title="创建 Web 应用程序和可打印地图">共享</a><a class="sub-nav-link is-active" href="../../../../../zh-CN/server/latest/administer/windows/" target="_top" title="管理和保护 ArcGIS Server">管理</a><a class="sub-nav-link" href="../../../../../zh-CN/server/latest/develop/windows/" target="_top" title="构建扩展模块并自动执行常见任务">开发</a></nav><select class='tablet-show select-full trailer-half js-select-nav'><option value="../../../../../zh-CN/server/">主页</option><option value="../../../../../zh-CN/server/latest/get-started/windows/">简介</option><option value="../../../../../zh-CN/server/latest/deploy/windows/">部署</option><option value="../../../../../zh-CN/server/latest/manage-data/windows/">管理数据</option><option value="../../../../../zh-CN/server/latest/publish-services/windows/">管理服务</option><option value="../../../../../zh-CN/server/latest/create-web-apps/windows/">共享</option><option selected="true" value="../../../../../zh-CN/server/latest/administer/windows/">管理</option><option value="../../../../../zh-CN/server/latest/develop/windows/">开发</option></select>
+            </div>
+
+          </div>
+        </header>
+        <!--googleon: all-->
+       
+        <!-- content goes here -->
+        <div class="grid-container ">
+          
+
+            
+              
+  <!--BREADCRUMB-BEG--><div id="bigmac" class="sticky-breadcrumbs trailer-2" data-spy="affix" data-offset-top="180"> </div><!--BREADCRUMB-END-->
+  <!--googleoff: all-->
+    <div class="column-5 tablet-column-12 trailer-2 ">
+      <aside class="js-accordion accordion reference-index" aria-live="polite" role="tablist">
+        <div></div>
+      </aside>
+
+      <div class="js-sticky scroll-show tablet-hide leader-1 back-to-top" data-top="0" style="top: 0px;">
+        <a href="#" class="btn btn-fill btn-clear">返回顶部</a>
+      </div>
+    </div>
+  <!--googleon: all-->
+  
+            
+            
+            
+	
+		<div class="column-13  pre-1 content-section">
+	
+		<header class="trailer-1"><h1>使用集成的 Windows 身份验证来配置 Web 层身份验证</h1></header>
+
+		 
+	<!--googleoff: all-->
+	
+		
+				<aside id="main-toc-small" class="js-accordion accordion tablet-show trailer-1">
+			      <div class="accordion-section">
+			        <h4 class="accordion-title">在本主题中</h4>
+			        <div class="accordion-content list-plain">
+			          <ol class="list-plain pre-0 trailer-0"><li><a href="#ESRI_SECTION1_65A67345C3A64964ADF768534F11F490">配置 <ph translate="no" varid="WebAdaptforArcGISIIS">ArcGIS Web Adaptor (IIS)</ph> 以使用 Windows 身份验证。</a></li><li><a href="#GUID-35BCCA6F-74C6-4705-9080-7A0942F6EA30">配置 <ph translate="no" varid="ArcGISforServer">ArcGIS Server</ph> 安全性以使用 Windows Active Directory 用户和角色</a></li><li><a href="#ESRI_SECTION1_38602A0D85D44635958B13012E0A128A">查看用户和角色</a></li><li><a href="#ESRI_SECTION1_2E746E7BA7B4473EA743D053135D4D63">为活动目录用户配置管理员和发布者权限</a></li><li><a href="#ESRI_SECTION1_A9F40A0B3F5B432D945E06E9AAE0D7B0">为 ArcGIS Web 服务设置权限</a></li><li><a href="#ESRI_SECTION1_87F6DA37FCDF441BABDE8E4EA20B8CF2">对受保护的服务进行访问测试</a></li></ol>
+			        </div>
+			      </div>
+			     </aside>
+		
+    
+   <!--googleon: all-->
+
+
+		<main>
+			
+	
+    	
+    
+
+
+			
+<p id="GUID-9292B682-4D88-4F09-B169-D9DEB09BD29F">您可以使用集成的 Windows 身份验证为 <span class="ph">ArcGIS Server</span> 站点配置 Web 层身份验证。这需要在 Active Directory 服务器中管理用户和角色。如果希望用户可以充分利用他们在网络中的已有的 Windows 域帐户，这不失为一种便捷的方法。</p><div class="panel trailer-1 note" id="GUID-52E66007-D1CB-4BD2-85B8-189F61562E23"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-3FE0C9E3-6E3F-4939-A001-84566CBF7047">如果您的 <span class="ph">ArcGIS Server</span> 站点<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/server/latest/deploy" href="../../../../../zh-CN/server/latest/deploy/windows/federate-an-arcgis-server-site-with-your-portal.htm">与门户联合</a>，则必须通过门户进行安全访问，而不是使用本主题中的步骤进行访问。有关详细信息，请参阅<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/web-adaptor/latest/install" href="../../../../../zh-CN/web-adaptor/latest/install/iis/use-integrated-windows-authentication-with-your-portal.htm">在门户中使用集成的 Windows 身份验证</a>。</p></div><p id="GUID-625FC94B-1CD0-475E-830A-E0A9E473A1ED">要使用集成的 Windows 身份验证，必须使用部署到 Microsoft 的 IIS Web 服务器的 <span class="ph">ArcGIS Web Adaptor (IIS)</span>。您无法使用 <span class="ph">ArcGIS Web Adaptor (Java Platform)</span> 来执行集成的 Windows 身份验证。</p><p id="GUID-00D9F682-B1C8-453E-8676-783282217316"> 如果登录设置拒绝登录用于托管活动目录的计算机，则在配置安全性时会遇到错误。无需对用户进行<span class="usertext">本地登录</span>组策略设置。有关详细信息，请参阅<a class="xref xref" href="../../../../../zh-CN/server/latest/administer/windows/advanced-considerations-when-using-domain-accounts.htm#ESRI_SECTION1_18796BB54FDD4A2BBF23D5D339CD4D38">使用域帐户时的高级注意事项</a>。</p><p id="GUID-287E800C-BD18-4297-8122-C2597831F029">要在服务器站点上配置集成的 Windows 身份验证，请按照下列步骤操作：</p><ol class="list-numbered" purpose="ol" id="OL_EBA17C24D68048DCB0FBD7BC232D0E87"><li purpose="li" id="LI_9F144F08ECC3467FBC906F42373D4558"><a class="xref xref" href="../../../../../zh-CN/server/latest/administer/windows/securing-web-services-with-integrated-windows-authentication.htm#ESRI_SECTION1_65A67345C3A64964ADF768534F11F490">配置 <span class="ph">ArcGIS Web Adaptor (IIS)</span> 以使用 Windows 身份验证</a>。</li><li purpose="li" id="LI_AEE6018BAFDE42F7A8EC399C8E29E9F2"><a class="xref xref" href="../../../../../zh-CN/server/latest/administer/windows/securing-web-services-with-integrated-windows-authentication.htm#GUID-35BCCA6F-74C6-4705-9080-7A0942F6EA30">配置 <span class="ph">ArcGIS Server</span> 以使用 Windows Active Directory 用户和角色</a>。</li><li purpose="li" id="LI_351DA84895E14ECFB5F87045F6DD0CBB"><a class="xref xref" href="../../../../../zh-CN/server/latest/administer/windows/securing-web-services-with-integrated-windows-authentication.htm#ESRI_SECTION1_38602A0D85D44635958B13012E0A128A">查看用户和角色</a>。</li><li purpose="li" id="LI_2764DD2EABA04516A49970BED0FD1451"><a class="xref xref" href="../../../../../zh-CN/server/latest/administer/windows/securing-web-services-with-integrated-windows-authentication.htm#ESRI_SECTION1_2E746E7BA7B4473EA743D053135D4D63">为 Active Directory 用户配置管理员和发布者权限</a>。</li><li purpose="li" id="LI_9290A60CDFF24CDD8AC3E0E521C5ADB1"><a class="xref xref" href="../../../../../zh-CN/server/latest/administer/windows/securing-web-services-with-integrated-windows-authentication.htm#ESRI_SECTION1_A9F40A0B3F5B432D945E06E9AAE0D7B0">设置服务的权限</a>。</li><li purpose="li" id="LI_7F80A7246D6043F6BDCA356390E0F2B7"><a class="xref xref" href="../../../../../zh-CN/server/latest/administer/windows/securing-web-services-with-integrated-windows-authentication.htm#ESRI_SECTION1_87F6DA37FCDF441BABDE8E4EA20B8CF2">对受保护的服务进行访问测试</a>。</li></ol><section class="section1 padded-anchor" id="ESRI_SECTION1_65A67345C3A64964ADF768534F11F490" purpose="section1"><h2>配置 <span class="ph">ArcGIS Web Adaptor (IIS)</span> 以使用 Windows 身份验证。</h2><p id="GUID-802B35B2-7D46-4899-9800-982820FE2425"><span class="ph">集成的 Windows 身份验证需要进行 Web 层身份验证，而此操作必须通过 <a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/web-adaptor/latest/install" href="../../../../../zh-CN/web-adaptor/latest/install/iis/install-arcgis-web-adaptor-server.htm">ArcGIS Web Adaptor (IIS)</a> 来完成</span>。Web Adaptor 基于 IIS 进行用户身份验证，并为 Web Adaptor 提供用户的帐户名。获取帐户名称后，会将其传送至 <span class="ph">ArcGIS Server</span>。</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_6B8437695B314F8B9E9718E398EDE0F8"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_3F3DC29C3D5A45F0B1086BCCE1AEFB8A"><span purpose="cmd" id="GUID-5BC01C3E-60E4-441C-AC16-5FFB8A9A9A54">按照<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/web-adaptor/latest/install" href="../../../../../zh-CN/web-adaptor/latest/install/iis/install-arcgis-web-adaptor-server.htm">安装 <span class="ph">ArcGIS Web Adaptor (IIS)</span></a> 中的说明安装 <span class="ph">ArcGIS Web Adaptor (IIS)</span>。</span></li><li purpose="step" id="ESRI_STEP_D8230C8A29B84E9B866BF097C0FBB3ED"><span purpose="cmd" id="GUID-E175748F-EFAA-414E-9B43-AA0259F83A77">按照<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/web-adaptor/latest/install" href="../../../../../zh-CN/web-adaptor/latest/install/iis/configure-arcgis-web-adaptor-server.htm">完成安装后配置 Web Adaptor</a> 中的说明配置 Web Adaptor。</span><div class="info" purpose="info"><div class="panel trailer-1 note" id="GUID-D02AC775-4935-4E61-9AEC-F6DA3DCEF735"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-7D650572-87F3-4C4D-A5E0-6CDFE87EE763">配置 <span class="ph">ArcGIS Web Adaptor</span> 时，必须通过 Web Adaptor 启用管理。这使得 Windows Active Directory 中的用户能够通过 ArcMap 来发布服务。具有这些角色的用户连接到 ArcMap 中的服务器时，必须指定 Web Adaptor URL。</p></div></div></li><li purpose="step" id="ESRI_STEP_63F687C06AA64E3380EC0F5A22E43278"><span purpose="cmd" id="GUID-D3CC680A-FBE5-425A-88A3-6373993D0641">使用 IIS 管理器设置 Web Adaptor 的身份验证方法。</span><div class="substeps" id="ESRI_SUBSTEPS_209A5EC1EDF24F4798A2EDCF049972DD" purpose="substeps"><ol class="list-numbered" purpose="ol"><li purpose="substep" id="ESRI_SUBSTEP_228EE59A52E943A7A850967E0BB1EEDB"><span purpose="cmd" id="GUID-C9416689-59A5-4D69-8EF5-BBF156A5E376">要打开 IIS 管理器，请单击<span class="uicontrol">开始 <span class="greaterthan">&gt;</span> 控制面板 <span class="greaterthan">&gt;</span> 管理工具 <span class="greaterthan">&gt;</span> Internet 信息服务管理器</span>。</span></li><li purpose="substep" id="ESRI_SUBSTEP_BB7EC97187904DCEA19418740AC22CA6"><span purpose="cmd" id="GUID-EEA1C83D-7DDE-4BA1-9E7A-C13F92ED1A6A">在<span class="uicontrol">站点</span>下，展开 IIS 管理器左侧的树状列表。展开<span class="uicontrol">默认网站</span>查找 <span class="ph">ArcGIS Web Adaptor (IIS)</span> 应用程序。默认情况下，<span class="ph">ArcGIS Web Adaptor (IIS)</span> 会命名为 <span class="uicontrol">arcgis</span>。</span></li><li purpose="substep" id="ESRI_SUBSTEP_249AE0B221274CEDA8AA7542CA1B9273"><span purpose="cmd" id="GUID-A24ED2D8-0DF4-4CC6-BFD0-B784852186B4">编辑 Web Adaptor 的身份验证属性。取消选择<span class="uicontrol">匿名</span>身份验证并选择 <span class="uicontrol">Windows 身份验证</span>。</span></li><li purpose="substep" id="ESRI_SUBSTEP_30939964E62C470A9E17AF5BCCE85941"><span purpose="cmd" id="GUID-9B2886BB-F11C-4E7B-8CAF-1997C4754819">关闭 IIS 管理器。</span></li></ol></div></li></ol></div></section></section><section class="section1 padded-anchor" id="GUID-35BCCA6F-74C6-4705-9080-7A0942F6EA30" purpose="section1"><h2>配置 <span class="ph">ArcGIS Server</span> 安全性以使用 Windows Active Directory 用户和角色</h2><p id="GUID-F6E5E5A0-6FAE-4BC6-B239-7C2EC1F7F0CF">要支持集成的 Windows 身份验证，请配置 <span class="ph">ArcGIS Server</span> 以从 Windows 活动目录服务器中检索用户和角色。</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="GUID-DF5B343E-6A43-4F42-B084-51948BF8FFC8"><ol class="list-numbered" purpose="ol"><li purpose="step" id="GUID-687EA87B-37F7-493B-8032-A4216CCE2E8D"><span purpose="cmd" id="GUID-2BC7ED67-9395-478C-A148-49371D44EDB6">打开 Manager 并以主站点管理员的身份登录。必须使用主站点管理员帐户。如需此步骤的帮助，请参阅<a class="xref xref" href="../../../../../zh-CN/server/latest/administer/windows/log-in-to-manager.htm">登录 Manager</a>。</span></li><li purpose="step" id="ESRI_STEP_C85C2784452641B99C2D1D3D8A52919D"><span purpose="cmd" id="GUID-C316D0E8-9CBA-4B08-86AC-05E2325954EE">单击<span class="uicontrol">安全性 <span class="greaterthan">&gt;</span> 设置</span>。</span></li><li purpose="step" id="ESRI_STEP_03BDE56FC02A4BDC8CC31EC08ECD81CB"><span purpose="cmd" id="GUID-6D24AF8E-A30F-48DA-B897-600CCC62763C">单击<span class="uicontrol">配置设置</span>旁边的<span class="uicontrol">编辑</span>按钮 <img purpose="img" placement="inline" alt="编辑" title="编辑" src="GUID-6874E190-0A2C-46A8-854C-028EA88CF48D-web.png">。</span></li><li purpose="step" id="ESRI_STEP_B19854965D234C4785FDE72F18D14F9F"><span purpose="cmd" id="GUID-B86EE937-EDE4-4BAA-9281-1A3448AFA39B">在<span class="uicontrol">用户和角色管理</span>页面中，选择<span class="uicontrol">现有企业系统（LDAP 或 Windows 域）中的用户和角色</span>选项，然后单击<span class="uicontrol">下一步</span>。</span></li><li purpose="step" id="ESRI_STEP_E0115606858E4AE699E5028F49B26A5D"><span purpose="cmd" id="GUID-01411EE3-92FD-4559-83F4-45760EDDAE6F">在<span class="uicontrol">企业存储类型</span>页面中，选择 <span class="uicontrol">Windows 域</span>选项，然后单击<span class="uicontrol">下一步</span>。</span></li><li purpose="step" id="ESRI_STEP_FB41E6849B344F7F92F7831C6011E0A7"><span purpose="cmd" id="GUID-3481FF5A-C4E9-4F23-8128-647807F4E6B9">在 <span class="uicontrol">Windows 域凭据</span>页面中，输入有权确定用户所在组的帐户凭据。单击<span class="uicontrol">下一步</span>。</span><div class="info" purpose="info"><div class="panel trailer-1 note" id="GUID-D3A74773-5DCD-4CB5-A473-03A97C3F7446"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-C621D20C-F547-4AEA-A8F7-DEA05D3E07E9">建议指定具有未过期密码的帐户。如果不可行，则需要在每次密码更改时重复本部分中的步骤。</p></div></div></li><li purpose="step" id="ESRI_STEP_B65C239AB92949E6BD98A3E456338369"><span purpose="cmd" id="GUID-3BE1B2D8-BD4A-424A-852A-EBA6085205EB">在<span class="uicontrol">身份验证层</span>页面中，选择 <span class="uicontrol">Web 层</span>。</span></li><li purpose="step" id="ESRI_STEP_603F57D5B2C54DCF9F436E140B2376F1"><span purpose="cmd" id="GUID-5F8B21E3-7D88-4936-9AA7-45EF144F9FC0">查看所选内容的摘要信息。单击<span class="uicontrol">完成</span>应用和保存安全性配置。</span></li></ol></div></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_38602A0D85D44635958B13012E0A128A" purpose="section1"><h2>查看用户和角色</h2><p id="GUID-9C8C7674-B897-433B-BA73-9CE81B418397">将 Windows Active Directory 域配置为用户和角色存储后，查看用户和角色以确保所检索的用户和角色正确无误。要添加、编辑或删除用户和角色，您需要使用活动目录服务器中所提供的工具。</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_46C7627D06D04A1CBAAAA9D0277BC1B8"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_EA58619530684B1888D8A5E13F680C55"><span purpose="cmd" id="GUID-3E40F123-5469-4301-AD29-45BA57FF7506">在 Manager 中，单击<span class="uicontrol">安全性 <span class="greaterthan">&gt;</span> 用户</span>。</span></li><li purpose="step" id="ESRI_STEP_85B53A9B7FA0459FAABA9F987277369E"><span purpose="cmd" id="GUID-DCD0AF71-880F-43FA-87A8-A006DF301D22">验证是否已按预期从 Windows 域服务器中检索用户。如果 Active Directory 具有多个域，则将显示 GIS 服务器计算机所属域的用户。要查看其他域的用户，请在<span class="uicontrol">查找用户</span>字段中输入搜索字符串<span class="usertext">[域名称]\</span>，并单击<span class="uicontrol">搜索</span> <img purpose="img" placement="inline" alt="搜索" title="搜索" src="GUID-ABBD9574-44C3-4D62-B5F9-371147498B2D-web.png"> 按钮。</span></li><li purpose="step" id="ESRI_STEP_226337C1B47443E5910DAECD1E557F22"><span purpose="cmd" id="GUID-6867FE98-A339-4583-A2A5-7864BB27515B">单击<span class="uicontrol">角色</span>查看从 Windows 域服务器中检索的角色。如果 Active Directory 具有多个域，则将显示 GIS 服务器计算机所属域的角色。要查看其他域的角色，请在<span class="uicontrol">查找角色</span>字段中输入搜索字符串<span class="usertext">[域名称]\</span>，并单击<span class="uicontrol">搜索</span> <img purpose="img" placement="inline" alt="搜索" title="搜索" src="GUID-ABBD9574-44C3-4D62-B5F9-371147498B2D-web.png"> 按钮。</span></li><li purpose="step" id="ESRI_STEP_1CB75DD59D0B4143AAFAD1A1B21C1285"><span purpose="cmd" id="GUID-0CBA2F70-399E-41BF-B832-EB5FD799C011">验证是否已按预期检索角色。</span></li></ol></div></section><div class="panel trailer-1 note" id="GUID-28C01153-4772-4DE4-8D36-1E0407144E7F"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-14E066A6-5E71-4727-A8B3-D7E81076C1E0">对于 10.3.1 及更新版本，<span class="ph">ArcGIS Web Adaptor (IIS)</span> 具有配置活动目录身份验证相关选项的属性。请参阅 Web Adaptor (IIS) 帮助中的<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/web-adaptor/latest/install" href="../../../../../zh-CN/web-adaptor/latest/install/iis/configure-arcgis-web-adaptor-memory-cache-options.htm">配置 ArcGIS Web Adaptor 内存缓存选项</a>了解详情。</p></div><section class="section2 padded-anchor" id="ESRI_SECTION2_1B9D8B745D154D848C5BDE6BC504EF08" purpose="section2"><h3>用户和角色缓存</h3><p id="GUID-E1B8C327-885C-4BC1-9B2B-2AFD9B59E65A">从 10.5 起，Active Directory 中的用户和角色将在发出用户或角色请求之后，在服务器上进行缓存。这会使安全服务性能得到优化。默认情况下，用户和角色将进行 30 分钟的缓存。可通过将 <span class="ph">ArcGIS Server</span> 管理员目录系统属性下的 <span class="usertext">minutesToCacheUserRoles</span> 属性设置为其他值来修改此时间段。也可以将该属性设置为零，从而禁用缓存。</p></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_2E746E7BA7B4473EA743D053135D4D63" purpose="section1"><h2>为活动目录用户配置管理员和发布者权限</h2><p id="GUID-13F70BB3-A4BA-4689-876D-F19044234863">出厂时，<span class="ph">ArcGIS Server</span> 仅允许主站点管理员访问服务器。如果要使用活动目录用户来管理 <span class="ph">ArcGIS Server</span> 或发布服务，请执行以下步骤。</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_85B4C1403C604357AC22F812FB206FAF"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_66BA4EBDBD3549F9ACE2E5D237E5776B"><span purpose="cmd" id="GUID-30C2CFF7-9990-4D53-A5D6-0C8E92E37376">在 <span class="ph">ArcGIS Server</span> Manager 中，单击<span class="uicontrol">安全性</span>选项卡，然后打开<span class="uicontrol">用户</span>页面。</span></li><li purpose="step" id="ESRI_STEP_9EE04D6E87044C1B85284D2F8A99AF88"><span purpose="cmd" id="GUID-8EDF0145-F4BD-49FA-9B4E-6225776FFC17">使用<span class="uicontrol">查找用户</span>工具定位您希望分配管理员或发布者权限的用户。查看该用户所属的角色，然后选择将分配管理员或发布者权限的角色。</span></li><li purpose="step" id="ESRI_STEP_E8E9041F07204482AE6BEFA6C9301949"><span purpose="cmd" id="GUID-E0FF7593-5A26-4318-95D0-035CA546C02B">打开<span class="uicontrol">角色</span>页面，并使用<span class="uicontrol">查找角色</span>工具定位在上一步中选择的角色。</span></li><li purpose="step" id="ESRI_STEP_4B19B84E6E4D43BEA6FD22EB5AFB54C9"><span purpose="cmd" id="GUID-BC780F9D-BC73-4F75-96B2-C85A0AA69034">单击角色旁的<span class="uicontrol">编辑</span>按钮 <img purpose="img" placement="inline" alt="编辑" title="编辑" src="GUID-6874E190-0A2C-46A8-854C-028EA88CF48D-web.png">。</span></li><li purpose="step" id="ESRI_STEP_BFB1876548064996B719D978F3E18A50"><span purpose="cmd" id="GUID-2DA32E4C-98E8-4B8C-B55D-E1F3D4323B31">对于<span class="uicontrol">角色类型</span>参数，可选择<span class="uicontrol">发布者</span>或<span class="uicontrol">管理员</span>。</span></li><li purpose="step" id="ESRI_STEP_F0FF32BEBAD048A8A9B0B57C44B6CC96"><span purpose="cmd" id="GUID-9F111702-B404-4798-8D7F-47C318918ACF">单击<span class="uicontrol">保存</span>应用更改。</span></li></ol></div></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_A9F40A0B3F5B432D945E06E9AAE0D7B0" purpose="section1"><h2>为 ArcGIS Web 服务设置权限</h2><p id="GUID-1624E878-6289-4D93-8FA4-DEACA0052AD7">配置安全性设置并定义用户和角色后，可设置服务的权限来控制允许访问服务的用户。</p><p id="GUID-3AEDBFB1-B3F8-4E04-818E-740B1FF49821"><span class="ph">ArcGIS Server</span> 使用基于角色的访问控制模型对服务的访问权限进行控制。在基于角色的访问控制模型中，访问受保护服务的权限将通过为该服务分配角色来控制。要使用某一受保护的服务，用户必须是已分配了该服务访问权限的角色中的成员。</p><p id="GUID-971ACBA0-A0C2-4DFC-BA43-A40D03771E69">要更改服务的权限，请参阅<a class="xref xref" href="../../../../../zh-CN/server/latest/administer/windows/editing-permissions-in-manager.htm#ESRI_SECTION1_163C51E6F52F472E8845FC466863859F">控制对服务的访问权限</a>。</p><div class="panel trailer-1 note" id="GUID-9856E5DF-9F66-406B-88FC-1870ADFAA693"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-70AE27FE-767A-4852-B2B7-77E0F0395D9B">使用集成 Windows 身份验证浏览 <span class="ph">ArcGIS Server</span> Manager 时，<span class="uicontrol">登出</span>链接将不再可见。这是因为运行 Web 浏览器的用户可通过操作系统自动登录。要以其他用户身份运行浏览器，可使用 Windows <span class="uicontrol">运行方式</span>命令选项。为此，请在“开始”菜单中找到程序快捷方式，按住 <span class="shortcut">Shift</span> 键，右键单击程序并选择<span class="uicontrol">以其他用户身份运行</span>。</p></div></section><section class="section1 padded-anchor" id="ESRI_SECTION1_87F6DA37FCDF441BABDE8E4EA20B8CF2" purpose="section1"><h2>对受保护的服务进行访问测试</h2><p id="GUID-73E755B2-09CB-46F4-8E82-D2C7D809D11E">要测试设置，请标识有权访问包含您的服务的根（站点）文件夹的 Windows 域用户帐户。使用此用户帐户登录 Windows，打开 Web 浏览器并访问 <span class="ph">ArcGIS Server</span> WSDL：</p><p id="GUID-B384E6B4-DC54-4941-B8F8-A356B1CC80D6"><span class="usertext">https://webadaptorhost.domain.com/webadaptorname/services?wsdl</span></p><p id="GUID-D010B50D-10A0-497F-8346-F5D7775D774A">同样，还可查看服务目录以验证对受保护的服务的访问权限：</p><p id="GUID-693FFE76-72AC-424D-883B-991AC4CFF642"><span class="usertext">https://webadaptorhost.domain.com/webadaptorname/rest/services</span></p><div class="panel trailer-1 note" id="GUID-ECC822FC-E5D9-409C-9508-AA5BC5339D7D"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-36C5E299-F594-4802-AA06-748F0A8347D1">使用集成 Windows 身份验证浏览服务目录时，<span class="uicontrol">注销</span>链接将不再可见。这是因为运行 Web 浏览器的用户可通过操作系统自动登录。要以其他用户身份运行浏览器，可使用 Windows <span class="uicontrol">运行方式</span>命令选项。为此，请在“开始”菜单中找到程序快捷方式，按住 <span class="shortcut">Shift</span> 键，右键单击程序并选择<span class="uicontrol">以其他用户身份运行</span>。</p></div><p id="GUID-9ECF922F-F348-449A-BCD0-ADCB2AA67316"> 要确定哪个 Windows 域用户有访问根文件夹的权限，请执行以下操作：</p><section class="wfsteps padded-anchor" purpose="wfsteps"><h4></h4><div class="steps" id="ESRI_STEPS_E41DA7D611E042B1AB71706CF7F70DE1"><ol class="list-numbered" purpose="ol"><li purpose="step" id="ESRI_STEP_B8D0AF65C3BA4B6697672994D4094A43"><span purpose="cmd" id="GUID-C1C88D5B-5EA8-4BE8-A36A-677229653907">登录 Manager，然后单击<span class="uicontrol">服务</span>。</span></li><li purpose="step" id="ESRI_STEP_93F0843327524D6497EC2666E9F6A560"><span purpose="cmd" id="GUID-BFFAAFDB-CBDE-43D8-97E5-7BD14E0F9FB5">单击站点（根）文件旁边的<span class="uicontrol">锁</span>按钮 <img purpose="img" placement="inline" alt="锁定" title="锁定" src="GUID-F89B95DF-E160-4F22-8978-84A36F442D61-web.png">，并标识被授予访问此文件夹的权限的角色。如果目前所有角色均无权访问，请单击<span class="uicontrol">添加角色</span> <img purpose="img" placement="inline" alt="添加角色" title="添加角色" src="GUID-C7B0B665-E8AB-471E-AA25-E101A3DF048D-web.png"> 向至少一个角色授予访问权限。</span></li><li purpose="step" id="ESRI_STEP_63C24FA89A7440DDA9BB233896940DE1"><span purpose="cmd" id="GUID-4B3F0B8B-53AD-433B-8618-8457F4BBE755">对于具有根文件夹访问权限的角色，单击<span class="uicontrol">安全性 <span class="greaterthan">&gt;</span> 角色</span>并单击<span class="uicontrol">编辑</span>按钮 <img purpose="img" placement="inline" alt="编辑" title="编辑" src="GUID-6874E190-0A2C-46A8-854C-028EA88CF48D-web.png">。</span></li><li purpose="step" id="ESRI_STEP_4B65535618FB4DF1B6941A25DE982D5A"><span purpose="cmd" id="GUID-536EF5CD-62D8-4346-8C66-37FDFEB9D711">查看属于该角色成员的用户的列表。</span></li></ol></div></section></section>
+			
+				<hr>
+				<!--googleoff: all-->
+				
+	
+        
+		    <p class="feedback right">
+		        <a id="afb" class="icon-ui-contact" href="/feedback/" data-langlabel="feedback-on-this-topic" >有关此主题的反馈?</a>
+		    </p>
+        
+	
+
+				<!--googleon: all-->
+			
+		</main>
+	</div>
+	
+	<!--googleoff: all-->
+	
+		
+			<div id="main-toc-large" class="column-5">
+			    <div class="panel font-size--2 tablet-hide trailer-1">
+			      <h5 class="trailer-half">在本主题中</h5>
+			      <ol class="list-plain pre-0 trailer-0"><li><a href="#ESRI_SECTION1_65A67345C3A64964ADF768534F11F490">配置 <ph translate="no" varid="WebAdaptforArcGISIIS">ArcGIS Web Adaptor (IIS)</ph> 以使用 Windows 身份验证。</a></li><li><a href="#GUID-35BCCA6F-74C6-4705-9080-7A0942F6EA30">配置 <ph translate="no" varid="ArcGISforServer">ArcGIS Server</ph> 安全性以使用 Windows Active Directory 用户和角色</a></li><li><a href="#ESRI_SECTION1_38602A0D85D44635958B13012E0A128A">查看用户和角色</a></li><li><a href="#ESRI_SECTION1_2E746E7BA7B4473EA743D053135D4D63">为活动目录用户配置管理员和发布者权限</a></li><li><a href="#ESRI_SECTION1_A9F40A0B3F5B432D945E06E9AAE0D7B0">为 ArcGIS Web 服务设置权限</a></li><li><a href="#ESRI_SECTION1_87F6DA37FCDF441BABDE8E4EA20B8CF2">对受保护的服务进行访问测试</a></li></ol>
+			    </div>
+			    
+			    
+	  		</div>
+		
+    
+   <!--googleon: all-->
+
+
+
+
+          
+        </div>
+        <!-- ENDPAGECONTENT -->
+
+      </div>
+
+    </div>  <!-- End of wrapper -->
+
+  <footer class="footer leader-3 link-dark-gray" role="contentinfo">
+    <div class="grid-container">
+      <div class="row">
+        <nav class="column-6">
+          <h6 data-langlabel="arcgis-for-server">Arc<span>GIS Enterprise</span></h6>
+          <ul class="list-plain">
+            <li><a data-langlabel="home" href="../../../../../zh-CN/">主页</a></li>
+            <li><a data-langlabel="portal" href="../../../../../zh-CN/portal/">Portal</a></li>
+            <li><a data-langlabel="server" href="../../../../../zh-CN/server/">Server</a></li>
+            <li><a data-langlabel="data-store" href="../../../../../zh-CN/data-store/">Data Stores</a></li>
+            <li><a data-langlabel="cloud" href="../../../../../zh-CN/cloud/">云</a></li>
+            <li><a data-langlabel="apps" href="../../../../../zh-CN/apps/">应用程序</a></li>
+            <li><a data-langlabel="documentation" href="../../../../../zh-CN/documentation/">文档</a></li>
+          </ul>
+        </nav>
+
+        
+  <nav class="column-6">
+    <h6 data-langlabel="arcgis-platform">ArcGIS 平台</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="arcgis" href="//www.arcgis.com/">ArcGIS Online</a></li>
+      <li><a data-langlabel="arcgis-for-professionals" href="//pro.arcgis.com/">ArcGIS Pro</a></li>
+      <li><a data-langlabel="arcgis-for-server" href="//enterprise.arcgis.com/">ArcGIS Enterprise</a></li>
+      <li><a data-langlabel="arcgis-for-developers" href="https://developers.arcgis.com/">ArcGIS for Developers</a></li>
+      <li><a data-langlabel="arcgis-solutions" href="//solutions.arcgis.com/">ArcGIS Solutions</a></li>
+      <li><a data-langlabel="arcgis-marketplace" href="//marketplace.arcgis.com/">ArcGIS Marketplace</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <h6 data-langlabel="about-esri">关于 Esri</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="about-us" href="//www.esri.com/about-esri/">关于我们</a></li>
+      <li><a data-langlabel="careers" href="//www.esri.com/careers/">招贤纳士</a></li>
+      <li><a data-langlabel="insiders-blog" href="https://www.esri.com/about/newsroom/blog/">Esri 博客</a></li>
+      <li><a data-langlabel="user-conference" href="//www.esri.com/events/user-conference/index.html">用户大会</a></li>
+      <li><a data-langlabel="developer-summit" href="//www.esri.com/events/devsummit/index.html">开发者峰会</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <a class="esri-logo" href="//www.esri.com/" aria-label="Esri Home"></a>
+    <section class="footer-social-nav leader-1">
+            <a class="icon-social-twitter" aria-label="Esri on Twitter" href="https://twitter.com/Esri/"></a>
+            <a class="icon-social-facebook" aria-label="Esri on Facebook" href="https://www.facebook.com/esrigis/"></a>
+            <a class="icon-social-github" aria-label="Esri on GitHub" href="//esri.github.io/"></a>
+            <a class="icon-social-contact" aria-label="Contact Esri" href="//www.esri.com/about-esri/contact/"></a>
+    </section>
+	  
+  </nav>
+  
+  <div class="column-24 leader-1">
+    <p class="font-size--3"><a href="http://www.esri.com/legal/copyright-trademarks">Copyright &copy; 2019 Esri.</a> All rights reserved. | <a href="http://www.esri.com/legal/privacy/">隐私政策</a> | <a href="http://www.esri.com/legal/software-license">法律声明</a></p>
+  </div>
+  
+
+
+      </div>
+    </div>
+  </footer>
+  <!--googleoff: all-->
+
+  
+  
+	<script src="../../../../../zh-CN/assets/js/init.js" type="text/javascript"></script>
+	<!--<script src="../../../../../zh-CN/assets/js/drop-down.js" type="text/javascript"></script>-->
+	<script src="../../../../../zh-CN/assets/js/search/searchform.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/cdn/js/link-modifier.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/cdn/js/sitewide.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/cdn/js/libs/highlight.pack.js" type="text/javascript"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+
+
+  
+    
+
+  <script src="../../../../../zh-CN/cdn/js/affix.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    $(function () {
+          var appendFlg = true;
+
+          $("#bigmac")
+          .on("affixed.bs.affix", function (evt) {
+            if (appendFlg) {
+              $("<a class='crumb' href='#'>使用集成的 Windows 身份验证来配置 Web 层身份验证</a>").insertAfter ($("#bigmac nav a").last());
+              appendFlg = false;
+            }
+          })
+          .on ("affix-top.bs.affix", function(evt) {
+            if (!appendFlg) {
+              $("#bigmac nav a").last().remove();
+            }
+            appendFlg = true;
+          })
+    })
+  </script>
+  
+        <script type="text/javascript">
+          window.doctoc = {
+            pubID: "1640",
+            tpcID: "135",
+            
+              prefix: "管理",
+              prefixUrl: "/zh-cn/server/latest/administer/windows/",
+          
+            hideToc: false
+          }
+        </script>
+
+        <script type="text/javascript" src="../../../../../zh-CN/server/latest/administer/windows/1640.js" ></script>
+        <script type="text/javascript" src="../../../../../zh-CN/cdn/calcite/js/protoc.js" ></script>
+        
+        
+
+  <noscript>
+        <p>
+            <a href="flisting.htm">flist</a>
+        </p>
+    </noscript>
+    <script type="text/javascript"></script>
+  
+  
+    
+    
+
+  </body>
+</html>

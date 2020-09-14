@@ -1,0 +1,543 @@
+
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>  <html class="ie lt-ie9 lt-ie8 lt-ie7 ie6" dir="ltr"> <![endif]-->
+<!--[if IE 7]>     <html class="ie lt-ie9 lt-ie8 ie7" dir="ltr"> <![endif]-->
+<!--[if IE 8]>     <html class="ie lt-ie9 ie8" dir="ltr"> <![endif]-->
+<!--[if IE 9]>     <html class="ie ie9" dir="ltr"> <![endif]-->
+<!--[if !IE]><!--> <html dir="ltr" lang="zh-CN"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>更新要素&mdash;处理事件数据(10.8) | ArcGIS Enterprise 文档</title>
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+    <script>
+      var docConfig = {
+        locale: 'zh-CN'
+        ,localedir: 'zh-cn'
+        ,langSelector: ''
+        
+        ,relativeUrl: false
+        
+
+        ,searchformUrl: '/search/'
+        ,tertiaryNavIndex: ''
+
+        
+      };
+    </script>
+	 
+
+
+    
+    <!--[if lt IE 9]>
+      <script src="../../../../zh-CN/cdn/js/libs/html5shiv.js" type="text/javascript"></script>
+      <script src="../../../../zh-CN/cdn/js/libs/selectivizr-min.js" type="text/javascript"></script>
+      <script src="../../../../zh-CN/cdn/js/libs/json2.js" type="text/javascript"></script>
+      <script src="../../../../zh-CN/cdn/js/libs/html5shiv-printshiv.js" type="text/javascript" >
+
+    <![endif]-->
+
+     <!--[if lt IE 11]>
+    <script>
+      $$(document).ready(function(){
+        $$(".hideOnIE").hide();
+      });
+    </script>
+    <![endif]-->
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<link href="../../../../zh-CN/assets/img/favicon.ico" rel="shortcut icon" >
+	<link href="../../../../zh-CN/assets/css/screen.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/cdn/calcite/css/documentation.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/assets/css/print.css" media="print" type="text/css" rel="stylesheet" />
+
+	<!--
+	<link href="../../../../zh-CN/assets/css/screen_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/assets/css/documentation/base_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/assets/css/print_l10n.css" media="print" type="text/css" rel="stylesheet" />
+	-->
+	
+	
+		<script src="../../../../zh-CN/cdn/js/libs/jquery.1.9.1.min.js" type="text/javascript"></script>
+	
+	<script src="../../../../zh-CN/cdn/js/libs/jquery.cookie.js" type="text/javascript"></script>
+	<link href="../../../../zh-CN/cdn/css/colorbox.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/cdn/css/colorbox_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<script src="../../../../zh-CN/cdn/js/libs/jquery.colorbox-min.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/assets/js/video-init.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/assets/js/sitecfg.js" type="text/javascript"></script>
+	
+		<script src="../../../../zh-CN/assets/js/signIn.js" type="text/javascript"></script>
+	
+
+	<!--- Language Picker -->
+	<script src="../../../../zh-CN/assets/js/locale/l10NStrings.js" type="text/javascript"></script>
+	
+		 
+	
+
+	<script src="../../../../zh-CN/assets/js/calcite-web.js" type="text/javascript"></script>
+
+
+
+  <!--- search MD -->
+    <META name="description" content="“更新要素输出连接器”可用于通过要素服务的要素图层来更新要素记录，其中包含从已处理事件记录中获取的属性。"><META name="last-modified" content="2019-12-6"><META name="product" content="arcgis-server-windows,arcgis-server-linux,ext-server-geoevent,arcgis-enterprise-windows,arcgis-enterprise-linux"><META name="sub_category" content="GeoEvent"><META name="search-collection" content="help"><META name="content_type_label" content="帮助主题"><META name="sub_category_label" content="GeoEvent"><META name="search-category" content="help-general"><META name="subject_label" content="REAL-TIME FEEDS,服务,SERVER"><META name="version" content="10.8"><META name="content_type" content="Help Topic"><META name="subject" content="REAL-TIME FEEDS,SERVICES,SERVER"><META name="keywords" content="更新要素,输出"><META name="content-language" content="zh-cn">
+    <!--- search MD -->
+
+  
+      
+
+</head>
+
+<!--
+      pub: GUID-5D524593-D8D3-4B10-896F-B21A7B6A7B11=16
+      tpc: GUID-2A6DB8EE-2F57-424F-AF08-91B0F8BB2575=1
+      -->
+
+
+<!-- variable declaration, if any -->
+<!-- can change following macro to set variable once we are on Jinja 2.8 -->
+
+
+
+
+
+<body class="claro zh-CN server">
+  
+
+  <!-- Drawer location -->
+  <div class="drawer drawer-left js-drawer" data-drawer="top-nav">
+        <nav class="drawer-nav" role="navigation">
+          <aside class="side-nav">
+            <h2 class="side-nav-title">Arc<span>GIS</span> Enterprise</h2>
+            <form id="helpSearchForm" class="margin-left-half margin-right-half leader-half trailer-half drawer-search-form" method="GET">
+              <input type="search" name="q"  placeholder="搜索 GeoEvent Server 10.7 帮助">
+              <input type="hidden" name="collection" value="help" />
+              <input type="hidden" name="product" value="ext-server-geoevent" />
+              <input type="hidden" name="version" value="10.8" />
+              <input type="hidden" name="language" value="zh-CN" />
+            </form>    
+             <a id="nav-portal" data-langlabel="portal" href="../../../../zh-CN/portal/" class="side-nav-link">Portal</a>
+             
+            <a id="all-servers" data-langlabel="all-servers" href="../../../../zh-CN/server/" class="side-nav-link">所有服务器</a>
+            <a id="gis-server" data-langlabel="gis-server" href="../../../../zh-CN/server/" class="side-nav-link">GIS Server</a>
+            <a id="image-server" data-langlabel="image-server" href="../../../../zh-CN/image/" class="side-nav-link">Image Server</a>
+            <a id="geo-analytics-server" data-langlabel="geo-analytics-server" href="../../../../zh-CN/geoanalytics/" class="side-nav-link">GeoAnalytics Server</a>
+            <a id="geoevent-server" data-langlabel="geoevent-server" href="../../../../zh-CN/geoevent/" class="side-nav-link">GeoEvent Server</a>
+            <a id="notebook-server" data-langlabel="notebook-server" href="../../../../zh-CN/notebook/" class="side-nav-link">Notebook Server</a>
+            <a id="nav-data-store" data-langlabel="data-store" href="../../../../zh-CN/data-store/" class="side-nav-link">Data Stores</a>
+            <a id="nav-cloud" data-langlabel="cloud" href="../../../../zh-CN/cloud/" class="side-nav-link">云</a>
+            <a id="nav-apps" data-langlabel="apps" href="../../../../zh-CN/apps/" class="side-nav-link">应用程序</a>
+            <a id="nav-doc" data-langlabel="documentation" href="../../../../zh-CN/documentation/" class="side-nav-link">文档</a>
+
+          </aside>
+        </nav>
+    </div>
+
+    <!-- user navigation collapses to drawer on mobile -->
+    
+    <div class="drawer drawer-right js-drawer hide-if-logged-out logged-in-navigation" data-drawer="user-nav">
+      <nav class="drawer-nav">
+        <aside class="side-nav">
+          <a class="side-nav-link agolProfile" href="#">我的个人资料</a>
+          <a class="side-nav-link icon-ui-sign-out js-log-out" href="#">登出</a>
+        </aside>
+      </nav>
+    </div>
+    
+<!-- End of drawer -->
+
+  
+  <div class="wrapper">
+      <!--googleoff: all-->
+
+      <header class="top-nav" data-skin="learn">
+        <a class="skip-to-content" href="#skip-to-content">Skip To Content</a>
+        <div class="grid-container">
+          <div class="column-24">
+
+
+            <!--<div class="top-nav-title-wrapper text-center ">-->
+              <a href='../../../../zh-CN/' class="top-nav-title tablet-hide"><span>Arc</span>GIS  Enterprise</a>
+              <a href='../../../../zh-CN/' class="icon-ui-menu top-nav-title js-drawer-toggle tablet-show" data-drawer="top-nav"><span>Arc</span>GIS Enterprise</a>
+            <!--</div> -->
+
+          
+            <nav role="navigation" class="top-nav-list left tablet-hide">
+              <a id="nav-portal" data-langlabel="portal" href="../../../../zh-CN/portal/" class="top-nav-link">Portal</a>
+
+                <div class="dropdown js-dropdown ">
+                  <a class="top-nav-link js-dropdown-toggle" tabindex="0" aria-haspopup="true" aria-expanded="false" href="#">Servers</a>
+                  <nav class="dropdown-menu featured" role="menu">
+                    <ul class="dropdown-sublist-featured">
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/get-started/latest/windows/additional-server-deployment.htm" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path  d="M42.92 6.1H4.12v8.566l.833.832-.835.833-.018 7.332.845.847-.825.824V33.9h25v5.2h-2v1.075H8.02v.8h19.1v.925h4.8v-.925H40v-.8h-8.08V39.1h-2v-5.2h13v-8.566l-.834-.834.835-.834v-7.332l-.835-.834.835-.834zm-11.8 35h-3.2v-1.2h3.2zm11-8H4.92v-7.434l.767-.766h35.668l.765.766zm0-9.766l-.766.766H5.666l-.766-.767.017-6.669.766-.764h35.671l.766.766zm0-9l-.766.766H5.687l-.766-.766V6.9h37.2zM19 11.9h-2v-.8h2zm-4 0h-2v-.8h2zm-4 0H9v-.8h2zm6 8.2h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9zm8 9h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9z"/></svg></span>
+                          <span class="sublink-text">所有服务器</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/server/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M45.98 33.575a.616.616 0 0 0-.335-.51l-3.362-2.03 3.362-2.031a.556.556 0 0 0 0-1.02l-11.1-6.704a1.293 1.293 0 0 0-1.112 0L22.33 27.982a.556.556 0 0 0 0 1.02l3.36 2.03-3.358 2.03a.556.556 0 0 0-.002 1.021l3.322 2.006-3.324 2.008a.555.555 0 0 0 .002 1.017l11.102 6.703a1.25 1.25 0 0 0 1.11.002l11.104-6.706a.556.556 0 0 0 0-1.02l-3.32-2.006 3.318-2.004a.607.607 0 0 0 .335-.509zM33.837 21.97c.026-.01.286-.005.29-.005l10.814 6.53-10.8 6.523c-.028.01-.284.005-.294.006l-10.813-6.53zm11.105 16.636l-10.8 6.523a2.564 2.564 0 0 1-.295.006l-10.81-6.529 3.39-2.047 7.004 4.23a1.083 1.083 0 0 0 .557.131 1.101 1.101 0 0 0 .554-.13l7.01-4.233zM34.14 40.098a2.545 2.545 0 0 1-.294.006l-10.812-6.53 3.43-2.073 6.97 4.208a1.25 1.25 0 0 0 1.107-.001l6.966-4.206 3.431 2.073zM9 8H7V7h2zm8 8h-2v-1h2zm-4-8h-2V7h2zm4 0h-2V7h2zm-4 8h-2v-1h2zm7.316 11.1H3.9v-6.434l.766-.766h35.668l.766.766v2.12l.8.483v-2.935l-.826-.826.826-.845v-6.329l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9h16.88a2.632 2.632 0 0 1 .336-.8zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zm0 8v-5.668l.766-.766h35.668l.766.766v5.67l-.746.764H4.666zM15 24v-1h2v1zm-4 0v-1h2v1zm-2-8H7v-1h2zm-2 8v-1h2v1z"/></svg></span>
+                          <span class="sublink-text">GIS Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/image/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 8h-2V7h2zm-4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm8 8h-2v1h2zm-8 0H7v1h2zm4 9v-1h-2v1zm-4 0v-1H7v1zm8 0v-1h-2v1zm4 3.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V21h-.8v-.334l-.766-.766H4.666l-.766.766V27.1H21zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zm40.234 4v21.8H23.1V23.1zm-.8 16.366L39.466 44.1h2.868l1.766-1.766zm-20.2-9.932l5.634-5.634h-2.868L23.9 26.666zm6.2-5.068L24.466 30.1h2.868l2.766-2.766zM28.466 30.1H30.1v-1.634zm2.434 0h6.2v-6.2h-6.2zm-7 7h6.2v-6.2h-6.2zm7 0h6.2v-6.2h-6.2zm0 6.434l5.634-5.634h-2.868L30.9 40.666zm7-7l5.634-5.634h-2.868L37.9 33.666zm1.634-5.634H37.9v1.634zm-8.634 7v1.634l1.634-1.634zm.566 6.2h2.868l2.766-2.766v-2.868zm6.434-3.566l2.634-2.634H37.9zM35.466 44.1H37.1v-1.634zm2.434 0h.434l5.766-5.766V37.9h-2.434L37.9 41.666zm6.2-8.634L42.466 37.1H44.1zm0-4L38.466 37.1h2.868l2.766-2.766zm0-7.566h-6.2v6.2h6.2zm-20.2 0v1.634l1.634-1.634zm0 20.2h6.2v-6.2h-6.2zm20.2 0v-.634l-.634.634z"/></svg></span>
+                          <span class="sublink-text">Image Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/geoanalytics/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 16h-2v-1h2zm-8 8v-1H7v1zm8 0v-1h-2v1zM13 7h-2v1h2zm4 0h-2v1h2zM9 7H7v1h2zm21.45 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V27.9h-1.464l-.801-.8H41.1v-6.434l-.766-.766H4.666l-.766.766V27.1h27.15zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM13 24v-1h-2v1zm0-9h-2v1h2zm-4 0H7v1h2zm26.672 27.148A1.87 1.87 0 0 1 35.9 43a1.91 1.91 0 1 1-3.763-.222l-9.845-3.414A1.88 1.88 0 0 1 21 39.9a1.9 1.9 0 1 1 1.474-3.084l4.692-2.346A1.878 1.878 0 0 1 27.1 34a1.902 1.902 0 0 1 1.9-1.9 1.867 1.867 0 0 1 .781.191l3.788-5.05A1.88 1.88 0 0 1 33.1 26a1.9 1.9 0 1 1 3.491 1.026l4.889 4.888c-.069.056-.144.1-.21.162a3.986 3.986 0 0 0-.358.402l-4.883-4.883A1.889 1.889 0 0 1 35 27.9a1.867 1.867 0 0 1-.781-.191l-3.788 5.049a1.868 1.868 0 0 1 .437.965l9.204.614c-.018.11-.049.218-.058.33A3.93 3.93 0 0 0 40 35c0 .046.01.09.01.135l-9.185-.612A1.913 1.913 0 0 1 29 35.9a1.889 1.889 0 0 1-1.474-.716l-4.692 2.346a1.878 1.878 0 0 1 .066.47 1.9 1.9 0 0 1-.105.625c-.007.02-.022.036-.03.056l9.63 3.34a1.87 1.87 0 0 1 2.786-.505l5.415-4.437c.067.108.127.22.204.322a3.9 3.9 0 0 0 .292.306zM33.9 26a1.092 1.092 0 0 0 .43.872 1.12 1.12 0 0 0 1.42-.068A1.1 1.1 0 1 0 33.9 26zm-6 8a1.1 1.1 0 0 0 2.196.093 1.135 1.135 0 0 0-.426-.965A1.087 1.087 0 0 0 29 32.9a1.101 1.101 0 0 0-1.1 1.1zm-5.8 4a1.098 1.098 0 1 0-.06.362A1.101 1.101 0 0 0 22.1 38zm13 5a1.1 1.1 0 1 0-2.2 0 1.1 1.1 0 0 0 2.2 0zm10.8-8a1.9 1.9 0 1 1-3.8 0c0-.053.003-.105.007-.158A1.9 1.9 0 0 1 45.9 35zm-.8 0a1.1 1.1 0 0 0-2.196-.093 1.153 1.153 0 0 0 .216.752A1.1 1.1 0 0 0 45.1 35z"/></svg></span>
+                          <span class="sublink-text">GeoAnalytics Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/geoevent/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M13 8h-2V7h2zm4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm12.418 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826v2.117c-.259-.177-.53-.337-.8-.497v-1.288l-.766-.766H4.666l-.766.766V27.1h17.933c-.148.26-.283.53-.415.8zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM9 24v-1H7v1zm4-9h-2v1h2zm0 9v-1h-2v1zm-4-9H7v1h2zm8 9v-1h-2v1zm16.9 2h-.8v8.9H39v-.8h-5.1zm.1-3.901a11.9 11.9 0 1 0 11.9 11.9 11.914 11.914 0 0 0-11.9-11.9zm0 23a11.1 11.1 0 1 1 11.1-11.1 11.112 11.112 0 0 1-11.1 11.1z"/></svg></span>
+                          <span class="sublink-text">GeoEvent Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/notebook/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M22 27.1H3.9v-6.434l.766-.766h18.576a5.262 5.262 0 0 1 .83-.8H4.666l-.766-.766v-5.668l.766-.766h35.668l.766.766V18h.8v-5.666l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9H22zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zM9 8H7V7h2zm8 0h-2V7h2zm-4 0h-2V7h2zm2 16v-1h2v1zm-4 0v-1h2v1zm-4 0v-1h2v1zm0-8v-1h2v1zm8 0v-1h2v1zm-4 0v-1h2v1zm18.9 8.1h-1.8v1.8h1.8zm-.8 1h-.2v-.2h.2zm15.498-4.48a2.727 2.727 0 0 0-1.62-.5v-.02H27.25a3.154 3.154 0 0 0-3.15 3.15V38.1h-1.68a3.386 3.386 0 0 0-2.872 1.58 3.49 3.49 0 0 0-.157 3.419 3.241 3.241 0 0 0 2.954 1.801h15.161a3.404 3.404 0 0 0 3.394-3.4V26.9h5v-3.65a3.224 3.224 0 0 0-1.302-2.63zM22.345 44.1a2.44 2.44 0 0 1-2.23-1.341 2.706 2.706 0 0 1 .11-2.65A2.588 2.588 0 0 1 22.42 38.9h12.89a3.395 3.395 0 0 0 0 5.2zM40.1 23.192V41.5a2.6 2.6 0 1 1-2.6-2.6v-.8H24.9V23.25a2.352 2.352 0 0 1 2.35-2.35h13.795a3.183 3.183 0 0 0-.945 2.292zm5 2.908h-4.2v-2.908a2.274 2.274 0 0 1 1.44-2.18 1.944 1.944 0 0 1 1.791.259 2.423 2.423 0 0 1 .97 1.979zm-17.1 5h9v.8h-9zm0 3h7v.8h-7zm0-6h9v.8h-9zm4-3h5v.8h-5z"/></svg></span>
+                          <span class="sublink-text">Notebook Server</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+
+              <a id="nav-data-store" data-langlabel="data-store" href="../../../../zh-CN/data-store/" class="top-nav-link">Data Stores</a>
+              <a id="nav-cloud" data-langlabel="cloud" href="../../../../zh-CN/cloud/" class="top-nav-link">云</a>
+              <a id="nav-apps" data-langlabel="apps" href="../../../../zh-CN/apps/" class="top-nav-link">应用程序</a>
+            </nav>
+
+
+            
+            
+            
+
+            <div class="margin-left-1 top-nav-list right hide-if-logged-in logged-out-navigation">
+               
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+              
+              <a data-langlabel="sign-in" id="login-link" class="icon-ui-user top-nav-link link-blue login-link" href="#">登录</a>
+              
+            </div>
+
+            
+            <nav class="margin-left-1 top-nav-list right hide-if-logged-out logged-in-navigation">
+              
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+             
+              <div class="dropdown js-dropdown right">
+
+                <div class="tablet-show top-nav-link">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a href="#" data-drawer="user-nav" class="user-nav-name js-drawer-toggle" data-first-name></a>
+                </div>
+
+                <div class="tablet-hide top-nav-link js-dropdown-toggle">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a class="user-nav-name top-nav-dropdown dropdown-btn" data-first-name>&nbsp;</a>
+                </div>
+
+                <nav class="dropdown-menu dropdown-right">
+                
+                  <a class="dropdown-link agolProfile" id="agolProfile" href="#">我的个人资料</a>
+                  <a class="dropdown-link js-log-out" id="agolLogout" href="#">登出</a>
+                </nav>
+              </div>
+            </nav>
+            
+
+            
+          </div>
+        </div>
+      </header>
+
+      <div class="js-search search-overlay">
+        <div class="search-content" role="dialog" aria-labelledby="search">
+          <form method="GET" id="helpSearchForm">
+            <label>
+              搜索 GeoEvent Server 10.7 帮助
+              <div class="search-bar">
+                <input type="search" name="q"  placeholder="搜索 GeoEvent Server 10.7 帮助" class="search-input js-search-input">
+                <input type="hidden" name="collection" value="help" />
+                <input type="hidden" name="product" value="ext-server-geoevent" />
+                <input type="hidden" name="version" value="10.8" />
+                <input type="hidden" name="language" value="zh-CN" />
+              </div>
+            </label>
+            <input type="hidden" name="relativePath" value="../../../../" /><button type="submit" class="btn btn-large right">搜索</button>
+          </form>
+        </div>
+      </div>
+
+      <!--googleon: all-->
+
+      <div id="skip-to-content">
+        <!--googleoff: all-->
+        <header class="sub-nav sub-nav-learn">
+          <div class="grid-container">
+            
+            <div class="column-24">
+              <div style="display:table;" class="sdk-home-banner">
+                <div class="sdk-home-banner-content">
+                  <h1 class="sub-nav-title link-white">GeoEvent Server</h1>
+                </div>
+              </div>
+            </div>
+
+            <div class="column-24">
+              <nav class='sub-nav-list tablet-hide'><a class="sub-nav-link" href="../../../../zh-CN/geoevent/" target="_top" title="GeoEvent Server 概述和文档">主页</a><a class="sub-nav-link" href="../../../../zh-CN/geoevent/latest/get-started/" target="_top" title="GeoEvent Server 入门">入门</a><a class="sub-nav-link is-active" href="../../../../zh-CN/geoevent/latest/process-event-data/" target="_top" title="过滤和处理事件数据流，以关注最感兴趣的要素">处理事件数据</a><a class="sub-nav-link" href="../../../../zh-CN/geoevent/latest/administer/" target="_top" title="管理 GeoEvent Server">管理</a></nav><select class='tablet-show select-full trailer-half js-select-nav'><option value="../../../../zh-CN/geoevent/">主页</option><option value="../../../../zh-CN/geoevent/latest/get-started/">入门</option><option selected="true" value="../../../../zh-CN/geoevent/latest/process-event-data/">处理事件数据</option><option value="../../../../zh-CN/geoevent/latest/administer/">管理</option></select>
+            </div>
+
+          </div>
+        </header>
+        <!--googleon: all-->
+       
+        <!-- content goes here -->
+        <div class="grid-container ">
+          
+
+            
+              
+  <!--BREADCRUMB-BEG--><div id="bigmac" class="sticky-breadcrumbs trailer-2" data-spy="affix" data-offset-top="180"> </div><!--BREADCRUMB-END-->
+  <!--googleoff: all-->
+    <div class="column-5 tablet-column-12 trailer-2 ">
+      <aside class="js-accordion accordion reference-index" aria-live="polite" role="tablist">
+        <div></div>
+      </aside>
+
+      <div class="js-sticky scroll-show tablet-hide leader-1 back-to-top" data-top="0" style="top: 0px;">
+        <a href="#" class="btn btn-fill btn-clear">返回顶部</a>
+      </div>
+    </div>
+  <!--googleon: all-->
+  
+            
+            
+            
+	
+		<div class="column-13  pre-1 content-section">
+	
+		<header class="trailer-1"><h1>更新要素</h1></header>
+
+		 
+	<!--googleoff: all-->
+	
+		
+				<aside id="main-toc-small" class="js-accordion accordion tablet-show trailer-1">
+			      <div class="accordion-section">
+			        <h4 class="accordion-title">在本主题中</h4>
+			        <div class="accordion-content list-plain">
+			          <ol class="list-plain pre-0 trailer-0"><li><a href="#ESRI_SECTION1_79389CD619384CF5A50A7DB26B7A5C7A">用法说明</a></li><li><a href="#ESRI_SECTION1_EE46643B34224EB888E78374F5BB9960">参数</a></li></ol>
+			        </div>
+			      </div>
+			     </aside>
+		
+    
+   <!--googleon: all-->
+
+
+		<main>
+			
+	
+    	
+    
+
+
+			
+<p id="GUID-DECBE6D7-EEF8-494F-881E-A0D4C1E76A23">“更新要素输出连接器”可用于通过要素服务的要素图层来更新要素记录，其中包含从已处理事件记录中获取的属性。要成功标识并更新正确的要素记录，此输出要求事件记录具有关联的 GeoEvent 定义以及已标记 <span class="usertext">TRACK_ID</span> 的属性字段，并且从此已标记字段中获取的值与现有要素记录的指定<span class="uicontrol">唯一要素标识符字段</span>中的值完全匹配。如果事件记录没有已标记 <span class="usertext">TRACK_ID</span> 的字段，或者无法将标记字段中的值与现有要素记录匹配，则将默认创建新要素记录。可以通过将<span class="uicontrol">仅更新</span>属性设置为<span class="uicontrol">是</span>来禁用默认创建新要素记录。此输出连接器依赖于<a class="xref xref" esrisubtype="extrel" hrefpfx="" href="../../../../zh-CN/portal/latest/use/feature-layers.htm">要素图层</a>查询以通过要素服务来更新要素记录。要素服务可以是已发布到 ArcGIS Server 站点的要素服务、由 ArcGIS Enterprise 门户托管的要素服务或由 ArcGIS Online 组织托管的要素服务。</p><section class="section1 padded-anchor" id="ESRI_SECTION1_79389CD619384CF5A50A7DB26B7A5C7A" purpose="section1"><h2>用法说明</h2><ul purpose="ul" id="UL_3DAB0BB4E5364D40B09005ACAAB4009C"><li purpose="li" id="LI_D2E00ADE56F6442EB4C901A58C563C0B">可以使用此输出连接器更新要素服务中的要素记录。</li><li purpose="li" id="LI_07650601975447268543008853B86614">要素服务应该已启用<span class="uicontrol">创建</span>和<span class="uicontrol">更新</span>操作。</li><li purpose="li" id="LI_376BC925AA7E4AE1B75664BB39BEA3A8">此输出连接器可将 JSON 出站适配器与要素服务出站传输进行配对。</li><li purpose="li" id="LI_37B8BC94D8B64C69A6688DB9B46338F2">路由到此输出连接器的事件记录将通过适配器重新格式化为<a target="_blank" class="xref xref" href="https://developers.arcgis.com/documentation/core-concepts/features-and-geometries/#features">要素 JSON</a>。</li><li purpose="li" id="LI_F81EFAACC8A74E1181FEBFA305F1E0AF">传输可将格式化的 JSON 整合到发送至要素服务的 REST 请求。</li><li purpose="li" id="LI_24ABD6B321F84625B6EDDFF17245DED1">有关对此输出连接器进行故障排除的帮助，请参阅 GeoNet 博客<a target="_blank" class="xref xref" href="https://community.esri.com/community/gis/enterprise-gis/geoevent/blog/2015/05/21/debugging-geoevent-add-a-feature-update-a-feature-output">调试添加要素/更新要素输出连接器</a>。</li><li purpose="li" id="LI_37F1496CDCFA4AF982DD40A14FF7E86F">此输出连接器假设已处理事件记录与现有要素记录之间存在一对一关系。如果存在多个要素记录，其<span class="uicontrol">唯一要素标识符字段</span>值与已处理事件记录的已标记 <span class="usertext">TRACK_ID</span> 字段中的值匹配，则要素记录可能不一致和/或错误更新。</li><li purpose="li" id="LI_A0E46F178D724805943168F166A9EE73">配置新输出时提供的<span class="uicontrol">注册 ArcGIS Server</span> 功能可用于将连接注册到独立 ArcGIS Server、ArcGIS Enterprise 托管服务器或者 ArcGIS Online 组织所使用的托管服务器。必须将服务器连接注册到 ArcGIS GeoEvent Server，才能为要使用的输出连接器选择服务文件夹、要素服务和要素图层。</li><li purpose="li" id="LI_10118132AF3D4F11B13B7230979C5862">配置新输出时提供的<span class="uicontrol">发布要素服务</span>功能可用于直接在 GeoEvent Manager 中发布要素服务。此功能需要现有的 GeoEvent 定义，其方案反映了您希望要素服务的要素图层所具有的字段。请注意，企业级地理数据库施加的限制（例如，保留字和属性字段大写）必须反映在发布新要素服务时使用的 GeoEvent 定义中。当然，您发布的要素服务中没有要素记录 - 它是一项空要素服务，您可以借助 GeoEvent Server 使用来自正在处理的实时事件记录的数据来添加和/或更新要素记录。发布新要素服务的服务器必须是 ArcGIS Enterprise 托管服务器或具有托管地理数据库的独立 ArcGIS Server。GeoEvent Manager 无法用于将新的托管要素服务发布到 ArcGIS Online 组织。</li><li purpose="li" id="LI_2B60BE02F67D4A6F86415987B439F1B4">将输出配置为在地理数据库中添加或更新要素记录时，不应更改<span class="uicontrol">生成平面 JSON</span> 默认值。通过禁用此属性，输出将保留发送到要素服务的属性值的层次结构，要素服务将拒绝该属性值，并且不会更新要素记录。</li><li purpose="li" id="LI_72D0BE488B5F4D1E9CA5BA18DA0A9CC3">如果希望输出定期查询要素服务的要素图层以查找超过指定分钟数的要素并删除其识别的要素记录，则可以启用<span class="uicontrol">删除旧要素</span>属性。或者，考虑使用客户端过滤器从 web 地图的显示中移除或隐藏旧要素记录，而非从地理数据库中删除权威数据。选择<span class="uicontrol">删除旧要素</span>时，请指定定期更新的日期/时间字段（例如<span class="usertext">Last Updated</span> 或 <span class="usertext">Last Edited</span>）。如果使用历史或固定时间字段（例如 <span class="usertext">Date Created</span>），您可能会意外地识别和删除不一定过时的要素记录。</li><li purpose="li" id="LI_AC1B31324D7D470981326FF5DACB7095">选择<span class="uicontrol">删除旧要素</span>时，请指定定期更新的日期/时间字段（例如<span class="usertext">Last Updated</span> 或 <span class="usertext">Last Edited</span>）。如果使用历史或固定时间字段（例如 <span class="usertext">Date Created</span>），您可能会意外地识别和删除不一定过时的要素记录。</li></ul></section><section class="section1 padded-anchor" id="ESRI_SECTION1_EE46643B34224EB888E78374F5BB9960" purpose="section1"><h2>参数</h2><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="1.00*"></colgroup><colgroup width="2.57*"></colgroup><thead><tr><th colspan="1" width="27%">参数</th><th colspan="1">说明</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-EF065D56-1F49-4A71-80EC-5F2245BF3D6F">名称</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-EE5DB929-2103-4AC5-A494-8D458C1507B3">用于在 GeoEvent Manager 中引用的输出连接器的描述性名称。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-C28EBD8F-B49F-4E40-B740-30A8C30BFFB0">ArcGIS Server 连接</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-9EEEED64-91BB-4984-83F1-BBF56E61932C">作为数据存储注册到 <span class="ph">ArcGIS GeoEvent Server</span> 的 ArcGIS Server、ArcGIS Enterprise 或 ArcGIS Online 连接。已注册的服务器连接会缓存有关地图/要素服务、其图层和图层属性的信息。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-EDBF9A92-7CEF-4906-BE8A-A5DDC5729F2F">文件夹</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-8C6BC538-B194-483A-B531-87CEB7F987E4">ArcGIS Server 服务文件夹或企业门户/ArcGIS Online 内容项目文件夹。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-D1E01636-CB7F-49FD-94B9-224BB8E0E4ED">服务名称</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-E0E12DBA-C41D-468F-B320-8E750E544FF1">要素服务的名称，新要素记录将添加到该要素图层中，或现有要素记录将使用共享相同唯一轨迹标识符的已处理事件数据中的值更新到其中。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-206A8C3C-3F0E-419A-8494-561409C36441"> 图层</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-D386E674-BDC2-4BBA-9DE6-4ED585BA6ED8">要素服务中要素图层的名称，新要素记录将添加到该要素图层中，或现有要素记录将使用共享相同唯一轨迹标识符的已处理事件数据中的值更新到其中。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-4BFBB346-C4F4-4369-8EB0-6B7A3A509DEA">唯一要素标识符字段</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-39B3F402-07E7-44D3-9D55-762D4883830A">要素服务的要素图层中的字段，用于唯一标识传感器或可跟踪资产。进行搜索以标识要更新的要素记录时，此输出将查询其<span class="uicontrol">唯一要素标识符字段</span>值与从具有 <span class="usertext">TRACK_ID</span> 标签的已处理事件记录的字段中获取的值完全匹配的要素记录。</p><p id="GUID-2DE46FF2-E371-4433-863C-F4E2E756E3C9">如果事件记录没有已标记 <span class="usertext">TRACK_ID</span> 的字段，或者在任何现有要素记录的<span class="uicontrol">唯一要素标识符字段</span>中未找到已标记字段中的值，则默认行为是创建新要素记录，并在输出接收具有特定 TRACK_ID 的后续事件记录时，开始更新创建的要素。</p><p id="GUID-BBC44467-C852-4ED6-BFF4-B6E7D84E4BEB">此输出连接器假设已处理事件记录与现有要素记录之间存在一对一关系。如果存在多个要素记录，其<span class="uicontrol">唯一要素标识符字段</span>值与已处理事件记录的已标记 <span class="usertext">TRACK_ID</span> 字段中的值匹配，则要素记录可能不一致和/或错误更新。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-E4099F3A-DAE5-418E-8EBE-1EFC600DA791">更新间隔(秒)</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-5C2F5812-A4BE-4BD9-88D1-6D08E292CACD">指定输出将刷新其已处理事件记录的缓存并请求在指定要素服务中创建新要素记录的间隔（以秒为单位）。此属性的默认值为 <span class="uicontrol">1</span> 秒，这意味着将处理来自已处理事件记录的数据，并且每秒刷新缓存以通过创建新要素记录来保存事件数据。您可以通过增加更新间隔来限制在数据库服务器上进行的事务请求的数量，以便事件数据将在输出的缓存中保留更长的时间。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-6D5B4366-4564-49CF-82F1-79C10B880779">生成平面 JSON</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-AE003A9E-1ECA-482A-A806-F3B2145A56DC">指定输出的适配器如何处理已处理事件记录中的层次。ArcGIS Server 要素服务不支持以数组、组或嵌套值组织的数据值。默认设置是将此类数据结构强制转换为单个字符串值，其属性名称取自组元素或数组元素的名称 - 有效地生成一个扁平 JSON 字符串值。<ul purpose="ul" id="UL_0800D218C5DC4844A5381636AD4AD672"><li purpose="li" id="LI_E22DC452EB484BF98E1CF8A849222F0B"><span class="uicontrol">是</span> - 使用子结构的基本名称作为字符串属性字段的名称，将分层值展平并作为单个文本字符串处理。</li><li purpose="li" id="LI_AE65FD91100F449C8B6292029FC03565"><span class="uicontrol">否</span> - 将保持分层值。因此，处理的事件记录将与要素服务不兼容。事件记录将被删除，不会作为要素记录添加到要素服务。</li></ul></p><p id="GUID-FD08BDCF-19AB-4FD7-8E63-C41EF0E3FEE6"><div class="panel trailer-1 note" id="GUID-71B94A7C-FC14-4E16-B7D0-62F5C5A68C0C"><h5 class="icon-ui-comment trailer-0">注：</h5>虽然添加要素输出连接器允许将层次结构值转换为简单字符串，但最佳做法建议是使用<a class="xref xref" href="../../../../zh-CN/geoevent/latest/process-event-data/field-mapper-processor.htm">字段映射器处理器</a>在将事件记录路由到输出之前显式展平事件记录的结构。将值显式映射到单独的离散属性字段（其类型为字符串、双精度、日期、几何等），有助于确保数据完整性并符合要素服务强制执行的属性字段值的限制。</div></p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-118DFB71-8881-47D0-9437-189B0FABBD11">格式化的 JSON</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-9477E797-F6B6-48ED-8C67-E818088BB828">指定是否使用空格缩进和换行格式来修饰要素 JSON 字符串。此 JSON（有时称为 PJSON）通常仅在写入可在文本编辑器中查看其内容的系统文件时适用。默认为<span class="uicontrol">否</span>。<ul purpose="ul" id="UL_047B12F6454548DEA2263459D3086C3D"><li purpose="li" id="LI_8EA3216768CF4EAF8737D03CAC5A4364"><span class="uicontrol">是</span> - 要素 JSON 将被格式化（修饰）。</li><li purpose="li" id="LI_D8038557788D4E038C981176F3A7AB70"><span class="uicontrol">否</span> - 要素 JSON 不会被格式化。</li></ul></p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-CEAACC47-275D-4952-850A-42D0C6A53E0A">删除旧要素</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-E35C42C9-CBD6-429A-AE4D-5B92B9F63957">确定输出连接器是否定期查询要素服务的要素图层以查找指定分钟数之前的要素，并删除其标识的要素记录。默认为<span class="uicontrol">否</span>。<ul purpose="ul" id="UL_3872AE61FF41440B9375AB37DE36A8B5"><li purpose="li" id="LI_1B4E47DFAEDC410083739ABE871BEE76"><span class="uicontrol">是</span> - 在一段时间后，将定期从要素服务中删除旧要素。</li><li purpose="li" id="LI_28B1175D673145D29D4C608ACFFA9BA4"><span class="uicontrol">否</span> - 不会定期删除旧要素。要素记录将在要素服务中累积。</li></ul></p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-A1458AE0-4202-4C5E-8921-F1507BA3AA96">最大要素期限(分钟):</p><p id="GUID-2DC60B65-6437-4FE5-927A-6A0DC91EC5F8">（条件分析）</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-43337F6C-7B3B-4944-99BB-C5D995112B08">指定要素记录在被视为旧记录之前可能保留的最长期限（以分钟为单位）。默认为 <span class="uicontrol">1440</span> 分钟，这意味着当输出配置为<span class="uicontrol">删除旧要素</span>时，将从要素服务中删除早于 24 小时的要素记录。</p><p id="GUID-A6ADB789-6ED4-420A-BB20-28E99E6959E0"><div class="panel trailer-1 note" id="GUID-4A2072F3-ACAB-457C-A243-B85364E88923"><h5 class="icon-ui-comment trailer-0">注：</h5>输出不需要接收任何已处理的要素记录以触发旧要素记录的删除。识别和删除旧记录的定期查询与添加或创建新要素记录并行运行。</div></p><p id="GUID-E8884D55-43A8-4E0F-9DD9-B41A37CA565C">属性在<span class="uicontrol">删除旧要素</span>设置为<span class="uicontrol">是</span>时显示，设置为<span class="uicontrol">否</span>时隐藏。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-1B09F33F-AF6B-4AD1-9F79-16C89BF90815">旧要素的删除频率(秒)</p><p id="GUID-E0701D5E-9835-4753-B115-08304CEECFF4">（条件分析）</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-67841C6F-2E06-43E5-8C03-DEEC72E2F7BA">指定将运行查询以标识旧要素记录的时间间隔（以秒为单位）。默认为 <span class="uicontrol">20</span> 秒，这意味着查询将每分钟运行三次，以检查其日期/时间值表明要素记录已过时的要素记录。</p><p id="GUID-0A6C5DB2-898F-48AE-AF75-7908063FBA89">属性在<span class="uicontrol">删除旧要素</span>设置为<span class="uicontrol">是</span>时显示，设置为<span class="uicontrol">否</span>时隐藏。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-F1BA0227-ED03-45CD-8875-C09BA4DAAD2C">要素类中的时间字段</p><p id="GUID-EA78F335-2011-4015-830B-311D13DC8448">（条件分析）</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-1D27BE2A-4FE8-4229-8796-88E1C48EA5DB">要素图层属性字段，其日期/时间值用于确定每个要素记录的期限。此属性没有默认值。应选择一个值经常更新的属性字段，以避免意外删除实际上并未过时的要素记录。</p><p id="GUID-FF94B7DE-9780-44DC-BFF8-A492ED6A9291">属性在<span class="uicontrol">删除旧要素</span>设置为<span class="uicontrol">是</span>时显示，设置为<span class="uicontrol">否</span>时隐藏。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-10ADB929-FF09-446F-B8EE-01240D5559DE">每项事务的最大要素</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-1BDBF111-330E-4DE7-BFD1-B12292A5BB02">要更新要素记录的任何单个要素服务请求中包含的最大记录数。如果输出缓存包含的记录数超过指定的最大记录数，则将创建多个请求，直到清空输出缓存为止。默认值为 <span class="uicontrol">500</span>。</p><p id="GUID-3DD6A11B-7E05-4AF9-AC5E-0B7746D2799B">作为最佳实践，请将每个事件记录的大小和复杂性与每秒处理的事件记录数进行平衡。当事件记录特别大，具有许多属性字段和/或大型复杂几何对象时，请减小该值以避免发送大于要素服务可以处理的请求。但是，根据每秒处理的事件记录的速度和数量，将值设置得太低可能会导致大量的事务请求。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-006C3AAB-2089-422E-B2EB-827ABD620B2E">仅更新</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-3FFB2813-3A5F-447B-B8C8-605BAF26ABE2">当事件记录没有已标记 <span class="usertext">TRACK_ID</span> 的字段，或者已标记字段中的值无法与现有要素记录匹配时，指定输出连接器是否应创建新要素记录。默认为<span class="uicontrol">否</span>。<ul purpose="ul" id="UL_830E8F6B49814431891974C992741CA9"><li purpose="li" id="LI_98E4E47454EF4506B894DCDBFC446025"><span class="uicontrol">是</span> - 必须存在要素记录，其<span class="uicontrol">唯一要素标识符字段</span>值与从已处理事件记录已标记 <span class="usertext">TRACK_ID</span> 的字段中获取的值完全匹配。将更新匹配的要素记录，但不会创建新要素记录。将放弃没有匹配要素记录的事件记录。</li><li purpose="li" id="LI_90CC7EA2AC5F41F3888D76EFAB160677"><span class="uicontrol">否</span> - 将更新与已处理事件记录匹配的要素记录。如果无法标识匹配的要素记录，则将创建新要素记录。</li></ul></p><div class="panel trailer-1 note" id="GUID-86808D96-AF4C-48F0-A679-3794D4DD6768"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-8A6C7F50-B85A-49FB-A6BD-6E591B719FFD">请注意：当<span class="uicontrol">仅更新</span>设置为<span class="uicontrol">否</span>时，要素服务必须同时启用<span class="uicontrol">创建</span>和<span class="uicontrol">更新</span>操作。如果将默认值更改为<span class="uicontrol">是</span>，则要素服务仅需要启用更新操作，因为不会创建新要素记录。</p></div></td></tr></tbody><caption></caption></table></div></section>
+			
+				<hr>
+				<!--googleoff: all-->
+				
+	
+        
+		    <p class="feedback right">
+		        <a id="afb" class="icon-ui-contact" href="/feedback/" data-langlabel="feedback-on-this-topic" >有关此主题的反馈?</a>
+		    </p>
+        
+	
+
+				<!--googleon: all-->
+			
+		</main>
+	</div>
+	
+	<!--googleoff: all-->
+	
+		
+			<div id="main-toc-large" class="column-5">
+			    <div class="panel font-size--2 tablet-hide trailer-1">
+			      <h5 class="trailer-half">在本主题中</h5>
+			      <ol class="list-plain pre-0 trailer-0"><li><a href="#ESRI_SECTION1_79389CD619384CF5A50A7DB26B7A5C7A">用法说明</a></li><li><a href="#ESRI_SECTION1_EE46643B34224EB888E78374F5BB9960">参数</a></li></ol>
+			    </div>
+			    
+			    
+	  		</div>
+		
+    
+   <!--googleon: all-->
+
+
+
+
+          
+        </div>
+        <!-- ENDPAGECONTENT -->
+
+      </div>
+
+    </div>  <!-- End of wrapper -->
+
+  <footer class="footer leader-3 link-dark-gray" role="contentinfo">
+    <div class="grid-container">
+      <div class="row">
+        <nav class="column-6">
+          <h6 data-langlabel="arcgis-for-server">Arc<span>GIS Enterprise</span></h6>
+          <ul class="list-plain">
+            <li><a data-langlabel="home" href="../../../../zh-CN/">主页</a></li>
+            <li><a data-langlabel="portal" href="../../../../zh-CN/portal/">Portal</a></li>
+            <li><a data-langlabel="server" href="../../../../zh-CN/server/">Server</a></li>
+            <li><a data-langlabel="data-store" href="../../../../zh-CN/data-store/">Data Stores</a></li>
+            <li><a data-langlabel="cloud" href="../../../../zh-CN/cloud/">云</a></li>
+            <li><a data-langlabel="apps" href="../../../../zh-CN/apps/">应用程序</a></li>
+            <li><a data-langlabel="documentation" href="../../../../zh-CN/documentation/">文档</a></li>
+          </ul>
+        </nav>
+
+        
+  <nav class="column-6">
+    <h6 data-langlabel="arcgis-platform">ArcGIS 平台</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="arcgis" href="//www.arcgis.com/">ArcGIS Online</a></li>
+      <li><a data-langlabel="arcgis-for-professionals" href="//pro.arcgis.com/">ArcGIS Pro</a></li>
+      <li><a data-langlabel="arcgis-for-server" href="//enterprise.arcgis.com/">ArcGIS Enterprise</a></li>
+      <li><a data-langlabel="arcgis-for-developers" href="https://developers.arcgis.com/">ArcGIS for Developers</a></li>
+      <li><a data-langlabel="arcgis-solutions" href="//solutions.arcgis.com/">ArcGIS Solutions</a></li>
+      <li><a data-langlabel="arcgis-marketplace" href="//marketplace.arcgis.com/">ArcGIS Marketplace</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <h6 data-langlabel="about-esri">关于 Esri</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="about-us" href="//www.esri.com/about-esri/">关于我们</a></li>
+      <li><a data-langlabel="careers" href="//www.esri.com/careers/">招贤纳士</a></li>
+      <li><a data-langlabel="insiders-blog" href="https://www.esri.com/about/newsroom/blog/">Esri 博客</a></li>
+      <li><a data-langlabel="user-conference" href="//www.esri.com/events/user-conference/index.html">用户大会</a></li>
+      <li><a data-langlabel="developer-summit" href="//www.esri.com/events/devsummit/index.html">开发者峰会</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <a class="esri-logo" href="//www.esri.com/" aria-label="Esri Home"></a>
+    <section class="footer-social-nav leader-1">
+            <a class="icon-social-twitter" aria-label="Esri on Twitter" href="https://twitter.com/Esri/"></a>
+            <a class="icon-social-facebook" aria-label="Esri on Facebook" href="https://www.facebook.com/esrigis/"></a>
+            <a class="icon-social-github" aria-label="Esri on GitHub" href="//esri.github.io/"></a>
+            <a class="icon-social-contact" aria-label="Contact Esri" href="//www.esri.com/about-esri/contact/"></a>
+    </section>
+	  
+  </nav>
+  
+  <div class="column-24 leader-1">
+    <p class="font-size--3"><a href="http://www.esri.com/legal/copyright-trademarks">Copyright &copy; 2019 Esri.</a> All rights reserved. | <a href="http://www.esri.com/legal/privacy/">隐私政策</a> | <a href="http://www.esri.com/legal/software-license">法律声明</a></p>
+  </div>
+  
+
+
+      </div>
+    </div>
+  </footer>
+  <!--googleoff: all-->
+
+  
+  
+	<script src="../../../../zh-CN/assets/js/init.js" type="text/javascript"></script>
+	<!--<script src="../../../../zh-CN/assets/js/drop-down.js" type="text/javascript"></script>-->
+	<script src="../../../../zh-CN/assets/js/search/searchform.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/cdn/js/link-modifier.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/cdn/js/sitewide.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/cdn/js/libs/highlight.pack.js" type="text/javascript"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+
+
+  
+    
+
+  <script src="../../../../zh-CN/cdn/js/affix.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    $(function () {
+          var appendFlg = true;
+
+          $("#bigmac")
+          .on("affixed.bs.affix", function (evt) {
+            if (appendFlg) {
+              $("<a class='crumb' href='#'>更新要素</a>").insertAfter ($("#bigmac nav a").last());
+              appendFlg = false;
+            }
+          })
+          .on ("affix-top.bs.affix", function(evt) {
+            if (!appendFlg) {
+              $("#bigmac nav a").last().remove();
+            }
+            appendFlg = true;
+          })
+    })
+  </script>
+  
+        <script type="text/javascript">
+          window.doctoc = {
+            pubID: "1336",
+            tpcID: "86",
+            
+              prefix: "处理事件数据",
+              prefixUrl: "/zh-cn/geoevent/latest/process-event-data/",
+          
+            hideToc: false
+          }
+        </script>
+
+        <script type="text/javascript" src="../../../../zh-CN/geoevent/latest/process-event-data/1336.js" ></script>
+        <script type="text/javascript" src="../../../../zh-CN/cdn/calcite/js/protoc.js" ></script>
+        
+        
+
+  <noscript>
+        <p>
+            <a href="flisting.htm">flist</a>
+        </p>
+    </noscript>
+    <script type="text/javascript"></script>
+  
+  
+    
+    
+
+  </body>
+</html>

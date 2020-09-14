@@ -1,0 +1,545 @@
+
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>  <html class="ie lt-ie9 lt-ie8 lt-ie7 ie6" dir="ltr"> <![endif]-->
+<!--[if IE 7]>     <html class="ie lt-ie9 lt-ie8 ie7" dir="ltr"> <![endif]-->
+<!--[if IE 8]>     <html class="ie lt-ie9 ie8" dir="ltr"> <![endif]-->
+<!--[if IE 9]>     <html class="ie ie9" dir="ltr"> <![endif]-->
+<!--[if !IE]><!--> <html dir="ltr" lang="zh-CN"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>ArcGIS Server 的数据源&mdash;管理数据 | ArcGIS Enterprise 文档</title>
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+    <script>
+      var docConfig = {
+        locale: 'zh-CN'
+        ,localedir: 'zh-cn'
+        ,langSelector: ''
+        
+        ,relativeUrl: false
+        
+
+        ,searchformUrl: '/search/'
+        ,tertiaryNavIndex: ''
+
+        
+      };
+    </script>
+	 
+
+
+    
+    <!--[if lt IE 9]>
+      <script src="../../../../../zh-CN/cdn/js/libs/html5shiv.js" type="text/javascript"></script>
+      <script src="../../../../../zh-CN/cdn/js/libs/selectivizr-min.js" type="text/javascript"></script>
+      <script src="../../../../../zh-CN/cdn/js/libs/json2.js" type="text/javascript"></script>
+      <script src="../../../../../zh-CN/cdn/js/libs/html5shiv-printshiv.js" type="text/javascript" >
+
+    <![endif]-->
+
+     <!--[if lt IE 11]>
+    <script>
+      $$(document).ready(function(){
+        $$(".hideOnIE").hide();
+      });
+    </script>
+    <![endif]-->
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<link href="../../../../../zh-CN/assets/img/favicon.ico" rel="shortcut icon" >
+	<link href="../../../../../zh-CN/assets/css/screen.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/cdn/calcite/css/documentation.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/assets/css/print.css" media="print" type="text/css" rel="stylesheet" />
+
+	<!--
+	<link href="../../../../../zh-CN/assets/css/screen_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/assets/css/documentation/base_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/assets/css/print_l10n.css" media="print" type="text/css" rel="stylesheet" />
+	-->
+	
+	
+		<script src="../../../../../zh-CN/cdn/js/libs/jquery.1.9.1.min.js" type="text/javascript"></script>
+	
+	<script src="../../../../../zh-CN/cdn/js/libs/jquery.cookie.js" type="text/javascript"></script>
+	<link href="../../../../../zh-CN/cdn/css/colorbox.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/cdn/css/colorbox_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<script src="../../../../../zh-CN/cdn/js/libs/jquery.colorbox-min.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/assets/js/video-init.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/assets/js/sitecfg.js" type="text/javascript"></script>
+	
+		<script src="../../../../../zh-CN/assets/js/signIn.js" type="text/javascript"></script>
+	
+
+	<!--- Language Picker -->
+	<script src="../../../../../zh-CN/assets/js/locale/l10NStrings.js" type="text/javascript"></script>
+	
+		 
+	
+
+	<script src="../../../../../zh-CN/assets/js/calcite-web.js" type="text/javascript"></script>
+
+
+
+  <!--- search MD -->
+    <META name="description" content="作为 ArcGIS Server 管理员，您可以选择将数据文件夹和数据库注册到 ArcGIS Server。数据注册会为服务器提供一份 ArcGIS Server 可以访问的位置列表，并且在多台计算机上发布时，还有助于 ArcGIS Server 了解如何调整数据路径。"><META name="last-modified" content="2019-12-6"><META name="product" content="arcgis-server-windows,arcgis-enterprise-windows"><META name="sub_category" content="ArcGIS Enterprise (Windows)"><META name="search-collection" content="help"><META name="content_type_label" content="Manage Data"><META name="sub_category_label" content="ArcGIS Enterprise (Windows)"><META name="search-category" content="help-general"><META name="subject_label" content="服务"><META name="version" content="10.8"><META name="content_type" content="Manage Data"><META name="subject" content="SERVICES"><META name="content-language" content="zh-cn">
+    <!--- search MD -->
+
+  
+  <script src="../../../../../zh-CN/assets/js/switchers/server-1.js" type="text/javascript"></script>
+  
+      
+
+</head>
+
+<!--
+      pub: GUID-2E5EB595-5E45-4392-A4AB-026D9EDE6464=5
+      tpc: GUID-DAB898B0-0226-4404-B687-C78413437802=38
+      -->
+
+
+<!-- variable declaration, if any -->
+<!-- can change following macro to set variable once we are on Jinja 2.8 -->
+
+
+
+
+
+<body class="claro zh-CN server">
+  
+
+  <!-- Drawer location -->
+  <div class="drawer drawer-left js-drawer" data-drawer="top-nav">
+        <nav class="drawer-nav" role="navigation">
+          <aside class="side-nav">
+            <h2 class="side-nav-title">Arc<span>GIS</span> Enterprise</h2>
+            <form id="helpSearchForm" class="margin-left-half margin-right-half leader-half trailer-half drawer-search-form" method="GET">
+              <input type="search" name="q"  placeholder="搜索 ArcGIS Server 10.8 帮助">
+              <input type="hidden" name="collection" value="help" />
+              <input type="hidden" name="product" value="arcgis-enterprise-windows" />
+              <input type="hidden" name="version" value="10.8" />
+              <input type="hidden" name="language" value="zh-CN" />
+            </form>    
+             <a id="nav-portal" data-langlabel="portal" href="../../../../../zh-CN/portal/" class="side-nav-link">Portal</a>
+             
+            <a id="all-servers" data-langlabel="all-servers" href="../../../../../zh-CN/server/" class="side-nav-link">所有服务器</a>
+            <a id="gis-server" data-langlabel="gis-server" href="../../../../../zh-CN/server/" class="side-nav-link">GIS Server</a>
+            <a id="image-server" data-langlabel="image-server" href="../../../../../zh-CN/image/" class="side-nav-link">Image Server</a>
+            <a id="geo-analytics-server" data-langlabel="geo-analytics-server" href="../../../../../zh-CN/geoanalytics/" class="side-nav-link">GeoAnalytics Server</a>
+            <a id="geoevent-server" data-langlabel="geoevent-server" href="../../../../../zh-CN/geoevent/" class="side-nav-link">GeoEvent Server</a>
+            <a id="notebook-server" data-langlabel="notebook-server" href="../../../../../zh-CN/notebook/" class="side-nav-link">Notebook Server</a>
+            <a id="nav-data-store" data-langlabel="data-store" href="../../../../../zh-CN/data-store/" class="side-nav-link">Data Stores</a>
+            <a id="nav-cloud" data-langlabel="cloud" href="../../../../../zh-CN/cloud/" class="side-nav-link">云</a>
+            <a id="nav-apps" data-langlabel="apps" href="../../../../../zh-CN/apps/" class="side-nav-link">应用程序</a>
+            <a id="nav-doc" data-langlabel="documentation" href="../../../../../zh-CN/documentation/" class="side-nav-link">文档</a>
+
+          </aside>
+        </nav>
+    </div>
+
+    <!-- user navigation collapses to drawer on mobile -->
+    
+    <div class="drawer drawer-right js-drawer hide-if-logged-out logged-in-navigation" data-drawer="user-nav">
+      <nav class="drawer-nav">
+        <aside class="side-nav">
+          <a class="side-nav-link agolProfile" href="#">我的个人资料</a>
+          <a class="side-nav-link icon-ui-sign-out js-log-out" href="#">登出</a>
+        </aside>
+      </nav>
+    </div>
+    
+<!-- End of drawer -->
+
+  
+  <div class="wrapper">
+      <!--googleoff: all-->
+
+      <header class="top-nav" data-skin="learn">
+        <a class="skip-to-content" href="#skip-to-content">Skip To Content</a>
+        <div class="grid-container">
+          <div class="column-24">
+
+
+            <!--<div class="top-nav-title-wrapper text-center ">-->
+              <a href='../../../../../zh-CN/' class="top-nav-title tablet-hide"><span>Arc</span>GIS  Enterprise</a>
+              <a href='../../../../../zh-CN/' class="icon-ui-menu top-nav-title js-drawer-toggle tablet-show" data-drawer="top-nav"><span>Arc</span>GIS Enterprise</a>
+            <!--</div> -->
+
+          
+            <nav role="navigation" class="top-nav-list left tablet-hide">
+              <a id="nav-portal" data-langlabel="portal" href="../../../../../zh-CN/portal/" class="top-nav-link">Portal</a>
+
+                <div class="dropdown js-dropdown ">
+                  <a class="top-nav-link js-dropdown-toggle" tabindex="0" aria-haspopup="true" aria-expanded="false" href="#">Servers</a>
+                  <nav class="dropdown-menu featured" role="menu">
+                    <ul class="dropdown-sublist-featured">
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/get-started/latest/windows/additional-server-deployment.htm" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path  d="M42.92 6.1H4.12v8.566l.833.832-.835.833-.018 7.332.845.847-.825.824V33.9h25v5.2h-2v1.075H8.02v.8h19.1v.925h4.8v-.925H40v-.8h-8.08V39.1h-2v-5.2h13v-8.566l-.834-.834.835-.834v-7.332l-.835-.834.835-.834zm-11.8 35h-3.2v-1.2h3.2zm11-8H4.92v-7.434l.767-.766h35.668l.765.766zm0-9.766l-.766.766H5.666l-.766-.767.017-6.669.766-.764h35.671l.766.766zm0-9l-.766.766H5.687l-.766-.766V6.9h37.2zM19 11.9h-2v-.8h2zm-4 0h-2v-.8h2zm-4 0H9v-.8h2zm6 8.2h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9zm8 9h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9z"/></svg></span>
+                          <span class="sublink-text">所有服务器</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/server/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M45.98 33.575a.616.616 0 0 0-.335-.51l-3.362-2.03 3.362-2.031a.556.556 0 0 0 0-1.02l-11.1-6.704a1.293 1.293 0 0 0-1.112 0L22.33 27.982a.556.556 0 0 0 0 1.02l3.36 2.03-3.358 2.03a.556.556 0 0 0-.002 1.021l3.322 2.006-3.324 2.008a.555.555 0 0 0 .002 1.017l11.102 6.703a1.25 1.25 0 0 0 1.11.002l11.104-6.706a.556.556 0 0 0 0-1.02l-3.32-2.006 3.318-2.004a.607.607 0 0 0 .335-.509zM33.837 21.97c.026-.01.286-.005.29-.005l10.814 6.53-10.8 6.523c-.028.01-.284.005-.294.006l-10.813-6.53zm11.105 16.636l-10.8 6.523a2.564 2.564 0 0 1-.295.006l-10.81-6.529 3.39-2.047 7.004 4.23a1.083 1.083 0 0 0 .557.131 1.101 1.101 0 0 0 .554-.13l7.01-4.233zM34.14 40.098a2.545 2.545 0 0 1-.294.006l-10.812-6.53 3.43-2.073 6.97 4.208a1.25 1.25 0 0 0 1.107-.001l6.966-4.206 3.431 2.073zM9 8H7V7h2zm8 8h-2v-1h2zm-4-8h-2V7h2zm4 0h-2V7h2zm-4 8h-2v-1h2zm7.316 11.1H3.9v-6.434l.766-.766h35.668l.766.766v2.12l.8.483v-2.935l-.826-.826.826-.845v-6.329l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9h16.88a2.632 2.632 0 0 1 .336-.8zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zm0 8v-5.668l.766-.766h35.668l.766.766v5.67l-.746.764H4.666zM15 24v-1h2v1zm-4 0v-1h2v1zm-2-8H7v-1h2zm-2 8v-1h2v1z"/></svg></span>
+                          <span class="sublink-text">GIS Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/image/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 8h-2V7h2zm-4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm8 8h-2v1h2zm-8 0H7v1h2zm4 9v-1h-2v1zm-4 0v-1H7v1zm8 0v-1h-2v1zm4 3.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V21h-.8v-.334l-.766-.766H4.666l-.766.766V27.1H21zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zm40.234 4v21.8H23.1V23.1zm-.8 16.366L39.466 44.1h2.868l1.766-1.766zm-20.2-9.932l5.634-5.634h-2.868L23.9 26.666zm6.2-5.068L24.466 30.1h2.868l2.766-2.766zM28.466 30.1H30.1v-1.634zm2.434 0h6.2v-6.2h-6.2zm-7 7h6.2v-6.2h-6.2zm7 0h6.2v-6.2h-6.2zm0 6.434l5.634-5.634h-2.868L30.9 40.666zm7-7l5.634-5.634h-2.868L37.9 33.666zm1.634-5.634H37.9v1.634zm-8.634 7v1.634l1.634-1.634zm.566 6.2h2.868l2.766-2.766v-2.868zm6.434-3.566l2.634-2.634H37.9zM35.466 44.1H37.1v-1.634zm2.434 0h.434l5.766-5.766V37.9h-2.434L37.9 41.666zm6.2-8.634L42.466 37.1H44.1zm0-4L38.466 37.1h2.868l2.766-2.766zm0-7.566h-6.2v6.2h6.2zm-20.2 0v1.634l1.634-1.634zm0 20.2h6.2v-6.2h-6.2zm20.2 0v-.634l-.634.634z"/></svg></span>
+                          <span class="sublink-text">Image Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/geoanalytics/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 16h-2v-1h2zm-8 8v-1H7v1zm8 0v-1h-2v1zM13 7h-2v1h2zm4 0h-2v1h2zM9 7H7v1h2zm21.45 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V27.9h-1.464l-.801-.8H41.1v-6.434l-.766-.766H4.666l-.766.766V27.1h27.15zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM13 24v-1h-2v1zm0-9h-2v1h2zm-4 0H7v1h2zm26.672 27.148A1.87 1.87 0 0 1 35.9 43a1.91 1.91 0 1 1-3.763-.222l-9.845-3.414A1.88 1.88 0 0 1 21 39.9a1.9 1.9 0 1 1 1.474-3.084l4.692-2.346A1.878 1.878 0 0 1 27.1 34a1.902 1.902 0 0 1 1.9-1.9 1.867 1.867 0 0 1 .781.191l3.788-5.05A1.88 1.88 0 0 1 33.1 26a1.9 1.9 0 1 1 3.491 1.026l4.889 4.888c-.069.056-.144.1-.21.162a3.986 3.986 0 0 0-.358.402l-4.883-4.883A1.889 1.889 0 0 1 35 27.9a1.867 1.867 0 0 1-.781-.191l-3.788 5.049a1.868 1.868 0 0 1 .437.965l9.204.614c-.018.11-.049.218-.058.33A3.93 3.93 0 0 0 40 35c0 .046.01.09.01.135l-9.185-.612A1.913 1.913 0 0 1 29 35.9a1.889 1.889 0 0 1-1.474-.716l-4.692 2.346a1.878 1.878 0 0 1 .066.47 1.9 1.9 0 0 1-.105.625c-.007.02-.022.036-.03.056l9.63 3.34a1.87 1.87 0 0 1 2.786-.505l5.415-4.437c.067.108.127.22.204.322a3.9 3.9 0 0 0 .292.306zM33.9 26a1.092 1.092 0 0 0 .43.872 1.12 1.12 0 0 0 1.42-.068A1.1 1.1 0 1 0 33.9 26zm-6 8a1.1 1.1 0 0 0 2.196.093 1.135 1.135 0 0 0-.426-.965A1.087 1.087 0 0 0 29 32.9a1.101 1.101 0 0 0-1.1 1.1zm-5.8 4a1.098 1.098 0 1 0-.06.362A1.101 1.101 0 0 0 22.1 38zm13 5a1.1 1.1 0 1 0-2.2 0 1.1 1.1 0 0 0 2.2 0zm10.8-8a1.9 1.9 0 1 1-3.8 0c0-.053.003-.105.007-.158A1.9 1.9 0 0 1 45.9 35zm-.8 0a1.1 1.1 0 0 0-2.196-.093 1.153 1.153 0 0 0 .216.752A1.1 1.1 0 0 0 45.1 35z"/></svg></span>
+                          <span class="sublink-text">GeoAnalytics Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/geoevent/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M13 8h-2V7h2zm4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm12.418 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826v2.117c-.259-.177-.53-.337-.8-.497v-1.288l-.766-.766H4.666l-.766.766V27.1h17.933c-.148.26-.283.53-.415.8zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM9 24v-1H7v1zm4-9h-2v1h2zm0 9v-1h-2v1zm-4-9H7v1h2zm8 9v-1h-2v1zm16.9 2h-.8v8.9H39v-.8h-5.1zm.1-3.901a11.9 11.9 0 1 0 11.9 11.9 11.914 11.914 0 0 0-11.9-11.9zm0 23a11.1 11.1 0 1 1 11.1-11.1 11.112 11.112 0 0 1-11.1 11.1z"/></svg></span>
+                          <span class="sublink-text">GeoEvent Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/notebook/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M22 27.1H3.9v-6.434l.766-.766h18.576a5.262 5.262 0 0 1 .83-.8H4.666l-.766-.766v-5.668l.766-.766h35.668l.766.766V18h.8v-5.666l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9H22zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zM9 8H7V7h2zm8 0h-2V7h2zm-4 0h-2V7h2zm2 16v-1h2v1zm-4 0v-1h2v1zm-4 0v-1h2v1zm0-8v-1h2v1zm8 0v-1h2v1zm-4 0v-1h2v1zm18.9 8.1h-1.8v1.8h1.8zm-.8 1h-.2v-.2h.2zm15.498-4.48a2.727 2.727 0 0 0-1.62-.5v-.02H27.25a3.154 3.154 0 0 0-3.15 3.15V38.1h-1.68a3.386 3.386 0 0 0-2.872 1.58 3.49 3.49 0 0 0-.157 3.419 3.241 3.241 0 0 0 2.954 1.801h15.161a3.404 3.404 0 0 0 3.394-3.4V26.9h5v-3.65a3.224 3.224 0 0 0-1.302-2.63zM22.345 44.1a2.44 2.44 0 0 1-2.23-1.341 2.706 2.706 0 0 1 .11-2.65A2.588 2.588 0 0 1 22.42 38.9h12.89a3.395 3.395 0 0 0 0 5.2zM40.1 23.192V41.5a2.6 2.6 0 1 1-2.6-2.6v-.8H24.9V23.25a2.352 2.352 0 0 1 2.35-2.35h13.795a3.183 3.183 0 0 0-.945 2.292zm5 2.908h-4.2v-2.908a2.274 2.274 0 0 1 1.44-2.18 1.944 1.944 0 0 1 1.791.259 2.423 2.423 0 0 1 .97 1.979zm-17.1 5h9v.8h-9zm0 3h7v.8h-7zm0-6h9v.8h-9zm4-3h5v.8h-5z"/></svg></span>
+                          <span class="sublink-text">Notebook Server</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+
+              <a id="nav-data-store" data-langlabel="data-store" href="../../../../../zh-CN/data-store/" class="top-nav-link">Data Stores</a>
+              <a id="nav-cloud" data-langlabel="cloud" href="../../../../../zh-CN/cloud/" class="top-nav-link">云</a>
+              <a id="nav-apps" data-langlabel="apps" href="../../../../../zh-CN/apps/" class="top-nav-link">应用程序</a>
+            </nav>
+
+
+            
+            
+            
+
+            <div class="margin-left-1 top-nav-list right hide-if-logged-in logged-out-navigation">
+               
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+              
+              <a data-langlabel="sign-in" id="login-link" class="icon-ui-user top-nav-link link-blue login-link" href="#">登录</a>
+              
+            </div>
+
+            
+            <nav class="margin-left-1 top-nav-list right hide-if-logged-out logged-in-navigation">
+              
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+             
+              <div class="dropdown js-dropdown right">
+
+                <div class="tablet-show top-nav-link">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a href="#" data-drawer="user-nav" class="user-nav-name js-drawer-toggle" data-first-name></a>
+                </div>
+
+                <div class="tablet-hide top-nav-link js-dropdown-toggle">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a class="user-nav-name top-nav-dropdown dropdown-btn" data-first-name>&nbsp;</a>
+                </div>
+
+                <nav class="dropdown-menu dropdown-right">
+                
+                  <a class="dropdown-link agolProfile" id="agolProfile" href="#">我的个人资料</a>
+                  <a class="dropdown-link js-log-out" id="agolLogout" href="#">登出</a>
+                </nav>
+              </div>
+            </nav>
+            
+
+            
+          </div>
+        </div>
+      </header>
+
+      <div class="js-search search-overlay">
+        <div class="search-content" role="dialog" aria-labelledby="search">
+          <form method="GET" id="helpSearchForm">
+            <label>
+              搜索 ArcGIS Server 10.8 帮助
+              <div class="search-bar">
+                <input type="search" name="q"  placeholder="搜索 ArcGIS Server 10.8 帮助" class="search-input js-search-input">
+                <input type="hidden" name="collection" value="help" />
+                <input type="hidden" name="product" value="arcgis-enterprise-windows" />
+                <input type="hidden" name="version" value="10.8" />
+                <input type="hidden" name="language" value="zh-CN" />
+              </div>
+            </label>
+            <input type="hidden" name="relativePath" value="../../../../../" /><button type="submit" class="btn btn-large right">搜索</button>
+          </form>
+        </div>
+      </div>
+
+      <!--googleon: all-->
+
+      <div id="skip-to-content">
+        <!--googleoff: all-->
+        <header class="sub-nav sub-nav-learn">
+          <div class="grid-container">
+            
+            <div class="column-24">
+              <div style="display:table;" class="sdk-home-banner">
+                <div class="sdk-home-banner-content">
+                  <h1 class="sub-nav-title link-white">ArcGIS Server</h1>
+                </div>
+              </div>
+            </div>
+
+            <div class="column-24">
+              <nav class='sub-nav-list tablet-hide'><a class="sub-nav-link" href="../../../../../zh-CN/server/" target="_top" title="ArcGIS Server 的概述和文档">主页</a><a class="sub-nav-link" href="../../../../../zh-CN/server/latest/get-started/windows/" target="_top" title="了解有关 ArcGIS Server 和服务器角色的信息">简介</a><a class="sub-nav-link" href="../../../../../zh-CN/server/latest/deploy/windows/" target="_top" title="构建、配置和升级部署">部署</a><a class="sub-nav-link is-active" href="../../../../../zh-CN/server/latest/manage-data/windows/" target="_top" title="管理企业的空间数据">管理数据</a><a class="sub-nav-link" href="../../../../../zh-CN/server/latest/publish-services/windows/" target="_top" title="使用 GIS 服务">管理服务</a><a class="sub-nav-link" href="../../../../../zh-CN/server/latest/create-web-apps/windows/" target="_top" title="创建 Web 应用程序和可打印地图">共享</a><a class="sub-nav-link" href="../../../../../zh-CN/server/latest/administer/windows/" target="_top" title="管理和保护 ArcGIS Server">管理</a><a class="sub-nav-link" href="../../../../../zh-CN/server/latest/develop/windows/" target="_top" title="构建扩展模块并自动执行常见任务">开发</a></nav><select class='tablet-show select-full trailer-half js-select-nav'><option value="../../../../../zh-CN/server/">主页</option><option value="../../../../../zh-CN/server/latest/get-started/windows/">简介</option><option value="../../../../../zh-CN/server/latest/deploy/windows/">部署</option><option selected="true" value="../../../../../zh-CN/server/latest/manage-data/windows/">管理数据</option><option value="../../../../../zh-CN/server/latest/publish-services/windows/">管理服务</option><option value="../../../../../zh-CN/server/latest/create-web-apps/windows/">共享</option><option value="../../../../../zh-CN/server/latest/administer/windows/">管理</option><option value="../../../../../zh-CN/server/latest/develop/windows/">开发</option></select>
+            </div>
+
+          </div>
+        </header>
+        <!--googleon: all-->
+       
+        <!-- content goes here -->
+        <div class="grid-container ">
+          
+
+            
+              
+  <!--BREADCRUMB-BEG--><div id="bigmac" class="sticky-breadcrumbs trailer-2" data-spy="affix" data-offset-top="180"> </div><!--BREADCRUMB-END-->
+  <!--googleoff: all-->
+    <div class="column-5 tablet-column-12 trailer-2 ">
+      <aside class="js-accordion accordion reference-index" aria-live="polite" role="tablist">
+        <div></div>
+      </aside>
+
+      <div class="js-sticky scroll-show tablet-hide leader-1 back-to-top" data-top="0" style="top: 0px;">
+        <a href="#" class="btn btn-fill btn-clear">返回顶部</a>
+      </div>
+    </div>
+  <!--googleon: all-->
+  
+            
+            
+            
+	
+		<div class="column-13  pre-1 content-section">
+	
+		<header class="trailer-1"><h1>ArcGIS Server 的数据源</h1></header>
+
+		 
+	<!--googleoff: all-->
+	
+		
+				<aside id="main-toc-small" class="js-accordion accordion tablet-show trailer-1">
+			      <div class="accordion-section">
+			        <h4 class="accordion-title">在本主题中</h4>
+			        <div class="accordion-content list-plain">
+			          <ol class="list-plain pre-0 trailer-0"><li><a href="#ESRI_SECTION1_9C2573C8944F43CAAEB6FC259F743A47">  您可以注册的数据源</a></li><li><a href="#ESRI_SECTION1_BA840936495646EFA1DED5BFABF1D51D">注册数据前</a></li><li><a href="#ESRI_SECTION1_015C666026144A7CBD9C17FD501F28FD">  注册数据的情景</a></li><li><a href="#ESRI_SECTION1_9086108E7B834277AFBEEA0210D50B5E">如何将您的数据注册到 <ph translate="no" varid="ArcGISforServer">ArcGIS Server</ph></a></li><li><a href="#ESRI_SECTION1_2632563688FC4908B70CF26FF49B4DAB">取消注册数据存储时的注意事项</a></li></ol>
+			        </div>
+			      </div>
+			     </aside>
+		
+    
+   <!--googleon: all-->
+
+
+		<main>
+			
+	
+    	
+    
+
+
+			
+<p id="GUID-D2070214-2CF5-4058-B635-2E25DAB93698">作为 <span class="ph">ArcGIS Server</span> 管理员或组织中的发布者，您可以注册 <span class="ph">ArcGIS Server</span> Web 服务的数据源，用于存储地图和图像缓存，也可用于 GeoAnalytics 和栅格分析输出存储。</p><p id="GUID-4D82679D-BCFC-40DD-9525-50E8731F28EA">通过将这些位置注册为数据存储，向 <span class="ph">ArcGIS Server</span> 提供一份访问位置列表以填充 web 服务数据。在多台计算机上发布时，数据注册还会帮助 <span class="ph">ArcGIS Server</span> 调整数据路径。此外，还可将这些数据存储中的一部分注册为栅格存储和大数据文件共享。</p><p id="GUID-EA027BDC-ABC4-4115-85EE-CA8E5D848A1E">假设您是 <span class="ph">ArcGIS Server</span> 管理员，当前有一个部门的 GIS 分析人员将从多台客户端计算机上将服务发布到您的 <span class="ph">ArcGIS Server</span> 站点。利用 <span class="ph">ArcMap</span>、<span class="ph">ArcGIS Pro</span> 或 <span class="ph">ArcGIS Server Manager</span> 中的工具，您可以将一组经认可的数据存储位置注册到 <span class="ph">ArcGIS Server</span> 站点，并将这些位置传达给分析人员。发布者还可以将经认可的文件夹、数据库（包括其中含有企业级或工作组级地理数据库的数据库）和云存储注册到站点。将这些数据存储注册到 <span class="ph">ArcGIS Server</span> 站点，可以减少分析人员因遇到权限问题而无法进行发布的事故数量。发布者可以创建引用已注册数据存储中的数据的服务。</p><p id="GUID-096EDD8E-E4E4-45FC-86D1-B7075CC682E0">还可以通过添加<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/portal/latest" href="../../../../../zh-CN/portal/latest/use/data-store-items.htm">数据存储项目</a>在您的 <span class="ph">ArcGIS Enterprise</span> 门户中为联合服务器注册数据存储位置。当您在门户中<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/portal/latest/administer" href="../../../../../zh-CN/portal/latest/administer/windows/add-items.htm#ADD_DATASTORE">添加数据存储项目</a>时，门户会将数据存储注册到您指定的 <span class="ph">ArcGIS Server</span> 站点。您可以在 <span class="ph">ArcGIS Server Manager</span> 中查看数据存储，且门户管理员可以<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/portal/latest/administer" href="../../../../../zh-CN/portal/latest/administer/windows/create-item-from-existing-data-store.htm">从现有数据库和文件夹数据存储中创建项目</a>。但是，您无法从 <span class="ph">ArcGIS Server Manager</span> 管理数据存储项目。数据存储项目必须<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/portal/latest" href="../../../../../zh-CN/portal/latest/use/manage-data-store-items.htm">在门户中管理</a>。</p><section class="section1 padded-anchor" id="ESRI_SECTION1_9C2573C8944F43CAAEB6FC259F743A47" purpose="section1"><h2>  您可以注册的数据源</h2><p id="GUID-970B7DB2-F3B7-4358-BFCD-0EF471C2177E">接下来 5 个章节将介绍发布者和 <span class="ph">ArcGIS Server</span> 管理员可注册到 <span class="ph">ArcGIS Server</span> 站点的数据存储。</p><p id="GUID-C6503214-C44C-4A64-859F-E029A4BAC8D8"> 如果数据位置发生改变，请添加更多的已注册数据位置。</p><section class="section2 padded-anchor" id="ESRI_SECTION2_9F39A2A7D1D34D79951E0597B08D5FC0" purpose="section2"><h3>数据库</h3><p id="GUID-D873D2C1-4DBA-442F-9C42-E041821A92D1"> 通过引用数据库连接文件 (<span class="usertext">.sde</span>)，您可以注册 ArcGIS 支持的任何数据库管理系统。连接到的数据库可以包含地理数据库，但并非必须包含地理数据库。</p><p id="GUID-9F27BE09-34FE-48B5-8929-6A0A242BD237">如果使用经数据库验证的用户进行连接，则用户帐户信息必须随 <span class="usertext">.sde</span> 文件一同保存，并且该用户必须拥有要发布数据的必要权限。例如，如果发布希望人们用于更新和添加要素的要素服务，则随已注册连接文件一同保存的用户必须拥有对数据库中的数据进行更新和创建的权限。</p><p id="GUID-5130CB4F-7130-45E3-AEFF-C5B5FC5F6C13">如果使用操作系统身份验证，则必须将 <a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/server/latest/administer" href="../../../../../zh-CN/server/latest/administer/windows/the-arcgis-server-account.htm"><span class="ph">ArcGIS Server</span></a> 帐户添加到数据库，并授予其访问数据所需的权限。</p><p id="GUID-D0A85548-5525-40B8-A474-8085A1927CFC">如果所注册的数据库包含传统版本化地理数据库，则 <span class="ph">ArcGIS Server</span> 可访问您为连接文件设置的地理数据库版本中存在的该数据版本。如果希望 <span class="ph">ArcGIS Server</span> 访问不同的版本，则必须注册单个连接文件，才能连接到这些地理数据库版本。例如，需要注册一个访问默认地理数据库版本的连接文件和一个访问子版本的连接文件。</p><p id="GUID-D7AC432E-9D9F-47D9-9F27-EBEDF2D96E10">如果所注册的数据库包含分支版本化地理数据库，则只能从默认版本发布；因此，请只注册一个访问默认版本的连接文件。</p><p id="GUID-09D8481F-5BCC-4CF7-8818-B2A6F84B4824" ishcondition="srv_os=windows">还可以通过引用 OLE DB 连接（<span class="usertext">.odc</span> 文件）将数据库注册到 <span class="ph">ArcGIS Server</span> 站点。OLE DB 连接提供对多个数据库源中数据的统一访问，但是属于非空间连接。您只能在 <span class="ph">ArcGIS Server Manager</span> 或 <span class="ph">ArcMap</span> 中注册这些文件。</p><p id="GUID-ABC88D49-27C4-4D84-BBFC-59F1FD02D08D"><span class="ph">ArcGIS Enterprise</span> 门户数据存储项目<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/portal/latest" href="../../../../../zh-CN/portal/latest/use/data-store-items.htm#GUID-582990AD-3EB4-4074-8A65-CAEB51E8AABD">支持的一组数据库</a>不同于在 <a class="xref xref" href="../../../../../zh-CN/server/latest/manage-data/windows/overview-register-data-with-arcgis-server.htm#UL_5F33657EDB6F4587B8AC0780D30901F2"><span class="ph">ArcGIS Server Manager</span>、<span class="ph">ArcMap</span> 或 <span class="ph">ArcGIS Pro</span> 中注册数据集时所支持的数据库</a>。</p></section><section class="section2 padded-anchor" id="ESRI_SECTION2_12DC7D51186049689BF1A83FE1474B7B" purpose="section2"><h3>文件夹</h3><p id="GUID-85DE8B3C-6807-4DF8-B0BF-95C554EED497">可以将本地和共享操作系统<a class="xref xref" href="../../../../../zh-CN/server/latest/manage-data/windows/registering-your-data-with-arcgis-server-using-manager.htm#ESRI_SECTION1_6C5F8400F19E4094B06235BC17F06DE7">文件夹</a>注册到 <span class="ph">ArcGIS Server</span> 站点，该站点包含要发布的数据文件。这些文件夹可以包含 shapefile、文件地理数据库、定位器文件、影像（栅格）文件和大数据文件。</p><p id="GUID-45E70189-0ED9-424E-B976-7199C66B62DD">注册文件夹时，同样会注册其子文件夹。出于安全考虑，请勿将整个驱动器注册到 <span class="ph">ArcGIS Server</span>。</p></section><section class="section2 padded-anchor" id="ESRI_SECTION2_F0BAE676844D489689D9DCCECA8C0E98" purpose="section2"><h3>大数据文件共享</h3><p id="GUID-51C74A67-26B2-4E38-AE62-4F64023A5D7D">大数据文件共享是共享的操作系统文件夹、<span class="ph">Apache Hadoop Distributed File System (HDFS)</span>、<span class="ph">Apache Hive</span>，或者包含用作 <span class="ph">GeoAnalytics 工具</span> 输入的分隔文件或 shapefile 集合的云存储。</p><p id="GUID-D1166A52-731F-40B9-90C0-4F177950509E">要将云存储用作大数据文件共享，必须先注册云存储。大数据文件共享支持 <span class="ph">Amazon Simple Storage Service (S3)</span> 存储段、<span class="ph">Microsoft Azure</span> Blob 存储容器和 <span class="ph">Microsoft Azure</span> Data Lake 存储。</p><p id="GUID-AAD0B967-4291-4366-9F89-D0BD00171C5A">有关注册大数据文件共享的信息，请参阅<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/geoanalytics/latest" href="../../../../../zh-CN/geoanalytics/latest/perform-analysis/what-is-a-big-data-file-share.htm">大数据文件共享入门</a>。</p></section><section class="section2 padded-anchor" id="ESRI_SECTION2_0FF9377EB53B4D429A89DDF85F8DED62" purpose="section2"><h3>栅格存储</h3><p id="GUID-BE8F6585-F379-41E9-9CA9-91C5B6BADEB8">栅格存储是输出数据存储；其包含运行栅格分析工具时所创建的影像图层。栅格存储可以为文件共享或云存储。</p><p id="GUID-391219D2-B72B-4F66-B806-E2CF0E5BCCE6">要使用云存储作为<a class="xref xref" href="../../../../../zh-CN/server/latest/manage-data/windows/registering-your-data-with-arcgis-server-using-manager.htm#ESRI_SECTION1_BF6287C0DD5B413D979055B627E49618">栅格存储</a>，必须先注册云存储。栅格存储支持 <span class="ph">Amazon S3</span> 存储段、<span class="ph">Azure</span> Blob 存储或 <span class="ph">Alibaba Cloud Object Storage Service (OSS)</span>。</p><p id="GUID-0308A1E1-EBCE-4F45-9063-C634B01F2916">有关注册栅格存储的信息，请参阅 <span class="ph">Portal for ArcGIS</span> 管理员指南中的<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/image/latest" href="../../../../../zh-CN/image/latest/raster-analytics/configure-and-deploy-arcgis-enterprise-for-raster-analytics.htm">针对栅格分析配置并部署 <span class="ph">ArcGIS Enterprise</span></a>。</p></section><section class="section2 padded-anchor" id="ESRI_SECTION2_1471973DAF444569A5C2671F1ABCAC4F" purpose="section2"><h3>云存储</h3><p id="GUID-C6A1D6F2-B2FC-4929-8CB5-906074D89D39">可以将 <span class="ph">Amazon Simple Storage Service (S3)</span> 存储段、<span class="ph">Azure</span> Blob 存储容器或 <span class="ph">Alibaba Cloud Object Storage Service (OSS)</span> 注册为地图和影像服务缓存的<a class="xref xref" href="../../../../../zh-CN/server/latest/manage-data/windows/registering-your-data-with-arcgis-server-using-manager.htm#REGISTER_CLOUD_STORE">云存储</a>以及栅格存储。可以将 <span class="ph">Amazon S3</span> 存储段、<span class="ph">Azure</span> Blob 存储容器或 <span class="ph">Microsoft Azure Data Lake</span> 存储注册为云存储以供大数据文件共享使用。</p><p id="GUID-F41406A1-F4C6-4151-AC92-FD37496FE8E7">其他几家云存储提供商表示可提供兼容 S3 的存储。</p><p id="GUID-C0A2C2BA-6540-4D54-99E8-474477B9C429">如果 <span class="ph">ArcGIS Server</span> 站点运行在相同的云平台上，则应仅使用地图和影像服务缓存的云存储。例如，如果 <span class="ph">ArcGIS GIS Server</span> 和 <span class="ph">ArcGIS Image Server</span> 站点正运行在 <span class="ph">Microsoft Azure</span> 上，则应仅使用地图和影像服务缓存的 <span class="ph">Azure</span> Blob 存储。</p><p id="GUID-8F852FA2-25F8-4A06-B9D9-BCCE983CDA96">您可以在 <span class="ph">Microsoft Azure</span> 中为一个或多个地理处理服务的<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/server/latest/administer" href="../../../../../zh-CN/server/latest/administer/windows/about-server-directories.htm#LI_656BB88A9DFA44679A4D580998FE3FFB">作业目录</a>使用云存储，即使您的 <span class="ph">ArcGIS Server</span> 的其他部分部署在本地或网络位置。有关说明，请参阅<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/server/latest/administer" href="../../../../../zh-CN/server/latest/administer/windows/use-cloud-storage-for-a-gp-service-jobs-directory.htm">将地理处理服务的作业目录移动到 <span class="ph">Microsoft Azure</span> 存储</a>。</p><section class="section3 padded-anchor" id="ESRI_SECTION3_87E7503681F04AFA8CDBE9A545FAA7DD" purpose="section3"><h4>兼容 <span class="ph">S3</span> 的存储提供程序</h4><p id="GUID-4C194EDE-24EC-4772-9010-FDB3E03AAC66">为了支持兼容 <span class="ph">S3</span> 的存储提供程序，<span class="ph">ArcGIS Server</span> 具有一种机制可以将自定义区域添加到 <span class="ph">Amazon Web Services (AWS)</span> 区域内置列表中，如<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/server/latest/deploy" href="../../../../../zh-CN/server/latest/deploy/windows/configure-regions-for-cloud-stores.htm">配置云存储区域</a>中所述。为了将兼容 <span class="ph">S3</span> 的存储提供程序与 ArcGIS 结合使用，提供程序必须与适用于 Java 的 <span class="ph">AWS</span> SDK 相兼容。</p><p id="GUID-6E27E174-37FE-468E-B3AC-3F037CB851FA">此软件支持多个要素的 <span class="ph">Amazon S3</span> 存储，但并非所有要素均支持自定义兼容 <span class="ph">S3</span> 的存储。</p><p id="GUID-3CDA3F19-2FD4-4159-84DE-B049E1901220"><ul purpose="ul" id="UL_7201EB65240C4344B54F75CC2EB5BE4D"><li purpose="li" id="LI_C2662859EB3D4D65B128B8627B0C3816">兼容 <span class="ph">S3</span> 的存储仅支持访问密钥和密钥身份验证；不支持 IAM 角色。</li><li purpose="li" id="LI_1F9E241CEF7A404F8499580AD42C2468">您只能使用兼容 <span class="ph">S3</span> 的存储来处理缓存地图和影像服务中的地图请求。</li></ul></p><p id="GUID-B8564BEF-D130-4CE3-BC63-414D4988739A">在理解 <span class="ph">Esri</span> 不保证兼容 <span class="ph">S3</span> 的自定义存储会与 <span class="ph">ArcGIS Server</span> 相兼容，并且没有可用于解决兼容性问题的技术支持的情况下，可以使用兼容 <span class="ph">S3</span> 的存储提供程序。此外，<span class="ph">Esri</span> 不保证第三方的互操作性，但是会通过合理的方式确保其继续操作。</p></section></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_BA840936495646EFA1DED5BFABF1D51D" purpose="section1"><h2>注册数据前</h2><p id="GUID-8F3A9FBD-0FFA-4DA7-9BA6-CF90CC7F3323"> 注册数据并不会授予 <span class="ph">ArcGIS Server</span> 站点对数据的访问权限。注册数据之前，需要确保对于存储在文件夹、工作组级地理数据库中的数据，或者使用操作系统身份验证访问的数据库或企业级地理数据库中的数据，<span class="ph">ArcGIS Server</span> 帐户至少具有读取权限。对于使用数据库身份验证用户访问的数据库或企业级地理数据库，必须授予该用户对数据的权限。要了解此过程的详细信息，请参阅<a class="xref xref" href="../../../../../zh-CN/server/latest/manage-data/windows/making-your-data-accessible-to-arcgis-server.htm">使数据可供 <span class="ph">ArcGIS Server</span> 访问</a>。</p><p id="GUID-509C4CB9-BFC6-4E73-ADCD-5F86318B8B4A">如果要将企业级地理数据库或数据库（<span class="usertext">.sde</span> 或 <span class="usertext">.odc</span> 文件）注册到 <span class="ph">ArcGIS Server</span> 站点，也需要确保站点中的每台 <span class="ph">ArcGIS Server</span> 计算机都安装了 64 位版本的数据库客户端软件。例如，如果要注册 <span class="ph">Microsoft SQL Server</span> 数据库，则必须在站点中的每台 <span class="ph">ArcGIS Server</span> 计算机上安装受支持的 <span class="ph">SQL Server</span> 客户端。<span class="ph">请注意，安装客户端软件后，您需要重新启动 <span class="ph">ArcGIS Server</span> 服务。</span></p><p id="GUID-51DCD590-8EC8-48B2-8D29-D1E206A6B8FF">以下链接描述了每个数据库所需的客户端软件、如何授权 <span class="ph">ArcGIS Server</span> 帐户数据访问权限以及如何连接到数据库：</p><ul purpose="ul" id="UL_5F33657EDB6F4587B8AC0780D30901F2"><li purpose="li" id="LI_B1F8F67C18234884BD065174A584FA3D"><a class="xref xref" href="../../../../../zh-CN/server/latest/manage-data/windows/register-dameng-with-arcgis-server.htm">将 <span class="ph">Dameng</span> 数据库注册到 <span class="ph">ArcGIS Server</span></a></li><li purpose="li" id="LI_C0E7E68661804045A375E24F4BB32D78"><a class="xref xref" href="../../../../../zh-CN/server/latest/manage-data/windows/register-db2-with-arcgis-server.htm">将 <span class="ph">Db2</span> 数据库注册到 <span class="ph">ArcGIS Server</span></a></li><li purpose="li" id="LI_DA9EFE86BF3848AD9AEB555C0B46FF43"><a class="xref xref" href="../../../../../zh-CN/server/latest/manage-data/windows/register-oracle-with-arcgis-server.htm">将 <span class="ph">Oracle</span> 数据库注册到 <span class="ph">ArcGIS Server</span></a></li><li purpose="li" id="LI_FD0FE471ED3B4C799A223B5DCB88EE55"><a class="xref xref" href="../../../../../zh-CN/server/latest/manage-data/windows/register-postgresql-with-arcgis-server.htm">将 <span class="ph">PostgreSQL</span> 数据库注册到 <span class="ph">ArcGIS Server</span></a></li><li purpose="li" id="LI_982A12807F2C4223B1B64B83A662DAF8"><a class="xref xref" href="../../../../../zh-CN/server/latest/manage-data/windows/register-sap-hana-with-arcgis-server.htm">将 <span class="ph">SAP HANA</span> 注册到 <span class="ph">ArcGIS Server</span></a></li><li purpose="li" id="LI_7BE336C7F3334D02B4911394A114ECA8"><a class="xref xref" href="../../../../../zh-CN/server/latest/manage-data/windows/register-sql-server-with-arcgis-server.htm">将 <span class="ph">SQL Server</span> 数据库注册到 <span class="ph">ArcGIS Server</span></a></li><li purpose="li" id="LI_8182F93098604DB9BD631A47DCD26C7B"><a class="xref xref" href="../../../../../zh-CN/server/latest/manage-data/windows/register-teradata-with-arcgis-server.htm">将 <span class="ph">Teradata</span> 数据库注册到 <span class="ph">ArcGIS Server</span></a></li><li purpose="li" id="LI_36D61DF3C09248C9A1D68758D6A31D4D" ishcondition="srv_os=windows"><a class="xref xref" href="../../../../../zh-CN/server/latest/manage-data/windows/register-workgroup-geodatabase-with-arcgis-server.htm">将工作组地理数据库注册到 <span class="ph">ArcGIS Server</span></a></li></ul><p id="GUID-FC887C01-AA0C-427F-87DE-1425B74A4AFB">无法将 <span class="ph">IBM Informix</span> 数据库或 z/OS 数据库上的 <span class="ph">Db2</span> 注册到 <span class="ph">ArcGIS Server</span> 站点。相反，可<a class="xref xref" esrisubtype="extrel" hrefpfx="https://desktop.arcgis.com/zh-cn/arcmap/latest/map" href="https://desktop.arcgis.com/zh-cn/arcmap/latest/map/publish-map-services/creating-a-service-definition-in-arcgis-for-desktop.htm">创建和发布服务定义文件</a>（引用数据库中的数据）。</p></section><section class="section1 padded-anchor" id="ESRI_SECTION1_015C666026144A7CBD9C17FD501F28FD" purpose="section1"><h2>  注册数据的情景</h2><p id="GUID-0D2B18F9-17CC-480D-94FF-81162C44DEA5"> 注册数据之前，请检查下列方案并考虑工作流之间如何进行关联：</p><section class="section2 padded-anchor" id="ESRI_SECTION2_50DEC7CB4EE24A38B2C97FD598487384" purpose="section2"><h3>  A) 发布者的计算机与 <span class="ph">ArcGIS Server</span> 站点引用同一数据库</h3><p id="GUID-5CC315F0-D69F-4997-B027-0C6AAD9CA5BA"> 如果发布者的计算机与 <span class="ph">ArcGIS Server</span> 站点将引用相同数据库、工作组级地理数据库或企业级地理数据库中的数据，则注册数据时请导入发布者的数据库连接，然后将 <span class="ph">ArcGIS Server</span> 站点的数据库连接设置为<span class="uicontrol">与发布者连接相同</span>。</p><p id="GUID-2FBE9D1E-5BED-4B64-92F8-4E3A5DBA36D1"><figure class="fig" href="#"><img src="GUID-FD593F54-A248-4601-BE8F-679519CECA4F-web.png" alt="发布者的计算机与 ArcGIS Server 查看和访问位于同一数据库中的数据" title="发布者的计算机与 ArcGIS Server 查看和访问位于同一数据库中的数据"></figure></p><section class="section3 padded-anchor" id="ESRI_SECTION3_C550DD4934AE40F78EC27AE7F6738798" purpose="section3"><h4>  何时使用此方案</h4><p id="GUID-40A1FEEA-1D03-414E-A013-A3E41DF12BE8"> 如果希望避免在 <span class="ph">ArcGIS Server</span> 计算机上放置数据副本，请使用此方案。例如，假设您希望使用本地企业级地理数据库的数据从 <span class="ph">ArcMap</span> 向 <span class="ph">ArcGIS Server</span> 发布地图服务，或者从 <span class="ph">ArcGIS Pro</span> 向您的任一门户联合服务器发布地图图像图层。为避免将地图文档所引用的数据副本放置在其中一台 <span class="ph">ArcGIS Server</span> 计算机的文件夹中，请导入发布者的数据库连接并将 <span class="ph">ArcGIS Server</span> 站点的数据库连接设置为<span class="uicontrol">与发布者连接相同</span>。发布后，地图文档将继续引用存储在企业级地理数据库中的数据。</p></section><section class="section3 padded-anchor" id="ESRI_SECTION3_5FF7607C3AF04BEF9E44DCD37D6A5278" purpose="section3"><h4>  何时不使用此方案</h4><p id="GUID-F90E978F-206F-4BF2-9CB4-A154541A88B6"><ul purpose="ul" id="UL_207E48D37C6642FD9C5E5B9090D5F1AF"><li purpose="li" id="LI_CF88C3E9181242F9B09C385FBCC24231">如果数据位于文件地理数据库或文件目录中。应使用<a class="xref xref" href="../../../../../zh-CN/server/latest/manage-data/windows/overview-register-data-with-arcgis-server.htm#ESRI_SECTION2_197E6EBBE8AE4CE992906F8F61030210">下一个</a>方案。</li><li purpose="li" id="LI_41805776A86D40F3A0748E22F907280E">如果希望在企业级地理数据库中保留一份单独的数据副本以用于 Web 中。</li></ul></p></section></section><section class="section2 padded-anchor" id="ESRI_SECTION2_197E6EBBE8AE4CE992906F8F61030210" purpose="section2"><h3>  B) 发布者的计算机与 <span class="ph">ArcGIS Server</span> 站点引用同一文件夹</h3><p id="GUID-A5818E2C-4800-42B0-A7F6-B00DC0CF41E6"> 如果发布者的计算机与 <span class="ph">ArcGIS Server</span> 站点将引用同一文件夹中的数据，则注册数据时请指定发布者的文件夹路径，然后将 <span class="ph">ArcGIS Server</span> 站点的文件夹路径设置为<span class="uicontrol">与发布者路径相同</span>。除了使用文件夹而不是数据库，此方案与上一方案没什么不同。</p><p id="GUID-C57B69FB-9E5D-4890-9F06-FDDF1CD32C44"><figure class="fig" href="#"><img src="GUID-E06C96E6-F7D3-4B13-BBF5-E5A8182D80D2-web.png" alt="发布者的计算机与 ArcGIS Server 查看和访问同一文件夹中的数据" title="发布者的计算机与 ArcGIS Server 查看和访问同一文件夹中的数据"></figure></p><section class="section3 padded-anchor" id="ESRI_SECTION3_8F8B02B1803C40018C40928196AF5B8C" purpose="section3"><h4>  何时使用此方案</h4><p id="GUID-4705D3FA-8493-4AAC-BDAB-A6F37EEDB536"> 如果希望避免在其中一台 <span class="ph">ArcGIS Server</span> 计算机上放置数据副本，请使用此方案。例如，假设您希望使用某一网络目录中的数据向 <span class="ph">ArcGIS Server</span> 发布地理处理服务。为避免将地理处理服务数据的副本复制到其中一台 <span class="ph">ArcGIS Server</span> 计算机上，请指定发布者的文件夹路径并将 <span class="ph">ArcGIS Server</span> 站点的文件夹路径设置为<span class="uicontrol">与发布者路径相同</span>。发布后，地理处理服务将继续引用存储在网络目录中的地理处理模型、输入、输出、脚本和投影数据。</p><p id="GUID-976EE91D-1BE5-4E66-BA1F-5F5F53E2881C"> 如果拥有管理所有数据的 <span class="ph">Linux</span> 上的 <span class="ph">ArcGIS Server</span> 站点，且已设置 Samba 以允许在 <span class="ph">Microsoft Windows</span> 和 <span class="ph">Linux</span> 之间共享文件，则此方案也非常有用。例如，如果希望发布引用 <span class="ph">Linux</span> 计算机上数据的地图文档，请将 Samba 目录 (<span class="usertext">\\net\data</span>) 注册为发布者文件夹，并将 <span class="ph">Linux</span> 目录 (<span class="usertext">/net/data</span>) 注册为 <span class="ph">ArcGIS Server</span> 站点的文件夹。发布后，地图文档会自动修改以引用 <span class="ph">Linux</span> 计算机中的目录。</p></section><section class="section3 padded-anchor" id="ESRI_SECTION3_55851028D607454AB19D1E26105DE305" purpose="section3"><h4>  何时不使用此方案</h4><p id="GUID-5F90620C-8D42-4BE6-AEEA-6BCD7C2FB710"><ul purpose="ul" id="UL_1ED5951FF7014C6DB1355F4347CEFDED"><li purpose="li" id="LI_53EA2ACBF8204F84955EC187CD63DCEA">如果数据位于某个数据库中。应使用<a class="xref xref" href="../../../../../zh-CN/server/latest/manage-data/windows/overview-register-data-with-arcgis-server.htm#ESRI_SECTION2_50DEC7CB4EE24A38B2C97FD598487384">上一个</a>方案。</li><li purpose="li" id="LI_BE7A9D9020264AF895C8E90C6A44E34A">如果要发布要素或 WFS-T 服务。</li></ul></p></section></section><section class="section2 padded-anchor" id="ESRI_SECTION2_A1D398914B6E4F6BBCB682EF5FE865F1" purpose="section2"><h3>C) 发布者的计算机和 <span class="ph">ArcGIS Server</span> 站点引用不同的地理数据库，并且数据不是静态数据</h3><p id="GUID-AA86FF52-4413-47E5-87E9-0E08275EC498"> 由于防火墙的存在、计算平台之间的差异或者希望保留一份单独的数据副本以便在 Web 中使用，发布者与 <span class="ph">ArcGIS Server</span> 站点可能各自引用不同地理数据库中的相同数据。要使用此方案注册您的数据，需要同时导入与发布者数据库的连接以及与 <span class="ph">ArcGIS Server</span> 站点的地理数据库的连接。</p><p id="GUID-5E4D858B-105E-4601-A609-68EC1BE22580"><figure class="fig" href="#"><img src="GUID-FBD385E0-E044-4507-B895-497CD7F450B8-web.png" alt="发布者的计算机与 ArcGIS Server 使用单独的地理数据库" title="发布者的计算机与 ArcGIS Server 使用单独的地理数据库"></figure></p><section class="section3 padded-anchor" id="ESRI_SECTION3_ACB1D0D76E8E4EC186BE1E4D93F560FB" purpose="section3"><h4>  何时使用此方案</h4><p id="GUID-410BE579-CFB0-440B-834A-DEF8E3A5D6C3"> 如果希望在本地企业级地理数据库中保留一份单独的数据副本以便在 Web 中使用，请使用此方案。这种情况下，您有责任确保 <span class="ph">ArcGIS Server</span> 站点的地理数据库中存在一份发布者地理数据库的数据副本。此方案仅适用于企业级地理数据库，而不适用于数据库。</p><p id="GUID-C7482000-666F-4137-87C2-0FCEECFECD12"> 要允许用户复制数据，以使发布者和 <span class="ph">ArcGIS Server</span> 站点具有更改数据的访问权限，则在 <span class="ph">ArcMap</span> 中注册您的企业级地理数据库时，请选中<span class="uicontrol">为服务器数据库创建地理数据服务</span>。选中此选项会自动创建<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/server/latest/publish-services" href="../../../../../zh-CN/server/latest/publish-services/windows/what-is-a-geodata-service-.htm">地理数据服务</a>，您可以通过此服务将发布者地理数据库的数据复本手动发送到
+<span class="ph">ArcGIS Server</span> 站点的地理数据库。</p><p id="GUID-2C3E5FB1-CCEF-45B3-AC03-39BAB8A3DDE5"> 您也可以使用地理数据服务同步企业级地理数据库，由此确保对发布者数据库所做的任何后续更改都反映在 <span class="ph">ArcGIS Server</span> 站点的地理数据库中。这对于云部署尤其有利，因为不需要有人登录到云计算机并安排数据传输。</p><p id="GUID-303D35FA-BC7C-47CF-9102-EFD005C6C37A"> 此方案也非常适合将要素服务发布到本地或云 <span class="ph">ArcGIS Server</span> 站点。例如，如果使用此方案发布要素服务，会将本地执行的编辑推送到 <span class="ph">ArcGIS Server</span> 站点的地理数据库，从而使其对要素服务的最终用户可用。相反，如果 Web 编辑者更改了 <span class="ph">ArcGIS Server</span> 站点的地理数据库中的任何要素，所进行的编辑会与发布者地理数据库同步。</p></section><section class="section3 padded-anchor" id="ESRI_SECTION3_B6374CC27CC64103AA693CD317FAEE73" purpose="section3"><h4>  何时不使用此方案</h4><p id="GUID-72A481FD-7417-42DB-9F82-BCEF75132F31"><ul purpose="ul" id="UL_3C548F9CDFD94592A107E69D1D8C5CA4"><li purpose="li" id="LI_9328CB5C31D44310A243495964CE03C0"> 如果数据位于文件地理数据库或文件目录中。应使用<a class="xref xref" href="../../../../../zh-CN/server/latest/manage-data/windows/overview-register-data-with-arcgis-server.htm#ESRI_SECTION2_781E94B0D808448EBC8CB920E2A6C133">方案 D</a>。</li><li purpose="li" id="LI_F7185F6D807C4069A57EF3E975785EA6">如果数据位于某个数据库中（不包含地理数据库的数据库）。应使用<a class="xref xref" href="../../../../../zh-CN/server/latest/manage-data/windows/overview-register-data-with-arcgis-server.htm#ESRI_SECTION2_50DEC7CB4EE24A38B2C97FD598487384">方案 A</a>。</li><li purpose="li" id="LI_889CA25C357348079E2F11E07538BC6B">如果不希望在服务器中保留一份单独的地理数据库的副本。</li><li purpose="li" id="LI_314FEF83EE514957BF8BC71F0CA53131">如果从 <span class="ph">ArcGIS Pro</span> 发布到您的任一门户联合服务器。</li><li purpose="li" id="LI_016880CF2AD74D6BA9ACAE51671A98C7">发布的数据是静态数据。在这种情况下，无需将发布者地理数据库中的更改同步到 <span class="ph">ArcGIS Server</span> 站点的地理数据库。在这种情况下，可以使用托管数据库方案而不进行复制。</li></ul></p></section></section><section class="section2 padded-anchor" id="ESRI_SECTION2_781E94B0D808448EBC8CB920E2A6C133" purpose="section2"><h3>D) 发布者的计算机与 <span class="ph">ArcGIS Server</span> 站点引用不同的文件夹</h3><p id="GUID-F2994C7B-9572-4B4F-914D-343AF4F0A54E"> 由于防火墙的存在、计算平台之间的差异或者保留一份单独的数据副本以便在 Web 中使用，发布者与服务器可能各自在他们自己的数据文件夹中引用相同数据的副本。要使用此方案注册您的数据，需要输入到发布者文件夹以及服务器文件夹的路径。</p><p id="GUID-D2943C6A-E0F0-416E-B389-C38E3B7C3D0F"><figure class="fig" href="#"><img src="GUID-EC32C5FB-985A-4027-A69D-520634D68A58-web.png" alt="发布者的计算机与 ArcGIS Server 使用各自不同的数据目录" title="发布者的计算机与 ArcGIS Server 使用各自不同的数据目录"></figure></p><section class="section3 padded-anchor" id="ESRI_SECTION3_89C6855F1FC54BB18886B1EFDEA0C000" purpose="section3"><h4>  何时使用此方案</h4><p id="GUID-13AB20D1-AD78-4637-83AE-9D16329461DE"> 此方案适用于 <span class="ph">Linux</span> 部署、云部署或者任何希望发布者与 web 用户使用单独数据副本的部署。</p><p id="GUID-6A67E992-8A7D-4A9D-ADC5-638F80C4498B"> 例如，如果希望从 <span class="ph">ArcMap</span> 发布地图服务到 <span class="ph">Linux</span> 上的 <span class="ph">ArcGIS Server</span> 站点，
+可以创建一份地图文档数据的相同副本，并将数据放置在 <span class="ph">ArcGIS Server</span> 计算机上。将两个目录都注册到 <span class="ph">ArcGIS Server</span> 站点并发布后，地图文档会自动修改，以引用在 <span class="ph">ArcGIS Server</span> 计算机上的文件夹。</p><p id="GUID-4DBCA8AA-9D24-459D-AF44-40EA2E94774E"> 如果要发布到在云端运行的 <span class="ph">ArcGIS Server</span> 站点，此方案同样有用。例如，您可以复制本地数据并将其放置于云中虚拟机上的任意目录。发布后，数据路径会自动修改以引用云服务器中的目录。这种方法的缺点是，需要用户登录到云计算机并为向云进行数据传输做好安排（这可以通过 FTP、远程桌面复制和粘贴或者其他受支持的数据传输方法来执行）。</p></section><section class="section3 padded-anchor" id="ESRI_SECTION3_9B5DC75512FE43799A3BC09B138E4E76" purpose="section3"><h4>  何时不使用此方案</h4><p id="GUID-CE06028D-B9B3-4A37-93DC-BD51796346D5"><ul purpose="ul" id="UL_510183BFD58A4BE98CBC3D050FEE91C6"><li purpose="li" id="LI_A22E0D0504154F9B80D822ED7A633B97">如果数据位于某个企业级地理数据库中，应使用<a class="xref xref" href="../../../../../zh-CN/server/latest/manage-data/windows/overview-register-data-with-arcgis-server.htm#ESRI_SECTION2_A1D398914B6E4F6BBCB682EF5FE865F1">方案 C</a>。</li><li purpose="li" id="LI_F380CE67A75B4FE6847F639BA632815E">如果数据位于某个数据库中，应使用<a class="xref xref" href="../../../../../zh-CN/server/latest/manage-data/windows/overview-register-data-with-arcgis-server.htm#ESRI_SECTION2_50DEC7CB4EE24A38B2C97FD598487384">方案 A</a>。</li><li purpose="li" id="LI_148383CF50E34A4BB1615DB4711EF1CC">如果不希望在服务器中保留一份单独的数据副本。</li><li purpose="li" id="LI_AFFFF0A89C5A4FB8A006B943E1CEF44E">如果从 <span class="ph">ArcGIS Pro</span> 发布到您的任一门户联合服务器。</li></ul></p></section></section><section class="section2 padded-anchor" id="ESRI_SECTION2_F29DBC094AA04078A708B15C7269E46D" purpose="section2"><h3>E) 发布者的计算机与 <span class="ph">ArcGIS Server</span> 站点引用不同的地理数据库</h3><p id="GUID-25C8BB7C-DA53-48E1-B1CC-E265E9581CC5"> 此方案类似于方案 C，但在此方案中，不会对两个地理数据库之间的数据进行同步。如果要将本地企业级地理数据库中的要素数据移动到云端中的企业级地理数据库，则此方法非常有用。</p><p id="GUID-1F734DDA-0906-4F68-8085-0A9F6C26AB9D"><img purpose="img" placement="inline" alt="发布要素服务时复制到云端的要素数据" title="发布要素服务时复制到云端的要素数据" src="GUID-5880FA2A-C4DD-4E6C-9219-81A341A523D0-web.png"></p><section class="section3 padded-anchor" id="ESRI_SECTION3_9100CBFC41AE4DF2BBFE878E4F99C374" purpose="section3"><h4>  何时使用此方案</h4><p id="GUID-92FC7456-B6C4-4E4E-BAD8-4F6DE05B1F93"> 可以使用此方案将要素数据移动到云端。此方案需要满足以下条件： <ul purpose="ul" id="UL_1190874AFFE0464E8F43CE7BBC61F4D7"><li purpose="li" id="LI_AECC385199EB4AA3BCD20838E42A1A80">本地数据源和云端中的数据存储必须为企业级地理数据库。</li><li purpose="li" id="LI_77705FACB351407798DBD4EBF5AB091E">必须将云端中的企业级地理数据库注册为独立或联合 <span class="ph">ArcGIS Server</span> 站点的托管数据库。</li><li purpose="li" id="LI_8E22EDDA01CE48FF930CC474D9C712D5">发布者必须使用 <span class="ph">ArcMap</span> 将要素服务发布到云端中的独立或联合 <span class="ph">ArcGIS Server</span> 站点。</li></ul> </p></section><section class="section3 padded-anchor" id="ESRI_SECTION3_194E6A03710D48669C7BCBC58B9C90B9" purpose="section3"><h4>  何时不使用此方案</h4><p id="GUID-28EEC888-FF93-497B-8F5E-0E5893223838"><ul purpose="ul" id="UL_2DDC141FF2A544E2956F4C08E3B7F616"><li purpose="li" id="LI_3CF757DD148B4E47BEF2F3C7DC6F44D6"> 如果数据位于文件地理数据库或文件目录中。</li><li purpose="li" id="LI_ECFB6E9F1F644C57BAB5AEA39137F9C6">如果数据位于某个数据库中（不包含地理数据库的数据库）。</li><li purpose="li" id="LI_A1353A52C9B54C39A512621D7E8EE72C">如果要对发布者与 <span class="ph">ArcGIS Server</span> 站点的地理数据库之间的数据更改进行同步，请使用<a class="xref xref" href="../../../../../zh-CN/server/latest/manage-data/windows/overview-register-data-with-arcgis-server.htm#ESRI_SECTION2_A1D398914B6E4F6BBCB682EF5FE865F1">方案 C</a>。</li></ul></p></section></section><section class="section2 padded-anchor" id="ESRI_SECTION2_C6FC09C3F39F46D289EAB3759A15130A" purpose="section2"><h3>  F) 发布者的计算机引用本地地图或影像数据，而 <span class="ph">ArcGIS Server</span> 站点引用云存储位置</h3><p id="GUID-517B73A8-2134-4F3B-80CB-536EB03E298D"> 如果您的 <span class="ph">ArcGIS GIS Server</span> 站点或 <span class="ph">ArcGIS Image Server</span> 站点正运行在云端中，并且您还希望将地图或影像服务缓存存储在云端，则发布之前，请为您的云提供商提供连接和身份验证信息。发布缓存的地图或影像服务时，缓存将驻留在注册的云存储中。</p><p id="GUID-5442C387-A322-4154-B9E1-0AD7B1843768"><img purpose="img" placement="inline" alt="通过云容器中存储的缓存发布地图或影像服务" title="通过云容器中存储的缓存发布地图或影像服务" src="GUID-FC089523-847F-4C06-9709-9DFAEFD14FDE-web.png"></p><section class="section3 padded-anchor" id="ESRI_SECTION3_4700A616DF8144A4BDEB5F83651E5317" purpose="section3"><h4>  何时使用此方案</h4><p id="GUID-8E37DA4B-F98E-4702-9B62-F2F44575B1F2">  如果您的 <span class="ph">ArcGIS Server</span> 站点运行在 <span class="ph">AWS</span>、<span class="ph">Microsoft Azure</span> 或 Alibaba 上，并且您希望地图或影像服务分别引用存储在 <span class="ph">Amazon S3</span> 存储段、<span class="ph">Azure</span> Blob 存储容器或 Alibaba 存储段中的缓存，请使用此方案。</p></section><section class="section3 padded-anchor" id="ESRI_SECTION3_CA8D1C80892F405C8B35814EB66A7011" purpose="section3"><h4>  何时不使用此方案</h4><p id="GUID-4E29A2C1-4545-427C-A0AE-7AEFE487A7B6"><ul purpose="ul" id="UL_0F9C1D27C2224DBFBDB1BDA1D1E4D240"><li purpose="li" id="LI_C4DDCBA9B68549C992C285D0A3032C2F">您的 <span class="ph">ArcGIS Server</span> 站点未运行在云端。</li></ul></p></section></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_9086108E7B834277AFBEEA0210D50B5E" purpose="section1"><h2>如何将您的数据注册到 <span class="ph">ArcGIS Server</span></h2><p id="GUID-66FBC98B-43CF-4D5F-9610-0A443D5158C6"> 可以使用 <span class="ph">ArcGIS Server Manager</span>、<span class="ph">ArcMap</span> 或 <span class="ph">ArcGIS Pro</span> 将数据文件夹、数据库和云位置注册到 <span class="ph">ArcGIS Server</span>。如果您的 <span class="ph">ArcGIS Server</span> 站点与门户联合，则您可以添加数据存储项目，用于发布要素和影像图层。</p><p id="GUID-2238D285-67D4-4F60-B6F0-B85CE1BDB08B">有关详细信息，请参阅以下内容：</p><ul purpose="ul" id="UL_931949D15B7A43978CCEC0C7252AA42C"><li purpose="li" id="LI_FB8E72B912A748CB87B10F41BBCD8ECE"><a class="xref xref" href="../../../../../zh-CN/server/latest/manage-data/windows/registering-your-data-with-arcgis-server-using-manager.htm">使用 <span class="ph">Server Manager</span> 将数据注册到 <span class="ph">ArcGIS Server</span></a></li><li purpose="li" id="LI_37085E383EF944CF91C2D7BF29F898CC"><a class="xref xref" href="../../../../../zh-CN/server/latest/manage-data/windows/registering-your-data-with-arcgis-server-using-arcgis-for-desktop.htm">使用 <span class="ph">ArcGIS Desktop</span> 或 <span class="ph">ArcGIS Pro</span> 将数据注册到 <span class="ph">ArcGIS Server</span></a></li><li purpose="li" id="LI_44179693454046859FDE8EB940DA58A1"><a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/portal/latest" href="../../../../../zh-CN/portal/latest/use/data-store-items.htm"><span class="ph">ArcGIS Enterprise</span> 门户中的数据存储项目</a></li></ul></section><section class="section1 padded-anchor" id="ESRI_SECTION1_2632563688FC4908B70CF26FF49B4DAB" purpose="section1"><h2>取消注册数据存储时的注意事项</h2><p id="GUID-2BD91A5D-F4F3-405B-8B2D-90D758A9E572">如果现有服务包含数据存储中的数据，则不应取消注册数据存储。</p><p id="GUID-AB005F3D-F240-4CE1-94A1-47CEED69FEC6">如果从 <span class="ph">ArcGIS Server</span> 站点中取消注册某个数据存储，并且该数据存储用于填充现有服务，那么您仍然可以查看服务，具体取决于所使用的数据存储类型。取消注册数据存储时，请注意以下限制： <ul purpose="ul" id="UL_4B16ABF741054C64AD740062CC1C5750"><li purpose="li" id="LI_B3B096A3EF51410898727F2CF9CE8686">对于在 <span class="ph">ArcGIS Server Manager</span>、<span class="ph">ArcGIS Pro</span> 或 <span class="ph">ArcMap</span> 中注册的数据库，您仍然可以查看其所填充的服务中的数据。但是，如果更改了使用数据存储进行存储的密码，将无法更新服务以使用新密码。此时，服务将不再运行，您需要注册包含服务数据的数据库并重新发布服务。</li><li purpose="li" id="LI_B012D768803241589B288FCF1661B881">对于注册数据库和托管数据库，如果源数据存储不再注册到 <span class="ph">ArcGIS Server</span> 站点，那么任何添加到集群的新 <span class="ph">ArcGIS Server</span> 计算机都将无法识别服务。您需要注册包含服务数据的数据库并重新发布服务，以便新计算机能够识别服务。</li><li purpose="li" id="LI_A5836425AB5C43A7B49D54432960626F">如果您在 <span class="ph">ArcGIS Enterprise</span> 门户中添加了数据存储项目，请不要使用 <span class="ph">ArcGIS Server Manager</span>、<span class="ph">ArcGIS Pro</span> 或 <span class="ph">ArcMap</span> 取消注册。您必须<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/portal/latest" href="../../../../../zh-CN/portal/latest/use/manage-data-store-items.htm#ESRI_SECTION1_32BA7BF8556946D299EA28A002C1ECA4">从数据存储项目中移除联合服务器</a>。</li><li purpose="li" id="LI_45035B4B867B46C6B0575E7464FCEF97">尽管可以在 <span class="ph">ArcGIS Server Manager</span> 中取消注册托管服务器站点中的 <span class="ph">ArcGIS Data Store</span> 关系数据存储、切片缓存数据存储以及时空大数据存储，但是请勿执行此操作。如果从 <span class="ph">Server Manager</span> 取消注册这些数据存储，则其所填充的服务将不再运行。<p id="GUID-35205B50-CDCD-4544-9FA1-91A995612E1D">如果您或组织内的发布者不小心在 <span class="ph">ArcGIS Server Manager</span> 中取消注册了 <span class="ph">ArcGIS Data Store</span>（或者在 <span class="ph">ArcMap</span> 中取消注册了关系数据存储），那么您必须将 <span class="ph">ArcGIS Data Store</span> <a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/portal/latest/administer" href="../../../../../zh-CN/portal/latest/administer/windows/data-store-utility-reference.htm#ESRI_SECTION1_21824FB573434E5783C48F0D63C1F228">重新配置</a>到同一个 <span class="ph">ArcGIS Server</span> 站点，以便使您的服务再次运行。</p></li></ul></p></section>
+			
+				<hr>
+				<!--googleoff: all-->
+				
+	
+        
+		    <p class="feedback right">
+		        <a id="afb" class="icon-ui-contact" href="/feedback/" data-langlabel="feedback-on-this-topic" >有关此主题的反馈?</a>
+		    </p>
+        
+	
+
+				<!--googleon: all-->
+			
+		</main>
+	</div>
+	
+	<!--googleoff: all-->
+	
+		
+			<div id="main-toc-large" class="column-5">
+			    <div class="panel font-size--2 tablet-hide trailer-1">
+			      <h5 class="trailer-half">在本主题中</h5>
+			      <ol class="list-plain pre-0 trailer-0"><li><a href="#ESRI_SECTION1_9C2573C8944F43CAAEB6FC259F743A47">  您可以注册的数据源</a></li><li><a href="#ESRI_SECTION1_BA840936495646EFA1DED5BFABF1D51D">注册数据前</a></li><li><a href="#ESRI_SECTION1_015C666026144A7CBD9C17FD501F28FD">  注册数据的情景</a></li><li><a href="#ESRI_SECTION1_9086108E7B834277AFBEEA0210D50B5E">如何将您的数据注册到 <ph translate="no" varid="ArcGISforServer">ArcGIS Server</ph></a></li><li><a href="#ESRI_SECTION1_2632563688FC4908B70CF26FF49B4DAB">取消注册数据存储时的注意事项</a></li></ol>
+			    </div>
+			    
+			    
+	  		</div>
+		
+    
+   <!--googleon: all-->
+
+
+
+
+          
+        </div>
+        <!-- ENDPAGECONTENT -->
+
+      </div>
+
+    </div>  <!-- End of wrapper -->
+
+  <footer class="footer leader-3 link-dark-gray" role="contentinfo">
+    <div class="grid-container">
+      <div class="row">
+        <nav class="column-6">
+          <h6 data-langlabel="arcgis-for-server">Arc<span>GIS Enterprise</span></h6>
+          <ul class="list-plain">
+            <li><a data-langlabel="home" href="../../../../../zh-CN/">主页</a></li>
+            <li><a data-langlabel="portal" href="../../../../../zh-CN/portal/">Portal</a></li>
+            <li><a data-langlabel="server" href="../../../../../zh-CN/server/">Server</a></li>
+            <li><a data-langlabel="data-store" href="../../../../../zh-CN/data-store/">Data Stores</a></li>
+            <li><a data-langlabel="cloud" href="../../../../../zh-CN/cloud/">云</a></li>
+            <li><a data-langlabel="apps" href="../../../../../zh-CN/apps/">应用程序</a></li>
+            <li><a data-langlabel="documentation" href="../../../../../zh-CN/documentation/">文档</a></li>
+          </ul>
+        </nav>
+
+        
+  <nav class="column-6">
+    <h6 data-langlabel="arcgis-platform">ArcGIS 平台</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="arcgis" href="//www.arcgis.com/">ArcGIS Online</a></li>
+      <li><a data-langlabel="arcgis-for-professionals" href="//pro.arcgis.com/">ArcGIS Pro</a></li>
+      <li><a data-langlabel="arcgis-for-server" href="//enterprise.arcgis.com/">ArcGIS Enterprise</a></li>
+      <li><a data-langlabel="arcgis-for-developers" href="https://developers.arcgis.com/">ArcGIS for Developers</a></li>
+      <li><a data-langlabel="arcgis-solutions" href="//solutions.arcgis.com/">ArcGIS Solutions</a></li>
+      <li><a data-langlabel="arcgis-marketplace" href="//marketplace.arcgis.com/">ArcGIS Marketplace</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <h6 data-langlabel="about-esri">关于 Esri</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="about-us" href="//www.esri.com/about-esri/">关于我们</a></li>
+      <li><a data-langlabel="careers" href="//www.esri.com/careers/">招贤纳士</a></li>
+      <li><a data-langlabel="insiders-blog" href="https://www.esri.com/about/newsroom/blog/">Esri 博客</a></li>
+      <li><a data-langlabel="user-conference" href="//www.esri.com/events/user-conference/index.html">用户大会</a></li>
+      <li><a data-langlabel="developer-summit" href="//www.esri.com/events/devsummit/index.html">开发者峰会</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <a class="esri-logo" href="//www.esri.com/" aria-label="Esri Home"></a>
+    <section class="footer-social-nav leader-1">
+            <a class="icon-social-twitter" aria-label="Esri on Twitter" href="https://twitter.com/Esri/"></a>
+            <a class="icon-social-facebook" aria-label="Esri on Facebook" href="https://www.facebook.com/esrigis/"></a>
+            <a class="icon-social-github" aria-label="Esri on GitHub" href="//esri.github.io/"></a>
+            <a class="icon-social-contact" aria-label="Contact Esri" href="//www.esri.com/about-esri/contact/"></a>
+    </section>
+	  
+  </nav>
+  
+  <div class="column-24 leader-1">
+    <p class="font-size--3"><a href="http://www.esri.com/legal/copyright-trademarks">Copyright &copy; 2019 Esri.</a> All rights reserved. | <a href="http://www.esri.com/legal/privacy/">隐私政策</a> | <a href="http://www.esri.com/legal/software-license">法律声明</a></p>
+  </div>
+  
+
+
+      </div>
+    </div>
+  </footer>
+  <!--googleoff: all-->
+
+  
+  
+	<script src="../../../../../zh-CN/assets/js/init.js" type="text/javascript"></script>
+	<!--<script src="../../../../../zh-CN/assets/js/drop-down.js" type="text/javascript"></script>-->
+	<script src="../../../../../zh-CN/assets/js/search/searchform.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/cdn/js/link-modifier.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/cdn/js/sitewide.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/cdn/js/libs/highlight.pack.js" type="text/javascript"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+
+
+  
+    
+
+  <script src="../../../../../zh-CN/cdn/js/affix.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    $(function () {
+          var appendFlg = true;
+
+          $("#bigmac")
+          .on("affixed.bs.affix", function (evt) {
+            if (appendFlg) {
+              $("<a class='crumb' href='#'>ArcGIS Server 的数据源</a>").insertAfter ($("#bigmac nav a").last());
+              appendFlg = false;
+            }
+          })
+          .on ("affix-top.bs.affix", function(evt) {
+            if (!appendFlg) {
+              $("#bigmac nav a").last().remove();
+            }
+            appendFlg = true;
+          })
+    })
+  </script>
+  
+        <script type="text/javascript">
+          window.doctoc = {
+            pubID: "2347",
+            tpcID: "103",
+            
+              prefix: "管理数据",
+              prefixUrl: "/zh-cn/server/latest/manage-data/windows/",
+          
+            hideToc: false
+          }
+        </script>
+
+        <script type="text/javascript" src="../../../../../zh-CN/server/latest/manage-data/windows/2347.js" ></script>
+        <script type="text/javascript" src="../../../../../zh-CN/cdn/calcite/js/protoc.js" ></script>
+        
+        
+
+  <noscript>
+        <p>
+            <a href="flisting.htm">flist</a>
+        </p>
+    </noscript>
+    <script type="text/javascript"></script>
+  
+  
+    
+    
+
+  </body>
+</html>

@@ -1,0 +1,571 @@
+
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>  <html class="ie lt-ie9 lt-ie8 lt-ie7 ie6" dir="ltr"> <![endif]-->
+<!--[if IE 7]>     <html class="ie lt-ie9 lt-ie8 ie7" dir="ltr"> <![endif]-->
+<!--[if IE 8]>     <html class="ie lt-ie9 ie8" dir="ltr"> <![endif]-->
+<!--[if IE 9]>     <html class="ie ie9" dir="ltr"> <![endif]-->
+<!--[if !IE]><!--> <html dir="ltr" lang="zh-CN"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>范围内汇总&mdash;Portal for ArcGIS | ArcGIS Enterprise 文档</title>
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+    <script>
+      var docConfig = {
+        locale: 'zh-CN'
+        ,localedir: 'zh-cn'
+        ,langSelector: ''
+        
+        ,relativeUrl: false
+        
+
+        ,searchformUrl: '/search/'
+        ,tertiaryNavIndex: ''
+
+        
+      };
+    </script>
+	 
+
+
+    
+    <!--[if lt IE 9]>
+      <script src="../../../../zh-CN/cdn/js/libs/html5shiv.js" type="text/javascript"></script>
+      <script src="../../../../zh-CN/cdn/js/libs/selectivizr-min.js" type="text/javascript"></script>
+      <script src="../../../../zh-CN/cdn/js/libs/json2.js" type="text/javascript"></script>
+      <script src="../../../../zh-CN/cdn/js/libs/html5shiv-printshiv.js" type="text/javascript" >
+
+    <![endif]-->
+
+     <!--[if lt IE 11]>
+    <script>
+      $$(document).ready(function(){
+        $$(".hideOnIE").hide();
+      });
+    </script>
+    <![endif]-->
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<link href="../../../../zh-CN/assets/img/favicon.ico" rel="shortcut icon" >
+	<link href="../../../../zh-CN/assets/css/screen.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/cdn/calcite/css/documentation.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/assets/css/print.css" media="print" type="text/css" rel="stylesheet" />
+
+	<!--
+	<link href="../../../../zh-CN/assets/css/screen_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/assets/css/documentation/base_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/assets/css/print_l10n.css" media="print" type="text/css" rel="stylesheet" />
+	-->
+	
+	
+		<script src="../../../../zh-CN/cdn/js/libs/jquery.1.9.1.min.js" type="text/javascript"></script>
+	
+	<script src="../../../../zh-CN/cdn/js/libs/jquery.cookie.js" type="text/javascript"></script>
+	<link href="../../../../zh-CN/cdn/css/colorbox.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/cdn/css/colorbox_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<script src="../../../../zh-CN/cdn/js/libs/jquery.colorbox-min.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/assets/js/video-init.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/assets/js/sitecfg.js" type="text/javascript"></script>
+	
+		<script src="../../../../zh-CN/assets/js/signIn.js" type="text/javascript"></script>
+	
+
+	<!--- Language Picker -->
+	<script src="../../../../zh-CN/assets/js/locale/l10NStrings.js" type="text/javascript"></script>
+	
+		 
+	
+
+	<script src="../../../../zh-CN/assets/js/calcite-web.js" type="text/javascript"></script>
+
+
+
+  <!--- search MD -->
+    <META name="description" content="此标准要素分析工具用于计算与边界重叠的要素统计数据。"><META name="last-modified" content="2019-12-6"><META name="product" content="arcgis-portal-windows,arcgis-portal-linux,arcgis-enterprise-windows,arcgis-enterprise-linux"><META name="sub_category" content="Portal for ArcGIS"><META name="search-collection" content="help"><META name="content_type_label" content="帮助主题"><META name="sub_category_label" content="Portal for ArcGIS"><META name="search-category" content="help-general"><META name="subject_label" content="PORTAL,服务,SERVER"><META name="version" content="10.8"><META name="content_type" content="Help Topic"><META name="subject" content="PORTAL,SERVICES,SERVER"><META name="content-language" content="zh-cn">
+    <!--- search MD -->
+
+  
+  <script src="../../../../zh-CN/assets/js/switchers/portal-1.js" type="text/javascript"></script>
+  
+      
+
+</head>
+
+<!--
+      pub: GUID-7B47163B-CE1B-465F-BEEE-4DADDB8DFF09=37
+      tpc: GUID-B7C19D21-010F-4379-9B75-F3D45CB7E81A=9
+      -->
+
+
+<!-- variable declaration, if any -->
+<!-- can change following macro to set variable once we are on Jinja 2.8 -->
+
+
+
+
+
+<body class="claro zh-CN server">
+  
+
+  <!-- Drawer location -->
+  <div class="drawer drawer-left js-drawer" data-drawer="top-nav">
+        <nav class="drawer-nav" role="navigation">
+          <aside class="side-nav">
+            <h2 class="side-nav-title">Arc<span>GIS</span> Enterprise</h2>
+            <form id="helpSearchForm" class="margin-left-half margin-right-half leader-half trailer-half drawer-search-form" method="GET">
+              <input type="search" name="q"  placeholder="搜索 ArcGIS Enterprise 帮助">
+              <input type="hidden" name="collection" value="help" />
+              <input type="hidden" name="product" value="arcgis-portal-windows" />
+              <input type="hidden" name="version" value="10.8" />
+              <input type="hidden" name="language" value="zh-CN" />
+            </form>    
+             <a id="nav-portal" data-langlabel="portal" href="../../../../zh-CN/portal/" class="side-nav-link">Portal</a>
+             
+            <a id="all-servers" data-langlabel="all-servers" href="../../../../zh-CN/server/" class="side-nav-link">所有服务器</a>
+            <a id="gis-server" data-langlabel="gis-server" href="../../../../zh-CN/server/" class="side-nav-link">GIS Server</a>
+            <a id="image-server" data-langlabel="image-server" href="../../../../zh-CN/image/" class="side-nav-link">Image Server</a>
+            <a id="geo-analytics-server" data-langlabel="geo-analytics-server" href="../../../../zh-CN/geoanalytics/" class="side-nav-link">GeoAnalytics Server</a>
+            <a id="geoevent-server" data-langlabel="geoevent-server" href="../../../../zh-CN/geoevent/" class="side-nav-link">GeoEvent Server</a>
+            <a id="notebook-server" data-langlabel="notebook-server" href="../../../../zh-CN/notebook/" class="side-nav-link">Notebook Server</a>
+            <a id="nav-data-store" data-langlabel="data-store" href="../../../../zh-CN/data-store/" class="side-nav-link">Data Stores</a>
+            <a id="nav-cloud" data-langlabel="cloud" href="../../../../zh-CN/cloud/" class="side-nav-link">云</a>
+            <a id="nav-apps" data-langlabel="apps" href="../../../../zh-CN/apps/" class="side-nav-link">应用程序</a>
+            <a id="nav-doc" data-langlabel="documentation" href="../../../../zh-CN/documentation/" class="side-nav-link">文档</a>
+
+          </aside>
+        </nav>
+    </div>
+
+    <!-- user navigation collapses to drawer on mobile -->
+    
+    <div class="drawer drawer-right js-drawer hide-if-logged-out logged-in-navigation" data-drawer="user-nav">
+      <nav class="drawer-nav">
+        <aside class="side-nav">
+          <a class="side-nav-link agolProfile" href="#">我的个人资料</a>
+          <a class="side-nav-link icon-ui-sign-out js-log-out" href="#">登出</a>
+        </aside>
+      </nav>
+    </div>
+    
+<!-- End of drawer -->
+
+  
+  <div class="wrapper">
+      <!--googleoff: all-->
+
+      <header class="top-nav" data-skin="learn">
+        <a class="skip-to-content" href="#skip-to-content">Skip To Content</a>
+        <div class="grid-container">
+          <div class="column-24">
+
+
+            <!--<div class="top-nav-title-wrapper text-center ">-->
+              <a href='../../../../zh-CN/' class="top-nav-title tablet-hide"><span>Arc</span>GIS  Enterprise</a>
+              <a href='../../../../zh-CN/' class="icon-ui-menu top-nav-title js-drawer-toggle tablet-show" data-drawer="top-nav"><span>Arc</span>GIS Enterprise</a>
+            <!--</div> -->
+
+          
+            <nav role="navigation" class="top-nav-list left tablet-hide">
+              <a id="nav-portal" data-langlabel="portal" href="../../../../zh-CN/portal/" class="top-nav-link">Portal</a>
+
+                <div class="dropdown js-dropdown ">
+                  <a class="top-nav-link js-dropdown-toggle" tabindex="0" aria-haspopup="true" aria-expanded="false" href="#">Servers</a>
+                  <nav class="dropdown-menu featured" role="menu">
+                    <ul class="dropdown-sublist-featured">
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/get-started/latest/windows/additional-server-deployment.htm" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path  d="M42.92 6.1H4.12v8.566l.833.832-.835.833-.018 7.332.845.847-.825.824V33.9h25v5.2h-2v1.075H8.02v.8h19.1v.925h4.8v-.925H40v-.8h-8.08V39.1h-2v-5.2h13v-8.566l-.834-.834.835-.834v-7.332l-.835-.834.835-.834zm-11.8 35h-3.2v-1.2h3.2zm11-8H4.92v-7.434l.767-.766h35.668l.765.766zm0-9.766l-.766.766H5.666l-.766-.767.017-6.669.766-.764h35.671l.766.766zm0-9l-.766.766H5.687l-.766-.766V6.9h37.2zM19 11.9h-2v-.8h2zm-4 0h-2v-.8h2zm-4 0H9v-.8h2zm6 8.2h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9zm8 9h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9z"/></svg></span>
+                          <span class="sublink-text">所有服务器</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/server/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M45.98 33.575a.616.616 0 0 0-.335-.51l-3.362-2.03 3.362-2.031a.556.556 0 0 0 0-1.02l-11.1-6.704a1.293 1.293 0 0 0-1.112 0L22.33 27.982a.556.556 0 0 0 0 1.02l3.36 2.03-3.358 2.03a.556.556 0 0 0-.002 1.021l3.322 2.006-3.324 2.008a.555.555 0 0 0 .002 1.017l11.102 6.703a1.25 1.25 0 0 0 1.11.002l11.104-6.706a.556.556 0 0 0 0-1.02l-3.32-2.006 3.318-2.004a.607.607 0 0 0 .335-.509zM33.837 21.97c.026-.01.286-.005.29-.005l10.814 6.53-10.8 6.523c-.028.01-.284.005-.294.006l-10.813-6.53zm11.105 16.636l-10.8 6.523a2.564 2.564 0 0 1-.295.006l-10.81-6.529 3.39-2.047 7.004 4.23a1.083 1.083 0 0 0 .557.131 1.101 1.101 0 0 0 .554-.13l7.01-4.233zM34.14 40.098a2.545 2.545 0 0 1-.294.006l-10.812-6.53 3.43-2.073 6.97 4.208a1.25 1.25 0 0 0 1.107-.001l6.966-4.206 3.431 2.073zM9 8H7V7h2zm8 8h-2v-1h2zm-4-8h-2V7h2zm4 0h-2V7h2zm-4 8h-2v-1h2zm7.316 11.1H3.9v-6.434l.766-.766h35.668l.766.766v2.12l.8.483v-2.935l-.826-.826.826-.845v-6.329l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9h16.88a2.632 2.632 0 0 1 .336-.8zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zm0 8v-5.668l.766-.766h35.668l.766.766v5.67l-.746.764H4.666zM15 24v-1h2v1zm-4 0v-1h2v1zm-2-8H7v-1h2zm-2 8v-1h2v1z"/></svg></span>
+                          <span class="sublink-text">GIS Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/image/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 8h-2V7h2zm-4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm8 8h-2v1h2zm-8 0H7v1h2zm4 9v-1h-2v1zm-4 0v-1H7v1zm8 0v-1h-2v1zm4 3.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V21h-.8v-.334l-.766-.766H4.666l-.766.766V27.1H21zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zm40.234 4v21.8H23.1V23.1zm-.8 16.366L39.466 44.1h2.868l1.766-1.766zm-20.2-9.932l5.634-5.634h-2.868L23.9 26.666zm6.2-5.068L24.466 30.1h2.868l2.766-2.766zM28.466 30.1H30.1v-1.634zm2.434 0h6.2v-6.2h-6.2zm-7 7h6.2v-6.2h-6.2zm7 0h6.2v-6.2h-6.2zm0 6.434l5.634-5.634h-2.868L30.9 40.666zm7-7l5.634-5.634h-2.868L37.9 33.666zm1.634-5.634H37.9v1.634zm-8.634 7v1.634l1.634-1.634zm.566 6.2h2.868l2.766-2.766v-2.868zm6.434-3.566l2.634-2.634H37.9zM35.466 44.1H37.1v-1.634zm2.434 0h.434l5.766-5.766V37.9h-2.434L37.9 41.666zm6.2-8.634L42.466 37.1H44.1zm0-4L38.466 37.1h2.868l2.766-2.766zm0-7.566h-6.2v6.2h6.2zm-20.2 0v1.634l1.634-1.634zm0 20.2h6.2v-6.2h-6.2zm20.2 0v-.634l-.634.634z"/></svg></span>
+                          <span class="sublink-text">Image Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/geoanalytics/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 16h-2v-1h2zm-8 8v-1H7v1zm8 0v-1h-2v1zM13 7h-2v1h2zm4 0h-2v1h2zM9 7H7v1h2zm21.45 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V27.9h-1.464l-.801-.8H41.1v-6.434l-.766-.766H4.666l-.766.766V27.1h27.15zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM13 24v-1h-2v1zm0-9h-2v1h2zm-4 0H7v1h2zm26.672 27.148A1.87 1.87 0 0 1 35.9 43a1.91 1.91 0 1 1-3.763-.222l-9.845-3.414A1.88 1.88 0 0 1 21 39.9a1.9 1.9 0 1 1 1.474-3.084l4.692-2.346A1.878 1.878 0 0 1 27.1 34a1.902 1.902 0 0 1 1.9-1.9 1.867 1.867 0 0 1 .781.191l3.788-5.05A1.88 1.88 0 0 1 33.1 26a1.9 1.9 0 1 1 3.491 1.026l4.889 4.888c-.069.056-.144.1-.21.162a3.986 3.986 0 0 0-.358.402l-4.883-4.883A1.889 1.889 0 0 1 35 27.9a1.867 1.867 0 0 1-.781-.191l-3.788 5.049a1.868 1.868 0 0 1 .437.965l9.204.614c-.018.11-.049.218-.058.33A3.93 3.93 0 0 0 40 35c0 .046.01.09.01.135l-9.185-.612A1.913 1.913 0 0 1 29 35.9a1.889 1.889 0 0 1-1.474-.716l-4.692 2.346a1.878 1.878 0 0 1 .066.47 1.9 1.9 0 0 1-.105.625c-.007.02-.022.036-.03.056l9.63 3.34a1.87 1.87 0 0 1 2.786-.505l5.415-4.437c.067.108.127.22.204.322a3.9 3.9 0 0 0 .292.306zM33.9 26a1.092 1.092 0 0 0 .43.872 1.12 1.12 0 0 0 1.42-.068A1.1 1.1 0 1 0 33.9 26zm-6 8a1.1 1.1 0 0 0 2.196.093 1.135 1.135 0 0 0-.426-.965A1.087 1.087 0 0 0 29 32.9a1.101 1.101 0 0 0-1.1 1.1zm-5.8 4a1.098 1.098 0 1 0-.06.362A1.101 1.101 0 0 0 22.1 38zm13 5a1.1 1.1 0 1 0-2.2 0 1.1 1.1 0 0 0 2.2 0zm10.8-8a1.9 1.9 0 1 1-3.8 0c0-.053.003-.105.007-.158A1.9 1.9 0 0 1 45.9 35zm-.8 0a1.1 1.1 0 0 0-2.196-.093 1.153 1.153 0 0 0 .216.752A1.1 1.1 0 0 0 45.1 35z"/></svg></span>
+                          <span class="sublink-text">GeoAnalytics Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/geoevent/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M13 8h-2V7h2zm4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm12.418 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826v2.117c-.259-.177-.53-.337-.8-.497v-1.288l-.766-.766H4.666l-.766.766V27.1h17.933c-.148.26-.283.53-.415.8zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM9 24v-1H7v1zm4-9h-2v1h2zm0 9v-1h-2v1zm-4-9H7v1h2zm8 9v-1h-2v1zm16.9 2h-.8v8.9H39v-.8h-5.1zm.1-3.901a11.9 11.9 0 1 0 11.9 11.9 11.914 11.914 0 0 0-11.9-11.9zm0 23a11.1 11.1 0 1 1 11.1-11.1 11.112 11.112 0 0 1-11.1 11.1z"/></svg></span>
+                          <span class="sublink-text">GeoEvent Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/notebook/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M22 27.1H3.9v-6.434l.766-.766h18.576a5.262 5.262 0 0 1 .83-.8H4.666l-.766-.766v-5.668l.766-.766h35.668l.766.766V18h.8v-5.666l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9H22zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zM9 8H7V7h2zm8 0h-2V7h2zm-4 0h-2V7h2zm2 16v-1h2v1zm-4 0v-1h2v1zm-4 0v-1h2v1zm0-8v-1h2v1zm8 0v-1h2v1zm-4 0v-1h2v1zm18.9 8.1h-1.8v1.8h1.8zm-.8 1h-.2v-.2h.2zm15.498-4.48a2.727 2.727 0 0 0-1.62-.5v-.02H27.25a3.154 3.154 0 0 0-3.15 3.15V38.1h-1.68a3.386 3.386 0 0 0-2.872 1.58 3.49 3.49 0 0 0-.157 3.419 3.241 3.241 0 0 0 2.954 1.801h15.161a3.404 3.404 0 0 0 3.394-3.4V26.9h5v-3.65a3.224 3.224 0 0 0-1.302-2.63zM22.345 44.1a2.44 2.44 0 0 1-2.23-1.341 2.706 2.706 0 0 1 .11-2.65A2.588 2.588 0 0 1 22.42 38.9h12.89a3.395 3.395 0 0 0 0 5.2zM40.1 23.192V41.5a2.6 2.6 0 1 1-2.6-2.6v-.8H24.9V23.25a2.352 2.352 0 0 1 2.35-2.35h13.795a3.183 3.183 0 0 0-.945 2.292zm5 2.908h-4.2v-2.908a2.274 2.274 0 0 1 1.44-2.18 1.944 1.944 0 0 1 1.791.259 2.423 2.423 0 0 1 .97 1.979zm-17.1 5h9v.8h-9zm0 3h7v.8h-7zm0-6h9v.8h-9zm4-3h5v.8h-5z"/></svg></span>
+                          <span class="sublink-text">Notebook Server</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+
+              <a id="nav-data-store" data-langlabel="data-store" href="../../../../zh-CN/data-store/" class="top-nav-link">Data Stores</a>
+              <a id="nav-cloud" data-langlabel="cloud" href="../../../../zh-CN/cloud/" class="top-nav-link">云</a>
+              <a id="nav-apps" data-langlabel="apps" href="../../../../zh-CN/apps/" class="top-nav-link">应用程序</a>
+            </nav>
+
+
+            
+            
+            
+
+            <div class="margin-left-1 top-nav-list right hide-if-logged-in logged-out-navigation">
+               
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+              
+              <a data-langlabel="sign-in" id="login-link" class="icon-ui-user top-nav-link link-blue login-link" href="#">登录</a>
+              
+            </div>
+
+            
+            <nav class="margin-left-1 top-nav-list right hide-if-logged-out logged-in-navigation">
+              
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+             
+              <div class="dropdown js-dropdown right">
+
+                <div class="tablet-show top-nav-link">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a href="#" data-drawer="user-nav" class="user-nav-name js-drawer-toggle" data-first-name></a>
+                </div>
+
+                <div class="tablet-hide top-nav-link js-dropdown-toggle">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a class="user-nav-name top-nav-dropdown dropdown-btn" data-first-name>&nbsp;</a>
+                </div>
+
+                <nav class="dropdown-menu dropdown-right">
+                
+                  <a class="dropdown-link agolProfile" id="agolProfile" href="#">我的个人资料</a>
+                  <a class="dropdown-link js-log-out" id="agolLogout" href="#">登出</a>
+                </nav>
+              </div>
+            </nav>
+            
+
+            
+          </div>
+        </div>
+      </header>
+
+      <div class="js-search search-overlay">
+        <div class="search-content" role="dialog" aria-labelledby="search">
+          <form method="GET" id="helpSearchForm">
+            <label>
+              搜索 ArcGIS Enterprise 帮助
+              <div class="search-bar">
+                <input type="search" name="q"  placeholder="搜索 ArcGIS Enterprise 帮助" class="search-input js-search-input">
+                <input type="hidden" name="collection" value="help" />
+                <input type="hidden" name="product" value="arcgis-portal-windows" />
+                <input type="hidden" name="version" value="10.8" />
+                <input type="hidden" name="language" value="zh-CN" />
+              </div>
+            </label>
+            <input type="hidden" name="relativePath" value="../../../../" /><button type="submit" class="btn btn-large right">搜索</button>
+          </form>
+        </div>
+      </div>
+
+      <!--googleon: all-->
+
+      <div id="skip-to-content">
+        <!--googleoff: all-->
+        <header class="sub-nav sub-nav-learn">
+          <div class="grid-container">
+            
+            <div class="column-24">
+              <div style="display:table;" class="sdk-home-banner">
+                <div class="sdk-home-banner-content">
+                  <h1 class="sub-nav-title link-white">Portal for ArcGIS</h1>
+                </div>
+              </div>
+            </div>
+
+            <div class="column-24">
+              <nav class='sub-nav-list tablet-hide'><a class="sub-nav-link" href="../../../../zh-CN/portal/" target="_top" title="Portal for ArcGIS 主页">主页</a><a class="sub-nav-link is-active" href="../../../../zh-CN/portal/latest/use/" target="_top" title="使用 Portal for ArcGIS">使用</a><a class="sub-nav-link" href="../../../../zh-CN/portal/latest/administer/windows/" target="_top" title="安装、管理和保护 Portal for ArcGIS">管理</a></nav><select class='tablet-show select-full trailer-half js-select-nav'><option value="../../../../zh-CN/portal/">主页</option><option selected="true" value="../../../../zh-CN/portal/latest/use/">使用</option><option value="../../../../zh-CN/portal/latest/administer/windows/">管理</option></select>
+            </div>
+
+          </div>
+        </header>
+        <!--googleon: all-->
+       
+        <!-- content goes here -->
+        <div class="grid-container ">
+          
+
+            
+              
+  <!--BREADCRUMB-BEG--><div id="bigmac" class="sticky-breadcrumbs trailer-2" data-spy="affix" data-offset-top="180"> </div><!--BREADCRUMB-END-->
+  <!--googleoff: all-->
+    <div class="column-5 tablet-column-12 trailer-2 ">
+      <aside class="js-accordion accordion reference-index" aria-live="polite" role="tablist">
+        <div></div>
+      </aside>
+
+      <div class="js-sticky scroll-show tablet-hide leader-1 back-to-top" data-top="0" style="top: 0px;">
+        <a href="#" class="btn btn-fill btn-clear">返回顶部</a>
+      </div>
+    </div>
+  <!--googleon: all-->
+  
+            
+            
+            
+	
+		<div class="column-13  pre-1 content-section">
+	
+		<header class="trailer-1"><h1>范围内汇总</h1></header>
+
+		 
+	<!--googleoff: all-->
+	
+		
+				<aside id="main-toc-small" class="js-accordion accordion tablet-show trailer-1">
+			      <div class="accordion-section">
+			        <h4 class="accordion-title">在本主题中</h4>
+			        <div class="accordion-content list-plain">
+			          <ol class="list-plain pre-0 trailer-0"><li><a href="#GUID-02ACBB34-456D-4461-A424-B5A9B1851662">工作流示意图
+</a></li><li><a href="#ESRI_SECTION1_0C4CDE9CF07B4C67BE71078C12560ABC">示例
+</a></li><li><a href="#ESRI_SECTION1_6AD37A94FF4B46D98FD21CD88BB8FB32">用法说明
+</a></li><li><a href="#ESRI_SECTION1_8B759C06514E485F8BD342E8ACA44B8C">限制
+</a></li><li><a href="#ESRI_SECTION1_0242F5BF7AC04152A747C3F49901C4BE"><esri_gptoolref cid="1jYCXy">范围内汇总</esri_gptoolref>工作原理
+</a></li><li><a href="#ESRI_SECTION1_787024CC68E7402CA38C537642AFB682">类似工具
+</a></li></ol>
+			        </div>
+			      </div>
+			     </aside>
+		
+    
+   <!--googleon: all-->
+
+
+		<main>
+			
+	
+    	
+    
+
+
+			
+<p id="GUID-E5D82288-E774-4F4D-A608-3F0DB789B991"> <img purpose="img" placement="inline" alt="范围内汇总" title="范围内汇总" src="GUID-E90411EE-AD55-4D3D-8562-283F339FC7FB-web.png"><span purpose="gptoolref">范围内汇总</span>工具可计算输入图层与边界图层重叠区域的统计数据。</p><section class="section1 padded-anchor" id="GUID-02ACBB34-456D-4461-A424-B5A9B1851662" purpose="section1"><h2>工作流示意图
+</h2><img purpose="img" placement="inline" alt="“范围内汇总”工作流示意图" title="“范围内汇总”工作流示意图" src="GUID-9B12DB3F-AA7B-41EB-87C6-D2DEC3D52DA9-web.png"></section><section class="section1 padded-anchor" id="ESRI_SECTION1_0C4CDE9CF07B4C67BE71078C12560ABC" purpose="section1"><h2>示例
+</h2><ul purpose="ul" id="UL_8551A8D2C57D420AB5E72E56F1B15018"><li purpose="li" id="LI_29B3183640F1438A841874B9606A9F3B"><p id="GUID-414B1671-3394-4ADB-9AFA-3123B1148E66"> 某城市正在尝试解决维护工程的积压问题，希望将维护评估地区融入与街灯和自行车车道维护相关的项目中。<span purpose="gptoolref">范围内汇总</span>工具用于计算每个地区的街灯数和自行车道的英里数，以便有效安排工程的优先级。</p></li><li purpose="li" id="LI_3408A4F108EB41B8A679B3E41E190276"><p id="GUID-3A6C8160-A7E5-4F4C-9E35-D45B988D835F"> 一家有线电视提供商即将启动一项试点工程，该工程可使收入较低的社区大学的学生以较低的成本访问互联网。<span purpose="gptoolref">范围内汇总</span>将用于确定各学区内低收入家庭的数量，以便有线电视提供商可以选择合适的地区来实施其试点工程。</p></li><li purpose="li" id="LI_D7D8195E920C4BA79528F9BF7F214728"><p id="GUID-2E6D34D8-6425-4A81-B32D-344F6F351C7F"> 开发公司希望在城区中心打造新型综合性开发项目来赚钱。<span purpose="gptoolref">范围内汇总</span>可用来汇总城市边界内符合资格的区域，以获得潜在开发区的总范围。</p></li></ul></section><section class="section1 padded-anchor" id="ESRI_SECTION1_6AD37A94FF4B46D98FD21CD88BB8FB32" purpose="section1"><h2>用法说明
+</h2><p id="GUID-5AD0B0E2-A5B7-4560-B524-096965C99CDB"> <span purpose="gptoolref">范围内汇总</span>的输入包括用作汇总要素边界的面图层，以及要汇总的点、线或面图层。</p><p id="GUID-A8BDB250-40A0-4CC5-B4F3-B771C04371E9">您可以提供要用于分析的区域图层，也可以生成要聚合到的指定大小和形状（六边形或正方形）的条柱。条柱大小将指定条柱的大小。如果聚合到六边形，则大小为每个六边形的高度，而所生成六边形的宽度为高度除以根号 3 再乘以 2。如果要聚合到正方形，则条柱大小为正方形的高度（等于宽度）。</p><img purpose="img" placement="inline" alt="方形和六边形图格测量" title="方形和六边形图格测量" src="GUID-9DC1281D-6E1B-48F9-9BDD-67D3B337CD30-web.png"><div class="panel trailer-1" id="GUID-964702C3-51B1-46BB-A772-31F59922E222"><h5 class="icon-ui-description trailer-0">提示：</h5><p id="GUID-6A36E29D-87E1-4A7E-8F99-EFBA2A87602A">您可以通过在下拉菜单中选择<span class="uicontrol">选择分析图层</span>将不在 <span class="ph">Map Viewer</span> 中的图层添加到工具窗格。</p></div><p id="GUID-812AE11B-1955-4189-9906-3AF1B9D8C171"> 根据图层中要汇总的要素类型，系统将显示<span class="uicontrol">点数</span>、<span class="uicontrol">总长度</span>或<span class="uicontrol">总面积</span>复选框。这些复选框默认处于选中状态，且只有正在计算统计数据时才可取消选中。默认距离测量值将取决于<a class="xref xref" href="../../../../zh-CN/portal/latest/use/profile.htm#ESRI_SECTION1_DBAC184C26344633BB3A7BAD4EC841DD">配置文件</a>的<a class="xref xref" href="../../../../zh-CN/portal/latest/use/profile.htm">单位</a>。</p><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><colgroup width="*"></colgroup><colgroup width="*"></colgroup><thead><tr><th colspan="1">总计</th><th colspan="1">输入要素</th><th colspan="1">默认</th><th colspan="1">选项</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-D0515A25-262E-4E82-89FA-09EBB43CF6D0"><span class="uicontrol">点计数</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-F6CB7DE1-7ECE-48C8-A7B8-F0C46E327913">点</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-EFF64E88-9FE3-4DEC-B851-7B0F0061B816">无</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-B7FBEA36-598E-4FD9-ADE6-FF5C6AA7DD98">无</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-A2B851CD-50B1-401B-B128-364F637DD6E9"><span class="uicontrol">总长度</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-23A791B4-AD26-4725-BB43-59728FF0F328">线</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-87E6D53F-9C3F-4FE7-A0A9-0152AE414DF4"><span class="uicontrol">英里</span>（美国 标准设置）或<span class="uicontrol">千米</span>（公制设置）</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><ul purpose="ul" id="UL_7A427B5B3C6B49D585E34495DE35F556"><li purpose="li" id="LI_1A177D634881472F83B512FB3C70FE9C"><span class="uicontrol">英里</span></li><li purpose="li" id="LI_3492B83D0FD245228C44856F49884DA0"><span class="uicontrol">英尺</span></li><li purpose="li" id="LI_0287AC3B29B44C0AAD43E36D585EA338"><span class="uicontrol">千米</span></li><li purpose="li" id="LI_77B7871390034AD59B133FE17EB10916"><span class="uicontrol">米</span></li><li purpose="li" id="LI_AB332ABE0EF6477A8191B39A11F8B960"><span class="uicontrol">码</span></li></ul></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-5BC886BD-7E4C-4EC5-A788-10D6ED29F9EB"><span class="uicontrol">总面积</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-344E5EFB-5AB8-40EE-BDF9-602A51D2EDCE">面</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-5664F26E-254F-40CF-977A-CC24A89D827E"> <span class="uicontrol">平方英里</span>（美国 标准设置）或<span class="uicontrol">平方千米</span>（公制设置）</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><ul purpose="ul" id="UL_EE81F13568EA4FB18BC6509ABA3D5763"><li purpose="li" id="LI_E12D21CF292D4946AF625A2060C7CC7F"><span class="uicontrol">平方英里</span></li><li purpose="li" id="LI_42B24B53E9824F629568AE077D901C24"><span class="uicontrol">平方千米</span></li><li purpose="li" id="LI_66E804C76BBA4D239E8717E7EAED0279"><span class="uicontrol">平方米</span></li><li purpose="li" id="LI_D50CEFEF52704B188C2F414F15B1670C"><span class="uicontrol">公顷</span></li><li purpose="li" id="LI_55E0DE48E13A4FB7A4FF068A11377399"><span class="uicontrol">英亩</span></li></ul></td></tr></tbody><caption></caption></table></div><p id="GUID-051AFEE5-6AB0-4799-BA9D-9BAC9222A091"> 有五个选项可用于计算待汇总图层中数值字段的统计数据：总和、最小值、最大值、平均值和标准差。每次输入<span class="uicontrol">字段</span>和<span class="uicontrol">统计数据</span>时，工具窗格都将新添加一行以便可以一次计算多个统计数据。汇总数据可在结果图层表或弹出窗口中进行查看。</p><p id="GUID-E13B73D5-FF4E-4ED3-9248-554AF7E2A3B7"> 或者，也可以选择按字段分组，以便分别为每个唯一属性值计算统计数据。选择按字段分组后，输出图层中每个要素的弹出窗口都将包含图表，用于显示各汇总计数/总数和按字段值分类的统计数据。系统还将创建汇总表，根据按字段值分组列出每个要素和统计数据。</p><p id="GUID-4A5329A1-DCDA-4267-ADE8-09A324573404"> 输入按字段分组时，系统将启用<span class="uicontrol">添加少数、多数</span>和<span class="uicontrol">添加百分比</span>复选框。少数和多数分别是按字段分组中所占比例最小和最大的值，其中所占比例将通过每个值的点数、总长度或总面积来确定。当选中<span class="uicontrol">添加少数、多数</span>时，两个新字段将添加到结果图层。这些字段将列出分组字段中各结果要素的少数值和多数值。选中<span class="uicontrol">添加百分比</span>后，结果图层中将添加两个新字段，列出属于各要素少数值和多数值的点数、总长度或总面积的百分比。百分比字段也将添加到结果表中，列出点数、总长度或总面积（属于按字段分组中各要素的所有值）的百分比。</p><p id="GUID-57FEC1F4-5991-4E9A-A985-A09E1BF1053A"> 如果选中<span class="uicontrol">使用当前地图范围</span>，则仅分析当前地图范围内可见的输入图层和待汇总图层中的要素。如果未选中，则会对输入图层和待汇总图层内的所有要素进行分析，包括超出当前地图范围的要素。</p><p conref="GUID-CD6DB769-1897-4121-A874-7A47416EDE2E.xml#GUID-CD6DB769-1897-4121-A874-7A47416EDE2E/GUID-971FB965-FE27-49D9-A1CB-F68B7039A56B" id="GUID-AAF6EB70-BBCA-43C6-BE23-6F0890CCB953" badconref="GUID-CD6DB769-1897-4121-A874-7A47416EDE2E/GUID-971FB965-FE27-49D9-A1CB-F68B7039A56B"></p></section><section class="section1 padded-anchor" id="ESRI_SECTION1_8B759C06514E485F8BD342E8ACA44B8C" purpose="section1"><h2>限制
+</h2><ul purpose="ul" id="UL_7545EFC78FF34345A58ED931DFFD2F67"><li purpose="li" id="LI_7A13C625BE1E4CC4AD2D8615B45D4244">边界输入必须是面要素。</li><li purpose="li" id="LI_40B48991A0DA438EB061E1E462D641D0">线和面是按比例进行汇总的；因此，汇总线或面时，最好汇总绝对数据（如人口）而非相对数据（如平均收入）。</li><li purpose="li" id="LI_E6D7AF48D5D744848350776D1A102465">无法选择移除与任何点、线或面都不重叠的边界。</li></ul></section><section class="section1 padded-anchor" id="ESRI_SECTION1_0242F5BF7AC04152A747C3F49901C4BE" purpose="section1"><h2><span purpose="gptoolref">范围内汇总</span>工作原理
+</h2><section class="section2 padded-anchor" id="ESRI_SECTION2_B9E32498294A4DA3AD7005B9E922F872" purpose="section2"><h3>生成图格</h3><p id="GUID-714775B7-615D-4BDD-BD60-0A53FE0170A2">  可以生成方形和六边形图格，将面聚合到输入面图层而不是将要素汇总到输入面图层。使用指定大小尺寸在面积不变的自定义投影坐标系中生成条柱，以确保大小相等且适合感兴趣区域。基于输入图层的地理范围选择适当的等积投影和参数。创建条柱后，它们会在用于分析之前投影回输入数据的坐标系。</p><p id="GUID-57549074-C1AD-441F-9801-4B8878938B38">分析完成后，结果会投影到 Web 墨卡托用于显示（默认），或者投影到您的自定义底图的投影。Web 墨卡托投影可能会造成结果变形，尤其是对于大条柱或极点区域附近的条柱。这些变形只是显示的一部分，并没有反映出分析不精确。</p></section><section class="section2 padded-anchor" id="ESRI_SECTION2_D2E394DA6AF04D738613047ADD851BF9" purpose="section2"><h3>等式</h3><p id="GUID-9A148109-7172-422D-A77C-5DCC46F8BD90">通过加权平均数和加权标准差来计算线要素和面要素的<span class="uicontrol">平均值</span>和<span class="uicontrol">标准差</span>。点要素的统计数据不进行加权。下表显示了用于计算标准差、加权平均数和加权标准差的等式。</p><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="1.13*"></colgroup><colgroup width="2.37*"></colgroup><colgroup width="2.21*"></colgroup><colgroup width="1.00*"></colgroup><thead><tr><th colspan="1">统计</th><th colspan="1">等式</th><th colspan="1">变量</th><th colspan="1">要素</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-49D86F7D-DCD1-46DE-9645-07AF704C3485">标准差</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><img purpose="img" placement="inline" alt="标准差等式" title="标准差等式" src="GUID-0968D605-BA17-40AB-929C-243D204F2C22-web.png"></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><img purpose="img" placement="inline" alt="标准差变量" title="标准差变量" src="GUID-BBDC6E11-3832-4666-A163-4CB158C0CB6E-web.png"></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-9A376936-286B-4887-9D7A-0DB301E56A87">点</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-214BA1EF-94B2-4A33-9094-187513DA974B">加权平均数</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><img purpose="img" placement="inline" alt="加权平均数等式" title="加权平均数等式" src="GUID-15B5B9A6-4BD5-4A1D-AADE-DA6BF35C1BD4-web.png"></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-0B005ACA-FA35-4D35-8DB5-A06D28FA26E9"><img purpose="img" placement="inline" alt="加权平均数变量" title="加权平均数变量" src="GUID-1E967302-6357-48F4-80FD-3B400E7DB853-web.png"></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-9299807B-CDCC-40B7-9DF1-300F748B0DB9">线与面</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-7BE75762-1750-4C20-AD24-968BEF4206D2">加权标准差</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><img purpose="img" placement="inline" alt="加权标准差等式" title="加权标准差等式" src="GUID-13445ECC-1B6F-4447-BE8F-F4931810B62D-web.png"></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-4DAD0165-E0EC-4FFD-A60C-690848A70D8B"><img purpose="img" placement="inline" alt="加权标准差变量" title="加权标准差变量" src="GUID-7D4BC68A-2889-4EE7-84A4-9BF02B1FB161-web.png"></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-D81F0123-D286-441D-9F12-8769BF9AC996">线与面</p></td></tr></tbody><caption></caption></table></div></section><section class="section2 padded-anchor" id="ESRI_SECTION2_D12D460DDDBA4DF1A02162D5D21181B7" purpose="section2"><h3>点</h3><p id="GUID-74C9CA21-F99F-4A12-AFDC-D9DA11BA088B"> 点图层仅使用输入边界内的点要素进行汇总。结果将使用分级符号进行显示。</p><p id="GUID-4F0CDDB4-936A-4AE7-BDA3-F8A5F900A920"> 以下图表解释了假设边界内点图层的统计计算过程。<span class="usertext">Population</span> 字段用于计算图层的统计数据（<span class="uicontrol">总和</span>、<span class="uicontrol">最小值</span>、<span class="uicontrol">最大值</span>、<span class="uicontrol">平均值</span>和<span class="uicontrol">标准差</span>）。</p><figure class="fig" href="#"><img src="GUID-9EF6C446-BC2E-419B-B115-5E31C6042B14-web.png" alt="汇总点图层" title="汇总点图层"><figcaption class="fig-caption">点图层仅使用位于边界图层范围内的点进行汇总。上方显示的示例属性表中的值将用于假设统计计算中。</figcaption></figure><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="1.00*"></colgroup><colgroup width="1.27*"></colgroup><thead><tr><th colspan="1">统计</th><th colspan="1">结果区 A</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-82221561-DF0F-4B2B-98B3-5084C34FCCE5"><span class="uicontrol">总和</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><pre><code class="equation" purpose="equation">280 + 408 + 356 + 361 + 450 + 713 = 2,568</code></pre></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-FF2B20FD-ACFE-4C94-A276-9A21B96B6BF2"><span class="uicontrol">最小值</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-7FB4954C-B543-49DF-B6D2-9C8374EE2FAC">最小值：</p><pre><code class="equation" purpose="equation">[280, 408, 356, 361, 450, 713] = 280</code></pre></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-FF11E1E5-4782-4262-862D-483584F71A81"><span class="uicontrol">最大值</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-6D79E21D-5F48-42ED-960C-9DCAF6CCCFE9">最大值：</p><pre><code class="equation" purpose="equation">[280, 408, 356, 361, 450, 713] = 713</code></pre></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-5FCF0518-206D-4146-A5B8-AFC10B6EB3A7"><span class="uicontrol">平均值</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><pre><code class="equation" purpose="equation">2,568/6 = 428</code></pre></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-911C163B-8AE5-451D-95BE-99A95E14E6C2"><span class="uicontrol">标准差</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><img purpose="img" placement="inline" alt="点的标准差" title="点的标准差" src="GUID-2487166E-0B3A-4D73-9583-7112293C994F-web.png"><pre><code class="equation" purpose="equation">= 150.79</code></pre></td></tr></tbody><caption></caption></table></div><p id="GUID-FC2608AB-CA4D-4E87-9BAE-37F6E9547E60"> 在现实场景中，可使用此分析确定每个学区中学生的总数。每个点表示一所学校。<span class="usertext">Type</span> 字段给出了学校类型（小学、中学或高中），学生人数字段给出了每所学校招收的学生人数。上表给出了针对区域 A 的运算和结果。从结果中可以看到区域 A 中有 2568 名学生。运行<span purpose="gptoolref">范围内汇总</span>工具时，也会给出区域 B 的结果。</p></section><section class="section2 padded-anchor" id="ESRI_SECTION2_AF4919503197450D85DB9045B9D5EEBC" purpose="section2"><h3>线</h3><p id="GUID-BB75C190-C5DD-46BE-A824-70311C7D234E"> 线图层仅使用输入边界内线要素的比例进行汇总。汇总线时，使用带计数或数量（而非比率或比例）的字段，这样分析中的比例计算才能符合逻辑。结果将使用分级符号进行显示。</p><p id="GUID-00B0FED8-D5AD-4430-87E3-76B46EB9A7D0"> 以下图表解释了假设边界内线图层的统计计算过程。<span class="usertext">Volume</span> 字段用于计算图层的统计数据（<span class="uicontrol">总和</span>、<span class="uicontrol">最小值</span>、<span class="uicontrol">最大值</span>、<span class="uicontrol">平均值</span>和<span class="uicontrol">标准差</span>）。统计数据仅使用边界范围内线的比例进行计算。</p><figure class="fig" href="#"><img src="GUID-8875645F-B74E-43D9-BC98-A6EA67167D65-web.png" alt="汇总线图层" title="汇总线图层"><figcaption class="fig-caption">线图层仅使用位于边界范围内的线的比例进行汇总。</figcaption></figure><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><thead><tr><th colspan="1">统计</th><th colspan="1">结果</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-EBCDDF24-2223-48AF-AC4A-FC0B3E53575C"><span class="uicontrol">总和</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><pre><code class="equation" purpose="equation">400 + 500 = 900</code></pre></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-DA42F1BC-8952-4F21-BF4D-4CF4DB3A1DA4"><span class="uicontrol">最小值</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-FB638D40-06D1-46CE-94AA-AA9421CF0D61">最小值：</p><pre><code class="equation" purpose="equation">[400, 500] = 400</code></pre></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-FF3D4443-038A-45B4-8ADC-B725160A8E5F"><span class="uicontrol">最大值</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-B020F3A2-B7B2-4618-979E-9F8F52FE851B">最大值：</p><pre><code class="equation" purpose="equation">[400, 500] = 500</code></pre></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-98C15C48-4969-4E73-BB81-C5F809C854DA"><span class="uicontrol">平均值</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><img purpose="img" placement="inline" alt="线的加权平均数" title="线的加权平均数" src="GUID-B1CE28B0-98B6-4456-B48B-7359B3020D32-web.png"><pre><code class="equation" purpose="equation">= 460</code></pre></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-63190FCD-47CF-430B-8B23-08336FE8AA8E"><span class="uicontrol">标准差</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><img purpose="img" placement="inline" alt="线的加权标准差" title="线的加权标准差" src="GUID-45CA6404-F56E-4554-8702-189443FD7798-web.png"><pre><code class="equation" purpose="equation">= 69.28</code></pre></td></tr></tbody><caption></caption></table></div><p id="GUID-C7C71E84-1B38-484D-B90A-56A5784B3B07"> 在现实场景中，可使用此分析确定州立公园边界范围内河流的总水量。每条线表示一条部分位于公园内的河。从结果中可以看到在公园内有 5 英里长的河，河水总量为 900 个单位。</p></section><section class="section2 padded-anchor" id="ESRI_SECTION2_C23BA087B1D94CA484FC196A9336198D" purpose="section2"><h3>面</h3><p id="GUID-A0D99DF0-803B-4815-B14E-B855EA890EF5"> 面图层仅使用输入边界内面要素的比例进行汇总。汇总面时，使用带计数或数量（而非比率或比例）的字段，这样分析中的比例计算才能符合逻辑。结果图层将使用分级色彩进行显示。</p><p id="GUID-95891D3C-5AD8-4060-A563-FFFD4DEA839B"> 以下图表解释了假设边界内面图层的统计计算过程。人口用于计算图层的统计数据（<span class="uicontrol">总和</span>、<span class="uicontrol">最小值</span>、<span class="uicontrol">最大值</span>、<span class="uicontrol">平均值</span>和<span class="uicontrol">标准差</span>）。统计数据仅使用边界范围内面的比例进行计算。</p><figure class="fig" href="#"><img src="GUID-D84E6F1B-46FD-4C99-B550-8F4BA4B321A7-web.png" alt="汇总面图层" title="汇总面图层"><figcaption class="fig-caption">面图层仅使用位于边界范围内的面的比例进行汇总。</figcaption></figure><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><thead><tr><th colspan="1">统计</th><th colspan="1">结果</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-42B4D9B6-1133-4404-9358-4330E3831A46"><span class="uicontrol">总和</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><pre><code class="equation" purpose="equation">2,133 + 3,133 + 400 + 3,375 + 1,800 = 10,841</code></pre></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-4CD8E926-4585-494A-8683-757789CAF807"><span class="uicontrol">最小值</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-3F8AD626-2371-49E6-9A87-978264A4E9DA">最小值：</p><pre><code class="equation" purpose="equation">[2,133, 3,133, 400, 3,375, 1,800] = 400</code></pre></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-BD77AF88-2690-436F-B414-5D899484A7CE"><span class="uicontrol">最大值</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-2DA0175D-7FE2-451A-9473-3563BE359B02">最大值：</p><pre><code class="equation" purpose="equation">[2,133, 3,133, 400, 3,375, 1,800] = 3,375</code></pre></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-119F7C95-0C13-4CFF-BB97-794CA74025E3"><span class="uicontrol">平均值</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><img purpose="img" placement="inline" alt="面的加权平均数" title="面的加权平均数" src="GUID-655A0785-1094-4D32-B7C9-283104968AA0-web.png"><pre><code class="equation" purpose="equation">= 2,665.53</code></pre></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-EA1A24BF-D954-4E35-8514-3CBF444F4EC9"><span class="uicontrol">标准差</span></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><img purpose="img" placement="inline" alt="面的加权标准差" title="面的加权标准差" src="GUID-1AD6A470-7195-483B-9596-ABB98804E671-web.png"><pre><code class="equation" purpose="equation">= 925.91</code></pre></td></tr></tbody><caption></caption></table></div><p id="GUID-78E9BE64-2C60-4261-A3C4-9B25129D82EA"> 在现实场景中，可使用此分析确定城市周边的人口数。蓝色轮廓表示周边的边界，较小的区域表示人口普查区块。从结果中可以看到周边有 10,841 人，每个人口普查区块平均大约有 2,666 人。</p></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_787024CC68E7402CA38C537642AFB682" purpose="section1"><h2>类似工具
+</h2><p id="GUID-62907198-BBBD-4AAC-A89E-BA5D2EFDD5FF">使用<span purpose="gptoolref">范围内汇总</span>可计算与边界图层重叠的要素的统计数据。其他工具或许在解决略有差异的类似问题时十分有用。</p><section class="section2 padded-anchor" id="ESRI_SECTION2_971DAE2BBDBF4B6EAB4581E94AD0B0B2" purpose="section2"><h3><span class="ph">Map Viewer</span> 分析工具</h3><p id="GUID-88B32AAF-0933-492F-A1A6-46E317C21C6B">如果要尝试对点进行汇总，并且仅希望保留计数大于零的边界，请使用<a class="xref xref" href="../../../../zh-CN/portal/latest/use/aggregate-points.htm"><span purpose="gptoolref">聚合点</span></a>工具。</p><p id="GUID-39EB9A16-8B28-496F-B51D-7E0AC5476773">如果要尝试对距输入要素一定距离范围内的要素进行汇总，请使用<a class="xref xref" href="../../../../zh-CN/portal/latest/use/summarize-nearby.htm"><span purpose="gptoolref">邻近汇总</span></a>工具。</p></section><section class="section2 padded-anchor" id="ESRI_SECTION2_3EB531BC0D41406FA6F560A90F7D3875" purpose="section2"><h3><span class="ph">ArcGIS Pro</span> 分析工具</h3><p id="GUID-957A2F4B-3F84-44D3-9A88-0AD34FB9D781"><span purpose="gptoolref">范围内汇总</span>可执行<a class="xref xref" esrisubtype="extrel" hrefpfx="https://desktop.arcgis.com/zh-cn/arcmap/latest/tools" href="https://desktop.arcgis.com/zh-cn/arcmap/latest/tools/analysis-toolbox/spatial-join.htm"><span purpose="gptoolref">空间连接</span></a>和<a class="xref xref" esrisubtype="extrel" hrefpfx="https://desktop.arcgis.com/zh-cn/arcmap/latest/tools" href="https://desktop.arcgis.com/zh-cn/arcmap/latest/tools/analysis-toolbox/summary-statistics.htm"><span purpose="gptoolref">汇总统计数据</span></a>工具的功能。</p><p id="GUID-64044C7E-EEBD-4172-86DE-E87929D319D9" ishcondition="agol_plat=portal"><a target="_blank" class="xref xref" href="http://pro.arcgis.com/en/pro-app/tool-reference/feature-analysis/summarize-within.htm"><span purpose="gptoolref">范围内汇总</span></a>同样适用于 <span class="ph">ArcGIS Pro</span>。要从 <span class="ph">ArcGIS Pro</span> 运行工具，则工程的活动门户必须运行 <span class="ph">Portal for ArcGIS</span> 10.5 或更高版本。您还必须使用相应帐户登录到门户，该帐户应具有在门户中执行标准要素分析的权限。</p></section></section>
+			
+				<hr>
+				<!--googleoff: all-->
+				
+	
+        
+		    <p class="feedback right">
+		        <a id="afb" class="icon-ui-contact" href="/feedback/" data-langlabel="feedback-on-this-topic" >有关此主题的反馈?</a>
+		    </p>
+        
+	
+
+				<!--googleon: all-->
+			
+		</main>
+	</div>
+	
+	<!--googleoff: all-->
+	
+		
+			<div id="main-toc-large" class="column-5">
+			    <div class="panel font-size--2 tablet-hide trailer-1">
+			      <h5 class="trailer-half">在本主题中</h5>
+			      <ol class="list-plain pre-0 trailer-0"><li><a href="#GUID-02ACBB34-456D-4461-A424-B5A9B1851662">工作流示意图
+</a></li><li><a href="#ESRI_SECTION1_0C4CDE9CF07B4C67BE71078C12560ABC">示例
+</a></li><li><a href="#ESRI_SECTION1_6AD37A94FF4B46D98FD21CD88BB8FB32">用法说明
+</a></li><li><a href="#ESRI_SECTION1_8B759C06514E485F8BD342E8ACA44B8C">限制
+</a></li><li><a href="#ESRI_SECTION1_0242F5BF7AC04152A747C3F49901C4BE"><esri_gptoolref cid="1jYCXy">范围内汇总</esri_gptoolref>工作原理
+</a></li><li><a href="#ESRI_SECTION1_787024CC68E7402CA38C537642AFB682">类似工具
+</a></li></ol>
+			    </div>
+			    
+			    
+	  		</div>
+		
+    
+   <!--googleon: all-->
+
+
+
+
+          
+        </div>
+        <!-- ENDPAGECONTENT -->
+
+      </div>
+
+    </div>  <!-- End of wrapper -->
+
+  <footer class="footer leader-3 link-dark-gray" role="contentinfo">
+    <div class="grid-container">
+      <div class="row">
+        <nav class="column-6">
+          <h6 data-langlabel="arcgis-for-server">Arc<span>GIS Enterprise</span></h6>
+          <ul class="list-plain">
+            <li><a data-langlabel="home" href="../../../../zh-CN/">主页</a></li>
+            <li><a data-langlabel="portal" href="../../../../zh-CN/portal/">Portal</a></li>
+            <li><a data-langlabel="server" href="../../../../zh-CN/server/">Server</a></li>
+            <li><a data-langlabel="data-store" href="../../../../zh-CN/data-store/">Data Stores</a></li>
+            <li><a data-langlabel="cloud" href="../../../../zh-CN/cloud/">云</a></li>
+            <li><a data-langlabel="apps" href="../../../../zh-CN/apps/">应用程序</a></li>
+            <li><a data-langlabel="documentation" href="../../../../zh-CN/documentation/">文档</a></li>
+          </ul>
+        </nav>
+
+        
+  <nav class="column-6">
+    <h6 data-langlabel="arcgis-platform">ArcGIS 平台</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="arcgis" href="//www.arcgis.com/">ArcGIS Online</a></li>
+      <li><a data-langlabel="arcgis-for-professionals" href="//pro.arcgis.com/">ArcGIS Pro</a></li>
+      <li><a data-langlabel="arcgis-for-server" href="//enterprise.arcgis.com/">ArcGIS Enterprise</a></li>
+      <li><a data-langlabel="arcgis-for-developers" href="https://developers.arcgis.com/">ArcGIS for Developers</a></li>
+      <li><a data-langlabel="arcgis-solutions" href="//solutions.arcgis.com/">ArcGIS Solutions</a></li>
+      <li><a data-langlabel="arcgis-marketplace" href="//marketplace.arcgis.com/">ArcGIS Marketplace</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <h6 data-langlabel="about-esri">关于 Esri</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="about-us" href="//www.esri.com/about-esri/">关于我们</a></li>
+      <li><a data-langlabel="careers" href="//www.esri.com/careers/">招贤纳士</a></li>
+      <li><a data-langlabel="insiders-blog" href="https://www.esri.com/about/newsroom/blog/">Esri 博客</a></li>
+      <li><a data-langlabel="user-conference" href="//www.esri.com/events/user-conference/index.html">用户大会</a></li>
+      <li><a data-langlabel="developer-summit" href="//www.esri.com/events/devsummit/index.html">开发者峰会</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <a class="esri-logo" href="//www.esri.com/" aria-label="Esri Home"></a>
+    <section class="footer-social-nav leader-1">
+            <a class="icon-social-twitter" aria-label="Esri on Twitter" href="https://twitter.com/Esri/"></a>
+            <a class="icon-social-facebook" aria-label="Esri on Facebook" href="https://www.facebook.com/esrigis/"></a>
+            <a class="icon-social-github" aria-label="Esri on GitHub" href="//esri.github.io/"></a>
+            <a class="icon-social-contact" aria-label="Contact Esri" href="//www.esri.com/about-esri/contact/"></a>
+    </section>
+	  
+  </nav>
+  
+  <div class="column-24 leader-1">
+    <p class="font-size--3"><a href="http://www.esri.com/legal/copyright-trademarks">Copyright &copy; 2019 Esri.</a> All rights reserved. | <a href="http://www.esri.com/legal/privacy/">隐私政策</a> | <a href="http://www.esri.com/legal/software-license">法律声明</a></p>
+  </div>
+  
+
+
+      </div>
+    </div>
+  </footer>
+  <!--googleoff: all-->
+
+  
+  
+	<script src="../../../../zh-CN/assets/js/init.js" type="text/javascript"></script>
+	<!--<script src="../../../../zh-CN/assets/js/drop-down.js" type="text/javascript"></script>-->
+	<script src="../../../../zh-CN/assets/js/search/searchform.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/cdn/js/link-modifier.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/cdn/js/sitewide.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/cdn/js/libs/highlight.pack.js" type="text/javascript"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+
+
+  
+    
+
+  <script src="../../../../zh-CN/cdn/js/affix.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    $(function () {
+          var appendFlg = true;
+
+          $("#bigmac")
+          .on("affixed.bs.affix", function (evt) {
+            if (appendFlg) {
+              $("<a class='crumb' href='#'>范围内汇总</a>").insertAfter ($("#bigmac nav a").last());
+              appendFlg = false;
+            }
+          })
+          .on ("affix-top.bs.affix", function(evt) {
+            if (!appendFlg) {
+              $("#bigmac nav a").last().remove();
+            }
+            appendFlg = true;
+          })
+    })
+  </script>
+  
+        <script type="text/javascript">
+          window.doctoc = {
+            pubID: "583",
+            tpcID: "548",
+            
+              prefix: "使用",
+              prefixUrl: "/zh-cn/portal/latest/use/",
+          
+            hideToc: false
+          }
+        </script>
+
+        <script type="text/javascript" src="../../../../zh-CN/portal/latest/use/583.js" ></script>
+        <script type="text/javascript" src="../../../../zh-CN/cdn/calcite/js/protoc.js" ></script>
+        
+        
+
+  <noscript>
+        <p>
+            <a href="flisting.htm">flist</a>
+        </p>
+    </noscript>
+    <script type="text/javascript"></script>
+  
+  
+    
+    
+
+  </body>
+</html>

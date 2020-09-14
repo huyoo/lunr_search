@@ -1,0 +1,598 @@
+
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>  <html class="ie lt-ie9 lt-ie8 lt-ie7 ie6" dir="ltr"> <![endif]-->
+<!--[if IE 7]>     <html class="ie lt-ie9 lt-ie8 ie7" dir="ltr"> <![endif]-->
+<!--[if IE 8]>     <html class="ie lt-ie9 ie8" dir="ltr"> <![endif]-->
+<!--[if IE 9]>     <html class="ie ie9" dir="ltr"> <![endif]-->
+<!--[if !IE]><!--> <html dir="ltr" lang="zh-CN"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>ArcGIS URL 组成&mdash;Portal for ArcGIS 
+  (10.8) | ArcGIS Enterprise 文档</title>
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+    <script>
+      var docConfig = {
+        locale: 'zh-CN'
+        ,localedir: 'zh-cn'
+        ,langSelector: ''
+        
+        ,relativeUrl: false
+        
+
+        ,searchformUrl: '/search/'
+        ,tertiaryNavIndex: ''
+
+        
+      };
+    </script>
+	 
+
+
+    
+    <!--[if lt IE 9]>
+      <script src="../../../../../zh-CN/cdn/js/libs/html5shiv.js" type="text/javascript"></script>
+      <script src="../../../../../zh-CN/cdn/js/libs/selectivizr-min.js" type="text/javascript"></script>
+      <script src="../../../../../zh-CN/cdn/js/libs/json2.js" type="text/javascript"></script>
+      <script src="../../../../../zh-CN/cdn/js/libs/html5shiv-printshiv.js" type="text/javascript" >
+
+    <![endif]-->
+
+     <!--[if lt IE 11]>
+    <script>
+      $$(document).ready(function(){
+        $$(".hideOnIE").hide();
+      });
+    </script>
+    <![endif]-->
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<link href="../../../../../zh-CN/assets/img/favicon.ico" rel="shortcut icon" >
+	<link href="../../../../../zh-CN/assets/css/screen.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/cdn/calcite/css/documentation.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/assets/css/print.css" media="print" type="text/css" rel="stylesheet" />
+
+	<!--
+	<link href="../../../../../zh-CN/assets/css/screen_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/assets/css/documentation/base_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/assets/css/print_l10n.css" media="print" type="text/css" rel="stylesheet" />
+	-->
+	
+	
+		<script src="../../../../../zh-CN/cdn/js/libs/jquery.1.9.1.min.js" type="text/javascript"></script>
+	
+	<script src="../../../../../zh-CN/cdn/js/libs/jquery.cookie.js" type="text/javascript"></script>
+	<link href="../../../../../zh-CN/cdn/css/colorbox.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/cdn/css/colorbox_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<script src="../../../../../zh-CN/cdn/js/libs/jquery.colorbox-min.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/assets/js/video-init.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/assets/js/sitecfg.js" type="text/javascript"></script>
+	
+		<script src="../../../../../zh-CN/assets/js/signIn.js" type="text/javascript"></script>
+	
+
+	<!--- Language Picker -->
+	<script src="../../../../../zh-CN/assets/js/locale/l10NStrings.js" type="text/javascript"></script>
+	
+		 
+	
+
+	<script src="../../../../../zh-CN/assets/js/calcite-web.js" type="text/javascript"></script>
+
+
+
+  <!--- search MD -->
+    <META name="description" content="ArcGIS URL 的某些部分表示变量值，您可为这些变量值提供特定于您站点的信息。ArcGIS URL 的其他部分则为常量；在特定类型的网站中，这些常量始终相同。"><META name="last-modified" content="2019-12-6"><META name="product" content="arcgis-portal-windows,arcgis-enterprise-windows"><META name="sub_category" content="Portal for ArcGIS (Windows)"><META name="search-collection" content="help"><META name="content_type_label" content="帮助主题"><META name="sub_category_label" content="Portal for ArcGIS (Windows)"><META name="search-category" content="help-general"><META name="subject_label" content="PORTAL,服务,SERVER"><META name="version" content="10.8"><META name="content_type" content="Help Topic"><META name="subject" content="PORTAL,SERVICES,SERVER"><META name="content-language" content="zh-cn">
+    <!--- search MD -->
+
+  
+  <script src="../../../../../zh-CN/assets/js/switchers/portal-1.js" type="text/javascript"></script>
+  
+      
+
+</head>
+
+<!--
+      pub: GUID-86E3206A-3CAD-43C1-9F16-FFB7CA3AEC71=33
+      tpc: GUID-E4CE22E5-9373-4642-8E09-10C4C012D270=10
+      -->
+
+
+<!-- variable declaration, if any -->
+<!-- can change following macro to set variable once we are on Jinja 2.8 -->
+
+
+
+
+
+<body class="claro zh-CN server">
+  
+
+  <!-- Drawer location -->
+  <div class="drawer drawer-left js-drawer" data-drawer="top-nav">
+        <nav class="drawer-nav" role="navigation">
+          <aside class="side-nav">
+            <h2 class="side-nav-title">Arc<span>GIS</span> Enterprise</h2>
+            <form id="helpSearchForm" class="margin-left-half margin-right-half leader-half trailer-half drawer-search-form" method="GET">
+              <input type="search" name="q"  placeholder="搜索 ArcGIS Enterprise 帮助">
+              <input type="hidden" name="collection" value="help" />
+              <input type="hidden" name="product" value="arcgis-portal-windows" />
+              <input type="hidden" name="version" value="10.8" />
+              <input type="hidden" name="language" value="zh-CN" />
+            </form>    
+             <a id="nav-portal" data-langlabel="portal" href="../../../../../zh-CN/portal/" class="side-nav-link">Portal</a>
+             
+            <a id="all-servers" data-langlabel="all-servers" href="../../../../../zh-CN/server/" class="side-nav-link">所有服务器</a>
+            <a id="gis-server" data-langlabel="gis-server" href="../../../../../zh-CN/server/" class="side-nav-link">GIS Server</a>
+            <a id="image-server" data-langlabel="image-server" href="../../../../../zh-CN/image/" class="side-nav-link">Image Server</a>
+            <a id="geo-analytics-server" data-langlabel="geo-analytics-server" href="../../../../../zh-CN/geoanalytics/" class="side-nav-link">GeoAnalytics Server</a>
+            <a id="geoevent-server" data-langlabel="geoevent-server" href="../../../../../zh-CN/geoevent/" class="side-nav-link">GeoEvent Server</a>
+            <a id="notebook-server" data-langlabel="notebook-server" href="../../../../../zh-CN/notebook/" class="side-nav-link">Notebook Server</a>
+            <a id="nav-data-store" data-langlabel="data-store" href="../../../../../zh-CN/data-store/" class="side-nav-link">Data Stores</a>
+            <a id="nav-cloud" data-langlabel="cloud" href="../../../../../zh-CN/cloud/" class="side-nav-link">云</a>
+            <a id="nav-apps" data-langlabel="apps" href="../../../../../zh-CN/apps/" class="side-nav-link">应用程序</a>
+            <a id="nav-doc" data-langlabel="documentation" href="../../../../../zh-CN/documentation/" class="side-nav-link">文档</a>
+
+          </aside>
+        </nav>
+    </div>
+
+    <!-- user navigation collapses to drawer on mobile -->
+    
+    <div class="drawer drawer-right js-drawer hide-if-logged-out logged-in-navigation" data-drawer="user-nav">
+      <nav class="drawer-nav">
+        <aside class="side-nav">
+          <a class="side-nav-link agolProfile" href="#">我的个人资料</a>
+          <a class="side-nav-link icon-ui-sign-out js-log-out" href="#">登出</a>
+        </aside>
+      </nav>
+    </div>
+    
+<!-- End of drawer -->
+
+  
+  <div class="wrapper">
+      <!--googleoff: all-->
+
+      <header class="top-nav" data-skin="learn">
+        <a class="skip-to-content" href="#skip-to-content">Skip To Content</a>
+        <div class="grid-container">
+          <div class="column-24">
+
+
+            <!--<div class="top-nav-title-wrapper text-center ">-->
+              <a href='../../../../../zh-CN/' class="top-nav-title tablet-hide"><span>Arc</span>GIS  Enterprise</a>
+              <a href='../../../../../zh-CN/' class="icon-ui-menu top-nav-title js-drawer-toggle tablet-show" data-drawer="top-nav"><span>Arc</span>GIS Enterprise</a>
+            <!--</div> -->
+
+          
+            <nav role="navigation" class="top-nav-list left tablet-hide">
+              <a id="nav-portal" data-langlabel="portal" href="../../../../../zh-CN/portal/" class="top-nav-link">Portal</a>
+
+                <div class="dropdown js-dropdown ">
+                  <a class="top-nav-link js-dropdown-toggle" tabindex="0" aria-haspopup="true" aria-expanded="false" href="#">Servers</a>
+                  <nav class="dropdown-menu featured" role="menu">
+                    <ul class="dropdown-sublist-featured">
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/get-started/latest/windows/additional-server-deployment.htm" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path  d="M42.92 6.1H4.12v8.566l.833.832-.835.833-.018 7.332.845.847-.825.824V33.9h25v5.2h-2v1.075H8.02v.8h19.1v.925h4.8v-.925H40v-.8h-8.08V39.1h-2v-5.2h13v-8.566l-.834-.834.835-.834v-7.332l-.835-.834.835-.834zm-11.8 35h-3.2v-1.2h3.2zm11-8H4.92v-7.434l.767-.766h35.668l.765.766zm0-9.766l-.766.766H5.666l-.766-.767.017-6.669.766-.764h35.671l.766.766zm0-9l-.766.766H5.687l-.766-.766V6.9h37.2zM19 11.9h-2v-.8h2zm-4 0h-2v-.8h2zm-4 0H9v-.8h2zm6 8.2h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9zm8 9h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9z"/></svg></span>
+                          <span class="sublink-text">所有服务器</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/server/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M45.98 33.575a.616.616 0 0 0-.335-.51l-3.362-2.03 3.362-2.031a.556.556 0 0 0 0-1.02l-11.1-6.704a1.293 1.293 0 0 0-1.112 0L22.33 27.982a.556.556 0 0 0 0 1.02l3.36 2.03-3.358 2.03a.556.556 0 0 0-.002 1.021l3.322 2.006-3.324 2.008a.555.555 0 0 0 .002 1.017l11.102 6.703a1.25 1.25 0 0 0 1.11.002l11.104-6.706a.556.556 0 0 0 0-1.02l-3.32-2.006 3.318-2.004a.607.607 0 0 0 .335-.509zM33.837 21.97c.026-.01.286-.005.29-.005l10.814 6.53-10.8 6.523c-.028.01-.284.005-.294.006l-10.813-6.53zm11.105 16.636l-10.8 6.523a2.564 2.564 0 0 1-.295.006l-10.81-6.529 3.39-2.047 7.004 4.23a1.083 1.083 0 0 0 .557.131 1.101 1.101 0 0 0 .554-.13l7.01-4.233zM34.14 40.098a2.545 2.545 0 0 1-.294.006l-10.812-6.53 3.43-2.073 6.97 4.208a1.25 1.25 0 0 0 1.107-.001l6.966-4.206 3.431 2.073zM9 8H7V7h2zm8 8h-2v-1h2zm-4-8h-2V7h2zm4 0h-2V7h2zm-4 8h-2v-1h2zm7.316 11.1H3.9v-6.434l.766-.766h35.668l.766.766v2.12l.8.483v-2.935l-.826-.826.826-.845v-6.329l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9h16.88a2.632 2.632 0 0 1 .336-.8zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zm0 8v-5.668l.766-.766h35.668l.766.766v5.67l-.746.764H4.666zM15 24v-1h2v1zm-4 0v-1h2v1zm-2-8H7v-1h2zm-2 8v-1h2v1z"/></svg></span>
+                          <span class="sublink-text">GIS Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/image/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 8h-2V7h2zm-4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm8 8h-2v1h2zm-8 0H7v1h2zm4 9v-1h-2v1zm-4 0v-1H7v1zm8 0v-1h-2v1zm4 3.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V21h-.8v-.334l-.766-.766H4.666l-.766.766V27.1H21zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zm40.234 4v21.8H23.1V23.1zm-.8 16.366L39.466 44.1h2.868l1.766-1.766zm-20.2-9.932l5.634-5.634h-2.868L23.9 26.666zm6.2-5.068L24.466 30.1h2.868l2.766-2.766zM28.466 30.1H30.1v-1.634zm2.434 0h6.2v-6.2h-6.2zm-7 7h6.2v-6.2h-6.2zm7 0h6.2v-6.2h-6.2zm0 6.434l5.634-5.634h-2.868L30.9 40.666zm7-7l5.634-5.634h-2.868L37.9 33.666zm1.634-5.634H37.9v1.634zm-8.634 7v1.634l1.634-1.634zm.566 6.2h2.868l2.766-2.766v-2.868zm6.434-3.566l2.634-2.634H37.9zM35.466 44.1H37.1v-1.634zm2.434 0h.434l5.766-5.766V37.9h-2.434L37.9 41.666zm6.2-8.634L42.466 37.1H44.1zm0-4L38.466 37.1h2.868l2.766-2.766zm0-7.566h-6.2v6.2h6.2zm-20.2 0v1.634l1.634-1.634zm0 20.2h6.2v-6.2h-6.2zm20.2 0v-.634l-.634.634z"/></svg></span>
+                          <span class="sublink-text">Image Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/geoanalytics/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 16h-2v-1h2zm-8 8v-1H7v1zm8 0v-1h-2v1zM13 7h-2v1h2zm4 0h-2v1h2zM9 7H7v1h2zm21.45 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V27.9h-1.464l-.801-.8H41.1v-6.434l-.766-.766H4.666l-.766.766V27.1h27.15zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM13 24v-1h-2v1zm0-9h-2v1h2zm-4 0H7v1h2zm26.672 27.148A1.87 1.87 0 0 1 35.9 43a1.91 1.91 0 1 1-3.763-.222l-9.845-3.414A1.88 1.88 0 0 1 21 39.9a1.9 1.9 0 1 1 1.474-3.084l4.692-2.346A1.878 1.878 0 0 1 27.1 34a1.902 1.902 0 0 1 1.9-1.9 1.867 1.867 0 0 1 .781.191l3.788-5.05A1.88 1.88 0 0 1 33.1 26a1.9 1.9 0 1 1 3.491 1.026l4.889 4.888c-.069.056-.144.1-.21.162a3.986 3.986 0 0 0-.358.402l-4.883-4.883A1.889 1.889 0 0 1 35 27.9a1.867 1.867 0 0 1-.781-.191l-3.788 5.049a1.868 1.868 0 0 1 .437.965l9.204.614c-.018.11-.049.218-.058.33A3.93 3.93 0 0 0 40 35c0 .046.01.09.01.135l-9.185-.612A1.913 1.913 0 0 1 29 35.9a1.889 1.889 0 0 1-1.474-.716l-4.692 2.346a1.878 1.878 0 0 1 .066.47 1.9 1.9 0 0 1-.105.625c-.007.02-.022.036-.03.056l9.63 3.34a1.87 1.87 0 0 1 2.786-.505l5.415-4.437c.067.108.127.22.204.322a3.9 3.9 0 0 0 .292.306zM33.9 26a1.092 1.092 0 0 0 .43.872 1.12 1.12 0 0 0 1.42-.068A1.1 1.1 0 1 0 33.9 26zm-6 8a1.1 1.1 0 0 0 2.196.093 1.135 1.135 0 0 0-.426-.965A1.087 1.087 0 0 0 29 32.9a1.101 1.101 0 0 0-1.1 1.1zm-5.8 4a1.098 1.098 0 1 0-.06.362A1.101 1.101 0 0 0 22.1 38zm13 5a1.1 1.1 0 1 0-2.2 0 1.1 1.1 0 0 0 2.2 0zm10.8-8a1.9 1.9 0 1 1-3.8 0c0-.053.003-.105.007-.158A1.9 1.9 0 0 1 45.9 35zm-.8 0a1.1 1.1 0 0 0-2.196-.093 1.153 1.153 0 0 0 .216.752A1.1 1.1 0 0 0 45.1 35z"/></svg></span>
+                          <span class="sublink-text">GeoAnalytics Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/geoevent/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M13 8h-2V7h2zm4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm12.418 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826v2.117c-.259-.177-.53-.337-.8-.497v-1.288l-.766-.766H4.666l-.766.766V27.1h17.933c-.148.26-.283.53-.415.8zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM9 24v-1H7v1zm4-9h-2v1h2zm0 9v-1h-2v1zm-4-9H7v1h2zm8 9v-1h-2v1zm16.9 2h-.8v8.9H39v-.8h-5.1zm.1-3.901a11.9 11.9 0 1 0 11.9 11.9 11.914 11.914 0 0 0-11.9-11.9zm0 23a11.1 11.1 0 1 1 11.1-11.1 11.112 11.112 0 0 1-11.1 11.1z"/></svg></span>
+                          <span class="sublink-text">GeoEvent Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/notebook/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M22 27.1H3.9v-6.434l.766-.766h18.576a5.262 5.262 0 0 1 .83-.8H4.666l-.766-.766v-5.668l.766-.766h35.668l.766.766V18h.8v-5.666l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9H22zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zM9 8H7V7h2zm8 0h-2V7h2zm-4 0h-2V7h2zm2 16v-1h2v1zm-4 0v-1h2v1zm-4 0v-1h2v1zm0-8v-1h2v1zm8 0v-1h2v1zm-4 0v-1h2v1zm18.9 8.1h-1.8v1.8h1.8zm-.8 1h-.2v-.2h.2zm15.498-4.48a2.727 2.727 0 0 0-1.62-.5v-.02H27.25a3.154 3.154 0 0 0-3.15 3.15V38.1h-1.68a3.386 3.386 0 0 0-2.872 1.58 3.49 3.49 0 0 0-.157 3.419 3.241 3.241 0 0 0 2.954 1.801h15.161a3.404 3.404 0 0 0 3.394-3.4V26.9h5v-3.65a3.224 3.224 0 0 0-1.302-2.63zM22.345 44.1a2.44 2.44 0 0 1-2.23-1.341 2.706 2.706 0 0 1 .11-2.65A2.588 2.588 0 0 1 22.42 38.9h12.89a3.395 3.395 0 0 0 0 5.2zM40.1 23.192V41.5a2.6 2.6 0 1 1-2.6-2.6v-.8H24.9V23.25a2.352 2.352 0 0 1 2.35-2.35h13.795a3.183 3.183 0 0 0-.945 2.292zm5 2.908h-4.2v-2.908a2.274 2.274 0 0 1 1.44-2.18 1.944 1.944 0 0 1 1.791.259 2.423 2.423 0 0 1 .97 1.979zm-17.1 5h9v.8h-9zm0 3h7v.8h-7zm0-6h9v.8h-9zm4-3h5v.8h-5z"/></svg></span>
+                          <span class="sublink-text">Notebook Server</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+
+              <a id="nav-data-store" data-langlabel="data-store" href="../../../../../zh-CN/data-store/" class="top-nav-link">Data Stores</a>
+              <a id="nav-cloud" data-langlabel="cloud" href="../../../../../zh-CN/cloud/" class="top-nav-link">云</a>
+              <a id="nav-apps" data-langlabel="apps" href="../../../../../zh-CN/apps/" class="top-nav-link">应用程序</a>
+            </nav>
+
+
+            
+            
+            
+
+            <div class="margin-left-1 top-nav-list right hide-if-logged-in logged-out-navigation">
+               
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+              
+              <a data-langlabel="sign-in" id="login-link" class="icon-ui-user top-nav-link link-blue login-link" href="#">登录</a>
+              
+            </div>
+
+            
+            <nav class="margin-left-1 top-nav-list right hide-if-logged-out logged-in-navigation">
+              
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+             
+              <div class="dropdown js-dropdown right">
+
+                <div class="tablet-show top-nav-link">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a href="#" data-drawer="user-nav" class="user-nav-name js-drawer-toggle" data-first-name></a>
+                </div>
+
+                <div class="tablet-hide top-nav-link js-dropdown-toggle">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a class="user-nav-name top-nav-dropdown dropdown-btn" data-first-name>&nbsp;</a>
+                </div>
+
+                <nav class="dropdown-menu dropdown-right">
+                
+                  <a class="dropdown-link agolProfile" id="agolProfile" href="#">我的个人资料</a>
+                  <a class="dropdown-link js-log-out" id="agolLogout" href="#">登出</a>
+                </nav>
+              </div>
+            </nav>
+            
+
+            
+          </div>
+        </div>
+      </header>
+
+      <div class="js-search search-overlay">
+        <div class="search-content" role="dialog" aria-labelledby="search">
+          <form method="GET" id="helpSearchForm">
+            <label>
+              搜索 ArcGIS Enterprise 帮助
+              <div class="search-bar">
+                <input type="search" name="q"  placeholder="搜索 ArcGIS Enterprise 帮助" class="search-input js-search-input">
+                <input type="hidden" name="collection" value="help" />
+                <input type="hidden" name="product" value="arcgis-portal-windows" />
+                <input type="hidden" name="version" value="10.8" />
+                <input type="hidden" name="language" value="zh-CN" />
+              </div>
+            </label>
+            <input type="hidden" name="relativePath" value="../../../../../" /><button type="submit" class="btn btn-large right">搜索</button>
+          </form>
+        </div>
+      </div>
+
+      <!--googleon: all-->
+
+      <div id="skip-to-content">
+        <!--googleoff: all-->
+        <header class="sub-nav sub-nav-learn">
+          <div class="grid-container">
+            
+            <div class="column-24">
+              <div style="display:table;" class="sdk-home-banner">
+                <div class="sdk-home-banner-content">
+                  <h1 class="sub-nav-title link-white">Portal for ArcGIS</h1>
+                </div>
+              </div>
+            </div>
+
+            <div class="column-24">
+              <nav class='sub-nav-list tablet-hide'><a class="sub-nav-link" href="../../../../../zh-CN/portal/" target="_top" title="Portal for ArcGIS 主页">主页</a><a class="sub-nav-link" href="../../../../../zh-CN/portal/latest/use/" target="_top" title="使用 Portal for ArcGIS">使用</a><a class="sub-nav-link is-active" href="../../../../../zh-CN/portal/latest/administer/windows/" target="_top" title="安装、管理和保护 Portal for ArcGIS">管理</a></nav><select class='tablet-show select-full trailer-half js-select-nav'><option value="../../../../../zh-CN/portal/">主页</option><option value="../../../../../zh-CN/portal/latest/use/">使用</option><option selected="true" value="../../../../../zh-CN/portal/latest/administer/windows/">管理</option></select>
+            </div>
+
+          </div>
+        </header>
+        <!--googleon: all-->
+       
+        <!-- content goes here -->
+        <div class="grid-container ">
+          
+
+            
+              
+  <!--BREADCRUMB-BEG--><div id="bigmac" class="sticky-breadcrumbs trailer-2" data-spy="affix" data-offset-top="180"> </div><!--BREADCRUMB-END-->
+  <!--googleoff: all-->
+    <div class="column-5 tablet-column-12 trailer-2 ">
+      <aside class="js-accordion accordion reference-index" aria-live="polite" role="tablist">
+        <div></div>
+      </aside>
+
+      <div class="js-sticky scroll-show tablet-hide leader-1 back-to-top" data-top="0" style="top: 0px;">
+        <a href="#" class="btn btn-fill btn-clear">返回顶部</a>
+      </div>
+    </div>
+  <!--googleon: all-->
+  
+            
+            
+            
+	
+		<div class="column-13  pre-1 content-section">
+	
+		<header class="trailer-1"><h1>ArcGIS URL 组成</h1></header>
+
+		 
+	<!--googleoff: all-->
+	
+		
+				<aside id="main-toc-small" class="js-accordion accordion tablet-show trailer-1">
+			      <div class="accordion-section">
+			        <h4 class="accordion-title">在本主题中</h4>
+			        <div class="accordion-content list-plain">
+			          <ol class="list-plain pre-0 trailer-0"><li><a href="#GUID-EACC14BB-E691-45D2-864D-2F202B5948CC"><ph translate="no" varid="ArcGISforServer">ArcGIS Server</ph> 管理 URL</a></li><li><a href="#ESRI_SECTION1_41D52658B83E43CBBE34C15D1015F0D0"><ph translate="no" varid="ArcGISforServer">ArcGIS Server</ph> 最终用户 URL</a></li><li><a href="#ESRI_SECTION1_15586F97B02D4FB7AA227705B4122F5B">ArcGIS Online URL</a></li><li><a href="#ESRI_SECTION1_9E0035F80E5F4453A0AD7C7BC9EEC5B4"><ph translate="no" varid="PortalForArcGIS">Portal for ArcGIS</ph> URL</a></li></ol>
+			        </div>
+			      </div>
+			     </aside>
+		
+    
+   <!--googleon: all-->
+
+
+		<main>
+			
+	
+    	
+    
+
+
+			
+<p id="GUID-68DDF490-74C9-45B5-A699-9FD5964EE739">统一资源定位器 (URL) 是用来标识不同网站的地址。ArcGIS URL 的某些部分表示变量值，您可为这些变量值提供特定于您站点的信息。ArcGIS URL 的其他部分则为常量；在特定类型的网站中，这些常量始终相同。例如，ArcGIS Server Manager 的 URL 始终包含文字“manager”。</p><p id="GUID-7EA2B8C5-F185-4C15-B579-0252F5679FD0">本主题帮助您确定必须对 ArcGIS URL 中的哪些部分进行更改，以便反映组织的正确信息。</p><section class="section1 padded-anchor" id="GUID-EACC14BB-E691-45D2-864D-2F202B5948CC" purpose="section1"><h2><span class="ph">ArcGIS Server</span> 管理 URL</h2><p id="GUID-0FAE0E8F-22C4-4595-B5B1-4B73C958C2B2">可将 ArcGIS Server Manager 用于 <span class="ph">ArcGIS Server</span> 站点的大部分管理任务；但有些管理任务要通过 ArcGIS Server Administrator Directory 完成。</p><section class="section2 padded-anchor" id="ESRI_SECTION2_9067EBCFB1254A01B9A10115FCB5501D" purpose="section2"><h3>ArcGIS Server Manager</h3><p id="GUID-1A01102B-1B3A-480D-BDEA-5B1D135BCFD9">ArcGIS Server Manager 是 <span class="ph">ArcGIS Server</span> 站点的主要管理工具。</p><p id="GUID-3320667D-1ABB-4B06-91C5-AC26E52AAC17">默认条件下，禁止通过 <span class="ph">ArcGIS Web Adaptor</span> 访问 Manager；因此在大多数情况下，需要通过以下任一格式的 URL 连接到 Manager：</p><p id="GUID-657EC6E2-6AF1-406C-A657-D1BC68771A8A"><span class="usertext">http://gisserver.domain.com:6080/arcgis/manager</span></p><p id="GUID-D5A57E4D-01A4-449D-A96B-A179F086BF3C">或者</p><p id="GUID-FF7CD763-9147-424C-9164-DBB6C89329F2"><span class="usertext">https://gisserver.domain.com:6443/arcgis/manager</span></p><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><thead><tr><th colspan="1">URL 组成</th><th colspan="1">描述</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-3FAFF9E9-E8CE-4558-9ADA-D2875F5AA96E">gisserver</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-0BBA4399-A6A7-43C1-8992-F7BE6E9A8149">安装 <span class="ph">ArcGIS Server</span> 的服务器的名称。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-29B1EF67-9772-421D-8BF9-3F3A4B61F64F">domain.com</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-0CD35805-8FBC-4FF1-A2AF-08F3EFCCBEF8">您的域名。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-C70C7838-2D3A-4CB8-A033-D916D100D4FD">6080</p><p id="GUID-F8D6042A-D2EC-43BA-B462-902AE129F732">或者</p><p id="GUID-4F3364D7-D512-400D-BC7F-60F047E1D6A8">6443</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-42E04AC9-F920-45B7-8C70-C67EC03E39A6"><span class="ph">ArcGIS Server</span> 的通信端口。</p><p id="GUID-A55B08C4-1E8B-476E-BCBB-BC20C2D8BE9D">如果 <span class="ph">ArcGIS Server</span> 使用 HTTP 通信，则端口号为 6080。</p><p id="GUID-BFFA5FD3-83B7-4B37-B97F-46343782E8E9">如果 <span class="ph">ArcGIS Server</span> 使用 HTTPS 通信，则端口号为 6443。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-8BB9B102-4D5D-490C-B58F-9CC0301E2393">arcgis</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-7681D6DA-C74B-476E-82B1-AE5A512E5DFC">常量</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-3F234656-D24D-4256-A76A-B85236A65264">manager</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-8D286B52-C492-49F6-BA5E-5F0DDD2EAABA">常量</p></td></tr></tbody><caption></caption></table></div><p id="GUID-C571E3EF-508C-4B04-979C-32B2EB058D59">如上所述，如果服务器管理员允许通过 <span class="ph">ArcGIS Web Adaptor</span> 进行管理访问，那么您只能通过 ArcGIS Web Adaptor 访问 Manager。如果这样，URL 与以下格式相似：</p><p id="GUID-35CAE894-03FD-4664-9E3B-6B784093B1B4"><span class="usertext">http://webadaptorhost.domain.com/webadaptorname/manager</span></p><p id="GUID-2E434944-8032-49D2-BEA4-7BEDEA2AF8EB">或者</p><p id="GUID-70E8D5B5-B6D0-45F1-BA9A-FEEF45861970"><span class="usertext">https://webadaptorhost.domain.com/webadaptorname/manager</span></p><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><thead><tr><th colspan="1">URL 组成</th><th colspan="1">描述</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-9EFC2A75-107A-4E68-B957-28C16DCC6351">webadaptorhost</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-8B0B88C2-EC8F-4539-83C2-67D2131EF8EC">安装 <span class="ph">ArcGIS Web Adaptor</span> 的服务器的名称。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-7F4174D3-43B3-4C1A-A36A-A39B40B76FA3">domain.com</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-6FE83976-A0BB-428F-B466-2E0B5F580A4A">您的域名。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-8CED32D8-43A7-45B7-B011-9352257435A4">webadaptorname</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-75E63AA0-ACAA-4F6D-8AE5-C55841ED08A8"><span class="ph">ArcGIS Web Adaptor</span> 的名称；默认名称为 arcgis，但在安装 <span class="ph">ArcGIS Web Adaptor</span> 时您可能使用了其他名称。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-F7F42516-7E77-46BB-9473-EC7F3FBA9290">manager</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-6AE9186A-A924-4682-AD29-AA6D5F62AAC4">常量</p></td></tr></tbody><caption></caption></table></div><p id="GUID-963A409D-6CDB-42D2-A181-FF977F5FB67A">如果您的<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/web-adaptor/latest/install" href="../../../../../zh-CN/web-adaptor/latest/install/iis/multiple-machine-deployment-with-third-party-load-balancer.htm">多机 <span class="ph">ArcGIS Server</span> 部署</a>使用第三方负载均衡器，您用来访问 Manager 的 URL 将为以下格式：</p><p id="GUID-4B0D36CF-452D-4AF4-AC1B-87C4BBDB6275"><span class="usertext">https://loadbalancerhost.domain.com/loadbalancername/manager</span></p><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><thead><tr><th colspan="1">URL 组成</th><th colspan="1">描述</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-A440C54A-ADFD-4771-9BFC-47C5DAD2E83F">loadbalancerhost</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-F1CE0FE7-7E12-446C-873C-A0A990ACA938">安装了第三方负载均衡器的服务器的名称。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-571FF8D0-6A1D-47DE-8572-DF983E7F5AFD">domain.com</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-ACA39888-6CA2-4A37-A0AB-511AD6994741">您的域名。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-57DE02BB-D0EA-4F59-9550-DB630D709BE8">loadbalancername</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-97777CD5-8D66-4D41-A37A-72B545CCF85C">web 上下文名称；在配置负载均衡器时指定该名称。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-FFD8E03C-40D2-4A9F-9F61-DF902C29DBC0">manager</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-EFA464C3-B72B-4F46-865C-0908B46664E4">常量</p></td></tr></tbody><caption></caption></table></div></section><section class="section2 padded-anchor" id="ESRI_SECTION2_E260C7E968D043B7960F2E534403573E" purpose="section2"><h3>ArcGIS Server Administrator Directory</h3><p id="GUID-19232E4B-C0AC-4EF9-B9E2-95A07C5E48B8">连接到 ArcGIS Server Administrator Directory 以编写 <span class="ph">ArcGIS Server</span> 的管理脚本，或者创建几何或搜索服务。</p><p id="GUID-B9186F5D-D13E-468E-ADB1-E9DF953555FB">在大多数情况下，使用包含端口号的 URL 连接到 ArcGIS Server Administrator Directory。默认情况下，通过 <span class="ph">ArcGIS Web Adaptor</span> 阻止管理员访问；因此，Administrator Directory 的 URL 采用以下任一格式：</p><p id="GUID-77517B0B-77BD-4E37-BBB0-A94026C8600A"><span class="usertext">http://gisserver.domain.com:6080/arcgis/admin</span></p><p id="GUID-138C2C61-3E66-472C-B7DC-B9A350508190">或者</p><p id="GUID-4F434B64-F4D5-4A2E-A970-69EC9D26B69C"><span class="usertext">https://gisserver.domain.com:6443/arcgis/admin</span></p><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><thead><tr><th colspan="1">URL 组成</th><th colspan="1">描述</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-D3431D30-F2AC-4FAA-A947-D37CD6122DD7">gisserver</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-5DF42884-3FA4-43B5-A0B0-37774F0DFED7">安装 <span class="ph">ArcGIS Server</span> 的服务器的名称。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-7BA3E948-8C91-454F-A1C5-EB6506DA954E">domain.com</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-8E6F8980-F121-4C69-A0D6-0D5F1AD116B4">您的域名。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-D4CABFF5-0B02-4DB3-B1D9-CD9DDC7BC155">6080</p><p id="GUID-00B8C075-869F-4C91-B0D0-BBAFD0539EFB">或者</p><p id="GUID-ACA4E5C0-90A6-44D8-ACED-41828F7B9ABC">6443</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-A2F8F963-0D0F-4C53-ABBD-C4AD99DEE840"><span class="ph">ArcGIS Server</span> 的通信端口。</p><p id="GUID-A6F6913E-63E3-4CBA-B1BE-115F0CB8FAED">如果 <span class="ph">ArcGIS Server</span> 使用 HTTP 通信，则端口号为 6080。</p><p id="GUID-371B1FC1-4727-40EB-AF60-43E398896796">如果 <span class="ph">ArcGIS Server</span> 使用 HTTPS 通信，则端口号为 6443。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-E11974AE-6732-4A03-B664-55E93BA90827">arcgis</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-811DCE95-EA7D-46B0-94B0-1EB7BCDBE1F8">常量</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-29FF70DD-5301-4E45-9D86-70BB728D67D4">管理</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-79EB155C-7340-412D-A346-F34E0BC39A10">常量</p></td></tr></tbody><caption></caption></table></div><p id="GUID-8A37670B-988F-4257-B8E6-0D0D3D956AB5">只有在服务器管理员通过 <span class="ph">ArcGIS Web Adaptor</span> 授予管理访问权限的情况下，Administrator Directory 的 URL 才会采用以下格式：</p><p id="GUID-B81EF71D-5358-44A2-8047-8C3A984D6259"><span class="usertext">http://webadaptorhost.domain.com/webadaptorname/admin</span></p><p id="GUID-A81895ED-FFDA-4DAB-ADE1-D29DEF9F834A">或者</p><p id="GUID-B5AA584E-897E-4821-85CF-FCA30B4F2823"><span class="usertext">https://webadaptorhost.domain.com/webadaptorname/admin</span></p><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><thead><tr><th colspan="1">URL 组成</th><th colspan="1">描述</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-24C183B1-CB31-4F90-9A4A-22F7B3FE831E">webadaptorhost</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-05A7E9F0-D28F-4DF3-8A52-4128F5FF4AC7">安装 <span class="ph">ArcGIS Web Adaptor</span> 的服务器的名称。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-42EAE191-5FAE-4059-AA61-145DC798F778">domain.com</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-20CF706A-CF63-4779-9E22-D96C801164D9">您的域名。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-09E12AE1-26A0-4BE2-B24E-2C8006A3D620">webadaptorname</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-E3152CA4-B5D6-434A-8D6C-733F9B0FC94C"><span class="ph">ArcGIS Web Adaptor</span> 的名称；默认名称为 arcgis，但在安装 <span class="ph">ArcGIS Web Adaptor</span> 时您可能使用了其他名称。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-77DFDB52-5A49-4AA3-A6D9-F6D665313B3F">管理</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-3EE868B8-4874-42A8-A16E-C3F875EAB14D">常量</p></td></tr></tbody><caption></caption></table></div><p id="GUID-0D9BB1E6-50A6-483A-8374-EED6C48475D7">如果您的<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/web-adaptor/latest/install" href="../../../../../zh-CN/web-adaptor/latest/install/iis/multiple-machine-deployment-with-third-party-load-balancer.htm">多机 <span class="ph">ArcGIS Server</span> 部署</a>使用第三方负载均衡器，您用来访问 Administrator Directory 的 URL 将为以下格式：</p><p id="GUID-D7A970FE-3FDC-47F9-B37A-6CF57F2558A4"><span class="usertext">https://loadbalancerhost.domain.com/loadbalancername/admin</span></p><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><thead><tr><th colspan="1">URL 组成</th><th colspan="1">描述</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-B720B576-1F56-4BF3-8410-B030E7573053">loadbalancerhost</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-D7D5478E-45F7-49A2-9F14-B10ACABCC383">安装了第三方负载均衡器的服务器的名称。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-18CFA2DC-4D63-40C7-AFAF-75DE6E9A9E10">domain.com</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-619FA696-54D1-4124-9234-ADE98F982DC2">您的域名。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-3B09532A-359E-46A7-938E-3305CCE69BEE">loadbalancername</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-36A32402-FDBA-44AB-A528-1A79BDC87C21">web 上下文名称；在配置负载均衡器时指定该名称。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-4A629A0E-96F6-44F9-8628-E9BBF4B418BC">管理</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-C63A9F26-A0FC-466E-895D-3EB544AA04C3">常量</p></td></tr></tbody><caption></caption></table></div></section><section class="section2 padded-anchor" id="ESRI_SECTION2_9B3B3326E55B43759989D7A003278B85" purpose="section2"><h3><span class="ph">ArcGIS Server</span> 管理员和发布者连接</h3><p id="GUID-B4CF4C42-7C22-4739-8278-5D224F7B6B55"><span class="ph">ArcGIS Server</span> 管理员可从 <span class="ph">ArcMap</span> 或 <span class="ph">ArcGIS Pro</span> 连接到其 <span class="ph">ArcGIS Server</span> 站点，以执行服务器管理任务的子集，例如注册数据库和管理目录及日志文件。</p><p id="GUID-7E30B736-B7CD-42FB-B128-F87360DBBBD1">发布者也可以从 <span class="ph">ArcMap</span> 连接到其 <span class="ph">ArcGIS Server</span> 站点。虽然发布者连接不具有管理员连接的所有功能，但与用户连接相比，需要更高级权限，以便能够发布服务和注册数据库。</p><p id="GUID-46AF8243-E0CD-42A9-9AC6-67510FE4EDAB">您提供的用于在 <span class="ph">ArcMap</span> 或 <span class="ph">ArcGIS Pro</span> 中将管理员或发布者连接到 <span class="ph">ArcGIS Server</span> 的 URL 取决于是否允许通过 <span class="ph">ArcGIS Web Adaptor</span> 进行管理访问。在 10.6 版本之前，默认禁用此选项，但是可以启用此选项；在 10.6 及后续版本中，默认启用此选项，但是可以禁用此选项。</p><p id="GUID-FCFBE0CE-05CD-4FB2-9883-65D6FC19F322">如果禁用通过 <span class="ph">ArcGIS Web Adaptor</span> 对 <span class="ph">ArcGIS Server</span> 进行管理访问，则用于连接到服务器的 URL 将包含端口号。此 URL 采用以下任一格式：</p><p id="GUID-129798F0-2B7F-41F2-9B4F-6DCB29D42A5A"><span class="usertext">http://gisserver.domain.com:6080/arcgis</span></p><p id="GUID-278731A5-36DA-41A8-906C-9C352720CF35">或者</p><p id="GUID-22F4BFD3-977D-47BF-968F-CB51206E3C09"><span class="usertext">https://gisserver.domain.com:6443/arcgis</span></p><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><thead><tr><th colspan="1">URL 组成</th><th colspan="1">描述</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-0CE65998-972F-40DB-97A2-52922839BA34">gisserver</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-E24681BC-806E-4F99-95A8-4FAA4A641D37">安装 <span class="ph">ArcGIS Server</span> 的服务器的名称。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-31EDC697-3600-4638-9E8C-F9E9FDD94338">domain.com</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-0DE35E54-8410-41FF-B1DB-35D423054AA6">您的域名。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-BCC49712-BFBC-465E-931F-E836001653F3">6080</p><p id="GUID-E15D1C71-6669-41E6-95BE-D2DC8F71CECC">或者</p><p id="GUID-823F95EB-DA63-4187-89F5-FE5102B1ABB7">6443</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-0CE265B2-F622-4F71-A0AB-043126A3DB68"><span class="ph">ArcGIS Server</span> 的通信端口。</p><p id="GUID-3E968322-A289-48B8-937A-32783A5E3308">如果 <span class="ph">ArcGIS Server</span> 使用 HTTP 通信，则端口号为 6080。</p><p id="GUID-6796E36D-2A3C-4BBD-8AAF-E4E8EE297315">如果 <span class="ph">ArcGIS Server</span> 使用 HTTPS 通信，则端口号为 6443。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-2A8570FF-18D0-443A-B529-AA11BF5A8C20">arcgis</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-F40F8295-1547-4F26-A19D-DCDF08C0F789">常量</p></td></tr></tbody><caption></caption></table></div><p id="GUID-FC3A4961-637B-4607-838F-268657B1852A">如果允许通过 <span class="ph">ArcGIS Web Adaptor</span> 进行管理访问，则 <span class="ph">ArcGIS Server</span> 管理员连接的 URL 将采用以下格式：</p><p id="GUID-029F1DC3-A91E-45FC-87C7-86A53543D827"><span class="usertext">http://webadaptorhost.domain.com/webadaptorname</span></p><p id="GUID-3B2FA515-D1FA-482B-B66F-A9FD43EC6ADE">或者</p><p id="GUID-619394FD-7170-4F88-A1C3-C0FCE6571282"><span class="usertext">https://webadaptorhost.domain.com/webadaptorname</span></p><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><thead><tr><th colspan="1">URL 组成</th><th colspan="1">描述</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-17AF36AC-1860-4881-A5B8-CD56D59E4B70">webadaptorhost</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-229698BB-87BA-4351-8823-1972ACABFD6E">安装 <span class="ph">ArcGIS Web Adaptor</span> 的服务器的名称。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-E7505B6F-3DE9-4A53-8D68-0AC567F63461">domain.com</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-F8F0A1B7-1562-4651-8389-71476A9C054F">您的域名。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-2E6B5AD8-04A0-4A01-B7BA-9C2B97235D2F">webadaptorname</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-0821BC38-40C5-40BB-AD0B-045E7F5C6129"><span class="ph">ArcGIS Web Adaptor</span> 的名称；默认名称为 arcgis，但在安装 <span class="ph">ArcGIS Web Adaptor</span> 时您可能使用了其他名称。</p></td></tr></tbody><caption></caption></table></div><p id="GUID-CB3CACCE-1267-4C04-B956-D91935BB7555">如果您的<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/web-adaptor/latest/install" href="../../../../../zh-CN/web-adaptor/latest/install/iis/multiple-machine-deployment-with-third-party-load-balancer.htm">多机 <span class="ph">ArcGIS Server</span> 部署</a>使用第三方负载均衡器，您用来访问 <span class="ph">ArcGIS Server</span> 的 URL 将为以下格式：</p><p id="GUID-51EE96BA-42B7-4C3A-9061-2FD3EAC62544"><span class="usertext">https://loadbalancerhost.domain.com/loadbalancername</span></p><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><thead><tr><th colspan="1">URL 组成</th><th colspan="1">描述</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-2ADFA831-DB5C-448F-A8D7-0C37C6CAD8DB">loadbalancerhost</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-756F645E-B90A-40CF-AAB5-15B771E7BCA0">安装了第三方负载均衡器的服务器的名称。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-16A9AAEA-4F3A-4F21-8098-8F569B41BD15">domain.com</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-9FD864CD-F329-4C15-9DAF-6B4249CD7D10">您的域名。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-52827663-D969-4C89-B24C-600BF7B8F44B">loadbalancername</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-0848CD3E-704D-4097-A24A-922831A9C990">web 上下文名称；在配置负载均衡器时指定该名称。</p></td></tr></tbody><caption></caption></table></div></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_41D52658B83E43CBBE34C15D1015F0D0" purpose="section1"><h2><span class="ph">ArcGIS Server</span> 最终用户 URL</h2><p id="GUID-BD38A2EF-33F1-4E5E-8405-8DF4EAA5213B">非管理员（如开发人员或最终用户）也可连接到 ArcGIS Server Services Directory 以编写应用程序或浏览服务器。他们可以连接到 ArcGIS Server Services Directory，或者通过在 URL 中包括服务位置、名称和类型以连接到特定服务。</p><section class="section2 padded-anchor" id="ESRI_SECTION2_ED8E2F7C852C46129E3950A9A9C5FF19" purpose="section2"><h3>ArcGIS Server Services Directory</h3><p id="GUID-FAE2865A-C843-4864-92D6-12AE4CB40CB8">ArcGIS Server Services Directory 通过服务器在视图中显示可用的 REST 资源。</p><p id="GUID-BB49E1AD-97B5-4D6D-96A1-3723A12B4B4E">在大多数情况下，使用包含端口号的 URL 连接到 ArcGIS REST Services Directory。此 URL 采用以下任一格式：</p><p id="GUID-3B4C46B1-64F0-45FD-940E-D3DBA4682FF0"><span class="usertext">http://gisserver.domain.com:6080/arcgis/rest</span></p><p id="GUID-8DF81477-48D6-407A-8E69-CD23084CAD37">或者</p><p id="GUID-27B49E55-289B-4F32-B5A0-0CC665FC872E"><span class="usertext">https://gisserver.domain.com:6443/arcgis/rest</span></p><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><thead><tr><th colspan="1">URL 组成</th><th colspan="1">描述</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-518DE2BE-8779-4877-A4A1-D7AC2C187B4F">gisserver</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-D8A6F3F3-320F-4617-851B-DEAAB9D9ABC9">安装 <span class="ph">ArcGIS Server</span> 的服务器的名称。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-2093DD13-12DA-4D07-9DDE-ABE630A5F885">domain.com</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-03F6D12A-A3F1-4FE4-8B87-6F19EAC55530">您的域名。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-69FC5352-CE96-4EAC-929B-00262D9C2404">6080</p><p id="GUID-9B224CC6-0B5E-4E73-9035-C0F0E49550E5">或者 </p><p id="GUID-796E33E6-83C1-47CF-9DB0-FBE205F21785">6443</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-FC7AC8FB-6B1F-48EE-A5C2-2C39141D0E42">如果 <span class="ph">ArcGIS Server</span> 使用 HTTP 通信，则端口号为 6080。</p><p id="GUID-3429BED2-CF89-48E5-B139-FAC9B5B3C18E">如果 <span class="ph">ArcGIS Server</span> 使用 HTTPS 通信，则端口号为 6443。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-793AC896-11B1-4A14-B7AA-89CFB8B72879">arcgis</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-7AC9CE79-ABAC-4061-971F-B69A77E93151">常量</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-77DB3C88-FBAD-4825-ABC5-CFA2BE53692E">rest</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-137C10EE-4DAE-4DD8-A3E3-1CE98839B516">常量</p></td></tr></tbody><caption></caption></table></div></section><section class="section2 padded-anchor" id="ESRI_SECTION2_772BC408E6164833AA132DC96872793C" purpose="section2"><h3><span class="ph">ArcGIS Server</span> 用户连接</h3><p id="GUID-F138FAAA-9DDA-4ED1-ABE3-03394630EA60">使用 <span class="ph">ArcMap</span> 或 <span class="ph">ArcGIS Pro</span> 中的服务（而并非发布或管理服务）的人员使用 <span class="ph">ArcGIS Server</span> 用户连接来访问服务。例如，进行用户连接以添加地图服务作为基础图层或通过 <span class="ph">ArcMap</span> 或 <span class="ph">ArcGIS Pro</span> 中的要素服务进行编辑。</p><p id="GUID-502A56AE-F85A-405C-B55B-CD8F92B662BE">通过端口进行 <span class="ph">ArcGIS Server</span> 用户连接时，URL 采用以下格式之一：</p><p id="GUID-A050831B-E9F3-4AEA-9D67-4984416FD98D"><span class="usertext">http://gisserver.domain.com:6080/arcgis/services</span></p><p id="GUID-F03588AC-DD10-4448-B973-557780993AAD">或者</p><p id="GUID-AE349B80-BD68-4659-989B-3266E94AA6FE"><span class="usertext">https://gisserver.domain.com:6443/arcgis/services</span></p><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><thead><tr><th colspan="1">URL 组成</th><th colspan="1">描述</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-F902942A-8CD1-4595-A35F-C11454138AD3">gisserver</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-13F42298-563E-456A-B8CC-D2B4271FD881">安装 <span class="ph">ArcGIS Server</span> 的服务器的名称。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-4AE74D16-6E81-44EB-85D3-709207B52F7A">domain.com</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-E73EC4B2-7472-4549-BD04-270C9BA92C15">您的域名。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-79DAB4B2-EBE2-49E9-9A2A-6DF01D4C2645">6080</p><p id="GUID-ECAA09D5-3D51-4727-A605-36358CBADDB6">或者 </p><p id="GUID-98602C6C-CE8D-4DB5-92A8-4EFF464781E3">6443</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-24561844-772E-44F5-A027-06B843EA5223">如果 <span class="ph">ArcGIS Server</span> 使用 HTTP 通信，则端口号为 6080。</p><p id="GUID-3690E947-B3C5-4931-AE4B-C2F956CD6415">如果 <span class="ph">ArcGIS Server</span> 使用 HTTPS 通信，则端口号为 6443。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-8DCD7D32-8FD3-4A3C-99FD-739D531DE6FB">arcgis</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-17EE4944-8EBA-4870-B66E-A50867457E3F">常量</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-E63EACBF-0EC6-4DC1-A7AF-881097DB0400">services</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-6203D186-8826-4EDE-ADC2-BF95A20DD97E">常量</p></td></tr></tbody><caption></caption></table></div><p id="GUID-BDDACB78-D9DF-4882-9FC5-1F1A55253A1A">如果 <span class="ph">ArcGIS Server</span> 配置了 <span class="ph">ArcGIS Web Adaptor</span>，则 URL 采用以下任一格式：</p><p id="GUID-4817D1CD-DED8-4F2A-B662-5ABB145D886D"><span class="usertext">http://webadaptorhost.domain.com/webadaptorname/services</span></p><p id="GUID-D3DD2DE5-04C4-4767-8CA3-E90E74111600">或者</p><p id="GUID-8945E982-A8EC-4D0C-9B3E-0A2ED21747A6"><span class="usertext">https://webadaptorhost.domain.com/webadaptorname/services</span></p><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><thead><tr><th colspan="1">URL 组成</th><th colspan="1">描述</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-3F298187-A503-46B9-8F92-CB497959C499">webadaptorhost</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-B04EE06F-4EA3-4355-B69A-60724DE8420A">安装 <span class="ph">ArcGIS Web Adaptor</span> 的服务器的名称。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-34B10287-C6EC-4375-A12B-C9379C3D0A31">domain.com</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-89E3AD48-16D8-447D-974C-0D17B5FAB38C">您的域名。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-99A25C53-2AA1-4952-B385-69A725966967">webadaptorname</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-568279EC-519D-4F8D-BD15-63C2EFC23FFB"><span class="ph">ArcGIS Web Adaptor</span> 的名称；默认名称为 arcgis，但在安装 <span class="ph">ArcGIS Web Adaptor</span> 时您可能使用了其他名称。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-CCB76E36-60CA-446C-A5EA-814FFE22ADC7">services</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-7F647906-99F6-46F4-B7ED-751A6E2D3801">常量</p></td></tr></tbody><caption></caption></table></div><p id="GUID-5B91D5BF-4111-450B-BA2A-DE5B42D7180F">如果您的<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/web-adaptor/latest/install" href="../../../../../zh-CN/web-adaptor/latest/install/iis/multiple-machine-deployment-with-third-party-load-balancer.htm">多机 <span class="ph">ArcGIS Server</span> 部署</a>使用第三方负载均衡器，您通过用户连接来访问 <span class="ph">ArcGIS Server</span> 的 URL 将为以下格式：</p><p id="GUID-53D29B92-1001-4469-BB40-B9FDB09FC21C"><span class="usertext">https://loadbalancerhost.domain.com/loadbalancername/services</span></p><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><thead><tr><th colspan="1">URL 组成</th><th colspan="1">描述</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-9E2C99BB-D1A8-403D-B0AD-FD0B5F210927">loadbalancerhost</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-BEBCF43F-CD40-4667-ABB8-873983E7598C">安装了第三方负载均衡器的服务器的名称。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-B21925EF-D45F-4705-B65D-045E84B8C8E1">domain.com</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-16BD1011-029E-4F66-9074-EF159AC76D73">您的域名。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-E8BD0BEC-7A67-4BA9-B856-0EB796724466">loadbalancername</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-9E602264-CF55-4851-9A98-DCB78E5202FC">web 上下文名称；在配置负载均衡器时指定该名称。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-96F3B55D-A534-4886-AA16-C51F85DF9D49">services</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-AEAF8B5B-CA83-45A3-8013-F7C7C823120A">常量</p></td></tr></tbody><caption></caption></table></div></section><section class="section2 padded-anchor" id="ESRI_SECTION2_30B15502135F49BFB5EA708C78FE6BD9" purpose="section2"><h3>ArcGIS 服务</h3><p id="GUID-8A8738DC-080A-4AA8-B70B-B2C1AA276565">当通过 URL 直接连接到服务时，其中包括了位置、名称和服务类型。</p><p id="GUID-D8A3FE43-B779-42AB-A771-06514C8D081A">当通过端口连接到服务时，URL 采用以下任一格式：</p><p id="GUID-ACC6143F-777E-4E93-9738-008188C5B0FB"><span class="usertext">http://gisserver.domain.com:6080/arcgis/rest/services/folder/service/MapServer</span></p><p id="GUID-E5829624-338D-4E0A-917E-2BA4CF98C5A1">或者</p><p id="GUID-37DD7E5A-B241-4462-829B-6822B8916625"><span class="usertext">https://gisserver.domain.com:6443/arcgis/rest/services/folder/service/MapServer</span></p><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><thead><tr><th colspan="1">URL 组成</th><th colspan="1">描述</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-EBC86E82-5F21-4CD1-91B5-17F9CABDD367">gisserver</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-83390CE5-175F-4E26-911B-157C98C9A75D">安装 <span class="ph">ArcGIS Server</span> 的服务器的名称。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-04D56CD5-BB1B-4364-AAD1-C4A26D934243">domain.com</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-2E6243AE-C9C2-40A1-A203-ED00CE1B74C7">您的域名。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-7376152D-2E1F-4594-888C-A232A32F41B7">6080</p><p id="GUID-747334D4-608A-46BA-972C-F74B8E48B56E">或者 </p><p id="GUID-36062959-356A-4187-9C56-90BE2081176D">6443</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-A128FE19-6428-4F74-8DBB-3842FAD1E239">如果 <span class="ph">ArcGIS Server</span> 使用 HTTP 通信，则端口号为 6080。</p><p id="GUID-3D09E08E-2ED4-4728-900B-C128AB34AED0">如果 <span class="ph">ArcGIS Server</span> 使用 HTTPS 通信，则端口号为 6443。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-83B18E07-42AF-448A-84A3-B5F645B6956C">arcgis</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-3F37567F-790B-425C-9F1A-166612C1E3D8">常量</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-8C560859-FFC3-4FA7-969D-8A8FE6835665">rest</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-C5597897-5886-4295-8728-0E4CBAE51A18">常量</p><p id="GUID-8F09EB21-4446-477F-AED0-C668950D4D61"><div class="panel trailer-1 note" id="GUID-CB2E9F82-47EA-482F-97F4-09806DC8C998"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-A7FDE920-E921-4636-9375-765571F53719">OGC 服务 URL 中不使用 rest 常数。这些包括 WMS、WMTS、WCS、WFS 和 WPS 服务。以下是一个 WMS 服务的 URL 示例：</p><p id="GUID-10CB490A-A261-4646-828F-6760D4826B12"><span class="usertext">https://gisserver.domain.com/arcgis/services/folder/service/MapServer/WMSServer</span></p></div></p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-5DB96367-259D-4AAD-9EE5-24C8F0651B53">services</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-5AD6C0A3-F259-48DA-95F8-09AEA7AC1E80">常量</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-3A56E0C9-66D0-4E99-AEC3-6A1EFBDD523F">文件夹</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-076CEAE6-A075-42D6-A0DB-53A561B3BFE0">存储服务的 <span class="ph">ArcGIS Server</span> 文件夹名称。</p><p id="GUID-BF95F3A7-7543-4D98-85C4-47BBDF03395D">如果服务存储在根文件夹而不是子文件夹中，则将此部分 URL 留空。以下是存储在根文件夹中的服务的 URL 示例：</p><p id="GUID-2D15868C-C782-4D09-B8E8-0669AF684C89"><span class="usertext">https://gisserver.domain.com:6443/arcgis/rest/services/service/MapServer</span></p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-C6103CA2-F9F7-49C1-813A-08E3B8662A9E">service</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-9A688688-2646-4025-83C4-674DC4A2ECEF">服务名称。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-9E75BAFE-347D-4D59-990B-5C6418E3EB02">MapServer</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-8D362E05-C67E-4EAB-A712-27F4C8F940BB">服务类型；有关可能的值，请参阅本节结尾部分的 REST 服务值表。</p></td></tr></tbody><caption></caption></table></div><p id="GUID-1B049229-AA68-40A8-AE3A-A512C997A4C2">如果 <span class="ph">ArcGIS Server</span> 配置了 <span class="ph">ArcGIS Web Adaptor</span>，则 URL 采用以下任一格式：</p><p id="GUID-14AE7F8B-C2C4-4045-B2E0-4F725C4A1DA4"><span class="usertext">http://webadaptorhost.domain.com/webadaptorname/rest/services/folder/service/MapServer</span></p><p id="GUID-A1FFF6C4-D3C6-48A9-AE35-AA37F728A6F4">或者</p><p id="GUID-66605E99-A9BC-416B-8C2F-BE5395EFE91A"><span class="usertext">https://webadaptorhost.domain.com/webadaptorname/rest/services/folder/service/MapServer</span></p><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><thead><tr><th colspan="1">URL 组成</th><th colspan="1">描述</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-856D115A-5787-4156-A93E-79F862C1D9BD">webadaptorhost</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-BC242F3E-F0F0-4E00-8BCA-CB636DB62737">安装 <span class="ph">ArcGIS Web Adaptor</span> 的服务器的名称。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-BDC3A1A9-D020-4881-8F08-272CCBB405FA">domain.com</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-92046DCD-B6E5-4F6F-BA2B-0FAE33279F7B">您的域名。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-F33613DD-0F26-4418-8C31-EAB43955C048">webadaptorname</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-F31490B9-5745-4902-8844-5C602B7D92CA"><span class="ph">ArcGIS Web Adaptor</span> 的名称；默认名称为 arcgis，但在安装 <span class="ph">ArcGIS Web Adaptor</span> 时您可能使用了其他名称。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-B129F396-9B97-4365-A4EB-B71C8FF0F27B">rest</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-AE8E4D3A-815B-43D7-A885-E8C34238C440">常量</p><p id="GUID-94990FEB-0520-4030-8EF3-6B715C58FB99"><div class="panel trailer-1 note" id="GUID-270A41B8-96EC-4ECD-B76B-1650A17FE97B"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-119F5214-A922-4192-AA99-BDEA7296D63F">OGC 服务 URL 中不使用 rest 常数。这些包括 WMS、WMTS、WCS、WFS 和 WPS 服务。以下是一个 WMS 服务的 URL 示例：</p><p id="GUID-01A63D5F-DFC6-48A1-9AA9-22F3E6E6BA00"><span class="usertext">https://webadaptorhost.domain.com/webadaptorname/services/folder/service/MapServer/WMSServer</span></p></div></p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-5B5D34D6-04C5-4627-A561-58888F0531B1">services</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-056863C6-68E9-4246-8A85-2FFB61EC5FB4">常量</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-2B437667-F2B3-49EB-9908-AECEE7524C04">文件夹</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-8564859B-B907-45D0-BF0A-470722448A24">存储服务的 <span class="ph">ArcGIS Server</span> 文件夹名称。</p><p id="GUID-4A06B47C-4D2C-444B-AC6A-E79605D28A11">如果服务存储在根文件夹而不是子文件夹中，则将此部分 URL 留空。以下是存储在根文件夹中的服务的 URL 示例：</p><p id="GUID-B7902C84-0BFC-4CAC-9C82-4E43FE44B4C4"><span class="usertext">https://webadaptorhost.domain.com/webadaptorname/rest/services/service/MapServer</span></p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-33841AC8-0169-4280-BE5A-852AB9B723DD">service</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-9EA1C0E9-CD36-4E94-8A28-58D5B4BFFDAB">服务名称。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-9633AD0D-7F3F-4852-B96D-2481965F334E">MapServer</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-4599F5D6-6CED-44D9-8139-C357355B2170">服务类型；有关可能的值，请参阅本节结尾部分的 REST 服务值表。</p></td></tr></tbody><caption></caption></table></div><p id="GUID-005B1F2E-537E-42EF-9FEA-AD21BD587309">如果您的<a class="xref xref" esrisubtype="extrel" hrefpfx="/zh-cn/web-adaptor/latest/install" href="../../../../../zh-CN/web-adaptor/latest/install/iis/multiple-machine-deployment-with-third-party-load-balancer.htm">多机 <span class="ph">ArcGIS Server</span> 部署</a>使用第三方负载均衡器，您通过用户连接来访问 <span class="ph">ArcGIS Server</span> 的 URL 将为以下格式：</p><p id="GUID-95BEB34E-1EB2-4AC1-BE8F-90F09C2CF67A"><span class="usertext">https://loadbalancerhost.domain.com/loadbalancername/rest/services/folder/service/MapServer</span></p><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><thead><tr><th colspan="1">URL 组成</th><th colspan="1">描述</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-09BCD82E-3FCB-4495-95E8-0452FB2B6416">loadbalancerhost</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-81EA9689-9074-449A-84A5-D840851958A2">安装了第三方负载均衡器的服务器的名称。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-B56580EC-7BFA-4D0F-8553-EF4EE4137631">domain.com</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-870DF97E-0EB2-4EBA-9256-530A0CC08044">您的域名。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-2FC2960D-A774-4738-9B79-E56B12D2AA17">loadbalancername</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-8F5FE990-A8E6-449B-82DC-5E294DD04C46">web 上下文名称；在配置负载均衡器时指定该名称。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-ADB52223-40A6-4E69-A80D-4155B0D27FF5">rest</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-0F0DC3E6-44B8-4859-93E9-765872107418">常量</p><p id="GUID-23267103-3D2F-4759-810B-0F1723156651"><div class="panel trailer-1 note" id="GUID-18883675-09D1-41CB-AB5E-3F957D5F2846"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-B4E11F39-C556-402A-B5C7-8FCE2B902125">OGC 服务 URL 中不使用 rest 常数。这些包括 WMS、WMTS、WCS、WFS 和 WPS 服务。以下是一个 WMS 服务的 URL 示例：</p><p id="GUID-70486C72-B0FD-4FC1-8163-85163635FA65"><span class="usertext">https://loadbalancerhost.domain.com/loadbalancername/services/folder/service/MapServer/WMSServer</span></p></div></p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-4C3D2D09-AD5D-4F00-A437-49BCD6D24A42">services</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-10B21E37-618D-4EB9-A501-68ED9389A99D">常量</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-405D18E9-E69B-4937-8BB7-06FD6C198334">文件夹</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-98614B3E-5D2F-4D07-95FA-1637069D6BD9">存储服务的 <span class="ph">ArcGIS Server</span> 文件夹名称。</p><p id="GUID-19E51CA9-7E7B-454E-A533-7529917C34EC">如果服务存储在根文件夹而不是子文件夹中，则将此部分 URL 留空。以下是存储在根文件夹中的服务的 URL 示例：</p><p id="GUID-53973114-F57D-482A-A259-DA1C754B8CB3"><span class="usertext">https://loadbalancerhost.domain.com/loadbalancername/rest/services/service/MapServer</span></p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-119CCF06-3D32-4880-B530-AD201E4400FC">service</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-31848F45-8D58-4904-9E64-60B293308698">服务名称。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-29669208-0DA4-4CE7-9889-9676E246B4FA">MapServer</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-A0A8ECE1-C787-4271-8795-2359086CE38A">服务类型；有关可能的值，请参阅本节结尾部分的 REST 服务值表。</p></td></tr></tbody><caption></caption></table></div><h4 class="table title">REST 服务值</h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><thead><tr><th colspan="1">服务类型</th><th colspan="1">有效 REST 服务值</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-EC364F8D-8808-4F70-B857-5C85B1D41710">大数据目录</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-ADAB5194-B68D-454B-9F3D-5CDE894DED28">BigDataCatalogServer</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-25813A47-7DCC-49CE-987E-D1D8E67C79DD">功能</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-7796279F-1749-4BF7-B190-CF8E12C16E4C">FeatureServer</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-1C738BE4-2368-4E0C-AE23-75E758514095">地理编码</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-E6E71DE8-A83A-42BD-A9FA-3E212BB684F0">GeocodeServer</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-D6500644-F799-4A51-843A-1D374EA783A7">地理数据</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-DC011892-426D-49EE-81EC-F7E3399F70FA">GeoDataServer</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-EFF3FD1B-ABA3-4CC5-81C1-749C7DE2DF7A">地理处理</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-AB31EA58-DA3B-48BC-9347-0557B5D8F57B">GPServer</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-5B3F2A6F-716A-45FE-A344-37B1CFA5594F">影像</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-10F3AC20-2B82-4585-B0DE-F35200B0D407">ImageServer</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-883182EB-A019-4E59-82AE-EA35B60933BF">KML</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-8DA63EC3-7F05-4975-AC79-ED2DA210E4B0">MapServer/kml</p><p id="GUID-AF88E61F-2AE2-4770-8949-07ADC5F12573">ImageServer/kml</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-C2CBF14A-CA94-4362-AF72-EF1D4DA37EF8">地图</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-3673F9F4-4A8D-428E-89CD-2114C4180484">MapServer</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-44B9E251-B780-4598-BE22-6A21B96B3405">路径</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-142C8E2C-F926-4C53-8660-0991F726564B">NAServer</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-AF2C5926-318A-4F45-B45E-545B53CAD7BC">场景</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-A7171F59-1E1F-452E-A4FF-1532E89C3BBE">SceneServer</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-137778C6-7B99-4CB3-B7B5-94BAC2D9A5CD">逻辑示意图</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-71FC23E3-21A7-43D7-96F0-B0A0C9D516F2">SchematicsServer</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-176A7F41-8948-406B-847A-17AA102694C7">搜索</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-DD88E9C7-80F7-4FBE-AA84-DE868816C003">SearchServer</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-E32C1ADB-FCE4-4131-A345-06652D80889F">流</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-EECECDA2-CE59-43C4-BC11-768B1E01F8D4">StreamServer</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-27EFA3A9-F9B5-40A4-953F-3681C3614AC8">WCS</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-7180AF58-E8EA-4D22-84E1-BAB3C957ED30">MapServer/WCSServer</p><p id="GUID-D82313A0-BC62-4E1E-A1F0-51C7582ED991">ImageServer/WCSServer</p><p id="GUID-1D726828-F87A-47C9-A693-A8D5BEBC53D7">GeoDataServer/WCSServer</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-7D970C56-091F-4694-ADCE-8142EF5A8959">WFS</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-EDF7B44D-D48F-4947-94F9-097745A08B94">MapServer/WFSServer</p><p id="GUID-7FA2C609-BF93-49A1-A840-ED588A92218A">GeoDataServer/WFSServer</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-D9236B46-FE27-477E-9A3C-E948E2268F87">WMS</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-70774548-E57F-4EE6-9F76-2050234F1A56">MapServer/WMSServer</p><p id="GUID-C0FBC5D0-74CB-4458-98FA-AF525B8AA8D9">ImageServer/WMSServer</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-44984FD9-8F9F-4AD7-8374-46352501CB6E">WMTS</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-3C3A8959-C605-427E-8BDC-3C454252171C">MapServer/WMTSServer</p><p id="GUID-8BDF7063-BA4F-499C-A491-20F1921A08C1">ImageServer/WMTSServer</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-D560BD01-20B3-4FD3-8706-4A191F4252AE">Workflow Manager</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-D70E3940-03A9-4806-ACCC-BC224058C0A6">WMServer</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-97B31B92-0FB4-425C-8814-989BFFED954E">WPS</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-6697B5C8-E13F-44F9-A7D0-C83C078F5525">GPServer/WPSServer</p></td></tr></tbody><caption></caption></table></div></section></section><section class="section1 padded-anchor" id="ESRI_SECTION1_15586F97B02D4FB7AA227705B4122F5B" purpose="section1"><h2>ArcGIS Online URL</h2><p id="GUID-28EF20FF-E50F-490A-AF09-C2B9C7CA78CD">访问 ArcGIS Online 主页以登录到 ArcGIS Online。</p><p id="GUID-88CC03AF-C7C1-4B99-9861-7913F6DF9942">如果要登录到使用 ArcGIS.com 身份验证的公共帐户或组织帐户，则 URL 为常量值：</p><p id="GUID-BDDEC0EC-899D-4A1E-9109-E9589B5BB93A"><span class="usertext">https://www.arcgis.com/home</span></p><p id="GUID-81685D75-167A-4465-9E84-C774C9C29A73">如果要登录到使用组织中实现的企业级安全保护措施的组织账户，如 LDAP 或 Windows 活动目录，则 URL 为如下格式：</p><p id="GUID-101EECEE-2313-49DF-8FDB-DD2B56136284"><span class="usertext">https://organization.maps.arcgis.com/home</span></p><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><thead><tr><th colspan="1">URL 组成</th><th colspan="1">描述</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-2C4C77B2-6E8E-4F01-820C-282FD873C399">organization</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-C5703921-B9B5-43CE-8DFA-3E7313C8B26D">您的组织名称</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-37361B3F-0D5E-4952-BC8D-453A4EA29BB4">maps.arcgis.com</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-A22F6914-613D-42A0-B7C1-0F1BEFF11425">常量</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-5D119AE8-7648-4EB3-881A-391557D5472B">home</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-4015A99B-37F5-4177-B5B1-F71CAA69DF11">常量</p></td></tr></tbody><caption></caption></table></div></section><section class="section1 padded-anchor" id="ESRI_SECTION1_9E0035F80E5F4453A0AD7C7BC9EEC5B4" purpose="section1"><h2><span class="ph">Portal for ArcGIS</span> URL</h2><p id="GUID-2D131CFD-FF7A-4AA7-A437-3A5F633C8318">用于连接到 <span class="ph">Portal for ArcGIS</span> 的 URL 必须始终包含完全限定的服务器名称。门户的最终用户通过包含 <span class="ph">ArcGIS Web Adaptor</span> 名称和主机名称的 URL 进行连接。只有管理员应该使用包含门户服务器名称的 URL。以下部分介绍了不同的门户 URL。</p><section class="section2 padded-anchor" id="ESRI_SECTION2_6133A6AB357C412D9D75D6B2449A7DB3" purpose="section2"><h3><span class="ph">Portal for ArcGIS</span></h3><p id="GUID-3D264BCC-15BE-49D9-868F-DCC92A483670">为 <span class="ph">Portal for ArcGIS</span> 配置 <span class="ph">ArcGIS Web Adaptor</span> 时提供的 URL 包含 <span class="ph">Portal for ArcGIS</span> 的通信端口。这几乎是唯一一次使用此 URL。</p><p id="GUID-FF276FB6-3029-4E74-A7AE-1BC5C69DC4B0"><span class="usertext">http://portal.domain.com:7080</span></p><p id="GUID-906C2EF1-12FD-4181-B00D-4933DA804AFB">或者</p><p id="GUID-8F33C319-235C-4D55-970D-7D588EB6B6F3"><span class="usertext">https://portal.domain.com:7443</span></p><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><thead><tr><th colspan="1">URL 组成</th><th colspan="1">描述</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-59185B92-D651-4281-8F04-1D44A4FBB4D8">门户</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-E1F57FCB-4B7D-4E56-AEED-6E92B1A7B6F3">安装 <span class="ph">Portal for ArcGIS</span> 的服务器的名称。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-343CC51E-CF1A-4260-AF2D-45C2BE57E7FA">domain.com</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-138CDA04-379F-4308-8CD9-BF0FC50ACE02">您的域名。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-9E1AE807-E177-42C1-97F3-70446243EC88">7080</p><p id="GUID-F7FAD55C-6E94-482C-97B1-C70E352F2C18">或者</p><p id="GUID-0B61349D-D966-48B4-ACDD-04CBB0234E9C">7443</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-00A93D4C-81BE-47E9-807E-C87765EA23A4"><span class="ph">Portal for ArcGIS</span> 的通信端口。</p><p id="GUID-C75E0031-9A4D-405D-8ACB-35484A17613F">如果 <span class="ph">Portal for ArcGIS</span> 使用 HTTP 通信，则端口号为 7080。</p><p id="GUID-03019B46-AA95-4921-9791-63F49FCEDAF5">如果 <span class="ph">Portal for ArcGIS</span> 使用 HTTPS 通信，则端口号为 7443。</p></td></tr></tbody><caption></caption></table></div></section><section class="section2 padded-anchor" id="ESRI_SECTION2_C4E8D4CAC5114572901AFA7052A552A9" purpose="section2"><h3><span class="ph">Portal for ArcGIS</span> 主页</h3><p id="GUID-3F114322-5295-4AD4-9849-11BC67639CD7"><span class="ph">Portal for ArcGIS</span> 主页 URL 将转到门户主页。您可以在这里登录到门户。大多数情况下，您会将 <span class="ph">ArcGIS Web Adaptor</span> 和 <span class="ph">Portal for ArcGIS</span> 结合使用，主页中包含 <span class="ph">ArcGIS Web Adaptor</span> 名称和主机名称。</p><p id="GUID-EDF7A0D7-A4AE-44D0-80FD-E7AFCDB05501"><span class="usertext">http://webadaptorhost.domain.com/webadaptorname/home</span></p><p id="GUID-C31D4FC2-AC9A-45F6-9CE1-3B860F7F0EB6">或者</p><p id="GUID-1CB81AA6-1A73-442C-BE36-50FC100928ED"><span class="usertext">https://webadaptorhost.domain.com/webadaptorname/home</span></p><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><thead><tr><th colspan="1">URL 组成</th><th colspan="1">描述</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-3E2B6759-3791-4706-9B8E-492B2CC5787F">webadaptorhost</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-43A7F998-CB44-4B7B-AA6E-0CA75459E8BB">安装 <span class="ph">ArcGIS Web Adaptor</span> 的服务器的名称。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-4DAC0374-215F-4F7B-BB13-6C9F0FB61FF7">domain.com</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-53E021D8-EB88-4853-896E-6334A020B03E">您的域名。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-26B7F59E-B22D-4A04-A9DA-03CEA746CEDA">webadaptorname</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-080D8FD1-9939-47F4-BFEC-5049940663B3"><span class="ph">ArcGIS Web Adaptor</span> 的名称；默认名称为 arcgis，但在安装 <span class="ph">ArcGIS Web Adaptor</span> 时您可能使用了其他名称。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-DBC1B8B9-7DF5-434D-8460-AA9EDB8E122A">home</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-61BC8FCC-40C7-4C2C-9CAA-F359CF6B49C8">常量</p></td></tr></tbody><caption></caption></table></div><p id="GUID-29848DAC-F5DC-4F27-ACE5-5437CE01412E">如果您拥有<a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/configuring-a-highly-available-portal.htm">通过第三方负载均衡器访问的高可用性门户</a>，用于访问门户主页的 URL 将包括负载均衡器计算机名称和 web 上下文，URL 示例如下：</p><p id="GUID-666E7317-5864-423E-BB08-2C0A8BCC375F"><span class="usertext">https://loadbalancerhost.domain.com/loadbalancername/home</span></p><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><thead><tr><th colspan="1">URL 组成</th><th colspan="1">描述</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-36431575-0B59-4F76-98BF-919BDD8B5B75">loadbalancerhost</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-326ACEB4-C357-44E4-88C7-F2873F3B9D82">安装了第三方负载均衡器的服务器的名称。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-45723DB8-9A08-49F9-A41E-AB831340A2E5">domain.com</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-5DA3A440-69D7-45EA-90D9-110C33C72CFE">您的域名。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-1CCA9DC1-8679-4C78-B175-B63570343334">loadbalancername</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-3AF3E658-4EC0-44C9-A294-D6A3C6174CA1">web 上下文名称；在配置负载均衡器时指定该名称。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-06887202-FD06-4099-A25F-827AACD264DF">home</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-E56733EE-7547-4C2A-8802-09D3DE6478CA">常量</p></td></tr></tbody><caption></caption></table></div></section><section class="section2 padded-anchor" id="ESRI_SECTION2_E388DDFE5F954D7095F33B14EDE32EF6" purpose="section2"><h3><span class="ph">Portal for ArcGIS</span> REST 端点</h3><p id="GUID-BD422084-6125-4115-9AB4-9D1A60AD1510">连接到 <span class="ph">Portal for ArcGIS</span> REST 端点以通过编程方式使用门户。</p><p id="GUID-78C77465-35D0-47A5-BE97-EEBE53CFE3AB">使用包含端口号的 URL 或通过 <span class="ph">Portal for ArcGIS</span> 连接到 <span class="ph">ArcGIS Web Adaptor</span> REST 端点。</p><p id="GUID-60B8254F-2EBA-4433-A2E4-FC2DF4B64656"><span class="usertext">http://portal.domain.com:7080/arcgis/sharing/rest</span></p><p id="GUID-66D46FB2-3B24-40CC-A23D-D69D451B21A7">或者</p><p id="GUID-E57E02E7-342F-446C-A7BB-0EED1DBA7691"><span class="usertext">https://portal.domain.com:7443/arcgis/sharing/rest</span></p><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><thead><tr><th colspan="1">URL 组成</th><th colspan="1">描述</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-332CA153-E34B-4B80-85C0-FC549BBFE736">门户</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-6E369D2A-2C09-4239-BA20-C07143B27A3B">安装 <span class="ph">Portal for ArcGIS</span> 的服务器的名称。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-C6620314-309C-43AA-9B66-31D2959EE510">domain.com</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-1E185674-4379-46E7-9D90-EA07C0B32DC3">您的域名。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-952EDE83-2C42-4D5F-A827-4138F64BBB02">7080</p><p id="GUID-8BC8318F-6F75-444A-A3AA-DCF550FABAA4">或者</p><p id="GUID-6BE0BAC9-B17F-4637-9128-4C1FED818996">7443</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-69AC9FBA-1CDB-4A00-A5FA-6B1B9A0F3E9E"><span class="ph">Portal for ArcGIS</span> 的通信端口。</p><p id="GUID-BEAC9915-758B-40D5-8464-0113194BDED0">如果 <span class="ph">Portal for ArcGIS</span> 使用 HTTP 通信，则端口号为 7080。</p><p id="GUID-B4C7B34D-79E7-4E43-B232-5C5438BF6AA8">如果 <span class="ph">Portal for ArcGIS</span> 使用 HTTPS 通信，则端口号为 7443。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-F185955D-C38D-41B1-98B8-F5259F673DC6">arcgis</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-9FD139A3-9259-4899-94B0-914A6522F00C">常量</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-B50E68B4-13F5-4963-82F1-5A8D9291938C">sharing</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-043F585F-C7EF-4E7C-B09B-7CCA708BBD60">常量</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-6B78DC13-915F-4EBA-A1CC-CD47137DAF7D">rest</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-C4472099-4738-4D19-9644-0471BC9B674E">常量</p></td></tr></tbody><caption></caption></table></div><p id="GUID-7EBCE9EE-A6D4-48AD-ADB9-825EAED5727B">当通过 <span class="ph">ArcGIS Web Adaptor</span> 进行连接时，URL 采用以下任一格式：</p><p id="GUID-11A1747C-5FBA-4B0F-8161-3E9EFED448AD"><span class="usertext">http://webadaptorhost.domain.com/webadaptorname/sharing/rest</span></p><p id="GUID-43BBE2E8-AB43-4387-A640-27360E1B7AE9">或者</p><p id="GUID-96A0C181-768C-4170-BDD4-14407AF84647"><span class="usertext">https://webadaptorhost.domain.com/webadaptorname/sharing/rest</span></p><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><thead><tr><th colspan="1">URL 组成</th><th colspan="1">描述</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-53F8EA98-3BD7-4827-B4B4-ECEA198CA7E7">webadaptorhost</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-7E2B381E-8375-43CC-A731-86F015E485AD">安装 <span class="ph">ArcGIS Web Adaptor</span> 的服务器的名称。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-03343587-ED91-45C6-BFBB-0EC2A8B86CF9">domain.com</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-44998896-2980-45F8-8594-38911EE8A439">您的域名。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-755CC2B0-C847-4A72-85AE-B5BB9F9E5F20">webadaptorname</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-AACF1467-BAA2-4B95-87B2-999CF1A36517"><span class="ph">ArcGIS Web Adaptor</span> 的名称；默认名称为 arcgis，但在安装 <span class="ph">ArcGIS Web Adaptor</span> 时您可能使用了其他名称。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-859EA792-0310-44CD-82D8-892AF331B269">sharing</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-62C61DD6-026A-402E-8862-F9E6154C8406">常量</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-46B5D1E4-8CEB-4CFE-A8FF-DB09FD50C823">rest</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-E0F8D474-7AA3-4782-B1BD-F6E41CF28D3E">常量</p></td></tr></tbody><caption></caption></table></div><p id="GUID-6BB0CEFC-D38B-4ABD-9DDA-85E9380A606E">如果您拥有<a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/configuring-a-highly-available-portal.htm">通过第三方负载均衡器访问的高可用性门户</a>，用于访问门户 REST 端点的 URL 将包括负载均衡器计算机名称和 web 环境，URL 示例如下：</p><p id="GUID-B375F0EB-B0FD-4D2A-9331-A199F1F6CD60"><span class="usertext">https://loadbalancerhost.domain.com/loadbalancername/sharing/rest</span></p><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><thead><tr><th colspan="1">URL 组成</th><th colspan="1">描述</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-4F363782-149A-4EFE-BD03-05A58DB94252">loadbalancerhost</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-CB0A8441-D681-496C-95BC-6ED059EE327E">安装了第三方负载均衡器的服务器的名称。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-DA90D955-C115-4C1C-BBAD-46078872C22E">domain.com</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-4852E54D-F8E0-419C-BA7D-E008C6E01171">您的域名。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-AE35D4D9-9F47-492A-AE00-F7C70E9E7260">loadbalancername</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-B9D5ADEF-56EB-410D-9D74-5AEDBB65F351">web 上下文名称；在配置负载均衡器时指定该名称。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-1BC557BD-DC47-42CB-8CAF-D79FCA576A46">sharing</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-27CCB355-9212-41B5-B251-A659B2326F8D">常量</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-774DF372-9EB9-4D1C-8F0F-5B8AA674F82E">rest</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-BD2828CA-8A99-4CA3-AB6C-6565754C9A3B">常量</p></td></tr></tbody><caption></caption></table></div></section><section class="section2 padded-anchor" id="ESRI_SECTION2_006A598B9EB947418B76333E7F2FC219" purpose="section2"><h3>ArcGIS Portal Directory</h3><p id="GUID-5AF043E6-2980-4821-B5C3-A4506219C992">组织管理员可以登录到 ArcGIS Portal Directory 以执行特定的门户管理任务，例如取消注册 <span class="ph">ArcGIS Web Adaptor</span> 或向门户添加集成的 Windows 身份验证登录帐户。</p><p id="GUID-0824C27A-B4D6-4407-B2A6-3D15D7D525D4">使用包含端口号的 URL 或通过 <span class="ph">ArcGIS Web Adaptor</span> 连接到 ArcGIS Portal Directory。</p><p id="GUID-436AF68B-1BC1-4D59-8ACF-48241DB3CDEA"><span class="usertext">http://portal.domain.com:7080/arcgis/portaladmin</span></p><p id="GUID-2773B0D6-3C6F-446C-9456-15B8858C75A0">或者</p><p id="GUID-3E9FA587-A00B-4888-9A20-57E688365572"><span class="usertext">https://portal.domain.com:7443/arcgis/portaladmin</span></p><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><thead><tr><th colspan="1">URL 组成</th><th colspan="1">描述</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-369FA8FA-5150-4C68-93A0-5F2675E14E16">门户</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-098977D9-C7ED-4A35-8FB7-DE6D5E538CAF">安装 <span class="ph">Portal for ArcGIS</span> 的服务器的名称。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-2372D034-7756-40D1-87F3-7ABD6FCF13E3">domain.com</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-106D8EF7-2802-459F-9309-14BF18B2B700">您的域名。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-2AC4B0AF-1B35-4654-A105-0674539ACD1C">7080</p><p id="GUID-3260338A-A954-49D3-B9E8-C9AE5AF473F2">或者</p><p id="GUID-95A86A32-B2CD-4B8E-84B8-28FDBDA8DDF9">7443</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-5B399C28-2BB8-43F3-ACAB-0D50C403B97D"><span class="ph">Portal for ArcGIS</span> 的通信端口。</p><p id="GUID-EDCC8DC5-BF20-4B0A-8988-A33D6E5E478E">如果 <span class="ph">Portal for ArcGIS</span> 使用 HTTP 通信，则端口号为 7080。</p><p id="GUID-698148D9-3816-4C61-BBA0-B1947F667092">如果 <span class="ph">Portal for ArcGIS</span> 使用 HTTPS 通信，则端口号为 7443。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-7CB320FE-CF04-4A9F-A06D-20AA833EC21C">arcgis</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-50592021-B95E-458A-802E-C802A4506E24">常量</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-9B0C7723-E6F1-4014-BA6D-A1F36CCDAA41">portaladmin</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-12D23D30-5419-4A29-93E4-0075D322B108">常量</p></td></tr></tbody><caption></caption></table></div><p id="GUID-5219A219-6A30-4C4D-9664-43A10842EB2A">当通过 <span class="ph">ArcGIS Web Adaptor</span> 进行连接时，URL 采用以下任一格式：</p><p id="GUID-8B9D4E6E-23FB-49AF-8D52-738448532529"><span class="usertext">http://webadaptorhost.domain.com/webadaptorname/portaladmin</span></p><p id="GUID-9EA724F4-9251-4E61-A7E8-2ECCA5F9DE8F">或者</p><p id="GUID-B8A6895E-9C6F-46E5-8FB2-D29EBA94E462"><span class="usertext">https://webadaptorhost.domain.com/webadaptorname/portaladmin</span></p><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><thead><tr><th colspan="1">URL 组成</th><th colspan="1">描述</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-4C436CC0-E8F5-400E-8039-9BFC8386838F">webadaptorhost</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-6A8F4F23-EA30-4247-A224-C5FBB9300FC0">安装 <span class="ph">ArcGIS Web Adaptor</span> 的服务器的名称。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-9EF6C16A-CCC0-4BCD-B9DC-92231D702B9E">domain.com</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-4A014B64-CD00-4925-8210-A8E76F0AC502">您的域名。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-DB1D3B13-5513-42B8-8C40-D276E7D59373">webadaptorname</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-D9CA62DE-6CBC-4F37-B71C-04932FB3848C"><span class="ph">ArcGIS Web Adaptor</span> 的名称；默认名称为 arcgis，但在安装 <span class="ph">ArcGIS Web Adaptor</span> 时您可能使用了其他名称。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-8DEF2286-59ED-4E98-83EC-2EC6E819B8F2">portaladmin</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-6F9609EC-FBD3-4388-B737-35F03257AB82">常量</p></td></tr></tbody><caption></caption></table></div><p id="GUID-4725ADF9-8C6A-430F-8E29-BFF7F9E3A646">如果您拥有<a class="xref xref" href="../../../../../zh-CN/portal/latest/administer/windows/configuring-a-highly-available-portal.htm">通过第三方负载均衡器访问的高可用性门户</a>，用于访问 ArcGIS Portal Directory 的 URL 将包括负载均衡器计算机名称和 web 环境，URL 示例如下：</p><p id="GUID-1030FEC7-01EB-4C18-8192-F692FF6F0700"><span class="usertext">https://loadbalancerhost.domain.com/loadbalancername/portaladmin</span></p><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><thead><tr><th colspan="1">URL 组成</th><th colspan="1">描述</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-8BB1A0C1-F2A6-4DD2-B262-3C45D358D039">loadbalancerhost</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-7AE73587-1953-4697-8626-C7E1AE9F7D73">安装了第三方负载均衡器的服务器的名称。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-81DB379F-ADA4-4BBE-A1A7-2F474D0DB4B0">domain.com</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-B6BFBFF8-F964-4090-84CC-899E95538812">您的域名。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-4B8441C6-27CD-480F-A2E8-0F39B5D9E514">loadbalancername</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-4D3FF67B-3E34-4BCE-B6C7-5439CBB41DA3">web 上下文名称；在配置负载均衡器时指定该名称。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-82FDCA3E-BAE5-405B-8C2F-7EB48C692A58">portaladmin</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-2869CCA8-3239-40EF-90B2-FE0252719C80">常量</p></td></tr></tbody><caption></caption></table></div></section></section>
+			
+				<hr>
+				<!--googleoff: all-->
+				
+	
+        
+		    <p class="feedback right">
+		        <a id="afb" class="icon-ui-contact" href="/feedback/" data-langlabel="feedback-on-this-topic" >有关此主题的反馈?</a>
+		    </p>
+        
+	
+
+				<!--googleon: all-->
+			
+		</main>
+	</div>
+	
+	<!--googleoff: all-->
+	
+		
+			<div id="main-toc-large" class="column-5">
+			    <div class="panel font-size--2 tablet-hide trailer-1">
+			      <h5 class="trailer-half">在本主题中</h5>
+			      <ol class="list-plain pre-0 trailer-0"><li><a href="#GUID-EACC14BB-E691-45D2-864D-2F202B5948CC"><ph translate="no" varid="ArcGISforServer">ArcGIS Server</ph> 管理 URL</a></li><li><a href="#ESRI_SECTION1_41D52658B83E43CBBE34C15D1015F0D0"><ph translate="no" varid="ArcGISforServer">ArcGIS Server</ph> 最终用户 URL</a></li><li><a href="#ESRI_SECTION1_15586F97B02D4FB7AA227705B4122F5B">ArcGIS Online URL</a></li><li><a href="#ESRI_SECTION1_9E0035F80E5F4453A0AD7C7BC9EEC5B4"><ph translate="no" varid="PortalForArcGIS">Portal for ArcGIS</ph> URL</a></li></ol>
+			    </div>
+			    
+			    
+	  		</div>
+		
+    
+   <!--googleon: all-->
+
+
+
+
+          
+        </div>
+        <!-- ENDPAGECONTENT -->
+
+      </div>
+
+    </div>  <!-- End of wrapper -->
+
+  <footer class="footer leader-3 link-dark-gray" role="contentinfo">
+    <div class="grid-container">
+      <div class="row">
+        <nav class="column-6">
+          <h6 data-langlabel="arcgis-for-server">Arc<span>GIS Enterprise</span></h6>
+          <ul class="list-plain">
+            <li><a data-langlabel="home" href="../../../../../zh-CN/">主页</a></li>
+            <li><a data-langlabel="portal" href="../../../../../zh-CN/portal/">Portal</a></li>
+            <li><a data-langlabel="server" href="../../../../../zh-CN/server/">Server</a></li>
+            <li><a data-langlabel="data-store" href="../../../../../zh-CN/data-store/">Data Stores</a></li>
+            <li><a data-langlabel="cloud" href="../../../../../zh-CN/cloud/">云</a></li>
+            <li><a data-langlabel="apps" href="../../../../../zh-CN/apps/">应用程序</a></li>
+            <li><a data-langlabel="documentation" href="../../../../../zh-CN/documentation/">文档</a></li>
+          </ul>
+        </nav>
+
+        
+  <nav class="column-6">
+    <h6 data-langlabel="arcgis-platform">ArcGIS 平台</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="arcgis" href="//www.arcgis.com/">ArcGIS Online</a></li>
+      <li><a data-langlabel="arcgis-for-professionals" href="//pro.arcgis.com/">ArcGIS Pro</a></li>
+      <li><a data-langlabel="arcgis-for-server" href="//enterprise.arcgis.com/">ArcGIS Enterprise</a></li>
+      <li><a data-langlabel="arcgis-for-developers" href="https://developers.arcgis.com/">ArcGIS for Developers</a></li>
+      <li><a data-langlabel="arcgis-solutions" href="//solutions.arcgis.com/">ArcGIS Solutions</a></li>
+      <li><a data-langlabel="arcgis-marketplace" href="//marketplace.arcgis.com/">ArcGIS Marketplace</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <h6 data-langlabel="about-esri">关于 Esri</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="about-us" href="//www.esri.com/about-esri/">关于我们</a></li>
+      <li><a data-langlabel="careers" href="//www.esri.com/careers/">招贤纳士</a></li>
+      <li><a data-langlabel="insiders-blog" href="https://www.esri.com/about/newsroom/blog/">Esri 博客</a></li>
+      <li><a data-langlabel="user-conference" href="//www.esri.com/events/user-conference/index.html">用户大会</a></li>
+      <li><a data-langlabel="developer-summit" href="//www.esri.com/events/devsummit/index.html">开发者峰会</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <a class="esri-logo" href="//www.esri.com/" aria-label="Esri Home"></a>
+    <section class="footer-social-nav leader-1">
+            <a class="icon-social-twitter" aria-label="Esri on Twitter" href="https://twitter.com/Esri/"></a>
+            <a class="icon-social-facebook" aria-label="Esri on Facebook" href="https://www.facebook.com/esrigis/"></a>
+            <a class="icon-social-github" aria-label="Esri on GitHub" href="//esri.github.io/"></a>
+            <a class="icon-social-contact" aria-label="Contact Esri" href="//www.esri.com/about-esri/contact/"></a>
+    </section>
+	  
+  </nav>
+  
+  <div class="column-24 leader-1">
+    <p class="font-size--3"><a href="http://www.esri.com/legal/copyright-trademarks">Copyright &copy; 2019 Esri.</a> All rights reserved. | <a href="http://www.esri.com/legal/privacy/">隐私政策</a> | <a href="http://www.esri.com/legal/software-license">法律声明</a></p>
+  </div>
+  
+
+
+      </div>
+    </div>
+  </footer>
+  <!--googleoff: all-->
+
+  
+  
+	<script src="../../../../../zh-CN/assets/js/init.js" type="text/javascript"></script>
+	<!--<script src="../../../../../zh-CN/assets/js/drop-down.js" type="text/javascript"></script>-->
+	<script src="../../../../../zh-CN/assets/js/search/searchform.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/cdn/js/link-modifier.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/cdn/js/sitewide.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/cdn/js/libs/highlight.pack.js" type="text/javascript"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+
+
+  
+    
+
+  <script src="../../../../../zh-CN/cdn/js/affix.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    $(function () {
+          var appendFlg = true;
+
+          $("#bigmac")
+          .on("affixed.bs.affix", function (evt) {
+            if (appendFlg) {
+              $("<a class='crumb' href='#'>ArcGIS URL 组成</a>").insertAfter ($("#bigmac nav a").last());
+              appendFlg = false;
+            }
+          })
+          .on ("affix-top.bs.affix", function(evt) {
+            if (!appendFlg) {
+              $("#bigmac nav a").last().remove();
+            }
+            appendFlg = true;
+          })
+    })
+  </script>
+  
+        <script type="text/javascript">
+          window.doctoc = {
+            pubID: "555",
+            tpcID: "154",
+            
+              prefix: "管理",
+              prefixUrl: "/zh-cn/portal/latest/administer/windows/",
+          
+            hideToc: false
+          }
+        </script>
+
+        <script type="text/javascript" src="../../../../../zh-CN/portal/latest/administer/windows/555.js" ></script>
+        <script type="text/javascript" src="../../../../../zh-CN/cdn/calcite/js/protoc.js" ></script>
+        
+        
+
+  <noscript>
+        <p>
+            <a href="flisting.htm">flist</a>
+        </p>
+    </noscript>
+    <script type="text/javascript"></script>
+  
+  
+    
+    
+
+  </body>
+</html>

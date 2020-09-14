@@ -1,0 +1,682 @@
+
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>  <html class="ie lt-ie9 lt-ie8 lt-ie7 ie6" dir="ltr"> <![endif]-->
+<!--[if IE 7]>     <html class="ie lt-ie9 lt-ie8 ie7" dir="ltr"> <![endif]-->
+<!--[if IE 8]>     <html class="ie lt-ie9 ie8" dir="ltr"> <![endif]-->
+<!--[if IE 9]>     <html class="ie ie9" dir="ltr"> <![endif]-->
+<!--[if !IE]><!--> <html dir="ltr" lang="zh-CN"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>GeoAnalytics 健康检查&mdash;GeoAnalytics (Windows) 部署指南 | ArcGIS Enterprise 文档</title>
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+    <script>
+      var docConfig = {
+        locale: 'zh-CN'
+        ,localedir: 'zh-cn'
+        ,langSelector: ''
+        
+        ,relativeUrl: false
+        
+
+        ,searchformUrl: '/search/'
+        ,tertiaryNavIndex: ''
+
+        
+      };
+    </script>
+	 
+
+
+    
+    <!--[if lt IE 9]>
+      <script src="../../../../../zh-CN/cdn/js/libs/html5shiv.js" type="text/javascript"></script>
+      <script src="../../../../../zh-CN/cdn/js/libs/selectivizr-min.js" type="text/javascript"></script>
+      <script src="../../../../../zh-CN/cdn/js/libs/json2.js" type="text/javascript"></script>
+      <script src="../../../../../zh-CN/cdn/js/libs/html5shiv-printshiv.js" type="text/javascript" >
+
+    <![endif]-->
+
+     <!--[if lt IE 11]>
+    <script>
+      $$(document).ready(function(){
+        $$(".hideOnIE").hide();
+      });
+    </script>
+    <![endif]-->
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<link href="../../../../../zh-CN/assets/img/favicon.ico" rel="shortcut icon" >
+	<link href="../../../../../zh-CN/assets/css/screen.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/cdn/calcite/css/documentation.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/assets/css/print.css" media="print" type="text/css" rel="stylesheet" />
+
+	<!--
+	<link href="../../../../../zh-CN/assets/css/screen_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/assets/css/documentation/base_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/assets/css/print_l10n.css" media="print" type="text/css" rel="stylesheet" />
+	-->
+	
+	
+		<script src="../../../../../zh-CN/cdn/js/libs/jquery.1.9.1.min.js" type="text/javascript"></script>
+	
+	<script src="../../../../../zh-CN/cdn/js/libs/jquery.cookie.js" type="text/javascript"></script>
+	<link href="../../../../../zh-CN/cdn/css/colorbox.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/cdn/css/colorbox_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<script src="../../../../../zh-CN/cdn/js/libs/jquery.colorbox-min.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/assets/js/video-init.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/assets/js/sitecfg.js" type="text/javascript"></script>
+	
+		<script src="../../../../../zh-CN/assets/js/signIn.js" type="text/javascript"></script>
+	
+
+	<!--- Language Picker -->
+	<script src="../../../../../zh-CN/assets/js/locale/l10NStrings.js" type="text/javascript"></script>
+	
+		 
+	
+
+	<script src="../../../../../zh-CN/assets/js/calcite-web.js" type="text/javascript"></script>
+
+
+
+  <!--- search MD -->
+    <META name="description" content="ArcGIS GeoAnalytics Server 计算平台健康检查概述了 GeoAnalytics 处理的健康状况，以启用站点的故障排除和监控。"><META name="last-modified" content="2019-12-6"><META name="product" content="arcgis-server-windows,arcgis-server-linux,arcgis-enterprise-windows,arcgis-enterprise-linux,geoanalytics-server"><META name="sub_category" content="GeoAnalytics Server"><META name="search-collection" content="help"><META name="content_type_label" content="安装指南主题"><META name="sub_category_label" content="GeoAnalytics Server"><META name="search-category" content="help-install"><META name="subject_label" content="ANALYSIS,服务"><META name="version" content="10.8"><META name="content_type" content="Install Guide Topic"><META name="subject" content="ANALYSIS,SERVICES"><META name="content-language" content="zh-cn">
+    <!--- search MD -->
+
+  
+  <script src="../../../../../zh-CN/assets/js/switchers/server-1.js" type="text/javascript"></script>
+  
+      
+
+</head>
+
+<!--
+      pub: GUID-B692B87B-BCB3-45CA-8C04-780168007B11=5
+      tpc: GUID-997E9839-BFE8-4911-A868-1D60EE24C7EB=2
+      -->
+
+
+<!-- variable declaration, if any -->
+<!-- can change following macro to set variable once we are on Jinja 2.8 -->
+
+
+
+
+
+<body class="claro zh-CN server">
+  
+
+  <!-- Drawer location -->
+  <div class="drawer drawer-left js-drawer" data-drawer="top-nav">
+        <nav class="drawer-nav" role="navigation">
+          <aside class="side-nav">
+            <h2 class="side-nav-title">Arc<span>GIS</span> Enterprise</h2>
+            <form id="helpSearchForm" class="margin-left-half margin-right-half leader-half trailer-half drawer-search-form" method="GET">
+              <input type="search" name="q"  placeholder="搜索 ArcGIS Enterprise 帮助">
+              <input type="hidden" name="collection" value="help" />
+              <input type="hidden" name="product" value="geoanalytics-server" />
+              <input type="hidden" name="version" value="10.8" />
+              <input type="hidden" name="language" value="zh-CN" />
+            </form>    
+             <a id="nav-portal" data-langlabel="portal" href="../../../../../zh-CN/portal/" class="side-nav-link">Portal</a>
+             
+            <a id="all-servers" data-langlabel="all-servers" href="../../../../../zh-CN/server/" class="side-nav-link">所有服务器</a>
+            <a id="gis-server" data-langlabel="gis-server" href="../../../../../zh-CN/server/" class="side-nav-link">GIS Server</a>
+            <a id="image-server" data-langlabel="image-server" href="../../../../../zh-CN/image/" class="side-nav-link">Image Server</a>
+            <a id="geo-analytics-server" data-langlabel="geo-analytics-server" href="../../../../../zh-CN/geoanalytics/" class="side-nav-link">GeoAnalytics Server</a>
+            <a id="geoevent-server" data-langlabel="geoevent-server" href="../../../../../zh-CN/geoevent/" class="side-nav-link">GeoEvent Server</a>
+            <a id="notebook-server" data-langlabel="notebook-server" href="../../../../../zh-CN/notebook/" class="side-nav-link">Notebook Server</a>
+            <a id="nav-data-store" data-langlabel="data-store" href="../../../../../zh-CN/data-store/" class="side-nav-link">Data Stores</a>
+            <a id="nav-cloud" data-langlabel="cloud" href="../../../../../zh-CN/cloud/" class="side-nav-link">云</a>
+            <a id="nav-apps" data-langlabel="apps" href="../../../../../zh-CN/apps/" class="side-nav-link">应用程序</a>
+            <a id="nav-doc" data-langlabel="documentation" href="../../../../../zh-CN/documentation/" class="side-nav-link">文档</a>
+
+          </aside>
+        </nav>
+    </div>
+
+    <!-- user navigation collapses to drawer on mobile -->
+    
+    <div class="drawer drawer-right js-drawer hide-if-logged-out logged-in-navigation" data-drawer="user-nav">
+      <nav class="drawer-nav">
+        <aside class="side-nav">
+          <a class="side-nav-link agolProfile" href="#">我的个人资料</a>
+          <a class="side-nav-link icon-ui-sign-out js-log-out" href="#">登出</a>
+        </aside>
+      </nav>
+    </div>
+    
+<!-- End of drawer -->
+
+  
+  <div class="wrapper">
+      <!--googleoff: all-->
+
+      <header class="top-nav" data-skin="learn">
+        <a class="skip-to-content" href="#skip-to-content">Skip To Content</a>
+        <div class="grid-container">
+          <div class="column-24">
+
+
+            <!--<div class="top-nav-title-wrapper text-center ">-->
+              <a href='../../../../../zh-CN/' class="top-nav-title tablet-hide"><span>Arc</span>GIS  Enterprise</a>
+              <a href='../../../../../zh-CN/' class="icon-ui-menu top-nav-title js-drawer-toggle tablet-show" data-drawer="top-nav"><span>Arc</span>GIS Enterprise</a>
+            <!--</div> -->
+
+          
+            <nav role="navigation" class="top-nav-list left tablet-hide">
+              <a id="nav-portal" data-langlabel="portal" href="../../../../../zh-CN/portal/" class="top-nav-link">Portal</a>
+
+                <div class="dropdown js-dropdown ">
+                  <a class="top-nav-link js-dropdown-toggle" tabindex="0" aria-haspopup="true" aria-expanded="false" href="#">Servers</a>
+                  <nav class="dropdown-menu featured" role="menu">
+                    <ul class="dropdown-sublist-featured">
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/get-started/latest/windows/additional-server-deployment.htm" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path  d="M42.92 6.1H4.12v8.566l.833.832-.835.833-.018 7.332.845.847-.825.824V33.9h25v5.2h-2v1.075H8.02v.8h19.1v.925h4.8v-.925H40v-.8h-8.08V39.1h-2v-5.2h13v-8.566l-.834-.834.835-.834v-7.332l-.835-.834.835-.834zm-11.8 35h-3.2v-1.2h3.2zm11-8H4.92v-7.434l.767-.766h35.668l.765.766zm0-9.766l-.766.766H5.666l-.766-.767.017-6.669.766-.764h35.671l.766.766zm0-9l-.766.766H5.687l-.766-.766V6.9h37.2zM19 11.9h-2v-.8h2zm-4 0h-2v-.8h2zm-4 0H9v-.8h2zm6 8.2h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9zm8 9h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9z"/></svg></span>
+                          <span class="sublink-text">所有服务器</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/server/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M45.98 33.575a.616.616 0 0 0-.335-.51l-3.362-2.03 3.362-2.031a.556.556 0 0 0 0-1.02l-11.1-6.704a1.293 1.293 0 0 0-1.112 0L22.33 27.982a.556.556 0 0 0 0 1.02l3.36 2.03-3.358 2.03a.556.556 0 0 0-.002 1.021l3.322 2.006-3.324 2.008a.555.555 0 0 0 .002 1.017l11.102 6.703a1.25 1.25 0 0 0 1.11.002l11.104-6.706a.556.556 0 0 0 0-1.02l-3.32-2.006 3.318-2.004a.607.607 0 0 0 .335-.509zM33.837 21.97c.026-.01.286-.005.29-.005l10.814 6.53-10.8 6.523c-.028.01-.284.005-.294.006l-10.813-6.53zm11.105 16.636l-10.8 6.523a2.564 2.564 0 0 1-.295.006l-10.81-6.529 3.39-2.047 7.004 4.23a1.083 1.083 0 0 0 .557.131 1.101 1.101 0 0 0 .554-.13l7.01-4.233zM34.14 40.098a2.545 2.545 0 0 1-.294.006l-10.812-6.53 3.43-2.073 6.97 4.208a1.25 1.25 0 0 0 1.107-.001l6.966-4.206 3.431 2.073zM9 8H7V7h2zm8 8h-2v-1h2zm-4-8h-2V7h2zm4 0h-2V7h2zm-4 8h-2v-1h2zm7.316 11.1H3.9v-6.434l.766-.766h35.668l.766.766v2.12l.8.483v-2.935l-.826-.826.826-.845v-6.329l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9h16.88a2.632 2.632 0 0 1 .336-.8zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zm0 8v-5.668l.766-.766h35.668l.766.766v5.67l-.746.764H4.666zM15 24v-1h2v1zm-4 0v-1h2v1zm-2-8H7v-1h2zm-2 8v-1h2v1z"/></svg></span>
+                          <span class="sublink-text">GIS Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/image/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 8h-2V7h2zm-4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm8 8h-2v1h2zm-8 0H7v1h2zm4 9v-1h-2v1zm-4 0v-1H7v1zm8 0v-1h-2v1zm4 3.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V21h-.8v-.334l-.766-.766H4.666l-.766.766V27.1H21zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zm40.234 4v21.8H23.1V23.1zm-.8 16.366L39.466 44.1h2.868l1.766-1.766zm-20.2-9.932l5.634-5.634h-2.868L23.9 26.666zm6.2-5.068L24.466 30.1h2.868l2.766-2.766zM28.466 30.1H30.1v-1.634zm2.434 0h6.2v-6.2h-6.2zm-7 7h6.2v-6.2h-6.2zm7 0h6.2v-6.2h-6.2zm0 6.434l5.634-5.634h-2.868L30.9 40.666zm7-7l5.634-5.634h-2.868L37.9 33.666zm1.634-5.634H37.9v1.634zm-8.634 7v1.634l1.634-1.634zm.566 6.2h2.868l2.766-2.766v-2.868zm6.434-3.566l2.634-2.634H37.9zM35.466 44.1H37.1v-1.634zm2.434 0h.434l5.766-5.766V37.9h-2.434L37.9 41.666zm6.2-8.634L42.466 37.1H44.1zm0-4L38.466 37.1h2.868l2.766-2.766zm0-7.566h-6.2v6.2h6.2zm-20.2 0v1.634l1.634-1.634zm0 20.2h6.2v-6.2h-6.2zm20.2 0v-.634l-.634.634z"/></svg></span>
+                          <span class="sublink-text">Image Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/geoanalytics/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 16h-2v-1h2zm-8 8v-1H7v1zm8 0v-1h-2v1zM13 7h-2v1h2zm4 0h-2v1h2zM9 7H7v1h2zm21.45 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V27.9h-1.464l-.801-.8H41.1v-6.434l-.766-.766H4.666l-.766.766V27.1h27.15zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM13 24v-1h-2v1zm0-9h-2v1h2zm-4 0H7v1h2zm26.672 27.148A1.87 1.87 0 0 1 35.9 43a1.91 1.91 0 1 1-3.763-.222l-9.845-3.414A1.88 1.88 0 0 1 21 39.9a1.9 1.9 0 1 1 1.474-3.084l4.692-2.346A1.878 1.878 0 0 1 27.1 34a1.902 1.902 0 0 1 1.9-1.9 1.867 1.867 0 0 1 .781.191l3.788-5.05A1.88 1.88 0 0 1 33.1 26a1.9 1.9 0 1 1 3.491 1.026l4.889 4.888c-.069.056-.144.1-.21.162a3.986 3.986 0 0 0-.358.402l-4.883-4.883A1.889 1.889 0 0 1 35 27.9a1.867 1.867 0 0 1-.781-.191l-3.788 5.049a1.868 1.868 0 0 1 .437.965l9.204.614c-.018.11-.049.218-.058.33A3.93 3.93 0 0 0 40 35c0 .046.01.09.01.135l-9.185-.612A1.913 1.913 0 0 1 29 35.9a1.889 1.889 0 0 1-1.474-.716l-4.692 2.346a1.878 1.878 0 0 1 .066.47 1.9 1.9 0 0 1-.105.625c-.007.02-.022.036-.03.056l9.63 3.34a1.87 1.87 0 0 1 2.786-.505l5.415-4.437c.067.108.127.22.204.322a3.9 3.9 0 0 0 .292.306zM33.9 26a1.092 1.092 0 0 0 .43.872 1.12 1.12 0 0 0 1.42-.068A1.1 1.1 0 1 0 33.9 26zm-6 8a1.1 1.1 0 0 0 2.196.093 1.135 1.135 0 0 0-.426-.965A1.087 1.087 0 0 0 29 32.9a1.101 1.101 0 0 0-1.1 1.1zm-5.8 4a1.098 1.098 0 1 0-.06.362A1.101 1.101 0 0 0 22.1 38zm13 5a1.1 1.1 0 1 0-2.2 0 1.1 1.1 0 0 0 2.2 0zm10.8-8a1.9 1.9 0 1 1-3.8 0c0-.053.003-.105.007-.158A1.9 1.9 0 0 1 45.9 35zm-.8 0a1.1 1.1 0 0 0-2.196-.093 1.153 1.153 0 0 0 .216.752A1.1 1.1 0 0 0 45.1 35z"/></svg></span>
+                          <span class="sublink-text">GeoAnalytics Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/geoevent/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M13 8h-2V7h2zm4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm12.418 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826v2.117c-.259-.177-.53-.337-.8-.497v-1.288l-.766-.766H4.666l-.766.766V27.1h17.933c-.148.26-.283.53-.415.8zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM9 24v-1H7v1zm4-9h-2v1h2zm0 9v-1h-2v1zm-4-9H7v1h2zm8 9v-1h-2v1zm16.9 2h-.8v8.9H39v-.8h-5.1zm.1-3.901a11.9 11.9 0 1 0 11.9 11.9 11.914 11.914 0 0 0-11.9-11.9zm0 23a11.1 11.1 0 1 1 11.1-11.1 11.112 11.112 0 0 1-11.1 11.1z"/></svg></span>
+                          <span class="sublink-text">GeoEvent Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/notebook/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M22 27.1H3.9v-6.434l.766-.766h18.576a5.262 5.262 0 0 1 .83-.8H4.666l-.766-.766v-5.668l.766-.766h35.668l.766.766V18h.8v-5.666l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9H22zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zM9 8H7V7h2zm8 0h-2V7h2zm-4 0h-2V7h2zm2 16v-1h2v1zm-4 0v-1h2v1zm-4 0v-1h2v1zm0-8v-1h2v1zm8 0v-1h2v1zm-4 0v-1h2v1zm18.9 8.1h-1.8v1.8h1.8zm-.8 1h-.2v-.2h.2zm15.498-4.48a2.727 2.727 0 0 0-1.62-.5v-.02H27.25a3.154 3.154 0 0 0-3.15 3.15V38.1h-1.68a3.386 3.386 0 0 0-2.872 1.58 3.49 3.49 0 0 0-.157 3.419 3.241 3.241 0 0 0 2.954 1.801h15.161a3.404 3.404 0 0 0 3.394-3.4V26.9h5v-3.65a3.224 3.224 0 0 0-1.302-2.63zM22.345 44.1a2.44 2.44 0 0 1-2.23-1.341 2.706 2.706 0 0 1 .11-2.65A2.588 2.588 0 0 1 22.42 38.9h12.89a3.395 3.395 0 0 0 0 5.2zM40.1 23.192V41.5a2.6 2.6 0 1 1-2.6-2.6v-.8H24.9V23.25a2.352 2.352 0 0 1 2.35-2.35h13.795a3.183 3.183 0 0 0-.945 2.292zm5 2.908h-4.2v-2.908a2.274 2.274 0 0 1 1.44-2.18 1.944 1.944 0 0 1 1.791.259 2.423 2.423 0 0 1 .97 1.979zm-17.1 5h9v.8h-9zm0 3h7v.8h-7zm0-6h9v.8h-9zm4-3h5v.8h-5z"/></svg></span>
+                          <span class="sublink-text">Notebook Server</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+
+              <a id="nav-data-store" data-langlabel="data-store" href="../../../../../zh-CN/data-store/" class="top-nav-link">Data Stores</a>
+              <a id="nav-cloud" data-langlabel="cloud" href="../../../../../zh-CN/cloud/" class="top-nav-link">云</a>
+              <a id="nav-apps" data-langlabel="apps" href="../../../../../zh-CN/apps/" class="top-nav-link">应用程序</a>
+            </nav>
+
+
+            
+            
+            
+
+            <div class="margin-left-1 top-nav-list right hide-if-logged-in logged-out-navigation">
+               
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+              
+              <a data-langlabel="sign-in" id="login-link" class="icon-ui-user top-nav-link link-blue login-link" href="#">登录</a>
+              
+            </div>
+
+            
+            <nav class="margin-left-1 top-nav-list right hide-if-logged-out logged-in-navigation">
+              
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+             
+              <div class="dropdown js-dropdown right">
+
+                <div class="tablet-show top-nav-link">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a href="#" data-drawer="user-nav" class="user-nav-name js-drawer-toggle" data-first-name></a>
+                </div>
+
+                <div class="tablet-hide top-nav-link js-dropdown-toggle">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a class="user-nav-name top-nav-dropdown dropdown-btn" data-first-name>&nbsp;</a>
+                </div>
+
+                <nav class="dropdown-menu dropdown-right">
+                
+                  <a class="dropdown-link agolProfile" id="agolProfile" href="#">我的个人资料</a>
+                  <a class="dropdown-link js-log-out" id="agolLogout" href="#">登出</a>
+                </nav>
+              </div>
+            </nav>
+            
+
+            
+          </div>
+        </div>
+      </header>
+
+      <div class="js-search search-overlay">
+        <div class="search-content" role="dialog" aria-labelledby="search">
+          <form method="GET" id="helpSearchForm">
+            <label>
+              搜索 ArcGIS Enterprise 帮助
+              <div class="search-bar">
+                <input type="search" name="q"  placeholder="搜索 ArcGIS Enterprise 帮助" class="search-input js-search-input">
+                <input type="hidden" name="collection" value="help" />
+                <input type="hidden" name="product" value="geoanalytics-server" />
+                <input type="hidden" name="version" value="10.8" />
+                <input type="hidden" name="language" value="zh-CN" />
+              </div>
+            </label>
+            <input type="hidden" name="relativePath" value="../../../../../" /><button type="submit" class="btn btn-large right">搜索</button>
+          </form>
+        </div>
+      </div>
+
+      <!--googleon: all-->
+
+      <div id="skip-to-content">
+        <!--googleoff: all-->
+        <header class="sub-nav sub-nav-learn">
+          <div class="grid-container">
+            
+            <div class="column-24">
+              <div style="display:table;" class="sdk-home-banner">
+                <div class="sdk-home-banner-content">
+                  <h1 class="sub-nav-title link-white">ArcGIS GeoAnalytics Server</h1>
+                </div>
+              </div>
+            </div>
+
+            <div class="column-24">
+              <nav class='sub-nav-list tablet-hide'><a class="sub-nav-link" href="../../../../../zh-CN/geoanalytics/" target="_top" title="ArcGIS GeoAnalytics Server 概览和文档">主页</a><a class="sub-nav-link is-active" href="../../../../../zh-CN/geoanalytics/latest/install/windows/" target="_top" title="什么是 ArcGIS GeoAnalytics Server？">简介</a><a class="sub-nav-link" href="../../../../../zh-CN/geoanalytics/latest/perform-analysis/" target="_top" title="准备数据并执行分析">执行分析</a></nav><select class='tablet-show select-full trailer-half js-select-nav'><option value="../../../../../zh-CN/geoanalytics/">主页</option><option selected="true" value="../../../../../zh-CN/geoanalytics/latest/install/windows/">简介</option><option value="../../../../../zh-CN/geoanalytics/latest/perform-analysis/">执行分析</option></select>
+            </div>
+
+          </div>
+        </header>
+        <!--googleon: all-->
+       
+        <!-- content goes here -->
+        <div class="grid-container ">
+          
+
+            
+              
+  <!--BREADCRUMB-BEG--><div id="bigmac" class="sticky-breadcrumbs trailer-2" data-spy="affix" data-offset-top="180"> </div><!--BREADCRUMB-END-->
+  <!--googleoff: all-->
+    <div class="column-5 tablet-column-12 trailer-2 ">
+      <aside class="js-accordion accordion reference-index" aria-live="polite" role="tablist">
+        <div></div>
+      </aside>
+
+      <div class="js-sticky scroll-show tablet-hide leader-1 back-to-top" data-top="0" style="top: 0px;">
+        <a href="#" class="btn btn-fill btn-clear">返回顶部</a>
+      </div>
+    </div>
+  <!--googleon: all-->
+  
+            
+            
+            
+	
+		<div class="column-13  pre-1 content-section">
+	
+		<header class="trailer-1"><h1>GeoAnalytics 健康检查</h1></header>
+
+		 
+	<!--googleoff: all-->
+	
+		
+				<aside id="main-toc-small" class="js-accordion accordion tablet-show trailer-1">
+			      <div class="accordion-section">
+			        <h4 class="accordion-title">在本主题中</h4>
+			        <div class="accordion-content list-plain">
+			          <ol class="list-plain pre-0 trailer-0"><li><a href="#ESRI_SECTION1_77DC51461EA34C628E84AA43E278A1A4">站点信息和资源</a></li><li><a href="#ESRI_SECTION1_C8DB0421BC3F42A2A21E40D967C82DAE">工作计算机</a></li><li><a href="#ESRI_SECTION1_175EC5D8848940D9B4ABBC34A9E7D6B1">完成的应用程序</a></li><li><a href="#ESRI_SECTION1_3ECD6F507A1340E58AA53821A1717867">活动应用</a></li></ol>
+			        </div>
+			      </div>
+			     </aside>
+		
+    
+   <!--googleon: all-->
+
+
+		<main>
+			
+	
+    	
+    
+
+
+			
+<section class="section1 padded-anchor" id="GUID-A20DFCF3-EC1F-417F-8258-489FDA56BE78" purpose="section1"><h2></h2><p id="GUID-EBF3009A-A462-421E-9C93-18FDB8A80E9A">健康检查操作可指示 <span class="ph">GeoAnalytics Server</span> 计算平台内的计算资源和作业的状态，即 <span class="ph">GeoAnalytics Server</span> 在多个 <span class="ph">GeoAnalytics Server</span> 内核和计算机中分配分析的基础框架。</p><p id="GUID-7E2457CB-8FF0-464C-A41D-0DAD9CF6D621">该操作用于故障排除和监控，可供服务器或门户管理员使用，可通过使用 URL 格式 <span class="usertext">https://gis_geoanalytics_server.domain.com:6443/arcgis/admin</span> 登录到您的 <span class="ph">ArcGIS Server</span> 管理员目录来对其进行访问。要打开健康检查，请从 <span class="ph">GeoAnalytics Server</span> 站点开始，然后单击<span class="uicontrol">系统 <span class="greaterthan">&gt;</span> 平台服务 <span class="greaterthan">&gt;</span> 计算平台 <span class="greaterthan">&gt;</span> 健康</span>。</p><p id="GUID-3263B69A-5709-4D1D-AC20-CF3EFC4BF38F">可以使用健康检查操作执行以下操作：<ul purpose="ul" id="UL_655590C02A2C4E1C99A30786F3680761"><li purpose="li" id="LI_EE5C407B5B4A4CF6B140B6113F0FCD6A">验证并识别正在用于分析的 <span class="ph">GeoAnalytics Server</span> 计算机。</li><li purpose="li" id="LI_117CC9D40BAE46F69EF592C35625626D">运行分析（或运行工具）时，验证已分配的内存和内核是否正在使用中。</li><li purpose="li" id="LI_01484D47334048678CCF7F8571855DBE">检查在 <span class="ph">GeoAnalytics Server</span> 计算机上可用的内核或内存数量。如果使用 <span class="ph">GeoAnalytics Server</span> 设置，则此操作非常有用。<p id="GUID-3905F17E-C73C-473C-B168-B5076C655C87"><a class="xref xref" href="../../../../../zh-CN/geoanalytics/latest/install/windows/geoanalytics-settings.htm">了解有关 <span class="ph">GeoAnalytics Server</span> 设置的详细信息</a></p></li><li purpose="li" id="LI_B4BA3646AB234894945824C27B9437F5">查找 <span class="ph">GeoAnalytics Server</span> 作业的 <span class="usertext">jobID</span> 以查看 REST 端点。</li><li purpose="li" id="LI_8D35F630A90C4490B5895A766DE12851">故障排除并解决错误消息。<div class="panel trailer-1 note" id="GUID-41DBE7AC-5D20-4B5B-834F-A1B63A798EF3"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-07B2A184-B021-4061-9FEA-4DFF4E3CB9B1">如果收到错误<span class="uicontrol">无法初始化分布式计算平台服务</span>，请完成健康检查操作并检查工作节点的状态。检查完节点的状态后，请完成<a class="xref xref" href="../../../../../zh-CN/geoanalytics/latest/install/windows/geoanalytics-troubleshooting.htm#GUID-F248E3DC-01FB-4B33-9BB7-8C09AA00C938">常见 <span class="ph">GeoAnalytics Server</span> 问题和解决方案</a>中列出的步骤。</p></div></li></ul></p><div class="panel trailer-1 note" id="GUID-6A305096-11F0-4859-A344-F4A4A01C91A0"><h5 class="icon-ui-comment trailer-0">注：</h5><p id="GUID-7D8BDF08-AB60-4D56-91BA-8F395A7C3D53"><span class="ph">ArcGIS Monitor</span> 中也提供 <span class="ph">GeoAnalytics Server</span> 健康检查。</p><p id="GUID-75E7762D-6CDE-4B31-85F6-CA3137C8264C"><a class="xref xref" esrisubtype="extrel" hrefpfx="" href="//enterprise.arcgis.com/zh-cn/monitor/latest/get-started/what-is-arcgis-monitor.htm">了解有关 <span class="ph">ArcGIS Monitor</span> 的详细信息</a></p></div><p id="GUID-C0D169A8-EDED-42CB-AB8E-24D909521A22">计算平台健康检查使用基础框架中用于分配分析的术语。下表概述了本文档中使用的术语和概念：<h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><thead><tr><th colspan="1">术语</th><th colspan="1">描述</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-340A7096-9534-4832-B514-6BB11F5B0230">节点</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-9F8AEFD1-C050-443E-ADD5-B73C093AA144">服务器计算机。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-392E2A18-3A74-4466-92EA-B330ECA12097">工作计算机</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-AC75798C-EDBC-4A8B-9CF2-4CEA2C856BC4">用于计算的计算机。工作计算机可接收来自主机的指令并执行这些指令。一台主机可以有一台或多台工作计算机。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-B87E762D-10AC-4E6A-97D2-7879C55986E5">主机</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-9B4325A3-0A9F-49DF-A34D-D2AD2B11D0B0">用于监控工作节点的服务器。服务器既可以是主节点，也可以是工作节点。</p></td></tr><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-1281B0A4-0ED9-4C79-8705-CF914A328DDB">作业</p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-9C87501B-E5AB-4E8B-927D-F23E81639AFD">作业是指运行 <span class="ph">GeoAnalytics Server</span> 工具。</p></td></tr></tbody><caption></caption></table></div></p><p id="GUID-1C5546CE-5B07-477E-B80B-4C319178A7F1">健康检查由包含单个值或数组的键组成。运行并完成 <span class="ph">GeoAnalytics Server</span> 作业后，对于站点中的每台 <span class="ph">GeoAnalytics Server</span> 计算机，健康检查将具有以下键：</p><section class="codeblock padded-anchor" purpose="codeblock"><div class="codeblockbody"><pre><code class="other no-highlight">{
+  &quot;&lt;geoanalytics server machine name&gt;&quot;:{
+  {.. url ..},
+  {.. workers ..},
+  {.. cores ..},
+  {.. coresused ..},
+  {.. memory ..},
+  {.. memoryused ..},
+  {.. activeapps ..},
+  {.. completedapps ..},
+  {.. activedrivers ..},
+  {.. status ..}
+}</code></pre></div></section><p id="GUID-28CCF1CE-D4E5-423C-A600-58751F9ABAD7">如果站点中有多台计算机，则将存在多个 <span class="usertext">geoanalytics service machine name keys</span>。仅主节点计算机将包含资源和作业信息。工作节点计算机将仅包含 <span class="usertext">null</span> 和 <span class="usertext">0</span> 值。在每个顶层服务器对象中，以下键包含一组值：<span class="usertext">workers</span>、<span class="usertext">activeapps</span>、<span class="usertext">completedapps</span> 和 <span class="usertext">activedrivers</span>。顶层键的 <span class="usertext">url</span>、<span class="usertext">cores</span>、<span class="usertext">coresused</span>、<span class="usertext">memory</span>、<span class="usertext">memoryused</span> 和 <span class="usertext">status</span> 具有单个值。</p><p id="GUID-288650DD-1454-4D10-9200-219A3B4378FA">将使用以下示例更加详细地介绍每个键：<ul purpose="ul" id="OL_654D075C80E642EA816705F80B939F9F"><li purpose="li" id="LI_AA2E451CE38A4F5295E859A71870FC00">示例 1：一个单机 <span class="ph">GeoAnalytics Server</span> 站点。<ul purpose="ul" id="UL_76A1A8995EEF45E193DF9E0BCC1E6DD2"><li purpose="li" id="LI_4A4A23AC172E4E79B80ADD39241FE3D4">每台计算机都具有 32 GB (32768 MB) RAM 和 8 个 CPU 内核。</li><li purpose="li" id="LI_C25B7BB84F5C4D9D9A934166E56AF42E">系统属性设置为使用最大 90％ 的可用 RAM 和内核。<ul purpose="ul" id="UL_F3D5E0C161A7496493CB9C6032C72F51"><li purpose="li" id="LI_7F6D319825504FE68522EE412590F0AC"><span class="ph">GeoAnalytics Server</span> 将使用每台计算机 29491 MB 的 RAM。该结果可通过以下方程计算得出：<pre><code class="equation" purpose="equation"> floor(32768 x .90) = 29491 </code></pre></li><li purpose="li" id="LI_E19294A3A33D46F6A7E26D6898FE2DA6"><span class="ph">GeoAnalytics Server</span> 将使用 7 个内核。该结果可通过以下方程计算得出： <pre><code class="equation" purpose="equation">floor(8 cores x 1 machines x .90) = 7 </code></pre></li></ul></li></ul></li><li purpose="li" id="LI_A3B64BDB63374A30851A381AD042F68B">示例 2：一个三机 <span class="ph">GeoAnalytics Server</span> 站点。<ul purpose="ul" id="UL_79AEF3798BF54C0FB4C45A32E76716D6"><li purpose="li" id="LI_5D7BB3D54E8C421E84D5AA550E1734C6">每台计算机都具有 16 GB (16384 MB) RAM 和 4 个 CPU 内核。</li><li purpose="li" id="LI_F34A9F20C7BE4C8E80FB20EB167C96FF">系统属性默认使用最大 80％ 的可用 RAM 和内核。<ul purpose="ul" id="UL_D34FC2573A4B445D888B0AF62F11C05E"><li purpose="li" id="LI_E0A625D76CB6438FB80D67C811E8CA93"><span class="ph">GeoAnalytics Server</span> 将使用每台计算机 13107 MB 的 RAM。该结果可通过以下方程计算得出：<pre><code class="equation" purpose="equation"> floor(16384 x .80)= 13107</code></pre></li><li purpose="li" id="LI_1CF9D29D0B384C4FB833BAB6056468A6"><span class="ph">GeoAnalytics Server</span> 将使用所有计算机的 9 个内核。该结果可通过以下方程计算得出： <pre><code class="equation" purpose="equation">floor(4 cores x 3 machines x .80) = 9 </code></pre></li></ul></li></ul></li></ul></p></section><section class="section1 padded-anchor" id="ESRI_SECTION1_77DC51461EA34C628E84AA43E278A1A4" purpose="section1"><h2>站点信息和资源</h2><p id="GUID-54C43CB5-C232-423D-A56E-48C08CC64E43">本节中将介绍 <span class="usertext">url</span>、<span class="usertext">cores</span>、<span class="usertext">coresused</span>、<span class="usertext">memory</span>、<span class="usertext">memoryused</span> 和 <span class="usertext">status</span> 键。如果 <span class="ph">GeoAnalytics Server</span> 站点中有多台计算机，则将存在多个 <span class="usertext">url</span> 键。将填充其中一个 <span class="usertext">url</span> 键的值，如以下示例所示。所有其他 <span class="usertext">url</span> 键的值将为 0，并且将不会列出工作计算机。具有填充值的 URL 为主节点；其他 URL 是表示为工作节点而非主节点的计算机。<span class="usertext">activedrivers</span> 键始终为空数组。</p><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="2.00*"></colgroup><colgroup width="*"></colgroup><thead><tr><th colspan="1">示例 1 - 单机站点</th><th colspan="1">示例 2 - 三机站点</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><p id="GUID-9E5812F1-3F74-4602-9EE0-8D2EFFB1892C"><section class="codeblock padded-anchor" purpose="codeblock"><div class="codeblockbody"><pre><code class="other no-highlight">{
+   &quot;machine1.example-esri.com&quot;: {
+       &quot;url&quot;: &quot;spark://machine1.example-esri.com:7077&quot;,
+       &quot;workers&quot;: [
+           {
+               ...worker1...
+           }
+       ],
+       &quot;cores&quot;: 7,
+       &quot;coresused&quot;: 7,
+       &quot;memory&quot;: 29491,
+       &quot;memoryused&quot;: 29491,
+       &quot;activeapps&quot;: [ ... ],
+       &quot;completedapps&quot;: [ ... ],
+       &quot;activedrivers&quot;: [],
+       &quot;status&quot;: &quot;ALIVE&quot;
+   }
+}</code></pre></div></section></p></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><section class="codeblock padded-anchor" purpose="codeblock"><div class="codeblockbody"><pre><code class="other no-highlight">{
+ &quot;machine1.example-esri.com&quot;: {
+       &quot;url&quot;: &quot;spark://machine1.example-esri.com:7077&quot;,       &quot;workers&quot;: [           {
+               ...worker1...           },           {
+               ...worker2...           },           {
+               ...worker3...           }
+       ],       &quot;cores&quot;: 9,       &quot;coresused&quot;: 9,       &quot;memory&quot;: 13107,       &quot;memoryused&quot;: 13107,       &quot;activeapps&quot;: [ ... ],       &quot;completedapps&quot;: [ ... ],       &quot;activedrivers&quot;: [],       &quot;status&quot;: &quot;ALIVE&quot;
+   },   &quot;machine2.example-esri.com&quot;: {
+       &quot;url&quot;: &quot;spark://machine2.example-esri.com:7077&quot;,       &quot;workers&quot;: [],       &quot;cores&quot;: 0,       &quot;coresused&quot;: 0,       &quot;memory&quot;: 0,       &quot;memoryused&quot;: 0,       &quot;activeapps&quot;: [],       &quot;completedapps&quot;: [],       &quot;activedrivers&quot;: [],       &quot;status&quot;: &quot;STANDBY&quot;
+   },   &quot;machine3.example-esri.com&quot;: {
+       &quot;url&quot;: &quot;spark://machine3.example-esri.com:7077&quot;,       &quot;workers&quot;: [],       &quot;cores&quot;: 0,       &quot;coresused&quot;: 0,       &quot;memory&quot;: 0,       &quot;memoryused&quot;: 0,       &quot;activeapps&quot;: [],       &quot;completedapps&quot;: [],       &quot;activedrivers&quot;: [],       &quot;status&quot;: &quot;STANDBY&quot;
+   }
+}</code></pre></div></section></td></tr></tbody><caption></caption></table></div><p id="GUID-D64AFC50-3EDB-4D52-8274-4F6FED801455">描述</p><ul purpose="ul" id="UL_5D28FCFAC8C0429A9AF09DFCA8B27DEA"><li purpose="li" id="LI_121F801FCAF34A21A4D72A009A8A8F77"><span class="usertext"> url</span> - 带有 Spark 前缀和 Spark 端口的 <span class="ph">GeoAnalytics Server</span> 计算机的 URL。每台计算机仅列出一个 URL。</li><li purpose="li" id="LI_7514950A00284F49ADBBE43FF0A143DE"><span class="usertext">cores</span> - 站点中所有 <span class="ph">GeoAnalytics Server</span> 计算机可用于 <span class="ph">GeoAnalytics Server</span> 的内核总数。这表示可用内核总数乘以 <span class="usertext">percentageMaxAllowedComputeCores</span> 设置（默认为 80％）。<p id="GUID-B4745873-5CFC-4744-9F63-80000E61BBA8">了解有关<a class="xref xref" href="../../../../../zh-CN/geoanalytics/latest/install/windows/geoanalytics-settings.htm#GUID-92A931A9-9365-46BB-ABFE-3396E328F054">设置 <span class="usertext">percentageMaxAllowedComputeCores</span></a> 的详细信息。</p> </li><li purpose="li" id="LI_3B42B832C5CA454080DFA1EA31F25D94"><span class="usertext">coresused</span> - <span class="ph">GeoAnalytics Server</span> 站点中所有计算机当前用于 <span class="ph">GeoAnalytics Server</span> 分析的内核总数。</li><li purpose="li" id="LI_8B95C996EEFD42FE9EFE782C94E66481"><span class="usertext">memory</span> - 站点中所有 <span class="ph">GeoAnalytics Server</span> 计算机可用于 <span class="ph">GeoAnalytics Server</span> 的可用内存总量 (MB)。这表示每台计算机上的内存量乘以 <span class="usertext">percentageMaxAllowedComputeMemory</span> 及计算机的数量。</li><li purpose="li" id="LI_53A4A4B3B8A44A9D9566B673D34E516F"><span class="usertext">memoryused</span> - <span class="ph">GeoAnalytics Server</span> 站点中所有计算机当前用于 <span class="ph">GeoAnalytics Server</span> 分析的内存总量。</li><li purpose="li" id="LI_BCBCE95DE0A249BD9A72FBDC8C5E27C0"><span class="usertext">activedrivers</span> - 始终为空数组。</li></ul></section><section class="section1 padded-anchor" id="ESRI_SECTION1_C8DB0421BC3F42A2A21E40D967C82DAE" purpose="section1"><h2>工作计算机</h2><p id="GUID-39C2BA52-113F-441A-AF97-8074CD500F52"><span class="usertext">workers</span> 键可将计算机和信息标识为 <span class="ph">GeoAnalytics Server</span> 站点的一部分。</p><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="1.12*"></colgroup><colgroup width="1.00*"></colgroup><thead><tr><th colspan="1">示例 1 - 单机站点</th><th colspan="1">示例 2 - 三机站点</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><section class="codeblock padded-anchor" purpose="codeblock"><div class="codeblockbody"><pre><code class="other no-highlight">{
+   &quot;machine1.example-esri.com&quot;: {
+       &quot;url&quot;: &quot;spark://machine1.example-esri.com:7077&quot;,
+       &quot;workers&quot;: [
+           {
+               &quot;id&quot;: &quot;worker-20180302114515-10.33.9.162-56544&quot;,
+               &quot;host&quot;: &quot;10.33.9.162&quot;,
+               &quot;port&quot;: 56544,
+               &quot;cores&quot;: 3,
+               &quot;coresused&quot;: 3,
+               &quot;coresfree&quot;: 0,
+               &quot;memory&quot;: 29491,
+               &quot;memoryused&quot;: 29491,
+               &quot;memoryfree&quot;: 0,
+               &quot;state&quot;: &quot;ALIVE&quot;,
+               &quot;lastheartbeat&quot;: 1520469707880,
+               &quot;lastheartbeatString&quot;: &quot;2018-03-07T04:41:47,880&quot;,
+               &quot;hostname&quot;: &quot;machine1.example-esri.com&quot;
+           }
+       ],
+    ...
+    }
+   }
+}</code></pre></div></section></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><section class="codeblock padded-anchor" purpose="codeblock"><div class="codeblockbody"><pre><code class="other no-highlight">{
+   &quot;machine1.example-esri.com&quot;: {
+       &quot;url&quot;: &quot;machine1.example-esri.com:7077&quot;,       &quot;workers&quot;: [           {
+               &quot;id&quot;: &quot;worker-20180302114515-10.33.9.162-56544&quot;,               &quot;host&quot;: &quot;10.33.9.162&quot;,               &quot;port&quot;: 56544,               &quot;cores&quot;: 3,               &quot;coresused&quot;: 3,               &quot;coresfree&quot;: 0,               &quot;memory&quot;: 13107,               &quot;memoryused&quot;: 13107,               &quot;memoryfree&quot;: 0,               &quot;state&quot;: &quot;ALIVE&quot;,               &quot;lastheartbeat&quot;: 1520469707880,               &quot;lastheartbeatString&quot;: &quot;2018-03-07T04:41:47,880&quot;,               &quot;hostname&quot;: &quot;machine1.example-esri.com&quot;
+           },           {
+               &quot;id&quot;: &quot;worker-20180302114111-10.33.10.149-56543&quot;,               &quot;host&quot;: &quot;10.33.10.149&quot;,               &quot;port&quot;: 56543,               &quot;cores&quot;: 3,               &quot;coresused&quot;: 3,               &quot;coresfree&quot;: 0,               &quot;memory&quot;: 13107,               &quot;memoryused&quot;: 13107,               &quot;memoryfree&quot;: 0,               &quot;state&quot;: &quot;ALIVE&quot;,               &quot;lastheartbeat&quot;: 1520469712961,               &quot;lastheartbeatString&quot;: &quot;2018-03-07T04:41:52,961&quot;,               &quot;hostname&quot;: &quot;machine2.example-esri.com&quot;
+           },           {
+               &quot;id&quot;: &quot;worker-20180302113155-10.33.9.165-56540&quot;,               &quot;host&quot;: &quot;10.33.9.165&quot;,               &quot;port&quot;: 56540,               &quot;cores&quot;: 3,               &quot;coresused&quot;: 3,               &quot;coresfree&quot;: 0,               &quot;memory&quot;: 13107,               &quot;memoryused&quot;: 13107,               &quot;memoryfree&quot;: 0,               &quot;state&quot;: &quot;ALIVE&quot;,               &quot;lastheartbeat&quot;: 1520469712874,               &quot;lastheartbeatString&quot;: &quot;2018-03-07T04:41:52,874&quot;,               &quot;hostname&quot;: &quot;machine3.example-esri.com&quot;
+           }
+       ],    ...    },       &quot;machine2.example-esri.com&quot;: {...},
+   &quot;machine3.example-esri.com&quot;: {...}
+   }
+}</code></pre></div></section></td></tr></tbody><caption></caption></table></div><p id="GUID-64278EF4-B9E3-4F82-9079-0176C20ECC72">描述</p><ul purpose="ul" id="UL_9A77DF265A9D4A1EB36BA614CCBF9C63"><li purpose="li" id="LI_7073346D936847A79232BAC3AB991BDA"><span class="usertext">id</span> - 工作计算机的唯一 ID。</li><li purpose="li" id="LI_8C262C04FA3445B59FAAB11EC8A268F4"><span class="usertext">host</span> - 计算机的主机地址。</li><li purpose="li" id="LI_83B78F3C7ECE41A4B93571AA754207B4"><span class="usertext">port</span> - 用于 <span class="ph">GeoAnalytics Server</span> 分析的计算机端口。已为每台工作计算机分配其自己的端口。必须打开这些端口才能进行通信。</li><li purpose="li" id="LI_5807C40AF9364B3AB96A468352826EA1"><span class="usertext">cores</span> - 计算机上分配给 <span class="ph">GeoAnalytics Server</span> 分析的内核数量。可使用 <span class="ph">GeoAnalytics Server</span> 设置进行设置并表示 <span class="usertext">percentageMaxAllowedComputeCores</span> 设置。</li><li purpose="li" id="LI_0FEAD4A4C75744558F7EF8DBE1D456DA"><span class="usertext">coresused</span> - 当前用于 <span class="ph">GeoAnalytics Server</span> 分析的内核总数。如果任何 <span class="ph">GeoAnalytics Tools</span> 正在运行，则此值需要大于 0。</li><li purpose="li" id="LI_F7F77E7D337641779217E068954346FA"><span class="usertext">coresfree</span> - 计算机上当前空闲且可立即用于 <span class="ph">GeoAnalytics Server</span> 分析的内核数量。如果此数量等于所有计算机上的 <span class="usertext">cores</span>，则当前未运行任何 <span class="ph">GeoAnalytics Tools</span>。</li><li purpose="li" id="LI_F0B1FE77B76844C09E49234C9FD8CD3A"><span class="usertext">memory</span> - 计算机上分配给 <span class="ph">GeoAnalytics Server</span> 分析的内存量 (MB)。可使用 <span class="ph">GeoAnalytics Server</span> 设置进行设置并表示 <span class="usertext">percentageMaxAllowedComputeMemory</span> 设置。</li><li purpose="li" id="LI_09680C1FF3AF462EBAE86B8199644E70"><span class="usertext">memoryused</span> - 指定计算机上当前用于 <span class="ph">GeoAnalytics Server</span> 分析的内存量 (MB)。</li><li purpose="li" id="LI_229889C54447415A87E271ACEFEF37AD"><span class="usertext">memoryfree</span> - 计算机上当前空闲且可立即用于 <span class="ph">GeoAnalytics Server</span> 分析的内存量 (MB)。要运行 <span class="ph">GeoAnalytics Tools</span>，<span class="usertext">memoryfree</span> 数量必须大于或等于在每台计算机的服务器设置中设置的数量。</li><li purpose="li" id="LI_AA89D5E376DF46EC8FE04A02A88A8570"><span class="usertext">state</span> - 当前计算机的状态。<span class="usertext">ALIVE</span> 已打开，准备好运行或正在运行一个作业。<span class="usertext">STANDBY</span> 启动作业后，将切换到 <span class="usertext">ALIVE</span>。<span class="usertext">DEAD</span> 可能有错误，并且应该重新启动 <span class="ph">GeoAnalytics Server</span>。<span class="usertext">UNKNOWN</span> 可能有错误，并且应该重新启动 <span class="ph">GeoAnalytics Server</span>。如果无法将计算机从 <span class="usertext">ALIVE</span> 或 <span class="usertext">STANDBY</span> 切换到 <span class="usertext">DEAD</span> 或 <span class="usertext">UNKNOWN</span>，请联系 Esri 支持中心。</li><li purpose="li" id="LI_59EFBE77C5C448F7B39CDEA82E7486D5"><span class="usertext">lastheartbeat</span> - 当前计算机上次联系主节点的时间，以新纪元毫秒为单位。该结果按计算机的所在地时间计算得出。</li><li purpose="li" id="LI_FF8AD84A14FE4633A6ADB1D293C0B43A"><span class="usertext">lastheartbeatString</span> - 当前计算机上次以字符串格式联系主节点的时间。该结果按计算机的所在地时间计算得出。</li><li purpose="li" id="LI_3D98C7739562414688C177FA10FBDE09"><span class="usertext">hostname</span> - 工作计算机的主机名。</li></ul></section><section class="section1 padded-anchor" id="ESRI_SECTION1_175EC5D8848940D9B4ABBC34A9E7D6B1" purpose="section1"><h2>完成的应用程序</h2><p id="GUID-A93B24DF-060B-46CA-9030-0D3594F32ED3"><span class="usertext">completedapps</span> 键可标识已完成的 <span class="ph">GeoAnalytics Server</span> 工具和信息。其中包括成功完成的工具和导致失败的工具。重新启动 <span class="ph">GeoAnalytics Server</span> 时，将清除完成的应用程序信息。</p><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="1.12*"></colgroup><colgroup width="1.00*"></colgroup><thead><tr><th colspan="1">示例 1 - 单机站点</th><th colspan="1">示例 2 - 三机站点</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><section class="codeblock padded-anchor" purpose="codeblock"><div class="codeblockbody"><pre><code class="other no-highlight">{
+   &quot;machine1.example-esri.com&quot;: {
+       &quot;url&quot;: &quot;spark://machine1.example-esri.com:7077&quot;,
+       &quot;workers&quot;: [...],
+       ...,
+       &quot;activeapps&quot;: [...],
+       &quot;completedapps&quot;: [
+           {
+               &quot;starttime&quot;: 1520469691617,
+               &quot;id&quot;: &quot;app-20180307164131-0008&quot;,
+               &quot;name&quot;: &quot;ArcGIS GeoAnalytics (jcb8bda25a3f14dc7835dca0b3267b42c)&quot;,
+               &quot;cores&quot;: 7,
+               &quot;user&quot;: &quot;agstest&quot;,
+               &quot;memoryperslave&quot;: 29491,
+               &quot;submitdate&quot;: &quot;Wed Mar 07 16:41:31 PST 2018&quot;,
+               &quot;state&quot;: &quot;FINISHED&quot;,
+               &quot;duration&quot;: 21947
+           }
+       ],
+       &quot;activedrivers&quot;: [],
+       &quot;status&quot;: &quot;ALIVE&quot;
+   }
+}</code></pre></div></section></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><section class="codeblock padded-anchor" purpose="codeblock"><div class="codeblockbody"><pre><code class="other no-highlight">{
+   &quot;machine1.example-esri.com&quot;: {
+       &quot;url&quot;: &quot;spark://machine1.example-esri.com:7077&quot;,       &quot;workers&quot;: [...],       ...,       &quot;activeapps&quot;: [...],       &quot;completedapps&quot;: [           {
+               &quot;starttime&quot;: 1520469691617,               &quot;id&quot;: &quot;app-20180307164131-0008&quot;,               &quot;name&quot;: &quot;ArcGIS GeoAnalytics (jcb8bda25a3f14dc7835dca0b3267b42c)&quot;,               &quot;cores&quot;: 9,               &quot;user&quot;: &quot;agstest&quot;,               &quot;memoryperslave&quot;: 13107,               &quot;submitdate&quot;: &quot;Wed Mar 07 16:41:31 PST 2018&quot;,               &quot;state&quot;: &quot;FINISHED&quot;,               &quot;duration&quot;: 21947           }
+       ],       &quot;activedrivers&quot;: [],       &quot;status&quot;: &quot;ALIVE&quot;
+   },   &quot;machine2.example-esri.com&quot;: {...},   &quot;machine3.example-esri.com&quot;: {...}
+}</code></pre></div></section></td></tr></tbody><caption></caption></table></div><p id="GUID-3708D734-7C10-4088-B51F-1CAD58C1BC07">描述</p><ul purpose="ul" id="UL_930D8DF75DAC4E77A1DD86D061F0303C"><li purpose="li" id="LI_7F3E1B710C004F2A9D24215FAFA05A18"><span class="usertext">starttime</span> - <span class="ph">GeoAnalytics Tools</span> 作业开始运行的时间，以新纪元毫秒为单位。</li><li purpose="li" id="LI_EFCE96F7D74D4FC2901651E63B53D138"><span class="usertext">id</span> - 作业的唯一 ID。</li><li purpose="li" id="LI_1DFC048613AC41B7B01B0237BABA0DFD"><span class="usertext">name</span> - 作业的名称。将始终使用 <span class="usertext">ArcGIS GeoAnalytics (&lt;jobID&gt;)</span> 格式。运行作业时，<span class="usertext"> jobID</span> 是用于 REST 端点的相同 <span class="usertext">jobID</span>。</li><li purpose="li" id="LI_DBBCDB67456D47F3A84F383822941745"><span class="usertext">cores</span> - 所有计算机上用于分析的内核总数。</li><li purpose="li" id="LI_0DC96919F39F44BDB04CDD7DC7655152"><span class="usertext">user</span> - 运行作业的用户。即设置 <span class="ph">ArcGIS Server</span> 的用户，并且在您的站点上将始终保持不变。并非运行该作业的门户成员。</li><li purpose="li" id="LI_05CFA2EDB09341AA8E2AC40FDA5588D5"><span class="usertext">memoryperslave</span> - 每台计算机上使用的内存量。</li><li purpose="li" id="LI_82271CCDF23C4D0F80C6D6BD46BE0CCB"><span class="usertext">submitdate</span> - <span class="ph">GeoAnalytics Tools</span> 作业开始运行的时间，采用可读文本格式。</li><li purpose="li" id="LI_9CDFB8EC3A4C4471A811D5A97DCFE592"><span class="usertext">state</span> - 当前作业的状态。<span class="usertext">FINISHED</span> 表示此作业已完成。作业可能已成功完成或导致错误。</li><li purpose="li" id="LI_155DCD8105924EC7AF2028D85F5FB92E"><span class="usertext">duration</span> - 作业的总持续时间，以毫秒为单位。</li></ul></section><section class="section1 padded-anchor" id="ESRI_SECTION1_3ECD6F507A1340E58AA53821A1717867" purpose="section1"><h2>活动应用</h2><p id="GUID-1248BC06-42D6-483D-8711-A8AFEEE502F9"><span class="usertext">activeapps</span> 键可标识当前正在运行的 <span class="ph">GeoAnalytics Tools</span> 及其信息。完成作业后，可将信息移至 <span class="usertext">completedapps</span> 对象。</p><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="1.12*"></colgroup><colgroup width="1.00*"></colgroup><thead><tr><th colspan="1">示例 1 - 单机站点</th><th colspan="1">示例 - 三机站点</th></tr></thead><tbody class="align-middle"><tr class="align-middle"><td outputclass="" purpose="entry" rowspan="1" colspan="1"><section class="codeblock padded-anchor" purpose="codeblock"><div class="codeblockbody"><pre><code class="other no-highlight">{
+   &quot;machine1.example-esri.com&quot;: {
+       &quot;url&quot;: &quot;spark://machine1.example-esri.com:7077&quot;,
+       &quot;workers&quot;: [...],
+       ...,
+       &quot;activeapps&quot;: [
+           {
+               &quot;starttime&quot;: 1520464610794,
+               &quot;id&quot;: &quot;app-20180307151650-0007&quot;,
+               &quot;name&quot;: &quot;ArcGIS GeoAnalytics (j4b986eb5c603426fae7abe8e9d5d7afa)&quot;,
+               &quot;cores&quot;: 7,
+               &quot;user&quot;: &quot;agstest&quot;,
+               &quot;memoryperslave&quot;: 29491,
+               &quot;submitdate&quot;: &quot;Wed Mar 07 15:16:50 PST 2018&quot;,
+               &quot;state&quot;: &quot;RUNNING&quot;,
+               &quot;duration&quot;: 5105025
+           }
+       ],
+       &quot;completedapps&quot;: [...]
+   }
+}</code></pre></div></section></td><td outputclass="" purpose="entry" rowspan="1" colspan="1"><section class="codeblock padded-anchor" purpose="codeblock"><div class="codeblockbody"><pre><code class="other no-highlight">{
+   &quot;machine1.example-esri.com&quot;: {
+       &quot;url&quot;: &quot;spark://machine1.example-esri.com:7077&quot;,       &quot;workers&quot;: [...],       ...,       &quot;activeapps&quot;: [           {
+               &quot;starttime&quot;: 1520464610794,               &quot;id&quot;: &quot;app-20180307151650-0007&quot;,               &quot;name&quot;: &quot;ArcGIS GeoAnalytics (j4b986eb5c603426fae7abe8e9d5d7afa)&quot;,               &quot;cores&quot;: 9,               &quot;user&quot;: &quot;agstest&quot;,               &quot;memoryperslave&quot;: 13107,               &quot;submitdate&quot;: &quot;Wed Mar 07 15:16:50 PST 2018&quot;,               &quot;state&quot;: &quot;RUNNING&quot;,               &quot;duration&quot;: 5105025           }
+       ],       &quot;completedapps&quot;: [...]   },   &quot;machine2.example-esri.com&quot;: {...},   &quot;machine3.example-esri.com&quot;: {...}
+}</code></pre></div></section></td></tr></tbody><caption></caption></table></div><p id="GUID-66350933-5D6F-4468-823F-AA10F13F61E9">描述</p><ul purpose="ul" id="UL_717ABB74A4AB4774ABDC2D049EC65326"><li purpose="li" id="LI_74733F74BFA84C81B4DFDC87F413BCCE"><span class="usertext">starttime</span> - <span class="ph">GeoAnalytics Tools</span> 开始运行的时间，以新纪元毫秒为单位。</li><li purpose="li" id="LI_469F8F430C5E45E0ABAB445800C94333"><span class="usertext">id</span> - 作业的唯一 ID。</li><li purpose="li" id="LI_486D9D5D0CCF436CAA1E8EB2696FA27C"><span class="usertext">name</span> - 作业的名称。将始终使用 <span class="usertext">ArcGIS GeoAnalytics (&lt;jobID&gt;)</span> 格式。运行作业时，jobID 是用于 REST 端点的相同作业 ID。</li><li purpose="li" id="LI_875B0BCB18314F8786DD325CA8D0B36C"><span class="usertext">cores</span> - 所有计算机上用于分析的内核总数。</li><li purpose="li" id="LI_AF7DD3DDD8284BB8B29982E5810E51B5"><span class="usertext">user</span> - 运行作业的用户。即设置 <span class="ph">ArcGIS Server</span> 的用户，并且在您的站点上将始终保持不变。并非运行该作业的门户成员。</li><li purpose="li" id="LI_1D90D26036E84AF4BC8000343D30C43D"><span class="usertext">memoryperslave</span> - 每台计算机上使用的内存量。</li><li purpose="li" id="LI_7EBD4793202F4B7FACB0E3578E7FCA65"><span class="usertext">submitdate</span> - <span class="ph">GeoAnalytics Tools</span> 开始运行的时间，采用可读文本格式。</li><li purpose="li" id="LI_71017A5C209A4DF4864009665FBA54F6"><span class="usertext">state</span> - 当前作业的状态。<span class="usertext">RUNNING</span> 表示作业已开始。<span class="usertext">WAITING</span> 表示作业将等待一分钟，以确定是否有足够的资源。如果一分钟内没有足够的资源，则该作业将取消。如果有足够的资源，则 <span class="usertext">RUNNING</span> 将开始启动。</li><li purpose="li" id="LI_6C74CE964ACF470FB59F5D7B4D8BAC40"><span class="usertext">duration</span> - 作业的当前持续时间，以毫秒为单位。</li></ul></section>
+			
+				<hr>
+				<!--googleoff: all-->
+				
+	
+        
+		    <p class="feedback right">
+		        <a id="afb" class="icon-ui-contact" href="/feedback/" data-langlabel="feedback-on-this-topic" >有关此主题的反馈?</a>
+		    </p>
+        
+	
+
+				<!--googleon: all-->
+			
+		</main>
+	</div>
+	
+	<!--googleoff: all-->
+	
+		
+			<div id="main-toc-large" class="column-5">
+			    <div class="panel font-size--2 tablet-hide trailer-1">
+			      <h5 class="trailer-half">在本主题中</h5>
+			      <ol class="list-plain pre-0 trailer-0"><li><a href="#ESRI_SECTION1_77DC51461EA34C628E84AA43E278A1A4">站点信息和资源</a></li><li><a href="#ESRI_SECTION1_C8DB0421BC3F42A2A21E40D967C82DAE">工作计算机</a></li><li><a href="#ESRI_SECTION1_175EC5D8848940D9B4ABBC34A9E7D6B1">完成的应用程序</a></li><li><a href="#ESRI_SECTION1_3ECD6F507A1340E58AA53821A1717867">活动应用</a></li></ol>
+			    </div>
+			    
+			    
+	  		</div>
+		
+    
+   <!--googleon: all-->
+
+
+
+
+          
+        </div>
+        <!-- ENDPAGECONTENT -->
+
+      </div>
+
+    </div>  <!-- End of wrapper -->
+
+  <footer class="footer leader-3 link-dark-gray" role="contentinfo">
+    <div class="grid-container">
+      <div class="row">
+        <nav class="column-6">
+          <h6 data-langlabel="arcgis-for-server">Arc<span>GIS Enterprise</span></h6>
+          <ul class="list-plain">
+            <li><a data-langlabel="home" href="../../../../../zh-CN/">主页</a></li>
+            <li><a data-langlabel="portal" href="../../../../../zh-CN/portal/">Portal</a></li>
+            <li><a data-langlabel="server" href="../../../../../zh-CN/server/">Server</a></li>
+            <li><a data-langlabel="data-store" href="../../../../../zh-CN/data-store/">Data Stores</a></li>
+            <li><a data-langlabel="cloud" href="../../../../../zh-CN/cloud/">云</a></li>
+            <li><a data-langlabel="apps" href="../../../../../zh-CN/apps/">应用程序</a></li>
+            <li><a data-langlabel="documentation" href="../../../../../zh-CN/documentation/">文档</a></li>
+          </ul>
+        </nav>
+
+        
+  <nav class="column-6">
+    <h6 data-langlabel="arcgis-platform">ArcGIS 平台</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="arcgis" href="//www.arcgis.com/">ArcGIS Online</a></li>
+      <li><a data-langlabel="arcgis-for-professionals" href="//pro.arcgis.com/">ArcGIS Pro</a></li>
+      <li><a data-langlabel="arcgis-for-server" href="//enterprise.arcgis.com/">ArcGIS Enterprise</a></li>
+      <li><a data-langlabel="arcgis-for-developers" href="https://developers.arcgis.com/">ArcGIS for Developers</a></li>
+      <li><a data-langlabel="arcgis-solutions" href="//solutions.arcgis.com/">ArcGIS Solutions</a></li>
+      <li><a data-langlabel="arcgis-marketplace" href="//marketplace.arcgis.com/">ArcGIS Marketplace</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <h6 data-langlabel="about-esri">关于 Esri</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="about-us" href="//www.esri.com/about-esri/">关于我们</a></li>
+      <li><a data-langlabel="careers" href="//www.esri.com/careers/">招贤纳士</a></li>
+      <li><a data-langlabel="insiders-blog" href="https://www.esri.com/about/newsroom/blog/">Esri 博客</a></li>
+      <li><a data-langlabel="user-conference" href="//www.esri.com/events/user-conference/index.html">用户大会</a></li>
+      <li><a data-langlabel="developer-summit" href="//www.esri.com/events/devsummit/index.html">开发者峰会</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <a class="esri-logo" href="//www.esri.com/" aria-label="Esri Home"></a>
+    <section class="footer-social-nav leader-1">
+            <a class="icon-social-twitter" aria-label="Esri on Twitter" href="https://twitter.com/Esri/"></a>
+            <a class="icon-social-facebook" aria-label="Esri on Facebook" href="https://www.facebook.com/esrigis/"></a>
+            <a class="icon-social-github" aria-label="Esri on GitHub" href="//esri.github.io/"></a>
+            <a class="icon-social-contact" aria-label="Contact Esri" href="//www.esri.com/about-esri/contact/"></a>
+    </section>
+	  
+  </nav>
+  
+  <div class="column-24 leader-1">
+    <p class="font-size--3"><a href="http://www.esri.com/legal/copyright-trademarks">Copyright &copy; 2019 Esri.</a> All rights reserved. | <a href="http://www.esri.com/legal/privacy/">隐私政策</a> | <a href="http://www.esri.com/legal/software-license">法律声明</a></p>
+  </div>
+  
+
+
+      </div>
+    </div>
+  </footer>
+  <!--googleoff: all-->
+
+  
+  
+	<script src="../../../../../zh-CN/assets/js/init.js" type="text/javascript"></script>
+	<!--<script src="../../../../../zh-CN/assets/js/drop-down.js" type="text/javascript"></script>-->
+	<script src="../../../../../zh-CN/assets/js/search/searchform.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/cdn/js/link-modifier.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/cdn/js/sitewide.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/cdn/js/libs/highlight.pack.js" type="text/javascript"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+
+
+  
+    
+
+  <script src="../../../../../zh-CN/cdn/js/affix.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    $(function () {
+          var appendFlg = true;
+
+          $("#bigmac")
+          .on("affixed.bs.affix", function (evt) {
+            if (appendFlg) {
+              $("<a class='crumb' href='#'>GeoAnalytics 健康检查</a>").insertAfter ($("#bigmac nav a").last());
+              appendFlg = false;
+            }
+          })
+          .on ("affix-top.bs.affix", function(evt) {
+            if (!appendFlg) {
+              $("#bigmac nav a").last().remove();
+            }
+            appendFlg = true;
+          })
+    })
+  </script>
+  
+        <script type="text/javascript">
+          window.doctoc = {
+            pubID: "2388",
+            tpcID: "8",
+            
+              prefix: "简介",
+              prefixUrl: "/zh-cn/geoanalytics/latest/install/windows/",
+          
+            hideToc: false
+          }
+        </script>
+
+        <script type="text/javascript" src="../../../../../zh-CN/geoanalytics/latest/install/windows/2388.js" ></script>
+        <script type="text/javascript" src="../../../../../zh-CN/cdn/calcite/js/protoc.js" ></script>
+        
+        
+
+  <noscript>
+        <p>
+            <a href="flisting.htm">flist</a>
+        </p>
+    </noscript>
+    <script type="text/javascript"></script>
+  
+  
+    
+    
+
+  </body>
+</html>

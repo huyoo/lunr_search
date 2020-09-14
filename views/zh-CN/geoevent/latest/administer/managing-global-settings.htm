@@ -1,0 +1,545 @@
+
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>  <html class="ie lt-ie9 lt-ie8 lt-ie7 ie6" dir="ltr"> <![endif]-->
+<!--[if IE 7]>     <html class="ie lt-ie9 lt-ie8 ie7" dir="ltr"> <![endif]-->
+<!--[if IE 8]>     <html class="ie lt-ie9 ie8" dir="ltr"> <![endif]-->
+<!--[if IE 9]>     <html class="ie ie9" dir="ltr"> <![endif]-->
+<!--[if !IE]><!--> <html dir="ltr" lang="zh-CN"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>管理全局设置&mdash;管理 (10.8) | ArcGIS Enterprise 文档</title>
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+    <script>
+      var docConfig = {
+        locale: 'zh-CN'
+        ,localedir: 'zh-cn'
+        ,langSelector: ''
+        
+        ,relativeUrl: false
+        
+
+        ,searchformUrl: '/search/'
+        ,tertiaryNavIndex: ''
+
+        
+      };
+    </script>
+	 
+
+
+    
+    <!--[if lt IE 9]>
+      <script src="../../../../zh-CN/cdn/js/libs/html5shiv.js" type="text/javascript"></script>
+      <script src="../../../../zh-CN/cdn/js/libs/selectivizr-min.js" type="text/javascript"></script>
+      <script src="../../../../zh-CN/cdn/js/libs/json2.js" type="text/javascript"></script>
+      <script src="../../../../zh-CN/cdn/js/libs/html5shiv-printshiv.js" type="text/javascript" >
+
+    <![endif]-->
+
+     <!--[if lt IE 11]>
+    <script>
+      $$(document).ready(function(){
+        $$(".hideOnIE").hide();
+      });
+    </script>
+    <![endif]-->
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<link href="../../../../zh-CN/assets/img/favicon.ico" rel="shortcut icon" >
+	<link href="../../../../zh-CN/assets/css/screen.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/cdn/calcite/css/documentation.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/assets/css/print.css" media="print" type="text/css" rel="stylesheet" />
+
+	<!--
+	<link href="../../../../zh-CN/assets/css/screen_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/assets/css/documentation/base_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/assets/css/print_l10n.css" media="print" type="text/css" rel="stylesheet" />
+	-->
+	
+	
+		<script src="../../../../zh-CN/cdn/js/libs/jquery.1.9.1.min.js" type="text/javascript"></script>
+	
+	<script src="../../../../zh-CN/cdn/js/libs/jquery.cookie.js" type="text/javascript"></script>
+	<link href="../../../../zh-CN/cdn/css/colorbox.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../zh-CN/cdn/css/colorbox_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<script src="../../../../zh-CN/cdn/js/libs/jquery.colorbox-min.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/assets/js/video-init.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/assets/js/sitecfg.js" type="text/javascript"></script>
+	
+		<script src="../../../../zh-CN/assets/js/signIn.js" type="text/javascript"></script>
+	
+
+	<!--- Language Picker -->
+	<script src="../../../../zh-CN/assets/js/locale/l10NStrings.js" type="text/javascript"></script>
+	
+		 
+	
+
+	<script src="../../../../zh-CN/assets/js/calcite-web.js" type="text/javascript"></script>
+
+
+
+  <!--- search MD -->
+    <META name="description" content="ArcGIS GeoEvent Server 中提供的全局设置可用于根据各种部署环境正确配置 GeoEvent Server。"><META name="last-modified" content="2019-12-6"><META name="product" content="arcgis-server-windows,arcgis-server-linux,ext-server-geoevent,arcgis-enterprise-windows,arcgis-enterprise-linux"><META name="sub_category" content="GeoEvent"><META name="search-collection" content="help"><META name="content_type_label" content="帮助主题"><META name="sub_category_label" content="GeoEvent"><META name="search-category" content="help-general"><META name="subject_label" content="REAL-TIME FEEDS,服务,SERVER"><META name="version" content="10.8"><META name="content_type" content="Help Topic"><META name="subject" content="REAL-TIME FEEDS,SERVICES,SERVER"><META name="content-language" content="zh-cn">
+    <!--- search MD -->
+
+  
+      
+
+</head>
+
+<!--
+      pub: GUID-631A2EAC-D430-4669-BA75-17AFACC28D9B=16
+      tpc: GUID-C2767E93-3C8D-425A-B4F9-6BC42BD621A7=1
+      -->
+
+
+<!-- variable declaration, if any -->
+<!-- can change following macro to set variable once we are on Jinja 2.8 -->
+
+
+
+
+
+<body class="claro zh-CN server">
+  
+
+  <!-- Drawer location -->
+  <div class="drawer drawer-left js-drawer" data-drawer="top-nav">
+        <nav class="drawer-nav" role="navigation">
+          <aside class="side-nav">
+            <h2 class="side-nav-title">Arc<span>GIS</span> Enterprise</h2>
+            <form id="helpSearchForm" class="margin-left-half margin-right-half leader-half trailer-half drawer-search-form" method="GET">
+              <input type="search" name="q"  placeholder="搜索 GeoEvent Server 10.7 帮助">
+              <input type="hidden" name="collection" value="help" />
+              <input type="hidden" name="product" value="ext-server-geoevent" />
+              <input type="hidden" name="version" value="10.8" />
+              <input type="hidden" name="language" value="zh-CN" />
+            </form>    
+             <a id="nav-portal" data-langlabel="portal" href="../../../../zh-CN/portal/" class="side-nav-link">Portal</a>
+             
+            <a id="all-servers" data-langlabel="all-servers" href="../../../../zh-CN/server/" class="side-nav-link">所有服务器</a>
+            <a id="gis-server" data-langlabel="gis-server" href="../../../../zh-CN/server/" class="side-nav-link">GIS Server</a>
+            <a id="image-server" data-langlabel="image-server" href="../../../../zh-CN/image/" class="side-nav-link">Image Server</a>
+            <a id="geo-analytics-server" data-langlabel="geo-analytics-server" href="../../../../zh-CN/geoanalytics/" class="side-nav-link">GeoAnalytics Server</a>
+            <a id="geoevent-server" data-langlabel="geoevent-server" href="../../../../zh-CN/geoevent/" class="side-nav-link">GeoEvent Server</a>
+            <a id="notebook-server" data-langlabel="notebook-server" href="../../../../zh-CN/notebook/" class="side-nav-link">Notebook Server</a>
+            <a id="nav-data-store" data-langlabel="data-store" href="../../../../zh-CN/data-store/" class="side-nav-link">Data Stores</a>
+            <a id="nav-cloud" data-langlabel="cloud" href="../../../../zh-CN/cloud/" class="side-nav-link">云</a>
+            <a id="nav-apps" data-langlabel="apps" href="../../../../zh-CN/apps/" class="side-nav-link">应用程序</a>
+            <a id="nav-doc" data-langlabel="documentation" href="../../../../zh-CN/documentation/" class="side-nav-link">文档</a>
+
+          </aside>
+        </nav>
+    </div>
+
+    <!-- user navigation collapses to drawer on mobile -->
+    
+    <div class="drawer drawer-right js-drawer hide-if-logged-out logged-in-navigation" data-drawer="user-nav">
+      <nav class="drawer-nav">
+        <aside class="side-nav">
+          <a class="side-nav-link agolProfile" href="#">我的个人资料</a>
+          <a class="side-nav-link icon-ui-sign-out js-log-out" href="#">登出</a>
+        </aside>
+      </nav>
+    </div>
+    
+<!-- End of drawer -->
+
+  
+  <div class="wrapper">
+      <!--googleoff: all-->
+
+      <header class="top-nav" data-skin="learn">
+        <a class="skip-to-content" href="#skip-to-content">Skip To Content</a>
+        <div class="grid-container">
+          <div class="column-24">
+
+
+            <!--<div class="top-nav-title-wrapper text-center ">-->
+              <a href='../../../../zh-CN/' class="top-nav-title tablet-hide"><span>Arc</span>GIS  Enterprise</a>
+              <a href='../../../../zh-CN/' class="icon-ui-menu top-nav-title js-drawer-toggle tablet-show" data-drawer="top-nav"><span>Arc</span>GIS Enterprise</a>
+            <!--</div> -->
+
+          
+            <nav role="navigation" class="top-nav-list left tablet-hide">
+              <a id="nav-portal" data-langlabel="portal" href="../../../../zh-CN/portal/" class="top-nav-link">Portal</a>
+
+                <div class="dropdown js-dropdown ">
+                  <a class="top-nav-link js-dropdown-toggle" tabindex="0" aria-haspopup="true" aria-expanded="false" href="#">Servers</a>
+                  <nav class="dropdown-menu featured" role="menu">
+                    <ul class="dropdown-sublist-featured">
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/get-started/latest/windows/additional-server-deployment.htm" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path  d="M42.92 6.1H4.12v8.566l.833.832-.835.833-.018 7.332.845.847-.825.824V33.9h25v5.2h-2v1.075H8.02v.8h19.1v.925h4.8v-.925H40v-.8h-8.08V39.1h-2v-5.2h13v-8.566l-.834-.834.835-.834v-7.332l-.835-.834.835-.834zm-11.8 35h-3.2v-1.2h3.2zm11-8H4.92v-7.434l.767-.766h35.668l.765.766zm0-9.766l-.766.766H5.666l-.766-.767.017-6.669.766-.764h35.671l.766.766zm0-9l-.766.766H5.687l-.766-.766V6.9h37.2zM19 11.9h-2v-.8h2zm-4 0h-2v-.8h2zm-4 0H9v-.8h2zm6 8.2h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9zm8 9h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9z"/></svg></span>
+                          <span class="sublink-text">所有服务器</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/server/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M45.98 33.575a.616.616 0 0 0-.335-.51l-3.362-2.03 3.362-2.031a.556.556 0 0 0 0-1.02l-11.1-6.704a1.293 1.293 0 0 0-1.112 0L22.33 27.982a.556.556 0 0 0 0 1.02l3.36 2.03-3.358 2.03a.556.556 0 0 0-.002 1.021l3.322 2.006-3.324 2.008a.555.555 0 0 0 .002 1.017l11.102 6.703a1.25 1.25 0 0 0 1.11.002l11.104-6.706a.556.556 0 0 0 0-1.02l-3.32-2.006 3.318-2.004a.607.607 0 0 0 .335-.509zM33.837 21.97c.026-.01.286-.005.29-.005l10.814 6.53-10.8 6.523c-.028.01-.284.005-.294.006l-10.813-6.53zm11.105 16.636l-10.8 6.523a2.564 2.564 0 0 1-.295.006l-10.81-6.529 3.39-2.047 7.004 4.23a1.083 1.083 0 0 0 .557.131 1.101 1.101 0 0 0 .554-.13l7.01-4.233zM34.14 40.098a2.545 2.545 0 0 1-.294.006l-10.812-6.53 3.43-2.073 6.97 4.208a1.25 1.25 0 0 0 1.107-.001l6.966-4.206 3.431 2.073zM9 8H7V7h2zm8 8h-2v-1h2zm-4-8h-2V7h2zm4 0h-2V7h2zm-4 8h-2v-1h2zm7.316 11.1H3.9v-6.434l.766-.766h35.668l.766.766v2.12l.8.483v-2.935l-.826-.826.826-.845v-6.329l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9h16.88a2.632 2.632 0 0 1 .336-.8zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zm0 8v-5.668l.766-.766h35.668l.766.766v5.67l-.746.764H4.666zM15 24v-1h2v1zm-4 0v-1h2v1zm-2-8H7v-1h2zm-2 8v-1h2v1z"/></svg></span>
+                          <span class="sublink-text">GIS Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/image/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 8h-2V7h2zm-4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm8 8h-2v1h2zm-8 0H7v1h2zm4 9v-1h-2v1zm-4 0v-1H7v1zm8 0v-1h-2v1zm4 3.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V21h-.8v-.334l-.766-.766H4.666l-.766.766V27.1H21zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zm40.234 4v21.8H23.1V23.1zm-.8 16.366L39.466 44.1h2.868l1.766-1.766zm-20.2-9.932l5.634-5.634h-2.868L23.9 26.666zm6.2-5.068L24.466 30.1h2.868l2.766-2.766zM28.466 30.1H30.1v-1.634zm2.434 0h6.2v-6.2h-6.2zm-7 7h6.2v-6.2h-6.2zm7 0h6.2v-6.2h-6.2zm0 6.434l5.634-5.634h-2.868L30.9 40.666zm7-7l5.634-5.634h-2.868L37.9 33.666zm1.634-5.634H37.9v1.634zm-8.634 7v1.634l1.634-1.634zm.566 6.2h2.868l2.766-2.766v-2.868zm6.434-3.566l2.634-2.634H37.9zM35.466 44.1H37.1v-1.634zm2.434 0h.434l5.766-5.766V37.9h-2.434L37.9 41.666zm6.2-8.634L42.466 37.1H44.1zm0-4L38.466 37.1h2.868l2.766-2.766zm0-7.566h-6.2v6.2h6.2zm-20.2 0v1.634l1.634-1.634zm0 20.2h6.2v-6.2h-6.2zm20.2 0v-.634l-.634.634z"/></svg></span>
+                          <span class="sublink-text">Image Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/geoanalytics/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 16h-2v-1h2zm-8 8v-1H7v1zm8 0v-1h-2v1zM13 7h-2v1h2zm4 0h-2v1h2zM9 7H7v1h2zm21.45 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V27.9h-1.464l-.801-.8H41.1v-6.434l-.766-.766H4.666l-.766.766V27.1h27.15zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM13 24v-1h-2v1zm0-9h-2v1h2zm-4 0H7v1h2zm26.672 27.148A1.87 1.87 0 0 1 35.9 43a1.91 1.91 0 1 1-3.763-.222l-9.845-3.414A1.88 1.88 0 0 1 21 39.9a1.9 1.9 0 1 1 1.474-3.084l4.692-2.346A1.878 1.878 0 0 1 27.1 34a1.902 1.902 0 0 1 1.9-1.9 1.867 1.867 0 0 1 .781.191l3.788-5.05A1.88 1.88 0 0 1 33.1 26a1.9 1.9 0 1 1 3.491 1.026l4.889 4.888c-.069.056-.144.1-.21.162a3.986 3.986 0 0 0-.358.402l-4.883-4.883A1.889 1.889 0 0 1 35 27.9a1.867 1.867 0 0 1-.781-.191l-3.788 5.049a1.868 1.868 0 0 1 .437.965l9.204.614c-.018.11-.049.218-.058.33A3.93 3.93 0 0 0 40 35c0 .046.01.09.01.135l-9.185-.612A1.913 1.913 0 0 1 29 35.9a1.889 1.889 0 0 1-1.474-.716l-4.692 2.346a1.878 1.878 0 0 1 .066.47 1.9 1.9 0 0 1-.105.625c-.007.02-.022.036-.03.056l9.63 3.34a1.87 1.87 0 0 1 2.786-.505l5.415-4.437c.067.108.127.22.204.322a3.9 3.9 0 0 0 .292.306zM33.9 26a1.092 1.092 0 0 0 .43.872 1.12 1.12 0 0 0 1.42-.068A1.1 1.1 0 1 0 33.9 26zm-6 8a1.1 1.1 0 0 0 2.196.093 1.135 1.135 0 0 0-.426-.965A1.087 1.087 0 0 0 29 32.9a1.101 1.101 0 0 0-1.1 1.1zm-5.8 4a1.098 1.098 0 1 0-.06.362A1.101 1.101 0 0 0 22.1 38zm13 5a1.1 1.1 0 1 0-2.2 0 1.1 1.1 0 0 0 2.2 0zm10.8-8a1.9 1.9 0 1 1-3.8 0c0-.053.003-.105.007-.158A1.9 1.9 0 0 1 45.9 35zm-.8 0a1.1 1.1 0 0 0-2.196-.093 1.153 1.153 0 0 0 .216.752A1.1 1.1 0 0 0 45.1 35z"/></svg></span>
+                          <span class="sublink-text">GeoAnalytics Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/geoevent/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M13 8h-2V7h2zm4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm12.418 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826v2.117c-.259-.177-.53-.337-.8-.497v-1.288l-.766-.766H4.666l-.766.766V27.1h17.933c-.148.26-.283.53-.415.8zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM9 24v-1H7v1zm4-9h-2v1h2zm0 9v-1h-2v1zm-4-9H7v1h2zm8 9v-1h-2v1zm16.9 2h-.8v8.9H39v-.8h-5.1zm.1-3.901a11.9 11.9 0 1 0 11.9 11.9 11.914 11.914 0 0 0-11.9-11.9zm0 23a11.1 11.1 0 1 1 11.1-11.1 11.112 11.112 0 0 1-11.1 11.1z"/></svg></span>
+                          <span class="sublink-text">GeoEvent Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../zh-CN/notebook/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M22 27.1H3.9v-6.434l.766-.766h18.576a5.262 5.262 0 0 1 .83-.8H4.666l-.766-.766v-5.668l.766-.766h35.668l.766.766V18h.8v-5.666l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9H22zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zM9 8H7V7h2zm8 0h-2V7h2zm-4 0h-2V7h2zm2 16v-1h2v1zm-4 0v-1h2v1zm-4 0v-1h2v1zm0-8v-1h2v1zm8 0v-1h2v1zm-4 0v-1h2v1zm18.9 8.1h-1.8v1.8h1.8zm-.8 1h-.2v-.2h.2zm15.498-4.48a2.727 2.727 0 0 0-1.62-.5v-.02H27.25a3.154 3.154 0 0 0-3.15 3.15V38.1h-1.68a3.386 3.386 0 0 0-2.872 1.58 3.49 3.49 0 0 0-.157 3.419 3.241 3.241 0 0 0 2.954 1.801h15.161a3.404 3.404 0 0 0 3.394-3.4V26.9h5v-3.65a3.224 3.224 0 0 0-1.302-2.63zM22.345 44.1a2.44 2.44 0 0 1-2.23-1.341 2.706 2.706 0 0 1 .11-2.65A2.588 2.588 0 0 1 22.42 38.9h12.89a3.395 3.395 0 0 0 0 5.2zM40.1 23.192V41.5a2.6 2.6 0 1 1-2.6-2.6v-.8H24.9V23.25a2.352 2.352 0 0 1 2.35-2.35h13.795a3.183 3.183 0 0 0-.945 2.292zm5 2.908h-4.2v-2.908a2.274 2.274 0 0 1 1.44-2.18 1.944 1.944 0 0 1 1.791.259 2.423 2.423 0 0 1 .97 1.979zm-17.1 5h9v.8h-9zm0 3h7v.8h-7zm0-6h9v.8h-9zm4-3h5v.8h-5z"/></svg></span>
+                          <span class="sublink-text">Notebook Server</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+
+              <a id="nav-data-store" data-langlabel="data-store" href="../../../../zh-CN/data-store/" class="top-nav-link">Data Stores</a>
+              <a id="nav-cloud" data-langlabel="cloud" href="../../../../zh-CN/cloud/" class="top-nav-link">云</a>
+              <a id="nav-apps" data-langlabel="apps" href="../../../../zh-CN/apps/" class="top-nav-link">应用程序</a>
+            </nav>
+
+
+            
+            
+            
+
+            <div class="margin-left-1 top-nav-list right hide-if-logged-in logged-out-navigation">
+               
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+              
+              <a data-langlabel="sign-in" id="login-link" class="icon-ui-user top-nav-link link-blue login-link" href="#">登录</a>
+              
+            </div>
+
+            
+            <nav class="margin-left-1 top-nav-list right hide-if-logged-out logged-in-navigation">
+              
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+             
+              <div class="dropdown js-dropdown right">
+
+                <div class="tablet-show top-nav-link">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a href="#" data-drawer="user-nav" class="user-nav-name js-drawer-toggle" data-first-name></a>
+                </div>
+
+                <div class="tablet-hide top-nav-link js-dropdown-toggle">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a class="user-nav-name top-nav-dropdown dropdown-btn" data-first-name>&nbsp;</a>
+                </div>
+
+                <nav class="dropdown-menu dropdown-right">
+                
+                  <a class="dropdown-link agolProfile" id="agolProfile" href="#">我的个人资料</a>
+                  <a class="dropdown-link js-log-out" id="agolLogout" href="#">登出</a>
+                </nav>
+              </div>
+            </nav>
+            
+
+            
+          </div>
+        </div>
+      </header>
+
+      <div class="js-search search-overlay">
+        <div class="search-content" role="dialog" aria-labelledby="search">
+          <form method="GET" id="helpSearchForm">
+            <label>
+              搜索 GeoEvent Server 10.7 帮助
+              <div class="search-bar">
+                <input type="search" name="q"  placeholder="搜索 GeoEvent Server 10.7 帮助" class="search-input js-search-input">
+                <input type="hidden" name="collection" value="help" />
+                <input type="hidden" name="product" value="ext-server-geoevent" />
+                <input type="hidden" name="version" value="10.8" />
+                <input type="hidden" name="language" value="zh-CN" />
+              </div>
+            </label>
+            <input type="hidden" name="relativePath" value="../../../../" /><button type="submit" class="btn btn-large right">搜索</button>
+          </form>
+        </div>
+      </div>
+
+      <!--googleon: all-->
+
+      <div id="skip-to-content">
+        <!--googleoff: all-->
+        <header class="sub-nav sub-nav-learn">
+          <div class="grid-container">
+            
+            <div class="column-24">
+              <div style="display:table;" class="sdk-home-banner">
+                <div class="sdk-home-banner-content">
+                  <h1 class="sub-nav-title link-white">GeoEvent Server</h1>
+                </div>
+              </div>
+            </div>
+
+            <div class="column-24">
+              <nav class='sub-nav-list tablet-hide'><a class="sub-nav-link" href="../../../../zh-CN/geoevent/" target="_top" title="GeoEvent Server 概述和文档">主页</a><a class="sub-nav-link" href="../../../../zh-CN/geoevent/latest/get-started/" target="_top" title="GeoEvent Server 入门">入门</a><a class="sub-nav-link" href="../../../../zh-CN/geoevent/latest/process-event-data/" target="_top" title="过滤和处理事件数据流，以关注最感兴趣的要素">处理事件数据</a><a class="sub-nav-link is-active" href="../../../../zh-CN/geoevent/latest/administer/" target="_top" title="管理 GeoEvent Server">管理</a></nav><select class='tablet-show select-full trailer-half js-select-nav'><option value="../../../../zh-CN/geoevent/">主页</option><option value="../../../../zh-CN/geoevent/latest/get-started/">入门</option><option value="../../../../zh-CN/geoevent/latest/process-event-data/">处理事件数据</option><option selected="true" value="../../../../zh-CN/geoevent/latest/administer/">管理</option></select>
+            </div>
+
+          </div>
+        </header>
+        <!--googleon: all-->
+       
+        <!-- content goes here -->
+        <div class="grid-container ">
+          
+
+            
+              
+  <!--BREADCRUMB-BEG--><div id="bigmac" class="sticky-breadcrumbs trailer-2" data-spy="affix" data-offset-top="180"> </div><!--BREADCRUMB-END-->
+  <!--googleoff: all-->
+    <div class="column-5 tablet-column-12 trailer-2 ">
+      <aside class="js-accordion accordion reference-index" aria-live="polite" role="tablist">
+        <div></div>
+      </aside>
+
+      <div class="js-sticky scroll-show tablet-hide leader-1 back-to-top" data-top="0" style="top: 0px;">
+        <a href="#" class="btn btn-fill btn-clear">返回顶部</a>
+      </div>
+    </div>
+  <!--googleon: all-->
+  
+            
+            
+            
+	
+		<div class="column-13  pre-1 content-section">
+	
+		<header class="trailer-1"><h1>管理全局设置</h1></header>
+
+		 
+	<!--googleoff: all-->
+	
+		
+				<aside id="main-toc-small" class="js-accordion accordion tablet-show trailer-1">
+			      <div class="accordion-section">
+			        <h4 class="accordion-title">在本主题中</h4>
+			        <div class="accordion-content list-plain">
+			          <ol class="list-plain pre-0 trailer-0"><li><a href="#GUID-1B83B9D1-F0B5-4A5A-A54B-9DD338C1AE27">什么是全局设置？</a></li><li><a href="#ESRI_SECTION1_D6D9E3DB6DF9438EB0E162F7F4023B03">全局设置概览</a></li></ol>
+			        </div>
+			      </div>
+			     </aside>
+		
+    
+   <!--googleon: all-->
+
+
+		<main>
+			
+	
+    	
+    
+
+
+			
+<section class="section1 padded-anchor" id="GUID-1B83B9D1-F0B5-4A5A-A54B-9DD338C1AE27" purpose="section1"><h2>什么是全局设置？</h2><p id="GUID-45A4A530-CAEC-41A5-8E70-EF3034823229"> <span class="ph">ArcGIS GeoEvent Server</span> 中提供的全局设置可用于根据各种部署环境正确配置 <span class="ph">GeoEvent Server</span>。例如，您可能想要配置 Internet 访问的代理设置、设置自动备份的频率，或增加支持的最大信息大小。</p><p id="GUID-ECB50E78-3E83-4C4A-8E02-DC091D8DEA3B"><img purpose="img" placement="inline" alt="全局设置" title="全局设置" src="GUID-E895C14A-44AE-4470-B4A5-03BAB2271F02-web.png"></p></section><section class="section1 padded-anchor" id="ESRI_SECTION1_D6D9E3DB6DF9438EB0E162F7F4023B03" purpose="section1"><h2>全局设置概览</h2><p id="GUID-839FF868-4899-4183-882A-2D7615CCCF24">以下概述了 <span class="ph">GeoEvent Server</span> 中提供的全局设置。某些设置可能需要来自 IT 部门或第三方供应商的其他信息才能正确配置。如果设置不正确，可能会导致功能减少和/或数据丢失。</p><section class="section2 padded-anchor" id="ESRI_SECTION2_BED6B035A1974E75A4E4F904DBE444C1" purpose="section2"><h3>自动备份设置</h3><p id="GUID-5B166B42-B1CB-4362-8DD1-9DE85E715619"> 自动备份设置可用于启用或禁用整个 <span class="ph">GeoEvent Server</span> 配置的计划备份。自动备份默认处于启用状态，会在每天中午 12 时进行备份，最多存储 10 天的配置。在<span class="uicontrol">站点</span> &gt; <span class="uicontrol">GeoEvent</span> &gt; <span class="uicontrol">数据存储</span>下配置<span class="usertext">自动备份</span>文件夹。可以计划每日、每周或每月运行一次备份。<span class="usertext">最大备份</span>设置可用于存储配置的数量。如果达到配置的最大数，<span class="ph">GeoEvent Server</span> 将自动开始删除最旧的文件。</p><p id="GUID-0AB79F95-AF1A-4AB4-915B-6F33C26B441C"><img purpose="img" placement="inline" alt="自动备份设置" title="自动备份设置" src="GUID-4F75ABA5-5A89-408F-8187-1934BE42D89B-web.png"></p></section><section class="section2 padded-anchor" id="ESRI_SECTION2_E261346C22E64C988C5AC6B934380F51" purpose="section2"><h3>Geofence Manager 设置</h3><p id="GUID-1537F3F8-3EED-4D27-B9E1-55E197665966">Geofence Manager 设置可用于配置针对地理围栏考虑的空间运算符、几何精度和数据存储的选项。</p><p id="GUID-047C24F6-DFBF-4FA1-A9DA-927CE3FF667E"><img purpose="img" placement="inline" alt="Geofence Manager 设置" title="Geofence Manager 设置" src="GUID-4031ABC9-7440-4400-9783-D85DEE6450C6-web.png"></p><ul purpose="ul" id="UL_BCED914A7D17415C9E691E38D3D8EF6E"><li purpose="li" id="LI_282FE8A84BC0460E9CA844A307107896"> <span class="usertext">第一个 GeoEvent 触发 Enter</span> - 与空间过滤处理器（如过滤器、GeoTagger、事件检测器等）配合使用，以确定地理围栏内部是否出现定义追踪的第一个 GeoEvent，以及是否应触发 <i>Enter</i> 条件。默认值为 <span class="usertext">true</span>。</li><li purpose="li" id="LI_5AB1F34BF5C14209B7AE4C0D6806B676"><span class="usertext">第一个 GeoEvent 触发 Exit</span> - 与空间过滤处理器（过滤器、GeoTagger、事件检测器等）配合使用，以确定地理围栏外部是否出现定义追踪的第一个 GeoEvent，以及是否应触发 <i>Exit</i> 条件。默认值为 <span class="usertext">false</span>。</li><li purpose="li" id="LI_40317ED89FC74118B08CE645813A120F"><span class="usertext">地理围栏加速程度</span> - 向空间评估授予的资源优先级。该值为 <span class="usertext">0</span> 到 <span class="usertext">3</span> 之间的非负整数。值越高表示使用速度越快，但初始加载时间更长，内存使用量也更多。默认值为 <span class="usertext">3</span>。<ul purpose="ul" id="UL_D2E3401025BE4E1883FAC04EB031EA82"><li purpose="li" id="LI_B24B8BA32B414631B37AA1BC427AB538">0 - 不加速</li><li purpose="li" id="LI_75D05A0066AD4738A7A87F09A78679D2">1 - 轻度加速（消耗的内存量最少）</li><li purpose="li" id="LI_D2847265850A41BF9EC89DC1F956284B">2 - 中等加速（添加地理围栏消耗的内存最多，花费时间最长，但工作速度最快）</li><li purpose="li" id="LI_AF5ED5832F224BCD9E3BE325DF2E2190">3 - 快速加速（添加地理围栏消耗的内存最多，花费时间最长，但工作速度最快）</li></ul></li><li purpose="li" id="LI_1D0ECE6C94EF40E4BE230CA7E844AB6A"><span class="usertext">地理围栏清除已启用</span> - 确定是否自动移除过期的地理围栏（以 <i>END_TIME</i> 标记字段为基础）。默认值为 <span class="usertext">false</span>。</li><li purpose="li" id="LI_3D993D9F74FE4F02A5F47730E68AE7C7"><span class="usertext">地理围栏清除间隔（秒）</span>- 与<span class="usertext">地理围栏清除已启用</span>设置配合使用，用于确定检查过期地理围栏的间隔。默认值为 <span class="usertext">300</span> 秒。</li><li purpose="li" id="LI_AB39DDB09E324599970DE20F14092A63"><span class="usertext">空间索引最高细节级别</span> - 存储地理围栏几何的精度级别。值越高，生成的索引对于较小地理范围（较小地理围栏）越高效，但同时消耗的内存也越多。该值应介于 <span class="usertext">4</span> 到 <span class="usertext">32</span> 之间，默认值为 <span class="usertext">16</span>。</li></ul></section><section class="section2 padded-anchor" id="ESRI_SECTION2_B5ED25A19DF04639B488D9EBEED3AF9F" purpose="section2"><h3>几何处理器设置</h3><p id="GUID-D84759D7-9402-4D94-9294-2FB7D0635A83">管理员可利用几何处理器设置启用或禁用可选线性单位，以便用于 <span class="ph">GeoEvent Server</span> 中的可用处理器。</p><p id="GUID-739FA353-CA1D-40F8-88CD-90F6DF778727"><img purpose="img" placement="inline" alt="几何处理器设置" title="几何处理器设置" src="GUID-B757F722-7FA1-411D-8112-C47BB2262D89-web.png"></p></section><section class="section2 padded-anchor" id="ESRI_SECTION2_9161CC18D37445B2BBAEDEA34B709163" purpose="section2"><h3>HTTP 代理设置</h3><p id="GUID-4FAA0830-7F03-45E4-903A-123FD8DF59DE">管理员可利用 HTTP 代理设置配置 <span class="ph">GeoEvent Server</span>，从而通过 HTTP 代理访问在线资源。这一过程通常是内部站点用户必须先验证身份，而后才能连接到 Internet。</p><p id="GUID-E68B25F9-89C5-46AC-AF54-C222003EDB6B"><img purpose="img" placement="inline" alt="HTTP 代理设置" title="HTTP 代理设置" src="GUID-1684651F-810C-401C-9A36-8E81E1288986-web.png"></p><ul purpose="ul" id="UL_EEB347782AC541F7A724693B7AAAC9E5"><li purpose="li" id="LI_ABDF1593C22045D291FE06B0A87DCC55"><span class="usertext">从 HTTP 代理中排除的主机</span> - 应该不通过 HTTP 代理访问的主机。通常情况下该设置定义内部主机。该属性的值是由 ''|'' 字符分隔的主机列表。此外，可使用通配符 ''*'’ 进行模式匹配。例如，<span class="usertext">http.nonProxyHosts="*.foo.com|localhost"</span> 表示即使指定了代理服务器，也应直接访问 <i>foo.com</i> 域中的各台主机和本地主机。</li><li purpose="li" id="LI_6A0E73F6CEB548C1B62699DD74099C10"><span class="usertext">HTTP 代理主机</span> - HTTP 代理服务器的主机名或地址。</li><li purpose="li" id="LI_5243B8E232214BEFB01AB3D89D63162C"><span class="usertext">HTTP 代理密码</span> - 在代理需要身份验证时向服务器提供的密码。</li><li purpose="li" id="LI_BE40B6F805F94B7B85FAEC2EEEC89F14"><span class="usertext">HTTP 代理端口</span> - HTTP 代理服务器的端口号。</li><li purpose="li" id="LI_D36E0F1D79F3413BB04DCEEF8FEF22E0"><span class="usertext">HTTP 代理用户</span> - 在 HTTP 代理需要身份验证时向服务器传输的用户。</li></ul></section><section class="section2 padded-anchor" id="ESRI_SECTION2_C284CF7AB73D4045BAF70582D9463D65" purpose="section2"><h3>HTTPS 代理设置</h3><p id="GUID-1659956B-C9FD-4654-A9C3-2136AC77AF03">管理员可利用 HTTP 代理设置配置 <span class="ph">GeoEvent Server</span>，从而通过 HTTPS 代理访问在线资源。这一过程通常是内部站点用户必须先验证身份，而后才能连接到 Internet。这些设置与 HTTP 代理设置的功能相同，但是使用 SSL 通信确保安全性。</p><p id="GUID-140A90BB-B849-4C4D-B107-49CFFB91F403"><img purpose="img" placement="inline" alt="HTTPS 代理设置" title="HTTPS 代理设置" src="GUID-066F7724-49ED-425B-AB2F-5829C5B8CA7D-web.png"></p><ul purpose="ul" id="UL_DA91E683CA114ED1BDF8B46ADEB32BC7"><li purpose="li" id="LI_6A4B6B285C124C8F9A521072D58DF3F8"><span class="usertext">从 HTTPS 代理中排除的主机</span> - 应该不通过 HTTPS 代理访问的主机。通常情况下该设置定义内部主机。该属性的值是由 ''|'' 字符分隔的主机列表。此外，可使用通配符 ''*'’ 进行模式匹配。例如，<span class="usertext">https.nonProxyHosts="*.foo.com|localhost"</span> 表示即使指定了代理服务器，也应直接访问 <i>foo.com</i> 域中的各台主机和本地主机。</li><li purpose="li" id="LI_3456304151E243D7BF0914BF55D7BEFA"><span class="usertext">HTTPS 代理主机</span> - HTTPS 代理服务器的主机名或地址。</li><li purpose="li" id="LI_E05BA1F835C240949CA14101A6E8FE23"><span class="usertext">HTTPS 代理密码</span> - 在代理需要身份验证时向服务器提供的密码。</li><li purpose="li" id="LI_BC67D80AA8F94E70AD22B7B6E77C940A"><span class="usertext">HTTPS 代理端口</span> - HTTPS 代理服务器的端口号。</li><li purpose="li" id="LI_CAB03E16F5754621A2C0BA4C0D4BADE4"><span class="usertext">HTTPS 代理用户</span> - 在 HTTPS 代理需要身份验证时向服务器传输的用户。</li></ul></section><section class="section2 padded-anchor" id="ESRI_SECTION2_8F21A3EF90024670910BF632699A299E" purpose="section2"><h3>事件点管理器设置</h3><p id="GUID-CB00D5B4-31A9-422E-A6D1-5E4F09139B19">事件点管理器设置可定义事件检测器处理器内使用的关闭事件和开放事件的最大数量。默认情况下，事件检测器处理器可以保留 <span class="usertext">1000</span> 个开放事件和 <span class="usertext">1000</span> 个关闭事件的当前状态。增加该值可监控其他 TRACK_ID 标记事件，但会消耗更多内存使用量。</p><p id="GUID-BA9E34DC-AD15-46F1-A17B-F0EACE09352C"><img purpose="img" placement="inline" alt="事件点管理器设置" title="事件点管理器设置" src="GUID-EA62DAE7-AC69-4F2E-8011-DB119D55D226-web.png"></p></section><section class="section2 padded-anchor" id="ESRI_SECTION2_870C1015A24449A58CF9C4FA59794DE9" purpose="section2"><h3>输入和输出设置</h3><p id="GUID-360E19E3-1F09-4FAB-A172-F1F1B28BC310">输入和输出设置可用于配置<span class="usertext">输入缓存区容量 (MB)</span>。该值确定内存中可针对输入保留的最大消息大小（以 MB 为单位）。大批量的事件或含高度复杂几何的事件有时可能会超过默认设置 <span class="usertext">20</span>。应将该值设置在 <span class="usertext">1</span> 到 <span class="usertext">2047</span> 之间。对该设置所做的任何更改都不会反映在现有输入中，建议重新启动 ArcGIS GeoEvent Server 服务。</p><p id="GUID-2518918C-2D0A-4C36-AE5D-6A2389AAC8D5"><img purpose="img" placement="inline" alt="输入和输出设置" title="输入和输出设置" src="GUID-C03FE44D-E863-4467-B72C-D6F53000C2F2-web.png"></p></section><section class="section2 padded-anchor" id="ESRI_SECTION2_1DB7390FA9D94C01A91CE57EAA489FF2" purpose="section2"><h3>SMS 设置</h3><p id="GUID-F23A342C-A0E2-47F0-A1E7-B1AE5670ABD1">SMS 设置为大多数手机运营商提供短消息服务 (SMS) 端点。发送文本消息时，将使用这些设置自动填充输出，以包括 <i>number@carrier.com</i>（例如，针对 Verizon，将为 <span class="usertext">5551234567@vtext.com</span>）。可以更新端点和添加新运营商。</p><p id="GUID-4B10F893-FD11-4B9F-B9C6-297B5FC28D64"><img purpose="img" placement="inline" alt="SMS 设置" title="SMS 设置" src="GUID-47405D5A-060E-40C3-88DF-41EC4A80FCB1-web.png"></p></section><section class="section2 padded-anchor" id="ESRI_SECTION2_9497285428C24FE9AD41124832070940" purpose="section2"><h3>SMTP 设置</h3><p id="GUID-4AE1F9F0-43AB-4190-820A-DCC096AF1DC0">管理员可利用 SMTP 设置配置特定于组织的简单邮件传输协议 (SMTP) 连接详细信息。该设置与发送电子邮件输出连接器配合使用，应按照组织的系统管理员或 IT 部门进行配置。</p><p id="GUID-3F317240-21BE-4403-A614-460C1F2A8A01"><img purpose="img" placement="inline" alt="SMTP 设置" title="SMTP 设置" src="GUID-16DE127D-A1AF-426B-8A3C-2FEA3EE5669E-web.png"></p><ul purpose="ul" id="UL_5D7D89050BEF421E8A5CB646CEE558DC"><li purpose="li" id="LI_60E7CC8383EB433E9B4E421647ACA0E7"><span class="usertext">默认 SMTP 身份验证</span> - 用于连接到 SMTP 服务器的身份验证方法（<i>匿名</i>、<i>SSL</i> 或 <i>TLS</i>）。</li><li purpose="li" id="LI_90F3D0123B284E2091415BE83FBF0398"><span class="usertext">默认 SMTP 密码</span> - 在身份验证方法需要凭据时向服务器提供的密码。</li><li purpose="li" id="LI_49F012A7DC9D4BD3AF5E67517627ECD4"><span class="usertext">默认 SMTP 端口</span> -  SMTP 服务器的端口号。</li><li purpose="li" id="LI_D41666753DFF4CA5937ADA64B7A3C002"><span class="usertext">默认 SMTP 服务器主机</span> - SMTP 服务器的主机名或地址。</li><li purpose="li" id="LI_AE3CAD7A7C654ECBAF937A819492E5AD"><span class="usertext">默认 SMTP 用户名</span> - 在身份验证方法需要凭据时向服务器提供的用户名。</li></ul></section><section class="section2 padded-anchor" id="ESRI_SECTION2_8273FE094EA5478BA71F635E6C51593E" purpose="section2"><h3>Spatiotemporal Big Data Store 设置</h3><p id="GUID-EC023611-B8E2-4D1E-9098-6E2D6C037633">时空大数据存储设置定义创建新时空大数据存储数据源时的默认设置。可在 GeoEvent Manager 中的发布对话框内更改值。</p><p id="GUID-AB79B48A-00DD-44B9-BB67-A6E54072409B"><img purpose="img" placement="inline" alt="时空大数据存储设置" title="时空大数据存储设置" src="GUID-DC1829FB-9C5B-4780-9E29-928AB86BA14B-web.png"></p><ul purpose="ul" id="UL_8A2CBB6ECF334924991910A4EA4B037A"><li purpose="li" id="LI_2F47A43B41A64352A1FB038BA3B1E245"><span class="usertext">默认碎片数</span> - 时空大数据存储的数据将被划分的默认碎片数。建议将该值设置为时空大数据存储集群中的节点数，但是该值不得超过节点数。可接受的值为 <span class="usertext">1</span> 到 <span class="usertext">N</span>，默认值为 
+<span class="usertext">3</span>。</li><li purpose="li" id="LI_675CDD988F374CB282EA412D8D8FCA17"><span class="usertext">默认复制因子</span> - 发布到时空大数据存储时使用的默认复制因子。可接受的值为 <span class="usertext">0</span> 到 <span class="usertext">N</span>，其中 <span class="usertext">N</span> 是时空大数据存储计算机的最大数量。</li></ul></section><section class="section2 padded-anchor" id="ESRI_SECTION2_189895C254B24D8BBB380C3031F08D10" purpose="section2"><h3>流服务设置</h3><p id="GUID-C410BA66-0771-4E39-A633-183F6BF2A498">流服务设置可用于从多方面调整流服务连接详细信息和消息大小。</p><p id="GUID-27C542BE-B216-429A-903B-EA0F8C17B0C5"><img purpose="img" placement="inline" alt="流服务设置" title="流服务设置" src="GUID-E8551347-2A0E-4351-BAF7-DB7A48F35922-web.png"></p><ul purpose="ul" id="UL_7A679EFD8BD948A4B59ABD9BC06292F6"><li purpose="li" id="LI_09DC49C427B644D98FE13ECECC09794D"><span class="usertext">客户端 ping 间隔（秒）</span>- 定义服务器向所有客户端发送“ping”，以确保这些客户端处于运行状态并告知它们服务器处于运行状态（即使当前没有数据流经）的频率（以秒为单位）。客户端应回复“ping”以保持通信（大多数浏览器自动进行处理）。客户端不应将超时期间设置为小于此值，否则可能会自行断开连接。值必须介于 <span class="usertext">1</span> 到 <span class="usertext">2,073,600</span>（24 天）之间。</li><li purpose="li" id="LI_A836C25AEFF541BDB9B623B111738BB5"><span class="usertext">聚类消息生命期（秒）</span>- 定义消息为等待客户端进行使用而可在 ArcGIS 聚类中保留的时间（以秒为单位）。如果聚类中的消息未能在此时间段内得到处理，则会遭到清除。值必须介于 <span class="usertext">0</span> 到 <span class="usertext">2,073,600</span>（24 天）之间。</li><li purpose="li" id="LI_8E609DB26C664CDEB9C1EB18044E3B59"><span class="usertext">最大 Web 套接字文本消息大小（字节）</span>- 定义通过 WebSocket 发送文本消息时的最大大小（以字节为单位）。超过此大小的文本消息无法传送。值必须介于 <span class="usertext">1</span><i></i> 到
+<span class="usertext">2,147,483,647</span> (2GB) 之间。</li><li purpose="li" id="LI_D12B10AD1C994AE4AEA8AA78FEDE646F"><span class="usertext">相关要素刷新间隔（秒）</span>-
+定义服务器应定期查询要素服务以查看空间过滤器中要素的频率（以秒为单位）。适用于在发布流服务时选择了相关要素服务，并从客户端添加了空间过滤器的情况。</li><li purpose="li" id="LI_F51061BA527F4F39B652F298DC63DCB2"><span class="usertext">支持线程计数</span> - 用于管理所有客户端连接的线程数。该设置可提供性能更高的隔离，从而避免缓慢的客户端影响其他客户端。通常情况下使用的线程越多，消耗的服务器资源越多。值必须介于 <span class="usertext">1</span> 到 <span class="usertext">100</span> 之间。</li><li purpose="li" id="LI_4A911267283C45D389F0738DD6581563"><span class="usertext">WebSocket 缓冲区大小（字节）</span>- 由 WebSocket 分配用于保持数据传输状态（数据已发送，但接收方尚未读取）的大小（以字节为单位）。值必须介于 <span class="usertext">1</span> 到 <span class="usertext">2,147,483,647</span> (2GB) 之间。</li><li purpose="li" id="LI_C08104A9207C491B9870933E8E2E4F73"><span class="usertext">允许的最大 WebSocket 空闲时间（秒）</span>- 与空闲客户端断开连接前，服务器可保持空闲客户端处于连接状态的最长时间（以秒为单位）。值必须介于
+<span class="usertext">1</span> 到 <span class="usertext">2,073,600</span>（24 天）之间。</li></ul></section></section>
+			
+				<hr>
+				<!--googleoff: all-->
+				
+	
+        
+		    <p class="feedback right">
+		        <a id="afb" class="icon-ui-contact" href="/feedback/" data-langlabel="feedback-on-this-topic" >有关此主题的反馈?</a>
+		    </p>
+        
+	
+
+				<!--googleon: all-->
+			
+		</main>
+	</div>
+	
+	<!--googleoff: all-->
+	
+		
+			<div id="main-toc-large" class="column-5">
+			    <div class="panel font-size--2 tablet-hide trailer-1">
+			      <h5 class="trailer-half">在本主题中</h5>
+			      <ol class="list-plain pre-0 trailer-0"><li><a href="#GUID-1B83B9D1-F0B5-4A5A-A54B-9DD338C1AE27">什么是全局设置？</a></li><li><a href="#ESRI_SECTION1_D6D9E3DB6DF9438EB0E162F7F4023B03">全局设置概览</a></li></ol>
+			    </div>
+			    
+			    
+	  		</div>
+		
+    
+   <!--googleon: all-->
+
+
+
+
+          
+        </div>
+        <!-- ENDPAGECONTENT -->
+
+      </div>
+
+    </div>  <!-- End of wrapper -->
+
+  <footer class="footer leader-3 link-dark-gray" role="contentinfo">
+    <div class="grid-container">
+      <div class="row">
+        <nav class="column-6">
+          <h6 data-langlabel="arcgis-for-server">Arc<span>GIS Enterprise</span></h6>
+          <ul class="list-plain">
+            <li><a data-langlabel="home" href="../../../../zh-CN/">主页</a></li>
+            <li><a data-langlabel="portal" href="../../../../zh-CN/portal/">Portal</a></li>
+            <li><a data-langlabel="server" href="../../../../zh-CN/server/">Server</a></li>
+            <li><a data-langlabel="data-store" href="../../../../zh-CN/data-store/">Data Stores</a></li>
+            <li><a data-langlabel="cloud" href="../../../../zh-CN/cloud/">云</a></li>
+            <li><a data-langlabel="apps" href="../../../../zh-CN/apps/">应用程序</a></li>
+            <li><a data-langlabel="documentation" href="../../../../zh-CN/documentation/">文档</a></li>
+          </ul>
+        </nav>
+
+        
+  <nav class="column-6">
+    <h6 data-langlabel="arcgis-platform">ArcGIS 平台</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="arcgis" href="//www.arcgis.com/">ArcGIS Online</a></li>
+      <li><a data-langlabel="arcgis-for-professionals" href="//pro.arcgis.com/">ArcGIS Pro</a></li>
+      <li><a data-langlabel="arcgis-for-server" href="//enterprise.arcgis.com/">ArcGIS Enterprise</a></li>
+      <li><a data-langlabel="arcgis-for-developers" href="https://developers.arcgis.com/">ArcGIS for Developers</a></li>
+      <li><a data-langlabel="arcgis-solutions" href="//solutions.arcgis.com/">ArcGIS Solutions</a></li>
+      <li><a data-langlabel="arcgis-marketplace" href="//marketplace.arcgis.com/">ArcGIS Marketplace</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <h6 data-langlabel="about-esri">关于 Esri</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="about-us" href="//www.esri.com/about-esri/">关于我们</a></li>
+      <li><a data-langlabel="careers" href="//www.esri.com/careers/">招贤纳士</a></li>
+      <li><a data-langlabel="insiders-blog" href="https://www.esri.com/about/newsroom/blog/">Esri 博客</a></li>
+      <li><a data-langlabel="user-conference" href="//www.esri.com/events/user-conference/index.html">用户大会</a></li>
+      <li><a data-langlabel="developer-summit" href="//www.esri.com/events/devsummit/index.html">开发者峰会</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <a class="esri-logo" href="//www.esri.com/" aria-label="Esri Home"></a>
+    <section class="footer-social-nav leader-1">
+            <a class="icon-social-twitter" aria-label="Esri on Twitter" href="https://twitter.com/Esri/"></a>
+            <a class="icon-social-facebook" aria-label="Esri on Facebook" href="https://www.facebook.com/esrigis/"></a>
+            <a class="icon-social-github" aria-label="Esri on GitHub" href="//esri.github.io/"></a>
+            <a class="icon-social-contact" aria-label="Contact Esri" href="//www.esri.com/about-esri/contact/"></a>
+    </section>
+	  
+  </nav>
+  
+  <div class="column-24 leader-1">
+    <p class="font-size--3"><a href="http://www.esri.com/legal/copyright-trademarks">Copyright &copy; 2019 Esri.</a> All rights reserved. | <a href="http://www.esri.com/legal/privacy/">隐私政策</a> | <a href="http://www.esri.com/legal/software-license">法律声明</a></p>
+  </div>
+  
+
+
+      </div>
+    </div>
+  </footer>
+  <!--googleoff: all-->
+
+  
+  
+	<script src="../../../../zh-CN/assets/js/init.js" type="text/javascript"></script>
+	<!--<script src="../../../../zh-CN/assets/js/drop-down.js" type="text/javascript"></script>-->
+	<script src="../../../../zh-CN/assets/js/search/searchform.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/cdn/js/link-modifier.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/cdn/js/sitewide.js" type="text/javascript"></script>
+	<script src="../../../../zh-CN/cdn/js/libs/highlight.pack.js" type="text/javascript"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+
+
+  
+    
+
+  <script src="../../../../zh-CN/cdn/js/affix.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    $(function () {
+          var appendFlg = true;
+
+          $("#bigmac")
+          .on("affixed.bs.affix", function (evt) {
+            if (appendFlg) {
+              $("<a class='crumb' href='#'>管理全局设置</a>").insertAfter ($("#bigmac nav a").last());
+              appendFlg = false;
+            }
+          })
+          .on ("affix-top.bs.affix", function(evt) {
+            if (!appendFlg) {
+              $("#bigmac nav a").last().remove();
+            }
+            appendFlg = true;
+          })
+    })
+  </script>
+  
+        <script type="text/javascript">
+          window.doctoc = {
+            pubID: "1334",
+            tpcID: "36",
+            
+              prefix: "管理",
+              prefixUrl: "/zh-cn/geoevent/latest/administer/",
+          
+            hideToc: false
+          }
+        </script>
+
+        <script type="text/javascript" src="../../../../zh-CN/geoevent/latest/administer/1334.js" ></script>
+        <script type="text/javascript" src="../../../../zh-CN/cdn/calcite/js/protoc.js" ></script>
+        
+        
+
+  <noscript>
+        <p>
+            <a href="flisting.htm">flist</a>
+        </p>
+    </noscript>
+    <script type="text/javascript"></script>
+  
+  
+    
+    
+
+  </body>
+</html>

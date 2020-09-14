@@ -1,0 +1,557 @@
+
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>  <html class="ie lt-ie9 lt-ie8 lt-ie7 ie6" dir="ltr"> <![endif]-->
+<!--[if IE 7]>     <html class="ie lt-ie9 lt-ie8 ie7" dir="ltr"> <![endif]-->
+<!--[if IE 8]>     <html class="ie lt-ie9 ie8" dir="ltr"> <![endif]-->
+<!--[if IE 9]>     <html class="ie ie9" dir="ltr"> <![endif]-->
+<!--[if !IE]><!--> <html dir="ltr" lang="zh-CN"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>影像服务参数&mdash;文档 | ArcGIS Enterprise 文档</title>
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+    <script>
+      var docConfig = {
+        locale: 'zh-CN'
+        ,localedir: 'zh-cn'
+        ,langSelector: ''
+        
+        ,relativeUrl: false
+        
+
+        ,searchformUrl: '/search/'
+        ,tertiaryNavIndex: ''
+
+        
+      };
+    </script>
+	 
+
+
+    
+    <!--[if lt IE 9]>
+      <script src="../../../../../zh-CN/cdn/js/libs/html5shiv.js" type="text/javascript"></script>
+      <script src="../../../../../zh-CN/cdn/js/libs/selectivizr-min.js" type="text/javascript"></script>
+      <script src="../../../../../zh-CN/cdn/js/libs/json2.js" type="text/javascript"></script>
+      <script src="../../../../../zh-CN/cdn/js/libs/html5shiv-printshiv.js" type="text/javascript" >
+
+    <![endif]-->
+
+     <!--[if lt IE 11]>
+    <script>
+      $$(document).ready(function(){
+        $$(".hideOnIE").hide();
+      });
+    </script>
+    <![endif]-->
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<link href="../../../../../zh-CN/assets/img/favicon.ico" rel="shortcut icon" >
+	<link href="../../../../../zh-CN/assets/css/screen.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/cdn/calcite/css/documentation.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/assets/css/print.css" media="print" type="text/css" rel="stylesheet" />
+
+	<!--
+	<link href="../../../../../zh-CN/assets/css/screen_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/assets/css/documentation/base_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/assets/css/print_l10n.css" media="print" type="text/css" rel="stylesheet" />
+	-->
+	
+	
+		<script src="../../../../../zh-CN/cdn/js/libs/jquery.1.9.1.min.js" type="text/javascript"></script>
+	
+	<script src="../../../../../zh-CN/cdn/js/libs/jquery.cookie.js" type="text/javascript"></script>
+	<link href="../../../../../zh-CN/cdn/css/colorbox.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="../../../../../zh-CN/cdn/css/colorbox_l10n.css" media="screen" rel="stylesheet" type="text/css" />
+	<script src="../../../../../zh-CN/cdn/js/libs/jquery.colorbox-min.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/assets/js/video-init.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/assets/js/sitecfg.js" type="text/javascript"></script>
+	
+		<script src="../../../../../zh-CN/assets/js/signIn.js" type="text/javascript"></script>
+	
+
+	<!--- Language Picker -->
+	<script src="../../../../../zh-CN/assets/js/locale/l10NStrings.js" type="text/javascript"></script>
+	
+		 
+	
+
+	<script src="../../../../../zh-CN/assets/js/calcite-web.js" type="text/javascript"></script>
+
+
+
+  <!--- search MD -->
+    <META name="description" content="其中大部分参数特定于提供镶嵌数据集的影像服务，只有少数参数适用于通过栅格数据集或图层创建的影像服务。"><META name="last-modified" content="2019-12-6"><META name="product" content="arcgis-server-windows,arcgis-enterprise-windows"><META name="sub_category" content="ArcGIS Server (Windows)"><META name="search-collection" content="help"><META name="content_type_label" content="帮助主题"><META name="sub_category_label" content="ArcGIS Server (Windows)"><META name="search-category" content="help-general"><META name="subject_label" content="服务"><META name="version" content="10.8"><META name="content_type" content="Help Topic"><META name="subject" content="SERVICES"><META name="content-language" content="zh-cn">
+    <!--- search MD -->
+
+  
+  <script src="../../../../../zh-CN/assets/js/switchers/server-1.js" type="text/javascript"></script>
+  
+      
+
+</head>
+
+<!--
+      pub: GUID-F157DF68-7F60-4427-A561-AD2F0FA30861=22
+      tpc: GUID-87144E54-E2E6-48BE-A514-C877DB684835=13
+      -->
+
+
+<!-- variable declaration, if any -->
+<!-- can change following macro to set variable once we are on Jinja 2.8 -->
+
+
+
+
+
+<body class="claro zh-CN server">
+  
+
+  <!-- Drawer location -->
+  <div class="drawer drawer-left js-drawer" data-drawer="top-nav">
+        <nav class="drawer-nav" role="navigation">
+          <aside class="side-nav">
+            <h2 class="side-nav-title">Arc<span>GIS</span> Enterprise</h2>
+            <form id="helpSearchForm" class="margin-left-half margin-right-half leader-half trailer-half drawer-search-form" method="GET">
+              <input type="search" name="q"  placeholder="搜索 ArcGIS Server 10.8 帮助">
+              <input type="hidden" name="collection" value="help" />
+              <input type="hidden" name="product" value="arcgis-server-windows" />
+              <input type="hidden" name="version" value="10.8" />
+              <input type="hidden" name="language" value="zh-CN" />
+            </form>    
+             <a id="nav-portal" data-langlabel="portal" href="../../../../../zh-CN/portal/" class="side-nav-link">Portal</a>
+             
+            <a id="all-servers" data-langlabel="all-servers" href="../../../../../zh-CN/server/" class="side-nav-link">所有服务器</a>
+            <a id="gis-server" data-langlabel="gis-server" href="../../../../../zh-CN/server/" class="side-nav-link">GIS Server</a>
+            <a id="image-server" data-langlabel="image-server" href="../../../../../zh-CN/image/" class="side-nav-link">Image Server</a>
+            <a id="geo-analytics-server" data-langlabel="geo-analytics-server" href="../../../../../zh-CN/geoanalytics/" class="side-nav-link">GeoAnalytics Server</a>
+            <a id="geoevent-server" data-langlabel="geoevent-server" href="../../../../../zh-CN/geoevent/" class="side-nav-link">GeoEvent Server</a>
+            <a id="notebook-server" data-langlabel="notebook-server" href="../../../../../zh-CN/notebook/" class="side-nav-link">Notebook Server</a>
+            <a id="nav-data-store" data-langlabel="data-store" href="../../../../../zh-CN/data-store/" class="side-nav-link">Data Stores</a>
+            <a id="nav-cloud" data-langlabel="cloud" href="../../../../../zh-CN/cloud/" class="side-nav-link">云</a>
+            <a id="nav-apps" data-langlabel="apps" href="../../../../../zh-CN/apps/" class="side-nav-link">应用程序</a>
+            <a id="nav-doc" data-langlabel="documentation" href="../../../../../zh-CN/documentation/" class="side-nav-link">文档</a>
+
+          </aside>
+        </nav>
+    </div>
+
+    <!-- user navigation collapses to drawer on mobile -->
+    
+    <div class="drawer drawer-right js-drawer hide-if-logged-out logged-in-navigation" data-drawer="user-nav">
+      <nav class="drawer-nav">
+        <aside class="side-nav">
+          <a class="side-nav-link agolProfile" href="#">我的个人资料</a>
+          <a class="side-nav-link icon-ui-sign-out js-log-out" href="#">登出</a>
+        </aside>
+      </nav>
+    </div>
+    
+<!-- End of drawer -->
+
+  
+  <div class="wrapper">
+      <!--googleoff: all-->
+
+      <header class="top-nav" data-skin="learn">
+        <a class="skip-to-content" href="#skip-to-content">Skip To Content</a>
+        <div class="grid-container">
+          <div class="column-24">
+
+
+            <!--<div class="top-nav-title-wrapper text-center ">-->
+              <a href='../../../../../zh-CN/' class="top-nav-title tablet-hide"><span>Arc</span>GIS  Enterprise</a>
+              <a href='../../../../../zh-CN/' class="icon-ui-menu top-nav-title js-drawer-toggle tablet-show" data-drawer="top-nav"><span>Arc</span>GIS Enterprise</a>
+            <!--</div> -->
+
+          
+            <nav role="navigation" class="top-nav-list left tablet-hide">
+              <a id="nav-portal" data-langlabel="portal" href="../../../../../zh-CN/portal/" class="top-nav-link">Portal</a>
+
+                <div class="dropdown js-dropdown ">
+                  <a class="top-nav-link js-dropdown-toggle" tabindex="0" aria-haspopup="true" aria-expanded="false" href="#">Servers</a>
+                  <nav class="dropdown-menu featured" role="menu">
+                    <ul class="dropdown-sublist-featured">
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/get-started/latest/windows/additional-server-deployment.htm" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path  d="M42.92 6.1H4.12v8.566l.833.832-.835.833-.018 7.332.845.847-.825.824V33.9h25v5.2h-2v1.075H8.02v.8h19.1v.925h4.8v-.925H40v-.8h-8.08V39.1h-2v-5.2h13v-8.566l-.834-.834.835-.834v-7.332l-.835-.834.835-.834zm-11.8 35h-3.2v-1.2h3.2zm11-8H4.92v-7.434l.767-.766h35.668l.765.766zm0-9.766l-.766.766H5.666l-.766-.767.017-6.669.766-.764h35.671l.766.766zm0-9l-.766.766H5.687l-.766-.766V6.9h37.2zM19 11.9h-2v-.8h2zm-4 0h-2v-.8h2zm-4 0H9v-.8h2zm6 8.2h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9zm8 9h2v.8h-2zm-4 0h2v.8h-2zm-4 0h2v.8H9z"/></svg></span>
+                          <span class="sublink-text">所有服务器</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/server/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M45.98 33.575a.616.616 0 0 0-.335-.51l-3.362-2.03 3.362-2.031a.556.556 0 0 0 0-1.02l-11.1-6.704a1.293 1.293 0 0 0-1.112 0L22.33 27.982a.556.556 0 0 0 0 1.02l3.36 2.03-3.358 2.03a.556.556 0 0 0-.002 1.021l3.322 2.006-3.324 2.008a.555.555 0 0 0 .002 1.017l11.102 6.703a1.25 1.25 0 0 0 1.11.002l11.104-6.706a.556.556 0 0 0 0-1.02l-3.32-2.006 3.318-2.004a.607.607 0 0 0 .335-.509zM33.837 21.97c.026-.01.286-.005.29-.005l10.814 6.53-10.8 6.523c-.028.01-.284.005-.294.006l-10.813-6.53zm11.105 16.636l-10.8 6.523a2.564 2.564 0 0 1-.295.006l-10.81-6.529 3.39-2.047 7.004 4.23a1.083 1.083 0 0 0 .557.131 1.101 1.101 0 0 0 .554-.13l7.01-4.233zM34.14 40.098a2.545 2.545 0 0 1-.294.006l-10.812-6.53 3.43-2.073 6.97 4.208a1.25 1.25 0 0 0 1.107-.001l6.966-4.206 3.431 2.073zM9 8H7V7h2zm8 8h-2v-1h2zm-4-8h-2V7h2zm4 0h-2V7h2zm-4 8h-2v-1h2zm7.316 11.1H3.9v-6.434l.766-.766h35.668l.766.766v2.12l.8.483v-2.935l-.826-.826.826-.845v-6.329l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9h16.88a2.632 2.632 0 0 1 .336-.8zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zm0 8v-5.668l.766-.766h35.668l.766.766v5.67l-.746.764H4.666zM15 24v-1h2v1zm-4 0v-1h2v1zm-2-8H7v-1h2zm-2 8v-1h2v1z"/></svg></span>
+                          <span class="sublink-text">GIS Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/image/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 8h-2V7h2zm-4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm8 8h-2v1h2zm-8 0H7v1h2zm4 9v-1h-2v1zm-4 0v-1H7v1zm8 0v-1h-2v1zm4 3.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V21h-.8v-.334l-.766-.766H4.666l-.766.766V27.1H21zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zm40.234 4v21.8H23.1V23.1zm-.8 16.366L39.466 44.1h2.868l1.766-1.766zm-20.2-9.932l5.634-5.634h-2.868L23.9 26.666zm6.2-5.068L24.466 30.1h2.868l2.766-2.766zM28.466 30.1H30.1v-1.634zm2.434 0h6.2v-6.2h-6.2zm-7 7h6.2v-6.2h-6.2zm7 0h6.2v-6.2h-6.2zm0 6.434l5.634-5.634h-2.868L30.9 40.666zm7-7l5.634-5.634h-2.868L37.9 33.666zm1.634-5.634H37.9v1.634zm-8.634 7v1.634l1.634-1.634zm.566 6.2h2.868l2.766-2.766v-2.868zm6.434-3.566l2.634-2.634H37.9zM35.466 44.1H37.1v-1.634zm2.434 0h.434l5.766-5.766V37.9h-2.434L37.9 41.666zm6.2-8.634L42.466 37.1H44.1zm0-4L38.466 37.1h2.868l2.766-2.766zm0-7.566h-6.2v6.2h6.2zm-20.2 0v1.634l1.634-1.634zm0 20.2h6.2v-6.2h-6.2zm20.2 0v-.634l-.634.634z"/></svg></span>
+                          <span class="sublink-text">Image Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/geoanalytics/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M17 16h-2v-1h2zm-8 8v-1H7v1zm8 0v-1h-2v1zM13 7h-2v1h2zm4 0h-2v1h2zM9 7H7v1h2zm21.45 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826V27.9h-1.464l-.801-.8H41.1v-6.434l-.766-.766H4.666l-.766.766V27.1h27.15zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM13 24v-1h-2v1zm0-9h-2v1h2zm-4 0H7v1h2zm26.672 27.148A1.87 1.87 0 0 1 35.9 43a1.91 1.91 0 1 1-3.763-.222l-9.845-3.414A1.88 1.88 0 0 1 21 39.9a1.9 1.9 0 1 1 1.474-3.084l4.692-2.346A1.878 1.878 0 0 1 27.1 34a1.902 1.902 0 0 1 1.9-1.9 1.867 1.867 0 0 1 .781.191l3.788-5.05A1.88 1.88 0 0 1 33.1 26a1.9 1.9 0 1 1 3.491 1.026l4.889 4.888c-.069.056-.144.1-.21.162a3.986 3.986 0 0 0-.358.402l-4.883-4.883A1.889 1.889 0 0 1 35 27.9a1.867 1.867 0 0 1-.781-.191l-3.788 5.049a1.868 1.868 0 0 1 .437.965l9.204.614c-.018.11-.049.218-.058.33A3.93 3.93 0 0 0 40 35c0 .046.01.09.01.135l-9.185-.612A1.913 1.913 0 0 1 29 35.9a1.889 1.889 0 0 1-1.474-.716l-4.692 2.346a1.878 1.878 0 0 1 .066.47 1.9 1.9 0 0 1-.105.625c-.007.02-.022.036-.03.056l9.63 3.34a1.87 1.87 0 0 1 2.786-.505l5.415-4.437c.067.108.127.22.204.322a3.9 3.9 0 0 0 .292.306zM33.9 26a1.092 1.092 0 0 0 .43.872 1.12 1.12 0 0 0 1.42-.068A1.1 1.1 0 1 0 33.9 26zm-6 8a1.1 1.1 0 0 0 2.196.093 1.135 1.135 0 0 0-.426-.965A1.087 1.087 0 0 0 29 32.9a1.101 1.101 0 0 0-1.1 1.1zm-5.8 4a1.098 1.098 0 1 0-.06.362A1.101 1.101 0 0 0 22.1 38zm13 5a1.1 1.1 0 1 0-2.2 0 1.1 1.1 0 0 0 2.2 0zm10.8-8a1.9 1.9 0 1 1-3.8 0c0-.053.003-.105.007-.158A1.9 1.9 0 0 1 45.9 35zm-.8 0a1.1 1.1 0 0 0-2.196-.093 1.153 1.153 0 0 0 .216.752A1.1 1.1 0 0 0 45.1 35z"/></svg></span>
+                          <span class="sublink-text">GeoAnalytics Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/geoevent/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M13 8h-2V7h2zm4-1h-2v1h2zm0 8h-2v1h2zM9 7H7v1h2zm12.418 20.9H3.1v-7.566l.834-.834-.834-.834v-6.332l.834-.834-.834-.834V3.1h38.8v7.566l-.834.834.834.834v6.33l-.826.844.826.826v2.117c-.259-.177-.53-.337-.8-.497v-1.288l-.766-.766H4.666l-.766.766V27.1h17.933c-.148.26-.283.53-.415.8zM4.666 11.1h35.668l.766-.766V3.9H3.9v6.434zm0 8h35.688l.746-.763v-5.671l-.766-.766H4.666l-.766.766v5.668zM9 24v-1H7v1zm4-9h-2v1h2zm0 9v-1h-2v1zm-4-9H7v1h2zm8 9v-1h-2v1zm16.9 2h-.8v8.9H39v-.8h-5.1zm.1-3.901a11.9 11.9 0 1 0 11.9 11.9 11.914 11.914 0 0 0-11.9-11.9zm0 23a11.1 11.1 0 1 1 11.1-11.1 11.112 11.112 0 0 1-11.1 11.1z"/></svg></span>
+                          <span class="sublink-text">GeoEvent Server</span>
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem-featured">
+                        <a href="../../../../../zh-CN/notebook/" class="sublink-featured">
+                          <span><svg class="sublink-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M22 27.1H3.9v-6.434l.766-.766h18.576a5.262 5.262 0 0 1 .83-.8H4.666l-.766-.766v-5.668l.766-.766h35.668l.766.766V18h.8v-5.666l-.834-.834.834-.834V3.1H3.1v7.566l.834.834-.834.834v6.332l.834.834-.834.834V27.9H22zM3.9 10.334V3.9h37.2v6.434l-.766.766H4.666zM9 8H7V7h2zm8 0h-2V7h2zm-4 0h-2V7h2zm2 16v-1h2v1zm-4 0v-1h2v1zm-4 0v-1h2v1zm0-8v-1h2v1zm8 0v-1h2v1zm-4 0v-1h2v1zm18.9 8.1h-1.8v1.8h1.8zm-.8 1h-.2v-.2h.2zm15.498-4.48a2.727 2.727 0 0 0-1.62-.5v-.02H27.25a3.154 3.154 0 0 0-3.15 3.15V38.1h-1.68a3.386 3.386 0 0 0-2.872 1.58 3.49 3.49 0 0 0-.157 3.419 3.241 3.241 0 0 0 2.954 1.801h15.161a3.404 3.404 0 0 0 3.394-3.4V26.9h5v-3.65a3.224 3.224 0 0 0-1.302-2.63zM22.345 44.1a2.44 2.44 0 0 1-2.23-1.341 2.706 2.706 0 0 1 .11-2.65A2.588 2.588 0 0 1 22.42 38.9h12.89a3.395 3.395 0 0 0 0 5.2zM40.1 23.192V41.5a2.6 2.6 0 1 1-2.6-2.6v-.8H24.9V23.25a2.352 2.352 0 0 1 2.35-2.35h13.795a3.183 3.183 0 0 0-.945 2.292zm5 2.908h-4.2v-2.908a2.274 2.274 0 0 1 1.44-2.18 1.944 1.944 0 0 1 1.791.259 2.423 2.423 0 0 1 .97 1.979zm-17.1 5h9v.8h-9zm0 3h7v.8h-7zm0-6h9v.8h-9zm4-3h5v.8h-5z"/></svg></span>
+                          <span class="sublink-text">Notebook Server</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+
+              <a id="nav-data-store" data-langlabel="data-store" href="../../../../../zh-CN/data-store/" class="top-nav-link">Data Stores</a>
+              <a id="nav-cloud" data-langlabel="cloud" href="../../../../../zh-CN/cloud/" class="top-nav-link">云</a>
+              <a id="nav-apps" data-langlabel="apps" href="../../../../../zh-CN/apps/" class="top-nav-link">应用程序</a>
+            </nav>
+
+
+            
+            
+            
+
+            <div class="margin-left-1 top-nav-list right hide-if-logged-in logged-out-navigation">
+               
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+              
+              <a data-langlabel="sign-in" id="login-link" class="icon-ui-user top-nav-link link-blue login-link" href="#">登录</a>
+              
+            </div>
+
+            
+            <nav class="margin-left-1 top-nav-list right hide-if-logged-out logged-in-navigation">
+              
+  <button class="search-top-nav link-dark-gray js-search-toggle" href="#" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-search-icon">
+      <path d="M31.607 27.838l-6.133-6.137a1.336 1.336 0 0 0-1.887 0l-.035.035-2.533-2.533-.014.014c3.652-4.556 3.422-11.195-.803-15.42-4.529-4.527-11.875-4.531-16.404 0-4.531 4.531-4.529 11.875 0 16.406 4.205 4.204 10.811 4.455 15.365.848l.004.003-.033.033 2.541 2.54a1.33 1.33 0 0 0 .025 1.848l6.135 6.133a1.33 1.33 0 0 0 1.887 0l1.885-1.883a1.332 1.332 0 0 0 0-1.887zM17.811 17.809a8.213 8.213 0 0 1-11.619 0 8.217 8.217 0 0 1 0-11.622 8.219 8.219 0 0 1 11.619.004 8.216 8.216 0 0 1 0 11.618z"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon js-close-icon hide">
+      <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/>
+    </svg>
+  </button>
+
+             
+              <div class="dropdown js-dropdown right">
+
+                <div class="tablet-show top-nav-link">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a href="#" data-drawer="user-nav" class="user-nav-name js-drawer-toggle" data-first-name></a>
+                </div>
+
+                <div class="tablet-hide top-nav-link js-dropdown-toggle">
+                  <img alt="User Avatar" class="user-nav-image js-drawer-toggle" data-drawer="user-nav" data-user-avatar>
+                  <a class="user-nav-name top-nav-dropdown dropdown-btn" data-first-name>&nbsp;</a>
+                </div>
+
+                <nav class="dropdown-menu dropdown-right">
+                
+                  <a class="dropdown-link agolProfile" id="agolProfile" href="#">我的个人资料</a>
+                  <a class="dropdown-link js-log-out" id="agolLogout" href="#">登出</a>
+                </nav>
+              </div>
+            </nav>
+            
+
+            
+          </div>
+        </div>
+      </header>
+
+      <div class="js-search search-overlay">
+        <div class="search-content" role="dialog" aria-labelledby="search">
+          <form method="GET" id="helpSearchForm">
+            <label>
+              搜索 ArcGIS Server 10.8 帮助
+              <div class="search-bar">
+                <input type="search" name="q"  placeholder="搜索 ArcGIS Server 10.8 帮助" class="search-input js-search-input">
+                <input type="hidden" name="collection" value="help" />
+                <input type="hidden" name="product" value="arcgis-server-windows" />
+                <input type="hidden" name="version" value="10.8" />
+                <input type="hidden" name="language" value="zh-CN" />
+              </div>
+            </label>
+            <input type="hidden" name="relativePath" value="../../../../../" /><button type="submit" class="btn btn-large right">搜索</button>
+          </form>
+        </div>
+      </div>
+
+      <!--googleon: all-->
+
+      <div id="skip-to-content">
+        <!--googleoff: all-->
+        <header class="sub-nav sub-nav-learn">
+          <div class="grid-container">
+            
+            <div class="column-24">
+              <div style="display:table;" class="sdk-home-banner">
+                <div class="sdk-home-banner-content">
+                  <h1 class="sub-nav-title link-white">ArcGIS Server</h1>
+                </div>
+              </div>
+            </div>
+
+            <div class="column-24">
+              <nav class='sub-nav-list tablet-hide'><a class="sub-nav-link" href="../../../../../zh-CN/server/" target="_top" title="ArcGIS Server 的概述和文档">主页</a><a class="sub-nav-link" href="../../../../../zh-CN/server/latest/get-started/windows/" target="_top" title="了解有关 ArcGIS Server 和服务器角色的信息">简介</a><a class="sub-nav-link" href="../../../../../zh-CN/server/latest/deploy/windows/" target="_top" title="构建、配置和升级部署">部署</a><a class="sub-nav-link" href="../../../../../zh-CN/server/latest/manage-data/windows/" target="_top" title="管理企业的空间数据">管理数据</a><a class="sub-nav-link is-active" href="../../../../../zh-CN/server/latest/publish-services/windows/" target="_top" title="使用 GIS 服务">管理服务</a><a class="sub-nav-link" href="../../../../../zh-CN/server/latest/create-web-apps/windows/" target="_top" title="创建 Web 应用程序和可打印地图">共享</a><a class="sub-nav-link" href="../../../../../zh-CN/server/latest/administer/windows/" target="_top" title="管理和保护 ArcGIS Server">管理</a><a class="sub-nav-link" href="../../../../../zh-CN/server/latest/develop/windows/" target="_top" title="构建扩展模块并自动执行常见任务">开发</a></nav><select class='tablet-show select-full trailer-half js-select-nav'><option value="../../../../../zh-CN/server/">主页</option><option value="../../../../../zh-CN/server/latest/get-started/windows/">简介</option><option value="../../../../../zh-CN/server/latest/deploy/windows/">部署</option><option value="../../../../../zh-CN/server/latest/manage-data/windows/">管理数据</option><option selected="true" value="../../../../../zh-CN/server/latest/publish-services/windows/">管理服务</option><option value="../../../../../zh-CN/server/latest/create-web-apps/windows/">共享</option><option value="../../../../../zh-CN/server/latest/administer/windows/">管理</option><option value="../../../../../zh-CN/server/latest/develop/windows/">开发</option></select>
+            </div>
+
+          </div>
+        </header>
+        <!--googleon: all-->
+       
+        <!-- content goes here -->
+        <div class="grid-container ">
+          
+
+            
+              
+  <!--BREADCRUMB-BEG--><div id="bigmac" class="sticky-breadcrumbs trailer-2" data-spy="affix" data-offset-top="180"> </div><!--BREADCRUMB-END-->
+  <!--googleoff: all-->
+    <div class="column-5 tablet-column-12 trailer-2 ">
+      <aside class="js-accordion accordion reference-index" aria-live="polite" role="tablist">
+        <div></div>
+      </aside>
+
+      <div class="js-sticky scroll-show tablet-hide leader-1 back-to-top" data-top="0" style="top: 0px;">
+        <a href="#" class="btn btn-fill btn-clear">返回顶部</a>
+      </div>
+    </div>
+  <!--googleon: all-->
+  
+            
+            
+            
+	
+		<div class="column-13  pre-1 content-section">
+	
+		<header class="trailer-1"><h1>影像服务参数</h1></header>
+
+		 
+	<!--googleoff: all-->
+	
+		
+				<aside id="main-toc-small" class="js-accordion accordion tablet-show trailer-1">
+			      <div class="accordion-section">
+			        <h4 class="accordion-title">在本主题中</h4>
+			        <div class="accordion-content list-plain">
+			          <ol class="list-plain pre-0 trailer-0"><li><a href="#ESRI_SECTION1_8E90BDF4F1254F0EAD62E2C5F924D652">控制影像数据的参数</a></li><li><a href="#ESRI_SECTION1_6BD4D5F179424188B77CD3E30BF88880">控制影像服务目录的参数</a></li><li><a href="#ESRI_SECTION1_E15F18B4092F43658642E4EF78493AC2">控制影像服务内容的参数</a></li><li><a href="#ESRI_SECTION1_0C26EBEAEB05478993E5719F3BCC1DC8">控制动态处理的参数</a></li><li><a href="#ESRI_SECTION1_4F333117CD7E45F8BB6414DFCE37BB3A">控制影像测量的参数</a></li></ol>
+			        </div>
+			      </div>
+			     </aside>
+		
+    
+   <!--googleon: all-->
+
+
+		<main>
+			
+	
+    	
+    
+
+
+			
+    <p id="GUID-B985C790-4938-47C1-B4E2-76E87C78E335"> 影像服务具有许多标准参数，这些标准参数的默认值适用于大多数 <span class="ph">ArcGIS Server</span> 服务。其中包括池化选项和其他多个选项。然而，由于栅格和影像数据的特性，有一些参数可影响影像服务的速度、可下载的数据、查询以及诸多其他选项。</p>    <p id="GUID-A8DFCFC6-CB3D-405B-B0E8-D6F51C1983AD">启用特定功能时，有些参数是必需的。例如，如果启用“下载”功能，则应修改下载参数。这也适用于<span class="uicontrol">目录</span>、<span class="uicontrol">编辑</span>和<span class="uicontrol">测量</span>功能。</p>    <section class="section1 padded-anchor" id="ESRI_SECTION1_8E90BDF4F1254F0EAD62E2C5F924D652" purpose="section1"><h2>控制影像数据的参数</h2><p id="GUID-F6FBE4D7-1695-4439-8B94-C8A7E5907707">影像服务参数分为几个部分；各部分取决于影像服务的输入。其中大部分参数特定于提供镶嵌数据集的影像服务，只有少数参数适用于通过栅格数据集或图层创建的影像服务。许多镶嵌数据集相关的参数是在创建镶嵌数据集时设置的。虽然部分参数可以由服务器管理员进行更改，但是服务器管理员不能将参数值设置为超出您在镶嵌数据集属性中设置的最大值。例如，如果您将允许的镶嵌方法限制为仅其中三种，管理员将不能添加第四种方法。或者，如果您已设置可下载项目的最大数，则管理员可减小但不能增大该值。</p><p id="GUID-90C740F9-3545-4F0D-8DCC-B311F38DE52C">如果将镶嵌数据集的参数更改为超出或限制某个值（例如最大请求大小），则需要将该镶嵌数据集重新发布为服务器的影像服务以读取修改的值。如果仅是停止和启动影像服务，则不会包含该镶嵌数据集中已更改的属性；而如果更改影像服务的属性，则只需停止并随后启动影像服务即可使更改生效。</p><section class="section2 padded-anchor" id="ESRI_SECTION2_58F0337E73C5471B8CA0BF9CB519E31D" purpose="section2"><h3>常规</h3><p id="GUID-22AF07CA-A96A-4457-8F96-39876D6A0FFD">显示影像服务的名称和位置。这适用于所有输入。</p></section><section class="section2 padded-anchor" id="ESRI_SECTION2_44A6FB8D0E8C4B249C3BD46FE936C33B" purpose="section2"><h3>参数</h3><p id="GUID-A18C7B5F-67F9-4DBC-941C-99BD1B34724B">以下影像参数将影响用户看到的影像：</p><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><thead><tr><th colspan="1">参数</th><th colspan="1">描述</th></tr></thead><tbody class="align-middle">              <tr class="align-middle">                <td outputclass="" purpose="entry" rowspan="1" colspan="1">                  <p id="GUID-1960FE41-2A4D-4EE7-B8B0-AD765BEE37F2">每次请求返回影像的最大尺寸</p>                </td>                <td outputclass="" purpose="entry" rowspan="1" colspan="1">                  <p id="GUID-61180EA6-D4E8-457E-BA3D-F52961724468">服务器允许客户端请求的最大像素行数和列数。</p>                  <p id="GUID-00991F09-A24B-4F35-A615-0643018DB3F1">如果客户端的请求超过此值，则不会返回任何像素。</p>                  <p id="GUID-CE84F642-4F28-49E4-8F00-173DA7427DC0">适用于所有输入。</p>                </td>              </tr>              <tr class="align-middle">                <td outputclass="" purpose="entry" rowspan="1" colspan="1">                  <p id="GUID-AEC1682D-2D37-42EE-A470-01C161F958FB">默认重采样方法</p>                </td>                <td outputclass="" purpose="entry" rowspan="1" colspan="1">                  <p id="GUID-B8DF97F2-BADE-451A-8FB4-CC81BEBA71F1">请求中使用的重采样方法。方法包括以下内容：<ul purpose="ul" id="UL_787786DF8D2940FDA697265A3AA00FF5"><li purpose="li" id="LI_B5513557867046E6B0CAE8FD15498497">最邻近法（对于离散数据，建议使用此方法）</li><li purpose="li" id="LI_3F425B6274F241C58ED6E99EE9E6D53B">双线性插值法（对于连续数据，建议使用此方法）</li><li purpose="li" id="LI_E0C9B138087E4359BF415FC38278F08E">三次卷积插值法（对于连续数据，建议使用此方法）</li><li purpose="li" id="LI_86131208E03C4CFAAB6157E999125316">众数法（对于离散数据，建议使用此方法）</li></ul></p>                  <p id="GUID-00AC0108-447D-4A14-A5AB-40E9A58BF536">适用于所有输入。</p>                </td>              </tr>              <tr class="align-middle">                <td outputclass="" purpose="entry" rowspan="1" colspan="1">                  <p id="GUID-388034E9-1002-48CD-AA7F-3AF28CB93A81">允许的压缩方法</p>                </td>                <td outputclass="" purpose="entry" rowspan="1" colspan="1">                  <p id="GUID-2227C53A-5E1D-4798-8627-301CCE924E3B">允许用于影像服务的压缩方法。提供了三种可能的压缩类型： <ul purpose="ul" id="UL_CCF9ACC168BC4DB394AEC726206BFFA3"><li purpose="li" id="LI_3ADB0E83030D4D3996122951384F6198">无</li><li purpose="li" id="LI_2885FE6252D24256B1E382C732E9BB20">JPEG</li><li purpose="li" id="LI_737F4327AB3440F493632456CE7C4F18">LERC</li><li purpose="li" id="LI_85715651DCBD41048536805745A86976">LZ77</li></ul></p>                  <p id="GUID-88152AC7-9156-4474-94EA-F6931D0B5219">可在<span class="uicontrol">配置允许列表</span>对话框上设置默认的 <span class="uicontrol">JPEG 质量</span>和 <span class="uicontrol">LERC 容差</span>。</p>                  <p id="GUID-00991DFE-99F1-45DC-B664-0C7E13D9F006">因而，客户端可选择允许用于传输的压缩方法。可在<span class="uicontrol">图层属性</span>对话框的<span class="uicontrol">显示</span>选项卡中设置此项。</p>                  <p id="GUID-EC6AAAAB-807C-4B22-874B-681FB5C7E3E3">此参数仅适用于通过 SOAP <a target="_blank" class="xref xref" href="HTTP://RESOURCES.ARCGIS.COM/EN/HELP/ARCOBJECTS-NET/COMPONENTHELP/#/GETIMAGE_METHOD/00120000069R000000/">GetImage</a> 方法访问影像服务的客户端，例如 <span class="ph">ArcGIS Desktop</span> 以及通过 ArcObjects 构建的应用程序。</p>                  <p id="GUID-F3AE30D8-93AE-43D6-B990-404ED2069403">对于通过 REST 访问服务的客户端，无论定义了何种压缩方法，均会基于请求的格式类型自动进行压缩。</p>                </td>              </tr>              <tr class="align-middle">                <td outputclass="" purpose="entry" rowspan="1" colspan="1">                  <p id="GUID-003DE8C3-5582-4DB0-9649-96B12F25DCC4">将 JPGPNG 以 JPG 形式返回</p>                </td>                <td outputclass="" purpose="entry" rowspan="1" colspan="1">                  <p id="GUID-D80191CD-BCFD-400A-A503-9EC215E29CAC">当用户请求使用 JPGPNG 格式的影像时，如果存在透明度，则返回 PNG；否则返回 JPG。由于 PNG 通常比 JPG 大很多，因此传输需要更长的时间。如果不需要透明度并且您需要确保始终使用较小的影像尺寸来传输影像服务，请选中此复选框。</p>                  <p id="GUID-6DCE4995-5CCB-48EC-A9B2-77D3169BB3FC">适用于所有输入。</p>                </td>              </tr>              <tr class="align-middle">                <td outputclass="" purpose="entry" rowspan="1" colspan="1">                  <p id="GUID-D5EC2236-ACD3-4AE2-9F8B-494053AC1794">具有实时数据</p>                </td>                <td outputclass="" purpose="entry" rowspan="1" colspan="1">                  <p id="GUID-25C08716-11B8-46EF-B733-6DD3A5B8A741">将新栅格添加到影像服务的镶嵌数据集后，源分辨率、空间范围、多维信息和时间范围等影像服务信息可能会过时。可重新启动服务以反映数据更改。但是，如果在任何情况下都不能发生停机时间，则可在不重新启动服务的情况下选择此选项以反映数据更改。</p>                  <p id="GUID-C48A5290-0830-495B-8034-CF5E70F30D2F">此属性仅在 <span class="ph">ArcGIS Server</span> Manager 和 ArcGIS REST API 中显示。</p>                </td>              </tr>              <tr class="align-middle">                <td outputclass="" purpose="entry" rowspan="1" colspan="1">                  <p id="GUID-0B8EF9CE-1D8B-46B1-9794-80843F145FB0">最大样本计数</p>                </td>                <td outputclass="" purpose="entry" rowspan="1" colspan="1">                  <p id="GUID-DB64CFDB-A170-4302-A016-64550F1B0ECC"> 该操作可为给定几何生成源数据的采样点位置、像素值和相应的空间分辨率。默认情况下，最大采样位置数为 1,000。</p>                </td>              </tr>              <tr class="align-middle">                <td outputclass="" purpose="entry" rowspan="1" colspan="1">                  <p id="GUID-50330F80-2E34-44B9-A6CF-A26E707092AD">缓存控制最长期限</p>                </td>                <td outputclass="" purpose="entry" rowspan="1" colspan="1">                  <p id="GUID-B6D93191-3601-41F0-8A46-53C0DFB6BCB3">当客户端向 <span class="ph">ArcGIS Image Server</span> 发送请求以显示影像服务时，服务器上的响应通常由浏览器进行缓存，并在一段时间之内重复使用。此行为有助于 <span class="ph">ArcGIS Image Server</span> 获得最理想的影像服务显示性能。但您可以考虑根据影像服务及其相关数据在应用程序中的使用方式来调整浏览器缓存中的响应时间。</p>                  <p id="GUID-ADC87167-CC43-46FA-803B-F316914077D0"> <span class="ph">ArcGIS Image Server</span> 影像服务响应包括实体标签 (ETag) 和缓存控制头。ETag 头值是响应的唯一标识符。缓存控制头具有一个最长期限值，该值可向浏览器提供有关浏览器缓存中响应可供重复使用的最大时段的信息。这由该属性控制。</p>                  <p id="GUID-43C6EFC3-974D-4FDA-BC2E-355384A7EA24"> 如果重复请求且尚未超过缓存的最长期限，则浏览器将使用缓存的响应而不会将请求发送到服务器。如果已超过最长期限，则浏览器必须将请求发送到服务器，并通过与其缓存中响应相对应的相关 ETag 值设置 IF-NONE-MATCH 头。<span class="ph">ArcGIS Image Server</span> 将评估请求，并使用 ETag 值来确定响应是否更改。如果服务器的响应与浏览器中的副本不同，则服务器会将一个全新的响应发送到浏览器。如果响应与浏览器中的副本一致，则服务器将提示浏览器继续使用其缓存中的响应。</p>                  <p id="GUID-8D65C00C-DF79-4A98-A25E-AEFF4F45E541"> <span class="ph">ArcGIS Server</span> 管理员可定义此属性，以指定允许浏览器使用缓存响应的时长。通过减少 <span class="ph">ArcGIS Image Server</span> 发送完整响应的需要，可提高浏览器缓存的效率，有助于优化应用程序，从而节省网络带宽。</p>                  <p id="GUID-3C4E575B-32F5-42C6-B4F3-0FEA8DFB75B5">影像服务的默认值为 12 小时（43200 秒）。这表示如果在 12 小时内重复请求，浏览器将使用其缓存中的响应。此值适用于大多数应用程序。</p>                  <p id="GUID-73076998-75FF-4B66-BA53-63CDBEECC40E">对于含有频繁更改的数据集或符号系统的影像服务，建议使用 5 分钟（300 秒）等值。如果应用程序含有动画或时间感知型数据，则应考虑增加该值从而为应用程序提供更为流畅的动画体验。</p>                  <p id="GUID-F25A3CA7-8A90-4DFB-8021-6B1647B6B333">此属性仅在 <span class="ph">ArcGIS Server</span> Manager 和 ArcGIS REST API 中显示。</p>                </td>              </tr>                            <tr class="align-middle">                <td outputclass="" purpose="entry" rowspan="1" colspan="1">                  <p id="GUID-F9E3FCF3-C5D9-4B98-9103-ABEAD8303EC7">目录</p>                </td>                <td outputclass="" purpose="entry" rowspan="1" colspan="1">                  <p id="GUID-13C01179-B65C-4BAE-A3FB-FB1DDE32F4AC">可以选择供服务器创建临时文件的输出目录。如果未指定输出目录，<span class="ph">ArcGIS Image Server</span> 只会将影像以 MIME 数据的形式返回。通过指定输出目录，还可以通过 URL 地址访问返回的影像。</p>                </td>              </tr>            </tbody><caption></caption></table></div></section></section>    <section class="section1 padded-anchor" id="ESRI_SECTION1_6BD4D5F179424188B77CD3E30BF88880" purpose="section1"><h2>控制影像服务目录的参数</h2><p id="GUID-B7EB744D-1E86-4E0E-9C70-0980D8D1759B">仅当将镶嵌数据集发布为影像服务时，<span class="uicontrol">目录</span>参数才适用。这些参数用于控制或限制用户对元数据和目录字段的访问权限，还用于限制对镶嵌数据集表中的记录的请求。这些参数可影响服务器上的负载。允许用户查看和查询的内容越多，服务器上的负载越大。</p><section class="section2 padded-anchor" id="ESRI_SECTION2_9143B4832A3249D79A2A5353F2726D52" purpose="section2"><h3>镶嵌参数</h3><p id="GUID-E4371429-DB7E-4AE2-A674-6C1912301FAE">          <h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><thead><tr><th colspan="1">参数</th><th colspan="1">描述</th></tr></thead><tbody class="align-middle">                <tr class="align-middle">                  <td outputclass="" purpose="entry" rowspan="1" colspan="1">                    <p id="GUID-99FFB3F9-577A-430F-8449-06DF7DF26AC1">每个镶嵌图的最大栅格数</p>                  </td>                  <td outputclass="" purpose="entry" rowspan="1" colspan="1">                    <p id="GUID-7B6447D3-EA6A-4283-9A2D-2BEE180B04F1">每次请求的最大可镶嵌栅格数。这样可以避免服务器针对一次请求打开并处理大量栅格。</p>                    <p id="GUID-C201AA13-E56E-45E4-8522-D3488C0F7FCC">如果客户端请求要求访问的栅格数量超过此数量，则只会对此数量的栅格进行访问。可能会导致所生成的影像中出现空隙的任何其他栅格的像素均不会返回。建议构建概视图以免客户端在显示时出现空隙。</p>                    <p id="GUID-391A1386-D26C-4FBE-9D1F-740F9926FD2C">仅适用于镶嵌数据集。</p>                  </td>                </tr>                <tr class="align-middle">                  <td outputclass="" purpose="entry" rowspan="1" colspan="1">                    <p id="GUID-E77119A0-725F-4E6B-969A-A67BE17B16B9">允许的镶嵌方法</p>                  </td>                  <td outputclass="" purpose="entry" rowspan="1" colspan="1">                    <p id="GUID-7DCEF901-4F6C-4CDD-9B08-C42427CFD8DE">允许用于影像服务的镶嵌方法。可能的镶嵌方法如下： <ul purpose="ul" id="UL_102A303119C245B88645B71A13803C8C"><li purpose="li" id="LI_4D2644A55A7F4786A636BEE3D0820B7B">最接近中心</li><li purpose="li" id="LI_B7C7F4CD56184214A3880D0FF117C174">西北省</li><li purpose="li" id="LI_278E6132702F4571A81118CBB73E9B29">锁定栅格</li><li purpose="li" id="LI_292FA7A787D74043963B95358871D56F">按属性</li><li purpose="li" id="LI_3F8FE4C83AD7481995C674E12BD231A4">最接近像底点</li><li purpose="li" id="LI_10DE326487FD45DABE9BFB42BE91F960">最接近视点</li><li purpose="li" id="LI_DE17B162015D4321BB5010E6B0381036">接缝线</li><li purpose="li" id="LI_7B64D478322845AEBB213D732D30D607">无</li></ul></p>                    <p id="GUID-BF8CFCE1-BE8E-40F0-AC33-E71B3F103B6E">仅适用于镶嵌数据集。</p>                  </td>                </tr>              </tbody><caption></caption></table></div>        </p></section><section class="section2 padded-anchor" id="ESRI_SECTION2_D2269C65094D42858E646EC9D6358CB9" purpose="section2"><h3>目录参数</h3><p id="GUID-EBD89A2A-7E40-4716-8B93-22B384530411">这些参数仅在选中<span class="uicontrol">目录</span>功能时适用。</p><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><thead><tr><th colspan="1">参数</th><th colspan="1">描述</th></tr></thead><tbody class="align-middle">              <tr class="align-middle">                <td outputclass="" purpose="entry" rowspan="1" colspan="1">                  <p id="GUID-CCC5848D-4E49-46E9-9FE6-C9E7D99482D5">每个请求返回的最大记录数</p>                </td>                <td outputclass="" purpose="entry" rowspan="1" colspan="1">                  <p id="GUID-D608EFF2-07FD-40B5-B169-ACE146AD03F0">每项事务的传输记录数的最大限制。如果用户的请求超过此值，则返回的影像将使用允许的最大栅格数。</p>                  <p id="GUID-B78A56E8-85D9-4365-98C7-C8E1FD18AC93">仅适用于镶嵌数据集。</p>                </td>              </tr>              <tr class="align-middle">                <td outputclass="" purpose="entry" rowspan="1" colspan="1">                  <p id="GUID-32E08DD7-02D9-4B52-988C-8B8501C69DD0">栅格元数据等级</p>                </td>                <td outputclass="" purpose="entry" rowspan="1" colspan="1">                  <p id="GUID-D51E63E5-594D-40AB-B9B3-671D80165CDB">将要传输到客户端的元数据。选项如下： <ul purpose="ul" id="UL_0B71E572323B4F508E152311906A86AB"><li purpose="li" id="LI_35CA79B73CF3439BAB40AA51194A333F">基本 - 栅格的元数据</li><li purpose="li" id="LI_D3DB15A85B424B4A95AE043D372E57D7">全部 - 栅格的元数据和应用于栅格的栅格函数</li><li purpose="li" id="LI_20FE3BF8F2574C2C8ACAD811010D6099">无 - 没有任何元数据</li></ul></p>                  <p id="GUID-6F19F62A-E5EB-40DE-B8EA-A19600EADB61">仅适用于镶嵌数据集。</p>                </td>              </tr>              <tr class="align-middle">                <td outputclass="" purpose="entry" rowspan="1" colspan="1">                  <p id="GUID-91E1E466-BDF9-43F6-B9E2-60A17BD26E6D">允许的字段</p>                </td>                <td outputclass="" purpose="entry" rowspan="1" colspan="1">                  <p id="GUID-0F2C56C6-D695-4D39-AFA7-57340B89957F">属性表中传输到客户端的字段的列表。取消选中不希望客户端查看或在查询中使用的字段。</p>                  <p id="GUID-CD590C60-6FBB-4B62-AE6D-48B7E6F87E18">仅适用于镶嵌数据集。</p>                </td>              </tr>              <tr class="align-middle">                <td outputclass="" purpose="entry" rowspan="1" colspan="1">                  <p id="GUID-311AD8A6-73A8-4FB7-AE4C-E4D2DF808AC9">参考影像</p>                </td>                <td outputclass="" purpose="entry" rowspan="1" colspan="1">                  <p id="GUID-B0D2561B-501D-4796-98B4-D7A61FA4752B">参考栅格数据集、镶嵌数据集或栅格图层用于对源栅格数据集进行地理配准。有关详细信息，请参阅 ArcGIS REST API 中的<a class="xref xref" esrisubtype="extrel" hrefpfx="https://developers.arcgis.com/rest" href="https://developers.arcgis.com/rest/services-reference/compute-tie-points.htm">计算连接点</a>。</p>                </td>              </tr>            </tbody><caption></caption></table></div></section><section class="section2 padded-anchor" id="ESRI_SECTION2_B7FE073FC61A402D9828825AD6C7FD1F" purpose="section2"><h3>下载参数</h3><p id="GUID-5ECE43B5-A8B4-4A8E-8B8A-D4149C5AD927">影像服务允许下载时，请确保选中<span class="uicontrol">影像</span>属性页中的<span class="uicontrol">下载</span>功能。此外，除了下面的属性，请确保在<span class="uicontrol">参数</span>属性页中配置输出目录。</p><p id="GUID-B341A3CF-20DE-402F-AB93-BFA63AA1EA62">这些参数将影响服务器上的负载和用户对源影像所具有的权限。</p><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><thead><tr><th colspan="1">参数</th><th colspan="1">描述</th></tr></thead><tbody class="align-middle">              <tr class="align-middle">                <td outputclass="" purpose="entry" rowspan="1" colspan="1">                  <p id="GUID-A57AC1AD-4046-468B-9E1E-ED229B9E522C">每个请求可下载的最大项目数</p>                </td>                <td outputclass="" purpose="entry" rowspan="1" colspan="1">                  <p id="GUID-1E0386A2-FE00-4A7B-9AEC-A09CEF84AA52">用户一次可以下载的最大栅格数。</p>                  <p id="GUID-82FDCE4F-1F6E-4EFA-9398-7FF22FF13FBD">仅适用于镶嵌数据集。</p>                </td>              </tr>              <tr class="align-middle">                <td outputclass="" purpose="entry" rowspan="1" colspan="1">                  <p id="GUID-193B2280-0906-468C-8314-CC2293B0655B">每个请求的最大下载量</p>                </td>                <td outputclass="" purpose="entry" rowspan="1" colspan="1">                  <p id="GUID-4A562484-2C5F-4B83-BA67-80EB77ECE226">一次可下载的兆字节 (MB) 总数。</p>                  <p id="GUID-AB5A2585-D2DA-4D96-B6C5-BDE3BB1D59C2">仅适用于镶嵌数据集。</p>                </td>              </tr>              <tr class="align-middle">                <td outputclass="" purpose="entry" rowspan="1" colspan="1">                  <p id="GUID-5CD73985-162F-4E1C-B9AE-14C1BD3C1625">允许下载元数据文件</p>                </td>                <td outputclass="" purpose="entry" rowspan="1" colspan="1">                  <p id="GUID-441FB2EF-9F7D-48B4-91BE-90693F535D8B">允许客户端下载与影像关联的元数据文件。</p>                  <p id="GUID-3F4C91DA-63CE-48B8-8167-3C408EAF1C5F">此属性仅在 <span class="ph">ArcGIS Server</span> Manager 和 ArcGIS REST API 中显示。</p>                </td>              </tr>              <tr class="align-middle">                <td outputclass="" purpose="entry" rowspan="1" colspan="1">                  <p id="GUID-2FD4DB95-87E4-40FF-825F-BE2A838B2F72">管理已下载的目录</p>                </td>                <td outputclass="" purpose="entry" rowspan="1" colspan="1">                  <p id="GUID-6DCA3EEF-C7D2-4FCC-A821-DC1BFC2743F4">用于将影像所在的物理目录映射到将在其中映射影像 URL 的虚拟目录。</p>                  <p id="GUID-C0D0B6CC-0C77-4E9E-99F6-F12644BC278F"> 如果允许下载，则必须确保该服务使用指向镶嵌数据集的源栅格的目录。这将避免在影像服务将文件从镶嵌数据集源目录复制到服务器输出目录时可能出现的严重性能瓶颈问题。</p>                  <p id="GUID-5BA9E05C-E1BA-455B-BE3D-442F5336F49E">凭借虚拟目录，Web 应用程序可通过 URL 地址访问 <span class="ph">ArcGIS Image Server</span> 所创建的文件。虚拟目录应与输出目录指向相同的磁盘位置。必须在 Web 服务器中创建虚拟目录并将其与磁盘上的物理目录相关联。有关虚拟目录的创建方法，请参阅 Web 服务器的相关文档。</p>                  <p id="GUID-A16406FA-92F9-4A22-8459-E3C0AC4AA075">仅适用于镶嵌数据集。</p>                </td>              </tr>            </tbody><caption></caption></table></div></section></section>    <section class="section1 padded-anchor" id="ESRI_SECTION1_E15F18B4092F43658642E4EF78493AC2" purpose="section1"><h2>控制影像服务内容的参数</h2><section class="section2 padded-anchor" id="ESRI_SECTION2_97705CB292984EBCA21BFAAB6428AC48" purpose="section2"><h3>编辑参数</h3><p id="GUID-D7A69E3C-96FD-4AAE-B6BB-EA59967AF701">如果影像服务是从镶嵌数据集创建的，那么，通过允许客户端将其栅格数据添加到镶嵌数据集，可以将影像服务配置为充当客户端的资料档案库。一旦添加之后，相同的客户端便可编辑所添加数据的属性或移除所添加数据。</p><p id="GUID-3B42CCCF-4F75-4D22-9594-55FBF78E929C">这些参数仅在选中<span class="uicontrol">编辑</span>功能时适用。提供引用的镶嵌数据集时无法使用“编辑”功能。</p><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><thead><tr><th colspan="1">参数</th><th colspan="1">描述</th></tr></thead><tbody class="align-middle">              <tr class="align-middle">                <td outputclass="" purpose="entry" rowspan="1" colspan="1">                  <p id="GUID-576ABDD3-159D-4F20-A32B-4ACDBDBEA820">管理动态图像工作空间</p>                </td>                <td outputclass="" purpose="entry" rowspan="1" colspan="1">                  <p id="GUID-F174279B-8A07-47BF-A51D-B40D4199A86F">可通过服务器和镶嵌数据集访问目录位置；将在其中上传和存储栅格数据。必须设置此项，否则服务无法使用编辑操作。</p>                  <p id="GUID-43DEFF41-8E8E-4289-B792-B045310869FC">仅适用于镶嵌数据集。</p>                </td>              </tr>              <tr class="align-middle">                <td outputclass="" purpose="entry" rowspan="1" colspan="1">                  <p id="GUID-D0201BC8-6747-4BFE-971C-4A2D647B926D">管理服务工作空间</p>                </td>                <td outputclass="" purpose="entry" rowspan="1" colspan="1">                  <p id="GUID-C25CC0D1-371B-44D8-A40B-7521C8844535">包含可添加到影像服务镶嵌数据集的栅格数据的文件夹。可添加文件、文件夹、栅格目录、表或 Web 服务等多种来源的栅格。</p>                </td>              </tr>              <tr class="align-middle">                <td outputclass="" purpose="entry" rowspan="1" colspan="1">                  <p id="GUID-8B18BA5A-5505-4CD8-B729-709190FAB8FD">编辑器信息</p>                </td>                <td outputclass="" purpose="entry" rowspan="1" colspan="1">                  <p id="GUID-DA60E7FA-C2E5-4C6A-B67F-D3A3E6086363">选择以在应用编辑时将域添加到用户名，以便可进行跟踪。访问受保护的影像服务时，<span class="ph">ArcGIS Server</span> 会记住用户名及其编辑。<span class="ph">ArcGIS Server</span> 还将追加影像服务中已配置的任何域。</p>                  <p id="GUID-CB716A88-21D4-4A0B-8A54-A498B7A532D9">仅适用于镶嵌数据集（镶嵌数据集上已启用编辑者追踪）。</p>                </td>              </tr>              <tr class="align-middle">                <td outputclass="" purpose="entry" rowspan="1" colspan="1">                  <p id="GUID-69427F8F-A7F5-4B3F-AD92-A3B5D31D4B09">允许对其他用户添加的项目执行的操作</p>                </td>                <td outputclass="" purpose="entry" rowspan="1" colspan="1">                  <ul purpose="ul" id="UL_8BCEB1370628478099E00A187C23CE2C">                    <li purpose="li" id="LI_E36E621269454C9CB95F00D293B681F8">更新 - 允许客户端对其添加到影像服务的栅格数据集的属性进行更新。</li>                    <li purpose="li" id="LI_B079F8484ADE46B895D488DF846FEF13">删除 - 允许客户端从影像服务移除栅格项目。</li>                  </ul>                  <p id="GUID-E2102AB6-E54E-48C1-8B4C-F76B7F6714EA">仅适用于镶嵌数据集（镶嵌数据集上已启用编辑者追踪）。</p>                </td>              </tr>              <tr class="align-middle">                <td outputclass="" purpose="entry" rowspan="1" colspan="1">                  <p id="GUID-D60761EE-9A64-40D8-A85A-B369DCBDE9A9">允许添加的类型</p>                </td>                <td outputclass="" purpose="entry" rowspan="1" colspan="1">                  <p id="GUID-26EEABB2-084C-43D7-9D74-347D599B7CCC">选择向影像服务添加栅格数据时，可供客户端选择的一个或多个栅格类型。</p>                  <p id="GUID-238D51DB-4728-4089-8EE2-7ED338D2B3B9">仅适用于镶嵌数据集。</p>                </td>              </tr>              <tr class="align-middle">                <td outputclass="" purpose="entry" rowspan="1" colspan="1">                  <p id="GUID-9C25BACC-37D1-48FF-8AB9-847B19D44A04">管理自定义类型</p>                </td>                <td outputclass="" purpose="entry" rowspan="1" colspan="1">                  <p id="GUID-D9C23EE8-97C1-42E8-A041-8AB2363461C3">如果需要客户端添加不按基本栅格类型定义的数据，可以选择一个或多个栅格类型文件 (<span class="usertext">.art</span>)。</p>                  <p id="GUID-16842530-B7F7-4A34-A3EE-D836462F4BA5">通过打开栅格类型的属性并保存文件，可以在<span purpose="gptoolref">添加栅格至镶嵌数据集</span>工具中创建和编辑栅格类型文件。</p>                  <p id="GUID-B3065AC2-DC90-4803-B9E1-20883C08F315">仅适用于镶嵌数据集。</p>                </td>              </tr>            </tbody><caption></caption></table></div></section></section>    <section class="section1 padded-anchor" id="ESRI_SECTION1_0C26EBEAEB05478993E5719F3BCC1DC8" purpose="section1"><h2>控制动态处理的参数</h2><section class="section2 padded-anchor" id="ESRI_SECTION2_A2D73219665E4651998B6BEBE8BB274D" purpose="section2"><h3>函数参数</h3><p id="GUID-882885FD-4580-4C2C-81E0-F98468E88CA3">函数可以通过服务器处理影像服务数据，从而为客户端提供特定的产品。有些函数直接显示，例如“山体阴影”和“坡度”；不过，可以应用到 <span class="ph">ArcGIS Desktop</span> 中栅格数据的所有函数都可以使用栅格函数模板向客户端显示。以下参数使用将向客户端显示的函数控制动态、服务器端处理：</p><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><thead><tr><th colspan="1">参数</th><th colspan="1">描述</th></tr></thead><tbody class="align-middle">              <tr class="align-middle">                <td outputclass="" purpose="entry" rowspan="1" colspan="1">                  <p id="GUID-96AEFBA9-E07B-4E05-91E5-6B2BA2F54A9D">允许客户端指定的渲染规则</p>                </td>                <td outputclass="" purpose="entry" rowspan="1" colspan="1">                  <p id="GUID-4FA731C6-D4EF-4317-9E4E-D571FD514C24">如果已选中，则客户端可以访问和控制服务器端渲染和处理。如果未选中，则客户端无法访问和请求任何服务器端渲染。</p>                  <p id="GUID-80400E2D-AF08-4D11-ACB4-3D175F66533A">适用于所有输入。</p>                </td>              </tr>              <tr class="align-middle">                <td outputclass="" purpose="entry" rowspan="1" colspan="1">                  <p id="GUID-F5EDF7D1-1C9A-4A78-9775-99140E4FE40D">将色彩映射表转换为 RGB</p>                </td>                <td outputclass="" purpose="entry" rowspan="1" colspan="1">                  <p id="GUID-F4E7D23B-C48C-4142-AF94-B29387CB3C28">如果您的栅格数据集具有色彩映射表，则可以选择将其发布为 RGB 图像，从而将该色彩映射表应用到图像。这会影响像素值，因为像素值将从单个值和关联色彩映射表更改为三波段像素值。要保留色彩映射表并允许用户基于其色彩映射表来查询像素，则不要选择此选项。</p>                  <p id="GUID-5F3B547E-4E9C-4C63-8C4B-A136C5BFF132">这适用于具有色彩映射表的栅格数据集，也适用于所使用的栅格数据集图层或镶嵌数据集采用“色彩映射表”函数的情况。</p>                  <p id="GUID-624E78BE-420E-4C3F-BA5D-6E1D4FF1BA5F">适用于所有输入。</p>                </td>              </tr>              <tr class="align-middle">                <td outputclass="" purpose="entry" rowspan="1" colspan="1">                  <p id="GUID-61DF8FF7-0584-42C4-8BC5-B94F7FFDB227">管理栅格函数模板</p>                </td>                <td outputclass="" purpose="entry" rowspan="1" colspan="1">                  <p id="GUID-F5836350-EDBA-4E88-BE8D-D74B3C833F2A">您可以提供一个或多个函数链，然后使用它们来处理影像服务中的数据。提供这些函数时，它们会被应用到服务器上，而结果会被传输到用户或应用程序。</p>                  <p id="GUID-D8D58183-C44F-40A7-B312-9AFD60292AB2">这些函数链在“栅格函数模板编辑器”中创建并另存为 <span class="usertext">.rft.xml</span> 文件（在 <span class="ph">ArcGIS Desktop</span> 中创建），该文件随后可应用于影像服务。</p>                  <p id="GUID-4917A26E-10AE-46B6-AEC6-69E4993E8204">借助这些函数链，Web 应用程序可以对影像服务中的数据执行各种动态处理。</p>                  <p id="GUID-BB730E02-8541-434E-8D4E-362D8EBD48F7">您可以选择任何时候使用影像服务均适用的默认函数链。将影像服务与拉伸后看起来更好些的数据一起使用时，此项非常有用。<span class="ph">ArcGIS Desktop</span> 将应用拉伸，但 Web 应用程序通常无法应用；因此，您可以确保使用函数链定义拉伸时，它将始终以最佳的方式显示。</p>                  <p id="GUID-B91558C3-D70E-4CAD-8AA3-F7B832475B95">                    <a class="xref xref" href="../../../../../zh-CN/server/latest/publish-services/windows/server-side-raster-functions.htm">了解有关服务器端处理的详细信息</a>                  </p>                  <p id="GUID-333E41F1-6D18-4BC5-A048-F69DD9184041">适用于所有输入。</p>                </td>              </tr>            </tbody><caption></caption></table></div></section></section>    <section class="section1 padded-anchor" id="ESRI_SECTION1_4F333117CD7E45F8BB6414DFCE37BB3A" purpose="section1"><h2>控制影像测量的参数</h2><section class="section2 padded-anchor" id="ESRI_SECTION2_3724694729044DF7801E2253127CD268" purpose="section2"><h3>测量参数</h3><p id="GUID-D33CA73B-DA35-4034-A4B1-48FB012FDFF4">ArcGIS 提供了一组影像测量工具，其中包括用于测量影像的点、距离、面积和高度的工具。您可以选择是否需要影像服务参与到 ArcGIS 的影像测量中。</p><p id="GUID-DF2866C1-A18F-4A4A-A9FC-F17718F3C533">适用于所有输入。</p><h4 class="table title"></h4><div class="overflow-auto"><table class="tablexyz lined-rows lined-columns bordered  
+            always-wrap
+          "><colgroup width="*"></colgroup><colgroup width="*"></colgroup><thead><tr><th colspan="1">参数</th><th colspan="1">描述</th></tr></thead><tbody class="align-middle">              <tr class="align-middle">                <td outputclass="" purpose="entry" rowspan="1" colspan="1">                  <p id="GUID-56EDF40F-03A2-49DF-BB8C-44D99A755045">允许的测量方法</p>                </td>                <td outputclass="" purpose="entry" rowspan="1" colspan="1">                  <p id="GUID-EB4380B3-AF9A-4B1A-9C80-81636E7FA27A">这些允许的方法通过源的测量功能获得，它们作为数据集属性的一部分列出。它们决定了可用于影像服务的测量工具。<ul purpose="ul" id="UL_5E8DFB87AA3E42A89DFFB5F1DF518EE4"><li purpose="li" id="LI_FEFADC49E3B34206B85AB4E145DE6986">基本 - 可以应用<span class="uicontrol">距离</span>、<span class="uicontrol">面积</span>、<span class="uicontrol">点位置</span>和<span class="uicontrol">质心位置</span>测量工具。这些工具可以同除“无”外的其他工具共同使用。</li><li purpose="li" id="LI_E89EF6FD3787424AAB46C8309EC83469">3D - 使用“基本”选项中的可用工具做出的测量可用 DEM 进行修改。</li><li purpose="li" id="LI_38DD6307D3FA486CB42FCF9D0FEDEC67">高度 - 镶嵌数据集中用于数据集的传感器模型；因此，<span class="uicontrol">高度：使用底部至顶层</span>测量工具可供使用。</li><li purpose="li" id="LI_8EDA38DD0D904DCCA568F3D9EDE7E2D6">阴影 - 镶嵌数据集中用于数据集的传感器模型和太阳角度信息；因此，<span class="uicontrol">高度：使用底部至顶层</span>，<span class="uicontrol">高度：使用底部至顶部阴影</span>和<span class="uicontrol">高度：使用顶部至顶部阴影</span>测量工具可以使用。</li><li purpose="li" id="LI_5A86BB424DF24D6C8C9B73C66767DAFE">无 - 用户不能对此数据集使用 ArcGIS 中的测量工具。</li></ul></p>                  <p id="GUID-8DCE17BA-3AFC-4E84-BE83-E20D96C8748F">适用于所有输入。</p>                </td>              </tr>              <tr class="align-middle">                <td outputclass="" purpose="entry" rowspan="1" colspan="1">                  <p id="GUID-F518DCED-2E9B-4C37-8E8F-64C6CCA0B520">高程源</p>                </td>                <td outputclass="" purpose="entry" rowspan="1" colspan="1">                  <p id="GUID-C1F736D3-ACCD-4F59-9188-39C9B6825C0C">如果存在应在测量时使用的、首选且可用的高程源，则可以在此处指向该高程源。这样可使用户以 3D 形式进行测量。</p>                  <p id="GUID-4CAD3237-3FDE-46C3-A598-4B17EC1E88D8">有效的高程源包括栅格数据集、影像服务 SOAP URL 和影像服务图层。如果高程影像服务需要身份验证，则请使用影像服务图层。</p>                  <p id="GUID-7CCE6D3B-1E86-483A-96A1-31B333197FE7">适用于所有输入。</p>                </td>              </tr>            </tbody><caption></caption></table></div></section></section>  
+			
+				<hr>
+				<!--googleoff: all-->
+				
+	
+        
+		    <p class="feedback right">
+		        <a id="afb" class="icon-ui-contact" href="/feedback/" data-langlabel="feedback-on-this-topic" >有关此主题的反馈?</a>
+		    </p>
+        
+	
+
+				<!--googleon: all-->
+			
+		</main>
+	</div>
+	
+	<!--googleoff: all-->
+	
+		
+			<div id="main-toc-large" class="column-5">
+			    <div class="panel font-size--2 tablet-hide trailer-1">
+			      <h5 class="trailer-half">在本主题中</h5>
+			      <ol class="list-plain pre-0 trailer-0"><li><a href="#ESRI_SECTION1_8E90BDF4F1254F0EAD62E2C5F924D652">控制影像数据的参数</a></li><li><a href="#ESRI_SECTION1_6BD4D5F179424188B77CD3E30BF88880">控制影像服务目录的参数</a></li><li><a href="#ESRI_SECTION1_E15F18B4092F43658642E4EF78493AC2">控制影像服务内容的参数</a></li><li><a href="#ESRI_SECTION1_0C26EBEAEB05478993E5719F3BCC1DC8">控制动态处理的参数</a></li><li><a href="#ESRI_SECTION1_4F333117CD7E45F8BB6414DFCE37BB3A">控制影像测量的参数</a></li></ol>
+			    </div>
+			    
+			    
+	  		</div>
+		
+    
+   <!--googleon: all-->
+
+
+
+
+          
+        </div>
+        <!-- ENDPAGECONTENT -->
+
+      </div>
+
+    </div>  <!-- End of wrapper -->
+
+  <footer class="footer leader-3 link-dark-gray" role="contentinfo">
+    <div class="grid-container">
+      <div class="row">
+        <nav class="column-6">
+          <h6 data-langlabel="arcgis-for-server">Arc<span>GIS Enterprise</span></h6>
+          <ul class="list-plain">
+            <li><a data-langlabel="home" href="../../../../../zh-CN/">主页</a></li>
+            <li><a data-langlabel="portal" href="../../../../../zh-CN/portal/">Portal</a></li>
+            <li><a data-langlabel="server" href="../../../../../zh-CN/server/">Server</a></li>
+            <li><a data-langlabel="data-store" href="../../../../../zh-CN/data-store/">Data Stores</a></li>
+            <li><a data-langlabel="cloud" href="../../../../../zh-CN/cloud/">云</a></li>
+            <li><a data-langlabel="apps" href="../../../../../zh-CN/apps/">应用程序</a></li>
+            <li><a data-langlabel="documentation" href="../../../../../zh-CN/documentation/">文档</a></li>
+          </ul>
+        </nav>
+
+        
+  <nav class="column-6">
+    <h6 data-langlabel="arcgis-platform">ArcGIS 平台</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="arcgis" href="//www.arcgis.com/">ArcGIS Online</a></li>
+      <li><a data-langlabel="arcgis-for-professionals" href="//pro.arcgis.com/">ArcGIS Pro</a></li>
+      <li><a data-langlabel="arcgis-for-server" href="//enterprise.arcgis.com/">ArcGIS Enterprise</a></li>
+      <li><a data-langlabel="arcgis-for-developers" href="https://developers.arcgis.com/">ArcGIS for Developers</a></li>
+      <li><a data-langlabel="arcgis-solutions" href="//solutions.arcgis.com/">ArcGIS Solutions</a></li>
+      <li><a data-langlabel="arcgis-marketplace" href="//marketplace.arcgis.com/">ArcGIS Marketplace</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <h6 data-langlabel="about-esri">关于 Esri</h6>
+    <ul class="list-plain">
+      <li><a data-langlabel="about-us" href="//www.esri.com/about-esri/">关于我们</a></li>
+      <li><a data-langlabel="careers" href="//www.esri.com/careers/">招贤纳士</a></li>
+      <li><a data-langlabel="insiders-blog" href="https://www.esri.com/about/newsroom/blog/">Esri 博客</a></li>
+      <li><a data-langlabel="user-conference" href="//www.esri.com/events/user-conference/index.html">用户大会</a></li>
+      <li><a data-langlabel="developer-summit" href="//www.esri.com/events/devsummit/index.html">开发者峰会</a></li>
+    </ul>
+  </nav>
+
+  <nav class="column-6">
+    <a class="esri-logo" href="//www.esri.com/" aria-label="Esri Home"></a>
+    <section class="footer-social-nav leader-1">
+            <a class="icon-social-twitter" aria-label="Esri on Twitter" href="https://twitter.com/Esri/"></a>
+            <a class="icon-social-facebook" aria-label="Esri on Facebook" href="https://www.facebook.com/esrigis/"></a>
+            <a class="icon-social-github" aria-label="Esri on GitHub" href="//esri.github.io/"></a>
+            <a class="icon-social-contact" aria-label="Contact Esri" href="//www.esri.com/about-esri/contact/"></a>
+    </section>
+	  
+  </nav>
+  
+  <div class="column-24 leader-1">
+    <p class="font-size--3"><a href="http://www.esri.com/legal/copyright-trademarks">Copyright &copy; 2019 Esri.</a> All rights reserved. | <a href="http://www.esri.com/legal/privacy/">隐私政策</a> | <a href="http://www.esri.com/legal/software-license">法律声明</a></p>
+  </div>
+  
+
+
+      </div>
+    </div>
+  </footer>
+  <!--googleoff: all-->
+
+  
+  
+	<script src="../../../../../zh-CN/assets/js/init.js" type="text/javascript"></script>
+	<!--<script src="../../../../../zh-CN/assets/js/drop-down.js" type="text/javascript"></script>-->
+	<script src="../../../../../zh-CN/assets/js/search/searchform.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/cdn/js/link-modifier.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/cdn/js/sitewide.js" type="text/javascript"></script>
+	<script src="../../../../../zh-CN/cdn/js/libs/highlight.pack.js" type="text/javascript"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+
+
+  
+    
+
+  <script src="../../../../../zh-CN/cdn/js/affix.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    $(function () {
+          var appendFlg = true;
+
+          $("#bigmac")
+          .on("affixed.bs.affix", function (evt) {
+            if (appendFlg) {
+              $("<a class='crumb' href='#'>影像服务参数</a>").insertAfter ($("#bigmac nav a").last());
+              appendFlg = false;
+            }
+          })
+          .on ("affix-top.bs.affix", function(evt) {
+            if (!appendFlg) {
+              $("#bigmac nav a").last().remove();
+            }
+            appendFlg = true;
+          })
+    })
+  </script>
+  
+        <script type="text/javascript">
+          window.doctoc = {
+            pubID: "1634",
+            tpcID: "189",
+            
+              prefix: "管理服务",
+              prefixUrl: "/zh-cn/server/latest/publish-services/windows/",
+          
+            hideToc: false
+          }
+        </script>
+
+        <script type="text/javascript" src="../../../../../zh-CN/server/latest/publish-services/windows/1634.js" ></script>
+        <script type="text/javascript" src="../../../../../zh-CN/cdn/calcite/js/protoc.js" ></script>
+        
+        
+
+  <noscript>
+        <p>
+            <a href="flisting.htm">flist</a>
+        </p>
+    </noscript>
+    <script type="text/javascript"></script>
+  
+  
+    
+    
+
+  </body>
+</html>

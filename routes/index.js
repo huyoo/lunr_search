@@ -1,19 +1,21 @@
-const router = require('koa-router')()
+/**
+ * 生成中文检索索引
+ */
+const readFAQHtml = require('./readFAQHtml');
+const createChinese = require('./lunrChinese');
+const composeFile = require('./composeFile');
 
-router.get('/', async (ctx, next) => {
-  await ctx.render('index', {
-    title: 'Hello Koa 2!'
-  })
-})
+function createChineseRef() {
+  readFAQHtml();
+  createChinese();
 
-router.get('/string', async (ctx, next) => {
-  ctx.body = 'koa2 string'
-})
+  setTimeout(() => {
+    composeFile();
+    console.log('[createChineseRef]: 生成中文检索索引success')
+  }, 2000);
 
-router.get('/json', async (ctx, next) => {
-  ctx.body = {
-    title: 'koa2 json'
-  }
-})
+  console.log('[createChineseRef]: 静默2秒，等待磁盘文件完全写入...')
+}
 
-module.exports = router
+
+createChineseRef()

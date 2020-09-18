@@ -5,6 +5,7 @@
  */
 const nodejieba = require('nodejieba');
 const fs = require('fs')
+const {path} = require('./config');
 
 const lunr = require('lunr-chinese')({
   dict: nodejieba.DEFAULT_DICT,
@@ -16,6 +17,7 @@ const lunr = require('lunr-chinese')({
 })
 
 function create() {
+
   let idx = lunr(function () {
     this.ref('id')
 
@@ -45,8 +47,8 @@ function create() {
   //   }
   // })
 
-  let PREVIEW_LOOKUP = fs.readFileSync('C:/Users/yu_hu/Desktop/新建文件夹/PREVIEW_LOOKUP_CONTENTS.txt', 'utf8');
-
+  console.log('[lunr_chinese]: 开始解析 PREVIEW_LOOKUP_CONTENT 内容.')
+  let PREVIEW_LOOKUP = fs.readFileSync(path + '/PREVIEW_LOOKUP_CONTENTS.txt', 'utf8');
 
 
   if (!PREVIEW_LOOKUP) {
@@ -57,10 +59,11 @@ function create() {
 
   PREVIEW_LOOKUP = JSON.parse(PREVIEW_LOOKUP);
 
-  console.info('[lunr_chinese]: postContents已生成，init...')
-
-
-  lunr.init(idx, PREVIEW_LOOKUP, 'C:/Users/yu_hu/Desktop/新建文件夹/lunrCnIndexs.json')
+  console.info('[lunr_chinese]: 解析完成，开始匹配关键字...')
+  lunr.init(idx, PREVIEW_LOOKUP, path + '/lunrCnIndexs.json');
+  console.info('[lunr_chinese]: lunrCnIndexs.json已生成')
 }
 
-create()
+module.exports = create
+
+// create();

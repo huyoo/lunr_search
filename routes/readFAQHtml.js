@@ -10,6 +10,9 @@ const {path} = require('./config');
 function readFAQHtml() {
   let PREVIEW_LOOKUP = fs.readFileSync(path + '/PREVIEW_LOOKUP.txt', 'utf8');
 
+  // PREVIEW_LOOKUP = PREVIEW_LOOKUP.replace(/C:\\Users\\admin\\Desktop\\python\\help_search\\zh-CN_windows\\/g, '');
+  // PREVIEW_LOOKUP = PREVIEW_LOOKUP.replace(/\\/g, '/');
+
   if (!PREVIEW_LOOKUP) {
     console.error('[read_FAQ_html]: PREVIEW_LOOKUP，无数据')
     return;

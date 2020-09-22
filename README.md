@@ -9,4 +9,4 @@
 
 ##### 注意事项
 1. PREVIEW_LOOKUP.txt里的数据需要满足JSON反序列化的要求，数据中不能有换行或其他非法字符。
-2. 
+2. PREVIEW_LOOKUP.txt的路径使用/，不能使用\，如果给出的路径不对，请replace替换
